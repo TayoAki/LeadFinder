@@ -21,5 +21,5 @@ Create a service from this repo, add a volume mounted at `/data`, and set `DATAB
 
 ## Status
 
-Done: phases 1–4 (Treg integration, foundation, Treg client with per-call receipts, auth, credits ledger and holds).
-Next: onboarding and site read, ICP generation with free counts, then the waterfall engine.
+Done: phases 1–7 (Treg integration, foundation, Treg client with receipts, auth and credits, onboarding and site read, ICP with free counts, the waterfall engine with a live leads view).
+Next: a first live run with real keys, then phase 8 (full leads table: filters, bulk actions, CSV export).

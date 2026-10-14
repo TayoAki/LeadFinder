@@ -6,6 +6,7 @@ export const WELCOME_CREDITS = 50;
 export const CREDIT_PRICES = {
   person: 1,
   verifiedEmail: 4,
+  unconfirmedEmail: 2, // catch-all or risky: delivered with its badge, charged less
   mobile: 10,
 } as const;
 
