@@ -83,7 +83,7 @@ test("a run finds one person per company, pays only for results, refunds the res
 test("a run cannot exceed the balance, and only one runs at a time", () => {
   const { db, u, icpId } = setup();
   assert.throws(() => startRun(db, u.id, icpId, 1000, true, { fetchImpl: fakeTreg([]) }), /credits/);
-  assert.equal(db.prepare("SELECT COUNT(*) AS n FROM runs").get().n, 0, "failed hold leaves no run behind");
+  assert.equal((db.prepare("SELECT COUNT(*) AS n FROM runs").get() as { n: number }).n, 0, "failed hold leaves no run behind");
 });
 
 test("runs interrupted by a restart are closed and refunded", () => {

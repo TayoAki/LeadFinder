@@ -65,3 +65,25 @@ test("tregCall sends token + idempotency + cap and records the real cost", async
   assert.equal(seen?.get("x-treg-route-max-cost"), "0.05");
   assert.deepEqual(tregCostTotals(db, 7), { calls: 1, cost_micro: 4834 });
 });
+
+test("AI client uses OpenRouter when its key is set, Anthropic otherwise", async () => {
+  const { aiText, modelFor } = await import("../src/lib/claude.ts");
+  const seen: { url: string; body: any; auth: string | null }[] = [];
+  const fake = (async (url: string, init: RequestInit) => {
+    const h = new Headers(init.headers);
+    seen.push({ url, body: JSON.parse(String(init.body)), auth: h.get("authorization") ?? h.get("x-api-key") });
+    const or = url.includes("openrouter");
+    return new Response(JSON.stringify(or ? { choices: [{ message: { content: "hi-or" } }] } : { content: [{ type: "text", text: "hi-an" }] }));
+  }) as unknown as typeof fetch;
+  process.env.OPENROUTER_API_KEY = "or-key";
+  assert.equal(modelFor("icp"), "anthropic/claude-opus-5.5");
+  assert.equal(await aiText({ role: "line", system: "s", prompt: "p" }, fake), "hi-or");
+  assert.equal(seen[0].auth, "Bearer or-key");
+  assert.equal(seen[0].body.messages[0].role, "system");
+  delete process.env.OPENROUTER_API_KEY;
+  process.env.ANTHROPIC_API_KEY = "an-key";
+  assert.equal(modelFor("icp"), "claude-opus-5-5");
+  assert.equal(await aiText({ role: "icp", system: "s", prompt: "p" }, fake), "hi-an");
+  assert.equal(seen[1].auth, "an-key");
+  delete process.env.ANTHROPIC_API_KEY;
+});

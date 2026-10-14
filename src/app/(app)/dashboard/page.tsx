@@ -17,7 +17,7 @@ export default async function Dashboard() {
           <h3>Operator</h3>
           <p className="muted" style={{ margin: 0 }}>
             {treg.calls} Treg calls · ${microToUsd(treg.cost_micro).toFixed(4)} spent ·{" "}
-            Treg token {process.env.TREG_TOKEN ? "set" : "missing"} · Anthropic key {process.env.ANTHROPIC_API_KEY ? "set" : "missing"}
+            Treg token {process.env.TREG_TOKEN ? "set" : "missing"} · AI {process.env.OPENROUTER_API_KEY ? "OpenRouter" : process.env.ANTHROPIC_API_KEY ? "Anthropic" : "missing"}
           </p>
         </div>
       )}

@@ -1,6 +1,6 @@
 import type { DB } from "./db.ts";
 import { tregCall } from "./treg.ts";
-import { claudeJson, ICP_MODEL } from "./claude.ts";
+import { aiJson } from "./claude.ts";
 import { countFrom, pickList } from "./normalize.ts";
 
 export interface OnboardingInput {
@@ -66,8 +66,8 @@ Fields: summary, industries, keywords, jobTitles, seniority, countries, employee
 
 /** Step 2: turn site text + answers into an ICP with Claude. */
 export async function writeIcp(input: OnboardingInput, siteText: string, brand: unknown): Promise<Icp> {
-  const icp = await claudeJson<Icp>({
-    model: ICP_MODEL,
+  const icp = await aiJson<Icp>({
+    role: "icp",
     system: ICP_SYSTEM,
     maxTokens: 1500,
     prompt: [

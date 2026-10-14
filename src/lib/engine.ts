@@ -3,7 +3,7 @@ import { tregCall } from "./treg.ts";
 import { CREDIT_PRICES, chargeFromHold, maxCreditsFor, placeHold, settleHold } from "./credits.ts";
 import { peopleFilters, type Icp } from "./icp.ts";
 import { emailFrom, personFrom, phoneFrom, pickList, verifyStatusFrom, type PersonRecord } from "./normalize.ts";
-import { claudeText, LINE_MODEL } from "./claude.ts";
+import { aiConfigured, aiText } from "./claude.ts";
 
 export const CONCURRENCY = 5;
 export const EMAIL_MAX_COST_USD = 0.05; // per lead: stops one lead climbing the whole 23-provider ladder
@@ -220,9 +220,9 @@ async function enrichLead(
 }
 
 async function defaultOpeningLine(icp: Icp, p: PersonRecord): Promise<string | null> {
-  if (!process.env.ANTHROPIC_API_KEY) return null;
-  const text = await claudeText({
-    model: LINE_MODEL,
+  if (!aiConfigured()) return null;
+  const text = await aiText({
+    role: "line",
     maxTokens: 120,
     system: "Write one short, specific cold-call or cold-email opening line (max 25 words). No greeting, no name, no quotes.",
     prompt: `We sell: ${icp.summary}\nAngle: ${icp.openingAngle}\nProspect: ${p.title ?? "decision maker"} at ${p.companyName ?? "their company"}.`,
