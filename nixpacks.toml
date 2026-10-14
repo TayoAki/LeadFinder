@@ -1,0 +1,6 @@
+# Node 22 has prebuilt better-sqlite3 binaries; python3 and a compiler are a fallback if it has to build from source.
+[variables]
+NIXPACKS_NODE_VERSION = "22"
+
+[phases.setup]
+nixPkgs = ["...", "python3", "gcc", "gnumake"]
