@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { packs } from "@/lib/stripe.ts";
+import { CREDIT_PRICES } from "@/lib/credits.ts";
 
 const steps = [
   ["Tell us your business", "Your website and one sentence on what you sell."],
@@ -6,6 +8,8 @@ const steps = [
   ["We find the people", "Matching companies and a decision maker at each."],
   ["The waterfall verifies them", "Cheapest email provider first, pay only on a hit, every inbox verified."],
 ];
+
+export const dynamic = "force-dynamic";
 
 export default function Landing() {
   return (
@@ -32,6 +36,27 @@ export default function Landing() {
           </div>
         ))}
       </section>
+      <section style={{ marginTop: "4rem" }}>
+        <h2>Pay for results, not seats</h2>
+        <p className="muted" style={{ maxWidth: 620 }}>
+          Every account starts with 50 free credits. A person found costs {CREDIT_PRICES.person}, a verified email{" "}
+          {CREDIT_PRICES.verifiedEmail} (catch-all or risky {CREDIT_PRICES.unconfirmedEmail}), a mobile {CREDIT_PRICES.mobile}. Misses and invalid
+          emails are free, and every run shows its maximum price before it starts.
+        </p>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: "1rem" }}>
+          {packs().map((p) => (
+            <div className="card" key={p.id}>
+              <div className="muted">{p.label ?? p.id}</div>
+              <h3 style={{ margin: ".2rem 0" }}>{p.credits.toLocaleString("en-US")} credits</h3>
+              <div>${(p.cents / 100).toFixed(0)}</div>
+              <div className="muted" style={{ fontSize: ".85rem" }}>about {Math.floor(p.credits / (CREDIT_PRICES.person + CREDIT_PRICES.verifiedEmail)).toLocaleString("en-US")} verified leads</div>
+            </div>
+          ))}
+        </div>
+      </section>
+      <footer className="muted" style={{ marginTop: "4rem", fontSize: ".85rem" }}>
+        LeadFinder is for B2B outreach. Respect opt-outs and the rules where your prospects are.
+      </footer>
     </main>
   );
 }

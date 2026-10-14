@@ -120,6 +120,17 @@ CREATE TABLE IF NOT EXISTS lists (
   filename TEXT NOT NULL, row_count INTEGER NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+-- Stripe Checkout top-ups. A session grants its credits once, when Stripe says it's paid.
+CREATE TABLE IF NOT EXISTS payments (
+  stripe_session_id TEXT PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  pack_id TEXT NOT NULL,
+  credits INTEGER NOT NULL,
+  amount_cents INTEGER NOT NULL,
+  status TEXT NOT NULL CHECK (status IN ('pending','paid','mismatch')),
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  updated_at TEXT
+);
 -- Provider lab: one email provider on a sample of people the waterfall already processed.
 CREATE TABLE IF NOT EXISTS lab_tests (
   id INTEGER PRIMARY KEY,

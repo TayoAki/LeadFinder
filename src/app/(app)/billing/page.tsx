@@ -2,8 +2,11 @@ import { requireUser } from "@/lib/session.ts";
 import { db } from "@/lib/db.ts";
 import { balance, ledgerFor } from "@/lib/credits.ts";
 import { runReceipts } from "@/lib/margin.ts";
+import { packs, stripeConfigured } from "@/lib/stripe.ts";
+import BuyCredits from "@/components/BuyCredits";
 
-export default async function Billing() {
+export default async function Billing({ searchParams }: { searchParams: Promise<{ paid?: string }> }) {
+  const { paid } = await searchParams;
   const user = await requireUser();
   const d = db();
   const rows = ledgerFor(d, user.id);
@@ -18,7 +21,17 @@ export default async function Billing() {
         <p className="muted" style={{ marginBottom: 0 }}>
           Runs hold the most they could cost, pay each result from the hold, and return the rest when they finish.
         </p>
-        <p className="muted" style={{ marginBottom: 0 }}>Card top-ups are coming soon. Until then, ask the LeadFinder team to add credits.</p>
+      </div>
+      {paid && (
+        <p className="card" style={{ marginBottom: "1rem" }}>
+          Thanks, your payment went through. Credits appear here as soon as Stripe confirms it, usually within a few seconds; refresh if they&apos;re not showing yet.
+        </p>
+      )}
+      <div style={{ marginBottom: "1rem" }}>
+        <h3>Buy credits</h3>
+        {stripeConfigured() ? <BuyCredits packs={packs()} /> : (
+          <p className="muted">Card payments aren&apos;t switched on yet. Ask the LeadFinder team to add credits.</p>
+        )}
       </div>
       <div className="card" style={{ overflowX: "auto", marginBottom: "1rem" }}>
         <h3>Run receipts</h3>
