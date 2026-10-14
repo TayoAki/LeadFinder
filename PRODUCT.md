@@ -153,7 +153,7 @@ its leads [assumed].
 9. Clean a list.
 10. Billing + admin margin dashboards.
 11. Provider lab.
-12. Polish, Stripe top-ups, deploy (Vercel).
+12. Polish, Stripe top-ups, deploy (Railway).
 
 ## Non-Goals
 
@@ -162,18 +162,21 @@ its leads [assumed].
 - Our own data — all data comes from Treg.
 - Personal (non-work) emails.
 
+## Decisions (14 Oct 2026)
+
+- **Name:** LeadFinder.
+- **Mobiles:** opt-in per run (off by default); only priced into the hold when chosen.
+- **Hosting:** Railway — one long-running Node service (web + background worker), SQLite on a Railway
+  volume (`DATABASE_PATH=/data/leadfinder.db`). Move to Railway Postgres if we need more than one instance.
+
 ## Open Questions
 
 1. Final credit prices and plan tiers (assumed list above).
-2. Mobile numbers: UK/EU legal basis for direct mobiles — offer by default or opt-in per run?
-3. Hosting target: Vercel needs a hosted DB and a separate worker for long runs — accept, or use a
-   single long-running host (e.g. Railway)?
-4. Brand name: "LeadFinder" (repo) vs "Cascade" (video).
 
 ## Handoff
 
 - **Ready for implementation?** Yes for phases 1–8 behind env keys; real-data checks need
   `TREG_TOKEN` and `ANTHROPIC_API_KEY`.
-- **Needs architecture review?** Only the hosting question (open question 3).
-- **Needs product clarification?** Pricing and mobile policy before public launch.
+- **Needs architecture review?** No — hosting decided (Railway).
+- **Needs product clarification?** Final pricing before public launch.
 - **Next ECC lane:** `orch-build-mvp` (thin vertical slices) → `verification-loop`.
