@@ -26,3 +26,9 @@ export async function startSession(userId: number) {
     maxAge: SESSION_DAYS * 86400,
   });
 }
+
+export async function requireAdmin(): Promise<User> {
+  const user = await requireUser();
+  if (user.role !== "admin") redirect("/dashboard");
+  return user;
+}

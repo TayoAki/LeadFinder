@@ -23,6 +23,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <aside className="sidebar">
         <div className="brand">LeadFinder</div>
         {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
+        {user.role === "admin" && <Link href="/admin">Admin</Link>}
       </aside>
       <div>
         <header className="topbar">

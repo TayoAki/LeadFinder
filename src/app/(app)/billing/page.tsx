@@ -1,11 +1,14 @@
 import { requireUser } from "@/lib/session.ts";
 import { db } from "@/lib/db.ts";
 import { balance, ledgerFor } from "@/lib/credits.ts";
+import { runReceipts } from "@/lib/margin.ts";
 
 export default async function Billing() {
   const user = await requireUser();
   const d = db();
   const rows = ledgerFor(d, user.id);
+  const receipts = runReceipts(d, user.id);
+  const num = { textAlign: "right" as const, fontVariantNumeric: "tabular-nums" as const };
   return (
     <>
       <h1>Billing</h1>
@@ -15,6 +18,29 @@ export default async function Billing() {
         <p className="muted" style={{ marginBottom: 0 }}>
           Runs hold the most they could cost, pay each result from the hold, and return the rest when they finish.
         </p>
+        <p className="muted" style={{ marginBottom: 0 }}>Card top-ups are coming soon. Until then, ask the LeadFinder team to add credits.</p>
+      </div>
+      <div className="card" style={{ overflowX: "auto", marginBottom: "1rem" }}>
+        <h3>Run receipts</h3>
+        {receipts.length === 0 ? <p className="muted">No runs yet.</p> : (
+          <table>
+            <thead><tr>
+              <th>Run</th><th>What</th><th>Status</th><th style={num}>Leads</th><th style={num}>Verified</th>
+              <th style={num}>Held</th><th style={num}>Charged</th><th style={num}>Refunded</th>
+            </tr></thead>
+            <tbody>
+              {receipts.map((r) => (
+                <tr key={r.id}>
+                  <td><a href={`/leads?run=${r.id}`}>#{r.id}</a><div className="muted" style={{ fontSize: ".75rem" }}>{r.created_at}</div></td>
+                  <td>{r.kind === "clean" ? `Cleaned ${r.filename ?? "a list"}` : `Found ${r.target} leads`}</td>
+                  <td>{r.status}</td><td style={num}>{r.leads}</td><td style={num}>{r.verified}</td>
+                  <td style={num}>{r.held}</td><td style={num}>{r.charged}</td>
+                  <td style={num}>{r.status === "held" || r.status === "running" ? "…" : r.refunded}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
       <div className="card" style={{ overflowX: "auto" }}>
         <h3>Ledger</h3>

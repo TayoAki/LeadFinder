@@ -21,7 +21,7 @@ Create a service from this repo, add a volume mounted at `/data`, and set `DATAB
 
 ## Status
 
-Done: phases 1–9 (Treg integration, foundation, Treg client with receipts, auth and credits, onboarding and site read, ICP with free counts, the waterfall engine, and the full leads table with filters, search, sort, bulk delete, CSV export and a lead side panel, and cleaning an uploaded list).
-Next: a first live run with real keys, then phase 10 (billing and admin margin dashboards).
+Done: phases 1–10 (Treg integration, foundation, Treg client with receipts, auth and credits, onboarding and site read, ICP with free counts, the waterfall engine, and the full leads table with filters, search, sort, bulk delete, CSV export and a lead side panel, cleaning an uploaded list, and billing receipts plus the admin margin page).
+Next: a first live run with real keys, then phase 11 (provider lab).
 
 AI: set `OPENROUTER_API_KEY` to use OpenRouter (default models `anthropic/claude-opus-5.5` for the ICP, `anthropic/claude-haiku-5.5` for opening lines), or `ANTHROPIC_API_KEY` to call Anthropic directly. Override with `LEADFINDER_ICP_MODEL` / `LEADFINDER_LINE_MODEL`.
