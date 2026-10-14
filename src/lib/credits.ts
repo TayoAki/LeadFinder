@@ -7,8 +7,14 @@ export const CREDIT_PRICES = {
   person: 1,
   verifiedEmail: 4,
   unconfirmedEmail: 2, // catch-all or risky: delivered with its badge, charged less
+  verifyOnly: 1, // an uploaded email we only had to check (invalid ones cost nothing)
   mobile: 10,
 } as const;
+
+/** The most cleaning `rows` uploaded rows could cost: no person credit, the email at most a verified find. */
+export function maxCreditsForList(rows: number, wantMobile: boolean) {
+  return rows * (CREDIT_PRICES.verifiedEmail + (wantMobile ? CREDIT_PRICES.mobile : 0));
+}
 
 /** The most a run of `target` leads could cost. This is what gets held. */
 export function maxCreditsFor(target: number, wantMobile: boolean) {

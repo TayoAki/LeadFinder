@@ -1,5 +1,10 @@
-import Empty from "@/components/Empty";
+import CleanList from "@/components/CleanList";
 
-export default function Page() {
-  return <Empty title="Clean a list" body="Upload a CSV of names and company domains or LinkedIn URLs, and we will find and verify each email." />;
+export default function CleanPage() {
+  return (
+    <>
+      <h1>Clean a list</h1>
+      <CleanList />
+    </>
+  );
 }

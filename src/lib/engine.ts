@@ -72,22 +72,25 @@ export async function processRun(db: DB, runId: number, icp: Icp, deps: EngineDe
     const leadIds = people.map((p) => queueLead(db, run.user_id, runId, p));
 
     // 2. Five rows at a time through the email waterfall → verify → optional mobile.
-    let next = 0;
-    const worker = async () => {
-      while (next < leadIds.length) {
-        const i = next++;
-        await enrichLead(db, runId, holdId, leadIds[i], people[i], icp, run.want_mobile === 1, call, deps);
-      }
-    };
-    await Promise.all(Array.from({ length: CONCURRENCY }, worker));
-    finish(db, runId, holdId, "completed");
+    await runWorkersFor(leadIds.length, (i) =>
+      enrichLead(db, runId, holdId, leadIds[i], people[i], icp, run.want_mobile === 1, call, deps, { source: "search" }),
+    );
+    finishRun(db, runId, holdId, "completed");
   } catch (e) {
     console.error(`run ${runId} failed`, e);
-    finish(db, runId, holdId, "failed");
+    finishRun(db, runId, holdId, "failed");
   }
 }
 
-function finish(db: DB, runId: number, holdId: number, status: "completed" | "failed" | "cancelled") {
+export async function runWorkersFor(count: number, job: (i: number) => Promise<unknown>) {
+  let next = 0;
+  const worker = async () => {
+    while (next < count) await job(next++);
+  };
+  await Promise.all(Array.from({ length: CONCURRENCY }, worker));
+}
+
+export function finishRun(db: DB, runId: number, holdId: number, status: "completed" | "failed" | "cancelled") {
   settleHold(db, holdId);
   db.prepare("UPDATE runs SET status = ?, finished_at = datetime('now') WHERE id = ?").run(status, runId);
 }
@@ -127,9 +130,10 @@ async function findPeople(
 const companyKey = (p: PersonRecord) =>
   p.companyDomain ?? (p.companyName ? `name:${p.companyName.toLowerCase().replace(/[^a-z0-9]+/g, "-")}` : null);
 
-function queueLead(db: DB, userId: number, runId: number, p: PersonRecord): number {
+export function queueLead(db: DB, userId: number, runId: number, p: PersonRecord): number {
   return db.transaction(() => {
-    const key = companyKey(p)!;
+    // Uploaded rows can have a LinkedIn URL and no company; they share one placeholder company record.
+    const key = companyKey(p) ?? "name:unknown";
     db.prepare("INSERT OR IGNORE INTO companies (user_id, domain, name) VALUES (?, ?, ?)").run(userId, key, p.companyName);
     const companyId = (db.prepare("SELECT id FROM companies WHERE user_id = ? AND domain = ?").get(userId, key) as { id: number }).id;
     const personId = Number(
@@ -144,14 +148,25 @@ function queueLead(db: DB, userId: number, runId: number, p: PersonRecord): numb
   })();
 }
 
-async function enrichLead(
-  db: DB, runId: number, holdId: number, leadId: number, p: PersonRecord, icp: Icp, wantMobile: boolean,
-  call: (e: string, o: Parameters<typeof tregCall>[2]) => ReturnType<typeof tregCall>, deps: EngineDeps,
+/**
+ * How a lead entered the run. Search leads pay the person credit; uploaded rows don't (you supplied the person),
+ * and an uploaded email skips the finder and is only verified.
+ */
+export type LeadSource = { source: "search" } | { source: "list"; email: string | null };
+
+export async function enrichLead(
+  db: DB, runId: number, holdId: number, leadId: number, p: PersonRecord, icp: Icp | null, wantMobile: boolean,
+  call: (e: string, o: Parameters<typeof tregCall>[2]) => ReturnType<typeof tregCall>, deps: EngineDeps, from: LeadSource,
 ) {
   try {
-    attempt(db, leadId, "people", "dropleads", "found", 0);
-    if (!charge(db, runId, holdId, leadId, CREDIT_PRICES.person)) return setState(db, leadId, "stopped");
-    setState(db, leadId, "finding_email");
+    if (from.source === "search") {
+      attempt(db, leadId, "people", "dropleads", "found", 0);
+      if (!charge(db, runId, holdId, leadId, CREDIT_PRICES.person)) return setState(db, leadId, "stopped");
+    } else {
+      attempt(db, leadId, "upload", null, "row", 0);
+    }
+    const uploadedEmail = from.source === "list" ? from.email : null;
+    setState(db, leadId, uploadedEmail ? "verifying" : "finding_email");
 
     const identity: Record<string, string> = { full_name: p.fullName };
     if (p.firstName) identity.first_name = p.firstName;
@@ -159,17 +174,22 @@ async function enrichLead(
     if (p.companyDomain) identity.domain = p.companyDomain;
     if (p.linkedinUrl) identity.linkedin_url = p.linkedinUrl;
 
-    const found = await call("treg.people.email.find", {
-      body: identity,
-      idempotencyKey: `run:${runId}:lead:${leadId}:email`,
-      maxCostUsd: EMAIL_MAX_COST_USD,
-    });
-    for (const t of found.tried) {
-      const name = typeof t === "string" ? t : (t as any)?.provider ?? (t as any)?.id ?? null;
-      if (name && name !== found.servedBy) attempt(db, leadId, "email", String(name), "miss", 0);
+    let email: string | null = uploadedEmail;
+    let emailProvider: string | null = uploadedEmail ? "uploaded" : null;
+    if (!uploadedEmail) {
+      const found = await call("treg.people.email.find", {
+        body: identity,
+        idempotencyKey: `run:${runId}:lead:${leadId}:email`,
+        maxCostUsd: EMAIL_MAX_COST_USD,
+      });
+      for (const t of found.tried) {
+        const name = typeof t === "string" ? t : (t as any)?.provider ?? (t as any)?.id ?? null;
+        if (name && name !== found.servedBy) attempt(db, leadId, "email", String(name), "miss", 0);
+      }
+      email = found.ok ? emailFrom(found.data) : null;
+      emailProvider = found.servedBy;
+      attempt(db, leadId, "email", found.servedBy, email ? "hit" : found.ok ? "miss" : `error: ${found.error}`, found.costMicro);
     }
-    const email = found.ok ? emailFrom(found.data) : null;
-    attempt(db, leadId, "email", found.servedBy, email ? "hit" : found.ok ? "miss" : `error: ${found.error}`, found.costMicro);
 
     if (email) {
       setState(db, leadId, "verifying");
@@ -178,9 +198,11 @@ async function enrichLead(
       attempt(db, leadId, "verify", v.servedBy, status, v.costMicro);
       // Invalid emails are never delivered as results, and never charged.
       db.prepare("UPDATE leads SET email = ?, email_status = ?, email_provider = ? WHERE id = ?").run(
-        status === "invalid" ? null : email, status, found.servedBy, leadId,
+        status === "invalid" ? null : email, status, emailProvider, leadId,
       );
-      const price = status === "verified" ? CREDIT_PRICES.verifiedEmail : status === "catch_all" || status === "risky" ? CREDIT_PRICES.unconfirmedEmail : 0;
+      const price = uploadedEmail
+        ? status === "invalid" ? 0 : CREDIT_PRICES.verifyOnly
+        : status === "verified" ? CREDIT_PRICES.verifiedEmail : status === "catch_all" || status === "risky" ? CREDIT_PRICES.unconfirmedEmail : 0;
       if (price && !charge(db, runId, holdId, leadId, price)) return setState(db, leadId, "stopped");
     } else {
       db.prepare("UPDATE leads SET email_status = 'not_found' WHERE id = ?").run(leadId);
@@ -210,7 +232,7 @@ async function enrichLead(
       }
     }
 
-    const line = await (deps.openingLine ?? defaultOpeningLine)(icp, p).catch(() => null);
+    const line = icp ? await (deps.openingLine ?? defaultOpeningLine)(icp, p).catch(() => null) : null;
     if (line) db.prepare("UPDATE leads SET opening_line = ? WHERE id = ?").run(line, leadId);
     setState(db, leadId, "done");
   } catch (e) {
@@ -236,7 +258,7 @@ export function recoverInterruptedRuns(db: DB) {
     id: number;
     hold_id: number;
   }[];
-  for (const r of stuck) finish(db, r.id, r.hold_id, "failed");
+  for (const r of stuck) finishRun(db, r.id, r.hold_id, "failed");
   return stuck.length;
 }
 
