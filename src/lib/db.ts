@@ -120,6 +120,30 @@ CREATE TABLE IF NOT EXISTS lists (
   filename TEXT NOT NULL, row_count INTEGER NOT NULL,
   created_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+-- Provider lab: one email provider on a sample of people the waterfall already processed.
+CREATE TABLE IF NOT EXISTS lab_tests (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  provider TEXT NOT NULL,
+  sample_size INTEGER NOT NULL,
+  status TEXT NOT NULL CHECK (status IN ('running','completed','failed')) DEFAULT 'running',
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  finished_at TEXT
+);
+CREATE TABLE IF NOT EXISTS lab_results (
+  id INTEGER PRIMARY KEY,
+  test_id INTEGER NOT NULL REFERENCES lab_tests(id) ON DELETE CASCADE,
+  lead_id INTEGER NOT NULL,
+  outcome TEXT NOT NULL CHECK (outcome IN ('hit','miss','error','not_tried')),
+  email TEXT,
+  served_by TEXT,
+  cost_micro INTEGER NOT NULL DEFAULT 0,
+  latency_ms INTEGER NOT NULL DEFAULT 0,
+  waterfall_email TEXT,
+  waterfall_cost_micro INTEGER NOT NULL DEFAULT 0,
+  note TEXT
+);
+-- Unused since the provider lab moved to lab_tests; kept so older databases still open.
 CREATE TABLE IF NOT EXISTS lab_runs (
   id INTEGER PRIMARY KEY,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
@@ -147,7 +171,7 @@ const PRICE_LIST: [string, string, number, string][] = [
   ["treg.companies.search", "companies", 0, "call"],
   ["treg.people.search", "people", 0, "call"],
   ["treg.people.email.find", "email", 0.00483, "success"],
-  ["treg.people.email.verify", "verify", 0, "call"],
+  ["treg.people.email.verify", "verify", 0.0006, "call"], // catalog says free; live calls (14 Oct 2026) billed $0.0006 each
   ["treg.people.phone.find", "mobile", 0.00483, "success"],
   ["hlrlookup.people.phone.validate", "mobile_check", 0, "call"],
 ];
@@ -159,7 +183,8 @@ export function openDb(file = process.env.DATABASE_PATH ?? "./data/leadfinder.db
   db.pragma("foreign_keys = ON");
   db.exec(SCHEMA);
   const seed = db.prepare(
-    "INSERT OR IGNORE INTO price_list (endpoint, step, usd_per_unit, unit, checked_on) VALUES (?, ?, ?, ?, '2026-10-14')",
+    `INSERT INTO price_list (endpoint, step, usd_per_unit, unit, checked_on) VALUES (?, ?, ?, ?, '2026-10-14')
+     ON CONFLICT(endpoint) DO UPDATE SET usd_per_unit = excluded.usd_per_unit, step = excluded.step, unit = excluded.unit`,
   );
   for (const row of PRICE_LIST) seed.run(...row);
   return db;

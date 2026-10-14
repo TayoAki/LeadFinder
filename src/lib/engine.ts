@@ -232,13 +232,33 @@ export async function enrichLead(
       }
     }
 
-    const line = icp ? await (deps.openingLine ?? defaultOpeningLine)(icp, p).catch(() => null) : null;
-    if (line) db.prepare("UPDATE leads SET opening_line = ? WHERE id = ?").run(line, leadId);
+    if (icp && (deps.openingLine || aiConfigured())) {
+      const line = await writeOpeningLine(db, leadId, icp, p, deps.openingLine ?? defaultOpeningLine);
+      if (line) db.prepare("UPDATE leads SET opening_line = ? WHERE id = ?").run(line, leadId);
+    }
     setState(db, leadId, "done");
   } catch (e) {
     attempt(db, leadId, "error", null, e instanceof Error ? e.message.slice(0, 200) : "error", 0);
     setState(db, leadId, "error");
   }
+}
+
+/** The opening line is a nice-to-have: try twice, and if it still fails, say why in the lead's history. */
+async function writeOpeningLine(
+  db: DB, leadId: number, icp: Icp, p: PersonRecord, write: (icp: Icp, p: PersonRecord) => Promise<string | null>,
+): Promise<string | null> {
+  let reason = "empty reply";
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const line = (await write(icp, p))?.trim();
+      if (line) return line;
+    } catch (e) {
+      reason = e instanceof Error ? e.message : String(e);
+    }
+    if (attempt === 0) await new Promise((r) => setTimeout(r, 1500));
+  }
+  attempt(db, leadId, "opening_line", null, `failed: ${reason.slice(0, 160)}`, 0);
+  return null;
 }
 
 async function defaultOpeningLine(icp: Icp, p: PersonRecord): Promise<string | null> {

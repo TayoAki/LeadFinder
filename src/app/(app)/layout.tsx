@@ -10,7 +10,6 @@ const nav = [
   ["/icp", "ICP"],
   ["/leads", "Leads"],
   ["/clean", "Clean a list"],
-  ["/lab", "Provider lab"],
   ["/billing", "Billing"],
   ["/settings", "Settings"],
 ];
@@ -23,7 +22,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
       <aside className="sidebar">
         <div className="brand">LeadFinder</div>
         {nav.map(([href, label]) => <Link key={href} href={href}>{label}</Link>)}
-        {user.role === "admin" && <Link href="/admin">Admin</Link>}
+        {user.role === "admin" && <><Link href="/lab">Provider lab</Link><Link href="/admin">Admin</Link></>}
       </aside>
       <div>
         <header className="topbar">

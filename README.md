@@ -21,7 +21,7 @@ Create a service from this repo, add a volume mounted at `/data`, and set `DATAB
 
 ## Status
 
-Done: phases 1–10 (Treg integration, foundation, Treg client with receipts, auth and credits, onboarding and site read, ICP with free counts, the waterfall engine, and the full leads table with filters, search, sort, bulk delete, CSV export and a lead side panel, cleaning an uploaded list, and billing receipts plus the admin margin page).
-Next: a first live run with real keys, then phase 11 (provider lab).
+Done: phases 1–11 (Treg integration, foundation, Treg client with receipts, auth and credits, onboarding and site read, ICP with free counts, the waterfall engine, and the full leads table with filters, search, sort, bulk delete, CSV export and a lead side panel, cleaning an uploaded list, billing receipts plus the admin margin page, and the provider lab). Verified live against Treg and OpenRouter on 14 Oct 2026: onboarding, a 5-lead run (5/5 emails, 4 verified, about $0.0066 of Treg cost per lead) and a provider lab test.
+Next: phase 12 (Stripe top-ups, polish, Railway deploy).
 
 AI: set `OPENROUTER_API_KEY` to use OpenRouter (default models `anthropic/claude-opus-5.5` for the ICP, `anthropic/claude-haiku-5.5` for opening lines), or `ANTHROPIC_API_KEY` to call Anthropic directly. Override with `LEADFINDER_ICP_MODEL` / `LEADFINDER_LINE_MODEL`.

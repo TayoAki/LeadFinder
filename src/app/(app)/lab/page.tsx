@@ -1,5 +1,13 @@
-import Empty from "@/components/Empty";
+import { requireAdmin } from "@/lib/session.ts";
+import { LAB_PROVIDERS } from "@/lib/lab.ts";
+import ProviderLab from "@/components/ProviderLab";
 
-export default function Page() {
-  return <Empty title="Provider lab" body="Compare a single email provider against the full waterfall on the same sample: hit rate, cost per hit and speed." />;
+export default async function LabPage() {
+  await requireAdmin();
+  return (
+    <>
+      <h1>Provider lab</h1>
+      <ProviderLab providers={LAB_PROVIDERS.map((p) => ({ ...p }))} />
+    </>
+  );
 }
