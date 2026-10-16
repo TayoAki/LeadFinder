@@ -104,3 +104,42 @@ th { color: var(--muted); font-weight: 500; }
   .content-body { padding: 1rem; }
   .bottombar { padding: .5rem 1rem; }
 }
+
+/* ---------- Deals ---------- */
+.search { padding: .55rem .7rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; min-width: 0; }
+.filters { display: flex; gap: .5rem; flex-wrap: wrap; }
+.filters .search { flex: 1 1 240px; }
+.board { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(230px, 1fr); gap: .75rem; overflow-x: auto; padding-bottom: .5rem; }
+.board-col { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); display: flex; flex-direction: column; min-height: 200px; }
+.board-head { display: flex; justify-content: space-between; padding: .7rem .8rem; border-bottom: 1px solid var(--line); font-weight: 500; font-size: .9rem; }
+.board-cards { padding: .6rem; display: grid; gap: .5rem; align-content: start; }
+.deal-card { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .6rem .7rem; display: grid; gap: .3rem; }
+.deal-name { font-weight: 500; text-decoration: none; }
+.deal-name:hover { text-decoration: underline; }
+.deal-sub { font-size: .8rem; }
+.deal-meta { display: flex; gap: .4rem; flex-wrap: wrap; align-items: center; font-size: .78rem; }
+.deal-due { font-size: .78rem; color: var(--muted); }
+.overdue { color: var(--bad) !important; }
+.deal-stage { font: inherit; font-size: .8rem; padding: .2rem .3rem; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.task-row { display: flex; gap: .6rem; align-items: center; padding: .65rem 1rem; border-bottom: 1px solid var(--line); }
+.task-row:last-child { border-bottom: 0; }
+.task-row.compact { padding: .4rem 0; border-bottom: 1px solid var(--line); cursor: pointer; }
+.task-row.done span:first-of-type { text-decoration: line-through; color: var(--muted); }
+.detail { display: grid; gap: 1rem; }
+.detail-head { display: flex; justify-content: space-between; gap: 1rem; align-items: start; flex-wrap: wrap; }
+.detail-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 1rem; }
+@media (max-width: 1100px) { .detail-grid { grid-template-columns: minmax(0, 1fr); } }
+.kv { display: grid; grid-template-columns: 130px 1fr; gap: .35rem .75rem; margin: 0; font-size: .92rem; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.signals { display: flex; flex-wrap: wrap; gap: .3rem; margin: .75rem 0; }
+.sig-met { color: var(--ok); }
+.sig-missed { color: var(--muted); }
+.buybox-check { margin-top: .75rem; padding-top: .6rem; border-top: 1px solid var(--line); font-size: .9rem; display: grid; gap: .15rem; }
+.progress { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; margin: .25rem 0 .75rem; }
+.progress span { display: block; height: 100%; background: var(--ok); }
+.dd-section { border-top: 1px solid var(--line); padding: .5rem 0; }
+.dd-section summary { cursor: pointer; display: flex; justify-content: space-between; }
+.dd-item { display: flex; gap: .5rem; align-items: start; padding: .3rem 0 .3rem .25rem; font-size: .9rem; }
+.timeline { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .7rem; font-size: .9rem; }
+textarea.search { resize: vertical; }

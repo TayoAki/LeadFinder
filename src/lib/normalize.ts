@@ -22,7 +22,7 @@ export function pickList(body: unknown): Obj[] {
     for (const node of queue) {
       if (Array.isArray(node) && node.some(isObj)) return node.filter(isObj);
       if (isObj(node)) {
-        for (const k of ["leads", "results", "people", "companies", "items", "data", "output", "records"]) {
+        for (const k of ["leads", "results", "rows", "people", "companies", "items", "data", "output", "records"]) {
           if (k in node) next.push(node[k]);
         }
       }
@@ -69,7 +69,7 @@ export function personFrom(r: Obj): PersonRecord | null {
     firstName: first,
     lastName: last,
     title: firstString(r, "title", "job_title", "jobTitle", "headline"),
-    linkedinUrl: firstString(r, "linkedin_url", "linkedinUrl", "linkedin"),
+    linkedinUrl: ((v) => (v && /linkedin\.com\//i.test(v) ? v : null))(firstString(r, "linkedin_url", "linkedinUrl", "linkedin", "employee_linkedin")),
     companyName: firstString(r, "organization_name", "company_name", "companyName") ?? firstString(org, "name"),
     companyDomain: domain,
     raw: r,

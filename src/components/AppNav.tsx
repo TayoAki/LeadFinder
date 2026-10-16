@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Icon from "./Icon";
-import { SECTIONS, sectionFor } from "./nav";
+import { SECTIONS, activeTab, sectionFor } from "./nav";
 
 /** Left rail: one icon per section, the current one highlighted. */
 export function Rail({ isAdmin, initials }: { isAdmin: boolean; initials: string }) {
@@ -26,13 +26,14 @@ export function Rail({ isAdmin, initials }: { isAdmin: boolean; initials: string
 export function SectionTabs() {
   const path = usePathname();
   const section = sectionFor(path);
-  if (section.tabs.length < 2 && section.id !== "leads") {
+  const current = activeTab(path);
+  if (section.tabs.length < 2) {
     return <div className="tabs"><span className="tab active">{section.tabs[0].label}</span></div>;
   }
   return (
     <div className="tabs" role="tablist">
       {section.tabs.map((t) => {
-        const active = path === t.href || path.startsWith(`${t.href}/`);
+        const active = t.href === current;
         return (
           <Link key={t.href} href={t.href} role="tab" aria-selected={active} className={`tab${active ? " active" : ""}`}>
             {t.label}

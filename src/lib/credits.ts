@@ -43,7 +43,7 @@ export class InsufficientCredits extends Error {
 }
 
 /** Set aside the most a run could cost. Debits the balance now; unused credits come back on settle. */
-export function placeHold(db: DB, userId: number, amount: number, runId: number | null): number {
+export function placeHold(db: DB, userId: number, amount: number, runId: number | null, note?: string): number {
   return db.transaction(() => {
     const available = balance(db, userId);
     if (amount > available) throw new InsufficientCredits(amount, available);
@@ -51,7 +51,7 @@ export function placeHold(db: DB, userId: number, amount: number, runId: number 
       .prepare("INSERT INTO holds (user_id, run_id, amount) VALUES (?, ?, ?)")
       .run(userId, runId, amount);
     db.prepare("INSERT INTO ledger (user_id, kind, delta, note, run_id) VALUES (?, 'hold', ?, ?, ?)").run(
-      userId, -amount, `Hold for run #${runId ?? "?"}`, runId,
+      userId, -amount, note ?? `Hold for run #${runId ?? "?"}`, runId,
     );
     return Number(lastInsertRowid);
   })();
@@ -77,7 +77,7 @@ export function settleHold(db: DB, holdId: number): { charged: number; refunded:
     db.prepare("UPDATE holds SET status = 'settled', settled_at = datetime('now') WHERE id = ?").run(holdId);
     if (refunded > 0) {
       db.prepare("INSERT INTO ledger (user_id, kind, delta, note, run_id) VALUES (?, 'release', ?, ?, ?)").run(
-        hold.user_id, refunded, `Unused credits from run #${hold.run_id ?? "?"}`, hold.run_id,
+        hold.user_id, refunded, hold.run_id ? `Unused credits from run #${hold.run_id}` : "Unused credits returned", hold.run_id,
       );
     }
     return { charged: hold.charged, refunded };

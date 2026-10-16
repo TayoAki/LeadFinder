@@ -170,6 +170,63 @@ CREATE TABLE IF NOT EXISTS price_list (
   unit TEXT NOT NULL,
   checked_on TEXT NOT NULL
 );
+-- ---------- Acquisition CRM: businesses to buy, the deal on each, and the work around it ----------
+-- One row per business an account is tracking. source: 'sba_import' | 'maps' | 'manual'.
+CREATE TABLE IF NOT EXISTS businesses_crm (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  source TEXT NOT NULL,
+  external_id TEXT NOT NULL,
+  name TEXT NOT NULL,
+  industry TEXT, address TEXT, city TEXT, state TEXT, zip TEXT, metro TEXT,
+  website TEXT, phone TEXT, rating REAL, reviews INTEGER, maps_url TEXT,
+  owner_name TEXT, owner_title TEXT, owner_email TEXT, email_status TEXT, email_provider TEXT,
+  age_years REAL, reg_date TEXT, est_payroll INTEGER, rev_lo INTEGER, rev_hi INTEGER, ebitda_lo INTEGER, ebitda_hi INTEGER,
+  role TEXT, tier TEXT, score REAL, fit_met TEXT, fit_missed TEXT, why TEXT, watch TEXT, family_run INTEGER,
+  raw_json TEXT,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  UNIQUE (user_id, source, external_id)
+);
+-- The deal on a business: where it is in the pipeline and who owns the next step.
+CREATE TABLE IF NOT EXISTS deals (
+  business_id INTEGER PRIMARY KEY REFERENCES businesses_crm(id) ON DELETE CASCADE,
+  stage TEXT NOT NULL DEFAULT 'identified',
+  assignee TEXT, next_step TEXT, due_date TEXT,
+  cadence_started_at TEXT,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE TABLE IF NOT EXISTS deal_tasks (
+  id INTEGER PRIMARY KEY,
+  business_id INTEGER NOT NULL REFERENCES businesses_crm(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL CHECK (kind IN ('cadence','manual')),
+  channel TEXT, title TEXT NOT NULL, due_date TEXT, done_at TEXT,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+-- Append-only timeline: notes, stage changes, calls, emails, letters, imports, enrichment.
+CREATE TABLE IF NOT EXISTS deal_activity (
+  id INTEGER PRIMARY KEY,
+  business_id INTEGER NOT NULL REFERENCES businesses_crm(id) ON DELETE CASCADE,
+  user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  kind TEXT NOT NULL, body TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE TABLE IF NOT EXISTS dd_items (
+  business_id INTEGER NOT NULL REFERENCES businesses_crm(id) ON DELETE CASCADE,
+  item_key TEXT NOT NULL,
+  done INTEGER NOT NULL DEFAULT 0,
+  note TEXT,
+  updated_at TEXT,
+  PRIMARY KEY (business_id, item_key)
+);
+-- Each account's buy box (what they'll buy), stored as JSON.
+CREATE TABLE IF NOT EXISTS buy_boxes (
+  user_id INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  json TEXT NOT NULL,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS biz_user ON businesses_crm(user_id);
+CREATE INDEX IF NOT EXISTS tasks_due ON deal_tasks(business_id, done_at, due_date);
+CREATE INDEX IF NOT EXISTS activity_biz ON deal_activity(business_id);
 CREATE INDEX IF NOT EXISTS ledger_user ON ledger(user_id);
 CREATE INDEX IF NOT EXISTS leads_run ON leads(run_id);
 CREATE INDEX IF NOT EXISTS treg_calls_run ON treg_calls(run_id);
@@ -185,6 +242,7 @@ const PRICE_LIST: [string, string, number, string][] = [
   ["treg.people.email.verify", "verify", 0.0006, "call"], // catalog says free; live calls (14 Oct 2026) billed $0.0006 each
   ["treg.people.phone.find", "mobile", 0.00483, "success"],
   ["hlrlookup.people.phone.validate", "mobile_check", 0, "call"],
+  ["crawl4ai.google.serp.maps", "business_search", 0.00015, "success"],
 ];
 
 export function openDb(file = process.env.DATABASE_PATH ?? "./data/leadfinder.db") {

@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { requireUser } from "@/lib/session.ts";
 import { db } from "@/lib/db.ts";
 import { balance, CREDIT_PRICES } from "@/lib/credits.ts";
 import { aiConfigured } from "@/lib/claude.ts";
+import { STAGES, dueTasks, stageCounts, today } from "@/lib/crm.ts";
 import { Rail, SectionTabs } from "@/components/AppNav";
 import Icon from "@/components/Icon";
 
@@ -28,6 +30,10 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     .prepare("SELECT COUNT(*) AS leads, COALESCE(SUM(email_status = 'verified'), 0) AS verified FROM leads WHERE user_id = ?")
     .get(user.id) as { leads: number; verified: number };
   const latest = runs[0];
+  const stages = stageCounts(d, user.id);
+  const activeDeals = STAGES.filter((st) => st.id !== "closed" && st.id !== "passed").reduce((n, st) => n + stages[st.id], 0);
+  const due = dueTasks(d, user.id, 0);
+  const overdue = due.filter((t) => t.due_date < today()).length;
   const initials = user.name.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase() || "U";
   const tregOk = Boolean(process.env.TREG_TOKEN);
   const aiOk = aiConfigured();
@@ -69,6 +75,18 @@ export default async function AppLayout({ children }: { children: React.ReactNod
           <div className="aside-big">{credits.toLocaleString()}</div>
           <Link href="/billing" className="muted aside-link">Billing and receipts</Link>
         </section>
+        {activeDeals + stages.closed + stages.passed > 0 && (
+          <section className="card aside-card">
+            <div className="aside-heading">Deals</div>
+            <dl className="aside-dl">
+              <dt>Active</dt><dd>{activeDeals}</dd>
+              {STAGES.filter((st) => stages[st.id] > 0).map((st) => <Fragment key={st.id}><dt>{st.label}</dt><dd>{stages[st.id]}</dd></Fragment>)}
+            </dl>
+            <Link href="/deals/today" className="aside-link">
+              {due.length ? `${due.length} task${due.length === 1 ? "" : "s"} due${overdue ? `, ${overdue} overdue` : ""}` : "Nothing due today"}
+            </Link>
+          </section>
+        )}
         <section className="card aside-card">
           <div className="aside-heading">All your leads</div>
           <dl className="aside-dl">
