@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { STAGES, api, money, type BusinessRow } from "./shared";
+import { BOARD_STAGES } from "@/lib/stages.ts";
 
 /** Kanban board: one column per stage. Move a deal with the stage menu on its card. */
 export default function Pipeline() {
@@ -11,7 +12,7 @@ export default function Pipeline() {
 
   const load = useCallback(async () => {
     const d = await api<{ businesses: BusinessRow[] }>(`/api/deals?sort=tier${q ? `&q=${encodeURIComponent(q)}` : ""}`);
-    setRows(d.businesses);
+    setRows(d.businesses.filter((b) => b.stage !== "shortlist"));
   }, [q]);
 
   useEffect(() => {
@@ -28,11 +29,11 @@ export default function Pipeline() {
   if (!rows.length && !q) {
     return (
       <div className="card empty">
-        <h2>No businesses yet</h2>
-        <p className="muted">Import your SBA Search leads, or find businesses by industry and city.</p>
+        <h2>Your pipeline is empty</h2>
+        <p className="muted">Shortlist businesses from your matches, then enrich them with contact details to bring them here.</p>
         <div style={{ display: "flex", gap: ".5rem", justifyContent: "center" }}>
-          <Link className="btn primary" href="/deals/import">Import leads</Link>
-          <Link className="btn" href="/deals/find">Find businesses</Link>
+          <Link className="btn primary" href="/matches">See my matches</Link>
+          <Link className="btn" href="/shortlist">Open shortlist</Link>
         </div>
       </div>
     );
@@ -43,7 +44,7 @@ export default function Pipeline() {
       <input className="search" placeholder="Filter by business, owner, city or industry" value={q} onChange={(e) => setQ(e.target.value)} />
       {error && <p className="error">{error}</p>}
       <div className="board">
-        {STAGES.map((s) => {
+        {BOARD_STAGES.map((s) => {
           const col = rows.filter((b) => b.stage === s.id);
           return (
             <section key={s.id} className="board-col" aria-label={s.label}>

@@ -24,7 +24,8 @@ const num = (v: string | undefined) => {
 const int = (v: string | undefined) => { const n = num(v); return n === null ? null : Math.round(n); };
 const txt = (v: string | undefined) => (v === undefined || v.trim() === "" || v === "nan" ? null : v.trim());
 const truthy = (v: string | undefined) => /^(true|1|yes)$/i.test(v ?? "");
-const title = (s: string | null) => (s ? s.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase()).replace(/\b(Llc|Inc|Lp|Ltd|Co)\b/g, (m) => m.toUpperCase()) : null);
+// Capitalise word starts, but not the letter after an apostrophe ("Coopwood's", not "Coopwood'S").
+const title = (s: string | null) => (s ? s.toLowerCase().replace(/(^|[^a-z'’])([a-z])/g, (_, p: string, c: string) => p + c.toUpperCase()).replace(/\b(Llc|Inc|Lp|Ltd|Co)\b/g, (m) => m.toUpperCase()) : null);
 
 export interface DirectoryRow {
   externalId: string; name: string; naics: string | null; industry: string | null; address: string | null; city: string | null;
@@ -120,7 +121,15 @@ export interface DirectoryFilter {
 
 /** The buy box as a default filter. EBITDA ranges overlap the box, so a $0.7–1.9M estimate fits a $0.5–3M box. */
 export function filterFromBuyBox(box: BuyBox): DirectoryFilter {
-  return { minAge: box.minAgeYears, ebitdaMin: box.ebitdaMin, ebitdaMax: box.ebitdaMax };
+  return {
+    industries: box.naics.length ? box.naics : undefined,
+    states: box.states.length ? box.states : undefined,
+    metro: box.metro || undefined,
+    minAge: box.minAgeYears,
+    ebitdaMin: box.ebitdaMin,
+    ebitdaMax: box.ebitdaMax,
+    familyOnly: box.familyOnly,
+  };
 }
 
 export function candidates(db: DB, f: DirectoryFilter, limit = 300) {
@@ -169,13 +178,14 @@ export const MAX_SCORE_PER_REQUEST = 100;
 export async function scoreRows(
   db: DB, userId: number, rows: Record<string, any>[],
   ai: (system: string, prompt: string) => Promise<{ results: { id: number; score: number; reason: string; flags?: string[] }[] }> = defaultAi,
+  max = MAX_SCORE_PER_REQUEST,
 ) {
   const box = getBuyBox(db, userId);
   const hash = profileHash(box);
   const cached = new Set(
     (db.prepare(`SELECT directory_id FROM directory_scores WHERE user_id = ? AND profile_hash = ?`).all(userId, hash) as { directory_id: number }[]).map((r) => r.directory_id),
   );
-  const todo = rows.filter((r) => !cached.has(r.id)).slice(0, MAX_SCORE_PER_REQUEST);
+  const todo = rows.filter((r) => !cached.has(r.id)).slice(0, Math.min(max, MAX_SCORE_PER_REQUEST));
   const save = db.prepare("INSERT OR REPLACE INTO directory_scores (user_id, directory_id, profile_hash, score, reason, flags) VALUES (?, ?, ?, ?, ?, ?)");
   const prompt = (batch: Record<string, any>[]) =>
     `Buyer's buy box:\n${JSON.stringify(box, null, 1)}\n\nBusinesses:\n${batch.map((r) => JSON.stringify(brief(r))).join("\n")}`;
@@ -216,15 +226,17 @@ export function rankedCandidates(db: DB, userId: number, f: DirectoryFilter, lim
       directory_id: number; score: number; reason: string; flags: string | null;
     }[]).map((s) => [s.directory_id, s]),
   );
-  const saved = new Set(
-    (db.prepare("SELECT external_id FROM businesses_crm WHERE user_id = ? AND source = 'directory'").all(userId) as { external_id: string }[]).map((r) => r.external_id),
-  );
+  const savedRows = db
+    .prepare("SELECT b.external_id, b.id, d.stage FROM businesses_crm b JOIN deals d ON d.business_id = b.id WHERE b.user_id = ? AND b.source = 'directory'")
+    .all(userId) as { external_id: string; id: number; stage: string }[];
+  const saved = new Map(savedRows.map((r) => [r.external_id, r]));
   const out = rows.map((r) => {
     const s = scores.get(r.id);
     return {
       id: r.id, name: r.name, industry: r.industry, city: r.city, state: r.state, metro: r.metro, owner_name: r.owner_name, owner_title: r.owner_title,
       age_years: r.age_years, ebitda_lo: r.ebitda_lo, ebitda_hi: r.ebitda_hi, rev_lo: r.rev_lo, rev_hi: r.rev_hi, jobs: r.jobs, family_run: r.family_run === 1,
-      role: r.role, score: s?.score ?? null, reason: s?.reason ?? null, flags: s?.flags ? (JSON.parse(s.flags) as string[]) : [], saved: saved.has(r.external_id),
+      role: r.role, score: s?.score ?? null, reason: s?.reason ?? null, flags: s?.flags ? (JSON.parse(s.flags) as string[]) : [],
+      saved: saved.has(r.external_id), businessId: saved.get(r.external_id)?.id ?? null, stage: saved.get(r.external_id)?.stage ?? null,
     };
   });
   out.sort((a, b) => (b.score ?? -1) - (a.score ?? -1));
@@ -233,7 +245,8 @@ export function rankedCandidates(db: DB, userId: number, f: DirectoryFilter, lim
 
 // ---------- Step 3: save into the account's own pipeline ----------
 
-export function saveFromDirectory(db: DB, userId: number, ids: number[]) {
+/** Star a directory business: it goes onto the account's Shortlist (free). Enriching it later moves it into the pipeline. */
+export function saveFromDirectory(db: DB, userId: number, ids: number[], stage: "shortlist" | "identified" = "shortlist") {
   const hash = profileHash(getBuyBox(db, userId));
   let added = 0;
   db.transaction(() => {
@@ -251,7 +264,8 @@ export function saveFromDirectory(db: DB, userId: number, ids: number[]) {
       });
       if (created) {
         added++;
-        logActivity(db, bid, userId, "import", `Saved from the business directory${s ? ` (AI match ${s.score})` : ""}`);
+        db.prepare("UPDATE deals SET stage = ? WHERE business_id = ?").run(stage, bid);
+        logActivity(db, bid, userId, "import", `${stage === "shortlist" ? "Shortlisted" : "Saved"} from the business directory${s ? ` (AI match ${s.score})` : ""}`);
       }
     }
   })();

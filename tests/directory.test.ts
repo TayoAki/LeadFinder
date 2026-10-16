@@ -77,7 +77,7 @@ test("saving copies a directory business into the account's pipeline once", asyn
   loadDirectoryCsv(db, admin.id, "sponsor_leads_tx_238220.csv", CSV);
   const id = candidates(db, { metro: "houston" }).rows[0].id;
   await scoreRows(db, cust.id, [{ id, name: "x" }], async () => ({ results: [{ id, score: 88, reason: "Old family HVAC firm", flags: ["owner holds license"] }] }));
-  assert.deepEqual(saveFromDirectory(db, cust.id, [id]), { added: 1 });
+  assert.deepEqual(saveFromDirectory(db, cust.id, [id], "identified"), { added: 1 });
   assert.deepEqual(saveFromDirectory(db, cust.id, [id]), { added: 0 });
   const [b] = listBusinesses(db, cust.id);
   assert.equal(b.owner_name, "Donald B Davis");
@@ -94,4 +94,9 @@ test("a batch that fails twice is skipped, not fatal", async () => {
   const flaky = async () => { calls++; throw new SyntaxError("bad JSON"); };
   await assert.rejects(scoreRows(db, cust.id, candidates(db, {}).rows, flaky), /couldn't score/);
   assert.equal(calls, 2, "retried once");
+});
+
+test("names keep apostrophes lower-case after them", () => {
+  const r = fromSponsorRow({ company: "COOPWOOD'S AIR CONDITIONING, INC.", state_entity_id: "1" }, "TX")!;
+  assert.equal(r.name, "Coopwood's Air Conditioning, INC.");
 });

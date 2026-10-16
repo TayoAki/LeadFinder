@@ -1,6 +1,6 @@
 import type { DB } from "./db.ts";
 import { tregCall } from "./treg.ts";
-import { chargeFromHold, placeHold, settleHold } from "./credits.ts";
+import { InsufficientCredits, balance, chargeFromHold, placeHold, settleHold } from "./credits.ts";
 import { emailFrom, personFrom, pickList, verifyStatusFrom } from "./normalize.ts";
 import { logActivity, upsertBusiness, websiteDomain } from "./crm.ts";
 
@@ -159,4 +159,79 @@ export async function enrichBusiness(db: DB, userId: number, businessId: number,
     settleHold(db, hold);
   }
   return result;
+}
+
+// ---------- Enriching a shortlisted directory business ----------
+
+export const LISTING_CREDITS = 1; // website + phone found on Google Maps
+export const MAX_SHORTLIST_ENRICH_CREDITS = LISTING_CREDITS + MAX_ENRICH_CREDITS;
+
+const STOP = new Set(["INC", "LLC", "CO", "COMPANY", "THE", "AND", "OF", "LTD", "CORP", "SERVICE", "SERVICES", "&"]);
+const words = (s: string) => new Set((s.toUpperCase().match(/[A-Z0-9]+/g) ?? []).filter((w) => !STOP.has(w)));
+export function nameOverlap(a: string, b: string) {
+  const x = words(a), y = words(b);
+  let n = 0;
+  for (const w of x) if (y.has(w)) n++;
+  return n / Math.max(1, Math.min(x.size, y.size));
+}
+
+/** A Maps listing counts only if its address has the business's ZIP, or its street number and city. */
+export function samePlace(listingAddress: string, b: { zip?: string | null; address?: string | null; city?: string | null }) {
+  const addr = listingAddress.toUpperCase();
+  if (b.zip && addr.includes(b.zip)) return true;
+  const num = b.address?.match(/^\s*(\d+)/)?.[1];
+  return Boolean(num && addr.includes(num) && b.city && addr.includes(b.city.toUpperCase()));
+}
+
+/**
+ * Website and phone for a business that has none, from Google Maps, checked against its address.
+ * Same-name companies elsewhere are common, so an unmatched listing is never used.
+ */
+export async function findListing(db: DB, userId: number, businessId: number, fetchImpl?: FetchLike) {
+  const b = db.prepare("SELECT * FROM businesses_crm WHERE id = ? AND user_id = ?").get(businessId, userId) as Record<string, any> | undefined;
+  if (!b) throw new Error("Business not found");
+  if (b.website) return { found: true, charged: 0 };
+  const res = await tregCall(db, "crawl4ai.google.serp.maps", {
+    body: { query: b.name, location: [b.city, b.state].filter(Boolean).join(", "), limit: 5 },
+    userId, idempotencyKey: `listing:${businessId}`, maxCostUsd: 0.01,
+  }, fetchImpl);
+  const rows = res.ok ? pickList(res.data) : [];
+  const best = rows
+    .filter((r) => r.name && r.address && samePlace(String(r.address), b))
+    .map((r) => ({ r, score: nameOverlap(String(r.name), b.name) }))
+    .sort((x, y) => y.score - x.score)[0]?.r;
+  if (!best) {
+    logActivity(db, businessId, userId, "enrich", "No matching Google listing found at this address");
+    return { found: false, charged: 0 };
+  }
+  return db.transaction(() => {
+    db.prepare("UPDATE businesses_crm SET website = ?, phone = COALESCE(phone, ?), rating = ?, reviews = ?, maps_url = ? WHERE id = ?").run(
+      best.website ?? null, best.phone ?? null, typeof best.rating === "number" ? best.rating : null,
+      typeof best.review_count === "number" ? best.review_count : null, best.url ?? null, businessId,
+    );
+    let charged = 0;
+    if (best.website || best.phone) {
+      const hold = placeHold(db, userId, LISTING_CREDITS, null, `Website and phone: ${b.name}`);
+      if (chargeFromHold(db, hold, LISTING_CREDITS)) charged = LISTING_CREDITS;
+      settleHold(db, hold);
+    }
+    logActivity(db, businessId, userId, "enrich", `Google listing matched: ${best.name}${best.website ? "" : " (no website listed)"}`);
+    return { found: Boolean(best.website), charged };
+  })();
+}
+
+/** Shortlist → enrich: listing, then owner email; the business then moves into the pipeline. */
+export async function enrichShortlisted(db: DB, userId: number, businessId: number, fetchImpl?: FetchLike) {
+  const have = balance(db, userId);
+  if (have < MAX_SHORTLIST_ENRICH_CREDITS) throw new InsufficientCredits(MAX_SHORTLIST_ENRICH_CREDITS, have);
+  const listing = await findListing(db, userId, businessId, fetchImpl);
+  let contact = { owner: null as string | null, email: null as string | null, status: null as string | null, charged: 0 };
+  const b = db.prepare("SELECT website, owner_email FROM businesses_crm WHERE id = ?").get(businessId) as { website: string | null; owner_email: string | null };
+  if (b.website && !b.owner_email) contact = await enrichBusiness(db, userId, businessId, fetchImpl);
+  const stage = (db.prepare("SELECT stage FROM deals WHERE business_id = ?").get(businessId) as { stage: string }).stage;
+  if (stage === "shortlist") {
+    db.prepare("UPDATE deals SET stage = 'identified', updated_at = datetime('now') WHERE business_id = ?").run(businessId);
+    logActivity(db, businessId, userId, "stage", "Enriched and moved from Shortlist to Identified");
+  }
+  return { listing: listing.found, ...contact, charged: listing.charged + contact.charged };
 }

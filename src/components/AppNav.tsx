@@ -9,7 +9,7 @@ export function Rail({ isAdmin, initials }: { isAdmin: boolean; initials: string
   const current = sectionFor(usePathname()).id;
   return (
     <nav className="rail" aria-label="Sections">
-      <Link href="/dashboard" className="rail-logo" aria-label="LeadFinder home">LF</Link>
+      <Link href="/matches" className="rail-logo" aria-label="LeadFinder home">LF</Link>
       {SECTIONS.filter((s) => !s.adminOnly || isAdmin).map((s) => (
         <Link key={s.id} href={s.tabs[0].href} className={`rail-item${s.id === current ? " active" : ""}`}
           aria-current={s.id === current ? "page" : undefined} title={s.label}>

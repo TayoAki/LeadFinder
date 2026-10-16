@@ -4,6 +4,8 @@ const PATHS: Record<string, string> = {
   find: "M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm9.5 16.5-4.5-4.5",
   leads: "M8 6h12M8 12h12M8 18h12M4 6h.01M4 12h.01M4 18h.01",
   account: "M3 7h18v10H3zM3 10h18M7 14h3",
+  matches: "M12 3l2.4 5.2 5.6.6-4.2 3.8 1.2 5.5L12 15.3 7 18.1l1.2-5.5L4 8.8l5.6-.6z",
+  star: "M6 3h12v18l-6-4-6 4z",
   deals: "M4 8h16v11H4zM9 8V5h6v3M4 13h16",
   admin: "M4 20V10M10 20V4M16 20v-7M22 20H2",
   user: "M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm-8 9a8 8 0 0 1 16 0",

@@ -72,6 +72,12 @@ export const DD_ITEM_COUNT = DD_SECTIONS.reduce((n, s) => n + s.items.length, 0)
 // ---------- Buy box ----------
 
 export interface BuyBox {
+  onboarded: boolean;
+  naics: string[]; // industries from the directory the buyer wants
+  states: string[];
+  metro: string; // free text matched against the metro name, e.g. "Dallas"
+  familyOnly: boolean;
+  priorities: string[]; // what matters, e.g. "Owner nearing retirement"
   thesis: string;
   industries: string;
   geography: string;
@@ -84,6 +90,12 @@ export interface BuyBox {
 }
 
 export const DEFAULT_BUY_BOX: BuyBox = {
+  onboarded: false,
+  naics: [],
+  states: [],
+  metro: "",
+  familyOnly: false,
+  priorities: [],
   thesis: "",
   industries: "Residential HVAC, plumbing, electrical service",
   geography: "",
@@ -103,16 +115,24 @@ export function getBuyBox(db: DB, userId: number): BuyBox {
 export function saveBuyBox(db: DB, userId: number, input: Partial<BuyBox>) {
   const num = (v: unknown, d: number) => (Number.isFinite(Number(v)) && Number(v) >= 0 ? Math.round(Number(v)) : d);
   const str = (v: unknown, d: string) => (typeof v === "string" ? v.slice(0, 500) : d);
+  const list = (v: unknown, d: string[]) => (Array.isArray(v) ? v.filter((x): x is string => typeof x === "string").map((x) => x.slice(0, 80)).slice(0, 20) : d);
+  const prev = getBuyBox(db, userId);
   const box: BuyBox = {
-    thesis: str(input.thesis, "").slice(0, 2000),
-    industries: str(input.industries, DEFAULT_BUY_BOX.industries),
-    geography: str(input.geography, ""),
-    minAgeYears: num(input.minAgeYears, DEFAULT_BUY_BOX.minAgeYears),
-    ebitdaMin: num(input.ebitdaMin, DEFAULT_BUY_BOX.ebitdaMin),
-    ebitdaMax: num(input.ebitdaMax, DEFAULT_BUY_BOX.ebitdaMax),
-    priceMultiple: str(input.priceMultiple, DEFAULT_BUY_BOX.priceMultiple),
-    structure: str(input.structure, DEFAULT_BUY_BOX.structure),
-    dealBreakers: str(input.dealBreakers, DEFAULT_BUY_BOX.dealBreakers),
+    onboarded: input.onboarded === true || prev.onboarded,
+    naics: list(input.naics, prev.naics).filter((x) => /^\d{4,6}$/.test(x)),
+    states: list(input.states, prev.states).filter((x) => /^[A-Z]{2}$/.test(x)),
+    metro: str(input.metro, prev.metro).slice(0, 80),
+    familyOnly: typeof input.familyOnly === "boolean" ? input.familyOnly : prev.familyOnly,
+    priorities: list(input.priorities, prev.priorities),
+    thesis: str(input.thesis, prev.thesis).slice(0, 2000),
+    industries: str(input.industries, prev.industries),
+    geography: str(input.geography, prev.geography),
+    minAgeYears: num(input.minAgeYears, prev.minAgeYears),
+    ebitdaMin: num(input.ebitdaMin, prev.ebitdaMin),
+    ebitdaMax: num(input.ebitdaMax, prev.ebitdaMax),
+    priceMultiple: str(input.priceMultiple, prev.priceMultiple),
+    structure: str(input.structure, prev.structure),
+    dealBreakers: str(input.dealBreakers, prev.dealBreakers),
   };
   db.prepare(
     "INSERT INTO buy_boxes (user_id, json) VALUES (?, ?) ON CONFLICT(user_id) DO UPDATE SET json = excluded.json, updated_at = datetime('now')",

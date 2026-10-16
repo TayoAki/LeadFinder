@@ -29,3 +29,14 @@ export async function PATCH(req: Request, ctx: Ctx) {
     return NextResponse.json({ ok: true });
   });
 }
+
+// Un-star: only businesses still on the shortlist can be removed this way.
+export async function DELETE(_req: Request, ctx: Ctx) {
+  return withUser(async (user) => {
+    const id = Number((await ctx.params).id);
+    if (!ownsBusiness(db(), user.id, id)) return NextResponse.json({ error: "Not found" }, { status: 404 });
+    const r = db().prepare("DELETE FROM businesses_crm WHERE id = ? AND id IN (SELECT business_id FROM deals WHERE stage = 'shortlist')").run(id);
+    if (!r.changes) throw new Error("Only shortlisted businesses can be removed; move pipeline deals to Passed instead");
+    return NextResponse.json({ ok: true });
+  });
+}

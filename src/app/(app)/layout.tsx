@@ -5,6 +5,7 @@ import { db } from "@/lib/db.ts";
 import { balance, CREDIT_PRICES } from "@/lib/credits.ts";
 import { aiConfigured } from "@/lib/claude.ts";
 import { STAGES, dueTasks, stageCounts, today } from "@/lib/crm.ts";
+import { LISTING_CREDITS, FINDER_PRICES } from "@/lib/finder.ts";
 import { Rail, SectionTabs } from "@/components/AppNav";
 import Icon from "@/components/Icon";
 
@@ -29,7 +30,11 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   const totals = d
     .prepare("SELECT COUNT(*) AS leads, COALESCE(SUM(email_status = 'verified'), 0) AS verified FROM leads WHERE user_id = ?")
     .get(user.id) as { leads: number; verified: number };
-  const latest = runs[0];
+  const latest = user.role === "admin" ? runs[0] : undefined;
+  const shortlist = d
+    .prepare(`SELECT b.id, b.name, b.city, b.score FROM businesses_crm b JOIN deals dl ON dl.business_id = b.id
+              WHERE b.user_id = ? AND dl.stage = 'shortlist' ORDER BY b.score DESC LIMIT 12`)
+    .all(user.id) as { id: number; name: string; city: string | null; score: number | null }[];
   const stages = stageCounts(d, user.id);
   const activeDeals = STAGES.filter((st) => st.id !== "closed" && st.id !== "passed").reduce((n, st) => n + stages[st.id], 0);
   const due = dueTasks(d, user.id, 0);
@@ -42,24 +47,25 @@ export default async function AppLayout({ children }: { children: React.ReactNod
     <div className="app">
       <Rail isAdmin={user.role === "admin"} initials={initials} />
 
-      <aside className="side" aria-label="Recent runs">
-        <Link href="/icp" className="side-cta"><Icon name="plus" size={16} /> New search</Link>
-        <div className="side-heading">Recent runs</div>
-        {runs.length === 0 ? (
-          <p className="muted side-empty">Your searches and cleaned lists will appear here.</p>
+      <aside className="side" aria-label="Shortlist">
+        <Link href="/start" className="side-cta"><Icon name="find" size={16} /> Edit buy box</Link>
+        <div className="side-heading">Shortlist</div>
+        {shortlist.length === 0 ? (
+          <p className="muted side-empty">Star businesses on your Matches page and they'll appear here.</p>
         ) : (
           <ul className="side-list">
-            {runs.map((r) => (
-              <li key={r.id}>
-                <Link href={`/leads?run=${r.id}`} className="side-item">
-                  <span className={`dot dot-${r.status}`} aria-hidden="true" />
+            {shortlist.map((b) => (
+              <li key={b.id}>
+                <Link href={`/deals/b/${b.id}`} className="side-item">
+                  <span className="side-score">{b.score !== null ? Math.round(b.score) : "–"}</span>
                   <span className="side-text">
-                    <span>{r.kind === "clean" ? "Cleaned list" : `${r.target} leads`} <span className="muted">#{r.id}</span></span>
-                    <span className="muted side-sub">{r.verified} verified · {STATUS_LABEL[r.status] ?? r.status}</span>
+                    <span style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{b.name}</span>
+                    <span className="muted side-sub">{b.city}</span>
                   </span>
                 </Link>
               </li>
             ))}
+            <li><Link href="/shortlist" className="muted" style={{ fontSize: ".85rem", padding: ".4rem .5rem", display: "block" }}>Open shortlist →</Link></li>
           </ul>
         )}
       </aside>
@@ -87,14 +93,14 @@ export default async function AppLayout({ children }: { children: React.ReactNod
             </Link>
           </section>
         )}
-        <section className="card aside-card">
+        {user.role === "admin" && <section className="card aside-card">
           <div className="aside-heading">All your leads</div>
           <dl className="aside-dl">
             <dt>Leads</dt><dd>{totals.leads.toLocaleString()}</dd>
             <dt>Verified emails</dt><dd>{totals.verified.toLocaleString()}</dd>
             <dt>Runs</dt><dd>{runs.length}{runs.length === 12 ? "+" : ""}</dd>
           </dl>
-        </section>
+        </section>}
         {latest && (
           <section className="card aside-card">
             <div className="aside-heading">Latest run #{latest.id}</div>
@@ -110,11 +116,12 @@ export default async function AppLayout({ children }: { children: React.ReactNod
         <section>
           <div className="aside-heading">What things cost</div>
           <ul className="aside-prices muted">
-            <li>Person found <span>{CREDIT_PRICES.person}</span></li>
-            <li>Verified email <span>{CREDIT_PRICES.verifiedEmail}</span></li>
-            <li>Catch-all or risky <span>{CREDIT_PRICES.unconfirmedEmail}</span></li>
-            <li>Mobile (opt-in) <span>{CREDIT_PRICES.mobile}</span></li>
-            <li>Misses, invalid emails <span>free</span></li>
+            <li>Matches and AI ranking <span>free</span></li>
+            <li>Shortlisting <span>free</span></li>
+            <li>Website and phone <span>{LISTING_CREDITS}</span></li>
+            <li>Owner found <span>{FINDER_PRICES.ownerFound}</span></li>
+            <li>Verified owner email <span>{FINDER_PRICES.verifiedEmail}</span></li>
+            <li>Nothing found <span>free</span></li>
           </ul>
         </section>
       </aside>

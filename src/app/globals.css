@@ -147,3 +147,24 @@ textarea.search { resize: vertical; }
 .score.hi { border-color: var(--ok); color: var(--ok); }
 .score.mid { border-color: var(--warn); color: var(--warn); }
 .score.lo { color: var(--muted); }
+/* ---------- Onboarding ---------- */
+.onboard { max-width: 640px; }
+.onboard h2 { margin: 1rem 0; }
+.onboard-progress { display: flex; gap: .35rem; }
+.onboard-progress span { flex: 1; height: 4px; border-radius: 2px; background: var(--line); }
+.onboard-progress span.on { background: var(--accent); }
+.choices { display: grid; gap: .5rem; }
+.choice { display: flex; align-items: center; gap: .6rem; padding: .7rem .85rem; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.choice span:nth-of-type(2) { margin-left: auto; font-size: .85rem; }
+.choice.on { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.onboard-nav { display: flex; justify-content: space-between; margin-top: 1.25rem; }
+/* ---------- Matches ---------- */
+.match-list { display: grid; gap: .75rem; }
+.match { display: flex; gap: 1rem; align-items: flex-start; }
+.score.big { font-size: 1.3rem; min-width: 2.6em; padding: .45rem .3rem; }
+.match-head { display: flex; justify-content: space-between; gap: .75rem; align-items: baseline; flex-wrap: wrap; }
+.match-facts { display: flex; gap: .4rem .9rem; flex-wrap: wrap; margin-top: .35rem; font-size: .88rem; }
+.star { font: inherit; font-size: .85rem; padding: .3rem .65rem; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; white-space: nowrap; }
+.star.on { border-color: var(--warn); color: var(--warn); }
+.star:disabled { cursor: default; color: var(--ok); border-color: var(--ok); }
+.side-score { flex: none; width: 2.1em; text-align: center; font-size: .8rem; font-weight: 600; border: 1px solid var(--line); border-radius: 6px; padding: .1rem 0; font-variant-numeric: tabular-nums; }
