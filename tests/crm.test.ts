@@ -49,7 +49,7 @@ test("imports a sponsor.py CSV", () => {
   const csv = "company,state_entity_id,ppp_loan_numbers,address,city,zip5,likely_owner,fit_tier,lead_score,est_ebitda_low,est_ebitda_high\nACME HEATING LLC,12345,,9 Elm,Dallas,75001,JANE ROE,A,90,\"500,000\",900000\n";
   assert.equal(importSbaFile(db, a.id, "sponsor_leads_tx_238220.csv", csv).created, 1);
   const [r] = listBusinesses(db, a.id);
-  assert.equal(r.name, "Acme Heating Llc");
+  assert.equal(r.name, "Acme Heating LLC");
   assert.equal(r.ebitda_lo, 500000);
   assert.throws(() => importSbaFile(db, a.id, "x.csv", "foo,bar\n1,2\n"), /doesn't look like an SBA Search file/);
 });

@@ -1,4 +1,4 @@
-import { STAGES } from "@/lib/crm.ts";
+import { STAGES } from "@/lib/stages.ts";
 
 export { STAGES };
 export const stageLabel = (s: string) => STAGES.find((x) => x.id === s)?.label ?? s;

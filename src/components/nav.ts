@@ -14,13 +14,14 @@ export const SECTIONS: Section[] = [
     { href: "/deals", label: "Pipeline" },
     { href: "/deals/list", label: "Businesses" },
     { href: "/deals/today", label: "Today" },
-    { href: "/deals/find", label: "Find businesses" },
+    { href: "/deals/directory", label: "Directory" },
+    { href: "/deals/find", label: "Search maps" },
     { href: "/deals/import", label: "Import" },
     { href: "/deals/buybox", label: "Buy box" },
   ] },
   { id: "leads", label: "Leads", icon: "leads", tabs: [{ href: "/leads", label: "Leads" }] },
   { id: "account", label: "Account", icon: "account", tabs: [{ href: "/billing", label: "Billing" }, { href: "/settings", label: "Settings" }] },
-  { id: "admin", label: "Admin", icon: "admin", adminOnly: true, tabs: [{ href: "/admin", label: "Margin" }, { href: "/lab", label: "Provider lab" }] },
+  { id: "admin", label: "Admin", icon: "admin", adminOnly: true, tabs: [{ href: "/admin", label: "Margin" }, { href: "/admin/directory", label: "Directory" }, { href: "/lab", label: "Provider lab" }] },
 ];
 
 const matches = (path: string, href: string) => path === href || path.startsWith(`${href}/`);

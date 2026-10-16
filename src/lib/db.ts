@@ -224,6 +224,36 @@ CREATE TABLE IF NOT EXISTS buy_boxes (
   json TEXT NOT NULL,
   updated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );
+-- ---------- Shared business directory: the SBA Search CSVs, uploaded by an admin, searchable by every account ----------
+CREATE TABLE IF NOT EXISTS directory (
+  id INTEGER PRIMARY KEY,
+  external_id TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL, naics TEXT, industry TEXT,
+  address TEXT, city TEXT, state TEXT, zip TEXT, county TEXT, metro TEXT,
+  owner_name TEXT, owner_title TEXT, officers TEXT, family_run INTEGER NOT NULL DEFAULT 0,
+  age_years REAL, reg_date TEXT, est_payroll INTEGER, rev_lo INTEGER, rev_hi INTEGER, ebitda_lo INTEGER, ebitda_hi INTEGER,
+  jobs INTEGER, plan_participants INTEGER, role TEXT, business_model TEXT, ppp_clean INTEGER,
+  source_tier TEXT, source_score REAL, source_notes TEXT, watch_outs TEXT,
+  dataset TEXT NOT NULL, raw_json TEXT,
+  updated_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS dir_naics ON directory(naics, state);
+CREATE INDEX IF NOT EXISTS dir_ebitda ON directory(ebitda_hi);
+CREATE TABLE IF NOT EXISTS directory_uploads (
+  id INTEGER PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id) ON DELETE SET NULL,
+  filename TEXT NOT NULL, rows_added INTEGER NOT NULL, rows_updated INTEGER NOT NULL, rows_skipped INTEGER NOT NULL,
+  created_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+-- AI match scores, per account and per version of that account's buy box (profile_hash).
+CREATE TABLE IF NOT EXISTS directory_scores (
+  user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  directory_id INTEGER NOT NULL REFERENCES directory(id) ON DELETE CASCADE,
+  profile_hash TEXT NOT NULL,
+  score INTEGER NOT NULL, reason TEXT NOT NULL, flags TEXT,
+  created_at TEXT NOT NULL DEFAULT (datetime('now')),
+  PRIMARY KEY (user_id, directory_id, profile_hash)
+);
 CREATE INDEX IF NOT EXISTS biz_user ON businesses_crm(user_id);
 CREATE INDEX IF NOT EXISTS tasks_due ON deal_tasks(business_id, done_at, due_date);
 CREATE INDEX IF NOT EXISTS activity_biz ON deal_activity(business_id);

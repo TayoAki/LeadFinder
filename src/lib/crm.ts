@@ -1,21 +1,12 @@
+import { fromSponsorRow } from "./directory.ts";
 import type { DB } from "./db.ts";
 import { parseCsv } from "./lists.ts";
 import { domainFromUrl } from "./normalize.ts";
 
 // ---------- Pipeline ----------
 
-export const STAGES = [
-  { id: "identified", label: "Identified" },
-  { id: "contacted", label: "Contacted" },
-  { id: "conversation", label: "Conversation" },
-  { id: "nda", label: "NDA / financials" },
-  { id: "loi", label: "LOI" },
-  { id: "diligence", label: "Due diligence" },
-  { id: "closed", label: "Closed" },
-  { id: "passed", label: "Passed" },
-] as const;
-export type Stage = (typeof STAGES)[number]["id"];
-export const isStage = (s: string): s is Stage => STAGES.some((x) => x.id === s);
+export { STAGES, isStage, type Stage } from "./stages.ts";
+import { isStage, STAGES, type Stage } from "./stages.ts";
 
 // ---------- Outreach cadence: about four weeks per owner ----------
 
@@ -81,6 +72,7 @@ export const DD_ITEM_COUNT = DD_SECTIONS.reduce((n, s) => n + s.items.length, 0)
 // ---------- Buy box ----------
 
 export interface BuyBox {
+  thesis: string;
   industries: string;
   geography: string;
   minAgeYears: number;
@@ -92,6 +84,7 @@ export interface BuyBox {
 }
 
 export const DEFAULT_BUY_BOX: BuyBox = {
+  thesis: "",
   industries: "Residential HVAC, plumbing, electrical service",
   geography: "",
   minAgeYears: 20,
@@ -111,6 +104,7 @@ export function saveBuyBox(db: DB, userId: number, input: Partial<BuyBox>) {
   const num = (v: unknown, d: number) => (Number.isFinite(Number(v)) && Number(v) >= 0 ? Math.round(Number(v)) : d);
   const str = (v: unknown, d: string) => (typeof v === "string" ? v.slice(0, 500) : d);
   const box: BuyBox = {
+    thesis: str(input.thesis, "").slice(0, 2000),
     industries: str(input.industries, DEFAULT_BUY_BOX.industries),
     geography: str(input.geography, ""),
     minAgeYears: num(input.minAgeYears, DEFAULT_BUY_BOX.minAgeYears),
@@ -129,7 +123,7 @@ export function saveBuyBox(db: DB, userId: number, input: Partial<BuyBox>) {
 // ---------- Businesses ----------
 
 export interface BusinessInput {
-  source: "sba_import" | "maps" | "manual";
+  source: "sba_import" | "maps" | "manual" | "directory";
   externalId: string;
   name: string;
   industry?: string | null;
@@ -270,38 +264,15 @@ export function fromLeadsJson(l: Record<string, unknown>): BusinessInput | null 
   };
 }
 
-/** One row from sponsor.py's CSV (sponsor_leads_<state>_<segment>.csv). */
+/** One row from sponsor.py's CSV (sponsor_leads_<state>_<segment>.csv), using the columns it really writes. */
 export function fromSponsorCsv(r: Record<string, string>): BusinessInput | null {
-  const name = str(r.company);
-  const id = str(r.state_entity_id) ?? (str(r.ppp_loan_numbers) ? `L${r.ppp_loan_numbers.split(";")[0]}` : null);
-  if (!name || !id) return null;
+  const d = fromSponsorRow(r, "TX");
+  if (!d) return null;
   return {
-    source: "sba_import",
-    externalId: id,
-    name: name.replace(/\b\w+/g, (w) => w[0] + w.slice(1).toLowerCase()),
-    industry: str(r.segment) ?? str(r.naics_description),
-    address: str(r.address),
-    city: str(r.city),
-    state: str(r.state) ?? "TX",
-    zip: str(r.zip5),
-    metro: str(r.metro),
-    ownerName: str(r.likely_owner),
-    ownerTitle: str(r.likely_owner_title),
-    ageYears: num(r.years_in_business),
-    regDate: str(r.registration_date),
-    estPayroll: num(r.est_annual_payroll),
-    revLo: num(r.est_revenue_low),
-    revHi: num(r.est_revenue_high),
-    ebitdaLo: num(r.est_ebitda_low),
-    ebitdaHi: num(r.est_ebitda_high),
-    role: str(r.role),
-    tier: str(r.fit_tier),
-    score: num(r.lead_score),
-    fitMet: list(r.fit_signals_met),
-    fitMissed: list(r.fit_signals_missed),
-    why: str(r.fit_explanation),
-    watch: str(r.watch_outs),
-    raw: r,
+    source: "sba_import", externalId: d.externalId, name: d.name, industry: d.industry, address: d.address, city: d.city, state: d.state,
+    zip: d.zip, metro: d.metro, ownerName: d.ownerName, ownerTitle: d.ownerTitle, ageYears: d.ageYears, regDate: d.regDate,
+    estPayroll: d.estPayroll, revLo: d.revLo, revHi: d.revHi, ebitdaLo: d.ebitdaLo, ebitdaHi: d.ebitdaHi, role: d.role,
+    tier: d.sourceTier, score: d.sourceScore, why: r.fit_rationale || d.sourceNotes, watch: d.watchOuts, familyRun: d.familyRun, raw: r,
   };
 }
 

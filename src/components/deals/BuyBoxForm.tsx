@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { api } from "./shared";
 
-type Box = { industries: string; geography: string; minAgeYears: number; ebitdaMin: number; ebitdaMax: number; priceMultiple: string; structure: string; dealBreakers: string };
+type Box = { thesis: string; industries: string; geography: string; minAgeYears: number; ebitdaMin: number; ebitdaMax: number; priceMultiple: string; structure: string; dealBreakers: string };
 
 export default function BuyBoxForm({ initial }: { initial: Box }) {
   const [box, setBox] = useState(initial);
@@ -20,6 +20,11 @@ export default function BuyBoxForm({ initial }: { initial: Box }) {
   return (
     <form className="card" onSubmit={save} style={{ maxWidth: 720 }}>
       <p className="muted" style={{ marginTop: 0 }}>Write down exactly what you'll buy, so you can say no fast. It's shown beside every business you review.</p>
+      <label className="field">Your thesis, in your own words
+        <textarea rows={4} value={box.thesis} onChange={set("thesis")}
+          placeholder="e.g. Residential HVAC and plumbing in Dallas or Houston, founder-run for 20+ years, owner ready to retire, strong team we can keep. Avoid new-construction-only shops." />
+      </label>
+      <p className="muted" style={{ marginTop: "-.4rem", fontSize: ".85rem" }}>The AI reads this and the fields below when it scores businesses from the directory.</p>
       <label className="field">Industries<input value={box.industries} onChange={set("industries")} /></label>
       <label className="field">Geography<input value={box.geography} onChange={set("geography")} placeholder="e.g. Dallas–Fort Worth and Houston" /></label>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "0 1rem" }}>
