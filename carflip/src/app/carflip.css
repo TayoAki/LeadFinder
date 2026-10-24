@@ -1,41 +1,56 @@
 body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
-.cf { max-width: 1240px; margin: 0 auto; padding: 1.25rem 1rem 4rem; }
-.cf-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
-.cf-brand { display: flex; align-items: center; gap: .6rem; font-weight: 700; font-size: 1.1rem; }
-.cf-logo { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: var(--ink); color: var(--bg); font-size: .8rem; }
-.cf-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .5rem; margin-bottom: 1rem; }
-.cf-step { text-align: left; padding: .7rem .8rem; border-radius: var(--radius); border: 1px solid var(--line); background: var(--surface);
-  color: var(--ink); font: inherit; cursor: pointer; display: grid; gap: .15rem; }
-.cf-step.active { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
-.cf-step .n { font-size: .72rem; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
-.cf-step .t { font-weight: 600; }
-.cf-step .s { font-size: .8rem; color: var(--muted); }
-.cf-step.done .n::after { content: " ✓"; color: var(--ok); }
-.cf-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 340px); gap: 1rem; align-items: start; }
-.cf-panel { position: sticky; top: 1rem; }
-.cf-bar { display: flex; gap: .6rem; align-items: end; flex-wrap: wrap; margin-bottom: .9rem; }
-.cf-bar .field { margin: 0; }
-.cf-bar input, .cf-bar select { width: 130px; }
-.cf-scroll { overflow-x: auto; }
+
+/* Buttons that sit inside the shared frame (rail, sidebar, tabs) look like the links they replace */
+.cf-railbtn, .cf-sideitem, .cf-tab { font: inherit; background: none; border: 0; cursor: pointer; position: relative; }
+.cf-sidebtn { width: 100%; font: inherit; border: 0; cursor: pointer; }
+.cf-sideitem { width: 100%; text-align: left; color: inherit; }
+.cf-sideitem.active { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.cf-tab { color: var(--muted); margin-bottom: -1px; }
+.cf-badge { position: absolute; top: 6px; right: 14px; width: 8px; height: 8px; border-radius: 50%; background: var(--warn); }
+.cf-avatar { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; flex: none; background: var(--line); }
+
+/* Main content */
+.cf-h1 { font-size: 1.35rem; }
+.cf-h2 { font-size: 1rem; margin: 1.5rem 0 .6rem; }
+.cf-lead { margin: 0 0 1.1rem; max-width: 70ch; }
+.cf-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .9rem; margin-bottom: 1.1rem; }
+.cf-carcard { display: grid; gap: .3rem; padding: .75rem; text-align: left; font: inherit; color: inherit; cursor: pointer; }
+.cf-carcard img, .cf-ph { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; display: grid; place-items: center; background: var(--bg); color: var(--muted); }
+.cf-carcard.cf-empty { cursor: default; }
+.cf-action { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; padding: 1rem 1.1rem; }
+.cf-actionicon { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); border: 1px solid var(--line); flex: none; }
+.cf-action > div:nth-child(2) { flex: 1 1 220px; min-width: 0; }
+.cf-actionbtns { display: flex; gap: .5rem; flex-wrap: wrap; }
+.cf-bar { display: flex; gap: .6rem; align-items: end; flex-wrap: wrap; margin-bottom: 1rem; }
+.cf-bar .field { margin: 0; flex: 1 1 120px; }
+.cf-bar input { width: 100%; }
+.cf-settings { display: grid; gap: .2rem; max-width: 420px; }
+.cf-scroll { overflow-x: auto; padding: .25rem .75rem; }
 .cf-row { cursor: pointer; }
 .cf-row:hover td { background: var(--bg); }
 .cf-row.sel td { background: color-mix(in srgb, var(--accent) 8%, transparent); }
-.cf-thumb { width: 64px; height: 48px; object-fit: cover; border-radius: 6px; background: var(--line); display: block; }
-.cf-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; margin: .6rem 0; }
-.cf-photos img { width: 100%; max-width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; border-radius: 6px; }
-.cf-msg { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .7rem; font-size: .9rem; }
-.cf-kv { display: grid; grid-template-columns: auto 1fr; gap: .25rem .8rem; font-size: .9rem; }
-.cf-kv dt { color: var(--muted); }
-.cf-kv dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
 .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .v-promising { color: var(--ok); } .v-caution { color: var(--warn); } .v-pass { color: var(--bad); }
 .cf-note { font-size: .82rem; color: var(--muted); }
-.cf-busy { opacity: .6; pointer-events: none; }
-.cf-flags { margin: .3rem 0 0; padding-left: 1.1rem; font-size: .88rem; }
-@media (max-width: 900px) {
-  .cf-grid { grid-template-columns: minmax(0, 1fr); }
-  .cf-bar input, .cf-bar select { width: 100%; }
-  .cf-bar .field { flex: 1 1 140px; }
-  .cf-panel { position: static; }
-  .cf-steps { grid-template-columns: repeat(5, minmax(120px, 1fr)); overflow-x: auto; }
-}
+.cf-busy { cursor: progress; }
+.cf-busy .btn { pointer-events: none; opacity: .6; }
+
+/* Right side bar */
+.aside { grid-template-columns: minmax(0, 1fr); }
+.cf-summary, .cf-panelbody { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1.1rem; align-content: start; min-width: 0; }
+.cf-panelbody > *, .cf-summary > * { min-width: 0; }
+.cf-dotlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .45rem; font-size: .88rem; }
+.cf-dotlist li { display: flex; align-items: center; gap: .5rem; }
+.cf-asideimg { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 8px; border: 1px solid var(--line); display: grid; place-items: center; }
+.cf-photos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .35rem; }
+.cf-photos img { width: 100%; max-width: 100%; display: block; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.cf-msg { white-space: pre-wrap; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: .7rem; font-size: .9rem; }
+
+/* The selected car moves into the main column when the right side bar is hidden (same breakpoint as the frame) */
+.cf-inline { display: none; margin-top: 1.25rem; }
+@media (max-width: 1280px) { .cf-inline { display: block; } }
+@media (max-width: 900px) { .cf-cards { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 641px) and (max-width: 900px) { .cf-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* Five step tabs scroll sideways on narrow screens */
+.tabs { overflow-x: auto; scrollbar-width: none; }
