@@ -3,7 +3,10 @@ import { NextResponse, type NextRequest } from "next/server";
 /**
  * Optional access key for a public deploy. When CARFLIP_ACCESS_KEY is set, every page and API call needs it:
  * open the app once with ?key=… (stored in a cookie), or send it as "Authorization: Bearer …" from scripts.
+ * With CARFLIP_PUBLIC=1 anyone can use the app, and the key only guards the whole-database tools.
  */
+const ADMIN_ONLY = ["/api/tools/import_snapshot", "/api/tools/export_snapshot"];
+
 export function middleware(req: NextRequest) {
   const key = process.env.CARFLIP_ACCESS_KEY;
   if (!key) return NextResponse.next();
@@ -16,6 +19,7 @@ export function middleware(req: NextRequest) {
     return res;
   }
   if (req.cookies.get("cf_key")?.value === key || req.headers.get("authorization") === `Bearer ${key}`) return NextResponse.next();
+  if (process.env.CARFLIP_PUBLIC === "1" && !ADMIN_ONLY.includes(req.nextUrl.pathname)) return NextResponse.next();
   return new NextResponse("CarFlip is private. Open it with ?key=<access key>.", { status: 401 });
 }
 
