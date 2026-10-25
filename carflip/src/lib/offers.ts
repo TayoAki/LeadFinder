@@ -54,13 +54,16 @@ export function draftCounter(move: ReturnType<typeof nextMove>) {
 }
 
 /** Step 4: draft opening offers for every survivor. Drafts only; nothing here sends a message. */
-export function draftOffers(db: DB, o: { openingPct?: number; ceilingPctOfValue?: number | null } = {}) {
+export function draftOffers(db: DB, o: { openingPct?: number; ceilingPctOfValue?: number | null; ids?: string[] } = {}) {
   const startedAt = now();
-  const rows = db.prepare(`SELECT c.id, c.title, c.price, v.value, i.red_flags FROM cars c
+  const all = db.prepare(`SELECT c.id, c.title, c.price, v.value, i.red_flags FROM cars c
     JOIN valuations v ON v.car_id = c.id JOIN inspections i ON i.car_id = c.id WHERE i.shortlisted = 1 ORDER BY v.discount DESC`).all() as Array<{
       id: string; title: string; price: number; value: number; red_flags: string }>;
+  const picked = o.ids?.length ? all.filter((r) => o.ids!.includes(r.id)) : all;
+  // Only shortlisted cars get offers; a selected car that isn't on the shortlist is reported, not drafted.
+  const notShortlisted = (o.ids ?? []).filter((id) => !all.some((r) => r.id === id));
   const insert = db.prepare("INSERT INTO offers (car_id,direction,amount,message) VALUES (?, 'out', ?, ?)");
-  const out = rows.map((r) => {
+  const out = picked.map((r) => {
     const plan = offerPlan(r.price, r.value, o);
     const message = draftOpening({ title: r.title, amount: plan.opening, flags: json<string[]>(r.red_flags, []) });
     // Re-drafting replaces an unsent opening draft; once a negotiation has started, leave the thread alone.
@@ -71,7 +74,7 @@ export function draftOffers(db: DB, o: { openingPct?: number; ceilingPctOfValue?
     }
     return { id: r.id, title: r.title, ...plan, message, status: "draft" };
   });
-  logRun(db, "buy", startedAt, { source: "drafts", report: { drafted: out.length, sent: 0, note: "Drafts only. No message was sent; no purchase occurred." } });
+  logRun(db, "buy", startedAt, { source: "drafts", report: { drafted: out.length, sent: 0, notShortlisted, note: "Drafts only. No message was sent; no purchase occurred." } });
   return out;
 }
 

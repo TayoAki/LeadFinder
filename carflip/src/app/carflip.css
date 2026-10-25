@@ -54,3 +54,42 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 
 /* Five step tabs scroll sideways on narrow screens */
 .tabs { overflow-x: auto; scrollbar-width: none; }
+
+/* Swapped layout: the selected car fills the center, the step workflow sits in a wider right panel */
+@media (min-width: 1281px) { .app { grid-template-columns: 76px 240px minmax(0, 1fr) 400px; } }
+.cf-center { max-width: 1200px; }
+.cf-center .cf-panelbody { display: block; columns: 2 320px; column-gap: 1.5rem; }
+.cf-center .cf-panelbody > * { break-inside: avoid; margin-bottom: 1.1rem; }
+.cf-center .cf-panelbody > div:first-child, .cf-center .cf-photos { column-span: all; }
+.cf-center .cf-photos { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .5rem; }
+.cf-photo { position: relative; display: block; }
+.cf-photo span { position: absolute; left: 6px; top: 6px; background: rgba(0,0,0,.65); color: #fff; font-size: .72rem; padding: 1px 6px; border-radius: 4px; }
+.cf-center .cf-inline { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); }
+
+.cf-flow { display: grid; gap: 1rem; align-content: start; min-width: 0; }
+.cf-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: .3rem; }
+.cf-stepbtn { font: inherit; font-size: .8rem; border: 1px solid var(--line); background: var(--surface); color: var(--muted); border-radius: 8px;
+  padding: .45rem .2rem; cursor: pointer; display: grid; justify-items: center; gap: .2rem; }
+.cf-stepbtn.active { color: var(--ink); border-color: var(--ink); font-weight: 500; }
+.cf-stepnum { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); border: 1px solid var(--line); font-size: .75rem; }
+.cf-flow .cf-action { padding: .8rem .9rem; }
+.cf-carlist { list-style: none; margin: 0; padding: 0; display: grid; gap: .4rem; }
+.cf-carrow { width: 100%; display: flex; gap: .7rem; align-items: center; text-align: left; font: inherit; color: inherit; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: .45rem; }
+.cf-carrow:hover { background: var(--bg); }
+.cf-carrow.sel { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.cf-carrow img, .cf-carrow .cf-ph { width: 64px; height: 48px; aspect-ratio: auto; object-fit: cover; border-radius: 6px; flex: none; }
+.cf-carrowtext { display: grid; gap: .1rem; min-width: 0; }
+.cf-carrowtext strong { font-size: .9rem; font-weight: 500; }
+.cf-pickall { display: flex; justify-content: space-between; align-items: center; font-size: .85rem; padding: 0 .2rem; }
+.cf-carli { display: flex; align-items: center; gap: .45rem; }
+.cf-carli > input { flex: none; width: 16px; height: 16px; }
+.cf-next { display: grid; gap: .6rem; padding: .9rem 1rem; border-color: var(--accent); }
+.cf-track { list-style: none; margin: 0; padding: 0; display: flex; gap: .3rem; flex-wrap: wrap; font-size: .78rem; }
+.cf-track li { padding: .15rem .55rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+.cf-track li.done { color: var(--ok); border-color: currentColor; }
+.cf-track li.now { color: var(--ink); border-color: var(--ink); font-weight: 600; }
+.cf-review { display: grid; gap: .45rem; }
+.cf-review textarea, .cf-review select { width: 100%; font: inherit; }
+.cf-check { display: flex; gap: .45rem; align-items: center; font-size: .88rem; }
+.cf-center .cf-next { column-span: all; }

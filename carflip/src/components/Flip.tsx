@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Icon from "./Icon.tsx";
 
 type Row = Record<string, any>;
@@ -35,6 +35,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
   const [error, setError] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
   const [detail, setDetail] = useState<Row | null>(null);
+  const [picked, setPicked] = useState<string[]>([]);
   const [search, setSearch] = useState({ city: "atlanta", radiusMiles: 60, target: 40, minPrice: 1500, maxPrice: 25000 });
 
   const refresh = async () => setRows(await tool("pipeline"));
@@ -44,6 +45,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
     catch (e) { setError((e as Error).message); }
     finally { setBusy(null); }
   };
+  useEffect(() => { if (!detail && rows[0]) open(rows[0].id); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const open = async (id: string) => {
     const [car, thread] = await Promise.all([tool("get_car", { id }), tool("offer_thread", { id })]);
     setDetail({ car, thread, row: rows.find((r) => r.id === id) });
@@ -60,23 +62,30 @@ export default function Flip({ initial }: { initial: Row[] }) {
   const meta = STEPS.find((s) => s.key === step)!;
   const nextStep = STEPS[STEPS.findIndex((s) => s.key === step) + 1];
 
+  const ids = picked.length ? { ids: picked } : {};
+  const changeStep = (s: Step) => { setStep(s); setPicked([]); };
   const actions: Record<Step, { label: string; run: () => Promise<string | void> }> = {
     find: { label: "Find cars", run: async () => {
       const r = await tool("find_cars", search);
       return `Saved ${r.saved} new cars (${r.total} total). Skipped ${r.dealersOrOther} dealer or non-car listings.`;
     } },
     value: { label: "Look up KBB values", run: async () => {
-      const r = await tool("value_cars");
+      const r = await tool("value_cars", ids);
       return `Valued ${r.valued}. ${r.classics.length} classics (pre-1990) need a collector guide; ${r.missing.length} had no KBB match.`;
     } },
     inspect: { label: "Inspect top 10", run: async () => {
-      const r = await tool("inspect_top", { top: 10 });
+      const r = await tool("inspect_top", { top: 10, ...ids });
       return `Reviewed ${r.reviewed}; ${r.incomplete.length} still need a full photo review; ${r.survivors} survivors. ${r.note}`;
     } },
-    buy: { label: "Draft offers", run: async () => `Drafted ${(await tool("draft_offers")).length} opening offers. Send them yourself, then log replies.` },
+    buy: { label: "Draft offers", run: async () => {
+      const drafted = await tool("draft_offers", ids);
+      const skipped = picked.filter((id) => !shortlisted.some((r) => r.id === id)).length;
+      return `Drafted ${drafted.length} opening offers${skipped ? `; ${skipped} selected cars aren't shortlisted, so no offer` : ""}. Send them yourself, then log replies.`;
+    } },
     sell: { label: "Plan resale", run: async () => {
-      for (const r of shortlisted) await tool("plan_resale", { id: r.id });
-      return `Planned resale for ${shortlisted.length} cars. Figures are hypothetical.`;
+      const targets = picked.length ? picked : shortlisted.map((r) => r.id);
+      for (const id of targets) await tool("plan_resale", { id });
+      return `Planned resale for ${targets.length} cars. Figures are hypothetical.`;
     } },
   };
 
@@ -84,6 +93,50 @@ export default function Flip({ initial }: { initial: Row[] }) {
   const panel = detail
     ? <CarPanel d={detail} step={step} onChange={async () => { await refresh(); await open(detail.car.id); }} />
     : <Summary rows={rows} shortlisted={shortlisted} />;
+
+  // The step workflow: tabs, what the step does, its action and the cars at this step.
+  const workflow = (
+    <div className="cf-flow">
+      <p className="cf-note" style={{ margin: 0 }}>Tick cars to run a step on just those, or run it on all. Open a car to move it forward on its own.</p>
+      <nav className="cf-steps" aria-label="Steps">
+        {STEPS.map((s, i) => (
+          <button key={s.key} className={`cf-stepbtn ${step === s.key ? "active" : ""}`} onClick={() => changeStep(s.key)}>
+            <span className="cf-stepnum">{done[s.key] ? "✓" : i + 1}</span>{s.t}
+          </button>
+        ))}
+      </nav>
+      <div>
+        <h2 className="cf-h1" style={{ margin: "0 0 .3rem" }}>{meta.h}</h2>
+        <p className="cf-note" style={{ margin: 0 }}>{meta.p}</p>
+      </div>
+      {busy && <p className="muted cf-note">{busy}… scrapes can take a few minutes.</p>}
+      {error && <p className="error">{error}</p>}
+      {note && <p className="pos cf-note">{note}</p>}
+      {step === "find" && (
+        <div className="cf-bar">
+          {(["city", "radiusMiles", "target", "minPrice", "maxPrice"] as const).map((k) => (
+            <label key={k} className="field"><span className="cf-note">{k}</span>
+              <input value={search[k]} onChange={(e) => setSearch({ ...search, [k]: k === "city" ? e.target.value : Number(e.target.value) })} />
+            </label>
+          ))}
+        </div>
+      )}
+      <div className="card cf-action">
+        <div>
+          <strong>{done[step] ? `${meta.t} is done${nextStep ? `. Next: ${nextStep.t}` : ""}` : `Run step ${STEPS.indexOf(meta) + 1}: ${meta.t}`}</strong>
+          <div className="muted cf-note">{list[step].length} cars at this step{step === "buy" ? " · drafts only, nothing is sent automatically" : ""}</div>
+        </div>
+        <div className="cf-actionbtns">
+          <button className={`btn ${done[step] && !picked.length ? "" : "primary"}`} onClick={() => run(meta.t, actions[step].run)}>
+            {picked.length && step !== "find" ? `${meta.t} ${picked.length} selected` : done[step] ? `${meta.t} all again` : actions[step].label}
+          </button>
+          {done[step] && nextStep && <button className="btn" onClick={() => changeStep(nextStep.key)}>Go to {nextStep.t}</button>}
+        </div>
+      </div>
+      <CarList rows={list[step === "value" ? "find" : step === "inspect" ? "value" : step]} step={step} onOpen={open} selected={detail?.car.id}
+        picked={picked} setPicked={step === "find" ? undefined : setPicked} />
+    </div>
+  );
 
   return (
     <div className={`app ${busy ? "cf-busy" : ""}`}>
@@ -123,64 +176,13 @@ export default function Flip({ initial }: { initial: Row[] }) {
 
       {/* Main content */}
       <main className="content">
-        {view === "pipeline" && <>
-          <nav className="tabs" aria-label="Steps">
-            {STEPS.map((s, i) => (
-              <button key={s.key} className={`tab cf-tab ${step === s.key ? "active" : ""}`} onClick={() => setStep(s.key)}>
-                {i + 1}. {s.t}{done[s.key] && <span className="pos"> ✓</span>}
-              </button>
-            ))}
-          </nav>
-          <div className="content-body">
-            <h1 className="cf-h1">{meta.h}</h1>
-            <p className="muted cf-lead">{meta.p}</p>
-            {busy && <p className="muted">{busy}… scrapes can take a few minutes.</p>}
-            {error && <p className="error">{error}</p>}
-            {note && <p className="pos">{note}</p>}
-
-            {/* Three highlight cards */}
-            <div className="cf-cards">
-              {list[step].slice(0, 3).map((r) => (
-                <button key={r.id} className="card cf-carcard" onClick={() => open(r.id)}>
-                  {r.photos[0] ? <img src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-ph"><Icon name="image" size={32} /></span>}
-                  <strong>{short(r.title)}</strong>
-                  <span className="muted">{money(r.price)}{r.value !== null && <> · value {money(r.value)}</>}</span>
-                  {r.verdict && <span className={`v-${r.verdict}`}>{label(r.verdict)}{r.photo_count_available ? ` · ${reviewed(r)}` : ""}</span>}
-                </button>
-              ))}
-              {!list[step].length && [0, 1, 2].map((i) => <div key={i} className="card cf-carcard cf-empty"><span className="cf-ph"><Icon name="image" size={32} /></span><span className="muted">Run this step to fill these cards</span></div>)}
-            </div>
-
-            {step === "find" && (
-              <div className="cf-bar">
-                {(["city", "radiusMiles", "target", "minPrice", "maxPrice"] as const).map((k) => (
-                  <label key={k} className="field"><span className="cf-note">{k}</span>
-                    <input value={search[k]} onChange={(e) => setSearch({ ...search, [k]: k === "city" ? e.target.value : Number(e.target.value) })} />
-                  </label>
-                ))}
-              </div>
-            )}
-
-            {/* Action card for this step */}
-            <div className="card cf-action">
-              <span className="cf-actionicon"><Icon name={done[step] ? "arrow" : "search"} /></span>
-              <div>
-                <strong>{done[step] ? `${meta.t} is done${nextStep ? `. Next: ${nextStep.t}` : ""}` : `Run step ${STEPS.indexOf(meta) + 1}: ${meta.t}`}</strong>
-                <div className="muted cf-note">{list[step].length} cars at this step{step === "buy" ? " · drafts only, nothing is sent automatically" : ""}</div>
-              </div>
-              <div className="cf-actionbtns">
-                <button className={`btn ${done[step] ? "" : "primary"}`} onClick={() => run(meta.t, actions[step].run)}>{done[step] ? "Run again" : actions[step].label}</button>
-                {done[step] && nextStep && <button className="btn primary" onClick={() => setStep(nextStep.key)}>Go to {nextStep.t}</button>}
-              </div>
-            </div>
-
-            <h2 className="cf-h2">All cars at this step</h2>
-            <CarTable rows={list[step]} step={step} onOpen={open} selected={detail?.car.id} />
-
-            {/* Below the side panel's breakpoint, the selected car shows here instead */}
-            <div className="card cf-inline">{panel}</div>
+        {view === "pipeline" && (
+          <div className="content-body cf-center">
+            {detail ? panel : <Summary rows={rows} shortlisted={shortlisted} />}
+            {/* Below the right panel's breakpoint, the step workflow shows here instead */}
+            <div className="cf-inline">{workflow}</div>
           </div>
-        </>}
+        )}
 
         {view === "negotiations" && (
           <div className="content-body">
@@ -223,7 +225,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
       </main>
 
       {/* Right side bar */}
-      <aside className="aside">{panel}</aside>
+      <aside className="aside cf-aside">{view === "pipeline" ? workflow : panel}</aside>
 
       {/* Bottom bar */}
       <footer className="bottombar">
@@ -270,6 +272,39 @@ function CarTable({ rows, step, onOpen, selected }: { rows: Row[]; step: Step; o
       </table>
       {step === "sell" && <p className="cf-note">* Profit before unprovided costs, at the latest counter or else the opening offer. Hypothetical.</p>}
     </div>
+  );
+}
+
+function CarList({ rows, step, onOpen, selected, picked = [], setPicked }: { rows: Row[]; step: Step; onOpen: (id: string) => void; selected?: string;
+  picked?: string[]; setPicked?: (ids: string[]) => void }) {
+  const all = rows.length > 0 && rows.every((r) => picked.includes(r.id));
+  return (
+    <ul className="cf-carlist">
+      {setPicked && rows.length > 0 && (
+        <li className="cf-pickall">
+          <label><input type="checkbox" checked={all} onChange={() => setPicked(all ? [] : rows.map((r) => r.id))} /> Select all ({rows.length})</label>
+          {picked.length > 0 && <button className="btn" onClick={() => setPicked([])}>Clear {picked.length}</button>}
+        </li>
+      )}
+      {rows.map((r) => (
+        <li key={r.id} className="cf-carli">
+          {setPicked && <input type="checkbox" aria-label={`Select ${short(r.title)}`} checked={picked.includes(r.id)}
+            onChange={() => setPicked(picked.includes(r.id) ? picked.filter((x) => x !== r.id) : [...picked, r.id])} />}
+          <button className={`cf-carrow ${selected === r.id ? "sel" : ""}`} onClick={() => onOpen(r.id)}>
+            {r.photos[0] ? <img src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-ph"><Icon name="image" size={18} /></span>}
+            <span className="cf-carrowtext">
+              <strong>{short(r.title)}{r.shortlisted ? " ★" : ""}</strong>
+              <span className="cf-note">{money(r.price)}{r.value !== null && <> · value {money(r.value)} · <span className={r.discount > 0 ? "pos" : "neg"}>{gap(r.discount)}</span></>}</span>
+              {step !== "find" && step !== "value" && r.verdict && <span className="cf-note"><span className={`v-${r.verdict}`}>{label(r.verdict)}</span>{r.photo_count_available ? ` · ${reviewed(r)}` : ""}</span>}
+              {step === "buy" && <span className="cf-note">Offer {money(r.last_offer)} · counter {money(r.last_counter)}</span>}
+              {step === "sell" && <span className="cf-note">Profit* {money(r.profit)} (before unprovided costs)</span>}
+              {step === "find" && <span className="cf-note">{r.city}{r.miles ? ` · ${Math.round(r.miles / 1000)}k mi` : ""}</span>}
+            </span>
+          </button>
+        </li>
+      ))}
+      {!rows.length && <li className="muted cf-note">Nothing here yet. Run this step.</li>}
+    </ul>
   );
 }
 
@@ -324,6 +359,12 @@ function Summary({ rows, shortlisted }: { rows: Row[]; shortlisted: Row[] }) {
 
 function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>; step: Step }) {
   const { car, thread } = d;
+  const [busy, setBusy] = useState<string | null>(null);
+  const [msg, setMsg] = useState<string | null>(null);
+  const act = async (label: string, fn: () => Promise<string>) => {
+    setBusy(label); setMsg(null);
+    try { setMsg(await fn()); await onChange(); } catch (e) { setMsg(`Error: ${(e as Error).message}`); } finally { setBusy(null); }
+  };
   const [reply, setReply] = useState("");
   const [counter, setCounter] = useState("");
   const [plan, setPlan] = useState<Row | null>(null);
@@ -333,9 +374,14 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
     <div className="cf-panelbody">
       <div>
         <div className="aside-heading">Selected car</div>
-        <h3 style={{ margin: 0 }}>{short(car.title)}</h3>
+        <h1 className="cf-h1" style={{ margin: 0 }}>{short(car.title)}</h1>
+        <span className="cf-note">{car.title.split("·")[1]?.trim()}{car.city ? ` · ${car.city}` : ""} · </span>
         <a className="cf-note" href={car.url} target="_blank" rel="noreferrer">Open listing ↗</a>
       </div>
+      <div className="cf-photos">{car.photos.map((p: string, i: number) => (
+        <a key={p} href={p} target="_blank" rel="noreferrer" className="cf-photo"><img src={p} alt={`Photo ${i + 1}`} referrerPolicy="no-referrer" /><span>#{i + 1}</span></a>
+      ))}</div>
+      <NextStep row={d.row ?? {}} car={car} thread={thread} busy={busy} msg={msg} act={act} />
       <div className="card aside-card">
         <dl className="aside-dl">
           <dt>Asking</dt><dd>{money(car.price)}</dd>
@@ -355,7 +401,6 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
       </details>}
       {d.row?.evidence?.length > 0 && <div><div className="aside-heading">Evidence</div>
         <ul className="cf-dotlist">{d.row.evidence.map((e: Row, i: number) => <li key={i}><span className="dot" /> <span><strong>{e.source}</strong>: {e.note}</span></li>)}</ul></div>}
-      <div className="cf-photos">{car.photos.slice(0, 6).map((p: string, i: number) => <img key={p} src={p} alt={`Photo ${i + 1}`} title={`#${i + 1}`} referrerPolicy="no-referrer" />)}</div>
       {d.row?.red_flags?.length > 0 && <div><div className="aside-heading">Flags</div><ul className="cf-dotlist">{d.row.red_flags.map((f: string) => <li key={f}><span className="dot dot-failed" /> {f}</li>)}</ul></div>}
       <details><summary className="cf-note">Seller's description</summary><p className="cf-note">{car.description}</p></details>
 
@@ -402,6 +447,75 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
           </>}
         </div>
       )}
+    </div>
+  );
+}
+
+/** Where this one car is in the pipeline, and the button (or review form) that moves it to the next step. */
+function NextStep({ row, car, thread, busy, msg, act }: { row: Row; car: Row; thread: Row[]; busy: string | null; msg: string | null;
+  act: (label: string, fn: () => Promise<string>) => Promise<void> }) {
+  const [verdict, setVerdict] = useState("promising");
+  const [allPhotos, setAllPhotos] = useState(false);
+  const [readDesc, setReadDesc] = useState(false);
+  const [notes, setNotes] = useState("");
+  const n = car.photos.length;
+  const stage = row.value === null || row.value === undefined ? "value"
+    : !row.photo_review_complete ? "inspect"
+    : !row.shortlisted ? "held"
+    : !thread.length ? "buy" : "sell";
+  const track = ["Find", "Value", "Inspect", "Buy", "Sell"];
+  const at = { value: 1, inspect: 2, held: 2, buy: 3, sell: 4 }[stage];
+  const review = (
+    <div className="cf-review">
+      <div className="cf-note">Your review. It only counts if you looked at all {n} photos and read the description; only "promising" goes to the shortlist.</div>
+      <label className="field"><span className="cf-note">Verdict</span>
+        <select value={verdict} onChange={(e) => setVerdict(e.target.value)}>
+          {["promising", "needs_review", "cheap_for_reason", "sold"].map((v) => <option key={v} value={v}>{label(v)}</option>)}
+        </select>
+      </label>
+      <label className="cf-check"><input type="checkbox" checked={allPhotos} onChange={(e) => setAllPhotos(e.target.checked)} /> I looked at all {n} photos</label>
+      <label className="cf-check"><input type="checkbox" checked={readDesc} onChange={(e) => setReadDesc(e.target.checked)} /> I read the description</label>
+      <label className="field"><span className="cf-note">What you saw, one per line (e.g. "#6: VIN label matches")</span>
+        <textarea rows={3} value={notes} onChange={(e) => setNotes(e.target.value)} />
+      </label>
+      <button className="btn primary" disabled={!notes.trim() || !!busy} onClick={() => act("Saving review", async () => {
+        const lines = notes.split("\n").map((l) => l.trim()).filter(Boolean);
+        const r = await tool("record_inspection", { id: car.id, verdict, photo_count_reviewed: allPhotos ? n : 0, description_reviewed: readDesc,
+          evidence: lines.map((l) => { const m = l.match(/^(#[\d\-, #]+|description)\s*:\s*(.+)$/i);
+            return m ? { source: m[1].startsWith("#") ? `photo ${m[1]}` : "description", note: m[2] } : { source: "manual review", note: l }; }) });
+        setNotes("");
+        return r.shortlisted.includes(car.id) ? "Saved. On the shortlist; next: draft an offer."
+          : r.complete ? `Saved as ${label(r.verdict)}. Not shortlisted (only promising goes forward).`
+          : "Saved, but incomplete: tick both boxes once you've seen every photo and the description.";
+      })}>Save review</button>
+    </div>
+  );
+  return (
+    <div className="card cf-next">
+      <div className="aside-heading">Move this car forward</div>
+      <ol className="cf-track">{track.map((t, i) => <li key={t} className={i < at ? "done" : i === at ? "now" : ""}>{t}</li>)}</ol>
+      {stage === "value" && <button className="btn primary" disabled={!!busy} onClick={() => act("Valuing", async () => {
+        const r = await tool("value_cars", { ids: [car.id] });
+        return r.valued ? "Valued. Next: review its photos." : `No value: ${r.missing[0]?.reason ?? "no KBB match"}`;
+      })}>Look up KBB value (about $0.20)</button>}
+      {stage === "inspect" && <>
+        <button className="btn" disabled={!!busy} onClick={() => act("Checking", async () => {
+          const r = await tool("inspect_top", { ids: [car.id] });
+          return `Automatic check: ${r.note}`;
+        })}>Run automatic check</button>
+        {review}
+      </>}
+      {stage === "held" && <>
+        <p className="cf-note">Reviewed as <span className={`v-${row.verdict}`}>{label(row.verdict)}</span>, so it stays out of the shortlist. Change your review to move it on.</p>
+        {review}
+      </>}
+      {stage === "buy" && <button className="btn primary" disabled={!!busy} onClick={() => act("Drafting", async () => {
+        const [o] = await tool("draft_offers", { ids: [car.id] });
+        return o ? `Drafted: "${o.message}" Copy it below and send it yourself.` : "Not drafted.";
+      })}>Draft opening offer (80% of asking)</button>}
+      {stage === "sell" && <p className="cf-note">Offer drafted. Log the seller's reply below, then use Resale plan.</p>}
+      {busy && <p className="cf-note">{busy}…</p>}
+      {msg && <p className={`cf-note ${msg.startsWith("Error") ? "neg" : "pos"}`}>{msg}</p>}
     </div>
   );
 }

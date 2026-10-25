@@ -40,9 +40,9 @@ export function valuationAssumptions(car: Pick<Car, "trim" | "miles" | "title">,
 }
 
 /** Step 2: value every saved car that has year/make/model, then rank by raw dollar gap (KBB value - asking). */
-export async function valueCars(db: DB, deps: { fetchImpl?: Fetch; token?: string } = {}) {
+export async function valueCars(db: DB, deps: { fetchImpl?: Fetch; token?: string; ids?: string[] } = {}) {
   const startedAt = now();
-  const all = loadCars(db).filter((c) => c.year && c.make && c.model);
+  const all = loadCars(db).filter((c) => c.year && c.make && c.model && (!deps.ids?.length || deps.ids.includes(c.id)));
   // KBB only covers 1990 onward; classics need a collector guide (e.g. Hagerty) instead.
   const classics = all.filter((c) => c.year! < KBB_MIN_YEAR).map((c) => c.title);
   const cars = all.filter((c) => c.year! >= KBB_MIN_YEAR);

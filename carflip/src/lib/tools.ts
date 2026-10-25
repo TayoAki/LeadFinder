@@ -23,9 +23,9 @@ export const tools = {
     run: (db: DB, a: any) => findCars(db, a),
   },
   value_cars: {
-    description: "Step 2 Value: look up KBB values for every saved car and rank by raw dollar gap (KBB value - asking).",
-    input: {},
-    run: (db: DB) => valueCars(db),
+    description: "Step 2 Value: look up KBB values for every saved car (or only ids) and rank by raw dollar gap (KBB value - asking).",
+    input: { ids: z.array(z.string()).optional() },
+    run: (db: DB, a: any) => valueCars(db, { ids: a.ids }),
   },
   ranked_cars: {
     description: "List valued cars ranked by raw dollar gap, with each valuation's source, capture time and assumptions.",
@@ -33,8 +33,8 @@ export const tools = {
     run: (db: DB, a: any) => rankedByDiscount(db).slice(0, a.limit),
   },
   inspect_top: {
-    description: "Step 3 Inspect: review the top N by dollar gap and shortlist every complete, evidence-backed promising review.",
-    input: { top: z.number().default(10) },
+    description: "Step 3 Inspect: review the top N by dollar gap (or only ids) and shortlist every complete, evidence-backed promising review.",
+    input: { top: z.number().default(10), ids: z.array(z.string()).optional() },
     run: (db: DB, a: any) => inspectTop(db, a),
   },
   get_car: {
@@ -62,8 +62,9 @@ export const tools = {
     },
   },
   draft_offers: {
-    description: "Step 4 Buy: draft low opening offers for every survivor (default 80% of asking; optional ceiling as a share of value). Drafts only.",
-    input: { openingPct: z.number().min(0.3).max(1).optional(), ceilingPctOfValue: z.number().min(0.3).max(1.2).nullable().optional() },
+    description: "Step 4 Buy: draft opening offers for every survivor (or only ids that are shortlisted) (default 80% of asking; optional ceiling as a share of value). Drafts only.",
+    input: { openingPct: z.number().min(0.3).max(1).optional(), ceilingPctOfValue: z.number().min(0.3).max(1.2).nullable().optional(),
+      ids: z.array(z.string()).optional() },
     run: (db: DB, a: any) => draftOffers(db, a),
   },
   log_seller_reply: {

@@ -142,10 +142,12 @@ export function shortlist(db: DB) {
 }
 
 /** Step 3: review the top N by dollar gap (AI vision when a key is set, otherwise description-only rules), then shortlist. */
-export async function inspectTop(db: DB, o: { top?: number; apiKey?: string; model?: string; fetchImpl?: Fetch } = {}) {
+export async function inspectTop(db: DB, o: { top?: number; ids?: string[]; apiKey?: string; model?: string; fetchImpl?: Fetch } = {}) {
   const startedAt = now();
   const apiKey = o.apiKey ?? process.env.OPENROUTER_API_KEY;
-  const top = rankedByDiscount(db).slice(0, o.top ?? config.topForReview);
+  // Selected cars when ids are given, otherwise the top N by dollar gap.
+  const ranked = rankedByDiscount(db);
+  const top = o.ids?.length ? ranked.filter((r) => o.ids!.includes(r.id)) : ranked.slice(0, o.top ?? config.topForReview);
   const results: Array<{ id: string; title: string; complete: boolean } & Inspection> = [];
   for (const t of top) {
     const car = getCar(db, t.id)!;
