@@ -6,13 +6,16 @@ import Icon from "./Icon.tsx";
 type Row = Record<string, any>;
 const money = (n: number | null | undefined) => (n === null || n === undefined ? "—" : `$${Math.round(n).toLocaleString()}`);
 const short = (t: string) => t.split("·")[0].trim();
+const label = (v: string | null | undefined) => (v ? v.replace(/_/g, " ") : "—");
+const gap = (n: number | null | undefined) => (n === null || n === undefined ? "—" : `${n > 0 ? "+" : "−"}$${Math.abs(Math.round(n)).toLocaleString()}`);
+const reviewed = (r: Row) => (r.photo_count_available ? `${r.photo_count_reviewed ?? 0}/${r.photo_count_available} photos` : "");
 
 const STEPS = [
   { key: "find", t: "Find", h: "Private-seller listings", p: "Facebook Marketplace cars near you, with dealers, bikes and new-car listings filtered out." },
-  { key: "value", t: "Value", h: "KBB values and discounts", p: "KBB fair purchase price for the closest trim, adjusted for mileage, ranked by how far each ask sits below value." },
-  { key: "inspect", t: "Inspect", h: "Photos and descriptions", p: "The top 10 by discount get a photo and description review. The best four go on the shortlist." },
-  { key: "buy", t: "Buy", h: "Offers and negotiation", p: "Low opening offers with a walk-away price. Drafts only: you send them, then log replies here for the next counter." },
-  { key: "sell", t: "Sell", h: "Photos, listing and profit", p: "Honest photo clean-up, a repair list, ad copy and hypothetical profit after tax and fees." },
+  { key: "value", t: "Value", h: "KBB values and discounts", p: "KBB fair purchase price for the closest trim, unadjusted, ranked by dollar gap (value minus asking). Every value keeps its source, capture time and assumptions." },
+  { key: "inspect", t: "Inspect", h: "Photos and descriptions", p: "The top 10 by dollar gap get a review of every photo and the description. Only complete, evidence-backed \"promising\" reviews survive; there is no fixed count." },
+  { key: "buy", t: "Buy", h: "Offers and negotiation", p: "Opening offers at 80% of asking (policy, not a guess). With no ceiling set, counters are recorded and never accepted. Drafts only: you send them." },
+  { key: "sell", t: "Sell", h: "Photos, listing and profit", p: "Hypothetical profit = resale − purchase − supplied repairs − 6.25% tax on purchase. Costs nobody supplied are listed, not counted as zero." },
 ] as const;
 type Step = (typeof STEPS)[number]["key"];
 type View = "pipeline" | "negotiations" | "report" | "settings";
@@ -67,8 +70,8 @@ export default function Flip({ initial }: { initial: Row[] }) {
       return `Valued ${r.valued}. ${r.classics.length} classics (pre-1990) need a collector guide; ${r.missing.length} had no KBB match.`;
     } },
     inspect: { label: "Inspect top 10", run: async () => {
-      const r = await tool("inspect_top", { top: 10, keep: 4 });
-      return `Inspected ${r.inspected.length}; shortlisted ${r.shortlisted.length}.`;
+      const r = await tool("inspect_top", { top: 10 });
+      return `Reviewed ${r.reviewed}; ${r.incomplete.length} still need a full photo review; ${r.survivors} survivors. ${r.note}`;
     } },
     buy: { label: "Draft offers", run: async () => `Drafted ${(await tool("draft_offers")).length} opening offers. Send them yourself, then log replies.` },
     sell: { label: "Plan resale", run: async () => {
@@ -110,7 +113,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
                 {r.photos[0] ? <img className="cf-avatar" src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-avatar" />}
                 <span className="side-text">
                   <span>{short(r.title)}</span>
-                  <span className="side-sub muted">{money(r.price)}{r.discount_pct !== null && ` · ${r.discount_pct > 0 ? "+" : ""}${Math.round(r.discount_pct)}%`}{r.shortlisted ? " · ★" : ""}</span>
+                  <span className="side-sub muted">{money(r.price)}{r.discount !== null && ` · ${gap(r.discount)}`}{r.shortlisted ? " · ★" : ""}</span>
                 </span>
               </button>
             </li>
@@ -142,7 +145,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
                   {r.photos[0] ? <img src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-ph"><Icon name="image" size={32} /></span>}
                   <strong>{short(r.title)}</strong>
                   <span className="muted">{money(r.price)}{r.value !== null && <> · value {money(r.value)}</>}</span>
-                  {r.verdict && <span className={`v-${r.verdict}`}>{r.verdict}{r.score !== null && ` · ${r.score}`}</span>}
+                  {r.verdict && <span className={`v-${r.verdict}`}>{label(r.verdict)}{r.photo_count_available ? ` · ${reviewed(r)}` : ""}</span>}
                 </button>
               ))}
               {!list[step].length && [0, 1, 2].map((i) => <div key={i} className="card cf-carcard cf-empty"><span className="cf-ph"><Icon name="image" size={32} /></span><span className="muted">Run this step to fill these cards</span></div>)}
@@ -191,13 +194,14 @@ export default function Flip({ initial }: { initial: Row[] }) {
         {view === "report" && (
           <div className="content-body">
             <h1 className="cf-h1">Resale report</h1>
-            <p className="muted cf-lead">Hypothetical: list at value, sell about 5% below, minus Georgia 7% TAVT, title and tag, reconditioning and detailing.</p>
+            <p className="muted cf-lead">Hypothetical, using the article's method: resale (KBB value) − purchase − supplied repairs − 6.25% of purchase. Unprovided costs are listed per car, not assumed.</p>
             <div className="cf-cards">
               <Stat label="Shortlisted" value={String(shortlisted.length)} />
-              <Stat label="Total hypothetical profit" value={money(shortlisted.reduce((a, r) => a + (r.profit ?? 0), 0))} />
-              <Stat label="Average discount" value={valued.length ? `${Math.round(valued.reduce((a, r) => a + r.discount_pct, 0) / valued.length)}%` : "—"} />
+              <Stat label="Profit before unprovided costs" value={money(shortlisted.reduce((a, r) => a + (r.profit ?? 0), 0))} />
+              <Stat label="Largest dollar gap" value={valued.length ? gap(Math.max(...valued.map((r) => r.discount))) : "—"} />
             </div>
             <CarTable rows={shortlisted} step="sell" onOpen={open} selected={detail?.car.id} />
+            <RunLog />
             <div className="card cf-inline">{panel}</div>
           </div>
         )}
@@ -240,10 +244,10 @@ function CarTable({ rows, step, onOpen, selected }: { rows: Row[]; step: Step; o
       <table>
         <thead><tr>
           <th>Car</th><th className="num">Ask</th><th className="num">Miles</th>
-          {step !== "find" && <><th className="num">Value</th><th className="num">Discount</th></>}
+          {step !== "find" && <><th className="num">Value</th><th className="num">Gap</th></>}
           {(step === "inspect" || step === "buy" || step === "sell") && <th>Inspection</th>}
           {step === "buy" && <><th className="num">Offer</th><th className="num">Counter</th></>}
-          {step === "sell" && <><th className="num">List</th><th className="num">Profit*</th></>}
+          {step === "sell" && <><th className="num">Resale</th><th className="num">Profit*</th></>}
         </tr></thead>
         <tbody>
           {rows.map((r) => (
@@ -253,10 +257,10 @@ function CarTable({ rows, step, onOpen, selected }: { rows: Row[]; step: Step; o
               <td className="num">{r.miles ? `${Math.round(r.miles / 1000)}k` : "—"}</td>
               {step !== "find" && <>
                 <td className="num">{money(r.value)}</td>
-                <td className={`num ${r.discount > 0 ? "pos" : "neg"}`}>{r.discount_pct === null ? "—" : `${r.discount_pct > 0 ? "+" : ""}${Math.round(r.discount_pct)}%`}</td>
+                <td className={`num ${r.discount > 0 ? "pos" : "neg"}`}>{gap(r.discount)}</td>
               </>}
               {(step === "inspect" || step === "buy" || step === "sell") &&
-                <td><span className={`v-${r.verdict}`}>{r.verdict ?? "—"}</span>{r.score !== null && ` · ${r.score}`}{r.shortlisted ? " ★" : ""}</td>}
+                <td><span className={`v-${r.verdict}`}>{label(r.verdict)}</span>{r.shortlisted ? " ★" : ""}<div className="cf-note">{reviewed(r)}{r.review_method ? ` · ${r.review_method}` : ""}</div></td>}
               {step === "buy" && <><td className="num">{money(r.last_offer)}</td><td className="num">{money(r.last_counter)}</td></>}
               {step === "sell" && <><td className="num">{money(r.list_price)}</td><td className={`num ${r.profit > 0 ? "pos" : ""}`}>{money(r.profit)}</td></>}
             </tr>
@@ -264,6 +268,24 @@ function CarTable({ rows, step, onOpen, selected }: { rows: Row[]; step: Step; o
           {!rows.length && <tr><td colSpan={9} className="muted">Nothing here yet.</td></tr>}
         </tbody>
       </table>
+      {step === "sell" && <p className="cf-note">* Profit before unprovided costs, at the latest counter or else the opening offer. Hypothetical.</p>}
+    </div>
+  );
+}
+
+function RunLog() {
+  const [runs, setRuns] = useState<Row[] | null>(null);
+  return (
+    <div>
+      <h2 className="cf-h2">Run log</h2>
+      <p className="muted cf-note">Every step: source, capture time and coverage. <button className="btn" onClick={async () => setRuns(await tool("run_log", { limit: 30 }))}>{runs ? "Refresh" : "Load"}</button></p>
+      {runs && <div className="card cf-scroll"><table>
+        <thead><tr><th>Step</th><th>Source</th><th>Finished</th><th>Report</th></tr></thead>
+        <tbody>{runs.map((r) => (
+          <tr key={r.id}><td>{r.step}</td><td>{r.source ?? "—"}</td><td className="cf-note">{r.finished_at ?? r.started_at}</td>
+            <td className="cf-note">{Object.entries(r.report ?? {}).filter(([, v]) => typeof v !== "object").map(([k, v]) => `${k}: ${v}`).join(" · ")}</td></tr>
+        ))}</tbody>
+      </table></div>}
     </div>
   );
 }
@@ -278,21 +300,22 @@ function Summary({ rows, shortlisted }: { rows: Row[]; shortlisted: Row[] }) {
           <ul className="cf-dotlist">
             <li><span className="dot dot-completed" /> {rows.length} cars found</li>
             <li><span className="dot dot-completed" /> {rows.filter((r) => r.value !== null).length} valued</li>
+            <li><span className="dot dot-completed" /> {rows.filter((r) => r.photo_review_complete).length} fully reviewed</li>
             <li><span className="dot dot-running" /> {shortlisted.length} shortlisted</li>
           </ul>
         </div>
       </div>
       {best && <div>
-        <div className="aside-heading">Biggest discount</div>
+        <div className="aside-heading">Biggest dollar gap</div>
         {best.photos[0] ? <img className="cf-asideimg" src={best.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-ph cf-asideimg"><Icon name="image" /></span>}
         <p style={{ margin: ".4rem 0 0" }}><strong>{short(best.title)}</strong></p>
-        <p className="muted cf-note">{money(best.price)} vs {money(best.value)}{best.verdict && <> · <span className={`v-${best.verdict}`}>{best.verdict}</span></>}</p>
+        <p className="muted cf-note">{money(best.price)} vs {money(best.value)} ({gap(best.discount)}){best.verdict && <> · <span className={`v-${best.verdict}`}>{label(best.verdict)}</span></>}</p>
       </div>}
       <div>
         <div className="aside-heading">Shortlist</div>
         <ul className="cf-dotlist">
           {shortlisted.map((r) => <li key={r.id}><span className="dot dot-completed" /> {short(r.title)} · {money(r.price)}</li>)}
-          {!shortlisted.length && <li className="muted">Inspect the top 10 to build a shortlist.</li>}
+          {!shortlisted.length && <li className="muted">No complete promising review yet. Review every photo of the top 10.</li>}
         </ul>
       </div>
     </div>
@@ -318,10 +341,21 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
           <dt>Asking</dt><dd>{money(car.price)}</dd>
           <dt>Miles</dt><dd>{car.miles?.toLocaleString() ?? "—"}</dd>
           <dt>Value</dt><dd>{money(d.row?.value)}</dd>
-          <dt>Inspection</dt><dd className={`v-${d.row?.verdict}`}>{d.row?.verdict ?? "—"} {d.row?.score ?? ""}</dd>
+          <dt>Gap</dt><dd>{gap(d.row?.discount)}</dd>
+          <dt>Inspection</dt><dd className={`v-${d.row?.verdict}`}>{label(d.row?.verdict)}</dd>
+          <dt>Reviewed</dt><dd>{d.row?.photo_count_available ? `${reviewed(d.row)}${d.row.description_reviewed ? " + description" : ""}` : "—"}</dd>
+          <dt>Seller</dt><dd>{label(car.seller_type)}</dd>
+          <dt>Captured</dt><dd className="cf-note">{car.captured_at ?? "—"}</dd>
         </dl>
       </div>
-      <div className="cf-photos">{car.photos.slice(0, 6).map((p: string) => <img key={p} src={p} alt="" referrerPolicy="no-referrer" />)}</div>
+      {d.row?.value !== null && d.row?.value !== undefined && <details>
+        <summary className="cf-note">Valuation source and assumptions</summary>
+        <p className="cf-note">{label(d.row.value_type)} · captured {d.row.valued_at ?? "—"}{d.row.value_source && <> · <a href={d.row.value_source} target="_blank" rel="noreferrer">KBB ↗</a></>}{d.row.conditional ? " · conditional" : ""}</p>
+        <ul className="cf-dotlist">{d.row.assumptions.map((a: string) => <li key={a}><span className="dot" /> {a}</li>)}</ul>
+      </details>}
+      {d.row?.evidence?.length > 0 && <div><div className="aside-heading">Evidence</div>
+        <ul className="cf-dotlist">{d.row.evidence.map((e: Row, i: number) => <li key={i}><span className="dot" /> <span><strong>{e.source}</strong>: {e.note}</span></li>)}</ul></div>}
+      <div className="cf-photos">{car.photos.slice(0, 6).map((p: string, i: number) => <img key={p} src={p} alt={`Photo ${i + 1}`} title={`#${i + 1}`} referrerPolicy="no-referrer" />)}</div>
       {d.row?.red_flags?.length > 0 && <div><div className="aside-heading">Flags</div><ul className="cf-dotlist">{d.row.red_flags.map((f: string) => <li key={f}><span className="dot dot-failed" /> {f}</li>)}</ul></div>}
       <details><summary className="cf-note">Seller's description</summary><p className="cf-note">{car.description}</p></details>
 
@@ -351,13 +385,20 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
           <button className="btn" onClick={async () => setPhotos((await tool("enhance_photos", { id: car.id })).written)}>Enhance photos</button>
           {photos && <p className="cf-note">Saved {photos.length} enhanced photos to {photos[0]?.replace(/[^/]+$/, "")}</p>}
           {plan && <>
-            <dl className="aside-dl" style={{ marginTop: ".6rem" }}>
-              <dt>Buy (assumed)</dt><dd>{money(plan.costs.buy)}</dd><dt>GA tax</dt><dd>{money(plan.costs.tax)}</dd>
-              <dt>Recon + detail</dt><dd>{money(plan.costs.recon + plan.costs.detail)}</dd><dt>List / expect</dt><dd>{money(plan.listPrice)} / {money(plan.expectedSale)}</dd>
-              <dt>Profit (hypothetical)</dt><dd className="pos">{money(plan.profit)}</dd>
-            </dl>
+            {plan.scenarios.map((sc: Row) => (
+              <dl key={sc.label} className="aside-dl" style={{ marginTop: ".6rem" }}>
+                <dt><strong>{sc.label}</strong></dt><dd />
+                <dt>Resale</dt><dd>{money(sc.resale)}</dd>
+                <dt>Repairs</dt><dd>{sc.repairs === null ? "not supplied" : money(sc.repairs)}</dd>
+                <dt>Tax 6.25%</dt><dd>${sc.tax.toFixed(2)}</dd>
+                <dt>Profit before unprovided</dt><dd className={sc.profitBeforeUnprovided > 0 ? "pos" : "neg"}>${sc.profitBeforeUnprovided.toLocaleString(undefined, { minimumFractionDigits: 2 })}</dd>
+              </dl>
+            ))}
+            <div className="aside-heading" style={{ marginTop: ".6rem" }}>Unprovided costs (not counted)</div>
+            <ul className="cf-dotlist">{plan.unprovidedCosts.map((c: string) => <li key={c}><span className="dot dot-failed" /> {c}</li>)}</ul>
+            <ul className="cf-dotlist">{plan.assumptions.map((a: string) => <li key={a} className="cf-note"><span className="dot" /> {a}</li>)}</ul>
             <div className="cf-msg">{plan.listing}</div>
-            <ul className="cf-dotlist" style={{ marginTop: ".5rem" }}>{[...plan.photos.repairsBeforeListing.map((r: string) => `Repair: ${r}`), ...plan.photos.prep].map((p: string) => <li key={p}><span className="dot" /> {p}</li>)}</ul>
+            <ul className="cf-dotlist" style={{ marginTop: ".5rem" }}>{plan.photos.prep.map((p: string) => <li key={p}><span className="dot" /> {p}</li>)}</ul>
           </>}
         </div>
       )}

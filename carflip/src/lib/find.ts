@@ -1,4 +1,4 @@
-import type { DB } from "./db.ts";
+import { logRun, now, type DB } from "./db.ts";
 import { runActor, type Fetch } from "./apify.ts";
 
 export const FB_ACTOR = "apify/facebook-marketplace-scraper";
@@ -8,6 +8,7 @@ export interface Car {
   year: number | null; make: string | null; model: string | null; trim: string | null;
   price: number; miles: number | null; city: string | null; lat: number | null; lng: number | null;
   description: string; photos: string[]; dealer_score: number; posted_at: string | null;
+  captured_at?: string | null; source_actor?: string | null; seller_type?: string;
 }
 
 export interface FindOptions {
@@ -96,17 +97,28 @@ export function normalizeFb(x: FbItem): Car | null {
 }
 
 /** A private-seller car worth valuing: a real car, a plausible price, no dealer signs. */
-export function isCandidate(c: Car, thisYear = new Date().getFullYear()): boolean {
-  const nearlyNew = c.year !== null && c.year >= thisYear - 1 && (c.miles ?? 0) < 5000; // new-car listings are almost always dealers
-  return c.dealer_score === 0 && !nearlyNew && !NOT_A_CAR.test(`${c.title} ${c.description}`) && !BIKE.test(c.title)
-    && c.year !== null && c.make !== null && c.price >= 1000;
+/**
+ * Why a listing is out of scope, or null if it stays. Marketplace has no seller-type field, so "private"
+ * is inferred from the absence of dealer signals and recorded as seller_type = private_inferred.
+ */
+export function exclusionReason(c: Car, thisYear = new Date().getFullYear()): string | null {
+  if (c.dealer_score > 0) return "dealer signals in listing";
+  if (c.year !== null && c.year >= thisYear - 1 && (c.miles ?? 0) < 5000) return "new-car listing (almost always a dealer)";
+  if (NOT_A_CAR.test(`${c.title} ${c.description}`) || BIKE.test(c.title)) return "not a car (bike, ATV, trailer, parts...)";
+  if (c.year === null || c.make === null) return "year or make not identifiable";
+  if (c.price < 1000) return "price under $1,000 (usually a placeholder)";
+  return null;
 }
 
+export const isCandidate = (c: Car, thisYear?: number) => exclusionReason(c, thisYear) === null;
+
 export function saveCar(db: DB, c: Car) {
-  db.prepare(`INSERT INTO cars (id,source,url,title,year,make,model,trim,price,miles,city,lat,lng,description,photos,dealer_score,posted_at)
-    VALUES (@id,@source,@url,@title,@year,@make,@model,@trim,@price,@miles,@city,@lat,@lng,@description,@photos,@dealer_score,@posted_at)
-    ON CONFLICT(id) DO UPDATE SET price=excluded.price, description=excluded.description, photos=excluded.photos`)
-    .run({ ...c, photos: JSON.stringify(c.photos) });
+  db.prepare(`INSERT INTO cars (id,source,url,title,year,make,model,trim,price,miles,city,lat,lng,description,photos,dealer_score,posted_at,
+      captured_at,source_actor,seller_type)
+    VALUES (@id,@source,@url,@title,@year,@make,@model,@trim,@price,@miles,@city,@lat,@lng,@description,@photos,@dealer_score,@posted_at,
+      @captured_at,@source_actor,@seller_type)
+    ON CONFLICT(id) DO UPDATE SET price=excluded.price, description=excluded.description, photos=excluded.photos, captured_at=excluded.captured_at`)
+    .run({ captured_at: null, source_actor: null, seller_type: "private_inferred", ...c, photos: JSON.stringify(c.photos) });
 }
 
 /** Re-check saved cars against the current filters and drop the ones that no longer qualify. */
@@ -128,19 +140,31 @@ export function prune(db: DB): string[] {
  */
 export async function findCars(db: DB, o: FindOptions = {}, deps: { fetchImpl?: Fetch; token?: string } = {}) {
   const target = o.target ?? 40;
+  const startedAt = now();
   const removed = prune(db);
   const have = (db.prepare("SELECT COUNT(*) n FROM cars").get() as { n: number }).n;
   const need = target - have;
-  if (need <= 0) return { scraped: 0, parsed: 0, dealersOrOther: 0, removed, saved: 0, total: have, cars: [] as Car[] };
+  if (need <= 0) return { scraped: 0, excluded: [], dealersOrOther: 0, removed, saved: 0, total: have, cars: [] as Car[],
+    limit: `Already have ${have} of ${target} cars; nothing scraped.` };
   const items = await runActor<FbItem>(FB_ACTOR, {
     startUrls: [{ url: fbVehiclesUrl(o) }],
     resultsLimit: Math.ceil(need * (have ? 2.5 : 1.8)), // top-ups see more duplicates; use a different sortBy to reach new listings
     includeListingDetails: true,
   }, deps);
-  const all = items.map(normalizeFb).filter((c): c is Car => c !== null);
+  const capturedAt = now();
+  const all = items.map(normalizeFb).filter((c): c is Car => c !== null)
+    .map((c) => ({ ...c, captured_at: capturedAt, source_actor: FB_ACTOR, seller_type: "private_inferred" }));
   const known = new Set((db.prepare("SELECT id FROM cars").all() as Array<{ id: string }>).map((r) => r.id));
+  const excluded = all.map((c) => ({ id: c.id, title: c.title, reason: exclusionReason(c) })).filter((x) => x.reason);
   const fresh = all.filter((c) => isCandidate(c) && !known.has(c.id)).slice(0, need);
   db.transaction(() => fresh.forEach((c) => saveCar(db, c)))();
-  return { scraped: items.length, parsed: all.length, dealersOrOther: all.filter((c) => !isCandidate(c)).length, removed,
-    saved: fresh.length, total: have + fresh.length, cars: fresh };
+  const resultsLimit = Math.ceil(need * (have ? 2.5 : 1.8));
+  const coverage = {
+    searchUrl: fbVehiclesUrl(o), capturedAt, scraped: items.length, unparseable: items.length - all.length,
+    excluded, duplicates: all.filter((c) => known.has(c.id)).length, saved: fresh.length, total: have + fresh.length,
+    limit: `Collection stopped at the ${resultsLimit}-result cap, so coverage of the area is partial, not exhaustive.`,
+    sellerType: "Marketplace doesn't label sellers; private status is inferred from the absence of dealer signals.",
+  };
+  logRun(db, "find", startedAt, { source: FB_ACTOR, params: o, report: coverage });
+  return { ...coverage, dealersOrOther: excluded.length, removed, cars: fresh };
 }

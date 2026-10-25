@@ -62,6 +62,56 @@ CREATE TABLE IF NOT EXISTS resale (
 );
 `;
 
+// Evidence columns added after the first release. Each is [table, column, definition]; added if missing.
+const COLUMNS: Array<[string, string, string]> = [
+  ["cars", "captured_at", "TEXT"],                 // when the listing was scraped
+  ["cars", "source_actor", "TEXT"],                // which collector produced it
+  ["cars", "seller_type", "TEXT NOT NULL DEFAULT 'private_inferred'"],
+  ["valuations", "value_type", "TEXT"],            // which KBB figure "value" is
+  ["valuations", "range_low", "INTEGER"],
+  ["valuations", "range_high", "INTEGER"],
+  ["valuations", "assumptions", "TEXT NOT NULL DEFAULT '[]'"],
+  ["valuations", "conditional", "INTEGER NOT NULL DEFAULT 1"],
+  ["valuations", "captured_at", "TEXT"],
+  ["inspections", "photo_count_available", "INTEGER NOT NULL DEFAULT 0"],
+  ["inspections", "photo_count_reviewed", "INTEGER NOT NULL DEFAULT 0"],
+  ["inspections", "description_reviewed", "INTEGER NOT NULL DEFAULT 0"],
+  ["inspections", "photo_review_complete", "INTEGER NOT NULL DEFAULT 0"],
+  ["inspections", "evidence", "TEXT NOT NULL DEFAULT '[]'"],
+  ["inspections", "repair_estimate", "INTEGER"],    // only when supplied; never invented
+  ["inspections", "corrections", "TEXT NOT NULL DEFAULT '[]'"],
+  ["resale", "scenarios", "TEXT NOT NULL DEFAULT '[]'"],
+  ["resale", "unprovided_costs", "TEXT NOT NULL DEFAULT '[]'"],
+  ["resale", "assumptions", "TEXT NOT NULL DEFAULT '[]'"],
+];
+
+const RUNS = `
+CREATE TABLE IF NOT EXISTS runs (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  step TEXT NOT NULL,
+  source TEXT,
+  params TEXT NOT NULL DEFAULT '{}',
+  report TEXT NOT NULL DEFAULT '{}',
+  started_at TEXT NOT NULL,
+  finished_at TEXT NOT NULL DEFAULT (datetime('now'))
+);`;
+
+function migrate(db: DB) {
+  db.exec(RUNS);
+  for (const [table, col, def] of COLUMNS) {
+    const have = (db.prepare(`PRAGMA table_info(${table})`).all() as Array<{ name: string }>).some((c) => c.name === col);
+    if (!have) db.exec(`ALTER TABLE ${table} ADD COLUMN ${col} ${def}`);
+  }
+}
+
+/** Record what a step did, where its data came from and when: the run log behind every result. */
+export function logRun(db: DB, step: string, startedAt: string, o: { source?: string; params?: unknown; report?: unknown }) {
+  db.prepare("INSERT INTO runs (step, source, params, report, started_at) VALUES (?,?,?,?,?)")
+    .run(step, o.source ?? null, JSON.stringify(o.params ?? {}), JSON.stringify(o.report ?? {}), startedAt);
+}
+
+export const now = () => new Date().toISOString();
+
 let shared: DB | undefined;
 
 /** Open (and migrate) a database. With no path, uses CARFLIP_DB or ./data/carflip.db, shared per process. */
@@ -73,6 +123,7 @@ export function openDb(file?: string): DB {
   db.pragma("journal_mode = WAL");
   db.pragma("foreign_keys = ON");
   db.exec(SCHEMA);
+  migrate(db);
   if (!file) shared = db;
   return db;
 }

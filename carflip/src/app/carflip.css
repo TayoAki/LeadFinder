@@ -30,7 +30,7 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 .cf-row:hover td { background: var(--bg); }
 .cf-row.sel td { background: color-mix(in srgb, var(--accent) 8%, transparent); }
 .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
-.v-promising { color: var(--ok); } .v-caution { color: var(--warn); } .v-pass { color: var(--bad); }
+.v-promising { color: var(--ok); } .v-needs_review { color: var(--warn); } .v-cheap_for_reason, .v-sold { color: var(--bad); }
 .cf-note { font-size: .82rem; color: var(--muted); }
 .cf-busy { cursor: progress; }
 .cf-busy .btn { pointer-events: none; opacity: .6; }

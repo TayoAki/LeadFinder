@@ -3,10 +3,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { openDb } from "../src/lib/db.ts";
 import { parseTitle, parseMiles, normalizeFb, isCandidate, dealerScore, findCars, fbVehiclesUrl } from "../src/lib/find.ts";
-import { pickTrim, mileageAdjustment, valueCars, slug } from "../src/lib/value.ts";
-import { ruleInspect, inspectTop } from "../src/lib/inspect.ts";
+import { pickTrim, valueCars, slug, rankedByDiscount } from "../src/lib/value.ts";
+import { ruleInspect, inspectTop, reviewComplete } from "../src/lib/inspect.ts";
 import { offerPlan, nextMove, draftOffers, logReply } from "../src/lib/offers.ts";
-import { resaleMath, planResale } from "../src/lib/sell.ts";
+import { scenario, unprovidedCosts, planResale } from "../src/lib/sell.ts";
 import { callTool } from "../src/lib/tools.ts";
 
 const fbItems = JSON.parse(fs.readFileSync(new URL("./fixtures/fb_items.json", import.meta.url), "utf8"));
@@ -50,63 +50,100 @@ test("builds a 60-mile Atlanta vehicles search", () => {
   assert.match(u, /marketplace\/atlanta\/vehicles\?radius=97&topLevelVehicleType=car_truck/);
 });
 
-test("picks the matching KBB trim and adjusts for mileage", () => {
+test("picks the matching KBB trim and never adjusts KBB's number", () => {
   const camry = kbbRows.filter((r: any) => r.model === "camry");
   assert.equal(pickTrim({ trim: "LE Sedan 4D", title: "2011 Toyota Camry" }, camry)!.trim, "LE Sedan 4D");
-  assert.equal(mileageAdjustment(10000, 2016, 120000, 2026), 0, "typical miles -> no change");
-  assert.equal(mileageAdjustment(10000, 2016, 60000, 2026), 2500, "low miles add value, capped at 25%");
-  assert.equal(mileageAdjustment(10000, 2016, 200000, 2026), -2500, "high miles cut value, capped at 25%");
-});
-
-test("rule inspection catches emissions and title problems", () => {
-  const i = ruleInspect({ description: "Runs great but will not pass emissions, salvage title", photos: Array(10).fill("x"), miles: 100000 });
-  assert.ok(i.red_flags.some((f) => /emissions/i.test(f)));
-  assert.ok(i.red_flags.some((f) => /title/i.test(f)));
-  assert.equal(i.verdict, "pass");
 });
 
 test("rules read Spanish listings and ignore negated flags", () => {
   const accord = ruleInspect({ description: "Golpe enfrente camina. Bolsas laterales coloradas. Clean title a mi nombre", photos: Array(8).fill("x"), miles: 1 });
   assert.ok(accord.red_flags.some((f) => /body damage/i.test(f)) && accord.red_flags.some((f) => /airbag/i.test(f)));
+  assert.equal(accord.verdict, "cheap_for_reason");
   const g8 = ruleInspect({ description: "No issues at all runs and drives good no check engine light nothing ac good", photos: Array(12).fill("x"), miles: 1 });
   assert.ok(!g8.red_flags.some((f) => /check-engine/i.test(f)));
   const fusion = ruleInspect({ description: "The car now needs an engine replacement due to a bad rod bearing", photos: Array(6).fill("x"), miles: 1 });
-  assert.ok(fusion.red_flags.some((f) => /engine or transmission/i.test(f)));
+  assert.equal(fusion.verdict, "cheap_for_reason");
 });
 
-test("offers start low, cap at walk-away and accept good counters", () => {
-  const p = offerPlan(9000, 10000, 500);
-  assert.ok(p.opening < p.walkAway && p.walkAway < 9000);
-  assert.equal(nextMove(p, p.opening, p.walkAway - 100).action, "accept");
-  assert.equal(nextMove(p, p.opening, 20000).action, "final");
-  assert.equal(nextMove(p, p.opening, 20000).amount, p.walkAway);
+test("a description-only review can never complete or produce a promising survivor", () => {
+  const i = ruleInspect({ description: "Runs great, clean title, one owner, new tires. Everything works.", photos: Array(10).fill("x"), miles: 90000 });
+  assert.equal(i.photo_count_reviewed, 0);
+  assert.equal(reviewComplete(i), false);
+  assert.equal(i.verdict, "needs_review");
+  assert.equal(i.repair_estimate, null, "repair costs are never invented");
+  assert.equal(ruleInspect({ description: "SOLD, thanks everyone", photos: ["x"], miles: 1 }).verdict, "sold");
 });
 
-test("resale math subtracts tax, fees and recon", () => {
-  const r = resaleMath({ buy: 5000, value: 8000, recon: 500 });
-  assert.equal(r.costs.tax, 560);
-  assert.equal(r.profit, r.expectedSale - r.totalCost);
+test("offers follow the configured policy; counters are never auto-accepted without a ceiling", () => {
+  const p = offerPlan(4500, 9000, { openingPct: 0.8, ceilingPctOfValue: null });
+  assert.equal(p.opening, 3600);
+  assert.equal(p.ceiling, null);
+  assert.equal(nextMove(p, p.opening, 4000).action, "hold");
+  const capped = offerPlan(6500, 8755, { openingPct: 0.8, maxOffer: 5800 });
+  assert.equal(capped.opening, 5200, "the article's Colorado: $5,200 opening on $6,500");
+  assert.equal(nextMove(capped, 5200, 5800).action, "within_ceiling");
+  assert.equal(nextMove(capped, 5200, 6400).action, "final");
 });
 
-test("end to end: find, value, inspect, offer, negotiate, sell", async () => {
+test("reproduces the article's Colorado arithmetic exactly", () => {
+  assert.equal(scenario("counter", { purchase: 5800, resale: 8755, repairs: 1000, taxRate: 0.0625 }).profitBeforeUnprovided, 1592.5);
+  assert.equal(scenario("opening", { purchase: 5200, resale: 8755, repairs: 1000, taxRate: 0.0625 }).profitBeforeUnprovided, 2230);
+  assert.equal(scenario("x", { purchase: 5800, resale: 8755, repairs: 1000 }).tax, 362.5);
+});
+
+test("missing costs are listed, not treated as zero", () => {
+  assert.ok(unprovidedCosts(null).includes("repairs (no estimate supplied)"));
+  assert.ok(unprovidedCosts(1000).length > 0, "other costs stay listed until supplied");
+  assert.deepEqual(unprovidedCosts(1000, 250), []);
+});
+
+test("end to end with evidence: find, value, inspect, agent review, offer, counter, sell", async () => {
   const db = openDb(":memory:");
-  const found = await findCars(db, { target: 40 }, { fetchImpl: fakeApify, token: "t" });
+  const found: any = await findCars(db, { target: 40 }, { fetchImpl: fakeApify, token: "t" });
   assert.equal(found.scraped, 6);
-  assert.ok(found.saved >= 4 && found.saved <= 5);
-  const valued = await valueCars(db, { fetchImpl: fakeApify, token: "t" });
-  assert.equal(valued.valued, 2, "fixtures only have KBB rows for the Camry and the Edge");
-  const insp = await inspectTop(db, { top: 10, keep: 4, apiKey: "" });
-  assert.equal(insp.inspected.length, 2);
-  const edge = insp.inspected.find((c) => /Edge/.test(c.title))!;
-  assert.ok(edge.red_flags.some((f) => /emissions/i.test(f)), "the Edge listing says it fails emissions");
-  const offers = draftOffers(db);
-  for (const o of offers) assert.ok(o.opening <= o.walkAway);
-  if (offers[0]) {
-    const reply = logReply(db, offers[0].id, "Lowest I'd go is 7000", 7000);
-    assert.ok(reply.next);
-    const sale = planResale(db, offers[0].id);
-    assert.equal(sale.hypothetical, true);
-  }
-  const pipe: any = await callTool(db, "pipeline", {});
-  assert.ok(pipe.length >= 4);
+  assert.ok(found.excluded.every((x: any) => x.reason), "every exclusion has a reason");
+  assert.match(found.limit, /partial/);
+  const car0: any = db.prepare("SELECT captured_at, source_actor, seller_type FROM cars LIMIT 1").get();
+  assert.ok(car0.captured_at && car0.source_actor && car0.seller_type === "private_inferred");
+
+  const valued: any = await valueCars(db, { fetchImpl: fakeApify, token: "t" });
+  assert.equal(valued.valued, 2);
+  const ranked = rankedByDiscount(db);
+  assert.ok(ranked[0].discount >= ranked[1].discount, "ranked by raw dollar gap");
+  assert.ok(JSON.parse(ranked[0].assumptions).some((a: string) => /Not adjusted for the listing/.test(a)));
+  const v: any = db.prepare("SELECT value, kbb_fair, value_type, captured_at FROM valuations LIMIT 1").get();
+  assert.equal(v.value, v.kbb_fair, "value is KBB's number, unadjusted");
+  assert.ok(v.value_type && v.captured_at);
+
+  const insp = await inspectTop(db, { top: 10, apiKey: "" });
+  assert.equal(insp.shortlisted.length, 0, "no survivors without a photo review");
+  const camry = ranked.find((r) => /Camry/.test(r.title))!;
+  const photos = (db.prepare("SELECT photos FROM cars WHERE id = ?").get(camry.id) as any).photos;
+  const n = JSON.parse(photos).length;
+  const partial: any = await callTool(db, "record_inspection", { id: camry.id, verdict: "promising", photo_count_reviewed: n - 1,
+    description_reviewed: true, evidence: [{ source: "photo 1", note: "clean body" }] });
+  assert.equal(partial.verdict, "needs_review", "a partial photo review is downgraded");
+  const full: any = await callTool(db, "record_inspection", { id: camry.id, verdict: "promising", photo_count_reviewed: n,
+    description_reviewed: true, evidence: [{ source: "photo 1", note: "clean body" }, { source: "description", note: "clean title stated" }] });
+  assert.deepEqual(full.shortlisted, [camry.id]);
+
+  const offers: any = await callTool(db, "draft_offers", {});
+  assert.equal(offers.length, 1);
+  assert.doesNotMatch(offers[0].message, /comparing|cash|today|pay on the spot/i, "no invented claims or commitments");
+  const reply = logReply(db, camry.id, "Lowest is 7000", 7000);
+  assert.equal(reply.purchase, false);
+  assert.equal(reply.next!.action, "hold");
+
+  const sale = planResale(db, camry.id);
+  assert.equal(sale.hypothetical, true);
+  assert.ok(sale.scenarios.some((s) => /Seller counter \$7,000/.test(s.label)));
+  assert.ok(sale.unprovidedCosts.includes("repairs (no estimate supplied)"));
+  const runs: any = await callTool(db, "run_log", {});
+  assert.deepEqual(runs.map((r: any) => r.step).reverse(), ["find", "value", "inspect", "inspect", "inspect", "buy", "sell"]);
+  assert.deepEqual(runs.filter((r: any) => r.source === "agent").map((r: any) => r.report.complete), [true, false]);
+
+  const snap: any = await callTool(db, "export_snapshot", {});
+  const db2 = openDb(":memory:");
+  const counts: any = await callTool(db2, "import_snapshot", { snapshot: snap });
+  assert.equal(counts.cars, snap.cars.length);
 });

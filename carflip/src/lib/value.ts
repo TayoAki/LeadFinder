@@ -1,4 +1,5 @@
-import type { DB } from "./db.ts";
+import { logRun, now, type DB } from "./db.ts";
+import { config } from "./config.ts";
 import { runActor, type Fetch } from "./apify.ts";
 import { loadCars } from "./cars.ts";
 import type { Car } from "./find.ts";
@@ -8,7 +9,8 @@ export const KBB_MIN_YEAR = 1990;
 
 export interface KbbRow {
   make: string; model: string; year: number; trim?: string;
-  fair_purchase_price?: number; offer_price?: number; offer_max_price?: number; source_url?: string;
+  fair_purchase_price?: number; fair_market_price_low?: number; fair_market_price_high?: number;
+  offer_price?: number; offer_max_price?: number; source_url?: string; scraped_at?: string;
 }
 
 /** KBB url slug: "Grand Cherokee" -> "grand-cherokee", "F-150" -> "f-150". */
@@ -27,17 +29,19 @@ export function pickTrim(car: Pick<Car, "trim" | "title">, rows: KbbRow[]): KbbR
   return top[Math.floor((top.length - 1) / 2)];
 }
 
-/** KBB's fair price assumes typical miles (~12k/yr). Adjust $0.05 per mile of difference, capped at ±25% of base. */
-export function mileageAdjustment(base: number, year: number, miles: number | null, now = new Date().getFullYear()): number {
-  if (miles === null) return 0;
-  const expected = 12000 * Math.max(1, now - year);
-  const raw = (expected - miles) * 0.05;
-  const cap = base * 0.25;
-  return Math.round(Math.max(-cap, Math.min(cap, raw)) / 50) * 50;
+/** What a valuation assumed. A listing's mileage and condition are recorded, never used to alter KBB's number. */
+export function valuationAssumptions(car: Pick<Car, "trim" | "miles" | "title">, row: KbbRow): string[] {
+  const out = [`Value type: KBB Fair Purchase Price for ${row.year} ${row.make} ${row.model}${row.trim ? ` ${row.trim}` : ""}`];
+  out.push(car.trim && row.trim && words(row.trim).size && [...words(row.trim)].every((w) => words(`${car.trim} ${car.title}`).has(w))
+    ? "Trim matched the listing" : `Trim not confirmed: listing says "${car.trim ?? "no trim"}", KBB row used is "${row.trim ?? "unspecified"}"`);
+  out.push(car.miles === null ? "Mileage unknown" : `Not adjusted for the listing's ${car.miles.toLocaleString()} miles`);
+  out.push("Condition and ZIP not supplied to KBB");
+  return out;
 }
 
-/** Step 2: value every saved car that has year/make/model, then rank by discount to value. */
+/** Step 2: value every saved car that has year/make/model, then rank by raw dollar gap (KBB value - asking). */
 export async function valueCars(db: DB, deps: { fetchImpl?: Fetch; token?: string } = {}) {
+  const startedAt = now();
   const all = loadCars(db).filter((c) => c.year && c.make && c.model);
   // KBB only covers 1990 onward; classics need a collector guide (e.g. Hagerty) instead.
   const classics = all.filter((c) => c.year! < KBB_MIN_YEAR).map((c) => c.title);
@@ -54,29 +58,36 @@ export async function valueCars(db: DB, deps: { fetchImpl?: Fetch; token?: strin
     const k = `${slug(r.make)}/${slug(r.model)}/${r.year}`;
     byKey.set(k, [...(byKey.get(k) ?? []), r]);
   }
-  const save = db.prepare(`INSERT OR REPLACE INTO valuations (car_id,kbb_trim,kbb_fair,kbb_offer,kbb_offer_max,mileage_adj,value,discount,discount_pct,source_url)
-    VALUES (?,?,?,?,?,?,?,?,?,?)`);
+  const save = db.prepare(`INSERT OR REPLACE INTO valuations (car_id,kbb_trim,kbb_fair,kbb_offer,kbb_offer_max,mileage_adj,value,discount,discount_pct,
+      source_url,value_type,range_low,range_high,assumptions,conditional,captured_at)
+    VALUES (?,?,?,?,?,0,?,?,?,?,?,?,?,?,?,?)`);
   let valued = 0;
-  const missing: string[] = [];
+  const missing: Array<{ title: string; reason: string }> = classics.map((title) => ({ title, reason: `KBB covers ${KBB_MIN_YEAR}+ only` }));
   db.transaction(() => {
     for (const c of cars) {
       const row = pickTrim(c, byKey.get(`${slug(c.make!)}/${slug(c.model!)}/${c.year}`) ?? []);
-      if (!row) { missing.push(c.title); continue; }
-      const base = row.fair_purchase_price!;
-      const adj = mileageAdjustment(base, c.year!, c.miles);
-      const value = base + adj;
-      const discount = value - c.price;
-      save.run(c.id, row.trim ?? null, base, row.offer_price ?? null, row.offer_max_price ?? null, adj, value, discount,
-        Math.round((discount / value) * 1000) / 10, row.source_url ?? null);
+      if (!row) { missing.push({ title: c.title, reason: "No KBB row for this year/make/model" }); continue; }
+      const value = row.fair_purchase_price!;
+      const gap = value - c.price;
+      const assumptions = valuationAssumptions(c, row);
+      save.run(c.id, row.trim ?? null, value, row.offer_price ?? null, row.offer_max_price ?? null, value, gap,
+        Math.round((gap / value) * 1000) / 10, row.source_url ?? null, config.valueType,
+        row.fair_market_price_low ?? null, row.fair_market_price_high ?? null, JSON.stringify(assumptions),
+        assumptions.some((a) => /not confirmed|unknown|not supplied|not adjusted/i.test(a)) ? 1 : 0, row.scraped_at ?? now());
       valued++;
     }
   })();
-  return { valued, missing, classics, ranked: rankedByDiscount(db) };
+  const report = { valued, missing, valueType: config.valueType, rankedBy: "dollar gap (KBB value - asking)",
+    note: "A local rank doesn't prove the KBB figures are right; each valuation keeps its source URL, capture time and assumptions." };
+  logRun(db, "value", startedAt, { source: KBB_ACTOR, report });
+  return { ...report, classics, ranked: rankedByDiscount(db) };
 }
 
+/** Ranked by raw dollar gap (KBB value - asking), highest first, as in the article. */
 export function rankedByDiscount(db: DB) {
-  return db.prepare(`SELECT c.id, c.title, c.price, c.miles, c.city, c.url, v.kbb_fair, v.mileage_adj, v.value, v.discount, v.discount_pct
-    FROM cars c JOIN valuations v ON v.car_id = c.id ORDER BY v.discount_pct DESC`).all() as Array<{
-      id: string; title: string; price: number; miles: number | null; city: string | null; url: string;
-      kbb_fair: number; mileage_adj: number; value: number; discount: number; discount_pct: number }>;
+  return db.prepare(`SELECT c.id, c.title, c.price, c.miles, c.city, c.url, v.value, v.value_type, v.discount, v.discount_pct,
+      v.source_url, v.captured_at, v.assumptions, v.conditional
+    FROM cars c JOIN valuations v ON v.car_id = c.id ORDER BY v.discount DESC`).all() as Array<{
+      id: string; title: string; price: number; miles: number | null; city: string | null; url: string; value: number; value_type: string;
+      discount: number; discount_pct: number; source_url: string | null; captured_at: string | null; assumptions: string; conditional: number }>;
 }

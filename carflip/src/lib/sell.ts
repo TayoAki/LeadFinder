@@ -1,73 +1,90 @@
-import { json, type DB } from "./db.ts";
+import { json, logRun, now, type DB } from "./db.ts";
 import { getCar } from "./cars.ts";
+import { config } from "./config.ts";
 import { offerPlan } from "./offers.ts";
 
-// Georgia: 7% title ad valorem tax on fair market value, $18 title, $20 registration. Override per state.
-export const GA_FEES = { tavtRate: 0.07, title: 18, registration: 20 };
+const cents = (n: number) => Math.round(n * 100) / 100;
 
-export interface ResaleCosts { buy: number; tax: number; titleAndTag: number; recon: number; detail: number; listingFees: number }
-
-/** Hypothetical flip: list at value, assume ~5% negotiation off list, subtract every cost. */
-export function resaleMath(o: { buy: number; value: number; recon: number; fees?: typeof GA_FEES }) {
-  const f = o.fees ?? GA_FEES;
-  const costs: ResaleCosts = {
-    buy: o.buy, tax: Math.round(o.value * f.tavtRate), titleAndTag: f.title + f.registration,
-    recon: o.recon, detail: 200, listingFees: 0,
-  };
-  const listPrice = Math.round(o.value / 100) * 100;
-  const expectedSale = Math.round(listPrice * 0.95);
-  const total = Object.values(costs).reduce((a, b) => a + b, 0);
-  return { listPrice, expectedSale, costs, totalCost: total, profit: expectedSale - total };
+export interface Scenario {
+  label: string;
+  purchase: number;
+  resale: number;
+  repairs: number | null;     // null = not supplied (listed in unprovided costs, not treated as zero)
+  tax: number;
+  otherCosts: number;
+  profitBeforeUnprovided: number;
 }
 
-/** Photo improvements: re-shoot plan plus the order to use the seller's existing photos. */
+/**
+ * The article's model: resale - purchase - repairs - tax - other supplied costs.
+ * Tax is the article's simplified 6.25% of purchase price, an example assumption rather than a tax determination.
+ */
+export function scenario(label: string, o: { purchase: number; resale: number; repairs: number | null; otherCosts?: number; taxRate?: number }): Scenario {
+  const tax = cents(o.purchase * (o.taxRate ?? config.taxRate));
+  const other = o.otherCosts ?? 0;
+  return { label, purchase: o.purchase, resale: o.resale, repairs: o.repairs, tax, otherCosts: other,
+    profitBeforeUnprovided: cents(o.resale - o.purchase - (o.repairs ?? 0) - tax - other) };
+}
+
+export function unprovidedCosts(repairs: number | null, otherCosts?: number) {
+  return [...(repairs === null ? ["repairs (no estimate supplied)"] : []), ...(otherCosts === undefined ? config.unprovidedCostNames : [])];
+}
+
+/** Photo improvements: a re-shoot plan. Edits may improve presentation but never remove damage or imply repairs. */
 export function photoPlan(photoCount: number) {
   return {
-    shots: ["Front 3/4 (driver side), low angle, golden hour", "Rear 3/4 (passenger side)", "Full side profile", "Dashboard, engine running, no warning lights",
-      "Odometer close-up", "Front seats from the rear door", "Rear seats", "Trunk / cargo area", "Engine bay (wiped down)", "Each wheel and tire tread", "Any flaws, shown honestly"],
-    prep: ["Full wash, tire shine, clean glass", "Vacuum and wipe interior; remove personal items", "Shoot in open shade or at golden hour; avoid noon sun",
-      "Plain background (empty lot, park); landscape orientation", "Edit lightly: straighten and correct exposure only. Don't hide damage"],
-    note: `Seller's listing has ${photoCount} photos. Re-shoot is recommended before relisting.`,
+    shots: ["Front 3/4 (driver side), low angle", "Rear 3/4 (passenger side)", "Full side profile", "Dashboard with engine running",
+      "Odometer close-up", "Front seats", "Rear seats", "Trunk / cargo area", "Engine bay", "Each wheel and tire tread", "Every flaw, shown honestly"],
+    prep: ["Wash, clean glass, vacuum the interior", "Shoot in open shade; avoid noon sun", "Plain background; landscape orientation",
+      "Edit for exposure and crop only; compare each edit to the original and reject any that hides damage"],
+    note: `Original listing has ${photoCount} photos; originals are kept unchanged.`,
   };
 }
 
 // Inspection notes about the listing (not the car) never go in the ad.
-const NOT_A_SELLING_POINT = /vin (shown|label)|description|photos?|odometer shown|seller says|stated/i;
+const NOT_A_FACT = /vin (shown|label)|description|photos?|odometer shown|staged|scam/i;
 const clean = (s: string) => s.replace(/\s*\((photos|seller|odometer photo)\)/gi, "").trim();
 
-/** Repairs to finish before relisting: condition flags only (not mileage, title or listing-quality notes). */
-export function repairList(flags: string[]) {
-  return flags.filter((f) => !/miles|title|photos?|description|price|confirm|scam|vin|staged/i.test(f)).map(clean);
+/** Ad draft from supported facts and disclosures only; anything still to confirm is marked [confirm]. Not published. */
+export function listingCopy(o: { title: string; miles: number | null; disclosures: string[]; price: number }) {
+  const facts = [`${o.title.split("·")[0].trim()}${o.miles ? `, ${o.miles.toLocaleString()} miles [confirm odometer]` : ", mileage [confirm]"}. $${o.price.toLocaleString()}.`];
+  const disclose = o.disclosures.filter((d) => !NOT_A_FACT.test(d)).map((d) => `• Known issue: ${clean(d)} [state whether repaired]`);
+  return [...facts, ...disclose, "• Title status [confirm before listing]", "Happy to meet at a public place or your mechanic."].join("\n");
 }
 
-/** Ad copy that only claims what is true once the repair list is done. */
-export function listingCopy(o: { title: string; miles: number | null; positives: string[]; repairs: string[]; price: number }) {
-  const lines = [
-    `${o.title.split("·")[0].trim()}${o.miles ? `, ${o.miles.toLocaleString()} miles` : ""}. $${o.price.toLocaleString()}.`,
-    ...o.positives.filter((p) => !NOT_A_SELLING_POINT.test(p)).map((p) => `• ${clean(p)}`),
-    ...(o.repairs.length ? [`• Recently serviced: ${o.repairs.length} ${o.repairs.length === 1 ? "repair" : "repairs"} done (receipts available)`] : []),
-    "• Title in hand",
-    "Serious buyers only. Happy to meet at a public place or your mechanic.",
-  ];
-  return lines.join("\n");
-}
-
-/** Step 5: plan the resale for one car at an assumed buy price (defaults to our walk-away). Hypothetical. */
-export function planResale(db: DB, carId: string, buyPrice?: number) {
+/** Step 5: hypothetical resale for one car, at the opening offer, the latest counter and any supplied price. */
+export function planResale(db: DB, carId: string, buyPrice?: number, o: { repairs?: number; otherCosts?: number } = {}) {
+  const startedAt = now();
   const car = getCar(db, carId);
   if (!car) throw new Error(`Unknown car ${carId}`);
-  const v = db.prepare("SELECT value FROM valuations WHERE car_id = ?").get(carId) as { value: number } | undefined;
-  const i = db.prepare("SELECT recon_estimate, red_flags, positives FROM inspections WHERE car_id = ?").get(carId) as
-    { recon_estimate: number; red_flags: string; positives: string } | undefined;
+  const v = db.prepare("SELECT value, value_type, source_url, captured_at FROM valuations WHERE car_id = ?").get(carId) as
+    { value: number; value_type: string | null; source_url: string | null; captured_at: string | null } | undefined;
   if (!v) throw new Error("Value the car before planning a resale");
-  const recon = i?.recon_estimate ?? 500;
-  const lastAgreed = db.prepare("SELECT amount FROM offers WHERE car_id = ? AND direction = 'out' AND amount IS NOT NULL ORDER BY id DESC LIMIT 1").get(carId) as { amount: number } | undefined;
-  const buy = buyPrice ?? lastAgreed?.amount ?? offerPlan(car.price, v.value, recon).walkAway;
-  const math = resaleMath({ buy, value: v.value, recon });
-  const repairs = repairList(json<string[]>(i?.red_flags, []));
-  const listing = listingCopy({ title: car.title, miles: car.miles, positives: json<string[]>(i?.positives, []), repairs, price: math.listPrice });
-  const photos = { ...photoPlan(car.photos.length), repairsBeforeListing: repairs };
-  db.prepare(`INSERT OR REPLACE INTO resale (car_id,buy_price,list_price,costs,profit,listing,photo_plan) VALUES (?,?,?,?,?,?,?)`)
-    .run(carId, buy, math.listPrice, JSON.stringify(math.costs), math.profit, listing, JSON.stringify(photos));
-  return { id: carId, title: car.title, hypothetical: true, ...math, listing, photos };
+  const i = db.prepare("SELECT red_flags, repair_estimate FROM inspections WHERE car_id = ?").get(carId) as
+    { red_flags: string; repair_estimate: number | null } | undefined;
+  const repairs = o.repairs ?? i?.repair_estimate ?? null;
+  const opening = (db.prepare("SELECT amount FROM offers WHERE car_id = ? AND direction = 'out' AND amount IS NOT NULL ORDER BY id LIMIT 1").get(carId) as
+    { amount: number } | undefined)?.amount ?? offerPlan(car.price, v.value).opening;
+  const counter = (db.prepare("SELECT amount FROM offers WHERE car_id = ? AND direction = 'in' AND amount IS NOT NULL ORDER BY id DESC LIMIT 1").get(carId) as
+    { amount: number } | undefined)?.amount;
+  const scenarios = [
+    scenario(`Opening offer $${opening.toLocaleString()}`, { purchase: opening, resale: v.value, repairs, otherCosts: o.otherCosts }),
+    ...(counter ? [scenario(`Seller counter $${counter.toLocaleString()}`, { purchase: counter, resale: v.value, repairs, otherCosts: o.otherCosts })] : []),
+    ...(buyPrice ? [scenario(`Supplied price $${buyPrice.toLocaleString()}`, { purchase: buyPrice, resale: v.value, repairs, otherCosts: o.otherCosts })] : []),
+    scenario(`Asking price $${car.price.toLocaleString()}`, { purchase: car.price, resale: v.value, repairs, otherCosts: o.otherCosts }),
+  ];
+  const unprovided = unprovidedCosts(repairs, o.otherCosts);
+  const assumptions = [
+    `Resale = KBB value $${v.value.toLocaleString()} (${v.value_type ?? "value type not recorded"}${v.captured_at ? `, captured ${v.captured_at}` : ""})`,
+    `Tax = ${(config.taxRate * 100).toFixed(2)}% of purchase price (the article's simplified assumption, not a tax determination)`,
+    "Hypothetical: no purchase or sale has occurred",
+  ];
+  const listing = listingCopy({ title: car.title, miles: car.miles, disclosures: json<string[]>(i?.red_flags, []), price: Math.round(v.value / 100) * 100 });
+  const photos = photoPlan(car.photos.length);
+  const primary = scenarios[counter ? 1 : 0];
+  db.prepare(`INSERT OR REPLACE INTO resale (car_id,buy_price,list_price,costs,profit,listing,photo_plan,scenarios,unprovided_costs,assumptions)
+    VALUES (?,?,?,?,?,?,?,?,?,?)`).run(carId, primary.purchase, v.value, JSON.stringify({ repairs, tax: primary.tax, other: primary.otherCosts }),
+      Math.round(primary.profitBeforeUnprovided), listing, JSON.stringify(photos), JSON.stringify(scenarios), JSON.stringify(unprovided), JSON.stringify(assumptions));
+  logRun(db, "sell", startedAt, { params: { carId, buyPrice, ...o }, report: { scenarios: scenarios.length, unprovided } });
+  return { id: carId, title: car.title, hypothetical: true, resale: v.value, scenarios, unprovidedCosts: unprovided, assumptions, listing, photos };
 }
