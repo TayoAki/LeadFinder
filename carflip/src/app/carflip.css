@@ -133,3 +133,20 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 .cf-chatrail { display: none; }
 @media (max-width: 1280px) { .cf-chatrail { display: flex; } }
 .cf-nowrap { white-space: nowrap; }
+
+/* Pinned columns: checkbox, car and stage stay put while the numbers scroll sideways; the header stays put going down */
+.cf-table { --pin-check: 38px; --pin-car: 190px; max-height: calc(100dvh - 260px); overflow: auto; padding: 0; }
+.cf-table table { border-collapse: separate; border-spacing: 0; }
+.cf-table th { top: 0; z-index: 2; }
+.cf-table .cf-pin { position: sticky; background: var(--surface); z-index: 1; }
+.cf-table th.cf-pin { z-index: 3; }
+.cf-table .cf-pin-check { left: 0; width: var(--pin-check); min-width: var(--pin-check); max-width: var(--pin-check); }
+.cf-table .cf-pin-car { left: 0; width: var(--pin-car); min-width: var(--pin-car); max-width: var(--pin-car); }
+.cf-table.has-check .cf-pin-car { left: var(--pin-check); }
+.cf-table .cf-pin-stage { left: var(--pin-car); box-shadow: 6px 0 6px -6px rgba(0, 0, 0, .25); }
+.cf-table.has-check .cf-pin-stage { left: calc(var(--pin-check) + var(--pin-car)); }
+.cf-table .cf-carcell { min-width: 0; }
+.cf-row:hover td.cf-pin { background: var(--bg); }
+.cf-row.sel td, .cf-row.sel td.cf-pin { background: color-mix(in srgb, var(--accent) 8%, var(--surface)); }
+.cf-table > .cf-note { padding: .5rem .75rem; margin: 0; }
+@media (max-width: 640px) { .cf-table { --pin-car: 130px; max-height: none; } }

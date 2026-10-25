@@ -266,23 +266,23 @@ function CarTable({ rows, picked, setPicked, onOpen, onMove, busy }: { rows: Row
   const all = rows.length > 0 && rows.every((r) => picked.includes(r.id));
   const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
-    <div className="card cf-scroll cf-table">
+    <div className={`card cf-scroll cf-table ${setPicked ? "has-check" : ""}`}>
       <table>
         <thead><tr>
-          {setPicked && <th><input type="checkbox" aria-label="Select all" checked={all} onChange={() => setPicked(all ? [] : rows.map((r) => r.id))} /></th>}
-          <th>Car</th><th>Stage</th><th className="num">Ask</th><th className="num">Value</th><th className="num">Gap</th>
+          {setPicked && <th className="cf-pin cf-pin-check"><input type="checkbox" aria-label="Select all" checked={all} onChange={() => setPicked(all ? [] : rows.map((r) => r.id))} /></th>}
+          <th className="cf-pin cf-pin-car">Car</th><th className="cf-pin cf-pin-stage">Stage</th><th className="num">Ask</th><th className="num">Value</th><th className="num">Gap</th>
           <th className="num">Offer</th><th className="num">Est. repairs</th><th>Review</th><th className="num">Profit*</th>
         </tr></thead>
         <tbody>
           {rows.map((r) => (
             <tr key={r.id} className={`cf-row ${picked.includes(r.id) ? "sel" : ""}`} onClick={() => onOpen(r.id)}>
-              {setPicked && <td onClick={stop}><input type="checkbox" aria-label={`Select ${short(r.title)}`} checked={picked.includes(r.id)}
+              {setPicked && <td className="cf-pin cf-pin-check" onClick={stop}><input type="checkbox" aria-label={`Select ${short(r.title)}`} checked={picked.includes(r.id)}
                 onChange={() => setPicked(picked.includes(r.id) ? picked.filter((x) => x !== r.id) : [...picked, r.id])} /></td>}
-              <td>
+              <td className="cf-pin cf-pin-car">
                 <div className="cf-carcell"><strong>{short(r.title)}{r.shortlisted ? " ★" : ""}</strong>
                   <span className="cf-note">{r.city?.replace(/, GA$/, "")}{r.miles ? ` · ${Math.round(r.miles / 1000)}k mi` : ""}</span></div>
               </td>
-              <td onClick={stop}>
+              <td className="cf-pin cf-pin-stage" onClick={stop}>
                 {onMove ? <select className="cf-stagesel" value={r.stage} disabled={busy} aria-label="Move to stage" onChange={(e) => onMove(r.id, e.target.value as Step)}>
                   {STEPS.map((s) => <option key={s.key} value={s.key}>{s.t}</option>)}
                 </select> : label(r.stage)}
