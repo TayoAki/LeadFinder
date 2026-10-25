@@ -94,6 +94,17 @@ CREATE TABLE IF NOT EXISTS runs (
   report TEXT NOT NULL DEFAULT '{}',
   started_at TEXT NOT NULL,
   finished_at TEXT NOT NULL DEFAULT (datetime('now'))
+);
+CREATE TABLE IF NOT EXISTS repair_estimates (
+  car_id TEXT PRIMARY KEY REFERENCES cars(id) ON DELETE CASCADE,
+  low INTEGER NOT NULL,
+  high INTEGER NOT NULL,
+  items TEXT NOT NULL DEFAULT '[]',        -- [{item, low, high, basis}]; every item cites the evidence behind it
+  not_assessed TEXT NOT NULL DEFAULT '[]', -- things the evidence can't show, listed rather than priced
+  method TEXT NOT NULL,                    -- ai | agent | manual
+  model TEXT,
+  assumptions TEXT NOT NULL DEFAULT '[]',
+  estimated_at TEXT NOT NULL DEFAULT (datetime('now'))
 );`;
 
 function migrate(db: DB) {

@@ -56,7 +56,9 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 .tabs { overflow-x: auto; scrollbar-width: none; }
 
 /* Swapped layout: the selected car fills the center, the step workflow sits in a wider right panel */
-@media (min-width: 1281px) { .app { grid-template-columns: 76px 240px minmax(0, 1fr) 400px; } }
+@media (min-width: 1281px) { .app { grid-template-columns: 76px 220px minmax(0, 1fr) 340px; } }
+.cf-listview { padding: 1.1rem; }
+.cf-table .cf-stagesel { padding: .15rem; }
 .cf-center { max-width: 1200px; }
 .cf-center .cf-panelbody { display: block; columns: 2 320px; column-gap: 1.5rem; }
 .cf-center .cf-panelbody > * { break-inside: avoid; margin-bottom: 1.1rem; }
@@ -93,3 +95,41 @@ body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
 .cf-review textarea, .cf-review select { width: 100%; font: inherit; }
 .cf-check { display: flex; gap: .45rem; align-items: center; font-size: .88rem; }
 .cf-center .cf-next { column-span: all; }
+
+/* List view: stage filters, bulk moves, the car table; chat on the right */
+.cf-listview { max-width: none; }
+.cf-filters { display: flex; gap: .45rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.cf-filter { font: inherit; display: grid; justify-items: center; gap: .15rem; min-width: 84px; padding: .5rem .8rem; border-radius: 10px;
+  border: 1px solid var(--line); background: var(--surface); color: var(--muted); cursor: pointer; }
+.cf-filter.active { color: var(--ink); border-color: var(--ink); font-weight: 600; }
+.cf-filtercount { font-size: .78rem; color: var(--ok); }
+.cf-filter.active .cf-filtercount { color: inherit; }
+.cf-stagehead { display: flex; gap: 1rem; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: .9rem; }
+.cf-stagehead > div { flex: 1 1 320px; min-width: 0; }
+.cf-bulk { display: flex; gap: .45rem; align-items: center; flex-wrap: wrap; padding: .6rem .8rem; margin-bottom: .8rem; border-color: var(--accent); }
+.cf-table table { width: 100%; }
+.cf-table th { position: sticky; top: 0; background: var(--surface); white-space: nowrap; }
+.cf-carcell { display: grid; min-width: 150px; }
+.cf-carcell strong { font-weight: 500; }
+.cf-table { font-size: .88rem; }
+.cf-table th, .cf-table td { padding: .5rem .45rem; }
+.cf-table td.num { white-space: nowrap; }
+.cf-stagesel { font: inherit; font-size: .85rem; padding: .2rem .3rem; border-radius: 6px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.cf-back { margin-bottom: 1rem; }
+
+.cf-aside { padding: 0; }
+.cf-chat { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto; gap: .6rem; height: 100%; min-height: 0; padding: 1rem; }
+.cf-aside .cf-chat { height: calc(100dvh - 48px); }
+.cf-chatlog { overflow-y: auto; display: grid; gap: .55rem; align-content: start; min-height: 200px; }
+.cf-bubble { padding: .6rem .75rem; border-radius: 10px; font-size: .9rem; max-width: 92%; }
+.cf-you { justify-self: end; background: var(--ink); color: var(--bg); }
+.cf-ai { justify-self: start; background: var(--surface); border: 1px solid var(--line); }
+.cf-error { justify-self: start; background: color-mix(in srgb, var(--bad) 12%, var(--surface)); color: var(--bad); }
+.cf-msgtext { white-space: pre-wrap; }
+.cf-suggest { font: inherit; font-size: .85rem; text-align: left; padding: .5rem .65rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.cf-suggest:hover { background: var(--bg); }
+.cf-chatform { display: flex; gap: .45rem; align-items: end; }
+.cf-chatform textarea { flex: 1; font: inherit; resize: vertical; padding: .5rem; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+.cf-chatrail { display: none; }
+@media (max-width: 1280px) { .cf-chatrail { display: flex; } }
+.cf-nowrap { white-space: nowrap; }

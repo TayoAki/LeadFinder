@@ -18,7 +18,8 @@ const STEPS = [
   { key: "sell", t: "Sell", h: "Photos, listing and profit", p: "Hypothetical profit = resale − purchase − supplied repairs − 6.25% tax on purchase. Costs nobody supplied are listed, not counted as zero." },
 ] as const;
 type Step = (typeof STEPS)[number]["key"];
-type View = "pipeline" | "negotiations" | "report" | "settings";
+type View = "pipeline" | "chat" | "negotiations" | "report" | "settings";
+type Filter = "all" | Step;
 
 async function tool(name: string, args: Row = {}) {
   const res = await fetch(`/api/tools/${name}`, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(args) });
@@ -30,7 +31,7 @@ async function tool(name: string, args: Row = {}) {
 export default function Flip({ initial }: { initial: Row[] }) {
   const [rows, setRows] = useState<Row[]>(initial);
   const [view, setView] = useState<View>("pipeline");
-  const [step, setStep] = useState<Step>(initial.some((r) => r.shortlisted) ? "buy" : initial.length ? "value" : "find");
+  const [filter, setFilter] = useState<Filter>("all");
   const [busy, setBusy] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [note, setNote] = useState<string | null>(null);
@@ -38,32 +39,47 @@ export default function Flip({ initial }: { initial: Row[] }) {
   const [picked, setPicked] = useState<string[]>([]);
   const [search, setSearch] = useState({ city: "atlanta", radiusMiles: 60, target: 40, minPrice: 1500, maxPrice: 25000 });
 
-  const refresh = async () => setRows(await tool("pipeline"));
+  const refresh = async () => {
+    const next = await tool("pipeline");
+    setRows(next);
+    if (detail) setDetail({ ...detail, row: next.find((r: Row) => r.id === detail.car.id) });
+  };
   const run = async (label: string, fn: () => Promise<string | void>) => {
     setBusy(label); setError(null); setNote(null);
     try { const msg = await fn(); if (msg) setNote(msg); await refresh(); }
     catch (e) { setError((e as Error).message); }
     finally { setBusy(null); }
   };
-  useEffect(() => { if (!detail && rows[0]) open(rows[0].id); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const open = async (id: string) => {
-    const [car, thread] = await Promise.all([tool("get_car", { id }), tool("offer_thread", { id })]);
-    setDetail({ car, thread, row: rows.find((r) => r.id === id) });
+    const [car, thread, repairs] = await Promise.all([tool("get_car", { id }), tool("offer_thread", { id }), tool("get_repair_estimate", { id })]);
+    setDetail({ car, thread, repairs, row: rows.find((r) => r.id === id) });
+    setView("pipeline");
   };
+  const reopen = async () => { const next = await tool("pipeline"); setRows(next); if (detail) {
+    const [car, thread, repairs] = await Promise.all([tool("get_car", { id: detail.car.id }), tool("offer_thread", { id: detail.car.id }), tool("get_repair_estimate", { id: detail.car.id })]);
+    setDetail({ car, thread, repairs, row: next.find((r: Row) => r.id === detail.car.id) });
+  } };
 
   const valued = rows.filter((r) => r.value !== null);
-  const inspected = rows.filter((r) => r.score !== null);
   const shortlisted = rows.filter((r) => r.shortlisted);
-  const list: Record<Step, Row[]> = { find: rows, value: valued, inspect: inspected, buy: shortlisted, sell: shortlisted };
-  const done: Record<Step, boolean> = {
-    find: rows.length > 0, value: valued.length > 0, inspect: inspected.length > 0,
-    buy: shortlisted.some((r) => r.last_offer), sell: shortlisted.some((r) => r.profit !== null),
-  };
-  const meta = STEPS.find((s) => s.key === step)!;
-  const nextStep = STEPS[STEPS.findIndex((s) => s.key === step) + 1];
-
+  const count = (s: Step) => rows.filter((r) => r.stage === s).length;
+  const visible = filter === "all" ? rows : rows.filter((r) => r.stage === filter);
+  const meta = filter === "all" ? null : STEPS.find((s) => s.key === filter)!;
   const ids = picked.length ? { ids: picked } : {};
-  const changeStep = (s: Step) => { setStep(s); setPicked([]); };
+
+  const moveTo = (targets: string[], to: Step) => run(`Moving to ${to}`, async () => {
+    const res: Row[] = await tool("move_to_stage", { ids: targets, to });
+    const blocked = res.filter((r) => !r.ok);
+    setPicked([]);
+    return `Moved ${res.length - blocked.length} of ${res.length} to ${label(to)}.${blocked.length ? ` ${blocked.length} stayed put: ${blocked[0].note}` : ""}`;
+  });
+  const estimate = (targets: string[]) => run("Estimating repairs", async () => {
+    const res: Row[] = await tool("estimate_repairs", { ids: targets });
+    const failed = res.filter((r) => r.error);
+    return `Estimated repairs for ${res.length - failed.length} cars.${failed.length ? ` ${failed.length} skipped: ${failed[0].error}` : ""}`;
+  });
+
+  // What each stage's main button does, on the ticked cars or on every car in that stage.
   const actions: Record<Step, { label: string; run: () => Promise<string | void> }> = {
     find: { label: "Find cars", run: async () => {
       const r = await tool("find_cars", search);
@@ -73,14 +89,13 @@ export default function Flip({ initial }: { initial: Row[] }) {
       const r = await tool("value_cars", ids);
       return `Valued ${r.valued}. ${r.classics.length} classics (pre-1990) need a collector guide; ${r.missing.length} had no KBB match.`;
     } },
-    inspect: { label: "Inspect top 10", run: async () => {
+    inspect: { label: "Check top 10", run: async () => {
       const r = await tool("inspect_top", { top: 10, ...ids });
-      return `Reviewed ${r.reviewed}; ${r.incomplete.length} still need a full photo review; ${r.survivors} survivors. ${r.note}`;
+      return `Checked ${r.reviewed}; ${r.incomplete.length} still need a full photo review; ${r.survivors} on the shortlist. ${r.note}`;
     } },
     buy: { label: "Draft offers", run: async () => {
       const drafted = await tool("draft_offers", ids);
-      const skipped = picked.filter((id) => !shortlisted.some((r) => r.id === id)).length;
-      return `Drafted ${drafted.length} opening offers${skipped ? `; ${skipped} selected cars aren't shortlisted, so no offer` : ""}. Send them yourself, then log replies.`;
+      return `Drafted ${drafted.length} opening offers. Send them yourself, then log replies.`;
     } },
     sell: { label: "Plan resale", run: async () => {
       const targets = picked.length ? picked : shortlisted.map((r) => r.id);
@@ -89,30 +104,42 @@ export default function Flip({ initial }: { initial: Row[] }) {
     } },
   };
 
-  const negotiations = rows.filter((r) => r.last_offer !== null);
-  const panel = detail
-    ? <CarPanel d={detail} step={step} onChange={async () => { await refresh(); await open(detail.car.id); }} />
-    : <Summary rows={rows} shortlisted={shortlisted} />;
+  const context = [
+    detail ? `viewing ${detail.car.title} (id ${detail.car.id})` : "viewing the car list",
+    `filter: ${filter}`,
+    picked.length ? `ticked: ${picked.map((id) => `${short(rows.find((r) => r.id === id)?.title ?? id)} (${id})`).join(", ")}` : "",
+  ].filter(Boolean).join("; ");
+  const chat = <Chat context={context} onTools={reopen} />;
 
-  // The step workflow: tabs, what the step does, its action and the cars at this step.
-  const workflow = (
-    <div className="cf-flow">
-      <p className="cf-note" style={{ margin: 0 }}>Tick cars to run a step on just those, or run it on all. Open a car to move it forward on its own.</p>
-      <nav className="cf-steps" aria-label="Steps">
-        {STEPS.map((s, i) => (
-          <button key={s.key} className={`cf-stepbtn ${step === s.key ? "active" : ""}`} onClick={() => changeStep(s.key)}>
-            <span className="cf-stepnum">{done[s.key] ? "✓" : i + 1}</span>{s.t}
+  const center = detail ? (
+    <div className="content-body cf-center">
+      <button className="btn cf-back" onClick={() => setDetail(null)}>← Back to list</button>
+      <CarPanel d={detail} step={detail.row?.stage ?? "find"} onChange={reopen} onEstimate={() => estimate([detail.car.id])} />
+    </div>
+  ) : (
+    <div className="content-body cf-center cf-listview">
+      {/* Stage filter: what's in each stage */}
+      <nav className="cf-filters" aria-label="Filter by stage">
+        <button className={`cf-filter ${filter === "all" ? "active" : ""}`} onClick={() => { setFilter("all"); setPicked([]); }}>
+          <span className="cf-filtercount">{rows.length}</span>All
+        </button>
+        {STEPS.map((s) => (
+          <button key={s.key} className={`cf-filter ${filter === s.key ? "active" : ""}`} onClick={() => { setFilter(s.key); setPicked([]); }}>
+            <span className="cf-filtercount">{count(s.key) ? `✓ ${count(s.key)}` : "0"}</span>{s.t}
           </button>
         ))}
       </nav>
-      <div>
-        <h2 className="cf-h1" style={{ margin: "0 0 .3rem" }}>{meta.h}</h2>
-        <p className="cf-note" style={{ margin: 0 }}>{meta.p}</p>
+
+      <div className="cf-stagehead">
+        <div>
+          <h1 className="cf-h1" style={{ margin: 0 }}>{meta ? meta.h : "All cars"}</h1>
+          <p className="cf-note" style={{ margin: ".2rem 0 0" }}>{meta ? meta.p : "Ranked by dollar gap (KBB value − asking). Tick cars to move them, or use each car's Stage menu. Click a car for details."}</p>
+        </div>
+        {meta && <button className="btn primary" onClick={() => run(meta.t, actions[meta.key].run)}>
+          {picked.length && meta.key !== "find" ? `${actions[meta.key].label}: ${picked.length} selected` : actions[meta.key].label}
+        </button>}
       </div>
-      {busy && <p className="muted cf-note">{busy}… scrapes can take a few minutes.</p>}
-      {error && <p className="error">{error}</p>}
-      {note && <p className="pos cf-note">{note}</p>}
-      {step === "find" && (
+      {filter === "find" && (
         <div className="cf-bar">
           {(["city", "radiusMiles", "target", "minPrice", "maxPrice"] as const).map((k) => (
             <label key={k} className="field"><span className="cf-note">{k}</span>
@@ -121,20 +148,21 @@ export default function Flip({ initial }: { initial: Row[] }) {
           ))}
         </div>
       )}
-      <div className="card cf-action">
-        <div>
-          <strong>{done[step] ? `${meta.t} is done${nextStep ? `. Next: ${nextStep.t}` : ""}` : `Run step ${STEPS.indexOf(meta) + 1}: ${meta.t}`}</strong>
-          <div className="muted cf-note">{list[step].length} cars at this step{step === "buy" ? " · drafts only, nothing is sent automatically" : ""}</div>
+      {busy && <p className="muted cf-note">{busy}… KBB lookups and scrapes can take a few minutes.</p>}
+      {error && <p className="error">{error}</p>}
+      {note && <p className="pos cf-note">{note}</p>}
+
+      {picked.length > 0 && (
+        <div className="card cf-bulk">
+          <strong>{picked.length} selected</strong>
+          <span className="cf-note">Move to</span>
+          {STEPS.map((s) => <button key={s.key} className="btn" disabled={!!busy} onClick={() => moveTo(picked, s.key)}>{s.t}</button>)}
+          <button className="btn" disabled={!!busy} onClick={() => estimate(picked)}>Estimate repairs (AI)</button>
+          <button className="btn" onClick={() => setPicked([])}>Clear</button>
         </div>
-        <div className="cf-actionbtns">
-          <button className={`btn ${done[step] && !picked.length ? "" : "primary"}`} onClick={() => run(meta.t, actions[step].run)}>
-            {picked.length && step !== "find" ? `${meta.t} ${picked.length} selected` : done[step] ? `${meta.t} all again` : actions[step].label}
-          </button>
-          {done[step] && nextStep && <button className="btn" onClick={() => changeStep(nextStep.key)}>Go to {nextStep.t}</button>}
-        </div>
-      </div>
-      <CarList rows={list[step === "value" ? "find" : step === "inspect" ? "value" : step]} step={step} onOpen={open} selected={detail?.car.id}
-        picked={picked} setPicked={step === "find" ? undefined : setPicked} />
+      )}
+
+      <CarTable rows={visible} picked={picked} setPicked={setPicked} onOpen={open} onMove={(id, to) => moveTo([id], to)} busy={!!busy} />
     </div>
   );
 
@@ -143,10 +171,10 @@ export default function Flip({ initial }: { initial: Row[] }) {
       {/* Left rail */}
       <nav className="rail" aria-label="Sections">
         <span className="rail-logo">CF</span>
-        {([["pipeline", "home", "Pipeline"], ["negotiations", "bell", "Offers"], ["report", "doc", "Report"], ["settings", "gear", "Settings"]] as const).map(([v, icon, label]) => (
-          <button key={v} className={`rail-item cf-railbtn ${view === v ? "active" : ""}`} onClick={() => setView(v)}>
-            <Icon name={icon} /><span className="rail-label">{label}</span>
-            {v === "negotiations" && negotiations.some((r) => r.last_counter) && <span className="cf-badge" />}
+        {([["pipeline", "home", "Pipeline"], ["chat", "search", "Chat"], ["negotiations", "bell", "Offers"], ["report", "doc", "Report"], ["settings", "gear", "Settings"]] as const).map(([v, icon, text]) => (
+          <button key={v} className={`rail-item cf-railbtn ${v === "chat" ? "cf-chatrail" : ""} ${view === v ? "active" : ""}`} onClick={() => setView(v)}>
+            <Icon name={icon} /><span className="rail-label">{text}</span>
+            {v === "negotiations" && rows.some((r) => r.last_counter) && <span className="cf-badge" />}
           </button>
         ))}
         <span className="rail-avatar"><Icon name="user" size={18} /></span>
@@ -154,7 +182,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
 
       {/* Sidebar: every car */}
       <aside className="side">
-        <button className="side-cta cf-sidebtn" onClick={() => { setView("pipeline"); setStep("find"); }}>
+        <button className="side-cta cf-sidebtn" onClick={() => { setView("pipeline"); setDetail(null); setFilter("find"); }}>
           <Icon name="plus" size={18} /> New search <span style={{ marginLeft: "auto" }}>›</span>
         </button>
         <div className="side-heading">Cars ({rows.length})</div>
@@ -166,7 +194,7 @@ export default function Flip({ initial }: { initial: Row[] }) {
                 {r.photos[0] ? <img className="cf-avatar" src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-avatar" />}
                 <span className="side-text">
                   <span>{short(r.title)}</span>
-                  <span className="side-sub muted">{money(r.price)}{r.discount !== null && ` · ${gap(r.discount)}`}{r.shortlisted ? " · ★" : ""}</span>
+                  <span className="side-sub muted">{money(r.price)}{r.discount !== null && ` · ${gap(r.discount)}`} · {label(r.stage)}</span>
                 </span>
               </button>
             </li>
@@ -176,20 +204,14 @@ export default function Flip({ initial }: { initial: Row[] }) {
 
       {/* Main content */}
       <main className="content">
-        {view === "pipeline" && (
-          <div className="content-body cf-center">
-            {detail ? panel : <Summary rows={rows} shortlisted={shortlisted} />}
-            {/* Below the right panel's breakpoint, the step workflow shows here instead */}
-            <div className="cf-inline">{workflow}</div>
-          </div>
-        )}
+        {view === "pipeline" && center}
+        {view === "chat" && <div className="content-body cf-center">{chat}</div>}
 
         {view === "negotiations" && (
           <div className="content-body">
             <h1 className="cf-h1">Negotiations</h1>
             <p className="muted cf-lead">Every car with a drafted offer. Open one to copy the message, log the seller's reply and get the next counter.</p>
-            <CarTable rows={negotiations} step="buy" onOpen={open} selected={detail?.car.id} />
-            <div className="card cf-inline">{panel}</div>
+            <CarTable rows={rows.filter((r) => r.last_offer !== null)} picked={[]} onOpen={open} busy={!!busy} />
           </div>
         )}
 
@@ -202,34 +224,33 @@ export default function Flip({ initial }: { initial: Row[] }) {
               <Stat label="Profit before unprovided costs" value={money(shortlisted.reduce((a, r) => a + (r.profit ?? 0), 0))} />
               <Stat label="Largest dollar gap" value={valued.length ? gap(Math.max(...valued.map((r) => r.discount))) : "—"} />
             </div>
-            <CarTable rows={shortlisted} step="sell" onOpen={open} selected={detail?.car.id} />
+            <CarTable rows={shortlisted} picked={[]} onOpen={open} busy={!!busy} />
             <RunLog />
-            <div className="card cf-inline">{panel}</div>
           </div>
         )}
 
         {view === "settings" && (
           <div className="content-body">
             <h1 className="cf-h1">Settings</h1>
-            <p className="muted cf-lead">Search defaults for step 1. Keys are read from the server's environment (.env), never from the browser.</p>
+            <p className="muted cf-lead">Search defaults for step 1. Keys are read from the server's environment, never from the browser.</p>
             <div className="card cf-settings">
               {(["city", "radiusMiles", "target", "minPrice", "maxPrice"] as const).map((k) => (
                 <label key={k} className="field"><span>{k}</span>
                   <input value={search[k]} onChange={(e) => setSearch({ ...search, [k]: k === "city" ? e.target.value : Number(e.target.value) })} />
                 </label>
               ))}
-              <p className="cf-note">MCP: connect any MCP client to <code>bin/mcp.ts</code> for headless runs. See README.</p>
+              <p className="cf-note">Chat and AI repair estimates need <code>ANTHROPIC_API_KEY</code> on the server. MCP: connect any MCP client to <code>bin/mcp.ts</code>.</p>
             </div>
           </div>
         )}
       </main>
 
-      {/* Right side bar */}
-      <aside className="aside cf-aside">{view === "pipeline" ? workflow : panel}</aside>
+      {/* Right side bar: AI chat */}
+      <aside className="aside cf-aside">{chat}</aside>
 
       {/* Bottom bar */}
       <footer className="bottombar">
-        <span className="muted">{search.city} · {search.radiusMiles} mi · {rows.length} cars · {valued.length} valued · {shortlisted.length} shortlisted</span>
+        <span className="muted">{search.city} · {search.radiusMiles} mi · {STEPS.map((s) => `${count(s.key)} ${s.t.toLowerCase()}`).join(" · ")}</span>
         <span className="bottombar-right muted">{busy ? `${busy}…` : "Ready"} · Offers are drafts only</span>
       </footer>
     </div>
@@ -240,71 +261,93 @@ function Stat({ label, value }: { label: string; value: string }) {
   return <div className="card"><div className="muted cf-note">{label}</div><div className="aside-big">{value}</div></div>;
 }
 
-function CarTable({ rows, step, onOpen, selected }: { rows: Row[]; step: Step; onOpen: (id: string) => void; selected?: string }) {
+function CarTable({ rows, picked, setPicked, onOpen, onMove, busy }: { rows: Row[]; picked: string[]; setPicked?: (ids: string[]) => void;
+  onOpen: (id: string) => void; onMove?: (id: string, to: Step) => void; busy: boolean }) {
+  const all = rows.length > 0 && rows.every((r) => picked.includes(r.id));
+  const stop = (e: React.SyntheticEvent) => e.stopPropagation();
   return (
-    <div className="card cf-scroll">
+    <div className="card cf-scroll cf-table">
       <table>
         <thead><tr>
-          <th>Car</th><th className="num">Ask</th><th className="num">Miles</th>
-          {step !== "find" && <><th className="num">Value</th><th className="num">Gap</th></>}
-          {(step === "inspect" || step === "buy" || step === "sell") && <th>Inspection</th>}
-          {step === "buy" && <><th className="num">Offer</th><th className="num">Counter</th></>}
-          {step === "sell" && <><th className="num">Resale</th><th className="num">Profit*</th></>}
+          {setPicked && <th><input type="checkbox" aria-label="Select all" checked={all} onChange={() => setPicked(all ? [] : rows.map((r) => r.id))} /></th>}
+          <th>Car</th><th>Stage</th><th className="num">Ask</th><th className="num">Value</th><th className="num">Gap</th>
+          <th className="num">Offer</th><th className="num">Est. repairs</th><th>Review</th><th className="num">Profit*</th>
         </tr></thead>
         <tbody>
           {rows.map((r) => (
-            <tr key={r.id} className={`cf-row ${selected === r.id ? "sel" : ""}`} onClick={() => onOpen(r.id)}>
-              <td>{short(r.title)}<div className="cf-note">{r.city}</div></td>
+            <tr key={r.id} className={`cf-row ${picked.includes(r.id) ? "sel" : ""}`} onClick={() => onOpen(r.id)}>
+              {setPicked && <td onClick={stop}><input type="checkbox" aria-label={`Select ${short(r.title)}`} checked={picked.includes(r.id)}
+                onChange={() => setPicked(picked.includes(r.id) ? picked.filter((x) => x !== r.id) : [...picked, r.id])} /></td>}
+              <td>
+                <div className="cf-carcell"><strong>{short(r.title)}{r.shortlisted ? " ★" : ""}</strong>
+                  <span className="cf-note">{r.city?.replace(/, GA$/, "")}{r.miles ? ` · ${Math.round(r.miles / 1000)}k mi` : ""}</span></div>
+              </td>
+              <td onClick={stop}>
+                {onMove ? <select className="cf-stagesel" value={r.stage} disabled={busy} aria-label="Move to stage" onChange={(e) => onMove(r.id, e.target.value as Step)}>
+                  {STEPS.map((s) => <option key={s.key} value={s.key}>{s.t}</option>)}
+                </select> : label(r.stage)}
+              </td>
               <td className="num">{money(r.price)}</td>
-              <td className="num">{r.miles ? `${Math.round(r.miles / 1000)}k` : "—"}</td>
-              {step !== "find" && <>
-                <td className="num">{money(r.value)}</td>
-                <td className={`num ${r.discount > 0 ? "pos" : "neg"}`}>{gap(r.discount)}</td>
-              </>}
-              {(step === "inspect" || step === "buy" || step === "sell") &&
-                <td><span className={`v-${r.verdict}`}>{label(r.verdict)}</span>{r.shortlisted ? " ★" : ""}<div className="cf-note">{reviewed(r)}{r.review_method ? ` · ${r.review_method}` : ""}</div></td>}
-              {step === "buy" && <><td className="num">{money(r.last_offer)}</td><td className="num">{money(r.last_counter)}</td></>}
-              {step === "sell" && <><td className="num">{money(r.list_price)}</td><td className={`num ${r.profit > 0 ? "pos" : ""}`}>{money(r.profit)}</td></>}
+              <td className="num">{money(r.value)}</td>
+              <td className={`num ${r.discount > 0 ? "pos" : "neg"}`}>{gap(r.discount)}</td>
+              <td className="num">{money(r.last_offer)}{r.last_counter ? <div className="cf-note">counter {money(r.last_counter)}</div> : null}</td>
+              <td className="num">{r.repair_high !== null && r.repair_high !== undefined
+                ? <span title={`${r.repair_method} estimate, not a quote`}>{r.repair_high === 0 ? "none seen" : `${money(r.repair_low)}–${money(r.repair_high)}`}</span> : "—"}</td>
+              <td className="cf-nowrap"><span className={`v-${r.verdict}`}>{label(r.verdict)}</span>
+                {r.photo_count_available ? <div className="cf-note">{r.photo_count_reviewed ?? 0}/{r.photo_count_available} photos</div> : null}</td>
+              <td className={`num ${r.profit > 0 ? "pos" : ""}`}>{money(r.profit)}</td>
             </tr>
           ))}
-          {!rows.length && <tr><td colSpan={9} className="muted">Nothing here yet.</td></tr>}
+          {!rows.length && <tr><td colSpan={10} className="muted">No cars in this stage.</td></tr>}
         </tbody>
       </table>
-      {step === "sell" && <p className="cf-note">* Profit before unprovided costs, at the latest counter or else the opening offer. Hypothetical.</p>}
+      <p className="cf-note">Gap = KBB value − asking. Est. repairs are estimates from the evidence, not quotes. * Profit before unprovided costs, hypothetical.</p>
     </div>
   );
 }
 
-function CarList({ rows, step, onOpen, selected, picked = [], setPicked }: { rows: Row[]; step: Step; onOpen: (id: string) => void; selected?: string;
-  picked?: string[]; setPicked?: (ids: string[]) => void }) {
-  const all = rows.length > 0 && rows.every((r) => picked.includes(r.id));
+function Chat({ context, onTools }: { context: string; onTools: () => Promise<void> }) {
+  const [history, setHistory] = useState<unknown[]>([]);
+  const [log, setLog] = useState<Array<{ who: "you" | "ai" | "error"; text: string; used?: Row[] }>>([]);
+  const [text, setText] = useState("");
+  const [busy, setBusy] = useState(false);
+  const send = async (msg: string) => {
+    if (!msg.trim() || busy) return;
+    setLog((l) => [...l, { who: "you", text: msg }]); setText(""); setBusy(true);
+    try {
+      const res = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ history, text: msg, context }) });
+      const body = await res.json();
+      if (!res.ok) throw new Error(body.error ?? `HTTP ${res.status}`);
+      setHistory(body.messages);
+      setLog((l) => [...l, { who: "ai", text: body.reply, used: body.used }]);
+      if (body.used?.length) await onTools();
+    } catch (e) { setLog((l) => [...l, { who: "error", text: (e as Error).message }]); }
+    finally { setBusy(false); }
+  };
+  const suggestions = ["Which cars look worth buying, and why?", "Estimate repairs for the car I'm viewing", "Why isn't the Maxima shortlisted?", "Draft an offer for the Elantra"];
   return (
-    <ul className="cf-carlist">
-      {setPicked && rows.length > 0 && (
-        <li className="cf-pickall">
-          <label><input type="checkbox" checked={all} onChange={() => setPicked(all ? [] : rows.map((r) => r.id))} /> Select all ({rows.length})</label>
-          {picked.length > 0 && <button className="btn" onClick={() => setPicked([])}>Clear {picked.length}</button>}
-        </li>
-      )}
-      {rows.map((r) => (
-        <li key={r.id} className="cf-carli">
-          {setPicked && <input type="checkbox" aria-label={`Select ${short(r.title)}`} checked={picked.includes(r.id)}
-            onChange={() => setPicked(picked.includes(r.id) ? picked.filter((x) => x !== r.id) : [...picked, r.id])} />}
-          <button className={`cf-carrow ${selected === r.id ? "sel" : ""}`} onClick={() => onOpen(r.id)}>
-            {r.photos[0] ? <img src={r.photos[0]} alt="" referrerPolicy="no-referrer" /> : <span className="cf-ph"><Icon name="image" size={18} /></span>}
-            <span className="cf-carrowtext">
-              <strong>{short(r.title)}{r.shortlisted ? " ★" : ""}</strong>
-              <span className="cf-note">{money(r.price)}{r.value !== null && <> · value {money(r.value)} · <span className={r.discount > 0 ? "pos" : "neg"}>{gap(r.discount)}</span></>}</span>
-              {step !== "find" && step !== "value" && r.verdict && <span className="cf-note"><span className={`v-${r.verdict}`}>{label(r.verdict)}</span>{r.photo_count_available ? ` · ${reviewed(r)}` : ""}</span>}
-              {step === "buy" && <span className="cf-note">Offer {money(r.last_offer)} · counter {money(r.last_counter)}</span>}
-              {step === "sell" && <span className="cf-note">Profit* {money(r.profit)} (before unprovided costs)</span>}
-              {step === "find" && <span className="cf-note">{r.city}{r.miles ? ` · ${Math.round(r.miles / 1000)}k mi` : ""}</span>}
-            </span>
-          </button>
-        </li>
-      ))}
-      {!rows.length && <li className="muted cf-note">Nothing here yet. Run this step.</li>}
-    </ul>
+    <div className="cf-chat">
+      <div className="aside-heading">Ask CarFlip</div>
+      <div className="cf-chatlog">
+        {!log.length && <>
+          <p className="cf-note">Ask about any car or tell it to move cars along. It uses the same tools as the app, and it asks before spending Apify or API credit.</p>
+          {suggestions.map((s) => <button key={s} className="cf-suggest" onClick={() => send(s)}>{s}</button>)}
+        </>}
+        {log.map((m, i) => (
+          <div key={i} className={`cf-bubble cf-${m.who}`}>
+            <div className="cf-msgtext">{m.text}</div>
+            {m.used && m.used.length > 0 && <div className="cf-note">Used: {m.used.map((u) => `${u.name}${u.ok ? "" : " (failed)"}`).join(", ")}</div>}
+          </div>
+        ))}
+        {busy && <div className="cf-bubble cf-ai cf-note">Thinking…</div>}
+      </div>
+      <form className="cf-chatform" onSubmit={(e) => { e.preventDefault(); send(text); }}>
+        <textarea rows={2} value={text} placeholder="Ask about a car, or say “move the Elantra to Buy”" onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); send(text); } }} />
+        <button className="btn primary" disabled={busy || !text.trim()}>Send</button>
+      </form>
+      <p className="cf-note" style={{ margin: 0 }}>Context sent: {context}</p>
+    </div>
   );
 }
 
@@ -357,7 +400,7 @@ function Summary({ rows, shortlisted }: { rows: Row[]; shortlisted: Row[] }) {
   );
 }
 
-function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>; step: Step }) {
+function CarPanel({ d, onChange, step, onEstimate }: { d: Row; onChange: () => Promise<void>; step: Step; onEstimate: () => Promise<void> }) {
   const { car, thread } = d;
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<string | null>(null);
@@ -401,6 +444,7 @@ function CarPanel({ d, onChange, step }: { d: Row; onChange: () => Promise<void>
       </details>}
       {d.row?.evidence?.length > 0 && <div><div className="aside-heading">Evidence</div>
         <ul className="cf-dotlist">{d.row.evidence.map((e: Row, i: number) => <li key={i}><span className="dot" /> <span><strong>{e.source}</strong>: {e.note}</span></li>)}</ul></div>}
+      <RepairBox est={d.repairs} reviewed={!!d.row?.review_method} onEstimate={onEstimate} />
       {d.row?.red_flags?.length > 0 && <div><div className="aside-heading">Flags</div><ul className="cf-dotlist">{d.row.red_flags.map((f: string) => <li key={f}><span className="dot dot-failed" /> {f}</li>)}</ul></div>}
       <details><summary className="cf-note">Seller's description</summary><p className="cf-note">{car.description}</p></details>
 
@@ -516,6 +560,25 @@ function NextStep({ row, car, thread, busy, msg, act }: { row: Row; car: Row; th
       {stage === "sell" && <p className="cf-note">Offer drafted. Log the seller's reply below, then use Resale plan.</p>}
       {busy && <p className="cf-note">{busy}…</p>}
       {msg && <p className={`cf-note ${msg.startsWith("Error") ? "neg" : "pos"}`}>{msg}</p>}
+    </div>
+  );
+}
+
+/** Repair estimate for one car: each item with the evidence it rests on, plus what the evidence can't show. */
+function RepairBox({ est, reviewed, onEstimate }: { est: Row | null; reviewed: boolean; onEstimate: () => Promise<void> }) {
+  return (
+    <div className="card aside-card">
+      <div className="aside-heading">Estimated repairs</div>
+      {est ? <>
+        <div className="aside-big" style={{ fontSize: "1.4rem" }}>{est.high === 0 ? "None evidenced" : `${money(est.low)} – ${money(est.high)}`}</div>
+        <p className="cf-note">{est.method === "ai" ? `AI estimate (${est.model})` : `${label(est.method)} estimate`} from the inspection evidence, {est.estimated_at}. Not a quote.</p>
+        {est.items.length > 0 && <table><tbody>{est.items.map((i: Row) => (
+          <tr key={i.item}><td>{i.item}<div className="cf-note">{i.basis}</div></td><td className="num">{money(i.low)}–{money(i.high)}</td></tr>
+        ))}</tbody></table>}
+        {est.not_assessed.length > 0 && <p className="cf-note">Not assessed (not priced): {est.not_assessed.join(", ")}</p>}
+        {est.assumptions.length > 0 && <p className="cf-note">Assumes: {est.assumptions.join("; ")}</p>}
+      </> : <p className="cf-note">{reviewed ? "No estimate yet." : "Review the car first: estimates are built from its inspection evidence."}</p>}
+      {reviewed && <button className="btn" onClick={onEstimate}>{est ? "Re-estimate with AI" : "Estimate with AI"}</button>}
     </div>
   );
 }

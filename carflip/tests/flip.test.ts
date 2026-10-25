@@ -147,3 +147,78 @@ test("end to end with evidence: find, value, inspect, agent review, offer, count
   const counts: any = await callTool(db2, "import_snapshot", { snapshot: snap });
   assert.equal(counts.cars, snap.cars.length);
 });
+
+async function shortlistedCamry() {
+  const db = openDb(":memory:");
+  await findCars(db, { target: 40 }, { fetchImpl: fakeApify, token: "t" });
+  await valueCars(db, { fetchImpl: fakeApify, token: "t" });
+  const camry = rankedByDiscount(db).find((r) => /Camry/.test(r.title))!;
+  const n = JSON.parse((db.prepare("SELECT photos FROM cars WHERE id = ?").get(camry.id) as any).photos).length;
+  return { db, camry, n };
+}
+
+test("stages: forward needs evidence, backward clears later work", async () => {
+  const { db, camry, n } = await shortlistedCamry();
+  const { moveToStage } = await import("../src/lib/stages.ts");
+  const { pipeline } = await import("../src/lib/cars.ts");
+  const stage = () => pipeline(db).find((r) => r.id === camry.id)!.stage;
+  assert.equal(stage(), "value");
+  const blocked = await moveToStage(db, [camry.id], "buy");
+  assert.equal(blocked[0].ok, false, "can't reach Buy without a complete promising review");
+  assert.equal(stage(), "inspect", "but it did get the description check");
+  await callTool(db, "record_inspection", { id: camry.id, verdict: "promising", photo_count_reviewed: n, description_reviewed: true,
+    evidence: [{ source: "photo #1", note: "clean body" }] });
+  const sold = await moveToStage(db, [camry.id], "sell");
+  assert.ok(sold[0].ok);
+  assert.equal(stage(), "sell");
+  assert.ok(db.prepare("SELECT 1 FROM offers WHERE car_id = ?").get(camry.id), "offer drafted on the way");
+  await moveToStage(db, [camry.id], "inspect");
+  assert.equal(stage(), "inspect");
+  assert.equal((db.prepare("SELECT COUNT(*) n FROM offers WHERE car_id = ?").get(camry.id) as any).n, 0, "draft offer cleared");
+  await moveToStage(db, [camry.id], "find");
+  assert.equal(stage(), "find");
+});
+
+test("repair estimates: items need a basis; shown as their own resale scenario", async () => {
+  const { db, camry, n } = await shortlistedCamry();
+  await callTool(db, "record_inspection", { id: camry.id, verdict: "promising", photo_count_reviewed: n, description_reviewed: true,
+    evidence: [{ source: "description", note: "needs 2 sensors" }] });
+  await assert.rejects(callTool(db, "record_repair_estimate", { id: camry.id, items: [{ item: "x", low: 1, high: 2, basis: "" }] }));
+  const e: any = await callTool(db, "record_repair_estimate", { id: camry.id,
+    items: [{ item: "2 sensors", low: 150, high: 450, basis: "description: needs 2 sensors" }], not_assessed: ["brakes"] });
+  assert.deepEqual([e.low, e.high], [150, 450]);
+  const plan = planResale(db, camry.id);
+  assert.ok(plan.scenarios.some((s) => /estimated repairs \(high, \$450\)/.test(s.label) && s.repairs === 450));
+  assert.ok(plan.scenarios.some((s) => s.repairs === null), "supplied-cost scenarios still leave repairs unprovided");
+  assert.match(plan.unprovidedCosts[0], /estimate \$150–\$450 only, not a quote/);
+
+  const { aiEstimateRepairs } = await import("../src/lib/repairs.ts");
+  const fake: any = { beta: { messages: { create: async (req: any) => {
+    assert.equal(req.output_config.format.type, "json_schema");
+    assert.match(req.messages[0].content, /needs 2 sensors/);
+    return { model: "claude-opus-5-5", stop_reason: "end_turn", content: [{ type: "text",
+      text: JSON.stringify({ items: [{ item: "O2 sensors", low: 200, high: 500, basis: "description: needs 2 sensors" }], not_assessed: ["tires"], assumptions: [] }) }] };
+  } } } };
+  const [ai]: any = await aiEstimateRepairs(db, [camry.id], { client: fake });
+  assert.equal(ai.method, "ai");
+  assert.equal(ai.high, 500);
+});
+
+test("chat: runs tools in a loop and keeps the full history", async () => {
+  const { db } = await shortlistedCamry();
+  const { chatTurn, chatTools } = await import("../src/lib/chat.ts");
+  assert.ok(!chatTools().some((t) => t.name === "import_snapshot"), "destructive tools are hidden");
+  let calls = 0;
+  const fake: any = { beta: { messages: { create: async (req: any) => {
+    calls++;
+    if (calls === 1) return { stop_reason: "tool_use", content: [{ type: "tool_use", id: "t1", name: "ranked_cars", input: {} }] };
+    const last = req.messages.at(-1);
+    assert.equal(last.content[0].type, "tool_result");
+    assert.match(last.content[0].content, /Camry/);
+    return { stop_reason: "end_turn", content: [{ type: "text", text: "The Camry has the biggest gap." }] };
+  } } } };
+  const out = await chatTurn(db, [], "Which car has the biggest gap?", { client: fake });
+  assert.equal(out.reply, "The Camry has the biggest gap.");
+  assert.equal(out.messages.length, 4, "user, assistant tool_use, tool_result, assistant answer");
+  assert.deepEqual(out.used, [{ name: "ranked_cars", ok: true }]);
+});

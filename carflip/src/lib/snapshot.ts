@@ -1,6 +1,6 @@
 import type { DB } from "./db.ts";
 
-const TABLES = ["cars", "valuations", "inspections", "offers", "resale", "runs"] as const;
+const TABLES = ["cars", "valuations", "inspections", "offers", "resale", "repair_estimates", "runs"] as const;
 
 export function exportSnapshot(db: DB) {
   return Object.fromEntries(TABLES.map((t) => [t, db.prepare(`SELECT * FROM ${t}`).all()]));

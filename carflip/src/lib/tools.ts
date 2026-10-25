@@ -9,6 +9,8 @@ import { planResale } from "./sell.ts";
 import { enhanceCarPhotos } from "./photos.ts";
 import path from "node:path";
 import { getCar, pipeline } from "./cars.ts";
+import { aiEstimateRepairs, getRepairEstimate, saveRepairEstimate } from "./repairs.ts";
+import { moveToStage, STAGES } from "./stages.ts";
 
 /**
  * The five steps as tools. The MCP server, the CLI and the web API all call these,
@@ -103,6 +105,29 @@ export const tools = {
     description: "Replace all data with a snapshot from export_snapshot.",
     input: { snapshot: z.record(z.array(z.record(z.any()))) },
     run: (db: DB, a: any) => importSnapshot(db, a.snapshot),
+  },
+  estimate_repairs: {
+    description: "AI repair-cost estimate (low-high per item) from each car's inspection evidence. Needs ANTHROPIC_API_KEY. An estimate, not a quote.",
+    input: { ids: z.array(z.string()).min(1) },
+    run: (db: DB, a: any) => aiEstimateRepairs(db, a.ids),
+  },
+  record_repair_estimate: {
+    description: "Save your own repair estimate for a car. Each item needs a basis citing the evidence (photo number or description); "
+      + "list what the evidence can't show under not_assessed instead of pricing it.",
+    input: { id: z.string(), items: z.array(z.object({ item: z.string(), low: z.number().min(0), high: z.number().min(0), basis: z.string().min(1) })),
+      not_assessed: z.array(z.string()).default([]), assumptions: z.array(z.string()).default([]) },
+    run: (db: DB, a: any) => saveRepairEstimate(db, a.id, a, "agent"),
+  },
+  get_repair_estimate: {
+    description: "The saved repair estimate for one car, with each item's basis.",
+    input: { id: z.string() },
+    run: (db: DB, a: any) => getRepairEstimate(db, a.id),
+  },
+  move_to_stage: {
+    description: "Move cars to a stage (find, value, inspect, buy, sell). Forward runs the missing steps (KBB lookups cost Apify credit); "
+      + "backward clears later work. Buy needs a complete promising review.",
+    input: { ids: z.array(z.string()).min(1), to: z.enum(STAGES) },
+    run: (db: DB, a: any) => moveToStage(db, a.ids, a.to),
   },
   pipeline: {
     description: "Every saved car with its value, inspection, offers and resale plan.",

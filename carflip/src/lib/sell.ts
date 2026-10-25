@@ -2,6 +2,7 @@ import { json, logRun, now, type DB } from "./db.ts";
 import { getCar } from "./cars.ts";
 import { config } from "./config.ts";
 import { offerPlan } from "./offers.ts";
+import { getRepairEstimate } from "./repairs.ts";
 
 const cents = (n: number) => Math.round(n * 100) / 100;
 
@@ -73,7 +74,14 @@ export function planResale(db: DB, carId: string, buyPrice?: number, o: { repair
     ...(buyPrice ? [scenario(`Supplied price $${buyPrice.toLocaleString()}`, { purchase: buyPrice, resale: v.value, repairs, otherCosts: o.otherCosts })] : []),
     scenario(`Asking price $${car.price.toLocaleString()}`, { purchase: car.price, resale: v.value, repairs, otherCosts: o.otherCosts }),
   ];
+  // A repair estimate (AI or agent) is shown as its own scenario, never folded into the supplied-cost figures.
+  const est = repairs === null ? getRepairEstimate(db, carId) : null;
+  if (est && est.items.length) scenarios.splice(1, 0,
+    scenario(`Opening offer + estimated repairs (high, $${est.high.toLocaleString()})`, { purchase: opening, resale: v.value, repairs: est.high, otherCosts: o.otherCosts }));
   const unprovided = unprovidedCosts(repairs, o.otherCosts);
+  if (est) unprovided[0] = est.high === 0
+    ? `repairs: none evidenced (${est.method} estimate); not assessed: ${est.not_assessed.join(", ") || "nothing listed"}`
+    : `repairs: ${est.method} estimate $${est.low.toLocaleString()}–$${est.high.toLocaleString()} only, not a quote`;
   const assumptions = [
     `Resale = KBB value $${v.value.toLocaleString()} (${v.value_type ?? "value type not recorded"}${v.captured_at ? `, captured ${v.captured_at}` : ""})`,
     `Tax = ${(config.taxRate * 100).toFixed(2)}% of purchase price (the article's simplified assumption, not a tax determination)`,
