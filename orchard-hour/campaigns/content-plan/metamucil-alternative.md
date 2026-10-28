@@ -58,4 +58,4 @@ Five-stick sampler
 DO FIRST
 
 ## Status
-planning
+drafted — see ../content/metamucil-alternatives.md
