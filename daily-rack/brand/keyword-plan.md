@@ -1,7 +1,7 @@
 # Keyword Plan
 
 ## Last Updated
-2026-10-28 by /keyword-research
+2026-10-29 by /keyword-research (refresh: Siamese volumes, blog formats, card cycle). Blog strategy: ./blog-strategy.md
 
 ## Business Context
 - Offer: Daily Rack, an American mahjong app (lessons with Pip, play the computer, online and friends tables, Game Night planner; Plus subscription)
@@ -16,14 +16,14 @@ American mahjong is booming. "american mahjong" went from 4,400 searches a month
 
 ### Pillar 1: Two- and three-player mahjong -- Priority: Critical (the gap)
 Validation:
-- **Search: PASS.** About 9,600 a month: siamese mahjong 4,400 (2.3×), 2 player mahjong 3,600 (2×), 3 player mahjong 1,600 (2.2×). Autocomplete adds "how to play american mahjong with 2 players for beginners", "siamese mahjong online free", "2 player mahjong online", "siamese mahjong rules pdf".
+- **Search: PASS.** About 16,000 a month: siamese mahjong 4,400 (2.3×), siamese mahjong rules 3,600 (3.6×), 2 player mahjong 3,600 (2×), how to play mahjong with 2 players 2,900 (2.6×), 3 player mahjong 1,600 (2.2×). Autocomplete adds "how to play american mahjong with 2 players for beginners", "siamese mahjong online free", "2 player mahjong online", "siamese mahjong rules pdf".
 - **Market: PASS.**
 - **Competitive: PASS.** Results are YouTube, Facebook groups, Reddit, mahjongg.org's rules page and one Southern Sparrow post. No app ranks. People Also Ask: "Where can I play siamese mahjong online?"
 - **Advantage: YES, if built.** Daily Rack has no 2-player mode today. A product gap and a content gap at once.
 
 | Cluster | Priority | Intent | Content Type | Status |
 |---|---|---|---|---|
-| How to play 2-player (Siamese) American mahjong | DO FIRST | Informational → product | How-to + rules printable | brief ready |
+| How to play 2-player (Siamese) American mahjong | DO FIRST | Informational → product | How-to + rules printable | drafted: ../campaigns/content/siamese-mahjong.md |
 | Play Siamese mahjong online (landing page for a new mode) | DO FIRST (after mode ships) | Transactional | App landing page | planned |
 | 3-player mahjong rules | QUICK WIN | Informational | How-to | planned |
 | Date night mahjong | Tier 3 | Informational | Use case | backlog |
@@ -74,6 +74,12 @@ Validation:
 - **Gear** ("mahjong set" 165,000; "american mahjong set" 40,500). Owned by Oh My Mahjong, The Mahjong Line and Amazon. Affiliate and partnership only.
 - **Mahjong solitaire** (165,000). A different game; the audience doesn't match.
 - **Lessons near me** (5,400 each). Local businesses win. Turn teachers into a distribution partner instead (see the audience plan).
+
+## Added in refresh (2026-10-29)
+- **The Card Year (seasonal):** "mahjong card 2026" peaks around 33,100 in spring; "new mahjong card" peaks at 1,900; "when does the new mahjong card come out" peaks at 720. Refresh these posts every March–April.
+- **Learn the Game additions:** "how many tiles in american mahjong" 1,600 (3.6×).
+- **History & Culture (low priority):** "mahjong history" 1,900 (2×); "jewish mahjong" 1,000.
+- **No search, so don't blog it:** "mahjong quiz" 30, "hand of the day" 0, "which hand to play" 0, "mahjong blog" 30. "mahjong puzzle" (1,000) means jigsaw and solitaire. Keep the daily puzzle in the app and on video.
 
 ## Competitive Landscape
 - **Apps:** Eight Bam (22.9k ratings) and Mahjong 4 Friends (25.8k) lead; The Mahjong App grew to 8k ratings in about 6 months in 2026. Four more launched in 2026. None owns 2-player or group organizing.

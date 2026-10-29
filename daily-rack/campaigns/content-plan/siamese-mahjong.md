@@ -61,7 +61,7 @@ Download the printable (email capture). Then "Practice with Pip" or "Play a 2-pl
 DO FIRST
 
 ## Status
-planning. Product dependency: a 2-player mode turns this from content into an acquisition channel.
+drafted (../content/siamese-mahjong.md). Product dependency: a 2-player mode turns this from content into an acquisition channel.
 
 ## Accuracy
 Verify setup and tile counts against the official Siamese rules (mahjongg.org / National Mah Jongg League). House rules vary; say so.
