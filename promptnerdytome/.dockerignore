@@ -1,0 +1,9 @@
+node_modules
+out
+lab/results
+docs/media
+test
+.github
+*.md
+!README.md
+.env
