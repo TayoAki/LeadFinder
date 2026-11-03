@@ -1,0 +1,392 @@
+[
+ {
+  "name": "Personal budget & spending tracking",
+  "total": 21,
+  "s_pain": 5,
+  "s_demand": 3,
+  "s_growth": 3,
+  "s_wtp": 5,
+  "s_gap": 5,
+  "posts": 14,
+  "vol": 1790,
+  "growth": 1.14,
+  "cpc": 7.93,
+  "forums_top5": 3,
+  "top5": [
+   "goodbudget.com",
+   "play.google.com",
+   "www.reddit.com",
+   "www.reddit.com",
+   "www.quora.com"
+  ],
+  "kw": [
+   "how to track spending=480",
+   "monthly budget spreadsheet template=590",
+   "free budget tracker app=720"
+  ]
+ },
+ {
+  "name": "CONTROL: AI meeting notes",
+  "total": 19,
+  "s_pain": 4,
+  "s_demand": 5,
+  "s_growth": 2,
+  "s_wtp": 5,
+  "s_gap": 3,
+  "posts": 6,
+  "vol": 19150,
+  "growth": 0.84,
+  "cpc": 18.8,
+  "forums_top5": 1,
+  "top5": [
+   "www.read.ai",
+   "www.simular.ai",
+   "www.notion.com",
+   "www.reddit.com",
+   "meeting.ai"
+  ],
+  "kw": [
+   "taking notes during meetings=50",
+   "meeting notes template=18100",
+   "ai meeting notes=1000"
+  ]
+ },
+ {
+  "name": "Self-employed receipts & write-off tracking",
+  "total": 15,
+  "s_pain": 3,
+  "s_demand": 1,
+  "s_growth": 5,
+  "s_wtp": 5,
+  "s_gap": 1,
+  "posts": 4,
+  "vol": 100,
+  "growth": 3.1,
+  "cpc": 12.18,
+  "forums_top5": 0,
+  "top5": [
+   "www.forbes.com",
+   "thedigitalmerchant.com",
+   "play.google.com",
+   "smartreceipts.co",
+   "apps.apple.com"
+  ],
+  "kw": [
+   "how to track business expenses for taxes=70",
+   "1099 expense spreadsheet template=0",
+   "receipt and expense tracker app=30"
+  ]
+ },
+ {
+  "name": "Personal photo library organization",
+  "total": 15,
+  "s_pain": 2,
+  "s_demand": 2,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 5,
+  "posts": 3,
+  "vol": 490,
+  "growth": 0.73,
+  "cpc": 6.3,
+  "forums_top5": 3,
+  "top5": [
+   "excire.com",
+   "www.reddit.com",
+   "mylio.com",
+   "www.reddit.com",
+   "www.facebook.com"
+  ],
+  "kw": [
+   "too many photos to organize=0",
+   "organize photos into folders by date=10",
+   "photo organizer software=480"
+  ]
+ },
+ {
+  "name": "Small landlord rental management",
+  "total": 14,
+  "s_pain": 4,
+  "s_demand": 1,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 3,
+  "posts": 7,
+  "vol": 130,
+  "growth": 0.54,
+  "cpc": 152.24,
+  "forums_top5": 1,
+  "top5": [
+   "www.tenantcloud.com",
+   "www.landlordstudio.com",
+   "www.reddit.com",
+   "www.baselane.com",
+   "lula.life"
+  ],
+  "kw": [
+   "how to track rental property expenses=10",
+   "rental property spreadsheet template=90",
+   "rental property management software for small landlords=30"
+  ]
+ },
+ {
+  "name": "CONTROL: AI calorie photo logging",
+  "total": 14,
+  "s_pain": 4,
+  "s_demand": 1,
+  "s_growth": 2,
+  "s_wtp": 4,
+  "s_gap": 3,
+  "posts": 8,
+  "vol": 70,
+  "growth": 0.86,
+  "cpc": 3.72,
+  "forums_top5": 1,
+  "top5": [
+   "plate.acara.app",
+   "play.google.com",
+   "www.caloriemama.ai",
+   "apps.apple.com",
+   "www.reddit.com"
+  ],
+  "kw": [
+   "counting calories is tedious=0",
+   "calorie tracking spreadsheet=50",
+   "calorie counter by photo=20"
+  ]
+ },
+ {
+  "name": "Home maintenance tracking",
+  "total": 13,
+  "s_pain": 4,
+  "s_demand": 1,
+  "s_growth": 2,
+  "s_wtp": 3,
+  "s_gap": 3,
+  "posts": 6,
+  "vol": 20,
+  "growth": 0.89,
+  "cpc": 2.38,
+  "forums_top5": 1,
+  "top5": [
+   "realestateledger.io",
+   "www.reddit.com",
+   "homekeep.com",
+   "www.homezada.com",
+   "homebeacon.app"
+  ],
+  "kw": [
+   "forgot home maintenance tasks=0",
+   "home maintenance checklist spreadsheet=0",
+   "home maintenance tracker app=20"
+  ]
+ },
+ {
+  "name": "Contractor estimating & material takeoffs",
+  "total": 13,
+  "s_pain": 3,
+  "s_demand": 1,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 3,
+  "posts": 4,
+  "vol": 70,
+  "growth": 0.47,
+  "cpc": 54.45,
+  "forums_top5": 1,
+  "top5": [
+   "www.stackct.com",
+   "www.nichessp.com",
+   "www.clearestimates.com",
+   "www.buildxact.com",
+   "www.reddit.com"
+  ],
+  "kw": [
+   "contractor estimates take too long=0",
+   "construction estimate spreadsheet template=0",
+   "construction estimating software for small contractors=70"
+  ]
+ },
+ {
+  "name": "Small online seller inventory sync",
+  "total": 13,
+  "s_pain": 2,
+  "s_demand": 2,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 3,
+  "posts": 3,
+  "vol": 300,
+  "growth": 0.54,
+  "cpc": 118.13,
+  "forums_top5": 1,
+  "top5": [
+   "www.veeqo.com",
+   "www.reddit.com",
+   "www.brightpearl.com",
+   "squareup.com",
+   "www.skunexus.com"
+  ],
+  "kw": [
+   "inventory not syncing between etsy and square=0",
+   "inventory spreadsheet for small business=90",
+   "multichannel inventory management software=210"
+  ]
+ },
+ {
+  "name": "CONTROL: AI headshots",
+  "total": 13,
+  "s_pain": 1,
+  "s_demand": 5,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 1,
+  "posts": 1,
+  "vol": 23570,
+  "growth": 0.61,
+  "cpc": 10.74,
+  "forums_top5": 0,
+  "top5": [
+   "www.canva.com",
+   "www.adobe.com",
+   "www.headshotpro.com",
+   "www.headshots.com",
+   "www.aragon.ai"
+  ],
+  "kw": [
+   "need professional headshot=70",
+   "headshot photographer=5400",
+   "ai headshot generator=18100"
+  ]
+ },
+ {
+  "name": "Wardrobe / clothing inventory",
+  "total": 12,
+  "s_pain": 3,
+  "s_demand": 1,
+  "s_growth": 3,
+  "s_wtp": 2,
+  "s_gap": 3,
+  "posts": 4,
+  "vol": 110,
+  "growth": 1.08,
+  "cpc": 1.48,
+  "forums_top5": 1,
+  "top5": [
+   "www.reddit.com",
+   "www.nytimes.com",
+   "apps.apple.com",
+   "www.myindyx.com",
+   "play.google.com"
+  ],
+  "kw": [
+   "forget what clothes i own=0",
+   "wardrobe inventory spreadsheet=20",
+   "closet inventory app=90"
+  ]
+ },
+ {
+  "name": "Investment portfolio tracking across accounts",
+  "total": 12,
+  "s_pain": 2,
+  "s_demand": 1,
+  "s_growth": 1,
+  "s_wtp": 5,
+  "s_gap": 3,
+  "posts": 3,
+  "vol": 120,
+  "growth": 0.69,
+  "cpc": 8.17,
+  "forums_top5": 1,
+  "top5": [
+   "www.reddit.com",
+   "play.google.com",
+   "wealthfolio.app",
+   "apps.apple.com",
+   "www.forbes.com"
+  ],
+  "kw": [
+   "track investments across multiple accounts=0",
+   "investment portfolio tracker spreadsheet=10",
+   "portfolio tracker app=110"
+  ]
+ },
+ {
+  "name": "Hobby collection tracking",
+  "total": 11,
+  "s_pain": 2,
+  "s_demand": 1,
+  "s_growth": 2,
+  "s_wtp": 3,
+  "s_gap": 3,
+  "posts": 3,
+  "vol": 40,
+  "growth": 0.86,
+  "cpc": 2.26,
+  "forums_top5": 1,
+  "top5": [
+   "www.reddit.com",
+   "apps.apple.com",
+   "www.collectioninventory.app",
+   "www.icollecteverything.com",
+   "play.google.com"
+  ],
+  "kw": [
+   "keep track of my collection=0",
+   "collection inventory spreadsheet=0",
+   "collection tracker app=40"
+  ]
+ },
+ {
+  "name": "ADHD daily routine & life organization",
+  "total": 10,
+  "s_pain": 3,
+  "s_demand": 1,
+  "s_growth": 1,
+  "s_wtp": 1,
+  "s_gap": 4,
+  "posts": 4,
+  "vol": 0,
+  "growth": 0,
+  "cpc": 0,
+  "forums_top5": 2,
+  "top5": [
+   "www.reddit.com",
+   "www.tiimoapp.com",
+   "apps.apple.com",
+   "lifestack.ai",
+   "www.reddit.com"
+  ],
+  "kw": [
+   "adhd cant stick to routine=0",
+   "adhd daily routine checklist printable=0",
+   "adhd routine planner app=0"
+  ]
+ },
+ {
+  "name": "Teacher student documentation & tracking",
+  "total": 10,
+  "s_pain": 2,
+  "s_demand": 1,
+  "s_growth": 3,
+  "s_wtp": 1,
+  "s_gap": 3,
+  "posts": 3,
+  "vol": 10,
+  "growth": 1.09,
+  "cpc": 0,
+  "forums_top5": 1,
+  "top5": [
+   "apps.apple.com",
+   "getshorthandapp.com",
+   "www.mytaptrack.com",
+   "www.reddit.com",
+   "www.understood.org"
+  ],
+  "kw": [
+   "teacher documentation overload=0",
+   "iep accommodation tracker spreadsheet=0",
+   "student behavior tracking app=10"
+  ]
+ }
+]

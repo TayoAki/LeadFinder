@@ -1,0 +1,313 @@
+[
+ {
+  "name": "Personal budget & spending tracking",
+  "audience": "individuals/households managing personal money",
+  "job": "track spending and budget across accounts",
+  "workaround": "spreadsheets, paper notebook, juggling budgeting apps",
+  "post_ids": [
+   "77",
+   "109",
+   "248",
+   "309",
+   "312",
+   "316",
+   "317",
+   "318",
+   "319",
+   "330",
+   "331",
+   "332",
+   "333",
+   "336"
+  ],
+  "independent_posts": 14,
+  "total_score": 60,
+  "total_comments": 301,
+  "quotes": [
+   "I remember Mint used to do all of this perfectly for free.",
+   "I still grab a notebook and write out my monthly expenses by hand every Sunday night.",
+   "I’ve tried YNAB, Monarch, Rocket."
+  ],
+  "keywords": {
+   "problem": "how to track spending",
+   "workaround": "monthly budget spreadsheet template",
+   "solution": "free budget tracker app"
+  }
+ },
+ {
+  "name": "Small landlord rental management",
+  "audience": "small landlords (1-60 units)",
+  "job": "track rent, expenses, leases, maintenance per property",
+  "workaround": "Google Sheets/Excel, receipts dumped in Drive",
+  "post_ids": [
+   "257",
+   "258",
+   "259",
+   "260",
+   "261",
+   "262",
+   "263"
+  ],
+  "independent_posts": 7,
+  "total_score": 27,
+  "total_comments": 280,
+  "quotes": [
+   "I'm currently managing 3 rental properties and honestly, I'm drowning in spreadsheets.",
+   "Small landlords, are you still tracking expenses for Schedule E in a spreadsheet?",
+   "Managing 20+ rental properties showed me spreadsheets eventually stop working"
+  ],
+  "keywords": {
+   "problem": "how to track rental property expenses",
+   "workaround": "rental property spreadsheet template",
+   "solution": "rental property management software for small landlords"
+  }
+ },
+ {
+  "name": "Home maintenance tracking",
+  "audience": "homeowners/renters",
+  "job": "remember recurring home maintenance tasks and dates",
+  "workaround": "photos and notes, memory, spreadsheet",
+  "post_ids": [
+   "93",
+   "98",
+   "291",
+   "293",
+   "294",
+   "295"
+  ],
+  "independent_posts": 6,
+  "total_score": 45,
+  "total_comments": 254,
+  "quotes": [
+   "Changed the HVAC filter 6 months late, missed the window for gutter cleaning",
+   "I keep forgetting sizes and when I last changed them.",
+   "How do you keep track of less frequent chores?"
+  ],
+  "keywords": {
+   "problem": "forgot home maintenance tasks",
+   "workaround": "home maintenance checklist spreadsheet",
+   "solution": "home maintenance tracker app"
+  }
+ },
+ {
+  "name": "ADHD daily routine & life organization",
+  "audience": "adults with ADHD/autism",
+  "job": "manage daily routines and life tasks with ADHD",
+  "workaround": "life-management spreadsheets, many abandoned apps",
+  "post_ids": [
+   "67",
+   "299",
+   "300",
+   "306"
+  ],
+  "independent_posts": 4,
+  "total_score": 20,
+  "total_comments": 51,
+  "quotes": [
+   "I need an app where I can make a daily routine checklist",
+   "I've tried so many apps, but none of them get it right when it should be so easy to.",
+   "ADHD Life management spreadsheets or worksheets that help manage everything in your life"
+  ],
+  "keywords": {
+   "problem": "adhd cant stick to routine",
+   "workaround": "adhd daily routine checklist printable",
+   "solution": "adhd routine planner app"
+  }
+ },
+ {
+  "name": "Wardrobe / clothing inventory",
+  "audience": "people with large or forgotten wardrobes",
+  "job": "catalog owned clothes and what's worn",
+  "workaround": "Notion, spreadsheets, memory",
+  "post_ids": [
+   "95",
+   "97",
+   "286",
+   "297"
+  ],
+  "independent_posts": 4,
+  "total_score": 22,
+  "total_comments": 102,
+  "quotes": [
+   "How do you keep track of what clothes you own?",
+   "I forget what clothes I own, so I end up wearing the same 4-5 items over and over.",
+   "I am tired of trying to find what dresses I own"
+  ],
+  "keywords": {
+   "problem": "forget what clothes i own",
+   "workaround": "wardrobe inventory spreadsheet",
+   "solution": "closet inventory app"
+  }
+ },
+ {
+  "name": "Contractor estimating & material takeoffs",
+  "audience": "residential/electrical contractors and estimators",
+  "job": "produce estimates and material takeoffs faster",
+  "workaround": "pencil, paper and spreadsheets",
+  "post_ids": [
+   "32",
+   "292",
+   "340",
+   "343"
+  ],
+  "independent_posts": 4,
+  "total_score": 12,
+  "total_comments": 156,
+  "quotes": [
+   "I’m looking for a more streamlined process than pencil, paper, and a spreadsheet.",
+   "my quoting process is embarrassingly slow",
+   "without the two kidney buy in of accubid"
+  ],
+  "keywords": {
+   "problem": "contractor estimates take too long",
+   "workaround": "construction estimate spreadsheet template",
+   "solution": "construction estimating software for small contractors"
+  }
+ },
+ {
+  "name": "Self-employed receipts & write-off tracking",
+  "audience": "small business owners and 1099 workers",
+  "job": "collect receipts and track deductible expenses for taxes",
+  "workaround": "Excel sheets, manual vendor portal logins",
+  "post_ids": [
+   "165",
+   "240",
+   "166",
+   "170",
+   "335"
+  ],
+  "independent_posts": 4,
+  "total_score": 34,
+  "total_comments": 133,
+  "quotes": [
+   "Is there an app yall recommended for keeping track of receipts and expenses?",
+   "I’ve been using excel sheets to track write offs.",
+   "I spend about an hour every month logging into all our vendor accounts to grab receipts for the accountant."
+  ],
+  "keywords": {
+   "problem": "how to track business expenses for taxes",
+   "workaround": "1099 expense spreadsheet template",
+   "solution": "receipt and expense tracker app"
+  }
+ },
+ {
+  "name": "Investment portfolio tracking across accounts",
+  "audience": "individual investors with multiple brokerages",
+  "job": "see all investment accounts and allocation in one place",
+  "workaround": "net worth tracker spreadsheet",
+  "post_ids": [
+   "315",
+   "321",
+   "322"
+  ],
+  "independent_posts": 3,
+  "total_score": 14,
+  "total_comments": 56,
+  "quotes": [
+   "is there an app that consolidates multiple brokerage",
+   "Is there an app that lets you manually input your investments and auto track your progress over time?",
+   "I have a Net Worth Tracker spreadsheet I used since 2017."
+  ],
+  "keywords": {
+   "problem": "track investments across multiple accounts",
+   "workaround": "investment portfolio tracker spreadsheet",
+   "solution": "portfolio tracker app"
+  }
+ },
+ {
+  "name": "Small online seller inventory sync",
+  "audience": "Etsy/Shopify/market sellers",
+  "job": "keep inventory in sync across sales channels",
+  "workaround": "manual listing deactivation, spreadsheets",
+  "post_ids": [
+   "164",
+   "362",
+   "370"
+  ],
+  "independent_posts": 3,
+  "total_score": 10,
+  "total_comments": 65,
+  "quotes": [
+   "having to manually deactivate/reactivate listings before every show",
+   "It is becoming a headache to manage inventory",
+   "How do you manage POD items that the blanks are discontinued"
+  ],
+  "keywords": {
+   "problem": "inventory not syncing between etsy and square",
+   "workaround": "inventory spreadsheet for small business",
+   "solution": "multichannel inventory management software"
+  }
+ },
+ {
+  "name": "Teacher student documentation & tracking",
+  "audience": "K-12 teachers",
+  "job": "log accommodations, behavior and documentation per student",
+  "workaround": "clipboards, post-its, huge spreadsheets",
+  "post_ids": [
+   "212",
+   "214",
+   "215"
+  ],
+  "independent_posts": 3,
+  "total_score": 402,
+  "total_comments": 83,
+  "quotes": [
+   "Clipboards are killing me.",
+   "These are huge spreadsheets for each student that list EVERY SINGLE ACCOMMODATION",
+   "I'm drowning in documentation that has nothing to do with teaching."
+  ],
+  "keywords": {
+   "problem": "teacher documentation overload",
+   "workaround": "iep accommodation tracker spreadsheet",
+   "solution": "student behavior tracking app"
+  }
+ },
+ {
+  "name": "Personal photo library organization",
+  "audience": "hobby photographers / people with large photo archives",
+  "job": "organize, browse and sort large photo collections",
+  "workaround": "manual folders by number/date",
+  "post_ids": [
+   "385",
+   "387",
+   "389"
+  ],
+  "independent_posts": 3,
+  "total_score": 5,
+  "total_comments": 24,
+  "quotes": [
+   "I had originally started calling folders 1, 2 etc",
+   "Platform or app for granular sorting of photos by EXIF information?",
+   "I could definitely have pulled it all manually but I think it's close to 100+ files."
+  ],
+  "keywords": {
+   "problem": "too many photos to organize",
+   "workaround": "organize photos into folders by date",
+   "solution": "photo organizer software"
+  }
+ },
+ {
+  "name": "Hobby collection tracking",
+  "audience": "collectors (model kits, banknotes, perfume samples)",
+  "job": "catalog collection items and progress",
+  "workaround": "Excel spreadsheet checklist",
+  "post_ids": [
+   "12",
+   "112",
+   "103"
+  ],
+  "independent_posts": 3,
+  "total_score": 935,
+  "total_comments": 448,
+  "quotes": [
+   "This year, I started using an Excel spreadsheet to log all my builds",
+   "Currently I use a spreadsheet to create a checklist and record my progress.",
+   "How do you keep track of what you have tried and your reactions/thoughts?"
+  ],
+  "keywords": {
+   "problem": "keep track of my collection",
+   "workaround": "collection inventory spreadsheet",
+   "solution": "collection tracker app"
+  }
+ }
+]
