@@ -1,0 +1,13 @@
+{
+  "brand": {
+    "brand_name": "Orchard Hour",
+    "brand_domain": "orchardhour.com",
+    "brand_color": "#C8553D",
+    "brand_product": "Sparkling prebiotic fiber drink, 9g fiber per can, real fruit, no grit",
+    "brand_offer": "Try the 12-can variety pack, free shipping",
+    "brand_voice": "Warm, plain-spoken, a little wry. Talks about the 3pm slump, not about gut science jargon.",
+    "category": "Fiber and gut-health drinks",
+    "audience": "Women and men 28-50 who want more fiber, hate gritty powders, and drink soda in the afternoon"
+  },
+  "rivals": ["Olipop", "Poppi", "AG1", "Bloom Nutrition", "Huel"]
+}

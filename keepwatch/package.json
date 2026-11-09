@@ -1,0 +1,18 @@
+{
+  "name": "keepwatch",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Competitor ad intelligence: what rivals keep running, kill and launch, and your version of their winners.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.5"
+  },
+  "scripts": {
+    "start": "node --experimental-sqlite --no-warnings server.mjs",
+    "collect": "node --experimental-sqlite --no-warnings collect.mjs",
+    "test": "node --experimental-sqlite --no-warnings --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  }
+}
