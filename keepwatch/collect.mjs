@@ -1,14 +1,13 @@
-// Collector: pulls each tracked rival's Meta ads through treg into SQLite.
+// Collector: pulls each tracked rival's Meta ads (ScrapeCreators, or treg locally) into SQLite.
 //   node --experimental-sqlite collect.mjs                 collect every rival
 //   node --experimental-sqlite collect.mjs --seed seed.json   set brand + rivals first, then collect
 //   node --experimental-sqlite collect.mjs --rival "Olipop"   add one rival by name, then collect it
 // Env: KW_ACTIVE_PAGES (3), KW_RECENT_PAGES (2), KW_KILLED_PAGES (3), KW_TRANSCRIPTS (8 per rival), KW_LANGUAGE (EN), KW_COUNTRY (unset = all)
 import { readFileSync } from 'node:fs';
-import { getDb, saveWorkspace } from './lib/db.mjs';
-import { treg, tregAvailable, costOf } from './lib/treg.mjs';
+import { getDb, workspaceForUser, saveWorkspace, trackRival } from './lib/db.mjs';
+import { adLibrary } from './lib/providers.mjs';
 import { normaliseAd, extractHook, angleFor } from './lib/classify.mjs';
 
-const SC = 'scrapecreators.x.v1-facebook-adlibrary';
 const env = (k, d) => (process.env[k] !== undefined ? Number(process.env[k]) : d);
 const PAGES = { active: env('KW_ACTIVE_PAGES', 3), recent: env('KW_RECENT_PAGES', 2), killed: env('KW_KILLED_PAGES', 3) };
 const TRANSCRIPTS = env('KW_TRANSCRIPTS', 8);
@@ -16,8 +15,8 @@ const COUNTRY = process.env.KW_COUNTRY || undefined; // note: the provider's cou
 const LANGUAGE = process.env.KW_LANGUAGE ?? 'EN';     // ad language; set KW_LANGUAGE= (empty) for all languages
 
 export async function findPage(name, db = getDb(), run) {
-  const { result, meta } = await treg(`${SC}-search-companies`, { query: { query: name } });
-  if (run) { run.calls++; run.cost += costOf(meta); }
+  const { result, cost } = await adLibrary('search-companies', { query: name });
+  if (run) { run.calls++; run.cost += cost; }
   const hits = (result?.searchResults || []).filter(h => !h.page_is_deleted);
   if (!hits.length) throw new Error(`No Meta advertiser found for "${name}"`);
   const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
@@ -71,8 +70,8 @@ async function pull(db, rival, run, { status, sort_by, pages }) {
     let cursor, n = 0;
     try {
       for (let p = 0; p < pages; p++) {
-        const { result, meta } = await treg(`${SC}-company-ads`, { query: { pageId: rival.page_id, status, sort_by, country: COUNTRY, language: LANGUAGE || undefined, cursor } });
-        run.calls++; run.cost += costOf(meta);
+        const { result, cost } = await adLibrary('company-ads', { pageId: rival.page_id, status, sort_by, country: COUNTRY, language: LANGUAGE || undefined, cursor });
+        run.calls++; run.cost += cost;
         n += store(db, rival, result?.results);
         cursor = result?.cursor;
         if (!cursor || !(result?.results || []).length) break;
@@ -91,8 +90,8 @@ async function transcribe(db, rival, run) {
     ORDER BY julianday(COALESCE(CASE WHEN is_active THEN date('now') END, end_date)) - julianday(start_date) DESC LIMIT ?`).all(rival.id, TRANSCRIPTS);
   for (const v of vids) {
     try {
-      const { result, meta } = await treg(`${SC}-ad-transcript`, { query: { id: v.id, cache_max_age: '30d' } });
-      run.calls++; run.cost += costOf(meta);
+      const { result, cost } = await adLibrary('ad-transcript', { id: v.id, cache_max_age: '30d' });
+      run.calls++; run.cost += cost;
       const t = (result?.transcript || '').trim();
       const { hook, source } = extractHook({ transcript: t, body: v.body, title: v.title });
       db.prepare('UPDATE ads SET transcript = ?, hook = COALESCE(?, hook), hook_source = COALESCE(?, hook_source), angle = ? WHERE id = ?')
@@ -121,12 +120,16 @@ export async function collectRival(db, rival, run) {
   return a + r + k;
 }
 
-export async function collectAll({ only } = {}) {
-  if (!(await tregAvailable())) throw new Error('treg is not installed here, so the collector cannot reach the Ad Library.');
+/** Collect one rival, a list of rivals, or (staleDays) every tracked rival not refreshed recently. */
+export async function collectAll({ only, ids, staleDays } = {}) {
   const db = getDb();
   const run = { calls: 0, cost: 0, ads: 0 };
   const runId = Number(db.prepare('INSERT INTO runs (note) VALUES (?)').run(only ? `rival ${only}` : 'all').lastInsertRowid);
-  const rivals = db.prepare('SELECT * FROM rivals' + (only ? ' WHERE id = ?' : '')).all(...(only ? [only] : []));
+  let rivals;
+  if (only) rivals = db.prepare('SELECT * FROM rivals WHERE id = ?').all(only);
+  else if (ids) rivals = ids.length ? db.prepare(`SELECT * FROM rivals WHERE id IN (${ids.map(() => '?').join(',')})`).all(...ids) : [];
+  else rivals = db.prepare(`SELECT * FROM rivals WHERE id IN (SELECT rival_id FROM workspace_rivals)
+    ${staleDays ? `AND (last_collected_at IS NULL OR last_collected_at < datetime('now', '-${Number(staleDays)} days'))` : ''}`).all();
   for (const rv of rivals) {
     process.stdout.write(`• ${rv.name} … `);
     try { const n = await collectRival(db, rv, run); run.ads += n; console.log(`${n} ads`); }
@@ -143,11 +146,14 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const run = { calls: 0, cost: 0 };
   const seedIdx = args.indexOf('--seed');
   if (seedIdx >= 0) {
+    // --seed seed.json [--user <betterAuthUserId>]: set a workspace's brand and rivals from a file.
     const seed = JSON.parse(readFileSync(args[seedIdx + 1], 'utf8'));
-    saveWorkspace(seed.brand, db);
+    const uIdx = args.indexOf('--user');
+    const ws = workspaceForUser(uIdx >= 0 ? args[uIdx + 1] : 'local', db);
+    saveWorkspace(ws.id, seed.brand, db);
     for (const name of seed.rivals) {
       const p = await findPage(name, db, run);
-      addRival(p, db);
+      trackRival(ws.id, addRival(p, db).id, db);
       console.log(`+ ${name} → ${p.name} (page ${p.page_id}, ${p.likes ?? '?'} likes)`);
     }
   }

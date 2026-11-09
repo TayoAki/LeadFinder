@@ -11,19 +11,12 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage blocked: fine */ } },
 };
 
-const state = { status: {}, ws: {}, rivals: [], overview: null };
+const state = { me: null, status: {}, ws: {}, rivals: [], overview: null };
 
 // ---------- API ----------
 async function api(path, opts = {}) {
-  const headers = { 'content-type': 'application/json' };
-  const pass = store.get('kw-pass');
-  if (pass) headers['x-keepwatch-pass'] = pass;
-  const res = await fetch(path, { ...opts, headers, body: opts.body ? JSON.stringify(opts.body) : undefined });
-  if (res.status === 401) {
-    const p = prompt('This action needs the Keepwatch passcode:');
-    if (p) { store.set('kw-pass', p); return api(path, opts); }
-    throw new Error('Passcode required');
-  }
+  const res = await fetch(path, { ...opts, headers: { 'content-type': 'application/json' }, credentials: 'same-origin', body: opts.body ? JSON.stringify(opts.body) : undefined });
+  if (res.status === 401) { location.href = '/login?next=' + encodeURIComponent(location.pathname + location.hash); return new Promise(() => {}); }
   const data = await res.json().catch(() => ({}));
   if (!res.ok) throw new Error(data.error || `HTTP ${res.status}`);
   return data;
@@ -33,6 +26,10 @@ async function api(path, opts = {}) {
 async function runJob(path, body, label) {
   toast(`${label}…`);
   const job = await api(path, { method: 'POST', body });
+  return pollJob(job.id);
+}
+async function pollJob(jobId) {
+  const job = { id: jobId };
   for (;;) {
     await new Promise(r => setTimeout(r, 2000));
     const j = await api(`/api/jobs/${job.id}`);
@@ -131,7 +128,8 @@ function survivalSentence(s) {
 // ---------- views ----------
 async function viewOverview() {
   const [ov, rivals, formats] = await Promise.all([api('/api/overview'), api('/api/rivals'), api('/api/formats')]);
-  if (!ov.counted) return empty(`No ads yet. Add rivals in <a href="#/settings">Settings</a> and run a collection.`);
+  if (!state.rivals.length) return onboarding();
+  if (!ov.counted) return empty(`Collecting your rivals' ads. This takes a minute or two; refresh shortly.`);
   const surv = formats.survival.filter(s => s.n >= 3);
   const lg = formats.league;
   return `
@@ -246,7 +244,7 @@ async function viewRebuild(adId) {
       <div class="vs">
         <div><span class="eyebrow">Theirs · ${esc(ad.rival_name)}</span>${thumb(ad)}<p class="small muted">${esc(runLabel(ad))} · ${esc(ad.format_label)}</p></div>
         <div id="ours"><span class="eyebrow">Yours · ${esc(state.ws.brand_name || 'your brand')}</span>
-          ${existing ? rebuildFigure(existing) : `<div class="ad-thumb"><div class="ph"><span>Not made yet.<br><br><button class="btn primary" id="make">Make my version (~$0.03)</button></span></div></div>`}
+          ${existing ? rebuildFigure(existing) : `<div class="ad-thumb"><div class="ph"><span>Not made yet.<br><br><button class="btn primary" id="make">Make my version</button><br><small class="muted">Uses 1 of your monthly rebuilds</small></span></div></div>`}
         </div>
       </div>
       ${existing ? planBlock(existing) : ''}
@@ -344,9 +342,16 @@ async function viewAlerts() {
 }
 
 async function viewSettings() {
-  const ws = state.ws, st = state.status;
+  const ws = state.ws, me = state.me, u = me.usage;
   const origin = location.origin;
-  return `<section class="section">${sectionHead('Your brand', 'Rebuilt ads and the buyer panel use these.')}
+  return `<section class="section">${sectionHead('Rivals', `${u.used.rivals} of ${u.limits.rivals} on the ${esc(u.plan_name)} plan. Search the Meta Ad Library by brand name, then pick the right page.`)}
+    <div class="card pad" style="display:grid;gap:12px">
+      ${state.rivals.length ? `<table class="table"><tbody>${state.rivals.map(r => `<tr><td><span class="row">${avatar(r.rival)}<b>${esc(r.rival.name)}</b></span></td><td class="muted">${fmtNum(r.counted)} ads · ${r.running} running</td><td class="num"><button class="btn sm" data-untrack="${r.rival.id}">Remove</button></td></tr>`).join('')}</tbody></table>` : ''}
+      <form class="filters" id="rival-search" style="margin:0"><input name="q" placeholder="Brand name, e.g. Olipop" required minlength="2" style="min-width:240px;flex:1"><button class="btn primary" ${me.providers.adData ? '' : 'disabled'}>Search</button></form>
+      ${me.providers.adData ? '' : '<span class="small muted">Adding new rivals is switched off on this server for now. Use "Try the demo" on the overview.</span>'}
+      <div id="rival-results" class="grid-auto"></div>
+    </div></section>
+  <section class="section">${sectionHead('Your brand', 'Rebuilt ads and the buyer panel use these.')}
     <form class="form card pad" id="ws-form">
       <label>Brand name<input name="brand_name" value="${esc(ws.brand_name)}" required></label>
       <label>Product <span class="hint">One line: what it is and the facts you can claim.</span><input name="brand_product" value="${esc(ws.brand_product)}"></label>
@@ -357,12 +362,17 @@ async function viewSettings() {
       <label>Category<input name="category" value="${esc(ws.category)}"></label>
       <div><button class="btn primary">Save</button></div>
     </form></section>
-  <section class="section">${sectionHead('Rivals', 'Search the Meta Ad Library by brand name. Each collection costs about a cent per rival.')}
-    <form class="filters" id="rival-form"><input name="name" placeholder="Brand name, e.g. Olipop" required style="min-width:260px"><button class="btn primary" ${st.treg ? '' : 'disabled'}>Track rival</button></form>
-    <div class="row"><button class="btn" id="collect" ${st.treg ? '' : 'disabled'}>Refresh all rivals now</button>${st.treg ? '' : '<span class="small muted">Collection needs the treg CLI on this server.</span>'}</div></section>
+  <section class="section">${sectionHead('Plan and usage')}
+    <div class="card pad"><table class="table"><thead><tr><th></th><th class="num">Used</th><th class="num">${esc(u.plan_name)} plan</th></tr></thead><tbody>
+      <tr><td>Tracked rivals</td><td class="num">${u.used.rivals}</td><td class="num">${u.limits.rivals}</td></tr>
+      <tr><td>Ad rebuilds this month</td><td class="num">${u.used.rebuilds}</td><td class="num">${u.limits.rebuilds}</td></tr>
+      <tr><td>Buyer panels this month</td><td class="num">${u.used.panels}</td><td class="num">${u.limits.panels}</td></tr></tbody></table>
+      <p class="small muted">Paid plans with higher limits are coming soon.</p></div></section>
   <section class="section">${sectionHead('Connect your AI', 'Keepwatch is also an MCP server. Ask Claude, ChatGPT or Cursor what your rivals keep running.')}
-    <pre>claude mcp add --transport http keepwatch ${esc(origin)}/mcp${st.passcode ? ' --header "Authorization: Bearer <passcode>"' : ''}</pre>
-    <p class="small muted">Tools: category_overview, rival_playbook, search_ads, hooks_that_lasted, angles_by_temperature, format_league.</p></section>
+    <pre id="mcp-cmd">claude mcp add --transport http keepwatch ${esc(origin)}/mcp --header "Authorization: Bearer ${esc(ws.api_key)}"</pre>
+    <div class="row"><button class="btn sm" id="copy-mcp">Copy</button><button class="btn sm" id="rotate-key">New key</button><span class="small muted">Keep this key private. "New key" disconnects the old one.</span></div></section>
+  <section class="section">${sectionHead('Account')}
+    <div class="card pad row" style="justify-content:space-between"><span>Signed in as <b>${esc(me.user.email)}</b></span><button class="btn" id="sign-out">Sign out</button></div></section>
   <section class="section">${sectionHead('How we count')}
     <div class="card pad"><ul class="list-plain">
       <li><b>Run days</b>: from the ad's Ad Library start date to its end date, or to today if it is still live.</li>
@@ -373,8 +383,19 @@ async function viewSettings() {
     </ul></div></section>`;
 }
 
+function onboarding() {
+  return `<section class="section"><div class="card pad" style="display:grid;gap:14px;max-width:720px">
+    <span class="eyebrow">Welcome${state.me.user.name ? `, ${esc(state.me.user.name.split(' ')[0])}` : ''}</span>
+    <h2 style="font-size:24px">See what your rivals keep paying to run.</h2>
+    <p class="sub">Add the brands you compete with. Keepwatch pulls their Meta ads, counts what they keep, kill and launch, and rebuilds their winners for your brand.</p>
+    <div class="row"><a class="btn primary" href="#/settings">Add your rivals</a><button class="btn" id="try-demo">Try the demo (fiber drinks)</button></div>
+    <span class="small muted">The demo fills in a sample brand and five real rivals so you can look around. You can change everything later.</span>
+  </div></section>`;
+}
+
 // ---------- right sidebar + footer ----------
 async function renderRight() {
+  if (!state.rivals.length) { $('#rightbar').innerHTML = `<div class="card rb-card"><h3>This week</h3><p class="small muted">Add rivals and their weekly numbers show up here.</p><a class="btn sm primary" href="#/settings">Add rivals</a></div>`; return; }
   const [ov, angles, rebuilds, st] = [state.overview, await api('/api/angles'), await api(`/api/rebuilds?week=${state.status.week}`), state.status];
   const open = angles.filter(a => a.temp === 'open' || a.temp === 'cooling').slice(0, 4);
   const crowded = angles.filter(a => a.temp === 'crowded').slice(0, 3);
@@ -387,8 +408,8 @@ async function renderRight() {
     <div class="card rb-card"><h3>Monday drop</h3>
       <div class="notif"><span class="avatar">K</span><div><b>Your Monday drop ${rebuilds.length ? 'is ready' : 'is waiting'}</b><div class="small muted">Week of ${esc(st.week)} · ${rebuilds.length} new ads</div></div></div>
       <div class="drop-thumbs">${rebuilds.slice(0, 4).map(r => r.image ? `<a href="#/rebuild/${esc(r.ad_id)}"><img src="${esc(r.image)}" alt="Drop ad"></a>` : '<div></div>').join('') || '<div></div><div></div><div></div><div></div>'}</div>
-      <button class="btn sm primary" id="drop-btn" ${st.treg ? '' : 'disabled'}>${rebuilds.length ? 'Make more' : 'Make this week\'s drop'}</button>
-      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. ~$0.03 per ad.</p></div>
+      <button class="btn sm primary" id="drop-btn" ${st.images ? '' : 'disabled'}>${rebuilds.length ? 'Make more' : 'Make this week\'s drop'}</button>
+      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. Each ad uses one of your monthly rebuilds.</p></div>
     <div class="card rb-card"><h3>Open ground</h3>
       ${open.length ? open.map(a => `<div class="rb-stat"><span>${esc(a.label)}</span><span class="pill ${a.temp}">${esc(a.temp_label)}</span></div>`).join('') : '<p class="small muted">Every angle has a rival on it.</p>'}
       ${crowded.length ? `<p class="small muted" style="margin:8px 0 0">Crowded: ${crowded.map(a => esc(a.label)).join(', ')}.</p>` : ''}
@@ -403,9 +424,9 @@ async function makeDrop(e) {
 }
 
 function renderFooter() {
-  const ov = state.overview, st = state.status, run = ov?.last_run;
-  $('#foot-left').textContent = run ? `Last collected ${run.finished_at.replace(' ', ' at ')} UTC · ${fmtNum(ov.counted)} ads counted · ${run.calls} calls, $${Number(run.cost_usd).toFixed(3)}` : 'Not collected yet';
-  $('#foot-right').innerHTML = `Source: public Meta Ad Library sample. Run length ≠ sales.<span class="status-dot ${st.treg ? 'on' : ''}"></span>Collector<span class="status-dot ${st.llm ? 'on' : ''}"></span>Claude`;
+  const ov = state.overview, me = state.me, u = me.usage;
+  $('#foot-left').textContent = `${ov?.last_collected ? `Updated ${ov.last_collected.slice(0, 10)}` : 'Not collected yet'} · ${fmtNum(ov?.counted)} ads counted · ${u.plan_name} plan: ${u.used.rebuilds}/${u.limits.rebuilds} rebuilds this month`;
+  $('#foot-right').innerHTML = `Source: public Meta Ad Library sample. Run length ≠ sales.<span class="status-dot ${me.providers.adData ? 'on' : ''}"></span>Ad data<span class="status-dot ${me.providers.images ? 'on' : ''}"></span>Images<span class="status-dot ${me.providers.llm ? 'on' : ''}"></span>Claude`;
 }
 
 function renderSidebar() {
@@ -458,7 +479,9 @@ async function route() {
 }
 
 async function refreshChrome() {
-  [state.status, state.ws, state.rivals, state.overview] = await Promise.all([api('/api/status'), api('/api/workspace'), api('/api/rivals'), api('/api/overview')]);
+  [state.me, state.rivals, state.overview] = await Promise.all([api('/api/me'), api('/api/rivals'), api('/api/overview')]);
+  state.ws = state.me.workspace;
+  state.status = { treg: state.me.providers.adData, images: state.me.providers.images, llm: state.me.providers.llm, week: state.me.week };
   document.documentElement.style.setProperty('--accent', state.ws.brand_color || '');
   $('#alert-dot').hidden = !(state.overview?.new7 || state.overview?.killed7);
   renderSidebar(); renderFooter(); renderRight().catch(() => {});
@@ -466,7 +489,7 @@ async function refreshChrome() {
 
 // ---------- events ----------
 document.addEventListener('click', async e => {
-  const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],#side-category,#collect,#drop-now,#run-panel');
+  const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
   if (!t) return;
   if (t.dataset.view) { location.hash = { home: '#/overview', search: '#/search', alerts: '#/alerts', library: '#/library', settings: '#/settings' }[t.dataset.view]; return; }
   if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
@@ -476,6 +499,19 @@ document.addEventListener('click', async e => {
     location.hash = `#/rebuild/${t.dataset.steal}`; return; }
   if (t.dataset.ad) { openAd(t.dataset.ad); return; }
   if (t.id === 'side-category') { location.hash = '#/overview'; return; }
+  if (t.id === 'try-demo') { t.disabled = true; try { await api('/api/demo', { method: 'POST' }); await refreshChrome(); route(); } catch (err) { toast(err.message, 6000); t.disabled = false; } return; }
+  if (t.id === 'sign-out') { await fetch('/api/auth/sign-out', { method: 'POST', headers: { 'content-type': 'application/json' }, body: '{}' }); location.href = '/'; return; }
+  if (t.id === 'copy-mcp') { try { await navigator.clipboard.writeText($('#mcp-cmd').textContent); toast('Copied'); } catch { toast('Select the text and copy it'); } return; }
+  if (t.id === 'rotate-key') { if (!confirm('Make a new key? Apps using the old one will stop working.')) return; await api('/api/workspace/rotate-key', { method: 'POST' }); await refreshChrome(); route(); return; }
+  if (t.dataset.untrack) { if (!confirm('Stop tracking this rival?')) return; await api(`/api/rivals/${t.dataset.untrack}`, { method: 'DELETE' }); await refreshChrome(); route(); return; }
+  if (t.dataset.pick) {
+    t.disabled = true;
+    try { const r = await api('/api/rivals', { method: 'POST', body: JSON.parse(t.dataset.pick) }); toast(r.job ? `Tracking ${r.rival.name}. Collecting their ads…` : `Tracking ${r.rival.name}`, 4000);
+      await refreshChrome(); route();
+      if (r.job) { runJob.poll = (async () => { try { await pollJob(r.job.id); await refreshChrome(); route(); toast(`${r.rival.name}'s ads are in`); } catch (err) { toast(err.message, 6000); } })(); } }
+    catch (err) { toast(err.message, 6000); t.disabled = false; }
+    return;
+  }
   if (t.id === 'collect') { t.disabled = true; try { const r = await runJob('/api/collect', {}, 'Collecting rival ads (a few minutes)'); toast(`Collected ${r.ads} ads for $${r.cost.toFixed(3)}`); await refreshChrome(); route(); } catch (err) { toast(err.message, 6000); } t.disabled = false; return; }
   if (t.id === 'drop-now') { makeDrop(e); return; }
   if (t.id === 'run-panel') {
@@ -488,10 +524,15 @@ document.addEventListener('click', async e => {
 document.addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target, data = Object.fromEntries(new FormData(f));
-  if (f.id === 'ws-form') { try { await api('/api/workspace', { method: 'POST', body: data }); toast('Saved'); refreshChrome(); } catch (err) { toast(err.message); } }
-  if (f.id === 'rival-form') {
-    try { const r = await api('/api/rivals', { method: 'POST', body: data }); toast(`Tracking ${r.rival.name}. Collecting their ads…`, 4000); f.reset(); await refreshChrome(); }
-    catch (err) { toast(err.message, 6000); }
+  if (f.id === 'ws-form') { try { await api('/api/workspace', { method: 'POST', body: data }); toast('Saved'); await refreshChrome(); } catch (err) { toast(err.message); } }
+  if (f.id === 'rival-search') {
+    const out = $('#rival-results'); out.innerHTML = '<div class="skeleton"></div>';
+    try {
+      const hits = await api(`/api/rivals/search?q=${encodeURIComponent(data.q)}`);
+      out.innerHTML = hits.length ? hits.map(h => `<div class="card pad" style="display:grid;gap:8px"><span class="row">${avatar({ name: h.name, avatar_url: h.avatar_url })}<b>${esc(h.name)}</b></span>
+        <span class="small muted">${esc(h.category || '')}${h.ig_username ? ` · @${esc(h.ig_username)}` : ''} · ${fmtNum(h.likes)} likes</span>
+        <button class="btn sm primary" data-pick='${esc(JSON.stringify(h))}'>Track this page</button></div>`).join('') : '<p class="muted">No advertisers found. Try the exact brand name.</p>';
+    } catch (err) { out.innerHTML = `<p class="muted">${esc(err.message)}</p>`; }
   }
   if (f.id === 'search-form') { const q = new URLSearchParams([...new FormData(f)].filter(([, v]) => v)); location.hash = `#/search?${q}`; }
 });

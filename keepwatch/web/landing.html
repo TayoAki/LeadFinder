@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Keepwatch</title>
+  <meta name="description" content="Keepwatch finds the Meta ads your competitors keep paying to run, shows why they work, and rebuilds them for your brand.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C8553D'/%3E%3Cpath d='M9 16a7 7 0 0 1 14 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='18' r='3' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { overflow-y: auto; }
+    .site { max-width: 1120px; margin: 0 auto; padding: 0 16px; }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; }
+    .brand svg { width: 30px; height: 30px; }
+    .hero { display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center; padding: 48px 0 64px; }
+    .hero h1 { font-size: clamp(34px, 5vw, 56px); letter-spacing: -.035em; line-height: 1.04; font-weight: 800; }
+    .hero p { font-size: 18px; color: var(--ink-2); margin: 18px 0 26px; max-width: 520px; }
+    .stack { position: relative; height: 470px; }
+    .stack img { position: absolute; width: 58%; border-radius: 16px; box-shadow: 0 18px 50px rgb(30 25 20 / .18); border: 1px solid var(--line); }
+    .stack img:nth-child(1) { left: 0; top: 40px; transform: rotate(-4deg); }
+    .stack img:nth-child(2) { right: 0; top: 0; transform: rotate(3deg); }
+    .stack .chip { position: absolute; left: 30%; bottom: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 10px 14px; box-shadow: var(--shadow); font-size: 13px; }
+    .band { padding: 56px 0; border-top: 1px solid var(--line); }
+    .band h2 { font-size: clamp(24px, 3vw, 34px); letter-spacing: -.02em; max-width: 720px; }
+    .band .lede { color: var(--ink-2); font-size: 17px; max-width: 640px; margin: 10px 0 28px; }
+    .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .features .card { padding: 18px; }
+    .features h3 { font-size: 16px; margin-bottom: 6px; }
+    .features p { margin: 0; color: var(--ink-2); }
+    .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: s; }
+    .steps div { counter-increment: s; padding: 16px; }
+    .steps div::before { content: counter(s); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; margin-bottom: 10px; }
+    .price { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: 14px; }
+    .price .card { padding: 22px; display: grid; gap: 10px; align-content: start; }
+    .price .amt { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
+    .price ul { margin: 0; padding-left: 18px; color: var(--ink-2); display: grid; gap: 4px; }
+    .foot { padding: 28px 0 40px; color: var(--ink-3); font-size: 13px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; padding-top: 24px; }
+      .stack { height: 380px; }
+      .features, .steps { grid-template-columns: 1fr 1fr; }
+      .price { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) { .features, .steps { grid-template-columns: 1fr; } .stack { height: 300px; } }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <nav class="nav">
+      <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 16a7 7 0 0 1 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="16" cy="18" r="3" fill="#fff"/></svg>Keepwatch</a>
+      <div class="row"><a class="btn" href="/login">Sign in</a><a class="btn primary" href="/signup">Start free</a></div>
+    </nav>
+
+    <section class="hero">
+      <div>
+        <span class="eyebrow">Competitor ad intelligence for Meta</span>
+        <h1>Turn your competitors' winning ads into yours.</h1>
+        <p>Keepwatch finds the ads your rivals keep paying to run, shows you why they work, and makes finished versions for your brand. New ones land every Monday.</p>
+        <div class="row"><a class="btn primary" href="/signup" style="padding:12px 18px;font-size:15px">Start free</a><a class="btn" href="/signup?demo=1" style="padding:12px 18px;font-size:15px">See the demo</a></div>
+        <p class="small muted" style="margin-top:14px">Free plan: 5 rivals, 10 ads a month. No card needed.</p>
+      </div>
+      <div class="stack" aria-hidden="true">
+        <img src="/img/example-offer.jpg" alt="">
+        <img src="/img/example-pour.jpg" alt="">
+        <div class="chip"><b>Rebuilt from a rival ad live 46 days</b><br><span class="muted">Same layout. Your product, offer and colour.</span></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>See what's working across your whole category, every week.</h2>
+      <p class="lede">Every rival's ads, counted and ranked: what they keep running, what they kill, and which formats last.</p>
+      <div class="features">
+        <div class="card"><h3>Kept, killed and launched</h3><p>An ad a rival keeps paying for past 30 days has survived their own testing. We count every one, every week.</p></div>
+        <div class="card"><h3>Each rival's playbook</h3><p>Their signature ad, the winners they keep, the tests they dropped inside a month, and what they're testing now.</p></div>
+        <div class="card"><h3>The format league</h3><p>Video, static or carousel: which formats rivals keep paying for, and how long each one lasts.</p></div>
+        <div class="card"><h3>Hooks that lasted</h3><p>Every opening line from an ad that ran 30+ days, with the ad it opens and how long it ran.</p></div>
+        <div class="card"><h3>Angles by temperature</h3><p>Open ground means none of your rivals runs it. Crowded means three or more do. Say it first.</p></div>
+        <div class="card"><h3>Works in your AI</h3><p>Connect Claude, ChatGPT or Cursor and ask what your competitors launched this week.</p></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Their winner, rebuilt as your ad in minutes.</h2>
+      <p class="lede">Pick any ad. Keepwatch keeps what makes it work and rebuilds it with your product, your offer and your colours. It never copies their name, logo, claims or wording.</p>
+      <div class="steps">
+        <div class="card"><b>Add your rivals</b><p class="muted">Search the Meta Ad Library by brand name.</p></div>
+        <div class="card"><b>Read what lasts</b><p class="muted">Kept, killed, formats, hooks and open angles.</p></div>
+        <div class="card"><b>Steal the structure</b><p class="muted">One click turns a lasting ad into yours.</p></div>
+        <div class="card"><b>Test before you spend</b><p class="muted">Simulated buyers pick between your ad and theirs.</p></div>
+      </div>
+    </section>
+
+    <section class="band">
+      <h2>Pick how many rivals to learn from.</h2>
+      <p class="lede">Start free. Paid plans with more rivals and ads are coming soon.</p>
+      <div class="price">
+        <div class="card"><span class="eyebrow">Free</span><span class="amt">$0</span>
+          <ul><li>5 tracked rivals, refreshed weekly</li><li>10 rebuilt ads a month</li><li>3 buyer-panel tests a month</li><li>MCP access for your AI</li></ul>
+          <a class="btn primary" href="/signup">Start free</a></div>
+        <div class="card"><span class="eyebrow">Pro · coming soon</span><span class="amt">More</span>
+          <ul><li>15 tracked rivals</li><li>200 rebuilt ads a month</li><li>60 buyer-panel tests a month</li><li>Monday drop every week</li></ul>
+          <a class="btn" href="/signup">Join on Free</a></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <span>© Keepwatch. Ads are a sample from the public Meta Ad Library. Run length shows an ad lasted, not that it made money.</span>
+      <span><a href="/login">Sign in</a></span>
+    </footer>
+  </div>
+</body>
+</html>

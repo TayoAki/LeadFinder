@@ -28,10 +28,13 @@ export function enrich(ad, t) {
   return { ...ad, run_days, pile, format_label: FORMAT_LABEL[ad.format] || ad.format, angle_label: angleLabel(ad.angle) };
 }
 
-export function loadAds(db = getDb(), { rivalId } = {}) {
+/** All ads for one rival, or for a workspace's rivals (rivalIds). An empty rivalIds list means no ads. */
+export function loadAds(db = getDb(), { rivalId, rivalIds } = {}) {
   const t = today(db);
+  const ids = rivalId ? [rivalId] : (rivalIds || []);
+  if (!ids.length) return { t, ads: [] };
   const rows = db.prepare(`SELECT a.*, r.name AS rival_name, r.avatar_url AS rival_avatar FROM ads a JOIN rivals r ON r.id = a.rival_id
-    ${rivalId ? 'WHERE a.rival_id = ?' : ''}`).all(...(rivalId ? [rivalId] : []));
+    WHERE a.rival_id IN (${ids.map(() => '?').join(',')})`).all(...ids);
   return { t, ads: rows.map(a => enrich(a, t)).filter(a => a.run_days !== null) };
 }
 
@@ -64,10 +67,12 @@ export function survival(ads, checkpoints = [1, 7, 30, 90, 180]) {
   };
 }
 
-export function overview(db = getDb()) {
-  const { t, ads } = loadAds(db);
-  const rivals = db.prepare('SELECT * FROM rivals ORDER BY name').all();
-  const run = db.prepare('SELECT * FROM runs WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1').get();
+const rivalsIn = (db, ids) => (ids.length ? db.prepare(`SELECT * FROM rivals WHERE id IN (${ids.map(() => '?').join(',')}) ORDER BY name`).all(...ids) : []);
+
+export function overview(db = getDb(), rivalIds = []) {
+  const { t, ads } = loadAds(db, { rivalIds });
+  const rivals = rivalsIn(db, rivalIds);
+  const lastCollected = rivals.map(r => r.last_collected_at).filter(Boolean).sort().at(-1) || null;
   const killed7 = ads.filter(a => !a.is_active && within(a.end_date, t, 7));
   return {
     today: t,
@@ -78,14 +83,14 @@ export function overview(db = getDb()) {
     retired7: killed7.filter(a => a.pile === 'retired').length,
     new7: ads.filter(a => within(a.start_date, t, 7)).length,
     kept: ads.filter(a => a.pile === 'kept').length,
-    last_run: run || null,
+    last_collected: lastCollected,
   };
 }
 
 /** Per rival: their longest-running live ad, and the format their kept ads bet on. */
-export function rivalKeeps(db = getDb()) {
-  const { ads } = loadAds(db);
-  const rivals = db.prepare('SELECT * FROM rivals ORDER BY name').all();
+export function rivalKeeps(db = getDb(), rivalIds = []) {
+  const { ads } = loadAds(db, { rivalIds });
+  const rivals = rivalsIn(db, rivalIds);
   return rivals.map(r => {
     const mine = ads.filter(a => a.rival_id === r.id);
     const live = mine.filter(a => a.is_active).sort((a, b) => b.run_days - a.run_days);
@@ -102,8 +107,8 @@ export function rivalKeeps(db = getDb()) {
 }
 
 /** Which formats rivals keep paying for, and which they kill, over the last 4 weeks. */
-export function formatLeague(db = getDb(), windowDays = 28) {
-  const { t, ads } = loadAds(db);
+export function formatLeague(db = getDb(), rivalIds = [], windowDays = 28) {
+  const { t, ads } = loadAds(db, { rivalIds });
   const inWindow = ads.filter(a => a.is_active || within(a.end_date, t, windowDays) || within(a.start_date, t, windowDays));
   const overall = pct(inWindow.filter(a => a.is_active).length, inWindow.length);
   const rows = Object.entries(groupBy(inWindow, a => a.format)).map(([fmt, list]) => {
@@ -123,8 +128,8 @@ export function formatLeague(db = getDb(), windowDays = 28) {
   return { window_days: windowDays, counted: inWindow.length, overall_share: overall, rows, ranked: inWindow.length >= 10 };
 }
 
-export function formatSurvival(db = getDb()) {
-  const { ads } = loadAds(db);
+export function formatSurvival(db = getDb(), rivalIds = []) {
+  const { ads } = loadAds(db, { rivalIds });
   return Object.entries(groupBy(ads, a => a.format)).map(([fmt, list]) => ({ format: fmt, label: FORMAT_LABEL[fmt] || fmt, ...survival(list) }))
     .sort((a, b) => b.n - a.n);
 }
@@ -132,8 +137,8 @@ export function formatSurvival(db = getDb()) {
 const normHook = h => (h || '').toLowerCase().replace(/[^a-z ]/g, ' ').replace(/\s+/g, ' ').trim().split(' ').slice(0, 8).join(' ');
 
 /** Opening lines ranked by how long the ad they open has run. Patterns = the same opening across 2+ brands. */
-export function hooksThatLasted(db = getDb(), { limit = 12, rivalId, perRival = 2 } = {}) {
-  const { ads } = loadAds(db, { rivalId });
+export function hooksThatLasted(db = getDb(), { limit = 12, rivalId, rivalIds, perRival = 2 } = {}) {
+  const { ads } = loadAds(db, { rivalId, rivalIds });
   const seen = new Set();
   const out = [];
   const perR = {};
@@ -150,8 +155,8 @@ export function hooksThatLasted(db = getDb(), { limit = 12, rivalId, perRival = 
 }
 
 /** Angles by temperature: how many rivals run each angle right now. Cold/open = say it first. */
-export function angleTemperature(db = getDb()) {
-  const { t, ads } = loadAds(db);
+export function angleTemperature(db = getDb(), rivalIds = []) {
+  const { t, ads } = loadAds(db, { rivalIds });
   const recent = ads.filter(a => a.is_active || within(a.end_date, t, 90));
   return [...ANGLES.map(a => a.key), 'other'].map(key => {
     const list = recent.filter(a => a.angle === key);
@@ -204,8 +209,8 @@ function summarise(rival, { kept, killed, formats, angles, ads }) {
   return parts.join(' ');
 }
 
-export function listAds(db = getDb(), { rivalId, format, pile, angle, minDays, q, limit = 60, sort = 'run' } = {}) {
-  let { ads } = loadAds(db, { rivalId });
+export function listAds(db = getDb(), { rivalId, rivalIds, format, pile, angle, minDays, q, limit = 60, sort = 'run' } = {}) {
+  let { ads } = loadAds(db, { rivalId: rivalId ? Number(rivalId) : undefined, rivalIds });
   if (format) ads = ads.filter(a => a.format === format);
   if (pile) ads = ads.filter(a => a.pile === pile);
   if (angle) ads = ads.filter(a => a.angle === angle);

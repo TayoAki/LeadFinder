@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign in · Keepwatch</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C8553D'/%3E%3Cpath d='M9 16a7 7 0 0 1 14 0' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='18' r='3' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    body { display: grid; place-items: center; min-height: 100vh; padding: 16px; }
+    .box { width: min(400px, 100%); padding: 26px; display: grid; gap: 14px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; color: var(--ink); text-decoration: none; justify-content: center; }
+    .brand svg { width: 30px; height: 30px; }
+    .err { color: var(--bad); min-height: 1.2em; }
+  </style>
+</head>
+<body>
+  <main class="card box">
+    <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 16a7 7 0 0 1 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="16" cy="18" r="3" fill="#fff"/></svg>Keepwatch</a>
+    <h1 id="title" style="font-size:22px;text-align:center">Create your account</h1>
+    <form class="form" id="form" novalidate>
+      <label id="name-row">Name<input name="name" autocomplete="name"></label>
+      <label>Email<input name="email" type="email" autocomplete="email" required></label>
+      <label>Password <span class="hint" id="pw-hint">At least 8 characters.</span><input name="password" type="password" minlength="8" autocomplete="new-password" required></label>
+      <button class="btn primary" id="submit" style="justify-content:center;padding:11px">Create account</button>
+      <p class="err small" id="err" role="alert"></p>
+    </form>
+    <p class="small muted" style="text-align:center;margin:0" id="switch"></p>
+  </main>
+  <script type="module">
+    const params = new URLSearchParams(location.search);
+    const isLogin = location.pathname === '/login';
+    const next = params.get('next') && params.get('next').startsWith('/') ? params.get('next') : '/app';
+    const $ = s => document.querySelector(s);
+    document.title = (isLogin ? 'Sign in' : 'Create your account') + ' · Keepwatch';
+    $('#title').textContent = isLogin ? 'Welcome back' : 'Create your account';
+    $('#submit').textContent = isLogin ? 'Sign in' : 'Create account';
+    $('#name-row').hidden = isLogin;
+    $('#pw-hint').hidden = isLogin;
+    $('[name=password]').autocomplete = isLogin ? 'current-password' : 'new-password';
+    const keep = params.toString() ? '?' + params.toString() : '';
+    $('#switch').innerHTML = isLogin ? `New here? <a href="/signup${keep}">Create an account</a>` : `Already have an account? <a href="/login${keep}">Sign in</a>`;
+
+    $('#form').addEventListener('submit', async e => {
+      e.preventDefault();
+      const f = Object.fromEntries(new FormData(e.target));
+      $('#err').textContent = '';
+      if (!/^\S+@\S+\.\S+$/.test(f.email || '')) return ($('#err').textContent = 'Enter a valid email.');
+      if ((f.password || '').length < 8) return ($('#err').textContent = 'Use at least 8 characters for your password.');
+      const btn = $('#submit'); btn.disabled = true;
+      const path = isLogin ? '/api/auth/sign-in/email' : '/api/auth/sign-up/email';
+      const body = isLogin ? { email: f.email, password: f.password } : { email: f.email, password: f.password, name: f.name || f.email.split('@')[0] };
+      try {
+        const res = await fetch(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), credentials: 'same-origin' });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(data.message || (res.status === 429 ? 'Too many tries. Wait a minute and try again.' : 'That did not work. Check your details and try again.'));
+        if (!isLogin && params.get('demo')) await fetch('/api/demo', { method: 'POST', credentials: 'same-origin' });
+        location.href = next;
+      } catch (err) { $('#err').textContent = err.message; btn.disabled = false; }
+    });
+  </script>
+</body>
+</html>
