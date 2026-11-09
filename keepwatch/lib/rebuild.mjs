@@ -62,7 +62,7 @@ export function rulePlan(ad, ws, { productName } = {}) {
  *               instead of what they hold) · 'none' (no product added: recreate the scene as is)
  *   button      draw a button only if true; Meta adds its own CTA button under the ad
  */
-export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts, productMode = 'replace', button = false }) {
+export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts, productMode = 'replace', button = false, setting }) {
   const lines = (texts && texts.length ? texts : [headline]).map(t => String(t).trim()).filter(Boolean);
   const product = !hasProduct || productMode === 'none'
     ? 'Do not add any product, phone, app screen or packaging that is not in the reference. If the reference shows a rival product or branded item, replace it with a plain unbranded equivalent.'
@@ -70,8 +70,10 @@ export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts,
       ? `Image 2 is our real product${productName ? ` (${productName})` : ''}. Where the reference person or character holds an object, have them hold this exact product instead, matching the reference's art style. If it is an app screenshot, show it on a phone screen, unchanged and legible.`
       : `Image 2 is our real product${productName ? ` (${productName})` : ''}. Replace each product in the reference with this exact product, in the same positions and size. Keep its packaging, label, shape and colours unchanged. If it is an app screenshot, show it on a phone screen, unchanged and legible. None of the reference's products may remain.`;
   return [
-    'Image 1 is a reference advertisement. Recreate it as faithfully as possible. Keep exactly: the layout and framing, the art style (photo, illustration or hand-drawn), the setting and background, the lighting and colour palette, any subject\'s pose and position, and every text element\'s position, size, box shape, font style and colour.',
-    'Change only three things: the words, the product, and any person.',
+    setting
+      ? `Image 1 is a reference advertisement. Recreate its layout in a new location: ${setting}. Keep exactly: the composition and camera framing, the camera height and angle, the art style (photo, illustration or hand-drawn), where the subject sits in the frame and their pose, the mood of the lighting, and every text element's position, size, box shape, font style and colour. The new location must look clearly different from the reference's location.`
+      : 'Image 1 is a reference advertisement. Recreate it as faithfully as possible. Keep exactly: the layout and framing, the art style (photo, illustration or hand-drawn), the setting and background, the lighting and colour palette, any subject\'s pose and position, and every text element\'s position, size, box shape, font style and colour.',
+    `Change only ${setting ? 'four things: the location, ' : 'three things: '}the words, the product, and any person.`,
     `The words: the reference has ${lines.length === 1 ? 'a text element' : 'text elements'}. Replace ${lines.length === 1 ? 'it' : 'them, in reading order, one for one'} with exactly: ${lines.map((t, n) => `(${n + 1}) "${t}"`).join(' ')}. Same styling as the text being replaced. No other words anywhere.`,
     product,
     button ? `Include a button with exactly the text "${cta}" where the reference has its button, styled like the reference's button.` : 'Do not add any button, call-to-action, logo, watermark or website. If the reference has none, the recreation has none.',
@@ -105,7 +107,9 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
   plan.texts = Array.isArray(concept?.texts) ? concept.texts.slice(0, 12).map(t => String(t).slice(0, 200)) : null;
   plan.product_mode = ['replace', 'in_hand', 'none'].includes(concept?.product_mode) ? concept.product_mode : 'replace';
   plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName,
-    texts: plan.texts, productMode: plan.product_mode, button: concept?.button === true });
+    texts: plan.texts, productMode: plan.product_mode, button: concept?.button === true,
+    setting: typeof concept?.setting === 'string' && concept.setting.trim() ? concept.setting.trim().slice(0, 300) : undefined });
+  plan.setting = concept?.setting || null;
   if (concept?.image_note) plan.image_prompt += `\n${String(concept.image_note).slice(0, 600)}`;
   plan.product_image = product;
   plan.size = size;
