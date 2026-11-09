@@ -143,6 +143,7 @@ WHERE rn = 1;
 "If your sources really update and delete, and they're big, use a notebook with MERGE driven by the change data feed. You handle the changes yourself:"
 
 ```python
+# one-time: CREATE TABLE ops.watermarks (tbl STRING, version BIGINT, updated_at TIMESTAMP)
 from delta.tables import DeltaTable
 from pyspark.sql import functions as F
 from pyspark.sql.window import Window
@@ -162,10 +163,12 @@ if cur > last:
               .filter("rn = 1")
               .drop("rn", "_commit_version", "_commit_timestamp"))
     tgt = DeltaTable.forName(spark, "silver.orders_clean_nb")
+    cols = [c for c in latest.columns if c != "_change_type"]
+    setmap = {c: f"s.{c}" for c in cols}
     (tgt.alias("t").merge(latest.alias("s"), "t.order_id = s.order_id")
         .whenMatchedDelete(condition="s._change_type = 'delete'")
-        .whenMatchedUpdateAll(condition="s._change_type != 'delete'")
-        .whenNotMatchedInsertAll(condition="s._change_type != 'delete'")
+        .whenMatchedUpdate(condition="s._change_type != 'delete'", set=setmap)
+        .whenNotMatchedInsert(condition="s._change_type != 'delete'", values=setmap)
         .execute())
     spark.sql(f"INSERT INTO ops.watermarks VALUES ('bronze.orders', {cur}, current_timestamp())")
 ```
