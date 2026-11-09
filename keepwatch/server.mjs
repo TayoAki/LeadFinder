@@ -20,6 +20,7 @@ import { ANGLES } from './lib/classify.mjs';
 import { addRival, collectAll } from './collect.mjs';
 import { importSeedIfEmpty, DEMO_BRAND } from './lib/seed.mjs';
 import { handleAdmin } from './lib/admin.mjs';
+import { dropTick, notify } from './lib/schedule.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(here, 'web');
@@ -60,6 +61,7 @@ async function weeklyRefresh() {
   catch (e) { console.warn('refresh failed:', e.message); } finally { refreshing = false; }
 }
 setInterval(weeklyRefresh, 60 * 60 * 1000).unref();
+setInterval(() => dropTick().catch(e => console.warn('drop tick:', e.message)), 5 * 60 * 1000).unref();
 
 async function personas(ws) {
   const k = `personas:${ws.id}`;
@@ -84,6 +86,9 @@ const routes = {
     db.prepare('DELETE FROM kv WHERE k = ?').run(`personas:${ws.id}`);
     const { brand_kit, brand_url, ...rest } = body; // the kit is only written by the scraper
     if (rest.product_image && !/^https:\/\//.test(rest.product_image)) delete rest.product_image;
+    if ('drop_enabled' in rest) rest.drop_enabled = rest.drop_enabled === true || rest.drop_enabled === 1 || rest.drop_enabled === '1' || rest.drop_enabled === 'on' ? 1 : 0;
+    if ('drop_hour' in rest) { const h = Number(rest.drop_hour); if (Number.isInteger(h) && h >= 0 && h <= 23) rest.drop_hour = h; else delete rest.drop_hour; }
+    if ('drop_tz' in rest) { try { new Intl.DateTimeFormat('en-US', { timeZone: String(rest.drop_tz) }); } catch { delete rest.drop_tz; } }
     return saveWorkspace(ws.id, rest);
   },
   'POST /api/brand/scrape': async ({ ws, body }) => {
@@ -157,6 +162,8 @@ const routes = {
       const refs = [];
       const r = await mondayDrop(getWorkspace(ws.id), { count: n, onEach: () => refs.push(spend(ws, 'ad', `ad:${randomUUID()}`)) });
       r.rebuilds.forEach((rb, i) => { if (rb.status !== 'done' && refs[i]) refund(ws, refs[i]); });
+      const made = r.rebuilds.filter(x => x.status === 'done').length;
+      if (made) notify(ws.id, { kind: 'drop_ready', title: 'Your drop is ready', body: `${made} new ad${made === 1 ? '' : 's'} in Your ads.`, link: '#/rebuild', ref: `drop-manual:${randomUUID()}` });
       return r;
     });
   },
@@ -174,6 +181,11 @@ const routes = {
       return { ...result, rebuild_id: rb.id, ad_id: theirs.id };
     }, () => refund(ws, ref));
   },
+  'GET /api/notifications': ({ ws }) => ({
+    unread: db.prepare('SELECT COUNT(*) n FROM notifications WHERE workspace_id = ? AND read_at IS NULL').get(ws.id).n,
+    items: db.prepare('SELECT id, kind, title, body, link, created_at, read_at FROM notifications WHERE workspace_id = ? ORDER BY id DESC LIMIT 30').all(ws.id),
+  }),
+  'POST /api/notifications/read': ({ ws }) => { db.prepare("UPDATE notifications SET read_at = datetime('now') WHERE workspace_id = ? AND read_at IS NULL").run(ws.id); return { ok: true }; },
   'GET /api/panels': ({ ws }) => db.prepare('SELECT * FROM panels WHERE workspace_id = ? ORDER BY id DESC LIMIT 10').all(ws.id).map(p => ({ ...p, result: JSON.parse(p.result) })),
 };
 

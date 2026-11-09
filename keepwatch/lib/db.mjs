@@ -69,6 +69,13 @@ CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refund
   created_at TEXT DEFAULT (datetime('now'))
 );
 CREATE INDEX IF NOT EXISTS ledger_ws ON credit_ledger(workspace_id, created_at);
+CREATE TABLE IF NOT EXISTS notifications (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  kind TEXT NOT NULL, title TEXT NOT NULL, body TEXT, link TEXT,
+  ref TEXT UNIQUE,                                -- idempotency, e.g. drop:3:2026-11-09
+  created_at TEXT DEFAULT (datetime('now')), read_at TEXT
+);
 CREATE TABLE IF NOT EXISTS panels (
   id INTEGER PRIMARY KEY AUTOINCREMENT, created_at TEXT DEFAULT (datetime('now')),
   workspace_id INTEGER REFERENCES workspaces(id) ON DELETE CASCADE,
@@ -79,7 +86,8 @@ CREATE TABLE IF NOT EXISTS panels (
 // Columns added after the first version: add them to older databases in place.
 const ADDED_COLUMNS = [['rebuilds', 'workspace_id', 'INTEGER'], ['panels', 'workspace_id', 'INTEGER'],
   ['workspaces', 'brand_url', 'TEXT'], ['workspaces', 'brand_kit', 'TEXT'], ['workspaces', 'product_image', 'TEXT'],
-  ['workspaces', 'trial_ends_at', 'TEXT'], ['rebuilds', 'size', 'TEXT'], ['rebuilds', 'credits', 'INTEGER']];
+  ['workspaces', 'trial_ends_at', 'TEXT'], ['rebuilds', 'size', 'TEXT'], ['rebuilds', 'credits', 'INTEGER'],
+  ['workspaces', 'drop_enabled', 'INTEGER DEFAULT 1'], ['workspaces', 'drop_hour', 'INTEGER DEFAULT 7'], ['workspaces', 'drop_tz', 'TEXT']];
 
 let db;
 export function getDb(file = resolve(DATA_DIR, 'keepwatch.db')) {
@@ -101,7 +109,7 @@ export function openMemoryDb() {
   return m;
 }
 
-const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image'];
+const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image', 'drop_enabled', 'drop_hour', 'drop_tz'];
 
 /** The signed-in user's workspace, created on first use. */
 export function workspaceForUser(userId, d = getDb()) {

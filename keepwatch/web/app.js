@@ -360,12 +360,18 @@ async function viewSearch() {
 }
 
 async function viewAlerts() {
-  const [fresh, killed] = await Promise.all([api('/api/ads?sort=new&limit=24&pile=testing'), api('/api/ads?pile=killed&limit=60')]);
+  const [fresh, killed, notes] = await Promise.all([api('/api/ads?sort=new&limit=24&pile=testing'), api('/api/ads?pile=killed&limit=60'), api('/api/notifications')]);
+  if (notes.unread) api('/api/notifications/read', { method: 'POST' }).then(() => { $('#alert-dot').hidden = true; });
+  const noteList = notes.items.length ? `<section class="section">${sectionHead('Notifications')}
+    <div style="display:grid;gap:8px">${notes.items.slice(0, 8).map(n => `<a class="card pad notif-row${n.read_at ? '' : ' unread'}" href="${esc(n.link || '#/alerts')}">
+      <span class="avatar" style="background:${n.kind === 'drop_ready' ? 'var(--accent)' : 'var(--line)'};color:${n.kind === 'drop_ready' ? 'var(--accent-ink)' : 'var(--ink-2)'}">${n.kind === 'drop_ready' ? '✓' : '!'}</span>
+      <span><b>${esc(n.title)}</b><span class="small muted" style="display:block">${esc(n.body || '')}</span></span>
+      <span class="small muted">${esc((n.created_at || '').slice(0, 16).replace('T', ' '))}</span></a>`).join('')}</div></section>` : '';
   const ov = state.overview;
   const wk = d => d && (Date.parse(ov.today) - Date.parse(d)) / 864e5 <= 7;
   const launched = fresh.filter(a => wk(a.start_date));
   const stopped = killed.filter(a => wk(a.end_date));
-  return `<section class="section">${sectionHead('Launched this week', `${launched.length} new ads started in the last 7 days.`)}
+  return noteList + `<section class="section">${sectionHead('Launched this week', `${launched.length} new ads started in the last 7 days.`)}
     ${launched.length ? `<div class="grid-auto">${launched.map(a => adCard(a)).join('')}</div>` : empty('No launches in the last 7 days.')}</section>
     <section class="section">${sectionHead('Killed this week', 'Stopped inside 30 days. These are tests that did not make it.')}
     ${stopped.length ? `<div class="grid-auto">${stopped.map(a => adCard(a, { cta: 'Steal anyway' })).join('')}</div>` : empty('Nothing killed in the last 7 days.')}</section>`;
@@ -395,6 +401,16 @@ async function viewSettings() {
       <label>Voice<textarea name="brand_voice">${esc(ws.brand_voice)}</textarea></label>
       <label>Audience<textarea name="audience">${esc(ws.audience)}</textarea></label>
       <label>Category<input name="category" value="${esc(ws.category)}"></label>
+      <div><button class="btn primary">Save</button></div>
+    </form></section>
+  <section class="section">${sectionHead('Monday drop', 'Every week, Keepwatch rebuilds the ads your rivals keep running, for your brand, and lets you know when they are ready.')}
+    <form class="form card pad" id="drop-form" style="max-width:none">
+      <label class="row" style="font-weight:550"><input type="checkbox" name="drop_enabled" ${ws.drop_enabled === 0 ? '' : 'checked'} style="width:auto"> Make my drop automatically every Monday</label>
+      <div class="row">
+        <label>Time <select name="drop_hour">${Array.from({ length: 24 }, (_, h) => `<option value="${h}" ${(ws.drop_hour ?? 7) === h ? 'selected' : ''}>${hourLabel(h)}</option>`).join('')}</select></label>
+        <label>Time zone <input name="drop_tz" value="${esc(ws.drop_tz || Intl.DateTimeFormat().resolvedOptions().timeZone)}" style="min-width:220px"></label>
+      </div>
+      <span class="small muted">${4} ads, ${4 * me.cost.ad} credits a week. A week is skipped (and you're told why) if credits run low or ad images aren't switched on.</span>
       <div><button class="btn primary">Save</button></div>
     </form></section>
   <section class="section">${sectionHead('Plan and credits', `One pool pays for everything: tracking a rival is ${me.cost.rival} credits a month, an ad is ${me.cost.ad}, a buyer panel is ${me.cost.panel}.`)}
@@ -427,6 +443,8 @@ async function viewSettings() {
     </ul></div></section>`;
 }
 
+const hourLabel = h => `${((h + 11) % 12) + 1}:00 ${h < 12 ? 'am' : 'pm'}`;
+
 function kitBlock(kit, current) {
   if (!kit) return '<p class="small muted" style="margin:0">Works best with Shopify stores; other sites work too.</p>';
   return `<div class="row">${kit.colors.map(c => `<span title="${esc(c)}" style="width:26px;height:26px;border-radius:6px;background:${esc(c)};border:1px solid var(--line)"></span>`).join('')}
@@ -458,10 +476,10 @@ async function renderRight() {
       <div class="rb-stat"><span>New (7 days)</span><b>${fmtNum(ov?.new7)}</b></div>
       <div class="rb-stat"><span>Kept past 30 days</span><b>${fmtNum(ov?.kept)}</b></div></div>
     <div class="card rb-card"><h3>Monday drop</h3>
-      <div class="notif"><span class="avatar">K</span><div><b>Your Monday drop ${rebuilds.length ? 'is ready' : 'is waiting'}</b><div class="small muted">Week of ${esc(st.week)} · ${rebuilds.length} new ads</div></div></div>
+      <div class="notif"><span class="avatar">K</span><div><b>${rebuilds.length ? 'Your Monday drop is ready' : state.ws.drop_enabled === 0 ? 'Monday drop is off' : 'Next drop: Monday ' + esc(hourLabel(state.ws.drop_hour ?? 7))}</b><div class="small muted">Week of ${esc(st.week)} · ${rebuilds.length} new ads</div></div></div>
       <div class="drop-thumbs">${rebuilds.slice(0, 4).map(r => r.image ? `<a href="#/rebuild/${esc(r.ad_id)}"><img src="${esc(r.image)}" alt="Drop ad"></a>` : '<div></div>').join('') || '<div></div><div></div><div></div><div></div>'}</div>
       <button class="btn sm primary" id="drop-btn" ${st.images ? '' : 'disabled'}>${rebuilds.length ? 'Make more' : 'Make this week\'s drop'}</button>
-      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. 10 credits per ad.</p></div>
+      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. 10 credits per ad. <a href="#/settings">Schedule</a></p></div>
     <div class="card rb-card"><h3>Open ground</h3>
       ${open.length ? open.map(a => `<div class="rb-stat"><span>${esc(a.label)}</span><span class="pill ${a.temp}">${esc(a.temp_label)}</span></div>`).join('') : '<p class="small muted">Every angle has a rival on it.</p>'}
       ${crowded.length ? `<p class="small muted" style="margin:8px 0 0">Crowded: ${crowded.map(a => esc(a.label)).join(', ')}.</p>` : ''}
@@ -535,7 +553,9 @@ async function refreshChrome() {
   state.ws = state.me.workspace;
   state.status = { treg: state.me.providers.adData, images: state.me.providers.images, llm: state.me.providers.llm, week: state.me.week };
   document.documentElement.style.setProperty('--accent', state.ws.brand_color || '');
-  $('#alert-dot').hidden = !(state.overview?.new7 || state.overview?.killed7);
+  api('/api/notifications').then(n => { $('#alert-dot').hidden = !n.unread; if (n.unread && n.items[0] && !n.items[0].read_at && store.get('kw-toast') !== String(n.items[0].id)) { store.set('kw-toast', String(n.items[0].id)); toast(n.items[0].title, 5000); } }).catch(() => {});
+  // First visit: remember this browser's time zone so the Monday drop lands at 7am local time.
+  if (!state.ws.drop_tz) { const tz = Intl.DateTimeFormat().resolvedOptions().timeZone; if (tz) api('/api/workspace', { method: 'POST', body: { drop_tz: tz } }).then(w => { state.ws.drop_tz = w.drop_tz; }).catch(() => {}); }
   renderSidebar(); renderFooter(); renderRight().catch(() => {});
 }
 
@@ -585,6 +605,10 @@ document.addEventListener('submit', async e => {
         <span class="small muted">${esc(h.category || '')}${h.ig_username ? ` · @${esc(h.ig_username)}` : ''} · ${fmtNum(h.likes)} likes</span>
         <button class="btn sm primary" data-pick='${esc(JSON.stringify(h))}'>Track this page</button></div>`).join('') : '<p class="muted">No advertisers found. Try the exact brand name.</p>';
     } catch (err) { out.innerHTML = `<p class="muted">${esc(err.message)}</p>`; }
+  }
+  if (f.id === 'drop-form') {
+    try { await api('/api/workspace', { method: 'POST', body: { drop_enabled: f.drop_enabled.checked ? 1 : 0, drop_hour: Number(f.drop_hour.value), drop_tz: f.drop_tz.value.trim() } }); toast('Drop schedule saved'); await refreshChrome(); route(); }
+    catch (err) { toast(err.message, 6000); }
   }
   if (f.id === 'kit-form') {
     const btn = $('button', f); btn.disabled = true; btn.textContent = 'Reading your site…';

@@ -244,3 +244,6 @@ dialog::backdrop { background: rgb(20 18 15 / .45); }
 .pick:has(input:focus-visible) { outline: 2px solid var(--accent); }
 details > summary { list-style: none; cursor: pointer; }
 details > summary::-webkit-details-marker { display: none; }
+
+.notif-row { display: grid; grid-template-columns: 32px 1fr auto; gap: 12px; align-items: center; color: inherit; text-decoration: none; padding: 12px 14px; }
+.notif-row.unread { border-color: var(--accent); }

@@ -203,9 +203,8 @@ async function imageLoads(url) {
 }
 
 /** Monday drop: rebuild the best-proven kept ads, in the brand's language, with working images, across rivals and angles. */
-export async function mondayDrop(ws, { count = 4, render = true, onEach, lang = 'en' } = {}) {
+export async function mondayDrop(ws, { count = 4, render = true, onEach, lang = 'en', week = mondayOf() } = {}) {
   const db = getDb();
-  const week = mondayOf();
   const done = new Set(db.prepare('SELECT ad_id FROM rebuilds WHERE workspace_id = ?').all(ws.id).map(r => r.ad_id));
   const { listAds } = await import('./analytics.mjs');
   const ads = listAds(db, { rivalIds: rivalIdsFor(ws.id, db), pile: 'kept', limit: 2000 });

@@ -12,7 +12,7 @@ import { PLANS } from './plans.mjs';
 const RIVAL_COLS = ['name', 'page_id', 'domain', 'avatar_url', 'ig_username', 'likes', 'page_category', 'last_collected_at'];
 const AD_COLS = ['id', 'collation_id', 'collation_count', 'is_active', 'start_date', 'end_date', 'format', 'display_format', 'body', 'title',
   'link_desc', 'cta', 'link_url', 'image_url', 'video_url', 'thumb_url', 'transcript', 'hook', 'hook_source', 'angle'];
-const BRAND = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image'];
+const BRAND = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image', 'drop_enabled', 'drop_hour', 'drop_tz'];
 
 export function adminAuthorized(req) {
   const want = process.env.ADMIN_TOKEN || '';
@@ -67,6 +67,7 @@ export async function handleAdmin(req, res, url, send) {
       }
       db.exec('COMMIT');
     } catch (e) { db.exec('ROLLBACK'); throw e; }
+    for (const n of b.notifications || []) db.prepare('INSERT OR IGNORE INTO notifications (workspace_id, kind, title, body, link, ref) VALUES (?,?,?,?,?,?)').run(ws.id, n.kind, n.title, n.body ?? null, n.link ?? null, n.ref ? `${n.ref}:${ws.id}` : null);
     if (b.workspace) saveWorkspace(ws.id, Object.fromEntries(BRAND.filter(k => b.workspace[k] != null).map(k => [k, b.workspace[k]])), db);
     if (b.plan && PLANS[b.plan]) db.prepare('UPDATE workspaces SET plan = ? WHERE id = ?').run(b.plan, ws.id);
     return send(res, 200, { ok: true, workspace_id: ws.id, ads, rebuilds, tracked: db.prepare('SELECT COUNT(*) n FROM workspace_rivals WHERE workspace_id = ?').get(ws.id).n });
