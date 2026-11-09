@@ -85,6 +85,7 @@ export async function handleAdmin(req, res, url, send) {
       db.prepare("INSERT INTO videos (workspace_id, rebuild_id, mode, seconds, status, path, engine, cost_usd) VALUES (?,?,?,?, 'done', ?,?,?)").run(ws.id, rb.id, v.mode, v.seconds ?? 6, v.path, v.engine ?? null, v.cost_usd ?? 0);
       videos++;
     }
+    for (const path of b.retire_videos || []) db.prepare("UPDATE videos SET status = 'replaced' WHERE workspace_id = ? AND path = ?").run(ws.id, String(path));
     for (const n of b.notifications || []) db.prepare('INSERT OR IGNORE INTO notifications (workspace_id, kind, title, body, link, ref) VALUES (?,?,?,?,?,?)').run(ws.id, n.kind, n.title, n.body ?? null, n.link ?? null, n.ref ? String(n.ref).replace('{ws}', ws.id) : null);
     if (b.workspace) saveWorkspace(ws.id, Object.fromEntries(BRAND.filter(k => b.workspace[k] != null).map(k => [k, b.workspace[k]])), db);
     if (b.plan && PLANS[b.plan]) db.prepare('UPDATE workspaces SET plan = ? WHERE id = ?').run(b.plan, ws.id);

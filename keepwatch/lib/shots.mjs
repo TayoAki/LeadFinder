@@ -10,10 +10,12 @@
 //
 // A plan is plain JSON stored on the rebuild (plan.video_plan), so it can be reviewed or edited before rendering.
 import { execFile } from 'node:child_process';
-import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { REBUILD_DIR } from './rebuild.mjs';
+import { DATA_DIR } from './db.mjs';
 import { renderImage } from './providers.mjs';
 import { treg, tregAvailable } from './treg.mjs';
 
@@ -21,6 +23,7 @@ export const W = 1080, H = 1920, FPS = 30;
 const FONT = process.env.KEEPWATCH_FONT || ['/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf'].find(existsSync);
 const FONT_REG = ['/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', '/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf'].find(existsSync) || FONT;
 export const MAX_SECONDS = 30;
+const CLIP_CACHE = resolve(DATA_DIR, 'videos', 'clips');
 
 const run = (cmd, args) => new Promise((ok, bad) => execFile(cmd, args, { maxBuffer: 64 * 1024 * 1024, timeout: 15 * 60 * 1000 },
   (err, stdout, stderr) => (err ? bad(new Error(`${cmd} failed: ${String(stderr || err.message).split('\n').filter(Boolean).slice(-3).join(' ')}`)) : ok(String(stdout) + String(stderr)))));
@@ -172,7 +175,7 @@ export function captionFilters(caps, shotSeconds, dir, tag) {
     if (c.style === 'word') {
       const words = String(c.text).split(/\s+/).filter(Boolean);
       const slot = (to - from) / words.length;
-      words.forEach((w, i) => out.push(`drawtext=fontfile='${FONT}':textfile='${txt(w.toUpperCase())}':fontsize=${c.size || 96}:fontcolor=white:borderw=7:bordercolor=black:x=(w-text_w)/2:y=${y0}:enable='between(t,${(from + i * slot).toFixed(2)},${(from + (i + 1) * slot - 0.01).toFixed(2)})'`));
+      words.forEach((w, i) => out.push(`drawtext=fontfile='${FONT}':textfile='${txt(w.replace(/[.,!?;:]+$/, '').toUpperCase())}':fontsize=${c.size || 96}:fontcolor=white:borderw=7:bordercolor=black:x=(w-text_w)/2:y=${y0}:enable='between(t,${(from + i * slot).toFixed(2)},${(from + (i + 1) * slot - 0.01).toFixed(2)})'`));
       continue;
     }
     const long = String(c.text).length > 80;
@@ -219,10 +222,15 @@ async function sceneSegment(shot, ctx, i, out) {
   const clips = [];
   let from = still;
   for (let p = 0; p < parts; p++) {
-    const clip = await animate(from, scenePrompt(shot, p), each);
-    ctx.cost += clip.cost;
-    const f = join(ctx.work, `clip-${i}-${p}.mp4`);
-    writeFileSync(f, clip.bytes);
+    // same picture + same instructions + same length = same clip: re-renders that only change captions are free
+    const key = createHash('sha1').update(readFileSync(from)).update(scenePrompt(shot, p)).update(String(each)).digest('hex').slice(0, 20);
+    const f = resolve(CLIP_CACHE, `${key}.mp4`);
+    if (!existsSync(f)) {
+      const clip = await animate(from, scenePrompt(shot, p), each);
+      ctx.cost += clip.cost;
+      mkdirSync(CLIP_CACHE, { recursive: true });
+      writeFileSync(f, clip.bytes);
+    }
     clips.push(f);
     from = join(ctx.work, `last-${i}-${p}.png`);
     await run('ffmpeg', ['-v', 'error', '-y', '-sseof', '-0.1', '-i', f, '-frames:v', '1', from]);
