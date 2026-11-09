@@ -54,15 +54,29 @@ export function rulePlan(ad, ws, { productName } = {}) {
 }
 
 /** The image instruction. With a product photo, image 2 is the real product and must appear unchanged. */
-export function imagePrompt({ headline, cta, ws, hasProduct, productName }) {
+/**
+ * The image instruction: a faithful recreation of the reference with only three things changed:
+ * the words, the product (only where the reference shows one), and any person (always a different person).
+ *   texts       on-image lines, replacing the reference's text elements one for one, in reading order
+ *   productMode 'replace' (swap the reference's product for ours) · 'in_hand' (a person holds our phone/product
+ *               instead of what they hold) · 'none' (no product added: recreate the scene as is)
+ *   button      draw a button only if true; Meta adds its own CTA button under the ad
+ */
+export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts, productMode = 'replace', button = false }) {
+  const lines = (texts && texts.length ? texts : [headline]).map(t => String(t).trim()).filter(Boolean);
+  const product = !hasProduct || productMode === 'none'
+    ? 'Do not add any product, phone, app screen or packaging that is not in the reference. If the reference shows a rival product or branded item, replace it with a plain unbranded equivalent.'
+    : productMode === 'in_hand'
+      ? `Image 2 is our real product${productName ? ` (${productName})` : ''}. Where the reference person or character holds an object, have them hold this exact product instead, matching the reference's art style. If it is an app screenshot, show it on a phone screen, unchanged and legible.`
+      : `Image 2 is our real product${productName ? ` (${productName})` : ''}. Replace each product in the reference with this exact product, in the same positions and size. Keep its packaging, label, shape and colours unchanged. If it is an app screenshot, show it on a phone screen, unchanged and legible. None of the reference's products may remain.`;
   return [
-    'Image 1 is a reference advertisement. Recreate it for a different brand: keep its composition, camera angle, lighting, photographic style and the positions of the headline and button.',
-    hasProduct
-      ? `Image 2 is a photo of our real product${productName ? ` (${productName})` : ''}. Replace every product in the reference with this exact product: same packaging, label, shape and colours. Where the reference shows several products, show several of ours in the same positions. None of the reference's products, packets or packaging may remain. Do not redesign, relabel or invent packaging.`
-      : `Replace every product and package in the reference with: ${ws.brand_product || ws.brand_name}. The brand name on the product is "${ws.brand_name}". None of the reference's products may remain.`,
-    `Render exactly this headline: "${headline}". Render exactly this button text: "${cta}". No other words.`,
-    `Use ${ws.brand_color || '#c8553d'} as the accent colour for the button and highlights.`,
-    'Remove every logo, brand name, watermark and claim from the reference brand. If the reference shows a person, show a clearly different person (different face, hair, build and clothing); never reproduce the reference person\'s likeness. No celebrity faces. Keep it looking like a native social ad, not a stock photo.',
+    'Image 1 is a reference advertisement. Recreate it as faithfully as possible. Keep exactly: the layout and framing, the art style (photo, illustration or hand-drawn), the setting and background, the lighting and colour palette, any subject\'s pose and position, and every text element\'s position, size, box shape, font style and colour.',
+    'Change only three things: the words, the product, and any person.',
+    `The words: the reference has ${lines.length === 1 ? 'a text element' : 'text elements'}. Replace ${lines.length === 1 ? 'it' : 'them, in reading order, one for one'} with exactly: ${lines.map((t, n) => `(${n + 1}) "${t}"`).join(' ')}. Same styling as the text being replaced. No other words anywhere.`,
+    product,
+    button ? `Include a button with exactly the text "${cta}" where the reference has its button, styled like the reference's button.` : 'Do not add any button, call-to-action, logo, watermark or website. If the reference has none, the recreation has none.',
+    'If the reference shows a person or character, show a clearly different one (different face, hair, build and clothing) in the same pose; never reproduce the reference person\'s likeness. No celebrity faces.',
+    'Remove every brand name, logo and claim belonging to the reference brand.',
   ].join('\n');
 }
 
@@ -75,7 +89,7 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
   const ad = getAd(db, adId);
   if (!ad || !rivalIdsFor(ws.id, db).includes(ad.rival_id)) throw new Error('Ad not found');
   if (!ws?.brand_name) throw new Error('Set up your brand first (Settings).');
-  const product = productImage || ws.product_image || null;
+  const product = concept?.product_mode === 'none' ? null : (productImage || ws.product_image || null);
 
   let plan;
   if (hasLLM()) {
@@ -88,7 +102,10 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
     if (Array.isArray(concept.why_it_works)) plan.why_it_works = concept.why_it_works.slice(0, 4).map(x => String(x).slice(0, 40));
     plan.source = 'custom';
   }
-  plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName });
+  plan.texts = Array.isArray(concept?.texts) ? concept.texts.slice(0, 12).map(t => String(t).slice(0, 200)) : null;
+  plan.product_mode = ['replace', 'in_hand', 'none'].includes(concept?.product_mode) ? concept.product_mode : 'replace';
+  plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName,
+    texts: plan.texts, productMode: plan.product_mode, button: concept?.button === true });
   if (concept?.image_note) plan.image_prompt += `\n${String(concept.image_note).slice(0, 600)}`;
   plan.product_image = product;
   plan.size = size;
