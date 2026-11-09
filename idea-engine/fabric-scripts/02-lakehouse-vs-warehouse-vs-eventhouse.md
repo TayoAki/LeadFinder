@@ -117,18 +117,6 @@ One more toggle. On the KQL database, turn on **OneLake availability**. Now `Bik
 ### 9:00 Demo: the eventhouse answer in KQL
 [DEMO: eh_bikes → New KQL queryset]
 ```kusto
-BikeEvents
-| where ingestion_time() > ago(30m)
-| summarize bikes_docked = sum(toint(No_Bikes)), stations = dcount(BikepointID)
-    by Neighbourhood, bin(ingestion_time(), 5m)
-| top-nested 5 of Neighbourhood by total = sum(bikes_docked),
-  top-nested of bin_ingestion_time = bin(ingestion_time(), 5m) by sum(bikes_docked)
-```
-
-Actually, let's keep it readable. Two simpler queries.
-
-[DEMO: replace with:]
-```kusto
 // Which neighbourhoods have the most bikes docked right now?
 BikeEvents
 | where ingestion_time() > ago(10m)
@@ -327,8 +315,6 @@ One more item you might see in the Create menu: **SQL database**. That one's for
 
 ### 23:30 Outro
 Next week we build that pattern properly: medallion architecture, bronze to silver to gold, in notebooks, on real data. If you've got a "we picked the wrong one" story, put it in the comments. I read all of them. Subscribe if you want the rest of the series on [CHANNEL].
-
-**Production note:** cut the first KQL `top-nested` block in the edit. It's there so the "let's keep it readable" line lands naturally. Or drop both and start at the simpler query.
 
 ## Chapters
 ```
