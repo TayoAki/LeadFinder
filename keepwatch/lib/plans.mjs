@@ -1,28 +1,71 @@
-// Plans and monthly limits. Billing (Stripe) plugs in later by setting workspaces.plan.
-import { getDb } from './db.mjs';
+// Plans and the credit pool. One monthly pool pays for everything:
+//   tracking a rival = 30 credits a month (its Read and Playbook included) · one finished ad = 10 · one buyer panel = 5
+// Growth: 550 credits − 5 rivals × 30 = 400 → about 40 ads. Scale: 2,000 − 600 → 140. Agency: 6,500 − 1,200 → 530.
+// New accounts get a 14-day trial; Stripe (later) sets workspaces.plan to a paid plan.
+import { getDb, rivalIdsFor } from './db.mjs';
+
+export const COST = { rival: 30, ad: 10, panel: 5 };
 
 export const PLANS = {
-  free: { name: 'Free', rivals: 5, rebuilds: 10, panels: 3 },
-  pro: { name: 'Pro', rivals: 15, rebuilds: 200, panels: 60 },
+  trial: { name: 'Trial', price: 0, rivals: 5, credits: 200, tagline: '14 days to try everything. No card needed.' },
+  growth: { name: 'Growth', price: 149, annual: 1490, rivals: 5, credits: 550, tagline: 'For founders testing paid ads.' },
+  scale: { name: 'Scale', price: 299, annual: 2990, rivals: 20, credits: 2000, tagline: 'For brands scaling their paid media.', popular: true },
+  agency: { name: 'Agency', price: 599, annual: 5990, rivals: 40, credits: 6500, tagline: 'For agencies managing multiple brands.' },
 };
+for (const p of Object.values(PLANS)) p.ads = Math.floor((p.credits - p.rivals * COST.rival) / COST.ad);
 
-const MONTH = "strftime('%Y-%m', created_at) = strftime('%Y-%m', 'now')";
+const month = () => new Date().toISOString().slice(0, 7);
+const isTrial = ws => ws.plan === 'trial';
+export const trialOver = ws => isTrial(ws) && ws.trial_ends_at && Date.parse(ws.trial_ends_at + 'Z') < Date.now();
 
-export function usage(ws, db = getDb()) {
-  const plan = PLANS[ws.plan] || PLANS.free;
-  const used = {
-    rivals: db.prepare('SELECT COUNT(*) n FROM workspace_rivals WHERE workspace_id = ?').get(ws.id).n,
-    rebuilds: db.prepare(`SELECT COUNT(*) n FROM rebuilds WHERE workspace_id = ? AND ${MONTH} AND status NOT LIKE 'failed%'`).get(ws.id).n,
-    panels: db.prepare(`SELECT COUNT(*) n FROM panels WHERE workspace_id = ? AND ${MONTH}`).get(ws.id).n,
-  };
-  return { plan: ws.plan, plan_name: plan.name, limits: plan, used };
+/** Ledger rows in the current pool window: the trial so far, or this calendar month. */
+function windowSql(ws) {
+  return isTrial(ws) ? ['workspace_id = ?', [ws.id]] : ["workspace_id = ? AND strftime('%Y-%m', created_at) = ?", [ws.id, month()]];
 }
 
-/** Throws a 402 if the workspace has no room left for `n` more of `what` this month. */
-export function assertRoom(ws, what, n = 1, db = getDb()) {
+/** Charge this month's 30 credits for every tracked rival not yet charged (idempotent). */
+export function chargeRivals(ws, db = getDb()) {
+  const key = isTrial(ws) ? 'trial' : month();
+  const ins = db.prepare('INSERT OR IGNORE INTO credit_ledger (workspace_id, delta, reason, ref) VALUES (?, ?, ?, ?)');
+  for (const rid of rivalIdsFor(ws.id, db)) ins.run(ws.id, -COST.rival, 'rival', `rival:${ws.id}:${rid}:${key}`);
+}
+
+export function usage(ws, db = getDb()) {
+  chargeRivals(ws, db);
+  const plan = PLANS[ws.plan] || PLANS.trial;
+  const [where, args] = windowSql(ws);
+  const spent = -db.prepare(`SELECT COALESCE(SUM(delta), 0) n FROM credit_ledger WHERE ${where}`).get(...args).n;
+  const by = Object.fromEntries(db.prepare(`SELECT reason, -SUM(delta) n FROM credit_ledger WHERE ${where} GROUP BY reason`).all(...args).map(r => [r.reason, r.n]));
+  const balance = trialOver(ws) ? 0 : Math.max(0, plan.credits - spent);
+  return {
+    plan: ws.plan, plan_name: plan.name, limits: plan, cost: COST, trial_ends_at: ws.trial_ends_at || null, trial_over: trialOver(ws),
+    credits: { pool: plan.credits, spent, balance, ads_left: Math.floor(balance / COST.ad), by_reason: by },
+    used: { rivals: rivalIdsFor(ws.id, db).length },
+    resets: isTrial(ws) ? 'when your trial ends' : 'on the 1st of each month',
+  };
+}
+
+const err402 = msg => Object.assign(new Error(msg), { status: 402 });
+
+/** Spend credits (throws 402 if the pool can't cover it). Returns the ledger ref so a failure can be refunded. */
+export function spend(ws, what, ref, db = getDb()) {
   const u = usage(ws, db);
-  if (u.used[what] + n > u.limits[what]) {
-    const label = { rivals: 'tracked rivals', rebuilds: 'ad rebuilds this month', panels: 'buyer panels this month' }[what];
-    throw Object.assign(new Error(`Your ${u.plan_name} plan includes ${u.limits[what]} ${label}. Upgrades are coming soon.`), { status: 402 });
-  }
+  if (u.trial_over) throw err402('Your trial has ended. Paid plans are coming soon; reply to your welcome email to keep going.');
+  const n = COST[what];
+  if (u.credits.balance < n) throw err402(`That needs ${n} credits and you have ${u.credits.balance} left. Your pool refills ${u.resets}.`);
+  db.prepare('INSERT INTO credit_ledger (workspace_id, delta, reason, ref) VALUES (?, ?, ?, ?)').run(ws.id, -n, what, ref);
+  return ref;
+}
+
+export function refund(ws, ref, db = getDb()) {
+  const row = db.prepare('SELECT delta, reason FROM credit_ledger WHERE ref = ? AND workspace_id = ?').get(ref, ws.id);
+  if (row && row.delta < 0) db.prepare('INSERT OR IGNORE INTO credit_ledger (workspace_id, delta, reason, ref) VALUES (?, ?, ?, ?)').run(ws.id, -row.delta, 'refund', `refund:${ref}`);
+}
+
+/** Room to track one more rival: a free slot on the plan and 30 credits for this month. */
+export function assertRivalRoom(ws, db = getDb()) {
+  const u = usage(ws, db);
+  if (u.trial_over) throw err402('Your trial has ended. Paid plans are coming soon.');
+  if (u.used.rivals >= u.limits.rivals) throw err402(`Your ${u.plan_name} plan tracks up to ${u.limits.rivals} rivals. Remove one first, or move up a plan when upgrades open.`);
+  if (u.credits.balance < COST.rival) throw err402(`Tracking a rival uses ${COST.rival} credits a month and you have ${u.credits.balance} left.`);
 }

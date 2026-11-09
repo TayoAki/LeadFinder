@@ -12,7 +12,10 @@ import * as A from './lib/analytics.mjs';
 import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR } from './lib/rebuild.mjs';
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
 import { providerStatus, adLibrary } from './lib/providers.mjs';
-import { usage, assertRoom, PLANS } from './lib/plans.mjs';
+import { usage, spend, refund, assertRivalRoom, chargeRivals, PLANS, COST } from './lib/plans.mjs';
+import { scrapeBrand, safeUrl } from './lib/brandkit.mjs';
+import { SIZES } from './lib/providers.mjs';
+import { randomUUID } from 'node:crypto';
 import { ANGLES } from './lib/classify.mjs';
 import { addRival, collectAll } from './collect.mjs';
 import { importSeedIfEmpty, DEMO_BRAND } from './lib/seed.mjs';
@@ -38,12 +41,12 @@ const httpError = (status, message) => Object.assign(new Error(message), { statu
 // ---------- background jobs (in-process; one server instance) ----------
 const jobs = new Map();
 let jobSeq = 0;
-function startJob(wsId, kind, fn) {
+function startJob(wsId, kind, fn, onFail) {
   const id = ++jobSeq;
   const job = { id, kind, status: 'running', started_at: new Date().toISOString() };
   jobs.set(id, { ...job, wsId });
   fn().then(r => Object.assign(jobs.get(id), { status: 'done', result: r }))
-    .catch(e => Object.assign(jobs.get(id), { status: 'failed', error: e.message }))
+    .catch(e => { try { onFail?.(); } catch {} Object.assign(jobs.get(id), { status: 'failed', error: e.message }); })
     .finally(() => setTimeout(() => jobs.delete(id), 60 * 60 * 1000));
   return job;
 }
@@ -73,16 +76,36 @@ const adInScope = (ws, id) => { const a = A.getAd(db, id); return a && mine(ws, 
 const routes = {
   'GET /api/me': async ({ ws, user }) => ({
     user: { id: user.id, name: user.name, email: user.email },
-    workspace: ws, usage: usage(ws), plans: PLANS, providers: await providerStatus(), model: hasLLM() ? MODEL : null, week: mondayOf(),
+    workspace: { ...ws, brand_kit: ws.brand_kit ? JSON.parse(ws.brand_kit) : null }, usage: usage(ws), plans: PLANS, cost: COST,
+    sizes: Object.fromEntries(Object.entries(SIZES).map(([k, v]) => [k, v.label])), providers: await providerStatus(), model: hasLLM() ? MODEL : null, week: mondayOf(),
   }),
-  'POST /api/workspace': ({ ws, body }) => { db.prepare('DELETE FROM kv WHERE k = ?').run(`personas:${ws.id}`); return saveWorkspace(ws.id, body); },
+  'POST /api/workspace': ({ ws, body }) => {
+    db.prepare('DELETE FROM kv WHERE k = ?').run(`personas:${ws.id}`);
+    const { brand_kit, brand_url, ...rest } = body; // the kit is only written by the scraper
+    if (rest.product_image && !/^https:\/\//.test(rest.product_image)) delete rest.product_image;
+    return saveWorkspace(ws.id, rest);
+  },
+  'POST /api/brand/scrape': async ({ ws, body }) => {
+    const kit = await scrapeBrand(String(body.url || ''));
+    const fresh = !ws.brand_name;
+    saveWorkspace(ws.id, {
+      brand_url: kit.url, brand_kit: JSON.stringify(kit), brand_domain: kit.domain,
+      ...(fresh ? { brand_name: kit.name } : {}),
+      ...(!ws.brand_product && kit.description ? { brand_product: kit.description.slice(0, 200) } : {}),
+      ...((!ws.brand_color || ws.brand_color === '#c8553d') && kit.colors[0] ? { brand_color: kit.colors.find(c => c !== '#3a3a3a') || kit.colors[0] } : {}),
+      ...(!ws.product_image && kit.products[0] ? { product_image: kit.products[0].url } : {}),
+    });
+    return { kit };
+  },
   'POST /api/workspace/rotate-key': ({ ws }) => ({ api_key: rotateApiKey(ws.id).api_key }),
   'POST /api/demo': ({ ws }) => {
     // One click to a filled-in account: the demo brand plus the rivals already in the shared cache.
     if (!ws.brand_name) saveWorkspace(ws.id, DEMO_BRAND);
-    const room = usage(ws).limits.rivals - usage(ws).used.rivals;
+    const u = usage(ws);
+    const room = Math.min(u.limits.rivals - u.used.rivals, Math.floor((u.credits.balance - COST.ad * 3) / COST.rival));
     const ids = db.prepare('SELECT r.id FROM rivals r WHERE EXISTS (SELECT 1 FROM ads a WHERE a.rival_id = r.id) ORDER BY r.likes DESC LIMIT ?').all(Math.max(0, room)).map(r => r.id);
     for (const id of ids) trackRival(ws.id, id);
+    chargeRivals(ws);
     return { tracked: ids.length };
   },
   'GET /api/overview': ({ ws }) => A.overview(db, rivalIdsFor(ws.id)),
@@ -96,9 +119,10 @@ const routes = {
   },
   'POST /api/rivals': ({ ws, body }) => {
     if (!body.page_id || !body.name) throw httpError(400, 'Pick a page from the search results.');
-    assertRoom(ws, 'rivals');
+    assertRivalRoom(ws);
     const r = addRival({ page_id: String(body.page_id), name: String(body.name).slice(0, 120), avatar_url: body.avatar_url, ig_username: body.ig_username, likes: body.likes, page_category: body.category });
     trackRival(ws.id, r.id);
+    chargeRivals(ws);
     const fresh = r.last_collected_at && Date.now() - Date.parse(r.last_collected_at + 'Z') < 7 * 864e5;
     return { rival: r, job: fresh ? null : startJob(ws.id, 'collect', () => collectAll({ only: r.id })) };
   },
@@ -114,13 +138,25 @@ const routes = {
   'GET /api/rebuilds': ({ ws, q }) => listRebuilds(db, { wsId: ws.id, dropWeek: q.get('week') || undefined }),
   'POST /api/rebuild': ({ ws, body }) => {
     if (!adInScope(ws, body.ad_id)) throw httpError(404, 'Ad not found');
-    assertRoom(ws, 'rebuilds');
-    return startJob(ws.id, 'rebuild', () => rebuildAd(getWorkspace(ws.id), body.ad_id));
+    const size = SIZES[body.size] ? body.size : 'feed';
+    const productImage = body.product_image && /^https:\/\//.test(body.product_image) ? body.product_image : undefined;
+    const ref = spend(ws, 'ad', `ad:${randomUUID()}`);
+    return startJob(ws.id, 'rebuild', async () => {
+      const r = await rebuildAd(getWorkspace(ws.id), body.ad_id, { size, productImage, productName: body.product_name });
+      if (r.status !== 'done') { refund(ws, ref); throw new Error(r.status.replace(/^failed: /, '') + ' (credits refunded)'); }
+      return r;
+    });
   },
   'POST /api/drop': ({ ws, body }) => {
     const n = Math.min(4, Number(body.count || 4));
-    assertRoom(ws, 'rebuilds', n);
-    return startJob(ws.id, 'drop', () => mondayDrop(getWorkspace(ws.id), { count: n }));
+    const u = usage(ws);
+    if (u.credits.balance < n * COST.ad) throw httpError(402, `This week's drop is ${n} ads (${n * COST.ad} credits) and you have ${u.credits.balance} left.`);
+    return startJob(ws.id, 'drop', async () => {
+      const refs = [];
+      const r = await mondayDrop(getWorkspace(ws.id), { count: n, onEach: () => refs.push(spend(ws, 'ad', `ad:${randomUUID()}`)) });
+      r.rebuilds.forEach((rb, i) => { if (rb.status !== 'done' && refs[i]) refund(ws, refs[i]); });
+      return r;
+    });
   },
   'POST /api/panel': ({ ws, body }) => {
     if (!hasLLM()) throw httpError(400, 'The buyer panel is not switched on yet.');
@@ -129,12 +165,12 @@ const routes = {
     const theirs = adInScope(ws, rb.ad_id);
     const theirsImg = theirs?.image_url || theirs?.thumb_url;
     if (!theirsImg) throw httpError(400, 'That rival ad has no image to compare.');
-    assertRoom(ws, 'panels');
+    const ref = spend(ws, 'panel', `panel:${randomUUID()}`);
     return startJob(ws.id, 'panel', async () => {
       const result = await buyerPanel(await personas(ws), resolve(REBUILD_DIR, rb.image_path), theirsImg);
       db.prepare('INSERT INTO panels (workspace_id, ours_rebuild_id, theirs_ad_id, result) VALUES (?,?,?,?)').run(ws.id, rb.id, theirs.id, JSON.stringify(result));
       return { ...result, rebuild_id: rb.id, ad_id: theirs.id };
-    });
+    }, () => refund(ws, ref));
   },
   'GET /api/panels': ({ ws }) => db.prepare('SELECT * FROM panels WHERE workspace_id = ? ORDER BY id DESC LIMIT 10').all(ws.id).map(p => ({ ...p, result: JSON.parse(p.result) })),
 };

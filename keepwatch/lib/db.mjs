@@ -60,6 +60,15 @@ CREATE TABLE IF NOT EXISTS rebuilds (
   drop_week TEXT                      -- set when part of a Monday drop (YYYY-MM-DD of the Monday)
 );
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT);
+CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refunded; the monthly pool is the plan's allowance
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  delta INTEGER NOT NULL,                         -- negative = spent, positive = refund/grant
+  reason TEXT NOT NULL,                           -- rival | ad | panel | refund | grant
+  ref TEXT UNIQUE,                                -- idempotency key, e.g. rival:12:2026-11
+  created_at TEXT DEFAULT (datetime('now'))
+);
+CREATE INDEX IF NOT EXISTS ledger_ws ON credit_ledger(workspace_id, created_at);
 CREATE TABLE IF NOT EXISTS panels (
   id INTEGER PRIMARY KEY AUTOINCREMENT, created_at TEXT DEFAULT (datetime('now')),
   workspace_id INTEGER REFERENCES workspaces(id) ON DELETE CASCADE,
@@ -68,7 +77,9 @@ CREATE TABLE IF NOT EXISTS panels (
 `;
 
 // Columns added after the first version: add them to older databases in place.
-const ADDED_COLUMNS = [['rebuilds', 'workspace_id', 'INTEGER'], ['panels', 'workspace_id', 'INTEGER']];
+const ADDED_COLUMNS = [['rebuilds', 'workspace_id', 'INTEGER'], ['panels', 'workspace_id', 'INTEGER'],
+  ['workspaces', 'brand_url', 'TEXT'], ['workspaces', 'brand_kit', 'TEXT'], ['workspaces', 'product_image', 'TEXT'],
+  ['workspaces', 'trial_ends_at', 'TEXT'], ['rebuilds', 'size', 'TEXT'], ['rebuilds', 'credits', 'INTEGER']];
 
 let db;
 export function getDb(file = resolve(DATA_DIR, 'keepwatch.db')) {
@@ -90,13 +101,14 @@ export function openMemoryDb() {
   return m;
 }
 
-const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience'];
+const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image'];
 
 /** The signed-in user's workspace, created on first use. */
 export function workspaceForUser(userId, d = getDb()) {
   let ws = d.prepare('SELECT * FROM workspaces WHERE user_id = ?').get(userId);
   if (!ws) {
-    d.prepare('INSERT INTO workspaces (user_id, api_key, brand_color) VALUES (?, ?, ?)').run(userId, `kw_${randomBytes(24).toString('hex')}`, '#c8553d');
+    // New accounts start on a 14-day trial (no card); Stripe will move them onto a paid plan.
+    d.prepare("INSERT INTO workspaces (user_id, api_key, brand_color, plan, trial_ends_at) VALUES (?, ?, ?, 'trial', datetime('now', '+14 days'))").run(userId, `kw_${randomBytes(24).toString('hex')}`, '#c8553d');
     ws = d.prepare('SELECT * FROM workspaces WHERE user_id = ?').get(userId);
   }
   return ws;
@@ -107,7 +119,7 @@ export const getWorkspace = (id, d = getDb()) => d.prepare('SELECT * FROM worksp
 
 export function saveWorkspace(id, w, d = getDb()) {
   const cur = getWorkspace(id, d);
-  const vals = BRAND_COLS.map(c => (w[c] !== undefined ? String(w[c]).slice(0, 2000) : cur[c]));
+  const vals = BRAND_COLS.map(c => (w[c] !== undefined && w[c] !== null ? String(w[c]).slice(0, c === 'brand_kit' ? 100000 : 2000) : cur[c]));
   d.prepare(`UPDATE workspaces SET ${BRAND_COLS.map(c => `${c} = ?`).join(', ')} WHERE id = ?`).run(...vals, id);
   return getWorkspace(id, d);
 }

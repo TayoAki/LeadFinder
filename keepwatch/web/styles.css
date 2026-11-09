@@ -233,3 +233,14 @@ dialog::backdrop { background: rgb(20 18 15 / .45); }
   .hook-row { grid-template-columns: 58px 1fr; }
   .hook-row > :last-child { grid-column: 1 / -1; }
 }
+
+/* product photo picker */
+.pick-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 8px; }
+.pick { position: relative; display: grid; gap: 4px; padding: 6px; border: 1px solid var(--line); border-radius: 10px; cursor: pointer; font-size: 11.5px; color: var(--ink-2); background: var(--panel); }
+.pick input { position: absolute; opacity: 0; pointer-events: none; }
+.pick img, .pick .ph-pick { width: 100%; aspect-ratio: 1; object-fit: contain; border-radius: 6px; background: var(--panel-2); display: grid; place-items: center; }
+.pick span { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pick:has(input:checked) { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-soft); }
+.pick:has(input:focus-visible) { outline: 2px solid var(--accent); }
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }

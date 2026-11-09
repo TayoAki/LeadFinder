@@ -1,6 +1,6 @@
 // "Steal this ad": rebuild a rival's lasting ad for our brand.
 // Concept: Claude when ANTHROPIC_API_KEY is set, otherwise a rule-based plan from the ad's angle.
-// Image:  Gemini 3 Pro Image (GEMINI_API_KEY, or treg locally) with the rival ad as the layout reference.
+// Image:  GPT Image 2 (Fal) or Gemini, with the rival ad as the layout reference and your real product photo.
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { getDb, DATA_DIR, rivalIdsFor } from './db.mjs';
@@ -11,75 +11,93 @@ import { angleLabel } from './classify.mjs';
 
 export const REBUILD_DIR = resolve(DATA_DIR, 'rebuilds');
 
-// Rule-based fallback: the structure each angle uses, written as a fill-in for our brand.
-// No invented quotes, reviews or numbers: only the brand's own facts and offer.
+// Rule-based fallback: the structure each angle uses, filled with the brand's own facts.
+// No invented quotes, reviews, prices or numbers: only what the brand gave us (product line, offer, site taglines).
 const PLAYS = {
-  social_proof: { why: ['Social proof', 'Real-life setting', 'Product in hand'], head: b => `The ${b.short} people keep restocking` },
-  before_after: { why: ['Before and after', 'Clear contrast', 'Outcome first'], head: b => `Your 3pm, before and after ${b.name}` },
+  social_proof: { why: ['Social proof', 'Real-life setting', 'Product in hand'], head: b => `Why people keep reordering ${b.name}` },
+  before_after: { why: ['Before and after', 'Clear contrast', 'Outcome first'], head: b => `Your day, with ${b.name}` },
   discount: { why: ['Offer up front', 'Low risk', 'One clear button'], head: b => b.offer || `Try ${b.name} today` },
-  expert: { why: ['Authority cue', 'Calm layout', 'Simple claim'], head: b => `${b.short[0].toUpperCase()}${b.short.slice(1)}, made simple` },
-  comparison: { why: ['Us vs them', 'Pattern break', 'Outcome first'], head: b => `Not a powder. Not a pill. ${b.name}.` },
-  problem: { why: ['Problem first', 'Relatable moment', 'Fix in frame'], head: b => `Fiber without the gritty glass` },
+  expert: { why: ['Authority cue', 'Calm layout', 'Simple claim'], head: b => `${b.Short}, done properly` },
+  comparison: { why: ['Us vs them', 'Pattern break', 'Outcome first'], head: b => `Swap it for ${b.name}` },
+  problem: { why: ['Problem first', 'Relatable moment', 'Fix in frame'], head: b => b.tagline || `There's an easier way` },
   science: { why: ['Specific numbers', 'Ingredient focus', 'Clean layout'], head: b => b.fact || `What's inside ${b.name}` },
   founder: { why: ['Founder voice', 'Story hook', 'Trust'], head: b => `Why we made ${b.name}` },
-  routine: { why: ['Easy routine', 'In-the-moment scene', 'Low effort'], head: b => `Your 3pm, sorted` },
-  taste: { why: ['Taste first', 'Craving cue', 'Bright colour'], head: b => `Tastes like a treat. Works like fiber.` },
+  routine: { why: ['Easy routine', 'In-the-moment scene', 'Low effort'], head: b => `Make it part of your day` },
+  taste: { why: ['Taste first', 'Craving cue', 'Bright colour'], head: b => `You'll actually look forward to it` },
   urgency: { why: ['Urgency', 'Offer up front', 'One clear button'], head: b => b.offer || `Back in stock` },
-  curiosity: { why: ['Curiosity gap', 'Question hook', 'Pattern break'], head: b => `What if fiber came in a can?` },
-  other: { why: ['Clear product', 'Simple layout', 'One message'], head: b => `Meet ${b.name}` },
+  curiosity: { why: ['Curiosity gap', 'Question hook', 'Pattern break'], head: b => `Have you tried ${b.name} yet?` },
+  other: { why: ['Clear product', 'Simple layout', 'One message'], head: b => b.tagline || `Meet ${b.name}` },
 };
 
-export function rulePlan(ad, ws) {
-  const short = (ws.brand_product || ws.brand_name).split(/[,.]/)[0].toLowerCase();
-  const fact = (ws.brand_product || '').match(/\d+\s?g [a-z]+(?: per [a-z]+)?/i)?.[0];
-  const b = { name: ws.brand_name, short, offer: ws.brand_offer, fact: fact ? `${fact[0].toUpperCase()}${fact.slice(1)}. Zero grit.` : null };
+const kitOf = ws => { try { return JSON.parse(ws.brand_kit || 'null') || {}; } catch { return {}; } };
+const sentence = s => (s ? s.trim().replace(/[.!\s]+$/, '') + '.' : '');
+
+export function rulePlan(ad, ws, { productName } = {}) {
+  const kit = kitOf(ws);
+  const short = (productName || ws.brand_product || ws.brand_name).split(/[,.]/)[0].trim();
+  const fact = (ws.brand_product || '').match(/\b\d+\s?(?:g|mg|%|oz|ml)\b[^,.]*/i)?.[0];
+  const tagline = (kit.taglines || []).find(t => t.length <= 48) || null;
+  const b = { name: ws.brand_name, Short: short[0].toUpperCase() + short.slice(1), offer: ws.brand_offer, tagline, fact: fact ? fact[0].toUpperCase() + fact.slice(1) : null };
   const play = PLAYS[ad.angle] || PLAYS.other;
-  const headline = play.head(b);
-  const cta = /shop|buy|order/i.test(ad.cta || '') ? 'Shop now' : (ad.cta || 'Shop now');
+  const headline = play.head(b).slice(0, 60);
+  // Standard Meta CTAs only; anything else (e.g. a rival's "Subscribe") becomes "Shop now".
+  const cta = { 'learn more': 'Learn more', 'get offer': 'Get offer', 'sign up': 'Sign up', 'order now': 'Order now' }[(ad.cta || '').toLowerCase()] || 'Shop now';
   return {
     why_it_works: play.why,
     keep_scene: `Same scene and camera framing as the reference ${ad.format_label.toLowerCase()} ad`,
     keep_layout: 'Same layout, headline position and button placement as the reference',
     headline, subline: ws.brand_offer || '', cta,
-    image_prompt: imagePrompt({ headline, cta, ws }),
+    primary_text: [sentence(ws.brand_product ? `${ws.brand_name}: ${ws.brand_product}` : ''), sentence(ws.brand_offer)].filter(Boolean).join(' '),
+    meta_headline: (ws.brand_offer || headline).slice(0, 40),
     source: 'rules',
   };
 }
 
-function imagePrompt({ headline, cta, ws }) {
+/** The image instruction. With a product photo, image 2 is the real product and must appear unchanged. */
+export function imagePrompt({ headline, cta, ws, hasProduct, productName }) {
   return [
-    'Recreate this advertisement for a different brand. Keep the reference image\'s composition, camera angle, lighting, photographic style and the position of the headline and button.',
-    `Replace the product and packaging with: ${ws.brand_product}. The brand name on the product is "${ws.brand_name}".`,
+    'Image 1 is a reference advertisement. Recreate it for a different brand: keep its composition, camera angle, lighting, photographic style and the positions of the headline and button.',
+    hasProduct
+      ? `Image 2 is a photo of our real product${productName ? ` (${productName})` : ''}. Replace every product in the reference with this exact product: same packaging, label, shape and colours. Where the reference shows several products, show several of ours in the same positions. None of the reference's products, packets or packaging may remain. Do not redesign, relabel or invent packaging.`
+      : `Replace every product and package in the reference with: ${ws.brand_product || ws.brand_name}. The brand name on the product is "${ws.brand_name}". None of the reference's products may remain.`,
     `Render exactly this headline: "${headline}". Render exactly this button text: "${cta}". No other words.`,
-    `Use ${ws.brand_color} as the accent colour for the button and highlights.`,
+    `Use ${ws.brand_color || '#c8553d'} as the accent colour for the button and highlights.`,
     'Remove every logo, brand name, watermark and claim from the reference brand. No realistic celebrity faces. Keep it looking like a native social ad, not a stock photo.',
   ].join('\n');
 }
 
-/** Plan + render one rebuild for a workspace. Returns the rebuild row. */
-export async function rebuildAd(ws, adId, { render = true, dropWeek = null } = {}) {
+/**
+ * Plan + render one finished ad for a workspace: image (sized for feed, story or square) plus Meta ad copy.
+ * productImage: one of the brand kit's product photos; when set, the real product is used as image 2.
+ */
+export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size = 'feed', productImage, productName } = {}) {
   const db = getDb();
   const ad = getAd(db, adId);
   if (!ad || !rivalIdsFor(ws.id, db).includes(ad.rival_id)) throw new Error('Ad not found');
   if (!ws?.brand_name) throw new Error('Set up your brand first (Settings).');
+  const product = productImage || ws.product_image || null;
 
   let plan;
   if (hasLLM()) {
-    try { plan = { ...(await writeConcept(ad, ws)), source: 'claude' }; }
-    catch (e) { plan = { ...rulePlan(ad, ws), note: `Claude step failed, used rules: ${e.message}` }; }
-  } else plan = rulePlan(ad, ws);
+    try { plan = { ...(await writeConcept(ad, ws, { productImage: product, productName })), source: 'claude' }; }
+    catch (e) { plan = { ...rulePlan(ad, ws, { productName }), note: `Claude step failed, used rules: ${e.message}` }; }
+  } else plan = rulePlan(ad, ws, { productName });
+  plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName });
+  plan.product_image = product;
+  plan.size = size;
 
-  const id = Number(db.prepare('INSERT INTO rebuilds (workspace_id, ad_id, headline, why, prompt, status, drop_week) VALUES (?,?,?,?,?,?,?)')
-    .run(ws.id, ad.id, plan.headline, JSON.stringify(plan), plan.image_prompt, render ? 'rendering' : 'planned', dropWeek).lastInsertRowid);
+  const id = Number(db.prepare('INSERT INTO rebuilds (workspace_id, ad_id, headline, why, prompt, status, drop_week, size) VALUES (?,?,?,?,?,?,?,?)')
+    .run(ws.id, ad.id, plan.headline, JSON.stringify(plan), plan.image_prompt, render ? 'rendering' : 'planned', dropWeek, size).lastInsertRowid);
 
   if (render) {
-    const ref = ad.image_url || ad.thumb_url;
+    const refs = [ad.image_url || ad.thumb_url, product].filter(Boolean);
     try {
-      const { bytes, cost } = await renderImage(plan.image_prompt, ref);
+      const { bytes, cost, engine } = await renderImage(plan.image_prompt, refs, { size });
       mkdirSync(REBUILD_DIR, { recursive: true });
       const file = `rebuild-${id}-${Date.now().toString(36)}.png`;
       writeFileSync(resolve(REBUILD_DIR, file), bytes);
-      db.prepare("UPDATE rebuilds SET image_path = ?, status = 'done', cost_usd = ? WHERE id = ?").run(file, cost, id);
+      plan.engine = engine;
+      db.prepare("UPDATE rebuilds SET image_path = ?, status = 'done', cost_usd = ?, why = ? WHERE id = ?").run(file, cost, JSON.stringify(plan), id);
     } catch (e) {
       db.prepare("UPDATE rebuilds SET status = ? WHERE id = ?").run(`failed: ${e.message}`.slice(0, 300), id);
     }
@@ -106,7 +124,7 @@ export function mondayOf(d = new Date()) {
 }
 
 /** Monday drop: rebuild the top kept ads (one per rival, different angles) we have not rebuilt yet. */
-export async function mondayDrop(ws, { count = 4, render = true } = {}) {
+export async function mondayDrop(ws, { count = 4, render = true, onEach } = {}) {
   const db = getDb();
   const week = mondayOf();
   const done = new Set(db.prepare('SELECT ad_id FROM rebuilds WHERE workspace_id = ?').all(ws.id).map(r => r.ad_id));
@@ -120,6 +138,6 @@ export async function mondayDrop(ws, { count = 4, render = true } = {}) {
   }
   for (const a of candidates) { if (picked.length >= count) break; if (!picked.includes(a)) picked.push(a); }
   const out = [];
-  for (const a of picked) out.push(await rebuildAd(ws, a.id, { render, dropWeek: week }));
+  for (const a of picked) { if (onEach) onEach(a); out.push(await rebuildAd(ws, a.id, { render, dropWeek: week })); }
   return { week, rebuilds: out, angles: [...angles].map(angleLabel) };
 }

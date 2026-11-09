@@ -43,14 +43,16 @@ const CONCEPT_SCHEMA = strict({
   why_it_works: { type: 'array', items: str, description: '3 short tags naming what makes the rival ad work, e.g. "Price lock", "Outcome first"' },
   keep_scene: str, keep_layout: str,
   headline: { type: 'string', description: 'On-image headline for our brand, 4-8 words, max 12' },
-  subline: str, cta: str,
-  image_prompt: { type: 'string', description: 'Instructions for an image model that will see the rival ad as a reference image' },
+  subline: str, cta: { type: 'string', description: 'Button text, 1-3 words' },
+  primary_text: { type: 'string', description: 'Meta primary text (above the image), 1-3 short sentences, ≤ 220 characters' },
+  meta_headline: { type: 'string', description: 'Meta headline (below the image), ≤ 40 characters' },
 });
 
 /** Read a rival's ad and write our version of it. */
-export async function writeConcept(ad, ws) {
+export async function writeConcept(ad, ws, { productImage, productName } = {}) {
   const content = [];
-  if (ad.image_url || ad.thumb_url) content.push(imageBlock(ad.image_url || ad.thumb_url));
+  if (ad.image_url || ad.thumb_url) content.push({ type: 'text', text: 'Rival ad image:' }, imageBlock(ad.image_url || ad.thumb_url));
+  if (productImage) content.push({ type: 'text', text: `Our real product${productName ? ` (${productName})` : ''}:` }, imageBlock(productImage));
   content.push({ type: 'text', text: `Rival ad (format: ${ad.format_label}; live ${ad.run_days} days${ad.is_active ? ', still running' : ''}):
 <rival_ad>
 Hook: ${ad.hook || ''}
@@ -68,8 +70,8 @@ Our brand:
 - Brand colour: ${ws.brand_color}
 - Audience: ${ws.audience}
 
-Work out why this ad has lasted, then rebuild it for our brand: same scene and layout, our product, our offer, our colour, our voice.
-The image_prompt must tell the image model to keep the reference's composition and photographic style, replace the rival's product and packaging with ours, render our headline and CTA as the only text, use ${ws.brand_color} as the accent colour, and include no rival logos or names.` });
+Work out why this ad has lasted, then write our version: same scene and layout, our product, our offer, our voice.
+Write the on-image headline and button, plus Meta primary text and a Meta headline. Only use facts the brand gave above.` });
   return askJSON({ system: `You are a direct-response creative strategist.\n${RULES}`, content, schema: CONCEPT_SCHEMA, effort: 'medium' });
 }
 

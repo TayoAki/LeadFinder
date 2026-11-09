@@ -20,7 +20,8 @@ export const auth = betterAuth({
   emailAndPassword: { enabled: true, minPasswordLength: 8, autoSignIn: true },
   session: { expiresIn: 60 * 60 * 24 * 30, updateAge: 60 * 60 * 24 },
   rateLimit: { enabled: true, window: 60, max: 30 },
-  advanced: { useSecureCookies: baseURL.startsWith('https://') },
+  // Railway's proxy puts the visitor's address in x-forwarded-for; rate limits are per visitor.
+  advanced: { useSecureCookies: baseURL.startsWith('https://'), ipAddress: { ipAddressHeaders: ['x-forwarded-for', 'x-real-ip'] } },
 });
 
 /** Create or update Better Auth's tables (user, session, account, verification). Safe to run on every boot. */

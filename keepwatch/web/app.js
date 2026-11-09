@@ -233,52 +233,82 @@ async function viewHooks() {
   </section>`;
 }
 
+function makeForm() {
+  const kit = state.ws.brand_kit, me = state.me;
+  const products = kit?.products || [];
+  const cur = state.ws.product_image;
+  return `<form id="make-form" class="card pad" style="display:grid;gap:10px">
+    <span class="eyebrow">Make your version</span>
+    <label class="small">Size <select name="size">${Object.entries(me.sizes).map(([k, l]) => `<option value="${k}">${esc(l)}</option>`).join('')}</select></label>
+    ${products.length ? `<div class="small">Product to feature <span class="muted">(your real photo, kept exact)</span></div>
+      <div class="pick-grid">${products.slice(0, 8).map((p, i) => `<label class="pick"><input type="radio" name="product" value="${esc(p.url)}" data-name="${esc(p.name)}" ${(cur ? p.url === cur : i === 0) ? 'checked' : ''}><img src="${esc(p.url)}" alt="${esc(p.name)}" loading="lazy"><span>${esc(p.name)}</span></label>`).join('')}
+        <label class="pick"><input type="radio" name="product" value="" ${products.length ? '' : 'checked'}><div class="ph-pick">No photo</div><span>Describe it instead</span></label></div>`
+      : `<p class="small muted" style="margin:0">Tip: <a href="#/settings">import your website</a> so ads use your real product photos.</p>`}
+    <button class="btn primary" id="make">Make it · ${me.cost.ad} credits</button>
+    <span class="small muted">${me.usage.credits.balance} credits left. About a minute.</span>
+  </form>`;
+}
+
 async function viewRebuild(adId) {
   const rebuilds = await api('/api/rebuilds');
   let head = '';
   if (adId) {
     const ad = await api(`/api/ads/${adId}`);
-    const existing = rebuilds.find(r => r.ad_id === String(adId) && r.status === 'done');
+    const mine = rebuilds.filter(r => r.ad_id === String(adId) && r.status === 'done');
+    const existing = mine[0];
     head = `<section class="section">
       ${sectionHead('Their winner, rebuilt as your ad', 'Keeps what makes it work. Swaps in your product, your offer and your colour. Never their name, logo, claims or wording.')}
       <div class="vs">
         <div><span class="eyebrow">Theirs · ${esc(ad.rival_name)}</span>${thumb(ad)}<p class="small muted">${esc(runLabel(ad))} · ${esc(ad.format_label)}</p></div>
         <div id="ours"><span class="eyebrow">Yours · ${esc(state.ws.brand_name || 'your brand')}</span>
-          ${existing ? rebuildFigure(existing) : `<div class="ad-thumb"><div class="ph"><span>Not made yet.<br><br><button class="btn primary" id="make">Make my version</button><br><small class="muted">Uses 1 of your monthly rebuilds</small></span></div></div>`}
+          ${existing ? rebuildFigure(existing) : makeForm()}
         </div>
       </div>
-      ${existing ? planBlock(existing) : ''}
+      ${existing ? planBlock(existing) + `<details style="margin-top:12px"><summary class="btn sm">Make another version</summary><div style="margin-top:10px;max-width:520px">${makeForm()}</div></details>` : ''}
+      ${mine.length > 1 ? `<div class="grid-auto" style="margin-top:12px">${mine.slice(1).map(r => `<div class="card ad"><div class="ad-thumb"><img src="${esc(r.image)}" alt="Earlier version"></div><div class="ad-body"><span class="hook">${esc(r.headline)}</span><a class="btn sm" href="${esc(r.image)}" download>Download</a></div></div>`).join('')}</div>` : ''}
     </section>`;
-    queueMicrotask(() => $('#make')?.addEventListener('click', async e => {
-      e.target.disabled = true; e.target.textContent = 'Making it… about a minute';
-      try { await runJob('/api/rebuild', { ad_id: adId }, 'Rebuilding the ad'); route(); }
-      catch (err) { toast(err.message, 6000); e.target.disabled = false; e.target.textContent = 'Try again'; }
+    queueMicrotask(() => $('#make-form')?.addEventListener('submit', async e => {
+      e.preventDefault(); e.stopPropagation();
+      const f = e.target, btn = $('#make', f), pick = $('input[name=product]:checked', f);
+      btn.disabled = true; btn.textContent = 'Making it… about a minute';
+      try {
+        await runJob('/api/rebuild', { ad_id: adId, size: f.size.value, product_image: pick?.value || undefined, product_name: pick?.dataset.name || undefined }, 'Making your ad');
+        await refreshChrome(); route();
+      } catch (err) { toast(err.message, 7000); btn.disabled = false; btn.textContent = 'Try again'; }
     }));
   }
   return head + `<section class="section">
-    ${sectionHead('Your ads', 'Every rebuild, newest first.', `<button class="btn" id="drop-now">Make this week's drop</button>`)}
+    ${sectionHead('Your ads', 'Every ad you have made, newest first.', `<button class="btn" id="drop-now">Make this week's drop</button>`)}
     ${rebuilds.length ? `<div class="grid-auto">${rebuilds.map(r => `<article class="card ad">
-        <a href="#/rebuild/${esc(r.ad_id)}" style="color:inherit;text-decoration:none">${r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Rebuilt ad"></div>` : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`}</a>
-        <div class="ad-body"><span class="who">From ${esc(r.ad?.rival_name || '')}${r.drop_week ? ` · drop ${esc(r.drop_week)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>
+        <a href="#/rebuild/${esc(r.ad_id)}" style="color:inherit;text-decoration:none">${r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Your ad"></div>` : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`}</a>
+        <div class="ad-body"><span class="who">From ${esc(r.ad?.rival_name || '')}${r.drop_week ? ` · drop ${esc(r.drop_week)}` : ''}${r.size && r.size !== 'feed' ? ` · ${esc(r.size)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>
         ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a></div>` : ''}</div></article>`).join('')}</div>`
-      : empty('No rebuilds yet. Pick any ad and press "Steal this ad".')}
+      : empty('No ads yet. Pick any rival ad and press "Steal this ad".')}
   </section>`;
 }
 
 function rebuildFigure(r) {
-  return r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Your version"></div>
-    <div class="row" style="margin-top:8px"><a class="btn sm" href="${esc(r.image)}" download>Download</a><button class="btn sm" data-steal="${esc(r.ad_id)}" data-again="1">Make another</button><a class="btn sm" href="#/test/${r.id}">Test vs theirs</a></div>`
+  return r.image ? `<div class="ad-thumb" style="aspect-ratio:auto"><img src="${esc(r.image)}" alt="Your version"></div>
+    <div class="row" style="margin-top:8px"><a class="btn sm primary" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test vs theirs</a></div>`
     : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`;
 }
 
+const copyBtn = text => `<button class="btn sm" type="button" data-copy="${esc(text)}">Copy</button>`;
 function planBlock(r) {
   const p = r.plan || {};
-  return `<div class="card pad" style="margin-top:14px;display:grid;gap:10px">
-    <span class="eyebrow">Why this works</span>
-    <div class="tags">${(p.why_it_works || []).map(t => `<span class="pill">${esc(t)}</span>`).join('')}</div>
-    <ul class="list-plain"><li><b>Scene</b>: ${esc(p.keep_scene)}</li><li><b>Layout</b>: ${esc(p.keep_layout)}</li><li><b>Swapped</b>: your name, your offer, your colour. Headline “${esc(p.headline)}”, button “${esc(p.cta)}”.</li></ul>
-    <span class="small muted">Concept by ${p.source === 'claude' ? 'Claude' : 'rules (add ANTHROPIC_API_KEY for Claude-written concepts)'} · image by Gemini 3 Pro Image</span>
-  </div>`;
+  return `<div class="split" style="margin-top:14px">
+    <div class="card pad" style="display:grid;gap:10px;align-content:start">
+      <span class="eyebrow">Ad copy, ready to paste into Ads Manager</span>
+      ${p.primary_text ? `<div><div class="row" style="justify-content:space-between"><b class="small">Primary text</b>${copyBtn(p.primary_text)}</div><p style="margin:4px 0 0">${esc(p.primary_text)}</p></div>` : ''}
+      <div><div class="row" style="justify-content:space-between"><b class="small">Headline</b>${copyBtn(p.meta_headline || p.headline)}</div><p style="margin:4px 0 0">${esc(p.meta_headline || p.headline)}</p></div>
+      <div><b class="small">Call to action</b><p style="margin:4px 0 0">${esc(p.cta)}</p></div>
+    </div>
+    <div class="card pad" style="display:grid;gap:10px;align-content:start">
+      <span class="eyebrow">Why this works</span>
+      <div class="tags">${(p.why_it_works || []).map(t => `<span class="pill">${esc(t)}</span>`).join('')}</div>
+      <ul class="list-plain"><li><b>Scene</b>: ${esc(p.keep_scene)}</li><li><b>Layout</b>: ${esc(p.keep_layout)}</li><li><b>Swapped</b>: ${p.product_image ? 'your real product photo' : 'your product'}, your offer, your colour.</li></ul>
+      <span class="small muted">Copy by ${p.source === 'claude' ? 'Claude' : 'templates'}${p.engine ? ` · image by ${esc(p.engine)}` : ''}</span>
+    </div></div>`;
 }
 
 async function viewTest(rebuildId) {
@@ -351,7 +381,12 @@ async function viewSettings() {
       ${me.providers.adData ? '' : '<span class="small muted">Adding new rivals is switched off on this server for now. Use "Try the demo" on the overview.</span>'}
       <div id="rival-results" class="grid-auto"></div>
     </div></section>
-  <section class="section">${sectionHead('Your brand', 'Rebuilt ads and the buyer panel use these.')}
+  <section class="section">${sectionHead('Brand kit', 'Paste your website. We pull your colours, font and real product photos so every ad shows your actual product.')}
+    <div class="card pad" style="display:grid;gap:12px">
+      <form class="filters" id="kit-form" style="margin:0"><input name="url" placeholder="yourbrand.com" value="${esc(ws.brand_url || '')}" required style="min-width:240px;flex:1"><button class="btn primary">${ws.brand_kit ? 'Re-import' : 'Import from website'}</button></form>
+      ${kitBlock(ws.brand_kit, ws.product_image)}
+    </div></section>
+  <section class="section">${sectionHead('Your brand', 'Ads, copy and the buyer panel use these.')}
     <form class="form card pad" id="ws-form">
       <label>Brand name<input name="brand_name" value="${esc(ws.brand_name)}" required></label>
       <label>Product <span class="hint">One line: what it is and the facts you can claim.</span><input name="brand_product" value="${esc(ws.brand_product)}"></label>
@@ -362,12 +397,21 @@ async function viewSettings() {
       <label>Category<input name="category" value="${esc(ws.category)}"></label>
       <div><button class="btn primary">Save</button></div>
     </form></section>
-  <section class="section">${sectionHead('Plan and usage')}
-    <div class="card pad"><table class="table"><thead><tr><th></th><th class="num">Used</th><th class="num">${esc(u.plan_name)} plan</th></tr></thead><tbody>
-      <tr><td>Tracked rivals</td><td class="num">${u.used.rivals}</td><td class="num">${u.limits.rivals}</td></tr>
-      <tr><td>Ad rebuilds this month</td><td class="num">${u.used.rebuilds}</td><td class="num">${u.limits.rebuilds}</td></tr>
-      <tr><td>Buyer panels this month</td><td class="num">${u.used.panels}</td><td class="num">${u.limits.panels}</td></tr></tbody></table>
-      <p class="small muted">Paid plans with higher limits are coming soon.</p></div></section>
+  <section class="section">${sectionHead('Plan and credits', `One pool pays for everything: tracking a rival is ${me.cost.rival} credits a month, an ad is ${me.cost.ad}, a buyer panel is ${me.cost.panel}.`)}
+    <div class="card pad" style="display:grid;gap:10px">
+      <div class="row" style="justify-content:space-between"><span><b>${esc(u.plan_name)}</b>${u.trial_ends_at && u.plan === 'trial' ? ` · ${u.trial_over ? 'ended' : 'ends'} ${esc(u.trial_ends_at.slice(0, 10))}` : ''}</span><span><b>${fmtNum(u.credits.balance)}</b> of ${fmtNum(u.credits.pool)} credits left · about ${u.credits.ads_left} ads</span></div>
+      <div class="bar"><span style="width:${Math.min(100, (100 * u.credits.spent) / Math.max(1, u.credits.pool))}%"></span></div>
+      <span class="small muted">Spent: ${Object.entries(u.credits.by_reason).map(([k, v]) => `${esc(k)} ${v}`).join(' · ') || 'nothing yet'}. Refills ${esc(u.resets)}.</span>
+    </div>
+    <div class="grid-3" style="margin-top:12px">${['growth', 'scale', 'agency'].map(k => { const p = me.plans[k]; return `<div class="card pad" style="display:grid;gap:6px;align-content:start;${p.popular ? 'border-color:var(--accent)' : ''}">
+      <div class="row" style="justify-content:space-between"><b>${esc(p.name)}</b>${p.popular ? '<span class="pill hot">Most popular</span>' : ''}</div>
+      <span class="small muted">${esc(p.tagline)}</span>
+      <span style="font-size:24px;font-weight:750">$${p.price}<small class="muted" style="font-size:13px;font-weight:500">/mo</small></span>
+      <span class="small muted">or $${fmtNum(p.annual)} a year (2 months free)</span>
+      <span>${p.rivals} tracked rivals · about ${p.ads} ads a month</span>
+      <span class="small muted">${fmtNum(p.credits)} credits a month</span>
+      <button class="btn sm" disabled>${u.plan === k ? 'Current plan' : 'Upgrades open soon'}</button></div>`; }).join('')}</div>
+  </section>
   <section class="section">${sectionHead('Connect your AI', 'Keepwatch is also an MCP server. Ask Claude, ChatGPT or Cursor what your rivals keep running.')}
     <pre id="mcp-cmd">claude mcp add --transport http keepwatch ${esc(origin)}/mcp --header "Authorization: Bearer ${esc(ws.api_key)}"</pre>
     <div class="row"><button class="btn sm" id="copy-mcp">Copy</button><button class="btn sm" id="rotate-key">New key</button><span class="small muted">Keep this key private. "New key" disconnects the old one.</span></div></section>
@@ -381,6 +425,14 @@ async function viewSettings() {
       <li>Every number is from a sample of each rival's public ads (English-language), not their whole library. Run length shows an ad lasted, not that it made money.</li>
       <li>Under 10 ads we describe instead of ranking; under 3 we just show the ads.</li>
     </ul></div></section>`;
+}
+
+function kitBlock(kit, current) {
+  if (!kit) return '<p class="small muted" style="margin:0">Works best with Shopify stores; other sites work too.</p>';
+  return `<div class="row">${kit.colors.map(c => `<span title="${esc(c)}" style="width:26px;height:26px;border-radius:6px;background:${esc(c)};border:1px solid var(--line)"></span>`).join('')}
+      ${kit.font ? `<span class="pill">Font: ${esc(kit.font)}</span>` : ''}<span class="pill">${esc(kit.domain)}</span></div>
+    ${kit.products.length ? `<div class="small">Default product for ads</div><div class="pick-grid">${kit.products.map(p => `<label class="pick"><input type="radio" name="default-product" value="${esc(p.url)}" ${p.url === current ? 'checked' : ''}><img src="${esc(p.url)}" alt="${esc(p.name)}" loading="lazy"><span>${esc(p.name)}</span></label>`).join('')}</div>`
+      : '<p class="small muted">No product photos found on that page.</p>'}`;
 }
 
 function onboarding() {
@@ -409,7 +461,7 @@ async function renderRight() {
       <div class="notif"><span class="avatar">K</span><div><b>Your Monday drop ${rebuilds.length ? 'is ready' : 'is waiting'}</b><div class="small muted">Week of ${esc(st.week)} · ${rebuilds.length} new ads</div></div></div>
       <div class="drop-thumbs">${rebuilds.slice(0, 4).map(r => r.image ? `<a href="#/rebuild/${esc(r.ad_id)}"><img src="${esc(r.image)}" alt="Drop ad"></a>` : '<div></div>').join('') || '<div></div><div></div><div></div><div></div>'}</div>
       <button class="btn sm primary" id="drop-btn" ${st.images ? '' : 'disabled'}>${rebuilds.length ? 'Make more' : 'Make this week\'s drop'}</button>
-      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. Each ad uses one of your monthly rebuilds.</p></div>
+      <p class="small muted" style="margin:8px 0 0">Built from what rivals keep running. Made for your brand. 10 credits per ad.</p></div>
     <div class="card rb-card"><h3>Open ground</h3>
       ${open.length ? open.map(a => `<div class="rb-stat"><span>${esc(a.label)}</span><span class="pill ${a.temp}">${esc(a.temp_label)}</span></div>`).join('') : '<p class="small muted">Every angle has a rival on it.</p>'}
       ${crowded.length ? `<p class="small muted" style="margin:8px 0 0">Crowded: ${crowded.map(a => esc(a.label)).join(', ')}.</p>` : ''}
@@ -425,7 +477,7 @@ async function makeDrop(e) {
 
 function renderFooter() {
   const ov = state.overview, me = state.me, u = me.usage;
-  $('#foot-left').textContent = `${ov?.last_collected ? `Updated ${ov.last_collected.slice(0, 10)}` : 'Not collected yet'} · ${fmtNum(ov?.counted)} ads counted · ${u.plan_name} plan: ${u.used.rebuilds}/${u.limits.rebuilds} rebuilds this month`;
+  $('#foot-left').textContent = `${ov?.last_collected ? `Updated ${ov.last_collected.slice(0, 10)}` : 'Not collected yet'} · ${fmtNum(ov?.counted)} ads counted · ${u.plan_name}: ${fmtNum(u.credits.balance)} credits left`;
   $('#foot-right').innerHTML = `Source: public Meta Ad Library sample. Run length ≠ sales.<span class="status-dot ${me.providers.adData ? 'on' : ''}"></span>Ad data<span class="status-dot ${me.providers.images ? 'on' : ''}"></span>Images<span class="status-dot ${me.providers.llm ? 'on' : ''}"></span>Claude`;
 }
 
@@ -534,9 +586,21 @@ document.addEventListener('submit', async e => {
         <button class="btn sm primary" data-pick='${esc(JSON.stringify(h))}'>Track this page</button></div>`).join('') : '<p class="muted">No advertisers found. Try the exact brand name.</p>';
     } catch (err) { out.innerHTML = `<p class="muted">${esc(err.message)}</p>`; }
   }
+  if (f.id === 'kit-form') {
+    const btn = $('button', f); btn.disabled = true; btn.textContent = 'Reading your site…';
+    try { await api('/api/brand/scrape', { method: 'POST', body: data }); toast('Brand kit imported'); await refreshChrome(); route(); }
+    catch (err) { toast(err.message, 7000); btn.disabled = false; btn.textContent = 'Try again'; }
+  }
   if (f.id === 'search-form') { const q = new URLSearchParams([...new FormData(f)].filter(([, v]) => v)); location.hash = `#/search?${q}`; }
 });
-document.addEventListener('change', e => { if (e.target.id === 'test-pick') location.hash = `#/test/${e.target.value}`; });
+document.addEventListener('change', async e => {
+  if (e.target.id === 'test-pick') location.hash = `#/test/${e.target.value}`;
+  if (e.target.name === 'default-product') { await api('/api/workspace', { method: 'POST', body: { product_image: e.target.value } }); state.ws.product_image = e.target.value; toast('Default product saved'); }
+});
+document.addEventListener('click', async e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  try { await navigator.clipboard.writeText(b.dataset.copy); toast('Copied'); } catch { toast('Select the text and copy it'); }
+});
 $('#modal').addEventListener('click', e => { if (e.target.id === 'modal') e.target.close(); });
 window.addEventListener('hashchange', route);
 

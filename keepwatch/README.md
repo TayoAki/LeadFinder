@@ -12,30 +12,64 @@ Keepwatch finds the Meta ads your rivals keep paying to run, shows why they work
 - **Monday drop:** four new ads a week, built from different rivals' kept ads with different angles.
 - **MCP server:** ask Claude, ChatGPT or Cursor what your rivals keep running (`POST /mcp`).
 
+## Plans and credits
+| Plan | Price | Tracked rivals | Credits a month | About |
+|---|---|---|---|---|
+| Trial | free, 14 days | 5 | 200 (whole trial) | 5 ads |
+| Growth | $149/mo or $1,490/yr | 5 | 550 | 40 ads |
+| Scale | $299/mo or $2,990/yr | 20 | 2,000 | 140 ads |
+| Agency | $599/mo or $5,990/yr | 40 | 6,500 | 530 ads |
+
+**What credits pay for:**
+- One finished ad: 10 credits.
+- One tracked rival: 30 credits a month. Its Read and Playbook are included.
+- One buyer panel: 5 credits.
+
+A failed render is refunded automatically. Every movement is recorded in `credit_ledger`.
+
+**Not built yet:**
+- Upgrades. Stripe will set `workspaces.plan` when billing is added.
+- A path after the trial. When it ends, the account is read-only.
+
+## Finished ads
+1. **Import your brand kit** (Settings): paste your website. We pull your name, colours, font and real product photos. Shopify stores return clean shots from `/products.json`.
+2. **Steal this ad:** pick a size (feed 4:5, story 9:16 or square) and the product to feature.
+3. **Render:** the rival ad is the layout reference and your product photo is the second reference. Every product in the frame becomes yours, unchanged, and nothing of the rival's stays.
+4. **Ad copy:** you also get the primary text, headline and call to action for Ads Manager.
+
 ## Run it
 ```sh
 cd keepwatch
 npm install
-npm run collect -- --seed seed.json   # sets your brand + rivals, pulls their ads (~$0.01 per rival)
-npm start                              # http://localhost:3100
+npm start          # http://localhost:3100 (sign up at /signup)
 npm test
 ```
-**Requirements:**
-- Node 22.5+, for the built-in `node:sqlite`.
-- The **treg** CLI, to collect ads and render images. treg injects the provider keys, so this app never holds them.
-- `ANTHROPIC_API_KEY` (optional). It turns on Claude-written concepts and the buyer panel. They use `claude-opus-5-5` with server-side refusal fallbacks.
-
-**Other commands:**
-- `npm run collect`: refresh all rivals.
-- `npm run collect -- --rival "Olipop"`: add one rival by name.
-- `npm run collect -- --page 183869772601 "AG1"`: add a rival by page id, for when name search picks the wrong page.
-- `npm run collect -- --retag`: re-run hook and angle tagging after you change `lib/classify.mjs`.
+Node 22.5+ (built-in `node:sqlite`). One SQLite file holds everything, including Better Auth's tables.
 
 **Environment variables:**
-- `KEEPWATCH_PASSCODE`: required for anything that spends money or changes data, and for `/mcp`.
-- `PORT` (default 3100).
-- `KEEPWATCH_DATA`: database and image folder.
-- Collector tuning: `KW_ACTIVE_PAGES`, `KW_RECENT_PAGES`, `KW_KILLED_PAGES` (30 ads per page), `KW_TRANSCRIPTS` (video transcripts per rival), and `KW_LANGUAGE` (default `EN`).
+
+| Variable | Needed for |
+|---|---|
+| `BETTER_AUTH_SECRET` | Required in production: 32+ random characters. |
+| `BETTER_AUTH_URL` | The public URL, e.g. `https://keepwatch.up.railway.app`. |
+| `KEEPWATCH_DATA` | Folder for the database and rendered ads (a Railway volume, e.g. `/data`). |
+| `SCRAPECREATORS_API_KEY` | Adding rivals and the weekly refresh. Without it, only the bundled demo data is available. |
+| `FAL_KEY` | Ad images with GPT Image 2. Recommended: best at keeping your product photo exact. |
+| `GEMINI_API_KEY` | Ad images with Gemini 3 Pro Image, used if `FAL_KEY` is not set. |
+| `ANTHROPIC_API_KEY` | Claude-written concepts and ad copy, and the buyer panel. |
+
+Locally, the **treg** CLI stands in for the ad-data and image keys.
+
+**Startup and refresh:**
+- On first boot, the server imports `seed-data/ads.json.gz`: public Ad Library rows for a demo category, so "Try the demo" works with no keys.
+- Every hour it refreshes any tracked rival not updated in 7 days.
+
+**Collector commands:**
+- `npm run collect -- --seed seed.json`: set a workspace's brand and rivals from a file.
+- `--rival "Name"`: add one rival by name.
+- `--page <pageId> "Name"`: add a rival by page id, for when name search picks the wrong page.
+- `--retag`: re-run hook and angle tagging.
+- `node --experimental-sqlite lib/seed.mjs --export`: rebuild the seed file.
 
 ## How we count
 | Term | Meaning |
@@ -65,7 +99,9 @@ server.mjs         JSON API, static UI, MCP endpoint
 web/               UI: left rail, rival sidebar, tabs, main content, right sidebar, bottom bar
 ```
 
-**Credits:** the method draws on Matt Berman's MIT-licensed kits:
+**Credits:**
+- The brand-kit scrape and the "real product photo as a reference" rendering are adapted from [RENDER Studio](https://robonuggets.com) by RoboNuggets (CC BY 4.0).
+- The method draws on Matt Berman's MIT-licensed kits:
 - [Steal-Ads-Nano-Banana](https://github.com/TheMattBerman/Steal-Ads-Nano-Banana): ranking, image prompt structure and no-logo rules.
 - [ads-mcp](https://github.com/TheMattBerman/ads-mcp): the 30-day line, the kept / killed / retired / testing piles, sample floors and adaptation rules.
 - [creator-breakout-kit](https://github.com/TheMattBerman/creator-breakout-kit), [openclaw-100k-posts-kit](https://github.com/TheMattBerman/openclaw-100k-posts-kit) and [meta-ads-kit](https://github.com/TheMattBerman/meta-ads-kit): hook rules, buyer inputs and copy specs.

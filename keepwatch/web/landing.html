@@ -33,16 +33,22 @@
     .steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; counter-reset: s; }
     .steps div { counter-increment: s; padding: 16px; }
     .steps div::before { content: counter(s); display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--accent-soft); color: var(--accent); font-weight: 700; margin-bottom: 10px; }
-    .price { display: grid; grid-template-columns: repeat(2, minmax(0, 340px)); gap: 14px; }
-    .price .card { padding: 22px; display: grid; gap: 10px; align-content: start; }
-    .price .amt { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
-    .price ul { margin: 0; padding-left: 18px; color: var(--ink-2); display: grid; gap: 4px; }
+    .plans { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .plan { padding: 22px; display: grid; gap: 8px; align-content: start; }
+    .plan p { margin: 0; }
+    .plan.popular { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), var(--shadow); }
+    .plan .per { color: var(--ink-3); font-size: 12.5px; margin-top: -4px; }
+    .plan .big2 { font-size: 15px; } .plan .big2 b { font-size: 22px; letter-spacing: -.02em; }
+    .plan ul { margin: 6px 0 10px; padding-left: 18px; color: var(--ink-2); display: grid; gap: 4px; }
+
+    .plan .amt { font-size: 34px; font-weight: 800; letter-spacing: -.02em; }
+
     .foot { padding: 28px 0 40px; color: var(--ink-3); font-size: 13px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     @media (max-width: 860px) {
       .hero { grid-template-columns: 1fr; padding-top: 24px; }
       .stack { height: 380px; }
       .features, .steps { grid-template-columns: 1fr 1fr; }
-      .price { grid-template-columns: 1fr; }
+      .plans { grid-template-columns: 1fr; }
     }
     @media (max-width: 520px) { .features, .steps { grid-template-columns: 1fr; } .stack { height: 300px; } }
   </style>
@@ -51,7 +57,7 @@
   <div class="site">
     <nav class="nav">
       <a class="brand" href="/"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M9 16a7 7 0 0 1 14 0" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="16" cy="18" r="3" fill="#fff"/></svg>Keepwatch</a>
-      <div class="row"><a class="btn" href="/login">Sign in</a><a class="btn primary" href="/signup">Start free</a></div>
+      <div class="row"><a class="btn" href="/login">Sign in</a><a class="btn primary" href="/signup">Start free trial</a></div>
     </nav>
 
     <section class="hero">
@@ -59,8 +65,8 @@
         <span class="eyebrow">Competitor ad intelligence for Meta</span>
         <h1>Turn your competitors' winning ads into yours.</h1>
         <p>Keepwatch finds the ads your rivals keep paying to run, shows you why they work, and makes finished versions for your brand. New ones land every Monday.</p>
-        <div class="row"><a class="btn primary" href="/signup" style="padding:12px 18px;font-size:15px">Start free</a><a class="btn" href="/signup?demo=1" style="padding:12px 18px;font-size:15px">See the demo</a></div>
-        <p class="small muted" style="margin-top:14px">Free plan: 5 rivals, 10 ads a month. No card needed.</p>
+        <div class="row"><a class="btn primary" href="/signup" style="padding:12px 18px;font-size:15px">Start free trial</a><a class="btn" href="/signup?demo=1" style="padding:12px 18px;font-size:15px">See the demo</a></div>
+        <p class="small muted" style="margin-top:14px">14-day free trial. No card needed.</p>
       </div>
       <div class="stack" aria-hidden="true">
         <img src="/img/example-offer.jpg" alt="">
@@ -93,17 +99,28 @@
       </div>
     </section>
 
-    <section class="band">
-      <h2>Pick how many rivals to learn from.</h2>
-      <p class="lede">Start free. Paid plans with more rivals and ads are coming soon.</p>
-      <div class="price">
-        <div class="card"><span class="eyebrow">Free</span><span class="amt">$0</span>
-          <ul><li>5 tracked rivals, refreshed weekly</li><li>10 rebuilt ads a month</li><li>3 buyer-panel tests a month</li><li>MCP access for your AI</li></ul>
-          <a class="btn primary" href="/signup">Start free</a></div>
-        <div class="card"><span class="eyebrow">Pro · coming soon</span><span class="amt">More</span>
-          <ul><li>15 tracked rivals</li><li>200 rebuilt ads a month</li><li>60 buyer-panel tests a month</li><li>Monday drop every week</li></ul>
-          <a class="btn" href="/signup">Join on Free</a></div>
+    <section class="band" id="pricing">
+      <h2>Pick how many rivals to learn from. Get ads every week.</h2>
+      <p class="lede">Every plan has the full Ad Library and one pool of credits for everything else. An ad is 10 credits. Tracking a rival is 30 a month, with its Read and Playbook included.</p>
+      <div class="row" role="group" aria-label="Billing period" style="margin-bottom:16px"><button class="btn sm primary" data-bill="mo" aria-pressed="true">Monthly</button><button class="btn sm" data-bill="yr" aria-pressed="false">Yearly · 2 months free</button></div>
+      <div class="plans">
+        <div class="card plan"><span class="eyebrow">Growth</span><p class="muted">For founders testing paid ads.</p>
+          <span class="amt" data-mo="$149" data-yr="$1,490">$149</span><span class="per" data-mo="per month, or $1,490 a year (2 months free)" data-yr="per year, billed annually">per month, or $1,490 a year (2 months free)</span>
+          <div class="big2"><b>5</b> tracked rivals</div><div class="big2">about <b>40</b> ads a month</div>
+          <ul><li>The full Ad Library, with everyone's ads</li><li>A Read and Playbook for every tracked rival</li><li>550 credits a month, one pool for everything</li></ul>
+          <a class="btn" href="/signup">Start free trial</a></div>
+        <div class="card plan popular"><span class="row" style="justify-content:space-between"><span class="eyebrow">Scale</span><span class="pill hot">Most popular</span></span><p class="muted">For brands scaling their paid media.</p>
+          <span class="amt" data-mo="$299" data-yr="$2,990">$299</span><span class="per" data-mo="per month, or $2,990 a year (2 months free)" data-yr="per year, billed annually">per month, or $2,990 a year (2 months free)</span>
+          <div class="big2"><b>20</b> tracked rivals</div><div class="big2">about <b>140</b> ads a month</div>
+          <ul><li>The full Ad Library, with everyone's ads</li><li>A Read and Playbook for every tracked rival</li><li>2,000 credits a month, one pool for everything</li></ul>
+          <a class="btn primary" href="/signup">Start free trial</a></div>
+        <div class="card plan"><span class="eyebrow">Agency</span><p class="muted">For agencies managing multiple brands.</p>
+          <span class="amt" data-mo="$599" data-yr="$5,990">$599</span><span class="per" data-mo="per month, or $5,990 a year (2 months free)" data-yr="per year, billed annually">per month, or $5,990 a year (2 months free)</span>
+          <div class="big2"><b>40</b> tracked rivals</div><div class="big2">about <b>530</b> ads a month</div>
+          <ul><li>The full Ad Library, with everyone's ads</li><li>A Read and Playbook for every tracked rival</li><li>6,500 credits a month, one pool for everything</li></ul>
+          <a class="btn" href="/signup">Start free trial</a></div>
       </div>
+      <p class="small muted" style="margin-top:12px">Every plan starts with a 14-day free trial: 5 rivals and 200 credits, no card needed.</p>
     </section>
 
     <footer class="foot">
@@ -111,5 +128,12 @@
       <span><a href="/login">Sign in</a></span>
     </footer>
   </div>
+  <script>
+    document.querySelectorAll('[data-bill]').forEach(b => b.addEventListener('click', () => {
+      const yr = b.dataset.bill === 'yr';
+      document.querySelectorAll('[data-bill]').forEach(x => { const on = x === b; x.classList.toggle('primary', on); x.setAttribute('aria-pressed', on); });
+      document.querySelectorAll('[data-mo]').forEach(el => { el.textContent = yr ? el.dataset.yr : el.dataset.mo; });
+    }));
+  </script>
 </body>
 </html>
