@@ -1,16 +1,34 @@
-# Wk 10: Microsoft Fabric Pricing Explained: F2 to F64, What You'll Really Pay (2026)
+# Wk 10: Microsoft Fabric Pricing Explained: F2 to F64, On-Demand, and What You'll Really Pay (2026)
 
-- **Runtime target:** ~20 min
+- **Runtime target:** ~23 min
 - **Pillar:** 6 — Cost and architecture for decision-makers
 - **Target keywords:** microsoft fabric pricing (720/mo, 0.76×, $50 CPC) · fabric f64 (70/mo, $119 CPC) · fabric capacity (390/mo, 0.94×) · fabric trial (90/mo) · microsoft fabric (22,200/mo)
 - **Title options:**
   1. Microsoft Fabric Pricing Explained: F2 to F64, What You'll Really Pay (2026)
-  2. Fabric Capacity Pricing in 20 Minutes: CUs, SKUs and the F64 Line
-  3. How Much Does Microsoft Fabric Cost? Sizing a Real Small Team (2026)
-- **Thumbnail:** "F2 → F64?" in big text, a price tag icon, and a capacity gauge needle in the red.
+  2. Fabric Capacity vs On-Demand: Which Should You Pick? (2026 Pricing Guide)
+  3. How Much Does Microsoft Fabric Cost? F8 → F16 or PPU, Worked Out
+- **Thumbnail:** "F64 or ON-DEMAND?" in big text, a price tag icon, and a capacity gauge needle in the red.
 - **Verify before recording:**
-  - **Pay-as-you-go prices.** Check the Azure pricing page for your region. Mid-2026 figures for US regions: F2 ≈ $0.36/hr (≈ $263/mo at 730 h); F64 ≈ $11.52/hr (≈ $8,410/mo).
+  - **Pay-as-you-go prices.** Check the Azure pricing page for your region. Mid-2026 figures for US regions:
+    - F2 ≈ $0.36/hr (≈ $263/mo at 730 h)
+    - F8 ≈ $1.44/hr (≈ $1,051/mo)
+    - F64 ≈ $11.52/hr (≈ $8,410/mo)
   - **Reservation discount:** about 41% for 1-year at last check. Confirm the current %.
+  - **On-demand (pay-per-use) billing,** announced at FabCon Barcelona, Sep 2026, per r/MicrosoftFabric. Confirm on Microsoft's own pages (Fabric blog, pricing page, Learn):
+    - GA or preview, and which regions;
+    - the unit and price;
+    - which workloads it covers;
+    - whether it can be mixed with capacities;
+    - whether F64-style free-viewer Power BI licensing applies (likely not; confirm);
+    - Microsoft's quoted example: $3,533 on an F64 vs $759 on-demand for the same workload. Use their exact wording and the workload they described.
+  - **Capacity overage billing:** reported in the community as overages charged at 3× the normal CU rate. Confirm:
+    - the multiplier;
+    - opt-in vs default;
+    - any cap;
+    - how it shows on the Azure bill.
+  - **OneLake billing change from Oct 1, 2026:** OneLake transactions from Spark's system-initiated calls are now billed (reported as previously underreported). Confirm on the Fabric blog / Learn "OneLake consumption" page, including which operations count.
+  - **"Find expensive queries" in the Capacity Metrics app is GA** (reported). Confirm its name and location in the app.
+  - **The Metrics app keeps 30 days of history** (the top community complaint). Confirm, and check whether an export option (e.g., to a lakehouse / workspace monitoring) exists for longer trends.
   - **OneLake storage price per GB per month,** and the BCDR (disaster recovery) storage rate.
   - **Power BI Pro and PPU per-user prices.** Pro was raised to $14 and PPU to $24 in April 2025; confirm.
   - **The F64 threshold:** free-license viewers can consume Power BI content in workspaces on F64 and above. Confirm the wording on Microsoft Learn ("Microsoft Fabric licenses").
@@ -20,25 +38,29 @@
     - interactive delay after 10 min of future capacity used;
     - interactive rejection after 60 min;
     - background rejection after 24 h.
+  - **New CU-consuming items:**
+    - Fabric Apps (codename "Rayfin" in community threads) and Fabric Plan: confirm official names and status, and how they bill.
+    - The community report of about 100K CU-seconds/day while authoring a Plan is anecdotal; say so.
+    - Data agent cost: anecdotal reports of high CU use when testing agents across many sources. Confirm how data agent usage is billed (capacity CUs, which operation names).
   - **Surge protection and "autoscale billing for Spark":** status (preview vs GA) and current names.
   - **Mirroring:** free compute for replication, plus free mirroring storage of 1 TB per CU of the SKU. Confirm.
-  - **Capacity Metrics app:** check the current name and whether the in-portal capacity reporting has replaced any of it.
+  - **The r/MicrosoftFabric F8→F16 vs PPU thread** (break-even ≈ 93 users): re-read it for its exact assumptions before citing it. Don't name the poster.
 
 ## Hook (0:00–0:30)
-"Microsoft Fabric pricing looks simple. Pick a size, pay by the hour. Then the bill comes, or worse, your reports slow to a crawl at 9 a.m. and nobody knows why. In the next 20 minutes I'll show you exactly what you pay for: capacity units, storage, and Power BI licenses. I'll show you the one size where licensing changes completely. And I'll size a real small team, start to finish, so you can walk into a budget meeting with a number you can defend."
+"Microsoft Fabric pricing just changed. There's now an on-demand option, and Microsoft's own example showed the same workload costing about 3,500 dollars on an F64 capacity and about 760 on-demand. So which one is right for you? In the next 20 minutes I'll show you exactly what you pay for, when capacity beats on-demand, what overages and throttling really cost, and I'll work through a real decision from the community: upgrade from F8 to F16, or move users to Premium Per User. You'll leave with a number you can defend."
 
 ## Script
 
 ### 0:30 — The three things you actually pay for
 "Every Fabric bill has three parts. Hold on to these, because everything else in this video hangs off them.
 
-[ON SCREEN: three boxes: 1. Capacity (compute) 2. OneLake storage 3. Power BI licenses]
+[ON SCREEN: three boxes: 1. Compute (capacity or on-demand) 2. OneLake storage and transactions 3. Power BI licenses]
 
-One: capacity. That's your compute. Every Spark job, every pipeline, every report query burns it.
+One: compute. Every Spark job, every pipeline, every report query burns it. Until recently that always meant a capacity. Now there's also on-demand, and we'll compare them.
 
-Two: OneLake storage. The data you keep. That's billed separately, per gigabyte per month.
+Two: OneLake. The data you keep, billed per gigabyte per month, plus some transaction costs that just changed.
 
-Three: Power BI licenses. Per person. Whether the people *viewing* reports need one depends on your capacity size. We'll get to that line, because it's the biggest decision in this whole video."
+Three: Power BI licenses. Per person. Whether the people *viewing* reports need one depends on your capacity size. That line is one of the biggest decisions in this video."
 
 ### 1:30 — Capacity units and F-SKUs
 "Compute is measured in capacity units, or CUs. The SKU name tells you how many. An F2 has 2 CUs. An F64 has 64. It doubles all the way up.
@@ -47,225 +69,283 @@ Three: Power BI licenses. Per person. Whether the people *viewing* reports need 
 
 So F2, F4, F8, F16, F32, F64, then 128, 256, 512, 1024 and 2048.
 
-Price scales linearly. An F4 costs twice an F2. An F64 costs 32 times an F2. There's no volume discount built into the bigger sizes. The discount comes from how you buy, which is next.
+Price scales linearly. An F4 costs twice an F2. Going up one size always doubles the price. There's no volume discount built into the bigger sizes.
 
-At time of recording, pay-as-you-go in US regions is about 36 cents an hour for an F2. Run it all month, that's about 263 dollars. An F64 is about eleven fifty an hour, roughly 8,400 dollars a month. Prices vary by region, so check yours. Link in the description."
+At time of recording, pay-as-you-go in US regions is about 36 cents an hour for an F2. Run it all month, that's about 263 dollars. An F8 is about 1,050 a month. An F64 is about eleven fifty an hour, roughly 8,400 a month. Prices vary by region, so check yours. Link in the description."
 
 ### 3:00 — Pay-as-you-go vs reservation
-"There are two ways to buy.
+"There are two ways to buy a capacity.
 
 [ON SCREEN: split screen. Left: Pay-as-you-go: per second, pause anytime. Right: Reservation: 1 year, ~41% off, always billed]
 
-Pay-as-you-go is billed by the second while the capacity is running. You can pause it, and while it's paused, you don't pay for compute.
+Pay-as-you-go is billed by the second while the capacity is running. Pause it and you stop paying for compute.
 
-A reservation is a one-year commitment. At time of recording it's about 41 percent cheaper. But you pay whether you use it or not. Pausing doesn't save you anything.
+A reservation is a one-year commitment. At time of recording it's about 41 percent cheaper. But you pay whether you use it or not.
 
-So here's the rule of thumb. If your capacity needs to be on most of the day, every day, reserve it. Do the math: a reservation that's 41 percent cheaper beats pay-as-you-go once you'd run it more than about 59 percent of the hours in the month.
+Rule of thumb: if the capacity is on more than about 59 percent of the hours in a month, reserve it.
 
 [ON SCREEN: Break-even ≈ on 59% of hours → reserve]
 
-If it's a dev capacity you only run during work hours, pay-as-you-go and pause it at night. Eight hours a day, five days a week, is about a quarter of the month. Pay-as-you-go wins easily."
+A dev capacity you only run during work hours is about a quarter of the month. Pay-as-you-go and pause it."
 
 ### 4:30 — Pause and resume
-"Let me show you pause.
+"Pausing is one button.
 
 [DEMO: Azure portal → search "Microsoft Fabric" → Fabric capacities → select your capacity → Pause. Then Resume.]
 
-That's it. One button. You can also automate it. An Azure Automation runbook or a Logic App on a schedule works fine.
+You can automate it with an Azure Automation runbook or a Logic App on a schedule.
 
-One catch. If your capacity has borrowed from the future, which I'll explain in a second, pausing settles that debt immediately. You'll see it on the bill as a one-time charge. That's expected, not a bug.
-
-And when it's paused, everything on it is unavailable. Reports, pipelines, notebooks. So don't pause the capacity your CFO's dashboard lives on."
+One catch. If your capacity has borrowed from the future, which I'll explain next, pausing settles that debt immediately. You'll see it as a one-time charge. And while it's paused, everything on it is unavailable, so don't pause the capacity your CFO's dashboard lives on."
 
 ### 5:30 — Bursting and smoothing
 "This is the part almost everyone gets wrong, so slow down with me.
 
-Fabric lets a job use more compute than your SKU size for a short time. That's bursting. A Spark job on an F2 can run much faster than 2 CUs would suggest.
+Fabric lets a job use more compute than your SKU size for a short time. That's bursting.
 
 [ON SCREEN: a spike chart going well above a dotted "SKU line"]
 
-Then Fabric spreads that usage out over time. That's smoothing. Interactive operations, like someone clicking on a report, are smoothed over at least five minutes. Background operations, like refreshes, pipelines and Spark jobs, are smoothed over 24 hours.
+Then Fabric spreads that usage out. That's smoothing. Interactive operations, like report clicks, are smoothed over at least five minutes. Background operations, like refreshes, pipelines and Spark jobs, are smoothed over 24 hours.
 
 [ON SCREEN: the same spike flattened into a long low band across 24 hours]
 
-Why does that matter? Because it means you size for your *average* load, not your peak. A big nightly job doesn't need a big capacity. It just gets spread across the day.
-
-The flip side: that nightly job is still using up tomorrow's capacity. Which brings us to throttling."
+So on a capacity, you size for your *average* load, not your peak. The flip side: a big nightly job is using up tomorrow's capacity. Which brings us to throttling."
 
 ### 7:30 — Throttling: what happens when you go over
-"If you keep using more than your capacity provides, you're borrowing from the future. Fabric lets you borrow a little for free. Past that, it starts pushing back, in stages.
+"Keep using more than your capacity provides and you're borrowing from the future. Fabric lets you borrow a little for free. Past that, it pushes back, in stages.
 
 [ON SCREEN: a staircase:
 - Up to 10 min of future capacity used → no impact
-- 10–60 min → interactive delay (reports wait ~20 seconds)
+- 10–60 min → interactive delay
 - 60 min–24 h → interactive rejection (reports fail)
 - Over 24 h → background rejection (refreshes and jobs fail too)]
 
-Up to ten minutes of future capacity: no impact. Ten minutes to an hour: interactive requests get delayed. People notice reports are slow. One hour to 24 hours: interactive requests get rejected. Reports fail to load. Past 24 hours: background jobs get rejected too.
+First your users feel it, then your pipelines break.
 
-So the order is: first your users feel it, then your pipelines break.
+Until recently you had three ways out: wait for it to burn down, scale up the SKU, or pause and resume and pay off the debt. Now there's a fourth."
 
-How do you get out? Three ways. Wait, and it burns down. Scale up the SKU for a while. Or pause and resume, which clears the debt but charges you for it, like we said."
+### 9:00 — Overage billing: pay 3×, get throttled, or double your SKU
+"Fabric now has a capacity overage option. Instead of throttling you, it lets you run over and bills the extra. At time of recording, the community reports overages are charged at three times the normal CU rate. Check the current multiplier, link below.
 
-### 9:00 — The Capacity Metrics app
-"You can't manage what you can't see. Install the Fabric Capacity Metrics app.
+Three times sounds terrible. But compare it to the alternatives.
 
-[DEMO: Fabric → Apps → Get apps → search "Microsoft Fabric Capacity Metrics" → Install → connect with your capacity ID (from Admin portal → Capacity settings → select capacity → copy ID).]
+[ON SCREEN: three options for a spike:
+1. Get throttled → free, but reports fail
+2. Overage → extra CUs at ~3× rate
+3. Next SKU up → 2× the whole bill, every hour]
 
-Three things to look at.
+Going up one SKU doubles your whole bill, every hour, whether you need it or not. Overage only charges you for the extra.
+
+Here's the break-even. If the extra usage over a month is less than about a third of what your capacity provides in that month, overage is cheaper than going up a size. Paying three times for something smaller than a third still costs less than paying for a whole second capacity.
+
+[ON SCREEN: Overage cheaper if extra CU usage < ~⅓ of your capacity's monthly CUs (at 3×)]
+
+So: occasional month-end spikes, use overage. Over a third of your capacity, every month, it's time for the next size, or for on-demand. Which is next."
+
+### 10:00 — Capacity vs on-demand: which should you pick?
+"In September 2026, at FabCon in Barcelona, Microsoft announced an on-demand, pay-per-use billing model. Instead of renting a fixed size, you pay for what you actually consume.
+
+Microsoft's own example: a workload that cost about 3,533 dollars on an F64 capacity cost about 759 dollars on-demand.
+
+[ON SCREEN: Microsoft example: F64 capacity ≈ $3,533 vs on-demand ≈ $759 · same workload]
+
+When that was posted, the reaction on the Fabric subreddit was pretty blunt. A lot of people read it as Microsoft admitting that capacities overcharge spiky workloads. And that's the key word: spiky.
+
+Here's how to think about it.
+
+[ON SCREEN: two charts. Left: flat usage near the SKU line → capacity. Right: tall spikes, mostly idle → on-demand]
+
+A capacity is a fixed rent. You pay for every CU, every hour, used or not. If your usage is steady and high, you use most of what you pay for. With a reservation discount on top, a capacity is hard to beat.
+
+On-demand is a meter. You pay only for what runs. If your workload is spiky, a big load once a day and quiet the rest of the time, most of a capacity sits idle. That idle time is what you stop paying for.
+
+So the question is utilization. Open the Capacity Metrics app and look at your smoothed CU percentage over a month.
+
+[ON SCREEN: decision rule:
+- High and steady (most hours near the SKU line) → capacity, probably reserved
+- Low average with spikes → price on-demand
+- In between → run both prices on your real usage]
+
+[RECORDING NOTE: once on-demand pricing is published, add the actual break-even utilization here, e.g. "below about X percent average utilization, on-demand wins." Don't guess it.]
+
+Two things to check before you switch. First, licensing. The F64 rule that lets free users view reports is a capacity feature. Check whether it applies to on-demand at all. If you have hundreds of viewers, that alone can decide it. Second, predictability. A capacity is a fixed bill your finance team can plan around. A meter isn't. Some teams will happily pay more for a number that doesn't move."
+
+### 12:30 — The Capacity Metrics app (and its 30-day problem)
+"You can't make any of these decisions without data. Install the Fabric Capacity Metrics app.
+
+[DEMO: Fabric → Apps → Get apps → search "Microsoft Fabric Capacity Metrics" → Install → connect with your capacity ID (Admin portal → Capacity settings → select capacity → copy ID).]
+
+Four things to look at.
 
 [DEMO: Compute page → CU % over time chart]
 
-One: the CU percentage over time. If your smoothed line sits near 100 percent, you're undersized.
+One: CU percentage over time. Near 100 percent smoothed, you're undersized. Low with spikes, look at on-demand.
 
 [DEMO: Throttling tab]
 
 Two: throttling. Any red here means users felt it.
 
-[DEMO: Items table, sorted by CU(s) descending]
+[DEMO: Items table sorted by CU(s) descending]
 
-Three: the items table. Sort by CU seconds. Nine times out of ten, one item is eating most of your capacity. Usually a refresh or a dataflow. Fix that one thing before you buy a bigger SKU."
+Three: the items table, sorted by CU seconds. Usually one item is eating most of your capacity.
 
-### 10:30 — OneLake storage
-"Storage is the second line on the bill. OneLake is billed per gigabyte per month, separate from capacity. It's priced like Azure Data Lake storage. Check the current rate for your region.
+[DEMO: the "Find expensive queries" view]
 
-[ON SCREEN: OneLake storage: billed per GB/month · Shortcuts: no copy, no OneLake storage · Mirroring: free storage up to a limit per CU]
+Four: 'Find expensive queries', now generally available. It takes you from 'this semantic model is expensive' to 'this query is the problem'. That's where the real fixes are.
 
-Two things keep it down.
+Now the catch, and it's the top complaint about this app: it only keeps about 30 days. So you can't trend month over month, which is exactly what you need for a reservation or on-demand decision.
 
-Shortcuts. A shortcut points at data that already lives in ADLS, S3 or Google Cloud Storage. Fabric reads it in place. You don't store a second copy in OneLake. You still pay the other cloud for storage and any egress.
+[ON SCREEN: "Metrics app: ~30 days only → export monthly"]
 
-And mirroring. At time of recording, mirrored data gets free storage up to a limit tied to your capacity size, one terabyte per CU. So an F64 covers 64 terabytes of mirrored data. Check that on the pricing page, but it's a real saving.
+Workaround: export or snapshot the numbers every month. Even a screenshot of the monthly CU chart into a shared folder beats nothing. If your tenant has a way to land this data in a lakehouse, use it."
 
-One more: deleted data and old Delta versions still take space until they're cleaned up. Run VACUUM on your big lakehouse tables."
+### 14:00 — OneLake: storage, and a billing change from October 2026
+"Second line on the bill: OneLake. Storage is billed per gigabyte per month, separate from compute, priced like Azure Data Lake storage.
 
-### 11:30 — Power BI licensing and the F64 line
-"Now the big one.
+There's also a change you need to know about. From October 1st, 2026, OneLake consumption from Spark's system-initiated calls is billed. Those are calls Spark makes on its own, not lines of code you wrote. The community's read is that this usage used to be underreported. So if your Spark-heavy workspaces show higher OneLake costs from October, that's probably why. Check the official note, link below.
 
-Anyone who *creates* or *publishes* Power BI content needs a Pro or Premium Per User license. That's true on every capacity size.
+[ON SCREEN: From Oct 1, 2026: Spark system-initiated OneLake calls are billed]
 
-The question is the *viewers*. The people who just open the report.
+What keeps OneLake costs down:
+
+Shortcuts. Point at data in ADLS, S3 or Google Cloud Storage instead of copying it.
+
+Mirroring. Replication compute is free, and mirrored storage is free up to a limit tied to your capacity size, one terabyte per CU at time of recording.
+
+And cleanup. Old Delta versions take space until you VACUUM them. Small files make Spark do more calls, so OPTIMIZE your big tables."
+
+### 15:00 — Power BI licensing and the F64 line
+"Now licensing.
+
+Anyone who *creates* or *publishes* Power BI content needs Pro or Premium Per User, on any capacity size.
+
+The question is the *viewers*.
 
 [ON SCREEN: a line drawn at F64.
 Below F64 (F2–F32): every viewer needs Pro.
 F64 and above: viewers with a free license can view.]
 
-Below F64, every viewer needs a Pro license. At F64 and above, viewers with a free license can view reports in workspaces on that capacity.
+Below F64, every viewer needs Pro. At F64 and above, free-license viewers can view reports on that capacity.
 
-So do the math. At time of recording, Pro is about 14 dollars per user per month in the US. If you have 400 report viewers, that's about 5,600 dollars a month in Pro licenses. An F64 reservation is in the same ballpark. Past a few hundred viewers, F64 often costs less overall than a small capacity plus Pro for everyone.
+At time of recording, Pro is about 14 dollars per user per month in the US. 400 viewers is about 5,600 dollars a month in Pro, the same ballpark as an F64 reservation. Under about a hundred viewers, F64 is almost never worth it on licensing alone. That's why 'F64' has the highest ad price in this whole niche. It's a real budget decision."
 
-[ON SCREEN: viewers × Pro price vs F64 price, with a crossover point]
-
-Under about a hundred viewers, it's almost never worth it on licensing alone. In between, run your own numbers. That's why the F64 search term has the highest ad price in this whole niche. It's a real budget decision."
-
-### 13:00 — The trial
-"If you haven't started yet, use the trial. It gives you a capacity equivalent to an F64 for 60 days.
+### 16:30 — The trial
+"If you haven't started yet, the trial gives you an F64-equivalent capacity for 60 days.
 
 [DEMO: app.fabric.microsoft.com → account manager (top right) → Start trial]
 
-Use those 60 days to measure, not just to play. Build your real pipelines and real reports on it. Then open the Capacity Metrics app and see how many CUs you actually burn. That's how you pick a SKU based on data instead of guessing."
+Use it to measure. Build your real pipelines and reports on it, then read the Metrics app. And export those numbers before the 30 days roll off."
 
-### 14:00 — Worked example: sizing a small team
-"Let's size a real one.
+### 17:00 — New things that burn CUs
+"Three newer items to watch, because people are getting surprised by them.
 
-[ON SCREEN: The team:
-- 3 data engineers
-- 2 Power BI developers
-- 60 report viewers
-- Nightly load: ~20 GB from Azure SQL plus a few CSV feeds
-- 15 reports, refreshed hourly during business hours]
+[ON SCREEN: Fabric Apps · Fabric Plan · Data agents]
 
-Step one. Ingestion. Azure SQL is a source we can mirror. Mirroring compute is free and the storage is within the free allowance. So that part costs almost nothing in CUs.
+Fabric Apps and Fabric Plan both run on your capacity. One user on the Fabric subreddit reported about 100,000 CU-seconds a day just authoring a Plan. That's one person's report, not a benchmark, but it shows that building things costs CUs too, not just running them.
 
-Step two. Transformation. A nightly Spark notebook builds silver and gold tables from the mirrored data and the CSVs. That's background work, smoothed over 24 hours. [RECORDING NOTE: run this on the trial first and say the real number from the Metrics app here, e.g. "it averaged X percent of an F8".] Your numbers will differ; this is why you measure.
+And data agents. Another user described burning through a lot of capacity while testing agents connected to many data sources at once. Every question an agent answers can fan out into queries across every source it's connected to.
 
-Step three. Reports. Fifteen Direct Lake reports. Direct Lake reads Delta tables directly, so there's no import refresh burning CUs every hour. That's a big saving over hourly import refreshes.
+So the advice is the same for all three. Try new items on a separate dev capacity or on-demand, not on the capacity your production reports share. Then check the items table in the Metrics app before you roll them out."
 
-Step four. Pick the SKU. Say the smoothed average sits around 50 to 60 percent of an F8, with business-hours peaks. [RECORDING NOTE: replace with your measured figure.] So F8, with room to grow. If the average were over about 80 percent, I'd go to F16.
+### 18:30 — Worked example: upgrade F8 to F16, or move users to PPU?
+"Let's do a real one. This came up on the Fabric subreddit: a team on an F8 is running hot. Should they upgrade to an F16, or move their Power BI users to Premium Per User?
 
-Step five. Licenses. 60 viewers is way under the F64 line. So everyone who opens a report needs Pro. That's 65 Pro licenses: 60 viewers, 3 engineers, 2 developers. Some of them may already have Pro through Microsoft 365 E5. Check that before you buy.
+[ON SCREEN: The situation:
+- F8 capacity, smoothed CU often near 100%
+- Power BI semantic models are a big share of CU use
+- Viewers already have Pro (required below F64)]
 
-[ON SCREEN: Total = F8 (reserve if on 24/7, or pay-as-you-go + pause) + OneLake storage + 65 × Pro]
+Option A: upgrade to F16. Going up one size doubles the price. So the extra cost is one more F8. About 1,050 dollars a month pay-as-you-go at time of recording, or less if reserved.
 
-Step six. Buy. This capacity runs pipelines overnight and reports all day. It's on most of the month, so reserve it. If you also want a dev capacity, make that a pay-as-you-go F2 and pause it at night.
+Option B: move the Power BI workloads to PPU workspaces. Those semantic models stop using the F8's CUs. But everyone who uses that content needs PPU instead of Pro. They already pay for Pro, so the extra cost is the difference: about 24 minus 14, 10 dollars per user per month.
 
-Plug in the current prices from the description and you've got a defensible number."
+[ON SCREEN: Break-even users = (F16 − F8 monthly cost) ÷ (PPU − Pro per user)]
 
-### 17:30 — Five ways to cut your bill
+So the break-even is the extra cost of the F16 divided by 10 dollars. At pay-as-you-go prices, that's about 105 users. With a reservation it's lower. The thread worked it out at about 93 users with their own prices.
+
+[ON SCREEN: ≈ 93–105 users · fewer users → PPU · more users → F16]
+
+Fewer users than that, PPU is cheaper. More, upgrade the capacity.
+
+Three things the simple math misses. One: PPU only takes the Power BI load off the capacity. If it's actually Spark or pipelines running hot, PPU doesn't help. Check the items table first. Two: managing two places, PPU workspaces and a capacity, is more admin. Three: now there's a third option. If the load is spiky, price the F8 plus overage, or on-demand, before you double anything.
+
+[RECORDING NOTE: re-read the thread for its exact assumptions and say them. Don't name the poster.]"
+
+### 21:30 — Five ways to cut your bill
 "Quick list before we wrap.
 
 [ON SCREEN: numbered as I say them]
 
-One. Fix the top item in the Metrics app before you scale up.
-Two. Separate dev and prod capacities. Pause dev.
+One. Use 'Find expensive queries' and fix the top item before you scale up.
+Two. Separate dev and prod. Pause dev, or put it on-demand.
 Three. Use Direct Lake instead of frequent import refreshes where it fits.
 Four. Use shortcuts and mirroring instead of copying data.
-Five. For small data, use a Python notebook instead of a Spark notebook. A single node is cheaper than spinning up a Spark cluster for a 50-megabyte file."
+Five. For small data, use a Python notebook instead of Spark."
 
-### 18:30 — Recap
-"So. You pay for three things: capacity, storage, and licenses. Capacity is measured in CUs; size for your smoothed average, not your peak. Throttling hits users first, then jobs. Reserve if it's on most of the month; pay-as-you-go and pause if it isn't. And the F64 line decides whether viewers need Pro.
+### 22:30 — Recap
+"So. You pay for compute, OneLake and licenses. On a capacity, size for your smoothed average; reserve it if it's on most of the month. Steady load, capacity. Spiky load, price on-demand. Occasional spikes, overage at three times can still beat doubling your SKU. Watch the October OneLake change, export your Metrics data before 30 days roll off, and keep the F64 line in mind for viewers.
 
-Next, I'm comparing pipelines, dataflows, notebooks and mirroring, including which one burns the most CUs for the same job. That's here. See you there."
+Next, I'm comparing pipelines, dataflows, notebooks and mirroring, including which one burns the most CUs for the same job. That's here."
 
 ## Chapters
-0:00 What Fabric really costs
+0:00 Fabric pricing changed: capacity vs on-demand
 0:30 The three things you pay for
 1:30 Capacity units and F-SKUs (F2 to F2048)
 3:00 Pay-as-you-go vs reservation
 4:30 Pause and resume
 5:30 Bursting and smoothing
 7:30 Throttling: what happens when you go over
-9:00 The Capacity Metrics app
-10:30 OneLake storage costs
-11:30 Power BI licensing and the F64 line
-13:00 The 60-day trial
-14:00 Worked example: sizing a small team
-17:30 Five ways to cut your bill
-18:30 Recap
+9:00 Overage billing: 3× vs throttling vs next SKU
+10:00 Capacity vs on-demand: which should you pick?
+12:30 Capacity Metrics app + "Find expensive queries" + the 30-day limit
+14:00 OneLake costs and the Oct 2026 Spark billing change
+15:00 Power BI licensing and the F64 line
+16:30 The 60-day trial
+17:00 New things that burn CUs: Apps, Plan, data agents
+18:30 Worked example: F8 → F16 or move users to PPU?
+21:30 Five ways to cut your bill
+22:30 Recap
 
 ## Description + tags
-Microsoft Fabric pricing explained for 2026: capacity units, F-SKUs from F2 to F64 and up, pay-as-you-go vs reservations, and the F64 Power BI licensing line.
-I size a real small team step by step, so you can pick a Fabric capacity based on data, not guesses.
+Microsoft Fabric pricing explained for 2026: F-SKUs from F2 to F64, the new on-demand billing model, overage billing, reservations, and the F64 Power BI licensing line.
+Plus a real worked example: upgrade an F8 to F16, or move users to Premium Per User?
 
-Covered: CUs, bursting and smoothing, throttling stages, pause/resume, OneLake storage, shortcuts and mirroring costs, Power BI Pro vs free viewers, the 60-day trial, and the Capacity Metrics app.
+Covered: capacity units, bursting and smoothing, throttling, overage at ~3×, capacity vs on-demand, the Capacity Metrics app ("Find expensive queries" and the 30-day limit), the Oct 2026 OneLake billing change for Spark, Fabric Apps, Plan and data agent costs, and the 60-day trial.
 
-Prices quoted are approximate US-region pay-as-you-go at time of recording. Check current pricing: [link to Azure Fabric pricing page]
+Prices quoted are approximate US-region figures at time of recording. Check current pricing: [link to Azure Fabric pricing page] · On-demand announcement: [link] · OneLake consumption: [link]
 
-Tags: microsoft fabric pricing, fabric capacity, fabric f64, fabric f2, fabric sku, capacity units, fabric trial, power bi pro license, power bi premium, fabric capacity metrics app, fabric throttling, onelake storage cost, microsoft fabric 2026
+Tags: microsoft fabric pricing, fabric capacity, fabric on demand, fabric pay as you go, fabric f64, fabric f8, fabric sku, capacity units, fabric overage, fabric trial, power bi ppu, power bi pro license, fabric capacity metrics app, onelake cost, microsoft fabric 2026
 
 ## Shorts cutdowns
 
-**Short 1: "The F64 line" (≈40s)**
+**Short 1: "Capacity or on-demand?" (≈40s)**
+[ON SCREEN: "Fabric: capacity or on-demand?"]
+"Microsoft's own example: same workload, about 3,500 dollars on an F64 capacity, about 760 on-demand. So is a capacity a ripoff? Not always. A capacity is rent. You pay every hour, used or not. On-demand is a meter. If your usage is steady and high, the rent wins, especially reserved. If it's spiky and idle most of the day, the meter wins. Open the Capacity Metrics app, look at your average, and price both."
+[ON SCREEN: "Steady → capacity · Spiky → on-demand"]
+
+**Short 2: "The F64 line" (≈40s)**
 [ON SCREEN: "Do your report viewers need Power BI Pro?"]
-"Do your report viewers need a Power BI Pro license? It depends on one number. Below an F64 capacity, yes. Every single person who opens a report needs Pro. At F64 and above, viewers with a free license can open reports in that capacity. So if you have a few hundred viewers, Pro for everyone can cost as much as the F64 itself. Under about a hundred viewers, stay small and buy Pro. In between, do the math. Full breakdown on my channel."
+"Do your report viewers need a Power BI Pro license? It depends on one number. Below an F64 capacity, yes. Every single person who opens a report needs Pro. At F64 and above, viewers with a free license can open reports on that capacity. A few hundred viewers on Pro can cost as much as the F64 itself. Under about a hundred, stay small and buy Pro."
 [ON SCREEN: "< F64: viewers need Pro · ≥ F64: free viewers OK"]
 
-**Short 2: "Why your reports are slow at 9 a.m." (≈40s)**
-[ON SCREEN: "Reports slow every morning?"]
-"Fabric reports slow every morning? You might be throttled. Fabric lets you borrow compute from the future. Big overnight jobs borrow a lot. Go more than ten minutes over, and reports get delayed. Over an hour, they get rejected. Over a day, your pipelines fail too. Open the Capacity Metrics app, sort items by CU seconds, and fix the top one. It's usually one refresh."
-[ON SCREEN: "10 min → delay · 1 h → reject reports · 24 h → reject jobs"]
-
-**Short 3: "Reserve or pay-as-you-go?" (≈30s)**
-[ON SCREEN: "Reserve or pay as you go?"]
-"Fabric reservation or pay-as-you-go? A one-year reservation is about 41 percent cheaper at time of recording. But you pay even when it's paused. So if your capacity runs more than about 60 percent of the hours in a month, reserve it. If it's a dev capacity that runs office hours, pay as you go and pause it at night."
-[ON SCREEN: "On > ~60% of hours → reserve"]
+**Short 3: "F8 to F16, or PPU?" (≈40s)**
+[ON SCREEN: "F8 maxed out. Upgrade or PPU?"]
+"Your F8 is maxed out. Upgrade to F16, or move your Power BI users to Premium Per User? Upgrading doubles the bill: one extra F8. PPU costs about 10 dollars more per user than Pro. Divide one by the other. Around 100 users is the break-even. Fewer, PPU. More, F16. But check first: if Spark is the thing running hot, PPU won't help at all."
+[ON SCREEN: "Break-even = extra F8 cost ÷ $10/user"]
 
 ## LinkedIn post
-[Diagram: a horizontal bar from F2 to F2048 with a red line at F64. Left: "Viewers need Pro". Right: "Free viewers OK".]
+[Diagram: two usage charts side by side. Left: a flat line near the SKU limit, labelled "Capacity". Right: tall spikes over a mostly empty chart, labelled "On-demand". Between them: Microsoft's example, "$3,533 vs $759, same workload".]
 
-Most Fabric pricing debates are the wrong debate.
+Fabric's new on-demand billing isn't a discount. It's a question about your usage shape.
 
-Teams argue about F8 vs F16. The bigger number on the bill is usually licenses.
+A capacity is rent: you pay every hour, used or not. On-demand is a meter.
 
-Below F64, every report viewer needs Power BI Pro. At F64 and above, free-license viewers can open reports on that capacity.
+Microsoft's own example showed one workload at ~$3,533 on an F64 and ~$759 on-demand. That gap is idle time.
 
-So the real sizing question isn't "how much compute do we need?" It's "how many people read our reports?"
+How I'd decide:
+→ Steady, high utilization: capacity, reserved.
+→ Spiky, mostly idle: price on-demand.
+→ Occasional spikes: overage (~3× rate) can still beat doubling your SKU.
 
-My rule:
-→ Under ~100 viewers: stay small, buy Pro.
-→ A few hundred or more: price an F64 reservation against Pro for everyone.
-→ Either way: run the 60-day trial, install the Capacity Metrics app, and size from your smoothed average, not your peak.
+But get the data first. The Capacity Metrics app keeps ~30 days, so export it monthly or you'll be guessing.
 
-Measure first. Then buy.
-
-Full walkthrough with a worked example in my latest video.
+Full breakdown, including F8→F16 vs PPU, in my latest video.

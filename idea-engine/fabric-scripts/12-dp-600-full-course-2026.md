@@ -735,8 +735,8 @@ If this helped, the DP-700 course for the data engineer side is linked here, and
 ---
 
 ## Chapters
-0:00 DP-600 course intro (2026)
-0:30 Exam format, passing score and skill areas
+0:00:00 DP-600 course intro (2026)
+0:00:30 Exam format, passing score and skill areas
 0:08:00 Module 1: Fabric mental model (OneLake, lakehouse, warehouse, eventhouse)
 0:25:00 Module 2: Workspaces, capacities and admin settings
 0:50:00 Module 3: Security and governance (roles, RLS, CLS, masking, labels, endorsement)
