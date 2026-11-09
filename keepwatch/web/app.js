@@ -259,7 +259,8 @@ async function viewRebuild(adId) {
     head = `<section class="section">
       ${sectionHead('Their winner, rebuilt as your ad', 'Keeps what makes it work. Swaps in your product, your offer and your colour. Never their name, logo, claims or wording.')}
       <div class="vs">
-        <div><span class="eyebrow">Theirs · ${esc(ad.rival_name)}</span>${thumb(ad)}<p class="small muted">${esc(runLabel(ad))} · ${esc(ad.format_label)}</p></div>
+        <div><span class="eyebrow">Theirs · ${esc(ad.rival_name)}</span><button class="ad-open" data-ad="${esc(ad.id)}" style="all:unset;cursor:pointer;display:block" aria-label="Open the original ad">${thumb(ad)}</button>
+          <p class="small muted">${esc(runLabel(ad))} · ${esc(ad.format_label)} · <button class="linklike" data-ad="${esc(ad.id)}">Open original</button> · <a href="${libUrl(ad.id)}" target="_blank" rel="noopener">Meta Ad Library ↗</a></p></div>
         <div id="ours"><span class="eyebrow">Yours · ${esc(state.ws.brand_name || 'your brand')}</span>
           ${existing ? rebuildFigure(existing) : makeForm()}
         </div>
@@ -281,7 +282,7 @@ async function viewRebuild(adId) {
     ${sectionHead('Your ads', 'Every ad you have made, newest first.', `<button class="btn" id="drop-now">Make this week's drop</button>`)}
     ${rebuilds.length ? `<div class="grid-auto">${rebuilds.map(r => `<article class="card ad">
         <a href="#/rebuild/${esc(r.ad_id)}" style="color:inherit;text-decoration:none">${r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Your ad"></div>` : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`}</a>
-        <div class="ad-body"><span class="who">From ${esc(r.ad?.rival_name || '')}${r.drop_week ? ` · drop ${esc(r.drop_week)}` : ''}${r.size && r.size !== 'feed' ? ` · ${esc(r.size)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>
+        <div class="ad-body"><span class="who">${r.drop_week ? `Drop ${esc(r.drop_week)}` : 'Remake'}${r.size && r.size !== 'feed' ? ` · ${esc(r.size)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>${sourceLink(r.ad)}
         ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a></div>` : ''}</div></article>`).join('')}</div>`
       : empty('No ads yet. Pick any rival ad and press "Steal this ad".')}
   </section>`;
@@ -292,6 +293,10 @@ function rebuildFigure(r) {
     <div class="row" style="margin-top:8px"><a class="btn sm primary" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test vs theirs</a></div>`
     : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`;
 }
+
+const libUrl = id => `https://www.facebook.com/ads/library/?id=${encodeURIComponent(id)}`;
+/** "Inspired by" link to the original rival ad: opens it in the app; the ↗ opens Meta's Ad Library. */
+const sourceLink = ad => ad ? `<span class="small">Inspired by <button class="linklike" data-ad="${esc(ad.id)}">${esc(ad.rival_name)} · ${esc(runLabel(ad).toLowerCase())}</button> <a href="${libUrl(ad.id)}" target="_blank" rel="noopener" title="Open in Meta Ad Library">↗</a></span>` : '';
 
 const copyBtn = text => `<button class="btn sm" type="button" data-copy="${esc(text)}">Copy</button>`;
 function planBlock(r) {
@@ -322,7 +327,7 @@ async function viewTest(rebuildId) {
   const board = tested.length ? `<section class="section">${sectionHead('Scoreboard', `${tested.length} of your ads tested. Best margin first.`)}
     <div class="card pad"><table class="table"><thead><tr><th>Your ad</th><th>Against</th><th class="num">Yours</th><th class="num">Theirs</th><th class="num">Ties</th><th>Top reason</th></tr></thead><tbody>
     ${tested.map(({ p, r }) => { const t = p.result.tally; const win = t.ours > t.theirs ? 'pill open' : t.ours < t.theirs ? 'pill crowded' : 'pill';
-      return `<tr><td><a href="#/test/${r.id}">${esc(r.headline)}</a></td><td class="muted">${esc(r.ad?.rival_name || '')}</td><td class="num"><b>${t.ours}</b></td><td class="num">${t.theirs}</td><td class="num">${t.tie}</td><td><span class="${win}">${t.ours > t.theirs ? 'Yours wins' : t.ours < t.theirs ? 'Theirs wins' : 'Draw'}</span> <span class="small muted">${esc(p.result.top_reason || '')}</span></td></tr>`; }).join('')}
+      return `<tr><td><a href="#/test/${r.id}">${esc(r.headline)}</a></td><td>${r.ad ? `<button class="linklike" data-ad="${esc(r.ad.id)}">${esc(r.ad.rival_name)}, ${esc(String(r.ad.run_days))}d</button> <a href="${libUrl(r.ad.id)}" target="_blank" rel="noopener" title="Open in Meta Ad Library">↗</a>` : ''}</td><td class="num"><b>${t.ours}</b></td><td class="num">${t.theirs}</td><td class="num">${t.tie}</td><td><span class="${win}">${t.ours > t.theirs ? 'Yours wins' : t.ours < t.theirs ? 'Theirs wins' : 'Draw'}</span> <span class="small muted">${esc(p.result.top_reason || '')}</span></td></tr>`; }).join('')}
     </tbody></table></div></section>` : '';
   return board + `<section class="section">
     ${sectionHead('Know which ad wins before you spend a cent', 'Put your ad against theirs. Simulated buyers built from your audience pick the one they would stop for, twice each with the order swapped.')}
@@ -331,7 +336,7 @@ async function viewTest(rebuildId) {
     <div class="filters"><select id="test-pick">${rebuilds.map(r => `<option value="${r.id}" ${r.id === pick.id ? 'selected' : ''}>${esc(r.headline)} (from ${esc(r.ad?.rival_name)})</option>`).join('')}</select>
       <button class="btn primary" id="run-panel" ${llm ? '' : 'disabled'}>Run the panel</button></div>
     <div class="vs"><div><span class="eyebrow">Yours</span><div class="ad-thumb"><img src="${esc(pick.image)}" alt="Your ad"></div></div>
-      <div><span class="eyebrow">Theirs · ${esc(pick.ad?.rival_name)}</span>${pick.ad ? thumb(pick.ad, { badge: false }) : ''}</div></div>
+      <div><span class="eyebrow">Theirs · ${esc(pick.ad?.rival_name)}</span>${pick.ad ? `<button class="ad-open" data-ad="${esc(pick.ad.id)}" style="all:unset;cursor:pointer;display:block" aria-label="Open the original ad">${thumb(pick.ad, { badge: false })}</button><p class="small muted">${sourceLink(pick.ad)}</p>` : ''}</div></div>
     <div id="panel-out" style="margin-top:14px">${last ? panelResult(last.result) : ''}</div>`}
   </section>`;
 }

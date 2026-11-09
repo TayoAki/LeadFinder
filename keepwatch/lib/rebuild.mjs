@@ -65,7 +65,7 @@ export function rulePlan(ad, ws, { productName } = {}) {
  *               instead of what they hold) · 'none' (no product added: recreate the scene as is)
  *   button      draw a button only if true; Meta adds its own CTA button under the ad
  */
-export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts, productMode = 'replace', button = false, setting }) {
+export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts, productMode = 'replace', button = false, setting, badge }) {
   const lines = (texts && texts.length ? texts : [headline]).map(t => String(t).trim()).filter(Boolean);
   const product = !hasProduct || productMode === 'none'
     ? 'Do not add any product, phone, app screen or packaging that is not in the reference. If the reference shows a rival product or branded item, replace it with a plain unbranded equivalent.'
@@ -77,7 +77,8 @@ export function imagePrompt({ headline, cta, ws, hasProduct, productName, texts,
       ? `Image 1 is a reference advertisement. Recreate its layout in a new location: ${setting}. Keep exactly: the composition and camera framing, the camera height and angle, the art style (photo, illustration or hand-drawn), where the subject sits in the frame and their pose, the mood of the lighting, and every text element's position, size, box shape, font style and colour. The new location must look clearly different from the reference's location.`
       : 'Image 1 is a reference advertisement. Recreate it as faithfully as possible. Keep exactly: the layout and framing, the art style (photo, illustration or hand-drawn), the setting and background, the lighting and colour palette, any subject\'s pose and position, and every text element\'s position, size, box shape, font style and colour.',
     `Change only ${setting ? 'four things: the location, ' : 'three things: '}the words, the product, and any person.`,
-    `The words: the reference has ${lines.length === 1 ? 'a text element' : 'text elements'}. Replace ${lines.length === 1 ? 'it' : 'them, in reading order, one for one'} with exactly: ${lines.map((t, n) => `(${n + 1}) "${t}"`).join(' ')}. Same styling as the text being replaced. No other words anywhere.`,
+    `The words: the reference has ${lines.length === 1 ? 'a text element' : 'text elements'}. Replace ${lines.length === 1 ? 'it' : 'them, in reading order, one for one'} with exactly: ${lines.map((t, n) => `(${n + 1}) "${t}"`).join(' ')}. Same styling as the text being replaced.${badge ? '' : ' No other words anywhere.'}`,
+    ...(badge ? [`Add one small, unobtrusive label near the bottom edge, styled like a native social sticker: "${badge}". It is the only text you may add beyond the replacements above.`] : []),
     product,
     button ? `Include a button with exactly the text "${cta}" where the reference has its button, styled like the reference's button.` : 'Do not add any button, call-to-action, logo, watermark or website. If the reference has none, the recreation has none.',
     'If the reference shows a person or character, show a clearly different one (different face, hair, build and clothing) in the same pose; never reproduce the reference person\'s likeness. No celebrity faces.',
@@ -114,7 +115,9 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
   if (plan.product_mode === 'none') product = null;
   plan.setting = typeof spec.setting === 'string' && spec.setting.trim() ? spec.setting.trim().slice(0, 300) : null;
   plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName,
-    texts: plan.texts, productMode: plan.product_mode, button: spec.button === true, setting: plan.setting || undefined });
+    texts: plan.texts, productMode: plan.product_mode, button: spec.button === true, setting: plan.setting || undefined,
+    badge: typeof spec.badge === 'string' && spec.badge.trim() ? spec.badge.trim().slice(0, 60) : undefined });
+  plan.badge = typeof spec.badge === 'string' ? spec.badge.trim().slice(0, 60) || null : null;
   if (concept?.image_note) plan.image_prompt += `\n${String(concept.image_note).slice(0, 600)}`;
   plan.product_image = product;
   plan.size = size;
@@ -145,7 +148,7 @@ export function getRebuild(id, db = getDb(), wsId) {
 }
 
 export function listRebuilds(db = getDb(), { wsId, dropWeek } = {}) {
-  const rows = db.prepare(`SELECT id FROM rebuilds WHERE workspace_id = ? ${dropWeek ? 'AND drop_week = ?' : ''} ORDER BY id DESC LIMIT 60`).all(wsId, ...(dropWeek ? [dropWeek] : []));
+  const rows = db.prepare(`SELECT id FROM rebuilds WHERE workspace_id = ? AND COALESCE(status, '') != 'replaced' ${dropWeek ? 'AND drop_week = ?' : ''} ORDER BY id DESC LIMIT 100`).all(wsId, ...(dropWeek ? [dropWeek] : []));
   return rows.map(r => getRebuild(r.id, db));
 }
 

@@ -43,6 +43,13 @@ test('image prompt: no button by default, new location keeps composition, text s
   assert.match(p, /Do not add any product/);
 });
 
+test('optional badge is the only added text', () => {
+  const p = imagePrompt({ headline: 'H', cta: 'Download', ws: { brand_name: 'B' }, hasProduct: false, texts: ['one'], badge: 'B · free on iPhone' });
+  assert.match(p, /only text you may add/);
+  assert.match(p, /B · free on iPhone/);
+  assert.doesNotMatch(p, /No other words anywhere/);
+});
+
 test('rule fallback moves the scene and uses an app CTA for apps', () => {
   const plan = rulePlan(ad(1, { angle: 'other', cta: 'Learn more' }), { brand_name: 'Weight Class', brand_product: 'AI calorie counter app for iPhone', brand_domain: 'apps.apple.com/x' });
   assert.match(plan.setting, /different place of the same kind/);
