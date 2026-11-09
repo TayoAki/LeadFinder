@@ -39,8 +39,16 @@ A failed render is refunded automatically. Every movement is recorded in `credit
 4. **Ad copy:** you also get the primary text, headline and call to action for Ads Manager.
 5. **Video (9:16, 4–10 s):** turn any finished ad into a vertical video for Reels, Stories and TikTok. There are two modes:
    - **Motion:** the ad exactly as approved, with a slow camera push. It runs in ffmpeg only, takes seconds and needs no AI.
-   - **AI video:** video models garble text, so we never animate the ad itself. We remove every word from the still (GPT Image 2), animate that clean frame (Seedance 1 Lite via `FAL_KEY`, or treg locally), then burn the ad's own lines back on with ffmpeg. The first line is the hook and stays up top; the other lines take turns below, and the badge closes the video.
+   - **AI video, matched to the original:** rebuilds the rival's video shot for shot (`lib/shots.mjs`).
+     1. **Break down the original:** cut the rival's video into shots (ffmpeg scene detection). Claude then describes each shot from three frames: its kind (scene, app screen or end card), the camera, what moves and when, and the caption style and position.
+     2. **Plan ours:** the same number of shots with the same lengths, the same camera and the same movement beats in the same order, moved to our scene, with our own lines in the original's caption style. The plan is saved on the ad (`video_plan`), so you can check or edit it before rendering.
+     3. **Render:**
+        - **Scene shots** are animated from our ad's still with the words removed, so the video model has no text to garble (Seedance 1 Lite: `FAL_KEY`, or treg locally). Long takes are chained clip to clip, each starting on the last frame of the one before.
+        - **App shots** scroll the brand's real App Store screenshots, like a screen recording.
+        - **End cards** use the brand's icon and screens.
+        - **Captions** are burned on with ffmpeg, so the words are exact.
 
+     Without Claude, the plan keeps the original's cuts and uses simple rules for each shot.
    Both modes need ffmpeg and a font. The Dockerfile installs them.
 
 ## Run it

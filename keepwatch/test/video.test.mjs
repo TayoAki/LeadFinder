@@ -6,7 +6,9 @@ import { join } from 'node:path';
 import { execFileSync } from 'node:child_process';
 
 process.env.KEEPWATCH_DATA = mkdtempSync(join(tmpdir(), 'kw-video-'));
-const { wrap, captionPlan, motionVideo, motionPrompt } = await import('../lib/video.mjs');
+const { motionVideo } = await import('../lib/video.mjs');
+const { wrap, shotsFromCuts, rulePlan, scenePrompt, captionFilters } = await import('../lib/shots.mjs');
+const { appStoreId } = await import('../lib/appstore.mjs');
 
 const hasFfmpeg = (() => { try { execFileSync('ffmpeg', ['-version']); return true; } catch { return false; } })();
 
@@ -14,22 +16,40 @@ test('captions wrap on words, never mid-word', () => {
   assert.deepEqual(wrap('The free way to track your GLP-1 and your meals', 20), ['The free way to', 'track your GLP-1 and', 'your meals']);
 });
 
-test('caption plan: hook stays up, the rest take turns, labels dropped, badge closes', () => {
-  const plan = captionPlan(['What nobody told me before my first week', 'DAY 1', 'DAY 2', 'Why day 3 can feel harder'], 'Free on iPhone', 6);
-  assert.equal(plan[0].at, 'top');
-  assert.deepEqual([plan[0].from, plan[0].to], [0, 6]);
-  assert.equal(plan.length, 3); // hook, one line, badge
-  assert.equal(plan[1].text, 'Why day 3 can feel harder');
-  assert.equal(plan.at(-1).text, 'Free on iPhone');
-  assert.equal(plan.at(-1).to, 6);
-  assert.ok(plan[1].to <= plan.at(-1).from);
+test('cuts become shots; flash cuts merge', () => {
+  assert.deepEqual(shotsFromCuts([2.96667, 3], 6.1), [{ start: 0, end: 2.97 }, { start: 2.97, end: 6.1 }]);
+  assert.deepEqual(shotsFromCuts([], 9), [{ start: 0, end: 9 }]);
 });
 
-test('motion prompt forbids new text and cuts', () => {
-  const p = motionPrompt({ setting: 'a pier by the sea' });
-  assert.match(p, /a pier by the sea/);
+test('rule plan keeps the original timing: scene with our lines, app screen, end card', () => {
+  const p = rulePlan({ breakdown: { shots: [{ start: 0, end: 5.7 }, { start: 5.7, end: 11 }, { start: 11, end: 12.2 }] },
+    plan: { texts: ['Six months on Ozempic and I still forgot which side.', 'Logs every injection site.'] },
+    assets: { name: 'Weight Class', price: 'Free', screens: [{ name: 'a' }, { name: 'b' }] } });
+  assert.deepEqual(p.shots.map(s => s.kind), ['scene', 'app_screen', 'end_card']);
+  assert.deepEqual(p.shots.map(s => s.seconds), [5.7, 5.3, 1.2]);
+  assert.equal(p.shots[0].still, 'ad');
+  assert.match(p.shots[0].captions[0].text, /Six months/);
+});
+
+test('scene prompt carries the timed beats and forbids text and cuts', () => {
+  const p = scenePrompt({ camera: 'Locked-off phone on a tripod', motion: ['0-1.5s pours water; 1.5-3s drinks', 'second part'] }, 0);
+  assert.match(p, /Locked-off/);
+  assert.match(p, /0-1.5s pours water/);
+  assert.match(p, /no cuts/);
   assert.match(p, /Do not add any text/);
-  assert.match(p, /Do not cut/);
+  assert.match(scenePrompt({ motion: ['a', 'b'] }, 1), /\bb\b/);
+});
+
+test('word captions show one word at a time across the span', () => {
+  const f = captionFilters([{ text: 'same calories', style: 'word', position: 0.1 }], 2, mkdtempSync(join(tmpdir(), 'kw-cap-')), 't');
+  assert.equal(f.length, 2);
+  assert.match(f[0], /between\(t,0\.00,0\.99\)/);
+  assert.match(f[1], /between\(t,1\.00,1\.99\)/);
+});
+
+test('App Store id comes from the brand link', () => {
+  assert.equal(appStoreId({ brand_domain: 'apps.apple.com/us/app/weight-class/id6816738487' }), '6816738487');
+  assert.equal(appStoreId({ brand_domain: 'example.com' }), null);
 });
 
 test('motion video is a 9:16 mp4 of the requested length', { skip: !hasFfmpeg && 'ffmpeg not installed' }, async () => {
@@ -38,8 +58,7 @@ test('motion video is a 9:16 mp4 of the requested length', { skip: !hasFfmpeg &&
   execFileSync('ffmpeg', ['-v', 'error', '-f', 'lavfi', '-i', 'color=c=teal:s=544x680', '-frames:v', '1', img]);
   await motionVideo(img, out, 4);
   assert.ok(existsSync(out) && statSync(out).size > 1000);
-  const probe = execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration', '-of', 'json', out]).toString();
-  const j = JSON.parse(probe);
+  const j = JSON.parse(execFileSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=width,height:format=duration', '-of', 'json', out]).toString());
   assert.deepEqual([j.streams[0].width, j.streams[0].height], [1080, 1920]);
   assert.ok(Math.abs(Number(j.format.duration) - 4) < 0.2);
 });

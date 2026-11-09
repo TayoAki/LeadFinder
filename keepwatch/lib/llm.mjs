@@ -155,3 +155,67 @@ export async function buyerPanel(personas, oursImg, theirsImg) {
   const topReason = Object.entries(reasonCount).sort((a, b) => b[1] - a[1])[0]?.[0] || null;
   return { tally, top_reason: topReason, votes: results, model: MODEL };
 }
+
+// ---------------------------------------------------------------- video: match the original shot for shot
+
+const SHOT_DESC_SCHEMA = strict({
+  shots: { type: 'array', items: strict({
+    start: { type: 'number' }, end: { type: 'number' },
+    kind: { type: 'string', enum: ['scene', 'app_screen', 'end_card'], description: 'scene: real people/places/objects filmed. app_screen: a phone app filling the frame (a screen recording). end_card: logo/brand card.' },
+    camera: { type: 'string', description: 'How the camera behaves, e.g. "locked-off phone on a tripod, chest height, does not move" or "handheld, close, slight sway".' },
+    motion: { type: 'string', description: 'What moves, in order, with rough times inside the shot: "0-1.5s she pours water into a glass; 1.5-3s sets the jug down, lifts the glass and drinks". For app screens: scroll direction and taps.' },
+    caption_style: { type: 'string', enum: ['outline', 'shadow', 'dark', 'light', 'box', 'word', 'none'], description: 'outline: white with black outline. shadow: white with a soft shadow. dark: dark text on a light background. box: on a dark box. word: one big word at a time.' },
+    caption_position: { type: 'number', description: 'Top of the caption block as a fraction of the frame height (0 = top, 1 = bottom).' },
+    caption_text: str,
+  }) },
+});
+
+/** Describe each shot of a rival's video from three frames per shot. */
+export async function describeShots({ duration, shots, transcript }) {
+  const content = [{ type: 'text', text: `A ${duration.toFixed(1)}s vertical video ad, cut into ${shots.length} shots. Three frames per shot (start, middle, end).${transcript ? `\nSpoken words: ${transcript.slice(0, 1500)}` : ''}` }];
+  for (const [i, s] of shots.entries()) {
+    content.push({ type: 'text', text: `Shot ${i + 1}: ${s.start.toFixed(2)}s to ${s.end.toFixed(2)}s` });
+    for (const f of s.frames) content.push({ type: 'image', source: { type: 'base64', media_type: 'image/jpeg', data: readFileSync(f).toString('base64') } });
+  }
+  content.push({ type: 'text', text: 'Describe every shot, keeping its start and end. Be concrete about the movement and its order: this is used to film the same movements in a new ad.' });
+  const out = await askJSON({ system: `You break video ads down shot by shot for a production team.\n${RULES}`, content, schema: SHOT_DESC_SCHEMA, effort: 'medium', maxTokens: 5000 });
+  return out.shots;
+}
+
+const VIDEO_PLAN_SCHEMA = strict({
+  shots: { type: 'array', items: strict({
+    kind: { type: 'string', enum: ['scene', 'app_screen', 'end_card'] },
+    seconds: { type: 'number', description: 'Exactly the original shot\'s length.' },
+    still: { type: 'string', enum: ['ad', 'continue', 'new'], description: 'Scene shots: ad = starts on our ad\'s picture; continue = carries on from the previous scene; new = needs a new picture (describe it in new_still).' },
+    new_still: { type: 'string', description: 'For still=new: the opening picture of this shot in our scene, one or two sentences. Empty otherwise.' },
+    camera: { type: 'string', description: 'Same camera behaviour as the original shot.' },
+    motion: { type: 'string', description: 'The same movement beats as the original shot, in the same order and timing, done in OUR scene with OUR people and objects. Never mention text.' },
+    screens: { type: 'array', items: str, description: 'app_screen only: names of our app screens to show, in order, chosen from the list given.' },
+    end_title: str, end_line: { type: 'string', description: 'end_card: one short line, only from the brand facts.' },
+    end_style: { type: 'string', enum: ['card', 'type_on'], description: 'card: icon, name, line and phone. type_on: plain white card, name types out next to the icon.' },
+    captions: { type: 'array', items: strict({ text: str, style: { type: 'string', enum: ['outline', 'shadow', 'dark', 'light', 'box', 'word'] }, position: { type: 'number' }, from: { type: 'number' }, to: { type: 'number' } }) },
+  }) },
+});
+
+/** Our version of the original, shot for shot. */
+export async function planVideoShots({ breakdown, plan, ws, screens }) {
+  const content = [{ type: 'text', text: `The original video ad, shot by shot:
+${JSON.stringify(breakdown.shots.map(({ frames, ...s }) => s), null, 1)}
+
+Our still ad already adapts its story for ${ws.brand_name}:
+- Our scene: ${plan.setting || 'see the ad'}
+- Our lines on the ad: ${JSON.stringify(plan.texts || [])}${plan.badge ? `\n- Badge: ${plan.badge}` : ''}
+Our app screens you can show: ${screens.length ? screens.join(', ') : '(none: we are not an app, so use scene shots instead of app screens and end cards)'}
+Brand facts (the ONLY things captions may claim):
+${brandFacts(ws).map(f => `- ${f}`).join('\n')}
+
+Plan our video so it matches the original shot for shot: the same number of shots, the same length for each, the same kind, the same camera, the same movement beats in the same order, and captions in the same style and position, with our own words. The first scene shot starts on our ad (still=ad) and carries our lines. Captions read like the original's: if the original speaks a script word by word, write our script in the same rhythm.` }];
+  const out = await askJSON({ system: `You are a video editor recreating the structure and movement of a proven ad for a different brand.\n${RULES}`, content, schema: VIDEO_PLAN_SCHEMA, effort: 'medium', maxTokens: 6000 });
+  return {
+    duration: breakdown.duration, source: 'claude',
+    shots: out.shots.map(s => ({ kind: s.kind, seconds: s.seconds, camera: s.camera, motion: s.motion, captions: s.captions,
+      ...(s.kind === 'scene' ? { still: s.still === 'new' ? { prompt: s.new_still } : s.still } : {}),
+      ...(s.kind === 'app_screen' ? { screens: s.screens } : {}),
+      ...(s.kind === 'end_card' ? { title: s.end_title, line: s.end_line, style: s.end_style } : {}) })),
+  };
+}

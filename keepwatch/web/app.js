@@ -11,7 +11,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage blocked: fine */ } },
 };
 
-const state = { me: null, status: {}, ws: {}, rivals: [], overview: null };
+const state = { me: null, status: {}, ws: {}, rivals: [], overview: null, videos: {} };
 
 // ---------- API ----------
 async function api(path, opts = {}) {
@@ -251,6 +251,7 @@ function makeForm() {
 
 async function viewRebuild(adId) {
   const rebuilds = await api('/api/rebuilds');
+  for (const r of rebuilds) state.videos[r.id] = { list: r.videos || [], poster: r.image, title: r.headline };
   let head = '';
   if (adId) {
     const ad = await api(`/api/ads/${adId}`);
@@ -283,7 +284,7 @@ async function viewRebuild(adId) {
     ${rebuilds.length ? `<div class="grid-auto">${rebuilds.map(r => `<article class="card ad">
         <a href="#/rebuild/${esc(r.ad_id)}" style="color:inherit;text-decoration:none">${r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Your ad"></div>` : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`}</a>
         <div class="ad-body"><span class="who">${r.drop_week ? `Drop ${esc(r.drop_week)}` : 'Remake'}${r.size && r.size !== 'feed' ? ` · ${esc(r.size)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>${sourceLink(r.ad)}
-        ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a>${r.videos?.length ? `<a class="btn sm" href="#/rebuild/${esc(r.ad_id)}">▶ Video</a>` : ''}</div>` : ''}</div></article>`).join('')}</div>`
+        ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a>${r.videos?.length ? `<button class="btn sm primary" data-play="${r.id}">▶ Play video</button>` : ''}</div>` : ''}</div></article>`).join('')}</div>`
       : empty('No ads yet. Pick any rival ad and press "Steal this ad".')}
   </section>`;
 }
@@ -301,10 +302,29 @@ function videoBlock(r) {
     <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><span class="eyebrow">Video for Reels, Stories and TikTok · 9:16</span>
       <span class="row" style="gap:6px"><button class="btn sm" data-video="${r.id}" data-mode="motion" title="Your ad exactly as approved, with a slow camera push. 2 credits.">Make motion video · 2</button>
       <button class="btn sm primary" data-video="${r.id}" data-mode="ai" title="Real movement in the scene, your lines burned on as captions. 30 credits, 1 to 3 minutes.">Make AI video · 30</button></span></div>
-    ${vids.length ? `<div class="video-grid">${vids.map(v => `<figure class="video-card"><video src="${esc(v.url)}" poster="${esc(r.image)}" controls playsinline muted loop preload="metadata"></video>
-      <figcaption class="row small" style="justify-content:space-between"><span>${v.mode === 'ai' ? 'AI video' : 'Motion'} · ${v.seconds}s</span><a class="btn sm" href="${esc(v.url)}" download>Download</a></figcaption></figure>`).join('')}</div>`
+    ${vids.length ? `<div class="video-grid">${vids.map((v, i) => `<figure class="video-card"><button class="vthumb" data-play="${r.id}" data-idx="${i}" aria-label="Play ${v.mode === 'ai' ? 'AI video' : 'motion video'}"><img src="${esc(r.image)}" alt=""><span class="vplay" aria-hidden="true">▶</span><span class="vlen">${v.seconds}s</span></button>
+      <figcaption class="row small" style="justify-content:space-between"><span>${v.mode === 'ai' ? 'AI video' : 'Motion'}</span><a class="btn sm" href="${esc(v.url)}" download>Download</a></figcaption></figure>`).join('')}</div>`
       : '<p class="small muted" style="margin:0">No video yet. Motion keeps every word exactly as approved. AI video moves the scene and puts your lines back on as captions.</p>'}
   </div>`;
+}
+
+/** Full-screen player for an ad's videos. Starts playing on open; tabs switch between versions. */
+function openVideos(rbId, idx = 0) {
+  const v = state.videos[rbId];
+  if (!v?.list.length) return;
+  const cur = v.list[idx];
+  $('#modal-body').innerHTML = `<div class="player">
+    <div class="row" style="justify-content:space-between;gap:8px"><strong class="small">${esc(v.title || 'Your video')}</strong><button class="btn sm" id="modal-close" aria-label="Close">✕</button></div>
+    <video id="player-video" src="${esc(cur.url)}" poster="${esc(v.poster || '')}" controls autoplay playsinline loop></video>
+    <p id="player-error" class="small muted" hidden>This browser can't play the video here. <a href="${esc(cur.url)}" download>Download it</a> to watch.</p>
+    <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:6px">
+      <span class="row" style="gap:6px">${v.list.map((x, i) => `<button class="btn sm ${i === idx ? 'primary' : ''}" data-play="${rbId}" data-idx="${i}">${x.mode === 'ai' ? 'AI video' : 'Motion'} · ${x.seconds}s</button>`).join('')}</span>
+      <a class="btn sm" href="${esc(cur.url)}" download>Download</a></div></div>`;
+  if (!$('#modal').open) $('#modal').showModal();
+  $('#modal-close').onclick = () => $('#modal').close();
+  const el = $('#player-video');
+  el.addEventListener('error', () => { $('#player-error').hidden = false; });
+  el.play().catch(() => {}); // a blocked autoplay still leaves the controls to press
 }
 
 const libUrl = id => `https://www.facebook.com/ads/library/?id=${encodeURIComponent(id)}`;
@@ -586,7 +606,7 @@ async function refreshChrome() {
 
 // ---------- events ----------
 document.addEventListener('click', async e => {
-  const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
+  const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
   if (!t) return;
   if (t.dataset.view) { location.hash = { home: '#/overview', search: '#/search', alerts: '#/alerts', library: '#/library', settings: '#/settings' }[t.dataset.view]; return; }
   if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
@@ -611,6 +631,7 @@ document.addEventListener('click', async e => {
   }
   if (t.id === 'collect') { t.disabled = true; try { const r = await runJob('/api/collect', {}, 'Collecting rival ads (a few minutes)'); toast(`Collected ${r.ads} ads for $${r.cost.toFixed(3)}`); await refreshChrome(); route(); } catch (err) { toast(err.message, 6000); } t.disabled = false; return; }
   if (t.id === 'drop-now') { makeDrop(e); return; }
+  if (t.dataset.play) { openVideos(Number(t.dataset.play), Number(t.dataset.idx || 0)); return; }
   if (t.dataset.video) {
     const ai = t.dataset.mode === 'ai';
     const btns = [...document.querySelectorAll('[data-video]')];
@@ -660,6 +681,7 @@ document.addEventListener('click', async e => {
   try { await navigator.clipboard.writeText(b.dataset.copy); toast('Copied'); } catch { toast('Select the text and copy it'); }
 });
 $('#modal').addEventListener('click', e => { if (e.target.id === 'modal') e.target.close(); });
+$('#modal').addEventListener('close', () => { $('#player-video')?.pause(); });
 window.addEventListener('hashchange', route);
 
 await refreshChrome();
