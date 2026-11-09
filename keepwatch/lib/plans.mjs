@@ -1,10 +1,11 @@
 // Plans and the credit pool. One monthly pool pays for everything:
 //   tracking a rival = 30 credits a month (its Read and Playbook included) · one finished ad = 10 · one buyer panel = 5
+//   a motion video (the exact ad with a camera push) = 2 · an AI video (real movement, captions burned on) = 30
 // Growth: 550 credits − 5 rivals × 30 = 400 → about 40 ads. Scale: 2,000 − 600 → 140. Agency: 6,500 − 1,200 → 530.
 // New accounts get a 14-day trial; Stripe (later) sets workspaces.plan to a paid plan.
 import { getDb, rivalIdsFor } from './db.mjs';
 
-export const COST = { rival: 30, ad: 10, panel: 5 };
+export const COST = { rival: 30, ad: 10, panel: 5, motion: 2, video: 30 };
 
 export const PLANS = {
   trial: { name: 'Trial', price: 0, rivals: 5, credits: 200, tagline: '14 days to try everything. No card needed.' },

@@ -24,6 +24,7 @@ Keepwatch finds the Meta ads your rivals keep paying to run, shows why they work
 - One finished ad: 10 credits.
 - One tracked rival: 30 credits a month. Its Read and Playbook are included.
 - One buyer panel: 5 credits.
+- One motion video: 2 credits. One AI video: 30 credits.
 
 A failed render is refunded automatically. Every movement is recorded in `credit_ledger`.
 
@@ -36,6 +37,11 @@ A failed render is refunded automatically. Every movement is recorded in `credit
 2. **Steal this ad:** pick a size (feed 4:5, story 9:16 or square) and the product to feature.
 3. **Render:** the rival ad is the layout reference and your product photo is the second reference. Every product in the frame becomes yours, unchanged, and nothing of the rival's stays.
 4. **Ad copy:** you also get the primary text, headline and call to action for Ads Manager.
+5. **Video (9:16, 4–10 s):** turn any finished ad into a vertical video for Reels, Stories and TikTok. There are two modes:
+   - **Motion:** the ad exactly as approved, with a slow camera push. It runs in ffmpeg only, takes seconds and needs no AI.
+   - **AI video:** video models garble text, so we never animate the ad itself. We remove every word from the still (GPT Image 2), animate that clean frame (Seedance 1 Lite via `FAL_KEY`, or treg locally), then burn the ad's own lines back on with ffmpeg. The first line is the hook and stays up top; the other lines take turns below, and the badge closes the video.
+
+   Both modes need ffmpeg and a font. The Dockerfile installs them.
 
 ## Run it
 ```sh

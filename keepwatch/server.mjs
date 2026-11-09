@@ -2,7 +2,7 @@
 //   PORT (3100) · NODE_ENV · BETTER_AUTH_SECRET · BETTER_AUTH_URL · KEEPWATCH_DATA (db + images folder)
 //   SCRAPECREATORS_API_KEY · GEMINI_API_KEY · ANTHROPIC_API_KEY (see lib/providers.mjs, lib/llm.mjs)
 import { createServer } from 'node:http';
-import { readFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, createReadStream } from 'node:fs';
 import { resolve, extname, dirname, normalize, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
@@ -13,6 +13,7 @@ import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR 
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
 import { providerStatus, adLibrary } from './lib/providers.mjs';
 import { usage, spend, refund, assertRivalRoom, chargeRivals, PLANS, COST } from './lib/plans.mjs';
+import { makeVideo, videosFor, videoStatus, VIDEO_DIR, VIDEO_MODES } from './lib/video.mjs';
 import { scrapeBrand, safeUrl } from './lib/brandkit.mjs';
 import { SIZES } from './lib/providers.mjs';
 import { randomUUID } from 'node:crypto';
@@ -141,7 +142,7 @@ const routes = {
     if (f.rivalId && !mine(ws, f.rivalId)) return [];
     return A.listAds(db, { ...f, rivalIds: rivalIdsFor(ws.id), limit: Math.min(120, Number(f.limit || 60)) });
   },
-  'GET /api/rebuilds': ({ ws, q }) => listRebuilds(db, { wsId: ws.id, dropWeek: q.get('week') || undefined }),
+  'GET /api/rebuilds': ({ ws, q }) => listRebuilds(db, { wsId: ws.id, dropWeek: q.get('week') || undefined }).map(r => ({ ...r, videos: videosFor(db, ws.id, r.id) })),
   'POST /api/rebuild': ({ ws, body }) => {
     if (!adInScope(ws, body.ad_id)) throw httpError(404, 'Ad not found');
     const size = SIZES[body.size] ? body.size : 'feed';
@@ -186,7 +187,22 @@ const routes = {
     items: db.prepare('SELECT id, kind, title, body, link, created_at, read_at FROM notifications WHERE workspace_id = ? ORDER BY id DESC LIMIT 30').all(ws.id),
   }),
   'POST /api/notifications/read': ({ ws }) => { db.prepare("UPDATE notifications SET read_at = datetime('now') WHERE workspace_id = ? AND read_at IS NULL").run(ws.id); return { ok: true }; },
-  'GET /api/panels': ({ ws }) => db.prepare('SELECT * FROM panels WHERE workspace_id = ? ORDER BY id DESC LIMIT 10').all(ws.id).map(p => ({ ...p, result: JSON.parse(p.result) })),
+  'GET /api/videos': ({ ws, q }) => videosFor(db, ws.id, Number(q.get('rebuild_id'))),
+  'GET /api/video/status': async () => ({ ...(await videoStatus()), modes: VIDEO_MODES, cost: { motion: COST.motion, ai: COST.video } }),
+  'POST /api/video': async ({ ws, body }) => {
+    const mode = body.mode === 'ai' ? 'ai' : 'motion';
+    const ok = await videoStatus();
+    if (!ok[mode]) throw httpError(400, mode === 'ai' ? 'AI video is not switched on yet. Motion video works now.' : 'Video is not available on this server yet.');
+    const rb = getRebuild(Number(body.rebuild_id), db, ws.id);
+    if (!rb?.image_path) throw httpError(400, 'Pick one of your finished ads.');
+    const ref = spend(ws, mode === 'ai' ? 'video' : 'motion', `video:${randomUUID()}`);
+    return startJob(ws.id, 'video', async () => {
+      const v = await makeVideo(ws.id, rb, { mode, seconds: body.seconds, db });
+      if (v.status !== 'done') { refund(ws, ref); throw new Error(v.status.replace(/^failed: /, '') + ' (credits refunded)'); }
+      return { ...v, url: `/media/videos/${v.path}` };
+    });
+  },
+  'GET /api/panels': ({ ws }) => db.prepare('SELECT * FROM panels WHERE workspace_id = ? ORDER BY id DESC LIMIT 40').all(ws.id).map(p => ({ ...p, result: JSON.parse(p.result) })),
 };
 
 async function api(req, res, url, session) {
@@ -267,6 +283,21 @@ function serveFile(res, base, rel, extra = {}) {
   res.end(readFileSync(p));
   return true;
 }
+/** Video files with byte ranges, which Safari and iOS need to play them. */
+function serveRange(req, res, p) {
+  if (!existsSync(p)) return false;
+  const size = statSync(p).size;
+  const head = { 'content-type': 'video/mp4', 'accept-ranges': 'bytes', 'cache-control': 'private, max-age=86400', ...SECURITY };
+  const m = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range || '');
+  if (!m || (m[1] === '' && m[2] === '')) { res.writeHead(200, { ...head, 'content-length': size }); createReadStream(p).pipe(res); return true; }
+  let start = m[1] === '' ? size - Number(m[2]) : Number(m[1]);
+  let end = m[1] !== '' && m[2] !== '' ? Number(m[2]) : size - 1;
+  start = Math.max(0, start); end = Math.min(end, size - 1);
+  if (start > end) { res.writeHead(416, { 'content-range': `bytes */${size}` }); res.end(); return true; }
+  res.writeHead(206, { ...head, 'content-range': `bytes ${start}-${end}/${size}`, 'content-length': end - start + 1 });
+  createReadStream(p, { start, end }).pipe(res);
+  return true;
+}
 const PAGES = { '/': 'landing.html', '/login': 'auth.html', '/signup': 'auth.html', '/app': 'index.html' };
 
 const server = createServer(async (req, res) => {
@@ -286,6 +317,13 @@ const server = createServer(async (req, res) => {
       const file = basename(path);
       const owns = db.prepare('SELECT 1 FROM rebuilds WHERE workspace_id = ? AND image_path = ?').get(ws.id, file);
       if (owns && serveFile(res, REBUILD_DIR, '/' + file, { 'cache-control': 'private, max-age=86400' })) return;
+      return send(res, 404, { error: 'not found' });
+    }
+    if (path.startsWith('/media/videos/')) {
+      const ws = workspaceForUser(session.user.id, db);
+      const file = basename(path);
+      const owns = db.prepare("SELECT 1 FROM videos WHERE workspace_id = ? AND path = ? AND status = 'done'").get(ws.id, file);
+      if (owns && serveRange(req, res, resolve(VIDEO_DIR, file))) return;
       return send(res, 404, { error: 'not found' });
     }
     if (PAGES[path]) return serveFile(res, WEB, '/' + PAGES[path]);

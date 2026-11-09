@@ -265,7 +265,7 @@ async function viewRebuild(adId) {
           ${existing ? rebuildFigure(existing) : makeForm()}
         </div>
       </div>
-      ${existing ? planBlock(existing) + `<details style="margin-top:12px"><summary class="btn sm">Make another version</summary><div style="margin-top:10px;max-width:520px">${makeForm()}</div></details>` : ''}
+      ${existing ? planBlock(existing) + videoBlock(existing) + `<details style="margin-top:12px"><summary class="btn sm">Make another version</summary><div style="margin-top:10px;max-width:520px">${makeForm()}</div></details>` : ''}
       ${mine.length > 1 ? `<div class="grid-auto" style="margin-top:12px">${mine.slice(1).map(r => `<div class="card ad"><div class="ad-thumb"><img src="${esc(r.image)}" alt="Earlier version"></div><div class="ad-body"><span class="hook">${esc(r.headline)}</span><a class="btn sm" href="${esc(r.image)}" download>Download</a></div></div>`).join('')}</div>` : ''}
     </section>`;
     queueMicrotask(() => $('#make-form')?.addEventListener('submit', async e => {
@@ -283,7 +283,7 @@ async function viewRebuild(adId) {
     ${rebuilds.length ? `<div class="grid-auto">${rebuilds.map(r => `<article class="card ad">
         <a href="#/rebuild/${esc(r.ad_id)}" style="color:inherit;text-decoration:none">${r.image ? `<div class="ad-thumb"><img src="${esc(r.image)}" alt="Your ad"></div>` : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`}</a>
         <div class="ad-body"><span class="who">${r.drop_week ? `Drop ${esc(r.drop_week)}` : 'Remake'}${r.size && r.size !== 'feed' ? ` · ${esc(r.size)}` : ''}</span><span class="hook">${esc(r.headline || '')}</span>${sourceLink(r.ad)}
-        ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a></div>` : ''}</div></article>`).join('')}</div>`
+        ${r.image ? `<div class="actions row"><a class="btn sm" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test it</a>${r.videos?.length ? `<a class="btn sm" href="#/rebuild/${esc(r.ad_id)}">▶ Video</a>` : ''}</div>` : ''}</div></article>`).join('')}</div>`
       : empty('No ads yet. Pick any rival ad and press "Steal this ad".')}
   </section>`;
 }
@@ -292,6 +292,19 @@ function rebuildFigure(r) {
   return r.image ? `<div class="ad-thumb" style="aspect-ratio:auto"><img src="${esc(r.image)}" alt="Your version"></div>
     <div class="row" style="margin-top:8px"><a class="btn sm primary" href="${esc(r.image)}" download>Download</a><a class="btn sm" href="#/test/${r.id}">Test vs theirs</a></div>`
     : `<div class="ad-thumb"><div class="ph">${esc(r.status)}</div></div>`;
+}
+
+/** Videos of a finished ad, plus buttons to make one. Motion keeps the ad exact; AI video adds real movement. */
+function videoBlock(r) {
+  const vids = r.videos || [];
+  return `<div class="card pad" style="margin-top:14px;display:grid;gap:12px">
+    <div class="row" style="justify-content:space-between;flex-wrap:wrap;gap:8px"><span class="eyebrow">Video for Reels, Stories and TikTok · 9:16</span>
+      <span class="row" style="gap:6px"><button class="btn sm" data-video="${r.id}" data-mode="motion" title="Your ad exactly as approved, with a slow camera push. 2 credits.">Make motion video · 2</button>
+      <button class="btn sm primary" data-video="${r.id}" data-mode="ai" title="Real movement in the scene, your lines burned on as captions. 30 credits, 1 to 3 minutes.">Make AI video · 30</button></span></div>
+    ${vids.length ? `<div class="video-grid">${vids.map(v => `<figure class="video-card"><video src="${esc(v.url)}" poster="${esc(r.image)}" controls playsinline muted loop preload="metadata"></video>
+      <figcaption class="row small" style="justify-content:space-between"><span>${v.mode === 'ai' ? 'AI video' : 'Motion'} · ${v.seconds}s</span><a class="btn sm" href="${esc(v.url)}" download>Download</a></figcaption></figure>`).join('')}</div>`
+      : '<p class="small muted" style="margin:0">No video yet. Motion keeps every word exactly as approved. AI video moves the scene and puts your lines back on as captions.</p>'}
+  </div>`;
 }
 
 const libUrl = id => `https://www.facebook.com/ads/library/?id=${encodeURIComponent(id)}`;
@@ -598,6 +611,15 @@ document.addEventListener('click', async e => {
   }
   if (t.id === 'collect') { t.disabled = true; try { const r = await runJob('/api/collect', {}, 'Collecting rival ads (a few minutes)'); toast(`Collected ${r.ads} ads for $${r.cost.toFixed(3)}`); await refreshChrome(); route(); } catch (err) { toast(err.message, 6000); } t.disabled = false; return; }
   if (t.id === 'drop-now') { makeDrop(e); return; }
+  if (t.dataset.video) {
+    const ai = t.dataset.mode === 'ai';
+    const btns = [...document.querySelectorAll('[data-video]')];
+    btns.forEach(b => { b.disabled = true; });
+    t.textContent = ai ? 'Making the video… 1 to 3 minutes' : 'Making the video…';
+    try { await runJob('/api/video', { rebuild_id: Number(t.dataset.video), mode: t.dataset.mode }, ai ? 'Making your AI video' : 'Making your video'); toast('Your video is ready'); await refreshChrome(); route(); }
+    catch (err) { toast(err.message, 7000); btns.forEach(b => { b.disabled = false; }); t.textContent = 'Try again'; }
+    return;
+  }
   if (t.id === 'run-panel') {
     t.disabled = true; t.textContent = 'Asking the panel…';
     try { const r = await runJob('/api/panel', { rebuild_id: Number($('#test-pick').value) }, 'Running the buyer panel'); $('#panel-out').innerHTML = panelResult(r); }

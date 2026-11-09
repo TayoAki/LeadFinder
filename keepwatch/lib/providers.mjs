@@ -60,9 +60,9 @@ async function inlineImage(url) {
  * Engines, first available wins: Fal GPT Image 2 (FAL_KEY) → Gemini (GEMINI_API_KEY) → treg (local dev).
  * Returns { bytes: Buffer, cost, engine }.
  */
-export async function renderImage(prompt, refs = [], { size = 'feed' } = {}) {
+export async function renderImage(prompt, refs = [], { size = 'feed', prefer } = {}) {
   const S = SIZES[size] || SIZES.feed;
-  refs = refs.filter(u => /^https:\/\//.test(u || '')).slice(0, 4);
+  refs = refs.filter(u => /^(https:\/\/|data:image\/)/.test(u || '')).slice(0, 4);
   if (process.env.FAL_KEY) {
     const endpoint = refs.length ? 'https://fal.run/openai/gpt-image-2/edit' : 'https://fal.run/openai/gpt-image-2';
     const fire = image_size => fetch(endpoint, {
@@ -93,7 +93,7 @@ export async function renderImage(prompt, refs = [], { size = 'feed' } = {}) {
   }
   if (await tregAvailable()) {
     // GPT Image 2 handles "use this exact product" edits best; Gemini when there is no product photo.
-    const useGpt = refs.length > 1;
+    const useGpt = prefer === 'gpt' || refs.length > 1;
     const endpoint = useGpt ? 'reapi.image-gen.gpt-image-2' : 'reapi.image-gen.gemini-3-pro-image';
     const body = useGpt
       ? { model: 'gpt-image-2', prompt, size: S.gpt, resolution: '1k', ...(refs.length ? { image_urls: refs } : {}) }

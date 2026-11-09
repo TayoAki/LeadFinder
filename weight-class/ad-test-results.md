@@ -1,5 +1,35 @@
 # Weight Class ad test: simulated buyer panel
 
+## Run 2: the remakes (2026-11-09)
+Each remake was built from the run 1 feedback below:
+- *free* is on the image.
+- The ads that never showed an app now name the app or show a badge.
+- The GLP-1 ads name the medicine.
+- The photo ad says you can change any number in a tap.
+
+Run 2 used the same 6 buyers, the same rival ads and the same blind, swapped-order method.
+
+| Ad | Run 1 (ours–theirs–tie) | Run 2 | Top reason in run 2 |
+|---|---|---|---|
+| Kitchen: appetite back before the next dose (vs Shotsy) | 3–3–0 | **6–0–0** | Feels like me |
+| Pier bench: which side I used last week (vs Shotsy) | 3–3–0 | **5–0–1** | Price I can trust |
+| Notebook: why day 3 can feel harder (vs Shotsy) | 4–0–2 | **6–0–0** | Clear next step |
+| Illustration: the free way to track your GLP-1 and your meals (vs Shotsy) | 4–0–2 | **6–0–0** | Price I can trust |
+| One photo shows what your meal had (vs Noom) | 6–0–0 | 6–0–0 | Clear benefit |
+| Easiest way to log a meal? (vs Cal AI) | 5–1–0 | **6–0–0** | Clear next step |
+| SAME CALORIES (vs MyFitnessPal) | 6–0–0 | 6–0–0 | Clear benefit |
+| Doses and meals in my notes app (vs Shotsy) | 5–1–0 | 5–0–1 | Clear next step |
+| **Total** | **36–8–4** | **46–0–2** | |
+
+**What changed:**
+- *Free on iPhone* turned the two GLP-1 ties into wins. Run 1's top objection was "is it a subscription?"
+- The GLP-1 buyers who chose Shotsy last time now chose ours, because the remake names Ozempic.
+- **Doubts that remain:** buyers who aren't on a GLP-1 still say "not for me" to the injection-site ad. Every buyer asks whether the photo estimate is accurate. Show a real edit in the app, in a video, to answer that.
+
+**Caution:** the buyers are the same personas whose objections we designed against, so run 2 partly marks our own homework. Treat it as "the fixes landed", not as a forecast. Confirm with real spend.
+
+## Run 1: first versions
+
 Run 2026-11-09.
 
 **Method:**

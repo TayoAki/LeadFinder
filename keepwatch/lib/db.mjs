@@ -59,6 +59,13 @@ CREATE TABLE IF NOT EXISTS rebuilds (
   headline TEXT, why TEXT, prompt TEXT, image_path TEXT, status TEXT, cost_usd REAL DEFAULT 0,
   drop_week TEXT                      -- set when part of a Monday drop (YYYY-MM-DD of the Monday)
 );
+CREATE TABLE IF NOT EXISTS videos (               -- short vertical videos made from a finished ad
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER REFERENCES workspaces(id) ON DELETE CASCADE,
+  rebuild_id INTEGER REFERENCES rebuilds(id) ON DELETE CASCADE,
+  mode TEXT, seconds INTEGER, status TEXT, path TEXT, engine TEXT, cost_usd REAL DEFAULT 0,
+  created_at TEXT DEFAULT (datetime('now'))
+);
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT);
 CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refunded; the monthly pool is the plan's allowance
   id INTEGER PRIMARY KEY AUTOINCREMENT,
