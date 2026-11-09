@@ -142,7 +142,8 @@ const routes = {
     const productImage = body.product_image && /^https:\/\//.test(body.product_image) ? body.product_image : undefined;
     const ref = spend(ws, 'ad', `ad:${randomUUID()}`);
     return startJob(ws.id, 'rebuild', async () => {
-      const r = await rebuildAd(getWorkspace(ws.id), body.ad_id, { size, productImage, productName: body.product_name });
+      const concept = body.concept && typeof body.concept === 'object' ? body.concept : undefined;
+      const r = await rebuildAd(getWorkspace(ws.id), body.ad_id, { size, productImage, productName: body.product_name, concept });
       if (r.status !== 'done') { refund(ws, ref); throw new Error(r.status.replace(/^failed: /, '') + ' (credits refunded)'); }
       return r;
     });

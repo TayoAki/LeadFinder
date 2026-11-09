@@ -62,7 +62,7 @@ export function imagePrompt({ headline, cta, ws, hasProduct, productName }) {
       : `Replace every product and package in the reference with: ${ws.brand_product || ws.brand_name}. The brand name on the product is "${ws.brand_name}". None of the reference's products may remain.`,
     `Render exactly this headline: "${headline}". Render exactly this button text: "${cta}". No other words.`,
     `Use ${ws.brand_color || '#c8553d'} as the accent colour for the button and highlights.`,
-    'Remove every logo, brand name, watermark and claim from the reference brand. No realistic celebrity faces. Keep it looking like a native social ad, not a stock photo.',
+    'Remove every logo, brand name, watermark and claim from the reference brand. If the reference shows a person, show a clearly different person (different face, hair, build and clothing); never reproduce the reference person\'s likeness. No celebrity faces. Keep it looking like a native social ad, not a stock photo.',
   ].join('\n');
 }
 
@@ -70,7 +70,7 @@ export function imagePrompt({ headline, cta, ws, hasProduct, productName }) {
  * Plan + render one finished ad for a workspace: image (sized for feed, story or square) plus Meta ad copy.
  * productImage: one of the brand kit's product photos; when set, the real product is used as image 2.
  */
-export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size = 'feed', productImage, productName } = {}) {
+export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size = 'feed', productImage, productName, concept } = {}) {
   const db = getDb();
   const ad = getAd(db, adId);
   if (!ad || !rivalIdsFor(ws.id, db).includes(ad.rival_id)) throw new Error('Ad not found');
@@ -82,7 +82,14 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
     try { plan = { ...(await writeConcept(ad, ws, { productImage: product, productName })), source: 'claude' }; }
     catch (e) { plan = { ...rulePlan(ad, ws, { productName }), note: `Claude step failed, used rules: ${e.message}` }; }
   } else plan = rulePlan(ad, ws, { productName });
+  // A hand-written concept (from the user, or an agent) overrides the generated words; structure rules still apply.
+  if (concept) {
+    for (const k of ['headline', 'cta', 'primary_text', 'meta_headline', 'subline']) if (typeof concept[k] === 'string' && concept[k].trim()) plan[k] = concept[k].trim().slice(0, 300);
+    if (Array.isArray(concept.why_it_works)) plan.why_it_works = concept.why_it_works.slice(0, 4).map(x => String(x).slice(0, 40));
+    plan.source = 'custom';
+  }
   plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName });
+  if (concept?.image_note) plan.image_prompt += `\n${String(concept.image_note).slice(0, 600)}`;
   plan.product_image = product;
   plan.size = size;
 

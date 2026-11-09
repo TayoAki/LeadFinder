@@ -307,7 +307,7 @@ function planBlock(r) {
       <span class="eyebrow">Why this works</span>
       <div class="tags">${(p.why_it_works || []).map(t => `<span class="pill">${esc(t)}</span>`).join('')}</div>
       <ul class="list-plain"><li><b>Scene</b>: ${esc(p.keep_scene)}</li><li><b>Layout</b>: ${esc(p.keep_layout)}</li><li><b>Swapped</b>: ${p.product_image ? 'your real product photo' : 'your product'}, your offer, your colour.</li></ul>
-      <span class="small muted">Copy by ${p.source === 'claude' ? 'Claude' : 'templates'}${p.engine ? ` · image by ${esc(p.engine)}` : ''}</span>
+      <span class="small muted">Copy by ${p.source === 'claude' ? 'Claude' : p.source === 'custom' ? 'you' : 'templates'}${p.engine ? ` · image by ${esc(p.engine)}` : ''}</span>
     </div></div>`;
 }
 
