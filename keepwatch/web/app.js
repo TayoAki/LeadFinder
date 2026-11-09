@@ -315,9 +315,16 @@ async function viewTest(rebuildId) {
   const rebuilds = (await api('/api/rebuilds')).filter(r => r.image);
   const panels = await api('/api/panels');
   const llm = state.status.llm;
-  const pick = rebuilds.find(r => String(r.id) === String(rebuildId)) || rebuilds[0];
+  const tested = panels.map(p => ({ p, r: rebuilds.find(x => x.id === p.ours_rebuild_id) })).filter(x => x.r)
+    .sort((a, b) => (b.p.result.tally.ours - b.p.result.tally.theirs) - (a.p.result.tally.ours - a.p.result.tally.theirs));
+  const pick = rebuilds.find(r => String(r.id) === String(rebuildId)) || tested[0]?.r || rebuilds[0];
   const last = pick ? panels.find(p => p.ours_rebuild_id === pick.id) : null;
-  return `<section class="section">
+  const board = tested.length ? `<section class="section">${sectionHead('Scoreboard', `${tested.length} of your ads tested. Best margin first.`)}
+    <div class="card pad"><table class="table"><thead><tr><th>Your ad</th><th>Against</th><th class="num">Yours</th><th class="num">Theirs</th><th class="num">Ties</th><th>Top reason</th></tr></thead><tbody>
+    ${tested.map(({ p, r }) => { const t = p.result.tally; const win = t.ours > t.theirs ? 'pill open' : t.ours < t.theirs ? 'pill crowded' : 'pill';
+      return `<tr><td><a href="#/test/${r.id}">${esc(r.headline)}</a></td><td class="muted">${esc(r.ad?.rival_name || '')}</td><td class="num"><b>${t.ours}</b></td><td class="num">${t.theirs}</td><td class="num">${t.tie}</td><td><span class="${win}">${t.ours > t.theirs ? 'Yours wins' : t.ours < t.theirs ? 'Theirs wins' : 'Draw'}</span> <span class="small muted">${esc(p.result.top_reason || '')}</span></td></tr>`; }).join('')}
+    </tbody></table></div></section>` : '';
+  return board + `<section class="section">
     ${sectionHead('Know which ad wins before you spend a cent', 'Put your ad against theirs. Simulated buyers built from your audience pick the one they would stop for, twice each with the order swapped.')}
     ${!llm ? `<div class="callout">The buyer panel needs a Claude API key on the server (<code>ANTHROPIC_API_KEY</code>). Everything else works without it.</div>` : ''}
     ${!pick ? empty('Make a rebuild first, then test it against the ad it came from.') : `

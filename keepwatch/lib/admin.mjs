@@ -67,10 +67,18 @@ export async function handleAdmin(req, res, url, send) {
       }
       db.exec('COMMIT');
     } catch (e) { db.exec('ROLLBACK'); throw e; }
+    let panels = 0;
+    for (const x of b.panels || []) {
+      const rb = db.prepare('SELECT id FROM rebuilds WHERE workspace_id = ? AND image_path = ?').get(ws.id, x.rebuild_image_path);
+      if (!rb) continue;
+      db.prepare('DELETE FROM panels WHERE workspace_id = ? AND ours_rebuild_id = ?').run(ws.id, rb.id); // latest run replaces the old one
+      db.prepare('INSERT INTO panels (workspace_id, ours_rebuild_id, theirs_ad_id, result) VALUES (?,?,?,?)').run(ws.id, rb.id, String(x.theirs_ad_id), JSON.stringify(x.result));
+      panels++;
+    }
     for (const n of b.notifications || []) db.prepare('INSERT OR IGNORE INTO notifications (workspace_id, kind, title, body, link, ref) VALUES (?,?,?,?,?,?)').run(ws.id, n.kind, n.title, n.body ?? null, n.link ?? null, n.ref ? String(n.ref).replace('{ws}', ws.id) : null);
     if (b.workspace) saveWorkspace(ws.id, Object.fromEntries(BRAND.filter(k => b.workspace[k] != null).map(k => [k, b.workspace[k]])), db);
     if (b.plan && PLANS[b.plan]) db.prepare('UPDATE workspaces SET plan = ? WHERE id = ?').run(b.plan, ws.id);
-    return send(res, 200, { ok: true, workspace_id: ws.id, ads, rebuilds, tracked: db.prepare('SELECT COUNT(*) n FROM workspace_rivals WHERE workspace_id = ?').get(ws.id).n });
+    return send(res, 200, { ok: true, workspace_id: ws.id, ads, rebuilds, panels, tracked: db.prepare('SELECT COUNT(*) n FROM workspace_rivals WHERE workspace_id = ?').get(ws.id).n });
   }
   return send(res, 404, { error: 'not found' });
 }
