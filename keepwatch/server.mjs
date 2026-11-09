@@ -19,6 +19,7 @@ import { randomUUID } from 'node:crypto';
 import { ANGLES } from './lib/classify.mjs';
 import { addRival, collectAll } from './collect.mjs';
 import { importSeedIfEmpty, DEMO_BRAND } from './lib/seed.mjs';
+import { handleAdmin } from './lib/admin.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(here, 'web');
@@ -261,6 +262,7 @@ const server = createServer(async (req, res) => {
   const path = url.pathname;
   try {
     if (path === '/health') return send(res, 200, { ok: true });
+    if (path.startsWith('/admin/')) return handleAdmin(req, res, url, send);
     if (path.startsWith('/api/auth/')) return authHandler(req, res);
     if (path === '/mcp') return mcp(req, res);
     const needsUser = path.startsWith('/api/') || path.startsWith('/media/');
