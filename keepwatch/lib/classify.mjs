@@ -62,7 +62,8 @@ export function extractHook({ transcript, body, title }) {
 
 // Angle taxonomy. Order matters: the first match wins, so specific angles sit above broad ones.
 export const ANGLES = [
-  { key: 'before_after', label: 'Before and after', rx: /before (and|&) after|transform|results after|day \d+ vs|week \d+/i },
+  { key: 'before_after', label: 'Before and after', rx: /before (and|&) after|transform|results after|day \d+ vs|week \d+|(lost|down|dropped) \d+\s?(lbs?|pounds|kg|kilos)|\d+\s?(lbs?|pounds|kg) (down|lost|gone)/i },
+  { key: 'demo', label: 'Product demo', rx: /\bsnap\b|take a (photo|picture|pic)|just (point|scan)|scan (any|the|a|your)|watch (it|this|how)|how (it|this) works|in action|(one|single) (photo|tap|click)/i },
   { key: 'discount', label: 'Discount offer', rx: /\d+% off|save \$?\d|\bsale\b|\bdeal\b|free (gift|shipping|t-?shirt|shaker|bottle)|promo|\bcode\b|bogo|limited[- ]time/i },
   { key: 'expert', label: 'Expert endorsement', rx: /\b(doctor|dr\.|dietitian|nutritionist|scientist|physician|expert|gastroenterologist|pharmacist)s?\b|recommend/i },
   { key: 'comparison', label: 'Us vs them', rx: /\bvs\.?\b|versus|unlike|instead of|not (a|your) |compared|swap|replace your|better than|just (change|switch|swap)|switch(ed)? to/i },

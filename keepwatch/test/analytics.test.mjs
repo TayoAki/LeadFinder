@@ -38,6 +38,8 @@ test('angles come from the hook before the body', () => {
   assert.equal(angleFor("Don't change your life, just change lunch", '26 vitamins and minerals', ''), 'comparison');
   assert.equal(angleFor('Get 30% off your first order', '', ''), 'discount');
   assert.equal(angleFor('Hello', '9g fiber per can', ''), 'science');
+  assert.equal(angleFor('Just snap a photo of your plate', 'AI counts your protein', ''), 'demo');
+  assert.equal(angleFor('I lost 32 lbs without counting every bite', '', ''), 'before_after');
 });
 
 test('normaliseAd reads video cards and template copy', () => {
