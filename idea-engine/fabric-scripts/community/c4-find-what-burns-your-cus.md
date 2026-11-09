@@ -268,10 +268,6 @@ Tags: microsoft fabric pricing, fabric capacity, fabric capacity metrics app, fa
 [ON SCREEN: `notebookutils.session.stop()`]
 "If your scheduled Fabric notebooks don't end with this line, you're paying for idle Spark. The notebook finishes, but the session stays up until it times out, and you're billed for the cores it holds. Add `notebookutils.session.stop()` as the last cell. One line."
 
-**Short 3: "Dataflow Gen2 cost trap" (~40 s)**
-[ON SCREEN: "Dataflow Gen2 = 20× more CUs?"]
-"One team moved from Dataflow Gen1 to Gen2 and saw about twenty times the capacity use, for simple SQL copies. The reason: Gen2 bills each query's execution time, and many short queries in parallel add up fast. If you're just copying data, use a Copy job or a pipeline Copy activity. Save Dataflow Gen2 for real transformations. And measure both in Capacity Metrics before you decide."
-
 ### LinkedIn post
 **Fabric cost problems are mostly attribution problems.**
 
