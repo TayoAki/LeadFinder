@@ -40,12 +40,15 @@ export function rulePlan(ad, ws, { productName } = {}) {
   const b = { name: ws.brand_name, Short: short[0].toUpperCase() + short.slice(1), offer: ws.brand_offer, tagline, fact: fact ? fact[0].toUpperCase() + fact.slice(1) : null };
   const play = PLAYS[ad.angle] || PLAYS.other;
   const headline = play.head(b).slice(0, 60);
-  // Standard Meta CTAs only; anything else (e.g. a rival's "Subscribe") becomes "Shop now".
-  const cta = { 'learn more': 'Learn more', 'get offer': 'Get offer', 'sign up': 'Sign up', 'order now': 'Order now' }[(ad.cta || '').toLowerCase()] || 'Shop now';
+  // Meta's button (drawn by Meta under the ad, never on the image). Apps download; everything else shops.
+  const isApp = /apps\.apple|play\.google|\bapp\b/i.test(`${ws.brand_domain || ''} ${ws.brand_product || ''}`);
+  const cta = isApp ? 'Download' : ({ 'learn more': 'Learn more', 'get offer': 'Get offer', 'sign up': 'Sign up', 'order now': 'Order now' }[(ad.cta || '').toLowerCase()] || 'Shop now');
   return {
     why_it_works: play.why,
-    keep_scene: `Same scene and camera framing as the reference ${ad.format_label.toLowerCase()} ad`,
-    keep_layout: 'Same layout, headline position and button placement as the reference',
+    // Without a model to read the image we can't swap each text line, but we still move the scene and change the person.
+    setting: 'a clearly different place of the same kind as the reference (a different kitchen if it is a kitchen, a different outdoor spot if it is outdoors, a different page or surface if it is a graphic), seen from the same angle with the same composition',
+    keep_scene: `Same composition and camera framing as the reference ${ad.format_label.toLowerCase()} ad, in a new location`,
+    keep_layout: 'Same layout and text placement as the reference',
     headline, subline: ws.brand_offer || '', cta,
     primary_text: [sentence(ws.brand_product ? `${ws.brand_name}: ${ws.brand_product}` : ''), sentence(ws.brand_offer)].filter(Boolean).join(' '),
     meta_headline: (ws.brand_offer || headline).slice(0, 40),
@@ -91,7 +94,7 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
   const ad = getAd(db, adId);
   if (!ad || !rivalIdsFor(ws.id, db).includes(ad.rival_id)) throw new Error('Ad not found');
   if (!ws?.brand_name) throw new Error('Set up your brand first (Settings).');
-  const product = concept?.product_mode === 'none' ? null : (productImage || ws.product_image || null);
+  let product = concept?.product_mode === 'none' ? null : (productImage || ws.product_image || null);
 
   let plan;
   if (hasLLM()) {
@@ -104,12 +107,14 @@ export async function rebuildAd(ws, adId, { render = true, dropWeek = null, size
     if (Array.isArray(concept.why_it_works)) plan.why_it_works = concept.why_it_works.slice(0, 4).map(x => String(x).slice(0, 40));
     plan.source = 'custom';
   }
-  plan.texts = Array.isArray(concept?.texts) ? concept.texts.slice(0, 12).map(t => String(t).slice(0, 200)) : null;
-  plan.product_mode = ['replace', 'in_hand', 'none'].includes(concept?.product_mode) ? concept.product_mode : 'replace';
+  // Structure comes from a hand-written concept first, then from the generated plan (Claude or rules).
+  const spec = { ...plan, ...(concept || {}) };
+  plan.texts = Array.isArray(spec.texts) && spec.texts.length ? spec.texts.slice(0, 12).map(t => String(t).slice(0, 200)) : null;
+  plan.product_mode = ['replace', 'in_hand', 'none'].includes(spec.product_mode) ? spec.product_mode : (product ? 'replace' : 'none');
+  if (plan.product_mode === 'none') product = null;
+  plan.setting = typeof spec.setting === 'string' && spec.setting.trim() ? spec.setting.trim().slice(0, 300) : null;
   plan.image_prompt = imagePrompt({ headline: plan.headline, cta: plan.cta, ws, hasProduct: Boolean(product), productName,
-    texts: plan.texts, productMode: plan.product_mode, button: concept?.button === true,
-    setting: typeof concept?.setting === 'string' && concept.setting.trim() ? concept.setting.trim().slice(0, 300) : undefined });
-  plan.setting = concept?.setting || null;
+    texts: plan.texts, productMode: plan.product_mode, button: spec.button === true, setting: plan.setting || undefined });
   if (concept?.image_note) plan.image_prompt += `\n${String(concept.image_note).slice(0, 600)}`;
   plan.product_image = product;
   plan.size = size;
@@ -151,21 +156,69 @@ export function mondayOf(d = new Date()) {
   return x.toISOString().slice(0, 10);
 }
 
-/** Monday drop: rebuild the top kept ads (one per rival, different angles) we have not rebuilt yet. */
-export async function mondayDrop(ws, { count = 4, render = true, onEach } = {}) {
+// ---------- picking ads for the Monday drop ----------
+const EN_WORDS = new Set('the and you your to a of is it for my i on with this that in are be not have so what how can just get was me we our'.split(' '));
+/** Rough language check on the ad's own words. Returns true/false, or null when there's too little text to tell. */
+export function looksEnglish(text) {
+  const t = String(text || '').toLowerCase();
+  const words = t.match(/[a-zà-ÿ']+/g) || [];
+  if (words.length < 4) return null;
+  const accents = (t.match(/[àáâãäåçèéêëìíîïñòóôõöùúûüß¿¡]/g) || []).length;
+  const hits = words.filter(w => EN_WORDS.has(w)).length;
+  return hits / words.length >= 0.12 && accents <= 2;
+}
+
+/** How much a kept ad has proven: long runs, still live, many variants. For ordering only. */
+export const dropScore = a => 0.7 * a.run_days + 3 * (a.collation_count || 1) + (a.is_active ? 15 : 0);
+
+/**
+ * Pick `count` ads for a drop: kept ads only, not already rebuilt, with an image, in the brand's language,
+ * best proven first, spread across rivals and angles (relaxing angle, then rival, if there aren't enough).
+ */
+export function pickForDrop(ads, { count = 4, done = new Set(), lang = 'en' } = {}) {
+  const textOf = a => [a.hook, a.title, a.body, a.transcript].filter(Boolean).join(' ');
+  const pool = ads.filter(a => a.pile === 'kept' && !done.has(a.id) && (a.image_url || a.thumb_url))
+    .map(a => ({ a, en: lang === 'en' ? looksEnglish(textOf(a)) : true }))
+    .filter(x => x.en !== false)
+    .sort((x, y) => (y.en === true) - (x.en === true) || dropScore(y.a) - dropScore(x.a))
+    .map(x => x.a);
+  const picked = [];
+  for (const [byRival, byAngle] of [[true, true], [true, false], [false, false]]) {
+    for (const a of pool) {
+      if (picked.length >= count) break;
+      if (picked.includes(a)) continue;
+      if (byRival && picked.some(p => p.rival_id === a.rival_id)) continue;
+      if (byAngle && picked.some(p => p.angle === a.angle)) continue;
+      picked.push(a);
+    }
+  }
+  return { picked, pool };
+}
+
+async function imageLoads(url) {
+  try {
+    const res = await fetch(url, { headers: { range: 'bytes=0-2047' }, signal: AbortSignal.timeout(15000) });
+    return res.ok && /^image\//.test(res.headers.get('content-type') || '');
+  } catch { return false; }
+}
+
+/** Monday drop: rebuild the best-proven kept ads, in the brand's language, with working images, across rivals and angles. */
+export async function mondayDrop(ws, { count = 4, render = true, onEach, lang = 'en' } = {}) {
   const db = getDb();
   const week = mondayOf();
   const done = new Set(db.prepare('SELECT ad_id FROM rebuilds WHERE workspace_id = ?').all(ws.id).map(r => r.ad_id));
   const { listAds } = await import('./analytics.mjs');
-  const candidates = listAds(db, { rivalIds: rivalIdsFor(ws.id, db), pile: 'kept', limit: 500 }).filter(a => !done.has(a.id) && (a.image_url || a.thumb_url));
-  const picked = [], rivals = new Set(), angles = new Set();
-  for (const a of candidates) {
-    if (picked.length >= count) break;
-    if (rivals.has(a.rival_id) || angles.has(a.angle)) continue;
-    picked.push(a); rivals.add(a.rival_id); angles.add(a.angle);
+  const ads = listAds(db, { rivalIds: rivalIdsFor(ws.id, db), pile: 'kept', limit: 2000 });
+  const broken = new Set();
+  let picked = [];
+  for (let round = 0; round < 4; round++) {
+    ({ picked } = pickForDrop(ads, { count, done: new Set([...done, ...broken]), lang }));
+    const checks = await Promise.all(picked.map(a => imageLoads(a.image_url || a.thumb_url)));
+    picked.forEach((a, i) => { if (!checks[i]) broken.add(a.id); });
+    if (checks.every(Boolean)) break;
+    picked = picked.filter((a, i) => checks[i]);
   }
-  for (const a of candidates) { if (picked.length >= count) break; if (!picked.includes(a)) picked.push(a); }
   const out = [];
   for (const a of picked) { if (onEach) onEach(a); out.push(await rebuildAd(ws, a.id, { render, dropWeek: week })); }
-  return { week, rebuilds: out, angles: [...angles].map(angleLabel) };
+  return { week, rebuilds: out, angles: [...new Set(picked.map(a => a.angle))].map(angleLabel), skipped_broken_images: broken.size };
 }

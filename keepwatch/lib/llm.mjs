@@ -39,19 +39,41 @@ const imageBlock = src => (src.startsWith('http')
 const strict = (properties, extra = {}) => ({ type: 'object', additionalProperties: false, required: Object.keys(properties), properties, ...extra });
 const str = { type: 'string' };
 
+export const META_CTAS = ['Shop now', 'Learn more', 'Download', 'Install now', 'Sign up', 'Get offer', 'Order now', 'Subscribe', 'Book now', 'Get quote'];
+
 const CONCEPT_SCHEMA = strict({
-  why_it_works: { type: 'array', items: str, description: '3 short tags naming what makes the rival ad work, e.g. "Price lock", "Outcome first"' },
-  keep_scene: str, keep_layout: str,
-  headline: { type: 'string', description: 'On-image headline for our brand, 4-8 words, max 12' },
-  subline: str, cta: { type: 'string', description: 'Button text, 1-3 words' },
+  story: { type: 'string', description: 'The rival ad\'s story in one plain sentence (the situation, the tension, the payoff). Ours tells the same story.' },
+  texts: { type: 'array', minItems: 1, maxItems: 12, items: str, description: 'One replacement line for EVERY text element visible in the rival ad image, in reading order (top to bottom, left to right). Keep labels that carry no claim (e.g. "DAY 1") unchanged. Same length and tone as the line it replaces, telling the same story for our brand, in our own words.' },
+  setting: { type: 'string', description: 'A clearly different location of the same kind, keeping the same composition, framing and camera angle. One sentence, concrete (e.g. "a bright white-tile kitchen with a window and plants").' },
+  product_mode: { type: 'string', enum: ['replace', 'in_hand', 'none'], description: 'replace: the rival ad shows its product and ours takes its place. in_hand: a person/character holds an object and holds our product instead. none: the rival ad shows no product, so we add none.' },
+  first_person: { type: 'boolean', description: 'True if the texts speak as "I" (a personal experience). These need a real customer or creator before running.' },
+  claims_used: { type: 'array', items: str, description: 'Every fact our texts and copy rely on, each copied from the brand facts given. Empty if none.' },
+  why_it_works: { type: 'array', items: str, description: '3 short tags naming what makes the rival ad work' },
+  headline: { type: 'string', description: 'A short name for this ad: the main line of our texts, ≤ 12 words' },
+  cta: { type: 'string', enum: META_CTAS, description: 'Meta call-to-action button (shown by Meta under the ad, not drawn on the image)' },
   primary_text: { type: 'string', description: 'Meta primary text (above the image), 1-3 short sentences, ≤ 220 characters' },
   meta_headline: { type: 'string', description: 'Meta headline (below the image), ≤ 40 characters' },
 });
 
-/** Read a rival's ad and write our version of it. */
+/** Facts the brand has given us: the only things an ad may claim. */
+export function brandFacts(ws) {
+  let kit = {};
+  try { kit = JSON.parse(ws.brand_kit || 'null') || {}; } catch { /* no kit */ }
+  return [
+    ws.brand_product && `Product: ${ws.brand_product}`,
+    ws.brand_offer && `Offer: ${ws.brand_offer}`,
+    kit.description && `From the brand's website: ${kit.description}`,
+    ...(kit.taglines || []).map(t => `Website tagline: ${t}`),
+  ].filter(Boolean);
+}
+
+/**
+ * Read a rival's ad and write our version: same story, every text line replaced one for one in our words,
+ * a new location with the same composition, a different person, no drawn button, and only claims from the brand facts.
+ */
 export async function writeConcept(ad, ws, { productImage, productName } = {}) {
   const content = [];
-  if (ad.image_url || ad.thumb_url) content.push({ type: 'text', text: 'Rival ad image:' }, imageBlock(ad.image_url || ad.thumb_url));
+  if (ad.image_url || ad.thumb_url) content.push({ type: 'text', text: 'Rival ad image (study its text elements, layout, setting and whether it shows a product):' }, imageBlock(ad.image_url || ad.thumb_url));
   if (productImage) content.push({ type: 'text', text: `Our real product${productName ? ` (${productName})` : ''}:` }, imageBlock(productImage));
   content.push({ type: 'text', text: `Rival ad (format: ${ad.format_label}; live ${ad.run_days} days${ad.is_active ? ', still running' : ''}):
 <rival_ad>
@@ -62,17 +84,21 @@ CTA: ${ad.cta || ''}
 ${ad.transcript ? `Spoken: ${ad.transcript.slice(0, 1200)}` : ''}
 </rival_ad>
 
-Our brand:
-- Name: ${ws.brand_name}
-- Product: ${ws.brand_product}
-- Offer: ${ws.brand_offer}
-- Voice: ${ws.brand_voice}
-- Brand colour: ${ws.brand_color}
-- Audience: ${ws.audience}
+Our brand: ${ws.brand_name}
+Voice: ${ws.brand_voice || 'plain and friendly'}
+Audience: ${ws.audience || 'not given'}
+Brand facts (the ONLY things our ad may claim):
+${brandFacts(ws).map(f => `- ${f}`).join('\n') || '- (none given: make no product claims beyond the brand name)'}
 
-Work out why this ad has lasted, then write our version: same scene and layout, our product, our offer, our voice.
-Write the on-image headline and button, plus Meta primary text and a Meta headline. Only use facts the brand gave above.` });
-  return askJSON({ system: `You are a direct-response creative strategist.\n${RULES}`, content, schema: CONCEPT_SCHEMA, effort: 'medium' });
+Write our version of this ad:
+1. Same story as the rival ad. Do not switch to a different benefit or topic, even one we are better at.
+2. texts: replace every text element in the image one for one, in reading order, telling that same story for ${ws.brand_name}. Our own words: never reuse the rival's sentences. Keep neutral labels unchanged.
+3. setting: a clearly different place of the same kind, same composition.
+4. product_mode: only show our product where the rival ad shows a product or a held object.
+5. Only claim what the brand facts say. If the story needs a capability the brand facts don't mention, tell the story without claiming it.
+6. No button on the image; pick the Meta CTA instead.` });
+  const out = await askJSON({ system: `You are a direct-response creative strategist who adapts proven ads for a different brand.\n${RULES}`, content, schema: CONCEPT_SCHEMA, effort: 'medium' });
+  return { ...out, button: false };
 }
 
 const PERSONAS_SCHEMA = strict({
