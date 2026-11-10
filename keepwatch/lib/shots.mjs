@@ -124,20 +124,29 @@ export async function cleanPlate(rebuild, size = 'story') {
 }
 
 /** One image → clip. Seedance 1 Lite: Fal in production, treg/Replicate locally. 4–12 s per clip. */
-export async function animate(imagePath, prompt, seconds) {
+export async function animate(imagePath, prompt, seconds, endPath) {
   const dur = Math.max(4, Math.min(12, Math.ceil(seconds)));
   const image = await shareable(imagePath);
+  const end = endPath ? await shareable(endPath) : null; // optional last frame: the clip must arrive here
   let url;
   if (process.env.FAL_KEY) {
     const res = await fetch('https://fal.run/fal-ai/bytedance/seedance/v1/lite/image-to-video', {
       method: 'POST', headers: { authorization: `Key ${process.env.FAL_KEY}`, 'content-type': 'application/json' }, signal: AbortSignal.timeout(900000),
-      body: JSON.stringify({ prompt, image_url: image, duration: String(dur), resolution: '720p', camera_fixed: /locked|tripod|does not move|static/i.test(prompt) }),
+      body: JSON.stringify({ prompt, image_url: image, ...(end ? { end_image_url: end } : {}), duration: String(dur), resolution: '720p', camera_fixed: /locked|tripod|does not move|static/i.test(prompt) }),
     });
     const body = await res.json().catch(() => ({}));
     url = body.video?.url;
     if (!res.ok || !url) throw new Error(`Video engine: HTTP ${res.status} ${JSON.stringify(body.detail || body.error || '').slice(0, 200)}`);
+  } else if (end && await tregAvailable()) {
+    // first + last frame: Seedance 2.5 (relaxed filter; the official route refuses any realistic face, even AI-made ones)
+    const d25 = [5, 8, 10, 15, 20, 25, 30].find(x => x >= seconds) || 30;
+    const { result } = await treg('piapi.video-gen.seedance-2-5.less-restriction', { wait: 1500, body: { model: 'seedance', task_type: 'seedance-2.5-less-restriction',
+      input: { prompt: `@image1 is the first frame and the video ends exactly like @image2.\n${prompt}`, image_urls: [image, end], duration: d25, resolution: '720p', aspect_ratio: '9:16' } } });
+    url = JSON.stringify(result).match(/https:[^"\\]+?\.mp4/)?.[0];
+    if (!url) throw new Error('The video engine returned no clip.');
+    return { bytes: Buffer.from(await (await fetch(url)).arrayBuffer()), cost: 0.385 * d25 };
   } else if (await tregAvailable()) {
-    const { result } = await treg('replicate.video-gen.seedance-1-lite', { body: { input: { prompt, image, duration: dur, resolution: '720p', aspect_ratio: '9:16' } }, wait: 900 });
+    const { result } = await treg('replicate.video-gen.seedance-1-lite', { body: { input: { prompt, image, ...(end ? { last_frame_image: end } : {}), duration: dur, resolution: '720p', aspect_ratio: '9:16' } }, wait: 900 });
     url = Array.isArray(result?.output) ? result.output[0] : result?.output;
     if (!url) throw new Error('The video engine returned no clip.');
   } else throw new Error('No video engine: set FAL_KEY.');
@@ -163,6 +172,7 @@ export function wrap(text, max = 26) {
  *   box      white on a dark box
  *   light    dark text on a white panel (captions over an app screen)
  *   word     one big word at a time, timed across the caption's span
+ *   tag      a small label on a black tag, placed at (x, position): names a thing in the frame, e.g. the food on a plate
  * position: top of the caption block as a fraction of the height.
  */
 export function captionFilters(caps, shotSeconds, dir, tag) {
@@ -176,6 +186,11 @@ export function captionFilters(caps, shotSeconds, dir, tag) {
       const words = String(c.text).split(/\s+/).filter(Boolean);
       const slot = (to - from) / words.length;
       words.forEach((w, i) => out.push(`drawtext=fontfile='${FONT}':textfile='${txt(w.replace(/[.,!?;:]+$/, '').toUpperCase())}':fontsize=${c.size || 96}:fontcolor=white:borderw=7:bordercolor=black:x=(w-text_w)/2:y=${y0}:enable='between(t,${(from + i * slot).toFixed(2)},${(from + (i + 1) * slot - 0.01).toFixed(2)})'`));
+      continue;
+    }
+    if (c.style === 'tag') {
+      const x = Math.round((c.x ?? 0.5) * W);
+      out.push(`drawtext=fontfile='${FONT}':textfile='${txt(c.text)}':fontsize=${c.size || 30}:fontcolor=white:box=1:boxcolor=black@0.88:boxborderw=10:x=max(8\\,min(w-text_w-8\\,${x}-text_w/2)):y=${y0}:enable='between(t,${from},${to})'`);
       continue;
     }
     const long = String(c.text).length > 80;
@@ -216,17 +231,37 @@ async function sceneSegment(shot, ctx, i, out) {
     writeFileSync(still, img.bytes);
     ctx.cost += img.cost;
   } else still = ctx.clean;
-  // long takes: chained clips of up to 10 s, each starting on the last frame of the one before
-  const parts = Math.ceil(shot.seconds / 10);
-  const each = shot.seconds / parts;
+  // long takes: chained clips, each starting on the last frame of the one before.
+  // part_seconds sets each clip's length; by default equal parts of up to 10 s.
+  const n = Math.ceil(shot.seconds / 10);
+  const lens = shot.part_seconds?.length ? shot.part_seconds : Array(n).fill(shot.seconds / n);
+  const parts = lens.length;
   const clips = [];
   let from = still;
   for (let p = 0; p < parts; p++) {
+    const each = lens[p];
+    // takes[p]: a clip already approved for this part (file next to the ads) is used as is, never re-made
+    const take = shot.takes?.[p] ? resolve(REBUILD_DIR, shot.takes[p]) : null;
+    if (take && existsSync(take)) {
+      clips.push(take);
+      from = join(ctx.work, `last-${i}-${p}.png`);
+      await run('ffmpeg', ['-v', 'error', '-y', '-sseof', '-0.1', '-i', take, '-frames:v', '1', from]);
+      continue;
+    }
     // same picture + same instructions + same length = same clip: re-renders that only change captions are free
-    const key = createHash('sha1').update(readFileSync(from)).update(scenePrompt(shot, p)).update(String(each)).digest('hex').slice(0, 20);
+    // end_frames[p]: an image (file next to the ads) this part must end on, e.g. the plates once every food is on them
+    const endFile = shot.end_frames?.[p] ? resolve(REBUILD_DIR, shot.end_frames[p]) : null;
+    let end = endFile && existsSync(endFile) ? endFile : null;
+    if (end) { // the engine needs both frames the same size
+      const [w, h] = (await run('ffprobe', ['-v', 'error', '-show_entries', 'stream=width,height', '-of', 'csv=p=0:s=x', from])).trim().split('x');
+      const fitted = join(ctx.work, `end-${i}-${p}.png`);
+      await run('ffmpeg', ['-v', 'error', '-y', '-i', end, '-vf', `scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h}`, fitted]);
+      end = fitted;
+    }
+    const key = createHash('sha1').update(readFileSync(from)).update(end ? readFileSync(end) : '').update(scenePrompt(shot, p)).update(String(each)).digest('hex').slice(0, 20);
     const f = resolve(CLIP_CACHE, `${key}.mp4`);
     if (!existsSync(f)) {
-      const clip = await animate(from, scenePrompt(shot, p), each);
+      const clip = await animate(from, scenePrompt(shot, p), each, end);
       ctx.cost += clip.cost;
       mkdirSync(CLIP_CACHE, { recursive: true });
       writeFileSync(f, clip.bytes);
@@ -237,10 +272,10 @@ async function sceneSegment(shot, ctx, i, out) {
   }
   ctx.lastFrame = from;
   const joined = join(ctx.work, `scene-${i}.mp4`);
-  if (clips.length === 1) await run('ffmpeg', ['-v', 'error', '-y', '-i', clips[0], '-t', String(each), '-an', ...VCODEC, '-vf', FILL, joined]);
+  if (clips.length === 1) await run('ffmpeg', ['-v', 'error', '-y', '-i', clips[0], '-t', String(lens[0]), '-an', ...VCODEC, '-vf', FILL, joined]);
   else {
     const inputs = clips.flatMap(c => ['-i', c]);
-    const fc = clips.map((_, k) => `[${k}:v]${FILL},fps=${FPS},trim=duration=${each.toFixed(3)},setpts=PTS-STARTPTS[v${k}]`).join(';') + ';' + clips.map((_, k) => `[v${k}]`).join('') + `concat=n=${clips.length}:v=1[v]`;
+    const fc = clips.map((_, k) => `[${k}:v]${FILL},fps=${FPS},trim=duration=${lens[k].toFixed(3)},setpts=PTS-STARTPTS[v${k}]`).join(';') + ';' + clips.map((_, k) => `[v${k}]`).join('') + `concat=n=${clips.length}:v=1[v]`;
     await run('ffmpeg', ['-v', 'error', '-y', ...inputs, '-filter_complex', fc, '-map', '[v]', '-an', ...VCODEC, joined]);
   }
   await encodeSegment(['-i', joined], FILL, shot.seconds, shot.captions, out, ctx.work, `s${i}`);

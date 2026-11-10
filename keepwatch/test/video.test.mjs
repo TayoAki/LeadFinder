@@ -62,3 +62,10 @@ test('motion video is a 9:16 mp4 of the requested length', { skip: !hasFfmpeg &&
   assert.deepEqual([j.streams[0].width, j.streams[0].height], [1080, 1920]);
   assert.ok(Math.abs(Number(j.format.duration) - 4) < 0.2);
 });
+
+test('plate labels sit at their x and appear when the food lands', () => {
+  const [f] = captionFilters([{ text: 'Chicken', style: 'tag', x: 0.1, position: 0.65, from: 1, to: 26.4 }], 30, mkdtempSync(join(tmpdir(), 'kw-tag-')), 't');
+  assert.match(f, /108-text_w\/2/);
+  assert.match(f, /y=1248/);
+  assert.match(f, /between\(t,1,26\.4\)/);
+});
