@@ -1,0 +1,255 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 20
+    },
+    "items": [
+     {
+      "authorFollowers": 175,
+      "authorId": "1455250063240962049",
+      "authorImage": "https://pbs.twimg.com/profile_images/2079839521370193920/tcAd7xRB_normal.jpg",
+      "authorName": "Matheus Mello",
+      "authorUsername": "thematheusmello",
+      "authorVerified": true,
+      "bookmarkCount": 0,
+      "conversationId": "2119780797519643117",
+      "createdUtc": 1794230100,
+      "id": "2119780797519643117",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 1,
+      "retweetCount": 0,
+      "text": "Every link I share for my quit-vaping app now carries its own campaign tag.\n\nApple's campaign reports show installs per link. Never per person, and only once a link has at least 5.\n\nSo I'll know which posts work. Not who you are.\n\nWeek 1 results soon.",
+      "url": "https://x.com/i/web/status/2119780797519643117",
+      "viewCount": 16
+     },
+     {
+      "authorFollowers": 43,
+      "authorId": "2044357907995672576",
+      "authorImage": "https://pbs.twimg.com/profile_images/2102504933979246592/Ahzx2nvi_normal.jpg",
+      "authorName": "Cooper Nusbaum",
+      "authorUsername": "coopernusbaum",
+      "authorVerified": true,
+      "bookmarkCount": 0,
+      "conversationId": "2119564790276186224",
+      "createdUtc": 1794178600,
+      "id": "2119564790276186224",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [
+       {
+        "height": 1920,
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2119564772106465280/img/_FqWh91uGOr1v2X8.jpg",
+        "videoUrl": "https://video.twimg.com/amplify_video/2119564772106465280/vid/avc1/1080x1920/Odw63HpZeafVJB83.mp4?tag=29",
+        "width": 1080
+       }
+      ],
+      "quoteCount": 1,
+      "replyCount": 0,
+      "retweetCount": 0,
+      "text": "This is a cool app I am thinking about building.\n\nYou take care of a pair of virtual lungs to help you quit vaping.\n\nYou can set it to roast you or be supportive lol\n\nWaitlist is here:\n\nhttps://t.co/zu5VFKkbty https://t.co/urSdKKTI85",
+      "url": "https://x.com/i/web/status/2119564790276186224",
+      "viewCount": 24
+     },
+     {
+      "authorFollowers": 33482,
+      "authorId": "31190828",
+      "authorImage": "https://pbs.twimg.com/profile_images/595288283988516865/rAYj40wt_normal.jpg",
+      "authorName": "Digital Health",
+      "authorUsername": "digitalhealth2",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "2118410520189415825",
+      "createdUtc": 1793903400,
+      "id": "2118410520189415825",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [
+       {
+        "height": 466,
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HWYbJBxXsAEiTUW.png",
+        "width": 750
+       }
+      ],
+      "quoteCount": 0,
+      "replyCount": 0,
+      "retweetCount": 1,
+      "text": "ICYMI:\n\nPublic Health Wales has launched a module in the NHS Wales Help Me Quit app to provide free, evidence-based support to people who want to stop vaping.\n\nhttps://t.co/dDQqpovrvR https://t.co/yBChWqenXq",
+      "url": "https://x.com/i/web/status/2118410520189415825",
+      "viewCount": 203
+     },
+     {
+      "authorFollowers": 33482,
+      "authorId": "31190828",
+      "authorImage": "https://pbs.twimg.com/profile_images/595288283988516865/rAYj40wt_normal.jpg",
+      "authorName": "Digital Health",
+      "authorUsername": "digitalhealth2",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "2118335565271560370",
+      "createdUtc": 1793885530,
+      "id": "2118335565271560370",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [
+       {
+        "height": 466,
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HWXW-GtWYAAxAfr.png",
+        "width": 750
+       }
+      ],
+      "quoteCount": 0,
+      "replyCount": 0,
+      "retweetCount": 0,
+      "text": "Public Health Wales has launched a module in the NHS Wales Help Me Quit app to provide free, evidence-based support to people who want to stop vaping.\n\nhttps://t.co/RFDaDT0La3 https://t.co/9kULybsb0Q",
+      "url": "https://x.com/i/web/status/2118335565271560370",
+      "viewCount": 221
+     },
+     {
+      "authorFollowers": 40339,
+      "authorId": "412004694",
+      "authorImage": "https://pbs.twimg.com/profile_images/1496036573720182788/Y0JztpW-_normal.jpg",
+      "authorName": "Steven",
+      "authorUsername": "StevenCravotta",
+      "authorVerified": true,
+      "bookmarkCount": 4,
+      "conversationId": "2117642960187929006",
+      "createdUtc": 1793720400,
+      "id": "2117642960187929006",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 9,
+      "media": [
+       {
+        "height": 1920,
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2114077654781747200/img/bA4HY-NhMudgiTmi.jpg",
+        "videoUrl": "https://video.twimg.com/amplify_video/2114077654781747200/vid/avc1/1080x1920/56xVjBxWfzftQmh4.mp4?tag=29",
+        "width": 1080
+       }
+      ],
+      "quoteCount": 0,
+      "replyCount": 1,
+      "retweetCount": 0,
+      "text": "The marketing strategy that scaled my quit vaping app to $44K a month came down to one method. https://t.co/1f33w17rsj",
+      "url": "https://x.com/i/web/status/2117642960187929006",
+      "viewCount": 1252
+     },
+     {
+      "authorFollowers": 175,
+      "authorId": "1455250063240962049",
+      "authorImage": "https://pbs.twimg.com/profile_images/2079839521370193920/tcAd7xRB_normal.jpg",
+      "authorName": "Matheus Mello",
+      "authorUsername": "thematheusmello",
+      "authorVerified": true,
+      "bookmarkCount": 0,
+      "conversationId": "2117640443467030790",
+      "createdUtc": 1793719800,
+      "id": "2117640443467030790",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 2,
+      "retweetCount": 0,
+      "text": "I spent €24 on Apple Ads for my quit-vaping app.\n\n553 impressions\n25 taps\n8 installs\n€3 per install\n\nGetting installs is the cheap part. Getting people to pay is the whole business.\n\nWorking on part two.",
+      "url": "https://x.com/i/web/status/2117640443467030790",
+      "viewCount": 58
+     },
+     {
+      "authorFollowers": 40339,
+      "authorId": "412004694",
+      "authorImage": "https://pbs.twimg.com/profile_images/1496036573720182788/Y0JztpW-_normal.jpg",
+      "authorName": "Steven",
+      "authorUsername": "StevenCravotta",
+      "authorVerified": true,
+      "bookmarkCount": 13,
+      "conversationId": "2117280572070679035",
+      "createdUtc": 1793634000,
+      "id": "2117280572070679035",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 9,
+      "media": [
+       {
+        "height": 1920,
+        "type": "video",
+        "url": "https://pbs.twimg.com/amplify_video_thumb/2114076863782137856/img/oaS5CEUdMH3TUbM4.jpg",
+        "videoUrl": "https://video.twimg.com/amplify_video/2114076863782137856/vid/avc1/1080x1920/XZCBSi0TLYxEJa21.mp4?tag=29",
+        "width": 1080
+       }
+      ],
+      "quoteCount": 0,
+      "replyCount": 1,
+      "retweetCount": 0,
+      "text": "How I got people to actually pay for my quit vaping app, all the way to $45K a month. https://t.co/1vF470yRqA",
+      "url": "https://x.com/i/web/status/2117280572070679035",
+      "viewCount": 1384
+     },
+     {
+      "authorFollowers": 14498,
+      "authorId": "955925072375701504",
+      "authorImage": "https://pbs.twimg.com/profile_images/996919846725210112/jNj0MInc_normal.jpg",
+      "authorName": "Charles A. Gardner, PhD",
+      "authorUsername": "ChaunceyGardner",
+      "authorVerified": true,
+      "bookmarkCount": 0,
+      "conversationId": "2116981015331959283",
+      "createdUtc": 1793562580,
+      "id": "2116981015331959283",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 24,
+      "media": [],
+      "quoteCount": 1,
+      "replyCount": 2,
+      "retweetCount": 4,
+      "text": "Where is the NHS Quit Alcohol app?  Alcohol is FAR more harmful to health than vaping nicotine.",
+      "url": "https://x.com/i/web/status/2116981015331959283",
+      "viewCount": 562
+     }
+    ],
+    "nextCursor": "cur_kp1ZYMfIlWGMaVqNqRpDfQ"
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.0006,
+  "items": 20,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-lynx",
+   "name": "Lynx",
+   "kind": "anonymous",
+   "artworkKey": "lynx"
+  },
+  "resultId": "6cc09004-fe8f-4c29-8952-234047de758e"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "ea6bfd0b561a4df9a5e0d0cffadc605c",
+  "charged_micro": 600,
+  "routed_tool": "treg.x.search.posts"
+ }
+}

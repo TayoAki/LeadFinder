@@ -1,0 +1,144 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 25
+    },
+    "nextCursor": "cur_Z0V7T1pMBStG_jMRUf4wHA",
+    "posts": [
+     {
+      "author": "epicsevenmyths",
+      "authorId": "1cx8y9g1je",
+      "createdUtc": 1784686204,
+      "id": "1v32ne6",
+      "nsfw": false,
+      "numComments": 26,
+      "permalink": "/r/MM_RomanceBooks/comments/1v32ne6/looking_for_a_goodreads_alternative_with_better/",
+      "score": 11,
+      "selftext": "II used to use this amazing app called Kaguya for book recommendations, and it was hands down the best at recommending books that *weren’t* the same titles everyone talks about.   \nUnfortunately, it’s gone now, and I’ve been trying to find a good replacement ever since.  \nWhat apps or platforms do you use for high-quality book recommendations besides Reddit?\n\nI’ve tried Goodreads, but I just can’t get into it. The layout feels pretty basic, and I struggle to find recommendations that really fit my tastes. I mostly use it to read reviews because they’re easy to access, but I’d love an app that not only helps me keep track of my reading but also gives genuinely good, personalized recommendations including lesser known books.",
+      "subreddit": "MM_RomanceBooks",
+      "title": "Looking for a Goodreads alternative with better recommendations",
+      "url": "https://www.reddit.com/r/MM_RomanceBooks/comments/1v32ne6/looking_for_a_goodreads_alternative_with_better/"
+     },
+     {
+      "author": "Mysterious-Zebra9580",
+      "authorId": "lwqdcqju",
+      "createdUtc": 1791388126,
+      "id": "1x001hc",
+      "nsfw": false,
+      "numComments": 12,
+      "permalink": "/r/opensourcealternative/comments/1x001hc/made_an_open_source_goodreads_alternative/",
+      "score": 122,
+      "selftext": "Hey gang, I recently made an open source Goodreads alternative! \n\nhttps://www.bookplate.eu\n\nIt follows an open core framework, so the proprietary software is built on the open source core. Github repo here:\n\nwww.github.com/LeoPhh/bookplate.git\n\nFeedback is very welcome!\n\nWhy is it better than Bookwyrm, Storygraph or Goodreads?      \n\\\\\\\\- Open source      \n\\\\\\\\- Note taking features and vocabulary feature      \n\\\\\\\\- Transparency about where proprietary software is hosted      \n\\\\\\\\- Privacy focused approach, no ads, no tracking :))",
+      "subreddit": "opensourcealternative",
+      "title": "Made an open source Goodreads alternative 📚",
+      "url": "https://www.reddit.com/r/opensourcealternative/comments/1x001hc/made_an_open_source_goodreads_alternative/"
+     },
+     {
+      "author": "Mysterious-Zebra9580",
+      "authorId": "lwqdcqju",
+      "createdUtc": 1793295032,
+      "id": "1xiqh6u",
+      "nsfw": false,
+      "numComments": 37,
+      "permalink": "/r/ebooks/comments/1xiqh6u/new_open_source_goodreads_alternative/",
+      "score": 132,
+      "selftext": "Hey guys, recently dropped my new alternative to websites like Goodreads, Storygraph, etc. You can see it here:\n\nwww.bookplate.eu\n\nIt's distinguishable in a few ways, e.g. ability to take notes with your books, see detailed insights, track vocabulary words, and most importantly, it's open source!\n\nWould love to hear thoughts, both good and bad :))",
+      "subreddit": "ebooks",
+      "title": "New open source Goodreads alternative 📚",
+      "url": "https://www.reddit.com/r/ebooks/comments/1xiqh6u/new_open_source_goodreads_alternative/"
+     },
+     {
+      "author": "Reave1905",
+      "authorId": "1w3c6tfq",
+      "createdUtc": 1776185012,
+      "id": "1sle4mh",
+      "nsfw": false,
+      "numComments": 13,
+      "permalink": "/r/selfhosted/comments/1sle4mh/looking_for_a_selfhosted_alternative_to/",
+      "score": 7,
+      "selftext": "TLDR: Is there a self-hosted alternative to GoodReads or StoryGraph that can sync with Calibre Web Automated and/or AudioBookShelf to save progress and provide reading insights?\n\n\n\nBoth my wife and I really love reading. we both use Kobo eReaders, and I like being able to see my reading activity on the device, but after an issue with sideloading an eBook through the Calibre desktop app via USB I corrupted my device and had to factory reset it, meaning I lost all of that activity history. Since then I set up Calibre Web Automated with Kobo Sync to prevent this from happening again and allow me to update books wirelessly, and it's been working great. I also cancelled my Audible subscription after finding AudioBookShelf.\n\nWe've been manually updating GoodReads and StoryGraph when we start and finish a book, but I do have some worries that I could potentially lose that activity history again in the future, so is there a self-hosted alternative that can link in with Kobo, CWE and/or AudioBookShelf to track pages read, reading hours, books finished etc, and allow us to automate updating what books are finished/started?",
+      "subreddit": "selfhosted",
+      "title": "Looking for a self-hosted alternative to GoodReads/StoryGraph",
+      "url": "https://www.reddit.com/r/selfhosted/comments/1sle4mh/looking_for_a_selfhosted_alternative_to/"
+     },
+     {
+      "author": "haxord",
+      "authorId": "2sua3k9g",
+      "createdUtc": 1768145152,
+      "id": "1qa22ok",
+      "nsfw": false,
+      "numComments": 68,
+      "permalink": "/r/BuyFromEU/comments/1qa22ok/whats_an_alternative_to_goodreads_for_tracking/",
+      "score": 90,
+      "selftext": "Hi everyone,\n\nMaybe this has been posted before but I’m trying to find a Goodreads alternative mostly just to track my books (want to read, read, currently reading, tags, etc etc).\n\nI know about:\n\n\\- story graph - uk\n\n\\- reado - germany\n\nFor anyone that uses them, what’s your opinion? Do you like it?\n\nDoes anyone know other alternatives that could be better?\n\nThank you and happy Sunday \\^\\^",
+      "subreddit": "BuyFromEU",
+      "title": "What’s an alternative to Goodreads for tracking and finding books?",
+      "url": "https://www.reddit.com/r/BuyFromEU/comments/1qa22ok/whats_an_alternative_to_goodreads_for_tracking/"
+     },
+     {
+      "author": "Mysterious-Zebra9580",
+      "authorId": "lwqdcqju",
+      "createdUtc": 1792076336,
+      "id": "1x6nxm1",
+      "nsfw": false,
+      "numComments": 8,
+      "permalink": "/r/HomeServer/comments/1x6nxm1/open_source_goodreads_alternative/",
+      "score": 20,
+      "selftext": "Hey ya’ll i was struggling to find a semi decent open source book tracking site so decided to build my own, and added some other optional features like vocabulary tracking, notes, etc:\n\nwww.bookplate.eu\n\nWould love to hear thoughts!",
+      "subreddit": "HomeServer",
+      "title": "Open source Goodreads alternative 📚",
+      "url": "https://www.reddit.com/r/HomeServer/comments/1x6nxm1/open_source_goodreads_alternative/"
+     },
+     {
+      "author": "Mysterious-Zebra9580",
+      "authorId": "lwqdcqju",
+      "createdUtc": 1791218777,
+      "id": "1wydj6j",
+      "nsfw": false,
+      "numComments": 97,
+      "permalink": "/r/BuyFromEU/comments/1wydj6j/my_goodreads_alternative_is_now_live_as_requested/",
+      "score": 235,
+      "selftext": "Hey guys, many of you asked me to make my open source book tracker and note taking app hosted, so have done so, on Scaleway!\n\n[https://www.bookplate.eu](https://www.bookplate.eu)\n\nFor those asking “why should I pick this over Storygraph”:  \n\\- Bookplate is open source  \n\\- Bookplate has transparency over where it’s hosted  \n\\- More features than other providers (vocabulary, note taking, etc.) and I’m very much keen to develop more, just let me know what you want!\n\nFeedback very welcome 🫶",
+      "subreddit": "BuyFromEU",
+      "title": "My Goodreads alternative is now live, as requested! 🇪🇺📚",
+      "url": "https://www.reddit.com/r/BuyFromEU/comments/1wydj6j/my_goodreads_alternative_is_now_live_as_requested/"
+     },
+     {
+      "author": "notifyShivam",
+      "authorId": "7k2mixt8r",
+      "createdUtc": 1793960030,
+      "id": "1xp9bdg",
+      "nsfw": false,
+      "numComments": 3,
+      "permalink": "/r/opensourcealternative/comments/1xp9bdg/open_source_goodreads_alternative_bookplate/",
+      "score": 92,
+      "selftext": "Goodreads is owned by Amazon, stores your reading history on its servers, and fills your feed with Amazon book recommendations and ads. Bookplate is a self-hosted reading tracker you run with Docker on your own machine. It includes a per-book notes editor, a vocabulary registry for words picked up while reading, and a statistics view with reading charts.\n\n**Overview**\n\n|Info|Value|\n|:-|:-|\n|Replaces|Goodreads|\n|License|Apache-2.0|\n|Runs on|Anywhere Docker runs|\n|Costs|Free, self-hosted|\n|Stars|62|\n|Latest release|v0.3.0, 1 Oct 2026|\n|Contributors|1|\n\n**What it does**\n\n* Track books by status: reading, finished, to-read, or did not finish\n* Write per-book notes in a Notion-style inline editor, with images pasted inline\n* Build a vocabulary registry that links new words to the book they came from\n* Search the Open Library catalogue to auto-fill title, author, page count, and cover\n* Export your library at any time as a zip of plain JSON, Markdown, and image files\n\n|Feature|Bookplate|Goodreads|\n|:-|:-|:-|\n|License|Apache-2.0|Proprietary|\n|Price|Free, self-hosted|Free (Amazon)|\n|Hosting|Your server|Amazon's servers|\n|Notes|Per-book editor|No|\n|Ads|No|Yes|\n\nBookplate's social side is optional and stays on your own server (profiles, friends and recommendations among readers on the same install). There are no crowd-sourced reviews, no public reading challenges and no link to other servers. The maker describes it as open core, so the hosted service at bookplate.eu may add features the Apache-2.0 repo does not include.\n\nRepo: [https://github.com/LeoPhh/bookplate](https://github.com/LeoPhh/bookplate)\n\nThanks u/Mysterious-Zebra9580 for sharing this in r/opensourcealternative\n\nps: keep sharing your projects and updates in community to get selected for pick of the day.",
+      "subreddit": "opensourcealternative",
+      "title": "Open Source Goodreads alternative - Bookplate",
+      "url": "https://www.reddit.com/r/opensourcealternative/comments/1xp9bdg/open_source_goodreads_alternative_bookplate/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "dda6d668-82b1-4b34-bf8c-043cbbd95c7c"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "0442c200b33d4340aa1f2967c5ef2a13",
+  "charged_micro": 350
+ }
+}

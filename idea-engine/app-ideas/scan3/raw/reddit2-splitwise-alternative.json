@@ -1,0 +1,144 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 25
+    },
+    "nextCursor": "cur_UdcH3Jvo6bQ_YSK68obghw",
+    "posts": [
+     {
+      "author": "marleybiscoff",
+      "authorId": "2entv53fph",
+      "createdUtc": 1793352590,
+      "id": "1xjaqqn",
+      "nsfw": false,
+      "numComments": 28,
+      "permalink": "/r/vadodara/comments/1xjaqqn/any_decent_indian_splitwise_alternatives_with/",
+      "score": 5,
+      "selftext": "Hey folks,\n\nSplitwise is basically unusable now with all the daily limits and aggressive paywalls.\n\nI’m looking for an Indian-made expense-splitting app that:\n\n* Works seamlessly on both **iOS and Android**\n* Is strictly built for **INR / UPI** settlement\n* Has **zero ads** (no annoying banners or 10-second video popups)\n* Handles ongoing group balances/flat ledgers (not just a one-off calculator)\n\nAre there any clean indie apps or startup tools you guys are using that fit this? Would love some quick recommendations!",
+      "subreddit": "vadodara",
+      "title": "Any decent Indian Splitwise alternatives with ZERO ads? (iOS + Android)",
+      "url": "https://www.reddit.com/r/vadodara/comments/1xjaqqn/any_decent_indian_splitwise_alternatives_with/"
+     },
+     {
+      "author": "Sweet_Plum_5032",
+      "authorId": "1vzp1t4xc4",
+      "createdUtc": 1785814811,
+      "id": "1vez5sg",
+      "nsfw": false,
+      "numComments": 40,
+      "permalink": "/r/roommates/comments/1vez5sg/splitwise_alternatives/",
+      "score": 2,
+      "selftext": "Are there any splitwise alternatives with payment integration that directly sends payment link to the person I owe money",
+      "subreddit": "roommates",
+      "title": "Splitwise alternatives",
+      "url": "https://www.reddit.com/r/roommates/comments/1vez5sg/splitwise_alternatives/"
+     },
+     {
+      "author": "themodestninja",
+      "authorId": "89inj",
+      "createdUtc": 1782095957,
+      "id": "1uc8itf",
+      "nsfw": false,
+      "numComments": 43,
+      "permalink": "/r/SideProject/comments/1uc8itf/i_spent_two_years_building_a_100_free_alternative/",
+      "score": 24,
+      "selftext": "Hi everyone,   \n  \nI believe a basic utility like splitting expenses with friends and family should be free. When Splitwise paywalled their core features and started adding dark patterns, I looked for alternatives but found nothing with an intuitive UX. So, I built Divy.\n\nThe thing I'm most proud of, is that I was also able to make a group debt simplification algorithm that is better than Splitwise. This was only possible due to my cousin, who literally did a research project on this at CMU and beat the Splitwise algo.   \n  \nWe've run many simulations at this point, and tested it to a point where I feel confident sharing it with the world. Check it out at [hellodivy.com](http://hellodivy.com).   \n  \nThis is the first side project I officially completed successfully in my life. I started on this in 2024, and hit publish on the app store earlier this year, spending the last few months fixing bugs and making UI improvements based on early feedback.   \n  \nTo my surprise, building an accounting app like this was much harder than I anticipated. Combine that with building this only on weekends while having a full time job, and I was barely making progress. I was determined though! I think the backend was completely ready by early 2025, without using any major AI coding tools (cause nothing was that good at that point). Since I was dedicated to making this available for both iOS and Android from day one, I started building the UI in React Native. It did not go so well, mainly due to the state management being a nightmare, and React coming with nothing out of the box. And I'm sorry, but I refuse to use Redux.   \n  \nIt was mid 2025, when I decided to restart the UI dev using Ionic/Angular. That combined with Cursor, I was able to fly. Even though I only worked on this every Sunday, I was able to make so much progress each week, and I finally had a working version by the end of the year. At this stage, I'm proud to announce that most of the basic requirements that would make an app like this useful.  \n  \n*Only available in the US and Canada at the moment, as I'm working on adding multi-currency support.*  \n  \nI look forward to any feedback! If you're interested, you can also join our Discord community [here](https://discord.com/invite/XMSZ5nWTyy) to get direct updates, make feature requests, and report issues.",
+      "subreddit": "SideProject",
+      "title": "I spent two years building a 100% free alternative to Splitwise.",
+      "url": "https://www.reddit.com/r/SideProject/comments/1uc8itf/i_spent_two_years_building_a_100_free_alternative/"
+     },
+     {
+      "author": "Tiny_Ad_9192",
+      "authorId": "2al4ulr2nq",
+      "createdUtc": 1792733044,
+      "id": "1xd5auv",
+      "nsfw": false,
+      "numComments": 7,
+      "permalink": "/r/SideProject/comments/1xd5auv/i_built_a_better_version_of_splitwise/",
+      "score": 1,
+      "selftext": "Hey everyone,\n\nI used Splitwise for group expenses and a separate tracker for my own spending. Every shared dinner meant entering it twice, and my monthly total was never right: I’d log the full ₹1,800 bill when my share was only ₹600.\n\nSo I built **Cashout**, where personal and group expenses live in one place.\n\n**How it fits together**\n\n* **One place to add everything.** Type “chai 40” for yourself or “dinner 1800, split with Aisha and Rohan” for the group, in the same box. Voice works too, in English, Hindi or a mix.\n* **Your share counts as your spending.** Split a ₹1,845 grocery bill and ₹702 goes into your monthly total, your categories and your budget. The rest shows up as money owed to you.\n* **One list.** Personal and shared expenses sit together, so you see your real month in one view.\n* **Groups still do everything you’d expect.** Split equally, by amounts, percentages, shares, or item by item from a scanned receipt. See who owes whom, settle up, and send reminders.\n\n**Also in there:** receipt scanning, monthly budgets, recurring bills, and questions like “how much did I spend on food last month?” It’s free, with no ads and no tracking.\n\n**Why I need you**  \nIt’s in closed testing on Google Play. Google won’t let me launch publicly until at least 12 testers stay opted in for 14 days straight.\n\n**How to join** (Android only, India or US Play accounts for now)\n\n1. **DM me the Gmail address** you use on the Play Store.\n2. Once I reply that you’re added, open this link with that account and tap “Become a tester”: [https://play.google.com/apps/testing/com.ashternext.cashout](https://play.google.com/apps/testing/com.ashternext.cashout)\n3. Install it here: [https://play.google.com/store/apps/details?id=com.ashternext.cashout](https://play.google.com/store/apps/details?id=com.ashternext.cashout)\n4. Keep it installed for 2 weeks, and use it for real splits if you can.\n\nI’d really like to know whether the personal-plus-group setup feels natural or confusing. Comment here or DM me. If you’re also stuck on the 12-tester requirement, I’m happy to test your app in return.\n\nMore: [https://cashout.ashternext.com](https://cashout.ashternext.com)",
+      "subreddit": "SideProject",
+      "title": "I built a better version of Splitwise.",
+      "url": "https://www.reddit.com/r/SideProject/comments/1xd5auv/i_built_a_better_version_of_splitwise/"
+     },
+     {
+      "author": "shiroBuilds",
+      "authorId": "2arjbvs9pq",
+      "createdUtc": 1775539918,
+      "id": "1sen4fa",
+      "nsfw": false,
+      "numComments": 43,
+      "permalink": "/r/apps/comments/1sen4fa/seeking_for_feedback_splitwise_alternative/",
+      "score": 1,
+      "selftext": "I am aware that splitting bills apps are crowded in the space. \n\nI have tried Splitwise, Tricount, SplitD , none of them fulfils all my needs\nBut i still cant find one that fits all of my needs\n* unlimited expense recordings: Splitwise not giving this\n* simplify debt: Tricount doesn’t have it, but not the other apps — non negotiable for me\n* tracking expenses while splitting bills: Splitwise doesnt have that\n* ad-free: yea every apps had it\n* simplification debt with breakdown expenses on the calculations: no apps has that — to answer my friend’s questions on “how come i owe this person money?”\n\nSo i spent around six months time to build my own production ready (means it is data secured, security did with RLS and so forth ) \n\nWould you guys try the app actually? \n*Note:* \nI am trying to sell my app but if it manage to solve your problem, i would be more than happy! \nI am here to validate my ideas, the app had been up for quite some time, i have tested so may times to make sure it is production ready.\nSo i am here to reach out more people to help me see if with this app i can solve more same problems you guys are facing.\n\n",
+      "subreddit": "apps",
+      "title": "Seeking for feedback: Splitwise Alternative",
+      "url": "https://www.reddit.com/gallery/1sen4fa"
+     },
+     {
+      "author": "FounderInStealth27",
+      "authorId": "2q18ezi8ao",
+      "createdUtc": 1793733691,
+      "id": "1xn2dk8",
+      "nsfw": false,
+      "numComments": 1,
+      "permalink": "/r/IndiaMoney/comments/1xn2dk8/best_splitwise_alternative/",
+      "score": 1,
+      "selftext": "Hey everyone 👋 Tired of daily limits and ads in Splitwise?\n\nI've built **Splitnor**, a **100% free Splitwise alternative** for splitting expenses with friends, flatmates and travel groups.\n\n🚫 No daily limit on adding expenses  \n🚫 No ads, no popups, no waiting timers  \n✅ Split equally, by amount or by %  \n✅ Shows the fewest payments needed to settle the whole group  \n✅ Works on iPhone and Android, in ₹, $ or any currency  \n✅ Import your Splitwise groups, and balances carry over\n\nSplitting and settling up are free forever. Try it on your next trip, flat rent or dinner plan, and tell me what you think 🙏\n\nDownload now - [splitnor.com/s/app](http://splitnor.com/s/app)",
+      "subreddit": "IndiaMoney",
+      "title": "Best Splitwise alternative",
+      "url": "https://www.reddit.com/r/IndiaMoney/comments/1xn2dk8/best_splitwise_alternative/"
+     },
+     {
+      "author": "krishan-ag",
+      "authorId": "2cfnzeakan",
+      "createdUtc": 1779181337,
+      "id": "1thh5a0",
+      "nsfw": false,
+      "numComments": 97,
+      "permalink": "/r/indianstartups/comments/1thh5a0/6_months_building_a_splitwise_alternative_5k/",
+      "score": 103,
+      "selftext": "Quick context: I built a free Splitwise alternative for India. Started 6 months ago. Sharing the real numbers because every \"how I grew my startup\" post I read was either fake or missing the painful parts.\n\nThe numbers:\n\n\\- 720+ users (Android + iOS combined)\n\n\\- Under ₹5k total spend (UAC ads, hosting, domain, tools)\n\n\\- 4.9 ★ across 32 reviews\n\n\\- ₹0 revenue (free forever, no plans to monetize yet)\n\n\\- One Reddit post that hit 104k views — still my single biggest traffic source\n\n\n\nThe biggest lesson, and the one I wish someone had screamed at me on day one: **discovery beats polish, every single time.**\n\nI spent weeks on:\n\n\\- Rewriting the Play Store listing 4 times\n\n\\- A/B testing app icons\n\n\\- Tweaking onboarding flow\n\n\\- Building a landing page with comparison pages for every competitor\n\nNone of it moved the needle. Because nobody was finding the app in the first place.\n\n\n\nWhat actually got me users, in order of impact:\n\n1. One Reddit post  (144k views)\n\n2. Word of mouth from those early users\n\n3. Direct \"Splitwise alternative India\" searches (tiny but consistent)\n\n4. UAC ads — and these actively hurt me, more below\n\nThe UAC ads disaster:\n\nI ran Google UAC for 6 weeks thinking cheap installs would kickstart things. They did bring cheap installs at ₹8-12 per install. But quality was garbage. People installed, opened once, never came back. Retention tanked. Play Store algorithm noticed and suppressed me organically. I spent ₹15k to actively make my organic visibility worse. Took 2 months to recover.\n\n\n\nWhat I'd do differently:\n\n\\- Skip ads entirely for the first 1000 users\n\n\\- Write 1 honest Reddit post per month instead of 1 blog post per week\n\n\\- Talk to users in week 1, not month 4 (I had 500 users before I'd talked to 30 of them — embarrassing)\n\n\\- Stop building features users \"asked for\" — I built 4, less than 3% touched them\n\n\n\nThe Splitwise moat isn't features, it's verb-status. \"Splitwise it\" is a verb in Indian friend groups. You don't compete with that by adding features. You compete by being the app the \\*next\\* generation of users default to — which means showing up where they're already complaining about Splitwise.\n\n\n\nHappy to answer anything — costs, what tools I used, why I'm still doing this for free, etc.",
+      "subreddit": "indianstartups",
+      "title": "6 months building a Splitwise alternative. ₹5k spent. 720 users. Here's what I got wrong.",
+      "url": "https://www.reddit.com/r/indianstartups/comments/1thh5a0/6_months_building_a_splitwise_alternative_5k/"
+     },
+     {
+      "author": "CyberTechnologyInc",
+      "authorId": "ggcur",
+      "createdUtc": 1784232867,
+      "id": "1uydyuh",
+      "nsfw": false,
+      "numComments": 4,
+      "permalink": "/r/budget/comments/1uydyuh/alternative_to_splitwise_for_receipt_splitting/",
+      "score": 0,
+      "selftext": "Heyo! I got quite tired of subscriptions being rammed down my throat, so I built something different for splitting receipts. Free accounts, and if you want the ability to extract receipt information automatically, then you can go the pay as you go route! No forced subscriptions.\n\nFree accounts have unlimited manual receipts, currency conversion, discord notifications, (and much more!). I just added a comparison page to compare it against the competition.\n\nBest part is that your friends don't need to register at all if they don't want to. You can assign items to guests, send them a link, and they can settle using [paypal.me](http://paypal.me) or monzo.me. I will be adding additional types in future, no bank account linking required.\n\nYou can find it here: [https://paritysplit.co.uk/compare](https://paritysplit.co.uk/compare)\n\nWould love to hear any feedback, suggestions, or any problems you encounter :)\n\nNote: I am the solo founder of Parity Split.",
+      "subreddit": "budget",
+      "title": "Alternative to Splitwise for receipt splitting. All core functionality is free, no forced subscriptions!",
+      "url": "https://www.reddit.com/r/budget/comments/1uydyuh/alternative_to_splitwise_for_receipt_splitting/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "59093fbd-d362-404b-82d6-4916d55dcc3a"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "9832ebe5a6304757a9d9c6b514bdf130",
+  "charged_micro": 350
+ }
+}

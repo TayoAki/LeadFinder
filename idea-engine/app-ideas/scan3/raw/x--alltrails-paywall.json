@@ -1,0 +1,105 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "items": [
+     {
+      "authorFollowers": 5661,
+      "authorId": "896504368631095296",
+      "authorImage": "https://pbs.twimg.com/profile_images/1947616942417666048/w1bKRPLP_normal.jpg",
+      "authorName": "Guillem",
+      "authorUsername": "guillemcraft",
+      "authorVerified": true,
+      "bookmarkCount": 2,
+      "conversationId": "2086091235509379546",
+      "createdUtc": 1786197882,
+      "id": "2086091235509379546",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 6,
+      "media": [
+       {
+        "height": 1200,
+        "type": "photo",
+        "url": "https://pbs.twimg.com/media/HPNI1ddWcAAL9hr.jpg",
+        "width": 552
+       }
+      ],
+      "quoteCount": 1,
+      "replyCount": 1,
+      "retweetCount": 0,
+      "text": "AllTrails paywall so you don't have to go throu... they don't have an onboarding so here it is\n\nthank me later https://t.co/XzynRyazaj",
+      "url": "https://x.com/i/web/status/2086091235509379546",
+      "viewCount": 1581
+     },
+     {
+      "authorFollowers": 3003,
+      "authorId": "795254522",
+      "authorImage": "https://pbs.twimg.com/profile_images/1872512168228159488/O7576UrK_normal.jpg",
+      "authorName": "Zach Witzel",
+      "authorUsername": "zzwitz",
+      "authorVerified": true,
+      "bookmarkCount": 46,
+      "conversationId": "2062632997199958487",
+      "createdUtc": 1780605003,
+      "id": "2062632997199958487",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "zxx",
+      "likeCount": 23,
+      "media": [],
+      "quoteCount": 2,
+      "replyCount": 1,
+      "retweetCount": 2,
+      "text": "https://t.co/S2w5WeU5wv",
+      "url": "https://x.com/i/web/status/2062632997199958487",
+      "viewCount": 6441
+     },
+     {
+      "authorFollowers": 3789,
+      "authorId": "970423990614396930",
+      "authorImage": "https://pbs.twimg.com/profile_images/2020312307822145536/Op72RC-n_normal.jpg",
+      "authorName": "Ⓐ🌲Robynette🌲Ⓥ",
+      "authorUsername": "tinybird420",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "1685024534104084481",
+      "createdUtc": 1690576129,
+      "id": "1685024534104084481",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 8,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 1,
+      "retweetCount": 1,
+      "text": "Seriously fuck AllTrails for putting a basic safety feature, (downloading gps trail offline), behind a paywall... Ghoulish fucking behavior.",
+      "url": "https://x.com/i/web/status/1685024534104084481",
+      "viewCount": 205
+     }
+    ],
+    "nextCursor": "cur_9bmZFFhpIgHE-SgNQ2vifA"
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.0006,
+  "items": 3,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-lynx",
+   "name": "Lynx",
+   "kind": "anonymous",
+   "artworkKey": "lynx"
+  },
+  "resultId": "e722cd52-0fad-4f6d-825e-7e31168a9827"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "a3da18af1db24c49be4554b8c4aa2c04",
+  "charged_micro": 600,
+  "routed_tool": "treg.x.search.posts"
+ }
+}

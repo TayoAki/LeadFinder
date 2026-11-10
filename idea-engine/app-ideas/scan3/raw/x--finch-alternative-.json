@@ -1,0 +1,98 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "items": [
+     {
+      "authorFollowers": 5632,
+      "authorId": "15733483",
+      "authorImage": "https://pbs.twimg.com/profile_images/1907459862088302592/WMWovuTF_normal.jpg",
+      "authorName": "TwolvesBlog",
+      "authorUsername": "TwolvesBlog",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "1634408981685755905",
+      "createdUtc": 1678508441,
+      "id": "1634408981685755905",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 5,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 7,
+      "retweetCount": 0,
+      "text": "Here’s the thing: there isn’t a Finch alternative Connelly will hire. He isn’t that kinda GM. No one from DEN is available, so that settles that. And he didn’t go after Quin when he could have (Rosas would’ve!). Ergo: Finch is here awhile. There isn’t another option. Boom done.",
+      "url": "https://x.com/i/web/status/1634408981685755905",
+      "viewCount": 1903
+     },
+     {
+      "authorFollowers": 2697,
+      "authorId": "776847885954449408",
+      "authorImage": "https://pbs.twimg.com/profile_images/1124472943105282049/5mvlj-rP_normal.png",
+      "authorName": "TorontoRoadClosures",
+      "authorUsername": "ToRoadClosures",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "787831939164090369",
+      "createdUtc": 1476668746,
+      "id": "787831939164090369",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "en",
+      "likeCount": 0,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 0,
+      "retweetCount": 0,
+      "text": "Next weekend Oct 22-23: Gardiner CLOSED for construction. #TTC Subway Line 1 CLOSED Lawrence to Finch. Alternative @GOTransit or #TTC Line 2",
+      "url": "https://x.com/i/web/status/787831939164090369",
+      "viewCount": null
+     },
+     {
+      "authorFollowers": 107335,
+      "authorId": "136977527",
+      "authorImage": "https://pbs.twimg.com/profile_images/875888398883405824/XzsDa8p__normal.jpg",
+      "authorName": "山中俊治 Shunji Yam",
+      "authorUsername": "Yam_eye",
+      "authorVerified": false,
+      "bookmarkCount": 0,
+      "conversationId": "405391393356382208",
+      "createdUtc": 1385487814,
+      "id": "405391393356382208",
+      "inReplyToId": null,
+      "isReply": false,
+      "lang": "ja",
+      "likeCount": 18,
+      "media": [],
+      "quoteCount": 0,
+      "replyCount": 1,
+      "retweetCount": 14,
+      "text": "11月の国際会議IROS2013で発表した電動義手、Finch, Alternative Handが米国GIZMODOで紹介されました。タイトルは「人間の手ぽく見えなくちゃいけないって誰が言った？」 http://t.co/AKHzYRLfEF",
+      "url": "https://x.com/i/web/status/405391393356382208",
+      "viewCount": null
+     }
+    ],
+    "nextCursor": "cur_c6oS9wkfodOgbEuOuiFgZA"
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.0006,
+  "items": 3,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-lynx",
+   "name": "Lynx",
+   "kind": "anonymous",
+   "artworkKey": "lynx"
+  },
+  "resultId": "2200b5fc-3c32-4625-8d2a-8879b5b3c7c3"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "d339ebb359e4420d987c2c96593d1446",
+  "charged_micro": 600,
+  "routed_tool": "treg.x.search.posts"
+ }
+}

@@ -1,0 +1,145 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 25
+    },
+    "nextCursor": "cur_PPZ4bhDHKwMak5pbguL5Ag",
+    "posts": [
+     {
+      "author": "Soft_Doubt5904",
+      "authorId": "1d9ygl9lje",
+      "createdUtc": 1793667383,
+      "id": "1xmf1sh",
+      "nsfw": false,
+      "numComments": 19,
+      "permalink": "/r/Software_Finder/comments/1xmf1sh/have_you_tried_any_subscription_tracking_apps/",
+      "score": 10,
+      "selftext": "I came across Unsubby recently, and it got me thinking about how messy subscription management can get as recurring payments start piling up.\n\nFor those who’ve tried tools like this, do you find them genuinely useful, or is it easier to manage everything manually?\n\nCurious to hear what’s worked for you and what features you wish these tools handled better.",
+      "subreddit": "Software_Finder",
+      "title": "Have you tried any subscription tracking apps?",
+      "url": "https://www.reddit.com/r/Software_Finder/comments/1xmf1sh/have_you_tried_any_subscription_tracking_apps/"
+     },
+     {
+      "author": "EffectiveTruth4805",
+      "authorId": "1myoogou4h",
+      "createdUtc": 1791851149,
+      "id": "1x4ih91",
+      "nsfw": false,
+      "numComments": 23,
+      "permalink": "/r/apps/comments/1x4ih91/app_to_track_subscriptions/",
+      "score": 4,
+      "selftext": "Man I really wish there’s something that can help me track my subscriptions (other than google sheets). Something that can give me notifications, y’know? I’d very much appreciate if anyone could share anything they use.",
+      "subreddit": "apps",
+      "title": "App to track subscriptions",
+      "url": "https://www.reddit.com/r/apps/comments/1x4ih91/app_to_track_subscriptions/"
+     },
+     {
+      "author": "AdviceNo1212",
+      "authorId": "1pblf4c7h6",
+      "createdUtc": 1781597551,
+      "id": "1u77ddl",
+      "nsfw": false,
+      "numComments": 63,
+      "permalink": "/r/ProductivityApps/comments/1u77ddl/im_looking_for_a_better_subscription_tracker_app/",
+      "score": 3,
+      "selftext": "I'm still trying to weigh the pros and cons of the following   \n \\- Rocket Money  \n \\-  Zentry: Subscription Tracker  \n \\-  Bobby  \nand some others...\n\nAnybody tried those in the list or suggest other app?  \nwhich one is better.",
+      "subreddit": "ProductivityApps",
+      "title": "I'm looking for a better subscription tracker app.",
+      "url": "https://www.reddit.com/r/ProductivityApps/comments/1u77ddl/im_looking_for_a_better_subscription_tracker_app/"
+     },
+     {
+      "author": "jojojoester",
+      "authorId": "1t26ki1246",
+      "createdUtc": 1792327108,
+      "id": "1x927gb",
+      "nsfw": false,
+      "numComments": 4,
+      "permalink": "/r/iosdev/comments/1x927gb/what_do_you_wish_subscription_tracker_apps_did/",
+      "score": 0,
+      "selftext": "Hey everyone!\n\nI've been exploring the idea of building an iOS subscription tracker, but after looking at existing apps, I realized that features like renewal reminders, spending summaries, and subscription calendars are already pretty well covered.\n\nI don't want to build yet another app that does the same things with a slightly different UI. I'd like to understand what people actually struggle with when managing their subscriptions.\n\nFor those of you who use subscription trackers, or have tried a few and stopped using them:\n\n* **What's your biggest frustration** with the subscription tracker you currently use?\n* Is there a feature you've wanted but haven't found in any existing app?\n* How do you currently track cancellations, price increases, pauses, or subscriptions you've restarted?\n* What would make you switch from your current app to a new one?\n* Would you prefer a one-time purchase, a free app with optional Pro features, or a subscription? Why?\n\nI'm especially interested in the small, frustrating things that existing apps haven't solved well, rather than a long wishlist of features.\n\nFeel free to share the app you currently use and what you like or dislike about it. Honest criticism would be really helpful.\n\nThanks!",
+      "subreddit": "iosdev",
+      "title": "What do you wish subscription tracker apps did better?",
+      "url": "https://www.reddit.com/r/iosdev/comments/1x927gb/what_do_you_wish_subscription_tracker_apps_did/"
+     },
+     {
+      "author": "Share_Tiny",
+      "authorId": "5p327k6g",
+      "createdUtc": 1789795745,
+      "id": "1wkdfgq",
+      "nsfw": false,
+      "numComments": 4,
+      "permalink": "/r/IPhoneApps/comments/1wkdfgq/best_subscription_tracker_apps_in_2026/",
+      "score": 3,
+      "selftext": "Hey everyone,\n\nA while ago, I [shared SubIQ here](https://www.reddit.com/r/IPhoneApps/comments/1wexz6u/best_subscription_manager_app_and_cheapest_too/) and offered **free lifetime access**. The response was amazing. Far more people were interested than I expected, and all the free codes were claimed quickly.\n\nI also received a lot of honest input about bugs, and features that needed improvement. Since then, I’ve made major changes throughout the app. It’s now much more polished, reliable, and stable than the version I originally shared.\n\n**I believe more and more things will become subscriptions in the future**. Having an app like SubIQ can help you stay in control, understand where your money is going, prepare for upcoming payments, and catch subscriptions you may have forgotten about.\n\nUnfortunately, We can’t afford to continue giving away lifetime access for free. But to thank everyone here for the support, I’m offering **50% off the one-time Lifetime purchase**.\n\n[Claim 50% off Lifetime for a limited time](https://apps.apple.com/redeem?ctx=offercodes&id=6789850180&code=SUBIQ50OFF)\n\nOr [Download app here](https://apps.apple.com/us/app/subscription-manager-refund/id6789850180)\n\nIf you tried the older version, I’d love for you to give the updated app another chance. If you’re new, let me know what you think. I’m still listening to every piece of suggestions.",
+      "subreddit": "IPhoneApps",
+      "title": "Best Subscription Tracker Apps in 2026",
+      "url": "https://www.reddit.com/r/IPhoneApps/comments/1wkdfgq/best_subscription_tracker_apps_in_2026/"
+     },
+     {
+      "author": "AkmenZ",
+      "authorId": "115jdmeq",
+      "createdUtc": 1780754021,
+      "id": "1tyhvrt",
+      "nsfw": false,
+      "numComments": 41,
+      "permalink": "/r/povertyfinance/comments/1tyhvrt/how_do_you_track_subscriptions/",
+      "score": 0,
+      "selftext": "Hi all. I’ve a question about tools/apps for tracking subscriptions. I noticed that many offer subscription model which is ridiculous for a subscription tracker app. The one I currently have for iPhone is called Subster and it works pretty good, but you have to add subscriptions manually, which is ok imo because you just do it once, but you still could miss some forgotten ones. Anyone has experience with subscription trackers that check your bank account? Or is there any privacy concerns?",
+      "subreddit": "povertyfinance",
+      "title": "How do you track subscriptions?",
+      "url": "https://www.reddit.com/r/povertyfinance/comments/1tyhvrt/how_do_you_track_subscriptions/"
+     },
+     {
+      "author": "kunwarprithvi",
+      "authorId": "7w75t",
+      "createdUtc": 1776157569,
+      "id": "1sl3a01",
+      "nsfw": false,
+      "numComments": 18,
+      "permalink": "/r/personalfinanceindia/comments/1sl3a01/how_do_people_track_their_subscriptions_any/",
+      "score": 1,
+      "selftext": "Just realised I am spending over 10k/month in subscriptions. Went out looking for tools that can list all my subscriptions at one place, but did not find any.\n\nAny suggestions?",
+      "subreddit": "personalfinanceindia",
+      "title": "How do people track their subscriptions? Any automated tool?",
+      "url": "https://www.reddit.com/r/personalfinanceindia/comments/1sl3a01/how_do_people_track_their_subscriptions_any/"
+     },
+     {
+      "author": "Share_Tiny",
+      "authorId": "5p327k6g",
+      "createdUtc": 1792331709,
+      "id": "1x93tjl",
+      "nsfw": false,
+      "numComments": 76,
+      "permalink": "/r/iosapps/comments/1x93tjl/subscription_cost_tracker_know_where_your_money/",
+      "score": 22,
+      "selftext": "Monthly plans, annual renewals, a free trial you meant to cancel, it can be surprisingly hard to keep a clear picture of what you’re spending.\n\nI’m the developer of **SubIQ**, and I’ve just released version 1.2. I’ve improved the design and navigation, fixed bugs, and made things smoother to use\n\n**A — What it does**\n\nIt’s a subscription cost tracker where you can add your subscriptions, see your monthly total, and get reminders before renewals or free trials end. There’s also a calendar for upcoming payments and widgets for checking what’s next.\n\nYou can enter everything manually or scan a bank statement or screenshot, then review what to save. You don’t need to connect your bank account.\n\n**B — Why use it over something else?**\n\nA spreadsheet in Apple Numbers works well for keeping a list. This puts spending totals and renewal reminders together, so you don’t have to maintain the sheet and set up separate alerts.\n\nThere are also cancellation and refund guides if you decide to stop using a service. You still handle the cancellation or request yourself.\n\n**C — What it costs**\n\nPremium lifetime access costs $49.99 as a one-time purchase\n\nDownload the app here: [App Store](https://apps.apple.com/us/app/subscription-manager-subiq/id6789850180)\n\n**Who’s behind the app**\n\nI’m Binh Tran, the developer behind SubIQ at AnmiSoft  \nContact: [support@anmisoft.com](mailto:support@anmisoft.com)  \n[Website](https://getsubiq.com/) · [Privacy Policy](https://getsubiq.com/privacy) · [Terms and Conditions](https://getsubiq.com/terms)",
+      "subreddit": "iosapps",
+      "title": "Subscription Cost Tracker: Know Where Your Money Goes",
+      "url": "https://www.reddit.com/r/iosapps/comments/1x93tjl/subscription_cost_tracker_know_where_your_money/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "b2f9385d-9e5a-4d8e-99fa-f37d906151a3"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "da61f59b44df4afa90a8de59fe906e29",
+  "charged_micro": 350,
+  "hint": "review"
+ }
+}

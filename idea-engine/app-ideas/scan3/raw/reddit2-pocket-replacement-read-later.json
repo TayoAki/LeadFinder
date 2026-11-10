@@ -1,0 +1,144 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 25
+    },
+    "nextCursor": "cur_lBnHGIj19YYOFKyz_aVr1A",
+    "posts": [
+     {
+      "author": "Tempestshade",
+      "authorId": "bzazl",
+      "createdUtc": 1793347961,
+      "id": "1xj9joz",
+      "nsfw": false,
+      "numComments": 54,
+      "permalink": "/r/ProductivityApps/comments/1xj9joz/i_built_a_readlater_app_as_an_omnivore_replacement/",
+      "score": 46,
+      "selftext": "I've thoroughly enjoyed engaging with this community over the past several days and thought it fitting to showcase my own project that I built as a replacement for Omnivore, which shut down a couple of years ago now.\n\nReadMeliora is the read-later app; the focus is clean, distracting free reading, while also being able to take highlights and notes as you go along. Omnivore was a significant component to my productivity stack back when it was live and I was really sad to see it go.\n\nContent is brought into ReadMeliora in a few ways:\n\n* The Chrome extension saves the page you're on without the ads. You can also save a selection, part of the page or a screenshot, and add labels before you close the tab. YouTube videos come with their transcript. This works behind authenticated pages, too.\n* Every account gets its own inbound-only email address for newsletters. Forward a newsletter to it, and it shows up in your Inbox instead of your mail.\n* RSS feeds. Paste a site's address and it finds the feed for you.\n* On Android, install it to your home screen and share links, text or files to it from any app.\n* Uploads: PDFs, Word documents, Markdown, text files and images.\n* Integrations - We currently have a Supernote plugin that can both be used to sync your reading to your Supernote, or bring your handwritten notes to ReadMeliora. I've written about that here: [ReadMeliora Supernote plugin 1.1.0 incoming: your handwritten notes can go to ReadMeliora now : r/Supernote](https://www.reddit.com/r/Supernote/comments/1xez996/readmeliora_supernote_plugin_110_incoming_your/)\n   * I would not be opposed to third-party ingestion integrations if anyone is interested. I'd have to write-up a public facing API article.\n* Import from Omnivore, Pocket, Instapaper, Readwise Reader, Raindrop, Wallabag, Linkwarden or your browser bookmarks\n\nOnce it's in:\n\n* Highlight a passage and takes notes (or not) about the highlight. All your highlights are visible on each article itself as well as in their own Highlights page.\n* Search covers titles, full text, highlights and notes.\n* Reading progress tracking across devices\n* Text-to-speech - Listen reads articles, newsletters and PDFs aloud and remembers where you stopped.\n* Labels, keyboard shortcuts, a focus mode and a dark theme.\n* Your Inbox and Library open offline.\n* Rediscover brings a few old saves and highlights back to the top of your Inbox each day.\n* You can export your whole library whenever you like.\n\nWhat I am still working on:\n\n* Still working on Firefox and Safari extensions (I have a Safari extension ported, I just do not have a mac to test it on. Anyone want to test a pre-release?!)\n* Native phone apps - read above for iPhone. Haven't begun work on android app yet, as the app works really well when installed as a PWA application.\n* Import formats - I've tested the Omnivore and Linkwarden imports with real export files. The others haven't been tested with real exports yet, so if one trips over your file, please tell me.\n* Integrations - I am a big fan of Obsidian and have plans to release a plugin \n\nCurrently completely free. I do intend to build out a paid plan, to ensure the project can be successful.\n\nYou can try it at [https://readmeliora.com](https://readmeliora.com/). I also have created [r/ReadMeliora](https://www.reddit.com/r/ReadMeliora/) where I try and post regular updates.",
+      "subreddit": "ProductivityApps",
+      "title": "I built a read-later app as an Omnivore replacement.",
+      "url": "https://www.reddit.com/gallery/1xj9joz"
+     },
+     {
+      "author": "nicosomb",
+      "authorId": "136omd",
+      "createdUtc": 1781596350,
+      "id": "1u771j4",
+      "nsfw": false,
+      "numComments": 6,
+      "permalink": "/r/wallabag/comments/1u771j4/which_readitlater_app_should_you_choose_in_2026/",
+      "score": 7,
+      "selftext": "The read-it-later landscape has changed a lot. Pocket has shut down. So has Omnivore. Here is my (almost) honest tour of what’s left in 2026.\n\n[https://wallabag.it/en/blog/2026/06/15/which-read-it-later-app-to-choose-in-2026/](https://wallabag.it/en/blog/2026/06/15/which-read-it-later-app-to-choose-in-2026/)",
+      "subreddit": "wallabag",
+      "title": "Which read-it-later app should you choose in 2026?",
+      "url": "https://www.reddit.com/r/wallabag/comments/1u771j4/which_readitlater_app_should_you_choose_in_2026/"
+     },
+     {
+      "author": "dragonlordcat",
+      "authorId": "2bq4oxdh",
+      "createdUtc": 1786960523,
+      "id": "1vqnwod",
+      "nsfw": false,
+      "numComments": 7,
+      "permalink": "/r/ereader/comments/1vqnwod/should_i_return_my_new_pocketbook/",
+      "score": 1,
+      "selftext": "For over a month, I couldn't find my Kobo Clara BW and while I knew it's somewhere around the house, I just couldn't keep looking anymore and purchased a Pocketbook Era Lite. I just wanted the most modern offering from them and I've read great things about them.\n\nHowever, on the day it arrived, I did one final search and found my Kobo Clara. So it allowed me to compare the two:\n\n# Speed\n\n- the speed difference I noticed immediately. Kobo is so so much faster. And I don't care much about the interface navigation speed, but marking anything more than 1 word on the Pocketbook is a chore. Also, scrolling various screens is much slower and choppier on the Pocketbook, which does suck for finding the book I want, as well as for other scrolling business I have, such as using a browser to open my library page and scroll through books to borrow.\n\n- Text marking on the Kobo is just easy and fast. I don't need to hold my finger as long and I can immediately highlight multiple words quickly.\n\n# Dictionary\n\n- This really became a big problem. Yesterday I started reading Four Seasons In Japan. And on the first page, I highlighted tatami to get an exact definition. Imagine my disappointment when, in the dictionary pop-up, I see \"Tartaric\" instead of tatami. So I can't even use a default dictionary on this thing. But hey, I thought, maybe Kobo will have the same issue! Nope, it gave me a proper definition of tatami. But all good still, I thought, I heard outside dictionaries can easily be added to the pocketbook! Except it seems it's virtually impossible to find a .dic file anywhere on the internet with the Oxford dictionary (which Kobo has). And while I found one from 2022, and it's wonderful, it doesn't automatically update every few years like on the Kobo Clara.\n\n# Other things\n\n- When connecting to Calibre, Pocketbook had all of its manuals displayed in the device window, as well as some other text files, annoying.\n\n- Pocketbook has Pocketbook cloud, send to Pocketbook, and Dropbox. However, I like my outside books with lots of metadata, so I throw them into Calibre first anyway. And if I really don't have my laptop and need a book, there's Send to Kobo website (even if it isn't official).\n\n- The Era Lite has a bigger screen, and it shows. A lot more text fits on the screen and I love it. However, I could just wait for a bigger Kobo variant or buy the Kobo Libra Colour (although the colour screen would have downsides)\n\n- Era Lite is using the same shell of the Era, so it has speaker holes and a lid on the back and both serve no purpose.\n\n- Kobo has an IPX8 water resistance rating, while era lite has IPX4. I don't do water regularly, but it's good to know it's more protected.\n\n- Kobo being made by a Japanese company makes it so Japanese text selection is natively supported and it works wonderfully. It doesn't really matter for me, but my gf graduated Japanese language and she uses the Kobo sometimes.\n\n- I miss reading statistics on the Pocketbook\n\n- Kepub format on the kobo is faster for turning pages, can show how much time I need until the end of a page or chapter, and the amount of text per chapter, all really cool stuff!\n\n- Pocketbook has buttons, which I love\n\n- Pocketbook also has automatic light adjustment per hour of each day, but it's kind of pointless since I could be anywhere during a given time. I only really care about the smart light for before bed, which Kobo also automatically adjusts based on time.\n\n- Kobo announced a StoryGraph partnership, and I definitely love that\n\nWith all of that said, on the first day with the Pocketbook it happened that my device completely froze. Nothing I clicked or touched worked and I had to force it to shutdown by holding the power button. Never had that happen on Kobo. \n\nI think that if I had a larger Kobo with buttons, it would be the perfect ereader. Should I return the Pocketbook? I'm thinking yes, but what do you think?\n\nEdit: I tried KOreader, didn't like it. The english dictionary there is meh. I liked the speed though, but I didn't like the interface. I did like the settings for text display, but that's about it.",
+      "subreddit": "ereader",
+      "title": "Should I return my new Pocketbook?",
+      "url": "https://www.reddit.com/r/ereader/comments/1vqnwod/should_i_return_my_new_pocketbook/"
+     },
+     {
+      "author": "frankiew00t",
+      "authorId": "gbzgw",
+      "createdUtc": 1778599213,
+      "id": "1tb4rgr",
+      "nsfw": false,
+      "numComments": 2,
+      "permalink": "/r/SideProject/comments/1tb4rgr/i_built_a_replacement_for_the_nowdefunct_pocket/",
+      "score": 1,
+      "selftext": "In 2022 I was in the top 1% of Pocket readers thanks to its text-to-speech feature. When Pocket shut down, nothing I tried could really fill that podcast player-companion gap.\n\nSo I built Otzio. Paste an article URL, it converts to natural-sounding audio in about a minute and drops it as an episode into your podcast app via private RSS feed. No new player to install. Just save URLs and listen in whatever modern podcast app you're already using.\n\nI started alpha testing about a week ago. Early feedback shaped a lot: easier setup, paywall workarounds, and article thumbnails + transcripts now showing up in modern podcast apps.\n\nToday it moves to its own home: [otzio.app](http://otzio.app)\n\nTry it out! Happy to answer any questions.",
+      "subreddit": "SideProject",
+      "title": "I built a replacement for the now-defunct Pocket read-it-later app",
+      "url": "https://www.reddit.com/r/SideProject/comments/1tb4rgr/i_built_a_replacement_for_the_nowdefunct_pocket/"
+     },
+     {
+      "author": "Eastern-Height2451",
+      "authorId": "1hm18r4qk6",
+      "createdUtc": 1771412487,
+      "id": "1r8013f",
+      "nsfw": false,
+      "numComments": 6,
+      "permalink": "/r/longform/comments/1r8013f/pocket_is_gone_so_i_built_the_read_later_tool_i/",
+      "score": 15,
+      "selftext": "Pocket shutting down pushed me to finally fix my own workflow for long reads. I wanted two things Pocket did well: save the full article in a clean reader, and keep my highlights tied to the source. Then I wanted one extra thing: a simple export that does not trap my notes.\n\nSo I built Sigilla. It saves full articles in a clean reader view, lets you highlight and add notes, and you can export to Markdown or JSON whenever you want. It is free while it is in beta.\n\nIf you are also replacing Pocket, what are your non negotiables  \nKindle send  \nOffline  \nSearch  \nTags  \nSomething else?\n\nI would love feedback on what you guys think\n\n[Sigilla](http://www.sigilla.net)",
+      "subreddit": "longform",
+      "title": "Pocket is gone, so i built the read later tool i wanted for longform",
+      "url": "https://www.reddit.com/r/longform/comments/1r8013f/pocket_is_gone_so_i_built_the_read_later_tool_i/"
+     },
+     {
+      "author": "Rongmistiry",
+      "authorId": "kg0xj",
+      "createdUtc": 1781634671,
+      "id": "1u7lwtr",
+      "nsfw": false,
+      "numComments": 2,
+      "permalink": "/r/chrome_extensions/comments/1u7lwtr/built_my_own_readlater_extension_after_pocket/",
+      "score": 2,
+      "selftext": "Pocket shut down last year and I couldn't find a replacement that wasn't bloated, cloud-dependent, or behind a monthly subscription. So I built one.\n\nReadNook is a reader mode + read-later Chrome extension. Save any article with one click, read it later in a clean distraction-free view with real typography controls.\n\nWhat makes it different:\n\n* Everything stored locally in your browser. No servers, no account, no tracking\n* Five reading typefaces with adjustable size, width, and line spacing\n* Light, sepia, and dark themes\n* Full-text search, tags, and highlights\n* Import your old Pocket export in one click\n\n  \nSolo indie maker. Built this in my spare time.\n\nWould love honest feedback from this community. What's missing, what's broken, what would make you actually use it daily.\n\nChrome Web Store: [https://chromewebstore.google.com/detail/readnook-reader-mode-read/nbdppaibjlhlghililclkcaoepodhdae](https://chromewebstore.google.com/detail/readnook-reader-mode-read/nbdppaibjlhlghililclkcaoepodhdae)",
+      "subreddit": "chrome_extensions",
+      "title": "Built my own read-later extension after Pocket shut down & just got approved on Chrome Web Store",
+      "url": "https://www.reddit.com/r/chrome_extensions/comments/1u7lwtr/built_my_own_readlater_extension_after_pocket/"
+     },
+     {
+      "author": "memture",
+      "authorId": "948hv1tu",
+      "createdUtc": 1766649271,
+      "id": "1pv8e6u",
+      "nsfw": false,
+      "numComments": 9,
+      "permalink": "/r/ProductivityApps/comments/1pv8e6u/i_built_a_read_later_app_that_nags_you_until_you/",
+      "score": 8,
+      "selftext": "Hi everyone,\n\nI built an app called **ReadRemind** because I had a problem with \"passive\" read-later apps. I would save hundreds of articles to Pocket or my browser bookmarks, but because there was no urgency, I never opened them again.\n\nI wanted a tool that treated reading articles like a **task** rather than a **collection**.\n\n**How ReadRemind is different:** Most apps just store links. ReadRemind focuses on **scheduling** them.\n\n* **Forced Intent:** When you save a link, the app prompts you to set a reminder immediately (e.g., \"In 1 Hour,\" \"Tomorrow Morning,\").\n* **The \"Nudge\":** It sends you a notification at that exact time. It turns your reading list from a passive archive into an active to-do list.\n* **Distraction-Free:** Once you click the notification, it opens the article in a clean, stripped-down reader view (no ads, no pop-ups).\n* **Offline Support:** It saves the text locally, so you can read on flights or commutes without data.\n\n**Who is this for?** If you have 50+ open tabs or a bookmarks folder you haven't looked at in months, this is designed to help you clear that backlog.\n\nIt is currently available for Android.\n\n[Link to ReadRemind on Play Store](https://play.google.com/store/apps/details?id=com.ropali.read_remind)\n\nI'd love to hear your thoughts on the UI or the reminder options!",
+      "subreddit": "ProductivityApps",
+      "title": "I built a \"Read Later\" app that nags you until you actually read the article.",
+      "url": "https://www.reddit.com/r/ProductivityApps/comments/1pv8e6u/i_built_a_read_later_app_that_nags_you_until_you/"
+     },
+     {
+      "author": "Feisty_Text_3891",
+      "authorId": "1xjzwko5ci",
+      "createdUtc": 1769332284,
+      "id": "1qmedoz",
+      "nsfw": false,
+      "numComments": 11,
+      "permalink": "/r/firefox/comments/1qmedoz/alternative_to_pocket_for_good_readsarticles/",
+      "score": 5,
+      "selftext": "I was a huge fan of pocket for its curated reads from around the web in one site. Is there a free website that you know of that does similar? \n\n  \nI tried medium, but it just seems like stories written by people purposefully for the site. I'm looking for something akin to pocket that aggregates interesting content from all over the web. I mainly read this stuff at work and the articles on the homepage don't show up due to our servers. Thanks!\n\n  \n",
+      "subreddit": "firefox",
+      "title": "Alternative to pocket for good reads/articles",
+      "url": "https://www.reddit.com/r/firefox/comments/1qmedoz/alternative_to_pocket_for_good_readsarticles/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "062ebf9d-0ada-4d9c-a6c5-d4583ae1fe8e"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "a497344ca1da4e57b496033215d43063",
+  "charged_micro": 350
+ }
+}

@@ -1,0 +1,144 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 8,
+     "total": 25
+    },
+    "nextCursor": "cur_D3iJ-ELeExj2_mVld3dbSg",
+    "posts": [
+     {
+      "author": "RepairVisual136",
+      "authorId": "2piang59gx",
+      "createdUtc": 1793689725,
+      "id": "1xmmb9s",
+      "nsfw": false,
+      "numComments": 14,
+      "permalink": "/r/QuitVaping/comments/1xmmb9s/free_app_to_quit_vaping_with_a_home_screen_widget/",
+      "score": 13,
+      "selftext": "I built I Quit because every quit app I tried was full of ads or paywalls. It works for vapes and pouches too.\n\nThe home screen widget shows your nicotine-free days and money saved, and one tap opens craving help.\n\nEvery feature is free, forever. No ads, no account. It's on Google Play as \"I Quit: Stop Smoking\".\n\nFeedback is very welcome. 💚",
+      "subreddit": "QuitVaping",
+      "title": "Free app to quit vaping, with a home screen widget. No ads, no paywall, Free forever!",
+      "url": "https://www.reddit.com/gallery/1xmmb9s"
+     },
+     {
+      "author": "[deleted]",
+      "authorId": "0",
+      "createdUtc": 1782048541,
+      "id": "1ubq420",
+      "nsfw": false,
+      "numComments": 4,
+      "permalink": "/r/QuitVaping/comments/1ubq420/app_to_help_quit/",
+      "score": 2,
+      "selftext": "Are there any FREE (im broke) apps that i can use as a support to help myself quit vaping?\n\n&#x200B;\n\nI was vape free for months. But when my fiance left i relapsed. Its veen a couple weeks and ive been hitting hard.\n\n&#x200B;\n\nI want to quit but doing it on my own is hard. Even if i had  an app or something I can only hope the support qould help. \n\n&#x200B;\n\nThanks",
+      "subreddit": "QuitVaping",
+      "title": "App to help quit",
+      "url": "https://www.reddit.com/r/QuitVaping/comments/1ubq420/app_to_help_quit/"
+     },
+     {
+      "author": "Worried_Inflation_37",
+      "authorId": "6j0f6ncx",
+      "createdUtc": 1792290367,
+      "id": "1x8rtm2",
+      "nsfw": false,
+      "numComments": 2,
+      "permalink": "/r/SideProject/comments/1x8rtm2/i_updated_my_quit_vaping_app_so_people_can_cut/",
+      "score": 1,
+      "selftext": "I’ve been working on Unva, an iPhone app for people trying to quit vaping, and version 2.0 is a big change to how it works.\n\nThe question behind this update was: what if someone wants to quit, but isn’t ready to stop all at once?\n\nThere are now two paths. **Vape-free** tracks time since quitting, milestones, and progress. **Puff Count** lets you log puffs, note triggers, and follow a daily target while cutting down. If you go over a target, the app shows it without treating the whole day as a failure.\n\nPuff logging, history, a 14-day chart, and core craving tools are free. There’s optional Premium for plan editing, automatic target adjustments, and deeper insights.\n\nI’d value honest feedback on the two-path approach. If you were trying to quit vaping, would you want to start with a counter, a reduction target, or go straight to a vape-free timer?\n\nApp Store: [https://apps.apple.com/us/app/unva-quit-vaping-tracker/id6783925457](https://apps.apple.com/us/app/unva-quit-vaping-tracker/id6783925457)",
+      "subreddit": "SideProject",
+      "title": "I updated my quit vaping app so people can cut down before they quit",
+      "url": "https://www.reddit.com/r/SideProject/comments/1x8rtm2/i_updated_my_quit_vaping_app_so_people_can_cut/"
+     },
+     {
+      "author": "burakkrkynlu",
+      "authorId": "28qller03k",
+      "createdUtc": 1784661343,
+      "id": "1v2s8w2",
+      "nsfw": false,
+      "numComments": 28,
+      "permalink": "/r/SideProject/comments/1v2s8w2/i_made_a_small_app_to_help_people_quit_smoking/",
+      "score": 10,
+      "selftext": "Hi everyone.\n\nA few months ago I started building a small Android app.  \nI tried many quit smoking apps. Most of them count days and money. They are useful, but I wanted to try a different idea.  \nIn my app, every smoke free day grows a small forest. If you smoke again, part of the forest is damaged. I wanted quitting to feel like building something instead of just counting days.  \nThere is also a breathing tool, a journal and a simple savings tracker.I'm still working on it and I would like some honest feedback.If you were trying to quit smoking, what would make you open an app every day? What do you think is missing in most quit smoking apps?",
+      "subreddit": "SideProject",
+      "title": "I made a small app to help people quit smoking. What do you think?",
+      "url": "https://www.reddit.com/r/SideProject/comments/1v2s8w2/i_made_a_small_app_to_help_people_quit_smoking/"
+     },
+     {
+      "author": "Mildly_Sarcastic",
+      "authorId": "ioh75",
+      "createdUtc": 1775613156,
+      "id": "1sfflrk",
+      "nsfw": false,
+      "numComments": 1,
+      "permalink": "/r/QuitVaping/comments/1sfflrk/built_an_app_to_help_me_quit_vaping_4_months/",
+      "score": 3,
+      "selftext": "Hey everyone. Long-time lurker here. I was vaping for about 3 years, I started with disposables, moved to refillables, and was going through pods like crazy. Tried quitting cold turkey twice and failed both times\n\nWhat actually helped me was tracking everything (health, money saved, cravings, etc.) so I could figure out my triggers. I couldn't find an app that did all of that well, so I built one called Clean Lungs.\n\nHere's what it does:\n\nReal-time health tracking: watches 7 body systems recover (heart, lungs, blood, brain, etc.) so you can actually see progress day by day\n\nMoney saved dashboard: tracks every dollar you're keeping. Seeing $1,000+/year hits different (can’t wait to get there!)\n\nCraving logger: log when cravings hit and what triggered them to keep a running tally\n\nDaily check-in: having a green mark daily on the calendar helped me when cravings got bad\n\nJournal: honestly this was just easy to add from a coding perspective in case anyone wants to write notes to reference back\n\nAchievements: milestones and badges to look forward to unlocking\n\nThe first week was hell but seeing my health rings improve really kept me going. The craving logger was a game changer because I realized 90% of my cravings were boredom, not actual nicotine withdrawal.\n\nIt's on iOS if anyone wants to check it out: [https://apps.apple.com/us/app/clean-lungs-quit-vaping/id6751339331](https://apps.apple.com/us/app/clean-lungs-quit-vaping/id6751339331)\n\nHappy to answer any questions, we got this!",
+      "subreddit": "QuitVaping",
+      "title": "Built an app to help me quit vaping - 4 months clean and sharing it with you guys",
+      "url": "https://www.reddit.com/gallery/1sfflrk"
+     },
+     {
+      "author": "Triepwoet",
+      "authorId": "17k12q",
+      "createdUtc": 1779977937,
+      "id": "1tq50mn",
+      "nsfw": false,
+      "numComments": 7,
+      "permalink": "/r/stopsmoking/comments/1tq50mn/anyone_else_dislike_the_apps/",
+      "score": 3,
+      "selftext": "On my 9th day of quitting and going strong. I know the worst is yet to come, but right now I’m feeling stable, confident, at peace. \n\nI downloaded one of these apps to help me quit, and although the info it provided appears useful, I absolutely despise the notifications, badges, statistics, widgets and everything else. \n\nIt keeps reminding me of my failures instead of my winnings. How much money I’ve spent, not what I’m saving as we speak. How long it takes for my lungs to clean and how much I’ve been messing up my body for almost 20 years. \n\nWithout the app I’m feeling peaceful. I hardly think about smoking and when I do get a craving I grab a glass of water or step away from work for a minute and it passes. But when the app sends me a badge that’s congratulates me for my progress I just feel miserable. I’ve now muted all notifications. \n\nWhat’s your experience with apps, do they work for you? How long do you use them and in what way?\n\nThanks!",
+      "subreddit": "stopsmoking",
+      "title": "Anyone else dislike the apps?",
+      "url": "https://www.reddit.com/r/stopsmoking/comments/1tq50mn/anyone_else_dislike_the_apps/"
+     },
+     {
+      "author": "Upstairs_Persimmon_1",
+      "authorId": "aw4kvwl3",
+      "createdUtc": 1792778938,
+      "id": "1xdlh8s",
+      "nsfw": false,
+      "numComments": 12,
+      "permalink": "/r/ItaliaStartups/comments/1xdlh8s/app_per_smettere_di_fumare/",
+      "score": 0,
+      "selftext": "buonasera ragazzi, vi avevo già parlato della app che avevo in mente. L'ho realizzata e cerco collaboratori (ditemi cosa state studiando o vi appassiona e sicuramente c'è un ambito in cui potete aiutarmi) e tester. Al momento è possibile provarla su iPhone, se volete vi giro il link. ",
+      "subreddit": "ItaliaStartups",
+      "title": "app per smettere di fumare",
+      "url": "https://www.reddit.com/gallery/1xdlh8s"
+     },
+     {
+      "author": "AlexWyatt6",
+      "authorId": "561humpn",
+      "createdUtc": 1792493287,
+      "id": "1xaov8n",
+      "nsfw": false,
+      "numComments": 3,
+      "permalink": "/r/stopsmoking/comments/1xaov8n/apps_or_similar_help_for_stopping_vaping/",
+      "score": 3,
+      "selftext": "Hey there, i am about to start my withdrawal from nicotine. I haven‘t smoked a cigarette in several years but I am heavily addicted to getting my nicotine via vaping and I just can‘t anymore. I tried so many times and it never worked. This time will be the last time!   \nI was wondering if theres something similar to „smokefree“ but a bit more tailored to vaping than classic smoking. I always thought that the extra motivation through apps like that did make a difference back when i tried to quit smoking before turning to vaping and at this point I am clinging to everything that could potentially help me finally achieving my goal. \n\nThanks in advance! :)",
+      "subreddit": "stopsmoking",
+      "title": "Apps or similar help for stopping Vaping.",
+      "url": "https://www.reddit.com/r/stopsmoking/comments/1xaov8n/apps_or_similar_help_for_stopping_vaping/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "39c810e1-fb3f-4f9f-8f91-016a75a49e42"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "9ef23cec550944c4801bf347c145b27b",
+  "charged_micro": 350
+ }
+}
