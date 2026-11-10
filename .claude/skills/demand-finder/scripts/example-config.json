@@ -1,0 +1,30 @@
+{
+  "idea": "Open-source DocSend alternative for founders sharing pitch decks and data rooms",
+  "keywords": [
+    "docsend alternative",
+    "docsend pricing",
+    "docsend free",
+    "open source docsend",
+    "docsend vs papermark",
+    "data room software",
+    "virtual data room for startups",
+    "share pitch deck with tracking",
+    "pitch deck analytics",
+    "papermark"
+  ],
+  "x_queries": [
+    "\"docsend alternative\"",
+    "\"open source docsend\"",
+    "docsend expensive"
+  ],
+  "reddit_queries": [
+    "docsend alternative",
+    { "query": "data room for seed round", "subreddit": "startups" }
+  ],
+  "paid_intent_queries": [
+    "site:upwork.com/freelance-jobs/apply \"data room\"",
+    "\"docsend alternative\""
+  ],
+  "location_code": 2840,
+  "language_code": "en"
+}
