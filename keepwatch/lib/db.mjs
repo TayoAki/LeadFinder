@@ -67,6 +67,7 @@ CREATE TABLE IF NOT EXISTS videos (               -- short vertical videos made 
   created_at TEXT DEFAULT (datetime('now'))
 );
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT);
+CREATE TABLE IF NOT EXISTS user_prefs (user_id TEXT PRIMARY KEY, current_ws INTEGER);  -- the workspace a login has open
 CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refunded; the monthly pool is the plan's allowance
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
@@ -94,7 +95,9 @@ CREATE TABLE IF NOT EXISTS panels (
 const ADDED_COLUMNS = [['rebuilds', 'workspace_id', 'INTEGER'], ['panels', 'workspace_id', 'INTEGER'],
   ['workspaces', 'brand_url', 'TEXT'], ['workspaces', 'brand_kit', 'TEXT'], ['workspaces', 'product_image', 'TEXT'],
   ['workspaces', 'trial_ends_at', 'TEXT'], ['rebuilds', 'size', 'TEXT'], ['rebuilds', 'credits', 'INTEGER'],
-  ['workspaces', 'drop_enabled', 'INTEGER DEFAULT 1'], ['workspaces', 'drop_hour', 'INTEGER DEFAULT 7'], ['workspaces', 'drop_tz', 'TEXT']];
+  ['workspaces', 'drop_enabled', 'INTEGER DEFAULT 1'], ['workspaces', 'drop_hour', 'INTEGER DEFAULT 7'], ['workspaces', 'drop_tz', 'TEXT'],
+  // several workspaces per login: extra ones point at the login's first workspace (parent_id), which holds the plan and credits
+  ['workspaces', 'owner_user_id', 'TEXT'], ['workspaces', 'parent_id', 'INTEGER']];
 
 let db;
 export function getDb(file = resolve(DATA_DIR, 'keepwatch.db')) {
@@ -118,8 +121,54 @@ export function openMemoryDb() {
 
 const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image', 'drop_enabled', 'drop_hour', 'drop_tz'];
 
-/** The signed-in user's workspace, created on first use. */
+/**
+ * Workspaces. Every login has a first workspace (workspaces.user_id = the login) that holds the plan and the credit pool.
+ * Extra workspaces (one per brand) have owner_user_id = the login and parent_id = that first workspace; their user_id is a
+ * unique placeholder so the original UNIQUE column needs no migration. user_prefs.current_ws is the one that's open.
+ */
 export function workspaceForUser(userId, d = getDb()) {
+  const cur = d.prepare('SELECT current_ws FROM user_prefs WHERE user_id = ?').get(userId)?.current_ws;
+  if (cur) {
+    const ws = getWorkspace(cur, d);
+    if (ws && canAccess(userId, ws)) return ws;
+  }
+  return primaryWorkspace(userId, d);
+}
+
+export const canAccess = (userId, ws) => Boolean(ws) && (ws.user_id === userId || ws.owner_user_id === userId);
+
+/** All workspaces of a login, the first one first. */
+export function listWorkspaces(userId, d = getDb()) {
+  primaryWorkspace(userId, d);
+  return d.prepare('SELECT * FROM workspaces WHERE user_id = ? OR owner_user_id = ? ORDER BY (parent_id IS NOT NULL), id').all(userId, userId);
+}
+
+/** A new, empty workspace for another brand. It shares the first workspace's plan and credits. */
+export function createWorkspace(userId, name, d = getDb()) {
+  const first = primaryWorkspace(userId, d);
+  const id = d.prepare(`INSERT INTO workspaces (user_id, owner_user_id, parent_id, api_key, brand_name, brand_color, plan, trial_ends_at, drop_tz, drop_enabled)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)`).run(`extra:${randomBytes(12).toString('hex')}`, userId, first.id, `kw_${randomBytes(24).toString('hex')}`,
+    String(name || 'New workspace').slice(0, 80), '#c8553d', first.plan, first.trial_ends_at, first.drop_tz).lastInsertRowid;
+  return getWorkspace(id, d);
+}
+
+export function switchWorkspace(userId, wsId, d = getDb()) {
+  const ws = getWorkspace(Number(wsId), d);
+  if (!canAccess(userId, ws)) return null;
+  d.prepare('INSERT INTO user_prefs (user_id, current_ws) VALUES (?, ?) ON CONFLICT(user_id) DO UPDATE SET current_ws = excluded.current_ws').run(userId, ws.id);
+  return ws;
+}
+
+/** The workspace that holds the plan and credits for this one (itself, or its parent). */
+export const rootWorkspace = (ws, d = getDb()) => (ws.parent_id ? getWorkspace(ws.parent_id, d) || ws : ws);
+/** Ids of a workspace and its siblings under the same login: they share one credit pool. */
+export function familyIds(ws, d = getDb()) {
+  const root = rootWorkspace(ws, d);
+  return d.prepare('SELECT id FROM workspaces WHERE id = ? OR parent_id = ?').all(root.id, root.id).map(r => r.id);
+}
+
+/** The login's first workspace, created on first use. */
+export function primaryWorkspace(userId, d = getDb()) {
   let ws = d.prepare('SELECT * FROM workspaces WHERE user_id = ?').get(userId);
   if (!ws) {
     // New accounts start on a 14-day trial (no card); Stripe will move them onto a paid plan.

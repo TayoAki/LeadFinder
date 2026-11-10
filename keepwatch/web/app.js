@@ -11,7 +11,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, v); } catch { /* storage blocked: fine */ } },
 };
 
-const state = { me: null, status: {}, ws: {}, rivals: [], overview: null, videos: {} };
+const state = { me: null, status: {}, ws: {}, rivals: [], overview: null, videos: {}, workspaces: [] };
 
 // ---------- API ----------
 async function api(path, opts = {}) {
@@ -546,6 +546,10 @@ function renderFooter() {
 
 function renderSidebar() {
   const cur = location.hash;
+  // one login can hold several workspaces (one per brand); the picker switches between them
+  const canAdd = state.workspaces.length < (state.me.usage.limits.workspaces || 1);
+  $('#ws-select').innerHTML = state.workspaces.map(w => `<option value="${w.id}" ${w.current ? 'selected' : ''}>${esc(w.name)}</option>`).join('')
+    + `<option value="new" ${canAdd ? '' : 'disabled'}>+ New workspace${canAdd ? '…' : ' (Agency plan)'}</option>`;
   $('#category-name').textContent = state.ws.category || 'Your category';
   $('#rival-count').textContent = `(${state.rivals.length})`;
   $('#side-category').setAttribute('aria-current', String(cur === '' || cur.startsWith('#/overview')));
@@ -594,7 +598,7 @@ async function route() {
 }
 
 async function refreshChrome() {
-  [state.me, state.rivals, state.overview] = await Promise.all([api('/api/me'), api('/api/rivals'), api('/api/overview')]);
+  [state.me, state.rivals, state.overview, state.workspaces] = await Promise.all([api('/api/me'), api('/api/rivals'), api('/api/overview'), api('/api/workspaces')]);
   state.ws = state.me.workspace;
   state.status = { treg: state.me.providers.adData, images: state.me.providers.images, llm: state.me.providers.llm, week: state.me.week };
   document.documentElement.style.setProperty('--accent', state.ws.brand_color || '');
@@ -673,6 +677,22 @@ document.addEventListener('submit', async e => {
   if (f.id === 'search-form') { const q = new URLSearchParams([...new FormData(f)].filter(([, v]) => v)); location.hash = `#/search?${q}`; }
 });
 document.addEventListener('change', async e => {
+  if (e.target.id === 'ws-select') {
+    const sel = e.target, back = state.workspaces.find(w => w.current)?.id;
+    try {
+      if (sel.value === 'new') {
+        const name = prompt('Name the new workspace (the brand it tracks):');
+        if (!name?.trim()) { sel.value = back; return; }
+        const w = await api('/api/workspaces', { method: 'POST', body: { name: name.trim() } });
+        toast(`Created ${w.name}. Add its rivals in Settings.`, 4000);
+      } else {
+        await api('/api/workspaces/switch', { method: 'POST', body: { id: Number(sel.value) } });
+      }
+      location.hash = '#/overview';
+      await refreshChrome(); route();
+    } catch (err) { toast(err.message, 6000); sel.value = back; }
+    return;
+  }
   if (e.target.id === 'test-pick') location.hash = `#/test/${e.target.value}`;
   if (e.target.name === 'default-product') { await api('/api/workspace', { method: 'POST', body: { product_image: e.target.value } }); state.ws.product_image = e.target.value; toast('Default product saved'); }
 });

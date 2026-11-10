@@ -5,7 +5,7 @@
 import { timingSafeEqual } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { getDb, workspaceForUser, saveWorkspace, trackRival } from './db.mjs';
+import { getDb, primaryWorkspace, listWorkspaces, createWorkspace, saveWorkspace, trackRival } from './db.mjs';
 import { REBUILD_DIR } from './rebuild.mjs';
 import { VIDEO_DIR } from './video.mjs';
 import { PLANS } from './plans.mjs';
@@ -47,7 +47,9 @@ export async function handleAdmin(req, res, url, send) {
     const b = JSON.parse((await readRaw(req, 40 * 1024 * 1024)).toString());
     const user = db.prepare('SELECT id FROM user WHERE lower(email) = lower(?)').get(String(b.email || ''));
     if (!user) return send(res, 404, { error: 'no account with that email' });
-    const ws = workspaceForUser(user.id, db);
+    // workspace_name: import into that named workspace of the account (created if missing); default is the first one
+    let ws = primaryWorkspace(user.id, db);
+    if (b.workspace_name) ws = listWorkspaces(user.id, db).find(w => (w.brand_name || '').toLowerCase() === String(b.workspace_name).toLowerCase()) || createWorkspace(user.id, b.workspace_name, db);
     const insR = db.prepare(`INSERT INTO rivals (${RIVAL_COLS.join(',')}) VALUES (${RIVAL_COLS.map(() => '?').join(',')})
       ON CONFLICT(page_id) DO UPDATE SET name=excluded.name, last_collected_at=MAX(COALESCE(rivals.last_collected_at,''), COALESCE(excluded.last_collected_at,''))`);
     const insA = db.prepare(`INSERT INTO ads (rival_id, ${AD_COLS.join(',')}) VALUES (?, ${AD_COLS.map(() => '?').join(',')})
@@ -88,7 +90,7 @@ export async function handleAdmin(req, res, url, send) {
     for (const path of b.retire_videos || []) db.prepare("UPDATE videos SET status = 'replaced' WHERE workspace_id = ? AND path = ?").run(ws.id, String(path));
     for (const n of b.notifications || []) db.prepare('INSERT OR IGNORE INTO notifications (workspace_id, kind, title, body, link, ref) VALUES (?,?,?,?,?,?)').run(ws.id, n.kind, n.title, n.body ?? null, n.link ?? null, n.ref ? String(n.ref).replace('{ws}', ws.id) : null);
     if (b.workspace) saveWorkspace(ws.id, Object.fromEntries(BRAND.filter(k => b.workspace[k] != null).map(k => [k, b.workspace[k]])), db);
-    if (b.plan && PLANS[b.plan]) db.prepare('UPDATE workspaces SET plan = ? WHERE id = ?').run(b.plan, ws.id);
+    if (b.plan && PLANS[b.plan]) db.prepare('UPDATE workspaces SET plan = ? WHERE id = ?').run(b.plan, ws.parent_id || ws.id); // the plan lives on the first workspace
     return send(res, 200, { ok: true, workspace_id: ws.id, ads, rebuilds, panels, videos, tracked: db.prepare('SELECT COUNT(*) n FROM workspace_rivals WHERE workspace_id = ?').get(ws.id).n });
   }
   return send(res, 404, { error: 'not found' });

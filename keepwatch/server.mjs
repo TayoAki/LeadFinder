@@ -7,7 +7,7 @@ import { resolve, extname, dirname, normalize, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth, migrateAuth } from './lib/auth.mjs';
-import { getDb, workspaceForUser, workspaceByKey, saveWorkspace, rotateApiKey, rivalIdsFor, trackRival, untrackRival, getWorkspace } from './lib/db.mjs';
+import { getDb, workspaceForUser, workspaceByKey, saveWorkspace, rotateApiKey, rivalIdsFor, trackRival, untrackRival, getWorkspace, listWorkspaces, createWorkspace, switchWorkspace, rootWorkspace } from './lib/db.mjs';
 import * as A from './lib/analytics.mjs';
 import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR } from './lib/rebuild.mjs';
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
@@ -83,6 +83,21 @@ const routes = {
     workspace: { ...ws, brand_kit: ws.brand_kit ? JSON.parse(ws.brand_kit) : null }, usage: usage(ws), plans: PLANS, cost: COST,
     sizes: Object.fromEntries(Object.entries(SIZES).map(([k, v]) => [k, v.label])), providers: await providerStatus(), model: hasLLM() ? MODEL : null, week: mondayOf(),
   }),
+  'GET /api/workspaces': ({ ws, user }) => listWorkspaces(user.id).map(w => ({ id: w.id, name: w.brand_name || 'My workspace', current: w.id === ws.id, first: !w.parent_id })),
+  'POST /api/workspaces': ({ ws, user, body }) => {
+    const name = String(body.name || '').trim();
+    if (!name) throw httpError(400, 'Give the workspace a name, e.g. the brand it tracks.');
+    const plan = PLANS[rootWorkspace(ws).plan] || PLANS.trial;
+    if (listWorkspaces(user.id).length >= (plan.workspaces || 1)) throw httpError(402, `Your ${plan.name} plan includes ${plan.workspaces || 1} workspace${(plan.workspaces || 1) === 1 ? '' : 's'}. Agency includes 10.`);
+    const created = createWorkspace(user.id, name);
+    switchWorkspace(user.id, created.id);
+    return { id: created.id, name: created.brand_name };
+  },
+  'POST /api/workspaces/switch': ({ user, body }) => {
+    const ws = switchWorkspace(user.id, body.id);
+    if (!ws) throw httpError(404, 'Workspace not found.');
+    return { id: ws.id, name: ws.brand_name || 'My workspace' };
+  },
   'POST /api/workspace': ({ ws, body }) => {
     db.prepare('DELETE FROM kv WHERE k = ?').run(`personas:${ws.id}`);
     const { brand_kit, brand_url, ...rest } = body; // the kit is only written by the scraper
