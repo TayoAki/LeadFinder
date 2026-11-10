@@ -297,3 +297,129 @@ Compiled from [features-part-a.md](features-part-a.md) and [features-part-b.md](
 - **Apps stop working if you stop paying:** Thunkable.
 - **Lifetime deal:** BuildNatively ($699).
 - **Refunds:** none on subscriptions (Anything, Superapp, Vibecode per reviews). Only Anything and Cabano refund failures.
+
+---
+
+# Additions from the full documentation pass (2026-11-10)
+
+The first catalog was built against a fixed checklist. A second pass read every vendor's full documentation index (llms.txt, docs sitemap, changelog, pricing tables). Full lists with a doc link on every bullet:
+- [features-full-group1.md](features-full-group1.md): Rork, Vibecode, Anything, a0, Bitrig, Superapp, Newly, Cabano.
+- [features-full-group2.md](features-full-group2.md): Replit, Bolt, Lovable, FlutterFlow, Draftbit, Adalo, Thunkable, BuildNatively, plus new competitors.
+
+## New features found
+
+**Guarantees, programs and pricing**
+- **Launch Pass ($149 one-time, full refund if the app isn't live on the App Store within 30 days):** Vibecode (refund policy, 6 Nov).
+- **Referral programs:** Vibecode (two-sided, 28 Sep).
+- **Credits for social posts:** Vibecode.
+- **Affiliates:**
+  - Superapp: 30% for 12 months, up to $150 per customer, plus an ambassador program.
+  - Anything: 30% for 1 year.
+  - Rork: affiliate program (terms unread).
+- **Experts network and template sellers:** Anything (Contra experts; creators sell templates).
+- **Education discount and Teams/Enterprise plans:** Bitrig.
+
+**Templates**
+- **Remixable templates:** Vibecode (166).
+
+**Store listing, readiness and publishing**
+- **Store listing automation:**
+  - Thunkable (4 Aug): AI store text and keywords, AI icon and feature graphic, hosted privacy policy, requirements checklist, automatic iOS permission strings.
+  - Base44: guideline scan for both stores with a "Readiness Score" and AI fixes.
+  - FlutterFlow's new builder: submits for review to both stores in-product, plus a flow for Apple change requests.
+- **AI store assets:**
+  - Replit: icon concepts, 5 framed screenshots, the Play feature graphic.
+  - Thunkable: iOS 26 Liquid Glass tabs, dark-mode icons, splash screens.
+- **App Store listing preview** (per language, light and dark mode, flags edits made in App Store Connect): Bitrig (14 Oct). Bitrig submission for review is now documented, not just claimed.
+- **App website with a privacy policy drafted from the app's code:** Superapp. Its MCP server is live now.
+
+**Marketing and post-launch**
+- **Marketing inside the builder:**
+  - Newly: AI-presenter videos with voice cloning, clay animated ads, posting to social accounts you buy, store analytics for both stores, an "Interviews" tab.
+  - Superapp Selfdrive: ChatGPT prompt research for AI-search optimization (works for apps built elsewhere).
+- **Post-launch services:** Newly Email (app emails and campaigns from your own domain); Newly AI support chat with a knowledge base inside your app (rolling out).
+
+**Agent and workflow**
+- **Skills:** Newly, Bitrig.
+- **Project memory:** Newly.
+- **Scheduled hourly agent runs:** Newly.
+- **Agent modes:**
+  - Rork: Design, Plan, Build.
+  - Anything: Fast, Discussion, Plan, plus Max, which tests in a real browser.
+  - Draftbit: Mockups (side-by-side design options) and Briefs (written plans and research).
+- **Model choice per message:** Rork (with effort levels), Vibecode.
+- **Bring your own AI subscription or key:**
+  - Draftbit: Claude, ChatGPT, OpenAI, Anthropic or OpenRouter, even on Free.
+  - Bitrig: your own Claude or ChatGPT.
+  - Bolt Forge: cheaper open-source models.
+- **Teams with roles:**
+  - Rork: Editor/Viewer, comments, project cloning.
+  - Newly: Admin/Editor/Viewer.
+  - Anything: real-time workspaces, REST API for members and roles.
+  - Superapp: unlimited free collaborators (waitlist).
+
+**Platforms and capabilities**
+- **More Apple platforms:** Bitrig CarPlay (27 Oct), Apple TV (8 Jul), Shortcuts/App Intents/Siri (27 May).
+- **Media generation:**
+  - Rork: video, music, voice, dialogue, 3D models, multiplayer voice chat in games.
+  - Vibecode: Sora and Seedance video APIs.
+  - Cabano: Apple Image Playground and Writing Tools.
+- **Ways to start and test:**
+  - Cabano: Slack app, seeding app data from CSV/JSON.
+  - Install by USB or QR: Newly, Superapp, Cabano, Rork Companion.
+  - Newly simulator: fake GPS location, webcam as the camera.
+- **Over-the-air updates (documented):** Draftbit (Pro), Bubble, Adalo, Expo.
+  - Every change needs a new store build at Bolt and Emergent.
+  - Not available in FlutterFlow's new builder.
+- **Web app installable to the home screen, with offline and push (no App Store path):** Lovable (Jun 2026).
+
+## Corrections to the first catalog
+
+**Confirmed gaps at the leaders**
+- **Replit:** its docs say "Publishing to Google Play is not yet supported."
+- **FlutterFlow's new builder (4 Nov):** no in-app purchases, no code export, no GitHub. Classic Studio keeps them.
+- **Bolt:** mobile publishing is fully manual.
+
+**Contradictions in the vendors' own docs**
+- **Anything:** one page lists push and HealthKit as available; another says push is "coming Q1 2026".
+- **Cabano:** one page offers Expo builds; another says there's no React Native/Expo. Its code also has a hidden Android emulator option.
+
+## New competitors
+
+| Competitor | What it is | Store publishing | Notes |
+|---|---|---|---|
+| **Emergent** | AI app builder | Builds and signs (creates the App Store Connect key itself); RevenueCat subscriptions | 30+ active Meta ads (earliest 4 Aug) |
+| **Base44** (Wix) | Web app wrapped into store apps | Guideline scan + Readiness Score + AI fixes; push; fixed bundle ID `com.base<id>.app` | 30+ active Meta ads (earliest 26 Feb); wrapper risk under 4.2 |
+| **Bubble** | Native mobile editor | App Store + Play in-app purchases; OTA updates; ~45-min build submission | Mobile plans $42/$169/$449 per month (yearly billing) |
+| **Expo** (EAS + Launch v2.3) | Publishing infrastructure | Publishes a local project or public GitHub repo (incl. Flutter) to the App Store, Play, web, Meta VR | MCP server; agents that test on a cloud simulator. It's the plumbing many builders sit on |
+| **RapidNative** | AI builder | Via sister service LetsDeployIt | Lightly verified |
+| **CatDoes** | Lovable/Shopify site → mobile app | — | Lightly verified |
+| **OnSpace** | AI builder | — | Lightly verified |
+| **Appy Pie** | Agent builder | — | Launched 3 Nov 2026; lightly verified |
+
+**Not real competitors**
+- Mocha: shut down 1 Aug 2026.
+- Same and Glide: web apps only (Glide's mobile option is add-to-home-screen).
+- Orchids: mobile is only claimed, and its site showed "deployment paused".
+- Momen: iOS only since Oct 2026.
+
+## Updated: what nobody has (after both passes)
+
+- **A check of a new app against the founder's own other apps** (Apple's 4.3 look-alike spam rule). Pre-flight and readiness scans exist (Rork, Vibecode, Anything, Newly, Thunkable, Base44), but none compares across your portfolio.
+- **A mock Apple review run on the real release build** (walkthrough, demo login, sandbox purchase, account deletion, iPad).
+- **Paywall A/B testing**, and a gallery of review-safe paywall templates.
+- **Credits back when the AI's own fix breaks something.**
+  - Anything and Cabano refund only failed generations or builds.
+  - Vibecode's Launch Pass refunds only if the app isn't live within 30 days.
+- **SSO / SOC 2, white-label, and generating in-app translations:** not documented anywhere.
+- **HealthKit and home-screen widgets:** rare. Only BuildNatively documents HealthKit; widgets only at Rork Max and Bitrig.
+
+## Still unknown
+
+- a0.dev prices.
+- Rork refund and affiliate terms.
+- Superapp launch dates (no changelog).
+- Thunkable's output stack.
+- Lovable's live plan prices.
+- Refund policies at Bolt, Thunkable and Draftbit.
+- Anything visible only after signing up. That needs hands-on teardowns.
