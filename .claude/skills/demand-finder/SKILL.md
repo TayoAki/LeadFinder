@@ -72,6 +72,7 @@ Rules:
 - Report **tight** counts (clearly this need, this buyer) separately from **loose** counts.
 - Volumes under ~100/month are noisy, and year-on-year changes on small numbers swing a lot. Say so.
 - **"No signal" ≠ "no demand"** unless you actually queried for it. List what you didn't measure.
+- **Low search volume means "test on social", not "kill".** Back-test (`references/example-scan-papermark.md`): "docsend alternative" gets only 170/mo, yet that market carried a $3M ARR product found through one tweet. A high CPC on a small term ($27 here) is itself a buying signal.
 - Never invent numbers. Mark unverified figures.
 
 ## Step 3 (optional): Simulate, only to pick what to test
