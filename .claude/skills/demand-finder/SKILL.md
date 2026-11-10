@@ -7,7 +7,7 @@ description: "Find and test real demand for a product idea before building it, u
 
 **Find demand in data that already exists, then prove it with one cheap real test before building.**
 
-The model is Papermark (`references/papermark-case.md`): an open-source DocSend alternative validated by one tweet (450 likes, 95k views, about 1k followers), built in a weekend, now $3M ARR. The rule that made it work was written **before** posting: "only build it if people like it, share it, comment."
+The model is Papermark (`references/papermark-case.md`): an open-source DocSend alternative validated by one tweet (450 likes, 95k views, about 1k followers), built in a weekend, now about 3M dollars ARR. The rule that made it work was written **before** posting: "only build it if people like it, share it, comment."
 
 This skill does three things:
 1. reads demand signals already in the world (real data);
@@ -72,7 +72,7 @@ Rules:
 - Report **tight** counts (clearly this need, this buyer) separately from **loose** counts.
 - Volumes under ~100/month are noisy, and year-on-year changes on small numbers swing a lot. Say so.
 - **"No signal" ≠ "no demand"** unless you actually queried for it. List what you didn't measure.
-- **Low search volume means "test on social", not "kill".** Back-test (`references/example-scan-papermark.md`): "docsend alternative" gets only 170/mo, yet that market carried a $3M ARR product found through one tweet. A high CPC on a small term (27 dollars here) is itself a buying signal.
+- **Low search volume means "test on social", not "kill".** Back-test (`references/example-scan-papermark.md`): "docsend alternative" gets only 170/mo, yet that market carried a 3M-dollar ARR product found through one tweet. A high CPC on a small term (27 dollars here) is itself a buying signal.
 - Never invent numbers. Mark unverified figures.
 
 ## Step 3 (optional): Simulate, only to pick what to test
