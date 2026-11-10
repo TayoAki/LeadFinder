@@ -309,7 +309,7 @@ Pillar: Ship & monetize a subscription app (Clusters C + J angle)
 Search volume test: PASS — ~2,900/mo non-brand, plus 20.7k brand (RevenueCat +147%)
 Market-centric test: PASS — "subscription app", "paywall examples", "how to make money with apps" are market terms
 Competitive test: PASS — the "superwall alternative" top 10 is Product Hunt, Reddit, vendor blogs and small sites
-Proprietary advantage: YES — onboarding + paywall are generated into the app, not bolted on
+Proprietary advantage: YES — onboarding + paywall are generated into the app, not bolted on  ⟵ SUPERSEDED 2026-11-10: Superapp claims "Subscriptions and in-app purchases, ready to charge from day one." Paywall is SHARED; generated onboarding is COSMETIC. See differentiators.md.
 VERDICT: VALID PILLAR
 ```
 
@@ -318,7 +318,7 @@ Pillar: App Store launch kit (Cluster D)
 Search volume test: PASS — ~4,300/mo, the fastest-growing non-brand cluster
 Market-centric test: PASS — "app store screenshot generator", "how to publish an app on app store"
 Competitive test: PASS — the top 10 is Figma community files, small tools (AppScreens, AppLaunchpad), Reddit, small blogs
-Proprietary advantage: YES — screenshots + keywords/description generated from the app's own screens
+Proprietary advantage: YES — screenshots + keywords/description generated from the app's own screens  ⟵ SUPERSEDED 2026-11-10: Rork ("App Store screenshots in one click"), Newly and Superapp now claim this on their homepages. It is SHARED, not proprietary. See differentiators.md.
 VERDICT: VALID PILLAR (quick win)
 ```
 
