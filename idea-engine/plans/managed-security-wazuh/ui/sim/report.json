@@ -1,0 +1,153 @@
+{
+ "app": "Watchpost: managed threat detection and response for small businesses (built on Wazuh)",
+ "score": 10,
+ "personas": {
+  "owner": {
+   "department": "Executive",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "office_mgr": {
+   "department": "Operations",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "it_mgr": {
+   "department": "IT",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "msp_tech": {
+   "department": "IT services (MSP)",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "msp_owner": {
+   "department": "IT services (MSP leadership)",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "compliance": {
+   "department": "Compliance",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "finance": {
+   "department": "Finance",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  }
+ },
+ "failures": [],
+ "global": [
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .side",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .right",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every tab (6) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every tab (6) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  }
+ ]
+}

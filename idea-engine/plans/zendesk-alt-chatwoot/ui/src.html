@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlatDesk mockup</title>
+<style>/*SHELL_CSS*/
+.thread{display:flex;flex-direction:column;gap:10px;max-width:760px}
+.composer{border:1px solid var(--line);border-radius:10px;background:var(--panel);padding:12px}
+.composer textarea{width:100%;min-height:110px;border:0;resize:vertical;background:transparent;color:var(--text);font:inherit}
+.ai-label{font-size:12px;font-weight:700;color:var(--accent);display:flex;gap:6px;align-items:center}
+.view-select{width:100%;padding:9px 10px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);color:var(--text);font:inherit;font-weight:600}
+.step{display:flex;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)} .step:last-child{border-bottom:0}
+.check{width:20px;height:20px;border-radius:50%;display:grid;place-items:center;font-size:12px;flex:none}
+.check.done{background:var(--good-weak);color:var(--good)} .check.todo{background:var(--panel-2);color:var(--faint)} .check.now{background:var(--accent-weak);color:var(--accent)}
+.compare td:last-child{font-weight:700}
+</style>
+</head>
+<body>
+<div class="app">
+  <nav class="rail" aria-label="Main">
+    <div class="logo" aria-hidden="true">F</div>
+    <button data-view="inbox" data-tab-target="conversation" aria-current="page" aria-label="Inbox" title="Inbox"><svg class="i" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+    <button data-view="search" aria-label="Search" title="Search" data-toast="Search across 48,210 conversations (mock)"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+    <button data-view="alerts" aria-label="Notifications, 3 new" title="Notifications" data-toast="3 tickets are close to breaching SLA"><svg class="i" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21h4"/></svg><span class="badge">3</span></button>
+    <button data-view="reports" data-tab-target="reports" aria-label="Reports" title="Reports"><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></button>
+    <button data-view="settings" data-tab-target="admin" aria-label="Settings" title="Settings"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 00.3 1.8l.1.1a2 2 0 11-2.8 2.8l-.1-.1a1.7 1.7 0 00-1.8-.3 1.7 1.7 0 00-1 1.5V21a2 2 0 11-4 0v-.1a1.7 1.7 0 00-1.1-1.5 1.7 1.7 0 00-1.8.3l-.1.1a2 2 0 11-2.8-2.8l.1-.1a1.7 1.7 0 00.3-1.8 1.7 1.7 0 00-1.5-1H3a2 2 0 110-4h.1a1.7 1.7 0 001.5-1.1 1.7 1.7 0 00-.3-1.8l-.1-.1a2 2 0 112.8-2.8l.1.1a1.7 1.7 0 001.8.3H9a1.7 1.7 0 001-1.5V3a2 2 0 114 0v.1a1.7 1.7 0 001 1.5 1.7 1.7 0 001.8-.3l.1-.1a2 2 0 112.8 2.8l-.1.1a1.7 1.7 0 00-.3 1.8V9a1.7 1.7 0 001.5 1H21a2 2 0 110 4h-.1a1.7 1.7 0 00-1.5 1z"/></svg></button>
+    <div class="spacer"></div>
+    <div class="avatar" title="Signed in as Maya (agent)">MR</div>
+  </nav>
+
+  <aside class="side" aria-label="Conversations">
+    <label class="small faint" for="view" style="display:block;margin:0 4px 6px">View</label>
+    <select id="view" class="view-select">
+      <option value="mine">My open conversations</option>
+      <option value="needs-human">Needs a human (AI handed off)</option>
+      <option value="sla">SLA at risk</option>
+      <option value="ai">Resolved by AI today</option>
+      <option value="whatsapp">Channel: WhatsApp</option>
+      <option value="all">All open</option>
+    </select>
+    <div class="row between" style="margin:12px 6px 4px"><span class="small muted"><span data-testid="view-count" id="view-count">0</span> conversations</span><span class="pill info">AI on</span></div>
+    <div id="convs" class="list"></div>
+  </aside>
+
+  <main class="main">
+    <div class="tabs" role="tablist" aria-label="Workspace">
+      <button class="toggle-side btn" aria-label="Show conversations" style="margin:6px 6px 6px 0">☰</button>
+      <button role="tab" data-tab="conversation" aria-selected="true">Conversation</button>
+      <button role="tab" data-tab="ai">AI agent</button>
+      <button role="tab" data-tab="migration">Migration</button>
+      <button role="tab" data-tab="reports">Reports</button>
+      <button role="tab" data-tab="billing">Billing</button>
+      <button role="tab" data-tab="admin">Admin</button>
+      <button class="toggle-right btn" aria-label="Show customer details" style="margin:6px 0 6px auto">Customer</button>
+    </div>
+    <div class="content">
+
+      <section class="panel" id="panel-conversation" aria-label="Conversation">
+        <div class="row between"><div><h1 id="thread-title">Select a conversation</h1><p class="sub" id="thread-sub"></p></div>
+          <div class="row"><button class="btn" data-testid="reassign" data-toast="Reassigned to Leo (lowest workload)">Reassign</button><button class="btn" data-toast="Marked resolved">Resolve</button></div></div>
+        <div class="thread" id="thread"></div>
+      </section>
+
+      <section class="panel" id="panel-ai" aria-label="AI agent" hidden>
+        <h1>AI agent</h1><p class="sub">Included in your flat plan. No per-resolution fees.</p>
+        <div class="grid g3">
+          <div class="card"><div class="kpi-label">Resolved by AI this month</div><div class="kpi">1,842</div><div class="delta good">61% of conversations</div></div>
+          <div class="card"><div class="kpi-label">Handed to a human</div><div class="kpi">1,177</div><div class="delta muted">with a draft ready</div></div>
+          <div class="card"><div class="kpi-label">AI resolution fees</div><div class="kpi">$0</div><div class="delta good">Zendesk rate: ~$1.50–2.00 each</div></div>
+        </div>
+        <div class="card" style="margin-top:12px" data-testid="gaps"><div class="row between"><h3>Questions the AI couldn't answer (last 7 days)</h3><span class="pill warn">5 gaps</span></div>
+          <table><thead><tr><th>Question customers ask</th><th class="num">Times</th><th></th></tr></thead><tbody>
+            <tr><td>Can I change my subscription grind after it ships?</td><td class="num">41</td><td><button class="btn" data-testid="draft-article" data-toast="Draft article created from 41 conversations">Draft article</button></td></tr>
+            <tr><td>Do you ship to Puerto Rico?</td><td class="num">23</td><td><button class="btn" data-toast="Draft article created from 23 conversations">Draft article</button></td></tr>
+            <tr><td>Is the decaf Swiss Water processed?</td><td class="num">17</td><td><button class="btn" data-toast="Draft article created from 17 conversations">Draft article</button></td></tr>
+            <tr><td>Wholesale pricing for cafés</td><td class="num">12</td><td><button class="btn" data-toast="Routed to the sales inbox">Route to sales</button></td></tr>
+            <tr><td>Refund to a gift card instead of a card</td><td class="num">9</td><td><button class="btn" data-toast="Draft article created from 9 conversations">Draft article</button></td></tr>
+          </tbody></table></div>
+        <div class="grid g2" style="margin-top:12px">
+          <div class="card"><h3>What the AI knows</h3><div class="list small">
+            <div class="row between"><span>Help centre (imported from Zendesk)</span><span class="pill good">212 articles</span></div>
+            <div class="row between"><span>Shopify orders and tracking</span><span class="pill good">Live</span></div>
+            <div class="row between"><span>Macros (imported)</span><span class="pill good">64</span></div>
+            <div class="row between"><span>Returns policy PDF</span><span class="pill good">Synced</span></div></div></div>
+          <div class="card"><h3>Guardrails</h3><div class="list small">
+            <div>✔ Hands off to a human on refunds over $100</div><div>✔ Never promises delivery dates the carrier hasn't</div>
+            <div>✔ Replies in the customer's language (EN/ES/FR)</div><div>✔ Every AI reply is logged and can be reviewed</div></div></div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-migration" aria-label="Migration" hidden>
+        <h1>Migration from Zendesk</h1><p class="sub">Done for you. Your Zendesk account stays live until you say go.</p>
+        <div class="card" data-testid="migration-progress"><div class="row between"><h3>Overall progress</h3><strong>86%</strong></div>
+          <div class="bar-track" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" aria-label="Migration progress"><div class="bar-fill" style="width:86%"></div></div>
+          <div style="margin-top:10px">
+            <div class="step"><span class="check done">✓</span><span>Tickets and history</span><span class="meta faint" style="margin-left:auto">48,210 of 48,210</span></div>
+            <div class="step"><span class="check done">✓</span><span>Customers and organisations</span><span class="meta faint" style="margin-left:auto">19,884</span></div>
+            <div class="step"><span class="check done">✓</span><span>Macros and tags</span><span class="meta faint" style="margin-left:auto">64 macros · 118 tags</span></div>
+            <div class="step"><span class="check done">✓</span><span>Help centre articles (URLs redirected)</span><span class="meta faint" style="margin-left:auto">212</span></div>
+            <div class="step"><span class="check now">●</span><span>Email forwarding and DNS (needs your IT: 10 minutes)</span><span class="meta" style="margin-left:auto"><button class="btn" data-toast="Instructions sent to your IT contact">Send to IT</button></span></div>
+            <div class="step"><span class="check todo">○</span><span>WhatsApp number switch-over</span><span class="meta faint" style="margin-left:auto">Scheduled Thu</span></div>
+          </div></div>
+        <div class="grid g2" style="margin-top:12px">
+          <div class="card" data-testid="go-live"><div class="kpi-label">Go-live date</div><div class="kpi">Fri, Nov 20</div><div class="delta muted">Day 6 of 7 · off-peak, 6am ET</div></div>
+          <div class="card" data-testid="guarantee"><h3>7-day guarantee</h3><p class="small muted" style="margin:0">If you're not live in 7 days, your first month is free. Nothing is deleted from Zendesk until you confirm.</p></div>
+        </div>
+      </section>
+
+      <section class="panel" id="panel-reports" aria-label="Reports" hidden>
+        <h1>Reports</h1><p class="sub">Last 30 days · all channels</p>
+        <div class="grid g4">
+          <div class="card" data-testid="kpi-ai-rate"><div class="kpi-label">AI resolution rate</div><div class="kpi">61%</div><div class="delta good">▲ 9 pts vs last month</div></div>
+          <div class="card" data-testid="kpi-cost-ticket"><div class="kpi-label">Cost per ticket</div><div class="kpi">$0.20</div><div class="delta good">was ~$1.18 on Zendesk</div></div>
+          <div class="card" data-testid="kpi-csat"><div class="kpi-label">CSAT</div><div class="kpi">94%</div><div class="delta good">▲ 2 pts</div></div>
+          <div class="card"><div class="kpi-label">First response (median)</div><div class="kpi">2m 40s</div><div class="delta good">SLA 1h</div></div>
+        </div>
+        <div class="card" style="margin-top:12px" data-testid="workload"><h3>Workload by agent (open now)</h3>
+          <table><thead><tr><th>Agent</th><th class="num">Open</th><th class="num">At SLA risk</th><th class="num">CSAT</th></tr></thead><tbody>
+            <tr><td>Maya R.</td><td class="num">14</td><td class="num warn">2</td><td class="num">96%</td></tr>
+            <tr><td>Leo S.</td><td class="num">6</td><td class="num">0</td><td class="num">93%</td></tr>
+            <tr><td>Priya K.</td><td class="num">11</td><td class="num warn">1</td><td class="num">95%</td></tr>
+            <tr><td>Sam T.</td><td class="num">9</td><td class="num">0</td><td class="num">91%</td></tr>
+          </tbody></table></div>
+      </section>
+
+      <section class="panel" id="panel-billing" aria-label="Billing" hidden>
+        <h1>Billing</h1><p class="sub">One flat price. AI included. Month to month.</p>
+        <div class="grid g3">
+          <div class="card" data-testid="bill-total"><div class="kpi-label">This month's bill</div><div class="kpi">$599</div><div class="delta muted">Flat · up to 10 agents</div></div>
+          <div class="card" data-testid="zendesk-equivalent"><div class="kpi-label">Same month on your old Zendesk plan (estimate)</div><div class="kpi">$3,568</div><div class="delta muted">7 seats × $115 + 1,842 AI resolutions × ~$1.50</div></div>
+          <div class="card" data-testid="no-overage"><div class="kpi-label">Overage this month</div><div class="kpi good">$0</div><div class="delta muted">1,842 of 3,000 AI resolutions (fair use)</div></div>
+        </div>
+        <div class="card" style="margin-top:12px"><h3>How the comparison is calculated</h3>
+          <table class="compare"><tbody>
+            <tr><td>Zendesk Suite Professional, 7 agents (list price, not your contract)</td><td class="num">$805</td></tr>
+            <tr><td>AI agent resolutions, 1,842 × ~$1.50 (third-party estimate; Zendesk doesn't publish the rate)</td><td class="num">$2,763</td></tr>
+            <tr><td>Estimated Zendesk total</td><td class="num">$3,568</td></tr>
+            <tr><td>FlatDesk</td><td class="num good">$599</td></tr></tbody></table>
+          <p class="small faint" style="margin:8px 0 0">Your real Zendesk invoice may differ; upload one to replace the estimate.</p></div>
+      </section>
+
+      <section class="panel" id="panel-admin" aria-label="Admin" hidden>
+        <h1>Admin</h1><p class="sub">Security, access and your data.</p>
+        <div class="grid g2">
+          <div class="card" data-testid="sso"><h3>Single sign-on</h3><div class="row between"><span>Google Workspace SAML</span><span class="pill good">On</span></div><p class="small muted">2FA enforced for 7 of 7 agents.</p></div>
+          <div class="card" data-testid="region"><h3>Where your data lives</h3><div class="row between"><span>Dedicated instance · AWS us-east-1</span><span class="pill info">US</span></div><p class="small muted">Not shared with other customers. Encrypted at rest.</p></div>
+          <div class="card" data-testid="export"><h3>Export everything</h3><p class="small muted">Full export of conversations, contacts and articles (JSON + CSV), any time.</p><button class="btn" data-toast="Export started; you'll get an email link">Start export</button></div>
+          <div class="card"><h3>No lock-in</h3><p class="small muted" style="margin:0">Built on Chatwoot, open source (MIT core). You can self-host the same software if you ever leave.</p></div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <aside class="right" aria-label="Customer details" id="right"></aside>
+
+  <footer class="bottombar">
+    <span><span class="status-dot"></span>All channels connected</span>
+    <span>Flat plan · <strong>7/10</strong> agents</span>
+    <span>AI resolutions <strong>1,842</strong> / 3,000 fair use</span>
+    <span class="sep"></span>
+    <span>Saved vs Zendesk this month: <strong class="good">~$2,969</strong></span>
+  </footer>
+</div>
+<script>/*SHELL_JS*/</script>
+<script>
+const C = [
+ {id:'c1', name:'Ana Lopez', av:'AL', subj:'Where is my order?', ch:'Email', views:['mine','ai','all'], sla:null, lang:'en', state:'Resolved by AI',
+  msgs:[['them','Hi, I ordered 3 days ago and haven\'t got tracking yet.'],['ai','AI replied: Your order #4019 shipped yesterday with UPS. Tracking: 1Z84A… expected Friday. (Resolved, customer said thanks.)']],
+  order:{no:'#4019', items:'Colombia Huila 1kg', status:'Shipped · UPS', total:'$38.00'}},
+ {id:'c2', name:'Daniel Kim', av:'DK', subj:'Wrong grind size', ch:'Email', views:['mine','needs-human','all'], sla:'due in 38m', lang:'en', state:'Needs a human',
+  msgs:[['them','I ordered whole bean but got espresso grind. Can you fix this? It\'s a gift.'],['sys','AI handed off: replacement over $100 policy check needed.']],
+  draft:'Hi Daniel, sorry about that! I\'ve set up a free replacement of whole-bean Ethiopia Guji (order #4021) shipping today with 2-day delivery, and you can keep the espresso grind. You\'ll get tracking within the hour.',
+  order:{no:'#4021', items:'Ethiopia Guji 2 × 1kg (gift)', status:'Delivered · Nov 9', total:'$112.00'}},
+ {id:'c3', name:'Grace Park', av:'GP', subj:'Cancel subscription', ch:'Chat', views:['mine','all'], sla:null, lang:'en', state:'Open',
+  msgs:[['them','How do I pause instead of cancel?']], draft:'Hi Grace, you can pause for up to 3 months from your account page, or I can pause it for you now. Want me to pause until February?',
+  order:{no:'Subscription', items:'Monthly · 2 bags', status:'Active', total:'$29/mo'}},
+ {id:'c4', name:'Lucía Fernández', av:'LF', subj:'¿Dónde está mi pedido?', ch:'WhatsApp', views:['whatsapp','needs-human','all'], sla:'due in 52m', lang:'es', state:'Needs a human',
+  msgs:[['them','Hola, mi pedido dice entregado pero no lo tengo.']],
+  draft:'Hola Lucía, siento mucho la molestia. El transportista marca el pedido #4017 como entregado el 9 de noviembre. Ya abrí una reclamación con UPS y, si no aparece en 48 horas, te enviamos uno nuevo sin costo.',
+  order:{no:'#4017', items:'Guatemala Antigua 1kg', status:'Delivered (disputed)', total:'$36.00'}},
+ {id:'c5', name:'Omar Haddad', av:'OH', subj:'Damaged bag', ch:'Instagram', views:['sla','all'], sla:'due in 12m', lang:'en', state:'Open',
+  msgs:[['them','Bag arrived ripped, beans everywhere 😩']], draft:'So sorry, Omar! A replacement is on its way today, no need to send anything back.',
+  order:{no:'#4012', items:'House blend 1kg', status:'Delivered', total:'$31.00'}},
+ {id:'c6', name:'Ruth Adeyemi', av:'RA', subj:'Invoice for my company', ch:'Email', views:['sla','all'], sla:'due in 21m', lang:'en', state:'Open',
+  msgs:[['them','Can you send a VAT invoice for order #4003?']], draft:'Hi Ruth, attached is the invoice for #4003 with your company details.',
+  order:{no:'#4003', items:'Office pack 5kg', status:'Delivered', total:'$165.00'}},
+ {id:'c7', name:'Ben Carter', av:'BC', subj:'Wholesale for my café', ch:'Email', views:['sla','all'], sla:'due in 44m', lang:'en', state:'Open',
+  msgs:[['them','Do you do wholesale pricing?']], draft:'Hi Ben, yes! I\'ve passed this to our wholesale team; they\'ll email a price list today.',
+  order:{no:'—', items:'No orders yet', status:'Prospect', total:'—'}}
+];
+const { $, $$ } = UI;
+function renderList(view){
+  const list = C.filter(c => c.views.includes(view));
+  $('#view-count').textContent = list.length;
+  $('#convs').innerHTML = list.map(c => `<button class="item" data-select="${c.id}"><span class="dot">${c.av}</span><span style="min-width:0"><strong>${c.name}</strong><small>${c.subj} · ${c.ch}</small>${c.sla ? `<small class="warn">SLA ${c.sla}</small>` : ''}</span><span class="meta">${c.state === 'Resolved by AI' ? 'AI' : ''}</span></button>`).join('') || '<p class="empty-note">Nothing here. Nice.</p>';
+}
+function esc(s){return s.replace(/[&<>]/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));}
+window.onSelect = id => {
+  const c = C.find(x => x.id === id); UI.selectTab('conversation');
+  $('#thread-title').textContent = c.subj;
+  $('#thread-sub').innerHTML = `${c.name} · <span data-testid="channel">${c.ch}</span> · ${c.state}${c.sla ? ` · <span class="warn">SLA ${c.sla}</span>` : ''}`;
+  $('#thread').innerHTML = c.msgs.map(([who, t]) => `<div class="msg ${who === 'ai' ? 'ai' : ''}">${who === 'sys' ? '<span class="pill warn">Handoff</span> ' : ''}${esc(t)}</div>`).join('') +
+    (c.draft ? `<div class="composer"><div class="ai-label">✦ AI draft · uses order ${c.order.no}${c.lang === 'es' ? ' · Spanish' : ''}</div><textarea aria-label="Reply" data-testid="ai-draft">${esc(c.draft)}</textarea>
+     <div class="row between"><span class="small faint">Edit anything before sending. Macros: /replace, /refund, /pause</span><button class="btn primary" data-testid="send-draft" data-toast="Sent to ${c.name}">Send</button></div></div>` : '');
+  $('#right').innerHTML = `<h2>Customer</h2><div class="row"><span class="avatar">${c.av}</span><div><strong>${c.name}</strong><div class="small faint">Customer since 2024 · 6 orders · $214 lifetime</div></div></div>
+    <h2>Latest order</h2><div class="card" data-testid="order-card"><div class="row between"><strong>${c.order.no}</strong><span class="pill">${c.order.status}</span></div><div class="small muted">${c.order.items}</div><div class="small">${c.order.total}</div>
+    <div class="row" style="margin-top:8px"><button class="btn" data-toast="Replacement order created">Send replacement</button><button class="btn" data-toast="Refund issued in Shopify">Refund</button></div></div>
+    <h2>Suggested macros</h2><div>${['Replacement shipped','Pause subscription','Carrier claim opened'].map(m => `<span class="chip">${m}</span>`).join('')}</div>
+    <h2>Previous conversations</h2><div class="list small"><div>Oct 2 · Changed address · resolved by AI</div><div>Aug 14 · Discount code · resolved</div></div>`;
+};
+$('#view').addEventListener('change', e => renderList(e.target.value));
+renderList('mine'); window.onSelect('c2'); $$('.side .item')[1]?.setAttribute('aria-current','true');
+</script>
+</body>
+</html>

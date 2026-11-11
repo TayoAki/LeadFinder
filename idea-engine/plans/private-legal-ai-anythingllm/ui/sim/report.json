@@ -1,0 +1,159 @@
+{
+ "app": "Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)",
+ "score": 10,
+ "personas": {
+  "partner": {
+   "department": "Firm leadership",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "associate": {
+   "department": "Litigation",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "paralegal": {
+   "department": "Litigation support",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "intake": {
+   "department": "Front office",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "billing": {
+   "department": "Billing / finance",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "it_ops": {
+   "department": "IT / legal operations",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "solo_immigration": {
+   "department": "Solo practice (immigration)",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "in_house": {
+   "department": "In-house legal",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  }
+ },
+ "failures": [],
+ "global": [
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .side",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .right",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every tab (8) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every tab (8) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+ "app": "FlatDesk: Zendesk alternative with AI included at a flat price (built on Chatwoot)",
+ "personas": [
+  {"id": "agent", "department": "Support (frontline)", "role": "Tier-1 support agent at a 7-agent Shopify brand",
+   "cares_about": "Closing tickets fast with good CSAT so the queue never runs away; hitting first-response SLA.",
+   "time_spent": "Most of the day in the inbox: reading tickets, looking up orders in Shopify, typing the same 'where is my order' answers.",
+   "struggles": "Switching between the helpdesk and Shopify admin for every order question; repetitive answers; AI drafts that don't know the order.",
+   "how_helps": "AI-drafted reply already filled with the live order and tracking, customer context in the right bar, one-click send.",
+   "tasks": [
+     {"name": "Open a ticket that needs a human", "steps": [{"select": "#view", "value": "needs-human"}, {"click": "[data-select='c2']"}],
+      "expect": ["#thread-title:has-text('Wrong grind size')", "[data-testid='ai-draft']", "[data-testid='order-card']:has-text('#4021')"]},
+     {"name": "Send the AI draft", "steps": [{"click": "[data-testid='send-draft']"}], "expect": [".toast.show:has-text('Sent')"]}]},
+  {"id": "lead", "department": "Support (management)", "role": "Support team lead",
+   "cares_about": "SLA compliance, balanced workload, coaching agents.",
+   "time_spent": "Watching the queue, reassigning tickets, chasing breaches, weekly 1:1s.",
+   "struggles": "No single view of tickets about to breach; finds out after the fact.",
+   "how_helps": "An 'SLA at risk' view with timers and one-click reassignment; workload by agent in Reports.",
+   "tasks": [
+     {"name": "See tickets about to breach SLA", "steps": [{"select": "#view", "value": "sla"}],
+      "expect": ["[data-testid='view-count']:has-text('3')", ".side .item:has-text('due in')"]},
+     {"name": "Reassign one", "steps": [{"click": "[data-select='c5']"}, {"click": "[data-testid='reassign']"}], "expect": [".toast.show:has-text('Reassigned')"]},
+     {"name": "Check workload by agent", "steps": [{"click": "[data-tab='reports']"}], "expect": ["[data-testid='workload']:has-text('Maya')"]}]},
+  {"id": "head_cx", "department": "Customer Experience (leadership)", "role": "Head of CX",
+   "cares_about": "CSAT, cost per ticket, headcount plan, what share the AI resolves.",
+   "time_spent": "Reports, vendor reviews, planning peak season staffing.",
+   "struggles": "Zendesk AI billed per resolution makes cost unpredictable; can't show the board savings.",
+   "how_helps": "Reports show AI resolution rate, cost per ticket and CSAT on one screen, plus the savings vs the old Zendesk bill.",
+   "tasks": [
+     {"name": "Read AI resolution rate, cost per ticket and CSAT", "steps": [{"click": "[data-tab='reports']"}],
+      "expect": ["[data-testid='kpi-ai-rate']", "[data-testid='kpi-cost-ticket']", "[data-testid='kpi-csat']"]}]},
+  {"id": "finance", "department": "Finance", "role": "Controller",
+   "cares_about": "Predictable software spend; no surprise invoices; renewal terms.",
+   "time_spent": "Month-end close, approving vendor bills, budget vs actual.",
+   "struggles": "Per-resolution AI fees and seat hikes make the helpdesk bill swing month to month.",
+   "how_helps": "Flat bill visible at all times, with a side-by-side of what the Zendesk plan would have cost this month.",
+   "tasks": [
+     {"name": "See this month's bill and the comparison", "steps": [{"click": "[data-tab='billing']"}],
+      "expect": ["[data-testid='bill-total']:has-text('$599')", "[data-testid='zendesk-equivalent']", "[data-testid='no-overage']"]}]},
+  {"id": "founder", "department": "Executive", "role": "Founder of a DTC brand",
+   "cares_about": "Revenue, repeat purchases, not losing sales to slow replies, and not wasting a week on a migration.",
+   "time_spent": "Everywhere; checks support when something breaks.",
+   "struggles": "Fear that switching helpdesks will lose ticket history and break things in peak season.",
+   "how_helps": "Migration tab shows exactly what has moved, what's left and the go-live date, with the 7-day guarantee.",
+   "tasks": [
+     {"name": "Check migration progress and go-live date", "steps": [{"click": "[data-tab='migration']"}],
+      "expect": ["[data-testid='migration-progress']", "[data-testid='go-live']", "[data-testid='guarantee']"]}]},
+  {"id": "it_admin", "department": "IT / Security", "role": "IT administrator",
+   "cares_about": "SSO, access control, data ownership, being able to leave.",
+   "time_spent": "User provisioning, security reviews, vendor questionnaires.",
+   "struggles": "Lock-in and unclear data location; exporting data from Zendesk is painful.",
+   "how_helps": "Admin shows SSO status, data region, full export and that the software is open source (MIT core).",
+   "tasks": [
+     {"name": "Find SSO, data region and export", "steps": [{"click": ".rail [data-view='settings']"}],
+      "expect": ["[data-testid='sso']", "[data-testid='region']", "[data-testid='export']"]}]},
+  {"id": "ops_whatsapp", "department": "Operations", "role": "Ops manager serving Spanish-speaking customers on WhatsApp",
+   "cares_about": "Answering customers in their channel and language; fewer missed messages.",
+   "time_spent": "Juggling a separate WhatsApp phone and the helpdesk.",
+   "struggles": "WhatsApp lives outside the helpdesk; translations are manual.",
+   "how_helps": "WhatsApp is a channel in the same inbox and the AI drafts in the customer's language.",
+   "tasks": [
+     {"name": "Open the WhatsApp channel and a Spanish conversation", "steps": [{"select": "#view", "value": "whatsapp"}, {"click": "[data-select='c4']"}],
+      "expect": ["[data-testid='channel']:has-text('WhatsApp')", "[data-testid='ai-draft']:has-text('Hola')"]}]},
+  {"id": "knowledge", "department": "Support (knowledge)", "role": "Help-centre / knowledge manager",
+   "cares_about": "Deflection: more questions answered by the AI and articles.",
+   "time_spent": "Writing and updating articles; reviewing what customers ask.",
+   "struggles": "Doesn't know which questions the AI fails on.",
+   "how_helps": "AI agent tab lists the questions the AI handed to humans, with a one-click 'draft article'.",
+   "tasks": [
+     {"name": "See AI knowledge gaps and draft an article", "steps": [{"click": "[data-tab='ai']"}, {"click": "[data-testid='draft-article']"}],
+      "expect": ["[data-testid='gaps']", ".toast.show:has-text('Draft article')"]}]}
+ ]
+}

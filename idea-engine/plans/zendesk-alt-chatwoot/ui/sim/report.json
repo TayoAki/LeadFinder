@@ -1,0 +1,159 @@
+{
+ "app": "FlatDesk: Zendesk alternative with AI included at a flat price (built on Chatwoot)",
+ "score": 10,
+ "personas": {
+  "agent": {
+   "department": "Support (frontline)",
+   "pass": 4,
+   "total": 4,
+   "score": 10
+  },
+  "lead": {
+   "department": "Support (management)",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "head_cx": {
+   "department": "Customer Experience (leadership)",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "finance": {
+   "department": "Finance",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "founder": {
+   "department": "Executive",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "it_admin": {
+   "department": "IT / Security",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "ops_whatsapp": {
+   "department": "Operations",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "knowledge": {
+   "department": "Support (knowledge)",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  }
+ },
+ "failures": [],
+ "global": [
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .side",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .right",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every tab (6) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .rail",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .tabs",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .content",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "wireframe region visible: .bottombar",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no horizontal page scroll",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every tab (6) opens a filled panel",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "every visible button has a label",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "no JavaScript errors",
+   "ok": true,
+   "why": ""
+  }
+ ]
+}
