@@ -5,7 +5,7 @@
 <title>Watchpost mockup</title>
 <style>/* Shared app shell: left rail | sidebar | (tabs + main) | right sidebar, bottom bar across. */
 :root{
-  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#8a919c;
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#6b7280;
   --accent:#2f5bea; --accent-weak:#e8eefe; --good:#13795b; --good-weak:#e3f5ee; --warn:#a15c00; --warn-weak:#fff3df;
   --bad:#c0282d; --bad-weak:#fde8e8; --focus:#2f5bea; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
   --radius:10px; --rail:64px; --side:264px; --right:312px; --bar:36px;
@@ -13,11 +13,11 @@
   font-size:14px; line-height:1.45; color:var(--text);
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#7d8693;
+  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
   --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; } }
 :root[data-theme="dark"]{
-  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#7d8693;
+  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
   --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; }
 *{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--bg)}
@@ -41,7 +41,9 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stro
 .item .meta{margin-left:auto;font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
 .item small{display:block;color:var(--faint);font-size:12px}
 .main{grid-area:main;display:flex;flex-direction:column;min-width:0;overflow:hidden}
-.tabs{display:flex;border-bottom:1px solid var(--line);background:var(--panel);padding:0 12px;gap:2px;overflow-x:auto}
+.tabbar{display:flex;align-items:center;border-bottom:1px solid var(--line);background:var(--panel);padding:0 8px;gap:6px;min-width:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;min-width:0;flex:1;scrollbar-width:thin;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+@media (min-width:1181px){.tabs{-webkit-mask-image:none;mask-image:none}}
 .tabs button{padding:12px 14px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;font-weight:500}
 .tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--accent)}
 .content{flex:1;overflow:auto;padding:20px 22px}
@@ -68,7 +70,13 @@ th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;le
 .list{display:flex;flex-direction:column;gap:6px}
 .msg{padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel)} .msg.me{background:var(--accent-weak);border-color:transparent}
 .msg.ai{border-style:dashed;border-color:var(--accent)}
-.toggle-side,.toggle-right{display:none}
+.toggle-side,.toggle-right{display:none;flex:none}
+.drawer-close{display:none;margin-left:auto}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:19;opacity:0;pointer-events:none;transition:opacity .2s}
+body.drawer-open .backdrop{opacity:1;pointer-events:auto}
+.role-switch{font:inherit;font-size:12px;padding:3px 6px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--text)}
+.cite{min-width:24px;min-height:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .chip{display:inline-block;padding:2px 7px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line);font-size:12px;margin:2px 4px 2px 0}
 .empty-note{color:var(--faint);font-size:12px}
 .toast{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:9px 14px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -76,231 +84,1022 @@ th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;le
 /* Tablet: right bar becomes a drawer */
 @media (max-width:1180px){ .app{grid-template-columns:var(--rail) var(--side) minmax(0,1fr);grid-template-areas:"rail side main" "bar bar bar"}
   .right{position:fixed;right:0;top:0;bottom:var(--bar);width:min(340px,92vw);transform:translateX(100%);transition:transform .2s;z-index:20;box-shadow:-8px 0 24px rgba(0,0,0,.12)}
-  .right.open{transform:none} .toggle-right{display:inline-flex} .g4{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .right.open{transform:none} .toggle-right{display:inline-flex} .right .drawer-close{display:inline-flex} .g4{grid-template-columns:repeat(2,minmax(0,1fr))} }
 /* Phone: sidebar becomes a drawer, rail moves to the bottom */
 @media (max-width:760px){ :root{--bar:auto}
   .app{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto 56px;grid-template-areas:"main" "bar" "rail";height:100dvh}
   .rail{flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 8px}
   .rail .logo,.rail .spacer{display:none}
   .side{position:fixed;left:0;top:0;bottom:0;width:min(300px,88vw);transform:translateX(-105%);transition:transform .2s;z-index:21;box-shadow:8px 0 24px rgba(0,0,0,.12)}
-  .side.open{transform:none} .right{bottom:0}
+  .side.open{transform:none} .right{bottom:0} .side .drawer-close{display:inline-flex}
   .toggle-side{display:inline-flex}
   .content{padding:14px 16px} .g3,.g2,.g4{grid-template-columns:minmax(0,1fr)}
-  .bottombar{padding:6px 16px;flex-wrap:wrap;gap:6px 14px;white-space:normal} .bottombar .sep{display:none}
+  .bottombar{padding:6px 16px;gap:12px;overflow-x:auto} .bottombar .sep,.bottombar .hide-sm{display:none}
   table{font-size:13px} .hide-sm{display:none} }
 
-:root{--accent:#0f766e;--accent-weak:#e0f2ef;--focus:#0f766e}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#4fd1c0;--accent-weak:#12302d}}
-.hero{display:flex;gap:16px;align-items:center;padding:18px;border-radius:12px;background:var(--good-weak);border:1px solid transparent}
-.hero .big{font-size:22px;font-weight:700;color:var(--good)} .hero.attn{background:var(--warn-weak)} .hero.attn .big{color:var(--warn)}
-.shield{width:44px;height:44px;border-radius:12px;background:var(--panel);display:grid;place-items:center;font-size:22px}
-.sev{width:10px;height:10px;border-radius:50%;display:inline-block} .sev.high{background:var(--bad)} .sev.med{background:var(--warn)} .sev.low{background:var(--faint)}
-.incident{width:100%;text-align:left;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--panel)} .incident:hover{background:var(--panel-2)}
-.box{border-radius:10px;padding:12px;margin-top:10px} .box.did{background:var(--good-weak)} .box.do{background:var(--warn-weak)}
-.box h4{margin:0 0 6px;font-size:13px}
-.ctrl{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+:root{--accent:#0f766e;--accent-weak:#e0f2ef;--focus:#0f766e;--faint:#5d6470}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#4fd1c0;--accent-weak:#12302d;--focus:#4fd1c0;--faint:#a7afbb}}
+:root[data-theme="dark"]{--accent:#4fd1c0;--accent-weak:#12302d;--focus:#4fd1c0;--faint:#a7afbb}
+.btn{min-height:32px} .btn.sm{padding:4px 9px;font-size:12px;min-height:28px} .btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn.primary{color:#fff} @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0f1115}}
+.toast{z-index:60}
+.viewas{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);margin:0 0 10px;padding:8px;border:1px dashed var(--line);border-radius:9px}
+.viewas select{min-height:30px;font-size:13px}
+.side-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.side input[type=search],.pop input[type=search],.field input,.field select,.content select{font:inherit;font-size:13px;padding:6px 9px;border-radius:8px;border:1px solid var(--line);background:var(--panel);color:var(--text);min-height:32px;max-width:100%}
+.side input[type=search]{width:100%;margin:8px 0 2px}
+.item{min-height:40px}
+.item .dot.ok{background:var(--good-weak);color:var(--good)} .item .dot.attn{background:var(--warn-weak);color:var(--warn)}
+.ctx{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:0 0 12px}
+.ctx strong{color:var(--text);font-size:13px}
+.brand-chip{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:var(--text)}
+.brand-chip i{width:18px;height:18px;border-radius:5px;display:inline-grid;place-items:center;color:#fff;font-style:normal;font-size:11px}
+.hero{display:flex;gap:16px;align-items:center;padding:16px 18px;border-radius:12px;background:var(--good-weak)}
+.hero .big{font-size:20px;font-weight:700;color:var(--good)} .hero.attn{background:var(--warn-weak)} .hero.attn .big{color:var(--warn)}
+.hero .ico{width:44px;height:44px;border-radius:12px;background:var(--panel);display:grid;place-items:center;flex:none;color:var(--good)} .hero.attn .ico{color:var(--warn)}
+.hero .ico svg{width:26px;height:26px}
+.hero p{margin:2px 0 0;color:var(--text)}
+.outcome{display:flex;flex-direction:column;gap:6px;text-align:left;width:100%;height:100%}
+.outcome .ico{width:36px;height:36px;border-radius:9px;background:var(--accent-weak);color:var(--accent);display:grid;place-items:center}
+a.link,button.link{color:var(--accent);text-decoration:underline;font-weight:600;padding:2px 0;min-height:24px;display:inline-flex;align-items:center}
+.sev{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:700;padding:1px 7px;border-radius:6px;border:1px solid currentColor;white-space:nowrap}
+.sev.high{color:var(--bad)} .sev.medium{color:var(--warn)} .sev.low{color:var(--muted)} .sev.info{color:var(--accent)}
+.inc{border:1px solid var(--line);border-radius:10px;background:var(--panel);overflow:hidden}
+.inc-head{width:100%;text-align:left;padding:12px;display:flex;flex-direction:column;gap:4px;min-height:44px}
+.inc-head:hover{background:var(--panel-2)} .inc-head[aria-expanded="true"]{background:var(--panel-2)}
+.inc-head .t{display:flex;gap:8px;align-items:flex-start;justify-content:space-between;flex-wrap:wrap}
+.inc-detail{padding:4px 12px 12px;border-top:1px solid var(--line)}
+.box{border-radius:10px;padding:12px;margin-top:10px} .box.did{background:var(--good-weak)} .box.do{background:var(--warn-weak)} .box.legal{background:var(--panel-2)}
+.box h4{margin:0 0 6px;font-size:13px} .box ul{margin:0;padding-left:18px} .box li{margin:2px 0}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)} .tl li{padding:2px 0 6px 10px;font-size:12px} .tl b{font-variant-numeric:tabular-nums}
+.ctrl{border-bottom:1px solid var(--line)}
+.ctrl-head{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 2px;text-align:left;min-height:40px}
+.ctrl-head:hover{background:var(--panel-2)}
+.ctrl-head .c{font-size:12px;color:var(--muted);display:block;font-variant-numeric:tabular-nums}
+.ctrl-detail{padding:4px 2px 12px;font-size:12px}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12px} .kv dt{color:var(--muted)} .kv dd{margin:0}
+.tw{overflow-x:auto;max-width:100%}
+.q{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:flex-start}
+.q .ev{font-size:12px;color:var(--muted)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden} .seg button{padding:5px 10px;font-size:12px;min-height:30px;font-weight:600;color:var(--muted)}
+.seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--accent)}
+.risk{font-weight:700;white-space:nowrap} .risk.high{color:var(--bad)} .risk.medium{color:var(--warn)} .risk.low{color:var(--good)}
+.mini{display:flex;flex-direction:column;gap:8px}
+.mini .row{gap:8px}
+.chart svg{width:100%;height:auto;display:block}
+.legend{display:flex;gap:12px;font-size:12px;color:var(--muted);flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:4px;vertical-align:-1px}
+.pop{position:fixed;left:calc(var(--rail) + 8px);top:8px;bottom:calc(var(--bar) + 8px);width:min(420px,calc(100vw - var(--rail) - 16px));background:var(--panel);border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,.18);z-index:30;display:flex;flex-direction:column}
+.pop[hidden]{display:none}
+.pop-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--line)} .pop-head h2{margin:0;font-size:15px}
+.pop-body{padding:12px 14px;overflow:auto;flex:1}
+.res{padding:8px 0;border-bottom:1px solid var(--line);font-size:13px} .res .k{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:700}
+mark{background:var(--warn-weak);color:var(--text);border-radius:3px}
+.spark{width:70px;height:20px;vertical-align:middle}
+.wl{border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.wl-top{display:flex;align-items:center;gap:8px;padding:8px 12px;color:#fff;font-weight:700}
+.wl-body{padding:12px}
+.price-tiers td.cur{font-weight:700}
+.tag{font-size:11px;font-weight:700;color:var(--bad);border:1px solid currentColor;border-radius:5px;padding:0 5px;white-space:nowrap}
+.field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.cta{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap}
+@media (max-width:760px){
+  h1{font-size:17px} .sub{margin-bottom:10px;font-size:13px} .hero{padding:12px} .hero .big{font-size:17px}
+  .ctx{margin-bottom:8px} .kpi{font-size:22px}
+  .pop{left:0;right:0;top:0;bottom:56px;width:100vw;border-radius:0}
+  .tabbar{padding:0 6px;gap:4px} .tabs button{padding:11px 10px}
+  .toggle-side,.toggle-right{padding:6px 10px}
+}
 </style>
 </head>
 <body>
 <div class="app">
-  <nav class="rail" aria-label="Main">
-    <div class="logo" aria-hidden="true">W</div>
-    <button data-view="home" data-tab-target="overview" aria-current="page" aria-label="Overview" title="Overview"><svg class="i" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
-    <button data-view="search" aria-label="Search logs" title="Search logs" data-toast="Search 30 days of logs (mock)"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
-    <button data-view="alerts" data-tab-target="incidents" aria-label="Incidents, 2 open" title="Incidents"><svg class="i" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21h4"/></svg><span class="badge">2</span></button>
-    <button data-view="reports" data-tab-target="compliance" aria-label="Compliance reports" title="Compliance"><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></button>
-    <button data-view="settings" data-tab-target="partner" aria-label="Settings" title="Settings"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></button>
-    <div class="spacer"></div><div class="avatar" title="Signed in as Jordan (MSP)">JM</div>
-  </nav>
+  <nav class="rail" aria-label="Main" id="rail"></nav>
 
-  <aside class="side" aria-label="Organizations">
-    <div class="top"><span>Clients · 25</span><span class="pill good">22 OK</span></div>
-    <h2>Needs attention</h2>
-    <div class="list" id="orgs-attn"></div>
-    <h2>All clients</h2>
-    <div class="list" id="orgs"></div>
+  <aside class="side" aria-label="Sidebar" id="side">
+    <div class="side-head"><button class="drawer-close btn" aria-label="Close">✕</button></div>
+    <label class="viewas">Mockup only · View as
+      <select id="role" class="role-switch" aria-label="View as (mockup role)">
+        <optgroup label="Business (one company)">
+          <option value="owner">Business owner (BrightSmile)</option>
+          <option value="office">Office manager (BrightSmile)</option>
+          <option value="it">IT manager (BrightSmile)</option>
+          <option value="staff">Employee (BrightSmile)</option>
+        </optgroup>
+        <optgroup label="MSP partner console (Northwind IT)">
+          <option value="msp_tech">MSP technician</option>
+          <option value="msp_am">MSP account manager</option>
+          <option value="msp_owner">MSP owner</option>
+        </optgroup>
+        <optgroup label="Shared read-only links">
+          <option value="auditor">Auditor (read-only, Ridgeline)</option>
+          <option value="broker">Insurance broker (BrightSmile pack)</option>
+          <option value="counsel">Privacy counsel (BrightSmile)</option>
+        </optgroup>
+      </select>
+    </label>
+    <div id="side-body"></div>
   </aside>
 
   <main class="main">
-    <div class="tabs" role="tablist" aria-label="Workspace">
-      <button class="toggle-side btn" aria-label="Show clients" style="margin:6px 6px 6px 0">☰</button>
-      <button role="tab" data-tab="overview" aria-selected="true">Overview</button>
-      <button role="tab" data-tab="incidents">Incidents</button>
-      <button role="tab" data-tab="devices">Devices</button>
-      <button role="tab" data-tab="compliance">Compliance</button>
-      <button role="tab" data-tab="insurance">Insurance</button>
-      <button role="tab" data-tab="partner">Partner</button>
-      <button class="toggle-right btn" aria-label="Show SOC contact" style="margin:6px 0 6px auto">SOC</button>
+    <div class="tabbar">
+      <button class="toggle-side btn" aria-label="Open sidebar">☰</button>
+      <div class="tabs" role="tablist" aria-label="Workspace" id="tabs"></div>
+      <button class="toggle-right btn" aria-label="Open context panel"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.5"/></svg></button>
     </div>
-    <div class="content">
-      <section class="panel" id="panel-overview" aria-label="Overview">
-        <p class="small faint" style="margin:0 0 4px">Organization</p><h1 data-testid="org-name" id="org-name">BrightSmile Dental Group</h1><p class="sub" id="org-sub">3 offices · 64 endpoints · HIPAA</p>
-        <div class="hero" id="hero" data-testid="status"><div class="shield">🛡️</div><div><div class="big" id="hero-big">Protected</div><div class="muted" id="hero-text">Analysts are watching 24/7. Nothing needs your attention today.</div></div></div>
-        <div class="grid g4" style="margin-top:12px">
-          <div class="card"><div class="kpi-label">Threats stopped (30 days)</div><div class="kpi" id="k1">3</div><div class="delta muted">all contained in &lt; 15 min</div></div>
-          <div class="card"><div class="kpi-label">Devices protected</div><div class="kpi" id="k2">60/64</div><div class="delta warn">4 not reporting</div></div>
-          <div class="card"><div class="kpi-label">Critical patches missing</div><div class="kpi" id="k3">2</div><div class="delta muted">fix list in Devices</div></div>
-          <div class="card"><div class="kpi-label">Median time to contain</div><div class="kpi">11 min</div><div class="delta good">SLA 30 min</div></div>
-        </div>
-        <div class="card" style="margin-top:12px" data-testid="summary"><h3>This month in plain English</h3>
-          <ul class="small" style="margin:0;padding-left:18px;line-height:1.7" id="summary">
-            <li>Someone tried to log in to the front-desk email from Nigeria 214 times. We blocked it and forced a password reset.</li>
-            <li>A staff laptop opened a fake invoice that tried to run a program. We isolated the laptop in 4 minutes; nothing spread.</li>
-            <li>Two servers are missing a Windows security update. Your IT contact has the steps.</li>
-          </ul><div class="row" style="margin-top:10px"><button class="btn" data-toast="Monthly report PDF downloaded">Download monthly report (PDF)</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-incidents" aria-label="Incidents" hidden>
-        <h1>Incidents</h1><p class="sub">Every incident says what we did and what you need to do.</p>
-        <div class="list">
-          <button class="incident" data-testid="incident-1" data-inc="1"><div class="row between"><strong><span class="sev high"></span> Malicious attachment ran on FRONTDESK-02</strong><span class="pill good">Contained</span></div><div class="small muted">Today 9:42 · Office 1 · 4 min to contain</div></button>
-          <button class="incident" data-inc="2"><div class="row between"><strong><span class="sev med"></span> 214 failed logins to reception@ (Microsoft 365)</strong><span class="pill warn">Action needed</span></div><div class="small muted">Yesterday 22:10 · blocked at sign-in</div></button>
-          <button class="incident" data-inc="3"><div class="row between"><strong><span class="sev low"></span> New admin account created on DC-01</strong><span class="pill">Confirmed OK by IT</span></div><div class="small muted">Nov 3</div></button>
-        </div>
-        <div class="card" id="inc-detail" style="margin-top:12px" hidden></div>
-      </section>
-
-      <section class="panel" id="panel-devices" aria-label="Devices" hidden>
-        <h1>Devices</h1><p class="sub">Coverage and what to fix first.</p>
-        <div class="grid g2">
-          <div class="card" data-testid="not-reporting"><div class="row between"><h3>Not reporting</h3><span class="pill warn">4 devices</span></div>
-            <table><tbody><tr><td>XRAY-PC-3</td><td class="muted">Office 2</td><td class="num muted">6 days</td></tr><tr><td>LAPTOP-DRKIM</td><td class="muted">Remote</td><td class="num muted">3 days</td></tr>
-            <tr><td>FRONTDESK-05</td><td class="muted">Office 3</td><td class="num muted">2 days</td></tr><tr><td>NAS-BACKUP</td><td class="muted">Office 1</td><td class="num muted">1 day</td></tr></tbody></table>
-            <button class="btn" data-toast="Reinstall link sent to IT contact">Send reinstall link to IT</button></div>
-          <div class="card" data-testid="top-vuln"><div class="row between"><h3>Fix first</h3><span class="pill bad">Critical</span></div>
-            <p class="small" style="margin:0 0 6px"><strong>Windows Server update KB5044284</strong> missing on DC-01 and FILE-01. Actively exploited.</p>
-            <p class="small muted" style="margin:0 0 8px">Why first: both servers hold patient records; exploit is public.</p>
-            <button class="btn primary" data-toast="Patch scheduled for tonight 1:00 am">Schedule patch tonight</button></div>
-        </div>
-        <div class="card" style="margin-top:12px"><h3>All devices (64)</h3><table><thead><tr><th>Device</th><th class="hide-sm">Office</th><th>Status</th><th class="num">Risk</th></tr></thead><tbody>
-          <tr><td>DC-01</td><td class="hide-sm">Office 1</td><td><span class="pill warn">Patch missing</span></td><td class="num">High</td></tr>
-          <tr><td>FRONTDESK-02</td><td class="hide-sm">Office 1</td><td><span class="pill good">Cleaned</span></td><td class="num">Low</td></tr>
-          <tr><td>LAPTOP-HYGIENE-1</td><td class="hide-sm">Office 2</td><td><span class="pill good">Protected</span></td><td class="num">Low</td></tr></tbody></table></div>
-      </section>
-
-      <section class="panel" id="panel-compliance" aria-label="Compliance" hidden>
-        <div class="row between"><div><h1>Compliance</h1><p class="sub">Controls mapped to live evidence.</p></div>
-          <label class="small">Framework <select id="fw" aria-label="Framework" class="btn"><option>HIPAA Security Rule</option><option>FTC Safeguards Rule</option><option>CMMC Level 1</option><option>PCI DSS</option></select></label></div>
-        <div class="card" data-testid="framework"><div class="row between"><h3 id="fw-name">HIPAA Security Rule</h3><strong id="fw-score">18 of 20 controls met</strong></div>
-          <div class="bar-track"><div class="bar-fill" id="fw-bar" style="width:90%"></div></div>
-          <div style="margin-top:8px">
-            <div class="ctrl"><span>Audit controls (§164.312(b)): logs kept 1 year</span><span class="pill good">Met</span></div>
-            <div class="ctrl"><span>Malware protection (§164.308(a)(5))</span><span class="pill good">Met</span></div>
-            <div class="ctrl"><span>Security incident procedures (§164.308(a)(6))</span><span class="pill good">Met</span></div>
-            <div class="ctrl"><span>Patch management (risk management)</span><span class="pill warn">2 servers behind</span></div>
-            <div class="ctrl"><span>Workforce training records</span><span class="pill warn">Upload needed</span></div></div>
-          <div class="row" style="margin-top:10px"><button class="btn primary" data-testid="export-evidence" data-toast="Evidence pack exported (ZIP, 46 files)">Export evidence for auditor</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-insurance" aria-label="Insurance" hidden>
-        <h1>Cyber insurance</h1><p class="sub">Your renewal questionnaire, answered from live data.</p>
-        <div class="grid g2">
-          <div class="card" data-testid="renewal"><div class="kpi-label">Renewal date</div><div class="kpi">Jan 15</div><div class="delta muted">Carrier: your current insurer · 65 days</div></div>
-          <div class="card"><div class="kpi-label">Questionnaire readiness</div><div class="kpi">9 of 10</div><div class="delta warn">1 answer needs a document</div></div>
-        </div>
-        <div class="card" style="margin-top:12px" data-testid="questionnaire"><h3>Common insurer questions</h3>
-          <div class="ctrl"><span>MFA on email and remote access?</span><span class="pill good">Yes · 62/64 users</span></div>
-          <div class="ctrl"><span>EDR on all endpoints?</span><span class="pill good">Yes · 24/7 monitored</span></div>
-          <div class="ctrl"><span>Offline / immutable backups?</span><span class="pill good">Yes · tested Nov 1</span></div>
-          <div class="ctrl"><span>Security awareness training?</span><span class="pill warn">Upload certificate</span></div>
-          <div class="row" style="margin-top:10px"><button class="btn primary" data-testid="download-pack" data-toast="Insurance evidence pack downloaded">Download evidence pack for broker</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-partner" aria-label="Partner" hidden>
-        <h1>Partner</h1><p class="sub">For MSPs reselling Watchpost under their own brand.</p>
-        <div class="grid g3">
-          <div class="card"><div class="kpi-label">Wholesale cost (25 clients)</div><div class="kpi">$9,750</div><div class="delta muted">$6/endpoint · 1,625 endpoints</div></div>
-          <div class="card"><div class="kpi-label">You bill clients</div><div class="kpi">$19,500</div><div class="delta muted">suggested $12/endpoint</div></div>
-          <div class="card" data-testid="margin"><div class="kpi-label">Your margin</div><div class="kpi good">50%</div><div class="delta muted">$9,750 / month</div></div>
-        </div>
-        <div class="card" style="margin-top:12px" data-testid="white-label"><div class="row between"><h3>White-label</h3><span class="pill good">On</span></div><p class="small muted" style="margin:0">Clients see your logo and your domain (security.yourmsp.com). Month to month, no minimum.</p></div>
-      </section>
+    <div class="content" id="content">
+      <div class="ctx" id="ctx" data-testid="ctx"></div>
+      <section class="panel" id="panel-queue" role="tabpanel" aria-labelledby="tab-queue" hidden></section>
+      <section class="panel" id="panel-overview" role="tabpanel" aria-labelledby="tab-overview" hidden></section>
+      <section class="panel" id="panel-incidents" role="tabpanel" aria-labelledby="tab-incidents" hidden></section>
+      <section class="panel" id="panel-devices" role="tabpanel" aria-labelledby="tab-devices" hidden></section>
+      <section class="panel" id="panel-accounts" role="tabpanel" aria-labelledby="tab-accounts" hidden></section>
+      <section class="panel" id="panel-compliance" role="tabpanel" aria-labelledby="tab-compliance" hidden></section>
+      <section class="panel" id="panel-insurance" role="tabpanel" aria-labelledby="tab-insurance" hidden></section>
+      <section class="panel" id="panel-billing" role="tabpanel" aria-labelledby="tab-billing" hidden></section>
+      <section class="panel" id="panel-partner" role="tabpanel" aria-labelledby="tab-partner" hidden></section>
+      <section class="panel" id="panel-report" role="tabpanel" aria-labelledby="tab-report" hidden></section>
     </div>
   </main>
 
-  <aside class="right" aria-label="Security operations">
-    <h2>Analyst on duty</h2>
-    <div class="row"><span class="avatar">RK</span><div><strong>Rosa K.</strong><div class="small faint">Senior analyst · until 18:00 ET</div></div></div>
-    <div class="row" style="margin-top:8px"><button class="btn primary" data-toast="Calling the SOC hotline (mock)">Call the SOC</button><button class="btn" data-toast="Chat opened (mock)">Chat</button></div>
-    <h2>Your next actions</h2>
-    <div class="list small"><div>1. Schedule the server patch (5 min)</div><div>2. Reset reception@ password (done by us, confirm)</div><div>3. Upload training certificates</div></div>
-    <h2>Response promise</h2>
-    <div class="small muted">Human analyst reviews every high alert within 15 minutes, 24/7. Isolation of an infected device is automatic.</div>
-    <h2>Monthly report</h2><button class="btn" data-toast="Report downloaded">October report (PDF)</button>
+  <aside class="right" aria-label="Context for this tab" id="right">
+    <div class="side-head"><button class="drawer-close btn" aria-label="Close">✕</button></div>
+    <div id="right-body"></div>
   </aside>
 
-  <footer class="bottombar">
-    <span><span class="status-dot"></span>Monitoring live · last event 12s ago</span>
-    <span id="bb-dev">60/64 endpoints reporting</span>
-    <span>SOC: analyst on duty</span>
-    <span class="sep"></span>
-    <span>Plan: flat $999/mo up to 100 endpoints</span>
-  </footer>
+  <footer class="bottombar" id="bb"></footer>
 </div>
-<script>// Shared behaviour: tabs, sidebar selection, drawers, toasts, rail views. No backend.
+<div class="pop" id="pop" role="dialog" aria-labelledby="pop-title" hidden>
+  <div class="pop-head"><h2 id="pop-title">Panel</h2><button class="btn sm" id="pop-close" aria-label="Close panel">✕</button></div>
+  <div class="pop-body" id="pop-body"></div>
+</div>
+<div class="sr" aria-live="polite" id="live"></div>
+<script>// Shared behaviour for the three mockups. No backend.
+// Hooks an app can define: window.onTab(id), window.onSelect(id), window.onRail(view), window.onRole(role), window.onReady().
 (function(){
   const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
   window.UI = { $, $$ };
+  let lastFocus = null;
   function selectTab(id){
-    $$('.tabs [role="tab"]').forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
-    $$('.panel').forEach(p => p.hidden = p.id !== 'panel-' + id);
+    const panel = $('#panel-' + id); if (!panel) return;
+    $$('.tabs [role="tab"]').forEach(t => { const on = t.dataset.tab === id; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+    $$('.panel').forEach(p => p.hidden = p !== panel);
+    // keep the rail in sync: highlight the rail button that targets this tab, if any
+    const railBtn = $$('.rail button[data-tab-target]').find(b => b.dataset.tabTarget.split(' ').includes(id));
+    $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current'));
+    if (railBtn) railBtn.setAttribute('aria-current', 'page');
+    document.body.dataset.tab = id;
+    if (window.onTab) window.onTab(id);
     try { localStorage.setItem(document.title + ':tab', id); } catch(e) {}
   }
-  window.UI.selectTab = selectTab;
+  function openDrawer(which){
+    const el = $(which === 'side' ? '.side' : '.right'); if (!el) return;
+    lastFocus = document.activeElement; el.classList.add('open'); document.body.classList.add('drawer-open');
+    const close = el.querySelector('.drawer-close') || el.querySelector('button,select,a,[tabindex]'); close && close.focus();
+  }
+  function closeDrawers(){
+    $$('.side.open,.right.open').forEach(e => e.classList.remove('open')); document.body.classList.remove('drawer-open');
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus(); lastFocus = null;
+  }
+  window.UI.selectTab = selectTab; window.UI.closeDrawers = closeDrawers; window.UI.openDrawer = openDrawer;
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab]'); if (t) { selectTab(t.dataset.tab); }
-    const goto = e.target.closest('[data-goto]'); if (goto) { selectTab(goto.dataset.goto); }
+    const t = e.target.closest('[data-tab]'); if (t) selectTab(t.dataset.tab);
+    const goto = e.target.closest('[data-goto]'); if (goto) selectTab(goto.dataset.goto);
     const it = e.target.closest('.side .item[data-select]');
     if (it) { $$('.side .item[data-select]').forEach(x => x.removeAttribute('aria-current')); it.setAttribute('aria-current', 'true');
-      if (window.onSelect) window.onSelect(it.dataset.select); $('.side').classList.remove('open'); }
+      if (window.onSelect) window.onSelect(it.dataset.select); if (window.matchMedia('(max-width:760px)').matches) closeDrawers(); }
     const r = e.target.closest('.rail button[data-view]');
-    if (r) { $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current')); r.setAttribute('aria-current', 'page');
-      if (r.dataset.tabTarget) selectTab(r.dataset.tabTarget); if (window.onRail) window.onRail(r.dataset.view); }
-    if (e.target.closest('.toggle-side')) $('.side').classList.toggle('open');
-    if (e.target.closest('.toggle-right')) $('.right').classList.toggle('open');
+    if (r) { if (r.dataset.tabTarget) selectTab(r.dataset.tabTarget.split(' ')[0]);
+      $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current')); r.setAttribute('aria-current', 'page');
+      if (window.onRail) window.onRail(r.dataset.view); }
+    if (e.target.closest('.toggle-side')) { $('.side').classList.contains('open') ? closeDrawers() : openDrawer('side'); }
+    if (e.target.closest('.toggle-right')) { $('.right').classList.contains('open') ? closeDrawers() : openDrawer('right'); }
+    if (e.target.closest('.drawer-close') || e.target.closest('.backdrop')) closeDrawers();
     const a = e.target.closest('[data-toast]'); if (a) toast(a.dataset.toast);
   });
   document.addEventListener('keydown', e => {
-    const tab = e.target.closest('.tabs [role="tab"]'); if (!tab) return;
-    const tabs = $$('.tabs [role="tab"]'), i = tabs.indexOf(tab);
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); selectTab(n.dataset.tab); }
-    if (e.key === 'Escape') { $('.side').classList.remove('open'); $('.right').classList.remove('open'); }
+    if (e.key === 'Escape') { closeDrawers(); return; }
+    const tab = e.target.closest && e.target.closest('.tabs [role="tab"]'); if (!tab) return;
+    const tabs = $$('.tabs [role="tab"]').filter(t => !t.hidden), i = tabs.indexOf(tab);
+    let n = null;
+    if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+    if (e.key === 'ArrowLeft') n = tabs[(i + tabs.length - 1) % tabs.length];
+    if (e.key === 'Home') n = tabs[0]; if (e.key === 'End') n = tabs[tabs.length - 1];
+    if (n) { e.preventDefault(); n.focus(); selectTab(n.dataset.tab); }
   });
-  function toast(msg){ let t = $('.toast'); if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role','status'); document.body.appendChild(t); }
-    t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2200); }
+  document.addEventListener('change', e => { if (e.target.id === 'role' && window.onRole) { document.body.dataset.role = e.target.value; window.onRole(e.target.value); } });
+  function toast(msg){ let t = $('.toast'); if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role','status'); t.setAttribute('aria-live','polite'); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600); }
   window.UI.toast = toast;
   window.addEventListener('DOMContentLoaded', () => {
-    let start = $('.tabs [role="tab"]')?.dataset.tab;
+    if (!$('.backdrop')) { const b = document.createElement('div'); b.className = 'backdrop'; b.setAttribute('aria-hidden', 'true'); document.body.appendChild(b); }
+    const role = $('#role'); if (role) document.body.dataset.role = role.value;
+    if (window.onReady) window.onReady();
+    let start = $('.tabs [role="tab"]:not([hidden])')?.dataset.tab;
     const h = location.hash.replace('#', ''); if (h && $('#panel-' + h)) start = h;
     if (start) selectTab(start);
   });
 })();
 </script>
 <script>
+(function(){
 const { $, $$ } = UI;
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const money = n => '$' + Math.round(n).toLocaleString('en-US');
+const slug = s => String(s).replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '');
+const TODAY = new Date('2026-11-11T14:20:00');
+const daysUntil = iso => Math.round((new Date(iso + 'T00:00:00') - new Date('2026-11-11T00:00:00')) / 864e5);
+const fmtDate = iso => new Date(iso + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+/* ---------------- Pricing (one source of truth) ---------------- */
+const DIRECT_TIERS = [
+  { name: 'Starter', cap: 25, price: 349 }, { name: 'Small office', cap: 50, price: 599 },
+  { name: 'Practice', cap: 100, price: 999 }, { name: 'Multi-site', cap: 200, price: 1799 }];
+const OVER_CAP_PER_DEVICE = 8; // above 200 devices: Multi-site price + $8 per extra device
+const WHOLESALE_PER_DEVICE = 6; // MSP partner cost
+function directPlan(devices){
+  const t = DIRECT_TIERS.find(t => devices <= t.cap);
+  if (t) return { name: t.name, cap: t.cap, price: t.price, note: `flat up to ${t.cap} devices` };
+  const top = DIRECT_TIERS[DIRECT_TIERS.length - 1], extra = devices - top.cap;
+  return { name: 'Multi-site + extra', cap: null, price: top.price + extra * OVER_CAP_PER_DEVICE, note: `${money(top.price)} for ${top.cap} + ${extra} extra × $${OVER_CAP_PER_DEVICE}` };
+}
+function resale(devices, rate){ const direct = directPlan(devices).price, asked = rate * devices; return { price: Math.min(asked, direct), capped: asked > direct, direct }; }
+
+/* ---------------- SOC shifts ---------------- */
+const SHIFTS = [
+  { who: 'Priya N.', init: 'PN', from: '02:00', to: '10:00', desk: 'Overnight desk' },
+  { who: 'Rosa K.', init: 'RK', from: '10:00', to: '18:00', desk: 'Day desk' },
+  { who: 'Sam T.', init: 'ST', from: '18:00', to: '02:00', desk: 'Evening desk' }];
+const ON = SHIFTS[1], NEXT = SHIFTS[2], AFTER = SHIFTS[0];
+const HOTLINE = '+1 (888) 555-0142';
+const MSP = { name: 'Northwind IT', brand: 'Northwind Secure', domain: 'security.northwind-it.com', sender: 'alerts@northwind-it.com', psa: 'ConnectWise PSA', rmm: 'NinjaOne RMM' };
+
+/* ---------------- ONE mock-data object, keyed by client ---------------- */
 const ORGS = {
-  brightsmile:{name:'BrightSmile Dental Group', sub:'3 offices · 64 endpoints · HIPAA', ok:true, k:['3','60/64','2'], st:'Protected', txt:'Analysts are watching 24/7. Nothing needs your attention today.'},
-  harbor:{name:'Harbor Auto Group', sub:'2 dealerships · 88 endpoints · FTC Safeguards', ok:false, k:['1','85/88','5'], st:'Action needed', txt:'One account needs a password reset. Everything else is protected.'},
-  kline:{name:'Kline & Ortiz CPAs', sub:'1 office · 22 endpoints · FTC Safeguards', ok:true, k:['0','22/22','0'], st:'Protected', txt:'Quiet month. Nothing needs your attention.'},
-  ridge:{name:'Ridgeline Machining', sub:'1 plant · 41 endpoints · CMMC L1', ok:true, k:['2','41/41','1'], st:'Protected', txt:'Analysts are watching 24/7.'},
-  sunrise:{name:'Sunrise Credit Union', sub:'4 branches · 120 endpoints · NCUA', ok:false, k:['4','117/120','3'], st:'Action needed', txt:'3 branch PCs missed updates. Steps are in Devices.'}
+ brightsmile: { name: 'BrightSmile Dental Group', short: 'BrightSmile', channel: 'direct', industry: 'Dental practice', dataLabel: 'Patient data', frameworks: ['hipaa'], users: 41,
+  domain: 'brightsmiledental.com', alertsReviewed: 1240, trainingUploaded: false, archive6y: false, backupTested: '2026-11-01', irPlan: '2026-06-12', riskAssessed: '2026-03-02', dmarc: true, remoteMfa: true,
+  attest: {}, baa: { status: 'signed', date: '2026-03-02' }, audit: { last: '2026-03-02', next: '2027-03-01', kind: 'HIPAA risk assessment', auditor: 'Dana Whitfield, CHPS', firm: 'Northgate Compliance Partners', email: 'dana@northgate-compliance.example' },
+  contacts: [{ who: 'Tina Nguyen (office manager)', how: 'SMS + email, immediately' }, { who: 'Dr. Alan Kim (owner)', how: 'Phone call if no reply in 15 min' }, { who: 'Marco Diaz (IT manager)', how: 'Email + ticket' }],
+  insurance: { carrier: 'Beacon Specialty Insurance', policy: 'BSC-CY-204417', limit: '$1,000,000', premium: 6840, renewal: '2027-01-15', broker: 'Lena Ortiz', brokerFirm: 'Harborview Risk Advisors', brokerEmail: 'lena@harborview-risk.example' },
+  sites: [{ n: 'Office 1 (Main St)', ep: 28 }, { n: 'Office 2 (Elm Ave)', ep: 20 }, { n: 'Office 3 (Lakeview)', ep: 12 }, { n: 'Remote', ep: 4 }],
+  devices: [
+   { n: 'NAS-BACKUP', site: 'Office 1 (Main St)', type: 'Backup storage', offline: 1, reason: 'Agent stopped after a firmware update', last: 'svc-backup · 10.1.0.20', impact: 95, tag: 'Backup server: ransomware risk' },
+   { n: 'FRONTDESK-05', site: 'Office 3 (Lakeview)', type: 'Windows PC', offline: 2, reason: 'Agent uninstalled by a local admin', last: 'm.reyes · 10.3.0.45', impact: 80 },
+   { n: 'LAPTOP-DRKIM', site: 'Remote', type: 'Windows laptop', offline: 3, reason: 'Off network; last seen on a home connection', last: 'a.kim · 73.21.x.x', impact: 60 },
+   { n: 'XRAY-PC-3', site: 'Office 2 (Elm Ave)', type: 'Imaging PC', offline: 6, reason: 'Powered off (imaging room closed)', last: 'xray · 10.2.0.31', impact: 40 },
+   { n: 'DC-01', site: 'Office 1 (Main St)', type: 'Windows Server 2022', risk: 'high', status: 'Update missing' },
+   { n: 'FILE-01', site: 'Office 1 (Main St)', type: 'Windows Server 2022', risk: 'high', status: 'Update missing' },
+   { n: 'FRONTDESK-02', site: 'Office 1 (Main St)', type: 'Windows PC', risk: 'low', status: 'Cleaned after incident' },
+   { n: 'HYGIENE-LT-1', site: 'Office 2 (Elm Ave)', type: 'Windows laptop', risk: 'low', status: 'Protected' },
+   { n: 'CHAIR-PC-7', site: 'Office 3 (Lakeview)', type: 'Windows PC', risk: 'low', status: 'Protected' }],
+  vulns: [{ name: 'Windows Server 2022 cumulative security update (KB50xxxxx placeholder)', hosts: ['DC-01', 'FILE-01'], exploited: true, ageDays: 9, why: 'Both servers hold patient records and the flaw is being exploited in the wild.' }],
+  accounts: [
+   { id: 'reception', n: 'reception@', role: 'Front desk (shared)', last: 0, mfa: true },
+   { id: 'billing', n: 'billing@', role: 'Billing mailbox (shared)', last: 1, mfa: false },
+   { id: 't-nguyen', n: 't.nguyen@', role: 'Office manager', last: 0, mfa: true, admin: true },
+   { id: 'j-alvarez', n: 'j.alvarez@', role: 'Hygienist (left Sep 30)', last: 42, mfa: true },
+   { id: 'm-reyes', n: 'm.reyes@', role: 'Dental assistant', last: 35, mfa: false },
+   { id: 'svc-backup', n: 'svc-backup', role: 'Service account (backups)', last: 0, mfa: null, admin: true, service: true },
+   { id: 'it-admin', n: 'it-admin@', role: 'IT admin', last: 2, mfa: true, admin: true }],
+  incidents: [
+   { id: 'bs1', sev: 'medium', status: 'action', threat: true, containMin: 21, when: 'Yesterday 22:10', site: 'Microsoft 365', psa: '#48213',
+     title: '214 blocked sign-in attempts on reception@brightsmiledental.com',
+     plain: 'Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.',
+     did: ['Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.', 'Reset the reception@brightsmiledental.com password at 22:31 as a precaution and signed out every session.'],
+     do: ['Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault.'],
+     data: 'No. No sign-in succeeded, so the mailbox was not opened.', clock: 'Not started. There was no access to protected health information, so HIPAA breach notification (60 days) does not apply.',
+     tl: [['22:10', '1st blocked attempt'], ['22:24', 'Analyst Sam T. reviewed; 214 attempts, all blocked'], ['22:31', 'Password reset, sessions revoked'], ['22:35', 'SMS sent to office manager']] },
+   { id: 'bs2', sev: 'high', status: 'contained', threat: true, containMin: 4, when: 'Nov 4, 9:42', site: 'Office 1 (Main St)', psa: '#48177', tip: true,
+     title: 'Malicious invoice attachment ran on FRONTDESK-02',
+     plain: 'A front-desk PC opened a fake invoice that tried to run a program. We cut the PC off the network in 4 minutes; nothing spread.',
+     did: ['Isolated FRONTDESK-02 from the network at 9:46 (4 minutes after the file ran).', 'Stopped the program, removed the file and checked all 64 devices for it (none found).', 'Blocked the sender domain for the whole company.'],
+     do: ['Nothing urgent. The PC is clean and back online.', 'Optional: share the 1-page phishing tip sheet with front-desk staff.'],
+     data: 'No. The program was stopped before it reached the practice-management system or shared drives.', clock: 'Not started. Forensic review found no access to protected health information.',
+     tl: [['9:42', 'Attachment opened, program started'], ['9:43', 'Watchpost alert (high)'], ['9:46', 'PC isolated by analyst Rosa K.'], ['10:20', 'Scan of all 64 devices: clean'], ['11:05', 'PC returned to service']] },
+   { id: 'bs3', sev: 'info', status: 'benign', threat: false, when: 'Nov 3, 16:05', site: 'Office 1 (Main St)', psa: '#48160',
+     title: 'New admin account "svc-backup" created on DC-01',
+     did: ['Flagged the new admin account and asked your IT manager to confirm.'], do: ['Nothing. Your IT manager confirmed it was the planned backup service account.'],
+     data: 'No.', clock: 'Not applicable (approved change).', tl: [['16:05', 'Account created'], ['16:07', 'Analyst asked IT to confirm'], ['16:40', 'IT confirmed: planned']] }],
+  logs: [['Nov 10 22:10', 'M365', 'reception@brightsmiledental.com', '102.89.4.17', 'Sign-in blocked (Conditional Access)'], ['Nov 10 22:31', 'M365', 'reception@brightsmiledental.com', '—', 'Password reset by Watchpost SOC'],
+   ['Nov 4 09:42', 'FRONTDESK-02', 't.lee', '10.1.0.52', 'invoice_8812.pdf.exe started'], ['Nov 4 09:46', 'FRONTDESK-02', 'SOC', '—', 'Host isolated'], ['Nov 9 23:58', 'NAS-BACKUP', 'svc-backup', '10.1.0.20', 'Agent stopped (firmware update)']] },
+
+ harbor: { name: 'Harbor Auto Group', short: 'Harbor Auto', channel: 'msp', industry: 'Car dealerships', dataLabel: 'Customer data', frameworks: ['ftc', 'pci'], users: 70,
+  domain: 'harborautogroup.com', alertsReviewed: 2310, trainingUploaded: true, archive6y: false, backupTested: '2026-10-20', irPlan: '2026-02-01', riskAssessed: '2026-05-10', dmarc: false, remoteMfa: true,
+  attest: { qi: true, encrypt: true, board: false, nsc: true }, baa: null, audit: { last: '2026-05-10', next: '2027-05-10', kind: 'FTC Safeguards risk assessment', auditor: 'Owen Price', firm: 'Keystone Assurance', email: 'owen@keystone-assure.example' },
+  contacts: [{ who: 'Greg Holt (GM)', how: 'Phone + SMS' }, { who: 'Northwind IT on-call', how: 'PSA ticket + phone' }],
+  insurance: { carrier: 'Atlas Mutual Cyber', policy: 'AMC-77120', limit: '$2,000,000', premium: 11200, renewal: '2027-03-01', broker: 'Sean Kelly', brokerFirm: 'Coastline Brokerage', brokerEmail: 'sean@coastline-brokerage.example' },
+  sites: [{ n: 'Harbor Ford', ep: 52 }, { n: 'Harbor Kia', ep: 36 }],
+  devices: [
+   { n: 'SALES-PC-11', site: 'Harbor Ford', type: 'Windows PC', offline: 4, reason: 'Agent service stopped', last: 'd.ruiz · 10.10.4.11', impact: 70 },
+   { n: 'FI-LAPTOP-2', site: 'Harbor Kia', type: 'Windows laptop', offline: 2, reason: 'Off network (finance manager travelling)', last: 'k.shaw · 98.4.x.x', impact: 75, tag: 'Holds credit applications' },
+   { n: 'SVC-KIOSK-1', site: 'Harbor Ford', type: 'Service kiosk', offline: 1, reason: 'Powered off overnight', last: 'kiosk · 10.10.8.3', impact: 30 },
+   { n: 'FW-FORD-01', site: 'Harbor Ford', type: 'Firewall / VPN', risk: 'high', status: 'Firmware update missing' },
+   { n: 'DMS-SRV-01', site: 'Harbor Ford', type: 'Dealer management server', risk: 'medium', status: 'Protected' },
+   { n: 'SALES-PC-02', site: 'Harbor Kia', type: 'Windows PC', risk: 'low', status: 'Protected' }],
+  vulns: [{ name: 'VPN appliance firmware: remote code execution (vendor advisory placeholder)', hosts: ['FW-FORD-01'], exploited: true, ageDays: 16, why: 'Internet-facing VPN; flaw is actively exploited against dealerships.' }],
+  accounts: [
+   { id: 'sales', n: 'sales@', role: 'Sales shared mailbox', last: 0, mfa: true },
+   { id: 'k-shaw', n: 'k.shaw@', role: 'Finance manager', last: 0, mfa: true },
+   { id: 'p-bauer', n: 'p.bauer@', role: 'Salesperson (left Oct 2)', last: 39, mfa: false },
+   { id: 'svc-dms', n: 'svc-dms', role: 'Service account (DMS)', last: 0, mfa: null, admin: true, service: true }],
+  incidents: [
+   { id: 'h1', sev: 'high', status: 'action', threat: true, containMin: 18, when: 'Today 08:12', site: 'Microsoft 365', psa: '#51022',
+     title: 'Mailbox rule forwarding sales@ email to an outside address',
+     plain: 'Someone added a rule that copied the sales@ mailbox to an outside Gmail address. We removed it and locked the account.',
+     did: ['Removed the forwarding rule and blocked the outside address.', 'Reset the sales@ password and revoked all sessions at 08:30.'],
+     do: ['Ask the sales manager whether any deposit or wire instructions were sent from sales@ since Nov 9 (5 minutes).'],
+     data: 'Under review: 14 forwarded emails contained customer names and phone numbers; no SSNs or credit applications found so far.', clock: 'Not started yet. FTC Safeguards notice (30 days) applies only if 500+ customers had unencrypted data taken. Decision due Nov 13.',
+     tl: [['Nov 9 19:02', 'Forwarding rule created'], ['Today 08:12', 'Watchpost alert (high)'], ['08:30', 'Rule removed, password reset'], ['08:41', 'PSA ticket #51022 opened for Northwind IT']] },
+   { id: 'h2', sev: 'medium', status: 'contained', threat: true, containMin: 2, when: 'Nov 6, 03:40', site: 'Harbor Ford', psa: '#50877',
+     title: 'Password-guessing attack on the dealer portal blocked',
+     plain: 'A bot tried thousands of passwords on the dealer web portal overnight. We blocked its addresses within 2 minutes.',
+     did: ['Blocked 3 attacking IP addresses at the firewall.'], do: ['Nothing. No account was taken over.'],
+     data: 'No.', clock: 'Not started (no access).', tl: [['03:38', 'Attack started'], ['03:40', 'IPs blocked']] }],
+  logs: [['Nov 9 19:02', 'M365', 'sales@harborautogroup.com', '41.58.x.x', 'Inbox rule created: forward to external'], ['Nov 11 08:30', 'M365', 'sales@harborautogroup.com', '—', 'Password reset by SOC']] },
+
+ kline: { name: 'Kline & Ortiz CPAs', short: 'Kline & Ortiz', channel: 'msp', industry: 'Accounting firm', dataLabel: 'Client tax data', frameworks: ['ftc'], users: 18,
+  domain: 'klineortiz.com', alertsReviewed: 410, trainingUploaded: true, archive6y: true, backupTested: '2026-10-28', irPlan: '2026-01-15', riskAssessed: '2026-01-15', dmarc: true, remoteMfa: true,
+  attest: { qi: true, encrypt: true, board: true }, baa: null, audit: { last: '2026-01-15', next: '2027-01-15', kind: 'FTC Safeguards review', auditor: 'Owen Price', firm: 'Keystone Assurance', email: 'owen@keystone-assure.example' },
+  contacts: [{ who: 'Ruth Kline (partner)', how: 'SMS + email' }],
+  insurance: { carrier: 'Atlas Mutual Cyber', policy: 'AMC-70833', limit: '$1,000,000', premium: 3900, renewal: '2027-04-30', broker: 'Sean Kelly', brokerFirm: 'Coastline Brokerage', brokerEmail: 'sean@coastline-brokerage.example' },
+  sites: [{ n: 'Main office', ep: 22 }],
+  devices: [{ n: 'TAX-SRV-01', site: 'Main office', type: 'Windows Server 2022', risk: 'low', status: 'Protected' }, { n: 'CPA-LT-04', site: 'Main office', type: 'Windows laptop', risk: 'low', status: 'Protected' }],
+  vulns: [], accounts: [{ id: 'r-kline', n: 'r.kline@', role: 'Partner', last: 0, mfa: true, admin: true }, { id: 'staff', n: 'staff@', role: 'Shared mailbox', last: 0, mfa: true }],
+  incidents: [], logs: [['Nov 11 09:01', 'TAX-SRV-01', 'r.kline', '10.0.0.5', 'Successful sign-in (MFA)']] },
+
+ ridgeline: { name: 'Ridgeline Machining', short: 'Ridgeline', channel: 'msp', industry: 'Defense subcontractor (machining)', dataLabel: 'Federal contract information', frameworks: ['cmmc'], users: 30,
+  domain: 'ridgelinemachining.com', alertsReviewed: 860, trainingUploaded: false, archive6y: false, backupTested: '2026-09-30', irPlan: '2026-04-02', riskAssessed: '2026-04-02', dmarc: true, remoteMfa: true,
+  attest: { roles: true, public: true, media: true, physical: true, dmz: false }, baa: null, audit: { last: '2026-04-02', next: '2026-12-08', kind: 'CMMC Level 1 self-assessment (SPRS)', auditor: 'Alex Moreno', firm: 'TriState C3PAO (assessor)', email: 'alex@tristate-c3pao.example' },
+  contacts: [{ who: 'Joe Ridge (owner)', how: 'Phone + SMS' }, { who: 'Northwind IT on-call', how: 'PSA ticket' }],
+  insurance: { carrier: 'Beacon Specialty Insurance', policy: 'BSC-CY-198004', limit: '$1,000,000', premium: 5200, renewal: '2027-02-10', broker: 'Lena Ortiz', brokerFirm: 'Harborview Risk Advisors', brokerEmail: 'lena@harborview-risk.example' },
+  sites: [{ n: 'Plant floor', ep: 29 }, { n: 'Front office', ep: 12 }],
+  devices: [{ n: 'CNC-PROG-2', site: 'Plant floor', type: 'CNC programming PC', risk: 'low', status: 'Cleaned after incident' }, { n: 'CAD-WS-01', site: 'Front office', type: 'CAD workstation', risk: 'low', status: 'Protected' }],
+  vulns: [], accounts: [{ id: 'j-ridge', n: 'j.ridge@', role: 'Owner', last: 0, mfa: true, admin: true }, { id: 'shop', n: 'shop-floor', role: 'Shared floor login', last: 0, mfa: false }],
+  incidents: [{ id: 'r1', sev: 'high', status: 'contained', threat: true, containMin: 6, when: 'Oct 29, 07:15', site: 'Plant floor', psa: '#49901',
+     title: 'USB stick spread a worm to CNC-PROG-2', plain: 'A USB stick plugged into a CNC programming PC carried a worm. We isolated the PC in 6 minutes.',
+     did: ['Isolated CNC-PROG-2 and removed the worm.', 'Blocked USB storage on plant-floor PCs (approved by owner).'], do: ['Nothing. PC is back in service.'],
+     data: 'No. No drawings or contract files were copied.', clock: 'Not started. DFARS 72-hour reporting applies to covered defense information only; none involved.',
+     tl: [['07:15', 'USB inserted'], ['07:16', 'Alert'], ['07:21', 'PC isolated'], ['09:00', 'Returned to service']] }],
+  logs: [['Oct 29 07:15', 'CNC-PROG-2', 'shop-floor', '10.5.0.22', 'USB mass storage mounted']] },
+
+ sunrise: { name: 'Sunrise Credit Union', short: 'Sunrise CU', channel: 'msp', industry: 'Credit union', dataLabel: 'Member data', frameworks: ['ncua', 'pci'], users: 95,
+  domain: 'sunrisecu.org', alertsReviewed: 3920, trainingUploaded: true, archive6y: true, backupTested: '2026-11-03', irPlan: '2026-03-20', riskAssessed: '2026-03-20', dmarc: true, remoteMfa: true,
+  attest: { nsc: true }, baa: null, audit: { last: '2026-06-14', next: '2027-06-14', kind: 'NCUA exam (IT)', auditor: 'NCUA examiner team', firm: 'NCUA Region', email: 'exam@ncua.example' },
+  contacts: [{ who: 'Maria Lopez (CIO)', how: 'Phone + SMS' }, { who: 'Northwind IT on-call', how: 'PSA ticket' }],
+  insurance: { carrier: 'Atlas Mutual Cyber', policy: 'AMC-61290', limit: '$3,000,000', premium: 18400, renewal: '2027-06-30', broker: 'Sean Kelly', brokerFirm: 'Coastline Brokerage', brokerEmail: 'sean@coastline-brokerage.example' },
+  sites: [{ n: 'Main branch', ep: 36 }, { n: 'Branch 2', ep: 28 }, { n: 'Branch 3', ep: 28 }, { n: 'Branch 4', ep: 28 }],
+  devices: [
+   { n: 'TELLER-B2-04', site: 'Branch 2', type: 'Teller PC', offline: 3, reason: 'Missed reboot after update; agent not started', last: 'teller4 · 10.20.2.14', impact: 70 },
+   { n: 'TELLER-B3-01', site: 'Branch 3', type: 'Teller PC', offline: 2, reason: 'Missed reboot after update; agent not started', last: 'teller1 · 10.20.3.11', impact: 70 },
+   { n: 'LOAN-LT-07', site: 'Main branch', type: 'Windows laptop', offline: 1, reason: 'Off network', last: 'b.ochoa · 66.1.x.x', impact: 55 },
+   { n: 'B4-PC-02', site: 'Branch 4', type: 'Windows PC', risk: 'high', status: 'Update missing' }],
+  vulns: [{ name: 'Windows 11 cumulative security update (KB50xxxxx placeholder)', hosts: ['B4-PC-02', 'B4-PC-05', 'B2-PC-09'], exploited: false, ageDays: 33, why: 'Branch PCs touch member accounts; update is 33 days old (PCI 6.3.3 wants critical fixes within a month).' }],
+  accounts: [{ id: 'b-ochoa', n: 'b.ochoa@', role: 'Loan officer', last: 0, mfa: true }, { id: 'm-lopez', n: 'm.lopez@', role: 'CIO', last: 0, mfa: true, admin: true }],
+  incidents: [{ id: 's1', sev: 'medium', status: 'action', threat: true, containMin: 9, when: 'Today 06:55', site: 'Microsoft 365', psa: '#51019',
+     title: 'Impossible-travel sign-in for loan officer b.ochoa@', plain: 'The loan officer signed in from Ohio and Romania 20 minutes apart. We blocked the Romanian session.',
+     did: ['Blocked the session from Romania and required a new MFA prompt.'], do: ['Confirm with Ben Ochoa that he did not approve an MFA prompt at 06:50 (2 minutes).'],
+     data: 'No. The blocked session never reached member records.', clock: 'Not started. NCUA 72-hour cyber-incident report is not triggered unless member data or operations were affected.',
+     tl: [['06:35', 'Sign-in from Ohio'], ['06:55', 'Sign-in from Romania'], ['07:04', 'Session blocked']] }],
+  logs: [['Nov 11 06:55', 'M365', 'b.ochoa@sunrisecu.org', '86.120.x.x', 'Sign-in (impossible travel)']] },
+
+ lakeside: { name: 'Lakeside Pediatrics', short: 'Lakeside Peds', channel: 'msp', industry: 'Pediatric clinic', dataLabel: 'Patient data', frameworks: ['hipaa'], users: 16,
+  domain: 'lakesidepeds.com', alertsReviewed: 290, trainingUploaded: true, archive6y: true, backupTested: '2026-10-15', irPlan: '2026-05-01', riskAssessed: '2026-05-01', dmarc: true, remoteMfa: true,
+  attest: {}, baa: { status: 'pending', date: null }, audit: { last: '2026-05-01', next: '2027-05-01', kind: 'HIPAA risk assessment', auditor: 'Dana Whitfield, CHPS', firm: 'Northgate Compliance Partners', email: 'dana@northgate-compliance.example' },
+  contacts: [{ who: 'Dr. Ines Park', how: 'SMS + email' }],
+  insurance: { carrier: 'Beacon Specialty Insurance', policy: 'BSC-CY-210551', limit: '$1,000,000', premium: 3100, renewal: '2027-08-01', broker: 'Lena Ortiz', brokerFirm: 'Harborview Risk Advisors', brokerEmail: 'lena@harborview-risk.example' },
+  sites: [{ n: 'Clinic', ep: 18 }], devices: [{ n: 'EXAM-PC-1', site: 'Clinic', type: 'Windows PC', risk: 'low', status: 'Protected' }],
+  vulns: [], accounts: [{ id: 'i-park', n: 'i.park@', role: 'Physician owner', last: 0, mfa: true, admin: true }], incidents: [], logs: [] },
+
+ vega: { name: 'Vega Logistics', short: 'Vega', channel: 'msp', industry: 'Defense logistics', dataLabel: 'Federal contract information', frameworks: ['cmmc'], users: 160,
+  domain: 'vegalogistics.com', alertsReviewed: 5100, trainingUploaded: true, archive6y: true, backupTested: '2026-10-30', irPlan: '2026-02-11', riskAssessed: '2026-02-11', dmarc: true, remoteMfa: true,
+  attest: { roles: true, public: true, media: true, physical: true, dmz: true }, baa: null, audit: { last: '2026-02-11', next: '2027-02-11', kind: 'CMMC Level 1 self-assessment', auditor: 'Alex Moreno', firm: 'TriState C3PAO (assessor)', email: 'alex@tristate-c3pao.example' },
+  contacts: [{ who: 'Kai Vega (COO)', how: 'Phone' }],
+  insurance: { carrier: 'Atlas Mutual Cyber', policy: 'AMC-58002', limit: '$5,000,000', premium: 24800, renewal: '2027-09-15', broker: 'Sean Kelly', brokerFirm: 'Coastline Brokerage', brokerEmail: 'sean@coastline-brokerage.example' },
+  sites: [{ n: 'Warehouse North', ep: 70 }, { n: 'Warehouse South', ep: 70 }, { n: 'HQ', ep: 70 }],
+  devices: [{ n: 'WMS-SRV-01', site: 'HQ', type: 'Linux server', risk: 'low', status: 'Protected' }],
+  vulns: [], accounts: [{ id: 'k-vega', n: 'k.vega@', role: 'COO', last: 0, mfa: true, admin: true }],
+  incidents: [{ id: 'v1', sev: 'medium', status: 'contained', threat: true, containMin: 3, when: 'Oct 22, 01:10', site: 'HQ', psa: '#49610',
+     title: 'Remote Desktop brute-force blocked on a jump host', plain: 'A bot tried to guess Remote Desktop passwords on a jump host. We blocked it in 3 minutes.',
+     did: ['Blocked the source IPs and closed public RDP.'], do: ['Nothing.'], data: 'No.', clock: 'Not started.', tl: [['01:07', 'Attack'], ['01:10', 'Blocked']] }],
+  logs: [] }
 };
-function item(id,o){return `<button class="item" data-select="${id}"><span class="dot" style="background:${o.ok?'var(--good-weak)':'var(--warn-weak)'};color:${o.ok?'var(--good)':'var(--warn)'}">${o.ok?'✓':'!'}</span><span><strong>${o.name}</strong><small>${o.sub.split(' · ').slice(0,2).join(' · ')}</small></span></button>`;}
-$('#orgs-attn').innerHTML = Object.entries(ORGS).filter(([,o])=>!o.ok).map(([i,o])=>item(i,o)).join('');
-$('#orgs').innerHTML = Object.entries(ORGS).filter(([,o])=>o.ok).map(([i,o])=>item(i,o)).join('') + '<p class="empty-note" style="margin:6px 8px">+ 20 more clients</p>';
-window.onSelect = id => { const o = ORGS[id]; UI.selectTab('overview');
-  $('#org-name').textContent = o.name; $('#org-sub').textContent = o.sub; $('#hero-big').textContent = o.st; $('#hero-text').textContent = o.txt;
-  $('#hero').classList.toggle('attn', !o.ok); [$('#k1').textContent,$('#k2').textContent,$('#k3').textContent] = o.k; $('#bb-dev').textContent = o.k[1] + ' endpoints reporting'; };
-$$('.side .item')[2]?.setAttribute('aria-current','true');
-const INC = {
- '1':{t:'Malicious attachment ran on FRONTDESK-02', did:['Isolated the laptop from the network at 9:46 (4 minutes after the file ran).','Killed the process and removed the file; scanned all 64 devices for the same file (none found).','Blocked the sender domain for the whole organization.'], do:['Nothing urgent. The laptop is back online.','Optional: remind front-desk staff not to open invoices from unknown senders (we included a 1-page tip sheet).']},
- '2':{t:'214 failed logins to reception@', did:['Blocked the sign-ins at Microsoft 365 and forced a password reset.'], do:['Confirm with the reception team that they have the new password (2 minutes).']},
- '3':{t:'New admin account created on DC-01', did:['Flagged and asked your IT contact to confirm.'], do:['Nothing. IT confirmed it was planned.']}};
-document.addEventListener('click', e => { const b = e.target.closest('[data-inc]'); if (!b) return; const i = INC[b.dataset.inc]; const d = $('#inc-detail'); d.hidden = false;
-  d.innerHTML = `<h3>${i.t}</h3><div class="box did" data-testid="we-did"><h4>What we already did</h4><ul class="small" style="margin:0;padding-left:18px">${i.did.map(x=>`<li>${x}</li>`).join('')}</ul></div>
-  <div class="box do" data-testid="you-do"><h4>What you need to do</h4><ul class="small" style="margin:0;padding-left:18px">${i.do.map(x=>`<li>${x}</li>`).join('')}</ul></div>`; d.scrollIntoView({block:'nearest'}); });
-$('#fw').addEventListener('change', e => { const m = {'HIPAA Security Rule':[18,20],'FTC Safeguards Rule':[8,9],'CMMC Level 1':[15,17],'PCI DSS':[9,12]}[e.target.value];
-  $('#fw-name').textContent = e.target.value; $('#fw-score').textContent = `${m[0]} of ${m[1]} controls met`; $('#fw-bar').style.width = Math.round(100*m[0]/m[1]) + '%'; });
+
+/* ---------------- Framework catalog (controls + citations) ---------------- */
+const FW = {
+ hipaa: { name: 'HIPAA Security Rule', short: 'HIPAA', controls: [
+  ['§164.308(a)(1)(ii)(A)', 'Risk analysis', 'risk'], ['§164.308(a)(1)(ii)(B)', 'Risk management (security updates)', 'patch'],
+  ['§164.308(a)(1)(ii)(D)', 'Information system activity review', 'logs'], ['§164.308(a)(5)(i)', 'Security awareness training', 'training'],
+  ['§164.308(a)(5)(ii)(B)', 'Protection from malicious software', 'edr'], ['§164.308(a)(5)(ii)(C)', 'Log-in monitoring', 'login'],
+  ['§164.308(a)(6)(ii)', 'Security incident response and reporting', 'ir'], ['§164.308(a)(7)(ii)(A)', 'Data backup plan', 'backup'],
+  ['§164.308(b)(1)', 'Business associate agreement with Watchpost', 'baa'], ['§164.312(a)(1)', 'Access control (remove unused accounts)', 'access'],
+  ['§164.312(b)', 'Audit controls (logs collected)', 'logs'], ['§164.312(d)', 'Person or entity authentication (MFA)', 'mfa'],
+  ['§164.316(b)(2)(i)', 'Documentation kept 6 years', 'retention']] },
+ ftc: { name: 'FTC Safeguards Rule (16 CFR 314)', short: 'FTC Safeguards', controls: [
+  ['314.4(a)', 'Qualified individual designated', 'm:qi'], ['314.4(b)', 'Written risk assessment', 'risk'], ['314.4(c)(1)', 'Access controls and periodic review', 'access'],
+  ['314.4(c)(3)', 'Encrypt customer information', 'm:encrypt'], ['314.4(c)(5)', 'MFA for anyone accessing customer information', 'mfa'],
+  ['314.4(c)(8)', 'Monitor and log user activity', 'logs'], ['314.4(d)(2)', 'Continuous monitoring (or annual pen test)', 'edr'],
+  ['314.4(e)', 'Security awareness training', 'training'], ['314.4(h)', 'Written incident response plan', 'ir'],
+  ['314.4(i)', 'Annual report to board or owner', 'm:board'], ['314.4(j)', 'Notify the FTC within 30 days (500+ customers)', 'notify']] },
+ cmmc: { name: 'CMMC Level 1 (FAR 52.204-21)', short: 'CMMC L1', controls: [
+  ['AC.L1-b.1.i', 'Limit system access to authorized users', 'access'], ['AC.L1-b.1.ii', 'Limit access to permitted transactions', 'm:roles'],
+  ['AC.L1-b.1.iii', 'Verify and control external connections', 'logs'], ['AC.L1-b.1.iv', 'Control information posted publicly', 'm:public'],
+  ['IA.L1-b.1.v', 'Identify users and devices', 'inventory'], ['IA.L1-b.1.vi', 'Authenticate users and devices', 'mfa'],
+  ['MP.L1-b.1.vii', 'Sanitize media before disposal', 'm:media'], ['PE.L1-b.1.viii', 'Limit physical access', 'm:physical'],
+  ['PE.L1-b.1.ix', 'Escort visitors and keep access logs', 'm:physical'], ['SC.L1-b.1.x', 'Monitor communications at boundaries', 'logs'],
+  ['SC.L1-b.1.xi', 'Separate public-facing systems', 'm:dmz'], ['SI.L1-b.1.xii', 'Identify and fix flaws on time', 'patch'],
+  ['SI.L1-b.1.xiii', 'Malicious code protection', 'edr'], ['SI.L1-b.1.xiv', 'Update malicious code protection', 'sigs'],
+  ['SI.L1-b.1.xv', 'Periodic and real-time scans', 'edr']] },
+ pci: { name: 'PCI DSS v4.0', short: 'PCI DSS', controls: [
+  ['Req. 1.2', 'Network security controls configured', 'm:nsc'], ['Req. 2.2', 'Secure system configuration (benchmarks)', 'sca'],
+  ['Req. 5.2', 'Anti-malware deployed on all systems', 'edr'], ['Req. 6.3.3', 'Critical patches within one month', 'patch'],
+  ['Req. 8.4.2', 'MFA for all access to card data', 'mfa'], ['Req. 10.2', 'Audit logs enabled', 'logs'], ['Req. 10.4.1', 'Daily log review', 'login'],
+  ['Req. 10.5.1', 'Keep logs 12 months (3 months at hand)', 'retention'], ['Req. 11.5.2', 'File integrity monitoring', 'fim'],
+  ['Req. 12.6', 'Security awareness program', 'training'], ['Req. 12.10.1', 'Incident response plan', 'ir']] },
+ ncua: { name: 'NCUA Part 748 / GLBA', short: 'NCUA / GLBA', controls: [
+  ['748 App. A III.B', 'Risk assessment', 'risk'], ['748 App. A III.C.1(a)', 'Access controls', 'access'], ['748 App. A III.C.1', 'MFA (FFIEC authentication guidance)', 'mfa'],
+  ['748 App. A III.C.1(f)', 'Monitor systems to detect attacks', 'logs'], ['748 App. A III.C.1(g)', 'Response program', 'ir'],
+  ['748 App. A III.C.2', 'Staff training', 'training'], ['748.1(c)', 'Report cyber incidents to NCUA within 72 hours', 'notify'],
+  ['748 App. B', 'Notify members of unauthorized access', 'notify']] }
+};
+const MANUAL = { qi: 'Qualified individual named', encrypt: 'Encryption attestation', board: 'Annual board report', roles: 'Role matrix', public: 'Public-posting procedure',
+  media: 'Media disposal log', physical: 'Badge and visitor log', dmz: 'Network diagram', nsc: 'Firewall rule review' };
+
+/* ---------------- Roles (who sees what) ---------------- */
+const BIZ_TABS = ['overview', 'incidents', 'devices', 'accounts', 'compliance', 'insurance'];
+const ROLES = {
+ owner: { kind: 'biz', org: 'brightsmile', who: 'Dr. Alan Kim', init: 'AK', tabs: [...BIZ_TABS, 'billing'], price: true },
+ office: { kind: 'biz', org: 'brightsmile', who: 'Tina Nguyen', init: 'TN', tabs: BIZ_TABS },
+ it: { kind: 'biz', org: 'brightsmile', who: 'Marco Diaz', init: 'MD', tabs: BIZ_TABS, it: true },
+ staff: { kind: 'biz', org: 'brightsmile', who: 'Taylor Lee', init: 'TL', tabs: ['report'] },
+ msp_tech: { kind: 'msp', who: 'Jordan M. (Northwind IT)', init: 'JM', tabs: ['queue', ...BIZ_TABS], it: true },
+ msp_am: { kind: 'msp', who: 'Casey R. (Northwind IT)', init: 'CR', tabs: ['queue', 'overview', 'incidents', 'devices', 'compliance', 'insurance', 'partner'], margins: true },
+ msp_owner: { kind: 'msp', who: 'Pat Owens (Northwind IT)', init: 'PO', tabs: ['queue', ...BIZ_TABS, 'partner'], margins: true },
+ auditor: { kind: 'ext', org: 'ridgeline', who: 'Alex Moreno (assessor)', init: 'AM', tabs: ['compliance', 'incidents'], ro: true, expires: '2026-12-11' },
+ broker: { kind: 'ext', org: 'brightsmile', who: 'Lena Ortiz (broker)', init: 'LO', tabs: ['insurance', 'incidents'], ro: true, expires: '2027-01-15' },
+ counsel: { kind: 'ext', org: 'brightsmile', who: 'Priya Shah (privacy counsel)', init: 'PS', tabs: ['incidents', 'compliance'], ro: true, expires: '2026-12-31' }
+};
+const TAB_LABEL = { queue: 'All-client queue', overview: 'Overview', incidents: 'Incidents', devices: 'Devices', accounts: 'Accounts', compliance: 'Compliance', insurance: 'Insurance', billing: 'Plan & billing', partner: 'Partner', report: 'Report an email' };
+
+/* ---------------- UI state ---------------- */
+const S = { role: 'owner', org: 'brightsmile', mspOrg: 'harbor', fw: {}, incOpen: {}, devSite: 'all', devStatus: 'all', acctFilter: 'all', resaleRate: 11, wlColor: '#1d4ed8',
+  exportOpen: false, exports: [{ when: 'Oct 2, 2026', what: 'HIPAA · Q3 2026 · ZIP (41 files)' }], qbr: false, wlPreview: false, verdict: null, disableReq: {}, mfaNudged: {}, ctrlOpen: {}, sharedLink: false, clientQ: '', clientFilter: 'all', pop: null, searchQ: '', searchScope: 'org' };
+const R = () => ROLES[S.role];
+const O = () => ORGS[S.org];
+const hasTab = t => R().tabs.includes(t);
+const curTab = () => document.body.dataset.tab;
+
+/* ---------------- Derived numbers (computed, never typed twice) ---------------- */
+function D(id){
+  const o = ORGS[id];
+  const total = o.sites.reduce((a, s) => a + s.ep, 0);
+  const offline = o.devices.filter(d => d.offline).sort((a, b) => b.impact - a.impact);
+  const reporting = total - offline.length;
+  const threats = o.incidents.filter(i => i.threat);
+  const open = o.incidents.filter(i => i.status === 'action');
+  const vulnHosts = o.vulns.reduce((a, v) => a + v.hosts.length, 0);
+  const mfaGap = o.accounts.filter(a => a.mfa === false);
+  const dormant = o.accounts.filter(a => a.last >= 30 && !a.service);
+  const dormantOpen = dormant.filter(a => !S.disableReq[id + ':' + a.id]);
+  const avgContain = threats.length ? Math.round(threats.reduce((a, i) => a + i.containMin, 0) / threats.length) : null;
+  const hipaa = o.frameworks.includes('hipaa');
+  const urgent = [], todo = [];
+  open.forEach(i => urgent.push({ text: i.do[0], tab: 'incidents', inc: i.id }));
+  o.vulns.forEach(v => urgent.push({ text: `Have IT install 1 critical update on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'} (${v.hosts.join(', ')})`, tab: 'devices' }));
+  if (offline.length) urgent.push({ text: `Reconnect ${offline.length} ${offline.length > 1 ? 'devices' : 'device'} that stopped reporting (${offline[0].n} first)`, tab: 'devices' });
+  if (mfaGap.length) todo.push({ text: `Turn on MFA for ${mfaGap.length} ${mfaGap.length > 1 ? 'accounts' : 'account'} (${mfaGap.map(a => a.n).join(', ')})`, tab: 'accounts' });
+  if (dormantOpen.length) todo.push({ text: `Disable ${dormantOpen.length} ${dormantOpen.length > 1 ? 'accounts' : 'account'} unused for 30+ days`, tab: 'accounts' });
+  if (!o.trainingUploaded) todo.push({ text: 'Upload security-training certificates (counts for compliance and insurance)', tab: 'compliance' });
+  if (hipaa && !o.archive6y) todo.push({ text: 'Turn on the 6-year log archive for HIPAA documentation', tab: 'compliance' });
+  if (o.baa && o.baa.status !== 'signed') todo.push({ text: 'Sign the business associate agreement (BAA)', tab: 'compliance' });
+  const plan = directPlan(total);
+  const r = resale(total, S.resaleRate);
+  const wholesale = total * WHOLESALE_PER_DEVICE;
+  return { o, total, offline, reporting, threats, open, vulnHosts, mfaGap, dormant, dormantOpen, avgContain, urgent, todo, attention: urgent.length > 0, plan, resale: r, wholesale,
+    escalated: o.incidents.length, usersMfa: o.users - mfaGap.length };
+}
+
+function check(o, d, key, fwId){
+  const today = 'Nov 11, 2026 06:00';
+  if (key.startsWith('m:')) { const k = key.slice(2); return o.attest[k] ? { s: 'met', note: `${MANUAL[k]} uploaded (customer attestation)`, src: 'Customer upload', owner: 'Your team', when: 'Sep 14, 2026' } : { s: 'gap', note: `Outside Watchpost: upload ${MANUAL[k].toLowerCase()}`, src: 'Customer upload needed', owner: 'Your team', when: '—' }; }
+  switch (key) {
+   case 'logs': return { s: 'met', note: 'Windows, Microsoft 365 and firewall logs collected; last event 12 s ago', src: 'Wazuh log collection', owner: 'Watchpost SOC', when: today };
+   case 'login': return { s: 'met', note: `Failed and unusual sign-ins reviewed 24/7 (${o.alertsReviewed.toLocaleString()} alerts in 30 days)`, src: 'Wazuh + M365 sign-in logs', owner: 'Watchpost SOC', when: today };
+   case 'sigs': return { s: 'met', note: 'Detection rules and malware signatures updated daily', src: 'Wazuh ruleset', owner: 'Watchpost SOC', when: today };
+   case 'fim': return { s: 'met', note: 'File integrity monitoring on servers holding card data', src: 'Wazuh FIM', owner: 'Watchpost SOC', when: today };
+   case 'sca': return d.vulnHosts ? { s: 'partial', note: `${d.vulnHosts} machine(s) fail the benchmark because of missing updates`, src: 'Wazuh configuration assessment', owner: 'Your IT', when: today } : { s: 'met', note: 'All servers pass the CIS benchmark baseline', src: 'Wazuh configuration assessment', owner: 'Your IT', when: today };
+   case 'edr': return d.offline.length ? { s: 'partial', note: `${d.reporting} of ${d.total} devices reporting; ${d.offline.length} not reporting`, src: 'Wazuh agent inventory', owner: 'Your IT', when: today } : { s: 'met', note: `All ${d.total} devices reporting`, src: 'Wazuh agent inventory', owner: 'Watchpost SOC', when: today };
+   case 'inventory': return d.offline.length ? { s: 'partial', note: `${d.offline.length} devices silent`, src: 'Wazuh agent inventory', owner: 'Your IT', when: today } : { s: 'met', note: `${d.total} devices identified and reporting`, src: 'Wazuh agent inventory', owner: 'Watchpost SOC', when: today };
+   case 'patch': return d.vulnHosts ? { s: 'gap', note: `1 critical update missing on ${d.vulnHosts} machine(s)`, src: 'Wazuh vulnerability detection', owner: 'Your IT', when: today } : { s: 'met', note: 'No critical updates missing', src: 'Wazuh vulnerability detection', owner: 'Your IT', when: today };
+   case 'training': return o.trainingUploaded ? { s: 'met', note: 'Training certificates on file (2026)', src: 'Customer upload', owner: 'Your team', when: 'Nov 11, 2026' } : { s: 'gap', note: 'Upload this year\'s training certificates', src: 'Customer upload needed', owner: 'Your team', when: '—' };
+   case 'mfa': return d.mfaGap.length ? { s: 'partial', note: `${d.mfaGap.length} of ${o.users} users without MFA (${d.mfaGap.map(a => a.n).join(', ')})`, src: 'Microsoft 365 / Entra ID', owner: 'Your IT', when: today } : { s: 'met', note: `MFA on for all ${o.users} users`, src: 'Microsoft 365 / Entra ID', owner: 'Your IT', when: today };
+   case 'access': return d.dormantOpen.length ? { s: 'partial', note: `${d.dormantOpen.length} account(s) unused for 30+ days still active`, src: 'Microsoft 365 / AD sign-in data', owner: 'Your team', when: today } : { s: 'met', note: 'No unused accounts older than 30 days', src: 'Microsoft 365 / AD sign-in data', owner: 'Your team', when: today };
+   case 'ir': return { s: 'met', note: `Watchpost 24/7 response + your written plan (updated ${fmtDate(o.irPlan)})`, src: 'Incident log + uploaded plan', owner: 'Watchpost SOC + you', when: today };
+   case 'backup': return { s: 'met', note: `Backups restore-tested ${fmtDate(o.backupTested)}`, src: 'Backup report (customer)', owner: 'Your IT', when: fmtDate(o.backupTested) };
+   case 'risk': return { s: 'met', note: `Risk assessment done ${fmtDate(o.riskAssessed)}`, src: 'Uploaded assessment', owner: 'Your team', when: fmtDate(o.riskAssessed) };
+   case 'baa': return o.baa && o.baa.status === 'signed' ? { s: 'met', note: `BAA signed ${fmtDate(o.baa.date)}`, src: 'Signed agreement (PDF)', owner: 'Owner', when: fmtDate(o.baa.date) } : { s: 'gap', note: 'BAA not signed yet', src: 'Agreement pending signature', owner: 'Owner', when: '—' };
+   case 'notify': return { s: 'met', note: 'Every incident records whether regulated data was touched and when a notice clock starts', src: 'Incident breach assessment', owner: 'Watchpost SOC + counsel', when: today };
+   case 'retention':
+     if (fwId === 'hipaa') return o.archive6y ? { s: 'met', note: 'Logs: 1 year searchable + 6-year archive; reports and incident records kept 6 years', src: 'Archive policy', owner: 'Watchpost', when: today } : { s: 'partial', note: 'Logs kept 1 year searchable. HIPAA documentation must be kept 6 years: turn on the 6-year archive', src: 'Archive policy', owner: 'Watchpost', when: today };
+     return { s: 'met', note: 'Logs kept 12 months, last 3 months searchable instantly', src: 'Archive policy', owner: 'Watchpost', when: today };
+  }
+  return { s: 'met', note: '', src: '', owner: '', when: today };
+}
+function controls(o, d, fwId){ return FW[fwId].controls.map(([cite, name, key]) => ({ cite, name, key, ...check(o, d, key, fwId) })); }
+
+function questions(o, d){
+  const ev = (s, a, src, when) => ({ s, a, src, when });
+  return [
+   ['mfa', 'MFA on email for all users?', d.mfaGap.length ? ev('partial', `Partly: ${d.usersMfa} of ${o.users} users; ${d.mfaGap.length} without MFA (${d.mfaGap.map(a => a.n).join(', ')})`, 'Microsoft 365', 'Nov 11, 2026') : ev('yes', `Yes: all ${o.users} users`, 'Microsoft 365', 'Nov 11, 2026')],
+   ['remote', 'MFA on remote access (VPN / remote desktop)?', o.remoteMfa ? ev('yes', 'Yes', 'VPN config', 'Nov 11, 2026') : ev('no', 'No', 'VPN config', 'Nov 11, 2026')],
+   ['edr', 'EDR / endpoint protection on all devices?', d.offline.length ? ev('partial', `Partly: installed on ${d.total}, ${d.reporting} reporting, ${d.offline.length} not reporting`, 'Wazuh agent inventory', 'Nov 11, 2026') : ev('yes', `Yes: ${d.total} of ${d.total} reporting`, 'Wazuh agent inventory', 'Nov 11, 2026')],
+   ['soc', '24/7 monitoring by a security operations team?', ev('yes', 'Yes: Watchpost SOC, staffed around the clock', 'Watchpost service record', 'Nov 11, 2026')],
+   ['backup', 'Offline or immutable backups, tested?', ev('yes', `Yes: restore tested ${fmtDate(o.backupTested)}`, 'Backup report', fmtDate(o.backupTested))],
+   ['patch', 'Critical updates installed within 30 days?', d.vulnHosts ? (o.vulns.some(v => v.ageDays > 30) ? ev('no', `No: update missing ${Math.max(...o.vulns.map(v => v.ageDays))} days on ${d.vulnHosts} machines`, 'Wazuh vulnerability detection', 'Nov 11, 2026') : ev('partial', `Partly: 1 critical update pending on ${d.vulnHosts} machine(s) (${Math.max(...o.vulns.map(v => v.ageDays))} days)`, 'Wazuh vulnerability detection', 'Nov 11, 2026')) : ev('yes', 'Yes', 'Wazuh vulnerability detection', 'Nov 11, 2026')],
+   ['training', 'Security awareness training for staff?', o.trainingUploaded ? ev('yes', 'Yes: certificates on file', 'Customer upload', 'Nov 11, 2026') : ev('no', 'Document missing: upload certificates', 'Customer upload needed', '—')],
+   ['email', 'Email filtering and DMARC?', o.dmarc ? ev('yes', 'Yes: DMARC enforced', 'DNS record', 'Nov 11, 2026') : ev('no', 'No: DMARC not enforced', 'DNS record', 'Nov 11, 2026')],
+   ['admin', 'Admin accounts limited and reviewed?', ev('yes', `Yes: ${o.accounts.filter(a => a.admin).length} admin accounts, reviewed monthly`, 'Directory export', 'Nov 1, 2026')],
+   ['ir', 'Written incident response plan?', ev('yes', `Yes: updated ${fmtDate(o.irPlan)}`, 'Uploaded plan', fmtDate(o.irPlan))]
+  ].map(([k, q, e]) => ({ k, q, ...e }));
+}
+
+/* ---------------- Small render helpers ---------------- */
+const ICON = {
+ home: '<path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/>', search: '<circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/>',
+ bell: '<path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21h4"/>', doc: '<path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/>',
+ gear: '<circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/>',
+ hand: '<path d="M3 12l4-4 4 3 3-3 7 6"/><path d="M7 16l3 3 4-1 3-3"/>', card: '<rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/>',
+ queue: '<path d="M4 6h16M4 12h16M4 18h10"/>', mail: '<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>',
+ shieldok: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/>', shieldbad: '<path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M12 8v5M12 16v.5"/>',
+ umbrella: '<path d="M3 12a9 9 0 0118 0z"/><path d="M12 12v7a2 2 0 01-4 0"/>', check: '<path d="M5 12l4 4 10-10"/>', laptop: '<rect x="4" y="5" width="16" height="11" rx="1"/><path d="M2 19h20"/>'
+};
+const svg = (k, cls = 'i') => `<svg class="${cls}" viewBox="0 0 24 24" aria-hidden="true">${ICON[k]}</svg>`;
+const SEV = { high: '▲ High', medium: '◆ Medium', low: '● Low', info: 'ℹ Info' };
+const sevBadge = s => `<span class="sev ${s}">${SEV[s]}<span class="sr"> severity</span></span>`;
+const STAT = { met: ['good', '✓ Met'], partial: ['warn', '! Partly met'], gap: ['bad', '✕ Gap'] };
+const statPill = s => `<span class="pill ${STAT[s][0]}">${STAT[s][1]}</span>`;
+const ANS = { yes: 'good', partial: 'warn', no: 'bad' };
+const ANSICON = { yes: '✓', partial: '!', no: '✕' };
+const incStatus = i => i.status === 'action' ? '<span class="pill warn">! Action needed</span>' : i.status === 'done' ? '<span class="pill good">✓ Done by you</span>' : i.status === 'benign' ? '<span class="pill">Confirmed OK by IT</span>' : '<span class="pill good">✓ Contained</span>';
+function brandChip(o){ const wl = o.channel === 'msp'; return `<span class="brand-chip"><i style="background:${wl ? S.wlColor : 'var(--accent)'}">${wl ? 'N' : 'W'}</i>${wl ? MSP.brand : 'Watchpost'}</span>`; }
+function seeded(seed){ let t = 0; for (const c of seed) t = (t * 31 + c.charCodeAt(0)) >>> 0; return () => { t += 0x6D2B79F5; let r = Math.imul(t ^ t >>> 15, 1 | t); r ^= r + Math.imul(r ^ r >>> 7, 61 | r); return ((r ^ r >>> 14) >>> 0) / 4294967296; }; }
+function series(id){ const o = ORGS[id], rnd = seeded(id), raw = Array.from({ length: 30 }, () => 0.6 + rnd()); const sum = raw.reduce((a, b) => a + b, 0);
+  const vals = raw.map(v => Math.round(v / sum * o.alertsReviewed)); vals[29] += o.alertsReviewed - vals.reduce((a, b) => a + b, 0); return vals; }
+function chart(id){
+  const d = D(id), vals = series(id), max = Math.max(...vals), W = 300, H = 80, bw = W / 30;
+  const escDays = d.o.incidents.map((_, i) => 29 - [1, 7, 8, 13, 20][i % 5]);
+  const bars = vals.map((v, i) => `<rect x="${(i * bw + 1).toFixed(1)}" y="${(H - 14 - v / max * (H - 24)).toFixed(1)}" width="${(bw - 2).toFixed(1)}" height="${(v / max * (H - 24)).toFixed(1)}" rx="1.5" fill="var(--accent)" opacity=".55"/>`).join('');
+  const marks = escDays.map(x => `<path d="M${(x * bw + bw / 2).toFixed(1)} 2l5 8h-10z" fill="var(--bad)"/>`).join('');
+  return `<div class="chart" data-testid="trend"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Last 30 days: ${vals.reduce((a, b) => a + b, 0)} alerts reviewed by analysts, ${d.escalated} escalated to you">${bars}${marks}<text x="0" y="${H - 2}" font-size="9" fill="var(--muted)">Oct 12</text><text x="${W}" y="${H - 2}" font-size="9" fill="var(--muted)" text-anchor="end">Nov 11</text></svg>
+  <div class="legend"><span><i style="background:var(--accent);opacity:.55"></i>Alerts reviewed: ${vals.reduce((a, b) => a + b, 0).toLocaleString()}</span><span><i style="background:var(--bad)"></i>▲ Escalated to you: ${d.escalated}</span></div></div>`;
+}
+function spark(id){ const v = series(id).filter((_, i) => i % 3 === 0), max = Math.max(...v), min = Math.min(...v);
+  return `<svg class="spark" viewBox="0 0 70 20" aria-hidden="true"><polyline fill="none" stroke="var(--accent)" stroke-width="1.6" points="${v.map((x, i) => `${(i * 70 / (v.length - 1)).toFixed(1)},${(18 - (x - min) / (max - min || 1) * 16).toFixed(1)}`).join(' ')}"/></svg>`; }
+function analystBlock(){ return `<h2>Analysts on duty · 24/7</h2>
+  <div class="mini" data-testid="analyst">
+   <div class="row"><span class="avatar" aria-hidden="true">${ON.init}</span><div><strong>Now: ${ON.who}</strong><div class="small muted">${ON.desk} · ${ON.from}–${ON.to} ET</div></div></div>
+   <div class="row" data-testid="next-shift"><span class="avatar" aria-hidden="true">${NEXT.init}</span><div><strong>Next: ${NEXT.who}</strong><div class="small muted">${NEXT.desk} · ${NEXT.from}–${NEXT.to} ET</div></div></div>
+   <div class="small muted">Then ${AFTER.who} ${AFTER.from}–${AFTER.to} ET. Hotline answered 24/7: <strong>${HOTLINE}</strong></div>
+   <div class="row"><button class="btn primary sm" data-toast="Calling the 24/7 SOC hotline ${HOTLINE} (mock)">Call the SOC</button><button class="btn sm" data-toast="Chat opened with ${ON.who} (mock)">Chat with ${ON.who.split(' ')[0]}</button></div></div>`; }
+
+/* ---------------- Rail, tabs, sidebar ---------------- */
+function renderRail(){
+  const r = R(), d = D(S.org), badge = r.kind === 'msp' ? mspOpen().length : d.urgent.length;
+  const b = [];
+  b.push(`<button data-view="home" data-tab-target="${r.tabs[0]}" aria-label="Home: ${TAB_LABEL[r.tabs[0]]}" title="Home">${svg('home')}</button>`);
+  if (r.kind !== 'ext' && S.role !== 'staff') b.push(`<button data-view="search" aria-label="Search logs, devices and accounts" title="Search">${svg('search')}</button>`);
+  if (S.role !== 'staff') b.push(`<button data-view="alerts" aria-label="Notifications, ${badge} need action" title="Notifications">${svg('bell')}${badge ? `<span class="badge" aria-hidden="true">${badge}</span>` : ''}</button>`);
+  if (hasTab('compliance')) b.push(`<button data-view="compliance" data-tab-target="compliance" aria-label="Compliance" title="Compliance">${svg('doc')}</button>`);
+  if (hasTab('partner')) b.push(`<button data-view="partner" data-tab-target="partner" aria-label="Partner: margins and white-label" title="Partner">${svg('hand')}</button>`);
+  if (hasTab('billing')) b.push(`<button data-view="billing" data-tab-target="billing" aria-label="Plan and billing" title="Plan and billing">${svg('card')}</button>`);
+  if (hasTab('report')) b.push(`<button data-view="report" data-tab-target="report" aria-label="Report a suspicious email" title="Report email">${svg('mail')}</button>`);
+  if (r.kind !== 'ext') b.push(`<button data-view="settings" aria-label="Settings: alert contacts and integrations" title="Settings">${svg('gear')}</button>`);
+  const brand = r.kind === 'msp' ? `<div class="logo" aria-hidden="true" style="background:${S.wlColor}">N</div>` : `<div class="logo" aria-hidden="true">W</div>`;
+  $('#rail').innerHTML = brand + b.join('') + `<div class="spacer"></div><div class="avatar" title="Signed in as ${esc(r.who)}" aria-label="Signed in as ${esc(r.who)}" role="img">${r.init}</div>`;
+  const t = curTab(); const rb = $$('.rail button[data-tab-target]').find(x => x.dataset.tabTarget === t); if (rb) rb.setAttribute('aria-current', 'page');
+}
+function renderTabs(){
+  $('#tabs').innerHTML = R().tabs.map(t => `<button role="tab" id="tab-${t}" data-tab="${t}" aria-controls="panel-${t}" aria-selected="false" tabindex="-1">${TAB_LABEL[t]}</button>`).join('');
+}
+function clientItem(id){ const d = D(id), on = S.org === id && curTab() !== 'queue';
+  return `<button class="item" data-select="${id}" ${on ? 'aria-current="true"' : ''}><span class="dot ${d.attention ? 'attn' : 'ok'}" aria-hidden="true">${d.attention ? '!' : '✓'}</span><span><strong>${esc(d.o.name)}</strong><small>${d.attention ? `<span class="sr">Needs attention. </span>${d.urgent.length} to fix` : '<span class="sr">OK. </span>All OK'} · ${d.total} devices</small></span><span class="meta">${d.open.length ? d.open.length + ' open' : ''}</span></button>`; }
+function mspClients(){ return Object.keys(ORGS).filter(k => ORGS[k].channel === 'msp'); }
+function mspOpen(){ return mspClients().flatMap(id => ORGS[id].incidents.filter(i => i.status === 'action').map(i => ({ id, i }))); }
+function renderSide(){
+  const r = R(), el = $('#side-body');
+  if (r.kind === 'msp') {
+    const ids = mspClients(), attn = ids.filter(id => D(id).attention), ok = ids.filter(id => !D(id).attention);
+    const q = S.clientQ.toLowerCase(), f = id => ORGS[id].name.toLowerCase().includes(q) && (S.clientFilter === 'all' || D(id).attention);
+    el.innerHTML = `<div class="top"><span>${MSP.name} · ${ids.length} clients</span><span class="pill ${attn.length ? 'warn' : 'good'}">${ok.length} OK</span></div>
+     <p class="small muted" style="margin:6px 8px 0" data-testid="client-counts">${ok.length} OK · ${attn.length} need attention · ${mspOpen().length} open incidents</p>
+     <label class="sr" for="client-q">Search clients</label><input id="client-q" type="search" placeholder="Search clients" value="${esc(S.clientQ)}">
+     <div class="seg" role="group" aria-label="Filter clients" style="margin:6px 0"><button data-cf="all" aria-pressed="${S.clientFilter === 'all'}">All</button><button data-cf="attn" aria-pressed="${S.clientFilter === 'attn'}">Needs attention</button></div>
+     <div class="list" id="client-list"><button class="item" data-select="all" ${curTab() === 'queue' ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">≡</span><span><strong>All clients</strong><small>Cross-client incident queue</small></span><span class="meta">${mspOpen().length}</span></button></div>
+     <h2>Needs attention (${attn.filter(f).length})</h2><div class="list">${attn.filter(f).map(clientItem).join('') || '<p class="empty-note" style="margin:0 8px">None</p>'}</div>
+     <h2>All OK (${ok.filter(f).length})</h2><div class="list">${ok.filter(f).map(clientItem).join('') || '<p class="empty-note" style="margin:0 8px">None</p>'}</div>`;
+  } else if (r.kind === 'biz') {
+    const d = D(S.org);
+    el.innerHTML = `<div class="top"><span>${esc(d.o.short)}</span>${brandChip(d.o)}</div>
+     <h2>Your locations</h2><div class="list" data-testid="sites">
+      <button class="item" data-select="site:all" ${S.devSite === 'all' ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${svg('laptop')}</span><span><strong>All locations</strong><small>${d.reporting} of ${d.total} devices reporting</small></span></button>
+      ${d.o.sites.map(s => { const off = d.offline.filter(x => x.site === s.n).length; return `<button class="item" data-select="site:${esc(s.n)}" ${S.devSite === s.n ? 'aria-current="true"' : ''}><span class="dot ${off ? 'attn' : 'ok'}" aria-hidden="true">${off ? '!' : '✓'}</span><span><strong>${esc(s.n)}</strong><small>${s.ep - off} of ${s.ep} reporting</small></span></button>`; }).join('')}</div>
+     <h2>Your Watchpost team</h2><div class="small muted" style="margin:0 8px">Now: ${ON.who} · Next: ${NEXT.who} (${NEXT.from})<br>24/7 hotline ${HOTLINE}</div>`;
+  } else {
+    const d = D(S.org);
+    el.innerHTML = `<div class="top"><span>Shared read-only link</span><span class="pill info">Read-only</span></div>
+     <dl class="kv" style="margin:10px 8px"><dt>Company</dt><dd>${esc(d.o.name)}</dd><dt>Shared by</dt><dd>${d.o.channel === 'msp' ? MSP.name : d.o.short + ' owner'}</dd><dt>Expires</dt><dd>${fmtDate(r.expires)}</dd><dt>Scope</dt><dd>${r.tabs.map(t => TAB_LABEL[t]).join(', ')}</dd></dl>
+     ${hasTab('compliance') ? `<h2>Frameworks</h2><div class="list">${Object.keys(FW).map(f => `<button class="item" data-select="fw:${f}" ${fwOf() === f ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${FW[f].short[0]}</span><span><strong>${FW[f].short}</strong><small>${d.o.frameworks.includes(f) ? 'In scope' : 'Mapping only'}</small></span></button>`).join('')}</div>` : ''}
+     <p class="small muted" style="margin:12px 8px">Every view and download on this link is logged for the owner.</p>`;
+  }
+}
+const fwOf = () => S.fw[S.org] || O().frameworks[0];
+
+/* ---------------- Context bar + bottom bar ---------------- */
+function renderCtx(){
+  const r = R(), d = D(S.org), t = curTab();
+  if (r.kind === 'msp' && t === 'queue') { $('#ctx').innerHTML = `${brandChip({ channel: 'msp' })}<span>·</span><strong>All ${mspClients().length} clients</strong><span>· partner console</span>`; return; }
+  $('#ctx').innerHTML = `${brandChip(d.o)}<span aria-hidden="true">·</span><span>${r.kind === 'msp' ? 'Client:' : r.kind === 'ext' ? 'Shared view of' : 'Company:'}</span><strong>${esc(d.o.name)}</strong><span class="hide-sm">· ${d.o.frameworks.map(f => FW[f].short).join(' + ')} · ${d.total} devices · ${d.o.users} users</span>${r.ro ? '<span class="pill info">Read-only</span>' : ''}`;
+}
+function renderBottom(){
+  const r = R(), d = D(S.org), parts = [];
+  if (r.kind === 'ext') { parts.push(`<span><span class="status-dot"></span>Read-only link · expires ${fmtDate(r.expires)}</span>`, `<span class="hide-sm">${esc(d.o.name)}</span>`); }
+  else {
+    parts.push(`<span><span class="status-dot"></span>Monitoring live</span>`);
+    parts.push(`<span data-testid="bb-devices">${r.kind === 'msp' ? esc(d.o.short) + ': ' : ''}${d.reporting} of ${d.total} devices reporting</span>`);
+    parts.push(`<span class="hide-sm">SOC: ${ON.who} now · ${NEXT.who} from ${NEXT.from}</span>`);
+    parts.push('<span class="sep"></span>');
+    if (r.kind === 'msp') parts.push(`<span class="hide-sm">${MSP.name} · ${mspClients().length} clients · ${mspOpen().length} open incidents</span>`);
+    else if (r.price) parts.push(`<span class="hide-sm" data-testid="bb-plan">Plan: ${d.plan.name} · ${money(d.plan.price)}/mo · ${d.total}${d.plan.cap ? ' of ' + d.plan.cap : ''} devices</span>`);
+  }
+  $('#bb').innerHTML = parts.join('');
+}
+
+/* ---------------- Panels ---------------- */
+function pQueue(){
+  const ids = mspClients(), rows = ids.flatMap(id => ORGS[id].incidents.filter(i => i.status !== 'benign').map(i => ({ id, i })))
+    .sort((a, b) => (a.i.status === 'action' ? 0 : 1) - (b.i.status === 'action' ? 0 : 1) || ['high', 'medium', 'low', 'info'].indexOf(a.i.sev) - ['high', 'medium', 'low', 'info'].indexOf(b.i.sev));
+  const off = ids.flatMap(id => D(id).offline.map(x => ({ id, x }))).sort((a, b) => b.x.impact - a.x.impact);
+  const attn = ids.filter(id => D(id).attention).length;
+  return `<h1>All-client queue</h1><p class="sub">Every open incident and silent device across your ${ids.length} clients, worst first.</p>
+  <div class="grid g3"><div class="card"><div class="kpi-label">Open incidents needing a client action</div><div class="kpi">${mspOpen().length}</div></div>
+   <div class="card"><div class="kpi-label">Devices not reporting (all clients)</div><div class="kpi">${off.length}</div></div>
+   <div class="card"><div class="kpi-label">Clients needing attention</div><div class="kpi">${attn} of ${ids.length}</div></div></div>
+  <div class="card" style="margin-top:12px" data-testid="queue"><h3>Incident queue (last 30 days)</h3><div class="tw"><table><thead><tr><th>Client</th><th>Incident</th><th>Severity</th><th>Status</th><th class="hide-sm">PSA ticket</th><th><span class="sr">Open</span></th></tr></thead><tbody>
+   ${rows.map(({ id, i }) => `<tr data-testid="queue-${i.id}"><td>${esc(ORGS[id].short)}</td><td>${esc(i.title)}<div class="small muted">${i.when} · PSA ${i.psa}</div></td><td>${sevBadge(i.sev)}</td><td>${incStatus(i)}</td><td class="hide-sm">${i.psa} · ${MSP.psa.split(' ')[0]}</td><td><button class="btn sm" data-open-inc="${id}:${i.id}" aria-label="Open ${esc(i.title)} for ${esc(ORGS[id].short)}">Open</button></td></tr>`).join('')}
+  </tbody></table></div></div>
+  <div class="card" style="margin-top:12px"><h3>Devices not reporting</h3><div class="tw"><table><thead><tr><th>Client</th><th>Device</th><th>Silent for</th><th class="hide-sm">Likely reason</th></tr></thead><tbody>
+   ${off.map(({ id, x }) => `<tr><td>${esc(ORGS[id].short)}</td><td>${x.n}${x.tag ? ` <span class="tag">${x.tag}</span>` : ''}</td><td>${x.offline} day${x.offline > 1 ? 's' : ''}</td><td class="hide-sm">${esc(x.reason)}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+function pOverview(){
+  const r = R(), d = D(S.org), o = d.o, fw = o.frameworks[0], cs = controls(o, d, fw), met = cs.filter(c => c.s === 'met').length, qs = questions(o, d), ready = qs.filter(q => q.s === 'yes').length;
+  const ins = o.insurance;
+  let big, txt;
+  if (d.urgent.length) { big = `Protected · ${d.urgent.length} ${d.urgent.length > 1 ? 'things need' : 'thing needs'} your team`; txt = `Analysts are watching 24/7 and stopped every threat. ${d.urgent.length > 1 ? 'These are' : 'This is'} on you: ${d.urgent.map(u => u.text.charAt(0).toLowerCase() + u.text.slice(1)).join('; ')}.`; }
+  else if (d.todo.length) { big = 'Protected · nothing urgent'; txt = `Analysts are watching 24/7. ${d.todo.length} paperwork ${d.todo.length > 1 ? 'items' : 'item'} for compliance and insurance when you have time.`; }
+  else { big = 'Protected · nothing needs your attention'; txt = 'Analysts are watching 24/7. No open tasks for your team.'; }
+  const summary = [...d.threats.map(i => i.plain)];
+  if (o.vulns.length) summary.push(`${d.vulnHosts} ${d.vulnHosts > 1 ? 'machines are' : 'machine is'} missing 1 critical security update. Your IT has the steps.`);
+  if (d.offline.length) summary.push(`${d.offline.length} ${d.offline.length > 1 ? 'devices have' : 'device has'} stopped reporting. ${d.offline[0].n} matters most.`);
+  if (!summary.length) summary.push('Quiet month: no threats needed action and every device reported in.');
+  return `<h1>Overview</h1><p class="sub">Last 30 days (Oct 12 – Nov 11, 2026)</p>
+  <div class="hero ${d.urgent.length ? 'attn' : ''}" data-testid="status"><div class="ico">${svg(d.urgent.length ? 'shieldbad' : 'shieldok', 'i')}</div><div><div class="big">${big}</div><p>${esc(txt)}</p>${d.urgent.length && hasTab('incidents') ? `<button class="link" data-goto="${d.urgent[0].tab}">Show me what to do</button>` : ''}</div></div>
+  <div class="grid g4" style="margin-top:12px">
+   <div class="card"><div class="kpi-label">Threats stopped</div><div class="kpi" data-testid="k-threats">${d.threats.length}</div><div class="delta muted">${d.escalated - d.threats.length ? `+${d.escalated - d.threats.length} alert checked and found safe` : 'all contained'}</div></div>
+   <div class="card"><div class="kpi-label">Computers protected <abbr title="Devices running the Watchpost agent and sending data (endpoints)">?</abbr></div><div class="kpi" data-testid="k-devices">${d.reporting} of ${d.total}</div><div class="delta ${d.offline.length ? 'warn' : 'good'}">${d.offline.length ? `! ${d.offline.length} not reporting` : '✓ all reporting'}</div></div>
+   <div class="card"><div class="kpi-label">Security updates still needed</div><div class="kpi">${o.vulns.length}</div><div class="delta ${o.vulns.length ? 'warn' : 'good'}">${o.vulns.length ? `! critical, on ${d.vulnHosts} ${d.vulnHosts > 1 ? 'machines' : 'machine'}` : '✓ none critical'}</div></div>
+   <div class="card"><div class="kpi-label">How fast we stopped threats <abbr title="Average minutes from first alert to containment (mean time to contain)">?</abbr></div><div class="kpi">${d.avgContain !== null ? d.avgContain + ' min' : '—'}</div><div class="delta muted">we promise 30 min</div></div>
+  </div>
+  <div class="grid g3" style="margin-top:12px" data-testid="outcomes">
+   <div class="card"><div class="outcome"><span class="ico">${svg('umbrella')}</span><strong>Insurance renewal ${fmtDate(ins.renewal).replace(/, \d{4}/, '')}</strong><span class="small muted">${ready} of ${qs.length} insurer answers ready · ${daysUntil(ins.renewal)} days left</span>${hasTab('insurance') ? '<button class="link" data-goto="insurance">Open insurance</button>' : ''}</div></div>
+   <div class="card"><div class="outcome"><span class="ico">${svg('doc')}</span><strong>${FW[fw].short}: ${met} of ${cs.length} controls met</strong><span class="small muted">Evidence collected automatically</span>${hasTab('compliance') ? '<button class="link" data-goto="compliance">Open compliance</button>' : ''}</div></div>
+   <div class="card"><div class="outcome"><span class="ico">${svg('laptop')}</span><strong>${d.reporting} of ${d.total} computers reporting</strong><span class="small muted">${d.offline.length ? d.offline.length + ' silent: ' + d.offline.map(x => x.n).join(', ') : 'Full coverage'}</span>${hasTab('devices') ? '<button class="link" data-goto="devices">Open devices</button>' : ''}</div></div>
+  </div>
+  <div class="card" style="margin-top:12px" data-testid="summary"><h3>The last 30 days in plain English</h3>
+   <ul class="small" style="margin:0;padding-left:18px;line-height:1.7">${summary.map(s => `<li>${esc(s)}</li>`).join('')}</ul></div>
+  <div class="card cta" style="margin-top:12px"><div class="row"><span class="avatar" aria-hidden="true">${svg('doc')}</span><div><strong>October 2026 report</strong><div class="small muted">Oct 1–31 · ${o.channel === 'msp' ? 'branded ' + MSP.brand : 'Watchpost'} · plain English, 4 pages</div></div></div><button class="btn primary" data-testid="monthly-report" data-toast="October 2026 report for ${esc(o.short)} downloaded (PDF)">Download October 2026 report (PDF)</button></div>`;
+}
+function incSort(a, b){ const st = { action: 0, contained: 1, done: 2, benign: 3 }; return st[a.status] - st[b.status] || ['high', 'medium', 'low', 'info'].indexOf(a.sev) - ['high', 'medium', 'low', 'info'].indexOf(b.sev); }
+function pIncidents(){
+  const r = R(), d = D(S.org), o = d.o, list = [...o.incidents].sort(incSort);
+  if (S.incOpen[S.org] === undefined) S.incOpen[S.org] = (list.find(i => i.status === 'action') || list[0] || {}).id || null;
+  const openId = S.incOpen[S.org];
+  return `<h1>Incidents</h1><p class="sub">Each incident says what our analysts already did and what, if anything, you need to do. Tasks for you are listed first.</p>
+  <div class="card" data-testid="noise"><div class="row between"><h3 style="margin:0">Alert noise, last 30 days</h3><span class="small muted">filtered by analysts so you don't have to</span></div>
+   <p style="margin:6px 0 0"><strong>${o.alertsReviewed.toLocaleString()}</strong> alerts reviewed by analysts → <strong>${d.escalated}</strong> escalated to you (${d.threats.length} real ${d.threats.length === 1 ? 'threat' : 'threats'}${d.escalated - d.threats.length ? `, ${d.escalated - d.threats.length} confirmed safe` : ''})</p></div>
+  <div class="list" style="margin-top:12px">${list.length ? list.map(i => incRow(i, i.id === openId)).join('') : '<div class="card"><p class="muted" style="margin:0">No incidents in the last 30 days. Analysts reviewed every alert and none needed you.</p></div>'}</div>`;
+}
+function incRow(i, open){
+  const r = R(), o = O();
+  const doBtns = !r.ro && i.status === 'action' ? `<div class="row" style="margin-top:8px"><button class="btn primary sm" data-done="${i.id}" data-testid="done-${i.id}">Mark done</button><button class="btn sm" data-toast="Question sent to ${ON.who} about this incident. Reply within 15 minutes, 24/7.">Ask an analyst about this</button></div>` : !r.ro ? `<div class="row" style="margin-top:8px"><button class="btn sm" data-toast="Question sent to ${ON.who}. Reply within 15 minutes, 24/7.">Ask an analyst about this</button></div>` : '';
+  return `<div class="inc"><button class="inc-head" id="inc-btn-${i.id}" data-testid="incident-${i.id}" data-inc="${i.id}" aria-expanded="${open}" aria-controls="inc-detail-${i.id}">
+    <span class="t"><strong>${esc(i.title)}</strong>${incStatus(i)}</span><span class="row small muted">${sevBadge(i.sev)}<span>${i.when} · ${esc(i.site)}${i.containMin !== undefined ? ` · contained in ${i.containMin} min` : ''}</span>${R().kind === 'msp' ? `<span>· PSA ${i.psa}</span>` : ''}</span></button>
+   <div class="inc-detail" id="inc-detail-${i.id}" role="region" aria-labelledby="inc-btn-${i.id}" ${open ? '' : 'hidden'}>
+    <div class="box did" data-testid="we-did"><h4>✓ What we already did</h4><ul class="small">${i.did.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>
+    <div class="box do" data-testid="you-do"><h4>${i.status === 'action' ? '! What you need to do' : 'What you need to do'}</h4><ul class="small">${i.do.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+     ${i.tip ? '<button class="link small" data-toast="Phishing tip sheet downloaded (PDF, 1 page)">Download the tip sheet (PDF)</button>' : ''}${doBtns}</div>
+    <div class="box legal" data-testid="breach"><h4>Breach assessment</h4><p class="small" style="margin:0 0 4px"><strong>${esc(o.dataLabel)} accessed: ${esc(i.data.split('. ')[0].replace(/\.$/, ''))}</strong>${i.data.includes('. ') ? '. ' + esc(i.data.split('. ').slice(1).join('. ')) : ''}</p><p class="small" style="margin:0"><strong>Notification clock:</strong> ${esc(i.clock)}</p></div>
+    <div style="margin-top:10px" data-testid="timeline"><h4 style="margin:0 0 6px;font-size:13px">Timeline (ET)</h4><ol class="tl">${i.tl.map(([t, e]) => `<li><b>${t}</b> · ${esc(e)}</li>`).join('')}</ol></div>
+    ${R().kind === 'msp' ? `<div class="row small" style="margin-top:8px"><span>PSA ticket ${i.psa} · ${MSP.psa}</span><button class="btn sm" data-toast="Notes pushed to ${MSP.psa} ticket ${i.psa}">Push update to PSA</button></div>` : ''}
+    ${i.status === 'benign' && R().it ? '<div class="row" style="margin-top:8px"><button class="btn sm" data-toast="Tuning request sent: similar planned admin-account alerts will be auto-closed after IT confirms">Tune this rule (fewer alerts like this)</button></div>' : ''}
+   </div></div>`;
+}
+function pDevices(){
+  const r = R(), d = D(S.org), o = d.o, site = S.devSite;
+  const inSite = x => site === 'all' || x.site === site;
+  const off = d.offline.filter(inSite);
+  const rows = o.devices.filter(inSite).filter(x => S.devStatus === 'all' || (S.devStatus === 'offline' ? x.offline : S.devStatus === 'update' ? /Update|update/.test(x.status || '') : true));
+  const siteTotal = site === 'all' ? d.total : (o.sites.find(s => s.n === site) || { ep: 0 }).ep;
+  const isIT = r.it;
+  return `<h1>Devices</h1><p class="sub">Coverage and what to fix first${site === 'all' ? '' : ' · ' + esc(site)}.</p>
+  <div class="row" style="margin-bottom:12px">
+   <label class="field">Location<select id="dev-site"><option value="all">All locations</option>${o.sites.map(s => `<option ${site === s.n ? 'selected' : ''}>${esc(s.n)}</option>`).join('')}</select></label>
+   <label class="field">Show<select id="dev-status"><option value="all" ${S.devStatus === 'all' ? 'selected' : ''}>All listed</option><option value="offline" ${S.devStatus === 'offline' ? 'selected' : ''}>Not reporting</option><option value="update" ${S.devStatus === 'update' ? 'selected' : ''}>Update missing</option></select></label></div>
+  <div class="grid g2">
+   <div class="card" data-testid="not-reporting"><div class="row between"><h3 style="margin:0">Not reporting</h3><span class="pill ${off.length ? 'warn' : 'good'}">${off.length ? '! ' : '✓ '}${off.length} ${off.length === 1 ? 'device' : 'devices'}</span></div>
+    <p class="small muted" style="margin:4px 0 6px">Sorted by business impact, not by days silent.</p>
+    ${off.length ? `<div class="tw"><table><thead><tr><th>Device</th><th>Silent</th><th class="hide-sm">Likely reason · last user / IP</th></tr></thead><tbody>${off.map(x => `<tr><td><strong>${x.n}</strong>${x.tag ? `<br><span class="tag">${x.tag}</span>` : ''}<div class="small muted">${esc(x.site)}</div></td><td>${x.offline} day${x.offline > 1 ? 's' : ''}</td><td class="hide-sm small">${esc(x.reason)}<br><span class="muted">${esc(x.last)}</span></td></tr>`).join('')}</tbody></table></div>` : '<p class="small muted">Every device is reporting.</p>'}
+    <div class="row" style="margin-top:8px">${isIT ? `<button class="btn primary sm" data-testid="copy-install" data-toast="Agent install command copied for ${esc(o.short)} (Windows, PowerShell)">Copy agent install command</button><button class="btn sm" data-toast="Deployment package sent to ${r.kind === 'msp' ? MSP.rmm : 'Intune'}">Deploy via ${r.kind === 'msp' ? 'RMM' : 'Intune / GPO'}</button>` : `<button class="btn sm" data-testid="send-it" data-toast="Reinstall link emailed to your IT manager">Send reinstall link to IT</button>`}</div></div>
+   <div class="card" data-testid="top-vuln"><div class="row between"><h3 style="margin:0">Fix first</h3>${o.vulns.length ? '<span class="pill bad">▲ Critical</span>' : '<span class="pill good">✓ Nothing critical</span>'}</div>
+    ${o.vulns.length ? o.vulns.map(v => `<p class="small" style="margin:8px 0 6px"><strong>1 critical update missing on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'}</strong>: ${esc(v.name)} on ${v.hosts.join(', ')}. ${v.exploited ? 'Actively exploited.' : ''} Missing for ${v.ageDays} days.</p><p class="small muted" style="margin:0 0 6px">Why first: ${esc(v.why)}</p>`).join('') + `<p class="small muted" style="margin:0 0 8px">Who installs it: ${r.kind === 'msp' ? 'your RMM' : 'your IT'}. Watchpost finds missing updates and confirms the fix; it does not reboot your servers.</p>
+    <button class="btn primary sm" data-toast="${r.kind === 'msp' ? `Patch job queued in ${MSP.rmm} for the next maintenance window` : 'Ticket created for your IT manager with the update steps and a suggested after-hours window'}">${r.kind === 'msp' ? 'Push to RMM' : 'Create ticket for IT'}</button>` : '<p class="small muted">No critical updates missing. Next scan tonight 01:00.</p>'}</div></div>
+  <div class="card" style="margin-top:12px" data-testid="device-table"><div class="row between"><h3 style="margin:0">Devices to know about</h3><button class="btn sm" data-toast="Device list exported (CSV, ${siteTotal} rows)">Export all ${siteTotal} (CSV)</button></div>
+   <p class="small muted" style="margin:4px 0 6px">Showing ${rows.length} of ${siteTotal} devices${site === 'all' ? '' : ' at ' + esc(site)}. The other ${siteTotal - rows.length} are protected and up to date.</p>
+   <div class="tw"><table><thead><tr><th>Device</th><th class="hide-sm">Location</th><th>Status</th><th>Risk</th></tr></thead><tbody>
+   ${rows.sort((a, b) => (b.impact || (b.risk === 'high' ? 85 : b.risk === 'medium' ? 50 : 10)) - (a.impact || (a.risk === 'high' ? 85 : a.risk === 'medium' ? 50 : 10))).map(x => { const risk = x.offline ? (x.impact >= 75 ? 'high' : x.impact >= 50 ? 'medium' : 'low') : x.risk;
+     return `<tr><td>${x.n}<div class="small muted">${esc(x.type)}</div></td><td class="hide-sm">${esc(x.site)}</td><td>${x.offline ? `<span class="pill warn">! Not reporting ${x.offline}d</span>` : /missing/i.test(x.status) ? `<span class="pill warn">! ${esc(x.status)}</span>` : `<span class="pill good">✓ ${esc(x.status)}</span>`}</td><td><span class="risk ${risk}">${risk === 'high' ? '▲ High' : risk === 'medium' ? '◆ Medium' : '● Low'}</span></td></tr>`; }).join('') || '<tr><td colspan="4" class="muted">No devices match this filter.</td></tr>'}
+   </tbody></table></div></div>`;
+}
+function pAccounts(){
+  const r = R(), d = D(S.org), o = d.o, f = S.acctFilter;
+  const rows = o.accounts.filter(a => f === 'all' || (f === 'dormant' ? a.last >= 30 && !a.service : a.mfa === false));
+  return `<h1>Accounts</h1><p class="sub">Who can sign in, who hasn't for a while, and who has no MFA.</p>
+  <div class="grid g4"><div class="card"><div class="kpi-label">Users</div><div class="kpi">${o.users}</div></div>
+   <div class="card"><div class="kpi-label">Without MFA</div><div class="kpi ${d.mfaGap.length ? 'warn' : 'good'}">${d.mfaGap.length}</div></div>
+   <div class="card"><div class="kpi-label">Unused 30+ days, still active</div><div class="kpi ${d.dormantOpen.length ? 'warn' : 'good'}">${d.dormantOpen.length}</div></div>
+   <div class="card"><div class="kpi-label">Admin accounts</div><div class="kpi">${o.accounts.filter(a => a.admin).length}</div></div></div>
+  <div class="card" style="margin-top:12px" data-testid="accounts"><div class="row between"><h3 style="margin:0">Accounts to review</h3>
+   <div class="seg" role="group" aria-label="Filter accounts"><button data-af="all" aria-pressed="${f === 'all'}">All listed</button><button data-af="dormant" data-testid="filter-dormant" aria-pressed="${f === 'dormant'}">Unused 30+ days</button><button data-af="nomfa" data-testid="filter-nomfa" aria-pressed="${f === 'nomfa'}">No MFA</button></div></div>
+   <p class="small muted" style="margin:6px 0">Showing ${rows.length} of ${o.users} users. Everyone not listed signed in this month with MFA.</p>
+   <div class="tw"><table><thead><tr><th>Account</th><th>Last sign-in</th><th>MFA</th><th>Action</th></tr></thead><tbody>
+   ${rows.map(a => { const key = S.org + ':' + a.id, req = S.disableReq[key], dorm = a.last >= 30 && !a.service;
+     return `<tr data-testid="acct-${a.id}"><td><strong>${a.n}${a.n.endsWith('@') ? esc(o.domain) : ''}</strong>${a.admin ? ' <span class="pill info">Admin</span>' : ''}<div class="small muted">${esc(a.role)}</div></td>
+      <td>${a.last === 0 ? 'Today' : a.last + ' days ago'}${dorm ? ' <span class="pill warn">! Unused</span>' : ''}</td>
+      <td>${a.mfa === null ? '<span class="pill">Service account</span>' : a.mfa ? '<span class="pill good">✓ On</span>' : '<span class="pill warn">! Off</span>'}</td>
+      <td>${req ? '<span class="pill good">✓ Disable requested · IT notified</span>' : dorm && !r.ro ? `<button class="btn sm" data-disable="${a.id}" data-testid="disable-${a.id}">Request disable</button>` : a.mfa === false && !r.ro ? (S.mfaNudged[key] ? '<span class="pill info">Reminder sent</span>' : `<button class="btn sm" data-nudge="${a.id}">Send MFA setup reminder</button>`) : '<span class="muted small">—</span>'}</td></tr>`; }).join('') || '<tr><td colspan="4" class="muted">No accounts match.</td></tr>'}
+   </tbody></table></div></div>`;
+}
+function pCompliance(){
+  const r = R(), d = D(S.org), o = d.o, fw = fwOf(), cs = controls(o, d, fw), met = cs.filter(c => c.s === 'met').length, part = cs.filter(c => c.s === 'partial').length, gap = cs.filter(c => c.s === 'gap').length;
+  const opts = id => `<option value="${id}" ${fw === id ? 'selected' : ''}>${FW[id].name}</option>`;
+  const inScope = o.frameworks, other = Object.keys(FW).filter(f => !inScope.includes(f));
+  return `<div class="row between"><div><h1>Compliance</h1><p class="sub">Controls mapped to evidence Watchpost collects automatically.</p></div>
+   <label class="field">Framework<select id="fw"><optgroup label="In scope for ${esc(o.short)}">${inScope.map(opts).join('')}</optgroup><optgroup label="Other frameworks (mapping only)">${other.map(opts).join('')}</optgroup></select></label></div>
+  ${fw === 'hipaa' ? `<div class="card" data-testid="baa" style="margin-bottom:12px"><div class="row between"><div><strong>Business associate agreement (BAA) with Watchpost</strong><div class="small muted">Required because Watchpost's logs can contain patient information.</div></div>${o.baa && o.baa.status === 'signed' ? `<span class="pill good">✓ Signed ${fmtDate(o.baa.date)}</span>` : '<span class="pill bad">✕ Not signed yet</span>'}</div>
+    <div class="row" style="margin-top:8px">${o.baa && o.baa.status === 'signed' ? '<button class="btn sm" data-toast="BAA downloaded (PDF, countersigned)">Download BAA</button>' : r.ro ? '' : '<button class="btn primary sm" data-toast="BAA sent for e-signature">Sign BAA</button>'}</div></div>` : ''}
+  ${!inScope.includes(fw) ? `<p class="small pill info" style="margin:0 0 10px">${FW[fw].short} is not in scope for ${esc(o.short)}. Shown as a mapping only.</p>` : ''}
+  <div class="card" data-testid="framework"><div class="row between"><h3 style="margin:0" id="fw-name">${FW[fw].name}</h3><strong data-testid="fw-score">${met} of ${cs.length} controls met</strong></div>
+   <p class="small muted" style="margin:4px 0 6px">${part} partly met · ${gap} gaps · all ${cs.length} controls listed below</p>
+   <div class="bar-track" role="img" aria-label="${met} of ${cs.length} controls met"><div class="bar-fill" style="width:${Math.round(100 * met / cs.length)}%"></div></div>
+   <div style="margin-top:8px">${cs.map(c => { const k = fw + ':' + c.cite, open = !!S.ctrlOpen[k], sl = slug(c.cite);
+     return `<div class="ctrl" data-testid="ctrl-${sl}"><button class="ctrl-head" data-ctrl="${esc(k)}" aria-expanded="${open}" aria-controls="cd-${fw}-${sl}"><span><span class="c">${esc(c.cite)}</span>${esc(c.name)}</span>${statPill(c.s)}</button>
+      <div class="ctrl-detail" id="cd-${fw}-${sl}" ${open ? '' : 'hidden'}><p style="margin:0 0 6px">${esc(c.note)}</p><dl class="kv"><dt>Evidence source</dt><dd>${esc(c.src)}</dd><dt>Collected</dt><dd>Collected ${esc(c.when)} ET</dd><dt>Owner</dt><dd>${esc(c.owner)}</dd></dl>
+       <div class="row" style="margin-top:6px">${c.when !== '—' ? `<button class="btn sm" data-testid="evidence-dl-${sl}" data-toast="Evidence for ${esc(c.cite)} downloaded · collected ${esc(c.when)} ET · SHA-256 recorded">Download evidence</button>` : ''}
+       ${c.key === 'training' && !o.trainingUploaded && !r.ro ? '<button class="btn primary sm" data-upload-training data-testid="upload-training">Upload training certificates</button>' : ''}
+       ${c.key === 'retention' && fw === 'hipaa' && !o.archive6y && !r.ro ? '<button class="btn primary sm" data-archive data-testid="enable-archive">Turn on 6-year archive</button>' : ''}</div></div></div>`; }).join('')}</div>
+   ${r.ro && S.role !== 'auditor' ? '' : `<div class="row" style="margin-top:10px"><button class="btn primary" data-testid="export-evidence" data-export-open aria-expanded="${S.exportOpen}" aria-controls="export-box">Export evidence for auditor</button><span class="small muted">Last exported ${S.exports[0].when}</span></div>`}
+   <div class="card" id="export-box" data-testid="export-box" style="margin-top:10px;background:var(--panel-2)" ${S.exportOpen ? '' : 'hidden'}><h3>Export evidence</h3>
+    <div class="row"><label class="field">Framework<select id="exp-fw" disabled><option>${FW[fw].short}</option></select></label>
+     <label class="field">Period<select id="exp-period"><option>Last 12 months</option><option>Q3 2026</option><option>Oct 1–31, 2026</option></select></label>
+     <label class="field">Format<select id="exp-format"><option>ZIP + PDF index</option><option>PDF only</option></select></label></div>
+    <div class="row" style="margin-top:8px"><button class="btn primary sm" data-testid="export-go" data-export-go>Create export</button></div>
+    <h4 style="margin:10px 0 4px;font-size:13px">Export history</h4><ul class="small" data-testid="export-history" style="margin:0;padding-left:18px">${S.exports.map(e => `<li>${e.when}: ${esc(e.what)}</li>`).join('')}</ul></div></div>`;
+}
+function pInsurance(){
+  const r = R(), d = D(S.org), o = d.o, ins = o.insurance, qs = questions(o, d), ready = qs.filter(q => q.s === 'yes').length, need = qs.filter(q => q.s !== 'yes');
+  return `<h1>Cyber insurance</h1><p class="sub">The renewal questionnaire, answered from live data with dated evidence.</p>
+  <div class="grid g3">
+   <div class="card" data-testid="renewal"><div class="kpi-label">Renewal date</div><div class="kpi">${fmtDate(ins.renewal)}</div><div class="delta muted">${daysUntil(ins.renewal)} days left</div></div>
+   <div class="card" data-testid="readiness"><div class="kpi-label">Questionnaire readiness</div><div class="kpi">${ready} of ${qs.length}</div><div class="delta ${need.length ? 'warn' : 'good'}">${need.length ? `! ${need.length} ${need.length > 1 ? 'answers need' : 'answer needs'} work` : '✓ ready to send'}</div></div>
+   <div class="card" data-testid="policy"><div class="kpi-label">Current policy</div><div><strong>${esc(ins.carrier)}</strong></div><div class="small muted">Policy ${ins.policy} · limit ${ins.limit}<br>Premium ${money(ins.premium)}/yr · broker ${esc(ins.broker)}, ${esc(ins.brokerFirm)}</div></div></div>
+  <div class="card" style="margin-top:12px" data-testid="questionnaire"><div class="row between"><h3 style="margin:0">Insurer questions</h3><span class="small muted" data-testid="q-count">All ${qs.length} questions shown</span></div>
+   ${qs.map(q => `<div class="q" data-testid="q-${q.k}"><div><div>${esc(q.q)}</div><div class="ev">Evidence: ${esc(q.src)} · ${q.when === '—' ? 'not collected yet' : 'dated ' + esc(q.when)}</div></div><span class="pill ${ANS[q.s]}" style="white-space:normal;text-align:right">${ANSICON[q.s]} ${esc(q.a)}</span></div>`).join('')}
+   <div class="row" style="margin-top:10px">
+    <button class="btn primary" data-testid="download-pack" data-toast="Insurance evidence pack downloaded (PDF + 10 evidence files, dated Nov 11, 2026)">Download evidence pack</button>
+    ${r.ro ? '' : `<button class="btn" data-testid="email-broker" data-toast="Pack emailed to ${esc(ins.broker)} (${esc(ins.brokerEmail)})">Email pack to broker</button>`}
+    <button class="btn" data-testid="attestation" data-toast="Signed provider attestation downloaded (Watchpost, dated Nov 11, 2026)">Download signed attestation</button>
+    ${!o.trainingUploaded && !r.ro ? '<button class="btn" data-upload-training>Upload training certificates</button>' : ''}</div></div>
+  <div class="grid g2" style="margin-top:12px">
+   <div class="card"><h3>Controls that usually lower premiums</h3><ul class="small" style="margin:0;padding-left:18px"><li>MFA on email and remote access for every user</li><li>24/7 managed detection and response (you have it)</li><li>Tested offline backups</li><li>Critical updates within 30 days</li></ul></div>
+   <div class="card"><h3>What a breach could cost</h3><p class="small" style="margin:0">Healthcare had the highest average breach cost of any industry, about $9.8M per breach across all company sizes (IBM Cost of a Data Breach Report 2024). Small practices pay far less in absolute terms, but notification, forensics and downtime alone often exceed a year of premiums.</p></div></div>`;
+}
+function pBilling(){
+  const d = D(S.org), o = d.o, p = d.plan;
+  if (o.channel === 'msp') return `<h1>Plan & billing</h1><p class="sub">Your security service is billed by ${MSP.name}.</p><div class="card"><p>Contact ${MSP.name} for invoices.</p></div>`;
+  return `<h1>Plan & billing</h1><p class="sub">One flat monthly price by device count. No per-alert or per-incident fees.</p>
+  <div class="grid g3"><div class="card" data-testid="plan"><div class="kpi-label">Your plan</div><div class="kpi">${money(p.price)}/mo</div><div class="delta muted">${p.name}: ${p.note} · you have ${d.total}</div></div>
+   <div class="card"><div class="kpi-label">Next invoice</div><div class="kpi">Dec 1</div><div class="delta muted">${money(p.price)} · card ending 4242</div></div>
+   <div class="card"><div class="kpi-label">Price locked until</div><div class="kpi">Mar 31, 2027</div><div class="delta muted">month to month after that</div></div></div>
+  <div class="card" style="margin-top:12px"><h3>Direct price list</h3><div class="tw"><table class="price-tiers"><thead><tr><th>Plan</th><th>Devices</th><th class="num">Per month</th></tr></thead><tbody>
+   ${DIRECT_TIERS.map((t, i) => `<tr><td class="${p.name === t.name ? 'cur' : ''}">${t.name}${p.name === t.name ? ' <span class="pill info">Your plan</span>' : ''}</td><td>${i ? DIRECT_TIERS[i - 1].cap + 1 : 1}–${t.cap}</td><td class="num">${money(t.price)}</td></tr>`).join('')}
+   <tr><td>Over ${DIRECT_TIERS[DIRECT_TIERS.length - 1].cap}</td><td>${DIRECT_TIERS[DIRECT_TIERS.length - 1].cap + 1}+</td><td class="num">${money(DIRECT_TIERS[DIRECT_TIERS.length - 1].price)} + $${OVER_CAP_PER_DEVICE}/extra device</td></tr></tbody></table></div>
+   <p class="small muted" style="margin:8px 0 0">Adding devices past ${p.cap || 'your'} moves you to the next plan the following month; we warn you 30 days ahead.</p></div>
+  <div class="card" style="margin-top:12px"><h3>Invoices</h3>${['Nov 1, 2026', 'Oct 1, 2026', 'Sep 1, 2026'].map(x => `<div class="q"><span>${x} · ${money(p.price)}</span><button class="btn sm" data-toast="Invoice ${x} downloaded (PDF)">Download invoice</button></div>`).join('')}</div>`;
+}
+function pPartner(){
+  const ids = mspClients(), rows = ids.map(id => ({ id, d: D(id) }));
+  const tw = rows.reduce((a, x) => a + x.d.wholesale, 0), tr = rows.reduce((a, x) => a + x.d.resale.price, 0), gp = tr - tw, tdev = rows.reduce((a, x) => a + x.d.total, 0);
+  const sel = mspClients().includes(S.org) ? S.org : 'harbor', sd = D(sel);
+  return `<h1>Partner</h1><p class="sub">${MSP.name} · wholesale ${money(WHOLESALE_PER_DEVICE)}/device/month, no minimum, month to month.</p>
+  <div class="grid g4"><div class="card"><div class="kpi-label">Wholesale cost (${ids.length} clients)</div><div class="kpi">${money(tw)}</div><div class="delta muted">${tdev.toLocaleString()} devices × $${WHOLESALE_PER_DEVICE}</div></div>
+   <div class="card"><div class="kpi-label">You bill clients</div><div class="kpi">${money(tr)}</div><div class="delta muted">per month</div></div>
+   <div class="card" data-testid="margin"><div class="kpi-label">Gross profit / month</div><div class="kpi good">${money(gp)}</div><div class="delta muted">Margin ${Math.round(100 * gp / tr)}%</div></div>
+   <div class="card"><div class="kpi-label">Annual recurring profit</div><div class="kpi">${money(gp * 12)}</div><div class="delta muted">at current client list</div></div></div>
+  <div class="card" style="margin-top:12px" data-testid="margin-table"><div class="row between"><h3 style="margin:0">Margin per client</h3>
+   <label class="field">Your resale price per device<select id="resale-rate">${[8, 9, 10, 11, 12, 14].map(v => `<option value="${v}" ${S.resaleRate === v ? 'selected' : ''}>$${v}/device</option>`).join('')}</select></label></div>
+   <p class="small muted" style="margin:6px 0">Your price is capped at Watchpost's direct price for the same client, so a client never finds it cheaper direct. Clients you register cannot buy direct (channel protection).</p>
+   <div class="tw"><table><thead><tr><th>Client</th><th class="num">Devices</th><th class="num hide-sm">Direct price</th><th class="num">Wholesale</th><th class="num">Your price</th><th class="num">Profit</th><th class="num">Margin</th><th class="hide-sm">Health 30d</th><th><span class="sr">QBR</span></th></tr></thead><tbody>
+   ${rows.map(({ id, d }) => `<tr data-testid="margin-row-${id}"><td>${esc(d.o.short)}</td><td class="num">${d.total}</td><td class="num hide-sm">${money(d.resale.direct)}</td><td class="num">${money(d.wholesale)}</td><td class="num">${money(d.resale.price)}${d.resale.capped ? ' <span class="pill info">capped at direct</span>' : ''}</td><td class="num">${money(d.resale.price - d.wholesale)}</td><td class="num">${Math.round(100 * (d.resale.price - d.wholesale) / d.resale.price)}%</td><td class="hide-sm">${spark(id)} <span class="small">${d.attention ? '! attention' : '✓ OK'}</span></td><td><button class="btn sm" data-qbr="${id}" aria-label="Generate QBR for ${esc(d.o.short)}">QBR</button></td></tr>`).join('')}
+   <tr><td><strong>Total</strong></td><td class="num"><strong>${tdev}</strong></td><td class="hide-sm"></td><td class="num"><strong>${money(tw)}</strong></td><td class="num"><strong>${money(tr)}</strong></td><td class="num"><strong>${money(gp)}</strong></td><td class="num"><strong>${Math.round(100 * gp / tr)}%</strong></td><td class="hide-sm"></td><td></td></tr></tbody></table></div></div>
+  <div class="card" style="margin-top:12px" data-testid="qbr-section"><div class="row between"><h3 style="margin:0">Quarterly business review</h3><button class="btn primary sm" data-qbr="${sel}" data-testid="qbr">Generate QBR for ${esc(sd.o.short)}</button></div>
+   ${S.qbr ? qbrCard(S.qbr) : '<p class="small muted" style="margin:6px 0 0">Pick a client in the sidebar, then generate a branded review with outcomes, trends and recommendations.</p>'}</div>
+  <div class="card" style="margin-top:12px" data-testid="white-label"><div class="row between"><h3 style="margin:0">White-label</h3><span class="pill good">✓ On for all ${ids.length} clients</span></div>
+   <div class="grid g2" style="margin-top:8px"><dl class="kv"><dt>Brand name</dt><dd>${MSP.brand}</dd><dt>Logo</dt><dd><span class="brand-chip"><i style="background:${S.wlColor}">N</i>northwind-logo.svg</span> <button class="link small" data-toast="Logo uploaded (mock)">Replace</button></dd><dt>Portal domain</dt><dd>${MSP.domain} <span class="pill good">✓ DNS verified</span></dd><dt>Alert sender</dt><dd>${MSP.sender} <span class="pill good">✓ SPF/DKIM</span></dd><dt>Reports</dt><dd>Your logo + colours; no Watchpost name</dd></dl>
+    <div><label class="field">Brand colour<select id="wl-color"><option value="#1d4ed8" ${S.wlColor === '#1d4ed8' ? 'selected' : ''}>Blue</option><option value="#7c3aed" ${S.wlColor === '#7c3aed' ? 'selected' : ''}>Purple</option><option value="#b45309" ${S.wlColor === '#b45309' ? 'selected' : ''}>Amber</option></select></label>
+     <div class="row" style="margin-top:8px"><button class="btn" data-testid="wl-preview-btn" data-wlprev aria-expanded="${S.wlPreview}" aria-controls="wl-preview">Preview as client (${esc(sd.o.short)})</button></div></div></div>
+   <div id="wl-preview" ${S.wlPreview ? '' : 'hidden'} style="margin-top:10px">${wlPreview(sel)}</div></div>`;
+}
+function qbrCard(id){ const d = D(id), o = d.o;
+  return `<div class="wl" data-testid="qbr-preview" style="margin-top:10px"><div class="wl-top" style="background:${S.wlColor}">N · ${MSP.brand} · Quarterly review for ${esc(o.name)}</div><div class="wl-body small">
+   <p style="margin:0 0 6px"><strong>Q4 2026 (to date)</strong> · prepared by Casey R., ${MSP.name}</p>
+   <ul style="margin:0;padding-left:18px"><li>Threats stopped: ${d.threats.length} (average ${d.avgContain ?? '—'} min to contain)</li><li>Alerts reviewed for you: ${o.alertsReviewed.toLocaleString()}</li><li>Coverage: ${d.reporting} of ${d.total} devices reporting</li><li>${FW[o.frameworks[0]].short}: ${controls(o, d, o.frameworks[0]).filter(c => c.s === 'met').length} of ${FW[o.frameworks[0]].controls.length} controls met</li></ul>
+   <p style="margin:6px 0 2px"><strong>Recommendations</strong></p><ul style="margin:0;padding-left:18px">${[...d.urgent, ...d.todo].slice(0, 3).map(a => `<li>${esc(a.text)}</li>`).join('') || '<li>Keep current controls; review again next quarter.</li>'}</ul>
+   <div class="row" style="margin-top:8px"><button class="btn primary sm" data-toast="QBR for ${esc(o.short)} downloaded (branded PDF, ${MSP.brand})">Download QBR (PDF)</button><button class="btn sm" data-toast="QBR deck exported (PPTX)">Export slides</button></div></div></div>`; }
+function wlPreview(id){ const d = D(id);
+  return `<div class="wl" data-testid="wl-preview"><div class="wl-top" style="background:${S.wlColor}">N · ${MSP.brand} <span style="margin-left:auto;font-weight:400">${MSP.domain}</span></div><div class="wl-body">
+   <div class="small muted">What ${esc(d.o.name)} sees</div><div class="hero ${d.urgent.length ? 'attn' : ''}" style="margin-top:6px"><div class="ico">${svg(d.urgent.length ? 'shieldbad' : 'shieldok')}</div><div><div class="big" style="font-size:16px">${d.urgent.length ? `Protected · ${d.urgent.length} need your team` : 'Protected · nothing urgent'}</div><p class="small">${d.reporting} of ${d.total} computers reporting · ${d.threats.length} threats stopped</p></div></div>
+   <p class="small muted" style="margin:6px 0 0">No Watchpost branding, no wholesale price and no other clients are shown to the client.</p></div></div>`; }
+function pReport(){
+  const v = S.verdict;
+  return `<h1>Report a suspicious email</h1><p class="sub">Not sure about an email? Send it to our analysts. You will not get in trouble for reporting, even if you clicked.</p>
+  <div class="card"><div class="grid g2"><label class="field">From<input id="rep-from" value="billing-dept@paypa1-secure.com"></label><label class="field">Subject<input id="rep-subj" value="Your invoice is overdue"></label></div>
+   <label class="field" style="margin-top:8px">What did you do?<select id="rep-did"><option value="none">I only opened the email</option><option value="link">I clicked a link</option><option value="password">I typed my password</option><option value="attach">I opened the attachment</option></select></label>
+   <div class="row" style="margin-top:10px"><button class="btn primary" data-testid="report-send" data-report>Send to analysts</button><span class="small muted">Or forward it to report@brightsmiledental.com</span></div></div>
+  ${v ? `<div class="card" style="margin-top:12px" data-testid="verdict" role="status"><div class="row between"><h3 style="margin:0">Analyst verdict: Phishing</h3><span class="pill bad">✕ Do not click</span></div>
+   <p class="small" style="margin:6px 0">Checked by ${ON.who} in 2 minutes. This is a fake invoice. We removed it from 3 other inboxes at BrightSmile.</p>
+   <div class="box do"><h4>What to do now</h4><ul class="small"><li>Delete the email. Do not reply.</li>${v === 'link' || v === 'password' ? '<li>Because you clicked: we reset your password as a precaution. You will get a text with a temporary one in 5 minutes.</li>' : ''}${v === 'attach' ? '<li>Because you opened the attachment: we scanned your PC; it is clean. No need to unplug it.</li>' : ''}<li>Thank you. Reports like yours protect everyone.</li></ul></div></div>` : ''}
+  <div class="card" style="margin-top:12px"><h3>Your recent reports</h3><div class="q"><span class="small">Oct 30 · "Shared document: Q4 schedule"</span><span class="pill good">✓ Safe</span></div><div class="q"><span class="small">Oct 12 · "Your mailbox is full"</span><span class="pill bad">✕ Phishing</span></div></div>`;
+}
+
+/* ---------------- Right side bar (context per tab) ---------------- */
+function renderRight(){
+  const r = R(), t = curTab(), d = D(S.org), o = d.o; let h = '';
+  const actions = () => `<h2>Your next actions (${d.urgent.length + d.todo.length})</h2>${d.urgent.length + d.todo.length ? `<ol class="small" style="margin:0;padding-left:18px" data-testid="next-actions">${[...d.urgent.map(a => ({ ...a, u: 1 })), ...d.todo].map(a => `<li style="margin:3px 0">${a.u ? '<strong>! </strong>' : ''}${esc(a.text)}${hasTab(a.tab) ? ` <button class="link small" data-goto="${a.tab}">Open</button>` : ''}</li>`).join('')}</ol>` : '<p class="small muted" data-testid="next-actions">Nothing to do. We will text you if that changes.</p>'}`;
+  const alertsLine = `<p class="small muted">Alerts go to ${o.contacts.map(c => esc(c.who.split(' (')[0])).join(', then ')}. <button class="link small" data-open-settings>Change who gets alerts</button></p>`;
+  if (t === 'queue') h = analystBlock() + `<h2>Coverage tonight</h2><p class="small">Every client's alerts are triaged by the same 24/7 desk. You only get escalations, as PSA tickets in ${MSP.psa}.</p>
+    <h2>Integrations</h2><ul class="small" style="margin:0;padding-left:18px"><li>${MSP.psa}: ✓ connected</li><li>${MSP.rmm}: ✓ connected</li></ul>`;
+  else if (t === 'overview') h = analystBlock() + actions() + `<h2>Last 30 days</h2>${chart(S.org)}` + `<h2>Alerts reach</h2>${alertsLine}`;
+  else if (t === 'incidents') { const i = o.incidents.find(x => x.id === S.incOpen[S.org]);
+    h = analystBlock() + (i ? `<h2>Selected incident</h2><p class="small"><strong>${esc(i.title)}</strong><br>${sevBadge(i.sev)} · ${i.when}</p><p class="small muted">Analyst note: ${esc(i.did[0])}</p>${r.kind === 'msp' ? `<p class="small">PSA ticket ${i.psa} · ${MSP.psa}</p>` : ''}` : '') + `<h2>Response promise</h2><p class="small muted">A human analyst reviews every high alert within 15 minutes, 24/7. Infected devices are isolated automatically.</p>`; }
+  else if (t === 'devices') h = `<h2>Agent install help</h2><div class="small" data-testid="install-help"><p style="margin:0 0 6px"><strong>Windows</strong> (PowerShell, as admin):</p><code style="display:block;background:var(--panel-2);padding:6px;border-radius:6px;font-size:11px;word-break:break-all">Invoke-WebRequest -Uri https://get.watchpost.example/win -OutFile wp.msi; msiexec /i wp.msi ORG_KEY=${S.org.toUpperCase()}-7F3K /q</code>
+     <p style="margin:8px 0 4px"><strong>macOS</strong>: download the .pkg and run it; approve the system extension.</p><p style="margin:0 0 4px"><strong>Linux</strong>: <code>curl -s https://get.watchpost.example/linux | sudo bash -s ${S.org}</code></p>
+     <p style="margin:8px 0 4px"><strong>Many devices at once</strong>: ${r.kind === 'msp' ? MSP.rmm + ' script "Watchpost agent"' : 'Intune app package or Group Policy MSI'}.</p></div>
+     <h2>Why a device goes silent</h2><ul class="small" style="margin:0;padding-left:18px"><li>Powered off or off network</li><li>Agent stopped after an update (restart service "WazuhSvc")</li><li>Agent removed by a local admin (we alert on this)</li></ul>
+     <h2>Need a hand?</h2><button class="btn sm" data-toast="Ticket opened with Watchpost support: agent reinstall help">Ask support to help reinstall</button>`;
+  else if (t === 'accounts') h = `<h2>Offboarding checklist</h2><ol class="small" style="margin:0;padding-left:18px"><li>Disable sign-in on the last day</li><li>Remove from shared mailboxes</li><li>Collect laptop and badge</li><li>Transfer files to manager</li></ol>
+     <h2>Who handles requests</h2><p class="small">Disable requests go to ${o.channel === 'msp' ? MSP.name + ' (PSA ticket)' : 'Marco Diaz, IT manager'}, who confirms within 1 business day.</p>${actions()}`;
+  else if (t === 'compliance') { const a = o.audit;
+    h = `<h2>Audit dates</h2><dl class="kv" data-testid="audit-dates"><dt>Last</dt><dd>${fmtDate(a.last)} · ${esc(a.kind)}</dd><dt>Next</dt><dd>${fmtDate(a.next)} (${daysUntil(a.next)} days)</dd></dl>
+     <h2>BAA status</h2><p class="small" data-testid="baa-side">${o.baa ? (o.baa.status === 'signed' ? `✓ Signed ${fmtDate(o.baa.date)} with Watchpost` : '✕ Pending signature') : 'Not required (no health data in scope)'}</p>
+     <h2>Auditor</h2><p class="small" data-testid="auditor">${esc(a.auditor)}<br>${esc(a.firm)}<br>${esc(a.email)}</p>
+     ${r.ro ? '' : `<button class="btn sm" data-share-link>${S.sharedLink ? 'Copy link again' : 'Share read-only link with auditor'}</button>${S.sharedLink ? `<p class="small" data-testid="share-link">Link active until ${fmtDate('2026-12-11')} · every view is logged</p>` : ''}`}
+     <h2>Log retention</h2><p class="small">Logs: 1 year searchable. ${o.archive6y ? '✓ 6-year archive on (HIPAA documentation).' : '! 6-year archive off. HIPAA requires documentation be kept 6 years.'}</p>`; }
+  else if (t === 'insurance') { const ins = o.insurance, qs = questions(o, d);
+    h = `<h2>Renewal checklist</h2><ul class="small" style="margin:0;padding-left:18px;list-style:none" data-testid="renewal-checklist">${qs.map(q => `<li style="margin:3px 0">${q.s === 'yes' ? '✓' : q.s === 'partial' ? '!' : '✕'} ${esc(q.q)}</li>`).join('')}</ul>
+     <h2>Timeline</h2><p class="small">${fmtDate('2026-12-15')}: send pack to broker<br>${fmtDate('2027-01-05')}: underwriter questions<br>${fmtDate(ins.renewal)}: renewal</p>
+     <h2>Broker</h2><p class="small" data-testid="broker">${esc(ins.broker)} · ${esc(ins.brokerFirm)}<br>${esc(ins.brokerEmail)}</p>`; }
+  else if (t === 'billing') h = `<h2>Billing contact</h2><p class="small">Dr. Alan Kim · invoices emailed on the 1st</p><h2>Plan fit</h2><p class="small">${d.total} devices on ${d.plan.name}${d.plan.cap ? ` (up to ${d.plan.cap}). ${d.plan.cap - d.total} devices of headroom.` : '.'}</p><h2>What's included</h2><ul class="small" style="margin:0;padding-left:18px"><li>24/7 analysts and response</li><li>Compliance evidence and insurance pack</li><li>Monthly plain-English report</li></ul>`;
+  else if (t === 'partner') { const ids = mspClients(), tw = ids.reduce((a, id) => a + D(id).wholesale, 0);
+    h = `<h2>Partner billing</h2><dl class="kv" data-testid="partner-billing"><dt>Next wholesale invoice</dt><dd>Dec 1 · ${money(tw)}</dd><dt>Terms</dt><dd>Month to month, no minimum</dd><dt>Rate</dt><dd>$${WHOLESALE_PER_DEVICE}/device</dd></dl>
+     <h2>White-label settings</h2><dl class="kv"><dt>Brand</dt><dd>${MSP.brand}</dd><dt>Domain</dt><dd>${MSP.domain} ✓</dd><dt>Sender</dt><dd>${MSP.sender}</dd><dt>Colour</dt><dd><span class="brand-chip"><i style="background:${S.wlColor}">N</i>${S.wlColor}</span></dd></dl>
+     <h2>Channel protection</h2><p class="small">Your ${ids.length} registered clients are locked to ${MSP.name}. Watchpost will not sell to them direct.</p>
+     <h2>Integrations</h2><p class="small">${MSP.psa} ✓ · ${MSP.rmm} ✓</p>`; }
+  else if (t === 'report') h = `<h2>What happens next</h2><ol class="small" style="margin:0;padding-left:18px"><li>An analyst checks the email (usually under 5 minutes, 24/7).</li><li>You get a verdict here and by text.</li><li>If it's bad, we remove it from everyone's inbox.</li></ol><h2>Signs of phishing</h2><ul class="small" style="margin:0;padding-left:18px"><li>Urgent payment or password requests</li><li>Look-alike addresses (paypa1 vs paypal)</li><li>Unexpected attachments</li></ul><h2>Analyst on duty</h2><p class="small">${ON.who} until ${ON.to} ET, then ${NEXT.who}.</p>`;
+  $('#right-body').innerHTML = h;
+}
+
+/* ---------------- Pop-up panels from the rail ---------------- */
+function openPop(kind){ S.pop = kind; renderPop(); $('#pop').hidden = false; const f = $('#pop input, #pop-close'); f && f.focus(); }
+function closePop(){ if (!S.pop) return; S.pop = null; $('#pop').hidden = true; const b = $(`.rail button[data-view]`); $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current')); const rb = $$('.rail button[data-tab-target]').find(x => x.dataset.tabTarget === curTab()); rb && rb.setAttribute('aria-current', 'page'); }
+function searchResults(){
+  const q = S.searchQ.trim().toLowerCase(), r = R(), ids = r.kind === 'msp' && S.searchScope === 'all' ? mspClients() : [S.org];
+  const out = [];
+  ids.forEach(id => { const o = ORGS[id], pre = ids.length > 1 ? o.short + ' · ' : '';
+    o.devices.forEach(x => (!q || x.n.toLowerCase().includes(q)) && out.push(['Device', pre + x.n, `${x.type} · ${x.site} · ${x.offline ? 'not reporting ' + x.offline + 'd' : x.status}`]));
+    o.accounts.forEach(a => (!q || a.n.toLowerCase().includes(q)) && out.push(['Account', pre + a.n + (a.n.endsWith('@') ? o.domain : ''), `${a.role} · last sign-in ${a.last ? a.last + ' days ago' : 'today'}`]));
+    o.incidents.forEach(i => (!q || i.title.toLowerCase().includes(q)) && out.push(['Incident', pre + i.title, `${SEV[i.sev]} · ${i.when}`]));
+    o.logs.forEach(l => (!q || l.join(' ').toLowerCase().includes(q)) && out.push(['Log', pre + l[0] + ' · ' + l[1], `${l[2]} · ${l[3]} · ${l[4]}`])); });
+  const hl = s => q ? esc(s).replace(new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'ig'), m => `<mark>${m}</mark>`) : esc(s);
+  return `<p class="small muted" style="margin:0 0 4px">${out.length} result${out.length === 1 ? '' : 's'} in the last 30 days${ids.length > 1 ? ' across ' + ids.length + ' clients' : ' for ' + esc(ORGS[S.org].short)}</p>` + (out.slice(0, 40).map(([k, a, b]) => `<div class="res"><div class="k">${k}</div><div>${hl(a)}</div><div class="small muted">${hl(b)}</div></div>`).join('') || '<p class="small muted">Nothing found. Try a device name, user or IP address.</p>');
+}
+function renderPop(){
+  const r = R(), d = D(S.org), o = d.o;
+  if (S.pop === 'search') {
+    $('#pop-title').textContent = 'Search logs, devices and accounts';
+    const chips = [o.devices[0] && o.devices[0].n, o.devices.find(x => x.n.includes('FRONTDESK-02')) ? 'FRONTDESK-02' : (o.devices[1] || {}).n, o.accounts[0] && o.accounts[0].n, (o.logs[0] || [])[3]].filter(x => x && x !== '—');
+    $('#pop-body').innerHTML = `<label class="field">Host, user, IP or text<input type="search" id="search-q" value="${esc(S.searchQ)}" placeholder="e.g. FRONTDESK-02 or 102.89"></label>
+     ${r.kind === 'msp' ? `<div class="seg" role="group" aria-label="Search scope" style="margin-top:8px"><button data-scope="org" aria-pressed="${S.searchScope === 'org'}">${esc(o.short)}</button><button data-scope="all" aria-pressed="${S.searchScope === 'all'}">All clients</button></div>` : ''}
+     <div class="row" style="margin:8px 0">${[...new Set(chips)].map(c => `<button class="chip" data-q="${esc(c)}">${esc(c)}</button>`).join('')}</div>
+     <div id="search-results" data-testid="search-results" aria-live="polite">${searchResults()}</div>`;
+  } else if (S.pop === 'alerts') {
+    $('#pop-title').textContent = 'Notifications';
+    const items = r.kind === 'msp' ? mspOpen().map(({ id, i }) => ({ t: `${ORGS[id].short}: ${i.title}`, s: i.when, go: `${id}:${i.id}` })) : [...d.urgent.map(u => ({ t: u.text, s: 'Needs action', tab: u.tab, inc: u.inc })), ...o.incidents.filter(i => i.status !== 'action').map(i => ({ t: i.title, s: `${incStatusText(i)} · ${i.when}`, tab: 'incidents' }))];
+    $('#pop-body').innerHTML = `<p class="small muted" style="margin:0 0 6px" data-testid="notif-count">${r.kind === 'msp' ? mspOpen().length : d.urgent.length} need action</p><div data-testid="notifications">${items.map(x => `<div class="res"><div>${esc(x.t)}</div><div class="row between"><span class="small muted">${esc(x.s)}</span>${x.go ? `<button class="btn sm" data-open-inc="${x.go}">Open</button>` : hasTab(x.tab) ? `<button class="btn sm" data-goto="${x.tab}" data-close-pop>Open</button>` : ''}</div></div>`).join('') || '<p class="small muted">No notifications.</p>'}</div>
+     <h3 style="font-size:13px;margin:14px 0 6px">How you get alerts</h3>${o.contacts.map((c, n) => `<div class="small">${n + 1}. ${esc(c.who)}: ${esc(c.how)}</div>`).join('')}`;
+  } else if (S.pop === 'settings') {
+    $('#pop-title').textContent = 'Settings';
+    $('#pop-body').innerHTML = `<h3 style="font-size:13px;margin:0 0 6px">Alert contacts and escalation order${r.kind === 'msp' ? ' · ' + esc(o.short) : ''}</h3>
+     <div data-testid="escalation">${o.contacts.map((c, n) => `<div class="res"><strong>${n + 1}. ${esc(c.who)}</strong><div class="small muted">${esc(c.how)}</div></div>`).join('')}</div>
+     <h3 style="font-size:13px;margin:14px 0 6px">My notification channels</h3>
+     <label class="row small"><input type="checkbox" checked> SMS for high-severity incidents</label><label class="row small"><input type="checkbox" checked> Email for every incident</label><label class="row small"><input type="checkbox"> Phone call after hours if no reply in 15 min</label>
+     ${r.kind === 'msp' ? `<h3 style="font-size:13px;margin:14px 0 6px">Integrations</h3><div class="small">${MSP.psa}: ✓ connected · ${MSP.rmm}: ✓ connected</div>` : ''}
+     <div class="row" style="margin-top:12px"><button class="btn primary sm" data-toast="Settings saved" data-close-pop>Save</button></div>`;
+  }
+}
+const incStatusText = i => ({ action: 'Action needed', contained: 'Contained', done: 'Done', benign: 'Confirmed OK' }[i.status]);
+
+/* ---------------- Render all ---------------- */
+const PANELS = { queue: pQueue, overview: pOverview, incidents: pIncidents, devices: pDevices, accounts: pAccounts, compliance: pCompliance, insurance: pInsurance, billing: pBilling, partner: pPartner, report: pReport };
+function renderPanels(){ for (const [k, f] of Object.entries(PANELS)) { const el = $('#panel-' + k); el.innerHTML = hasTab(k) ? f() : ''; } }
+function renderAll(){
+  const fid = document.activeElement && (document.activeElement.id || document.activeElement.dataset.testid);
+  renderRail(); renderSide(); renderCtx(); renderPanels(); renderRight(); renderBottom(); if (S.pop) renderPop();
+  if (fid) { const el = document.getElementById(fid) || $(`[data-testid="${fid}"]`); if (el && el !== document.activeElement) el.focus({ preventScroll: true }); }
+}
+const say = m => { $('#live').textContent = ''; setTimeout(() => $('#live').textContent = m, 30); };
+
+/* ---------------- Hooks ---------------- */
+window.onTab = id => { renderRight(); renderCtx(); renderSide(); renderRail(); };
+window.onSelect = id => {
+  if (id === 'all') { UI.selectTab('queue'); return; }
+  if (id.startsWith('site:')) { S.devSite = id.slice(5); renderAll(); if (hasTab('devices')) UI.selectTab('devices'); return; }
+  if (id.startsWith('fw:')) { S.fw[S.org] = id.slice(3); renderAll(); UI.selectTab('compliance'); return; }
+  S.org = id; S.mspOrg = id; S.devSite = 'all'; S.devStatus = 'all'; S.qbr = false; S.wlPreview = false; S.exportOpen = false;
+  renderAll(); if (curTab() === 'queue') UI.selectTab('overview'); else UI.selectTab(curTab());
+  say(`Now showing ${ORGS[id].name}`);
+};
+window.onRail = v => { if (['search', 'alerts', 'settings'].includes(v)) openPop(v); else closePop(); };
+window.onRole = role => {
+  S.role = role; const r = R(); S.org = r.org || S.mspOrg; S.devSite = 'all'; S.devStatus = 'all'; S.acctFilter = 'all'; S.qbr = false; S.wlPreview = false; S.exportOpen = false; S.verdict = null;
+  closePop(); renderTabs(); renderAll(); UI.selectTab(r.tabs[0]);
+  if (window.matchMedia('(max-width:760px)').matches) UI.closeDrawers();
+  say(`Viewing as ${$('#role').selectedOptions[0].textContent}`);
+};
+window.onReady = () => { renderTabs(); renderAll(); };
+
+/* ---------------- Events ---------------- */
+document.addEventListener('click', e => {
+  const t = e.target;
+  const inc = t.closest('[data-inc]'); if (inc) { const id = inc.dataset.inc; S.incOpen[S.org] = S.incOpen[S.org] === id ? null : id; $('#panel-incidents').innerHTML = pIncidents(); renderRight(); const b = $('#inc-btn-' + id); b && b.focus({ preventScroll: true }); b && b.scrollIntoView({ block: 'start', behavior: 'instant' }); say(S.incOpen[S.org] ? 'Details shown' : 'Details hidden'); return; }
+  const done = t.closest('[data-done]'); if (done) { const i = O().incidents.find(x => x.id === done.dataset.done); i.status = 'done'; renderAll(); UI.toast('Marked done. Thanks, the analyst has been told.'); return; }
+  const ctrl = t.closest('[data-ctrl]'); if (ctrl) { S.ctrlOpen[ctrl.dataset.ctrl] = !S.ctrlOpen[ctrl.dataset.ctrl]; $('#panel-compliance').innerHTML = pCompliance(); const b = $(`[data-ctrl="${CSS.escape(ctrl.dataset.ctrl)}"]`); b && b.focus({ preventScroll: true }); return; }
+  if (t.closest('[data-upload-training]')) { O().trainingUploaded = true; renderAll(); UI.toast('Training certificates uploaded: counts for compliance and insurance'); return; }
+  if (t.closest('[data-archive]')) { O().archive6y = true; renderAll(); UI.toast('6-year log archive turned on (included in your plan)'); return; }
+  if (t.closest('[data-export-open]')) { S.exportOpen = !S.exportOpen; $('#panel-compliance').innerHTML = pCompliance(); $('[data-export-open]').focus(); return; }
+  if (t.closest('[data-export-go]')) { const what = `${FW[fwOf()].short} · ${$('#exp-period').value} · ${$('#exp-format').value}`; S.exports.unshift({ when: 'Nov 11, 2026', what }); $('#panel-compliance').innerHTML = pCompliance(); UI.toast(`Evidence pack exported: ${what}`); return; }
+  if (t.closest('[data-share-link]')) { S.sharedLink = true; renderRight(); UI.toast('Read-only auditor link copied (expires Dec 11, 2026)'); return; }
+  const dis = t.closest('[data-disable]'); if (dis) { S.disableReq[S.org + ':' + dis.dataset.disable] = true; renderAll(); UI.toast('Disable request sent to IT'); return; }
+  const nud = t.closest('[data-nudge]'); if (nud) { S.mfaNudged[S.org + ':' + nud.dataset.nudge] = true; $('#panel-accounts').innerHTML = pAccounts(); UI.toast('MFA setup reminder sent'); return; }
+  const af = t.closest('[data-af]'); if (af) { S.acctFilter = af.dataset.af; $('#panel-accounts').innerHTML = pAccounts(); $(`[data-af="${S.acctFilter}"]`).focus(); return; }
+  const cf = t.closest('[data-cf]'); if (cf) { S.clientFilter = cf.dataset.cf; renderSide(); $(`[data-cf="${S.clientFilter}"]`).focus(); return; }
+  const qb = t.closest('[data-qbr]'); if (qb) { S.qbr = qb.dataset.qbr; if (S.qbr !== S.org) { S.org = S.qbr; S.mspOrg = S.qbr; } renderAll(); const p = $('[data-testid="qbr-preview"]'); p && p.scrollIntoView({ block: 'nearest' }); return; }
+  if (t.closest('[data-wlprev]')) { S.wlPreview = !S.wlPreview; $('#panel-partner').innerHTML = pPartner(); $('[data-wlprev]').focus(); return; }
+  if (t.closest('[data-report]')) { S.verdict = $('#rep-did').value; $('#panel-report').innerHTML = pReport(); say('Analyst verdict: phishing'); return; }
+  const oi = t.closest('[data-open-inc]'); if (oi) { const [org, id] = oi.dataset.openInc.split(':'); S.org = org; S.mspOrg = org; S.incOpen[org] = id; closePop(); renderAll(); UI.selectTab('incidents'); return; }
+  const q = t.closest('[data-q]'); if (q) { S.searchQ = q.dataset.q; renderPop(); return; }
+  const sc = t.closest('[data-scope]'); if (sc) { S.searchScope = sc.dataset.scope; renderPop(); return; }
+  if (t.closest('[data-open-settings]')) { openPop('settings'); return; }
+  if (t.closest('#pop-close') || t.closest('[data-close-pop]')) { closePop(); return; }
+});
+document.addEventListener('change', e => {
+  const id = e.target.id;
+  if (id === 'fw') { S.fw[S.org] = e.target.value; renderAll(); $('#fw').focus(); say(`Showing ${FW[e.target.value].name} controls`); }
+  if (id === 'dev-site') { S.devSite = e.target.value; renderAll(); $('#dev-site').focus(); }
+  if (id === 'dev-status') { S.devStatus = e.target.value; $('#panel-devices').innerHTML = pDevices(); $('#dev-status').focus(); }
+  if (id === 'resale-rate') { S.resaleRate = +e.target.value; renderAll(); $('#resale-rate').focus(); }
+  if (id === 'wl-color') { S.wlColor = e.target.value; renderAll(); $('#wl-color').focus(); }
+});
+document.addEventListener('input', e => {
+  if (e.target.id === 'client-q') { S.clientQ = e.target.value; const pos = e.target.selectionStart; renderSide(); const i = $('#client-q'); i.focus(); i.setSelectionRange(pos, pos); }
+  if (e.target.id === 'search-q') { S.searchQ = e.target.value; $('#search-results').innerHTML = searchResults(); }
+});
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && S.pop) { closePop(); const b = $('.rail button[data-view="search"]'); b && b.focus(); }
+  if (e.key === 'Tab' && document.body.classList.contains('drawer-open')) { // keep focus inside the open drawer
+    const d = $('.side.open, .right.open'); if (!d) return; const f = [...d.querySelectorAll('button,select,input,a[href]')].filter(x => x.offsetParent);
+    if (!f.length) return; const first = f[0], last = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); } else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+  }
+});
+})();
 </script>
 </body>
 </html>
