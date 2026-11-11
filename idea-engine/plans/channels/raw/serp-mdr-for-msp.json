@@ -1,0 +1,744 @@
+{
+  "search_metadata": {
+    "id": "6af4e907e1bead5cda812c59",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/_V-XBfRCXucWNudC9BPIYXpVP-hFSHYDooKzP4oA7rE/6af4e907e1bead5cda812c59.json",
+    "markdown_endpoint": "https://serpapi.com/searches/_V-XBfRCXucWNudC9BPIYXpVP-hFSHYDooKzP4oA7rE/6af4e907e1bead5cda812c59.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/_V-XBfRCXucWNudC9BPIYXpVP-hFSHYDooKzP4oA7rE/6af4e907e1bead5cda812c59.json_with_pixel_position",
+    "created_at": "2026-11-11 22:15:35 UTC",
+    "processed_at": "2026-11-11 22:15:35 UTC",
+    "google_ads_url": "https://www.google.com/search?q=mdr+for+msp&hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/_V-XBfRCXucWNudC9BPIYXpVP-hFSHYDooKzP4oA7rE/6af4e907e1bead5cda812c59.html",
+    "total_time_taken": 3.59
+  },
+  "search_parameters": {
+    "engine": "google_ads",
+    "q": "mdr for msp",
+    "location_requested": "Austin, Texas, United States",
+    "location_used": "Austin,Texas,United States",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "mdr for msp",
+    "total_results": 139,
+    "time_taken_displayed": 0.3,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "ads": [
+    {
+      "position": 1,
+      "block_position": "top",
+      "title": "MDR Cybersecurity Platform | One Platform, Zero Gaps",
+      "link": "https://www.cynet.com/platform/cyops/",
+      "displayed_link": "https://www.cynet.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQAxoCcHY&co=1&ase=2&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYASAAEgLKlPD_BwE&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&cce=2&category=acrcp_v1_32&sig=AOD64_3isgV6sO9TE4k9ufv_DFW5BJDU-w&q&nis=4&adurl=https://www.cynet.com/platform/cyops/?utm_source%3Dgoogle%26utm_medium%3Dppc%26utm_campaign%3Dmdr-core%26utm_term%3D%26utm_content%3Dplatform%26utm_id%3D23754232739%26hsa_acc%3D7566844470%26hsa_cam%3D21764343971%26hsa_grp%3D195755330375%26hsa_ad%3D805268774367%26hsa_src%3Dg%26hsa_tgt%3Dkwd-833573264636%26hsa_kw%3Dmanaged%2520detection%2520and%2520response%2520providers%26hsa_mt%3Dp%26hsa_net%3Dadwords%26hsa_ver%3D25%26gad_source%3D1%26gad_campaignid%3D23754232739%26gbraid%3D0AAAAADPiC_7NQ49LeCZOMydd-X4ot1VY9%26gclid%3DEAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYASAAEgLKlPD_BwE",
+      "description": "Reduce cost & tool fatigue with Cynet's automated MDR platform that scales. Access 24/7 CyOps for enhanced MDR protection. Empower your team with Cynet. Built-in 24/7 MDR Service. 24/7 SOC.",
+      "source": "Cynet Security",
+      "sitelinks": [
+        {
+          "title": "16 tools- 24/7 SOC- 1 Fee",
+          "link": "https://www.cynet.com/platform/",
+          "snippets": [
+            "Discover Cynet Today and Easily Streamline Your Cyberscurity Offer"
+          ]
+        },
+        {
+          "title": "Become a Partner",
+          "link": "https://www.cynet.com/partners/",
+          "snippets": [
+            "Cynet empowers our Partners to Deliver full breach protection"
+          ]
+        },
+        {
+          "title": "24x7 CyOps Support Included",
+          "link": "https://www.google.com/aclk?adurl=https%3A%2F%2Fwww.cynet.com%2Fplatform%2Fcyops%2F%3Futm_source%3Dgoogle%26utm_medium%3Dppc%26utm_campaign%3Dmdr-core%26utm_term%3D%26utm_content%3Dplatform%26utm_id%3D23754232739%26hsa_acc%3D7566844470%26hsa_cam%3D21764343971%26hsa_grp%3D195755330375%26hsa_ad%3D805268774367%26hsa_src%3Dg%26hsa_tgt%3Dkwd-833573264636%26hsa_kw%3Dmanaged%2520detection%2520and%2520response%2520providers%26hsa_mt%3Dp%26hsa_net%3Dadwords%26hsa_ver%3D25%26gad_source%3D1%26gad_campaignid%3D23754232739%26gbraid%3D0AAAAADPiC_7NQ49LeCZOMydd-X4ot1VY9%26gclid%3DEAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYASADEgKCu_D_BwE&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQCxoCcHY&ase=2&category=acrcp_v1_32&cce=2&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&co=1&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYASADEgKCu_D_BwE&pf=1&q=&sa=L&sig=AOD64_24RMydxdC4IXI9BfHdtfiuZXv06g",
+          "snippets": [
+            "Protect endpoints, users, network & cloud\u2014one platform, zero gaps. Explore Cynet today."
+          ]
+        }
+      ]
+    },
+    {
+      "position": 2,
+      "block_position": "top",
+      "title": "MDR Without Enterprise Pricing | Managed SOC, No Staff Needed",
+      "link": "https://www.huntress.com/edr-free-trial",
+      "displayed_link": "https://www.huntress.com \u203a edr-mdr \u203a free-trial",
+      "tracking_link": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQARoCcHY&co=1&ase=2&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYAiAAEgJ9sPD_BwE&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&cce=2&category=acrcp_v1_32&sig=AOD64_1QX0fGDjb85TPNFXduVw4-32RgRg&q&nis=4&adurl=https://www.huntress.com/edr-free-trial?utm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3Dgoogle-bofu-na-search-nonbrand-bmpm-eng-core-edr_ai_max%26hnt%3Djwgbrablcahi%26utm_term%3Dmdr%26campaignid%3D22864709022%26adgroupid%3D193561231607%26adid%3D819713373513%26hsa_acc%3D7071168637%26hsa_cam%3D22864709022%26hsa_grp%3D193561231607%26hsa_ad%3D819713373513%26hsa_kw%3Dmdr%26hsa_mt%3Db%26hsa_net%3Dadwords%26hsa_src%3Dg%26hsa_tgt%3Dkwd-298080819265%26hsa_ver%3D3%26gad_source%3D1%26gad_campaignid%3D22864709022%26gbraid%3D0AAAAABmU8LSNjI2krVsde2hNwlNTClh-0%26gclid%3DEAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYAiAAEgJ9sPD_BwE",
+      "description": "MDR without the enterprise price. Try Huntress free\u2014no credit card, no contract needed. Huntress...",
+      "source": "Huntress",
+      "sitelinks": [
+        {
+          "title": "Huntress For MSPs",
+          "link": "https://www.huntress.com/lp/partners-msps"
+        },
+        {
+          "title": "EDR Pricing",
+          "link": "https://www.huntress.com/pricing/edr"
+        },
+        {
+          "title": "Get Huntress Pricing",
+          "link": "https://www.huntress.com/pricing"
+        },
+        {
+          "title": "24/7 SOC, No Extra Headcount",
+          "link": "https://www.google.com/aclk?adurl=https%3A%2F%2Fwww.huntress.com%2Fedr-free-trial%3Futm_source%3Dgoogle%26utm_medium%3Dcpc%26utm_campaign%3Dgoogle-bofu-na-search-nonbrand-bmpm-eng-core-edr_ai_max%26hnt%3Djwgbrablcahi%26utm_term%3Dmdr%26campaignid%3D22864709022%26adgroupid%3D193561231607%26adid%3D819713373513%26hsa_acc%3D7071168637%26hsa_cam%3D22864709022%26hsa_grp%3D193561231607%26hsa_ad%3D819713373513%26hsa_kw%3Dmdr%26hsa_mt%3Db%26hsa_net%3Dadwords%26hsa_src%3Dg%26hsa_tgt%3Dkwd-298080819265%26hsa_ver%3D3%26gad_source%3D1%26gad_campaignid%3D22864709022%26gbraid%3D0AAAAABmU8LSNjI2krVsde2hNwlNTClh-0%26gclid%3DEAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYAiAEEgLhH_D_BwE&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQDBoCcHY&ase=2&category=acrcp_v1_32&cce=2&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&co=1&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYAiAEEgLhH_D_BwE&pf=1&q=&sa=L&sig=AOD64_1LRgbZ9-hplkpf2vgt5PDayk7ZKw"
+        }
+      ]
+    },
+    {
+      "position": 3,
+      "block_position": "top",
+      "title": "It Managed Services - Flat-Rate MSP Pricing",
+      "link": "https://www.zazz.io/managed-it-services-v7",
+      "displayed_link": "https://www.zazz.io \u203a it-managed \u203a services",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQABoCcHY&co=1&ase=2&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYAyAAEgIhh_D_BwE&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&cce=2&category=acrcp_v1_32&sig=AOD64_2DMA8l15kLxSRQxAYtIEYuZF_YbQ&q&nis=4&adurl",
+      "description": "Switch MSPs with zero downtime. Get fast, proactive, enterprise-grade support. Solve recurring tech issues with expert-led IT managed services. Compliance-Ready Ops. SLA-Driven... Read more",
+      "source": "Zazz"
+    },
+    {
+      "position": 4,
+      "block_position": "top",
+      "title": "Compare MDR Providers",
+      "link": "https://go.crowdstrike.com/mdr-buyers-guide.html",
+      "displayed_link": "https://go.crowdstrike.com",
+      "thumbnail": "https://serpapi.com/searches/6af4e907e1bead5cda812c59/images/psVu2AXCs6GU-mZfeEBlFw.jpg",
+      "tracking_link": "https://www.google.com/aclk?adurl=&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAEQBBoCcHY&ase=2&category=acrcp_v1_32&cce=2&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&co=1&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAAYBCABEgLjQPD_BwE&nis=4&q=&sa=L&sig=AOD64_3_zoFiW5kpo0VWhwR0AK8OhTQ-ag&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQh78CegQIIRAB",
+      "description": "Top MDR Considerations \u2014 When adversaries strike in seconds, agentic MDR matters. Get the MDR Buyer's Guide. From alert...",
+      "source": "CrowdStrike"
+    },
+    {
+      "position": 5,
+      "block_position": "middle",
+      "title": "MDR - Managed Detection and Response",
+      "link": "https://www.deepwatch.com/blog/the-future-of-enterprise-managed-detection-and-response-mdr/",
+      "displayed_link": "https://www.deepwatch.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAIQABoCcHY&co=1&ase=2&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAMYASAAEgLoavD_BwE&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&cce=2&category=acrcp_v1_32&sig=AOD64_3rJbxgMFPz7EXqahXCkUA3DxiQsA&q&nis=4&adurl",
+      "description": "Discover how the future of enterprise MDR will be defined by AI-driven innovation, deep integration, industry specialization, and expert-led security. MDR Services. AI-Native MDR. Managed Detection.",
+      "extensions": [
+        "10K+ visits in past month"
+      ],
+      "source": "Deepwatch, Inc.",
+      "sitelinks": [
+        {
+          "title": "Deepwatch MDR",
+          "link": "https://www.deepwatch.com/managed-detection-response/?utm_source=google&utm_medium=ppc&utm_campaign=Search_MDR_Category-US"
+        },
+        {
+          "title": "Compare Top MDR Services",
+          "link": "https://www.deepwatch.com/blog/the-future-of-enterprise-managed-detection-and-response-mdr/"
+        },
+        {
+          "title": "24/7 Managed Detection",
+          "link": "https://www.google.com/aclk?adurl=&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAIQBxoCcHY&ase=2&category=acrcp_v1_32&cce=2&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&co=1&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAMYASADEgIKpPD_BwE&q=&sa=L&sig=AOD64_3MFWggwEbHNniJYzF3AlwYMNpyjg"
+        },
+        {
+          "title": "AI-Native MDR Solutions",
+          "link": "https://www.deepwatch.com/why-deepwatch/?utm_source=google&utm_medium=ppc&utm_campaign=Search_MDR_Category-US&utm_content=talk-to-an-expert"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "block_position": "middle",
+      "title": "Huntress for MSPs",
+      "link": "https://www.huntress.com/lp/partners-msps",
+      "displayed_link": "https://www.huntress.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjClIXH-ICYAxXCIK0GHfAWKTUYACICCAIQARoCcHY&co=1&ase=2&gclid=EAIaIQobChMIwpSFx_iAmAMVwiCtBh3wFik1EAMYAiAAEgKr0fD_BwE&cid=CAASuwHkaNNY2r9kEa2oLFN2hiAFrVZMRHsPnlcduF3moOXlX0O_100Q9qMs2uqD1QAV9aujRDjTx_-Un6Z8Xx2PX9lbfgOqwG15_snkAXkgzCK8YPOt5nsI0EfgbCsKbmoKIFC4S64ocPcMdluq0hQyZwSctAJSuwWpjbY_B2eANcJYjqMijjBRVH5QBdqj_KS7uhsSTKXudoZUVGJy0IMr8AJs-Pc_yd3KUdbXZUV1bFmqNezuGSAQjHHjLguH&cce=2&category=acrcp_v1_32&sig=AOD64_1UMO9PDkmETyPviloguFSt1A2aXw&q&nis=4&adurl",
+      "description": "Predictable MSP Pricing \u2014 Learn how Huntress helps MSPs extend their team without adding headcount. Learn how Huntress helps MSPs cut through alert fatigue with real SOC-backed detection. 24/7 Threat Hunting Team. Try Huntress Free. Limitless Integrations. Easy To Use. Detailed Incident Reports.",
+      "source": "Huntress",
+      "sitelinks": [
+        {
+          "title": "EDR Pricing",
+          "link": "https://www.huntress.com/pricing/edr"
+        },
+        {
+          "title": "SAT Pricing",
+          "link": "https://www.huntress.com/pricing/sat"
+        },
+        {
+          "title": "Get Huntress Pricing",
+          "link": "https://www.huntress.com/pricing"
+        },
+        {
+          "title": "Huntress For MSPs",
+          "link": "https://www.huntress.com/lp/partners-msps"
+        },
+        {
+          "title": "Get SIEM Pricing",
+          "link": "https://www.huntress.com/pricing/siem"
+        },
+        {
+          "title": "Huntress",
+          "link": "https://www.huntress.com/"
+        }
+      ]
+    }
+  ],
+  "related_questions": [
+    {
+      "question": "What is MDR in cybersecurity?",
+      "type": "ai_overview",
+      "page_token": "-tNErXicHdBdToMwAADg-ORN9jgoG1OXLCZ1LYgbhLK2jJelFPZDy1hYI2yPnsUnD-MBvIHvHkDjDb58b-_6cFRfN-nemNN5alld1w13TbPT5VA2tSXOl6O0pNA6F1JNJ3cT8LiVM3Tu4FPTwZgStNaFXjOtIoQjgsYXqrKk9KEfseCYe2S_oMghlW6lD8_C7gyvgUOuGCY4O7IKZhQpl8yDF6GCltM-jZVpE31yMx8vQhW7GTjVFJOW8IdlAe5N5PWj3GPL9YjAdc1AWGeArEjP7D4uuFnIFetE9Qe-YhX6GHDk8lJJV3LGE4A5rfdKsDjBdqjzCu4L9gASB-toDmPC4KVIM71UuPIOAUzQuCOr4pmluJf10k506AtKPOaQIEMsKlKdhldqlwiPBlv5OhsN_sdmm21tpqe22X3IthSmLDbCfFY_37e_U9qALg",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=-tNErXicHdBdToMwAADg-ORN9jgoG1OXLCZ1LYgbhLK2jJelFPZDy1hYI2yPnsUnD-MBvIHvHkDjDb58b-_6cFRfN-nemNN5alld1w13TbPT5VA2tSXOl6O0pNA6F1JNJ3cT8LiVM3Tu4FPTwZgStNaFXjOtIoQjgsYXqrKk9KEfseCYe2S_oMghlW6lD8_C7gyvgUOuGCY4O7IKZhQpl8yDF6GCltM-jZVpE31yMx8vQhW7GTjVFJOW8IdlAe5N5PWj3GPL9YjAdc1AWGeArEjP7D4uuFnIFetE9Qe-YhX6GHDk8lJJV3LGE4A5rfdKsDjBdqjzCu4L9gASB-toDmPC4KVIM71UuPIOAUzQuCOr4pmluJf10k506AtKPOaQIEMsKlKdhldqlwiPBlv5OhsN_sdmm21tpqe22X3IthSmLDbCfFY_37e_U9qALg",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBpcyBNRFIgaW4gY3liZXJzZWN1cml0eT8iLCJsayI6IkdoTmtaV1pwYm1VZ2JXUnlJSE5sWTNWeWFYUjUiLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0=",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBpcyBNRFIgaW4gY3liZXJzZWN1cml0eT8iLCJsayI6IkdoTmtaV1pwYm1VZ2JXUnlJSE5sWTNWeWFYUjUiLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0%3D"
+    },
+    {
+      "question": "What are the biggest MDR companies?",
+      "type": "ai_overview",
+      "page_token": "GwWJ8XicHdA9bsIwGIBhdepNOpIEA22QUFWXhB9BII795WdBxgZCYhMEVkMYe5ZOPUwP0Bt07wGKur_SI73vH2p_KL_vktyY47lvWXVdt3ZVtVOblqi0xc_NQViCK7Xmouz3HnvO81YMvHONX6sah4x4qZIqhacmc7BPE2yAQZwhadMrnkGcNxIFvWg8XaRXGQlQs41OO_P4cha2IbdyG8eeLYEsU-3shXYv8YgAR6y9oEEpbBLMtdsTiY8ZgmGq3UagPCcFLAkoh8eg5wCKj8Mrs7t5eMjbFE0uFOFRWN4MxRqGAl-UbpbprqHw0k119xDaIvLtQK0LnEtwnajtq8UQhwRwI5NMzUu_GO2nOPI6NaFyTJBiAZUdqkkZJxLYGAfBSJq1F9agJg4vMHrYircBevg_NlhttekfT9XuU5w23Gzkipuv4vfn_g_DtX-c",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=GwWJ8XicHdA9bsIwGIBhdepNOpIEA22QUFWXhB9BII795WdBxgZCYhMEVkMYe5ZOPUwP0Bt07wGKur_SI73vH2p_KL_vktyY47lvWXVdt3ZVtVOblqi0xc_NQViCK7Xmouz3HnvO81YMvHONX6sah4x4qZIqhacmc7BPE2yAQZwhadMrnkGcNxIFvWg8XaRXGQlQs41OO_P4cha2IbdyG8eeLYEsU-3shXYv8YgAR6y9oEEpbBLMtdsTiY8ZgmGq3UagPCcFLAkoh8eg5wCKj8Mrs7t5eMjbFE0uFOFRWN4MxRqGAl-UbpbprqHw0k119xDaIvLtQK0LnEtwnajtq8UQhwRwI5NMzUu_GO2nOPI6NaFyTJBiAZUdqkkZJxLYGAfBSJq1F9agJg4vMHrYircBevg_NlhttekfT9XuU5w23Gzkipuv4vfn_g_DtX-c",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBhcmUgdGhlIGJpZ2dlc3QgTURSIGNvbXBhbmllcz8iLCJsayI6IkdoVmlhV2RuWlhOMElHMWtjaUJqYjIxd1lXNXBaWE0iLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0=",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBhcmUgdGhlIGJpZ2dlc3QgTURSIGNvbXBhbmllcz8iLCJsayI6IkdoVmlhV2RuWlhOMElHMWtjaUJqYjIxd1lXNXBaWE0iLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0%3D"
+    },
+    {
+      "question": "Is CrowdStrike an MDR?",
+      "type": "ai_overview",
+      "page_token": "aPmlnHicHdDBTsIwGADgePJNOAodEwMJMalbwUlH1pV_bBeytRvQlo3AQh1Hn8WTD-MD-AbefQCNL_Advrd3s6_1181617bH86Tft9bebZtma8o70Rz6-bmrRV_kxhS50JPRwwg9VmLqny1-aiyOVsxPjTTJAUVCSRoO7l84l1l0JU08h2SxevXknCwFEVfOiQVN6rLGujChZmRnSxLOEwVVgcZV6ZPDakAq6qU21GiRDV4dCuO29A0sACxLJKfOMUwRuYohTmAW-rnKLlJnjK_JGjzfjRHRsBp7IYIT4zLg9U6VELh8SF3qwEUmsougQdJLYzIITaHwTsIYxQ4xSw9HDHAn15mhmqjZPsCx79o_55l2yEu5PFGSdowHTjE7ukyZNE22Q1CYLWdB3avEZTrs_Y9NN9WhnRxPzfZDnMq8LeUmbz_Vz_ftLyqmf-Q",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=aPmlnHicHdDBTsIwGADgePJNOAodEwMJMalbwUlH1pV_bBeytRvQlo3AQh1Hn8WTD-MD-AbefQCNL_Advrd3s6_1181617bH86Tft9bebZtma8o70Rz6-bmrRV_kxhS50JPRwwg9VmLqny1-aiyOVsxPjTTJAUVCSRoO7l84l1l0JU08h2SxevXknCwFEVfOiQVN6rLGujChZmRnSxLOEwVVgcZV6ZPDakAq6qU21GiRDV4dCuO29A0sACxLJKfOMUwRuYohTmAW-rnKLlJnjK_JGjzfjRHRsBp7IYIT4zLg9U6VELh8SF3qwEUmsougQdJLYzIITaHwTsIYxQ4xSw9HDHAn15mhmqjZPsCx79o_55l2yEu5PFGSdowHTjE7ukyZNE22Q1CYLWdB3avEZTrs_Y9NN9WhnRxPzfZDnMq8LeUmbz_Vz_ftLyqmf-Q",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiSXMgQ3Jvd2RTdHJpa2UgYW4gTURSPyIsImxrIjoiR2hWcGN5QmpjbTkzWkhOMGNtbHJaU0JoYmlCdFpISSIsImJzIjoiYzIyT1FRdUNRQkJHNlRxbklDd1Fpb0YtUVI0NkpsR1hEa0hrb2ZPNmpqcUVxLXhzaVA4LVhWS0N1czc3M3ZCZ0QtdEhxUnl5NFBWOFJ6YW91NVNza0g1WmRsMGNCZUVpbzV3TllaVlpITzl3Z0szM2xDVjBKV0hLUlVIaV9CTmRWNDB5VEJKSHF6QVl5YUJQQkhhd3ZBaWViTjFtaWJQOEpGUm1rTDNTeC1pQnlFUjZHWTVmcWNudFR5cUdtX1l6VUZoSjh6T1p6OTQiLCJpZCI6ImZjX0NlbjBhdV91S2FlODBQRVBydXZlMkFjXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiSXMgQ3Jvd2RTdHJpa2UgYW4gTURSPyIsImxrIjoiR2hWcGN5QmpjbTkzWkhOMGNtbHJaU0JoYmlCdFpISSIsImJzIjoiYzIyT1FRdUNRQkJHNlRxbklDd1Fpb0YtUVI0NkpsR1hEa0hrb2ZPNmpqcUVxLXhzaVA4LVhWS0N1czc3M3ZCZ0QtdEhxUnl5NFBWOFJ6YW91NVNza0g1WmRsMGNCZUVpbzV3TllaVlpITzl3Z0szM2xDVjBKV0hLUlVIaV9CTmRWNDB5VEJKSHF6QVl5YUJQQkhhd3ZBaWViTjFtaWJQOEpGUm1rTDNTeC1pQnlFUjZHWTVmcWNudFR5cUdtX1l6VUZoSjh6T1p6OTQiLCJpZCI6ImZjX0NlbjBhdV91S2FlODBQRVBydXZlMkFjXzUifQ%3D%3D"
+    },
+    {
+      "question": "What is MSP in cybersecurity?",
+      "type": "ai_overview",
+      "page_token": "TYL2DnicHdBLcpswAADQ6ao3yTJGJnannvF0qiKw1QEHIYnPJiMkQDYCHFsJmGXP0lUPkwPkBt33AO10-5bvx09z7Nv3D6_a2vN1s1iM43jfDENjqns5dAtxvfVyIYUxpZDtZv1pDb7Ucote9vDb8x7GjKDcKJO3eGa95iRonGRXzAdPiQwUHg8sKSkGpYP9HLAxPmGdprZQ_5y755j2BpRLPpM22ovTVzdMwFoh40cgGunM_arDN85DV3oRFMh8Vy04MaTc3AlHQRUuZn8nO30UO6XL9vNRco4PzFmFS1wnhmSiJ-sIsSlahjfmTA858B9lgBHp7Eqm-Jp4EHKjk8qDF8KiWaHWod0EkVZekT6MecZrxawuaDMyxGPZ82VBMcyn4RgzfQgRcwnglGYwKB1rwyBfKeecxgA_VsH0ErmGkow8s_iulq9b9-7_5_ap7uzmfBmaX_JSCVupJ2HfTn9-f_wLXDiKXA",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=TYL2DnicHdBLcpswAADQ6ao3yTJGJnannvF0qiKw1QEHIYnPJiMkQDYCHFsJmGXP0lUPkwPkBt33AO10-5bvx09z7Nv3D6_a2vN1s1iM43jfDENjqns5dAtxvfVyIYUxpZDtZv1pDb7Ucote9vDb8x7GjKDcKJO3eGa95iRonGRXzAdPiQwUHg8sKSkGpYP9HLAxPmGdprZQ_5y755j2BpRLPpM22ovTVzdMwFoh40cgGunM_arDN85DV3oRFMh8Vy04MaTc3AlHQRUuZn8nO30UO6XL9vNRco4PzFmFS1wnhmSiJ-sIsSlahjfmTA858B9lgBHp7Eqm-Jp4EHKjk8qDF8KiWaHWod0EkVZekT6MecZrxawuaDMyxGPZ82VBMcyn4RgzfQgRcwnglGYwKB1rwyBfKeecxgA_VsH0ErmGkow8s_iulq9b9-7_5_ap7uzmfBmaX_JSCVupJ2HfTn9-f_wLXDiKXA",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBpcyBNU1AgaW4gY3liZXJzZWN1cml0eT8iLCJsayI6IkdoNTNhR0YwSUdseklHRWdiWE53SUdsdUlHTjVZbVZ5YzJWamRYSnBkSGsiLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0=",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYWVIQnBSRFJhVEVGRmRucEliREpFVjB4blVuTk1RbFpCYkd0VE1YUlNUWHBRTmxGVU1YVXlVVXcxZFZWd1ZXZDFSbFpUYWpWaVgzbHdjM1pGYnpaVFowUm5iMEZMVFZsVGFWcHJNblJ2UVhWRWJUaG1XVUYyTW1kRFp4SVhRMlZ1TUdGMVgzVkxZV1U0TUZCRlVISjFkbVV5UVdNYUlrRklUakJGTjBVM01VWXljR0U0ZERseU4xbDJPR3hoYUcxNWIzTklTMHhGWWxFIiwiZmN2IjoiMyIsImVpIjoiQ2VuMGF1X3VLYWU4MFBFUHJ1dmUyQWMiLCJxYyI6IkNndHRaSElnWm05eUlHMXpjQkFBZlFrcU9UOCIsInF1ZXN0aW9uIjoiV2hhdCBpcyBNU1AgaW4gY3liZXJzZWN1cml0eT8iLCJsayI6IkdoNTNhR0YwSUdseklHRWdiWE53SUdsdUlHTjVZbVZ5YzJWamRYSnBkSGsiLCJicyI6ImMyMk9RUXVDUUJCRzZUcW5JQ3dRaW9GLVFSNDZKbEdYRGtIa29mTzZqanFFcS14c2lQOC1YVktDdXM3NzN2QmdELXRIcVJ5eTRQVjhSemFvdTVTc2tINVpkbDBjQmVFaW81d05ZWlZaSE85d2dLMzNsQ1YwSldIS1JVSGlfQk5kVjQweVRCSkhxekFZeWFCUEJIYXd2QWllYk4xbWliUDhKRlJta0wzU3gtaUJ5RVI2R1k1ZnFjbnRUeXFHbV9ZelVGaEo4ek9aejk0IiwiaWQiOiJmY19DZW4wYXVfdUthZTgwUEVQcnV2ZTJBY181In0%3D"
+    }
+  ],
+  "ai_overview": {
+    "text_blocks": [
+      {
+        "type": "paragraph",
+        "snippet": "Managed Detection and Response (MDR) for Managed Service Providers (MSPs) is an outsourced cybersecurity service that delivers 24/7 threat monitoring, human-led incident response, and advanced detection without requiring the MSP to build and staff an internal Security Operations Center (SOC).",
+        "snippet_highlighted_words": [
+          "an outsourced cybersecurity service that delivers 24/7 threat monitoring, human-led incident response, and advanced detection without requiring the MSP to build and staff an internal Security Operations Center (SOC)"
+        ],
+        "reference_indexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "Why MSPs Partner with MDR Providers"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Overcoming the Skills Gap: Building a 24/7 in-house SOC is cost-prohibitive and operationally complex due to ongoing training and analyst shortages.",
+            "reference_indexes": [
+              1,
+              2
+            ]
+          },
+          {
+            "snippet": "24/7 Coverage: MDR partners monitor endpoints, cloud workloads, and identity tools around the clock, intercepting threats outside of normal business hours.",
+            "reference_indexes": [
+              1,
+              3,
+              4
+            ]
+          },
+          {
+            "snippet": "Reducing Alert Fatigue: Advanced analytics, AI triage, and human-led investigations filter out false positives so technicians only handle validated threats.",
+            "reference_indexes": [
+              3,
+              5,
+              6
+            ]
+          },
+          {
+            "snippet": "Scaling Revenue: Partnering with an MDR allows MSPs to expand their security portfolios, increase recurring revenue per client, and improve client retention.",
+            "reference_indexes": [
+              0,
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "Key Considerations for MSPs"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "MSP-Friendly Models: According to discussions on Reddit, there is a community consensus that true \"MSP-friendly\" MDR services must accommodate flexible billing models (such as per-endpoint or usage-based pricing) rather than rigid enterprise minimums.",
+            "snippet_links": [
+              {
+                "text": "Reddit",
+                "link": "https://www.reddit.com/r/msp/comments/x6qzko/what_is_the_best_mdr_managed_detection_and/"
+              }
+            ],
+            "reference_indexes": [
+              9
+            ]
+          },
+          {
+            "snippet": "White-Label & Multi-Tenant Support: Many top providers offer white-label reporting, centralized multi-tenant dashboards, and pre-approved automated response actions that integrate directly with RMM and PSA tools.",
+            "reference_indexes": [
+              0,
+              3,
+              10
+            ]
+          },
+          {
+            "snippet": "Popular Offerings: Vendors tailored to this channel include Bitdefender MDR for MSPs, Guardz, and channel-focused solutions like Arctic Wolf and ESET.",
+            "snippet_links": [
+              {
+                "text": "Bitdefender MDR for MSPs",
+                "link": "https://www.bitdefender.com/en-us/business/products/mdr-for-msp"
+              },
+              {
+                "text": "Guardz",
+                "link": "https://guardz.com/blog/mdr-migration-guide-for-msps/"
+              }
+            ],
+            "reference_indexes": [
+              3,
+              7,
+              10,
+              11
+            ]
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "index": 0,
+        "title": "Why MSPs Should Partner with an MDR Provider Instead of Building In ...",
+        "link": "https://www.cybermaxx.com/resources/why-msps-should-partner-with-an-mdr-provider-instead-of-building-in-house/",
+        "snippet": "With White-label MDR for MSPs, providers can offer these services under their own brand, while the MDR partner handles operations behind the scenes. * TL;DR: Why a...",
+        "source": "CyberMaxx",
+        "source_icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.cybermaxx.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXWdmUjBC1GYou6hRUv9uXpHApicsXxa02qtwMyUGy74RM5APQsLNRVgOyO_re_5dBI-bMFHZfMk4eBHSCYMJ4CM1AphkSDafejDqAss_pRZOpFRNr5XCD0-t1X6k85Pgu1EnxPoMuxssST7n5tHjvKEA"
+      },
+      {
+        "index": 1,
+        "title": "What is Managed Detection and Response (MDR)? | LogMeIn Resolve",
+        "link": "https://www.logmein.com/blog/what-is-mdr-and-why-msps-cannot-ignore-it",
+        "snippet": "Cyberthreats aren't slowing down. They're accelerating in speed, sophistication, and scale. For managed service providers (MSPs), that reality presents both a chal...",
+        "source": "LogMeIn",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.logmein.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+      },
+      {
+        "index": 2,
+        "title": "What MDR Means for MSPs with Dave MacKinnon",
+        "link": "https://www.youtube.com/watch?v=rlbTmDJ99a0&t=189",
+        "snippet": "What MDR Means for MSPs with Dave MacKinnon so why why do msps. need MDR. and what are some of the core. benefits. that this sort of yeah this this this new Advanc",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQAsH1MKtVcIGXzaO7ssecHhwf7Ugg8wcl9CqIjEcyQBy1Z-5GXnfZogcasFo-w2iE6r-0huwIIe8XePoXyS7Nte3LwfqbYOzOq9-70F0WeXhS3kw-xEgF3gk2S-skF8qg7IwuScBStDlEpCFLHPrh7T-I"
+      },
+      {
+        "index": 3,
+        "title": "Managed Detection and Response for MSPs - Bitdefender",
+        "link": "https://www.bitdefender.com/en-us/business/products/mdr-for-msp",
+        "snippet": "Advanced Protection, Proactive Detection, Effortless Response Bitdefender MDR for MSPs provides real-time threat detection, powerful endpoint protection, and aroun...",
+        "source": "Bitdefender",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.bitdefender.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRk3t3BvtkKz579W_M4g89hPBkLIoqNLUOnPocnRNXveyMVxeNk8WVwMMrHPNVzCOtFlOZttrAtpa_HgCc2q7pEOYZO3-YpeH1Zg9rORt-HJzmG6uPrXXwY2gBRUVCLc-zZ7egx2W9PXN84B_hBtsgG8Dk"
+      },
+      {
+        "index": 4,
+        "title": "Key Considerations When Choosing an MDR Provider for MSPs - N",
+        "link": "https://www.n-able.com/it/blog/key-considerations-when-choosing-an-mdr-provider-for-msps",
+        "snippet": "Understanding MDR * Managed Detection and Response (MDR) is a proactive approach to cybersecurity that combines advanced threat detection, incident response, and c...",
+        "source": "N-able",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.n-able.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS7Sx1wwN8gZ-BLivxLpxRmSjIV51hG1JolYGkyqjOTvCRHhMtMps88fUrjInlGUtrqidiPZMkhmy8c-zON0Nhs-vh8NqChl9fQuDOwtxZjtPrGU6NpLnGmjLRPrWp1dPZLa24yMCbqpIY"
+      },
+      {
+        "index": 5,
+        "title": "YouTube",
+        "link": "https://www.youtube.com/watch?v=AjQUbpEu_O0",
+        "snippet": "msps are facing mounting. pressure their clients depend on them for continuous protection. even as they face talent shortages relentless alert volumes. and rising",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSU5uHVyGktgp0YU7OALAA6HlYWMIaw1WyMtYBG-FilNejdCzV9IxFBw9oVvNpvw2YK_BfuEzbqSXR-je2iM5olRgUBI3ezrTV3Zl5PHvL9pg0_yIfTSCZKV3wNZ1AOMRoqA0eas9OynIQ9bum8hEO49XE"
+      },
+      {
+        "index": 6,
+        "title": "What is Managed Detection and Response?",
+        "link": "https://www.youtube.com/watch?v=sS7QDirXDP0&t=97",
+        "snippet": "What is Managed Detection and Response? support it improves client service by ensuring reliable IT performance it gives businesses access to expert talent and dedi",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTzDLHwjRTFW96YvX51VTjuWabtLavny7EASWKiwhbdLFXZpxBEThSDxODqUQOR7xF-fuaTqc_os64WPAPKzqWLxJkhKCoUL8ZD9sS0nXQgUrTtVFn3bCp85e80DQCP0AkKwGsDKbIOGOWrEFFo0vJYubw"
+      },
+      {
+        "index": 7,
+        "title": "5 Ways MDR Keeps MSPs Ahead in a Competitive Market | ESET",
+        "link": "https://www.eset.com/us/business/resource-center/handbooks/5-ways-mdr-keeps-msps-ahead-in-a-competitive-market/",
+        "snippet": "Those who rise to this challenge stand to enhance their market presence and create deeper, lasting relationships with their customers. * Managed Detection and Resp...",
+        "source": "ESET",
+        "source_icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.eset.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRCpP-daHo8Wbc7J1wefaMcNXOm99BW4czUSipdUzslDN_zzKnRyVd6hz2IYJQ9nHdg148sHN2riGiconmT-M7bvDBZ0ajQLg-gN_VdEarEca28af7Lvv54BPP418nLyptiCZncqjt_hX4"
+      },
+      {
+        "index": 8,
+        "title": "MSP MDR Platform Comparison: A Survival Guide - WhiteDog Cyber",
+        "link": "https://www.whitedogcyber.com/blog/msp-mdr-platform",
+        "snippet": "Running an MSP in 2026 means you are managing more client endpoints, more threat vectors, and more compliance requirements than ever before. The old approach \u2014 sti...",
+        "source": "WhiteDog Cyber",
+        "source_icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.whitedogcyber.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS7DisXXNX8ofrb1fpQFmGy-bVtMembR7r_9DGtOJRX1tLYBgt19yXJ6kXUZerLbp7-M_xRbFMjHwYS6Rn5qDyPUGbhFfDY8C73t8FkKfiifKtn1NYWFblYpJHM8A5v_M_pEuoOwwOy6l8"
+      },
+      {
+        "index": 9,
+        "title": "r/msp on Reddit: What is the Best MDR, Managed Detection and ...",
+        "link": "https://www.reddit.com/r/msp/comments/x6qzko/what_is_the_best_mdr_managed_detection_and/",
+        "snippet": "Defining MSP-Friendly MDR: What constitutes an 'MSP friendly' MDR service is highly variable, encompassing factors like endpoint count, budget, billing models (e.g...",
+        "source": "Reddit",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.reddit.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+      },
+      {
+        "index": 10,
+        "title": "MDR Migration Guide for MSPs: Reduce Security Gaps - Guardz",
+        "link": "https://guardz.com/blog/mdr-migration-guide-for-msps/",
+        "snippet": "Assess Existing Security Infrastructure and Coverage Gaps: Define Client Security Requirements and Risk Priorities: Rank clients by risk exposure, regulatory oblig...",
+        "source": "Guardz",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://guardz.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTq0yYQVSnJeCYr1CbAy2pNqB3IE7ytYkdmxwgmTJ8uEbPSMIoP_BCl-gwik7s4vBfdQdCvuB9tEWoKjk_Dj29_Sf11XoTdIFkiOjwOb4WlAssga19woPa5tZqTM0JlHvx0Es1Q94HZKY0"
+      },
+      {
+        "index": 11,
+        "title": "Arctic Wolf Reveals New Aurora MDR Connect #cybersecurity #msp",
+        "link": "https://www.youtube.com/shorts/t9TIY7z0ZdQ",
+        "snippet": "Arctic Wolf Reveals New Aurora MDR Connect #cybersecurity #msp so this this product Aurora MDR connect was designed specifically for our MSPs. and the intent of it",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQGvZymnr7vbv2nDFf7IkMLfvjG5yx09sZyO7pGID3pHJe_LAjUHQdYgJ68G82PU9xM1hbJFroYn6zM7I7ILNyPh-hoDyi0VV9VooMJ1PAS5rhEAfJgPDXhUwbMnrfdqXOlLoovKP-3cckSnqwDFerH3dw"
+      }
+    ]
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "Top 7 Managed Detection and Response (MDR) Service ...",
+      "link": "https://www.cynet.com/security-foundations/managed-detection-and-response/top-mdr-service-providers/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESoQEBxCJF1-OUCQsxl7fJ8ANIl31yWhWgDDruAHPyDrlUm77LHgxW2cUb90_bHSfMmo7V9nWrP6-MMHc-_JEzL4XaKyOtI9ex0cS-9fTzu-iYcDfUpUYfVVB8sK1rl0EBfF4qnxd4MycAjKHEFab2zK82MzHkdBtVz4ChPVrEoGQIbt6KGRA-QF7MzmJ-azEeWDZcjhiMxb6VU3tzMR6_s73j1A&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECB4QAQ&uoh=1",
+      "displayed_link": "https://www.cynet.com \u203a top-mdr-service-providers",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAJ1BMVEUAdv5HcEwAd_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad__re8hUAAAADHRSTlMBADh1qbzuJ9MYjlk5P_ggAAAA5klEQVQ4jYVTCQ7DMAiD3Nf_3zvItULSzVKrtnYQuAZAAifgDmJMtbaau4RY1yacOSWYfXvAg1KgaQpGKg5eKs7zjLwVGBUVvE90X51ilrSP3YvSyioh-doPkiS3cR6C4gdNV7b9MQnejrLkWbBoXvhV1HMZ4d9sa3-sgE7wDuVUiUaRPCrbwEoDTgGWm2Ib4-GlidVkH_MyxhpzvFyNwBJaqmzUq4IR7QxjUApulRPcdmCkInGsMbv1XwgqEKRJ4RGYS6Q68p9QylifNaJeDBCeOr04PFf8rl582U6MvLzx537L9f8AkiEYlEEsZswAAAAASUVORK5CYII.png",
+      "date": "Oct 20, 2026",
+      "snippet": "The top 7 MDR service providers for 2026 are Cynet, Arctic Wolf, Rapid7, Sophos, Palo Alto Networks, CrowdStrike, and SentinelOne.",
+      "snippet_highlighted_words": [
+        "MDR"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The top 7 MDR service providers for 2026 are Cynet, Arctic Wolf, Rapid7, Sophos, Palo Alto Networks, CrowdStrike, and SentinelOne.",
+          "source_info_link": "https://www.cynet.com/security-foundations/managed-detection-and-response/top-mdr-service-providers/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAJ1BMVEUAdv5HcEwAd_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad_8Ad__re8hUAAAADHRSTlMBADh1qbzuJ9MYjlk5P_ggAAAA5klEQVQ4jYVTCQ7DMAiD3Nf_3zvItULSzVKrtnYQuAZAAifgDmJMtbaau4RY1yacOSWYfXvAg1KgaQpGKg5eKs7zjLwVGBUVvE90X51ilrSP3YvSyioh-doPkiS3cR6C4gdNV7b9MQnejrLkWbBoXvhV1HMZ4d9sa3-sgE7wDuVUiUaRPCrbwEoDTgGWm2Ib4-GlidVkH_MyxhpzvFyNwBJaqmzUq4IR7QxjUApulRPcdmCkInGsMbv1XwgqEKRJ4RGYS6Q68p9QylifNaJeDBCeOr04PFf8rl582U6MvLzx537L9f8AkiEYlEEsZswAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CugBL2dvdG8_dXJsPUNBRVNvUUVCeENKRjEzd3g0cWhVd3BpNEpmTTNpV0RCaWh1R19jTnJSQXE2Wjg4aFJKMG5vaFB1TkE5czhJMmhfdmhab2tVaGZ3ZjVCbGdzVnZIMnJudkZJNENPMVRqR0NxLWxqUFcyeU5kb0x4S1ZJUXdZeThJMVJxR29aYlVKU1hBUXB5RU51SVNvZnhGLW01MDkyaV9rZ1hMR0JuSDVIR2NmQkh0azNNTjh4U2FtQ2FOOEJqM0tfZGFNdERuRElMSDhHMUZ4ajhHUFZqcFFCRzd2WEtsa1kybjE4QRIEGgIIABqfBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkD7AwgAEAAYACAAKhQKA21kchUiwWtAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVZIxxPxoIaXY7cDttc3Ay6AEvZ290bz91cmw9Q0FFU29RRUJ4Q0pGMTN3eDRxaFV3cGk0SmZNM2lXREJpaHVHX2NOclJBcTZaODhoUkowbm9oUHVOQTlzOEkyaF92aFpva1VoZndmNUJsZ3NWdkgycm52Rkk0Q08xVGpHQ3EtbGpQVzJ5TmRvTHhLVklRd1l5OEkxUnFHb1piVUpTWEFRcHlFTnVJU29meEYtbTUwOTJpX2tnWExHQm5INUhHY2ZCSHRrM01OOHhTYW1DYU44QmozS19kYU10RG5ESUxIOEcxRnhqOEdQVmpwUUJHN3ZYS2xrWTJuMThBOj1Ub3AgNyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKDxiPk1EUjwvYj4pIFNlcnZpY2UgLi4uQokBVGhlIHRvcCA3IDxiPk1EUjwvYj4gc2VydmljZSBwcm92aWRlcnMgZm9yIDIwMjYgYXJlIEN5bmV0LCBBcmN0aWMgV29sZiwgUmFwaWQ3LCBTb3Bob3MsIFBhbG8gQWx0byBOZXR3b3JrcywgQ3Jvd2RTdHJpa2UsIGFuZCBTZW50aW5lbE9uZS5KA2ZvciICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CugBL2dvdG8_dXJsPUNBRVNvUUVCeENKRjEzd3g0cWhVd3BpNEpmTTNpV0RCaWh1R19jTnJSQXE2Wjg4aFJKMG5vaFB1TkE5czhJMmhfdmhab2tVaGZ3ZjVCbGdzVnZIMnJudkZJNENPMVRqR0NxLWxqUFcyeU5kb0x4S1ZJUXdZeThJMVJxR29aYlVKU1hBUXB5RU51SVNvZnhGLW01MDkyaV9rZ1hMR0JuSDVIR2NmQkh0azNNTjh4U2FtQ2FOOEJqM0tfZGFNdERuRElMSDhHMUZ4ajhHUFZqcFFCRzd2WEtsa1kybjE4QRIEGgIIABqfBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkD7AwgAEAAYACAAKhQKA21kchUiwWtAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVZIxxPxoIaXY7cDttc3Ay6AEvZ290bz91cmw9Q0FFU29RRUJ4Q0pGMTN3eDRxaFV3cGk0SmZNM2lXREJpaHVHX2NOclJBcTZaODhoUkowbm9oUHVOQTlzOEkyaF92aFpva1VoZndmNUJsZ3NWdkgycm52Rkk0Q08xVGpHQ3EtbGpQVzJ5TmRvTHhLVklRd1l5OEkxUnFHb1piVUpTWEFRcHlFTnVJU29meEYtbTUwOTJpX2tnWExHQm5INUhHY2ZCSHRrM01OOHhTYW1DYU44QmozS19kYU10RG5ESUxIOEcxRnhqOEdQVmpwUUJHN3ZYS2xrWTJuMThBOj1Ub3AgNyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKDxiPk1EUjwvYj4pIFNlcnZpY2UgLi4uQokBVGhlIHRvcCA3IDxiPk1EUjwvYj4gc2VydmljZSBwcm92aWRlcnMgZm9yIDIwMjYgYXJlIEN5bmV0LCBBcmN0aWMgV29sZiwgUmFwaWQ3LCBTb3Bob3MsIFBhbG8gQWx0byBOZXR3b3JrcywgQ3Jvd2RTdHJpa2UsIGFuZCBTZW50aW5lbE9uZS5KA2ZvciICEAFIAFgAaAA",
+      "source": "Cynet",
+      "read_more_link": "https://www.cynet.com/security-foundations/managed-detection-and-response/top-mdr-service-providers/#:~:text=The%20top%207%20MDR%20service,Alto%20Networks%2C%20CrowdStrike%2C%20and%20SentinelOne."
+    },
+    {
+      "position": 2,
+      "title": "What Is MDR? Managed Detection and Response Explained",
+      "link": "https://www.kaseya.com/blog/managed-detection-and-response-mdr/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESfAHEIkXXitZLjFPoxiAh2ArbUSDvGFFtjOB5_WNKl-sqaJDgiZ8TsdFdcn3apFgymV96lph049SGfSxtAMDWUnnK6Mel4dt5bhyD6-VO9QpKnYK6N1asyLqtfXJ-zBXCqbI4exmp2SfqiLYkPFZzU3bk0reaEz2fjyl6crM&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECCAQAQ&uoh=1",
+      "displayed_link": "https://www.kaseya.com \u203a Blog",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAkFBMVEX____Qz_-iov92df9LSv9BP__z8_-Xlv8zMf8rKP85N_89O_8-PP-op_8nJP_29v9eXf_s7P83Nf9aWf-enf8tK_8xL_87Of-Tkv_o6P98e__c3P-vrv-Eg_8kIf8vLf_Cwf8TD_9ta_9WVP_Hx_-Ih_8AAP9vbf-1tP_g4P_6-v-7u_9PTf84Nv_U0_-6uf_8jcu_AAABm0lEQVR4AX3TBYLCMBAF0F9PmqkLThW3-99uSZYU59W9GcEDw7Rsx7Et08AHrsc48wWR8K87nosXQcgEDQQLAzyKYi7oieBxhEFCKb1JnWR4Xvj0gU_6HVlKH6UZlLygG0HPClP9QChI8XnqpLxMR6SJ0AUwZiSNwngCZzqbL5xlpf-JjQGUQu2OaiBvVAyjuk1TJm8SJWBw9a6FDOayk-u5RdyeelnIiLiBnBGNqh5Xq2aGvl1vtrs9riYeI5bD8mk0SqBeYNXMPmCwr8i3cBTEd5C84tSqPa3zSRzhkEgh7ZexXa1m0KKjjJ8Dh6jaqnxyYLdY2zWUZHQidcNxRBTKO_7DtvfWlcz0-T8Wow6W3FmOcVm7t0fbJr0cliOSfAs5U1G3OgtabxeVDmUuAyWdqjm0SabTIQOFStz2F3sowdIfslXqZEmsGu-Ag6Of0MlyZbp1qZZVMaKXdMMsaCDEa8FI3beS63TP-J-LduT-LntKMIiy4rVxiizCo4A_tV7Jg_fmrTg7jYQYnRivvAgfGOY0c5xs-tT-f85lKfU3bM2zAAAAAElFTkSuQmCC.png",
+      "date": "Apr 24, 2026",
+      "snippet": "MDR provides the security operations coverage that protects the MSP's own environment, including the high-privilege RMM and PSA platforms",
+      "snippet_highlighted_words": [
+        "MDR",
+        "MSP's"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "MDR provides the security operations coverage that protects the MSP's own environment, including the high-privilege RMM and PSA platforms",
+          "source_info_link": "https://www.kaseya.com/blog/managed-detection-and-response-mdr/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAkFBMVEX____Qz_-iov92df9LSv9BP__z8_-Xlv8zMf8rKP85N_89O_8-PP-op_8nJP_29v9eXf_s7P83Nf9aWf-enf8tK_8xL_87Of-Tkv_o6P98e__c3P-vrv-Eg_8kIf8vLf_Cwf8TD_9ta_9WVP_Hx_-Ih_8AAP9vbf-1tP_g4P_6-v-7u_9PTf84Nv_U0_-6uf_8jcu_AAABm0lEQVR4AX3TBYLCMBAF0F9PmqkLThW3-99uSZYU59W9GcEDw7Rsx7Et08AHrsc48wWR8K87nosXQcgEDQQLAzyKYi7oieBxhEFCKb1JnWR4Xvj0gU_6HVlKH6UZlLygG0HPClP9QChI8XnqpLxMR6SJ0AUwZiSNwngCZzqbL5xlpf-JjQGUQu2OaiBvVAyjuk1TJm8SJWBw9a6FDOayk-u5RdyeelnIiLiBnBGNqh5Xq2aGvl1vtrs9riYeI5bD8mk0SqBeYNXMPmCwr8i3cBTEd5C84tSqPa3zSRzhkEgh7ZexXa1m0KKjjJ8Dh6jaqnxyYLdY2zWUZHQidcNxRBTKO_7DtvfWlcz0-T8Wow6W3FmOcVm7t0fbJr0cliOSfAs5U1G3OgtabxeVDmUuAyWdqjm0SabTIQOFStz2F3sowdIfslXqZEmsGu-Ag6Of0MlyZbp1qZZVMaKXdMMsaCDEa8FI3beS63TP-J-LduT-LntKMIiy4rVxiizCo4A_tV7Jg_fmrTg7jYQYnRivvAgfGOY0c5xs-tT-f85lKfU3bM2zAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWENaaWhKSHZxelVQNEtoVnFHSUVsdUg4T0hqQWFwMHNuNTdXaFFZRl9XMmhDZS1tV2twU1lfSmw3R3VLTFRyLXhCYUxYZ0ZrcGtFMU0yUkZtbUg5VFVzZHA5dkJDVkZLM2x0X2htSHAxbXJnbXYtcHlERUpBZk5DYWFHOGt6OU5MRk4yMERwRExWSEVTdVhqMWVyQkhveEZPWTFhSEV3axIEGgIIABqABBICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNoDCAAQABgAIAAqFAoDbWRyFfSdVUAaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVLa34_GghpdjtwO21zcDK1AS9nb3RvP3VybD1DQUVTZkFIRUlrWFhDWmloSkh2cXpVUDRLaFZxR0lFbHVIOE9IakFhcDBzbjU3V2hRWUZfVzJoQ2UtbVdrcFNZX0psN0d1S0xUci14QmFMWGdGa3BrRTFNMlJGbW1IOVRVc2RwOXZCQ1ZGSzNsdF9obUhwMW1yZ212LXB5REVKQWZOQ2FhRzhrejlOTEZOMjBEcERMVkhFU3VYajFlckJIb3hGT1kxYUhFd2s6PVdoYXQgaXMgTWFuYWdlZCBEZXRlY3Rpb24gYW5kIFJlc3BvbnNlICg8Yj5NRFI8L2I-KT8gLSBLYXNleWFCmwE8Yj5NRFI8L2I-IHByb3ZpZGVzIHRoZSBzZWN1cml0eSBvcGVyYXRpb25zIGNvdmVyYWdlIHRoYXQgcHJvdGVjdHMgdGhlIDxiPk1TUCYjMzk7czwvYj4gb3duIGVudmlyb25tZW50LCBpbmNsdWRpbmcgdGhlIGhpZ2gtcHJpdmlsZWdlIFJNTSBhbmQgUFNBIHBsYXRmb3Jtc0oDZm9yIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWENaaWhKSHZxelVQNEtoVnFHSUVsdUg4T0hqQWFwMHNuNTdXaFFZRl9XMmhDZS1tV2twU1lfSmw3R3VLTFRyLXhCYUxYZ0ZrcGtFMU0yUkZtbUg5VFVzZHA5dkJDVkZLM2x0X2htSHAxbXJnbXYtcHlERUpBZk5DYWFHOGt6OU5MRk4yMERwRExWSEVTdVhqMWVyQkhveEZPWTFhSEV3axIEGgIIABqABBICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNoDCAAQABgAIAAqFAoDbWRyFfSdVUAaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVLa34_GghpdjtwO21zcDK1AS9nb3RvP3VybD1DQUVTZkFIRUlrWFhDWmloSkh2cXpVUDRLaFZxR0lFbHVIOE9IakFhcDBzbjU3V2hRWUZfVzJoQ2UtbVdrcFNZX0psN0d1S0xUci14QmFMWGdGa3BrRTFNMlJGbW1IOVRVc2RwOXZCQ1ZGSzNsdF9obUhwMW1yZ212LXB5REVKQWZOQ2FhRzhrejlOTEZOMjBEcERMVkhFU3VYajFlckJIb3hGT1kxYUhFd2s6PVdoYXQgaXMgTWFuYWdlZCBEZXRlY3Rpb24gYW5kIFJlc3BvbnNlICg8Yj5NRFI8L2I-KT8gLSBLYXNleWFCmwE8Yj5NRFI8L2I-IHByb3ZpZGVzIHRoZSBzZWN1cml0eSBvcGVyYXRpb25zIGNvdmVyYWdlIHRoYXQgcHJvdGVjdHMgdGhlIDxiPk1TUCYjMzk7czwvYj4gb3duIGVudmlyb25tZW50LCBpbmNsdWRpbmcgdGhlIGhpZ2gtcHJpdmlsZWdlIFJNTSBhbmQgUFNBIHBsYXRmb3Jtc0oDZm9yIgIQAUgAWABoAA",
+      "source": "Kaseya"
+    },
+    {
+      "position": 3,
+      "title": "MSSP vs. MDR: Which Model Is Right for Your Team?",
+      "link": "https://www.huntress.com/msp-guide/mssp-vs-mdr",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESawHEIkXXomOWbHtWUZc6JzOSO2O47Rq4jRdd7CJW9kdz0Pic1CoZdJTURHJOBD1fbcBksH6a2JF9o16s1OC0AGtl39sx3K-imxWfAAh82ekhvjWDy62smgO2KUQzKaHb-KFK1IF85J_C-JB7&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECB8QAQ&uoh=1",
+      "displayed_link": "https://www.huntress.com \u203a ... \u203a MSP Guide",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAdVBMVEUmJygmJSYmIiMlPD8jdHwmHh4ilZ8mEhAmGxsjfoYfxdIlREgmHBsmFhUmFRQmLS8lOTsnAAAkXGIfv8wlSU0ho64grbkhmaQfvsskaXAfws8kZGoijpcezNofu8cgsLwih5AlU1gihY4jcXkmMzUmDw0nCQX47vYkAAABIklEQVR4AWIgDjDikQN0Sh7ZFcIwFD00f1t0hI2rTEv2v8TwZyY90fSqv5cXX9OsKKsvYVWyx5eFXEDdVG3XVh-698M4Ac6lVIvo2_dNQRtlQTjnWWA8v0EuAJRG8LPoJ0Z9dhs5SrCICIbKOEpqbzMnsdKTRoawOFp58gAXwEZFiLRYtLSFdGprorXPSnXVU9i0Sz7C5cZijBr11UB6s3iezJQBwF6QrKxLzzxLYCaME5LIrhB38EKklQ86RIiRwCE4kIdLVWj2aA6MpDcBSsA8n1kqdJj8oXC2q1QrsO5iSekRim7fyFpbapjy--tf1nC8igh4Qcyuwjs1QPtkIkgm-EcvVKUk7RSUx2eGqdrHIzvh_NpM7Zp_Y98i-5e57_EGEjoXlStYK5oAAAAASUVORK5CYII.png",
+      "date": "Aug 31, 2026",
+      "snippet": "MDR is an end-to-end service designed to go beyond monitoring. It uses a 24/7 security operations center (SOC) to provide proactive threat ...",
+      "snippet_highlighted_words": [
+        "MDR is an end-to-end service designed to go beyond monitoring"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "MDR is an end-to-end service designed to go beyond monitoring. It uses a 24/7 security operations center (SOC) to provide proactive threat ...",
+          "source_info_link": "https://www.huntress.com/msp-guide/mssp-vs-mdr",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAdVBMVEUmJygmJSYmIiMlPD8jdHwmHh4ilZ8mEhAmGxsjfoYfxdIlREgmHBsmFhUmFRQmLS8lOTsnAAAkXGIfv8wlSU0ho64grbkhmaQfvsskaXAfws8kZGoijpcezNofu8cgsLwih5AlU1gihY4jcXkmMzUmDw0nCQX47vYkAAABIklEQVR4AWIgDjDikQN0Sh7ZFcIwFD00f1t0hI2rTEv2v8TwZyY90fSqv5cXX9OsKKsvYVWyx5eFXEDdVG3XVh-698M4Ac6lVIvo2_dNQRtlQTjnWWA8v0EuAJRG8LPoJ0Z9dhs5SrCICIbKOEpqbzMnsdKTRoawOFp58gAXwEZFiLRYtLSFdGprorXPSnXVU9i0Sz7C5cZijBr11UB6s3iezJQBwF6QrKxLzzxLYCaME5LIrhB38EKklQ86RIiRwCE4kIdLVWj2aA6MpDcBSsA8n1kqdJj8oXC2q1QrsO5iSekRim7fyFpbapjy--tf1nC8igh4Qcyuwjs1QPtkIkgm-EcvVKUk7RSUx2eGqdrHIzvh_NpM7Zp_Y98i-5e57_EGEjoXlStYK5oAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cp4BL2dvdG8_dXJsPUNBRVNhd0hFSWtYWDgyR0pXMm96cDJNTkRKb3RkVmJCaUdrMWdwM1ZhQzYzRzlSMUIzb3l3WTNlTDJCYXZXVXZxOWs4aUdCQlZtaFpXUXY5dklKQVhiYk5OTF82V0lCdVQ5V0l4aURWdlZSTEp4UXBjMXZPdXF4Y3R3d0xsVVY4WTk3eFZLeVdwcVk5R29aTUhPOXgSBBoCCAAa7AMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAyAMIABAAGAAgACoUCgNtZHIVDHM9QBoIaXY7cDttZHIqCgoDZm9yFQAAAAAqFAoDbXNwFaDQkD8aCGl2O3A7bXNwMp4BL2dvdG8_dXJsPUNBRVNhd0hFSWtYWDgyR0pXMm96cDJNTkRKb3RkVmJCaUdrMWdwM1ZhQzYzRzlSMUIzb3l3WTNlTDJCYXZXVXZxOWs4aUdCQlZtaFpXUXY5dklKQVhiYk5OTF82V0lCdVQ5V0l4aURWdlZSTEp4UXBjMXZPdXF4Y3R3d0xsVVY4WTk3eFZLeVdwcVk5R29aTUhPOXg6Q01TU1AgdnMuIDxiPk1EUjwvYj46IFdoaWNoIE1vZGVsIElzIFJpZ2h0IGZvciBZb3VyIFRlYW0_IC0gSHVudHJlc3NCmgE8Yj5NRFIgaXMgYW4gZW5kLXRvLWVuZCBzZXJ2aWNlIGRlc2lnbmVkIHRvIGdvIGJleW9uZCBtb25pdG9yaW5nPC9iPi4gSXQgdXNlcyBhIDI0Lzcgc2VjdXJpdHkgb3BlcmF0aW9ucyBjZW50ZXIgKFNPQykgdG8gcHJvdmlkZSBwcm9hY3RpdmUgdGhyZWF0Jm5ic3A7Li4uSgNmb3IiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cp4BL2dvdG8_dXJsPUNBRVNhd0hFSWtYWDgyR0pXMm96cDJNTkRKb3RkVmJCaUdrMWdwM1ZhQzYzRzlSMUIzb3l3WTNlTDJCYXZXVXZxOWs4aUdCQlZtaFpXUXY5dklKQVhiYk5OTF82V0lCdVQ5V0l4aURWdlZSTEp4UXBjMXZPdXF4Y3R3d0xsVVY4WTk3eFZLeVdwcVk5R29aTUhPOXgSBBoCCAAa7AMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAyAMIABAAGAAgACoUCgNtZHIVDHM9QBoIaXY7cDttZHIqCgoDZm9yFQAAAAAqFAoDbXNwFaDQkD8aCGl2O3A7bXNwMp4BL2dvdG8_dXJsPUNBRVNhd0hFSWtYWDgyR0pXMm96cDJNTkRKb3RkVmJCaUdrMWdwM1ZhQzYzRzlSMUIzb3l3WTNlTDJCYXZXVXZxOWs4aUdCQlZtaFpXUXY5dklKQVhiYk5OTF82V0lCdVQ5V0l4aURWdlZSTEp4UXBjMXZPdXF4Y3R3d0xsVVY4WTk3eFZLeVdwcVk5R29aTUhPOXg6Q01TU1AgdnMuIDxiPk1EUjwvYj46IFdoaWNoIE1vZGVsIElzIFJpZ2h0IGZvciBZb3VyIFRlYW0_IC0gSHVudHJlc3NCmgE8Yj5NRFIgaXMgYW4gZW5kLXRvLWVuZCBzZXJ2aWNlIGRlc2lnbmVkIHRvIGdvIGJleW9uZCBtb25pdG9yaW5nPC9iPi4gSXQgdXNlcyBhIDI0Lzcgc2VjdXJpdHkgb3BlcmF0aW9ucyBjZW50ZXIgKFNPQykgdG8gcHJvdmlkZSBwcm9hY3RpdmUgdGhyZWF0Jm5ic3A7Li4uSgNmb3IiAhABSABYAGgA",
+      "source": "Huntress",
+      "read_more_link": "https://www.huntress.com/msp-guide/mssp-vs-mdr#:~:text=MDR%20is%20an%20end%2Dto%2Dend%20service,analyst%20investigation%20to%20spot%20threats."
+    },
+    {
+      "position": 4,
+      "title": "Managed Detection and Response - ( - Bitdefender MDR",
+      "link": "https://www.bitdefender.com/business/support/en/77211-128809-mdr-for-msps.html",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiwEBxCJF1xVI5-aMEdVHcGCtg3wvWe74k8iLCPloVMwIUNfTh8wT7FYVkcES9zjRJP4XoKRthYOajdu-df4JjSbsLwy2exqs8T_v_6BTVkKXfqohRlMBtw2AtI9WFnv5Or4fzGzhy_d_I2QEIF7NGbPN9w-j7P2qN-tt8SDxv8H2DXeNyP5BzRp2_myI&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECB0QAQ&uoh=1",
+      "displayed_link": "https://www.bitdefender.com \u203a business \u203a support \u203a 77...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAKlBMVEX___9HcEz_NTX_Cwv_AgL_AAD_EBD_AAD_CAj_CQn_AwP_AAD_AQH_AQF0_N87AAAADXRSTlMBABGsMvEH3lccwnWLGKKBAQAAAKZJREFUKJGl0tsShSAIBVDxCmr__7sHtFSyXjr7yZk1CJHG_BVQuVm0S4x2oHyMhORQa3THmmyVgtQGSVOna6XUc2_y7RI_ELiyYZ9WLlFtVywNt2s7ypF2NDFGqnyqahMNk4THDdXseK2hWHhF4aawInoOltSnBY3ntCRt48t3nucPaNMj8g4soVjaes5f9rDb-Z2oH9LAkDLeNzQf2P4A5zY2-ZQfwbwLBM2FCDcAAAAASUVORK5CYII.png",
+      "snippet": "The Bitdefender Managed Detection and Response (Bitdefender MDR) service combines cybersecurity for endpoints, network and security analytics",
+      "snippet_highlighted_words": [
+        "Bitdefender Managed Detection and Response (Bitdefender MDR"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The Bitdefender Managed Detection and Response (Bitdefender MDR) service combines cybersecurity for endpoints, network and security analytics",
+          "source_info_link": "https://www.bitdefender.com/business/support/en/77211-128809-mdr-for-msps.html",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAKlBMVEX___9HcEz_NTX_Cwv_AgL_AAD_EBD_AAD_CAj_CQn_AwP_AAD_AQH_AQF0_N87AAAADXRSTlMBABGsMvEH3lccwnWLGKKBAQAAAKZJREFUKJGl0tsShSAIBVDxCmr__7sHtFSyXjr7yZk1CJHG_BVQuVm0S4x2oHyMhORQa3THmmyVgtQGSVOna6XUc2_y7RI_ELiyYZ9WLlFtVywNt2s7ypF2NDFGqnyqahMNk4THDdXseK2hWHhF4aawInoOltSnBY3ntCRt48t3nucPaNMj8g4soVjaes5f9rDb-Z2oH9LAkDLeNzQf2P4A5zY2-ZQfwbwLBM2FCDcAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEtLWxUMzh2SV9KUzJOR1ZLbllqdlVaWm1KT3dzaHhla0VfZjhSOVdOVFNOSjZCc0pJdHc0WWowTS00MlpyeFl2VGhuaklhVDJlQlpuQXdNX25kMVlUbkZHd0NhWUo4S1ZBei1XTVRGOVZuV1VNS0pyblFiU2w1aXYyQmJYVmxFT2xZWTZCaDVzNVpTYUhrM2JxZzVVQ2l3U3lwX1N6bzBNMzctend6aVB3aDhlSEh3Ym1mSxIEGgIIABqPBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDrAwgAEAAYACAAKhQKA21kchXTfllAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVpoLaPxoIaXY7cDttc3AyygEvZ290bz91cmw9Q0FFU2l3RUJ4Q0pGMS0tbFQzOHZJX0pTMk5HVktuWWp2VVpabUpPd3NoeGVrRV9mOFI5V05UU05KNkJzSkl0dzRZajBNLTQyWnJ4WXZUaG5qSWFUMmVCWm5Bd01fbmQxWVRuRkd3Q2FZSjhLVkF6LVdNVEY5Vm5XVU1LSnJuUWJTbDVpdjJCYlhWbEVPbFlZNkJoNXM1WlNhSGszYnFnNVVDaXdTeXBfU3pvME0zNy16d3ppUHdoOGVISHdibWZLOkBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKEJpdGRlZmVuZGVyIDxiPk1EUjwvYj4pIGZvciBNU1BzQpQBVGhlIDxiPkJpdGRlZmVuZGVyIE1hbmFnZWQgRGV0ZWN0aW9uIGFuZCBSZXNwb25zZSAoQml0ZGVmZW5kZXIgTURSPC9iPikgc2VydmljZSBjb21iaW5lcyBjeWJlcnNlY3VyaXR5IGZvciBlbmRwb2ludHMsIG5ldHdvcmsgYW5kIHNlY3VyaXR5IGFuYWx5dGljc0oDZm9yIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEtLWxUMzh2SV9KUzJOR1ZLbllqdlVaWm1KT3dzaHhla0VfZjhSOVdOVFNOSjZCc0pJdHc0WWowTS00MlpyeFl2VGhuaklhVDJlQlpuQXdNX25kMVlUbkZHd0NhWUo4S1ZBei1XTVRGOVZuV1VNS0pyblFiU2w1aXYyQmJYVmxFT2xZWTZCaDVzNVpTYUhrM2JxZzVVQ2l3U3lwX1N6bzBNMzctend6aVB3aDhlSEh3Ym1mSxIEGgIIABqPBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDrAwgAEAAYACAAKhQKA21kchXTfllAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVpoLaPxoIaXY7cDttc3AyygEvZ290bz91cmw9Q0FFU2l3RUJ4Q0pGMS0tbFQzOHZJX0pTMk5HVktuWWp2VVpabUpPd3NoeGVrRV9mOFI5V05UU05KNkJzSkl0dzRZajBNLTQyWnJ4WXZUaG5qSWFUMmVCWm5Bd01fbmQxWVRuRkd3Q2FZSjhLVkF6LVdNVEY5Vm5XVU1LSnJuUWJTbDVpdjJCYlhWbEVPbFlZNkJoNXM1WlNhSGszYnFnNVVDaXdTeXBfU3pvME0zNy16d3ppUHdoOGVISHdibWZLOkBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKEJpdGRlZmVuZGVyIDxiPk1EUjwvYj4pIGZvciBNU1BzQpQBVGhlIDxiPkJpdGRlZmVuZGVyIE1hbmFnZWQgRGV0ZWN0aW9uIGFuZCBSZXNwb25zZSAoQml0ZGVmZW5kZXIgTURSPC9iPikgc2VydmljZSBjb21iaW5lcyBjeWJlcnNlY3VyaXR5IGZvciBlbmRwb2ludHMsIG5ldHdvcmsgYW5kIHNlY3VyaXR5IGFuYWx5dGljc0oDZm9yIgIQAUgAWABoAA",
+      "source": "Bitdefender"
+    },
+    {
+      "position": 5,
+      "title": "MSSP vs MDR: Differences, Coverage and Response",
+      "link": "https://threatdefence.com/msp-guide/mssp-vs-mdr",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESbAHEIkXXxJ45T6B8wIWlX4Dxo6nJT71hHC9uhsvho1YmRK0lSMxt31DSMmrYR-2jSZ6u4prK8hC6SbWr7bYc0GLI4i1shjW6fc1U5XBRl8GgpYZ0rMVeZa4q1xwpPabK1Kpkw4FWbkl5ZCNlXw&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECDkQAQ&uoh=1",
+      "displayed_link": "https://threatdefence.com \u203a MSP security guide",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAilBMVEUZGRkaGhoJCQkAAAAEGhoAGhp4eHjZ2dl9EhKlDQ2IEBGTk5P___-pDA3kAAC4CgrgAAC1CgsTExPFBwfTBAXdAALHBgeBEREwMDC_v7_39_fGxsY5OTmJiYnpAACWDw9cXFwWGhoqGBghGRl_f3-oqKjk5OSysrKcnJwPGhpZFRV0ExONEBFfFRWdLyP4AAABL0lEQVR4AV2ShbLDQAhFuWGpxl7d3eX_f-_RzTJMe-OcQQOpABCI0p3cZF9kH0jULhhKwB1TKHOITwcAwSjM7uEMmUAZs3mAgoREoyVrtdscPVWh0-0FeFDu5zlbbinKSsj0DSHd-k8kEGjAHzkEyXA0Hg0n00A8my_yxXK1Vpg6l814PC43W8l2eaNlhLGhPRV1tT8cB1D7GoNTnrsniULZE5_zfMeDAa8iTNOIEMSXvB0deG5QFaHaFvk12qxaFcxT4byBN4MwT3A7XzRh279h5c5a5plVp9whZFuPt73HXSvK2-vT0ltR7Y_j8jOEQaZUdYk57W_vw_P1et8x4Na8vTzx7tqUnaZ015wAUcYqvUfHxPG1Jr51vkFGfHOgam4mmMlulII4heVz0VeUf4SnENlmOv9AAAAAAElFTkSuQmCC.png",
+      "date": "Oct 29, 2026",
+      "snippet": "MSSP vs MDR. An MSSP manages security services for clients. MDR focuses on detecting, investigating, and responding to threats.",
+      "snippet_highlighted_words": [
+        "MDR focuses on detecting, investigating, and responding to threats"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "MSSP vs MDR. An MSSP manages security services for clients. MDR focuses on detecting, investigating, and responding to threats.",
+          "source_info_link": "https://threatdefence.com/msp-guide/mssp-vs-mdr",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAilBMVEUZGRkaGhoJCQkAAAAEGhoAGhp4eHjZ2dl9EhKlDQ2IEBGTk5P___-pDA3kAAC4CgrgAAC1CgsTExPFBwfTBAXdAALHBgeBEREwMDC_v7_39_fGxsY5OTmJiYnpAACWDw9cXFwWGhoqGBghGRl_f3-oqKjk5OSysrKcnJwPGhpZFRV0ExONEBFfFRWdLyP4AAABL0lEQVR4AV2ShbLDQAhFuWGpxl7d3eX_f-_RzTJMe-OcQQOpABCI0p3cZF9kH0jULhhKwB1TKHOITwcAwSjM7uEMmUAZs3mAgoREoyVrtdscPVWh0-0FeFDu5zlbbinKSsj0DSHd-k8kEGjAHzkEyXA0Hg0n00A8my_yxXK1Vpg6l814PC43W8l2eaNlhLGhPRV1tT8cB1D7GoNTnrsniULZE5_zfMeDAa8iTNOIEMSXvB0deG5QFaHaFvk12qxaFcxT4byBN4MwT3A7XzRh279h5c5a5plVp9whZFuPt73HXSvK2-vT0ltR7Y_j8jOEQaZUdYk57W_vw_P1et8x4Na8vTzx7tqUnaZ015wAUcYqvUfHxPG1Jr51vkFGfHOgam4mmMlulII4heVz0VeUf4SnENlmOv9AAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqABL2dvdG8_dXJsPUNBRVNiQUhFSWtYWC1VS282UlU1Q2F1NHIxeWVFR2FTd0ZNbWN1SUFyaXo2WWRKa2VLY1VOVkM4dllzemxKa3NZNFVzWkZQTGJkSXplaXhCSFBoLURCV2I5QzhsVUdhZ0RpWEVCNU01M2NtX2VZYlN3TWxkUFZvT0tWWERhZGxpUGpwckRINmRWb2ctWEFQTy0wTEJ1ZxIEGgIIABrNAxIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCpAwgAEAAYACAAKhQKA21kchVEUGNAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVefuNPxoIaXY7cDttc3AyoAEvZ290bz91cmw9Q0FFU2JBSEVJa1hYLVVLbzZSVTVDYXU0cjF5ZUVHYVN3Rk1tY3VJQXJpejZZZEprZUtjVU5WQzh2WXN6bEprc1k0VXNaRlBMYmRJemVpeEJIUGgtREJXYjlDOGxVR2FnRGlYRUI1TTUzY21fZVliU3dNbGRQVm9PS1ZYRGFkbGlQanByREg2ZFZvZy1YQVBPLTBMQnVnOjZNU1NQIHZzIDxiPk1EUjwvYj46IERpZmZlcmVuY2VzLCBDb3ZlcmFnZSBhbmQgUmVzcG9uc2VChgFNU1NQIHZzIE1EUi4gQW4gTVNTUCBtYW5hZ2VzIHNlY3VyaXR5IHNlcnZpY2VzIGZvciBjbGllbnRzLiA8Yj5NRFIgZm9jdXNlcyBvbiBkZXRlY3RpbmcsIGludmVzdGlnYXRpbmcsIGFuZCByZXNwb25kaW5nIHRvIHRocmVhdHM8L2I-LkoDZm9yIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqABL2dvdG8_dXJsPUNBRVNiQUhFSWtYWC1VS282UlU1Q2F1NHIxeWVFR2FTd0ZNbWN1SUFyaXo2WWRKa2VLY1VOVkM4dllzemxKa3NZNFVzWkZQTGJkSXplaXhCSFBoLURCV2I5QzhsVUdhZ0RpWEVCNU01M2NtX2VZYlN3TWxkUFZvT0tWWERhZGxpUGpwckRINmRWb2ctWEFQTy0wTEJ1ZxIEGgIIABrNAxIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCpAwgAEAAYACAAKhQKA21kchVEUGNAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVefuNPxoIaXY7cDttc3AyoAEvZ290bz91cmw9Q0FFU2JBSEVJa1hYLVVLbzZSVTVDYXU0cjF5ZUVHYVN3Rk1tY3VJQXJpejZZZEprZUtjVU5WQzh2WXN6bEprc1k0VXNaRlBMYmRJemVpeEJIUGgtREJXYjlDOGxVR2FnRGlYRUI1TTUzY21fZVliU3dNbGRQVm9PS1ZYRGFkbGlQanByREg2ZFZvZy1YQVBPLTBMQnVnOjZNU1NQIHZzIDxiPk1EUjwvYj46IERpZmZlcmVuY2VzLCBDb3ZlcmFnZSBhbmQgUmVzcG9uc2VChgFNU1NQIHZzIE1EUi4gQW4gTVNTUCBtYW5hZ2VzIHNlY3VyaXR5IHNlcnZpY2VzIGZvciBjbGllbnRzLiA8Yj5NRFIgZm9jdXNlcyBvbiBkZXRlY3RpbmcsIGludmVzdGlnYXRpbmcsIGFuZCByZXNwb25kaW5nIHRvIHRocmVhdHM8L2I-LkoDZm9yIgIQAUgAWABoAA",
+      "source": "ThreatDefence",
+      "read_more_link": "https://threatdefence.com/msp-guide/mssp-vs-mdr#:~:text=MSSP%20vs%20MDR,vulnerability%20management%2C%20and%20security%20reporting."
+    },
+    {
+      "position": 6,
+      "title": "MSSP vs. MSP vs. MDR: Choosing the Right Service ...",
+      "link": "https://corsicatech.com/blog/mssp-vs-msp-vs-mdr-vs-mxdr/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESdQHEIkXX6G4qJe9_3XlFXU_3K4Eji0-pl7UnvvEAkDtig5bXSoeZH_YdLtjOfw0XkXfW7_kIJNOgp5UbqgvcXoNp1qi5wbkloHnDU_GGLeqprV9pj-W1lnY6UqtLbSC-nxsmqmW3SDDQdF57GR4ezuVqhB6MIA&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECDsQAQ&uoh=1",
+      "displayed_link": "https://corsicatech.com \u203a blog \u203a mssp-vs-msp-vs-mdr-v...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAZlBMVEUkVpgeU5cASJI_aKLV3OjL1ONIbqX___8aUZYWT5UFSpIJS5MxX52dr8vDzd6Fmr-nttCWqchzjbcARZD4-vxdfK3j6PC3xNkAOYvt8fZ5kroAQI5dfa1lg7Frh7NTdanc4uw3Y5_aERP6AAAAxUlEQVR4Ac2PRQKEMAxFmyI13F3uf8mpDc6ebCIv9tH3DTDGr8xxPRfeoE8IoZca45gzGQhHQsyOWASh50YxpyxOJEzDbKd5SLQVZV6ZKOIbq4k1t2kvkGaqXAZdUfcwdDIZpxksVKuWngIDgRBTDwm6i1G99FkKqN4VXnSCTDN2hCYxNxdCKnUzYKDg6SadZF5NTkwWZo6Ec7lRnPx1tgLhQgvG--LUshmM6tNZBmnk1VkOKp5rLwlUtGPOhVUAggtAX7QfvwkKv83Ut4sAAAAASUVORK5CYII.png",
+      "date": "Jun 16, 2026",
+      "snippet": "MDR is best for organizations facing advanced threats and requiring rapid, expert-led detection and response without building an internal SOC.",
+      "snippet_highlighted_words": [
+        "MDR is best for organizations facing advanced threats"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "MDR is best for organizations facing advanced threats and requiring rapid, expert-led detection and response without building an internal SOC.",
+          "source_info_link": "https://corsicatech.com/blog/mssp-vs-msp-vs-mdr-vs-mxdr/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAZlBMVEUkVpgeU5cASJI_aKLV3OjL1ONIbqX___8aUZYWT5UFSpIJS5MxX52dr8vDzd6Fmr-nttCWqchzjbcARZD4-vxdfK3j6PC3xNkAOYvt8fZ5kroAQI5dfa1lg7Frh7NTdanc4uw3Y5_aERP6AAAAxUlEQVR4Ac2PRQKEMAxFmyI13F3uf8mpDc6ebCIv9tH3DTDGr8xxPRfeoE8IoZca45gzGQhHQsyOWASh50YxpyxOJEzDbKd5SLQVZV6ZKOIbq4k1t2kvkGaqXAZdUfcwdDIZpxksVKuWngIDgRBTDwm6i1G99FkKqN4VXnSCTDN2hCYxNxdCKnUzYKDg6SadZF5NTkwWZo6Ec7lRnPx1tgLhQgvG--LUshmM6tNZBmnk1VkOKp5rLwlUtGPOhVUAggtAX7QfvwkKv83Ut4sAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWGYtRUJhb2xOTUZHdUNhcUNMNEJQNXB0TGx6UVJuMUdIZVFGT0xBeWttOTdDRXJCMWFkckZlNVVzeDllbGt3eXljSC1BRFI2ZGdZeTBJc2tsMmZRZFdWMlhCR0p2S3p0S1FDN190VmJoalkxLWtjaERfZVN2a1JfcmtDQ2RrZ2EydXhUazNYOWk2N0RZNWc1TmdOMDZyQRIEGgIIABr4AxICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNIDCAAQABgAIAAqFAoDbWRyFah_d0AaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBW8_G1AGghpdjtwO21zcDKsAS9nb3RvP3VybD1DQUVTZFFIRUlrWFhmLUVCYW9sTk1GR3VDYXFDTDRCUDVwdExselFSbjFHSGVRRk9MQXlrbTk3Q0VyQjFhZHJGZTVVc3g5ZWxrd3l5Y0gtQURSNmRnWXkwSXNrbDJmUWRXVjJYQkdKdkt6dEtRQzdfdFZiaGpZMS1rY2hEX2VTdmtSX3JrQ0Nka2dhMnV4VGszWDlpNjdEWTVnNU5nTjA2ckE6RE1TU1AgdnMuIDxiPk1TUDwvYj4gdnMuIDxiPk1EUjwvYj46IENob29zaW5nIHRoZSBSaWdodCBTZXJ2aWNlIE1vZGVsQpUBPGI-TURSIGlzIGJlc3QgZm9yIG9yZ2FuaXphdGlvbnMgZmFjaW5nIGFkdmFuY2VkIHRocmVhdHM8L2I-IGFuZCByZXF1aXJpbmcgcmFwaWQsIGV4cGVydC1sZWQgZGV0ZWN0aW9uIGFuZCByZXNwb25zZSB3aXRob3V0IGJ1aWxkaW5nIGFuIGludGVybmFsIFNPQy5KA2ZvciICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWGYtRUJhb2xOTUZHdUNhcUNMNEJQNXB0TGx6UVJuMUdIZVFGT0xBeWttOTdDRXJCMWFkckZlNVVzeDllbGt3eXljSC1BRFI2ZGdZeTBJc2tsMmZRZFdWMlhCR0p2S3p0S1FDN190VmJoalkxLWtjaERfZVN2a1JfcmtDQ2RrZ2EydXhUazNYOWk2N0RZNWc1TmdOMDZyQRIEGgIIABr4AxICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNIDCAAQABgAIAAqFAoDbWRyFah_d0AaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBW8_G1AGghpdjtwO21zcDKsAS9nb3RvP3VybD1DQUVTZFFIRUlrWFhmLUVCYW9sTk1GR3VDYXFDTDRCUDVwdExselFSbjFHSGVRRk9MQXlrbTk3Q0VyQjFhZHJGZTVVc3g5ZWxrd3l5Y0gtQURSNmRnWXkwSXNrbDJmUWRXVjJYQkdKdkt6dEtRQzdfdFZiaGpZMS1rY2hEX2VTdmtSX3JrQ0Nka2dhMnV4VGszWDlpNjdEWTVnNU5nTjA2ckE6RE1TU1AgdnMuIDxiPk1TUDwvYj4gdnMuIDxiPk1EUjwvYj46IENob29zaW5nIHRoZSBSaWdodCBTZXJ2aWNlIE1vZGVsQpUBPGI-TURSIGlzIGJlc3QgZm9yIG9yZ2FuaXphdGlvbnMgZmFjaW5nIGFkdmFuY2VkIHRocmVhdHM8L2I-IGFuZCByZXF1aXJpbmcgcmFwaWQsIGV4cGVydC1sZWQgZGV0ZWN0aW9uIGFuZCByZXNwb25zZSB3aXRob3V0IGJ1aWxkaW5nIGFuIGludGVybmFsIFNPQy5KA2ZvciICEAFIAFgAaAA",
+      "source": "Corsica Technologies",
+      "read_more_link": "https://corsicatech.com/blog/mssp-vs-msp-vs-mdr-vs-mxdr/#:~:text=MDR%20is%20best%20for%20organizations,without%20building%20an%20internal%20SOC."
+    },
+    {
+      "position": 7,
+      "title": "What is Managed Detection and Response?",
+      "link": "https://www.connectwise.com/cybersecurity-center/glossary/managed-detection-and-response",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESlQEBxCJF15Ak-7Usynlv4e4SEEgZl4iF6yWflG7pYyUYR186b_kTOBTb-taoOTvGgfKutMzfGQ9p4vwYOT3WrP8ULknl9WV4eE9Kfo-nCi6S0C8TXrr1hZwI7T5wFmsYbBNjlEpAMp11ELdvICEdtCHyJMXnMpnmsBFIAndHbsExx_nFd4iu2sGKMJQLVorE5l9UO3hMBg&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECDgQAQ&uoh=1",
+      "displayed_link": "https://www.connectwise.com \u203a glossary \u203a managed-dete...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAAB4AAAAgCAMAAAAynjhNAAAA6lBMVEX_____683_0ob_-_b_9OT_26L_xl__sgD_zHL_5bz_79f_xGP_tBr_zHz_qwD_vEf_rhj_z5D_263_szT_ogD_mwD_qBb_rCr_1KP_tUz_4ML_woP_oxT_r1T_3Lf_oSX_nRL_lxD_yJr_7d7_w47_r2H_jgD_hgr_kQ7_jAz_mS__z6r_3c7_7ef_ewb_gAj_mEf_tYP_9_T_wZ3_zK__18D_aQD_ZwD_dQT_giT_ZAD_l1f_bwL_y7f_WgD_gEL_oXX_dyD_XwD_qIT_h1D_w63_PgD_tJj_TgD_dzD_xrH_jlz_g0n_s5VEHELmAAABaElEQVR4AWzJgwEEQRAAwfmzbdvIP7s_u9bbsPkhKHzC8DkQJElhXxknSYKGH0VOJ_POLMlNhWeAJgRB_D2zIM0EQZAxUFRNxW4V1TXNWGiaaaGYrcGd45q6rnkzTfdBD-AJddxQj2ax4yfXkmazJEnyeFY8slMWm2pWp017zV1ZX5Vpdcv9MM7KzfhvW76SG4ZhKIpiJkvJLynHLIBDi5QI97b_7Xig3s4nLp7624P57ZoG2FvnvNt1Cmt3AOikOoKWPRS9_59gweKxKI5kQfhDeRiU0Sal5IBHEFUop4KudUYsQw1Rch0QKeOAtUn1KUWltJbOxOfIQyY-pQsEuN7arO4neBCOAnJIUgwIDcO4Rxy9eSpovRLhQuB0N9CJjxRo8UIPGOnbmRMz05D5AnNGK1X1nRjWVNoc93I_Du-NeuGuEsKGQLmtZDbqLdXU1IfZHLNnyay26iVVikngVn5kH_ND5A-ILxyUYxRXUsRlAAAAAElFTkSuQmCC.png",
+      "snippet": "To detect and respond to threats that get past other cybersecurity measures, MSPs might consider a new breed of MDR: co-managed detection and response (co-MDR).",
+      "snippet_highlighted_words": [
+        "MDR",
+        "MDR"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "To detect and respond to threats that get past other cybersecurity measures, MSPs might consider a new breed of MDR: co-managed detection and response (co-MDR).",
+          "source_info_link": "https://www.connectwise.com/cybersecurity-center/glossary/managed-detection-and-response",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAAB4AAAAgCAMAAAAynjhNAAAA6lBMVEX_____683_0ob_-_b_9OT_26L_xl__sgD_zHL_5bz_79f_xGP_tBr_zHz_qwD_vEf_rhj_z5D_263_szT_ogD_mwD_qBb_rCr_1KP_tUz_4ML_woP_oxT_r1T_3Lf_oSX_nRL_lxD_yJr_7d7_w47_r2H_jgD_hgr_kQ7_jAz_mS__z6r_3c7_7ef_ewb_gAj_mEf_tYP_9_T_wZ3_zK__18D_aQD_ZwD_dQT_giT_ZAD_l1f_bwL_y7f_WgD_gEL_oXX_dyD_XwD_qIT_h1D_w63_PgD_tJj_TgD_dzD_xrH_jlz_g0n_s5VEHELmAAABaElEQVR4AWzJgwEEQRAAwfmzbdvIP7s_u9bbsPkhKHzC8DkQJElhXxknSYKGH0VOJ_POLMlNhWeAJgRB_D2zIM0EQZAxUFRNxW4V1TXNWGiaaaGYrcGd45q6rnkzTfdBD-AJddxQj2ax4yfXkmazJEnyeFY8slMWm2pWp017zV1ZX5Vpdcv9MM7KzfhvW76SG4ZhKIpiJkvJLynHLIBDi5QI97b_7Xig3s4nLp7624P57ZoG2FvnvNt1Cmt3AOikOoKWPRS9_59gweKxKI5kQfhDeRiU0Sal5IBHEFUop4KudUYsQw1Rch0QKeOAtUn1KUWltJbOxOfIQyY-pQsEuN7arO4neBCOAnJIUgwIDcO4Rxy9eSpovRLhQuB0N9CJjxRo8UIPGOnbmRMz05D5AnNGK1X1nRjWVNoc93I_Du-NeuGuEsKGQLmtZDbqLdXU1IfZHLNnyay26iVVikngVn5kH_ND5A-ILxyUYxRXUsRlAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CtgBL2dvdG8_dXJsPUNBRVNsUUVCeENKRjF4b1c0NEVuaWxaMDd6bjBfb3J6U0p1WjQ4YWxsUmdlZnQtbU1ybXBTeGYtRm1UUXN1WTlSeGViNDZVTFVoMTVKNFdscWxScWJYSWhRWXVyVUI0bllzZkFKMFh4TGw2dUlfaW9MZHo4bUluc0xZQTBieTNaM2N1YUNxZV9MZlN1aUlZZDNuMVcxN3NvN0tKN0pIaEhERnppdTBpemdheEE3cEZHQnZjM3RuaFdIcGN2dFRiWDYyTnFkSnNHRnJXaHpREgQaAggAGqwEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQIgECAAQABgAIAAqFAoDbWRyFRugzz8aCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVwER0_GghpdjtwO21zcDLYAS9nb3RvP3VybD1DQUVTbFFFQnhDSkYxeG9XNDRFbmlsWjA3em4wX29yelNKdVo0OGFsbFJnZWZ0LW1Ncm1wU3hmLUZtVFFzdVk5UnhlYjQ2VUxVaDE1SjRXbHFsUnFiWEloUVl1clVCNG5Zc2ZBSjBYeExsNnVJX2lvTGR6OG1JbnNMWUEwYnkzWjNjdWFDcWVfTGZTdWlJWWQzbjFXMTdzbzdLSjdKSGhIREZ6aXUwaXpnYXhBN3BGR0J2YzN0bmhXSHBjdnRUYlg2Mk5xZEpzR0ZyV2h6UTo1V2hhdCBpcyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2U_IC0gQ29ubmVjdFdpc2VCrgFUbyBkZXRlY3QgYW5kIHJlc3BvbmQgdG8gdGhyZWF0cyB0aGF0IGdldCBwYXN0IG90aGVyIGN5YmVyc2VjdXJpdHkgbWVhc3VyZXMsIE1TUHMgbWlnaHQgY29uc2lkZXIgYSBuZXcgYnJlZWQgb2YgPGI-TURSPC9iPjogY28tbWFuYWdlZCBkZXRlY3Rpb24gYW5kIHJlc3BvbnNlIChjby08Yj5NRFI8L2I-KS5KA2ZvciICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CtgBL2dvdG8_dXJsPUNBRVNsUUVCeENKRjF4b1c0NEVuaWxaMDd6bjBfb3J6U0p1WjQ4YWxsUmdlZnQtbU1ybXBTeGYtRm1UUXN1WTlSeGViNDZVTFVoMTVKNFdscWxScWJYSWhRWXVyVUI0bllzZkFKMFh4TGw2dUlfaW9MZHo4bUluc0xZQTBieTNaM2N1YUNxZV9MZlN1aUlZZDNuMVcxN3NvN0tKN0pIaEhERnppdTBpemdheEE3cEZHQnZjM3RuaFdIcGN2dFRiWDYyTnFkSnNHRnJXaHpREgQaAggAGqwEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQIgECAAQABgAIAAqFAoDbWRyFRugzz8aCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVwER0_GghpdjtwO21zcDLYAS9nb3RvP3VybD1DQUVTbFFFQnhDSkYxeG9XNDRFbmlsWjA3em4wX29yelNKdVo0OGFsbFJnZWZ0LW1Ncm1wU3hmLUZtVFFzdVk5UnhlYjQ2VUxVaDE1SjRXbHFsUnFiWEloUVl1clVCNG5Zc2ZBSjBYeExsNnVJX2lvTGR6OG1JbnNMWUEwYnkzWjNjdWFDcWVfTGZTdWlJWWQzbjFXMTdzbzdLSjdKSGhIREZ6aXUwaXpnYXhBN3BGR0J2YzN0bmhXSHBjdnRUYlg2Mk5xZEpzR0ZyV2h6UTo1V2hhdCBpcyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2U_IC0gQ29ubmVjdFdpc2VCrgFUbyBkZXRlY3QgYW5kIHJlc3BvbmQgdG8gdGhyZWF0cyB0aGF0IGdldCBwYXN0IG90aGVyIGN5YmVyc2VjdXJpdHkgbWVhc3VyZXMsIE1TUHMgbWlnaHQgY29uc2lkZXIgYSBuZXcgYnJlZWQgb2YgPGI-TURSPC9iPjogY28tbWFuYWdlZCBkZXRlY3Rpb24gYW5kIHJlc3BvbnNlIChjby08Yj5NRFI8L2I-KS5KA2ZvciICEAFIAFgAaAA",
+      "source": "ConnectWise",
+      "read_more_link": "https://www.connectwise.com/cybersecurity-center/glossary/managed-detection-and-response#:~:text=To%20detect%20and%20respond%20to,co%2Dmanaged%20detection%20and%20response%20(co%2DMDR)."
+    },
+    {
+      "position": 8,
+      "title": "5 Ways MDR Keeps MSPs Ahead in a Competitive Market",
+      "link": "https://www.eset.com/us/business/resource-center/handbooks/5-ways-mdr-keeps-msps-ahead-in-a-competitive-market/?srsltid=AYCX9vKjk3bH_3RVE8RXynhSO8zxfQtVeDjoseisnvganx3j4eEGpUbd",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAES7gEBxCJF117FKB467OTaG53f9MjbipTOjY-bOnf0N1ssaVaBkzT8q5sWya9B0zoyS_wNyMfuSeKENkoJLXr1MMOBvvEiJ5ct5StMdgY0gOvgp2Rih4JSqjF0dySw5kAenNYKkz2xnO9NHcuFdxZ2jeAULvVZshHW_tkWT7MbP1QA5wWvDygPdtqLzNz0Qi86lvopnBEWmlmo9FpOih1ZtizS1i9twM5IQBq5t9Ov4E-c0LjUr6HkJ2lCpfhE7bQhCKjblq5v9j3xCqOh6MHcfv8UEp1ZR4UIgkEeexkpbiXyTa_BRmkc1WG-acMeh1x3&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECDYQAQ&uoh=1",
+      "displayed_link": "https://www.eset.com \u203a ... \u203a Handbooks",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAS1BMVEVHcEwAlqEAlqEAlqEAlqEAlqEAlqEAlqEAlqEAlqEAkp0AlqEAj5sam6Zar7h9vcSIw8mUyM6r1Njx-Pn____d7u9mtLw1oqzG4eTdBeIaAAAADHRSTlMAQXurzeb2_xSt_12AVp5UAAABBElEQVR4AX2Tiw6DIAxFUdRqV0AYoP__pWtFDFk2Tp7kJNe-VDfDqKd5AVjmSY-Dalg3YPAGmG2t7iWGjHW797uzhsS_HkcmvOPDOxi87crOxy88AUjy1rrWapYAJv7AAHAPgKE8U_DO-ZDKKyAMagQqtWTCC8qlKoJR6TvVkfQjXdB-52o1oY2COJ-SZ4tRsDipGV1kEssjMgcApSsKZ7XglXKKDIzIMzI7LorDqkRiELFIj9BKkwu2yiaWK2vh2Kag0lNwztWC2laIV3PKN1NtpQ4hY6kImGcIz_iOOj5KdXzN4E-frc17aAbfXZnSvWV3z0QODP8dWP80OVn_O-rO7_AB2awoPVCUEBYAAAAASUVORK5CYII.png",
+      "snippet": "Managed Detection and Response (MDR) solutions empower MSPs to provide reliable, round-the-clock protection without requiring significant in-house resources.",
+      "snippet_highlighted_words": [
+        "Managed Detection and Response (MDR) solutions"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Managed Detection and Response (MDR) solutions empower MSPs to provide reliable, round-the-clock protection without requiring significant in-house resources.",
+          "source_info_link": "https://www.eset.com/us/business/resource-center/handbooks/5-ways-mdr-keeps-msps-ahead-in-a-competitive-market/?srsltid=AYCX9vKjk3bH_3RVE8RXynhSO8zxfQtVeDjoseisnvganx3j4eEGpUbd",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAS1BMVEVHcEwAlqEAlqEAlqEAlqEAlqEAlqEAlqEAlqEAlqEAkp0AlqEAj5sam6Zar7h9vcSIw8mUyM6r1Njx-Pn____d7u9mtLw1oqzG4eTdBeIaAAAADHRSTlMAQXurzeb2_xSt_12AVp5UAAABBElEQVR4AX2Tiw6DIAxFUdRqV0AYoP__pWtFDFk2Tp7kJNe-VDfDqKd5AVjmSY-Dalg3YPAGmG2t7iWGjHW797uzhsS_HkcmvOPDOxi87crOxy88AUjy1rrWapYAJv7AAHAPgKE8U_DO-ZDKKyAMagQqtWTCC8qlKoJR6TvVkfQjXdB-52o1oY2COJ-SZ4tRsDipGV1kEssjMgcApSsKZ7XglXKKDIzIMzI7LorDqkRiELFIj9BKkwu2yiaWK2vh2Kag0lNwztWC2laIV3PKN1NtpQ4hY6kImGcIz_iOOj5KdXzN4E-frc17aAbfXZnSvWV3z0QODP8dWP80OVn_O-rO7_AB2awoPVCUEBYAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cs4CL2dvdG8_dXJsPUNBRVM3Z0VCeENKRjFfNXhnT1NyeHNXYnlzakhxRVdsY1JienJlZ1I4U2RUSE81VzRHY1luSnE1ZHZtSlk3eEhGM2EtZ2pObnJXWU9PYjJTUWRLbHVRR3VSOGcxTjFWeTV5Smg5WC00RWUzZmFUd3JDYm5qZGlBY2ZZWl9zT1ctT1l5alNkR1owSXJBRkxsaFZEQ0F6bUw1Y3hqUXBhTjMxTFdxaWVfZ0cxc3ZXbmh2bk9mSzhRdzNnV2pFZldadThLaFpneXdmNVZ6Rk5QdGxhNGpib0JSbENPdUpWeTRVY1ItREJSRHdLYWJTQXRneHl6Rlc1bG1ob1FycGtRNHJhbXhFLWpZM2Q5b0hGcGxFZEoxMTVQMHJRUkM5cFVUY3loZkU2ZWJTY3V4QnFVeU1jb0dhUGRDaEw0SWY4djZUaVZ5ZRIEGgIIABrFBBIAGgAiACoAMgYIARICdXM6AEIECAEQAEoAWgByAHoAgkChBAgAEAAYACAAKhQKA21kchWW0mNAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVVqtOPhoIaXY7cDttc3Ay9gEvZ290bz91cmw9Q0FFU3JBRUJ4Q0pGMTR0bEJQRGRXbmVhSHNLc0t0d0VfOTROM053YjBxbWZBMDBBQWl3b0Eyb1U2ZDY1d0xDNkR0aVJFWUtndndCREFGSnZ5SFA3d3pfOEMwNWJ6Vmo3UW03ejdvd2liSDBpM19VRVpZc1NtT1Z5RER2aHJjZTVyQTJYR1luSXNaYWlxaFFMLVA1NWNjWk0yLThtbXltOU9TTzV6WFI4Qlh6YXk4VUhuTGZveTdIbTIwbDZZWjA1VVRlTC1paEd6RXlaOFJNaTdabkdySTRwaG5WbXVDMldkVjZzSDByUEJxMGc6OjUgV2F5cyA8Yj5NRFI8L2I-IEtlZXBzIE1TUHMgQWhlYWQgaW4gYSBDb21wZXRpdGl2ZSBNYXJrZXRCpAE8Yj5NYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKE1EUikgc29sdXRpb25zPC9iPiBlbXBvd2VyIE1TUHMgdG8gcHJvdmlkZSByZWxpYWJsZSwgcm91bmQtdGhlLWNsb2NrIHByb3RlY3Rpb24gd2l0aG91dCByZXF1aXJpbmcgc2lnbmlmaWNhbnQgaW4taG91c2UgcmVzb3VyY2VzLkoDZm9yIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cs4CL2dvdG8_dXJsPUNBRVM3Z0VCeENKRjFfNXhnT1NyeHNXYnlzakhxRVdsY1JienJlZ1I4U2RUSE81VzRHY1luSnE1ZHZtSlk3eEhGM2EtZ2pObnJXWU9PYjJTUWRLbHVRR3VSOGcxTjFWeTV5Smg5WC00RWUzZmFUd3JDYm5qZGlBY2ZZWl9zT1ctT1l5alNkR1owSXJBRkxsaFZEQ0F6bUw1Y3hqUXBhTjMxTFdxaWVfZ0cxc3ZXbmh2bk9mSzhRdzNnV2pFZldadThLaFpneXdmNVZ6Rk5QdGxhNGpib0JSbENPdUpWeTRVY1ItREJSRHdLYWJTQXRneHl6Rlc1bG1ob1FycGtRNHJhbXhFLWpZM2Q5b0hGcGxFZEoxMTVQMHJRUkM5cFVUY3loZkU2ZWJTY3V4QnFVeU1jb0dhUGRDaEw0SWY4djZUaVZ5ZRIEGgIIABrFBBIAGgAiACoAMgYIARICdXM6AEIECAEQAEoAWgByAHoAgkChBAgAEAAYACAAKhQKA21kchWW0mNAGghpdjtwO21kcioKCgNmb3IVAAAAACoUCgNtc3AVVqtOPhoIaXY7cDttc3Ay9gEvZ290bz91cmw9Q0FFU3JBRUJ4Q0pGMTR0bEJQRGRXbmVhSHNLc0t0d0VfOTROM053YjBxbWZBMDBBQWl3b0Eyb1U2ZDY1d0xDNkR0aVJFWUtndndCREFGSnZ5SFA3d3pfOEMwNWJ6Vmo3UW03ejdvd2liSDBpM19VRVpZc1NtT1Z5RER2aHJjZTVyQTJYR1luSXNaYWlxaFFMLVA1NWNjWk0yLThtbXltOU9TTzV6WFI4Qlh6YXk4VUhuTGZveTdIbTIwbDZZWjA1VVRlTC1paEd6RXlaOFJNaTdabkdySTRwaG5WbXVDMldkVjZzSDByUEJxMGc6OjUgV2F5cyA8Yj5NRFI8L2I-IEtlZXBzIE1TUHMgQWhlYWQgaW4gYSBDb21wZXRpdGl2ZSBNYXJrZXRCpAE8Yj5NYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKE1EUikgc29sdXRpb25zPC9iPiBlbXBvd2VyIE1TUHMgdG8gcHJvdmlkZSByZWxpYWJsZSwgcm91bmQtdGhlLWNsb2NrIHByb3RlY3Rpb24gd2l0aG91dCByZXF1aXJpbmcgc2lnbmlmaWNhbnQgaW4taG91c2UgcmVzb3VyY2VzLkoDZm9yIgIQAUgAWABoAA",
+      "source": "ESET"
+    },
+    {
+      "position": 9,
+      "title": "What is Managed Detection and Response (MDR)?",
+      "link": "https://www.logmein.com/blog/what-is-mdr-and-why-msps-cannot-ignore-it",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESgwEBxCJF14C7fjnM33A1RN8Mik5fv1TBSy-sRKxNjfEqDEpyH5Hx_RwcrczEZX8ukhyVeWkxA7LYkZyYjj_oLvpbmr1Z9GaMQqhN6qbYehraG_D20xBPX1Qc_mSJwk5ksTEn-nqy_KM44koctmNoZBQfiplcZkES5-W31xZQcS_ihTgY0Q&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQFnoECDoQAQ&uoh=1",
+      "displayed_link": "https://www.logmein.com \u203a Home \u203a msp",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABDUlEQVR4AYxSgQaEQBDtU7r7jBQQApQoEpRAgD6iD0lXAiIcAX1CCAoIB0ggQHPbsqPWnuvxmJ2Z99qZVuKhKIpMWBACx9dR4_t5ccuJRHz_Ei-EcJMf4Zfbtt2BwHEcuH0TEjxYkiEIgrs3kaXzwhg8z6NnXdexOUkS8H2fNyikc4LBtm2I45jG8zzDGV3XXUyEBqZpQhRFeDYMg5LhjgHdw4GmabA-TRPNaZr23yAMQxrneY71vu9pTlVVzAmXaFkWjpBlGTYPw8CPUAp_o-u6uMSyLFEwjiNv8Lw8pLqu93Vd6QjHY9q2DdI0RUFVVbAsy_4dlL8XPTW-JSEpf8CVH3YSoXkXsh6KszMAFfvNl_9qOSoAAAAASUVORK5CYII.png",
+      "date": "May 7, 2026",
+      "snippet": "Unlike traditional security tools that simply generate alerts, MDR provides active threat detection and human-led response.",
+      "snippet_highlighted_words": [
+        "MDR provides active threat detection and human-led response"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Unlike traditional security tools that simply generate alerts, MDR provides active threat detection and human-led response.",
+          "source_info_link": "https://www.logmein.com/blog/what-is-mdr-and-why-msps-cannot-ignore-it",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABDUlEQVR4AYxSgQaEQBDtU7r7jBQQApQoEpRAgD6iD0lXAiIcAX1CCAoIB0ggQHPbsqPWnuvxmJ2Z99qZVuKhKIpMWBACx9dR4_t5ccuJRHz_Ei-EcJMf4Zfbtt2BwHEcuH0TEjxYkiEIgrs3kaXzwhg8z6NnXdexOUkS8H2fNyikc4LBtm2I45jG8zzDGV3XXUyEBqZpQhRFeDYMg5LhjgHdw4GmabA-TRPNaZr23yAMQxrneY71vu9pTlVVzAmXaFkWjpBlGTYPw8CPUAp_o-u6uMSyLFEwjiNv8Lw8pLqu93Vd6QjHY9q2DdI0RUFVVbAsy_4dlL8XPTW-JSEpf8CVH3YSoXkXsh6KszMAFfvNl_9qOSoAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CsABL2dvdG8_dXJsPUNBRVNnd0VCeENKRjF3bWxMMk5rNFc1c2Z0eC0tY2ZEU2RQX1ZxX1BwREJ6UmJINHRFakVyZGV4OWNWR0pJZDlnRnB2elJBUHFSajZ2RXUtVHoxa0VCcHRDTzR0d0ZUd3N6QXZHT3ZJM3lMZlE4YmVpa3RBWnNBN0dfRTluczVmSS1YLVcyXzdSbGxwMC1JWWNDbDJ1YW9zUEE3N25ZdnQ0eER0aXBFXzVJS01SZ3JtbmV3ODRREgQaAggAGvEDEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQM0DCAAQABgAIAAqFAoDbWRyFQgalUAaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVrTV8_GghpdjtwO21zcDLAAS9nb3RvP3VybD1DQUVTZ3dFQnhDSkYxd21sTDJOazRXNXNmdHgtLWNmRFNkUF9WcV9QcERCelJiSDR0RWpFcmRleDljVkdKSWQ5Z0ZwdnpSQVBxUmo2dkV1LVR6MWtFQnB0Q080dHdGVHdzekF2R092STN5TGZROGJlaWt0QVpzQTdHX0U5bnM1ZkktWC1XMl83UmxscDAtSVljQ2wydWFvc1BBNzduWXZ0NHhEdGlwRV81SUtNUmdybW5ldzg0UTo-V2hhdCBpcyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKDxiPk1EUjwvYj4pPyAtIExvZ01lSW5CggFVbmxpa2UgdHJhZGl0aW9uYWwgc2VjdXJpdHkgdG9vbHMgdGhhdCBzaW1wbHkgZ2VuZXJhdGUgYWxlcnRzLCA8Yj5NRFIgcHJvdmlkZXMgYWN0aXZlIHRocmVhdCBkZXRlY3Rpb24gYW5kIGh1bWFuLWxlZCByZXNwb25zZTwvYj4uSgNmb3IiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CsABL2dvdG8_dXJsPUNBRVNnd0VCeENKRjF3bWxMMk5rNFc1c2Z0eC0tY2ZEU2RQX1ZxX1BwREJ6UmJINHRFakVyZGV4OWNWR0pJZDlnRnB2elJBUHFSajZ2RXUtVHoxa0VCcHRDTzR0d0ZUd3N6QXZHT3ZJM3lMZlE4YmVpa3RBWnNBN0dfRTluczVmSS1YLVcyXzdSbGxwMC1JWWNDbDJ1YW9zUEE3N25ZdnQ0eER0aXBFXzVJS01SZ3JtbmV3ODRREgQaAggAGvEDEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQM0DCAAQABgAIAAqFAoDbWRyFQgalUAaCGl2O3A7bWRyKgoKA2ZvchUAAAAAKhQKA21zcBVrTV8_GghpdjtwO21zcDLAAS9nb3RvP3VybD1DQUVTZ3dFQnhDSkYxd21sTDJOazRXNXNmdHgtLWNmRFNkUF9WcV9QcERCelJiSDR0RWpFcmRleDljVkdKSWQ5Z0ZwdnpSQVBxUmo2dkV1LVR6MWtFQnB0Q080dHdGVHdzekF2R092STN5TGZROGJlaWt0QVpzQTdHX0U5bnM1ZkktWC1XMl83UmxscDAtSVljQ2wydWFvc1BBNzduWXZ0NHhEdGlwRV81SUtNUmdybW5ldzg0UTo-V2hhdCBpcyBNYW5hZ2VkIERldGVjdGlvbiBhbmQgUmVzcG9uc2UgKDxiPk1EUjwvYj4pPyAtIExvZ01lSW5CggFVbmxpa2UgdHJhZGl0aW9uYWwgc2VjdXJpdHkgdG9vbHMgdGhhdCBzaW1wbHkgZ2VuZXJhdGUgYWxlcnRzLCA8Yj5NRFIgcHJvdmlkZXMgYWN0aXZlIHRocmVhdCBkZXRlY3Rpb24gYW5kIGh1bWFuLWxlZCByZXNwb25zZTwvYj4uSgNmb3IiAhABSABYAGgA",
+      "source": "LogMeIn"
+    }
+  ],
+  "related_searches": [
+    {
+      "block_position": 1,
+      "query": "Mdr for msp tutorial",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Mdr%20for%20msp%20tutorial&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAgxEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Mdr+for+msp+tutorial"
+    },
+    {
+      "block_position": 1,
+      "query": "Best mdr for msp",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Best%20mdr%20for%20msp&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAhDEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Best+mdr+for+msp"
+    },
+    {
+      "block_position": 1,
+      "query": "Kaseya MDR",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Kaseya%20MDR&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAg-EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Kaseya+MDR"
+    },
+    {
+      "block_position": 1,
+      "query": "Kaseya MDR login",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Kaseya%20MDR%20login&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAhCEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Kaseya+MDR+login"
+    },
+    {
+      "block_position": 1,
+      "query": "Kaseya MDR knowledge base",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Kaseya%20MDR%20knowledge%20base&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAhAEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Kaseya+MDR+knowledge+base"
+    },
+    {
+      "block_position": 1,
+      "query": "Kaseya SIEM",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Kaseya%20SIEM&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAg8EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Kaseya+SIEM"
+    },
+    {
+      "block_position": 1,
+      "query": "RocketCyber",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=RocketCyber&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAg3EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=RocketCyber"
+    },
+    {
+      "block_position": 1,
+      "query": "RocketCyber Managed SOC",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=RocketCyber%20Managed%20SOC&sa=X&sca_esv=6fc6b37d899c546e&sxsrf=AKL5yDi9MvDGyNNnGVuXgafX5QrWV_r9-A%3A1794435337694&ved=2ahUKEwivl4DH-ICYAxUnHjQIHa61F3sQ1QJ6BAg1EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=RocketCyber+Managed+SOC"
+    }
+  ]
+}
+treg: charged $0.015 · call id 613ec2a3d40b458da0cad130a0bdeec3

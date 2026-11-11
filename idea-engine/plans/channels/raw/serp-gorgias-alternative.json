@@ -1,0 +1,360 @@
+{
+  "search_metadata": {
+    "id": "6af4e8f8a33d2bf0e62bea78",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/bLB9iyaHEeMDzvM9Z9eYBb1LGmVbsapZYF_re2JRJj8/6af4e8f8a33d2bf0e62bea78.json",
+    "markdown_endpoint": "https://serpapi.com/searches/bLB9iyaHEeMDzvM9Z9eYBb1LGmVbsapZYF_re2JRJj8/6af4e8f8a33d2bf0e62bea78.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/bLB9iyaHEeMDzvM9Z9eYBb1LGmVbsapZYF_re2JRJj8/6af4e8f8a33d2bf0e62bea78.json_with_pixel_position",
+    "created_at": "2026-11-11 22:15:20 UTC",
+    "processed_at": "2026-11-11 22:15:20 UTC",
+    "google_ads_url": "https://www.google.com/search?q=gorgias+alternative&hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/bLB9iyaHEeMDzvM9Z9eYBb1LGmVbsapZYF_re2JRJj8/6af4e8f8a33d2bf0e62bea78.html",
+    "total_time_taken": 0.6
+  },
+  "search_parameters": {
+    "engine": "google_ads",
+    "q": "gorgias alternative",
+    "location_requested": "Austin, Texas, United States",
+    "location_used": "Austin,Texas,United States",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "gorgias alternative",
+    "total_results": 129,
+    "time_taken_displayed": 0.18,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "related_questions": [
+    {
+      "question": "What is the gorgias AI agent?",
+      "type": "ai_overview",
+      "page_token": "-Hvb0XicHdDLbcIwAABQdRmOBBOgChKqMOCkfBxiYjvOBRmbX-KQAFaj9NhZeuowHaATdIAeeqzUN8J7ezfnS_71kJysre5Dx6nrun0sy6PZt1VZOPLeXJSjpDE7qfLh4HEAng5qNLvXcFLWMKJkJow23FQ25FWlE9YnFCWSzoUAwpLCK9ILrHBiQorgImLpBOd2IZJ0HSVpLM242RcACxdflVnZmKNG0V5PUfucAm-x4mWzc0XNMnbQyMtIx-syP-ooBiva8dYYnKCkyE8Lrx_6aKpzHfKA5SH3bBiwSczBcjXFa2LmBAcVIa4xPLdulIkNasBaZvCkCxCRjonTVxgRNu6qC_J3DBH_PIebWa8msQ6IbzcYoTrmZIN9smTAI7JgfRxgQ5m-iq52Wwf1MnJb_2Oj7aGww-pWHj_UbS_tXm-l_cx-vn__AApOgCA",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=-Hvb0XicHdDLbcIwAABQdRmOBBOgChKqMOCkfBxiYjvOBRmbX-KQAFaj9NhZeuowHaATdIAeeqzUN8J7ezfnS_71kJysre5Dx6nrun0sy6PZt1VZOPLeXJSjpDE7qfLh4HEAng5qNLvXcFLWMKJkJow23FQ25FWlE9YnFCWSzoUAwpLCK9ILrHBiQorgImLpBOd2IZJ0HSVpLM242RcACxdflVnZmKNG0V5PUfucAm-x4mWzc0XNMnbQyMtIx-syP-ooBiva8dYYnKCkyE8Lrx_6aKpzHfKA5SH3bBiwSczBcjXFa2LmBAcVIa4xPLdulIkNasBaZvCkCxCRjonTVxgRNu6qC_J3DBH_PIebWa8msQ6IbzcYoTrmZIN9smTAI7JgfRxgQ5m-iq52Wwf1MnJb_2Oj7aGww-pWHj_UbS_tXm-l_cx-vn__AApOgCA",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBnb3JnaWFzIEFJIGFnZW50PyIsImxrIjoiR2hoM2FHRjBJR2x6SUdkdmNtZHBZWE1nWVdrZ1lXZGxiblEiLCJicyI6ImMxMk9NUXZDTUJDRmNiM0Z1a2xhNVJZbnQ2d2RnbU1ISjRmT2gxeVRBOU9VSkNELWU4VmFnbDNmOTkyOUJ5MGNla2NaSldGMmpEWkVLNVR3MGlGWkhyUFJTdTJmUDJHQkpET0VLNXlfeHhRWlVfQ005LUFuR29VVEp2SHlvSWc1NE0yRlNZYVgwVWZWTEhFUlAwS2FCV2loN2xkVjVZM1JqVkxySlFYRENhcXVnQ0V5RzcxVFdfblBxczBiIiwiaWQiOiJmY18tT2owYXZtUEdJU2cwUEVQNnJxRm1RUV81In0=",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBnb3JnaWFzIEFJIGFnZW50PyIsImxrIjoiR2hoM2FHRjBJR2x6SUdkdmNtZHBZWE1nWVdrZ1lXZGxiblEiLCJicyI6ImMxMk9NUXZDTUJDRmNiM0Z1a2xhNVJZbnQ2d2RnbU1ISjRmT2gxeVRBOU9VSkNELWU4VmFnbDNmOTkyOUJ5MGNla2NaSldGMmpEWkVLNVR3MGlGWkhyUFJTdTJmUDJHQkpET0VLNXlfeHhRWlVfQ005LUFuR29VVEp2SHlvSWc1NE0yRlNZYVgwVWZWTEhFUlAwS2FCV2loN2xkVjVZM1JqVkxySlFYRENhcXVnQ0V5RzcxVFdfblBxczBiIiwiaWQiOiJmY18tT2owYXZtUEdJU2cwUEVQNnJxRm1RUV81In0%3D"
+    },
+    {
+      "question": "What are some companies similar to Shopify?",
+      "type": "ai_overview",
+      "page_token": "9d_k5nicHdBLUsIwAADQ8TIugbSgAzOMQ7GpVqEmTROSDROSQinpZ2ik0qVnceVhPIAn8AAuXOq4frv3-mb25eHzYpVZWzeTfr9t296uqnYm7amq6MvmXKq-ksZspDpMrq6vwM1WTf2m9eZV66EE-9xow1nbLQaGxUA_IjAbSFBvuZOd-AGO5F0tNaXhwh8jmdOcwTCSuXiOoClTM-vUrWYih_vlHGBevAjkhBiBOlLGiEcKiWaYq5VZ6IBa6kK5LIXFzjiOu8QuExhq-GcMuppWw4WzGwpGI8QsIck42NyKMyeQx8GScDobCaMfFDAxmQ9ieAZPMvcyXQCEB4aIzkOYzhxVwmBDIQ72oRf7wxYTHaBSDDGz96sui6QvGnnImrSgfpLULC19l4Dau9yq09S9_B-brreFndTHaveujqm0qV5L-5F_f_38Am5xgaE",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=9d_k5nicHdBLUsIwAADQ8TIugbSgAzOMQ7GpVqEmTROSDROSQinpZ2ik0qVnceVhPIAn8AAuXOq4frv3-mb25eHzYpVZWzeTfr9t296uqnYm7amq6MvmXKq-ksZspDpMrq6vwM1WTf2m9eZV66EE-9xow1nbLQaGxUA_IjAbSFBvuZOd-AGO5F0tNaXhwh8jmdOcwTCSuXiOoClTM-vUrWYih_vlHGBevAjkhBiBOlLGiEcKiWaYq5VZ6IBa6kK5LIXFzjiOu8QuExhq-GcMuppWw4WzGwpGI8QsIck42NyKMyeQx8GScDobCaMfFDAxmQ9ieAZPMvcyXQCEB4aIzkOYzhxVwmBDIQ72oRf7wxYTHaBSDDGz96sui6QvGnnImrSgfpLULC19l4Dau9yq09S9_B-brreFndTHaveujqm0qV5L-5F_f_38Am5xgaE",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGFyZSBzb21lIGNvbXBhbmllcyBzaW1pbGFyIHRvIFNob3BpZnk/IiwibGsiOiJHaHh6YVcxcGJHRnlJR052YlhCaGJtbGxjeUIwYnlCemFHOXdhV1o1IiwiYnMiOiJjMTJPTVF2Q01CQ0ZjYjNGdWtsYTVSWW50NndkZ21NSEo0Zk9oMXlUQTlPVUpDRC1lOFZhZ2wzZjk5MjlCeTBjZWtjWkpXRjJqRFpFSzVUdzBpRlpIclBSU3UyZlAyR0JKRE9FSzV5X3h4UVpVX0NNOS1BbkdvVVRKdkh5b0lnNTRNMkZTWWFYMFVmVkxIRVJQMEthQldpaDdsZFY1WTNSalZMckpRWERDYXF1Z0NFeUc3MVRXX25QcXMwYiIsImlkIjoiZmNfLU9qMGF2bVBHSVNnMFBFUDZycUZtUVFfNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGFyZSBzb21lIGNvbXBhbmllcyBzaW1pbGFyIHRvIFNob3BpZnk%2FIiwibGsiOiJHaHh6YVcxcGJHRnlJR052YlhCaGJtbGxjeUIwYnlCemFHOXdhV1o1IiwiYnMiOiJjMTJPTVF2Q01CQ0ZjYjNGdWtsYTVSWW50NndkZ21NSEo0Zk9oMXlUQTlPVUpDRC1lOFZhZ2wzZjk5MjlCeTBjZWtjWkpXRjJqRFpFSzVUdzBpRlpIclBSU3UyZlAyR0JKRE9FSzV5X3h4UVpVX0NNOS1BbkdvVVRKdkh5b0lnNTRNMkZTWWFYMFVmVkxIRVJQMEthQldpaDdsZFY1WTNSalZMckpRWERDYXF1Z0NFeUc3MVRXX25QcXMwYiIsImlkIjoiZmNfLU9qMGF2bVBHSVNnMFBFUDZycUZtUVFfNSJ9"
+    },
+    {
+      "question": "What is gorgias similar to?",
+      "type": "ai_overview",
+      "page_token": "M04tcnicHdA7boMwAABQ9TIZEz5JqkaKqrrhExRQbDAGL5FjE0gwHwWrBMaepVMP0wP0BD1Ah46tur_pvb7Jc11-3iWFUm23ms36vp_mTZPLbMqbasa6oeYzzqQ8Ml6ulvdL_fHE11bXg-emBxAjK5VCEhzbkUFH4tKCbYog0KmXOek80VTpb8QQGnopDOnDsTRZlQ-U3LboErRBqJc8RrtdgjAnxU0keMQJ8JgUN6o_-FATHnOBCom1yCrcCxzsI9MecDkfoaEt0qoNxWhfM0c1vlvYx3o7UCcOqItMEouEll4ssF1HBOo48sCfc6iDCLb80B70PbuAQlQ6RJqM6Aggip8MXtvOMbaRc_ZAaM17FAmXu_EmrWWNqu5GJO6h3M5h1alUK3wcgZ1vBebkxF_W5uR_bH04VWrVXpv8nV8zpjJxYOrj8v318wvegoIu",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=M04tcnicHdA7boMwAABQ9TIZEz5JqkaKqrrhExRQbDAGL5FjE0gwHwWrBMaepVMP0wP0BD1Ah46tur_pvb7Jc11-3iWFUm23ms36vp_mTZPLbMqbasa6oeYzzqQ8Ml6ulvdL_fHE11bXg-emBxAjK5VCEhzbkUFH4tKCbYog0KmXOek80VTpb8QQGnopDOnDsTRZlQ-U3LboErRBqJc8RrtdgjAnxU0keMQJ8JgUN6o_-FATHnOBCom1yCrcCxzsI9MecDkfoaEt0qoNxWhfM0c1vlvYx3o7UCcOqItMEouEll4ssF1HBOo48sCfc6iDCLb80B70PbuAQlQ6RJqM6Aggip8MXtvOMbaRc_ZAaM17FAmXu_EmrWWNqu5GJO6h3M5h1alUK3wcgZ1vBebkxF_W5uR_bH04VWrVXpv8nV8zpjJxYOrj8v318wvegoIu",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIGdvcmdpYXMgc2ltaWxhciB0bz8iLCJsayI6IkdocDNhR0YwSUdseklHZHZjbWRwWVhNZ2MybHRhV3hoY2lCMGJ3IiwiYnMiOiJjMTJPTVF2Q01CQ0ZjYjNGdWtsYTVSWW50NndkZ21NSEo0Zk9oMXlUQTlPVUpDRC1lOFZhZ2wzZjk5MjlCeTBjZWtjWkpXRjJqRFpFSzVUdzBpRlpIclBSU3UyZlAyR0JKRE9FSzV5X3h4UVpVX0NNOS1BbkdvVVRKdkh5b0lnNTRNMkZTWWFYMFVmVkxIRVJQMEthQldpaDdsZFY1WTNSalZMckpRWERDYXF1Z0NFeUc3MVRXX25QcXMwYiIsImlkIjoiZmNfLU9qMGF2bVBHSVNnMFBFUDZycUZtUVFfNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIGdvcmdpYXMgc2ltaWxhciB0bz8iLCJsayI6IkdocDNhR0YwSUdseklHZHZjbWRwWVhNZ2MybHRhV3hoY2lCMGJ3IiwiYnMiOiJjMTJPTVF2Q01CQ0ZjYjNGdWtsYTVSWW50NndkZ21NSEo0Zk9oMXlUQTlPVUpDRC1lOFZhZ2wzZjk5MjlCeTBjZWtjWkpXRjJqRFpFSzVUdzBpRlpIclBSU3UyZlAyR0JKRE9FSzV5X3h4UVpVX0NNOS1BbkdvVVRKdkh5b0lnNTRNMkZTWWFYMFVmVkxIRVJQMEthQldpaDdsZFY1WTNSalZMckpRWERDYXF1Z0NFeUc3MVRXX25QcXMwYiIsImlkIjoiZmNfLU9qMGF2bVBHSVNnMFBFUDZycUZtUVFfNSJ9"
+    },
+    {
+      "question": "Is gorgias free?",
+      "type": "ai_overview",
+      "page_token": "hMMtU3icHdBLTsJAGADgeBmX9gWYkBDjSKdaDNLpzF-YjRlmBkr79xForGXpWVx5GA_gCTyAC5cmfkf43t7xUJdfF-u869rT1HH6vr_aN80e7ZVuKkedhlo7WiFulS6nk-uJd7PTs_DUk7umJ4lg4QYNZgXm_P5hbOfomoJMoCaS07zZ8hxMCMSuQWohRxnmg1rnXhqIAEoQaWVCi2axRCogwkVSxqsNYsqEfGQuzFVgAuZRrmvYCb87KmTUVGaj_QeXh-MnXp58keUl4_hqoS0Ml5yfSWiirkkybyVdOYa57oCSDT8vB8mX9HHNRok_SungrVRBclN5CXORyzNJGNz6uqbRFiiLDjFJw1HPuLk3dUye5nEClWwtAgFqhA1jNFH7wstyUFnLLnf6ZRZc_o_NnndVN22Pzf5DH63qrHlW3Wfx8_37B7JDgjI",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=hMMtU3icHdBLTsJAGADgeBmX9gWYkBDjSKdaDNLpzF-YjRlmBkr79xForGXpWVx5GA_gCTyAC5cmfkf43t7xUJdfF-u869rT1HH6vr_aN80e7ZVuKkedhlo7WiFulS6nk-uJd7PTs_DUk7umJ4lg4QYNZgXm_P5hbOfomoJMoCaS07zZ8hxMCMSuQWohRxnmg1rnXhqIAEoQaWVCi2axRCogwkVSxqsNYsqEfGQuzFVgAuZRrmvYCb87KmTUVGaj_QeXh-MnXp58keUl4_hqoS0Ml5yfSWiirkkybyVdOYa57oCSDT8vB8mX9HHNRok_SungrVRBclN5CXORyzNJGNz6uqbRFiiLDjFJw1HPuLk3dUye5nEClWwtAgFqhA1jNFH7wstyUFnLLnf6ZRZc_o_NnndVN22Pzf5DH63qrHlW3Wfx8_37B7JDgjI",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJJcyBnb3JnaWFzIGZyZWU/IiwibGsiOiJHZzlwY3lCbmIzSm5hV0Z6SUdaeVpXVSIsImJzIjoiYzEyT01RdkNNQkNGY2IzRnVrbGE1UlludDZ3ZGdtTUhKNGZPaDF5VEE5T1VKQ0QtZThWYWdsM2Y5OTI5QnkwY2VrY1pKV0YyakRaRUs1VHcwaUZaSHJQUlN1MmZQMkdCSkRPRUs1eV94eFFaVV9DTTktQW5Hb1VUSnZIeW9JZzU0TTJGU1lhWDBVZlZMSEVSUDBLYUJXaWg3bGRWNVkzUmpWTHJKUVhEQ2FxdWdDRXlHNzFUV19uUHFzMGIiLCJpZCI6ImZjXy1PajBhdm1QR0lTZzBQRVA2cnFGbVFRXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWYVlsVlNlbEZJUW1oRVExQlBjV3hITjNwclh6WnFWSFl6U1ZKZmFVeGlhRGR3ZFVKTlNIQlFUVkZqU0hwa1IycHFYMkZXWjNnNFdHd3djbFprZDBKcE9HUjFhVTkyV1c1d1FWWmlaekI1WDJobVIxSjZVSEZDVWxrNVFSSVhMVTlxTUdGMmJWQkhTVk5uTUZCRlVEWnljVVp0VVZFYUlrRklUakJGTjBVelIwVlFUMHAzU2tsSFQzVXdObWxEU2s4eGNHaGxUR3QxUTNjIiwiZmN2IjoiMyIsImVpIjoiLU9qMGF2bVBHSVNnMFBFUDZycUZtUVEiLCJxYyI6IkNoTm5iM0puYVdGeklHRnNkR1Z5Ym1GMGFYWmxFQUI5ZXdvSlB3IiwicXVlc3Rpb24iOiJJcyBnb3JnaWFzIGZyZWU%2FIiwibGsiOiJHZzlwY3lCbmIzSm5hV0Z6SUdaeVpXVSIsImJzIjoiYzEyT01RdkNNQkNGY2IzRnVrbGE1UlludDZ3ZGdtTUhKNGZPaDF5VEE5T1VKQ0QtZThWYWdsM2Y5OTI5QnkwY2VrY1pKV0YyakRaRUs1VHcwaUZaSHJQUlN1MmZQMkdCSkRPRUs1eV94eFFaVV9DTTktQW5Hb1VUSnZIeW9JZzU0TTJGU1lhWDBVZlZMSEVSUDBLYUJXaWg3bGRWNVkzUmpWTHJKUVhEQ2FxdWdDRXlHNzFUV19uUHFzMGIiLCJpZCI6ImZjXy1PajBhdm1QR0lTZzBQRVA2cnFGbVFRXzUifQ%3D%3D"
+    }
+  ],
+  "ai_overview": {
+    "page_token": "UnsCqHiczVbdsqo2FH6BzvQpyk23gqJu3TPMmRBQUbaK-0_3DYOAEfmJG1D0ts_Sqz5MH6BP0AfoRS8bUBCsePY5N21mTEiy8mVlZX35_OVXx_LsP374cRWGm-CBpqMoqiKMkWNWdezSWnDwdHqJncDXV1-Qw20DauVwpkdtooBjqMOOYyk9_jItrjJeM9rOnfSkJ8RMxEnL_-i6ikIlIJy60AJzTfbYrwNapUll_8QKpFMNqqZXFVzruQUs-C7Y1TpTZ6tjWnOJAfjvCs-DYdwAgOKq1AzEBp8pEjGWjngX68VTmxnySQ0BsI42ShkmmZDQEYaPO8nKMVjuvUggCL1sF-WWjzzM9-QMPAaMPZA-d8BcSRd0z0PwqmHmQinG8BKzzD7dBiXxzPoIQCECEciNXoZTOYNLSY2PnSVqK7zAg5ebrsfeSBJo2kARPxUouGkdwjnZkjYQyXGGXvikqdGWvtKTDz-IUx8-dxjcZVvyrtdAPq7Yr-tHF4KR0jD0TWcHAa0viJ2DNcM01JXKfEn6tXqtyXTY-_Zdwjk9yEgX5EkHa92ZexiNRKhX5SpfSxkHC-EpnocHCF1LduVEkcu4nq8cTguXAooXyIv5yTTbeQBJBk_BBXBXwMcLk9IRMwIk2fcF-NxllzEu9T0rCeNO6Sa-5Galsw1QCDtJEM7LipnYB9cKf8HwJF768ROC-Wlwns4Vd0zctZPApxC94nR8xFX3-G4QxokzXhyeHBdAdnoIpoj4rSgpZg5fSqzQxRWiXNxIhsPYDMCxAkT-aQxEOM08FRMLmNjHtXg-bIwolj5gcvLclE5_pZQ_jMVCuHLi2AVlClRrAm-xb-GNtRkKmmx5I7yV3XbFwLPoOrWwu_gGQdP_1-RL5e4Ed4t86FPkS-SulHw8yKBzcvdxtHm5Qb5BQr7rcpeRryB3_yLfCubJd5K7eancfR_54E3y5XTxgnxnucuTb1BGvlTucuSD_X0md1fJl8ldSr7vkzv-2-UuoaB5bIrat12jUg3s97y5H7nO4xLx7HRzCHwrENbyG3hhla9q4NINH1zNcO5Uy3jg64PwYNypZAA_mAb1wSHsI0sLftac0PQ9LbR2JuU6PuYYrbWXhe79nK2R1a9PAxsO5pW6jhtiw6_jebcSNrvKUq6PxCFSsfE8DWdTl3m2BuOKuHx_OjC75utkrapLk43EafvQ0rG_fdqi3rvt6KPm85swiVzbMmFbtd_Adub128rKGzedrtZs2xPk9YQNrGAZJf4EHMT193b4OG4PRcr1dY7QpYHIvwHwBoAG-IgwI6Yw-ZFWJq2MCUf6JK8FRH6xaFKBrqlmsOPua3XNMDptVmdbutZpUS4KDxuuUaMCz-dqv-m-qYUkoFr4-_qvP__-B_q8bp8",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=UnsCqHiczVbdsqo2FH6BzvQpyk23gqJu3TPMmRBQUbaK-0_3DYOAEfmJG1D0ts_Sqz5MH6BP0AfoRS8bUBCsePY5N21mTEiy8mVlZX35_OVXx_LsP374cRWGm-CBpqMoqiKMkWNWdezSWnDwdHqJncDXV1-Qw20DauVwpkdtooBjqMOOYyk9_jItrjJeM9rOnfSkJ8RMxEnL_-i6ikIlIJy60AJzTfbYrwNapUll_8QKpFMNqqZXFVzruQUs-C7Y1TpTZ6tjWnOJAfjvCs-DYdwAgOKq1AzEBp8pEjGWjngX68VTmxnySQ0BsI42ShkmmZDQEYaPO8nKMVjuvUggCL1sF-WWjzzM9-QMPAaMPZA-d8BcSRd0z0PwqmHmQinG8BKzzD7dBiXxzPoIQCECEciNXoZTOYNLSY2PnSVqK7zAg5ebrsfeSBJo2kARPxUouGkdwjnZkjYQyXGGXvikqdGWvtKTDz-IUx8-dxjcZVvyrtdAPq7Yr-tHF4KR0jD0TWcHAa0viJ2DNcM01JXKfEn6tXqtyXTY-_Zdwjk9yEgX5EkHa92ZexiNRKhX5SpfSxkHC-EpnocHCF1LduVEkcu4nq8cTguXAooXyIv5yTTbeQBJBk_BBXBXwMcLk9IRMwIk2fcF-NxllzEu9T0rCeNO6Sa-5Galsw1QCDtJEM7LipnYB9cKf8HwJF768ROC-Wlwns4Vd0zctZPApxC94nR8xFX3-G4QxokzXhyeHBdAdnoIpoj4rSgpZg5fSqzQxRWiXNxIhsPYDMCxAkT-aQxEOM08FRMLmNjHtXg-bIwolj5gcvLclE5_pZQ_jMVCuHLi2AVlClRrAm-xb-GNtRkKmmx5I7yV3XbFwLPoOrWwu_gGQdP_1-RL5e4Ed4t86FPkS-SulHw8yKBzcvdxtHm5Qb5BQr7rcpeRryB3_yLfCubJd5K7eancfR_54E3y5XTxgnxnucuTb1BGvlTucuSD_X0md1fJl8ldSr7vkzv-2-UuoaB5bIrat12jUg3s97y5H7nO4xLx7HRzCHwrENbyG3hhla9q4NINH1zNcO5Uy3jg64PwYNypZAA_mAb1wSHsI0sLftac0PQ9LbR2JuU6PuYYrbWXhe79nK2R1a9PAxsO5pW6jhtiw6_jebcSNrvKUq6PxCFSsfE8DWdTl3m2BuOKuHx_OjC75utkrapLk43EafvQ0rG_fdqi3rvt6KPm85swiVzbMmFbtd_Adub128rKGzedrtZs2xPk9YQNrGAZJf4EHMT193b4OG4PRcr1dY7QpYHIvwHwBoAG-IgwI6Yw-ZFWJq2MCUf6JK8FRH6xaFKBrqlmsOPua3XNMDptVmdbutZpUS4KDxuuUaMCz-dqv-m-qYUkoFr4-_qvP__-B_q8bp8"
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "5 Best Gorgias Alternatives for eCommerce (2026) - eDesk",
+      "link": "https://www.edesk.com/blog/gorgias-alternatives/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESbQHEIkXXuTHM2unMcoY-YCCr6vjSz_2nGIRpQb949hHkxlbPB1Cquzw1taDO40Y-iSQJ0BogDeqAilo3NnriPjeYMVlUGwxcFZN0TZO08Vo-mYnlb23Fe1MdVPzxnCzS1Lz4JIOzdrNQ6aO6T2s&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECCEQAQ&uoh=1",
+      "displayed_link": "https://www.edesk.com \u203a blog \u203a gorgias-alternatives",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAWlBMVEUAAAAAAQABAAAAAAE8fP89e_49e_89e_89ev8-fP88fP4BAAE9e_48e_8BAQA8ff88ev8_fP8AAQE-fP48e_89ev89fP89fP49ev4-ff48e_48ff4_fP4_ff_aAJx9AAAAHnRSTlMAAAAAQL-___-AQAD__wBA_4AAgL-_QED_gP9AgIAotBpiAAABbUlEQVR4AUWTVZblMAxEZWiVlLGaGfa_zTkW-N0Po7DiEFHrNGgz75ghzHrtU9r8Ixp73CiAJYABgJJzv4fwfkCx8AgAT-R0H5u7u29h0Gdyxr7n8l6AuaHJUiqaApIh2Hzthi9EvUV5Ev46vZnaQ7NAdwBeZzTX6F4jDsjRMnf74MkgC8YRwOGqOTp7i5quDGAL2XWn4DJveoZBJei9UU_hvR3jcTLM4t3HDxVv7JSAtfMcTGBYtg3e4QiWW5UE5TVpIg7NMoR8ohDg_ZYCjuXVEjhVw7mVk0fwCUOIm-K0VLLnG2p1QSPNitr1GvtkrgeWDNVStfd3BnDRGI2K_mWAurylNd9y7YGBBWHaTByL0fKDMgxi9bhZvDFWSh54ec9VxvxeLsKjvvwQzXlXksyWLSmcUPq21k7F70JidX8S-NgUhYTNtxfYjgHF-3j0IJ8w4-vIWuPTHw787i_w_OCZSvWJYcxPc0vRQ7n_7FEULTdAvUcAAAAASUVORK5CYII.png",
+      "date": "Aug 25, 2023",
+      "snippet": "The 5 Best Gorgias Alternatives for eCommerce \u00b7 1. eDesk: Best for Multichannel and Marketplace Sellers \u00b7 2. Zendesk: Best for Large Enterprises ...",
+      "snippet_highlighted_words": [
+        "eDesk: Best for Multichannel and Marketplace Sellers"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The 5 Best Gorgias Alternatives for eCommerce \u00b7 1. eDesk: Best for Multichannel and Marketplace Sellers \u00b7 2. Zendesk: Best for Large Enterprises ...",
+          "source_info_link": "https://www.edesk.com/blog/gorgias-alternatives/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAWlBMVEUAAAAAAQABAAAAAAE8fP89e_49e_89e_89ev8-fP88fP4BAAE9e_48e_8BAQA8ff88ev8_fP8AAQE-fP48e_89ev89fP89fP49ev4-ff48e_48ff4_fP4_ff_aAJx9AAAAHnRSTlMAAAAAQL-___-AQAD__wBA_4AAgL-_QED_gP9AgIAotBpiAAABbUlEQVR4AUWTVZblMAxEZWiVlLGaGfa_zTkW-N0Po7DiEFHrNGgz75ghzHrtU9r8Ixp73CiAJYABgJJzv4fwfkCx8AgAT-R0H5u7u29h0Gdyxr7n8l6AuaHJUiqaApIh2Hzthi9EvUV5Ev46vZnaQ7NAdwBeZzTX6F4jDsjRMnf74MkgC8YRwOGqOTp7i5quDGAL2XWn4DJveoZBJei9UU_hvR3jcTLM4t3HDxVv7JSAtfMcTGBYtg3e4QiWW5UE5TVpIg7NMoR8ohDg_ZYCjuXVEjhVw7mVk0fwCUOIm-K0VLLnG2p1QSPNitr1GvtkrgeWDNVStfd3BnDRGI2K_mWAurylNd9y7YGBBWHaTByL0fKDMgxi9bhZvDFWSh54ec9VxvxeLsKjvvwQzXlXksyWLSmcUPq21k7F70JidX8S-NgUhYTNtxfYjgHF-3j0IJ8w4-vIWuPTHw787i_w_OCZSvWJYcxPc0vRQ7n_7FEULTdAvUcAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqEBL2dvdG8_dXJsPUNBRVNiUUhFSWtYWFc4UzlHalZOUnc0SHdFbkMzbEFqWV91Z0t1XzVkczdJbGxDb2U0bEtsdmJJd0dNQk96bmlwNzRjd2ZsdVJSYmlLWUR6d3QzaGRrVWwza1QyeDFEV3JTZ19hOG9wMUFkZlFhRGxFbHJiNVpnVlRMM25VZWJkUXQtTTVXRThMX21ib3c5RnJFTVJCZFESBBoCCAAamQQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9QMIABAAGAAgACocCgdnb3JnaWFzFfgfokAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXGrYk_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKhAS9nb3RvP3VybD1DQUVTYlFIRUlrWFhXOFM5R2pWTlJ3NEh3RW5DM2xBallfdWdLdV81ZHM3SWxsQ29lNGxLbHZiSXdHTUJPem5pcDc0Y3dmbHVSUmJpS1lEend0M2hka1VsM2tUMngxRFdyU2dfYThvcDFBZGZRYURsRWxyYjVaZ1ZUTDNuVWViZFF0LU01V0U4TF9tYm93OUZyRU1SQmRROj81IEJlc3QgPGI-R29yZ2lhcyBBbHRlcm5hdGl2ZXM8L2I-IGZvciBlQ29tbWVyY2UgKDIwMjYpIC0gZURlc2tCrgFUaGUgNSBCZXN0IEdvcmdpYXMgQWx0ZXJuYXRpdmVzIGZvciBlQ29tbWVyY2UgJm1pZGRvdDsgMS4gPGI-ZURlc2s6IEJlc3QgZm9yIE11bHRpY2hhbm5lbCBhbmQgTWFya2V0cGxhY2UgU2VsbGVyczwvYj4gJm1pZGRvdDsgMi4gWmVuZGVzazogQmVzdCBmb3IgTGFyZ2UgRW50ZXJwcmlzZXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqEBL2dvdG8_dXJsPUNBRVNiUUhFSWtYWFc4UzlHalZOUnc0SHdFbkMzbEFqWV91Z0t1XzVkczdJbGxDb2U0bEtsdmJJd0dNQk96bmlwNzRjd2ZsdVJSYmlLWUR6d3QzaGRrVWwza1QyeDFEV3JTZ19hOG9wMUFkZlFhRGxFbHJiNVpnVlRMM25VZWJkUXQtTTVXRThMX21ib3c5RnJFTVJCZFESBBoCCAAamQQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9QMIABAAGAAgACocCgdnb3JnaWFzFfgfokAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXGrYk_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKhAS9nb3RvP3VybD1DQUVTYlFIRUlrWFhXOFM5R2pWTlJ3NEh3RW5DM2xBallfdWdLdV81ZHM3SWxsQ29lNGxLbHZiSXdHTUJPem5pcDc0Y3dmbHVSUmJpS1lEend0M2hka1VsM2tUMngxRFdyU2dfYThvcDFBZGZRYURsRWxyYjVaZ1ZUTDNuVWViZFF0LU01V0U4TF9tYm93OUZyRU1SQmRROj81IEJlc3QgPGI-R29yZ2lhcyBBbHRlcm5hdGl2ZXM8L2I-IGZvciBlQ29tbWVyY2UgKDIwMjYpIC0gZURlc2tCrgFUaGUgNSBCZXN0IEdvcmdpYXMgQWx0ZXJuYXRpdmVzIGZvciBlQ29tbWVyY2UgJm1pZGRvdDsgMS4gPGI-ZURlc2s6IEJlc3QgZm9yIE11bHRpY2hhbm5lbCBhbmQgTWFya2V0cGxhY2UgU2VsbGVyczwvYj4gJm1pZGRvdDsgMi4gWmVuZGVzazogQmVzdCBmb3IgTGFyZ2UgRW50ZXJwcmlzZXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "edesk.com",
+      "read_more_link": "https://www.edesk.com/blog/gorgias-alternatives/#:~:text=The%205%20Best%20Gorgias%20Alternatives,for%20eCommerce&text=1.%20eDesk%3A%20Best%20for%20Multichannel,and%20Marketplace%20Sellers&text=2.%20Zendesk%3A%20Best%20for%20Large,Enterprises%20Needing%20Deep%20Customization"
+    },
+    {
+      "position": 2,
+      "title": "8 best Gorgias alternatives in 2026 (ranked for ecommerce ...",
+      "link": "https://www.eesel.ai/blog/best-gorgias-alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAEScAHEIkXXT05e3qwtUseYG-kKko7oVnJboo6uDFIcuPT5njyxLqphdgj3hS032zjJyajHQyGY6p-nvOW13Wxweu7NP-H0BrUE4G4rPks1IsU-YDCcQyn0-v4v2lvgdZFRZbhM2L6KgiKJ23AWIFxnYMU&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECCIQAQ&uoh=1",
+      "displayed_link": "https://www.eesel.ai \u203a blog \u203a best-gorgias-alternatives",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAUVBMVEVHcEz________________________9_f3____________MzMudnZ2FhYWJiYizs7Pg4N8BAQBhYWHw8PA_Pz4REQ8hISAaGhl5eXmAgIAwMDDLp2_hAAAAC3RSTlMAM4XE5_9h9RffP150WSwAAAD_SURBVHgBZJIHgoQgDABtsdKCJLj-_6HHJe7axkIZOql-1E3bAXRtU1dP-gF-DP1NjRPcmMbTzfBifrnFWOfDzY6gGFSiTq8j63xrQkx-WQwSi51knbpCzrRJLiBFyfRF6iCRcgLFEAZpX_Z-NGf0AN-uRjJ11Uj6IcYVDjBHSZuqlZSZM3yhvEvaVp02Zt4Xb9wWU8ZMDP90le6jSMaDnOIGwimzM34JYYWTc1hc4UF3LGgv0j9le2zFEuf0lM15CO-u9Xl8xS6gDJv8rwdf7CeUbLAoi-svV7YjMyHuWDB6ZY_LpqIxBr3sZ5g4a_z6DKInp_sbtqRJOFHjzQ4AgiYWc0vSmMoAAAAASUVORK5CYII.png",
+      "date": "Oct 26, 2026",
+      "snippet": "1. Re:amaze - best for Shopify teams wanting Gorgias-like depth at a lower cost \u00b7 2. Richpanel - best for AI-first ecommerce brands with high ...",
+      "snippet_highlighted_words": [
+        "Re:amaze - best for Shopify teams wanting Gorgias-like depth at a lower cost"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "1. Re:amaze - best for Shopify teams wanting Gorgias-like depth at a lower cost \u00b7 2. Richpanel - best for AI-first ecommerce brands with high ...",
+          "source_info_link": "https://www.eesel.ai/blog/best-gorgias-alternatives",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAUVBMVEVHcEz________________________9_f3____________MzMudnZ2FhYWJiYizs7Pg4N8BAQBhYWHw8PA_Pz4REQ8hISAaGhl5eXmAgIAwMDDLp2_hAAAAC3RSTlMAM4XE5_9h9RffP150WSwAAAD_SURBVHgBZJIHgoQgDABtsdKCJLj-_6HHJe7axkIZOql-1E3bAXRtU1dP-gF-DP1NjRPcmMbTzfBifrnFWOfDzY6gGFSiTq8j63xrQkx-WQwSi51knbpCzrRJLiBFyfRF6iCRcgLFEAZpX_Z-NGf0AN-uRjJ11Uj6IcYVDjBHSZuqlZSZM3yhvEvaVp02Zt4Xb9wWU8ZMDP90le6jSMaDnOIGwimzM34JYYWTc1hc4UF3LGgv0j9le2zFEuf0lM15CO-u9Xl8xS6gDJv8rwdf7CeUbLAoi-svV7YjMyHuWDB6ZY_LpqIxBr3sZ5g4a_z6DKInp_sbtqRJOFHjzQ4AgiYWc0vSmMoAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWG5ITmF4eDR2X2lZYzJaSDh4TVFPb3BtUnlhTXJtZVRjTldDUnV5Y1FIclRiOG8yR21lQllxdkQ0Y0RJMXhlWVgwa3hqYl9nTGY0MGhNOXRsaDNkanhHUUZ6MTAxdU0xdjJGQXRlSmhZLTNnZHplYTZLTGRaR2xUOXpWUHBYTDVQUU9OVDkyT1Rodk5kTHc4EgQaAggAGpoEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9AMIABAAGAAgACocCgdnb3JnaWFzFdtNpUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRUAl48_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKlAS9nb3RvP3VybD1DQUVTY0FIRUlrWFhuSE5heHg0dl9pWWMyWkg4eE1RT29wbVJ5YU1ybWVUY05XQ1J1eWNRSHJUYjhvMkdtZUJZcXZENGNESTF4ZVlYMGt4amJfZ0xmNDBoTTl0bGgzZGp4R1FGejEwMXVNMXYyRkF0ZUpoWS0zZ2R6ZWE2S0xkWkdsVDl6VlBwWEw1UFFPTlQ5Mk9UaHZOZEx3ODpEOCBiZXN0IDxiPkdvcmdpYXMgYWx0ZXJuYXRpdmVzPC9iPiBpbiAyMDI2IChyYW5rZWQgZm9yIGVjb21tZXJjZSAuLi5CpAExLiA8Yj5SZTphbWF6ZSAtIGJlc3QgZm9yIFNob3BpZnkgdGVhbXMgd2FudGluZyBHb3JnaWFzLWxpa2UgZGVwdGggYXQgYSBsb3dlciBjb3N0PC9iPiAmbWlkZG90OyAyLiBSaWNocGFuZWwgLSBiZXN0IGZvciBBSS1maXJzdCBlY29tbWVyY2UgYnJhbmRzIHdpdGggaGlnaCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWG5ITmF4eDR2X2lZYzJaSDh4TVFPb3BtUnlhTXJtZVRjTldDUnV5Y1FIclRiOG8yR21lQllxdkQ0Y0RJMXhlWVgwa3hqYl9nTGY0MGhNOXRsaDNkanhHUUZ6MTAxdU0xdjJGQXRlSmhZLTNnZHplYTZLTGRaR2xUOXpWUHBYTDVQUU9OVDkyT1Rodk5kTHc4EgQaAggAGpoEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9AMIABAAGAAgACocCgdnb3JnaWFzFdtNpUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRUAl48_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKlAS9nb3RvP3VybD1DQUVTY0FIRUlrWFhuSE5heHg0dl9pWWMyWkg4eE1RT29wbVJ5YU1ybWVUY05XQ1J1eWNRSHJUYjhvMkdtZUJZcXZENGNESTF4ZVlYMGt4amJfZ0xmNDBoTTl0bGgzZGp4R1FGejEwMXVNMXYyRkF0ZUpoWS0zZ2R6ZWE2S0xkWkdsVDl6VlBwWEw1UFFPTlQ5Mk9UaHZOZEx3ODpEOCBiZXN0IDxiPkdvcmdpYXMgYWx0ZXJuYXRpdmVzPC9iPiBpbiAyMDI2IChyYW5rZWQgZm9yIGVjb21tZXJjZSAuLi5CpAExLiA8Yj5SZTphbWF6ZSAtIGJlc3QgZm9yIFNob3BpZnkgdGVhbXMgd2FudGluZyBHb3JnaWFzLWxpa2UgZGVwdGggYXQgYSBsb3dlciBjb3N0PC9iPiAmbWlkZG90OyAyLiBSaWNocGFuZWwgLSBiZXN0IGZvciBBSS1maXJzdCBlY29tbWVyY2UgYnJhbmRzIHdpdGggaGlnaCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "eesel AI",
+      "read_more_link": "https://www.eesel.ai/blog/best-gorgias-alternatives#:~:text=Gorgias%20is%20the%20ecommerce%20helpdesk&text=Gorgias%20is%20the%20ecommerce%20helpdesk"
+    },
+    {
+      "position": 3,
+      "title": "Gorgias AI Agent Alternatives for Shopify (2026)",
+      "link": "https://www.hellorep.ai/blog/gorgias-ai-agent-alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESdwHEIkXXuUqNOOHPfa4Tyi0jNxigsxxQ7rIFFgsmEi3MpabFueSGZ75XvzOrl3yoDFdnE9fB0MKya4xPq7_lyl2HIhI4KYBm4C0Bl3WgiH4Zno7g17AURyyXGoZ5MJ_8ZVyWovyObv39v7r41ue0oYpBNk3eEvNk&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDMQAQ&uoh=1",
+      "displayed_link": "https://www.hellorep.ai \u203a blog \u203a gorgias-ai-agent-altern...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEX____Ozs4AAABKSkoxMjLAwMDS0tIFBgZcXFwYGRkLDAy2t7dWVlY5OTnl5eWKioqSkpKlpqZCQkKysrJzdHSampqqqqol6LvsAAAAZklEQVR4Ad3PSQ6AIAxAUfiKdRbH-x9VyxJD9_o3hLyQUve7PKmqhjrk2CBPtBUCoYxCZ6BgIL01c3hhapygy83NS9TW2WmFl5vXW2HmSLCQ3UBhNVCIpQ-hHdkq8dT2Kx3Ruw92Az0MBU2--yZzAAAAAElFTkSuQmCC.png",
+      "date": "2 days ago",
+      "snippet": "The best Gorgias alternative with an AI sales agent is REP AI, which recommends products, adds them to the cart in chat and prices website ...",
+      "snippet_highlighted_words": [
+        "REP AI"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The best Gorgias alternative with an AI sales agent is REP AI, which recommends products, adds them to the cart in chat and prices website ...",
+          "source_info_link": "https://www.hellorep.ai/blog/gorgias-ai-agent-alternatives",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEX____Ozs4AAABKSkoxMjLAwMDS0tIFBgZcXFwYGRkLDAy2t7dWVlY5OTnl5eWKioqSkpKlpqZCQkKysrJzdHSampqqqqol6LvsAAAAZklEQVR4Ad3PSQ6AIAxAUfiKdRbH-x9VyxJD9_o3hLyQUve7PKmqhjrk2CBPtBUCoYxCZ6BgIL01c3hhapygy83NS9TW2WmFl5vXW2HmSLCQ3UBhNVCIpQ-hHdkq8dT2Kx3Ruw92Az0MBU2--yZzAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cq4BL2dvdG8_dXJsPUNBRVNkd0hFSWtYWHpVWWRlcUlHOHlLTDVNNks4VmlHRWhlenRCeTAxeUxWdmpXcEpUaHl1QWtodWlkcTlXbU5oSjQ3WjN0VVQ4MGE2VWVyVUwtUXJ2ckgzRnRhMmh6WS1GTjRzYVdrY242bzZXZE5XYkhHY1VULWRxWnp1SVg5SkcwdkwycFBfMmRxSG9qMGlCX0ozcm5iUGVGT0tuLTU4M182EgQaAggAGpwEEgAaACICCAEqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9gMIABAAGAAgACocCgdnb3JnaWFzFXpCvUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRWWUHU_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKuAS9nb3RvP3VybD1DQUVTZHdIRUlrWFh6VVlkZXFJRzh5S0w1TTZLOFZpR0VoZXp0QnkwMXlMVnZqV3BKVGh5dUFraHVpZHE5V21OaEo0N1ozdFVUODBhNlVlclVMLVFydnJIM0Z0YTJoelktRk40c2FXa2NuNm82V2ROV2JIR2NVVC1kcVp6dUlYOUpHMHZMMnBQXzJkcUhvajBpQl9KM3JuYlBlRk9Lbi01ODNfNjpHPGI-R29yZ2lhczwvYj4gQUkgQWdlbnQgPGI-QWx0ZXJuYXRpdmVzPC9iPiBmb3IgU2hvcGlmeSAoMjAyNikgLSBSRVAgQUlCmgFUaGUgYmVzdCBHb3JnaWFzIGFsdGVybmF0aXZlIHdpdGggYW4gQUkgc2FsZXMgYWdlbnQgaXMgPGI-UkVQIEFJPC9iPiwgd2hpY2ggcmVjb21tZW5kcyBwcm9kdWN0cywgYWRkcyB0aGVtIHRvIHRoZSBjYXJ0IGluIGNoYXQgYW5kIHByaWNlcyB3ZWJzaXRlJm5ic3A7Li4uIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cq4BL2dvdG8_dXJsPUNBRVNkd0hFSWtYWHpVWWRlcUlHOHlLTDVNNks4VmlHRWhlenRCeTAxeUxWdmpXcEpUaHl1QWtodWlkcTlXbU5oSjQ3WjN0VVQ4MGE2VWVyVUwtUXJ2ckgzRnRhMmh6WS1GTjRzYVdrY242bzZXZE5XYkhHY1VULWRxWnp1SVg5SkcwdkwycFBfMmRxSG9qMGlCX0ozcm5iUGVGT0tuLTU4M182EgQaAggAGpwEEgAaACICCAEqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA9gMIABAAGAAgACocCgdnb3JnaWFzFXpCvUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRWWUHU_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKuAS9nb3RvP3VybD1DQUVTZHdIRUlrWFh6VVlkZXFJRzh5S0w1TTZLOFZpR0VoZXp0QnkwMXlMVnZqV3BKVGh5dUFraHVpZHE5V21OaEo0N1ozdFVUODBhNlVlclVMLVFydnJIM0Z0YTJoelktRk40c2FXa2NuNm82V2ROV2JIR2NVVC1kcVp6dUlYOUpHMHZMMnBQXzJkcUhvajBpQl9KM3JuYlBlRk9Lbi01ODNfNjpHPGI-R29yZ2lhczwvYj4gQUkgQWdlbnQgPGI-QWx0ZXJuYXRpdmVzPC9iPiBmb3IgU2hvcGlmeSAoMjAyNikgLSBSRVAgQUlCmgFUaGUgYmVzdCBHb3JnaWFzIGFsdGVybmF0aXZlIHdpdGggYW4gQUkgc2FsZXMgYWdlbnQgaXMgPGI-UkVQIEFJPC9iPiwgd2hpY2ggcmVjb21tZW5kcyBwcm9kdWN0cywgYWRkcyB0aGVtIHRvIHRoZSBjYXJ0IGluIGNoYXQgYW5kIHByaWNlcyB3ZWJzaXRlJm5ic3A7Li4uIgIQAUgAWABoAA",
+      "source": "REP AI",
+      "read_more_link": "https://www.hellorep.ai/blog/gorgias-ai-agent-alternatives#:~:text=The%20best%20Gorgias%20alternative%20with,website%20AI%20by%20monthly%20sessions."
+    },
+    {
+      "position": 4,
+      "title": "Gorgias Alternative",
+      "link": "https://helpspace.com/gorgias-alternative",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESZgHEIkXXzzSWSxvCcIdU1e6xEyU1-T2Gw6uYFvjInNn09app3x1E5E28NtYCyCpRLgkPVSnh94q6fQXN5ykxiRD82NgiqJRjo-nLVL6Iipu7qogUAw8lsF7nPVIf_8zbCGiD5TkH9w&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDEQAQ&uoh=1",
+      "displayed_link": "https://helpspace.com \u203a gorgias-alternative",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAA_1BMVEUTGycTGycTGycAESNyWTYAAiKyfEj_x1YOGST9vVecb0HGlkj-tVjKj0z-p14AHzMfKTUJAwjOd1j9mGP5k2Nc4_4veZWyXVT_iGv3hmeITkVIrsdh7_89jKADGCBiNTz5dm6NRkkkVWsQEBvaWWv0ZXFS3P9Nw-M8IkL8WXv3V3O8QZEAFxJJ0v8bM0GGMVj5S3xjJ7NAyf8qY4PvSJJ9Kq5EvP7QRbSQK7ewKsBYJVtQn-pbq_7ISdnEMr4HExM-TIF2lv5tmPwAFAC2SdzKO7UfIDeYfP6GiP92fONeMHSbQZipa_s9NWaHP63EXP_CWv3EY_9zOpjNWf_JVv7DxbkyAAAAAnRSTlNL-aF_EU4AAAEbSURBVHgBfdJFAoMwEEDRdoJD3d3d3d1d4P5naegK_9sHcZvNDibZLUxWsEiNCJkjIghkiiRFM4wJMiRLc8gESZ6medIYSYoVBAfJGCA2J45zuT16JL0-n8_vc3sCQY8WUSgciUTCUeSJxRMeNSZTabkMAk8wEM_mVIjyhUIhA0kAJlssljxKZMqVaq2elBeayzYaxSajwGSrXeuUGfhjt9vo5VTY7wwGdcB5gt1hN6jGUWc8mSZlnM3nQ9WfTHkxGE-W5SSs1pvNdu5mFAi7PbblYbo7nk6n88UDSqxf95PlYTS63XGnB6NC2D0XGBev9_v9-e5AhVi_oihKkiSK2LQI9eNzL0n7J9SN7pOp73B19X2aZ_2o1aq2HyK2Kn71Fhc3AAAAAElFTkSuQmCC.png",
+      "snippet": "Gorgias not working for you? HelpSpace is the easy alternative for fast, structured support \u2013 perfect for your e commerce team. Start free trial now!",
+      "snippet_highlighted_words": [
+        "HelpSpace"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Gorgias not working for you? HelpSpace is the easy alternative for fast, structured support \u2013 perfect for your e commerce team. Start free trial now!",
+          "source_info_link": "https://helpspace.com/gorgias-alternative",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAA_1BMVEUTGycTGycTGycAESNyWTYAAiKyfEj_x1YOGST9vVecb0HGlkj-tVjKj0z-p14AHzMfKTUJAwjOd1j9mGP5k2Nc4_4veZWyXVT_iGv3hmeITkVIrsdh7_89jKADGCBiNTz5dm6NRkkkVWsQEBvaWWv0ZXFS3P9Nw-M8IkL8WXv3V3O8QZEAFxJJ0v8bM0GGMVj5S3xjJ7NAyf8qY4PvSJJ9Kq5EvP7QRbSQK7ewKsBYJVtQn-pbq_7ISdnEMr4HExM-TIF2lv5tmPwAFAC2SdzKO7UfIDeYfP6GiP92fONeMHSbQZipa_s9NWaHP63EXP_CWv3EY_9zOpjNWf_JVv7DxbkyAAAAAnRSTlNL-aF_EU4AAAEbSURBVHgBfdJFAoMwEEDRdoJD3d3d3d1d4P5naegK_9sHcZvNDibZLUxWsEiNCJkjIghkiiRFM4wJMiRLc8gESZ6medIYSYoVBAfJGCA2J45zuT16JL0-n8_vc3sCQY8WUSgciUTCUeSJxRMeNSZTabkMAk8wEM_mVIjyhUIhA0kAJlssljxKZMqVaq2elBeayzYaxSajwGSrXeuUGfhjt9vo5VTY7wwGdcB5gt1hN6jGUWc8mSZlnM3nQ9WfTHkxGE-W5SSs1pvNdu5mFAi7PbblYbo7nk6n88UDSqxf95PlYTS63XGnB6NC2D0XGBev9_v9-e5AhVi_oihKkiSK2LQI9eNzL0n7J9SN7pOp73B19X2aZ_2o1aq2HyK2Kn71Fhc3AAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CpgBL2dvdG8_dXJsPUNBRVNaZ0hFSWtYWGdzRnBUOE1hUnN3QUFaMEYzZ1U5RHJZOEdiNWoyTHlwamo0Y0FXSkdxMXVRRXNrd2ZMLXRKYURaU3BFY1JxUWNJdjhPZEpQWERRWGlzMkhaclVTbnplbUQyNVpPRW9jQUM3VHM5TDRUazkyWjFDT3hMS2tQYVZBUGNDOTBOQWcxX3cSBBoCCAAa8gMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAzgMIABAAGAAgACocCgdnb3JnaWFzFZsYrUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXvlY1AGglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKYAS9nb3RvP3VybD1DQUVTWmdIRUlrWFhnc0ZwVDhNYVJzd0FBWjBGM2dVOURyWThHYjVqMkx5cGpqNGNBV0pHcTF1UUVza3dmTC10SmFEWlNwRWNScVFjSXY4T2RKUFhEUVhpczJIWnJVU256ZW1EMjVaT0VvY0FDN1RzOUw0VGs5MloxQ094TEtrUGFWQVBjQzkwTkFnMV93OjE8Yj5Hb3JnaWFzIEFsdGVybmF0aXZlPC9iPiAtIEhlbHBTcGFjZSB2cyBHb3JnaWFzQp4BR29yZ2lhcyBub3Qgd29ya2luZyBmb3IgeW91PyA8Yj5IZWxwU3BhY2U8L2I-IGlzIHRoZSBlYXN5IGFsdGVybmF0aXZlIGZvciBmYXN0LCBzdHJ1Y3R1cmVkIHN1cHBvcnQg4oCTIHBlcmZlY3QgZm9yIHlvdXIgZSBjb21tZXJjZSB0ZWFtLiBTdGFydCBmcmVlIHRyaWFsIG5vdyEiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CpgBL2dvdG8_dXJsPUNBRVNaZ0hFSWtYWGdzRnBUOE1hUnN3QUFaMEYzZ1U5RHJZOEdiNWoyTHlwamo0Y0FXSkdxMXVRRXNrd2ZMLXRKYURaU3BFY1JxUWNJdjhPZEpQWERRWGlzMkhaclVTbnplbUQyNVpPRW9jQUM3VHM5TDRUazkyWjFDT3hMS2tQYVZBUGNDOTBOQWcxX3cSBBoCCAAa8gMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAzgMIABAAGAAgACocCgdnb3JnaWFzFZsYrUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXvlY1AGglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKYAS9nb3RvP3VybD1DQUVTWmdIRUlrWFhnc0ZwVDhNYVJzd0FBWjBGM2dVOURyWThHYjVqMkx5cGpqNGNBV0pHcTF1UUVza3dmTC10SmFEWlNwRWNScVFjSXY4T2RKUFhEUVhpczJIWnJVU256ZW1EMjVaT0VvY0FDN1RzOUw0VGs5MloxQ094TEtrUGFWQVBjQzkwTkFnMV93OjE8Yj5Hb3JnaWFzIEFsdGVybmF0aXZlPC9iPiAtIEhlbHBTcGFjZSB2cyBHb3JnaWFzQp4BR29yZ2lhcyBub3Qgd29ya2luZyBmb3IgeW91PyA8Yj5IZWxwU3BhY2U8L2I-IGlzIHRoZSBlYXN5IGFsdGVybmF0aXZlIGZvciBmYXN0LCBzdHJ1Y3R1cmVkIHN1cHBvcnQg4oCTIHBlcmZlY3QgZm9yIHlvdXIgZSBjb21tZXJjZSB0ZWFtLiBTdGFydCBmcmVlIHRyaWFsIG5vdyEiAhABSABYAGgA",
+      "source": "HelpSpace"
+    },
+    {
+      "position": 5,
+      "title": "9 Best Gorgias Alternatives for CX-Driven Brands in 2026",
+      "link": "https://www.kapture.cx/blog/gorgias-alternative/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESbQHEIkXXspEYgfxCS9Q6nrrvLLP3VCdQuKFmsHZDm6dd4TZhfwuLQ5L_hGhszcYtDEfWRLDBDt3hCBCT1W-TaLXXM0cPP1E44lFMYV9umNCoTzJAF5Ovx-aZpWpOBCpKurLtZ6RuVrSg9-Oyeuw&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDUQAQ&uoh=1",
+      "displayed_link": "https://www.kapture.cx \u203a Home \u203a Customer Service",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAV1BMVEVHcEzTIzDWIy_aIiveHy3RJTDUIzPeHy3gHi3hHindHy7mGizdHyvYISrhHi_PJjDPRFDSEifEGynZam740NHzt7b_-vr-_v3cgIn63dr_6-vcmp66eHwixj_vAAAAC3RSTlMAK0N0gGAR1vH_riGxKdUAAAGsSURBVHgBbJMHgpwwDEVNWyP0JbBp0-5_zsjGMCTZN3301CjuTlU3bdt29Y_7jZ_G93Tgh_r_cMsEFAGi_yqVVxPoBMra3ht1YL4JEAAy3OJCJyJq8XESEhnOGpXAuJI1xHkhlhFDmc8zfQVFnNZtDwxR7bLQ6iUYEh_Pbd8js6r2uQDzJSjCvOz7thVB2zShgswg8zRM68vSzYikCW9zehUTBMwh5OqJrVSg2lU9cgWRaOl7EY4W1rR1tQDH7u8rnAQgCepdl2ImjPP6DT9nkSxQ71oT0gbx-f4sx4DbOgVAD0xIMMd9f5li4WUOfMXpENgEC-3Px2fJ6TehO4WnCdb9EyP0ituQNYjATDEfIZvg-RjDVxjsVIGgyuF5LrktSSlC49wApBZiwla2SEpeEn3lXK1ZCOt-kOu8JjAZ3hmeMYpSvE6E7TumyYw6CZ3KKGxvUznYyzzqEfcuMwigOgry2X69YyAQBDbBdc0pkoCAeZ2jKDLSWbAYqqyqgIagihJv_rpvcEEGrH6JFwZNwEg7p_lK_4tq6EkNNgj-an9XmqHXhB_-DKkAAABkpS1BwKAXRwAAAABJRU5ErkJggg.png",
+      "date": "Jan 15, 2026",
+      "snippet": "Top 9 Gorgias Alternatives in 2026 \u00b7 1. Kapture CX \u00b7 2. Tidio \u00b7 3. Richpanel \u00b7 4. Help Scout \u00b7 5. Zendesk \u00b7 6. Freshdesk \u00b7 7. Salesforce Service ...",
+      "snippet_highlighted_words": [
+        "1. Kapture CX"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Top 9 Gorgias Alternatives in 2026 \u00b7 1. Kapture CX \u00b7 2. Tidio \u00b7 3. Richpanel \u00b7 4. Help Scout \u00b7 5. Zendesk \u00b7 6. Freshdesk \u00b7 7. Salesforce Service ...",
+          "source_info_link": "https://www.kapture.cx/blog/gorgias-alternative/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAV1BMVEVHcEzTIzDWIy_aIiveHy3RJTDUIzPeHy3gHi3hHindHy7mGizdHyvYISrhHi_PJjDPRFDSEifEGynZam740NHzt7b_-vr-_v3cgIn63dr_6-vcmp66eHwixj_vAAAAC3RSTlMAK0N0gGAR1vH_riGxKdUAAAGsSURBVHgBbJMHgpwwDEVNWyP0JbBp0-5_zsjGMCTZN3301CjuTlU3bdt29Y_7jZ_G93Tgh_r_cMsEFAGi_yqVVxPoBMra3ht1YL4JEAAy3OJCJyJq8XESEhnOGpXAuJI1xHkhlhFDmc8zfQVFnNZtDwxR7bLQ6iUYEh_Pbd8js6r2uQDzJSjCvOz7thVB2zShgswg8zRM68vSzYikCW9zehUTBMwh5OqJrVSg2lU9cgWRaOl7EY4W1rR1tQDH7u8rnAQgCepdl2ImjPP6DT9nkSxQ71oT0gbx-f4sx4DbOgVAD0xIMMd9f5li4WUOfMXpENgEC-3Px2fJ6TehO4WnCdb9EyP0ituQNYjATDEfIZvg-RjDVxjsVIGgyuF5LrktSSlC49wApBZiwla2SEpeEn3lXK1ZCOt-kOu8JjAZ3hmeMYpSvE6E7TumyYw6CZ3KKGxvUznYyzzqEfcuMwigOgry2X69YyAQBDbBdc0pkoCAeZ2jKDLSWbAYqqyqgIagihJv_rpvcEEGrH6JFwZNwEg7p_lK_4tq6EkNNgj-an9XmqHXhB_-DKkAAABkpS1BwKAXRwAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqEBL2dvdG8_dXJsPUNBRVNiUUhFSWtYWHZmNmNFem12T1dvY2thLWMtX3JZSDFZQ2hnU1Z3UGt6UW1JcGRsajBuTmhUWVJfSk9fcDlpcFpnVmtFM2Z5bkQ3T2plTk9Hc09XaDVfampETG1YWDdwV1pyUDNVc2VWWnhnck44al81S3hfYUlhZUdtRXAxdEd0UnduTVpsZExQVHdyTDRlWUoxa1USBBoCCAAavAQSABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAmAQIABAAGAAgACocCgdnb3JnaWFzFcq0bUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXM4FtAGglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKhAS9nb3RvP3VybD1DQUVTYlFIRUlrWFh2ZjZjRXptdk9Xb2NrYS1jLV9yWUgxWUNoZ1NWd1BrelFtSXBkbGowbk5oVFlSX0pPX3A5aXBaZ1ZrRTNmeW5EN09qZU5PR3NPV2g1X2pqRExtWFg3cFdaclAzVXNlVlp4Z3JOOGpfNUt4X2FJYWVHbUVwMXRHdFJ3bk1abGRMUFR3ckw0ZVlKMWtVOj85IEJlc3QgPGI-R29yZ2lhcyBBbHRlcm5hdGl2ZXM8L2I-IGZvciBDWC1Ecml2ZW4gQnJhbmRzIGluIDIwMjZC0QFUb3AgOSBHb3JnaWFzIEFsdGVybmF0aXZlcyBpbiAyMDI2ICZtaWRkb3Q7IDxiPjEuIEthcHR1cmUgQ1g8L2I-ICZtaWRkb3Q7IDIuIFRpZGlvICZtaWRkb3Q7IDMuIFJpY2hwYW5lbCAmbWlkZG90OyA0LiBIZWxwIFNjb3V0ICZtaWRkb3Q7IDUuIFplbmRlc2sgJm1pZGRvdDsgNi4gRnJlc2hkZXNrICZtaWRkb3Q7IDcuIFNhbGVzZm9yY2UgU2VydmljZSZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqEBL2dvdG8_dXJsPUNBRVNiUUhFSWtYWHZmNmNFem12T1dvY2thLWMtX3JZSDFZQ2hnU1Z3UGt6UW1JcGRsajBuTmhUWVJfSk9fcDlpcFpnVmtFM2Z5bkQ3T2plTk9Hc09XaDVfampETG1YWDdwV1pyUDNVc2VWWnhnck44al81S3hfYUlhZUdtRXAxdEd0UnduTVpsZExQVHdyTDRlWUoxa1USBBoCCAAavAQSABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAmAQIABAAGAAgACocCgdnb3JnaWFzFcq0bUAaDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRXM4FtAGglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTKhAS9nb3RvP3VybD1DQUVTYlFIRUlrWFh2ZjZjRXptdk9Xb2NrYS1jLV9yWUgxWUNoZ1NWd1BrelFtSXBkbGowbk5oVFlSX0pPX3A5aXBaZ1ZrRTNmeW5EN09qZU5PR3NPV2g1X2pqRExtWFg3cFdaclAzVXNlVlp4Z3JOOGpfNUt4X2FJYWVHbUVwMXRHdFJ3bk1abGRMUFR3ckw0ZVlKMWtVOj85IEJlc3QgPGI-R29yZ2lhcyBBbHRlcm5hdGl2ZXM8L2I-IGZvciBDWC1Ecml2ZW4gQnJhbmRzIGluIDIwMjZC0QFUb3AgOSBHb3JnaWFzIEFsdGVybmF0aXZlcyBpbiAyMDI2ICZtaWRkb3Q7IDxiPjEuIEthcHR1cmUgQ1g8L2I-ICZtaWRkb3Q7IDIuIFRpZGlvICZtaWRkb3Q7IDMuIFJpY2hwYW5lbCAmbWlkZG90OyA0LiBIZWxwIFNjb3V0ICZtaWRkb3Q7IDUuIFplbmRlc2sgJm1pZGRvdDsgNi4gRnJlc2hkZXNrICZtaWRkb3Q7IDcuIFNhbGVzZm9yY2UgU2VydmljZSZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "Kapture CX",
+      "read_more_link": "https://www.kapture.cx/blog/gorgias-alternative/#:~:text=Top%209%20Gorgias%20Alternatives%20in,2026&text=1.%20Kapture%20CX&text=2.%20Tidio&text=3.%20Richpanel&text=4.%20Help%20Scout&text=5.%20Zendesk&text=6.%20Freshdesk&text=7.%20Salesforce%20Service%20Cloud"
+    },
+    {
+      "position": 6,
+      "title": "11 Zendesk alternatives and competitors for e-commerce ...",
+      "link": "https://letsengaige.com/blog/best-zendesk-alternatives-competitors/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESgAEBxCJF19qxgzQRuiMll9ldshujDcmSuxse1bw5mwU7CWM-7q1ylKvEzJW3WncKkPb7QIwJAw9wPGMW9MefHEXlV1-npsGEPAA3FFkojRjCy9cwW-vZPx_jHn4fV0hgt2PjJ4XkPWOwPfl2Q46hd_athg76CyH2v8sVT99yPRAwKQ&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDQQAQ&uoh=1",
+      "displayed_link": "https://letsengaige.com \u203a Blog",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAWlBMVEVHcEyave-cxPChy_KhzPGk0PKo0_Sl0vWHz_twv_FrvvVYs_Nlvv5yxP6r0_Z3wu9_yfyIz_2p0PWT0fyOy_qb0fm51POczPaoz_SnyvG0yu67zu7A0vCyx-3CrLbOAAAAHnRSTlMAAwYLEyExTF93zf7__3ZZ___O____W_________yd3uvxAAABAElEQVR4AY3SVQKDMBRE0RIiuLvsf5udCa-u9_dA_PRngQqRCt6Q0sa6KHLWaPX8l7ZxkqZZludJYR9ZmZJEq6q6icxVaTFJrG7b4qYBjUTrYP2d6jLNchKtg6FBH6ZsAiHRurFnjVUedeyFREP91PeFPmZMCEJsGqdpakzgRwXUdXe1eZ6pftzQ1ahtr8KALiRGEHSzZVrWdRsObP3qr7SQNkF3hyQackRln0zQKr-VhijGvHErSBet_CjGP1ceAn-1zd2gOxDqj4_p4UASkQ36emWFIHRfqAVmlBRU_gSi4vEpDI0gagbawwMrGv4EKqwOriDMpzkM8jR_P-rvnQEnKCS2owQc9gAAAABJRU5ErkJggg.png",
+      "date": "Oct 21, 2026",
+      "snippet": "The best Zendesk alternatives in 2026 are Engaige, Intercom Fin, Yuma and Siena if you want to keep Zendesk and replace only its AI; Gorgias or ...",
+      "snippet_highlighted_words": [
+        "Engaige, Intercom Fin, Yuma and Siena"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The best Zendesk alternatives in 2026 are Engaige, Intercom Fin, Yuma and Siena if you want to keep Zendesk and replace only its AI; Gorgias or ...",
+          "source_info_link": "https://letsengaige.com/blog/best-zendesk-alternatives-competitors/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAWlBMVEVHcEyave-cxPChy_KhzPGk0PKo0_Sl0vWHz_twv_FrvvVYs_Nlvv5yxP6r0_Z3wu9_yfyIz_2p0PWT0fyOy_qb0fm51POczPaoz_SnyvG0yu67zu7A0vCyx-3CrLbOAAAAHnRSTlMAAwYLEyExTF93zf7__3ZZ___O____W_________yd3uvxAAABAElEQVR4AY3SVQKDMBRE0RIiuLvsf5udCa-u9_dA_PRngQqRCt6Q0sa6KHLWaPX8l7ZxkqZZludJYR9ZmZJEq6q6icxVaTFJrG7b4qYBjUTrYP2d6jLNchKtg6FBH6ZsAiHRurFnjVUedeyFREP91PeFPmZMCEJsGqdpakzgRwXUdXe1eZ6pftzQ1ahtr8KALiRGEHSzZVrWdRsObP3qr7SQNkF3hyQackRln0zQKr-VhijGvHErSBet_CjGP1ceAn-1zd2gOxDqj4_p4UASkQ36emWFIHRfqAVmlBRU_gSi4vEpDI0gagbawwMrGv4EKqwOriDMpzkM8jR_P-rvnQEnKCS2owQc9gAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrwBL2dvdG8_dXJsPUNBRVNnQUVCeENKRjE0QTJ1bmVFQmxfaXJVSGs1ZjZiSUc3ejFuODRLNVBmVkRhRFFWZmFuemRPQUNoM21TakNQRFpHbzVSU0xLTHFBRjdBWFAtZFZhZnFWcTZfcmlLbEFacEJBQ3BtLUtJb3JKQUdQWjJyLVJzeWlqRU04ZFUxV2o4UVF6R1FXQTlBanN4S3Zhc2pkYkF3VG16bzZWVElDVjdFWmExa0dUZFdMdEpIdGcSBBoCCAAaqgQSABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAhgQIABAAGAAgACocCgdnb3JnaWFzFSyfET8aDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRVmCYU_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTK8AS9nb3RvP3VybD1DQUVTZ0FFQnhDSkYxNEEydW5lRUJsX2lyVUhrNWY2YklHN3oxbjg0SzVQZlZEYURRVmZhbnpkT0FDaDNtU2pDUERaR281UlNMS0xxQUY3QVhQLWRWYWZxVnE2X3JpS2xBWnBCQUNwbS1LSW9ySkFHUFoyci1Sc3lpakVNOGRVMVdqOFFRekdRV0E5QWpzeEt2YXNqZGJBd1Rtem82VlRJQ1Y3RVphMWtHVGRXTHRKSHRnOkQxMSBaZW5kZXNrIDxiPmFsdGVybmF0aXZlczwvYj4gYW5kIGNvbXBldGl0b3JzIGZvciBlLWNvbW1lcmNlICgyMDI2KUKfAVRoZSBiZXN0IFplbmRlc2sgYWx0ZXJuYXRpdmVzIGluIDIwMjYgYXJlIDxiPkVuZ2FpZ2UsIEludGVyY29tIEZpbiwgWXVtYSBhbmQgU2llbmE8L2I-IGlmIHlvdSB3YW50IHRvIGtlZXAgWmVuZGVzayBhbmQgcmVwbGFjZSBvbmx5IGl0cyBBSTsgR29yZ2lhcyBvciZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrwBL2dvdG8_dXJsPUNBRVNnQUVCeENKRjE0QTJ1bmVFQmxfaXJVSGs1ZjZiSUc3ejFuODRLNVBmVkRhRFFWZmFuemRPQUNoM21TakNQRFpHbzVSU0xLTHFBRjdBWFAtZFZhZnFWcTZfcmlLbEFacEJBQ3BtLUtJb3JKQUdQWjJyLVJzeWlqRU04ZFUxV2o4UVF6R1FXQTlBanN4S3Zhc2pkYkF3VG16bzZWVElDVjdFWmExa0dUZFdMdEpIdGcSBBoCCAAaqgQSABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAhgQIABAAGAAgACocCgdnb3JnaWFzFSyfET8aDGl2O3A7Z29yZ2lhcyo3CgthbHRlcm5hdGl2ZRVmCYU_GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlcxoKc3Vic3RpdHV0ZTK8AS9nb3RvP3VybD1DQUVTZ0FFQnhDSkYxNEEydW5lRUJsX2lyVUhrNWY2YklHN3oxbjg0SzVQZlZEYURRVmZhbnpkT0FDaDNtU2pDUERaR281UlNMS0xxQUY3QVhQLWRWYWZxVnE2X3JpS2xBWnBCQUNwbS1LSW9ySkFHUFoyci1Sc3lpakVNOGRVMVdqOFFRekdRV0E5QWpzeEt2YXNqZGJBd1Rtem82VlRJQ1Y3RVphMWtHVGRXTHRKSHRnOkQxMSBaZW5kZXNrIDxiPmFsdGVybmF0aXZlczwvYj4gYW5kIGNvbXBldGl0b3JzIGZvciBlLWNvbW1lcmNlICgyMDI2KUKfAVRoZSBiZXN0IFplbmRlc2sgYWx0ZXJuYXRpdmVzIGluIDIwMjYgYXJlIDxiPkVuZ2FpZ2UsIEludGVyY29tIEZpbiwgWXVtYSBhbmQgU2llbmE8L2I-IGlmIHlvdSB3YW50IHRvIGtlZXAgWmVuZGVzayBhbmQgcmVwbGFjZSBvbmx5IGl0cyBBSTsgR29yZ2lhcyBvciZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "Engaige",
+      "read_more_link": "https://letsengaige.com/blog/best-zendesk-alternatives-competitors/#:~:text=The%20best%20Zendesk%20alternatives%20in,only%20its%20AI%3B%20Gorgias%20or"
+    },
+    {
+      "position": 7,
+      "title": "Gorgias Sidekick alternatives: 7 picks for Shopify (2026)",
+      "link": "https://www.ringly.io/blog/gorgias-sidekick-alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESdQHEIkXXa76_thBWPBqn2co900Kkx4P118VSgwjClDufdgahDt_NQwtSnSSJIQqxnEAubKngLu1XE5Ea78xg7VNaZ7a2WetsGQYeBfIk5km3_QcrTSkPCPnoHZbBHp84NNcdnQZXMQUyzhgIN05XLIg5yfpPTw&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDYQAQ&uoh=1",
+      "displayed_link": "https://www.ringly.io \u203a blog \u203a gorgias-sidekick-alternati...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAUVBMVEVHcEz________________________f39_GxsaEhIQwMDD7-_sAAAB6enq1tbU-Pj5RUVGjo6P09PRfX19sbGwQEBAfHx_r6-uQkJC8vLy_v7_7hGp3AAAAB3RSTlMAN5_f_xCKmE2IwQAAARpJREFUeAFs0gWChDAMBVBcU2-Rvf9BN8kfh4x-HpbQiqtu2u6n2qaupPqhu62hZ7w3UT7nRxynafyIddV8pHlZ5ldYu6Zqn38FicznXVX4te4TvcVWYCDy8YkxEYU3xlw2Sjtwz7SVHF-oGyjvjPNu9G8H_FDvnBdLMCC0FDqCfGc0C4Qavu648_UMjgOOh1Ym4g4sUUYeBSVLLRy59mNBtoonUSmFXFAcg9NIJ05rtDy5v66bHHlknHbVkmaWcXfSJLYIYuwxy7mCtCLjWb9aSTKEtLgk0_CffcISxieaPjB6Oe5j8OSjYiuX5IGyAVkLmVUfNpaJEevO4zg7UTVeJrViFHvVHrHAdGmu_0OWgacpNvyJGm92AAA0rxqejStu3gAAAABJRU5ErkJggg.png",
+      "date": "Oct 16, 2026",
+      "snippet": "The 6 best Gorgias Sidekick alternatives \u00b7 1. Ringly: best for the phone-channel gap Sidekick can't see \u00b7 2. Richpanel (with AI Sidekick): best ...",
+      "snippet_highlighted_words": [
+        "1. Ringly: best for the phone-channel gap Sidekick can't see"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The 6 best Gorgias Sidekick alternatives \u00b7 1. Ringly: best for the phone-channel gap Sidekick can't see \u00b7 2. Richpanel (with AI Sidekick): best ...",
+          "source_info_link": "https://www.ringly.io/blog/gorgias-sidekick-alternatives",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAUVBMVEVHcEz________________________f39_GxsaEhIQwMDD7-_sAAAB6enq1tbU-Pj5RUVGjo6P09PRfX19sbGwQEBAfHx_r6-uQkJC8vLy_v7_7hGp3AAAAB3RSTlMAN5_f_xCKmE2IwQAAARpJREFUeAFs0gWChDAMBVBcU2-Rvf9BN8kfh4x-HpbQiqtu2u6n2qaupPqhu62hZ7w3UT7nRxynafyIddV8pHlZ5ldYu6Zqn38FicznXVX4te4TvcVWYCDy8YkxEYU3xlw2Sjtwz7SVHF-oGyjvjPNu9G8H_FDvnBdLMCC0FDqCfGc0C4Qavu648_UMjgOOh1Ym4g4sUUYeBSVLLRy59mNBtoonUSmFXFAcg9NIJ05rtDy5v66bHHlknHbVkmaWcXfSJLYIYuwxy7mCtCLjWb9aSTKEtLgk0_CffcISxieaPjB6Oe5j8OSjYiuX5IGyAVkLmVUfNpaJEevO4zg7UTVeJrViFHvVHrHAdGmu_0OWgacpNvyJGm92AAA0rxqejStu3gAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWG5jNF84SGU0RWc2MlFnMVljRzYtU0ZfbUJPUTluUGsxaUxrTENVWnJBeWlldHpCemhWM2Y4VUp1WmlRZmFFZmJVNDlQR0lINnpmeUdaU3VXNFFsY0ltaEl0UFZvenZtZl9pZ1QxM21EN1ZkVmp1NkljMEo4WFp4ejRWSkNhUG8zbnNEVkt6ODZELUVPbVFsYm9lb3BvQRIEGgIIABq4BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCUBAgAEAAYACAAKhwKB2dvcmdpYXMVCsypQBoMaXY7cDtnb3JnaWFzKjcKC2FsdGVybmF0aXZlFUDXYT8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzGgpzdWJzdGl0dXRlMqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWG5jNF84SGU0RWc2MlFnMVljRzYtU0ZfbUJPUTluUGsxaUxrTENVWnJBeWlldHpCemhWM2Y4VUp1WmlRZmFFZmJVNDlQR0lINnpmeUdaU3VXNFFsY0ltaEl0UFZvenZtZl9pZ1QxM21EN1ZkVmp1NkljMEo4WFp4ejRWSkNhUG8zbnNEVkt6ODZELUVPbVFsYm9lb3BvQTpQPGI-R29yZ2lhczwvYj4gU2lkZWtpY2sgPGI-YWx0ZXJuYXRpdmVzPC9iPjogNyBwaWNrcyBmb3IgU2hvcGlmeSAoMjAyNikgLSBSaW5nbHlCsQFUaGUgNiBiZXN0IEdvcmdpYXMgU2lkZWtpY2sgYWx0ZXJuYXRpdmVzICZtaWRkb3Q7IDxiPjEuIFJpbmdseTogYmVzdCBmb3IgdGhlIHBob25lLWNoYW5uZWwgZ2FwIFNpZGVraWNrIGNhbiYjMzk7dCBzZWU8L2I-ICZtaWRkb3Q7IDIuIFJpY2hwYW5lbCAod2l0aCBBSSBTaWRla2ljayk6IGJlc3QmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWG5jNF84SGU0RWc2MlFnMVljRzYtU0ZfbUJPUTluUGsxaUxrTENVWnJBeWlldHpCemhWM2Y4VUp1WmlRZmFFZmJVNDlQR0lINnpmeUdaU3VXNFFsY0ltaEl0UFZvenZtZl9pZ1QxM21EN1ZkVmp1NkljMEo4WFp4ejRWSkNhUG8zbnNEVkt6ODZELUVPbVFsYm9lb3BvQRIEGgIIABq4BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCUBAgAEAAYACAAKhwKB2dvcmdpYXMVCsypQBoMaXY7cDtnb3JnaWFzKjcKC2FsdGVybmF0aXZlFUDXYT8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzGgpzdWJzdGl0dXRlMqwBL2dvdG8_dXJsPUNBRVNkUUhFSWtYWG5jNF84SGU0RWc2MlFnMVljRzYtU0ZfbUJPUTluUGsxaUxrTENVWnJBeWlldHpCemhWM2Y4VUp1WmlRZmFFZmJVNDlQR0lINnpmeUdaU3VXNFFsY0ltaEl0UFZvenZtZl9pZ1QxM21EN1ZkVmp1NkljMEo4WFp4ejRWSkNhUG8zbnNEVkt6ODZELUVPbVFsYm9lb3BvQTpQPGI-R29yZ2lhczwvYj4gU2lkZWtpY2sgPGI-YWx0ZXJuYXRpdmVzPC9iPjogNyBwaWNrcyBmb3IgU2hvcGlmeSAoMjAyNikgLSBSaW5nbHlCsQFUaGUgNiBiZXN0IEdvcmdpYXMgU2lkZWtpY2sgYWx0ZXJuYXRpdmVzICZtaWRkb3Q7IDxiPjEuIFJpbmdseTogYmVzdCBmb3IgdGhlIHBob25lLWNoYW5uZWwgZ2FwIFNpZGVraWNrIGNhbiYjMzk7dCBzZWU8L2I-ICZtaWRkb3Q7IDIuIFJpY2hwYW5lbCAod2l0aCBBSSBTaWRla2ljayk6IGJlc3QmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "Ringly.io",
+      "read_more_link": "https://www.ringly.io/blog/gorgias-sidekick-alternatives#:~:text=The%206%20best%20Gorgias%20Sidekick,alternatives&text=1.%20Ringly%3A%20best%20for%20the,phone%2Dchannel%20gap%20Sidekick%20can't%20see&text=2.%20Richpanel%20(with%20AI%20Sidekick)%3A,direct%20chat%2Dsubstitute%20for%20Gorgias%20Sidekick"
+    },
+    {
+      "position": 8,
+      "title": "Best Gorgias Alternatives for Small Shopify Stores (2026) - Ansa",
+      "link": "https://ansa.so/blog/gorgias-alternative-shopify-small-business",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESfAHEIkXXBdkipXQ3NCyuWcKYjV83_RFQvbEWJDBRTSv_qYQUB_19EyzPsBfqYP1FUQLhZWrdtY2VwZjTlCkh6R-WAwv64y8cO0TWAkBVgjSPiArymQOCBqyvdz3cnY6wlt9mMCZ3qHNpPu6SdwG2Xa6rMjU8jLME6jbqgGw&ved=2ahUKEwj56-C--ICYAxUEEDQIHWpdIUMQFnoECDIQAQ&uoh=1",
+      "displayed_link": "https://ansa.so \u203a blog \u203a gorgias-alternative-shopify-smal...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEUaGhoaGhoaGhoXFxcBAQEODg7g4OD___-oqKhlZWXp6eknJye2trb8_Pz29vZ-fn4UFBQ-Pj7Y2NjAwMCWlpZUVFTOzs7N9HTzAAAAAnRSTlMUrmlTlIIAAACpSURBVHgBtM83AsMgEERRCXYZckb3v6lzNnLnX86rZllWsdd6t2mL_IXi7yjp1A5KVoCmObKxgHJyiuQREBPNMJeKFtGynCD1iOGhBn-jdCdwBuj0jWwUOjuFVvIX5o5gnOuIiT4xlw1R1aoA7eQHssE9O_gDhYb1-lQLSPkdc4logk4Nhc3JN6SE0On2CIPf0cKay0Qd8PSGgoj4ODiLBW9kD6Ak3hQPAEtECzbXRDgpAAAAAElFTkSuQmCC.png",
+      "date": "Mar 22, 2026",
+      "snippet": "Ansa \u2014 Best for AI-First Support With Flat Pricing \u00b7 Re:amaze \u2014 Best for Multi-Channel With Live Chat Focus \u00b7 Tidio \u2014 Best for Stores Just ...",
+      "snippet_highlighted_words": [
+        "Ansa \u2014 Best for AI-First Support With Flat Pricing"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Ansa \u2014 Best for AI-First Support With Flat Pricing \u00b7 Re:amaze \u2014 Best for Multi-Channel With Live Chat Focus \u00b7 Tidio \u2014 Best for Stores Just ...",
+          "source_info_link": "https://ansa.so/blog/gorgias-alternative-shopify-small-business",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEUaGhoaGhoaGhoXFxcBAQEODg7g4OD___-oqKhlZWXp6eknJye2trb8_Pz29vZ-fn4UFBQ-Pj7Y2NjAwMCWlpZUVFTOzs7N9HTzAAAAAnRSTlMUrmlTlIIAAACpSURBVHgBtM83AsMgEERRCXYZckb3v6lzNnLnX86rZllWsdd6t2mL_IXi7yjp1A5KVoCmObKxgHJyiuQREBPNMJeKFtGynCD1iOGhBn-jdCdwBuj0jWwUOjuFVvIX5o5gnOuIiT4xlw1R1aoA7eQHssE9O_gDhYb1-lQLSPkdc4logk4Nhc3JN6SE0On2CIPf0cKay0Qd8PSGgoj4ODiLBW9kD6Ak3hQPAEtECzbXRDgpAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWDJIWTZXY3hzek1QSWZQYjBSYmdGdTFqbHVYc1pDNnFCS0ZRdWV3WGxBN2l5NnZOcGJwQVd3cEJGY0pzbVNQOXJoN2xDMWd3YWhXS0pCNXBCY24wb2RsOHBuOE1wNWNYNm96RUJjOWdmejY2VjNmWWFZcE4tdUhaVWh6RlVLbUhqZm5oSFR6SXktLVlMZmpZRy1rZ05wTmZMd3MxVF9HZxIEGgIIABq1BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCRBAgAEAAYACAAKhwKB2dvcmdpYXMVuKm9QBoMaXY7cDtnb3JnaWFzKjcKC2FsdGVybmF0aXZlFfNxpj8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzGgpzdWJzdGl0dXRlMrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWDJIWTZXY3hzek1QSWZQYjBSYmdGdTFqbHVYc1pDNnFCS0ZRdWV3WGxBN2l5NnZOcGJwQVd3cEJGY0pzbVNQOXJoN2xDMWd3YWhXS0pCNXBCY24wb2RsOHBuOE1wNWNYNm96RUJjOWdmejY2VjNmWWFZcE4tdUhaVWh6RlVLbUhqZm5oSFR6SXktLVlMZmpZRy1rZ05wTmZMd3MxVF9HZzpHQmVzdCA8Yj5Hb3JnaWFzIEFsdGVybmF0aXZlczwvYj4gZm9yIFNtYWxsIFNob3BpZnkgU3RvcmVzICgyMDI2KSAtIEFuc2FCrgE8Yj5BbnNhIOKAlCBCZXN0IGZvciBBSS1GaXJzdCBTdXBwb3J0IFdpdGggRmxhdCBQcmljaW5nPC9iPiAmbWlkZG90OyBSZTphbWF6ZSDigJQgQmVzdCBmb3IgTXVsdGktQ2hhbm5lbCBXaXRoIExpdmUgQ2hhdCBGb2N1cyAmbWlkZG90OyBUaWRpbyDigJQgQmVzdCBmb3IgU3RvcmVzIEp1c3QmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWDJIWTZXY3hzek1QSWZQYjBSYmdGdTFqbHVYc1pDNnFCS0ZRdWV3WGxBN2l5NnZOcGJwQVd3cEJGY0pzbVNQOXJoN2xDMWd3YWhXS0pCNXBCY24wb2RsOHBuOE1wNWNYNm96RUJjOWdmejY2VjNmWWFZcE4tdUhaVWh6RlVLbUhqZm5oSFR6SXktLVlMZmpZRy1rZ05wTmZMd3MxVF9HZxIEGgIIABq1BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCRBAgAEAAYACAAKhwKB2dvcmdpYXMVuKm9QBoMaXY7cDtnb3JnaWFzKjcKC2FsdGVybmF0aXZlFfNxpj8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzGgpzdWJzdGl0dXRlMrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWDJIWTZXY3hzek1QSWZQYjBSYmdGdTFqbHVYc1pDNnFCS0ZRdWV3WGxBN2l5NnZOcGJwQVd3cEJGY0pzbVNQOXJoN2xDMWd3YWhXS0pCNXBCY24wb2RsOHBuOE1wNWNYNm96RUJjOWdmejY2VjNmWWFZcE4tdUhaVWh6RlVLbUhqZm5oSFR6SXktLVlMZmpZRy1rZ05wTmZMd3MxVF9HZzpHQmVzdCA8Yj5Hb3JnaWFzIEFsdGVybmF0aXZlczwvYj4gZm9yIFNtYWxsIFNob3BpZnkgU3RvcmVzICgyMDI2KSAtIEFuc2FCrgE8Yj5BbnNhIOKAlCBCZXN0IGZvciBBSS1GaXJzdCBTdXBwb3J0IFdpdGggRmxhdCBQcmljaW5nPC9iPiAmbWlkZG90OyBSZTphbWF6ZSDigJQgQmVzdCBmb3IgTXVsdGktQ2hhbm5lbCBXaXRoIExpdmUgQ2hhdCBGb2N1cyAmbWlkZG90OyBUaWRpbyDigJQgQmVzdCBmb3IgU3RvcmVzIEp1c3QmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "ansa.so",
+      "read_more_link": "https://ansa.so/blog/gorgias-alternative-shopify-small-business#:~:text=Ansa%20%E2%80%94%20Best%20for%20AI%2DFirst,Support%20With%20Flat%20Pricing&text=Re%3Aamaze%20%E2%80%94%20Best%20for%20Multi%2DChannel,With%20Live%20Chat%20Focus&text=Tidio%20%E2%80%94%20Best%20for%20Stores,Just%20Starting%20With%20Chat"
+    }
+  ],
+  "discussions_and_forums": [
+    {
+      "title": "Cheaper alternative to Gorgias?",
+      "link": "https://www.reddit.com/r/shopify/comments/1kk6jtf/cheaper_alternative_to_gorgias/",
+      "date": "1 year ago",
+      "extensions": [
+        "r/shopify",
+        "30+ comments"
+      ],
+      "source": "Reddit",
+      "answers": [
+        {
+          "link": "https://www.reddit.com/r/shopify/comments/1kk6jtf/cheaper_alternative_to_gorgias/mrujqyg/",
+          "extensions": [
+            "Top answer",
+            "3 votes",
+            "a year ago"
+          ]
+        },
+        {
+          "link": "https://www.reddit.com/r/shopify/comments/1kk6jtf/cheaper_alternative_to_gorgias/mrsl2f2/",
+          "extensions": [
+            "2 votes",
+            "a year ago"
+          ]
+        },
+        {
+          "link": "https://www.reddit.com/r/shopify/comments/1kk6jtf/cheaper_alternative_to_gorgias/mrtbtdb/",
+          "extensions": [
+            "2 votes",
+            "a year ago"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Gorgias Alternative",
+      "link": "https://www.reddit.com/r/shopify/comments/1r8p1gp/gorgias_alternative/",
+      "date": "8 months ago",
+      "extensions": [
+        "r/shopify",
+        "60+ comments"
+      ],
+      "source": "Reddit",
+      "answers": [
+        {
+          "link": "https://www.reddit.com/r/shopify/comments/1r8p1gp/gorgias_alternative/"
+        }
+      ]
+    }
+  ]
+}
+treg: charged $0.015 · call id 0695bc86bfd547d1ace3f36bd0db4718

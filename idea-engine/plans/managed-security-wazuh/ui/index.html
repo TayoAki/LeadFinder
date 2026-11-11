@@ -99,6 +99,8 @@ body.drawer-open .backdrop{opacity:1;pointer-events:auto}
 
 :root{--accent:#0f766e;--accent-weak:#e0f2ef;--focus:#0f766e;--faint:#5d6470}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#4fd1c0;--accent-weak:#12302d;--focus:#4fd1c0;--faint:#a7afbb}}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .rail .logo:not([style]),:root:not([data-theme="light"]) .brand-chip i.w,:root:not([data-theme="light"]) .rail .badge{color:#0f1115}}
+:root[data-theme="dark"] .rail .logo:not([style]),:root[data-theme="dark"] .brand-chip i.w,:root[data-theme="dark"] .rail .badge{color:#0f1115}
 :root[data-theme="dark"]{--accent:#4fd1c0;--accent-weak:#12302d;--focus:#4fd1c0;--faint:#a7afbb}
 .btn{min-height:32px} .btn.sm{padding:4px 9px;font-size:12px;min-height:28px} .btn[disabled]{opacity:.55;cursor:not-allowed}
 .btn.primary{color:#fff} @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary{color:#0f1115}}
@@ -138,9 +140,10 @@ a.link,button.link{color:var(--accent);text-decoration:underline;font-weight:600
 .ctrl-head .c{font-size:12px;color:var(--muted);display:block;font-variant-numeric:tabular-nums}
 .ctrl-detail{padding:4px 2px 12px;font-size:12px}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:12px} .kv dt{color:var(--muted)} .kv dd{margin:0}
-.tw{overflow-x:auto;max-width:100%}
+.tw{overflow-x:auto;max-width:100%;position:relative}
+.sr{left:0;top:0} .pop .chip{min-height:28px;cursor:pointer;color:var(--text)}
 .q{display:flex;justify-content:space-between;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);align-items:flex-start}
-.q .ev{font-size:12px;color:var(--muted)}
+.q .ev{font-size:12px;color:var(--muted)} .q .pill{border-radius:8px;white-space:normal;max-width:55%;text-align:left}
 .seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden} .seg button{padding:5px 10px;font-size:12px;min-height:30px;font-weight:600;color:var(--muted)}
 .seg button[aria-pressed="true"]{background:var(--accent-weak);color:var(--accent)}
 .risk{font-weight:700;white-space:nowrap} .risk.high{color:var(--bad)} .risk.medium{color:var(--warn)} .risk.low{color:var(--good)}
@@ -162,13 +165,16 @@ mark{background:var(--warn-weak);color:var(--text);border-radius:3px}
 .price-tiers td.cur{font-weight:700}
 .tag{font-size:11px;font-weight:700;color:var(--bad);border:1px solid currentColor;border-radius:5px;padding:0 5px;white-space:nowrap}
 .field{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted)}
+.show-sm{display:none}
 .cta{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap}
 @media (max-width:760px){
   h1{font-size:17px} .sub{margin-bottom:10px;font-size:13px} .hero{padding:12px} .hero .big{font-size:17px}
   .ctx{margin-bottom:8px} .kpi{font-size:22px}
-  .pop{left:0;right:0;top:0;bottom:56px;width:100vw;border-radius:0}
+  .pop{left:0;right:0;top:45px;bottom:56px;width:100vw;border-radius:0}
   .tabbar{padding:0 6px;gap:4px} .tabs button{padding:11px 10px}
   .toggle-side,.toggle-right{padding:6px 10px}
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))} .card{padding:12px}
+  .q{flex-direction:column;gap:4px} .q .pill{max-width:100%} .show-sm{display:inline}
 }
 </style>
 </head>
@@ -363,7 +369,7 @@ const ORGS = {
    { id: 'it-admin', n: 'it-admin@', role: 'IT admin', last: 2, mfa: true, admin: true }],
   incidents: [
    { id: 'bs1', sev: 'medium', status: 'action', threat: true, containMin: 21, when: 'Yesterday 22:10', site: 'Microsoft 365', psa: '#48213',
-     title: '214 blocked sign-in attempts on reception@brightsmiledental.com',
+     title: '214 blocked sign-in attempts on reception@brightsmiledental.com', short: 'give the front desk the new reception@ password',
      plain: 'Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.',
      did: ['Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.', 'Reset the reception@brightsmiledental.com password at 22:31 as a precaution and signed out every session.'],
      do: ['Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault.'],
@@ -404,7 +410,7 @@ const ORGS = {
    { id: 'svc-dms', n: 'svc-dms', role: 'Service account (DMS)', last: 0, mfa: null, admin: true, service: true }],
   incidents: [
    { id: 'h1', sev: 'high', status: 'action', threat: true, containMin: 18, when: 'Today 08:12', site: 'Microsoft 365', psa: '#51022',
-     title: 'Mailbox rule forwarding sales@ email to an outside address',
+     title: 'Mailbox rule forwarding sales@ email to an outside address', short: 'check with sales about wire instructions',
      plain: 'Someone added a rule that copied the sales@ mailbox to an outside Gmail address. We removed it and locked the account.',
      did: ['Removed the forwarding rule and blocked the outside address.', 'Reset the sales@ password and revoked all sessions at 08:30.'],
      do: ['Ask the sales manager whether any deposit or wire instructions were sent from sales@ since Nov 9 (5 minutes).'],
@@ -456,7 +462,7 @@ const ORGS = {
   vulns: [{ name: 'Windows 11 cumulative security update (KB50xxxxx placeholder)', hosts: ['B4-PC-02', 'B4-PC-05', 'B2-PC-09'], exploited: false, ageDays: 33, why: 'Branch PCs touch member accounts; update is 33 days old (PCI 6.3.3 wants critical fixes within a month).' }],
   accounts: [{ id: 'b-ochoa', n: 'b.ochoa@', role: 'Loan officer', last: 0, mfa: true }, { id: 'm-lopez', n: 'm.lopez@', role: 'CIO', last: 0, mfa: true, admin: true }],
   incidents: [{ id: 's1', sev: 'medium', status: 'action', threat: true, containMin: 9, when: 'Today 06:55', site: 'Microsoft 365', psa: '#51019',
-     title: 'Impossible-travel sign-in for loan officer b.ochoa@', plain: 'The loan officer signed in from Ohio and Romania 20 minutes apart. We blocked the Romanian session.',
+     title: 'Impossible-travel sign-in for loan officer b.ochoa@', short: 'confirm the MFA prompt with Ben Ochoa', plain: 'The loan officer signed in from Ohio and Romania 20 minutes apart. We blocked the Romanian session.',
      did: ['Blocked the session from Romania and required a new MFA prompt.'], do: ['Confirm with Ben Ochoa that he did not approve an MFA prompt at 06:50 (2 minutes).'],
      data: 'No. The blocked session never reached member records.', clock: 'Not started. NCUA 72-hour cyber-incident report is not triggered unless member data or operations were affected.',
      tl: [['06:35', 'Sign-in from Ohio'], ['06:55', 'Sign-in from Romania'], ['07:04', 'Session blocked']] }],
@@ -563,9 +569,9 @@ function D(id){
   const avgContain = threats.length ? Math.round(threats.reduce((a, i) => a + i.containMin, 0) / threats.length) : null;
   const hipaa = o.frameworks.includes('hipaa');
   const urgent = [], todo = [];
-  open.forEach(i => urgent.push({ text: i.do[0], tab: 'incidents', inc: i.id }));
-  o.vulns.forEach(v => urgent.push({ text: `Have IT install 1 critical update on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'} (${v.hosts.join(', ')})`, tab: 'devices' }));
-  if (offline.length) urgent.push({ text: `Reconnect ${offline.length} ${offline.length > 1 ? 'devices' : 'device'} that stopped reporting (${offline[0].n} first)`, tab: 'devices' });
+  open.forEach(i => urgent.push({ text: i.do[0], short: i.short || 'finish an incident task', tab: 'incidents', inc: i.id }));
+  o.vulns.forEach(v => urgent.push({ text: `Have IT install 1 critical update on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'} (${v.hosts.join(', ')})`, short: `install 1 critical update on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'}`, tab: 'devices' }));
+  if (offline.length) urgent.push({ text: `Reconnect ${offline.length} ${offline.length > 1 ? 'devices' : 'device'} that stopped reporting (${offline[0].n} first)`, short: `reconnect ${offline.length} silent ${offline.length > 1 ? 'devices' : 'device'}`, tab: 'devices' });
   if (mfaGap.length) todo.push({ text: `Turn on MFA for ${mfaGap.length} ${mfaGap.length > 1 ? 'accounts' : 'account'} (${mfaGap.map(a => a.n).join(', ')})`, tab: 'accounts' });
   if (dormantOpen.length) todo.push({ text: `Disable ${dormantOpen.length} ${dormantOpen.length > 1 ? 'accounts' : 'account'} unused for 30+ days`, tab: 'accounts' });
   if (!o.trainingUploaded) todo.push({ text: 'Upload security-training certificates (counts for compliance and insurance)', tab: 'compliance' });
@@ -640,7 +646,7 @@ const statPill = s => `<span class="pill ${STAT[s][0]}">${STAT[s][1]}</span>`;
 const ANS = { yes: 'good', partial: 'warn', no: 'bad' };
 const ANSICON = { yes: '✓', partial: '!', no: '✕' };
 const incStatus = i => i.status === 'action' ? '<span class="pill warn">! Action needed</span>' : i.status === 'done' ? '<span class="pill good">✓ Done by you</span>' : i.status === 'benign' ? '<span class="pill">Confirmed OK by IT</span>' : '<span class="pill good">✓ Contained</span>';
-function brandChip(o){ const wl = o.channel === 'msp'; return `<span class="brand-chip"><i style="background:${wl ? S.wlColor : 'var(--accent)'}">${wl ? 'N' : 'W'}</i>${wl ? MSP.brand : 'Watchpost'}</span>`; }
+function brandChip(o){ const wl = o.channel === 'msp'; return `<span class="brand-chip"><i class="${wl ? '' : 'w'}" style="background:${wl ? S.wlColor : 'var(--accent)'}">${wl ? 'N' : 'W'}</i>${wl ? MSP.brand : 'Watchpost'}</span>`; }
 function seeded(seed){ let t = 0; for (const c of seed) t = (t * 31 + c.charCodeAt(0)) >>> 0; return () => { t += 0x6D2B79F5; let r = Math.imul(t ^ t >>> 15, 1 | t); r ^= r + Math.imul(r ^ r >>> 7, 61 | r); return ((r ^ r >>> 14) >>> 0) / 4294967296; }; }
 function series(id){ const o = ORGS[id], rnd = seeded(id), raw = Array.from({ length: 30 }, () => 0.6 + rnd()); const sum = raw.reduce((a, b) => a + b, 0);
   const vals = raw.map(v => Math.round(v / sum * o.alertsReviewed)); vals[29] += o.alertsReviewed - vals.reduce((a, b) => a + b, 0); return vals; }
@@ -673,7 +679,7 @@ function renderRail(){
   if (hasTab('billing')) b.push(`<button data-view="billing" data-tab-target="billing" aria-label="Plan and billing" title="Plan and billing">${svg('card')}</button>`);
   if (hasTab('report')) b.push(`<button data-view="report" data-tab-target="report" aria-label="Report a suspicious email" title="Report email">${svg('mail')}</button>`);
   if (r.kind !== 'ext') b.push(`<button data-view="settings" aria-label="Settings: alert contacts and integrations" title="Settings">${svg('gear')}</button>`);
-  const brand = r.kind === 'msp' ? `<div class="logo" aria-hidden="true" style="background:${S.wlColor}">N</div>` : `<div class="logo" aria-hidden="true">W</div>`;
+  const brand = (r.kind === 'msp' || ORGS[S.org].channel === 'msp') ? `<div class="logo" aria-hidden="true" style="background:${S.wlColor}">N</div>` : `<div class="logo" aria-hidden="true">W</div>`;
   $('#rail').innerHTML = brand + b.join('') + `<div class="spacer"></div><div class="avatar" title="Signed in as ${esc(r.who)}" aria-label="Signed in as ${esc(r.who)}" role="img">${r.init}</div>`;
   const t = curTab(); const rb = $$('.rail button[data-tab-target]').find(x => x.dataset.tabTarget === t); if (rb) rb.setAttribute('aria-current', 'page');
 }
@@ -689,7 +695,7 @@ function renderSide(){
   if (r.kind === 'msp') {
     const ids = mspClients(), attn = ids.filter(id => D(id).attention), ok = ids.filter(id => !D(id).attention);
     const q = S.clientQ.toLowerCase(), f = id => ORGS[id].name.toLowerCase().includes(q) && (S.clientFilter === 'all' || D(id).attention);
-    el.innerHTML = `<div class="top"><span>${MSP.name} · ${ids.length} clients</span><span class="pill ${attn.length ? 'warn' : 'good'}">${ok.length} OK</span></div>
+    el.innerHTML = `<div class="top"><span>${MSP.name} · ${ids.length} clients</span><span class="pill ${attn.length ? 'warn' : 'good'}">${attn.length ? '! ' + attn.length + ' attention' : '✓ all OK'}</span></div>
      <p class="small muted" style="margin:6px 8px 0" data-testid="client-counts">${ok.length} OK · ${attn.length} need attention · ${mspOpen().length} open incidents</p>
      <label class="sr" for="client-q">Search clients</label><input id="client-q" type="search" placeholder="Search clients" value="${esc(S.clientQ)}">
      <div class="seg" role="group" aria-label="Filter clients" style="margin:6px 0"><button data-cf="all" aria-pressed="${S.clientFilter === 'all'}">All</button><button data-cf="attn" aria-pressed="${S.clientFilter === 'attn'}">Needs attention</button></div>
@@ -721,7 +727,8 @@ function renderCtx(){
 }
 function renderBottom(){
   const r = R(), d = D(S.org), parts = [];
-  if (r.kind === 'ext') { parts.push(`<span><span class="status-dot"></span>Read-only link · expires ${fmtDate(r.expires)}</span>`, `<span class="hide-sm">${esc(d.o.name)}</span>`); }
+  if (S.role === 'staff') { parts.push(`<span><span class="status-dot"></span>Analysts on duty 24/7 · ${ON.who} now</span>`); }
+  else if (r.kind === 'ext') { parts.push(`<span><span class="status-dot"></span>Read-only link · expires ${fmtDate(r.expires)}</span>`, `<span class="hide-sm">${esc(d.o.name)}</span>`); }
   else {
     parts.push(`<span><span class="status-dot"></span>Monitoring live</span>`);
     parts.push(`<span data-testid="bb-devices">${r.kind === 'msp' ? esc(d.o.short) + ': ' : ''}${d.reporting} of ${d.total} devices reporting</span>`);
@@ -753,7 +760,7 @@ function pOverview(){
   const r = R(), d = D(S.org), o = d.o, fw = o.frameworks[0], cs = controls(o, d, fw), met = cs.filter(c => c.s === 'met').length, qs = questions(o, d), ready = qs.filter(q => q.s === 'yes').length;
   const ins = o.insurance;
   let big, txt;
-  if (d.urgent.length) { big = `Protected · ${d.urgent.length} ${d.urgent.length > 1 ? 'things need' : 'thing needs'} your team`; txt = `Analysts are watching 24/7 and stopped every threat. ${d.urgent.length > 1 ? 'These are' : 'This is'} on you: ${d.urgent.map(u => u.text.charAt(0).toLowerCase() + u.text.slice(1)).join('; ')}.`; }
+  if (d.urgent.length) { big = `Protected · ${d.urgent.length} ${d.urgent.length > 1 ? 'things need' : 'thing needs'} your team`; txt = `Analysts are watching 24/7 and stopped every threat. ${d.urgent.length > 1 ? 'Your team needs to' : 'Your team needs to'}: ${d.urgent.map(u => u.short).join('; ')}.`; }
   else if (d.todo.length) { big = 'Protected · nothing urgent'; txt = `Analysts are watching 24/7. ${d.todo.length} paperwork ${d.todo.length > 1 ? 'items' : 'item'} for compliance and insurance when you have time.`; }
   else { big = 'Protected · nothing needs your attention'; txt = 'Analysts are watching 24/7. No open tasks for your team.'; }
   const summary = [...d.threats.map(i => i.plain)];
@@ -816,7 +823,7 @@ function pDevices(){
   <div class="grid g2">
    <div class="card" data-testid="not-reporting"><div class="row between"><h3 style="margin:0">Not reporting</h3><span class="pill ${off.length ? 'warn' : 'good'}">${off.length ? '! ' : '✓ '}${off.length} ${off.length === 1 ? 'device' : 'devices'}</span></div>
     <p class="small muted" style="margin:4px 0 6px">Sorted by business impact, not by days silent.</p>
-    ${off.length ? `<div class="tw"><table><thead><tr><th>Device</th><th>Silent</th><th class="hide-sm">Likely reason · last user / IP</th></tr></thead><tbody>${off.map(x => `<tr><td><strong>${x.n}</strong>${x.tag ? `<br><span class="tag">${x.tag}</span>` : ''}<div class="small muted">${esc(x.site)}</div></td><td>${x.offline} day${x.offline > 1 ? 's' : ''}</td><td class="hide-sm small">${esc(x.reason)}<br><span class="muted">${esc(x.last)}</span></td></tr>`).join('')}</tbody></table></div>` : '<p class="small muted">Every device is reporting.</p>'}
+    ${off.length ? `<div class="tw"><table><thead><tr><th>Device</th><th>Silent</th><th class="hide-sm">Likely reason · last user / IP</th></tr></thead><tbody>${off.map(x => `<tr><td><strong>${x.n}</strong>${x.tag ? `<br><span class="tag">${x.tag}</span>` : ''}<div class="small muted">${esc(x.site)}<span class="show-sm"> · ${esc(x.reason)}</span></div></td><td>${x.offline} day${x.offline > 1 ? 's' : ''}</td><td class="hide-sm small">${esc(x.reason)}<br><span class="muted">${esc(x.last)}</span></td></tr>`).join('')}</tbody></table></div>` : '<p class="small muted">Every device is reporting.</p>'}
     <div class="row" style="margin-top:8px">${isIT ? `<button class="btn primary sm" data-testid="copy-install" data-toast="Agent install command copied for ${esc(o.short)} (Windows, PowerShell)">Copy agent install command</button><button class="btn sm" data-toast="Deployment package sent to ${r.kind === 'msp' ? MSP.rmm : 'Intune'}">Deploy via ${r.kind === 'msp' ? 'RMM' : 'Intune / GPO'}</button>` : `<button class="btn sm" data-testid="send-it" data-toast="Reinstall link emailed to your IT manager">Send reinstall link to IT</button>`}</div></div>
    <div class="card" data-testid="top-vuln"><div class="row between"><h3 style="margin:0">Fix first</h3>${o.vulns.length ? '<span class="pill bad">▲ Critical</span>' : '<span class="pill good">✓ Nothing critical</span>'}</div>
     ${o.vulns.length ? o.vulns.map(v => `<p class="small" style="margin:8px 0 6px"><strong>1 critical update missing on ${v.hosts.length} ${v.hosts.length > 1 ? 'machines' : 'machine'}</strong>: ${esc(v.name)} on ${v.hosts.join(', ')}. ${v.exploited ? 'Actively exploited.' : ''} Missing for ${v.ageDays} days.</p><p class="small muted" style="margin:0 0 6px">Why first: ${esc(v.why)}</p>`).join('') + `<p class="small muted" style="margin:0 0 8px">Who installs it: ${r.kind === 'msp' ? 'your RMM' : 'your IT'}. Watchpost finds missing updates and confirms the fix; it does not reboot your servers.</p>
@@ -857,7 +864,7 @@ function pCompliance(){
     <div class="row" style="margin-top:8px">${o.baa && o.baa.status === 'signed' ? '<button class="btn sm" data-toast="BAA downloaded (PDF, countersigned)">Download BAA</button>' : r.ro ? '' : '<button class="btn primary sm" data-toast="BAA sent for e-signature">Sign BAA</button>'}</div></div>` : ''}
   ${!inScope.includes(fw) ? `<p class="small pill info" style="margin:0 0 10px">${FW[fw].short} is not in scope for ${esc(o.short)}. Shown as a mapping only.</p>` : ''}
   <div class="card" data-testid="framework"><div class="row between"><h3 style="margin:0" id="fw-name">${FW[fw].name}</h3><strong data-testid="fw-score">${met} of ${cs.length} controls met</strong></div>
-   <p class="small muted" style="margin:4px 0 6px">${part} partly met · ${gap} gaps · all ${cs.length} controls listed below</p>
+   <p class="small muted" style="margin:4px 0 6px">${part} partly met · ${gap} ${gap === 1 ? 'gap' : 'gaps'} · all ${cs.length} controls listed below</p>
    <div class="bar-track" role="img" aria-label="${met} of ${cs.length} controls met"><div class="bar-fill" style="width:${Math.round(100 * met / cs.length)}%"></div></div>
    <div style="margin-top:8px">${cs.map(c => { const k = fw + ':' + c.cite, open = !!S.ctrlOpen[k], sl = slug(c.cite);
      return `<div class="ctrl" data-testid="ctrl-${sl}"><button class="ctrl-head" data-ctrl="${esc(k)}" aria-expanded="${open}" aria-controls="cd-${fw}-${sl}"><span><span class="c">${esc(c.cite)}</span>${esc(c.name)}</span>${statPill(c.s)}</button>
@@ -881,7 +888,7 @@ function pInsurance(){
    <div class="card" data-testid="readiness"><div class="kpi-label">Questionnaire readiness</div><div class="kpi">${ready} of ${qs.length}</div><div class="delta ${need.length ? 'warn' : 'good'}">${need.length ? `! ${need.length} ${need.length > 1 ? 'answers need' : 'answer needs'} work` : '✓ ready to send'}</div></div>
    <div class="card" data-testid="policy"><div class="kpi-label">Current policy</div><div><strong>${esc(ins.carrier)}</strong></div><div class="small muted">Policy ${ins.policy} · limit ${ins.limit}<br>Premium ${money(ins.premium)}/yr · broker ${esc(ins.broker)}, ${esc(ins.brokerFirm)}</div></div></div>
   <div class="card" style="margin-top:12px" data-testid="questionnaire"><div class="row between"><h3 style="margin:0">Insurer questions</h3><span class="small muted" data-testid="q-count">All ${qs.length} questions shown</span></div>
-   ${qs.map(q => `<div class="q" data-testid="q-${q.k}"><div><div>${esc(q.q)}</div><div class="ev">Evidence: ${esc(q.src)} · ${q.when === '—' ? 'not collected yet' : 'dated ' + esc(q.when)}</div></div><span class="pill ${ANS[q.s]}" style="white-space:normal;text-align:right">${ANSICON[q.s]} ${esc(q.a)}</span></div>`).join('')}
+   ${qs.map(q => `<div class="q" data-testid="q-${q.k}"><div><div>${esc(q.q)}</div><div class="ev">Evidence: ${esc(q.src)} · ${q.when === '—' ? 'not collected yet' : 'dated ' + esc(q.when)}</div></div><span class="pill ${ANS[q.s]}">${ANSICON[q.s]} ${esc(q.a)}</span></div>`).join('')}
    <div class="row" style="margin-top:10px">
     <button class="btn primary" data-testid="download-pack" data-toast="Insurance evidence pack downloaded (PDF + 10 evidence files, dated Nov 11, 2026)">Download evidence pack</button>
     ${r.ro ? '' : `<button class="btn" data-testid="email-broker" data-toast="Pack emailed to ${esc(ins.broker)} (${esc(ins.brokerEmail)})">Email pack to broker</button>`}
@@ -916,9 +923,9 @@ function pPartner(){
   <div class="card" style="margin-top:12px" data-testid="margin-table"><div class="row between"><h3 style="margin:0">Margin per client</h3>
    <label class="field">Your resale price per device<select id="resale-rate">${[8, 9, 10, 11, 12, 14].map(v => `<option value="${v}" ${S.resaleRate === v ? 'selected' : ''}>$${v}/device</option>`).join('')}</select></label></div>
    <p class="small muted" style="margin:6px 0">Your price is capped at Watchpost's direct price for the same client, so a client never finds it cheaper direct. Clients you register cannot buy direct (channel protection).</p>
-   <div class="tw"><table><thead><tr><th>Client</th><th class="num">Devices</th><th class="num hide-sm">Direct price</th><th class="num">Wholesale</th><th class="num">Your price</th><th class="num">Profit</th><th class="num">Margin</th><th class="hide-sm">Health 30d</th><th><span class="sr">QBR</span></th></tr></thead><tbody>
-   ${rows.map(({ id, d }) => `<tr data-testid="margin-row-${id}"><td>${esc(d.o.short)}</td><td class="num">${d.total}</td><td class="num hide-sm">${money(d.resale.direct)}</td><td class="num">${money(d.wholesale)}</td><td class="num">${money(d.resale.price)}${d.resale.capped ? ' <span class="pill info">capped at direct</span>' : ''}</td><td class="num">${money(d.resale.price - d.wholesale)}</td><td class="num">${Math.round(100 * (d.resale.price - d.wholesale) / d.resale.price)}%</td><td class="hide-sm">${spark(id)} <span class="small">${d.attention ? '! attention' : '✓ OK'}</span></td><td><button class="btn sm" data-qbr="${id}" aria-label="Generate QBR for ${esc(d.o.short)}">QBR</button></td></tr>`).join('')}
-   <tr><td><strong>Total</strong></td><td class="num"><strong>${tdev}</strong></td><td class="hide-sm"></td><td class="num"><strong>${money(tw)}</strong></td><td class="num"><strong>${money(tr)}</strong></td><td class="num"><strong>${money(gp)}</strong></td><td class="num"><strong>${Math.round(100 * gp / tr)}%</strong></td><td class="hide-sm"></td><td></td></tr></tbody></table></div></div>
+   <div class="tw"><table><thead><tr><th>Client</th><th class="num hide-sm">Devices</th><th class="num hide-sm">Direct price</th><th class="num hide-sm">Wholesale</th><th class="num">Your price</th><th class="num">Profit</th><th class="num">Margin</th><th class="hide-sm">Health 30d</th><th><span class="sr">QBR</span></th></tr></thead><tbody>
+   ${rows.map(({ id, d }) => `<tr data-testid="margin-row-${id}"><td>${esc(d.o.short)}<div class="small muted">${d.total} devices</div></td><td class="num hide-sm">${d.total}</td><td class="num hide-sm">${money(d.resale.direct)}</td><td class="num hide-sm">${money(d.wholesale)}</td><td class="num">${money(d.resale.price)}${d.resale.capped ? ' <span class="pill info">capped at direct</span>' : ''}</td><td class="num">${money(d.resale.price - d.wholesale)}</td><td class="num">${Math.round(100 * (d.resale.price - d.wholesale) / d.resale.price)}%</td><td class="hide-sm">${spark(id)} <span class="small">${d.attention ? '! attention' : '✓ OK'}</span></td><td><button class="btn sm" data-qbr="${id}" aria-label="Generate QBR for ${esc(d.o.short)}">QBR</button></td></tr>`).join('')}
+   <tr><td><strong>Total</strong></td><td class="num hide-sm"><strong>${tdev}</strong></td><td class="hide-sm"></td><td class="num hide-sm"><strong>${money(tw)}</strong></td><td class="num"><strong>${money(tr)}</strong></td><td class="num"><strong>${money(gp)}</strong></td><td class="num"><strong>${Math.round(100 * gp / tr)}%</strong></td><td class="hide-sm"></td><td></td></tr></tbody></table></div></div>
   <div class="card" style="margin-top:12px" data-testid="qbr-section"><div class="row between"><h3 style="margin:0">Quarterly business review</h3><button class="btn primary sm" data-qbr="${sel}" data-testid="qbr">Generate QBR for ${esc(sd.o.short)}</button></div>
    ${S.qbr ? qbrCard(S.qbr) : '<p class="small muted" style="margin:6px 0 0">Pick a client in the sidebar, then generate a branded review with outcomes, trends and recommendations.</p>'}</div>
   <div class="card" style="margin-top:12px" data-testid="white-label"><div class="row between"><h3 style="margin:0">White-label</h3><span class="pill good">✓ On for all ${ids.length} clients</span></div>
@@ -971,7 +978,7 @@ function renderRight(){
      <h2>BAA status</h2><p class="small" data-testid="baa-side">${o.baa ? (o.baa.status === 'signed' ? `✓ Signed ${fmtDate(o.baa.date)} with Watchpost` : '✕ Pending signature') : 'Not required (no health data in scope)'}</p>
      <h2>Auditor</h2><p class="small" data-testid="auditor">${esc(a.auditor)}<br>${esc(a.firm)}<br>${esc(a.email)}</p>
      ${r.ro ? '' : `<button class="btn sm" data-share-link>${S.sharedLink ? 'Copy link again' : 'Share read-only link with auditor'}</button>${S.sharedLink ? `<p class="small" data-testid="share-link">Link active until ${fmtDate('2026-12-11')} · every view is logged</p>` : ''}`}
-     <h2>Log retention</h2><p class="small">Logs: 1 year searchable. ${o.archive6y ? '✓ 6-year archive on (HIPAA documentation).' : '! 6-year archive off. HIPAA requires documentation be kept 6 years.'}</p>`; }
+     <h2>Log retention</h2><p class="small">Logs: 12 months, last 3 months instantly searchable. ${o.frameworks.includes('hipaa') ? (o.archive6y ? '✓ 6-year archive on (HIPAA documentation).' : '! 6-year archive off. HIPAA requires documentation be kept 6 years.') : (o.archive6y ? '✓ 6-year archive on.' : 'Longer archive available on request.')}</p>`; }
   else if (t === 'insurance') { const ins = o.insurance, qs = questions(o, d);
     h = `<h2>Renewal checklist</h2><ul class="small" style="margin:0;padding-left:18px;list-style:none" data-testid="renewal-checklist">${qs.map(q => `<li style="margin:3px 0">${q.s === 'yes' ? '✓' : q.s === 'partial' ? '!' : '✕'} ${esc(q.q)}</li>`).join('')}</ul>
      <h2>Timeline</h2><p class="small">${fmtDate('2026-12-15')}: send pack to broker<br>${fmtDate('2027-01-05')}: underwriter questions<br>${fmtDate(ins.renewal)}: renewal</p>
@@ -1013,7 +1020,7 @@ function renderPop(){
     $('#pop-title').textContent = 'Notifications';
     const items = r.kind === 'msp' ? mspOpen().map(({ id, i }) => ({ t: `${ORGS[id].short}: ${i.title}`, s: i.when, go: `${id}:${i.id}` })) : [...d.urgent.map(u => ({ t: u.text, s: 'Needs action', tab: u.tab, inc: u.inc })), ...o.incidents.filter(i => i.status !== 'action').map(i => ({ t: i.title, s: `${incStatusText(i)} · ${i.when}`, tab: 'incidents' }))];
     $('#pop-body').innerHTML = `<p class="small muted" style="margin:0 0 6px" data-testid="notif-count">${r.kind === 'msp' ? mspOpen().length : d.urgent.length} need action</p><div data-testid="notifications">${items.map(x => `<div class="res"><div>${esc(x.t)}</div><div class="row between"><span class="small muted">${esc(x.s)}</span>${x.go ? `<button class="btn sm" data-open-inc="${x.go}">Open</button>` : hasTab(x.tab) ? `<button class="btn sm" data-goto="${x.tab}" data-close-pop>Open</button>` : ''}</div></div>`).join('') || '<p class="small muted">No notifications.</p>'}</div>
-     <h3 style="font-size:13px;margin:14px 0 6px">How you get alerts</h3>${o.contacts.map((c, n) => `<div class="small">${n + 1}. ${esc(c.who)}: ${esc(c.how)}</div>`).join('')}`;
+     <h3 style="font-size:13px;margin:14px 0 6px">How you get alerts</h3><div data-testid="escalation-mini">${o.contacts.map((c, n) => `<div class="small">${n + 1}. ${esc(c.who)}: ${esc(c.how)}</div>`).join('')}</div>`;
   } else if (S.pop === 'settings') {
     $('#pop-title').textContent = 'Settings';
     $('#pop-body').innerHTML = `<h3 style="font-size:13px;margin:0 0 6px">Alert contacts and escalation order${r.kind === 'msp' ? ' · ' + esc(o.short) : ''}</h3>
@@ -1037,7 +1044,10 @@ function renderAll(){
 const say = m => { $('#live').textContent = ''; setTimeout(() => $('#live').textContent = m, 30); };
 
 /* ---------------- Hooks ---------------- */
-window.onTab = id => { renderRight(); renderCtx(); renderSide(); renderRail(); };
+// Note: the kit's click handler matches body[data-tab] on every click and re-selects the current tab,
+// so only re-render when the tab really changes, and defer rail/sidebar so the kit's later branches still see the clicked element.
+let lastTab = null;
+window.onTab = id => { if (id === lastTab) return; lastTab = id; renderRight(); renderCtx(); const tb = document.getElementById('tab-' + id); if (tb) { const box = tb.parentElement; box.scrollLeft = Math.max(0, tb.offsetLeft - box.offsetLeft - (box.clientWidth - tb.offsetWidth) / 2); } queueMicrotask(() => { renderSide(); renderRail(); }); };
 window.onSelect = id => {
   if (id === 'all') { UI.selectTab('queue'); return; }
   if (id.startsWith('site:')) { S.devSite = id.slice(5); renderAll(); if (hasTab('devices')) UI.selectTab('devices'); return; }
@@ -1058,6 +1068,7 @@ window.onReady = () => { renderTabs(); renderAll(); };
 /* ---------------- Events ---------------- */
 document.addEventListener('click', e => {
   const t = e.target;
+  if (S.pop && t.isConnected && !t.closest('#pop') && !t.closest('.rail button[data-view="search"],.rail button[data-view="alerts"],.rail button[data-view="settings"]')) closePop();
   const inc = t.closest('[data-inc]'); if (inc) { const id = inc.dataset.inc; S.incOpen[S.org] = S.incOpen[S.org] === id ? null : id; $('#panel-incidents').innerHTML = pIncidents(); renderRight(); const b = $('#inc-btn-' + id); b && b.focus({ preventScroll: true }); b && b.scrollIntoView({ block: 'start', behavior: 'instant' }); say(S.incOpen[S.org] ? 'Details shown' : 'Details hidden'); return; }
   const done = t.closest('[data-done]'); if (done) { const i = O().incidents.find(x => x.id === done.dataset.done); i.status = 'done'; renderAll(); UI.toast('Marked done. Thanks, the analyst has been told.'); return; }
   const ctrl = t.closest('[data-ctrl]'); if (ctrl) { S.ctrlOpen[ctrl.dataset.ctrl] = !S.ctrlOpen[ctrl.dataset.ctrl]; $('#panel-compliance').innerHTML = pCompliance(); const b = $(`[data-ctrl="${CSS.escape(ctrl.dataset.ctrl)}"]`); b && b.focus({ preventScroll: true }); return; }

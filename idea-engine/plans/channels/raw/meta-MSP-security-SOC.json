@@ -1,0 +1,345 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 831,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: meta-ads-search: 'MSP security SOC' \u00b7 US \u00b7 active \u00b7 6 ad(s) \u00b7 one view \u00b7 direct"
+    ]
+  },
+  "recipe": "meta-ads-search",
+  "rows": [
+    {
+      "ad_archive_id": "4044103869218898",
+      "ad_url": "https://www.facebook.com/ads/library/?id=4044103869218898",
+      "body": "$299 a month plus $9 per seat, with the base waived at 50 seats. Published pricing, a 14-day trial, and no demo call required to start.",
+      "cards": [],
+      "cta": "Sign up",
+      "cta_type": "SIGN_UP",
+      "currency": null,
+      "display_format": "image",
+      "end_date": null,
+      "images": [
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/856401358_1080947908053222_509200793126242872_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=NQpR0ykKqPMQ7kNvwF7I69I&_nc_oc=AdoaMJ92v144sAF4bmKLRBRHmbrJ3472NKkev2BFcP-hIDxPVzp8PV6Qz_hCkKODU3M&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQR8XJ1O214UYjpf8gxoTdCIiy_Qp-etQLQlb7qU4CG4Hg&oe=6AFAB9E7"
+      ],
+      "impressions": null,
+      "is_active": true,
+      "link_caption": "https://subrosacyber.com/solutions/msp",
+      "link_url": "https://subrosacyber.com/solutions/msp",
+      "page_id": "219956642054581",
+      "page_likes": 413,
+      "page_name": "SubRosa",
+      "page_url": "https://www.facebook.com/subrosacyber/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "audience_network",
+        "whatsapp",
+        "threads"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-10-20T07:00:00Z",
+      "title": "Start a 14-day Sable trial",
+      "videos": []
+    },
+    {
+      "ad_archive_id": "2414794526015524",
+      "ad_url": "https://www.facebook.com/ads/library/?id=2414794526015524",
+      "body": "Get free Huntress NFR licenses and protect your own MSP\u2026so you can protect clients.",
+      "cards": [
+        {
+          "body": "Get free Huntress NFR licenses and protect your own MSP\u2026so you can protect clients.",
+          "cta": "Contact Us",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897455808_1857739592329789_4121173578607671470_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-l_xY0xToZUQ7kNvwGQVTkT&_nc_oc=Adqx2UxJRsJ5tzSNnf5kL1bL6UOFdNF7Z4ib_w1dHPZOkx3ftzx1cy7skI6GkTKJZic&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQTxNtfDpnZX4fZxPp4x-nsuBQQoJCHUE9RDz9CRg-k0eQ&oe=6AFAD6EA",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get free NFR licenses for a year.",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Protect clients all day? Let the 24/7 Huntress SOC protect you for free, too.",
+          "cta": "Learn More",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897963819_1160710623566871_5486099866276557455_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=bcOost4QnoQQ7kNvwG-KtwR&_nc_oc=AdoRuMzxAzEErOQNpZub2nQb1sVGAAaCpDuGRgqBK1W_JdzUDEabph11S1lJeuz1QI4&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQSnXuBm1CK3E0ErUnc1W8i9h1WRiN2EXbSAwffkPBN0qQ&oe=6AFAA1D2",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get the full Huntress Agentic Security Platform",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Layer Huntress on your stack free for up to a year. Prove the value, then scale.",
+          "cta": "Contact Us",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/900769855_1609482786945411_5452378545231962221_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=TIKpgcx3KbwQ7kNvwE8OBIj&_nc_oc=AdrtW3IXXvKoidHqDFTyR5txWJYrAb6SzTGU9S8PIZBDVmqoW5ekA5_Yf2fjRyRjc7Q&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQQ6gTdf6Sv2X6oyogtjLZWITDpZoTxmuzOOQDxq8MUdyw&oe=6AFABEB8",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get free NFR licenses and shut hackers out",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Join the Neighborhood Watch program and get the full Huntress platform free.",
+          "cta": "Learn More",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897490494_1868574081261382_503244560392494896_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2On1FtquR-cQ7kNvwFwnVcF&_nc_oc=AdpNjYiQzCXqfMh4mCAav-ILPtfxY_rMLkfwehikB9rP3zhHsNV16gvu0BYt7275FRY&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQQDinCD8pSp5XXvUIX4JLIsR6zuom6RRO8cw4lcDeW9Nw&oe=6AFAD66A",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Free internal-use licenses for MSPs.",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Hackers target your clients\u2014and you. Get free NFR licenses to protect your MSP.",
+          "cta": "Contact Us",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/899658697_1451520207145131_2940925707656293102_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Cf420JWyzWsQ7kNvwGXYrSF&_nc_oc=AdpyUiO34msyan9sG1U856BTtvOzT0U_8EeLPU_PpAnckXWuKfoWnTDmzjmvKS73X7k&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQRFL0NhG4KaJ1MKKt_0x-Bl5oOXEYddDV5U8yKB_4zvTw&oe=6AFAD534",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Let the 24/7 Huntress SOC protect you, free.",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Get free Huntress NFR licenses and protect your own MSP\u2026so you can protect clients.",
+          "cta": "Learn More",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896530513_2321189392071716_201897327398951120_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9nNPu7LP2CcQ7kNvwHfev81&_nc_oc=AdrkUEaI31HAGleDT0sr3yLsLUv5MwaajuW22TdFW8Vy7jhnfLSXSLrNZLAc2l7knT0&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQStzQv-wEAmSl_JJDlsd5O7g133Er2lQvHlnxlainrk5g&oe=6AFAA84F",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get free NFR licenses for a year.",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Protect clients all day? Let the 24/7 Huntress SOC protect you for free, too.",
+          "cta": "Contact Us",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896452429_1657513205964868_8435122904991194576_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=nHkKFdb_QY0Q7kNvwHr82yQ&_nc_oc=AdrBlcyjqCgk_rq1gs2gqDhrcNsVK8dfixO4gK943kS8Hq0kSWLeUCdzYyt90zUoh3E&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQRORId6XrBgEPJotbQ2686EcI7gtk42MHWvTXGfZ8PgQQ&oe=6AFAA694",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get the full Huntress Agentic Security Platform",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Layer Huntress on your stack free for up to a year. Prove the value, then scale.",
+          "cta": "Learn More",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896941332_1877781773486399_5545452786581128683_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=eJ_ULOany84Q7kNvwGMBVgD&_nc_oc=Adp9-KFNJwmQk47d6uajn-hcfzyP-RtTGgcbOyNt1ljxLDODfk_8Jm3mint8MwsaJic&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQSTbHUf7Y-ExSh5veoUqGX00Uv9tFUFALKlEQohIIkxrA&oe=6AFAB1EC",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Get free NFR licenses and shut hackers out",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        },
+        {
+          "body": "Join the Neighborhood Watch program and get the full Huntress platform free.",
+          "cta": "Contact Us",
+          "image": "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/895574825_2319568422230314_4301301625630972968_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Xi62pokEa3UQ7kNvwH0iAYJ&_nc_oc=AdonCyE1uzsSs9mqreymaU7B6Ih4F9eArQdccZNZ5PgJZzajUra8Op8ymBlHh2ZV9Fg&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQTMdPfqq6lSU0l9whI01YNJ3hNosQPaC_J4b_Uyu-bBZQ&oe=6AFAC143",
+          "link_url": "https://www.huntress.com/lp/partners-msps",
+          "title": "Free internal-use licenses for MSPs.",
+          "video": "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+        }
+      ],
+      "cta": "Contact us",
+      "cta_type": "CONTACT_US",
+      "currency": null,
+      "display_format": "dco",
+      "end_date": null,
+      "images": [
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897455808_1857739592329789_4121173578607671470_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=-l_xY0xToZUQ7kNvwGQVTkT&_nc_oc=Adqx2UxJRsJ5tzSNnf5kL1bL6UOFdNF7Z4ib_w1dHPZOkx3ftzx1cy7skI6GkTKJZic&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQTxNtfDpnZX4fZxPp4x-nsuBQQoJCHUE9RDz9CRg-k0eQ&oe=6AFAD6EA",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897963819_1160710623566871_5486099866276557455_n.jpg?_nc_cat=108&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=bcOost4QnoQQ7kNvwG-KtwR&_nc_oc=AdoRuMzxAzEErOQNpZub2nQb1sVGAAaCpDuGRgqBK1W_JdzUDEabph11S1lJeuz1QI4&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQSnXuBm1CK3E0ErUnc1W8i9h1WRiN2EXbSAwffkPBN0qQ&oe=6AFAA1D2",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/900769855_1609482786945411_5452378545231962221_n.jpg?_nc_cat=102&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=TIKpgcx3KbwQ7kNvwE8OBIj&_nc_oc=AdrtW3IXXvKoidHqDFTyR5txWJYrAb6SzTGU9S8PIZBDVmqoW5ekA5_Yf2fjRyRjc7Q&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQQ6gTdf6Sv2X6oyogtjLZWITDpZoTxmuzOOQDxq8MUdyw&oe=6AFABEB8",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/897490494_1868574081261382_503244560392494896_n.jpg?_nc_cat=111&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=2On1FtquR-cQ7kNvwFwnVcF&_nc_oc=AdpNjYiQzCXqfMh4mCAav-ILPtfxY_rMLkfwehikB9rP3zhHsNV16gvu0BYt7275FRY&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQQDinCD8pSp5XXvUIX4JLIsR6zuom6RRO8cw4lcDeW9Nw&oe=6AFAD66A",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/899658697_1451520207145131_2940925707656293102_n.jpg?_nc_cat=109&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Cf420JWyzWsQ7kNvwGXYrSF&_nc_oc=AdpyUiO34msyan9sG1U856BTtvOzT0U_8EeLPU_PpAnckXWuKfoWnTDmzjmvKS73X7k&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQRFL0NhG4KaJ1MKKt_0x-Bl5oOXEYddDV5U8yKB_4zvTw&oe=6AFAD534",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896530513_2321189392071716_201897327398951120_n.jpg?_nc_cat=107&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=9nNPu7LP2CcQ7kNvwHfev81&_nc_oc=AdrkUEaI31HAGleDT0sr3yLsLUv5MwaajuW22TdFW8Vy7jhnfLSXSLrNZLAc2l7knT0&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQStzQv-wEAmSl_JJDlsd5O7g133Er2lQvHlnxlainrk5g&oe=6AFAA84F",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896452429_1657513205964868_8435122904991194576_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=nHkKFdb_QY0Q7kNvwHr82yQ&_nc_oc=AdrBlcyjqCgk_rq1gs2gqDhrcNsVK8dfixO4gK943kS8Hq0kSWLeUCdzYyt90zUoh3E&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQRORId6XrBgEPJotbQ2686EcI7gtk42MHWvTXGfZ8PgQQ&oe=6AFAA694",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/896941332_1877781773486399_5545452786581128683_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=eJ_ULOany84Q7kNvwGMBVgD&_nc_oc=Adp9-KFNJwmQk47d6uajn-hcfzyP-RtTGgcbOyNt1ljxLDODfk_8Jm3mint8MwsaJic&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQSTbHUf7Y-ExSh5veoUqGX00Uv9tFUFALKlEQohIIkxrA&oe=6AFAB1EC",
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/895574825_2319568422230314_4301301625630972968_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=Xi62pokEa3UQ7kNvwH0iAYJ&_nc_oc=AdonCyE1uzsSs9mqreymaU7B6Ih4F9eArQdccZNZ5PgJZzajUra8Op8ymBlHh2ZV9Fg&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQTMdPfqq6lSU0l9whI01YNJ3hNosQPaC_J4b_Uyu-bBZQ&oe=6AFAC143"
+      ],
+      "impressions": null,
+      "is_active": true,
+      "link_caption": "huntress.com",
+      "link_url": "https://www.huntress.com/lp/partners-msps",
+      "page_id": "1565545123497425",
+      "page_likes": 1858,
+      "page_name": "Huntress Labs",
+      "page_url": "https://www.facebook.com/huntresslabs/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-11-10T08:00:00Z",
+      "title": "Get free NFR licenses for a year.",
+      "videos": [
+        "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQPRh4TQDEh9IQC1JYzUFNrxrbUGNxsYbGOUbRDBbdrtEMMvSfreXcXWg_-65-eAkheQ__YD9K1OpqjyLel35SKlqTrUXQpQMPUgPGRyg3j7ug.mp4?_nc_cat=107&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=IvHmGpAMu3cQ7kNvwFOpgBM&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjo0NDc2NTk1NTM1OTg1MzM3LCJhc3NldF9hZ2VfZGF5cyI6MSwidmlfdXNlY2FzZV9pZCI6MTAxMzksImR1cmF0aW9uX3MiOjMwLCJ1cmxnZW5fc291cmNlIjoid3d3In0%3D&ccb=17-1&vs=f472b278bbd0d979&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC8xMkVEOUMyNDdCQkI0ODBBQjg2NzRBNkMwQzk3MEQxNV9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50Lzc5NzZFOUFBMDEyMDQ1Rjc4RjNDNTQwRjNDODQ3REUzX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACby6s3rk9zzDxUCKAJDMywXQD4AAAAAAAAYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQj6uhCeeyEcrg43g4y5BUtVrwQylGrbwySHOeTHE425w&oe=6AFAAFF1"
+      ]
+    },
+    {
+      "ad_archive_id": "4141957142602486",
+      "ad_url": "https://www.facebook.com/ads/library/?id=4141957142602486",
+      "body": "Every new compliance client adds evidence collection, reporting and follow-up. Most MSPs absorb that with staff time. Sable standardizes the work across every client, so delivery scales without the hours scaling with it.",
+      "cards": [],
+      "cta": "See details",
+      "cta_type": "SEE_DETAILS",
+      "currency": null,
+      "display_format": "image",
+      "end_date": null,
+      "images": [
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/840404999_1045579988530126_7609937329018492916_n.jpg?_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=sXNDYEW7kpEQ7kNvwHLTj1L&_nc_oc=Adr7myoHW36Q5O7QFxtvj_jZEHIlZRzkFds6Fx0mEj_czRT9vwJPww0eBlbqKQFuEJQ&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQQ6BrDxDj_ToYPQGaeJfnD8yxeJsv1nPstPhyheFlZnRg&oe=6AFAA19C"
+      ],
+      "impressions": null,
+      "is_active": true,
+      "link_caption": "subrosacyber.com",
+      "link_url": "https://subrosacyber.com/solutions/msp?utm_source=meta&utm_medium=paid_social&utm_campaign=sable_retargeting&utm_content=m1_capacity",
+      "page_id": "219956642054581",
+      "page_likes": 413,
+      "page_name": "SubRosa",
+      "page_url": "https://www.facebook.com/subrosacyber/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "audience_network",
+        "whatsapp",
+        "threads"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-10-09T07:00:00Z",
+      "title": "Add clients without adding staff hours",
+      "videos": []
+    },
+    {
+      "ad_archive_id": "1258623379806391",
+      "ad_url": "https://www.facebook.com/ads/library/?id=1258623379806391",
+      "body": "Steve runs security for a West Coast MSP covering roughly 425 clients, 15,000 identities, and 12,000 computers.\n\nHe came to Blackpoint for one reason: Microsoft 365 was where he was seeing the most compromise and the most data loss.\n\nThe part he did not expect to care about as much \u2014 a SOC he can actually reach. He knows the analysts by first name and works problems with them directly instead of filing a ticket and waiting.",
+      "cards": [],
+      "cta": "Book now",
+      "cta_type": "BOOK_TRAVEL",
+      "currency": null,
+      "display_format": "video",
+      "end_date": null,
+      "images": [],
+      "impressions": null,
+      "is_active": true,
+      "link_caption": "blackpointcyber.com",
+      "link_url": "https://blackpointcyber.com/demo/",
+      "page_id": "966381516746407",
+      "page_likes": 1600,
+      "page_name": "Blackpoint",
+      "page_url": "https://www.facebook.com/BlackpointCyber/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-10-29T07:00:00Z",
+      "title": "\u201cThree years protecting Microsoft 365. Zero attacks got through.\u201d",
+      "videos": [
+        "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQMgRsaoFqB3XF_g58__PW74N_BWYpaHRsg4E6u54D5jJnKir9elyOoaFYwFCWMCduboqp9WGKCiRk2qEcOA34HKK9nU6ZzXxhlHMpSnt5OeRQ.mp4?_nc_cat=101&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=DIadQLu-n1sQ7kNvwFYkGS3&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuMTI4MC5kYXNoX2gyNjQtYmFzaWMtZ2VuMl83MjBwIiwieHB2X2Fzc2V0X2lkIjoxNTg2ODIyMDg2MDk0Njg2LCJhc3NldF9hZ2VfZGF5cyI6MTMsInZpX3VzZWNhc2VfaWQiOjEwMTM5LCJkdXJhdGlvbl9zIjo1NywidXJsZ2VuX3NvdXJjZSI6Ind3dyJ9&ccb=17-1&vs=7e6e4c97d0297e3f&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9EMzdEOURCMzExNzY0MEVCQkMyMjM2RjNFMEI0MDk3N19tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50L0I3OTgyNzE5RTI1MzQ0MDRCNjA0RjFFMjk4Mjk2ODIyX2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACa8vZvsmc3RBRUCKAJDMywXQEyKn752yLQYGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQQTl2EbCUJPcN_cq8alpTMRVjkSFLxWjDTiX--pAwK0qA&oe=6AFAA3DF"
+      ]
+    },
+    {
+      "ad_archive_id": "1125099460236213",
+      "ad_url": "https://www.facebook.com/ads/library/?id=1125099460236213",
+      "body": "As an MSP or MSSP, your clients want proof, not promises.\n\nBeaconAnalytics turns your data into executive summaries, monthly reports and a findings tracker that shows what was raised and what was fixed. A single source of truth for every client.\n\n\u2713 Endpoint health and backup posture\n\u2713 Vulnerabilities by client, asset or CVE\n\u2713 Compliance posture reviews, including PCI DSS and CIS Benchmarks\n\u2713 No SOC switch required, and no big upfront cost: one monthly subscription\n\nShow your value. Book your Beacon demo.",
+      "cards": [],
+      "cta": "Learn more",
+      "cta_type": "LEARN_MORE",
+      "currency": null,
+      "display_format": "video",
+      "end_date": null,
+      "images": [],
+      "impressions": null,
+      "is_active": true,
+      "link_caption": "fb.me",
+      "link_url": "http://fb.me/",
+      "page_id": "101365408053535",
+      "page_likes": 67,
+      "page_name": "Security Validation LLC",
+      "page_url": "https://www.facebook.com/secvalmsp/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram",
+        "audience_network",
+        "whatsapp"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-11-09T08:00:00Z",
+      "title": "Prove your value every month.",
+      "videos": [
+        "https://video-phl2-1.xx.fbcdn.net/o1/v/t2/f2/m366/AQOyQ2QbXurhEKf86KWLDs0u_VMb9CSKu1IPU505228tsSPzUbeNFQh2Ly9Aow8uEF0PexpKfQTPmA6Wy0zu-z32JSZnS_ZQq1NulKB1_jL6_g.mp4?_nc_cat=103&_nc_sid=b66105&_nc_ht=video-phl2-1.xx.fbcdn.net&_nc_ohc=Z8w8ZNuhNfIQ7kNvwH07by-&efg=eyJ2ZW5jb2RlX3RhZyI6Inhwdl9wcm9ncmVzc2l2ZS5WSV9VU0VDQVNFX1BST0RVQ1RfVFlQRS4uQzMuNzIwLmRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHAiLCJ4cHZfYXNzZXRfaWQiOjIwNTY3MjkwMzgzNzYxMjEsImFzc2V0X2FnZV9kYXlzIjoxLCJ2aV91c2VjYXNlX2lkIjoxMDEzOSwiZHVyYXRpb25fcyI6MjYsInVybGdlbl9zb3VyY2UiOiJ3d3cifQ%3D%3D&ccb=17-1&vs=87e2a81bac43c56e&_nc_vs=HBksFQIYRWZiX2VwaGVtZXJhbC9BMjQ2RkNBMjM2OUU0MjMxQTdGRTIwQjIwNEE3M0M1NF9tdF8xX3ZpZGVvX2Rhc2hpbml0Lm1wNBUAAsgBEgAVAhhAZmJfcGVybWFuZW50LzUzRjI1OTY4QjJCMjQ0RjNBMUIxRTZBOTBDMkFDN0U5X2F1ZGlvX2Rhc2hpbml0Lm1wNBUCAsgBEgAoABgAGwKIB3VzZV9vaWwBMRJwcm9ncmVzc2l2ZV9yZWNpcGUBMRUAACbystq7saWnBxUCKAJDMywXQDrMzMzMzM0YGWRhc2hfaDI2NC1iYXNpYy1nZW4yXzcyMHARAHUAZbaeAQA&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&_nc_map=urlgen_bucketless&_nc_zt=28&oh=00_AQTSvMXIUvyPn0WBPDxz2EEz_Ag3ZzuOCLliVjqOUWDqAw&oe=6AFAD3CD"
+      ]
+    },
+    {
+      "ad_archive_id": "1824191505281900",
+      "ad_url": "https://www.facebook.com/ads/library/?id=1824191505281900",
+      "body": "If you\u2019re protecting multiple clients, protect them with the best. Blackpoint\u2019s AI SOC stops threats in under 2 minutes, is trained on real analyst decisions, and is backed by a human team reachable 24/7.",
+      "cards": [],
+      "cta": "Learn more",
+      "cta_type": "LEARN_MORE",
+      "currency": null,
+      "display_format": "image",
+      "end_date": null,
+      "images": [
+        "https://scontent-phl2-1.xx.fbcdn.net/v/t39.35426-6/869930677_3048235138869281_2891473099267495192_n.jpg?_nc_cat=103&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=c53f8f&_nc_ohc=mKElL-TGZnoQ7kNvwF1lLi1&_nc_oc=AdoFIicE6Hhw9BimyPBd115i4CYefZ6MPisXIpM_hXjMRyoWVJAYsYjYgwPn-PMsmVA&_nc_zt=14&_nc_ht=scontent-phl2-1.xx&_nc_gid=w-y5VNOQTQC--tj_3BprSA&_nc_ss=70289&oh=00_AQT6AIr_cmsRqONApNia1kbfIG0ch75ajKaSS6zcHYJm4A&oe=6AFAA537"
+      ],
+      "impressions": "<100",
+      "is_active": true,
+      "link_caption": "blackpointcyber.com",
+      "link_url": "https://blackpointcyber.com/why-blackpoint/",
+      "page_id": "966381516746407",
+      "page_likes": 1600,
+      "page_name": "Blackpoint",
+      "page_url": "https://www.facebook.com/BlackpointCyber/",
+      "paid_for_by": null,
+      "platforms": [
+        "facebook",
+        "instagram"
+      ],
+      "same_creative_ads": 1,
+      "spend": null,
+      "start_date": "2026-10-30T07:00:00Z",
+      "title": "Why Blackpoint",
+      "videos": []
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1449,
+      "requests": 1402,
+      "search": 2880
+    },
+    "units": 3
+  },
+  "version": 2
+}
+treg: charged $0.00165 · call id 28cb572a0ac0498e954dd6a4ebdb66fa

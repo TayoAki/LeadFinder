@@ -1,0 +1,633 @@
+{
+  "search_metadata": {
+    "id": "6af4e8eb2d916af35605c1cc",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/cBp053pvyjtQhnU8cDWY-fehrDUh9YUZXgtZ8fiZUMA/6af4e8eb2d916af35605c1cc.json",
+    "markdown_endpoint": "https://serpapi.com/searches/cBp053pvyjtQhnU8cDWY-fehrDUh9YUZXgtZ8fiZUMA/6af4e8eb2d916af35605c1cc.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/cBp053pvyjtQhnU8cDWY-fehrDUh9YUZXgtZ8fiZUMA/6af4e8eb2d916af35605c1cc.json_with_pixel_position",
+    "created_at": "2026-11-11 22:15:07 UTC",
+    "processed_at": "2026-11-11 22:15:07 UTC",
+    "google_ads_url": "https://www.google.com/search?q=zendesk+alternative&hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/cBp053pvyjtQhnU8cDWY-fehrDUh9YUZXgtZ8fiZUMA/6af4e8eb2d916af35605c1cc.html",
+    "total_time_taken": 1.8
+  },
+  "search_parameters": {
+    "engine": "google_ads",
+    "q": "zendesk alternative",
+    "location_requested": "Austin, Texas, United States",
+    "location_used": "Austin,Texas,United States",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "zendesk alternative",
+    "total_results": 108,
+    "time_taken_displayed": 0.16,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "ads": [
+    {
+      "position": 1,
+      "block_position": "top",
+      "title": "Freshdesk Does it Better",
+      "link": "https://www.freshworks.com/freshdesk/compare-helpdesks/zendesk-vs-freshdesk/",
+      "displayed_link": "https://www.freshworks.com \u203a freshdesk \u203a vs",
+      "tracking_link": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAEQARoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYASAAEgK1EPD_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_1x36qM8LmlAZLIA5o-hS3i0XMjFQ&q&nis=4&adurl=https://www.freshworks.com/freshdesk/compare-helpdesks/zendesk-vs-freshdesk/?tactic_id%3D7209031%26utm_source%3Dgoogle-adwords%26utm_medium%3Dfd-search-us-competition-ai-max%26utm_campaign%3Dfd-search-us-competition-ai-max%26utm_term%3Dzendesk%2520pricing%26device%3Dc%26matchtype%3Db%26network%3Dg%26gclid%3DEAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYASAAEgK1EPD_BwE%26audience%3Dkwd-21070032845%26ad_id%3D791714093434%26gad_source%3D1%26gad_campaignid%3D22872898719%26gbraid%3D0AAAAADth8EMOjtB3q5SZHqEcPwvi9RKFE",
+      "description": "Switch and Save Your Budget \u2014 Pay 50% less, get 100% more. Switch now! Try Freshdesk now with a 14-day free trial. Full access. No credit card.",
+      "source": "Freshworks"
+    },
+    {
+      "position": 2,
+      "block_position": "top",
+      "title": "Modern Ticketing, One Inbox - No More Old-School Ticketing",
+      "link": "https://front.com/lp/vs-zendesk",
+      "displayed_link": "https://www.front.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&pf=1&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAEQABoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYAiAAEgIzZvD_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_3UuEMALKQ-ycPVQ-EFbl4edYY6VQ&q&nis=4&adurl=https://front.com/lp/vs-zendesk?hstk_creative%3D751697254222%26hstk_campaign%3D23773251095%26hstk_network%3DgoogleAds%26network%3Dg%26hsa_m%3Dp%26utm_term%3Dzendesk%2520alternative%26utm_campaign%3Dgoogle_sem_na_competitors_23773251095%26utm_source%3Dadwords%26utm_medium%3Dppc%26utm_content%3Dcompetitor%26hsa_acc%3D8738266666%26hsa_cam%3D23773251095%26hsa_grp%3D197289170802%26hsa_ad%3D751697254222%26hsa_src%3Dg%26hsa_tgt%3Dkwd-16568841707%26hsa_kw%3Dzendesk%2520alternative%26hsa_mt%3Dp%26hsa_net%3Dadwords%26hsa_ver%3D3%26gad_source%3D1%26gad_campaignid%3D23773251095%26gbraid%3D0AAAAADR2zUBd3X2UXRxCnApssB_2MRW-M%26gclid%3DEAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYAiAAEgIzZvD_BwE",
+      "description": "Clunky helpdesk system slowing you down? Manage email, SMS, chat & 160+ apps in one inbox.",
+      "source": "Front"
+    },
+    {
+      "position": 3,
+      "block_position": "top",
+      "title": "Better Than Any Alternative",
+      "link": "https://www.zendesk.com/lp/brand/",
+      "displayed_link": "https://www.zendesk.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAEQAxoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYAyAAEgKwrPD_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_0d9-0Yh6YAQ8N8V0ack4ohtNVVSQ&q&nis=4&adurl",
+      "description": "Zendesk Wins Every Time \u2014 No need to search\u2014Zendesk outperforms alternatives every time. Quick to Deploy. Easy to Use. Scales as You Grow. See Why More Businesses Choose Zendesk\u00ae. 900...",
+      "source": "Zendesk"
+    },
+    {
+      "position": 4,
+      "block_position": "top",
+      "title": "Hiver, The Better Alternative - AI That Resolves, Not Deflects",
+      "link": "https://hiverhq.com/compare/zendesk-vs-hiver",
+      "displayed_link": "https://www.hiverhq.com \u203a alternative",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAEQAhoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAAYBCAAEgJvTfD_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_27vU1FEgX8bJtjxetEdJT_7TTxHg&q&nis=4&adurl",
+      "description": "Predictable per-seat pricing with AI included. No per-resolution meter, no surprise bills.",
+      "source": "Hiver HQ"
+    },
+    {
+      "position": 5,
+      "block_position": "middle",
+      "title": "Plain: AI-Native Alternative",
+      "link": "https://www.plain.com/go/plain-vs-zendesk",
+      "displayed_link": "https://www.plain.com",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAIQARoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAMYASAAEgL57_D_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_2g2q290lXR7LDfJPVNYzIHSDeRVQ&q&nis=4&adurl",
+      "description": "AI That Fully Resolves \u2014 Bring every channel into one queue, set custom SLAs and tiers, and build custom workflows. Built...",
+      "source": "Plain",
+      "sitelinks": [
+        {
+          "title": "Transparent Pricing",
+          "link": "https://www.plain.com/pricing"
+        },
+        {
+          "title": "Slack, Discord, Teams, Chat",
+          "link": "https://www.plain.com/go/plain-vs-zendesk"
+        },
+        {
+          "title": "See Full Customer Context",
+          "link": "https://www.plain.com/go/plain-vs-zendesk"
+        },
+        {
+          "title": "Plain for Startups",
+          "link": "https://www.plain.com/startups"
+        }
+      ]
+    },
+    {
+      "position": 6,
+      "block_position": "middle",
+      "title": "BoldDesk: A Better Alternative",
+      "link": "https://www.bolddesk.com/alternative/zendesk",
+      "displayed_link": "https://www.bolddesk.com \u203a help-desk",
+      "tracking_link": "https://www.google.com/aclk?sa=L&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAIQABoCcXU&co=1&ase=2&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAMYAiAAEgICE_D_BwE&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&cce=2&category=acrcp_v1_32&sig=AOD64_0bE6qE-TDNqkCwnFbY06fRrQlZmw&q&nis=4&adurl",
+      "description": "Unlimited Agents on All Plans \u2014 Other help desks charge per agent, then extra for AI. BoldDesk gives you unlimited agents. Automate up to 90% of support with AI agents that take action, not just answer FAQs. Rated 4.5 on G2.",
+      "source": "BoldDesk",
+      "sitelinks": [
+        {
+          "title": "Plans From $99/Month",
+          "link": "https://www.bolddesk.com/pricing"
+        },
+        {
+          "title": "Save Up to 70% with BoldDesk",
+          "link": "https://www.google.com/aclk?adurl=&ai=DChsSEwjYmYS5-ICYAxV5Y0cBHQOXJRIYACICCAIQBRoCcXU&ase=2&category=acrcp_v1_32&cce=2&cid=CAASuwHkaH74nBOg3RIK69e2UWlvC5hn2n8vhhp50dQZq1dQ8b3G8IbguWeU0cS0u96C_sFoJK6rKqsP1HvpXtRN0F4yfBbDOIWFwgaRZH697mrqb1H4kXj3UZ_as32CEO7L5sCOGbW8YKIceIfcC8_df1PDiAtxRaef2r6MRjn3-6cA6Mc9AqdNGKPJlCELDa1xCIxc2ukEaO8Va0erClkioaWhgYG5_aIMTV7KZ6wXNBHZi_v9dbjOiV2Wg2q2&co=1&gclid=EAIaIQobChMI2JmEufiAmAMVeWNHAR0DlyUSEAMYAiACEgLwafD_BwE&q=&sa=L&sig=AOD64_0BcvBKrdAmhFf2pyXQrAPrb98ezA"
+        },
+        {
+          "title": "No Per-Agent Fees on Any Plan",
+          "link": "https://www.bolddesk.com/alternative/zendesk"
+        }
+      ]
+    }
+  ],
+  "related_questions": [
+    {
+      "question": "What is the Zendesk platform?",
+      "type": "ai_overview",
+      "page_token": "3aMP0HicHdBRboIwAADQ7DL7VJDpoolZ0kFRJ0VK2yA_prQCQhGnuGo_d5Z97TA7wE6wZL87wJad4CXv9U3t9vXnTVJ23eE06fe11r2ibQu17Ym26fPTdS_6giuVcVFPRvcj-yEXU--kwWOrQUSxt1ZSrQlaZu5Ck3psIgU0auwGD9Kn0CsvJFmsQv-yZFVkIoKPGWF-6MK7yJQwmMGSOgzEVMEUyucY1k4G5XldCxMblMe06HAFLkGNaVRBk3opxf44IPtWRyTNo1oNmUEMKYWXlCkeW04yKBNhI47JwmJWoaWrCGJyGViqCVx8lU15XVvzGBq54hUoZSVsTIeH1LAws0EX086RNjz6uwWIvTuNifSZjfYi-dNdfA69ueEOnmNrvEMqXW1n6YAZBW5z8TJ1bv_Hppu86SaHY1u8i-OWd1u54d1H9fP1_QtleIKU",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=3aMP0HicHdBRboIwAADQ7DL7VJDpoolZ0kFRJ0VK2yA_prQCQhGnuGo_d5Z97TA7wE6wZL87wJad4CXv9U3t9vXnTVJ23eE06fe11r2ibQu17Ym26fPTdS_6giuVcVFPRvcj-yEXU--kwWOrQUSxt1ZSrQlaZu5Ck3psIgU0auwGD9Kn0CsvJFmsQv-yZFVkIoKPGWF-6MK7yJQwmMGSOgzEVMEUyucY1k4G5XldCxMblMe06HAFLkGNaVRBk3opxf44IPtWRyTNo1oNmUEMKYWXlCkeW04yKBNhI47JwmJWoaWrCGJyGViqCVx8lU15XVvzGBq54hUoZSVsTIeH1LAws0EX086RNjz6uwWIvTuNifSZjfYi-dNdfA69ueEOnmNrvEMqXW1n6YAZBW5z8TJ1bv_Hppu86SaHY1u8i-OWd1u54d1H9fP1_QtleIKU",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBaZW5kZXNrIHBsYXRmb3JtPyIsImxrIjoiR2h4M2FHRjBJR2x6SUhSb1pTQjZaVzVrWlhOcklIQnNZWFJtYjNKdCIsImJzIjoiYy1PeTU1SU56MGdzVWNnc1ZpakpTRldJU3MxTFNTM09WaWpJU1N4Snl5X0t0VGVTazVJcFIxSlFoYWFBeTVOTEJXeEFZbEVxV0VGeWZtNUJha2xtU1g1UnNVSi1Hc3hBZXlORktmbHltRG8wTlZBenVSeTU1R0J1Z2JtanJGZ2hPREVudFJob1ZYS3F2Wkc4bEN6TU1WVUlGY1Z3RlZ5R1hHS2VDTjJKQ3VuNS1Ta0t6a0ctOWtiaVVxSkl1cUF5eVVXNUFvd0EiLCJpZCI6ImZjXzdPajBhdjc1RU5pZzVOb1BtSUt3d1FrXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSBaZW5kZXNrIHBsYXRmb3JtPyIsImxrIjoiR2h4M2FHRjBJR2x6SUhSb1pTQjZaVzVrWlhOcklIQnNZWFJtYjNKdCIsImJzIjoiYy1PeTU1SU56MGdzVWNnc1ZpakpTRldJU3MxTFNTM09WaWpJU1N4Snl5X0t0VGVTazVJcFIxSlFoYWFBeTVOTEJXeEFZbEVxV0VGeWZtNUJha2xtU1g1UnNVSi1Hc3hBZXlORktmbHltRG8wTlZBenVSeTU1R0J1Z2JtanJGZ2hPREVudFJob1ZYS3F2Wkc4bEN6TU1WVUlGY1Z3RlZ5R1hHS2VDTjJKQ3VuNS1Ta0t6a0ctOWtiaVVxSkl1cUF5eVVXNUFvd0EiLCJpZCI6ImZjXzdPajBhdjc1RU5pZzVOb1BtSUt3d1FrXzUifQ%3D%3D"
+    },
+    {
+      "question": "What are the competitors of Zendesk?",
+      "type": "ai_overview",
+      "page_token": "nhBT93icHdBRUuIwGADg2cv4KLQVdmSG2bHSIAjpJk2ati9OmgCR_CWAkQKPnsUnD-MBPIEzvnoAd_YI3_fyCo8b-_HrYLzfPg06nbZtL1fOrWBxqVzTkU-njeooCVBLZQf93_3gz1INk-dJfLubxITTpAQNglVJ0XVXdeB68_GxxE1laTiN5k11yMOAyAAKwYyfMfSMxdVZ3GGTd_VaRdteJsyytF4yoLNK0FLa431a6LNCqJQol5jBum5MpeB6XwLspND9zPr7mYAdYTHKxt5RhlMWVpZFkyCz9sSZiRnDccpuehnQv_MRtKJAtwtAU7FGVm2mVoYa5yPEs1zvRQFBzdGYnPEou8ObxKiIha4tizLCPE-lUAFrrknNYaYjTeXRPRJu0nnCI9o1B5zwnu7qMxOaZLk7CSBhFVL0T-GrwLSEXCzVYRhd_P8cPiwbP9ju3epN7RfSL_SD9O_r78-vH3CFjM0",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=nhBT93icHdBRUuIwGADg2cv4KLQVdmSG2bHSIAjpJk2ati9OmgCR_CWAkQKPnsUnD-MBPIEzvnoAd_YI3_fyCo8b-_HrYLzfPg06nbZtL1fOrWBxqVzTkU-njeooCVBLZQf93_3gz1INk-dJfLubxITTpAQNglVJ0XVXdeB68_GxxE1laTiN5k11yMOAyAAKwYyfMfSMxdVZ3GGTd_VaRdteJsyytF4yoLNK0FLa431a6LNCqJQol5jBum5MpeB6XwLspND9zPr7mYAdYTHKxt5RhlMWVpZFkyCz9sSZiRnDccpuehnQv_MRtKJAtwtAU7FGVm2mVoYa5yPEs1zvRQFBzdGYnPEou8ObxKiIha4tizLCPE-lUAFrrknNYaYjTeXRPRJu0nnCI9o1B5zwnu7qMxOaZLk7CSBhFVL0T-GrwLSEXCzVYRhd_P8cPiwbP9ju3epN7RfSL_SD9O_r78-vH3CFjM0",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGFyZSB0aGUgY29tcGV0aXRvcnMgb2YgWmVuZGVzaz8iLCJsayI6IkdoOTNhR0YwSUdGeVpTQmpiMjF3WlhScGRHOXljeUJ2WmlCNlpXNWtaWE5yIiwiYnMiOiJjLU95NTVJTnowZ3NVY2dzVmlqSlNGV0lTczFMU1MzT1ZpaklTU3hKeXlfS3RUZVNrNUlwUjFKUWhhYUF5NU5MQld4QVlsRXFXRUZ5Zm01QmFrbG1TWDVSc1VKLUdzeEFleU5GS2ZseW1EbzBOVkF6dVJ5NTVHQnVnYm1qckZnaE9ERW50UmhvVlhLcXZaRzhsQ3pNTVZVSUZjVndGVnlHWEdLZUNOMkpDdW41LVNrS3prRy05a2JpVXFKSXVxQXl5VVc1QW93QSIsImlkIjoiZmNfN09qMGF2NzVFTmlnNU5vUG1JS3d3UWtfNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGFyZSB0aGUgY29tcGV0aXRvcnMgb2YgWmVuZGVzaz8iLCJsayI6IkdoOTNhR0YwSUdGeVpTQmpiMjF3WlhScGRHOXljeUJ2WmlCNlpXNWtaWE5yIiwiYnMiOiJjLU95NTVJTnowZ3NVY2dzVmlqSlNGV0lTczFMU1MzT1ZpaklTU3hKeXlfS3RUZVNrNUlwUjFKUWhhYUF5NU5MQld4QVlsRXFXRUZ5Zm01QmFrbG1TWDVSc1VKLUdzeEFleU5GS2ZseW1EbzBOVkF6dVJ5NTVHQnVnYm1qckZnaE9ERW50UmhvVlhLcXZaRzhsQ3pNTVZVSUZjVndGVnlHWEdLZUNOMkpDdW41LVNrS3prRy05a2JpVXFKSXVxQXl5VVc1QW93QSIsImlkIjoiZmNfN09qMGF2NzVFTmlnNU5vUG1JS3d3UWtfNSJ9"
+    },
+    {
+      "question": "What is Zendesk vs Salesforce?",
+      "type": "ai_overview",
+      "page_token": "H_h0nXicHdBdboIwAADg7DI-Csh00cQswbQYkoJUWn5eDLRqhVIQOtl43Fn2tMPsADvBkr3uAFt2gO_le32TF1V93iVC67ZfGcYwDNNz05zlccqa2sj7F8UMlktZ5KxaLR4W1uOJrUE_OJtmcEKCQSq5TJVoGaDXYwSsYuv3KKnmyBUgjLNrqnw_oBAh1-sJeN6w2VJighVV7Y1W0KRuFhATjMimIByzksyWkM3goqgh9pWT4q20Y2CRIhZjAck8iGSaEb_jEmdx3IxhwgcMxTNS8qkwvciPKA3rs41qGqIq2yLAFa9awYB_4qa4MQUrDMgejnyXl47gJbMwmbfZSIPCcvSeaJtbsHMvnrMH9wOOuJvJVuDI2-FRzuOYaFb6dVjj5M90-1rHfCbsyYnd1vbkf2x9ONV61XbN-Z11x1wf-SHXH-XP1_cvTDODrg",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=H_h0nXicHdBdboIwAADg7DI-Csh00cQswbQYkoJUWn5eDLRqhVIQOtl43Fn2tMPsADvBkr3uAFt2gO_le32TF1V93iVC67ZfGcYwDNNz05zlccqa2sj7F8UMlktZ5KxaLR4W1uOJrUE_OJtmcEKCQSq5TJVoGaDXYwSsYuv3KKnmyBUgjLNrqnw_oBAh1-sJeN6w2VJighVV7Y1W0KRuFhATjMimIByzksyWkM3goqgh9pWT4q20Y2CRIhZjAck8iGSaEb_jEmdx3IxhwgcMxTNS8qkwvciPKA3rs41qGqIq2yLAFa9awYB_4qa4MQUrDMgejnyXl47gJbMwmbfZSIPCcvSeaJtbsHMvnrMH9wOOuJvJVuDI2-FRzuOYaFb6dVjj5M90-1rHfCbsyYnd1vbkf2x9ONV61XbN-Z11x1wf-SHXH-XP1_cvTDODrg",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIFplbmRlc2sgdnMgU2FsZXNmb3JjZT8iLCJsayI6IkdoMTNhR0YwSUdseklIcGxibVJsYzJzZ2RuTWdjMkZzWlhObWIzSmpaUSIsImJzIjoiYy1PeTU1SU56MGdzVWNnc1ZpakpTRldJU3MxTFNTM09WaWpJU1N4Snl5X0t0VGVTazVJcFIxSlFoYWFBeTVOTEJXeEFZbEVxV0VGeWZtNUJha2xtU1g1UnNVSi1Hc3hBZXlORktmbHltRG8wTlZBenVSeTU1R0J1Z2JtanJGZ2hPREVudFJob1ZYS3F2Wkc4bEN6TU1WVUlGY1Z3RlZ5R1hHS2VDTjJKQ3VuNS1Ta0t6a0ctOWtiaVVxSkl1cUF5eVVXNUFvd0EiLCJpZCI6ImZjXzdPajBhdjc1RU5pZzVOb1BtSUt3d1FrXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJXaGF0IGlzIFplbmRlc2sgdnMgU2FsZXNmb3JjZT8iLCJsayI6IkdoMTNhR0YwSUdseklIcGxibVJsYzJzZ2RuTWdjMkZzWlhObWIzSmpaUSIsImJzIjoiYy1PeTU1SU56MGdzVWNnc1ZpakpTRldJU3MxTFNTM09WaWpJU1N4Snl5X0t0VGVTazVJcFIxSlFoYWFBeTVOTEJXeEFZbEVxV0VGeWZtNUJha2xtU1g1UnNVSi1Hc3hBZXlORktmbHltRG8wTlZBenVSeTU1R0J1Z2JtanJGZ2hPREVudFJob1ZYS3F2Wkc4bEN6TU1WVUlGY1Z3RlZ5R1hHS2VDTjJKQ3VuNS1Ta0t6a0ctOWtiaVVxSkl1cUF5eVVXNUFvd0EiLCJpZCI6ImZjXzdPajBhdjc1RU5pZzVOb1BtSUt3d1FrXzUifQ%3D%3D"
+    },
+    {
+      "question": "Is Zendesk a good CRM?",
+      "type": "ai_overview",
+      "page_token": "2naRq3icHdDLTcMwAABQsUyPzY8WtVKFlC-NmoQ6thPnUjl20k-cD62F2xyZhRPDMAATIHFlACTeCO_tXRy75usuP0g5XJaappSa7vt-L6op61uNXm4d0xgVoqSsWc4f5sZjzVbeRdlOr-wtAh4RXGR40W7NoovaWYd1ZEa-mG91cCUCJynER5gXFJ8KE1mAVB6T0SicCoVnYg4KBb4LM2CQEYvIAA7LFgV0Y5qP67EUvM5NUcOAGbC9pvipeOHuWm2yIQXBYMX-cI0wviTZYoywSHgQrhMPoCSP49IKERR-zD19RC5wqrxwqDWQqonnxCCpP_JnerIP_MQMgGZDMeKkNGyZImlxwz8Hx9BOvXsFIPerxp-Vpn5LYSOh7slNhvMyYBbvcFhmntpiACY1e11Zk_-x1a5u5XI49_sPdq6orPiOys_T7_fPH1nogXc",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=2naRq3icHdDLTcMwAABQsUyPzY8WtVKFlC-NmoQ6thPnUjl20k-cD62F2xyZhRPDMAATIHFlACTeCO_tXRy75usuP0g5XJaappSa7vt-L6op61uNXm4d0xgVoqSsWc4f5sZjzVbeRdlOr-wtAh4RXGR40W7NoovaWYd1ZEa-mG91cCUCJynER5gXFJ8KE1mAVB6T0SicCoVnYg4KBb4LM2CQEYvIAA7LFgV0Y5qP67EUvM5NUcOAGbC9pvipeOHuWm2yIQXBYMX-cI0wviTZYoywSHgQrhMPoCSP49IKERR-zD19RC5wqrxwqDWQqonnxCCpP_JnerIP_MQMgGZDMeKkNGyZImlxwz8Hx9BOvXsFIPerxp-Vpn5LYSOh7slNhvMyYBbvcFhmntpiACY1e11Zk_-x1a5u5XI49_sPdq6orPiOys_T7_fPH1nogXc",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJJcyBaZW5kZXNrIGEgZ29vZCBDUk0/IiwibGsiOiJHaFZwY3lCNlpXNWtaWE5ySUdFZ1oyOXZaQ0JqY20wIiwiYnMiOiJjLU95NTVJTnowZ3NVY2dzVmlqSlNGV0lTczFMU1MzT1ZpaklTU3hKeXlfS3RUZVNrNUlwUjFKUWhhYUF5NU5MQld4QVlsRXFXRUZ5Zm01QmFrbG1TWDVSc1VKLUdzeEFleU5GS2ZseW1EbzBOVkF6dVJ5NTVHQnVnYm1qckZnaE9ERW50UmhvVlhLcXZaRzhsQ3pNTVZVSUZjVndGVnlHWEdLZUNOMkpDdW41LVNrS3prRy05a2JpVXFKSXVxQXl5VVc1QW93QSIsImlkIjoiZmNfN09qMGF2NzVFTmlnNU5vUG1JS3d3UWtfNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWaFoxbGFkVUpXYTJKdGNIbGlWWFUwYTNKVFNtbElWRTFJVlV4eFQzRnZkVXR3U0Zadk1GcDNUMUpwU0dwNFMxaG5la3czVEdreVEyTkhjek5OZDJ4clkwWlZVRTlZYUhNMmRVb3RkMXAyWDFsMU16TmZRV1J6ZERBeFFSSVhOMDlxTUdGMk56VkZUbWxuTlU1dlVHMUpTM2QzVVdzYUlrRklUakJGTjBnMmIzQmtRV2cxYTJrdFdESlpWMVpLY0V4VWFXeENWV1JaY21jIiwiZmN2IjoiMyIsImVpIjoiN09qMGF2NzVFTmlnNU5vUG1JS3d3UWsiLCJxYyI6IkNoTjZaVzVrWlhOcklHRnNkR1Z5Ym1GMGFYWmxFQUI5WE9BaVB3IiwicXVlc3Rpb24iOiJJcyBaZW5kZXNrIGEgZ29vZCBDUk0%2FIiwibGsiOiJHaFZwY3lCNlpXNWtaWE5ySUdFZ1oyOXZaQ0JqY20wIiwiYnMiOiJjLU95NTVJTnowZ3NVY2dzVmlqSlNGV0lTczFMU1MzT1ZpaklTU3hKeXlfS3RUZVNrNUlwUjFKUWhhYUF5NU5MQld4QVlsRXFXRUZ5Zm01QmFrbG1TWDVSc1VKLUdzeEFleU5GS2ZseW1EbzBOVkF6dVJ5NTVHQnVnYm1qckZnaE9ERW50UmhvVlhLcXZaRzhsQ3pNTVZVSUZjVndGVnlHWEdLZUNOMkpDdW41LVNrS3prRy05a2JpVXFKSXVxQXl5VVc1QW93QSIsImlkIjoiZmNfN09qMGF2NzVFTmlnNU5vUG1JS3d3UWtfNSJ9"
+    }
+  ],
+  "ai_overview": {
+    "text_blocks": [
+      {
+        "type": "paragraph",
+        "snippet": "Here are top Zendesk alternatives categorized by use case and team size:"
+      },
+      {
+        "type": "heading",
+        "snippet": "1. Best for Small-to-Midsize B2B Teams (Gmail & Workspace Native)"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Hiver",
+            "list": [
+              {
+                "snippet": "Key Features: Unifies email, live chat, Slack, WhatsApp, and phone directly inside Google Workspace/Outlook workspaces. Includes AI reply drafting, conversation summaries, and internal team collaboration tools without the bloat of enterprise systems."
+              },
+              {
+                "snippet": "Pricing: Growth plan starts around $25/user/month (annual); Pro plan at $55/user/month (AI included in paid tiers).",
+                "reference_indexes": [
+                  0
+                ]
+              }
+            ],
+            "reference_indexes": [
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "2. Best for AI-First Automation & Scaling"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "BoldDesk",
+            "list": [
+              {
+                "snippet": "Key Features: AI-first helpdesk capable of automating up to 80% of routine tickets using custom knowledge bases and an AI Copilot that assists human agents with drafting and ticket summaries. Supports 39 languages and deep integrations with Jira and Salesforce.",
+                "reference_indexes": [
+                  1
+                ]
+              }
+            ],
+            "reference_indexes": [
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "3. Best for Chat-First & Enterprise AI Solutions"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Intercom (Fin) & Decagon / Sierra",
+            "list": [
+              {
+                "snippet": "Key Features: Noted in Reddit discussions on SaaS as mature, high-quality, AI-driven helpdesk and conversational support solutions excelling in omnichannel and voice support.",
+                "snippet_links": [
+                  {
+                    "text": "Reddit discussions on SaaS",
+                    "link": "https://www.reddit.com/r/SaaS/comments/un60z6/which_alternatives_do_you_recommend_for_zendesk/"
+                  }
+                ],
+                "reference_indexes": [
+                  2
+                ]
+              }
+            ],
+            "reference_indexes": [
+              2
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "snippet": "To help narrow down the best choice for you, could you share:"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Team size (how many support agents you have)"
+          },
+          {
+            "snippet": "Main channels you need (email, live chat, phone, social media)"
+          },
+          {
+            "snippet": "Whether you are looking for AI automation or a simpler ticketing interface?"
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "index": 0,
+        "title": "Hiver Review | Is it REALLY the Best Zendesk Alternative in 2026? ...",
+        "link": "https://www.youtube.com/watch?v=70V0pIZau24&t=47",
+        "snippet": "Hiver Review | Is it REALLY the Best Zendesk Alternative in 2026? (Breakdown & Features) issue i'm Daniel. and today I want to show you Hiver an AI customer servic",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTBy1H6F9Hyf-t33FNLnzYpV-RrNoliGfNSn7m75N-xFUManDdeooqwvqFdezlzknFx1O_bWxrAjkfjDxSn8jhFpABnaGF9bZC4FB8nt_wN7xwXhabbNjxlvtTLdDNXgWGkH_e0L_511s5mj5rHojU_Mj_frQ"
+      },
+      {
+        "index": 1,
+        "title": "The #1 Zendesk Alternative for Customer Support Teams ...",
+        "link": "https://www.youtube.com/watch?v=BZMsx35wTEY&vl=en",
+        "snippet": "The #1 Zendesk Alternative for Customer Support Teams (@BoldDesk Review) zenesk is powerful but it's also expensive it's clunky. and it is slow to innovate. so I h",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcT1ye18HeLyBCApPKNFE3Rl_-uMlK_Gkoq3chAwYT8T8a_ecGSo9z1O76P4rGpJe3pNUcfLMsbJ_us7DAtQMjrCWU1Jw2l3Twa77Ax5_f_Bp8K15zL7xjEgzsLPBku4bxAU8IT5vMbDnnKIK4R-q9E_rQ8-1g"
+      },
+      {
+        "index": 2,
+        "title": "Which alternatives do you recommend for Zendesk? : r/SaaS - Reddit",
+        "link": "https://www.reddit.com/r/SaaS/comments/un60z6/which_alternatives_do_you_recommend_for_zendesk/",
+        "snippet": "Advanced AI Helpdesk Solutions: Intercom/Fin and Decagon/Sierra are noted as high-quality, mature AI-driven helpdesk solutions, excelling in AI performance, offeri...",
+        "source": "Reddit",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.reddit.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+      }
+    ]
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "We Tested and Reviewed 10 Best Zendesk Alternatives ...",
+      "link": "https://hiverhq.com/blog/zendesk-alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESagHEIkXXVHzOM-qSIJr_kMtulW4ptJPO3273OG9DMFTgV5fMj1DmjvrVFDHybAwXUJeafN2jsQKQpfRhAgHgIfxLrs477BXl89H-oPrubA2rY4pepwOb0mlyE9I7GHEL3lnvIe_OQKiglzE&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCEQAQ&uoh=1",
+      "displayed_link": "https://hiverhq.com \u203a blog \u203a zendesk-alternatives",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAS1BMVEVHcEz-sSL-sSL-sSL9sSL-sSL-sSL_sSL_sCP_sCL-sSL-sSL-sSL-sSL9sBv-uzz_14_-wU7-yWP___7_9uT-sSL_78_9tif_5bO-_qATAAAAFnRSTlMAJIbc_--rSQcVapNYxf________87kjdtvwAAANVJREFUeAGlkwUChSAAQ2mbsO9_UTtofsx2z2QDuiDChLIsB5Y0e9eG-OyiPOwTqaBt55p9IMhA8rohtjAqHjtjxCdcngisSEhNvfvP3TnnNkE3onp8IZVDYAjoA7RdL4mtARAN6LrWvkdmAWMK6Kf_AU44jwJCSsGjQN-NiseBbp4SQCd4AlBeQPQ7MAUBwucd4LMFUO0Wc78BYtSBAWhx4Vy123qS8_OSTbEHRkeOlREYAFk8cntom0hoI7GHZq8auzjR6jEIXOUFuhA2WJZV_8Go_woKeRe7e625WAAAAABJRU5ErkJggg.png",
+      "date": "Oct 1, 2026",
+      "snippet": "6 best Zendesk alternatives to consider in 2026 \u00b7 1. Hiver \u00b7 2. Freshdesk \u00b7 3. Front \u00b7 4. Intercom \u00b7 5. Help Scout \u00b7 6. Zoho Desk. Best for: ...",
+      "snippet_highlighted_words": [
+        "1. Hiver"
+      ],
+      "rich_snippet": {
+        "top": {
+          "detected_extensions": {
+            "rating": 4.8,
+            "reviews": 1271,
+            "price": 25.0,
+            "currency": "$"
+          },
+          "extensions": [
+            "4.8(1,271)",
+            "$25.00"
+          ]
+        }
+      },
+      "about_this_result": {
+        "source": {
+          "description": "6 best Zendesk alternatives to consider in 2026 \u00b7 1. Hiver \u00b7 2. Freshdesk \u00b7 3. Front \u00b7 4. Intercom \u00b7 5. Help Scout \u00b7 6. Zoho Desk. Best for: ...",
+          "source_info_link": "https://hiverhq.com/blog/zendesk-alternatives",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAS1BMVEVHcEz-sSL-sSL-sSL9sSL-sSL-sSL_sSL_sCP_sCL-sSL-sSL-sSL-sSL9sBv-uzz_14_-wU7-yWP___7_9uT-sSL_78_9tif_5bO-_qATAAAAFnRSTlMAJIbc_--rSQcVapNYxf________87kjdtvwAAANVJREFUeAGlkwUChSAAQ2mbsO9_UTtofsx2z2QDuiDChLIsB5Y0e9eG-OyiPOwTqaBt55p9IMhA8rohtjAqHjtjxCdcngisSEhNvfvP3TnnNkE3onp8IZVDYAjoA7RdL4mtARAN6LrWvkdmAWMK6Kf_AU44jwJCSsGjQN-NiseBbp4SQCd4AlBeQPQ7MAUBwucd4LMFUO0Wc78BYtSBAWhx4Vy123qS8_OSTbEHRkeOlREYAFk8cntom0hoI7GHZq8auzjR6jEIXOUFuhA2WJZV_8Go_woKeRe7e625WAAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cp0BL2dvdG8_dXJsPUNBRVNhZ0hFSWtYWDVxSGRlekpOVlYtUk1qb3lxNlYzcnJldUNsV3BURzdJQ0F1Nm9ybmlkVnpfYVJuWEdDSGl3dWtBbkVLdHc3Y0lrei1raUNRSVFDUjZwOHNHTm1LLWVpbFY3TWdCM1U4OUVaeHd6bVBwUHpnWDJZaU5iRmZBTVZHaGxiME9iLWFJZ3VKQUVIaxIEGgIIABqlBBICCAEaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQP8DCAAQABgAIAAqHAoHemVuZGVzaxXS_4xAGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVNcLgPhoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMynQEvZ290bz91cmw9Q0FFU2FnSEVJa1hYNXFIZGV6Sk5WVi1STWpveXE2VjNycmV1Q2xXcFRHN0lDQXU2b3JuaWRWel9hUm5YR0NIaXd1a0FuRUt0dzdjSWt6LWtpQ1FJUUNSNnA4c0dObUstZWlsVjdNZ0IzVTg5RVp4d3ptUHBQemdYMllpTmJGZkFNVkdobGIwT2ItYUlndUpBRUhrOkFXZSBUZXN0ZWQgYW5kIFJldmlld2VkIDEwIEJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-ICgyMDI2KULGATYgYmVzdCBaZW5kZXNrIGFsdGVybmF0aXZlcyB0byBjb25zaWRlciBpbiAyMDI2ICZtaWRkb3Q7IDxiPjEuIEhpdmVyPC9iPiAmbWlkZG90OyAyLiBGcmVzaGRlc2sgJm1pZGRvdDsgMy4gRnJvbnQgJm1pZGRvdDsgNC4gSW50ZXJjb20gJm1pZGRvdDsgNS4gSGVscCBTY291dCAmbWlkZG90OyA2LiBab2hvIERlc2suIEJlc3QgZm9yOiZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cp0BL2dvdG8_dXJsPUNBRVNhZ0hFSWtYWDVxSGRlekpOVlYtUk1qb3lxNlYzcnJldUNsV3BURzdJQ0F1Nm9ybmlkVnpfYVJuWEdDSGl3dWtBbkVLdHc3Y0lrei1raUNRSVFDUjZwOHNHTm1LLWVpbFY3TWdCM1U4OUVaeHd6bVBwUHpnWDJZaU5iRmZBTVZHaGxiME9iLWFJZ3VKQUVIaxIEGgIIABqlBBICCAEaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQP8DCAAQABgAIAAqHAoHemVuZGVzaxXS_4xAGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVNcLgPhoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMynQEvZ290bz91cmw9Q0FFU2FnSEVJa1hYNXFIZGV6Sk5WVi1STWpveXE2VjNycmV1Q2xXcFRHN0lDQXU2b3JuaWRWel9hUm5YR0NIaXd1a0FuRUt0dzdjSWt6LWtpQ1FJUUNSNnA4c0dObUstZWlsVjdNZ0IzVTg5RVp4d3ptUHBQemdYMllpTmJGZkFNVkdobGIwT2ItYUlndUpBRUhrOkFXZSBUZXN0ZWQgYW5kIFJldmlld2VkIDEwIEJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-ICgyMDI2KULGATYgYmVzdCBaZW5kZXNrIGFsdGVybmF0aXZlcyB0byBjb25zaWRlciBpbiAyMDI2ICZtaWRkb3Q7IDxiPjEuIEhpdmVyPC9iPiAmbWlkZG90OyAyLiBGcmVzaGRlc2sgJm1pZGRvdDsgMy4gRnJvbnQgJm1pZGRvdDsgNC4gSW50ZXJjb20gJm1pZGRvdDsgNS4gSGVscCBTY291dCAmbWlkZG90OyA2LiBab2hvIERlc2suIEJlc3QgZm9yOiZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "Hiver",
+      "read_more_link": "https://hiverhq.com/blog/zendesk-alternatives#:~:text=6%20best%20Zendesk%20alternatives%20to,consider%20in%202026&text=1.%20Hiver&text=2.%20Freshdesk&text=3.%20Front&text=4.%20Intercom&text=5.%20Help%20Scout&text=6.%20Zoho%20Desk,Best%20for%3A"
+    },
+    {
+      "position": 2,
+      "title": "10 Best Zendesk Alternatives in 2026 (Tested & Reviewed)",
+      "link": "https://www.brilo.ai/resources/zendesk-alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAEScAHEIkXX2KpdTlDg7TvdL629CPEyCxot8DN62R0QpJUqMDOrJU0O7PMG8inO-kr66c7a-6khP0u7aYblt33ANjRENHLWxNySU6N0D0IXSB-SFrmEIZ6kqc_0Ryk7i7CxlPC5D0WdFXX5PSs49nooYmI&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECC0QAQ&uoh=1",
+      "displayed_link": "https://www.brilo.ai \u203a Resources",
+      "favicon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgBBgkIBwgKCgoLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys_RD84QzQ5OjcBCgoKDQwNFQ8PFysiHyU3KzctLSstLjUtKzgyNys3Ky0tKysrNys1KzcrKzctKzcyKysyKy0rLSsrKystNTUrLf_AABEIACAAIAMBIgACEQEDEQH_xAAaAAACAwEBAAAAAAAAAAAAAAAFBwEECAYA_8QALxAAAQIDBgUCBgMAAAAAAAAAAQIDBAUGAAcREjGBCAkhQXETYSIyUVKR8BQjQv_EABYBAQEBAAAAAAAAAAAAAAAAAAABAv_EABcRAQEBAQAAAAAAAAAAAAAAAAAxARH_2gAMAwEAAhEDEQA_AO1vNvDZ5WLCISDbRETN9OZCF_I0nTMr6-w_SgJ1U084yHlOTSZxL-Y45C4QgeED4RsLeqyaucYlTTKZOLK_XiFFGPZAOCBskAbWIXfUyrmQ1KxAqxEOgetEqB6hsEYge5JA3x7W1APktTTzg3eS5K5pFMZTjkDhKD5Qeh3FtAXZXhs809hcJFtoh5mwjMttPyup0zJ-nXUe_wCEbXtMOctyon4EhRh1_wBkK4f9Nk9NxofHvajSc1c4OamlsybWUehEJK8O6CcFjdJI3somrJUvg-qWZS1xBR6EQoIB7oJxQd0kHe1-lq1f5cSE_wAGXsLeDwcU8tZzLGmXxgSN8bO6827trmltIjIFxuHmbKcqVrByPI-1WGmHY7eEBO6YnfB08pqayyJYynDOUEoV4WOh2NoubwcrW8J7muQbEPGymGYcYXmbfbcUVJB1HXsen4FglJypfGFU0tlraCv14hIWB2QDis7JBO1oklMTvjGeS1KpZEv5jhnCCEJ8rPQbm2gLsrvGuVkyuLjXEREzeTlUtA-FlP2px166nxuiP__Z.jpg",
+      "date": "Apr 13, 2026",
+      "snippet": "1. Brilo.ai \u2014 Overall Best Zendesk Alternative for AI Voice + Chat Support \u00b7 2. Freshdesk \u2014 Best Budget Multi-Channel Alternative \u00b7 3. Help ...",
+      "snippet_highlighted_words": [
+        "1. Brilo.ai \u2014 Overall Best Zendesk Alternative"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "1. Brilo.ai \u2014 Overall Best Zendesk Alternative for AI Voice + Chat Support \u00b7 2. Freshdesk \u2014 Best Budget Multi-Channel Alternative \u00b7 3. Help ...",
+          "source_info_link": "https://www.brilo.ai/resources/zendesk-alternatives",
+          "icon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgBBgkIBwgKCgoLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys_RD84QzQ5OjcBCgoKDQwNFQ8PFysiHyU3KzctLSstLjUtKzgyNys3Ky0tKysrNys1KzcrKzctKzcyKysyKy0rLSsrKystNTUrLf_AABEIACAAIAMBIgACEQEDEQH_xAAaAAACAwEBAAAAAAAAAAAAAAAFBwEECAYA_8QALxAAAQIDBgUCBgMAAAAAAAAAAQIDBAUGAAcREjGBCAkhQXETYSIyUVKR8BQjQv_EABYBAQEBAAAAAAAAAAAAAAAAAAABAv_EABcRAQEBAQAAAAAAAAAAAAAAAAAxARH_2gAMAwEAAhEDEQA_AO1vNvDZ5WLCISDbRETN9OZCF_I0nTMr6-w_SgJ1U084yHlOTSZxL-Y45C4QgeED4RsLeqyaucYlTTKZOLK_XiFFGPZAOCBskAbWIXfUyrmQ1KxAqxEOgetEqB6hsEYge5JA3x7W1APktTTzg3eS5K5pFMZTjkDhKD5Qeh3FtAXZXhs809hcJFtoh5mwjMttPyup0zJ-nXUe_wCEbXtMOctyon4EhRh1_wBkK4f9Nk9NxofHvajSc1c4OamlsybWUehEJK8O6CcFjdJI3somrJUvg-qWZS1xBR6EQoIB7oJxQd0kHe1-lq1f5cSE_wAGXsLeDwcU8tZzLGmXxgSN8bO6827trmltIjIFxuHmbKcqVrByPI-1WGmHY7eEBO6YnfB08pqayyJYynDOUEoV4WOh2NoubwcrW8J7muQbEPGymGYcYXmbfbcUVJB1HXsen4FglJypfGFU0tlraCv14hIWB2QDis7JBO1oklMTvjGeS1KpZEv5jhnCCEJ8rPQbm2gLsrvGuVkyuLjXEREzeTlUtA-FlP2px166nxuiP__Z.jpg"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWFl2UE5EYXRjekQwMHBZM3QxUUdNVlhTSi1qWDQ3Y3QwR3BYUjRoV3JPVk8yUF9aOEJvMnU0c3BGZi1WMUQxWlNVNDNHdXR2X2xGcWZ3SDg5bW84bGswZTNmUWVPSlNSM0N6SDVSSEFYOVI4MFpjMkZyaElmdF9fWjdaM1RkaGg0X283OWRmUUR2bG9wSDlJEgQaAggAGpQEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQPADCAAQABgAIAAqHAoHemVuZGVzaxVkOK9AGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUV3fucPxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMypQEvZ290bz91cmw9Q0FFU2NBSEVJa1hYWXZQTkRhdGN6RDAwcFkzdDFRR01WWFNKLWpYNDdjdDBHcFhSNGhXck9WTzJQX1o4Qm8ydTRzcEZmLVYxRDFaU1U0M0d1dHZfbEZxZndIODltbzhsazBlM2ZRZU9KU1IzQ3pINVJIQVg5UjgwWmMyRnJoSWZ0X19aN1ozVGRoaDRfbzc5ZGZRRHZsb3BIOUk6QzEwIEJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGluIDIwMjYgKFRlc3RlZCAmYW1wOyBSZXZpZXdlZClCrQE8Yj4xLiBCcmlsby5haSDigJQgT3ZlcmFsbCBCZXN0IFplbmRlc2sgQWx0ZXJuYXRpdmU8L2I-IGZvciBBSSBWb2ljZSArIENoYXQgU3VwcG9ydCAmbWlkZG90OyAyLiBGcmVzaGRlc2sg4oCUIEJlc3QgQnVkZ2V0IE11bHRpLUNoYW5uZWwgQWx0ZXJuYXRpdmUgJm1pZGRvdDsgMy4gSGVscCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWFl2UE5EYXRjekQwMHBZM3QxUUdNVlhTSi1qWDQ3Y3QwR3BYUjRoV3JPVk8yUF9aOEJvMnU0c3BGZi1WMUQxWlNVNDNHdXR2X2xGcWZ3SDg5bW84bGswZTNmUWVPSlNSM0N6SDVSSEFYOVI4MFpjMkZyaElmdF9fWjdaM1RkaGg0X283OWRmUUR2bG9wSDlJEgQaAggAGpQEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQPADCAAQABgAIAAqHAoHemVuZGVzaxVkOK9AGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUV3fucPxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMypQEvZ290bz91cmw9Q0FFU2NBSEVJa1hYWXZQTkRhdGN6RDAwcFkzdDFRR01WWFNKLWpYNDdjdDBHcFhSNGhXck9WTzJQX1o4Qm8ydTRzcEZmLVYxRDFaU1U0M0d1dHZfbEZxZndIODltbzhsazBlM2ZRZU9KU1IzQ3pINVJIQVg5UjgwWmMyRnJoSWZ0X19aN1ozVGRoaDRfbzc5ZGZRRHZsb3BIOUk6QzEwIEJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGluIDIwMjYgKFRlc3RlZCAmYW1wOyBSZXZpZXdlZClCrQE8Yj4xLiBCcmlsby5haSDigJQgT3ZlcmFsbCBCZXN0IFplbmRlc2sgQWx0ZXJuYXRpdmU8L2I-IGZvciBBSSBWb2ljZSArIENoYXQgU3VwcG9ydCAmbWlkZG90OyAyLiBGcmVzaGRlc2sg4oCUIEJlc3QgQnVkZ2V0IE11bHRpLUNoYW5uZWwgQWx0ZXJuYXRpdmUgJm1pZGRvdDsgMy4gSGVscCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "Brilo AI",
+      "read_more_link": "https://www.brilo.ai/resources/zendesk-alternatives#:~:text=1.%20Brilo.ai%20%E2%80%94%20Overall%20Best,AI%20Voice%20%2B%20Chat%20Support&text=2.%20Freshdesk%20%E2%80%94%20Best%20Budget,Multi%2DChannel%20Alternative&text=3.%20Help%20Scout%20%E2%80%94%20Best,for%20Human%2DStyle%20Email%20Support"
+    },
+    {
+      "position": 3,
+      "title": "Best Zendesk Alternatives for Small Businesses in 2026",
+      "link": "https://www.reddit.com/r/issuetrak/comments/1u169g1/best_zendesk_alternatives_for_small_businesses_in/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESowEBxCJF1-Sy50t4Fl1z0cdFAbUF8-4Cmhw332YCS5z6zWmTg9v3RWeTEPWkx1YQc33zm96hd_zqX0j1aOi_nStkzLkw4fItBWtY9Z17RjwxHAFc8H23zZELmLypOfGoN9wUo7lzxUJTbdb3bpVSoHyonMxLuMD9_4HpIbbPu-f55o2wYnGKCbp4dZnQTH2CsrEdGlO0i9gZLhDXvhYrVgNnMOV8&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCgQAQ&uoh=1",
+      "displayed_link": "6 comments",
+      "date": "5 months ago",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAqFBMVEVHcEz_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_PAD_____RQD_PAD_QAD_MQDS4Of_RAD_NwD6-vv4_v_K2N_z-fra5uzm7_H72NLq9vkCCAvweWDol4r_hm3-mYX9YTj-cFDW7PP45uP4qJjbUTNBR0rRtbD_wLO-MgW1vsHfzc_gFQDUqKf_WAb_UgAxODwAHilxLR1scnTHa13kHQCLRbHLAAAADHRSTlMA_kAZ4YjF7WQ0GH3klhKFAAABhUlEQVQokW2T53aDMAyFoSGQpMfyJmaEnb1X-_5vVttkkDT3BxJ8xyBdCce5a9j3A9cN_P7QedcggIeCwQvqeU8EhIA3erKvDgJa1ZTD10cmVghNxYOOugzWY4RQiQF6Fna_tz5fNigMDfRsnd1z5zleNs0Yc52bmh89ECzWF4FpllkGge5dB0wpxrQqV_vlqqyoMPf68dDp6-KLJCmLKbppWpRJUlCAvuODmKEPmgnwnYCTTwwhwgPHJXVocrlv3xtO98rGmriOyyFVEqE5zaR9-Fv96KtKgbu6E5w3UsrdAScGJvSwU6Fscqx78XW1M6XC-RHsSQnHeajUTFfrm1ZIlaZKJbItRCZKpWlFTCvGBMriOFWbxeJ0Wiw2YRrHEbUmGPtIFkVxHE-sdBI1GbH2WeNFzsYsYtfJ5KoDY7m4GW9HJrKxFosiZmJmmNcukBkBJvnWnGHRNifGdbitkakJOBZQF0UNoh3YfYm-bwPlRIu3-TvryOvd1_kf6iz1C3z9Hf4AClYvY_ay9KgAAAAASUVORK5CYII.png",
+      "snippet": "Why SMBs Are Migrating Away From Zendesk \u00b7 The 5 Best Zendesk Alternatives for Small Businesses \u00b7 Issuetrak \u00b7 Freshdesk \u00b7 Help Scout \u00b7 Zoho Desk.",
+      "snippet_highlighted_words": [
+        "Issuetrak"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Why SMBs Are Migrating Away From Zendesk \u00b7 The 5 Best Zendesk Alternatives for Small Businesses \u00b7 Issuetrak \u00b7 Freshdesk \u00b7 Help Scout \u00b7 Zoho Desk.",
+          "source_info_link": "https://www.reddit.com/r/issuetrak/comments/1u169g1/best_zendesk_alternatives_for_small_businesses_in/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAqFBMVEVHcEz_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_PAD_____RQD_PAD_QAD_MQDS4Of_RAD_NwD6-vv4_v_K2N_z-fra5uzm7_H72NLq9vkCCAvweWDol4r_hm3-mYX9YTj-cFDW7PP45uP4qJjbUTNBR0rRtbD_wLO-MgW1vsHfzc_gFQDUqKf_WAb_UgAxODwAHilxLR1scnTHa13kHQCLRbHLAAAADHRSTlMA_kAZ4YjF7WQ0GH3klhKFAAABhUlEQVQokW2T53aDMAyFoSGQpMfyJmaEnb1X-_5vVttkkDT3BxJ8xyBdCce5a9j3A9cN_P7QedcggIeCwQvqeU8EhIA3erKvDgJa1ZTD10cmVghNxYOOugzWY4RQiQF6Fna_tz5fNigMDfRsnd1z5zleNs0Yc52bmh89ECzWF4FpllkGge5dB0wpxrQqV_vlqqyoMPf68dDp6-KLJCmLKbppWpRJUlCAvuODmKEPmgnwnYCTTwwhwgPHJXVocrlv3xtO98rGmriOyyFVEqE5zaR9-Fv96KtKgbu6E5w3UsrdAScGJvSwU6Fscqx78XW1M6XC-RHsSQnHeajUTFfrm1ZIlaZKJbItRCZKpWlFTCvGBMriOFWbxeJ0Wiw2YRrHEbUmGPtIFkVxHE-sdBI1GbH2WeNFzsYsYtfJ5KoDY7m4GW9HJrKxFosiZmJmmNcukBkBJvnWnGHRNifGdbitkakJOBZQF0UNoh3YfYm-bwPlRIu3-TvryOvd1_kf6iz1C3z9Hf4AClYvY_ay9KgAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CuoBL2dvdG8_dXJsPUNBRVNvd0VCeENKRjF3RDYxUld1OHZvc1dXX1ptT19rZlhja0JYZUtYT0VTN0lyTmlNTTlxU28xMnNueGU0MGFPWE9Odk1kWnRYMEN3X1laeU5fY092MUVCYkRzM3dWMlJkRFIwaXhnaTRsemRQNmhWaFRSMlRYRWg5N2w1bnUybm5DWXI0MHpEbW9nQ0ZRaktQWWkzVkZvWjUwU2c5a0VuZ1ZWajJTT2NHbHZnREtqakstenh2MjlPM3hvb0c1emdvOU5XT01HWmhZNFRKOGJFZUtLcG41WlZZcFZnTFczEgQaAggAGuoEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQMYECAAQABgAIAAqHAoHemVuZGVzaxUbaJ9AGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVMWy1PxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMy6gEvZ290bz91cmw9Q0FFU293RUJ4Q0pGMXdENjFSV3U4dm9zV1dfWm1PX2tmWGNrQlhlS1hPRVM3SXJOaU1NOXFTbzEyc254ZTQwYU9YT052TWRadFgwQ3dfWVp5Tl9jT3YxRUJiRHMzd1YyUmREUjBpeGdpNGx6ZFA2aFZoVFIyVFhFaDk3bDVudTJubkNZcjQwekRtb2dDRlFqS1BZaTNWRm9aNTBTZzlrRW5nVlZqMlNPY0dsdmdES2pqSy16eHYyOU8zeG9vRzV6Z285TldPTUdaaFk0VEo4YkVlS0twbjVaVllwVmdMVzM6RkJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGZvciBTbWFsbCBCdXNpbmVzc2VzIGluIDIwMjYgLSBSZWRkaXRCuwFXaHkgU01CcyBBcmUgTWlncmF0aW5nIEF3YXkgRnJvbSBaZW5kZXNrICZtaWRkb3Q7IFRoZSA1IEJlc3QgWmVuZGVzayBBbHRlcm5hdGl2ZXMgZm9yIFNtYWxsIEJ1c2luZXNzZXMgJm1pZGRvdDsgPGI-SXNzdWV0cmFrPC9iPiAmbWlkZG90OyBGcmVzaGRlc2sgJm1pZGRvdDsgSGVscCBTY291dCAmbWlkZG90OyBab2hvIERlc2suIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CuoBL2dvdG8_dXJsPUNBRVNvd0VCeENKRjF3RDYxUld1OHZvc1dXX1ptT19rZlhja0JYZUtYT0VTN0lyTmlNTTlxU28xMnNueGU0MGFPWE9Odk1kWnRYMEN3X1laeU5fY092MUVCYkRzM3dWMlJkRFIwaXhnaTRsemRQNmhWaFRSMlRYRWg5N2w1bnUybm5DWXI0MHpEbW9nQ0ZRaktQWWkzVkZvWjUwU2c5a0VuZ1ZWajJTT2NHbHZnREtqakstenh2MjlPM3hvb0c1emdvOU5XT01HWmhZNFRKOGJFZUtLcG41WlZZcFZnTFczEgQaAggAGuoEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQMYECAAQABgAIAAqHAoHemVuZGVzaxUbaJ9AGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVMWy1PxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMy6gEvZ290bz91cmw9Q0FFU293RUJ4Q0pGMXdENjFSV3U4dm9zV1dfWm1PX2tmWGNrQlhlS1hPRVM3SXJOaU1NOXFTbzEyc254ZTQwYU9YT052TWRadFgwQ3dfWVp5Tl9jT3YxRUJiRHMzd1YyUmREUjBpeGdpNGx6ZFA2aFZoVFIyVFhFaDk3bDVudTJubkNZcjQwekRtb2dDRlFqS1BZaTNWRm9aNTBTZzlrRW5nVlZqMlNPY0dsdmdES2pqSy16eHYyOU8zeG9vRzV6Z285TldPTUdaaFk0VEo4YkVlS0twbjVaVllwVmdMVzM6RkJlc3QgPGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGZvciBTbWFsbCBCdXNpbmVzc2VzIGluIDIwMjYgLSBSZWRkaXRCuwFXaHkgU01CcyBBcmUgTWlncmF0aW5nIEF3YXkgRnJvbSBaZW5kZXNrICZtaWRkb3Q7IFRoZSA1IEJlc3QgWmVuZGVzayBBbHRlcm5hdGl2ZXMgZm9yIFNtYWxsIEJ1c2luZXNzZXMgJm1pZGRvdDsgPGI-SXNzdWV0cmFrPC9iPiAmbWlkZG90OyBGcmVzaGRlc2sgJm1pZGRvdDsgSGVscCBTY291dCAmbWlkZG90OyBab2hvIERlc2suIgIQAUgAWABoAA",
+      "source": "Reddit \u00b7 r/issuetrak",
+      "read_more_link": "https://www.reddit.com/r/issuetrak/comments/1u169g1/best_zendesk_alternatives_for_small_businesses_in/#:~:text=Why%20SMBs%20Are%20Migrating%20Away,From%20Zendesk&text=The%205%20Best%20Zendesk%20Alternatives,for%20Small%20Businesses&text=Issuetrak&text=Freshdesk&text=Help%20Scout&text=Zoho%20Desk"
+    },
+    {
+      "position": 4,
+      "title": "Best Zendesk Alternatives with On\u2011Premises Deployment",
+      "link": "https://www.comm100.com/blog/best-zendesk-alternatives-on-premises-deployment/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiwEBxCJF10RZxfrYb0eLTunE5MsWM3ztudO_o7upcraFWcx_V2mZt8vhObWFOxDI2-TbjU6L4NfkRf-feElqaiD1pDvY9pzVQpFSiuC95R2kSvAKiCyNf0TobQ-l6fIfwOQ_F4acR43_GRAO3oRn9Lsf-WPRPfxQR9y_UHHzcUIMEeO_3-pDcpalsoda&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECC4QAQ&uoh=1",
+      "displayed_link": "https://www.comm100.com \u203a blog \u203a best-zendesk-altern...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABgElEQVR4AdTSQShEURTG8QMTacpOycogniQZRWgMaMaQLOwLFgpL-wRFNgIMSLCysN-wkX1YSFFDjI1AGmSO_613lf3Kq19v8c737r3nHvknjz9mpeDvt6Zwh5UBB0FUwJtTe2BCXnRhDoNwkAkxbLgE24jjHY_N4cheXv1OufhvdihMQPGJB-yi1P6gCMdQJJFAsiHUvZpadWXCauELSShOUCwUR6F4wSSaW9pCvbl1-2z39sktTuIMwxjFMxTrQuAOimWkN4Y7RSrjQngUCtycmtUgSMM8FHEh9AHFAKSmtU9URQoDs-u-wLwa-YGlTfGqZNcc2tvo_z0SoVso1uBpCrcL7zKaeA51jUUitZLivzZhD1aguDPFC1C8YQYjuIAahJ-c4PiQVN6bK2zHDF6hWBSKfDiCur6hVjDUtZVWdblmtwx1HcFn56AAUcSQgOKd42wUN0w7NHHDNAwviCGKQjsHlgf56MEU2pDlBCfEnbwSVMMnP4OEAzhABx4AAOE5D1_fizIQAAAAAElFTkSuQmCC.png",
+      "date": "Aug 7, 2026",
+      "snippet": "The Top Zendesk Alternatives with On-Premises Deployment \u00b7 1. Comm100 \u00b7 2. ManageEngine ServiceDesk Plus \u00b7 3. SysAid \u00b7 4. Chatwoot. Chatwoot is ...",
+      "snippet_highlighted_words": [
+        "1. Comm100"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "The Top Zendesk Alternatives with On-Premises Deployment \u00b7 1. Comm100 \u00b7 2. ManageEngine ServiceDesk Plus \u00b7 3. SysAid \u00b7 4. Chatwoot. Chatwoot is ...",
+          "source_info_link": "https://www.comm100.com/blog/best-zendesk-alternatives-on-premises-deployment/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABgElEQVR4AdTSQShEURTG8QMTacpOycogniQZRWgMaMaQLOwLFgpL-wRFNgIMSLCysN-wkX1YSFFDjI1AGmSO_613lf3Kq19v8c737r3nHvknjz9mpeDvt6Zwh5UBB0FUwJtTe2BCXnRhDoNwkAkxbLgE24jjHY_N4cheXv1OufhvdihMQPGJB-yi1P6gCMdQJJFAsiHUvZpadWXCauELSShOUCwUR6F4wSSaW9pCvbl1-2z39sktTuIMwxjFMxTrQuAOimWkN4Y7RSrjQngUCtycmtUgSMM8FHEh9AHFAKSmtU9URQoDs-u-wLwa-YGlTfGqZNcc2tvo_z0SoVso1uBpCrcL7zKaeA51jUUitZLivzZhD1aguDPFC1C8YQYjuIAahJ-c4PiQVN6bK2zHDF6hWBSKfDiCur6hVjDUtZVWdblmtwx1HcFn56AAUcSQgOKd42wUN0w7NHHDNAwviCGKQjsHlgf56MEU2pDlBCfEnbwSVMMnP4OEAzhABx4AAOE5D1_fizIQAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjF5OEtzenpmbktvMmRLUWUwZFlOblVuODh5RFBVTlZ4dDFzVjBDVy1sQm8xTXR1NGJmemlOeG5Rd2Q2b2VVRnMtX1RBT29nSDBVbDVUWnRvSTRQcl9fN0FZYmIwNlZjRk0xN2pKN2RsOExCeWpMY1ZZQTJXTHBPS2xtODBEVUlFUjktVzlnc2E4MGtuT1lsTm5HVTJGRlQ0M1UwZnN5d0I3a1lzdUY4WlBvNWtfTFUwSnJzYRIEGgIIABrEBBICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQJ4ECAAQABgAIAAqHAoHemVuZGVzaxUyRHlAGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVrauLPxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMyygEvZ290bz91cmw9Q0FFU2l3RUJ4Q0pGMXk4S3N6emZuS28yZEtRZTBkWU5uVW44OHlEUFVOVnh0MXNWMENXLWxCbzFNdHU0YmZ6aU54blF3ZDZvZVVGcy1fVEFPb2dIMFVsNVRadG9JNFByX183QVliYjA2VmNGTTE3ako3ZGw4TEJ5akxjVllBMldMcE9LbG04MERVSUVSOS1XOWdzYTgwa25PWWxObkdVMkZGVDQzVTBmc3l3QjdrWXN1RjhaUG81a19MVTBKcnNhOj5CZXN0IDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiB3aXRoIE9u4oCRUHJlbWlzZXMgRGVwbG95bWVudEK7AVRoZSBUb3AgWmVuZGVzayBBbHRlcm5hdGl2ZXMgd2l0aCBPbi1QcmVtaXNlcyBEZXBsb3ltZW50ICZtaWRkb3Q7IDxiPjEuIENvbW0xMDA8L2I-ICZtaWRkb3Q7IDIuIE1hbmFnZUVuZ2luZSBTZXJ2aWNlRGVzayBQbHVzICZtaWRkb3Q7IDMuIFN5c0FpZCAmbWlkZG90OyA0LiBDaGF0d29vdC4gQ2hhdHdvb3QgaXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjF5OEtzenpmbktvMmRLUWUwZFlOblVuODh5RFBVTlZ4dDFzVjBDVy1sQm8xTXR1NGJmemlOeG5Rd2Q2b2VVRnMtX1RBT29nSDBVbDVUWnRvSTRQcl9fN0FZYmIwNlZjRk0xN2pKN2RsOExCeWpMY1ZZQTJXTHBPS2xtODBEVUlFUjktVzlnc2E4MGtuT1lsTm5HVTJGRlQ0M1UwZnN5d0I3a1lzdUY4WlBvNWtfTFUwSnJzYRIEGgIIABrEBBICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQJ4ECAAQABgAIAAqHAoHemVuZGVzaxUyRHlAGgxpdjtwO3plbmRlc2sqKwoLYWx0ZXJuYXRpdmUVrauLPxoJYWx0ZXJuYXRlGgxhbHRlcm5hdGl2ZXMyygEvZ290bz91cmw9Q0FFU2l3RUJ4Q0pGMXk4S3N6emZuS28yZEtRZTBkWU5uVW44OHlEUFVOVnh0MXNWMENXLWxCbzFNdHU0YmZ6aU54blF3ZDZvZVVGcy1fVEFPb2dIMFVsNVRadG9JNFByX183QVliYjA2VmNGTTE3ako3ZGw4TEJ5akxjVllBMldMcE9LbG04MERVSUVSOS1XOWdzYTgwa25PWWxObkdVMkZGVDQzVTBmc3l3QjdrWXN1RjhaUG81a19MVTBKcnNhOj5CZXN0IDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiB3aXRoIE9u4oCRUHJlbWlzZXMgRGVwbG95bWVudEK7AVRoZSBUb3AgWmVuZGVzayBBbHRlcm5hdGl2ZXMgd2l0aCBPbi1QcmVtaXNlcyBEZXBsb3ltZW50ICZtaWRkb3Q7IDxiPjEuIENvbW0xMDA8L2I-ICZtaWRkb3Q7IDIuIE1hbmFnZUVuZ2luZSBTZXJ2aWNlRGVzayBQbHVzICZtaWRkb3Q7IDMuIFN5c0FpZCAmbWlkZG90OyA0LiBDaGF0d29vdC4gQ2hhdHdvb3QgaXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "Comm100",
+      "read_more_link": "https://www.comm100.com/blog/best-zendesk-alternatives-on-premises-deployment/#:~:text=The%20Top%20Zendesk%20Alternatives%20with,On%2DPremises%20Deployment&text=1.%20Comm100&text=2.%20ManageEngine%20ServiceDesk%20Plus&text=3.%20SysAid&text=4.%20Chatwoot,platform%20that%20can%20be%20self%2Dhosted."
+    },
+    {
+      "position": 5,
+      "title": "Top Alternatives to Zendesk for customer service",
+      "link": "https://www.gartner.com/reviews/product/zendesk-for-customer-service/alternatives",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESjgEBxCJF1w8CpRrvpkUaqA2gB9MXawpvlui_O-T-fgWe2H0mX-Nu4M-1wMuB38UsaR0u-D9jiKWVs5SaJPG8mf1DPERAo4d6PvBrQ2OIrTwAJpDny1xWE1g47txXiQG0mSoo9qrrVRDblpI1zKQnT4gNvisf-cglVxRplKNiMJwCr2-osBNf5HbpepUcmwZr&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCoQAQ&uoh=1",
+      "displayed_link": "https://www.gartner.com \u203a reviews \u203a product \u203a alternati...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAk1BMVEX____3-fve4-vJz9zDyNTX3Oa3wNGKlbBUaJIPN3UAGWMACl9CWomGjaistcjr7_Ruf6EgPXYAH2UAJGcAJ2kAKGkAIWYAF2Jpd5vDzNsAHGQAImY0SHs2V4p7j7GRob6yu817j68OLm0eOXPk6fE5UIKosMMwQ3dhbJBLZZJecppRX4ikssl7iKYAAFoAM3UhSYKaZNJxAAABFklEQVR4Aa2SBXIFIQxAWXcjCSvf3eX-pyuddRtr3yjzgCj7DxRV0yWaoYyVadmO63mu4wdh1HdqnLgckAhBpJTlXaf5BRAKN03dhbyQ-kbroiVH5N5qvdmsV2m64NtOPJsTgm1Up93eZC3hARCzNotjx0WxoIWvskm00wJxx6bZOoiHfEaeOcJFKZPZXEvOjUwJLqyUt5T_4gVTcuVyDkRuI0MgSI6lvD8ejwSl7Ca0f1ZPJTFiKw1f0OLeDmrXlexVEBzCGWkmQLA0pyWLC6TFYa2WUW6dhMrygMB9f77fxHsLorQjZQmOfEwgISLgZLEuT_tTFGKxWIgiPWTPwYyOWyu-nZYn-3U2o4ndjFTDMFRp_swPjq0YxxfD23EAAAAASUVORK5CYII.png",
+      "snippet": "Zendesk for customer service Alternatives \u00b7 1. Agentforce Service \u00b7 2. Microsoft Dynamics 365 Customer Service \u00b7 3. ServiceNow Customer Service Management \u00b7 4.",
+      "snippet_highlighted_words": [
+        "1. Agentforce Service"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Zendesk for customer service Alternatives \u00b7 1. Agentforce Service \u00b7 2. Microsoft Dynamics 365 Customer Service \u00b7 3. ServiceNow Customer Service Management \u00b7 4.",
+          "source_info_link": "https://www.gartner.com/reviews/product/zendesk-for-customer-service/alternatives",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAk1BMVEX____3-fve4-vJz9zDyNTX3Oa3wNGKlbBUaJIPN3UAGWMACl9CWomGjaistcjr7_Ruf6EgPXYAH2UAJGcAJ2kAKGkAIWYAF2Jpd5vDzNsAHGQAImY0SHs2V4p7j7GRob6yu817j68OLm0eOXPk6fE5UIKosMMwQ3dhbJBLZZJecppRX4ikssl7iKYAAFoAM3UhSYKaZNJxAAABFklEQVR4Aa2SBXIFIQxAWXcjCSvf3eX-pyuddRtr3yjzgCj7DxRV0yWaoYyVadmO63mu4wdh1HdqnLgckAhBpJTlXaf5BRAKN03dhbyQ-kbroiVH5N5qvdmsV2m64NtOPJsTgm1Up93eZC3hARCzNotjx0WxoIWvskm00wJxx6bZOoiHfEaeOcJFKZPZXEvOjUwJLqyUt5T_4gVTcuVyDkRuI0MgSI6lvD8ejwSl7Ca0f1ZPJTFiKw1f0OLeDmrXlexVEBzCGWkmQLA0pyWLC6TFYa2WUW6dhMrygMB9f77fxHsLorQjZQmOfEwgISLgZLEuT_tTFGKxWIgiPWTPwYyOWyu-nZYn-3U2o4ndjFTDMFRp_swPjq0YxxfD23EAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cs4BL2dvdG8_dXJsPUNBRVNqZ0VCeENKRjF3bjJyNkU3UjJxTWhGZnowNzltVDNyMzlqMUNQREdkTjZtZG0wU2hGbVVpUE40OEtiUldCR3doTWRFSUVtQnZDVG52UXJ1elR2dGJnb05xdmZQQ3N6VTh5Q05vNk9oZ1UzUzdrb2lGcGRhSkNzMzhfckVsVFhGTjNXc2dTbGpNZ0tLOVVTUHdHeVFMN1A1dGJ2Szd6N2RUQXFVMEhib1dNU3lZek9lSk1TTWxrT01HZ2cxTE5rM2USBBoCCAAa2QQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCzBAgAEAAYACAAKhwKB3plbmRlc2sVO_6CQBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFQAAAAAaCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMs4BL2dvdG8_dXJsPUNBRVNqZ0VCeENKRjF3bjJyNkU3UjJxTWhGZnowNzltVDNyMzlqMUNQREdkTjZtZG0wU2hGbVVpUE40OEtiUldCR3doTWRFSUVtQnZDVG52UXJ1elR2dGJnb05xdmZQQ3N6VTh5Q05vNk9oZ1UzUzdrb2lGcGRhSkNzMzhfckVsVFhGTjNXc2dTbGpNZ0tLOVVTUHdHeVFMN1A1dGJ2Szd6N2RUQXFVMEhib1dNU3lZek9lSk1TTWxrT01HZ2cxTE5rM2U6SFRvcCA8Yj5BbHRlcm5hdGl2ZXM8L2I-IHRvIDxiPlplbmRlc2s8L2I-IGZvciBjdXN0b21lciBzZXJ2aWNlIC0gR2FydG5lckLCAVplbmRlc2sgZm9yIGN1c3RvbWVyIHNlcnZpY2UgQWx0ZXJuYXRpdmVzICZtaWRkb3Q7IDxiPjEuIEFnZW50Zm9yY2UgU2VydmljZTwvYj4gJm1pZGRvdDsgMi4gTWljcm9zb2Z0IER5bmFtaWNzIDM2NSBDdXN0b21lciBTZXJ2aWNlICZtaWRkb3Q7IDMuIFNlcnZpY2VOb3cgQ3VzdG9tZXIgU2VydmljZSBNYW5hZ2VtZW50ICZtaWRkb3Q7IDQuIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cs4BL2dvdG8_dXJsPUNBRVNqZ0VCeENKRjF3bjJyNkU3UjJxTWhGZnowNzltVDNyMzlqMUNQREdkTjZtZG0wU2hGbVVpUE40OEtiUldCR3doTWRFSUVtQnZDVG52UXJ1elR2dGJnb05xdmZQQ3N6VTh5Q05vNk9oZ1UzUzdrb2lGcGRhSkNzMzhfckVsVFhGTjNXc2dTbGpNZ0tLOVVTUHdHeVFMN1A1dGJ2Szd6N2RUQXFVMEhib1dNU3lZek9lSk1TTWxrT01HZ2cxTE5rM2USBBoCCAAa2QQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCzBAgAEAAYACAAKhwKB3plbmRlc2sVO_6CQBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFQAAAAAaCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMs4BL2dvdG8_dXJsPUNBRVNqZ0VCeENKRjF3bjJyNkU3UjJxTWhGZnowNzltVDNyMzlqMUNQREdkTjZtZG0wU2hGbVVpUE40OEtiUldCR3doTWRFSUVtQnZDVG52UXJ1elR2dGJnb05xdmZQQ3N6VTh5Q05vNk9oZ1UzUzdrb2lGcGRhSkNzMzhfckVsVFhGTjNXc2dTbGpNZ0tLOVVTUHdHeVFMN1A1dGJ2Szd6N2RUQXFVMEhib1dNU3lZek9lSk1TTWxrT01HZ2cxTE5rM2U6SFRvcCA8Yj5BbHRlcm5hdGl2ZXM8L2I-IHRvIDxiPlplbmRlc2s8L2I-IGZvciBjdXN0b21lciBzZXJ2aWNlIC0gR2FydG5lckLCAVplbmRlc2sgZm9yIGN1c3RvbWVyIHNlcnZpY2UgQWx0ZXJuYXRpdmVzICZtaWRkb3Q7IDxiPjEuIEFnZW50Zm9yY2UgU2VydmljZTwvYj4gJm1pZGRvdDsgMi4gTWljcm9zb2Z0IER5bmFtaWNzIDM2NSBDdXN0b21lciBTZXJ2aWNlICZtaWRkb3Q7IDMuIFNlcnZpY2VOb3cgQ3VzdG9tZXIgU2VydmljZSBNYW5hZ2VtZW50ICZtaWRkb3Q7IDQuIgIQAUgAWABoAA",
+      "source": "Gartner",
+      "read_more_link": "https://www.gartner.com/reviews/product/zendesk-for-customer-service/alternatives#:~:text=Zendesk%20for%20customer%20service%20Alternatives&text=1.%20Agentforce%20Service&text=2.%20Microsoft%20Dynamics%20365%20Customer,Service&text=3.%20ServiceNow%20Customer%20Service%20Management&text=4.%20Freshdesk%20Omni"
+    },
+    {
+      "position": 6,
+      "title": "The 12 Best Free Zendesk Alternatives in 2026 (What's ...",
+      "link": "https://www.dragapp.com/blog/zendesk-free-alternatives/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESdAHEIkXXdW1k3ufQCF0DaxQjll_cCD2qFESf_YXIz7m6RspFCI5Caz7cCdvWWNpBTLC8Y7xYpKf4L-ybkTTB2VO7FcfUXBhFWyJ6UuxFdDInEcJkxUX0FIUTMQHvgHM80XnTiEx6jgiLino9KHtufkBz-q8L&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCsQAQ&uoh=1",
+      "displayed_link": "https://www.dragapp.com \u203a Blog \u203a Shared Inbox",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAq1BMVEVHcExSfeA4hek4hOlWet54b9CWZcWzXLnBWLQ2heo4hOlSfN9rdNZ9bs6NacibZMOoYL26WrbKVbDTUq3YUatKfuJxctOVZsXZUKrIVrHfTqjQU6lYe91rdNXjTaKgY8DdT6LpS5PpS5vKVavpS5_pS5vUUp7rS4vrS4jsS2viTaflTabsS3XsS27LVbDmTKXtS2HuSlDvSkztS2nuSlfuSkjrS4PsS3HvSkb42YdbAAAAOXRSTlMAMa7a1tnW1n-J_______7_____1Z7gYWVzf8qDFFtUKaC2Rfq_wjm_2zB0f_mOuP__6WB14nV1jde5fQ9AAAA_ElEQVR4AcXPhYGEQAxA0SzurmHd3a3_yi5h4IwC9uF8ZAY-pSfJsqwQVVU1ouu60TbTIrZtO47jep4fBGEYxYloqWXJZpqmGcuJYRhRXIhoWRL8U8ZYiR_adr_bmq8ObLvbhtBEx-H31VHbxjFOAIbTWR1d2uee19QiRh7MfDHk6HJc-n5QcTNiHANZrTe0H3kecKXp0YeGMW7hV_R9YDOa-jJB3IGI-zoGAdSqKN5yEw4ihiEIR0Q8QRvPIkbQ1tN2-TcmUQxdHMXHltB1vnAExG23XS-X-pXhYjGfNG6N--XygNpksVis2Z6cyYVcoVGNn-TF7sL1DR_yBYNKHvheX5jZAAAAAElFTkSuQmCC.png",
+      "date": "May 28, 2018",
+      "snippet": "For a classic help-desk shape without ads: Zoho Desk's 3-agent free tier. For a small IT team: Spiceworks, free for up to 5 technicians if you ...",
+      "snippet_highlighted_words": [
+        "Zoho Desk's 3-agent free tier"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "For a classic help-desk shape without ads: Zoho Desk's 3-agent free tier. For a small IT team: Spiceworks, free for up to 5 technicians if you ...",
+          "source_info_link": "https://www.dragapp.com/blog/zendesk-free-alternatives/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAq1BMVEVHcExSfeA4hek4hOlWet54b9CWZcWzXLnBWLQ2heo4hOlSfN9rdNZ9bs6NacibZMOoYL26WrbKVbDTUq3YUatKfuJxctOVZsXZUKrIVrHfTqjQU6lYe91rdNXjTaKgY8DdT6LpS5PpS5vKVavpS5_pS5vUUp7rS4vrS4jsS2viTaflTabsS3XsS27LVbDmTKXtS2HuSlDvSkztS2nuSlfuSkjrS4PsS3HvSkb42YdbAAAAOXRSTlMAMa7a1tnW1n-J_______7_____1Z7gYWVzf8qDFFtUKaC2Rfq_wjm_2zB0f_mOuP__6WB14nV1jde5fQ9AAAA_ElEQVR4AcXPhYGEQAxA0SzurmHd3a3_yi5h4IwC9uF8ZAY-pSfJsqwQVVU1ouu60TbTIrZtO47jep4fBGEYxYloqWXJZpqmGcuJYRhRXIhoWRL8U8ZYiR_adr_bmq8ObLvbhtBEx-H31VHbxjFOAIbTWR1d2uee19QiRh7MfDHk6HJc-n5QcTNiHANZrTe0H3kecKXp0YeGMW7hV_R9YDOa-jJB3IGI-zoGAdSqKN5yEw4ihiEIR0Q8QRvPIkbQ1tN2-TcmUQxdHMXHltB1vnAExG23XS-X-pXhYjGfNG6N--XygNpksVis2Z6cyYVcoVGNn-TF7sL1DR_yBYNKHvheX5jZAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqoBL2dvdG8_dXJsPUNBRVNkQUhFSWtYWE5qejJHNzF2R0RhX3ZIS0syQlZROWEzdXJxTnlUMzIzQ2lsQUd5OWRZenlCdXVtNWZsbG5jWUdkdER1SnZZSFhUV1YxekI1bnRzS29waTVuOHNEakhsZ3UzcHJIYUNmd04tMGNJTjZJcUdKdnlEa2FVYngtVG8wam1HVktaT3JvSTBjM3ltcjVfdWhGdmxXQVRFckgSBBoCCAAajQQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA6QMIABAAGAAgACocCgd6ZW5kZXNrFXBmjkAaDGl2O3A7emVuZGVzayorCgthbHRlcm5hdGl2ZRXshdE-GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlczKqAS9nb3RvP3VybD1DQUVTZEFIRUlrWFhOanoyRzcxdkdEYV92SEtLMkJWUTlhM3VycU55VDMyM0NpbEFHeTlkWXp5QnV1bTVmbGxuY1lHZHREdUp2WUhYVFdWMXpCNW50c0tvcGk1bjhzRGpIbGd1M3BySGFDZndOLTBjSU42SXFHSnZ5RGthVWJ4LVRvMGptR1ZLWk9yb0kwYzN5bXI1X3VoRnZsV0FURXJIOkJUaGUgMTIgQmVzdCBGcmVlIDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiBpbiAyMDI2IC4uLiAtIERyYWdBcHBCogFGb3IgYSBjbGFzc2ljIGhlbHAtZGVzayBzaGFwZSB3aXRob3V0IGFkczogPGI-Wm9obyBEZXNrJiMzOTtzIDMtYWdlbnQgZnJlZSB0aWVyPC9iPi4gRm9yIGEgc21hbGwgSVQgdGVhbTogU3BpY2V3b3JrcywgZnJlZSBmb3IgdXAgdG8gNSB0ZWNobmljaWFucyBpZiB5b3UmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqoBL2dvdG8_dXJsPUNBRVNkQUhFSWtYWE5qejJHNzF2R0RhX3ZIS0syQlZROWEzdXJxTnlUMzIzQ2lsQUd5OWRZenlCdXVtNWZsbG5jWUdkdER1SnZZSFhUV1YxekI1bnRzS29waTVuOHNEakhsZ3UzcHJIYUNmd04tMGNJTjZJcUdKdnlEa2FVYngtVG8wam1HVktaT3JvSTBjM3ltcjVfdWhGdmxXQVRFckgSBBoCCAAajQQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA6QMIABAAGAAgACocCgd6ZW5kZXNrFXBmjkAaDGl2O3A7emVuZGVzayorCgthbHRlcm5hdGl2ZRXshdE-GglhbHRlcm5hdGUaDGFsdGVybmF0aXZlczKqAS9nb3RvP3VybD1DQUVTZEFIRUlrWFhOanoyRzcxdkdEYV92SEtLMkJWUTlhM3VycU55VDMyM0NpbEFHeTlkWXp5QnV1bTVmbGxuY1lHZHREdUp2WUhYVFdWMXpCNW50c0tvcGk1bjhzRGpIbGd1M3BySGFDZndOLTBjSU42SXFHSnZ5RGthVWJ4LVRvMGptR1ZLWk9yb0kwYzN5bXI1X3VoRnZsV0FURXJIOkJUaGUgMTIgQmVzdCBGcmVlIDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiBpbiAyMDI2IC4uLiAtIERyYWdBcHBCogFGb3IgYSBjbGFzc2ljIGhlbHAtZGVzayBzaGFwZSB3aXRob3V0IGFkczogPGI-Wm9obyBEZXNrJiMzOTtzIDMtYWdlbnQgZnJlZSB0aWVyPC9iPi4gRm9yIGEgc21hbGwgSVQgdGVhbTogU3BpY2V3b3JrcywgZnJlZSBmb3IgdXAgdG8gNSB0ZWNobmljaWFucyBpZiB5b3UmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "DragApp",
+      "read_more_link": "https://www.dragapp.com/blog/zendesk-free-alternatives/#:~:text=For%20a%20classic%20help%2Ddesk%20shape,technicians%20if%20you%20accept%20ads."
+    },
+    {
+      "position": 7,
+      "title": "Top Zendesk Alternatives with Modern User Experience",
+      "link": "https://www.usepylon.com/blog/zendesk-alternatives-modern-user-experience-2025",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiwEBxCJF1xC7IV2xBBqz7O-uovSVJgP5yFxvqxll6Oc_Hhd4FEDfYrbPDKEQLRy5kI9NLqFrcgJVFdB6r4PDI-MKicWWU1HJzQNi6E23YxYE1WMLgHQg2X-PgoYhYdSlt6dN1lpeeUiMVAtKrfbk_1GwBf2VXeqD-xjSfOzvEl4RVr6ptgXTx_7aHHo-&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCkQAQ&uoh=1",
+      "displayed_link": "https://www.usepylon.com \u203a blog \u203a zendesk-alternative...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEVHcExbDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv8A76YmAAAADHRSTlMAXuVUwjLw2j8Yhp9NkBk8AAAArUlEQVQokX2T2RaFIAhFEYfS-P_vvZzQq1aL8-CyNjKJREO5JRbh1DI9FYr8VcKGKssmrpOd-JEiRRFdEr7OlTEiBRF4zDxpxTELbJAIh82z2l1mFgcE5W6-aCTKti2fMGtFtnJXmRCOMzWkT8-Y977Bgr4goQSNHIMpXissmu_etwUe6tKFi9vwcusm5JaCJhxd_GyC2z6_8e6V-Zftjok_YP5okjvUd2Xv5_ADksMO29Ohw00AAAAASUVORK5CYII.png",
+      "date": "Oct 3, 2025",
+      "snippet": "Popular alternatives include Help Scout, Intercom, Freshdesk, Pylon, and HubSpot Service Hub\u2014each offering modern UX",
+      "snippet_highlighted_words": [
+        "Help Scout, Intercom, Freshdesk, Pylon, and HubSpot Service Hub"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Popular alternatives include Help Scout, Intercom, Freshdesk, Pylon, and HubSpot Service Hub\u2014each offering modern UX",
+          "source_info_link": "https://www.usepylon.com/blog/zendesk-alternatives-modern-user-experience-2025",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEVHcExbDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv9bDv8A76YmAAAADHRSTlMAXuVUwjLw2j8Yhp9NkBk8AAAArUlEQVQokX2T2RaFIAhFEYfS-P_vvZzQq1aL8-CyNjKJREO5JRbh1DI9FYr8VcKGKssmrpOd-JEiRRFdEr7OlTEiBRF4zDxpxTELbJAIh82z2l1mFgcE5W6-aCTKti2fMGtFtnJXmRCOMzWkT8-Y977Bgr4goQSNHIMpXissmu_etwUe6tKFi9vwcusm5JaCJhxd_GyC2z6_8e6V-Zftjok_YP5okjvUd2Xv5_ADksMO29Ohw00AAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEzUW4tZ0ptZHFMZ2VPMEdwUWdNQ1lseExoMmRydVBLTjVvLUJOVEZOQVB2SWJMWVlLTEhvQlA4T1hYUlJkOW5JQlk5X08xelJVUnhXQVEyYTAtODhZaTkwTGtlTHJCQnV5Ym1sTUdSZ3AzSEQzQ3ZFSnZzNVdyeHR0NzJmS1M5a0l4SHZaMTFYWGJkTTY4eFhIQU5FTTRObEl1UHNXRXZ0d1BaV2xIcXdyR1FrNDl5X0NNThIEGgIIABqIBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDkAwgAEAAYACAAKhwKB3plbmRlc2sVt9d5QBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFbSLOj8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEzUW4tZ0ptZHFMZ2VPMEdwUWdNQ1lseExoMmRydVBLTjVvLUJOVEZOQVB2SWJMWVlLTEhvQlA4T1hYUlJkOW5JQlk5X08xelJVUnhXQVEyYTAtODhZaTkwTGtlTHJCQnV5Ym1sTUdSZ3AzSEQzQ3ZFSnZzNVdyeHR0NzJmS1M5a0l4SHZaMTFYWGJkTTY4eFhIQU5FTTRObEl1UHNXRXZ0d1BaV2xIcXdyR1FrNDl5X0NNTjpDVG9wIDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiB3aXRoIE1vZGVybiBVc2VyIEV4cGVyaWVuY2UgLSBQeWxvbkJ9UG9wdWxhciBhbHRlcm5hdGl2ZXMgaW5jbHVkZSA8Yj5IZWxwIFNjb3V0LCBJbnRlcmNvbSwgRnJlc2hkZXNrLCBQeWxvbiwgYW5kIEh1YlNwb3QgU2VydmljZSBIdWI8L2I-4oCUZWFjaCBvZmZlcmluZyBtb2Rlcm4gVVgiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEzUW4tZ0ptZHFMZ2VPMEdwUWdNQ1lseExoMmRydVBLTjVvLUJOVEZOQVB2SWJMWVlLTEhvQlA4T1hYUlJkOW5JQlk5X08xelJVUnhXQVEyYTAtODhZaTkwTGtlTHJCQnV5Ym1sTUdSZ3AzSEQzQ3ZFSnZzNVdyeHR0NzJmS1M5a0l4SHZaMTFYWGJkTTY4eFhIQU5FTTRObEl1UHNXRXZ0d1BaV2xIcXdyR1FrNDl5X0NNThIEGgIIABqIBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDkAwgAEAAYACAAKhwKB3plbmRlc2sVt9d5QBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFbSLOj8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMsoBL2dvdG8_dXJsPUNBRVNpd0VCeENKRjEzUW4tZ0ptZHFMZ2VPMEdwUWdNQ1lseExoMmRydVBLTjVvLUJOVEZOQVB2SWJMWVlLTEhvQlA4T1hYUlJkOW5JQlk5X08xelJVUnhXQVEyYTAtODhZaTkwTGtlTHJCQnV5Ym1sTUdSZ3AzSEQzQ3ZFSnZzNVdyeHR0NzJmS1M5a0l4SHZaMTFYWGJkTTY4eFhIQU5FTTRObEl1UHNXRXZ0d1BaV2xIcXdyR1FrNDl5X0NNTjpDVG9wIDxiPlplbmRlc2sgQWx0ZXJuYXRpdmVzPC9iPiB3aXRoIE1vZGVybiBVc2VyIEV4cGVyaWVuY2UgLSBQeWxvbkJ9UG9wdWxhciBhbHRlcm5hdGl2ZXMgaW5jbHVkZSA8Yj5IZWxwIFNjb3V0LCBJbnRlcmNvbSwgRnJlc2hkZXNrLCBQeWxvbiwgYW5kIEh1YlNwb3QgU2VydmljZSBIdWI8L2I-4oCUZWFjaCBvZmZlcmluZyBtb2Rlcm4gVVgiAhABSABYAGgA",
+      "source": "Pylon Labs, Inc."
+    },
+    {
+      "position": 8,
+      "title": "Zendesk Alternatives for Startups: 7 Lean Picks in 2026",
+      "link": "https://knocket.trtc.io/blog/zendesk-alternatives-for-startups/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESfAHEIkXXlQQszhSTwH2fHxHBAKHEp0xGSV44f3Dh__Xc-g-su4Ug74UxdTDphBXW--juLJoElcOSsFSaQhr2cbVaa9g37tutsBGU3j5VQieJcf0-QYLU4zUNxOH8XmfGI1dEyYSZlZiDwW7LgfyrtGNgxhZLTRnkbMxylNA&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQFnoECCcQAQ&uoh=1",
+      "displayed_link": "https://knocket.trtc.io \u203a ... \u203a Blog \u203a Run Support Better",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEVHcEwKGg8KGg8KGg8KGg8KGg8KGg8KGg8KGg8KGg8AAgYHGA7s_2cAEw3G2Vh9izng9GKouUu1xlBRXic9SSBvfTTU6F13qmmoAAAACnRSTlMAuon_ium5Yuu7IFdKxwAAALpJREFUKJGF0tEOgyAMBVBcVbAgoNP9_6euRU2o0ngfNPFQwVpjOLZzUMV11lyx0MjJfcsAerXuquX7jJSHHoV-SyntD7VmoiumkHN84GRcwdx6rStbMoIvLBYduEf0GFYE_IYfeIG0ngrDgmQRZ1nJKShN4iZNYMxhE2euMaw5g1rJZ1X3RGoVfZSCgAt_bQv5Ma685o5n-6gfVRPE8Mi48suUTPqUlDnR8W3AtNH8vA818zjUMIwH_QE-8A6TqfTcKQAAAABJRU5ErkJggg.png",
+      "date": "Aug 16, 2026",
+      "snippet": "Knocket, Tawk.to, Crisp, Tidio, Freshdesk, LiveChat, and Zendesk. Knocket is 100% free forever with no ads and no seat limits. Tawk.to also ...",
+      "snippet_highlighted_words": [
+        "Knocket"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Knocket, Tawk.to, Crisp, Tidio, Freshdesk, LiveChat, and Zendesk. Knocket is 100% free forever with no ads and no seat limits. Tawk.to also ...",
+          "source_info_link": "https://knocket.trtc.io/blog/zendesk-alternatives-for-startups/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAARVBMVEVHcEwKGg8KGg8KGg8KGg8KGg8KGg8KGg8KGg8KGg8AAgYHGA7s_2cAEw3G2Vh9izng9GKouUu1xlBRXic9SSBvfTTU6F13qmmoAAAACnRSTlMAuon_ium5Yuu7IFdKxwAAALpJREFUKJGF0tEOgyAMBVBcVbAgoNP9_6euRU2o0ngfNPFQwVpjOLZzUMV11lyx0MjJfcsAerXuquX7jJSHHoV-SyntD7VmoiumkHN84GRcwdx6rStbMoIvLBYduEf0GFYE_IYfeIG0ngrDgmQRZ1nJKShN4iZNYMxhE2euMaw5g1rJZ1X3RGoVfZSCgAt_bQv5Ma685o5n-6gfVRPE8Mi48suUTPqUlDnR8W3AtNH8vA818zjUMIwH_QE-8A6TqfTcKQAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWG01dVVhM0RQREdlRmVJVFA5RmVQMExNNnNLcmFGOXUwYWk0S3g2OTF2UDhjUW1tMGlpOGFiR1lqM3hoUlVGUTZTaENyaWhScEtkOWUxbFVVbkwtZEIxRUhGdW0tU3JCRndWV2hQanB5ZkFaWlp3UG1fXzJaWi1JU0p4ZTlvZG5iWUhqcVlEcF9INUFxc0VMNXlKQndob2xCZVVOaUNMRRIEGgIIABqNBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDpAwgAEAAYACAAKhwKB3plbmRlc2sVyTi5QBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFQal8T8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWG01dVVhM0RQREdlRmVJVFA5RmVQMExNNnNLcmFGOXUwYWk0S3g2OTF2UDhjUW1tMGlpOGFiR1lqM3hoUlVGUTZTaENyaWhScEtkOWUxbFVVbkwtZEIxRUhGdW0tU3JCRndWV2hQanB5ZkFaWlp3UG1fXzJaWi1JU0p4ZTlvZG5iWUhqcVlEcF9INUFxc0VMNXlKQndob2xCZVVOaUNMRTo-PGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGZvciBTdGFydHVwczogNyBMZWFuIFBpY2tzIGluIDIwMjZCmwE8Yj5Lbm9ja2V0PC9iPiwgVGF3ay50bywgQ3Jpc3AsIFRpZGlvLCBGcmVzaGRlc2ssIExpdmVDaGF0LCBhbmQgWmVuZGVzay4gS25vY2tldCBpcyAxMDAlIGZyZWUgZm9yZXZlciB3aXRoIG5vIGFkcyBhbmQgbm8gc2VhdCBsaW1pdHMuIFRhd2sudG8gYWxzbyZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWG01dVVhM0RQREdlRmVJVFA5RmVQMExNNnNLcmFGOXUwYWk0S3g2OTF2UDhjUW1tMGlpOGFiR1lqM3hoUlVGUTZTaENyaWhScEtkOWUxbFVVbkwtZEIxRUhGdW0tU3JCRndWV2hQanB5ZkFaWlp3UG1fXzJaWi1JU0p4ZTlvZG5iWUhqcVlEcF9INUFxc0VMNXlKQndob2xCZVVOaUNMRRIEGgIIABqNBBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDpAwgAEAAYACAAKhwKB3plbmRlc2sVyTi5QBoMaXY7cDt6ZW5kZXNrKisKC2FsdGVybmF0aXZlFQal8T8aCWFsdGVybmF0ZRoMYWx0ZXJuYXRpdmVzMrUBL2dvdG8_dXJsPUNBRVNmQUhFSWtYWG01dVVhM0RQREdlRmVJVFA5RmVQMExNNnNLcmFGOXUwYWk0S3g2OTF2UDhjUW1tMGlpOGFiR1lqM3hoUlVGUTZTaENyaWhScEtkOWUxbFVVbkwtZEIxRUhGdW0tU3JCRndWV2hQanB5ZkFaWlp3UG1fXzJaWi1JU0p4ZTlvZG5iWUhqcVlEcF9INUFxc0VMNXlKQndob2xCZVVOaUNMRTo-PGI-WmVuZGVzayBBbHRlcm5hdGl2ZXM8L2I-IGZvciBTdGFydHVwczogNyBMZWFuIFBpY2tzIGluIDIwMjZCmwE8Yj5Lbm9ja2V0PC9iPiwgVGF3ay50bywgQ3Jpc3AsIFRpZGlvLCBGcmVzaGRlc2ssIExpdmVDaGF0LCBhbmQgWmVuZGVzay4gS25vY2tldCBpcyAxMDAlIGZyZWUgZm9yZXZlciB3aXRoIG5vIGFkcyBhbmQgbm8gc2VhdCBsaW1pdHMuIFRhd2sudG8gYWxzbyZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "Tencent RTC"
+    }
+  ],
+  "related_searches": [
+    {
+      "block_position": 1,
+      "query": "Zendesk alternatives open source",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Zendesk%20alternatives%20open%20source&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhJEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Zendesk+alternatives+open+source"
+    },
+    {
+      "block_position": 1,
+      "query": "Freshdesk",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Freshdesk&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhIEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Freshdesk"
+    },
+    {
+      "block_position": 1,
+      "query": "Zoho Desk",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Zoho%20Desk&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhLEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Zoho+Desk"
+    },
+    {
+      "block_position": 1,
+      "query": "Zendesk pricing",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Zendesk%20pricing&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhNEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Zendesk+pricing"
+    },
+    {
+      "block_position": 1,
+      "query": "Help Scout",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Help%20Scout&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhMEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Help+Scout"
+    },
+    {
+      "block_position": 1,
+      "query": "Intercom",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Intercom&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDgubV18vVfAaYZ-WVFElOTyrMUBDA%3A1794435308287&ved=2ahUKEwj-n_24-ICYAxVYEFkFHRgBLJgQ1QJ6BAhKEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Intercom"
+    }
+  ],
+  "discussions_and_forums": [
+    {
+      "title": "Good Zendesk alternatives in 2026?",
+      "link": "https://www.reddit.com/r/SaaS/comments/1sf84by/good_zendesk_alternatives_in_2026/",
+      "date": "7 months ago",
+      "extensions": [
+        "r/SaaS",
+        "90+ comments"
+      ],
+      "source": "Reddit",
+      "answers": [
+        {
+          "link": "https://www.reddit.com/r/SaaS/comments/1sf84by/good_zendesk_alternatives_in_2026/oevyvpx/",
+          "extensions": [
+            "Top answer",
+            "3 votes",
+            "7 months ago"
+          ]
+        },
+        {
+          "link": "https://www.reddit.com/r/SaaS/comments/1sf84by/good_zendesk_alternatives_in_2026/oeyjm8f/",
+          "extensions": [
+            "2 votes",
+            "7 months ago"
+          ]
+        },
+        {
+          "link": "https://www.reddit.com/r/SaaS/comments/1sf84by/good_zendesk_alternatives_in_2026/oeyuw4s/",
+          "extensions": [
+            "2 votes",
+            "7 months ago"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "The 10 Best Zendesk Alternatives in 2026",
+      "link": "https://www.reddit.com/r/issuetrak/comments/1tv3ic5/the_10_best_zendesk_alternatives_in_2026/",
+      "date": "5 months ago",
+      "extensions": [
+        "r/issuetrak",
+        "5 comments"
+      ],
+      "source": "Reddit",
+      "answers": [
+        {
+          "link": "https://www.reddit.com/r/issuetrak/comments/1tv3ic5/the_10_best_zendesk_alternatives_in_2026/"
+        }
+      ]
+    }
+  ]
+}
+treg: charged $0.015 · call id a421dae20e764f2ba24e7364d8818356

@@ -1,0 +1,414 @@
+{
+  "search_metadata": {
+    "id": "6af4e90dd5a7e82ebd945f9b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/KVuJnXMIRXKiCwn75-bCo68buhgxyYv_rPaOeGHoExs/6af4e90dd5a7e82ebd945f9b.json",
+    "markdown_endpoint": "https://serpapi.com/searches/KVuJnXMIRXKiCwn75-bCo68buhgxyYv_rPaOeGHoExs/6af4e90dd5a7e82ebd945f9b.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/KVuJnXMIRXKiCwn75-bCo68buhgxyYv_rPaOeGHoExs/6af4e90dd5a7e82ebd945f9b.json_with_pixel_position",
+    "created_at": "2026-11-11 22:15:41 UTC",
+    "processed_at": "2026-11-11 22:15:41 UTC",
+    "google_ads_url": "https://www.google.com/search?q=soc+as+a+service&hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/KVuJnXMIRXKiCwn75-bCo68buhgxyYv_rPaOeGHoExs/6af4e90dd5a7e82ebd945f9b.html",
+    "total_time_taken": 0.46
+  },
+  "search_parameters": {
+    "engine": "google_ads",
+    "q": "soc as a service",
+    "location_requested": "Austin, Texas, United States",
+    "location_used": "Austin,Texas,United States",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "soc as a service",
+    "total_results": 144,
+    "time_taken_displayed": 0.28,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "related_questions": [
+    {
+      "question": "What is a SOC operation?",
+      "type": "ai_overview",
+      "page_token": "z8PnGHicHdDLTcMwGABgMQBrcKR5tEVUqpACdqIgjOrETuILcm23efxJTBtI2yOzcGIYBmAD7gwAYoDv8r29Q9U1X2d5OQx2v5hMxnG83Pb9Fsyl6tuJ3B87NVESYC1Vs5hfzd2bjVqi_Rjc9mOwYhQVoKEAeH5E16A8Xqy8w0vu27mMiMc8l4g72gmvbEwOjcF6ZKxweEgqlrgnAuJEay4p0k4akpQwe1Q1yUxYOCrjnclWThbhe1GXTtK6osgp0BNUBAlf1qVVnp4n7HrGMMcrl4a5L3rV2M1DTXZrxIbHKD5osAFt4vTPJySE3nAqinaaYIfCug5KHYrXNKSpjAKH8cDLWjRTHJOwioMETUeaaqwx77QbV8S39-TEjjyLQTTcoX6JDMcR9Sy92KjXpX_xP7Z82rTDwu767YfaGTkY_SSHz_rn-_wXcdiAZg",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=z8PnGHicHdDLTcMwGABgMQBrcKR5tEVUqpACdqIgjOrETuILcm23efxJTBtI2yOzcGIYBmAD7gwAYoDv8r29Q9U1X2d5OQx2v5hMxnG83Pb9Fsyl6tuJ3B87NVESYC1Vs5hfzd2bjVqi_Rjc9mOwYhQVoKEAeH5E16A8Xqy8w0vu27mMiMc8l4g72gmvbEwOjcF6ZKxweEgqlrgnAuJEay4p0k4akpQwe1Q1yUxYOCrjnclWThbhe1GXTtK6osgp0BNUBAlf1qVVnp4n7HrGMMcrl4a5L3rV2M1DTXZrxIbHKD5osAFt4vTPJySE3nAqinaaYIfCug5KHYrXNKSpjAKH8cDLWjRTHJOwioMETUeaaqwx77QbV8S39-TEjjyLQTTcoX6JDMcR9Sy92KjXpX_xP7Z82rTDwu767YfaGTkY_SSHz_rn-_wXcdiAZg",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoYXQgaXMgYSBTT0Mgb3BlcmF0aW9uPyIsImxrIjoiR2hkM2FHRjBJR2x6SUdFZ2MyOWpJRzl3WlhKaGRHbHZiZyIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoYXQgaXMgYSBTT0Mgb3BlcmF0aW9uPyIsImxrIjoiR2hkM2FHRjBJR2x6SUdFZ2MyOWpJRzl3WlhKaGRHbHZiZyIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9"
+    },
+    {
+      "question": "Which department handles active or urgent cyber incidents?",
+      "type": "ai_overview",
+      "page_token": "XjbKBHicHdBNjpswGIBh9QC9xiwn_IRUEymqlMgOQwupjbHBmxGxSQj5CJSQGFj2CD1DVz1MD9AbdN8DNOoFXj16v_2A0-X8-933su_b63I2M8Y8H5vmCMWzaupZfh0vaqZygH2uzsvFh4X98aBW6K7Wm06tSUJRBhoEjzwuwj6HNRE-TyOBS-brg0rLhrlrVEDEssTrMkGxnuCmBNzYlszlVp-Y2_p5RTxpBycq2qrg8IkDromjvKwe_M-JNSeTGtX2OjBBX2PxIvml3dAa-xyXIb3oOcN8o5NeKMENS_ioOXwtUuJw_9XQbdvu_NYI_BIyP7rnU3CLkRpjF7rYDpwI9BSeccUgtKQte1IPsZqwU_gSPdSOdvni0V7EWH8pkD2hUiMp5iZLab23hnPilEZjTDS05S7FlNHmRJJyF6LEfRjHPWiUWnJgKKg0wn1seSgTclAcSjIFgzRPB3VfuU__X6_eDnW_bLvm-FN1Rd4X-i3vf1V__7z_Bzwslu0",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=XjbKBHicHdBNjpswGIBh9QC9xiwn_IRUEymqlMgOQwupjbHBmxGxSQj5CJSQGFj2CD1DVz1MD9AbdN8DNOoFXj16v_2A0-X8-933su_b63I2M8Y8H5vmCMWzaupZfh0vaqZygH2uzsvFh4X98aBW6K7Wm06tSUJRBhoEjzwuwj6HNRE-TyOBS-brg0rLhrlrVEDEssTrMkGxnuCmBNzYlszlVp-Y2_p5RTxpBycq2qrg8IkDromjvKwe_M-JNSeTGtX2OjBBX2PxIvml3dAa-xyXIb3oOcN8o5NeKMENS_ioOXwtUuJw_9XQbdvu_NYI_BIyP7rnU3CLkRpjF7rYDpwI9BSeccUgtKQte1IPsZqwU_gSPdSOdvni0V7EWH8pkD2hUiMp5iZLab23hnPilEZjTDS05S7FlNHmRJJyF6LEfRjHPWiUWnJgKKg0wn1seSgTclAcSjIFgzRPB3VfuU__X6_eDnW_bLvm-FN1Rd4X-i3vf1V__7z_Bzwslu0",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoaWNoIGRlcGFydG1lbnQgaGFuZGxlcyBhY3RpdmUgb3IgdXJnZW50IGN5YmVyIGluY2lkZW50cz8iLCJsayI6ImM1T3lMTV9JVE01UVNFa3RTQ3dxeVUzTksxSElTTXhMeVVrdFZraE1Mc2tzUzFYSUwxSW9MVW9IU1NSWEpxVVdLV1RtSldlbUFMbkZBQSIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoaWNoIGRlcGFydG1lbnQgaGFuZGxlcyBhY3RpdmUgb3IgdXJnZW50IGN5YmVyIGluY2lkZW50cz8iLCJsayI6ImM1T3lMTV9JVE01UVNFa3RTQ3dxeVUzTksxSElTTXhMeVVrdFZraE1Mc2tzUzFYSUwxSW9MVW9IU1NSWEpxVVdLV1RtSldlbUFMbkZBQSIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9"
+    },
+    {
+      "question": "Is a SOC analyst a hard job?",
+      "type": "ai_overview",
+      "page_token": "NtBQo3icHdBRboIwAADQ7AC7hp_aqrhoYpbgAMWBo6Ut8mNqi2IplikT9HNn2dcOswPsBvvfAZbsHeG9f-jDsfi-S_K6rs6TXq9pmu7emL3OusKUPX6-HkVPcK23XBST0cMIPu7E1Dk39sw0dkSQs9ZSr8uixv1qht1qxzVqs7mBpN_yMDHD4ACt4Fi1zKlMiCEVZPyCndyPmb-URaqoB_sUoDItUC6OOpG3ANIkXKZOmwRx6mXM4s-0ijKFTvgmrjFLw62LXiWwLusYqSCRlIB9G4AUCuanWemGQqG3lee2uBhHEWkxc2jOGFLEtVkAUY4LgV2A9FbZufTSS-yhmM9tQKjdZ6VjCeqG3sG3sTNsUCwXBIwXK69WAoQweNIjRgtrHcuQKB9ugWVkkg86O3GZDjr_Y9PNrqwn1cnsP8Up43UmN7z-Ur8_938G14Bh",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=NtBQo3icHdBRboIwAADQ7AC7hp_aqrhoYpbgAMWBo6Ut8mNqi2IplikT9HNn2dcOswPsBvvfAZbsHeG9f-jDsfi-S_K6rs6TXq9pmu7emL3OusKUPX6-HkVPcK23XBST0cMIPu7E1Dk39sw0dkSQs9ZSr8uixv1qht1qxzVqs7mBpN_yMDHD4ACt4Fi1zKlMiCEVZPyCndyPmb-URaqoB_sUoDItUC6OOpG3ANIkXKZOmwRx6mXM4s-0ijKFTvgmrjFLw62LXiWwLusYqSCRlIB9G4AUCuanWemGQqG3lee2uBhHEWkxc2jOGFLEtVkAUY4LgV2A9FbZufTSS-yhmM9tQKjdZ6VjCeqG3sG3sTNsUCwXBIwXK69WAoQweNIjRgtrHcuQKB9ugWVkkg86O3GZDjr_Y9PNrqwn1cnsP8Up43UmN7z-Ur8_938G14Bh",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IklzIGEgU09DIGFuYWx5c3QgYSBoYXJkIGpvYj8iLCJsayI6IkdodHBjeUJoSUhOdll5QmhibUZzZVhOMElHRWdhR0Z5WkNCcWIySSIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IklzIGEgU09DIGFuYWx5c3QgYSBoYXJkIGpvYj8iLCJsayI6IkdodHBjeUJoSUhOdll5QmhibUZzZVhOMElHRWdhR0Z5WkNCcWIySSIsImJzIjoiYzUyUE1RdkNNQlNFY2Mza3BzYXE3d2U0Tk1WQlJZSTRDUVVIaDg1cEVrd2tKaVdKbHY1NzY5QmFjSE40d19IZE8tN1FCazBMeFNMb0FBeXVseE80U25vV3RiT1V6UENrN2xsd19NdFFnM2FGMGx5QmtCWHo4U0Z0Qk1Xc01MTDE4cWhmRXB5SHA3OTlBRzlLNlVGYnJrVXJBeVY3dkszX19VWUhsSnk3c3N3eTA0VFlLc1c4Z0xzcktWbmdlVl80bDZNalduV0Rod2w1dW9hY3RKZFJzc1JKdDNzWVlsSXdCRXcySHIwQiIsImlkIjoiZmNfRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU1fNSJ9"
+    },
+    {
+      "question": "What is SOC analyst L1, L2, L3?",
+      "type": "ai_overview",
+      "page_token": "13PifnicHdBRboIwAADQ7AC7hp8KKC4zMUuqgGPCZinF9sdAiyAtINKA8rmz7GuH2QF2g_3vAEv2jvDeP-SpEt93-1ypc7uYTPq-H2d1ncl0zOpyEre3ik1YLGUSM7GYP8z1pyNbWm0PVnUPdiG0iOSSlMpM9vhCDNVSRyh_A3TmmJ034BUrH6-0xMddeVWoggYMeb2r8ogW9gu1nhXX4BvcuDmPsBkYsolPekhF3qS27VAJOh9nxjbKL55wXWoJkwzZwJBLvZs29Uo1pBui-ACaV8wRdjw9lbwgA8W-3Kk0ms0Czbsy7BeJBIiH-jpFfE_2JLA1KJMC5NyhHXIgijdACzEwotIyGbZ95-SCwJr1EHE7WQM3Qrxlhd0kmN2ocNdE8GiLvCnG58IXcDo6sm45Hf2PLQ_HUi3Olzr7ZJc0Vik_xOqr-P25_wNHgYLS",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=13PifnicHdBRboIwAADQ7AC7hp8KKC4zMUuqgGPCZinF9sdAiyAtINKA8rmz7GuH2QF2g_3vAEv2jvDeP-SpEt93-1ypc7uYTPq-H2d1ncl0zOpyEre3ik1YLGUSM7GYP8z1pyNbWm0PVnUPdiG0iOSSlMpM9vhCDNVSRyh_A3TmmJ034BUrH6-0xMddeVWoggYMeb2r8ogW9gu1nhXX4BvcuDmPsBkYsolPekhF3qS27VAJOh9nxjbKL55wXWoJkwzZwJBLvZs29Uo1pBui-ACaV8wRdjw9lbwgA8W-3Kk0ms0Czbsy7BeJBIiH-jpFfE_2JLA1KJMC5NyhHXIgijdACzEwotIyGbZ95-SCwJr1EHE7WQM3Qrxlhd0kmN2ocNdE8GiLvCnG58IXcDo6sm45Hf2PLQ_HUi3Olzr7ZJc0Vik_xOqr-P25_wNHgYLS",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoYXQgaXMgU09DIGFuYWx5c3QgTDEsIEwyLCBMMz8iLCJsayI6IkdoeDNhR0YwSUdseklITnZZeUJoYm1Gc2VYTjBJR3d4SUd3eUlHd3oiLCJicyI6ImM1MlBNUXZDTUJTRWNjM2twc2FxN3dlNE5NVkJSWUk0Q1FVSGg4NXBFa3drSmlXSmx2NTc2OUJhY0hONHdfSGRPLTdRQmswTHhTTG9BQXl1bHhPNFNub1d0Yk9VelBDazdsbHdfTXRRZzNhRjBseUJrQlh6OFNGdEJNV3NNTEwxOHFoZkVweUhwNzk5QUc5SzZVRmJya1VyQXlWN3ZLM19fVVlIbEp5N3Nzd3kwNFRZS3NXOGdMc3JLVm5nZVZfNGw2TWpXbldEaHdsNXVvYWN0SmRSc3NSSnQzc1lZbEl3QkV3MkhyMEIiLCJpZCI6ImZjX0RlbjBhdGZvTGRTaHB0UVB2WmE5cVFNXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWlZHYzFXRXhPVlVsdVRsRkpNelpSTW1OcU1XMWxWVXhXY1RocmRrMHdMVEkxZEZSMlluQkZZVmhDZVdkUFJVOHpha2x1ZGpkQlVtNUZOWGczVVU0MldESjZVamRWWjJadFpISnFWM1I2WldvMVprNU5ZbGxRYjNsWVVSSVhSR1Z1TUdGMFptOU1aRk5vY0hSUlVIWmFZVGx4VVUwYUlrRklUakJGTjBoQlJVZDJXSGRuWlVkbWFtRmtUV3hVVUZOeVVqQmlSR1ptYTBFIiwiZmN2IjoiMyIsImVpIjoiRGVuMGF0Zm9MZFNocHRRUHZaYTlxUU0iLCJxYyI6IkNoQnpiMk1nWVhNZ1lTQnpaWEoyYVdObEVBQjlmbVk3UHciLCJxdWVzdGlvbiI6IldoYXQgaXMgU09DIGFuYWx5c3QgTDEsIEwyLCBMMz8iLCJsayI6IkdoeDNhR0YwSUdseklITnZZeUJoYm1Gc2VYTjBJR3d4SUd3eUlHd3oiLCJicyI6ImM1MlBNUXZDTUJTRWNjM2twc2FxN3dlNE5NVkJSWUk0Q1FVSGg4NXBFa3drSmlXSmx2NTc2OUJhY0hONHdfSGRPLTdRQmswTHhTTG9BQXl1bHhPNFNub1d0Yk9VelBDazdsbHdfTXRRZzNhRjBseUJrQlh6OFNGdEJNV3NNTEwxOHFoZkVweUhwNzk5QUc5SzZVRmJya1VyQXlWN3ZLM19fVVlIbEp5N3Nzd3kwNFRZS3NXOGdMc3JLVm5nZVZfNGw2TWpXbldEaHdsNXVvYWN0SmRSc3NSSnQzc1lZbEl3QkV3MkhyMEIiLCJpZCI6ImZjX0RlbjBhdGZvTGRTaHB0UVB2WmE5cVFNXzUifQ%3D%3D"
+    }
+  ],
+  "ai_overview": {
+    "page_token": "3wWrmHiczZXdcqJIFMevt2r3MZabZEQkiTFV1FR3g4qSaMePibmxEBAInwEUvZ1n2at9mH2AeYO53wfYBgTBlSQzN7tdJW13nz59OH1-_L_-YZuu9e3XX4wo8sM7mo7juKF7nm5rDcVzaDncuwq99uwwUIzPfhxyTUq3uU1IGTanudR-y7GUksxqJsdrblOO1p6kTgw_wuPts9x5xfdU6oRbruRQeyFn7F5CekmTh_U7y5NBI2xoboN3zOkNMNEzbzVazRbbGNGyQwzAf9D0rIMQDJMumYD11vC4450mEmMx83eyXzj0hSFMnwgAM7PBdT7JgqhnbmAySHeOwHrnxjzx0CtOwW_FCFF5JBXOE4dJBOLHXrDU8g3d4xQ6a1iEUOtjeOqzzj4_Rk_zWYx1gPgYxKA0e5pOfHQupk8vG6z1Wwx5CGZvhp5EI4rg2gJY-FCikH-zjxbkSFrVSY036VVAOoY2FUNJ_wRhUvpo2ml6ginykjZCiMFg7j3HcncisNZA6jMippUVsbM9WdXUpbFsfk7HTIu5bnbY9u1lypwSFtCFZegQ031y9g8PAlIaUgMyOXGokp7q-0Cg6-eKHR8QOc3r8coRrlwKqF4gFMqLebVDgEgFP4ITx13eyy5MzGe0GPBA2lVcli67jrg89qKlxB3KTZilNviwcGyY0EmScNxWrcQ-ONfgCeFpvpTsLwKLw-QiX6uemIZrpYnPXfSqy5ikzOhm3w1CnPAEheEhcB4Ub4_Ao07ixjj3WfIvplanV6uXJkiFo8QMoBG5SzgZAQE9FpEKqQVK7ZOncHzZ5Dih9gMmpZ-b2uV3Wv2HsdoQyBk7QaaMWn_h4xeNdQZ44JrX7KZrjZrT3sZgdl1wHi3PWf2AoCn_T_iMDL5c7g7u3oJP_xB8qdzVwgdB4bokd6-ZzewN-AYpfOflroCvInf_gs9AZfgOcreolbufgw-9CV9JF0_gO8pdGb5BHXy53JXgQ_1dIXdn4SvkLofv5-QO_rjcpQhqWVfVvs2LXq-B2tyf4A2Wus7YnpkrbE1fp-NbX1L772vg2onuHFm1L5emegdbg2ivXi7JhHenqdQrF3rKhRxeyBehFmxNRaMcO_C4ptw23elyPOfZT50ns3e9UJg5nPFSZz7wuzNxvPFlf-0IuwmSrvTgeRiOI3Vlutu-pUHz6rY_NR4feCmeb1aj-_B-0dsy_qcv7L22YW-aEu--Tu1HdoKddn8_vH7etz1-0d5Od3a87gXDGS8EfmsiybM0mJATLdMZz5WdGWDKCRSOgHJlgQcMvgAgAxgTJhJ4yY_0Euklj9DRJxXN6-SXyCUVKvJSC7dcm2nJqtq5ZRX2RpE7N5SjR3ufu2Ko0A045k8l0OSIpFKO_nr5-_tv_wDg9GwV",
+    "serpapi_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=3wWrmHiczZXdcqJIFMevt2r3MZabZEQkiTFV1FR3g4qSaMePibmxEBAInwEUvZ1n2at9mH2AeYO53wfYBgTBlSQzN7tdJW13nz59OH1-_L_-YZuu9e3XX4wo8sM7mo7juKF7nm5rDcVzaDncuwq99uwwUIzPfhxyTUq3uU1IGTanudR-y7GUksxqJsdrblOO1p6kTgw_wuPts9x5xfdU6oRbruRQeyFn7F5CekmTh_U7y5NBI2xoboN3zOkNMNEzbzVazRbbGNGyQwzAf9D0rIMQDJMumYD11vC4450mEmMx83eyXzj0hSFMnwgAM7PBdT7JgqhnbmAySHeOwHrnxjzx0CtOwW_FCFF5JBXOE4dJBOLHXrDU8g3d4xQ6a1iEUOtjeOqzzj4_Rk_zWYx1gPgYxKA0e5pOfHQupk8vG6z1Wwx5CGZvhp5EI4rg2gJY-FCikH-zjxbkSFrVSY036VVAOoY2FUNJ_wRhUvpo2ml6ginykjZCiMFg7j3HcncisNZA6jMippUVsbM9WdXUpbFsfk7HTIu5bnbY9u1lypwSFtCFZegQ031y9g8PAlIaUgMyOXGokp7q-0Cg6-eKHR8QOc3r8coRrlwKqF4gFMqLebVDgEgFP4ITx13eyy5MzGe0GPBA2lVcli67jrg89qKlxB3KTZilNviwcGyY0EmScNxWrcQ-ONfgCeFpvpTsLwKLw-QiX6uemIZrpYnPXfSqy5ikzOhm3w1CnPAEheEhcB4Ub4_Ao07ixjj3WfIvplanV6uXJkiFo8QMoBG5SzgZAQE9FpEKqQVK7ZOncHzZ5Dih9gMmpZ-b2uV3Wv2HsdoQyBk7QaaMWn_h4xeNdQZ44JrX7KZrjZrT3sZgdl1wHi3PWf2AoCn_T_iMDL5c7g7u3oJP_xB8qdzVwgdB4bokd6-ZzewN-AYpfOflroCvInf_gs9AZfgOcreolbufgw-9CV9JF0_gO8pdGb5BHXy53JXgQ_1dIXdn4SvkLofv5-QO_rjcpQhqWVfVvs2LXq-B2tyf4A2Wus7YnpkrbE1fp-NbX1L772vg2onuHFm1L5emegdbg2ivXi7JhHenqdQrF3rKhRxeyBehFmxNRaMcO_C4ptw23elyPOfZT50ns3e9UJg5nPFSZz7wuzNxvPFlf-0IuwmSrvTgeRiOI3Vlutu-pUHz6rY_NR4feCmeb1aj-_B-0dsy_qcv7L22YW-aEu--Tu1HdoKddn8_vH7etz1-0d5Od3a87gXDGS8EfmsiybM0mJATLdMZz5WdGWDKCRSOgHJlgQcMvgAgAxgTJhJ4yY_0Euklj9DRJxXN6-SXyCUVKvJSC7dcm2nJqtq5ZRX2RpE7N5SjR3ufu2Ko0A045k8l0OSIpFKO_nr5-_tv_wDg9GwV"
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "What is a Security Operations Center (SOC)?",
+      "link": "https://www.fortinet.com/resources/cyberglossary/what-is-soc",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESeQHEIkXXqAIkFdMmOCVKay2jRx6jzXnMjY1ckoSVaWDc_DQJA2IUJNvlmSEnH3hkBLNm320aAxun5dallVjVo8RrRdrQxTuj1tXx65i5NhU0HKqQ0_-2_ELdzkWKEja65aeMne_w9jpBQxauYievJOVsxRfgMZRSfHM&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECCcQAQ&uoh=1",
+      "displayed_link": "https://www.fortinet.com \u203a resources \u203a cyberglossary",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd-UAAAAxElEQVR4AWJwL_ChK6ad4aMW3tKUAbRbBicQg0AUrccurMNzOrARr-lgKrGEbSJnz1k_uDC7rJ_ZJUwg5PAOyTz-B0UxdEpHFKuaC4F5yAxvhePn_g0VtBOawcuYQ4jWIMJm9AKE6lgoEBo-HJYUPCCkzjJDBS2EZPX8j8VozjN-DSRZIBn30I5lDzcitAsWOixpYfxRuJK8fMqxiIwhHuadcrW5X97JsTC-JJlJBxaWzydGHMVVo-aVIMQTZN_PxOsUPgH0XG5VnZUfFQAAAABJRU5ErkJggg.png",
+      "snippet": "Outsourced security operations, known as SOC as a service (SOCaaS), offer access to experts, advanced technology, established processes, and fast ...",
+      "snippet_highlighted_words": [
+        "Outsourced security operations, known as SOC as a service"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Outsourced security operations, known as SOC as a service (SOCaaS), offer access to experts, advanced technology, established processes, and fast ...",
+          "source_info_link": "https://www.fortinet.com/resources/cyberglossary/what-is-soc",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd-UAAAAxElEQVR4AWJwL_ChK6ad4aMW3tKUAbRbBicQg0AUrccurMNzOrARr-lgKrGEbSJnz1k_uDC7rJ_ZJUwg5PAOyTz-B0UxdEpHFKuaC4F5yAxvhePn_g0VtBOawcuYQ4jWIMJm9AKE6lgoEBo-HJYUPCCkzjJDBS2EZPX8j8VozjN-DSRZIBn30I5lDzcitAsWOixpYfxRuJK8fMqxiIwhHuadcrW5X97JsTC-JJlJBxaWzydGHMVVo-aVIMQTZN_PxOsUPgH0XG5VnZUfFQAAAABJRU5ErkJggg.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrEBL2dvdG8_dXJsPUNBRVNlUUhFSWtYWE0teG93d0xHc2RlRHlwVmZYLXlNTDJjUEZhd2FpWFlXMlgxc0dzOVNuSjhma1lBbTNvUHdpenZWYWZYVmI0XzBYMEk5bEp2T3ZVUjc2V3lUZUNPWXY3QTdLMzJBdHE5Rl9faWlDSEhvd3VsaHRsVEpoS3RubDVTaWw0bC02R3FoclNrVlVxZ0NJTk1UeDZ3eWE3YWljQlRtOGRFEgQaAggAGocEEgIIARoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA4QMIABAAGAAgACoUCgNzb2MVVux7QBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRW1Uq8_MrEBL2dvdG8_dXJsPUNBRVNlUUhFSWtYWE0teG93d0xHc2RlRHlwVmZYLXlNTDJjUEZhd2FpWFlXMlgxc0dzOVNuSjhma1lBbTNvUHdpenZWYWZYVmI0XzBYMEk5bEp2T3ZVUjc2V3lUZUNPWXY3QTdLMzJBdHE5Rl9faWlDSEhvd3VsaHRsVEpoS3RubDVTaWw0bC02R3FoclNrVlVxZ0NJTk1UeDZ3eWE3YWljQlRtOGRFOj1XaGF0IGlzIGEgU2VjdXJpdHkgT3BlcmF0aW9ucyBDZW50ZXIgKDxiPlNPQzwvYj4pPyAtIEZvcnRpbmV0QqEBPGI-T3V0c291cmNlZCBzZWN1cml0eSBvcGVyYXRpb25zLCBrbm93biBhcyBTT0MgYXMgYSBzZXJ2aWNlPC9iPiAoU09DYWFTKSwgb2ZmZXIgYWNjZXNzIHRvIGV4cGVydHMsIGFkdmFuY2VkIHRlY2hub2xvZ3ksIGVzdGFibGlzaGVkIHByb2Nlc3NlcywgYW5kIGZhc3QmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrEBL2dvdG8_dXJsPUNBRVNlUUhFSWtYWE0teG93d0xHc2RlRHlwVmZYLXlNTDJjUEZhd2FpWFlXMlgxc0dzOVNuSjhma1lBbTNvUHdpenZWYWZYVmI0XzBYMEk5bEp2T3ZVUjc2V3lUZUNPWXY3QTdLMzJBdHE5Rl9faWlDSEhvd3VsaHRsVEpoS3RubDVTaWw0bC02R3FoclNrVlVxZ0NJTk1UeDZ3eWE3YWljQlRtOGRFEgQaAggAGocEEgIIARoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA4QMIABAAGAAgACoUCgNzb2MVVux7QBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRW1Uq8_MrEBL2dvdG8_dXJsPUNBRVNlUUhFSWtYWE0teG93d0xHc2RlRHlwVmZYLXlNTDJjUEZhd2FpWFlXMlgxc0dzOVNuSjhma1lBbTNvUHdpenZWYWZYVmI0XzBYMEk5bEp2T3ZVUjc2V3lUZUNPWXY3QTdLMzJBdHE5Rl9faWlDSEhvd3VsaHRsVEpoS3RubDVTaWw0bC02R3FoclNrVlVxZ0NJTk1UeDZ3eWE3YWljQlRtOGRFOj1XaGF0IGlzIGEgU2VjdXJpdHkgT3BlcmF0aW9ucyBDZW50ZXIgKDxiPlNPQzwvYj4pPyAtIEZvcnRpbmV0QqEBPGI-T3V0c291cmNlZCBzZWN1cml0eSBvcGVyYXRpb25zLCBrbm93biBhcyBTT0MgYXMgYSBzZXJ2aWNlPC9iPiAoU09DYWFTKSwgb2ZmZXIgYWNjZXNzIHRvIGV4cGVydHMsIGFkdmFuY2VkIHRlY2hub2xvZ3ksIGVzdGFibGlzaGVkIHByb2Nlc3NlcywgYW5kIGZhc3QmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "source": "Fortinet"
+    },
+    {
+      "position": 2,
+      "title": "What is SOC as a Service (SOCaaS)?",
+      "link": "https://evalian.co.uk/soc-as-a-service-explained/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESbgHEIkXXG-aHX0GZ3zZgTqtWQMEV-F0rGTzOyLh6-x0xYGwgSyLRobnHnTTXC44yFcq55a2qBWQvT8rbRlebx25aZ-kbkFhBCUBLEqmpL_tBCUEuWyhl8PJrzONeyoLzAomc7_v9vJIO09tg7ZFW&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECCYQAQ&uoh=1",
+      "displayed_link": "https://evalian.co.uk \u203a Evalian Blog \u203a Cyber Security",
+      "favicon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fNT0tMTU3Ojo6Iys_RD84QzQ5Oj0BCgoKDQwNGg8PGjclHyU3Nzc3Nzc2NTc3NzcyNzc3NDc3NzA1NTU3Nys1NzUvLzc3LDc3NzU1NS01Nzc1LjcvNf_AABEIABwAHAMBEQACEQEDEQH_xAAYAAADAQEAAAAAAAAAAAAAAAAEBQYHAv_EACsQAAIBAwICCQUAAAAAAAAAAAECAwAEEQUhEjEGEyIyQmFxgaEUI0FRsf_EABoBAAMAAwEAAAAAAAAAAAAAAAMEBQECBgD_xAAkEQACAgIBAwQDAAAAAAAAAAABAgADESEEEjHwBUFR4SIyQv_aAAwDAQACEQMRAD8A26WWOFeKRgB_ayATNWYKMmLJ9TcsOqwi58XM0QJ8xdrz7Qq21COXCydh_g1qUIhEuB0YZWkNEuu6jawSfTFeO74OJRnGF338-XKjVIxGfaJcq-tT0f1I69u-KYiedSw3xnu-1OKmtCQ7rh1YdofZXdxJEqRydbxbKVGW9KGygHcaptZl_E5lrYI6WUCSgh1jUMD-8Um22OJbqBCAHvJfpn0cvdSuU1DT3DSRxhDD3W2JOQffltTfG5CoOhpI9U9PtvcXVHYGMSBdpYJGiuI2SRThlcYIPmKo4B2Jy7BkPSwwY76KWetz3gudLYwRjZ5XH2yPyMeL2-KX5DVBcPuU_TKeW1nXTofJ7ffnaagnEEUSEF8doqMAn0qSZ14zjc6r0zAdQ0jT9SeN721jlaM5VjsfQ45jyO1ES10_Uxe7i03kGxc488EMRVRAiKFVRgKBgAUPvDgADAnVemZ__9k.jpg",
+      "date": "Jun 26, 2025",
+      "snippet": "SOC as a Service (SOCaaS) is a managed security service that gives organisations 24/7 monitoring, threat detection, incident response and ...",
+      "snippet_highlighted_words": [
+        "SOC as a Service (SOCaaS"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOC as a Service (SOCaaS) is a managed security service that gives organisations 24/7 monitoring, threat detection, incident response and ...",
+          "source_info_link": "https://evalian.co.uk/soc-as-a-service-explained/",
+          "icon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fNT0tMTU3Ojo6Iys_RD84QzQ5Oj0BCgoKDQwNGg8PGjclHyU3Nzc3Nzc2NTc3NzcyNzc3NDc3NzA1NTU3Nys1NzUvLzc3LDc3NzU1NS01Nzc1LjcvNf_AABEIABwAHAMBEQACEQEDEQH_xAAYAAADAQEAAAAAAAAAAAAAAAAEBQYHAv_EACsQAAIBAwICCQUAAAAAAAAAAAECAwAEEQUhEjEGEyIyQmFxgaEUI0FRsf_EABoBAAMAAwEAAAAAAAAAAAAAAAMEBQECBgD_xAAkEQACAgIBAwQDAAAAAAAAAAABAgADESEEEjHwBUFR4SIyQv_aAAwDAQACEQMRAD8A26WWOFeKRgB_ayATNWYKMmLJ9TcsOqwi58XM0QJ8xdrz7Qq21COXCydh_g1qUIhEuB0YZWkNEuu6jawSfTFeO74OJRnGF338-XKjVIxGfaJcq-tT0f1I69u-KYiedSw3xnu-1OKmtCQ7rh1YdofZXdxJEqRydbxbKVGW9KGygHcaptZl_E5lrYI6WUCSgh1jUMD-8Um22OJbqBCAHvJfpn0cvdSuU1DT3DSRxhDD3W2JOQffltTfG5CoOhpI9U9PtvcXVHYGMSBdpYJGiuI2SRThlcYIPmKo4B2Jy7BkPSwwY76KWetz3gudLYwRjZ5XH2yPyMeL2-KX5DVBcPuU_TKeW1nXTofJ7ffnaagnEEUSEF8doqMAn0qSZ14zjc6r0zAdQ0jT9SeN721jlaM5VjsfQ45jyO1ES10_Uxe7i03kGxc488EMRVRAiKFVRgKBgAUPvDgADAnVemZ__9k.jpg"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqIBL2dvdG8_dXJsPUNBRVNiZ0hFSWtYWFlYUVBKc0hVWkUwbUhVWWlodkdFOHlsRGdqLWZUNThsbnNETWtnTFI3NmhLTHl6LVZuSGRVMklaNnd0MDVYcFYxdm5NSXItTWh3QmtfQmZxQk5EZW5DZS1BMDZjTVJYdG9FazdzYzdQclBCQXNJS18yaWZwT3p2RUk0ZV92SllKYWFOY3lzX2tiUVYxEgQaAggAGuYDEgIIABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAwAMIABAAGAAgACoUCgNzb2MV3ZeYQBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRXKKo5AMqIBL2dvdG8_dXJsPUNBRVNiZ0hFSWtYWFlYUVBKc0hVWkUwbUhVWWlodkdFOHlsRGdqLWZUNThsbnNETWtnTFI3NmhLTHl6LVZuSGRVMklaNnd0MDVYcFYxdm5NSXItTWh3QmtfQmZxQk5EZW5DZS1BMDZjTVJYdG9FazdzYzdQclBCQXNJS18yaWZwT3p2RUk0ZV92SllKYWFOY3lzX2tiUVYxOjNXaGF0IGlzIDxiPlNPQyBhcyBhIFNlcnZpY2U8L2I-IChTT0NhYVMpPyAtIEV2YWxpYW5CmQE8Yj5TT0MgYXMgYSBTZXJ2aWNlIChTT0NhYVM8L2I-KSBpcyBhIG1hbmFnZWQgc2VjdXJpdHkgc2VydmljZSB0aGF0IGdpdmVzIG9yZ2FuaXNhdGlvbnMgMjQvNyBtb25pdG9yaW5nLCB0aHJlYXQgZGV0ZWN0aW9uLCBpbmNpZGVudCByZXNwb25zZSBhbmQmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqIBL2dvdG8_dXJsPUNBRVNiZ0hFSWtYWFlYUVBKc0hVWkUwbUhVWWlodkdFOHlsRGdqLWZUNThsbnNETWtnTFI3NmhLTHl6LVZuSGRVMklaNnd0MDVYcFYxdm5NSXItTWh3QmtfQmZxQk5EZW5DZS1BMDZjTVJYdG9FazdzYzdQclBCQXNJS18yaWZwT3p2RUk0ZV92SllKYWFOY3lzX2tiUVYxEgQaAggAGuYDEgIIABoAIgAqADIGCAISAnVzOgBCBAgBEABKAFoAcgB6AIJAwAMIABAAGAAgACoUCgNzb2MV3ZeYQBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRXKKo5AMqIBL2dvdG8_dXJsPUNBRVNiZ0hFSWtYWFlYUVBKc0hVWkUwbUhVWWlodkdFOHlsRGdqLWZUNThsbnNETWtnTFI3NmhLTHl6LVZuSGRVMklaNnd0MDVYcFYxdm5NSXItTWh3QmtfQmZxQk5EZW5DZS1BMDZjTVJYdG9FazdzYzdQclBCQXNJS18yaWZwT3p2RUk0ZV92SllKYWFOY3lzX2tiUVYxOjNXaGF0IGlzIDxiPlNPQyBhcyBhIFNlcnZpY2U8L2I-IChTT0NhYVMpPyAtIEV2YWxpYW5CmQE8Yj5TT0MgYXMgYSBTZXJ2aWNlIChTT0NhYVM8L2I-KSBpcyBhIG1hbmFnZWQgc2VjdXJpdHkgc2VydmljZSB0aGF0IGdpdmVzIG9yZ2FuaXNhdGlvbnMgMjQvNyBtb25pdG9yaW5nLCB0aHJlYXQgZGV0ZWN0aW9uLCBpbmNpZGVudCByZXNwb25zZSBhbmQmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "source": "Evalian",
+      "read_more_link": "https://evalian.co.uk/soc-as-a-service-explained/#:~:text=SOC%20as%20a%20Service%20(SOCaaS),full%20in%2Dhouse%20Security%20Operations%20Centre."
+    },
+    {
+      "position": 3,
+      "title": "Understanding SOC as a Service (SOCaaS)",
+      "link": "https://www.zscaler.com/zpedia/understanding-socaas",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAEScAHEIkXXb7r5qD7yalU6nJUzfoGOmF56JrZB69XQnIGQ3xQwfXN2sI-PuzgPfLVY3HXCgGqOs7tCYnc6GmgPdh5vxips8Ih4fV-mStG1fVEOPN2FkE9yG79LrVWZikldfK48cmRZy4UpkBv-rKsxqZM&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECDQQAQ&uoh=1",
+      "displayed_link": "https://www.zscaler.com \u203a zpedia \u203a understanding-socaas",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAKlBMVEVHcEwjaPUjaPUjaPUjaPUjaPUjaPUiaPUjaPUjaPUjaPUjaPUiaPUjaPVOOudGAAAADXRSTlMAMctwo-aRDvSEWUYc8-bUugAAAKBJREFUKJHNkdcBBCEIRAmKuf92z7zobQE7nzwYRgH4spBFOL0iKVPG3SgNQPEiSGuG_ma2XRHxxUbNQlEirAsMWUuhmWTNou5lAPMgW1s9hYQ59ZYE9rGsPrwTUSscTKuWwC-43oXYp7EUv3e2F7gwlnjhtjSstDWMztZ_sZbiHMSDEOexpXnNniWvTxXhYPb6YyfGrOT8etJ-bXxFn9APTnYMj_bdFiAAAAAASUVORK5CYII.png",
+      "snippet": "SOCaaS is a cloud-based security service that unifies threat detection, incident response, and continuous monitoring, enabling businesses to stay protected ...",
+      "snippet_highlighted_words": [
+        "SOCaaS is a cloud-based security service"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOCaaS is a cloud-based security service that unifies threat detection, incident response, and continuous monitoring, enabling businesses to stay protected ...",
+          "source_info_link": "https://www.zscaler.com/zpedia/understanding-socaas",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAKlBMVEVHcEwjaPUjaPUjaPUjaPUjaPUjaPUiaPUjaPUjaPUjaPUjaPUiaPUjaPVOOudGAAAADXRSTlMAMctwo-aRDvSEWUYc8-bUugAAAKBJREFUKJHNkdcBBCEIRAmKuf92z7zobQE7nzwYRgH4spBFOL0iKVPG3SgNQPEiSGuG_ma2XRHxxUbNQlEirAsMWUuhmWTNou5lAPMgW1s9hYQ59ZYE9rGsPrwTUSscTKuWwC-43oXYp7EUv3e2F7gwlnjhtjSstDWMztZ_sZbiHMSDEOexpXnNniWvTxXhYPb6YyfGrOT8etJ-bXxFn9APTnYMj_bdFiAAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWEtmX1dUZHA2Y2FwNEVYRUlySTFlbHJLa3dPc2hUS093T0ZJQVl1NkJSZl9kWHNneEtzVU9EQmdDdFNiNkhsOHVRT2VpRkl2SS0wZ3Q0VWtOR3piZURZWEIxSmFPSTlibUU4YTBaUnFRUnp3ZGV3OERYdDFSeWxZd201S0pUR1l5djNaaEZZak5TQ2EzSlo4EgQaAggAGv4DEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNoDCAAQABgAIAAqFAoDc29jFX6eUkAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UVqqFgQDKlAS9nb3RvP3VybD1DQUVTY0FIRUlrWFhLZl9XVGRwNmNhcDRFWEVJckkxZWxyS2t3T3NoVEtPd09GSUFZdTZCUmZfZFhzZ3hLc1VPREJnQ3RTYjZIbDh1UU9laUZJdkktMGd0NFVrTkd6YmVEWVhCMUphT0k5Ym1FOGEwWlJxUVJ6d2RldzhEWHQxUnlsWXdtNUtKVEdZeXYzWmhGWWpOU0NhM0paODo4VW5kZXJzdGFuZGluZyA8Yj5TT0MgYXMgYSBTZXJ2aWNlPC9iPiAoU09DYWFTKSAtIFpzY2FsZXJCqwE8Yj5TT0NhYVMgaXMgYSBjbG91ZC1iYXNlZCBzZWN1cml0eSBzZXJ2aWNlPC9iPiB0aGF0IHVuaWZpZXMgdGhyZWF0IGRldGVjdGlvbiwgaW5jaWRlbnQgcmVzcG9uc2UsIGFuZCBjb250aW51b3VzIG1vbml0b3JpbmcsIGVuYWJsaW5nIGJ1c2luZXNzZXMgdG8gc3RheSBwcm90ZWN0ZWQmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqUBL2dvdG8_dXJsPUNBRVNjQUhFSWtYWEtmX1dUZHA2Y2FwNEVYRUlySTFlbHJLa3dPc2hUS093T0ZJQVl1NkJSZl9kWHNneEtzVU9EQmdDdFNiNkhsOHVRT2VpRkl2SS0wZ3Q0VWtOR3piZURZWEIxSmFPSTlibUU4YTBaUnFRUnp3ZGV3OERYdDFSeWxZd201S0pUR1l5djNaaEZZak5TQ2EzSlo4EgQaAggAGv4DEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQNoDCAAQABgAIAAqFAoDc29jFX6eUkAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UVqqFgQDKlAS9nb3RvP3VybD1DQUVTY0FIRUlrWFhLZl9XVGRwNmNhcDRFWEVJckkxZWxyS2t3T3NoVEtPd09GSUFZdTZCUmZfZFhzZ3hLc1VPREJnQ3RTYjZIbDh1UU9laUZJdkktMGd0NFVrTkd6YmVEWVhCMUphT0k5Ym1FOGEwWlJxUVJ6d2RldzhEWHQxUnlsWXdtNUtKVEdZeXYzWmhGWWpOU0NhM0paODo4VW5kZXJzdGFuZGluZyA8Yj5TT0MgYXMgYSBTZXJ2aWNlPC9iPiAoU09DYWFTKSAtIFpzY2FsZXJCqwE8Yj5TT0NhYVMgaXMgYSBjbG91ZC1iYXNlZCBzZWN1cml0eSBzZXJ2aWNlPC9iPiB0aGF0IHVuaWZpZXMgdGhyZWF0IGRldGVjdGlvbiwgaW5jaWRlbnQgcmVzcG9uc2UsIGFuZCBjb250aW51b3VzIG1vbml0b3JpbmcsIGVuYWJsaW5nIGJ1c2luZXNzZXMgdG8gc3RheSBwcm90ZWN0ZWQmbmJzcDsuLi5KAWFKAmFzIgIQAUgAWABoAA",
+      "source": "Zscaler",
+      "read_more_link": "https://www.zscaler.com/zpedia/understanding-socaas#:~:text=SOCaaS%20is%20a%20cloud%2Dbased%20security,while%20reducing%20cost%20and%20complexity."
+    },
+    {
+      "position": 4,
+      "title": "SOC as a Service: Outsourcing Your Security Operations ...",
+      "link": "https://www.bluevoyant.com/knowledge-center/soc-as-a-service-outsourcing-your-security-operations-center",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESpQEBxCJF155vDulzBvcl0jd7qgHsq0I5mBp1HqP3O7JmRHr0ZxDGoZ_F6mshbUNr6BXqaHUIZw_fA4YDMKU9JI8bdUWbNWrkCOcR2-wZEMoWNKz0RXwEsh-zSx37Nlo4hvw0NUpQYw2mgwT7PDV8qnxYMhFPQte0WO-nqpe5bu6KIcFi_rDZolzGAtDZJwic5dYe69yJbQICwaPAeZe53hoUK5u9_I4&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECDoQAQ&uoh=1",
+      "displayed_link": "https://www.bluevoyant.com \u203a knowledge-center \u203a soc-...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAD1BMVEVHcEwAAAAAAAAAAAAAAAI9omnTAAAABXRSTlMAmP-Me1TmhOQAAABnSURBVHgBjc6BCcAgDERRxQXEDTw7gLj_cFX9oVqANgByvMPE_Rofj5jKgVLdUYJ9nWicykS4QxwId8gDBxObdLXFlGswzus7eJwX-mvsXvEoc_GOzyKiQMoC4Q1hEDaEQdgQju57bqc1E7Ghy82bAAAAAElFTkSuQmCC.png",
+      "snippet": "SOC as a Service, also known as a managed SOC, allows organizations to outsource threat detection and incident response activities to a third-party provider.",
+      "snippet_highlighted_words": [
+        "SOC as a Service"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOC as a Service, also known as a managed SOC, allows organizations to outsource threat detection and incident response activities to a third-party provider.",
+          "source_info_link": "https://www.bluevoyant.com/knowledge-center/soc-as-a-service-outsourcing-your-security-operations-center",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAD1BMVEVHcEwAAAAAAAAAAAAAAAI9omnTAAAABXRSTlMAmP-Me1TmhOQAAABnSURBVHgBjc6BCcAgDERRxQXEDTw7gLj_cFX9oVqANgByvMPE_Rofj5jKgVLdUYJ9nWicykS4QxwId8gDBxObdLXFlGswzus7eJwX-mvsXvEoc_GOzyKiQMoC4Q1hEDaEQdgQju57bqc1E7Ghy82bAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE3ODhmMER6cEhhR3BvTWZ4cnVMQlBLZmVmZXJlLXB2WlRKMWFfeEczaW5nNGotOURZV0lOUFdsOGY5VFhwNFpKUUhEdWtfdkstN1J1SjBRRTdGbFhOTVdLcTQxSzA3RlRJMlRSdFhkdHExRmdEeG03MG1idjNfaWRlQjRaQ250YW95ZTdseldkaEFJeHRPMzhodWxwM1dLRHhLdWxlZlJKdDNIVml6Sm1XeWRTNXVJbEVGWmg0MGNBa3ZTV3dyQWVSZjhzOVg5OF9Qc1pJdG5OaVFwcnZnEgQaAggAGs0EEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJApwQIABAAGAAgACoUCgNzb2MVXu-2QBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRW0ZKNAMu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE3ODhmMER6cEhhR3BvTWZ4cnVMQlBLZmVmZXJlLXB2WlRKMWFfeEczaW5nNGotOURZV0lOUFdsOGY5VFhwNFpKUUhEdWtfdkstN1J1SjBRRTdGbFhOTVdLcTQxSzA3RlRJMlRSdFhkdHExRmdEeG03MG1idjNfaWRlQjRaQ250YW95ZTdseldkaEFJeHRPMzhodWxwM1dLRHhLdWxlZlJKdDNIVml6Sm1XeWRTNXVJbEVGWmg0MGNBa3ZTV3dyQWVSZjhzOVg5OF9Qc1pJdG5OaVFwcnZnOkQ8Yj5TT0MgYXMgYSBTZXJ2aWNlPC9iPjogT3V0c291cmNpbmcgWW91ciBTZWN1cml0eSBPcGVyYXRpb25zIENlbnRlckKkATxiPlNPQyBhcyBhIFNlcnZpY2U8L2I-LCBhbHNvIGtub3duIGFzIGEgbWFuYWdlZCBTT0MsIGFsbG93cyBvcmdhbml6YXRpb25zIHRvIG91dHNvdXJjZSB0aHJlYXQgZGV0ZWN0aW9uIGFuZCBpbmNpZGVudCByZXNwb25zZSBhY3Rpdml0aWVzIHRvIGEgdGhpcmQtcGFydHkgcHJvdmlkZXIuSgJhc0oBYSICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE3ODhmMER6cEhhR3BvTWZ4cnVMQlBLZmVmZXJlLXB2WlRKMWFfeEczaW5nNGotOURZV0lOUFdsOGY5VFhwNFpKUUhEdWtfdkstN1J1SjBRRTdGbFhOTVdLcTQxSzA3RlRJMlRSdFhkdHExRmdEeG03MG1idjNfaWRlQjRaQ250YW95ZTdseldkaEFJeHRPMzhodWxwM1dLRHhLdWxlZlJKdDNIVml6Sm1XeWRTNXVJbEVGWmg0MGNBa3ZTV3dyQWVSZjhzOVg5OF9Qc1pJdG5OaVFwcnZnEgQaAggAGs0EEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJApwQIABAAGAAgACoUCgNzb2MVXu-2QBoIaXY7cDtzb2MqCQoCYXMVAAAAACoICgFhFQAAAAAqDgoHc2VydmljZRW0ZKNAMu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE3ODhmMER6cEhhR3BvTWZ4cnVMQlBLZmVmZXJlLXB2WlRKMWFfeEczaW5nNGotOURZV0lOUFdsOGY5VFhwNFpKUUhEdWtfdkstN1J1SjBRRTdGbFhOTVdLcTQxSzA3RlRJMlRSdFhkdHExRmdEeG03MG1idjNfaWRlQjRaQ250YW95ZTdseldkaEFJeHRPMzhodWxwM1dLRHhLdWxlZlJKdDNIVml6Sm1XeWRTNXVJbEVGWmg0MGNBa3ZTV3dyQWVSZjhzOVg5OF9Qc1pJdG5OaVFwcnZnOkQ8Yj5TT0MgYXMgYSBTZXJ2aWNlPC9iPjogT3V0c291cmNpbmcgWW91ciBTZWN1cml0eSBPcGVyYXRpb25zIENlbnRlckKkATxiPlNPQyBhcyBhIFNlcnZpY2U8L2I-LCBhbHNvIGtub3duIGFzIGEgbWFuYWdlZCBTT0MsIGFsbG93cyBvcmdhbml6YXRpb25zIHRvIG91dHNvdXJjZSB0aHJlYXQgZGV0ZWN0aW9uIGFuZCBpbmNpZGVudCByZXNwb25zZSBhY3Rpdml0aWVzIHRvIGEgdGhpcmQtcGFydHkgcHJvdmlkZXIuSgJhc0oBYSICEAFIAFgAaAA",
+      "source": "BlueVoyant",
+      "read_more_link": "https://www.bluevoyant.com/knowledge-center/soc-as-a-service-outsourcing-your-security-operations-center#:~:text=SOC%20as%20a%20Service%2C%20also,activities%20to%20a%20third%2Dparty%20provider."
+    },
+    {
+      "position": 5,
+      "title": "24/7 Managed SOC Services",
+      "link": "https://underdefense.com/services/soc/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESYwHEIkXXGIRNlXxayR1kkbiA-Iv4fbhxcTH1VAh3Lif41JAbXoF8U_WwXoMm0fP8gtLmh_WYrTBzJIlQYqzbxPEz_aalpf5V3wDTAQZOPer5AUulLq-3rJWUvD31F57CL8Sgtw&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECDYQAQ&uoh=1",
+      "displayed_link": "https://underdefense.com \u203a Services",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAMFBMVEX_cAJHcEz_cAL_cQL_cAL_cAH_cQL_cAL_cAH_cQL_cQL_cAL_cAH_cAL_cQL_cQKEi5eJAAAAD3RSTlODAHfekgvxPRjEslYmZqRofPPMAAAAyElEQVQokX2S2xaEIAhFASU1Nf__bye8ZQ4z56FVbBXaBfgnIBd7SkCHUCRBh3hVepAKMZQWywpE02m5_Ddki3Q0HNwOa2Lfb6ICEV1vfjgFIqaz0QltuB2EsS7J4WZCWiV4IFsO3iUUeUgAQEaX4G4G-ZcEYykqEnKXYHQJdmBFQrznHMfvErLMkvy1SaihyqR9eEmYTD4Xk0jwC2RBwFWQSOBlIKkA8bxbX-WppFVQFz8rwqagBvNcTSvrPd0wxi7hDp-8fs0PMWsLcysUMpAAAAAASUVORK5CYII.png",
+      "snippet": "SOC as a Service (SOCaaS) is a broader, operational model that delivers 24/7 monitoring, alert triage, and log management through a virtual SOC.",
+      "snippet_highlighted_words": [
+        "SOC as a Service (SOCaaS"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOC as a Service (SOCaaS) is a broader, operational model that delivers 24/7 monitoring, alert triage, and log management through a virtual SOC.",
+          "source_info_link": "https://underdefense.com/services/soc/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAMFBMVEX_cAJHcEz_cAL_cQL_cAL_cAH_cQL_cAL_cAH_cQL_cQL_cAL_cAH_cAL_cQL_cQKEi5eJAAAAD3RSTlODAHfekgvxPRjEslYmZqRofPPMAAAAyElEQVQokX2S2xaEIAhFASU1Nf__bye8ZQ4z56FVbBXaBfgnIBd7SkCHUCRBh3hVepAKMZQWywpE02m5_Ddki3Q0HNwOa2Lfb6ICEV1vfjgFIqaz0QltuB2EsS7J4WZCWiV4IFsO3iUUeUgAQEaX4G4G-ZcEYykqEnKXYHQJdmBFQrznHMfvErLMkvy1SaihyqR9eEmYTD4Xk0jwC2RBwFWQSOBlIKkA8bxbX-WppFVQFz8rwqagBvNcTSvrPd0wxi7hDp-8fs0PMWsLcysUMpAAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CpQBL2dvdG8_dXJsPUNBRVNZd0hFSWtYWE4xYll6eWpBN3k5WmNOWU9mZWtWTWVMaUd2TWJEWEwzN0RhQVh6bFVfM29aelVpd2x3eWMzbnRYenJESmZodHFzNjdDc09ydDdFYksydWI2UHI2YmlTaWM0WWlra3VoNVplWEdpemRVcklkNF9WYVdXRGZScE5BVVZMakxDdxIEGgIIABrSAxICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQKwDCAAQABgAIAAqFAoDc29jFe-UnEAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UVAMN3QDKUAS9nb3RvP3VybD1DQUVTWXdIRUlrWFhOMWJZenlqQTd5OVpjTllPZmVrVk1lTGlHdk1iRFhMMzdEYUFYemxVXzNvWnpVaXdsd3ljM250WHpyREpmaHRxczY3Q3NPcnQ3RWJLMnViNlByNmJpU2ljNFlpa2t1aDVaZVhHaXpkVXJJZDRfVmFXV0RmUnBOQVVWTGpMQ3c6LzI0LzcgTWFuYWdlZCA8Yj5TT0M8L2I-IFNlcnZpY2VzIC0gVW5kZXJEZWZlbnNlQpcBPGI-U09DIGFzIGEgU2VydmljZSAoU09DYWFTPC9iPikgaXMgYSBicm9hZGVyLCBvcGVyYXRpb25hbCBtb2RlbCB0aGF0IGRlbGl2ZXJzIDI0LzcgbW9uaXRvcmluZywgYWxlcnQgdHJpYWdlLCBhbmQgbG9nIG1hbmFnZW1lbnQgdGhyb3VnaCBhIHZpcnR1YWwgU09DLkoBYUoCYXMiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CpQBL2dvdG8_dXJsPUNBRVNZd0hFSWtYWE4xYll6eWpBN3k5WmNOWU9mZWtWTWVMaUd2TWJEWEwzN0RhQVh6bFVfM29aelVpd2x3eWMzbnRYenJESmZodHFzNjdDc09ydDdFYksydWI2UHI2YmlTaWM0WWlra3VoNVplWEdpemRVcklkNF9WYVdXRGZScE5BVVZMakxDdxIEGgIIABrSAxICCAAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQKwDCAAQABgAIAAqFAoDc29jFe-UnEAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UVAMN3QDKUAS9nb3RvP3VybD1DQUVTWXdIRUlrWFhOMWJZenlqQTd5OVpjTllPZmVrVk1lTGlHdk1iRFhMMzdEYUFYemxVXzNvWnpVaXdsd3ljM250WHpyREpmaHRxczY3Q3NPcnQ3RWJLMnViNlByNmJpU2ljNFlpa2t1aDVaZVhHaXpkVXJJZDRfVmFXV0RmUnBOQVVWTGpMQ3c6LzI0LzcgTWFuYWdlZCA8Yj5TT0M8L2I-IFNlcnZpY2VzIC0gVW5kZXJEZWZlbnNlQpcBPGI-U09DIGFzIGEgU2VydmljZSAoU09DYWFTPC9iPikgaXMgYSBicm9hZGVyLCBvcGVyYXRpb25hbCBtb2RlbCB0aGF0IGRlbGl2ZXJzIDI0LzcgbW9uaXRvcmluZywgYWxlcnQgdHJpYWdlLCBhbmQgbG9nIG1hbmFnZW1lbnQgdGhyb3VnaCBhIHZpcnR1YWwgU09DLkoBYUoCYXMiAhABSABYAGgA",
+      "source": "UnderDefense"
+    },
+    {
+      "position": 6,
+      "title": "Top 9 SOC as a Service Providers (Reviewed)",
+      "link": "https://www.getastra.com/blog/security-audit/top-soc-as-a-service-providers/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESiQEBxCJF19nTOf3Fl-zQl-oNN2lefm1QHY1LJkdLZ2rH5XE8ck0rUazOTAy3eRlDb_m_Rvc4hE1OefSLYvBJCv4-WdYbQ3CJtvZNBWJdhUTGEJ8ZxEbWy_Q9t03H8DCPwrgl0D7i9SWqTIkO8G1graO3J8iBX23zXhRI_nRINE6wFG8eQjNqAFrAnw&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECDcQAQ&uoh=1",
+      "displayed_link": "https://www.getastra.com \u203a Security Audit",
+      "favicon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgHBgkIBxIKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys_RD84RTQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3NTc3Nzc3Nzc3Nzc3Nzc3Nzc3NzU3Ny83Ljc3Nzc4N__AABEIABwAHAMBEQACEQEDEQH_xAAaAAACAgMAAAAAAAAAAAAAAAABAgQFAAMG_8QAIRAAAgEFAQADAQEAAAAAAAAAAQIDAAQREiEFMUFRIgb_xAAbAQEAAgIDAAAAAAAAAAAAAAABAAMCBAUGB__EACgRAAEDAwIEBwEAAAAAAAAAAAEAAhEDITEEQRJxgaETMlFhkbHhIv_aAAwDAQACEQMRAD8Ari1egQuspS1MISlqYUQ2phCtfB8tfWmaORzAu6RpISmu7k6g7MCc4PFyeGtTVag0GyBOTvgZwD3V9GkKhgmP1S_J8jz7iSykmeaaCeCUu8QXVJViL6H-tgV78gZwPonFVfU1WBwAAIIzOCYnEX7c1ZSosdwkmQZ-YlCz_wA9bXVzBAJZlEkUDvK0aKsbTAFF6-WPTwd5TU1j2NLuEWLrXvw5OLdUM07XECdh6b43XONkEg_IODXIrUW-1v7uyLmzlnty4wxhkKbfmcVg-jTqedoPMSsmvczymFh9K9xEDLORChjiDSEhFK6kAH45yp4FO_8AIvc--_2p4j7XwhB6V9bOXt5rmJygQtHMynUDAHD8D6_KXUKTxDmg9ECo9uCVELd7V0LCUSaFECaVEuaUIVFF_9k.jpg",
+      "date": "Jul 29, 2026",
+      "snippet": "SOC-as-a-Service is a subscription-based cybersecurity solution where a third-party provider delivers security monitoring, threat detection, ...",
+      "snippet_highlighted_words": [
+        "SOC-as-a-Service"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOC-as-a-Service is a subscription-based cybersecurity solution where a third-party provider delivers security monitoring, threat detection, ...",
+          "source_info_link": "https://www.getastra.com/blog/security-audit/top-soc-as-a-service-providers/",
+          "icon": "https://serpapi.com/images/i/_9j_4AAQSkZJRgABAQAAAQABAAD_2wCEAAkGBwgHBgkIBxIKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys_RD84RTQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3NTc3Nzc3Nzc3Nzc3Nzc3Nzc3NzU3Ny83Ljc3Nzc4N__AABEIABwAHAMBEQACEQEDEQH_xAAaAAACAgMAAAAAAAAAAAAAAAABAgQFAAMG_8QAIRAAAgEFAQADAQEAAAAAAAAAAQIDAAQREiEFMUFRIgb_xAAbAQEAAgIDAAAAAAAAAAAAAAABAAMCBAUGB__EACgRAAEDAwIEBwEAAAAAAAAAAAEAAhEDITEEQRJxgaETMlFhkbHhIv_aAAwDAQACEQMRAD8Ari1egQuspS1MISlqYUQ2phCtfB8tfWmaORzAu6RpISmu7k6g7MCc4PFyeGtTVag0GyBOTvgZwD3V9GkKhgmP1S_J8jz7iSykmeaaCeCUu8QXVJViL6H-tgV78gZwPonFVfU1WBwAAIIzOCYnEX7c1ZSosdwkmQZ-YlCz_wA9bXVzBAJZlEkUDvK0aKsbTAFF6-WPTwd5TU1j2NLuEWLrXvw5OLdUM07XECdh6b43XONkEg_IODXIrUW-1v7uyLmzlnty4wxhkKbfmcVg-jTqedoPMSsmvczymFh9K9xEDLORChjiDSEhFK6kAH45yp4FO_8AIvc--_2p4j7XwhB6V9bOXt5rmJygQtHMynUDAHD8D6_KXUKTxDmg9ECo9uCVELd7V0LCUSaFECaVEuaUIVFF_9k.jpg"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CsgBL2dvdG8_dXJsPUNBRVNpUUVCeENKRjFfQWx4M3kzQm9pQU9KaUNiTUFBcEFaanI0d1Nndnhlc2xNWFM3b3FCNlVHelRFemEwUENxY3ZYT3M2ZXNaME9jaUs5ZUl1cDU1dUhzLV91LVMxVm1NdUE4NEdPNzNkVE5xRWNKckIybHlYOWQ4OThDYXhsOXBvMmZLQ2xsVF94S0NzeDhhRDBTZWNYVnhvOUU0dldVUGpRaDJmb01zUEN3ZTRRdG8tU3dsT2JMR2VaSmcSBBoCCAAangQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkD4AwgAEAAYACAAKhQKA3NvYxVgnaZAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFZRAp0AyyAEvZ290bz91cmw9Q0FFU2lRRUJ4Q0pGMV9BbHgzeTNCb2lBT0ppQ2JNQUFwQVpqcjR3U2d2eGVzbE1YUzdvcUI2VUd6VEV6YTBQQ3FjdlhPczZlc1owT2NpSzllSXVwNTV1SHMtX3UtUzFWbU11QTg0R083M2RUTnFFY0pyQjJseVg5ZDg5OENheGw5cG8yZktDbGxUX3hLQ3N4OGFEMFNlY1hWeG85RTR2V1VQalFoMmZvTXNQQ3dlNFF0by1Td2xPYkxHZVpKZzpCVG9wIDkgPGI-U09DIGFzIGEgU2VydmljZTwvYj4gUHJvdmlkZXJzIChSZXZpZXdlZCkgLSBBc3RyYSBQZW50ZXN0QpwBPGI-U09DLWFzLWEtU2VydmljZTwvYj4gaXMgYSBzdWJzY3JpcHRpb24tYmFzZWQgY3liZXJzZWN1cml0eSBzb2x1dGlvbiB3aGVyZSBhIHRoaXJkLXBhcnR5IHByb3ZpZGVyIGRlbGl2ZXJzIHNlY3VyaXR5IG1vbml0b3JpbmcsIHRocmVhdCBkZXRlY3Rpb24sJm5ic3A7Li4uSgJhc0oBYSICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CsgBL2dvdG8_dXJsPUNBRVNpUUVCeENKRjFfQWx4M3kzQm9pQU9KaUNiTUFBcEFaanI0d1Nndnhlc2xNWFM3b3FCNlVHelRFemEwUENxY3ZYT3M2ZXNaME9jaUs5ZUl1cDU1dUhzLV91LVMxVm1NdUE4NEdPNzNkVE5xRWNKckIybHlYOWQ4OThDYXhsOXBvMmZLQ2xsVF94S0NzeDhhRDBTZWNYVnhvOUU0dldVUGpRaDJmb01zUEN3ZTRRdG8tU3dsT2JMR2VaSmcSBBoCCAAangQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkD4AwgAEAAYACAAKhQKA3NvYxVgnaZAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFZRAp0AyyAEvZ290bz91cmw9Q0FFU2lRRUJ4Q0pGMV9BbHgzeTNCb2lBT0ppQ2JNQUFwQVpqcjR3U2d2eGVzbE1YUzdvcUI2VUd6VEV6YTBQQ3FjdlhPczZlc1owT2NpSzllSXVwNTV1SHMtX3UtUzFWbU11QTg0R083M2RUTnFFY0pyQjJseVg5ZDg5OENheGw5cG8yZktDbGxUX3hLQ3N4OGFEMFNlY1hWeG85RTR2V1VQalFoMmZvTXNQQ3dlNFF0by1Td2xPYkxHZVpKZzpCVG9wIDkgPGI-U09DIGFzIGEgU2VydmljZTwvYj4gUHJvdmlkZXJzIChSZXZpZXdlZCkgLSBBc3RyYSBQZW50ZXN0QpwBPGI-U09DLWFzLWEtU2VydmljZTwvYj4gaXMgYSBzdWJzY3JpcHRpb24tYmFzZWQgY3liZXJzZWN1cml0eSBzb2x1dGlvbiB3aGVyZSBhIHRoaXJkLXBhcnR5IHByb3ZpZGVyIGRlbGl2ZXJzIHNlY3VyaXR5IG1vbml0b3JpbmcsIHRocmVhdCBkZXRlY3Rpb24sJm5ic3A7Li4uSgJhc0oBYSICEAFIAFgAaAA",
+      "source": "Astra Pentest"
+    },
+    {
+      "position": 7,
+      "title": "SOC-as-a-Service (SOCaaS): Architecture, Benefits, and ROI",
+      "link": "https://www.deepwatch.com/glossary/soc-as-a-service-socaas/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESeAHEIkXXDIKnkQ0C4wfvkAJE9lR_HFsyezlJKYQlgTdgVW_ry5xDcAhLlN7lOPDMri9FGUSRFb4yAroxeTsGzu1G_ZHIMVpQT-7_cq6nfIoqXcy9zOe_RJwgU2CkICLce4SHCPq8IHbN6C5VhuVESSnbmlzRXQg6-g&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECDUQAQ&uoh=1",
+      "displayed_link": "https://www.deepwatch.com \u203a glossary \u203a soc-as-a-servic...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAMFBMVEX9ggtHcEz_hQ3_hQ3_hQ3_hAz_hAz_hQ3_gwv_hQ3_hQ3_hAz_hAz_ggn_hQ3_hQ0PAVCUAAAAD3RSTlMBAPXksh4w1Q-SdWFICMcrLD3jAAAA-UlEQVQokW2SWQLDIAhEHRdcEuv9b1sWNU0aPhLkKSOgc2ZAajGMEWIrgLsZ0mdsi-VGcYybnT8UbQaDn86xKUgDviZWrsbToshGTtaNJ6gy_GBdZlTCGfd9lM-jcD9kc6fwj0xOmIpvpqoI7zAr9O8wKOQM7rjpxoO1PKTjvOIvX1_FcyNedPYEdusWhA-fxLNeyz9Jnllx77MxolJkX9ZdgGo4TYFdCmzGNHviSKeebeRYxUhlq-owWUvdAnr55ZKOlCdd0hNyZMFhyS6YMS5YnjAtWPzo_zBYydyjl5Nuv5PnyVAK0aL8GvwFfSVr2KI6FYG50g5_Adn8F105ahRgAAAAAElFTkSuQmCC.png",
+      "snippet": "SOC-as-a-Service (SOCaaS) is a subscription-based model that delivers fully managed security operations center (SOC) capabilities through the cloud.",
+      "snippet_highlighted_words": [
+        "SOC-as-a-Service (SOCaaS"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "SOC-as-a-Service (SOCaaS) is a subscription-based model that delivers fully managed security operations center (SOC) capabilities through the cloud.",
+          "source_info_link": "https://www.deepwatch.com/glossary/soc-as-a-service-socaas/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAMFBMVEX9ggtHcEz_hQ3_hQ3_hQ3_hAz_hAz_hQ3_gwv_hQ3_hQ3_hAz_hAz_ggn_hQ3_hQ0PAVCUAAAAD3RSTlMBAPXksh4w1Q-SdWFICMcrLD3jAAAA-UlEQVQokW2SWQLDIAhEHRdcEuv9b1sWNU0aPhLkKSOgc2ZAajGMEWIrgLsZ0mdsi-VGcYybnT8UbQaDn86xKUgDviZWrsbToshGTtaNJ6gy_GBdZlTCGfd9lM-jcD9kc6fwj0xOmIpvpqoI7zAr9O8wKOQM7rjpxoO1PKTjvOIvX1_FcyNedPYEdusWhA-fxLNeyz9Jnllx77MxolJkX9ZdgGo4TYFdCmzGNHviSKeebeRYxUhlq-owWUvdAnr55ZKOlCdd0hNyZMFhyS6YMS5YnjAtWPzo_zBYydyjl5Nuv5PnyVAK0aL8GvwFfSVr2KI6FYG50g5_Adn8F105ahRgAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrABL2dvdG8_dXJsPUNBRVNlQUhFSWtYWGc1ZlBIY0oyTmpGemxQb2dXMEhKVXd5a0ppOW1rU0F6TjRhT0I2SkhTc0toMTl0azlQZTNkZzlhT2ZxMGRLMUhzRjZ2N1NPdlBhVW9hVlUwQzFEeWo2Tk83NEdHRXZ6R2otTDU5NzFFWXJpejI0a0JfQVZZYVpwQWdrcVNXc01IV2xoRVVFTXJ4bEhBRk9DREttN2JFeHpqTlESBBoCCAAa7wMSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDJAwgAEAAYACAAKhQKA3NvYxUWEJxAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFSbElEAysAEvZ290bz91cmw9Q0FFU2VBSEVJa1hYZzVmUEhjSjJOakZ6bFBvZ1cwSEpVd3lrSmk5bWtTQXpONGFPQjZKSFNzS2gxOXRrOVBlM2RnOWFPZnEwZEsxSHNGNnY3U092UGFVb2FWVTBDMUR5ajZOTzc0R0dFdnpHai1MNTk3MUVZcml6MjRrQl9BVllhWnBBZ2txU1dzTUhXbGhFVUVNcnhsSEFGT0NES203YkV4empOUTosPGI-U09DLWFzLWEtU2VydmljZTwvYj4gKFNPQ2FhUykgLSBEZWVwd2F0Y2hCmwE8Yj5TT0MtYXMtYS1TZXJ2aWNlIChTT0NhYVM8L2I-KSBpcyBhIHN1YnNjcmlwdGlvbi1iYXNlZCBtb2RlbCB0aGF0IGRlbGl2ZXJzIGZ1bGx5IG1hbmFnZWQgc2VjdXJpdHkgb3BlcmF0aW9ucyBjZW50ZXIgKFNPQykgY2FwYWJpbGl0aWVzIHRocm91Z2ggdGhlIGNsb3VkLkoBYUoCYXMiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrABL2dvdG8_dXJsPUNBRVNlQUhFSWtYWGc1ZlBIY0oyTmpGemxQb2dXMEhKVXd5a0ppOW1rU0F6TjRhT0I2SkhTc0toMTl0azlQZTNkZzlhT2ZxMGRLMUhzRjZ2N1NPdlBhVW9hVlUwQzFEeWo2Tk83NEdHRXZ6R2otTDU5NzFFWXJpejI0a0JfQVZZYVpwQWdrcVNXc01IV2xoRVVFTXJ4bEhBRk9DREttN2JFeHpqTlESBBoCCAAa7wMSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDJAwgAEAAYACAAKhQKA3NvYxUWEJxAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFSbElEAysAEvZ290bz91cmw9Q0FFU2VBSEVJa1hYZzVmUEhjSjJOakZ6bFBvZ1cwSEpVd3lrSmk5bWtTQXpONGFPQjZKSFNzS2gxOXRrOVBlM2RnOWFPZnEwZEsxSHNGNnY3U092UGFVb2FWVTBDMUR5ajZOTzc0R0dFdnpHai1MNTk3MUVZcml6MjRrQl9BVllhWnBBZ2txU1dzTUhXbGhFVUVNcnhsSEFGT0NES203YkV4empOUTosPGI-U09DLWFzLWEtU2VydmljZTwvYj4gKFNPQ2FhUykgLSBEZWVwd2F0Y2hCmwE8Yj5TT0MtYXMtYS1TZXJ2aWNlIChTT0NhYVM8L2I-KSBpcyBhIHN1YnNjcmlwdGlvbi1iYXNlZCBtb2RlbCB0aGF0IGRlbGl2ZXJzIGZ1bGx5IG1hbmFnZWQgc2VjdXJpdHkgb3BlcmF0aW9ucyBjZW50ZXIgKFNPQykgY2FwYWJpbGl0aWVzIHRocm91Z2ggdGhlIGNsb3VkLkoBYUoCYXMiAhABSABYAGgA",
+      "source": "Deepwatch",
+      "read_more_link": "https://www.deepwatch.com/glossary/soc-as-a-service-socaas/#:~:text=SOC%2Das%2Da%2DService%20(SOCaaS)%20is%20a%20subscription%2Dbased,(SOC)%20capabilities%20through%20the%20cloud."
+    },
+    {
+      "position": 8,
+      "title": "What Is SOC as a Service? A Complete Guide",
+      "link": "https://clearnetwork.com/what-is-soc-as-a-service-complete-guide/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESfgHEIkXXPl1UXz1lmxCg4wjq3KN7KH0AjhGmJ1DKZFiqRwjxq6v_a863vvbICEvHify5akhPJWMKBSn-UeaPOMXFzPNksIx5-KghUinieO761GOptP6-EoexNe1dDNwJ6vsK-Q9YTmBrnW-d_xWs9pdkyFeLT6b0__f6k-x6kA&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECD4QAQ&uoh=1",
+      "displayed_link": "https://clearnetwork.com \u203a what-is-soc-as-a-service-comp...",
+      "favicon": "https://serpapi.com/searches/6af4e90dd5a7e82ebd945f9b/images/Y1MhK2w50-UuDxOtWkx3G8McmK5GWaE5pSIXAoFmB0Y.png",
+      "date": "Aug 1, 2025",
+      "snippet": "Learn what SOC as a Service is, how it works, and why managed SOC solutions improve security, response speed, and compliance.",
+      "snippet_highlighted_words": [
+        "Learn what SOC as a Service is"
+      ],
+      "sitelinks": {
+        "inline": [
+          {
+            "title": "Core Functions",
+            "link": "https://clearnetwork.com/what-is-soc-as-a-service-complete-guide/#:~:text=Core%20Functions,-Threat%20monitoring%20across%20every%20environment"
+          },
+          {
+            "title": "Managed Soc Solutions In...",
+            "link": "https://clearnetwork.com/what-is-soc-as-a-service-complete-guide/#:~:text=Managed%20SOC%20Solutions%20in%20Practice,-When%20businesses%20consider%20adopting%20SOC"
+          },
+          {
+            "title": "Benefits Of Soc As A Service",
+            "link": "https://clearnetwork.com/what-is-soc-as-a-service-complete-guide/#:~:text=.-,Benefits%20of%20SOC%20as%20a%20Service"
+          }
+        ]
+      },
+      "about_this_result": {
+        "source": {
+          "description": "Learn what SOC as a Service is, how it works, and why managed SOC solutions improve security, response speed, and compliance.",
+          "source_info_link": "https://clearnetwork.com/what-is-soc-as-a-service-complete-guide/",
+          "icon": "https://serpapi.com/searches/6af4e90dd5a7e82ebd945f9b/images/Y1MhK2w50-UuDxOtWkx3G2dczDc00FGbq5ynMMtW1RHO2c3kjdkaYe2GMINIyaWx.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CrgBL2dvdG8_dXJsPUNBRVNmZ0hFSWtYWGFhVDZNbXRWWmtGaktCZXppc1NHSzF5NndPSE5RVkM0VjBreFJVMkViRE9rTDdRbWt2MUZQYVFhRHFacGVPbXI0SWxGdTJDQW5lNEhwWDNmVjJ0WDNXOTBYaTJyU1RCOFM5b1RmS0RqbVd1SVZ1YXdLWDNpSWl5Mm9mMVpTTm1aZWduSXZKTW1JcnktZTVJeHJtZVBDQ3F0VVhzRnBud0l0ZxIEGgIIABr0AxIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAggBegCCQM4DCAAQABgAIAAqFAoDc29jFSnRukAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UV2nSvQDK4AS9nb3RvP3VybD1DQUVTZmdIRUlrWFhhYVQ2TW10VlprRmpLQmV6aXNTR0sxeTZ3T0hOUVZDNFYwa3hSVTJFYkRPa0w3UW1rdjFGUGFRYURxWnBlT21yNElsRnUyQ0FuZTRIcFgzZlYydFgzVzkwWGkyclNUQjhTOW9UZktEam1XdUlWdWF3S1gzaUlpeTJvZjFaU05tWmVnbkl2Sk1tSXJ5LWU1SXhybWVQQ0NxdFVYc0ZwbndJdGc6QFdoYXQgSXMgPGI-U09DIGFzIGEgU2VydmljZTwvYj4_IEEgQ29tcGxldGUgR3VpZGUgLSBDbGVhcm5ldHdvcmtChAE8Yj5MZWFybiB3aGF0IFNPQyBhcyBhIFNlcnZpY2UgaXM8L2I-LCBob3cgaXQgd29ya3MsIGFuZCB3aHkgbWFuYWdlZCBTT0Mgc29sdXRpb25zIGltcHJvdmUgc2VjdXJpdHksIHJlc3BvbnNlIHNwZWVkLCBhbmQgY29tcGxpYW5jZS5KAmFzSgFhIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CrgBL2dvdG8_dXJsPUNBRVNmZ0hFSWtYWGFhVDZNbXRWWmtGaktCZXppc1NHSzF5NndPSE5RVkM0VjBreFJVMkViRE9rTDdRbWt2MUZQYVFhRHFacGVPbXI0SWxGdTJDQW5lNEhwWDNmVjJ0WDNXOTBYaTJyU1RCOFM5b1RmS0RqbVd1SVZ1YXdLWDNpSWl5Mm9mMVpTTm1aZWduSXZKTW1JcnktZTVJeHJtZVBDQ3F0VVhzRnBud0l0ZxIEGgIIABr0AxIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAggBegCCQM4DCAAQABgAIAAqFAoDc29jFSnRukAaCGl2O3A7c29jKgkKAmFzFQAAAAAqCAoBYRUAAAAAKg4KB3NlcnZpY2UV2nSvQDK4AS9nb3RvP3VybD1DQUVTZmdIRUlrWFhhYVQ2TW10VlprRmpLQmV6aXNTR0sxeTZ3T0hOUVZDNFYwa3hSVTJFYkRPa0w3UW1rdjFGUGFRYURxWnBlT21yNElsRnUyQ0FuZTRIcFgzZlYydFgzVzkwWGkyclNUQjhTOW9UZktEam1XdUlWdWF3S1gzaUlpeTJvZjFaU05tWmVnbkl2Sk1tSXJ5LWU1SXhybWVQQ0NxdFVYc0ZwbndJdGc6QFdoYXQgSXMgPGI-U09DIGFzIGEgU2VydmljZTwvYj4_IEEgQ29tcGxldGUgR3VpZGUgLSBDbGVhcm5ldHdvcmtChAE8Yj5MZWFybiB3aGF0IFNPQyBhcyBhIFNlcnZpY2UgaXM8L2I-LCBob3cgaXQgd29ya3MsIGFuZCB3aHkgbWFuYWdlZCBTT0Mgc29sdXRpb25zIGltcHJvdmUgc2VjdXJpdHksIHJlc3BvbnNlIHNwZWVkLCBhbmQgY29tcGxpYW5jZS5KAmFzSgFhIgIQAUgAWABoAA",
+      "source": "ClearNetwork, Inc"
+    },
+    {
+      "position": 9,
+      "title": "5 top SOC-as-a-service providers and how to evaluate them",
+      "link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESngEBxCJF1zvXt-r2i13lFjQ1UxKuat6VYIwqm1G_xLtNTMf6PcCAkIYZpYYiD8c8sMzBtakIeW1Gl1okQ4ZkfJCDeExxHltZJLj-GfMC-TcpquShW_IYIENOz7QeX4bJdy1L99OXXMuCuvkC1I41fABiIDA0DNWV7qCR4lhEKh7dGFMdzENqcO0FtjwZhFOUWVRzNYulE3S5v1cQuztDlg&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQFnoECEEQAQ&uoh=1",
+      "displayed_link": "https://www.techtarget.com \u203a news \u203a 5-top-SOC-as-a-se...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEUeuaweuawAtacduaz___8RuKvo9_X2_PzQ7uszvrFbx72f3NaE08s_7YfVAAAAAnRSTlPtOLVB-AcAAACWSURBVCiR1dPLEoAgCAVQEiFf__-9iZJYY-67K_IsYBiCA_AjcMCnVd1YVSeZHuYvYA7Mk4UQDL1kQvY-PtFpqKG7W0GU8NmTSJAluWqb1nlNxxbDU18irlH7CCLWTq3nQJuWEKlPu0b8NRKRopYTlpRS7Kjla7eFxm6zrS8b5jeiK0GSaJSFBiLZnd03YbjO_qh3v8MFf9ILPZtyjVAAAAAASUVORK5CYII.png",
+      "date": "Apr 2, 2026",
+      "snippet": "SOCaaS simplifies security operations. Compare five providers and key evaluation criteria, including tools, automation, threat intelligence ...",
+      "snippet_highlighted_words": [
+        "SOCaaS simplifies security operations"
+      ],
+      "sitelinks": {
+        "inline": [
+          {
+            "title": "Key Capabilities And...",
+            "link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/#:~:text=Key%20capabilities%20and%20features%20to%20look%20for"
+          },
+          {
+            "title": "Socaas Vendors To Consider",
+            "link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/#:~:text=SOCaaS%20vendors%20to%20consider"
+          },
+          {
+            "title": "Crowdstrike",
+            "link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/#:~:text=CrowdStrike,-CrowdStrike"
+          }
+        ]
+      },
+      "about_this_result": {
+        "source": {
+          "description": "SOCaaS simplifies security operations. Compare five providers and key evaluation criteria, including tools, automation, threat intelligence ...",
+          "source_info_link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEUeuaweuawAtacduaz___8RuKvo9_X2_PzQ7uszvrFbx72f3NaE08s_7YfVAAAAAnRSTlPtOLVB-AcAAACWSURBVCiR1dPLEoAgCAVQEiFf__-9iZJYY-67K_IsYBiCA_AjcMCnVd1YVSeZHuYvYA7Mk4UQDL1kQvY-PtFpqKG7W0GU8NmTSJAluWqb1nlNxxbDU18irlH7CCLWTq3nQJuWEKlPu0b8NRKRopYTlpRS7Kjla7eFxm6zrS8b5jeiK0GSaJSFBiLZnd03YbjO_qh3v8MFf9ILPZtyjVAAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CuQBL2dvdG8_dXJsPUNBRVNuZ0VCeENKRjEwcVJZRkpnQ3NFMkIzS0JHSmMzM0VOTGRIT1VPbkQwbGhyMUFTNU01SlREaFYtRjRfdWtPem4tMEExcThoZHEyaDNmMUJVRmtIOUJ6UFlya0lncW9LWl9lajZHOUVCN3ZxUE16U3kyWWUzZkpZOVRJVUlPb3NTZFljaTluZ2h3YUtJSzVpVjQxNE5uS1JSNzlHMjFxUDlzWnhNTjhtSFd0aUZ4UkRZMjlYU05jZ0FzSGVSaFVNcVJYWl9xMzY2Y09JZXZPV1BRWjdzSGpBEgQaAggAGrkEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgIIAXoAgkCRBAgAEAAYACAAKhQKA3NvYxWMlIlAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFYkFkUAy5AEvZ290bz91cmw9Q0FFU25nRUJ4Q0pGMTBxUllGSmdDc0UyQjNLQkdKYzMzRU5MZEhPVU9uRDBsaHIxQVM1TTVKVERoVi1GNF91a096bi0wQTFxOGhkcTJoM2YxQlVGa0g5QnpQWXJrSWdxb0taX2VqNkc5RUI3dnFQTXpTeTJZZTNmSlk5VElVSU9vc1NkWWNpOW5naHdhS0lLNWlWNDE0Tm5LUlI3OUcyMXFQOXNaeE1OOG1IV3RpRnhSRFkyOVhTTmNnQXNIZVJoVU1xUlhaX3EzNjZjT0lldk9XUFFaN3NIakE6QDUgdG9wIDxiPlNPQy1hcy1hLXNlcnZpY2U8L2I-IHByb3ZpZGVycyBhbmQgaG93IHRvIGV2YWx1YXRlIHRoZW1CmwE8Yj5TT0NhYVMgc2ltcGxpZmllcyBzZWN1cml0eSBvcGVyYXRpb25zPC9iPi4gQ29tcGFyZSBmaXZlIHByb3ZpZGVycyBhbmQga2V5IGV2YWx1YXRpb24gY3JpdGVyaWEsIGluY2x1ZGluZyB0b29scywgYXV0b21hdGlvbiwgdGhyZWF0IGludGVsbGlnZW5jZSZuYnNwOy4uLkoCYXNKAWEiAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CuQBL2dvdG8_dXJsPUNBRVNuZ0VCeENKRjEwcVJZRkpnQ3NFMkIzS0JHSmMzM0VOTGRIT1VPbkQwbGhyMUFTNU01SlREaFYtRjRfdWtPem4tMEExcThoZHEyaDNmMUJVRmtIOUJ6UFlya0lncW9LWl9lajZHOUVCN3ZxUE16U3kyWWUzZkpZOVRJVUlPb3NTZFljaTluZ2h3YUtJSzVpVjQxNE5uS1JSNzlHMjFxUDlzWnhNTjhtSFd0aUZ4UkRZMjlYU05jZ0FzSGVSaFVNcVJYWl9xMzY2Y09JZXZPV1BRWjdzSGpBEgQaAggAGrkEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgIIAXoAgkCRBAgAEAAYACAAKhQKA3NvYxWMlIlAGghpdjtwO3NvYyoJCgJhcxUAAAAAKggKAWEVAAAAACoOCgdzZXJ2aWNlFYkFkUAy5AEvZ290bz91cmw9Q0FFU25nRUJ4Q0pGMTBxUllGSmdDc0UyQjNLQkdKYzMzRU5MZEhPVU9uRDBsaHIxQVM1TTVKVERoVi1GNF91a096bi0wQTFxOGhkcTJoM2YxQlVGa0g5QnpQWXJrSWdxb0taX2VqNkc5RUI3dnFQTXpTeTJZZTNmSlk5VElVSU9vc1NkWWNpOW5naHdhS0lLNWlWNDE0Tm5LUlI3OUcyMXFQOXNaeE1OOG1IV3RpRnhSRFkyOVhTTmNnQXNIZVJoVU1xUlhaX3EzNjZjT0lldk9XUFFaN3NIakE6QDUgdG9wIDxiPlNPQy1hcy1hLXNlcnZpY2U8L2I-IHByb3ZpZGVycyBhbmQgaG93IHRvIGV2YWx1YXRlIHRoZW1CmwE8Yj5TT0NhYVMgc2ltcGxpZmllcyBzZWN1cml0eSBvcGVyYXRpb25zPC9iPi4gQ29tcGFyZSBmaXZlIHByb3ZpZGVycyBhbmQga2V5IGV2YWx1YXRpb24gY3JpdGVyaWEsIGluY2x1ZGluZyB0b29scywgYXV0b21hdGlvbiwgdGhyZWF0IGludGVsbGlnZW5jZSZuYnNwOy4uLkoCYXNKAWEiAhABSABYAGgA",
+      "source": "TechTarget",
+      "read_more_link": "https://www.techtarget.com/news/5-top-SOC-as-a-service-providers-and-how-to-evaluate-them/836263/#:~:text=SOCaaS%20simplifies%20security%20operations.%20Compare,automation%2C%20threat%20intelligence%20and%20compliance."
+    }
+  ],
+  "related_searches": [
+    {
+      "block_position": 1,
+      "query": "What is SOC in cyber security",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=What%20is%20SOC%20in%20cyber%20security&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAgvEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=What+is+SOC+in+cyber+security"
+    },
+    {
+      "block_position": 1,
+      "query": "Soc as a service certification",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Soc%20as%20a%20service%20certification&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAhDEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Soc+as+a+service+certification"
+    },
+    {
+      "block_position": 1,
+      "query": "SOC full form",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=SOC%20full%20form&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAhAEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=SOC+full+form"
+    },
+    {
+      "block_position": 1,
+      "query": "SOC Analyst full form",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=SOC%20Analyst%20full%20form&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAg_EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=SOC+Analyst+full+form"
+    },
+    {
+      "block_position": 1,
+      "query": "SOC full form in cyber security",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=SOC%20full%20form%20in%20cyber%20security&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAg9EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=SOC+full+form+in+cyber+security"
+    },
+    {
+      "block_position": 1,
+      "query": "Security Operations center (SOC)",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=Security%20Operations%20center%20%28SOC%29&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAg4EAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=Security+Operations+center+%28SOC%29"
+    },
+    {
+      "block_position": 1,
+      "query": "SOC in battery",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=SOC%20in%20battery&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAgzEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=SOC+in+battery"
+    },
+    {
+      "block_position": 1,
+      "query": "SOC services",
+      "link": "https://www.google.com/search?gl=us&hl=en&q=SOC%20services&sa=X&sca_esv=712add983c36ca96&sxsrf=AKL5yDiF6nnkbOK8E8KFq8FPatk2QgY4XA%3A1794435341759&ved=2ahUKEwiXo_jI-ICYAxXUkIkEHT1LLzUQ1QJ6BAgxEAE",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_ads&gl=us&google_domain=google.com&hl=en&location=Austin%2C+Texas%2C+United+States&q=SOC+services"
+    }
+  ]
+}
+treg: charged $0.015 · call id 05e92a6c96044c669a8b6072582bf110

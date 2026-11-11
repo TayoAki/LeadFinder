@@ -23,7 +23,7 @@
     {"name": "Marking done updates the badge and the hero", "steps": [{"select": "#role", "value": "office"}, {"click": "[data-tab='incidents']"}, {"click": "[data-testid='done-bs1']"}, {"click": "[data-tab='overview']"}],
      "expect": [".rail [data-view='alerts'] .badge:has-text('2')", "[data-testid='status']:has-text('2 things need your team')", ".tabs:not(:has([data-tab='billing']))"]},
     {"name": "Notifications open a real panel", "steps": [{"select": "#role", "value": "office"}, {"click": ".rail [data-view='alerts']"}],
-     "expect": ["#pop [data-testid='notifications']:has-text('reception@')", "#pop [data-testid='notif-count']:has-text('3 need action')"]}
+     "expect": ["#pop [data-testid='notifications']:has-text('reception@')", "#pop [data-testid='notif-count']:has-text('need action')", "#pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"]}
    ]},
   {"id": "it_mgr", "department": "IT", "role": "In-house IT manager",
    "cares_about": "Full coverage, patched systems, fewer false alarms.",
@@ -76,7 +76,7 @@
      "expect": ["[data-testid='baa']:has-text('Signed Mar 2, 2026')", "[data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')", "[data-testid='fw-score']:has-text('of 13 controls met')", "[data-testid='audit-dates']:has-text('Mar 1, 2027')", "[data-testid='auditor']:has-text('Dana Whitfield')"]},
     {"name": "Framework switch swaps controls and citations", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}, {"select": "#fw", "value": "pci"}],
      "expect": ["[data-testid='framework']:has-text('PCI DSS v4.0')", "[data-testid='framework']:has-text('Req. 10.5.1')", "[data-testid='framework']:not(:has-text('§164'))", "[data-testid='fw-score']:has-text('of 11 controls met')"]},
-    {"name": "Export evidence with history", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}, {"click": "[data-testid='export-evidence']"}, {"click": "[data-testid='export-go']"}],
+    {"name": "Export evidence with history", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}, {"select": "#fw", "value": "hipaa"}, {"click": "[data-testid='export-evidence']"}, {"click": "[data-testid='export-go']"}],
      "expect": [".toast.show:has-text('Evidence pack exported')", "[data-testid='export-history']:has-text('HIPAA · Last 12 months')"]},
     {"name": "One training upload fixes compliance and insurance", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='insurance']"}, {"click": "#panel-insurance [data-upload-training]"}],
      "expect": ["[data-testid='q-training']:has-text('certificates on file')", "[data-testid='readiness']:has-text('7 of 10')"]}

@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 491,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: meta-ads-search: the Ad Library has no active ads for 'managed detection and response' in US",
+      "module: meta-ads-search: 'managed detection and response' \u00b7 US \u00b7 active \u00b7 0 ad(s) \u00b7 one view \u00b7 direct"
+    ]
+  },
+  "recipe": "meta-ads-search",
+  "rows": [],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1453,
+      "requests": 1450,
+      "search": 2889
+    },
+    "units": 3
+  },
+  "version": 2
+}
+treg: charged $0 · call id 94430358013f4d0fa4183398fec40988

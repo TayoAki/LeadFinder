@@ -5,7 +5,7 @@
 <title>Briefcase mockup</title>
 <style>/* Shared app shell: left rail | sidebar | (tabs + main) | right sidebar, bottom bar across. */
 :root{
-  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#8a919c;
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#6b7280;
   --accent:#2f5bea; --accent-weak:#e8eefe; --good:#13795b; --good-weak:#e3f5ee; --warn:#a15c00; --warn-weak:#fff3df;
   --bad:#c0282d; --bad-weak:#fde8e8; --focus:#2f5bea; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
   --radius:10px; --rail:64px; --side:264px; --right:312px; --bar:36px;
@@ -13,11 +13,11 @@
   font-size:14px; line-height:1.45; color:var(--text);
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
-  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#7d8693;
+  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
   --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; } }
 :root[data-theme="dark"]{
-  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#7d8693;
+  --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
   --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; }
 *{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--bg)}
@@ -41,7 +41,9 @@ svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stro
 .item .meta{margin-left:auto;font-size:12px;color:var(--faint);font-variant-numeric:tabular-nums}
 .item small{display:block;color:var(--faint);font-size:12px}
 .main{grid-area:main;display:flex;flex-direction:column;min-width:0;overflow:hidden}
-.tabs{display:flex;border-bottom:1px solid var(--line);background:var(--panel);padding:0 12px;gap:2px;overflow-x:auto}
+.tabbar{display:flex;align-items:center;border-bottom:1px solid var(--line);background:var(--panel);padding:0 8px;gap:6px;min-width:0}
+.tabs{display:flex;gap:2px;overflow-x:auto;min-width:0;flex:1;scrollbar-width:thin;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+@media (min-width:1181px){.tabs{-webkit-mask-image:none;mask-image:none}}
 .tabs button{padding:12px 14px;color:var(--muted);border-bottom:2px solid transparent;white-space:nowrap;font-weight:500}
 .tabs button[aria-selected="true"]{color:var(--text);border-bottom-color:var(--accent)}
 .content{flex:1;overflow:auto;padding:20px 22px}
@@ -68,7 +70,13 @@ th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;le
 .list{display:flex;flex-direction:column;gap:6px}
 .msg{padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--panel)} .msg.me{background:var(--accent-weak);border-color:transparent}
 .msg.ai{border-style:dashed;border-color:var(--accent)}
-.toggle-side,.toggle-right{display:none}
+.toggle-side,.toggle-right{display:none;flex:none}
+.drawer-close{display:none;margin-left:auto}
+.backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:19;opacity:0;pointer-events:none;transition:opacity .2s}
+body.drawer-open .backdrop{opacity:1;pointer-events:auto}
+.role-switch{font:inherit;font-size:12px;padding:3px 6px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--text)}
+.cite{min-width:24px;min-height:24px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .chip{display:inline-block;padding:2px 7px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line);font-size:12px;margin:2px 4px 2px 0}
 .empty-note{color:var(--faint);font-size:12px}
 .toast{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:9px 14px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -76,217 +84,1059 @@ th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;le
 /* Tablet: right bar becomes a drawer */
 @media (max-width:1180px){ .app{grid-template-columns:var(--rail) var(--side) minmax(0,1fr);grid-template-areas:"rail side main" "bar bar bar"}
   .right{position:fixed;right:0;top:0;bottom:var(--bar);width:min(340px,92vw);transform:translateX(100%);transition:transform .2s;z-index:20;box-shadow:-8px 0 24px rgba(0,0,0,.12)}
-  .right.open{transform:none} .toggle-right{display:inline-flex} .g4{grid-template-columns:repeat(2,minmax(0,1fr))} }
+  .right.open{transform:none} .toggle-right{display:inline-flex} .right .drawer-close{display:inline-flex} .g4{grid-template-columns:repeat(2,minmax(0,1fr))} }
 /* Phone: sidebar becomes a drawer, rail moves to the bottom */
 @media (max-width:760px){ :root{--bar:auto}
   .app{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto 56px;grid-template-areas:"main" "bar" "rail";height:100dvh}
   .rail{flex-direction:row;justify-content:space-around;border-right:0;border-top:1px solid var(--line);padding:6px 8px}
   .rail .logo,.rail .spacer{display:none}
   .side{position:fixed;left:0;top:0;bottom:0;width:min(300px,88vw);transform:translateX(-105%);transition:transform .2s;z-index:21;box-shadow:8px 0 24px rgba(0,0,0,.12)}
-  .side.open{transform:none} .right{bottom:0}
+  .side.open{transform:none} .right{bottom:0} .side .drawer-close{display:inline-flex}
   .toggle-side{display:inline-flex}
   .content{padding:14px 16px} .g3,.g2,.g4{grid-template-columns:minmax(0,1fr)}
-  .bottombar{padding:6px 16px;flex-wrap:wrap;gap:6px 14px;white-space:normal} .bottombar .sep{display:none}
+  .bottombar{padding:6px 16px;gap:12px;overflow-x:auto} .bottombar .sep,.bottombar .hide-sm{display:none}
   table{font-size:13px} .hide-sm{display:none} }
 
-:root{--accent:#6d4aff;--accent-weak:#efebff;--focus:#6d4aff}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#a995ff;--accent-weak:#251f42}}
-.cite{display:inline-block;font-size:11px;font-weight:700;padding:0 6px;border-radius:5px;background:var(--accent-weak);color:var(--accent);margin-left:3px;vertical-align:1px}
-.cite:hover{filter:brightness(.95)} .q{font-weight:600;margin-bottom:8px}
+:root{--accent:#5534d6;--accent-weak:#eeeaff;--focus:#5534d6;--faint:#5d6470}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}}
+:root[data-theme="dark"]{--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}
+.cite{display:inline-grid;place-items:center;font-size:12px;font-weight:700;padding:0 6px;border-radius:6px;background:var(--accent-weak);color:var(--accent);margin:0 2px 0 3px;vertical-align:baseline;border:1px solid transparent;line-height:1}
+.cite:hover,.cite[aria-pressed="true"]{border-color:var(--accent)}
+.q{font-weight:600;margin-bottom:6px}
+.turn{display:flex;flex-direction:column;gap:6px}
+.input{font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--panel);color:var(--text);min-width:0}
+select.input{padding:6px 8px}
+label.lbl{font-size:12px;color:var(--muted);font-weight:600}
 .tl{border-left:2px solid var(--line);margin-left:6px;padding-left:16px}
-.tl .ev{position:relative;padding:6px 0 12px} .tl .ev::before{content:'';position:absolute;left:-22px;top:10px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
-.doc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;font-family: Georgia, "Times New Roman", serif;line-height:1.6;max-width:720px}
-.privacy{display:flex;gap:8px;align-items:flex-start;padding:10px;border-radius:10px;background:var(--good-weak);color:var(--good);font-size:12px;font-weight:600}
+.tl .ev{position:relative;padding:6px 8px 10px;border-radius:8px;cursor:pointer}
+.tl .ev::before{content:'';position:absolute;left:-23px;top:12px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.tl .ev.sel{background:var(--accent-weak)} .tl .ev:hover{background:var(--panel-2)}
+.doc{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px;font-family:Georgia,"Times New Roman",serif;line-height:1.6;min-width:0}
+.doc p{margin:0 0 10px}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.privacy{display:flex;gap:8px;align-items:flex-start;padding:10px;border-radius:10px;background:var(--panel-2);border:1px solid var(--line);color:var(--text);font-size:13px}
+.privacy svg{flex:none;color:var(--good)}
+.banner{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line);background:var(--panel)}
+.banner.warn{background:var(--warn-weak);border-color:transparent} .banner.good{background:var(--good-weak);border-color:transparent} .banner.info{background:var(--accent-weak);border-color:transparent} .banner.bad{background:var(--bad-weak);border-color:transparent}
+.banner strong{color:var(--text)} .banner .tag{font-weight:700}
+.banner.warn .tag{color:var(--warn)} .banner.good .tag{color:var(--good)} .banner.info .tag{color:var(--accent)} .banner.bad .tag{color:var(--bad)}
+.tablewrap{overflow-x:auto;max-width:100%}
+.kv{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px;font-size:13px;margin:0} .kv dt{color:var(--muted)} .kv dd{margin:0}
+.page{background:#fff;color:#222;border:1px solid #cfd4dc;border-radius:6px;padding:10px 12px;font:11px/1.5 Georgia,serif;margin-top:8px}
+.page .ln{height:6px;background:#e3e6eb;border-radius:3px;margin:5px 0} .page .ln.s{width:70%}
+.page mark{background:#ffe58a;color:#222;padding:1px 2px;display:block;border-left:3px solid #c08a00}
+.page .ph{display:flex;justify-content:space-between;color:#555;font-size:10px;font-family:ui-sans-serif,system-ui,sans-serif}
+mark.term{background:var(--accent-weak);color:var(--text);padding:0 2px;border-radius:3px}
+.sel-row{background:var(--accent-weak)}
+tr.clickable{cursor:pointer} tr.clickable:hover{background:var(--panel-2)}
+.state{font-size:12px;font-weight:600}
+.chipbtn{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel-2);font-size:12px;font-weight:600;min-height:28px}
+.chipbtn[aria-pressed="true"]{background:var(--accent-weak);color:var(--accent);border-color:var(--accent)}
+.linkbtn{color:var(--accent);text-decoration:underline;font-weight:600;padding:0;min-height:24px}
+.drawer-head{display:flex}
+.denied{max-width:620px} .denied h1{margin-bottom:8px}
+.rail button .lock{position:absolute;bottom:3px;right:3px;width:12px;height:12px;color:var(--muted)}
+.rail button[hidden]{display:none}
+.peek{display:none}
+@media (max-width:1180px){.peek{display:block}}
+.section{margin-top:16px} .section > h2{font-size:15px;margin:0 0 8px}
+.hstack{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;gap:2px}
+.icon-ok,.icon-warn,.icon-bad{font-weight:700}
+.vlabel{font-size:12px}
+details summary{cursor:pointer;font-weight:600;padding:6px 0}
+.side .top{flex-direction:column;align-items:flex-start;gap:2px}
+.side .top small{font-weight:400;color:var(--muted);font-size:12px}
+.item .tagline{display:block;font-size:11px;font-weight:600;color:var(--muted)}
+.mini{font-size:12px}
+.right .card + .card{margin-top:8px}
+.badge-inline{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:10px;background:var(--bad);color:#fff;font-size:11px;font-weight:700;padding:0 6px}
+@media (max-width:760px){
+  .split{grid-template-columns:minmax(0,1fr)}
+  .rail{gap:0;padding:4px 2px} .rail button{width:38px;height:44px} .rail .avatar{display:none}
+  .rail .badge{top:2px;right:0}
+  .tabs button{padding:12px 10px}
+  .vlabel{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  table.cards-sm thead{display:none}
+  table.cards-sm,table.cards-sm tbody,table.cards-sm tr,table.cards-sm td{display:block;width:100%}
+  table.cards-sm tr{border:1px solid var(--line);border-radius:10px;margin:0 0 10px;padding:8px 10px;background:var(--panel)}
+  table.cards-sm td{border:0;padding:3px 0;display:flex;gap:10px;text-align:left}
+  table.cards-sm td.num{text-align:left}
+  table.cards-sm td::before{content:attr(data-label);flex:none;width:92px;font-size:12px;font-weight:600;color:var(--muted)}
+  table.cards-sm td[data-label=""]::before{display:none}
+  .content h1{font-size:18px}
+}
 </style>
 </head>
 <body>
 <div class="app">
   <nav class="rail" aria-label="Main">
     <div class="logo" aria-hidden="true">B</div>
-    <button data-view="home" data-tab-target="ask" aria-current="page" aria-label="Matters" title="Matters"><svg class="i" viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
-    <button data-view="search" aria-label="Search all firm documents" title="Search" data-toast="Search across 18,402 firm documents (mock)"><svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
-    <button data-view="alerts" data-tab-target="timeline" aria-label="Deadlines, 2 this week" title="Deadlines"><svg class="i" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21h4"/></svg><span class="badge">2</span></button>
-    <button data-view="docs" data-tab-target="draft" aria-label="Templates and drafts" title="Drafts"><svg class="i" viewBox="0 0 24 24"><path d="M14 3H6v18h12V7z"/><path d="M14 3v4h4M9 13h6M9 17h6"/></svg></button>
-    <button data-view="settings" data-tab-target="admin" aria-label="Settings" title="Settings"><svg class="i" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg></button>
-    <div class="spacer"></div><div class="avatar" title="Signed in as Alex (associate)">AC</div>
+    <button data-view="home" data-tab-target="ask draft review timeline" aria-current="page" aria-label="Matters" title="Matters"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+    <button data-view="search" data-tab-target="search" aria-label="Search all documents you can access" title="Search"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></button>
+    <button data-view="docket" data-tab-target="docket" aria-label="Deadlines" title="Deadlines and docket"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8a6 6 0 1112 0c0 7 3 8 3 8H3s3-1 3-8"/><path d="M10 21h4"/></svg><span class="badge" aria-hidden="true"></span></button>
+    <button data-view="intake" data-tab-target="intake" aria-label="Intake" title="Intake and conflicts"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg></button>
+    <button data-view="time" data-tab-target="time" aria-label="Time entries" title="Time"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></button>
+    <button data-view="knowledge" data-tab-target="knowledge" aria-label="Firm knowledge" title="Templates, precedents and playbooks"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 016.5 17H20V3H6.5A2.5 2.5 0 004 5.5v14z"/><path d="M4 19.5A2.5 2.5 0 006.5 22H20v-5"/></svg></button>
+    <button data-view="firm" data-tab-target="firm" aria-label="Firm insights" title="Firm insights"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></button>
+    <button data-view="admin" data-tab-target="admin" aria-label="Admin and settings" title="Admin and settings"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></button>
+    <div class="spacer"></div><div class="avatar" id="avatar" aria-hidden="true">AC</div>
   </nav>
 
-  <aside class="side" aria-label="Matters">
-    <div class="top"><span>Matters · 214 active</span><span aria-hidden="true">›</span></div>
-    <h2>My matters</h2>
-    <div class="list" id="matters"></div>
-    <h2>Firm knowledge</h2>
-    <div class="list small">
-      <button class="item" data-toast="Opened: 312 templates"><span class="dot">T</span><span><strong>Templates</strong><small>312 firm templates</small></span></button>
-      <button class="item" data-toast="Opened: brief bank"><span class="dot">P</span><span><strong>Precedents & briefs</strong><small>2,140 filed briefs</small></span></button>
-      <button class="item" data-toast="Opened: playbook"><span class="dot">R</span><span><strong>Contract playbook</strong><small>48 positions</small></span></button>
-    </div>
+  <aside class="side" aria-label="Matters and queues">
+    <div class="drawer-head"><button class="drawer-close btn" aria-label="Close">✕</button></div>
+    <div id="side"></div>
   </aside>
 
   <main class="main">
-    <div class="tabs" role="tablist" aria-label="Workspace">
-      <button class="toggle-side btn" aria-label="Show matters" style="margin:6px 6px 6px 0">☰</button>
-      <button role="tab" data-tab="ask" aria-selected="true">Ask</button>
-      <button role="tab" data-tab="draft">Draft</button>
-      <button role="tab" data-tab="review">Review</button>
-      <button role="tab" data-tab="timeline">Timeline</button>
-      <button role="tab" data-tab="intake">Intake</button>
-      <button role="tab" data-tab="time">Time</button>
-      <button role="tab" data-tab="firm">Firm</button>
-      <button role="tab" data-tab="admin">Admin</button>
-      <button class="toggle-right btn" aria-label="Show sources" style="margin:6px 0 6px auto">Sources</button>
+    <div class="tabbar">
+      <button class="toggle-side btn" aria-label="Show matters list">☰</button>
+      <div class="tabs" role="tablist" aria-label="Matter tools">
+        <button role="tab" id="tab-ask" data-tab="ask" aria-controls="panel-ask" aria-selected="true">Ask</button>
+        <button role="tab" id="tab-draft" data-tab="draft" aria-controls="panel-draft">Draft</button>
+        <button role="tab" id="tab-review" data-tab="review" aria-controls="panel-review">Review</button>
+        <button role="tab" id="tab-timeline" data-tab="timeline" aria-controls="panel-timeline">Timeline</button>
+      </div>
+      <button class="toggle-right btn" aria-label="Show context panel">Details</button>
     </div>
     <div class="content">
-      <section class="panel" id="panel-ask" aria-label="Ask">
-        <p class="small faint" style="margin:0">Matter</p><h1 id="matter-title">Reyes v. Coastal Freight</h1><p class="sub" id="matter-sub">Personal injury · 1,284 documents indexed · answers only from this matter</p>
-        <div class="card" data-testid="answer"><div class="q">Q: When did Coastal Freight first learn the trailer brakes were failing?</div>
-          <p style="margin:0 0 8px">Coastal's fleet manager received a brake defect report on <strong>March 3, 2025</strong><button class="cite" data-testid="cite-1" data-src="1" aria-label="Source 1">1</button>, three weeks before the collision. The trailer was cleared for service on March 5 without the repair being logged<button class="cite" data-src="2" aria-label="Source 2">2</button>. In deposition, the manager said he "assumed the shop handled it"<button class="cite" data-src="3" aria-label="Source 3">3</button>.</p>
-          <div class="row small faint"><span>Answered from 3 documents in this matter</span><span>·</span><span>No outside sources used</span></div>
-          <div class="row" style="margin-top:10px"><button class="btn" data-toast="Copied with citations">Copy with citations</button><button class="btn" data-goto="draft">Use in a draft</button></div></div>
-        <div class="composer card" style="margin-top:12px"><label class="small faint" for="ask-input">Ask about this matter</label><input id="ask-input" class="btn" style="width:100%;text-align:left;font-weight:400;margin-top:6px" placeholder="e.g. List every statement about the speed of the truck"></div>
-        <div class="privacy" style="margin-top:12px">🔒 Private to your firm. Questions and documents never leave your firm's instance and are never used to train any model.</div>
-      </section>
-
-      <section class="panel" id="panel-draft" aria-label="Draft" hidden>
-        <h1>Draft</h1><p class="sub">From your firm's own templates.</p>
-        <div class="row" style="margin-bottom:10px"><span class="pill info">Template: Client status letter (immigration)</span><button class="btn" data-testid="translate">Translate to Spanish</button><button class="btn" data-toast="Exported to Word">Export to Word</button></div>
-        <div class="doc" data-testid="draft-doc" id="draft-doc"><p>Dear Ms. Herrera,</p><p>Your I-130 petition was received by USCIS on September 12, 2025 (receipt number IOE0912345678). Current processing time at the National Benefits Center is about 14 months. We will contact you as soon as we receive any notice.</p><p>Please do not travel outside the United States without speaking to us first.</p><p>Sincerely,<br>Marisol Vega, Esq.</p></div>
-      </section>
-
-      <section class="panel" id="panel-review" aria-label="Review" hidden>
-        <h1>Review</h1><p class="sub">Vendor MSA from Brightline Software compared with your playbook.</p>
-        <div class="card" data-testid="review-table"><table><thead><tr><th>Clause</th><th>Their draft</th><th>Risk</th><th>Suggested</th></tr></thead><tbody>
-          <tr><td>Limitation of liability</td><td class="small">Cap at fees paid in last 1 month</td><td><span class="pill bad">High</span></td><td class="small">Suggested: 12 months of fees; carve-out for data breach (playbook §4.2)</td></tr>
-          <tr><td>Auto-renewal</td><td class="small">3-year renewal, 90-day notice</td><td><span class="pill warn">Medium</span></td><td class="small">Suggested: 1-year renewal, 30-day notice (§7.1)</td></tr>
-          <tr><td>Governing law</td><td class="small">Delaware</td><td><span class="pill good">OK</span></td><td class="small">Matches playbook</td></tr>
-          <tr><td>Data processing</td><td class="small">No DPA referenced</td><td><span class="pill bad">High</span></td><td class="small">Suggested: attach standard DPA (§9)</td></tr></tbody></table>
-          <div class="row" style="margin-top:10px"><button class="btn primary" data-toast="Redline created in Word with 3 changes">Create redline</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-timeline" aria-label="Timeline" hidden>
-        <h1>Timeline</h1><p class="sub">Built from the matter documents. Every event links to its source.</p>
-        <div class="card" data-testid="deadline" style="margin-bottom:12px;background:var(--warn-weak)"><strong class="warn">Deadline: Expert disclosures due Fri, Nov 14</strong><div class="small muted">From scheduling order, p.3 · added to your calendar</div></div>
-        <div class="tl" data-testid="timeline">
-          <div class="ev"><strong>Mar 3, 2025</strong> · Brake defect report sent to fleet manager <button class="cite" data-src="1" aria-label="Source 1">1</button></div>
-          <div class="ev"><strong>Mar 5, 2025</strong> · Trailer cleared for service; no repair logged <button class="cite" data-src="2" aria-label="Source 2">2</button></div>
-          <div class="ev"><strong>Mar 24, 2025</strong> · Collision on I-95, mile 41 <button class="cite" data-src="4" aria-label="Source 4">4</button></div>
-          <div class="ev"><strong>Jun 18, 2026</strong> · Fleet manager deposed <button class="cite" data-src="3" aria-label="Source 3">3</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-intake" aria-label="Intake" hidden>
-        <h1>Intake</h1><p class="sub">New caller · summarized from the intake call notes.</p>
-        <div class="grid g2">
-          <div class="card" data-testid="intake-summary"><h3>Summary</h3><p class="small" style="margin:0">Jamal Ortiz, rear-ended Nov 2 on Route 9 by a delivery van (Swift Parcel LLC). ER visit same day, ongoing neck pain, missed 6 work days. Police report filed. No prior attorney.</p>
-            <div class="row" style="margin-top:8px"><span class="pill info">Personal injury</span><span class="pill">SOL: Nov 2, 2028</span></div></div>
-          <div class="card" data-testid="conflict"><h3>Conflict check</h3><div class="row between"><span>No conflicts found</span><span class="pill good">Clear</span></div><p class="small muted">Searched 4,812 past and current matters for Jamal Ortiz, Swift Parcel LLC and related names.</p>
-            <button class="btn primary" data-toast="Consult booked for Thu 10:00">Book consult</button></div></div>
-      </section>
-
-      <section class="panel" id="panel-time" aria-label="Time" hidden>
-        <h1>Time</h1><p class="sub">Suggested entries from today's work in Briefcase. You approve every one.</p>
-        <div class="card"><table><thead><tr><th>Matter</th><th>Work</th><th class="num">Hours</th><th></th></tr></thead><tbody>
-          <tr><td>Reyes v. Coastal</td><td class="small">Reviewed fleet maintenance records; analysis of notice of brake defect</td><td class="num">1.4</td><td><button class="btn" data-testid="approve-1" data-toast="Time entry approved and sent to Clio">Approve</button></td></tr>
-          <tr><td>Herrera (I-130)</td><td class="small">Drafted client status letter (EN/ES)</td><td class="num">0.4</td><td><button class="btn" data-toast="Time entry approved and sent to Clio">Approve</button></td></tr>
-          <tr><td>Brightline MSA</td><td class="small">Reviewed vendor MSA against playbook; prepared redline</td><td class="num">0.8</td><td><button class="btn" data-toast="Time entry approved and sent to Clio">Approve</button></td></tr></tbody></table></div>
-      </section>
-
-      <section class="panel" id="panel-firm" aria-label="Firm" hidden>
-        <h1>Firm</h1><p class="sub">Last 30 days · 12 lawyers, 5 staff</p>
-        <div class="grid g3">
-          <div class="card" data-testid="hours-saved"><div class="kpi-label">Hours saved (estimated)</div><div class="kpi">146</div><div class="delta muted">from time-to-draft vs firm baseline</div></div>
-          <div class="card"><div class="kpi-label">Active users</div><div class="kpi">15 / 17</div><div class="delta good">2 not yet onboarded</div></div>
-          <div class="card"><div class="kpi-label">Answers with citations</div><div class="kpi">100%</div><div class="delta muted">answers without a source are blocked</div></div>
-        </div>
-        <div class="grid g2" style="margin-top:12px">
-          <div class="card" data-testid="no-training"><h3>Client confidentiality</h3><p class="small muted" style="margin:0">Your documents and questions stay in your firm's private instance. Nothing is used to train any model. Written in your engagement-letter language (ABA Formal Op. 512 checklist attached).</p></div>
-          <div class="card" data-testid="audit-log"><h3>Audit log</h3><table><tbody><tr><td class="small">Today 10:12</td><td class="small">A. Chen asked a question in Reyes v. Coastal</td></tr><tr><td class="small">Today 09:55</td><td class="small">M. Vega exported a draft (Herrera)</td></tr><tr><td class="small">Yesterday</td><td class="small">J. Patel ran a contract review</td></tr></tbody></table></div>
-        </div>
-      </section>
-
-      <section class="panel" id="panel-admin" aria-label="Admin" hidden>
-        <h1>Admin</h1><p class="sub">Where your data lives and who can see it.</p>
-        <div class="grid g2">
-          <div class="card" data-testid="hosting"><h3>Hosting</h3><div class="row between"><span>Dedicated instance for your firm · Azure East US</span><span class="pill good">Private</span></div><p class="small muted">Encrypted at rest and in transit. Matter-level permissions mirror Clio.</p></div>
-          <div class="card" data-testid="model"><h3>Model</h3><div class="row between"><span>Enterprise model API with zero data retention</span><span class="pill info">Switchable</span></div><p class="small muted">Option: run an open-weight model inside your instance so nothing leaves it.</p></div>
-          <div class="card" data-testid="integrations"><h3>Integrations</h3><div class="row"><span class="pill good">Clio</span><span class="pill good">NetDocuments</span><span class="pill">iManage</span><span class="pill good">Microsoft 365</span></div></div>
-          <div class="card"><h3>Access</h3><p class="small muted" style="margin:0">SSO with Microsoft Entra · MFA required · ethical walls applied per matter · retention follows your policy.</p></div>
-        </div>
-      </section>
+      <section class="panel" id="panel-ask" role="tabpanel" aria-labelledby="tab-ask"></section>
+      <section class="panel" id="panel-draft" role="tabpanel" aria-labelledby="tab-draft" hidden></section>
+      <section class="panel" id="panel-review" role="tabpanel" aria-labelledby="tab-review" hidden></section>
+      <section class="panel" id="panel-timeline" role="tabpanel" aria-labelledby="tab-timeline" hidden></section>
+      <section class="panel" id="panel-search" aria-label="Search" hidden></section>
+      <section class="panel" id="panel-docket" aria-label="Deadlines and docket" hidden></section>
+      <section class="panel" id="panel-intake" aria-label="Intake" hidden></section>
+      <section class="panel" id="panel-time" aria-label="Time entries" hidden></section>
+      <section class="panel" id="panel-knowledge" aria-label="Firm knowledge" hidden></section>
+      <section class="panel" id="panel-firm" aria-label="Firm insights" hidden></section>
+      <section class="panel" id="panel-admin" aria-label="Admin and settings" hidden></section>
     </div>
   </main>
 
-  <aside class="right" aria-label="Sources">
-    <h2>Sources</h2>
-    <div id="source-detail" data-testid="source-detail" class="card small"><strong>Select a citation</strong><div class="muted">Click a numbered citation to see the exact page.</div></div>
-    <div class="list small" style="margin-top:10px">
-      <button class="item" data-src="1"><span class="dot">1</span><span><strong>Brake defect report.pdf</strong><small>p. 2 · Mar 3, 2025</small></span></button>
-      <button class="item" data-src="2"><span class="dot">2</span><span><strong>Service log Q1.xlsx</strong><small>row 118</small></span></button>
-      <button class="item" data-src="3"><span class="dot">3</span><span><strong>Depo – D. Marsh.pdf</strong><small>p. 47, lines 3–9</small></span></button>
-      <button class="item" data-src="4"><span class="dot">4</span><span><strong>Police report.pdf</strong><small>p. 1</small></span></button></div>
-    <h2>Matter</h2><div class="small"><div>Client: Elena Reyes</div><div>Responsible: A. Chen</div><div>Next deadline: Nov 14 (expert disclosures)</div></div>
-    <h2>Privacy</h2><div class="privacy">🔒 This matter's documents are only visible to its team (ethical wall on).</div>
+  <aside class="right" aria-label="Context for this screen">
+    <div class="drawer-head"><button class="drawer-close btn" aria-label="Close">✕</button></div>
+    <div id="right"></div>
   </aside>
 
   <footer class="bottombar">
-    <span><span class="status-dot"></span>Private instance · healthy</span>
-    <span>Data never used for training</span>
-    <span>Audit log on</span>
+    <span class="hstack"><label for="role" class="vlabel">View as</label><select id="role" class="role-switch"></select></span>
+    <span><span class="status-dot" aria-hidden="true"></span>Private instance · healthy</span>
+    <span class="hide-sm" id="bb-flow"></span>
+    <span class="hide-sm">Audit log on</span>
     <span class="sep"></span>
-    <span>Hours saved this week: <strong>11.5</strong></span>
+    <span class="hide-sm" id="bb-saved"></span>
   </footer>
 </div>
-<script>// Shared behaviour: tabs, sidebar selection, drawers, toasts, rail views. No backend.
+<script>// Shared behaviour for the three mockups. No backend.
+// Hooks an app can define: window.onTab(id), window.onSelect(id), window.onRail(view), window.onRole(role), window.onReady().
 (function(){
   const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
   window.UI = { $, $$ };
+  let lastFocus = null;
   function selectTab(id){
-    $$('.tabs [role="tab"]').forEach(t => t.setAttribute('aria-selected', String(t.dataset.tab === id)));
-    $$('.panel').forEach(p => p.hidden = p.id !== 'panel-' + id);
+    const panel = $('#panel-' + id); if (!panel) return;
+    $$('.tabs [role="tab"]').forEach(t => { const on = t.dataset.tab === id; t.setAttribute('aria-selected', String(on)); t.tabIndex = on ? 0 : -1; });
+    $$('.panel').forEach(p => p.hidden = p !== panel);
+    // keep the rail in sync: highlight the rail button that targets this tab, if any
+    const railBtn = $$('.rail button[data-tab-target]').find(b => b.dataset.tabTarget.split(' ').includes(id));
+    $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current'));
+    if (railBtn) railBtn.setAttribute('aria-current', 'page');
+    document.body.dataset.tab = id;
+    if (window.onTab) window.onTab(id);
     try { localStorage.setItem(document.title + ':tab', id); } catch(e) {}
   }
-  window.UI.selectTab = selectTab;
+  function openDrawer(which){
+    const el = $(which === 'side' ? '.side' : '.right'); if (!el) return;
+    lastFocus = document.activeElement; el.classList.add('open'); document.body.classList.add('drawer-open');
+    const close = el.querySelector('.drawer-close') || el.querySelector('button,select,a,[tabindex]'); close && close.focus();
+  }
+  function closeDrawers(){
+    $$('.side.open,.right.open').forEach(e => e.classList.remove('open')); document.body.classList.remove('drawer-open');
+    if (lastFocus && document.contains(lastFocus)) lastFocus.focus(); lastFocus = null;
+  }
+  window.UI.selectTab = selectTab; window.UI.closeDrawers = closeDrawers; window.UI.openDrawer = openDrawer;
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab]'); if (t) { selectTab(t.dataset.tab); }
-    const goto = e.target.closest('[data-goto]'); if (goto) { selectTab(goto.dataset.goto); }
+    const t = e.target.closest('[data-tab]'); if (t) selectTab(t.dataset.tab);
+    const goto = e.target.closest('[data-goto]'); if (goto) selectTab(goto.dataset.goto);
     const it = e.target.closest('.side .item[data-select]');
     if (it) { $$('.side .item[data-select]').forEach(x => x.removeAttribute('aria-current')); it.setAttribute('aria-current', 'true');
-      if (window.onSelect) window.onSelect(it.dataset.select); $('.side').classList.remove('open'); }
+      if (window.onSelect) window.onSelect(it.dataset.select); if (window.matchMedia('(max-width:760px)').matches) closeDrawers(); }
     const r = e.target.closest('.rail button[data-view]');
-    if (r) { $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current')); r.setAttribute('aria-current', 'page');
-      if (r.dataset.tabTarget) selectTab(r.dataset.tabTarget); if (window.onRail) window.onRail(r.dataset.view); }
-    if (e.target.closest('.toggle-side')) $('.side').classList.toggle('open');
-    if (e.target.closest('.toggle-right')) $('.right').classList.toggle('open');
+    if (r) { if (r.dataset.tabTarget) selectTab(r.dataset.tabTarget.split(' ')[0]);
+      $$('.rail button[data-view]').forEach(x => x.removeAttribute('aria-current')); r.setAttribute('aria-current', 'page');
+      if (window.onRail) window.onRail(r.dataset.view); }
+    if (e.target.closest('.toggle-side')) { $('.side').classList.contains('open') ? closeDrawers() : openDrawer('side'); }
+    if (e.target.closest('.toggle-right')) { $('.right').classList.contains('open') ? closeDrawers() : openDrawer('right'); }
+    if (e.target.closest('.drawer-close') || e.target.closest('.backdrop')) closeDrawers();
     const a = e.target.closest('[data-toast]'); if (a) toast(a.dataset.toast);
   });
   document.addEventListener('keydown', e => {
-    const tab = e.target.closest('.tabs [role="tab"]'); if (!tab) return;
-    const tabs = $$('.tabs [role="tab"]'), i = tabs.indexOf(tab);
-    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; n.focus(); selectTab(n.dataset.tab); }
-    if (e.key === 'Escape') { $('.side').classList.remove('open'); $('.right').classList.remove('open'); }
+    if (e.key === 'Escape') { closeDrawers(); return; }
+    const tab = e.target.closest && e.target.closest('.tabs [role="tab"]'); if (!tab) return;
+    const tabs = $$('.tabs [role="tab"]').filter(t => !t.hidden), i = tabs.indexOf(tab);
+    let n = null;
+    if (e.key === 'ArrowRight') n = tabs[(i + 1) % tabs.length];
+    if (e.key === 'ArrowLeft') n = tabs[(i + tabs.length - 1) % tabs.length];
+    if (e.key === 'Home') n = tabs[0]; if (e.key === 'End') n = tabs[tabs.length - 1];
+    if (n) { e.preventDefault(); n.focus(); selectTab(n.dataset.tab); }
   });
-  function toast(msg){ let t = $('.toast'); if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role','status'); document.body.appendChild(t); }
-    t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2200); }
+  document.addEventListener('change', e => { if (e.target.id === 'role' && window.onRole) { document.body.dataset.role = e.target.value; window.onRole(e.target.value); } });
+  function toast(msg){ let t = $('.toast'); if (!t) { t = document.createElement('div'); t.className = 'toast'; t.setAttribute('role','status'); t.setAttribute('aria-live','polite'); document.body.appendChild(t); }
+    t.textContent = msg; t.classList.add('show'); clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600); }
   window.UI.toast = toast;
   window.addEventListener('DOMContentLoaded', () => {
-    let start = $('.tabs [role="tab"]')?.dataset.tab;
+    if (!$('.backdrop')) { const b = document.createElement('div'); b.className = 'backdrop'; b.setAttribute('aria-hidden', 'true'); document.body.appendChild(b); }
+    const role = $('#role'); if (role) document.body.dataset.role = role.value;
+    if (window.onReady) window.onReady();
+    let start = $('.tabs [role="tab"]:not([hidden])')?.dataset.tab;
     const h = location.hash.replace('#', ''); if (h && $('#panel-' + h)) start = h;
     if (start) selectTab(start);
   });
 })();
 </script>
-<script>
+<script id="app">
 const { $, $$ } = UI;
-const M = {m1:['Reyes v. Coastal Freight','Personal injury · 1,284 documents indexed'], m2:['Herrera I-130','Immigration · 86 documents'], m3:['Brightline MSA review','Contract · 4 documents'], m4:['Estate of D. Liu','Estate planning · 211 documents']};
-$('#matters').innerHTML = Object.entries(M).map(([id,[t,s]])=>`<button class="item" data-select="${id}"><span class="dot">${t[0]}</span><span><strong>${t}</strong><small>${s.split(' · ')[0]}</small></span></button>`).join('');
-$$('#matters .item')[0].setAttribute('aria-current','true');
-window.onSelect = id => { UI.selectTab('ask'); $('#matter-title').textContent = M[id][0]; $('#matter-sub').textContent = M[id][1] + ' · answers only from this matter'; };
-const SRC = {'1':['Brake defect report.pdf','p. 2 · "Rear axle brake pads below minimum. Trailer 4471 should not be dispatched." — sent to D. Marsh, Mar 3, 2025'],
-  '2':['Service log Q1.xlsx','row 118 · Trailer 4471 · Mar 5 · status "cleared" · repair field blank'],
-  '3':['Depo – D. Marsh.pdf','p. 47, lines 3–9 · "I assumed the shop handled it."'], '4':['Police report.pdf','p. 1 · Collision Mar 24, 2025, I-95 mile 41']};
-document.addEventListener('click', e => { const c = e.target.closest('[data-src]'); if (!c) return; const s = SRC[c.dataset.src];
-  $('#source-detail').innerHTML = `<strong>${s[0]}</strong><div class="muted" style="margin-top:4px">${s[1]}</div><button class="btn" style="margin-top:8px" data-toast="Opened ${s[0]} at the cited page">Open document</button>`;
-  if (window.matchMedia('(max-width:1180px)').matches) $('.right').classList.add('open'); });
-$('[data-testid="translate"]').addEventListener('click', () => { $('#draft-doc').innerHTML = '<p>Estimada Sra. Herrera:</p><p>USCIS recibió su petición I-130 el 12 de septiembre de 2025 (número de recibo IOE0912345678). El tiempo de procesamiento actual en el National Benefits Center es de unos 14 meses. Le avisaremos en cuanto recibamos cualquier notificación.</p><p>Por favor, no viaje fuera de los Estados Unidos sin hablar antes con nosotros.</p><p>Atentamente,<br>Marisol Vega, Esq.</p><p class="small faint">Traducción revisada por la abogada antes de enviar.</p>'; UI.toast('Spanish version ready for attorney review'); });
+/* ============ Dates and formatting (weekdays are always computed, never typed) ============ */
+const TODAY = '2026-11-11';
+const D = iso => new Date(iso + 'T12:00:00Z');
+const iso = d => d.toISOString().slice(0, 10);
+const fmtD = s => D(s).toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const fmtS = s => D(s).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric', timeZone: 'UTC' });
+const fmtES = s => D(s).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const addDays = (s, n) => { const d = D(s); d.setUTCDate(d.getUTCDate() + n); return iso(d); };
+const addMonths = (s, n) => { const d = D(s); d.setUTCMonth(d.getUTCMonth() + n); return iso(d); };
+const addYears = (s, n) => addMonths(s, 12 * n);
+const dow = s => D(s).getUTCDay();
+const nextBiz = s => { let x = s; while ([0, 6].includes(dow(x))) x = addDays(x, 1); return x; };
+const nextMonday = s => { let x = addDays(s, 1); while (dow(x) !== 1) x = addDays(x, 1); return x; };
+const WEEK_START = addDays(TODAY, -((dow(TODAY) + 6) % 7)), WEEK_END = addDays(WEEK_START, 6);
+const money = n => '$' + Math.round(n).toLocaleString('en-US');
+const money2 = n => '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const num = n => n.toLocaleString('en-US');
+const h1 = x => (Math.round(x * 10) / 10).toFixed(1);
+const sum = (a, f) => a.reduce((t, x) => t + f(x), 0);
+
+/* ============ People, roles ============ */
+const P = {
+  rh: { n: 'Ruth Hartwell', t: 'Managing partner', law: 1, rate: 450, prac: 'Litigation', sso: 'BC-Partners', act: 1, pol: 1, ses: 22, qs: 61, dr: 9, saved: 6, last: '2026-11-11' },
+  mv: { n: 'Marisol Vega', t: 'Partner', law: 1, rate: 375, prac: 'Immigration', sso: 'BC-Partners', act: 1, pol: 1, ses: 48, qs: 120, dr: 64, saved: 14, last: '2026-11-11', flat: 1 },
+  do: { n: 'Dana Okafor', t: 'Partner', law: 1, rate: 400, prac: 'Estates', sso: 'BC-Partners', act: 1, pol: 1, ses: 30, qs: 95, dr: 12, saved: 9, last: '2026-11-10', flat: 1 },
+  pg: { n: 'Paul Grant', t: 'Partner, general counsel', law: 1, rate: 425, prac: 'Risk', sso: 'BC-Partners', act: 1, pol: 1, ses: 15, qs: 28, dr: 3, saved: 4, last: '2026-11-09' },
+  fw: { n: 'Frank Webb', t: 'Partner', law: 1, rate: 450, prac: 'Litigation', sso: 'BC-Partners', act: 0, pol: 0, ses: 0, qs: 0, dr: 0, saved: 0, last: null },
+  lm: { n: 'Lena Moss', t: 'Of counsel', law: 1, rate: 400, prac: 'Corporate', sso: 'BC-Lawyers', act: 1, pol: 0, ses: 6, qs: 11, dr: 2, saved: 3, last: '2026-11-03' },
+  ac: { n: 'Alex Chen', t: 'Associate', law: 1, rate: 300, prac: 'Litigation', sso: 'BC-Lawyers', act: 1, pol: 1, ses: 54, qs: 188, dr: 21, saved: 16, last: '2026-11-11' },
+  jp: { n: 'Jay Patel', t: 'Associate', law: 1, rate: 300, prac: 'Corporate', sso: 'BC-Lawyers', act: 1, pol: 1, ses: 41, qs: 97, dr: 18, saved: 12, last: '2026-11-11' },
+  sk: { n: 'Sara Kim', t: 'Associate', law: 1, rate: 275, prac: 'Litigation', sso: 'BC-Lawyers', act: 1, pol: 1, ses: 37, qs: 102, dr: 11, saved: 10, last: '2026-11-10' },
+  bt: { n: 'Ben Torres', t: 'Associate', law: 1, rate: 275, prac: 'Immigration', sso: 'BC-Lawyers', act: 1, pol: 1, ses: 33, qs: 70, dr: 40, saved: 8, last: '2026-11-11', flat: 1 },
+  ny: { n: 'Nora Young', t: 'Associate', law: 1, rate: 250, prac: 'Estates', sso: 'BC-Lawyers', act: 0, pol: 0, ses: 0, qs: 0, dr: 0, saved: 0, last: null },
+  ns: { n: 'Nina Shah', t: 'KM attorney', law: 1, rate: 250, prac: 'Knowledge', sso: 'BC-Lawyers', act: 1, pol: 1, ses: 19, qs: 40, dr: 6, saved: 5, last: '2026-11-11' },
+  pn: { n: 'Priya Nair', t: 'Senior paralegal', tk: 1, rate: 175, prac: 'Litigation', sso: 'BC-Staff', act: 1, pol: 1, ses: 60, qs: 140, dr: 25, saved: 18, last: '2026-11-11' },
+  bm: { n: 'Beth Moore', t: 'Legal secretary', prac: 'Litigation', sso: 'BC-Staff', act: 1, pol: 1, ses: 44, qs: 35, dr: 52, saved: 11, last: '2026-11-11' },
+  tr: { n: 'Tom Reilly', t: 'Intake specialist', prac: 'Front office', sso: 'BC-Staff', act: 1, pol: 1, ses: 38, qs: 20, dr: 14, saved: 7, last: '2026-11-11' },
+  lb: { n: 'Leo Brandt', t: 'Docketing clerk', prac: 'Docketing', sso: 'BC-Staff', act: 1, pol: 1, ses: 29, qs: 12, dr: 0, saved: 9, last: '2026-11-11' },
+  od: { n: 'Omar Diaz', t: 'Litigation support manager', prac: 'Litigation', sso: 'BC-Staff', act: 1, pol: 1, ses: 21, qs: 33, dr: 2, saved: 7, last: '2026-11-10' },
+  kl: { n: 'Kim Lee', t: 'Billing manager', prac: 'Finance', sso: 'BC-Admin', act: 1, pol: 1, ses: 12, qs: 4, dr: 0, saved: 4, last: '2026-11-11' },
+  gw: { n: 'Grace Wu', t: 'Firm administrator', prac: 'Operations', sso: 'BC-Admin', act: 1, pol: 1, ses: 9, qs: 6, dr: 1, saved: 2, last: '2026-11-10' },
+  so: { n: 'Sam Ortega', t: 'IT & legal ops lead', prac: 'IT', sso: 'BC-Admin', act: 1, pol: 1, ses: 8, qs: 3, dr: 0, saved: 1, last: '2026-11-11' },
+  sl: { n: 'Sasha Lin', t: 'In-house counsel', prac: 'Legal', sso: 'NW-Legal', act: 1, pol: 1, saved: 0, ext: 1 }
+};
+const short = id => { const n = P[id].n.split(' '); return n[0][0] + '. ' + n.slice(1).join(' '); };
+const ALL = ['matter', 'search', 'docket', 'intake', 'time', 'knowledge', 'firm', 'admin'];
+const ROLES = {
+  associate: { label: 'Associate', user: 'ac', areas: ['matter', 'search', 'docket', 'time', 'knowledge'], attorney: 1 },
+  partner: { label: 'Managing partner', user: 'rh', areas: ALL, attorney: 1, clears: 1, sees: 'all' },
+  paralegal: { label: 'Paralegal', user: 'pn', areas: ['matter', 'search', 'docket', 'intake', 'time', 'knowledge'], verifies: 1 },
+  secretary: { label: 'Legal secretary', user: 'bm', areas: ['matter', 'search', 'docket', 'knowledge'] },
+  intake: { label: 'Intake specialist', user: 'tr', areas: ['intake'] },
+  docketing: { label: 'Docketing clerk', user: 'lb', areas: ['docket', 'matter', 'search'], verifies: 1 },
+  billing: { label: 'Billing manager', user: 'kl', areas: ['time', 'firm'], sees: 'all' },
+  firm_admin: { label: 'Firm administrator', user: 'gw', areas: ['admin', 'firm', 'knowledge'] },
+  it: { label: 'IT / legal ops', user: 'so', areas: ['admin'] },
+  km: { label: 'KM attorney', user: 'ns', areas: ['knowledge', 'matter', 'search'], attorney: 1 },
+  lit_support: { label: 'Lit support', user: 'od', areas: ['matter', 'search', 'docket'] },
+  ethics: { label: 'Risk partner / GC', user: 'pg', areas: ALL, attorney: 1, clears: 1, sees: 'all' },
+  immigration: { label: 'Partner (immigration)', user: 'mv', areas: ['matter', 'search', 'docket', 'intake', 'time', 'knowledge'], attorney: 1, clears: 1 },
+  estate: { label: 'Partner (estates)', user: 'do', areas: ['matter', 'search', 'docket', 'intake', 'time', 'knowledge'], attorney: 1, clears: 1 },
+  inhouse: { label: 'In-house counsel', user: 'sl', areas: ['matter', 'search', 'knowledge'], attorney: 1, ws: 'inhouse' }
+};
+const AREA_NAME = { matter: 'Matter tools', search: 'Search', docket: 'Deadlines', intake: 'Intake', time: 'Time', knowledge: 'Firm knowledge', firm: 'Firm insights', admin: 'Admin' };
+const TAB_AREA = t => ['ask', 'draft', 'review', 'timeline'].includes(t) ? 'matter' : t;
+const WS = { firm: { name: 'Hartwell & Vega LLP', sub: '12 lawyers · 8 staff · Newark, NJ' }, inhouse: { name: 'Northwind Robotics · Legal', sub: 'In-house workspace · 1 lawyer' } };
+const FIRM = { activeMatters: 214, totalMatters: 4812, blended: 310, seatPrice: 89, realization: 91, realizationPrior: 88, blocked30: 27 };
+const MODEL = { name: 'Claude Sonnet 4.5', vendor: 'Anthropic', via: 'Amazon Bedrock', region: 'AWS us-east-1 (N. Virginia)' };
+const DATAFLOW = `Documents stay in your firm's private instance. Only your question and the relevant excerpts are sent to ${MODEL.name} (${MODEL.vendor}, via ${MODEL.via}, ${MODEL.region}) under zero data retention, and are never used for training.`;
+
+/* ============ Integrations / instance ============ */
+const INTEG = [
+  { id: 'nd', n: 'NetDocuments', what: 'Documents (DMS)', st: 'ok', sync: '4 min ago', docs: 402118, note: 'Workspace ACLs are the source of truth for document permissions' },
+  { id: 'clio', n: 'Clio Manage', what: 'Matters, parties, ethical walls, time entries', st: 'ok', sync: '2 min ago', docs: 0, note: '4,812 matters · ethical walls synced' },
+  { id: 'o365', n: 'Microsoft 365 (Outlook)', what: 'Filed email and attachments', st: 'warn', sync: '11 min ago', docs: 7882, note: '3 attachments failed: password-protected PDFs' },
+  { id: 'im', n: 'iManage Work', what: 'Legacy DMS (pre-2019 files)', st: 'off', sync: '—', docs: 0, note: 'Not connected' }
+];
+const FIRM_DOCS = () => sum(INTEG, i => i.docs);
+
+/* ============ Matters: ONE object keyed by matter, drives every matter screen ============ */
+const IMM_PENDING = ['Herrera', 'Alvarez', 'Nguyen', 'Okoye', 'Ramírez', 'Castillo', 'Mendoza', 'Silva', 'Duarte', 'Pereira', 'Flores', 'Rojas', 'Vargas', 'Cruz', 'Morales', 'Ortega', 'Ibarra', 'Santos', 'León', 'Navarro', 'Peña', 'Aguilar', 'Campos'];
+const M = {
+  m1: { ws: 'firm', name: 'Reyes v. Coastal Freight', short: 'Reyes', no: '1042-003', kind: 'lit', type: 'Personal injury litigation', client: 'Elena Reyes', salute: 'Ms. Reyes', resp: 'ac', team: ['ac', 'sk', 'pn', 'fw', 'bm', 'od'], court: 'D.N.J. No. 2:25-cv-04417', billing: 'Contingency (time recorded)', lang: 'en',
+    ai: { st: 'consent', note: 'Client consent in engagement letter, §8 AI disclosure (Wed, Apr 2, 2025)' }, aiUses: 212, lastUse: '2026-11-11',
+    folders: [
+      { id: 'VOL001', n: 'Coastal production VOL001', bates: 'COASTAL_000001–COASTAL_001650', docs: 402, st: 'indexed', inc: 1 },
+      { id: 'VOL002', n: 'Coastal production VOL002', bates: 'COASTAL_001651–COASTAL_003420', docs: 377, st: 'indexed', inc: 1 },
+      { id: 'VOL003', n: 'Coastal production VOL003', bates: 'COASTAL_003421–COASTAL_004119', docs: 118, st: 'indexed', inc: 1 },
+      { id: 'PLT', n: 'Plaintiff production', bates: 'REYES_000001–REYES_000640', docs: 96, st: 'indexed', inc: 1 },
+      { id: 'PLEAD', n: 'Pleadings and orders', bates: 'ECF', docs: 61, st: 'indexed', inc: 1 },
+      { id: 'DEPO', n: 'Deposition transcripts', bates: 'Tr.', docs: 14, st: 'indexed', inc: 1 },
+      { id: 'CORR', n: 'Correspondence and email', bates: '—', docs: 180, st: 'indexed', inc: 1 },
+      { id: 'PRIV', n: 'Privileged: work product and client communications', bates: '—', docs: 36, st: 'indexed', inc: 1, priv: 1 },
+      { id: 'VOL004', n: 'Coastal production VOL004 (received Tue, Nov 10, 2026)', bates: 'COASTAL_004120–COASTAL_004987', docs: 868, st: 'ready', inc: 0 }
+    ],
+    src: {
+      s1: { t: 'Brake defect report.pdf', dms: 'ND-1042-0412', bates: 'COASTAL_000412', vol: 'VOL001', pg: 'p. 2', q: 'Rear axle brake pads below minimum. Trailer 4471 should not be dispatched.', note: 'Emailed to D. Marsh, fleet manager, Mon, Mar 3, 2025' },
+      s2: { t: 'Service log Q1 2025.xlsx', dms: 'ND-1042-0977', bates: 'COASTAL_001877', vol: 'VOL002', pg: 'row 118', q: 'Trailer 4471 · 03/05/2025 · status CLEARED · repair: (blank)' },
+      s3: { t: 'Deposition of D. Marsh (Thu, Jun 18, 2026).pdf', dms: 'ND-1042-2210', bates: 'Tr. 47:3–9', vol: 'DEPO', pg: 'p. 47, lines 3–9', q: 'Q. Did anyone repair the brakes before March 24? A. I assumed the shop handled it.' },
+      s4: { t: 'NJ police crash report.pdf', dms: 'ND-1042-0014', bates: 'REYES_000014', vol: 'PLT', pg: 'p. 1', q: 'NJ Turnpike (I-95) northbound, MP 41.2. Driver states speed "about 55".' },
+      s5: { t: 'ECM download, tractor 2290.pdf', dms: 'ND-1042-3302', bates: 'COASTAL_003512', vol: 'VOL003', pg: 'p. 4', q: 'Vehicle speed 4.0 s before hard-brake event: 63 mph.' },
+      s6: { t: "Plaintiff's 2nd request for production.pdf", dms: 'ND-1042-0233', bates: 'REYES_000233', vol: 'PLT', pg: 'p. 5, Request 14', q: 'Request 14: all cell phone records for D. Ruiz (driver) for Mar 24, 2025.' },
+      s7: { t: 'Complaint (ECF 1).pdf', dms: 'ND-1042-0001', bates: 'ECF 1', vol: 'PLEAD', pg: 'p. 1', q: 'Filed Mon, Jun 2, 2025, D.N.J.' },
+      s8: { t: 'Order setting final pretrial conference (ECF 44).pdf', dms: 'ND-1042-4410', bates: 'ECF 44', vol: 'PLEAD', pg: 'p. 2', q: 'Final pretrial conference: January 12, 2027 at 10:00 a.m.' },
+      s9: { t: 'Scheduling order (ECF 31).pdf', dms: 'ND-1042-3100', bates: 'ECF 31', vol: 'PLEAD', pg: 'p. 3, ¶¶3, 5, 8', q: '¶3 fact discovery closes December 14, 2026. ¶5 plaintiff expert disclosures due November 13, 2026. ¶8 trial April 12, 2027.' }
+    },
+    threads: [
+      { t: 'Notice of brake defect', turns: [
+        { q: 'When did Coastal Freight first learn the trailer brakes were failing?', a: "Coastal's fleet manager received a brake defect report on <strong>Mon, Mar 3, 2025</strong>{s1}, three weeks before the collision. Trailer 4471 was cleared for service on Wed, Mar 5, 2025 with the repair field left blank{s2}. In deposition the manager said he \"assumed the shop handled it\"{s3}." },
+        { q: 'How fast was the truck going before the collision?', kind: 'conflict', a: 'The ECM download records <strong>63 mph</strong> four seconds before the hard-brake event{s5}.', conflict: 'Sources disagree: the driver told police he was going "about 55"{s4}. Check both before relying on either.' },
+        { q: 'Was the driver using his phone at the time?', kind: 'notfound', a: 'Closest: your request for the driver\'s phone records (Request 14){s6}. No responsive records appear in the productions indexed so far.' }
+      ] },
+      { t: 'Damages documents', turns: [] }
+    ],
+    events: [
+      { d: '2025-03-03', t: 'Brake defect report emailed to fleet manager D. Marsh', k: 'document', s: 's1', key: 1 },
+      { d: '2025-03-05', t: 'Trailer 4471 cleared for service; repair field blank', k: 'document', s: 's2', key: 1 },
+      { d: '2025-03-24', t: 'Collision, NJ Turnpike (I-95) northbound, MP 41.2; Ms. Reyes injured', k: 'document', s: 's4', key: 1 },
+      { d: '2025-03-24', t: 'ECM records 63 mph four seconds before braking', k: 'document', s: 's5', key: 1 },
+      { d: '2025-06-02', t: 'Complaint filed in D.N.J.', k: 'filing', s: 's7', key: 1 },
+      { d: '2026-06-18', t: 'Fleet manager D. Marsh deposed: "assumed the shop handled it"', k: 'testimony', s: 's3', key: 1 },
+      { d: '2026-11-10', t: 'Court sets final pretrial conference (ECF 44)', k: 'filing', s: 's8', key: 1 }
+    ], totalEvents: 37,
+    keyDates: m => [
+      { n: 'Statute of limitations', v: fmtD(addYears('2025-03-24', 2)), d: 'NJ · 2-year personal injury limit, N.J.S.A. 2A:14-2, from collision ' + fmtD('2025-03-24') + '. Complaint filed ' + fmtD('2025-06-02') + ', so the claim was timely.', verify: 'AI-calculated · verified by A. Chen, ' + fmtD('2025-05-20') },
+      { n: 'Close of fact discovery', v: fmtD('2026-12-14'), d: 'Scheduling order ¶3 (ECF 31)', verify: 'Verified by P. Nair' },
+      { n: 'Trial', v: fmtD('2027-04-12'), d: 'Scheduling order ¶8 (ECF 31)', verify: 'Verified by P. Nair' }
+    ],
+    tpls: ['t4', 't2']
+  },
+  m2: { ws: 'firm', name: 'Herrera I-130', short: 'Herrera', no: '2210-001', kind: 'imm', type: 'Immigration · family petition', client: 'Lucía Herrera', salute: 'Ms. Herrera', resp: 'mv', team: ['mv', 'bt', 'bm'], court: 'USCIS · National Benefits Center', billing: 'Flat fee', lang: 'es', channel: 'whatsapp',
+    ai: { st: 'consent', note: 'Client consent in Spanish engagement letter (Tue, Sep 2, 2025)' }, aiUses: 64, lastUse: '2026-11-11', docs: 86,
+    receipt: '2025-09-12', procMonths: 14, procAsOf: '2026-11-01',
+    src: {
+      s1: { t: 'I-797C receipt notice.pdf', dms: 'ND-2210-0012', bates: '—', vol: 'USCIS notices', pg: 'p. 1', q: 'Receipt number IOE0912345678 · Received date 09/12/2025 · Form I-130' },
+      s2: { t: 'USCIS processing times (saved Sun, Nov 1, 2026).pdf', dms: 'ND-2210-0090', bates: '—', vol: 'Research', pg: 'p. 1', q: 'I-130, spouse of U.S. citizen, National Benefits Center: 14 months' },
+      s3: { t: 'Client questionnaire (Spanish).pdf', dms: 'ND-2210-0003', bates: '—', vol: 'Client', pg: 'p. 1', q: 'Idioma preferido: español · Contacto: WhatsApp' },
+      s4: { t: 'I-130 filing cover letter.pdf', dms: 'ND-2210-0010', bates: '—', vol: 'Filings', pg: 'p. 1', q: 'Petition mailed by courier Tue, Sep 2, 2025' }
+    },
+    threads: [{ t: 'Case status', turns: [
+      { q: "Where does Ms. Herrera's I-130 stand?", a: m => `USCIS received the I-130 on <strong>${fmtD(m.receipt)}</strong>, receipt number IOE0912345678{s1}. The posted processing time at the National Benefits Center is 14 months as of ${fmtD(m.procAsOf)}{s2}, so a decision is expected around <strong>${fmtD(addMonths(m.receipt, m.procMonths))}</strong>. No notice after the receipt is in the file yet. Client prefers Spanish and WhatsApp{s3}.` }
+    ] }],
+    events: [
+      { d: '2025-09-02', t: 'I-130 petition sent to USCIS', k: 'filing', s: 's4', key: 1 },
+      { d: '2025-09-12', t: 'USCIS receipt notice issued (IOE0912345678)', k: 'document', s: 's1', key: 1 },
+      { d: '2026-11-01', t: 'USCIS posted processing time: 14 months', k: 'document', s: 's2', key: 1 }
+    ], totalEvents: 9,
+    keyDates: m => [{ n: 'Expected decision', v: fmtD(addMonths(m.receipt, m.procMonths)), d: '14 months from receipt, per USCIS posted time as of ' + fmtD(m.procAsOf), verify: 'Estimate only · check case status' }, { n: 'Limitation period', v: 'None', d: 'Not applicable to a pending petition', verify: '' }],
+    tpls: ['t1', 't4']
+  },
+  m3: { ws: 'firm', name: 'Calder Foods supply agreement', short: 'Calder', no: '3307-014', kind: 'contract', type: 'Commercial contract review', client: 'Calder Foods Inc.', salute: 'Ms. Ito', resp: 'jp', team: ['jp', 'lm', 'bm'], court: '—', billing: 'Hourly', lang: 'en',
+    ai: { st: 'consent', note: 'Consent in outside-counsel engagement terms (Thu, Jan 15, 2026)' }, aiUses: 18, lastUse: '2026-11-10', docs: 14,
+    src: {
+      s1: { t: 'Pinnacle Mills supply agreement v2.docx', dms: 'ND-3307-0141', bates: '—', vol: 'Agreements', pg: '§4.2', q: 'Supplier may adjust prices on fifteen (15) days\' written notice.' },
+      s2: { t: 'Email from Calder GC (Fri, Nov 6, 2026).msg', dms: 'ND-3307-0150', bates: '—', vol: 'Correspondence', pg: 'p. 1', q: 'Please send comments by Thursday, Nov 12.' }
+    },
+    threads: [{ t: 'Pricing terms', turns: [{ q: 'Can the supplier raise prices during the term?', a: 'Yes. Section 4.2 lets Pinnacle Mills adjust prices on 15 days\' written notice, with no cap{s1}. The client wants comments by Thu, Nov 12, 2026{s2}.' }] }],
+    events: [{ d: '2026-11-05', t: 'Supplier draft v2 received', k: 'document', s: 's1', key: 1 }, { d: '2026-11-06', t: 'Client asks for comments by Thu, Nov 12, 2026', k: 'document', s: 's2', key: 1 }], totalEvents: 4,
+    keyDates: () => [{ n: 'Comments due to client', v: fmtD('2026-11-12'), d: 'Client request, not a court deadline', verify: 'Verified by L. Brandt' }],
+    req: { who: 'Mia Ito, General Counsel, Calder Foods', deal: 'Annual supply ≈ $2.4M', due: '2026-11-12', received: '2026-11-05', sla: 'Client deadline', paper: 'Supplier paper (Pinnacle Mills)', playbook: 'Commercial supply, buyer side v3' },
+    clauses: [
+      ['c1', '§4.2', 'Price adjustment', 'Supplier may adjust prices on fifteen (15) days\' written notice.', 'High', 'Fixed prices for 12 months, then CPI-capped', 'Increases capped at 5% with 60 days\' notice', 'Unilateral uncapped increases', 'Client GC'],
+      ['c2', '§7.1', 'Late delivery', 'Supplier shall not be liable for any delay in delivery.', 'High', 'Credits of 2% per week late; right to cover', 'Credits after 5 business days late', 'No remedy for late delivery', 'Client GC'],
+      ['c3', '§9.1', 'Warranty period', 'Goods are warranted for thirty (30) days from delivery.', 'Medium', 'Warranty through shelf life', '90 days', 'Under 30 days', 'Client GC'],
+      ['c4', '§11.2', 'Limitation of liability', 'Supplier\'s liability excludes recall and withdrawal costs.', 'Medium', 'Recall costs recoverable when caused by supplier', 'Recall costs capped at 2× annual spend', 'Full exclusion of recall costs', 'Client CFO'],
+      ['c5', '§14.3', 'Force majeure', 'Force majeure includes changes in market conditions.', 'Medium', 'Exclude market and price changes', 'Market changes only if over 30% input cost increase', 'Market conditions included', 'Client GC'],
+      ['c6', '§16', 'Governing law', 'Kansas law governs.', 'Low', 'New Jersey or New York law', 'Delaware law', '—', 'Client GC'],
+      ['c7', '—', 'Recall cooperation', 'Not found in the agreement.', 'Missing', 'Supplier cooperates in recalls and bears costs it causes', 'Cooperation duty only', 'No recall clause', 'Client GC'],
+      ['c8', '§13', 'Termination', 'Either party may terminate on 90 days\' notice.', 'OK', 'Matches playbook', '', '', '']
+    ],
+    tpls: ['t6', 't4']
+  },
+  m4: { ws: 'firm', name: 'Estate of D. Liu', short: 'Liu', no: '4120-002', kind: 'est', type: 'Estate administration', client: 'Grace Liu, executor', salute: 'Ms. Liu', resp: 'do', team: ['do', 'ny', 'bm'], court: 'Essex County Surrogate', billing: 'Flat fee', lang: 'en',
+    ai: { st: 'consent', note: 'Executor consent in engagement letter (Thu, Aug 20, 2026)' }, aiUses: 33, lastUse: '2026-11-10', docs: 211, dod: '2026-07-14',
+    src: {
+      s1: { t: 'Chase checking x2291, Jul 2026 statement.pdf', dms: 'ND-4120-0031', bates: '—', vol: 'Financial statements', pg: 'p. 1', q: 'Balance on 07/14/2026: $18,240.55' },
+      s2: { t: 'Vanguard brokerage x8830, date-of-death valuation.pdf', dms: 'ND-4120-0044', bates: '—', vol: 'Financial statements', pg: 'p. 2', q: 'Total account value as of 07/14/2026: $412,906.10' },
+      s3: { t: 'Fidelity IRA x1172, statement and beneficiary form.pdf', dms: 'ND-4120-0052', bates: '—', vol: 'Financial statements', pg: 'pp. 1, 4', q: 'Value 07/14/2026: $268,330.00 · Primary beneficiary: Grace Liu 100%' },
+      s4: { t: 'Wells Fargo savings x5506, Jul 2026 statement.pdf', dms: 'ND-4120-0060', bates: '—', vol: 'Financial statements', pg: 'p. 1', q: 'Balance on 07/14/2026: $41,102.37' },
+      s5: { t: 'Last will of Daniel Liu (Tue, Mar 9, 2021).pdf', dms: 'ND-4120-0002', bates: '—', vol: 'Estate documents', pg: 'Art. IV', q: 'Residuary estate in equal shares to Grace Liu and Henry Liu.' },
+      s6: { t: 'MetLife policy 55-0912 beneficiary designation.pdf', dms: 'ND-4120-0071', bates: '—', vol: 'Insurance', pg: 'p. 3', q: 'Death benefit $250,000 · Beneficiary: Henry Liu' },
+      s7: { t: 'Death certificate.pdf', dms: 'ND-4120-0001', bates: '—', vol: 'Estate documents', pg: 'p. 1', q: 'Date of death: July 14, 2026' },
+      s8: { t: 'Letters testamentary.pdf', dms: 'ND-4120-0005', bates: '—', vol: 'Estate documents', pg: 'p. 1', q: 'Issued August 20, 2026 to Grace Liu, executor' }
+    },
+    accounts: [
+      { a: 'Chase checking x2291', bal: 18240.55, probate: 1, s: 's1' },
+      { a: 'Vanguard brokerage x8830', bal: 412906.10, probate: 1, s: 's2' },
+      { a: 'Wells Fargo savings x5506', bal: 41102.37, probate: 1, s: 's4' },
+      { a: 'Fidelity IRA x1172 (to Grace Liu)', bal: 268330.00, probate: 0, s: 's3' },
+      { a: 'MetLife life policy 55-0912 (to Henry Liu)', bal: 250000.00, probate: 0, s: 's6' }
+    ],
+    threads: [{ t: 'Assets at date of death', turns: [{ q: 'List all accounts with balances at date of death.', kind: 'inventory', a: m => `Daniel Liu died on <strong>${fmtD(m.dod)}</strong>{s7}. Five accounts and policies were found in the estate's 211 documents. Probate assets pass under the will in equal shares to Grace and Henry Liu{s5}; the IRA and life policy pass by beneficiary designation.` }] }],
+    events: [
+      { d: '2021-03-09', t: 'Will executed', k: 'document', s: 's5', key: 1 },
+      { d: '2026-07-14', t: 'Death of Daniel Liu', k: 'document', s: 's7', key: 1 },
+      { d: '2026-08-20', t: 'Letters testamentary issued to Grace Liu', k: 'filing', s: 's8', key: 1 }
+    ], totalEvents: 12,
+    keyDates: m => [{ n: 'NJ inheritance tax return', v: fmtD(nextBiz(addMonths(m.dod, 8))), d: '8 months after death (' + fmtD(addMonths(m.dod, 8)) + ' is a weekend, so next business day)', verify: 'AI-calculated · needs verification against NJ Division of Taxation rules' }],
+    tpls: ['t5', 't4']
+  },
+  m5: { ws: 'firm', name: 'Meridian Bank v. Pell Industries', short: 'Meridian', no: '5012-007', kind: 'lit', type: 'Commercial lending litigation', client: 'Meridian Bank', salute: 'Mr. Shaw', resp: 'rh', team: ['rh', 'sk', 'pn'], court: 'D.N.J. No. 2:26-cv-01190', billing: 'Hourly', lang: 'en',
+    ai: { st: 'restricted', note: "Client's outside counsel guidelines §12.3 (Thu, Jan 15, 2026) prohibit generative AI on its files" }, aiUses: 0, lastUse: null, docs: 3906,
+    src: {}, threads: [], events: [], totalEvents: 0, keyDates: () => [], tpls: []
+  },
+  m6: { ws: 'firm', name: 'Harbor Health OCR inquiry', short: 'Harbor', no: '6200-001', kind: 'lit', type: 'Regulatory · HIPAA inquiry', client: 'Harbor Health LLC', salute: 'Ms. Grant', resp: 'pg', team: ['pg', 'rh', 'jp', 'pn'], wall: ['ac', 'sk'], court: 'HHS Office for Civil Rights', billing: 'Hourly', lang: 'en',
+    ai: { st: 'pending', note: 'AI disclosure sent Tue, Nov 3, 2026; awaiting client reply. AI limited to internal research.' }, aiUses: 6, lastUse: '2026-11-05', docs: 742,
+    src: { s1: { t: 'OCR data request letter.pdf', dms: 'ND-6200-0001', bates: '—', vol: 'Agency', pg: 'p. 2, item 3', q: 'Produce access logs for the period Jan 1 – Jun 30, 2026 within 30 days of receipt.' } },
+    threads: [{ t: 'OCR request', turns: [{ q: 'What does item 3 of the OCR request ask for?', a: 'Access logs for Jan 1 – Jun 30, 2026, due 30 days from receipt{s1}. Received ' + fmtD('2026-11-04') + ', so due ' + fmtD(addDays('2026-11-04', 30)) + ' (needs docketing verification).' }] }],
+    events: [{ d: '2026-11-04', t: 'OCR data request received', k: 'document', s: 's1', key: 1 }], totalEvents: 5,
+    keyDates: () => [{ n: 'Production due', v: fmtD(addDays('2026-11-04', 30)), d: '30 days from receipt (letter item 3)', verify: 'Needs verification' }],
+    tpls: ['t4']
+  },
+  i1: { ws: 'inhouse', name: 'Brightline Software MSA', short: 'Brightline', no: 'REQ-2611', kind: 'contract', type: 'Vendor agreement (their paper)', client: 'Northwind Robotics', salute: 'Dev', resp: 'sl', team: ['sl'], court: '—', billing: 'Internal', lang: 'en', ai: { st: 'consent', note: 'Company AI policy v1.2 allows AI on vendor contracts' }, docs: 3,
+    src: { s1: { t: 'Brightline MSA v3 (vendor paper).docx', dms: 'NW-LEG-2611-01', bates: '—', vol: 'Agreement', pg: '§9.1', q: "In no event shall Provider's aggregate liability exceed the fees paid by Customer in the one (1) month preceding the claim." }, s2: { t: 'Order form (Brightline).pdf', dms: 'NW-LEG-2611-02', bates: '—', vol: 'Agreement', pg: 'p. 1', q: 'Annual fees: $180,000' } },
+    threads: [{ t: 'Liability', turns: [{ q: 'Does the Brightline MSA cap their liability?', a: 'Yes. Section 9.1 caps Brightline\'s liability at one month of fees{s1}, about $15,000 on $180,000 annual fees{s2}. Your playbook asks for 12 months.' }] }],
+    events: [{ d: '2026-11-09', t: 'Request received from Dev Rao (IT procurement)', k: 'document', s: 's2', key: 1 }, { d: '2026-11-09', t: 'Brightline MSA v3 received', k: 'document', s: 's1', key: 1 }], totalEvents: 3,
+    keyDates: () => [{ n: 'Turnaround due', v: fmtD('2026-11-13'), d: 'Legal SLA: 3 business days from ' + fmtD('2026-11-10'), verify: '' }],
+    req: { who: 'Dev Rao, IT procurement', deal: '$180,000 per year, 3-year term', due: '2026-11-13', received: '2026-11-10', sla: '3 business days', paper: 'Their paper (Brightline)', playbook: 'Northwind vendor playbook v5' },
+    clauses: [
+      ['c1', '§9.1', 'Limitation of liability', "In no event shall Provider's aggregate liability exceed the fees paid by Customer in the one (1) month preceding the claim.", 'High', "Cap at 12 months' fees", "6 months' fees plus a separate data-breach cap of 3× annual fees", "Below 6 months' fees, or no data-breach carve-out", 'CFO (Maya Ito)'],
+      ['c2', '§11.1', 'Data processing', 'Provider may process Customer Data as reasonably necessary to provide the Services. (No DPA referenced.)', 'High', 'Attach Northwind DPA v2', "Provider's DPA if it includes SCCs and 72-hour breach notice", 'No DPA', 'Privacy lead (K. Adams)'],
+      ['c3', '§14.2', 'Renewal', 'This Agreement renews automatically for successive three (3) year terms unless either party gives notice at least ninety (90) days before renewal.', 'Medium', '1-year renewals, 30 days\' notice', '1-year renewals, 60 days\' notice', 'Multi-year auto-renewal without a price cap', 'Legal (you)'],
+      ['c4', '§6.2', 'Fee increases', 'Provider may increase fees by up to ten percent (10%) at each renewal.', 'Medium', 'Capped at CPI or 3%, whichever is lower', '5% cap', 'Uncapped', 'CFO (Maya Ito)'],
+      ['c5', '§8.3', 'IP indemnity', 'Provider will indemnify Customer for final judgments finding the Services infringe a U.S. patent.', 'Medium', 'Defend and indemnify third-party IP claims worldwide, including settlements', 'U.S. and EU claims; settlements with consent', 'No duty to defend', 'Legal (you)'],
+      ['c6', '§14.4', 'Termination for convenience', 'Neither party may terminate for convenience during the Initial Term.', 'Medium', "Customer may terminate on 60 days' notice after year 1", "90 days' notice with pro-rata refund", 'No exit for terms over 1 year', 'Legal (you)'],
+      ['c7', '§5.1', 'Service levels', 'Provider will use commercially reasonable efforts to achieve 99.5% monthly uptime.', 'Low', '99.9% with service credits', '99.5% with credits of at least 10%', 'No credits', 'IT (Dev Rao)'],
+      ['c8', '§10.3', 'Confidentiality term', 'Obligations survive for three (3) years after termination.', 'Low', '5 years; trade secrets while they remain secret', '3 years plus trade-secret carve-out', 'Under 3 years', 'Legal (you)'],
+      ['c9', '—', 'Insurance', 'Not found in the agreement.', 'Missing', 'Cyber $5M, E&O $2M, CGL $1M; certificates on request', 'Cyber $3M', 'No cyber insurance', 'CFO (Maya Ito)'],
+      ['c10', '—', 'Security standards', 'Not found in the agreement.', 'Missing', 'SOC 2 Type II yearly; breach notice within 72 hours', 'ISO 27001 certificate', 'No independent audit', 'IT security'],
+      ['c11', '§15.1', 'Governing law', 'Delaware law governs.', 'OK', 'Matches playbook', '', '', ''],
+      ['c12', '§13.1', 'Assignment', 'Neither party may assign without consent, except in a merger or sale of substantially all assets.', 'OK', 'Matches playbook', '', '', ''],
+      ['c13', '§7.2', 'Data ownership', 'As between the parties, Customer owns all Customer Data.', 'OK', 'Matches playbook', '', '', ''],
+      ['c14', '§16.4', 'Notices', 'Notices by email to the addresses in the Order Form are effective on sending.', 'OK', 'Matches playbook', '', '', '']
+    ],
+    tpls: ['t6', 't4']
+  },
+  i2: { ws: 'inhouse', name: 'Acme Logistics customer MSA', short: 'Acme', no: 'REQ-2614', kind: 'contract', type: 'Customer agreement (our paper)', client: 'Northwind Robotics', salute: 'Jen', resp: 'sl', team: ['sl'], court: '—', billing: 'Internal', lang: 'en', ai: { st: 'consent', note: 'Company AI policy v1.2' }, docs: 2, indexing: { done: 2, total: 3 },
+    src: {}, threads: [], events: [], totalEvents: 0, keyDates: () => [{ n: 'Turnaround due', v: fmtD('2026-11-17'), d: 'Requested by Sales', verify: '' }],
+    req: { who: 'Jen Park, Sales', deal: '$240,000 first year', due: '2026-11-17', received: '2026-11-11', sla: '4 business days', paper: 'Our paper with Acme edits', playbook: 'Northwind customer playbook v3' }, clauses: null, tpls: ['t6']
+  },
+  i3: { ws: 'inhouse', name: 'Zenith Robotics mutual NDA', short: 'Zenith', no: 'REQ-2609', kind: 'contract', type: 'NDA (their paper)', client: 'Northwind Robotics', salute: 'Jen', resp: 'sl', team: ['sl'], court: '—', billing: 'Internal', lang: 'en', ai: { st: 'consent', note: 'Company AI policy v1.2' }, docs: 1,
+    src: { s1: { t: 'Zenith mutual NDA.pdf', dms: 'NW-LEG-2609-01', bates: '—', vol: 'Agreement', pg: '§6', q: 'Recipient may use Residuals retained in its unaided memory for any purpose.' } },
+    threads: [{ t: 'Residuals', turns: [{ q: 'Is there a residuals clause?', a: 'Yes. Section 6 lets Zenith use anything its staff remember, for any purpose{s1}. Your playbook rejects residuals clauses.' }] }],
+    events: [{ d: '2026-11-09', t: 'NDA received from Zenith', k: 'document', s: 's1', key: 1 }], totalEvents: 1,
+    keyDates: () => [{ n: 'Turnaround due', v: fmtD('2026-11-12'), d: 'Requested by Sales for pilot kickoff', verify: '' }],
+    req: { who: 'Jen Park, Sales', deal: 'Reseller pilot, $60,000', due: '2026-11-12', received: '2026-11-09', sla: '2 business days', paper: 'Their paper (Zenith)', playbook: 'Northwind NDA playbook v2' },
+    clauses: [
+      ['c1', '§6', 'Residuals', 'Recipient may use Residuals retained in its unaided memory for any purpose.', 'High', 'Delete residuals clause', 'Residuals excluding trade secrets and source code', 'Any residuals clause covering source code', 'Legal (you)'],
+      ['c2', '§8', 'Non-solicitation', 'Neither party will solicit the other\'s employees for 24 months.', 'Medium', 'Delete, or 12 months limited to people met', '12 months, general ads excluded', '24 months, all employees', 'HR lead'],
+      ['c3', '§3', 'Term', 'This Agreement lasts two (2) years.', 'Low', '3 years; trade secrets indefinitely', '2 years plus trade-secret carve-out', '—', 'Legal (you)'],
+      ['c4', '§1', 'Definition of Confidential Information', 'Includes all information marked or reasonably understood as confidential.', 'OK', 'Matches playbook', '', '', ''],
+      ['c5', '§10', 'Governing law', 'California law governs.', 'OK', 'Matches playbook', '', '', ''],
+      ['c6', '§5', 'Return or destruction', 'Return or destroy on request, with certification.', 'OK', 'Matches playbook', '', '', '']
+    ],
+    tpls: ['t6']
+  }
+};
+/* Calder review also binds to time entries; Meridian has AI off. */
+
+/* ============ Deadlines (docket) ============ */
+const DL = [
+  { id: 'd1', m: 'm1', what: 'Plaintiff expert disclosures', date: '2026-11-13', rule: 'Scheduling order ¶5 (ECF 31); FRCP 26(a)(2)', src: 's9', srcTxt: 'Scheduling order (ECF 31), p. 3', resp: 'ac', st: 'verified', by: 'pn', on: '2026-11-02' },
+  { id: 'd2', m: 'm3', what: 'Comments on supply agreement to client', date: '2026-11-12', rule: 'Client request (email, Fri, Nov 6, 2026); not a court deadline', src: 's2', srcTxt: 'Email from Calder GC, p. 1', resp: 'jp', st: 'verified', by: 'lb', on: '2026-11-06' },
+  { id: 'd3', m: 'm5', what: 'Opposition to motion to dismiss', date: '2026-11-16', rule: 'D.N.J. L.Civ.R. 7.1(d)(2): due 14 days before motion day (' + fmtD('2026-11-30') + ')', src: null, srcTxt: 'Notice of motion (ECF 18), p. 1', resp: 'rh', st: 'verified', by: 'lb', on: '2026-11-03' },
+  { id: 'd4', m: 'm1', what: 'Close of fact discovery', date: '2026-12-14', rule: 'Scheduling order ¶3 (ECF 31)', src: 's9', srcTxt: 'Scheduling order (ECF 31), p. 2', resp: 'ac', st: 'verified', by: 'pn', on: '2026-11-02' },
+  { id: 'n1', m: 'm1', what: 'Final pretrial conference', date: '2027-01-12', rule: 'Date set by court order (ECF 44); no calculation', src: 's8', srcTxt: 'Order (ECF 44, entered ' + fmtD('2026-11-10') + '), p. 2', resp: 'ac', st: 'new' },
+  { id: 'n2', m: 'm6', what: 'Document production to HHS OCR', date: addDays('2026-11-04', 30), rule: 'Data request item 3: 30 days from receipt (' + fmtD('2026-11-04') + ')', src: 's1', srcTxt: 'OCR data request letter, p. 2', resp: 'pg', st: 'new' },
+  { id: 'n3', m: 'm4', what: 'NJ transfer inheritance tax return', date: nextBiz(addMonths('2026-07-14', 8)), rule: '8 months after death; ' + fmtD(addMonths('2026-07-14', 8)) + ' is a weekend, rolled to next business day. Verify with NJ Division of Taxation.', src: 's7', srcTxt: 'Death certificate, p. 1', resp: 'do', st: 'new' }
+];
+
+/* ============ Intake queue ============ */
+const INTAKE = {
+  c1: { n: 'Jamal Ortiz', when: '2026-11-10', time: '4:12 pm', by: 'tr', kind: 'Personal injury', status: 'New', contact: '(732) 555-0148 · jortiz@example.com', ref: 'Google search', insurer: 'Van: Garden State Mutual · Caller: NJM', facts: 'Rear-ended on ' + fmtD('2026-11-02') + ' on Route 9 in Freehold, NJ by a Swift Parcel LLC delivery van (driver Kevin Doyle). Police report filed. No prior attorney.', injury: 'Neck pain; ER at CentraState the same day; physical therapy twice a week', wages: '6 work days missed (≈ $1,450)',
+    fit: { ok: 1, why: ['Personal injury is a firm practice area', 'Commercial defendant with insurance', 'Treatment ongoing and documented', 'Well within limitation period'] },
+    sol: { incident: '2026-11-02', state: 'NJ (assumed from Route 9, Freehold: confirm with caller)', rule: '2-year personal injury limit, N.J.S.A. 2A:14-2', years: 2 },
+    names: ['Jamal Ortiz', 'Swift Parcel LLC', 'Kevin Doyle', 'Garden State Mutual Insurance', 'NJM Insurance'],
+    near: [{ n: 'Swift Parcel Inc.', m: 'Lin v. Swift Parcel Inc. (closed 2021)', rel: 'Firm was adverse (represented Lin)', sim: 91 }, { n: 'Ortiz Landscaping LLC', m: 'Client matter 0877-002 (closed 2019)', rel: 'Former client; owner J. Ortiz, likely a different person', sim: 78 }] },
+  c2: { n: 'Maria Santos', when: '2026-11-11', time: '9:05 am', by: 'tr', kind: 'Landlord-tenant', status: 'New', contact: '(973) 555-0112', ref: 'Former client referral', insurer: '—', facts: 'Landlord (Bayview Apartments LLC) kept a $2,100 security deposit after move-out on ' + fmtD('2026-09-30') + '.', injury: '—', wages: '—',
+    fit: { ok: 0, why: ['Landlord-tenant is outside the firm\'s practice areas', 'Small claims value', 'Refer to Legal Services of NJ or a tenant attorney'] },
+    sol: { incident: '2026-09-30', state: 'NJ', rule: '6-year contract limit, N.J.S.A. 2A:14-1', years: 6 },
+    names: ['Maria Santos', 'Bayview Apartments LLC'], near: [] },
+  c3: { n: 'Kevin Brooks', when: '2026-11-11', time: '10:20 am', by: 'tr', kind: 'Estate planning', status: 'New', contact: '(201) 555-0190 · kbrooks@example.com', ref: 'Website form', insurer: '—', facts: 'Wants a will and revocable trust after the birth of a grandchild. Married, two adult children, home in Montclair.', injury: '—', wages: '—',
+    fit: { ok: 1, why: ['Estate planning is a firm practice area', 'Flat-fee package fits'] },
+    sol: null, names: ['Kevin Brooks', 'Linda Brooks'], near: [] }
+};
+const SLOTS = [{ id: 'sl1', at: '2026-11-12', t: '10:00 am', who: 'ac' }, { id: 'sl2', at: '2026-11-12', t: '2:30 pm', who: 'rh' }, { id: 'sl3', at: '2026-11-13', t: '9:00 am', who: 'sk' }];
+const SLOT_FOR = { c1: ['sl1', 'sl2', 'sl3'], c2: ['sl2'], c3: [] };
+const DO_SLOTS = [{ id: 'sl4', at: '2026-11-13', t: '11:00 am', who: 'do' }, { id: 'sl5', at: '2026-11-16', t: '3:00 pm', who: 'do' }];
+
+/* ============ Time entries: based on measured active lawyer time only ============ */
+const TIME = [
+  { id: 't1', date: '2026-11-11', tk: 'ac', m: 'm1', task: 'L120', act: 'A104', narr: 'Reviewed fleet maintenance records and brake defect report; analyzed notice issue for expert disclosures.', from: '09:58', to: '11:22', ai: 3 },
+  { id: 't2', date: '2026-11-11', tk: 'mv', m: 'm2', task: '—', act: 'A103', narr: 'Revised and approved client status letter (English and Spanish).', from: '10:30', to: '10:54', ai: 1 },
+  { id: 't3', date: '2026-11-11', tk: 'jp', m: 'm3', task: '—', act: 'A104', narr: 'Reviewed supplier agreement against commercial playbook; prepared redline comments.', from: '08:40', to: '09:28', ai: 2 },
+  { id: 't4', date: '2026-11-10', tk: 'pn', m: 'm1', task: 'L140', act: 'A110', narr: 'Checked Bates ranges and index for Coastal production VOL003.', from: '13:10', to: '13:46', ai: 0 },
+  { id: 't5', date: '2026-11-10', tk: 'do', m: 'm4', task: '—', act: 'A104', narr: 'Reviewed financial statements and prepared draft inventory of estate assets.', from: '14:05', to: '15:17', ai: 2 },
+  { id: 't6', date: '2026-11-10', tk: 'ac', m: 'm1', task: 'L330', act: 'A101', narr: 'Prepared outline for deposition of Coastal safety director.', from: '15:00', to: '17:06', ai: 1 }
+];
+const mins = (a, b) => { const [h1_, m1_] = a.split(':').map(Number), [h2, m2] = b.split(':').map(Number); return (h2 * 60 + m2) - (h1_ * 60 + m1_); };
+TIME.forEach(t => { t.hours = Math.round(mins(t.from, t.to) / 6) / 10; });
+const LAST_WEEK_CAPTURED = 5.1;
+
+/* ============ Knowledge ============ */
+const TPL = {
+  t1: { n: 'Client status letter: I-130', v: 'v4 (Mar 2026)', st: 'Authoritative', owner: 'ns', uses: 31, langs: 'EN, ES', used: [] },
+  t2: { n: 'Client update letter: litigation', v: 'v3 (Jan 2026)', st: 'Authoritative', owner: 'ns', uses: 44, langs: 'EN', used: [] },
+  t3: { n: 'Client status letter: I-130 (2023)', v: 'v2 (Feb 2023)', st: 'Superseded', owner: 'ns', uses: 3, langs: 'EN', used: [['Alvarez I-130', '2026-10-28', 'bt'], ['Nguyen I-130', '2026-10-30', 'bt'], ['Okoye I-130', '2026-11-04', 'mv']] },
+  t4: { n: 'Memo to file', v: 'v2 (Jun 2025)', st: 'Authoritative', owner: 'ns', uses: 58, langs: 'EN', used: [] },
+  t5: { n: 'Estate inventory (draft)', v: 'v1 (Aug 2026)', st: 'Authoritative', owner: 'do', uses: 9, langs: 'EN', used: [] },
+  t6: { n: 'Redline cover note', v: 'v2 (Apr 2026)', st: 'Authoritative', owner: 'ns', uses: 22, langs: 'EN', used: [] },
+  t7: { n: 'Engagement letter: AI disclosure clause', v: 'v1 (Sep 2026)', st: 'Authoritative', owner: 'pg', uses: 15, langs: 'EN, ES', used: [] },
+  t8: { n: 'Non-engagement letter', v: 'v3 (May 2025)', st: 'Authoritative', owner: 'pg', uses: 7, langs: 'EN', used: [] }
+};
+const PLAYBOOKS = [['Commercial supply, buyer side', 'v3', 26], ['Vendor SaaS (firm clients)', 'v4', 31], ['NDA', 'v2', 12]];
+
+/* ============ Firm-level records ============ */
+const AUDIT = [
+  ['2026-11-11', '10:12', 'ac', 'm1', 'ask', 'Asked a question (3 sources cited)'],
+  ['2026-11-11', '10:05', 'mv', 'm2', 'export', 'Exported approved letter to Word'],
+  ['2026-11-11', '09:41', 'bm', 'm1', 'draft', 'Generated client update letter (needs review)'],
+  ['2026-11-11', '09:30', 'tr', null, 'intake', 'Ran conflict search for J. Ortiz (no direct matches)'],
+  ['2026-11-10', '17:02', 'jp', 'm3', 'review', 'Ran contract review (8 clauses)'],
+  ['2026-11-10', '15:20', 'do', 'm4', 'ask', 'Asked for account balances at date of death'],
+  ['2026-11-10', '09:12', 'so', null, 'admin', 'Reviewed model change log; no change'],
+  ['2026-11-09', '16:40', 'ac', 'm1', 'blocked', 'Answer blocked: no source found in matter'],
+  ['2026-11-05', '11:20', 'pg', 'm6', 'ask', 'Asked a question (internal research only)'],
+  ['2026-01-15', '14:55', 'pg', 'm5', 'policy', 'Turned AI off for matter (client OCG §12.3)']
+];
+const SUPERVISION = [
+  { id: 'sv1', who: 'ac', m: 'm1', what: 'AI-assisted memo to file: notice of brake defect', since: '2026-11-11' },
+  { id: 'sv2', who: 'bt', m: 'm2', what: 'Batch of 6 I-130 status letters', since: '2026-11-10' },
+  { id: 'sv3', who: 'jp', m: 'm3', what: 'Redline of Pinnacle Mills supply agreement', since: '2026-11-10' }
+];
+const INVOICES = [['2026-11-01', 20], ['2026-10-01', 20], ['2026-09-01', 18]];
+
+/* ============ State ============ */
+const S = { role: 'associate', matter: 'm1', tab: 'ask', thread: {}, src: {}, scopeOpen: false, draft: {}, carry: {}, rev: {}, clause: {}, tlf: 'all', ev: {}, addEv: false, extraEv: {}, intake: 'c1', ist: {}, time: {}, editing: null, dl: {}, dlSel: 'n1', tplSt: {}, tplSel: 't3', reg: 'all', audit: 'all', invites: {}, sv: {}, done: {}, q: 'brake', qscope: 'all', imConnected: false, period: '30', sent: {} };
+const R = () => ROLES[S.role];
+const ME = () => R().user;
+const ws = () => R().ws || 'firm';
+const canSee = id => { const m = M[id]; if (!m || m.ws !== ws()) return false; if (m.wall && m.wall.includes(ME())) return false; return true; };
+const myMatters = () => Object.keys(M).filter(canSee);
+const hiddenByWall = () => Object.keys(M).filter(id => M[id].ws === ws() && M[id].wall && M[id].wall.includes(ME()));
+const allowed = area => R().areas.includes(area);
+const docsOf = m => m.folders ? sum(m.folders.filter(f => f.st === 'indexed'), f => f.docs) : m.docs;
+const scopeDocs = m => m.folders ? sum(m.folders.filter(f => f.st === 'indexed' && f.inc), f => f.docs) : m.docs;
+const privExcluded = m => m.folders && m.folders.some(f => f.priv && !f.inc);
+const ds = id => (S.draft[id] ||= { tpl: M[id].tpls[0], st: 'needs', tr: false, trSt: 'needs', exp: null, sent: null, batch: false, channel: M[id].channel || 'email' });
+const rv = id => (S.rev[id] ||= {});
+const visibleDL = () => DL.filter(d => canSee(d.m));
+const dlState = d => S.dl[d.id] || { st: d.st, by: d.by, on: d.on };
+const thisWeek = () => visibleDL().filter(d => d.date >= WEEK_START && d.date <= WEEK_END).sort((a, b) => a.date < b.date ? -1 : 1);
+
+/* ============ Small UI helpers ============ */
+const ICON = {
+  lock: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>',
+  check: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><path d="M20 6L9 17l-5-5"/></svg>',
+  alert: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg>',
+  info: '<svg class="i" viewBox="0 0 24 24" aria-hidden="true" style="width:16px;height:16px"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v5h1"/></svg>'
+};
+const banner = (kind, tag, text, attrs = '') => `<div class="banner ${kind}" ${attrs}>${kind === 'good' ? ICON.check : kind === 'info' ? ICON.info : ICON.alert}<div><span class="tag">${tag}</span> ${text}</div></div>`;
+const pill = (cls, text) => `<span class="pill ${cls}">${text}</span>`;
+const RISK = { High: ['bad', 'High risk'], Medium: ['warn', 'Medium risk'], Low: ['info', 'Low risk'], Missing: ['bad', 'Missing'], OK: ['good', 'Matches playbook'] };
+const srcIndex = (m, sid) => Object.keys(m.src).indexOf(sid) + 1;
+const cite = (mid, sid) => { const m = M[mid], s = m.src[sid]; if (!s) return ''; const n = srcIndex(m, sid);
+  return `<button class="cite" data-act="cite" data-m="${mid}" data-src="${sid}" aria-pressed="${S.src[mid] === sid}" aria-label="Source ${n}: ${s.t}, ${s.pg}">${n}</button>`; };
+const withCites = (mid, str) => str.replace(/\{(s\d+)\}/g, (_, s) => cite(mid, s));
+const textOf = (m, a) => typeof a === 'function' ? a(m) : a;
+const aiBadge = m => m.ai.st === 'restricted' ? pill('bad', 'AI off: client restriction') : m.ai.st === 'pending' ? pill('warn', 'AI consent pending') : pill('good', 'AI consent on file');
+const crumbs = m => `<p class="small faint" style="margin:0" data-testid="workspace-name">${WS[m.ws].name} · ${m.no} · ${m.type}</p>`;
+const aiOff = m => `<div class="card" data-testid="ai-off">${banner('bad', 'AI is off for this matter.', m.ai.note + '. Briefcase will not send any of its documents to a model. Documents remain available in NetDocuments, and deadlines are docketed by hand.')}<p class="small muted" style="margin:10px 0 0">Changed by P. Grant on ${fmtD('2026-01-15')} · recorded in the audit log and the AI-use register.</p></div>`;
+const indexing = m => `<div class="card" data-testid="indexing">${banner('info', 'Indexing in progress.', `${m.indexing.done} of ${m.indexing.total} files processed. Answers and review become available when indexing finishes (about 2 minutes).`)}<div class="bar-track" style="margin-top:10px" role="progressbar" aria-label="Indexing progress" aria-valuenow="${Math.round(100 * m.indexing.done / m.indexing.total)}" aria-valuemin="0" aria-valuemax="100"><div class="bar-fill" style="width:${Math.round(100 * m.indexing.done / m.indexing.total)}%"></div></div></div>`;
+function denied(id) {
+  const area = TAB_AREA(id), who = Object.values(ROLES).filter(r => r.areas.includes(area)).map(r => r.label).join(', ');
+  const first = R().areas[0], firstTab = first === 'matter' ? 'ask' : first;
+  return `<div class="card denied" data-testid="denied-${id}"><h1>${AREA_NAME[area]} is not available</h1>${banner('warn', 'Restricted by role.', `You are viewing as <strong>${R().label}</strong> (${P[ME()].n}). ${AREA_NAME[area]} is available to: ${who}.`)}<div class="row" style="margin-top:12px"><button class="btn" data-goto="${firstTab}">Go to ${AREA_NAME[first]}</button></div></div>`;
+}
+
+/* ============ Side bar ============ */
+function renderSide() {
+  const r = R(), u = P[ME()], w = WS[ws()];
+  const mlist = myMatters();
+  const items = mlist.map(id => { const m = M[id]; return `<button class="item" data-select="${id}" ${S.matter === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${m.short[0]}</span><span><strong>${m.name}</strong><small>${m.type} · ${num(docsOf(m))} docs</small>${m.ai.st === 'restricted' ? '<span class="tagline">AI off (client)</span>' : ''}</span></button>`; }).join('');
+  const walled = hiddenByWall().length;
+  let top = '';
+  if (S.tab === 'intake' && allowed('intake')) {
+    top = `<h2>Intake queue (${Object.keys(INTAKE).length})</h2><div class="list">` + Object.entries(INTAKE).map(([id, c]) => { const st = S.ist[id] || {}; const status = st.declined ? 'Declined' : st.cleared ? 'Conflict cleared' : st.requested ? 'Clearance requested' : c.status;
+      return `<button class="item" data-select="${id}" ${S.intake === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${c.n[0]}</span><span><strong>${c.n}</strong><small>${c.kind} · ${fmtS(c.when)} ${c.time}</small><span class="tagline">${status}</span></span></button>`; }).join('') + '</div>';
+  }
+  $('#side').innerHTML = `<div class="top"><span>${w.name}</span><small>${P[ME()].n} · ${r.label}</small><small>${w.sub}</small></div>${top}
+    <h2>${ws() === 'inhouse' ? 'Contract requests' : 'Matters you can access'} (${mlist.length})</h2>
+    <div class="list" id="matters">${items}</div>
+    ${ws() === 'firm' ? `<p class="empty-note" style="margin:8px">Showing your recent matters · ${num(FIRM.activeMatters)} active and ${num(FIRM.totalMatters)} total firm-wide.${walled ? ` ${walled} matter hidden by an ethical wall.` : ''}</p>` : ''}`;
+}
+
+/* ============ Ask ============ */
+function renderAsk() {
+  const id = S.matter, m = M[id];
+  if (!m) return emptyMatter();
+  const head = `${crumbs(m)}<h1 data-testid="matter-title">${m.name}</h1>`;
+  if (m.ai.st === 'restricted') return head + aiOff(m);
+  if (m.indexing) return head + indexing(m);
+  const th = m.threads[S.thread[id] || 0] || { t: 'New thread', turns: [] };
+  const priv = privExcluded(m);
+  const scope = `<div class="row" style="margin:6px 0 12px"><button class="chipbtn" data-act="scope" data-testid="scope-btn" aria-expanded="${S.scopeOpen}"><span data-testid="scope-chip">Searching: this matter, ${num(scopeDocs(m))} docs${priv ? ' (privileged excluded)' : ''}</span><span aria-hidden="true">▾</span></button>${aiBadge(m)}</div>`;
+  const scopePanel = S.scopeOpen && m.folders ? `<div class="card" data-testid="scope-panel" style="margin-bottom:12px"><h3>Search scope and productions</h3><div class="tablewrap"><table class="cards-sm"><thead><tr><th>Folder / volume</th><th>Bates range</th><th class="num">Docs</th><th>Status</th><th>In scope</th></tr></thead><tbody>${m.folders.map(f => `<tr data-testid="vol-${f.id}"><td data-label="Folder">${f.n}${f.priv ? ' ' + pill('warn', 'Privileged') : ''}</td><td data-label="Bates" class="small">${f.bates}</td><td data-label="Docs" class="num">${num(f.docs)}</td><td data-label="Status">${f.st === 'indexed' ? pill('good', 'Indexed') : `<button class="btn" data-act="loadvol" data-id="${f.id}" data-testid="load-vol">Load and index</button>`}</td><td data-label="In scope">${f.st !== 'indexed' ? '<span class="small muted">Not loaded</span>' : f.priv ? `<button class="btn" data-act="togglepriv" data-testid="exclude-priv">${f.inc ? 'Exclude from Ask and drafts' : 'Excluded · include again'}</button>` : '<span class="small">Included</span>'}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:8px 0 0">Excluded folders are never sent to the model and never cited.</p></div>` : '';
+  const threads = `<div class="row" style="margin-bottom:10px"><span class="small muted">Threads in ${m.short}:</span>${m.threads.map((t, i) => `<button class="chipbtn" data-act="thread" data-i="${i}" aria-pressed="${(S.thread[id] || 0) === i}">${t.t}${t.turns.length ? '' : ' (empty)'}</button>`).join('')}</div>`;
+  const turns = th.turns.length ? th.turns.map((t, i) => turnHTML(id, t, i)).join('') : `<div class="card"><p class="empty-note" style="margin:0">No questions yet in this thread. Ask something about ${m.name} below.</p></div>`;
+  const sel = S.src[id] && m.src[S.src[id]];
+  const peek = sel ? `<div class="card small peek" data-testid="peek" style="margin-top:10px"><strong>Source ${srcIndex(m, S.src[id])}: ${sel.t}</strong><div class="muted">${sel.bates !== '—' ? sel.bates + ' · ' : ''}${sel.pg}</div><div style="margin-top:4px">"${sel.q}"</div><button class="linkbtn" data-act="openright">See full source and page</button></div>` : '';
+  return head + scope + scopePanel + threads + `<div class="list" data-testid="answer" aria-live="polite">${turns}</div>${peek}
+    <div class="card" style="margin-top:12px"><label class="lbl" for="ask-input">Ask about ${m.name}</label><div class="row" style="margin-top:6px;flex-wrap:nowrap"><input id="ask-input" class="input" style="flex:1" placeholder="e.g. List every statement about the speed of the truck"><button class="btn primary" data-act="send">Send</button></div><div class="small faint" style="margin-top:4px">Press Enter to send · answers cite only this matter's documents; if nothing supports an answer, Briefcase says so.</div></div>
+    <div class="privacy" style="margin-top:12px" data-testid="dataflow-note">${ICON.lock}<span>${DATAFLOW} <button class="linkbtn" data-goto="admin">How data flows</button></span></div>`;
+}
+function turnHTML(id, t, i) {
+  const m = M[id], a = withCites(id, textOf(m, t.a));
+  let body = '';
+  if (t.kind === 'notfound') body = `${banner('warn', 'Not found', `in this matter's ${num(scopeDocs(m))} documents. Briefcase did not write an answer.`, 'data-testid="not-found"')}<p style="margin:8px 0 0">${a}</p>`;
+  else if (t.kind === 'conflict') body = `<p style="margin:0 0 8px">${a}</p>${banner('warn', 'Conflicting evidence.', withCites(id, t.conflict), 'data-testid="conflict-note"')}`;
+  else if (t.kind === 'inventory') { const rows = m.accounts, tot = sum(rows, r => r.bal), prob = sum(rows.filter(r => r.probate), r => r.bal), ex = S.done['inv-' + id];
+    body = `<p style="margin:0 0 8px">${a}</p><div class="tablewrap" data-testid="inventory"><table class="cards-sm"><thead><tr><th>Account / asset</th><th class="num">Value at date of death</th><th>Passes by</th><th>Source</th></tr></thead><tbody>${rows.map(r => `<tr><td data-label="Asset">${r.a}</td><td data-label="Value" class="num">${money2(r.bal)}</td><td data-label="Passes by">${r.probate ? 'Will (probate)' : 'Beneficiary designation'}</td><td data-label="Source">${cite(id, r.s)}</td></tr>`).join('')}<tr><td data-label=""><strong>Probate estate</strong></td><td data-label="Value" class="num"><strong>${money2(prob)}</strong></td><td data-label=""></td><td data-label=""></td></tr><tr><td data-label=""><strong>Total, all assets</strong></td><td data-label="Value" class="num"><strong>${money2(tot)}</strong></td><td data-label=""></td><td data-label=""></td></tr></tbody></table></div>
+      ${banner('warn', 'Verify:', 'Chase and Wells Fargo values are statement balances on the date of death; confirm with each bank\'s date-of-death letter before filing.')}
+      <div class="row" style="margin-top:8px"><button class="btn" data-act="exportinv" data-testid="export-inventory">${ex ? 'Exported: Liu_inventory_2026-11-11.xlsx (with cites)' : 'Export cited inventory (Excel)'}</button></div>`; }
+  else body = `<p style="margin:0">${a}</p>`;
+  const cites = (textOf(m, t.a) + (t.conflict || '')).match(/\{s\d+\}/g) || [];
+  return `<div class="card turn"><div class="q">Q: ${t.q}</div>${body}<div class="row small faint" style="margin-top:6px"><span>${t.kind === 'notfound' ? 'No answer written' : `Answered from ${new Set(cites).size} source${new Set(cites).size === 1 ? '' : 's'} in this matter`}</span><span>·</span><span>No outside sources used</span></div>
+    ${t.kind === 'notfound' ? '' : `<div class="row" style="margin-top:8px"><label class="sr" for="copyas-${i}">Copy format</label><select id="copyas-${i}" class="input" data-change="copyas"><option value="plain">Copy as plain text</option><option value="bates">Copy with Bates cites</option><option value="bluebook">Copy with Bluebook-style record cites</option></select><button class="btn" data-act="copy" data-i="${i}">Copy</button><button class="btn" data-act="todraft" data-i="${i}">Use in a draft</button></div>`}</div>`;
+}
+function emptyMatter() { return `<div class="card"><h1>No matter selected</h1><p class="muted">Choose a matter in the side bar.</p></div>`; }
+
+/* ============ Draft ============ */
+function draftBody(id, tpl) {
+  const m = M[id], c = s => cite(id, s);
+  if (tpl === 't1') { const due = addMonths(m.receipt, m.procMonths), chk = nextMonday(TODAY);
+    return { en: `<p>Dear Ms. Herrera,</p><p>USCIS received your I-130 petition on ${fmtD(m.receipt)} (receipt number IOE0912345678)${c('s1')}. USCIS currently posts a processing time of about 14 months at the National Benefits Center (as of ${fmtD(m.procAsOf)})${c('s2')}, so we expect a decision around ${fmtD(due)}.</p><p>We will check your case status on ${fmtD(chk)} and write to you with an update.</p><p>Please do not travel outside the United States without speaking to us first.</p><p>Sincerely,<br>Marisol Vega, Esq.</p>`,
+      es: `<p>Estimada Sra. Herrera:</p><p><mark class="term">USCIS</mark> recibió su petición <mark class="term">I-130</mark> el ${fmtES(m.receipt)} (número de recibo IOE0912345678)${c('s1')}. Según el tiempo de procesamiento publicado por <mark class="term">USCIS</mark> para el <mark class="term">National Benefits Center</mark> (unos 14 meses, al ${fmtES(m.procAsOf)})${c('s2')}, esperamos una decisión alrededor del ${fmtES(due)}.</p><p>Revisaremos el estado de su caso el ${fmtES(chk)} y le escribiremos con novedades.</p><p>Por favor, no viaje fuera de los Estados Unidos sin hablar antes con nosotros.</p><p>Atentamente,<br>Marisol Vega, Esq.</p>`,
+      vars: [['Client name', m.client, 's3'], ['Receipt number', 'IOE0912345678', 's1'], ['Receipt date', fmtD(m.receipt), 's1'], ['Processing time', '14 months (as of ' + fmtD(m.procAsOf) + ')', 's2'], ['Expected decision', fmtD(due) + ' (computed)', 's2'], ['Language', 'Spanish (client preference)', 's3']] }; }
+  if (tpl === 't2') return { en: `<p>Dear ${m.salute},</p><p>Here is an update on your case against Coastal Freight. Our expert disclosures are due on ${fmtD('2026-11-13')}${c('s9')}, and fact discovery closes on ${fmtD('2026-12-14')}${c('s9')}.</p><p>In June we took the deposition of Coastal's fleet manager, who testified that he "assumed the shop handled it" when asked about the brake repair${c('s3')}. The court has set the final pretrial conference for ${fmtD('2027-01-12')}${c('s8')}.</p><p>Please call me if you have questions.</p><p>Sincerely,<br>${P[m.resp].n}</p>`,
+      vars: [['Client name', m.client, 's7'], ['Expert disclosures', fmtD('2026-11-13'), 's9'], ['Fact discovery closes', fmtD('2026-12-14'), 's9'], ['Pretrial conference', fmtD('2027-01-12'), 's8'], ['Signer', P[m.resp].n, null]] };
+  if (tpl === 't5') return { en: `<p><strong>INVENTORY OF ASSETS (DRAFT)</strong><br>Estate of Daniel Liu · date of death ${fmtD(m.dod)}${c('s7')}</p>${m.accounts.filter(a => a.probate).map(a => `<p>${a.a}: ${money2(a.bal)}${c(a.s)}</p>`).join('')}<p><strong>Total probate assets: ${money2(sum(m.accounts.filter(a => a.probate), a => a.bal))}</strong></p><p>Non-probate assets (passing by beneficiary designation) are listed separately and are not part of this inventory.</p>`,
+      vars: [['Decedent', 'Daniel Liu', 's7'], ['Date of death', fmtD(m.dod), 's7'], ['Executor', 'Grace Liu', 's8'], ['Accounts', String(m.accounts.filter(a => a.probate).length) + ' probate accounts', 's2']] };
+  if (tpl === 't6') { const r = rv(id), acc = (m.clauses || []).filter(x => r[x[0]] === 'accepted');
+    return { en: `<p>${m.salute},</p><p>Attached is our redline of the ${m.name}. ${acc.length ? 'We propose ' + acc.length + ' change' + (acc.length === 1 ? '' : 's') + ': ' + acc.map(x => x[2].toLowerCase() + ' (' + x[1] + ')').join('; ') + '.' : 'No changes have been accepted in Review yet.'}${c('s1')}</p><p>Happy to discuss.</p>`, vars: [['Agreement', m.name, 's1'], ['Accepted changes', String(acc.length) + ' (from Review)', null], ['Playbook', m.req ? m.req.playbook : '—', null]] }; }
+  const th = m.threads[0], carry = S.carry[id];
+  const turn = th && th.turns[carry != null ? carry : 0];
+  return { en: `<p><strong>MEMORANDUM TO FILE</strong><br>Matter: ${m.name} (${m.no}) · ${fmtD(TODAY)}<br>Re: ${th ? th.t : 'Summary'}</p><p>${turn ? withCites(id, textOf(m, turn.a)) : 'No cited answer to insert yet.'}</p>`, vars: [['Matter', m.name + ' (' + m.no + ')', null], ['Inserted answer', turn ? 'From Ask: ' + turn.q : '—', null], ['Author', P[m.resp].n, null]] };
+}
+function reviewStatus(id) {
+  const d = ds(id), m = M[id];
+  if (d.st === 'approved') return banner('good', 'Approved', `by ${short(d.by)} · ${fmtD(TODAY)}. Ready to send.`, 'data-testid="review-status"');
+  if (d.st === 'sent') return banner('info', `Sent to ${short(m.resp)} for review`, `· ${fmtD(TODAY)} · still needs attorney review before it goes to the client.`, 'data-testid="review-status"');
+  return banner('warn', 'Needs attorney review.', 'AI-generated draft, not yet checked by a lawyer. Facts are cited; check each one.', 'data-testid="review-status"');
+}
+function renderDraft() {
+  const id = S.matter, m = M[id]; if (!m) return emptyMatter();
+  const head = `${crumbs(m)}<h1>Draft · ${m.name}</h1><p class="sub">From your firm's own templates, with facts filled from this matter and cited.</p>`;
+  if (m.ai.st === 'restricted') return head + aiOff(m);
+  if (m.indexing) return head + indexing(m);
+  const d = ds(id), t = TPL[d.tpl], b = draftBody(id, d.tpl), isAtt = R().attorney, approved = d.st === 'approved';
+  const opts = m.tpls.filter(x => (S.tplSt[x] || TPL[x].st) !== 'Retired').map(x => `<option value="${x}" ${x === d.tpl ? 'selected' : ''}>${TPL[x].n}</option>`).join('');
+  const carry = S.carry[id] != null && d.tpl === 't4' ? banner('info', 'Inserted from Ask:', 'the cited answer below came from your Ask thread; citations kept.') : '';
+  const es = m.lang === 'es' && d.tpl === 't1';
+  const trBanner = d.tr ? (d.trSt === 'reviewed' ? banner('good', 'Spanish translation reviewed', 'by ' + short(d.trBy) + ' · ' + fmtD(TODAY), 'data-testid="tr-status"') : banner('warn', 'Spanish translation not yet reviewed.', 'Do not send until an attorney checks it. Terms highlighted were kept in English on purpose (agency and form names).', 'data-testid="tr-status"')) : '';
+  const docs = d.tr ? `<div class="split"><div><h3 class="small muted">English</h3><div class="doc" data-testid="draft-doc">${b.en}</div></div><div><h3 class="small muted">Español</h3><div class="doc" data-testid="draft-es">${b.es}${d.trSt === 'reviewed' ? `<p class="small">Traducción revisada por ${P[d.trBy].n}, ${fmtES(TODAY)}.</p>` : ''}</div></div></div>` : `<div class="doc" data-testid="draft-doc">${b.en}</div>`;
+  const send = es || d.tpl === 't2' ? `<div class="card" style="margin-top:12px" data-testid="send-client"><h3>Send to client</h3><div class="row"><label class="lbl" for="channel">Channel</label><select id="channel" class="input" data-change="channel">${[['email', 'Email'], ['portal', 'Client portal'], ['whatsapp', 'WhatsApp (client preference)'], ['print', 'Print and mail']].map(([v, l]) => `<option value="${v}" ${d.channel === v ? 'selected' : ''}>${l}</option>`).join('')}</select><button class="btn primary" data-act="sendclient" ${approved && (!d.tr || d.trSt === 'reviewed') ? '' : 'disabled'}>Send and record in matter</button></div><p class="small muted" style="margin:6px 0 0">${d.sent ? `<strong>Sent via ${d.sent}</strong> · ${fmtD(TODAY)} · recorded in Clio` : approved ? (d.tr && d.trSt !== 'reviewed' ? 'Review the translation before sending.' : 'Ready to send.') : 'Sending is enabled after attorney approval.'}</p></div>` : '';
+  const batch = es ? `<div class="card" style="margin-top:12px"><h3>Batch</h3><p class="small muted" style="margin:0 0 8px">Same template for every client with a pending I-130 (${IMM_PENDING.length} clients). Each letter goes to a review queue; nothing is sent without approval.</p><button class="btn" data-act="batch" data-testid="batch">Generate for all ${IMM_PENDING.length} pending I-130 clients</button>${d.batch ? `<div data-testid="batch-queue" style="margin-top:10px">${banner('warn', `${IMM_PENDING.length} letters generated`, '· 0 approved · all need attorney review')}<ul class="small" style="margin:8px 0 0;padding-left:18px">${IMM_PENDING.slice(0, 6).map(n => `<li>${n} I-130 · status letter · <span class="state warn">Needs review</span></li>`).join('')}<li>and ${IMM_PENDING.length - 6} more</li></ul></div>` : ''}</div>` : '';
+  return head + `<div class="row" style="margin-bottom:10px"><label class="lbl" for="tpl-select">Template</label><select id="tpl-select" class="input" data-change="tpl">${opts}</select>${pill('good', t.st + ' · ' + t.v)}</div>${carry}${reviewStatus(id)}
+    <div class="row" style="margin:10px 0">${isAtt ? `<button class="btn primary" data-act="approve" data-testid="approve-draft" ${approved ? 'disabled' : ''}>${approved ? 'Approved' : 'Approve draft'}</button>` : `<button class="btn primary" data-act="sendreview" data-testid="send-review" ${d.st !== 'needs' ? 'disabled' : ''}>${d.st === 'needs' ? 'Send to ' + short(m.resp) + ' for review' : 'Sent for review'}</button>`}
+    ${es ? `<button class="btn" data-act="translate" data-testid="translate">${d.tr ? 'Hide Spanish' : 'Translate to Spanish'}</button>` : ''}${d.tr && d.trSt !== 'reviewed' && isAtt ? '<button class="btn" data-act="trreview" data-testid="tr-review">Mark translation reviewed</button>' : ''}
+    <button class="btn" data-act="export" data-testid="export-word">Export to Word (firm letterhead)</button></div>
+    <div data-testid="export-status" class="small" ${d.exp ? '' : 'hidden'}>${d.exp ? `<strong>Exported:</strong> ${d.exp} on firm letterhead${approved ? '' : ' · marked DRAFT, not yet approved'}` : ''}</div>
+    ${trBanner ? `<div style="margin:10px 0">${trBanner}</div>` : ''}${docs}${send}${batch}`;
+}
+
+/* ============ Review ============ */
+function renderReview() {
+  const id = S.matter, m = M[id]; if (!m) return emptyMatter();
+  const head = `${crumbs(m)}<h1>Review · ${m.name}</h1>`;
+  if (m.ai.st === 'restricted') return head + aiOff(m);
+  const rq = m.req ? `<div class="card" data-testid="request-header" style="margin-bottom:12px"><dl class="kv"><dt>Requested by</dt><dd>${m.req.who}</dd><dt>Deal</dt><dd>${m.req.deal}</dd><dt>Received</dt><dd>${fmtD(m.req.received)}</dd><dt>Due</dt><dd><strong>${fmtD(m.req.due)}</strong> · SLA ${m.req.sla}</dd><dt>Paper</dt><dd>${m.req.paper}</dd><dt>Playbook</dt><dd>${m.req.playbook}</dd><dt>Status</dt><dd>${pill('info', rv(id).redline ? 'Redline ready for your review' : 'In review')}</dd></dl></div>` : '';
+  if (m.indexing) return head + rq + indexing(m);
+  if (!m.clauses) return head + `<div class="card" data-testid="review-empty"><h3>No agreement in this matter</h3><p class="small muted" style="margin:0">Review compares an agreement with a playbook. This matter has pleadings and evidence, not contracts. Upload an agreement in NetDocuments or open a contract matter such as ${Object.keys(M).filter(k => canSee(k) && M[k].clauses).map(k => `<button class="linkbtn" data-select-m="${k}" data-act="gomatter" data-id="${k}">${M[k].name}</button>`).join(', ') || 'none you can access'}.</p></div>`;
+  const r = rv(id), cl = m.clauses;
+  const need = cl.filter(c => ['High', 'Medium', 'Low'].includes(c[4])), miss = cl.filter(c => c[4] === 'Missing'), ok = cl.filter(c => c[4] === 'OK');
+  const accepted = cl.filter(c => r[c[0]] === 'accepted').length;
+  const row = c => { const st = r[c[0]]; const [cls, lab] = RISK[c[4]];
+    return `<tr class="clickable ${S.clause[id] === c[0] ? 'sel-row' : ''}" data-row="clause" data-id="${c[0]}" data-testid="clause-${c[0]}"><td data-label="Section">${c[1]}</td><td data-label="Clause"><strong>${c[2]}</strong><div class="small muted">"${c[3]}"</div></td><td data-label="Risk">${pill(cls, lab)}</td><td data-label="Playbook" class="small">${c[5]}<div class="faint">Approver: ${c[8]}</div></td><td data-label="Decision">${st ? `<span class="state ${st === 'accepted' ? 'good' : 'muted'}">${st === 'accepted' ? '✓ Accepted' : 'Ignored'}</span> <button class="linkbtn" data-act="clauseundo" data-id="${c[0]}">Undo</button>` : `<div class="row" style="gap:6px"><button class="btn" data-act="accept" data-id="${c[0]}" data-testid="accept-${c[0]}" aria-label="Accept change for ${c[2]}">Accept</button><button class="btn" data-act="ignore" data-id="${c[0]}" aria-label="Ignore ${c[2]}">Ignore</button></div>`}</td></tr>`; };
+  const table = rows => `<div class="tablewrap"><table class="cards-sm"><thead><tr><th>§</th><th>Clause and quoted text</th><th>Risk</th><th>Playbook position</th><th>Decision</th></tr></thead><tbody>${rows.map(row).join('')}</tbody></table></div>`;
+  return head + rq + `<div class="banner info" data-testid="review-summary">${ICON.info}<div><strong>Checked ${cl.length} clauses</strong> · ${need.length} need changes · ${miss.length} missing · ${ok.length} match the playbook</div></div>
+    <div class="card" data-testid="review-table" style="margin-top:12px"><h3>Needs changes (${need.length})</h3>${table(need)}<h3 style="margin-top:14px">Missing clauses (${miss.length})</h3>${table(miss)}
+    <details style="margin-top:10px"><summary>${ok.length} clauses match the playbook</summary>${table(ok)}</details>
+    <div class="row" style="margin-top:12px"><button class="btn primary" data-act="redline" data-testid="redline-btn" ${accepted ? '' : 'disabled'}>Create redline (${accepted} accepted)</button>${r.redline ? `<span class="small" data-testid="redline-status"><strong>Redline created:</strong> ${m.short}_redline_v1.docx with ${r.redline} change${r.redline === 1 ? '' : 's'} · review it before sending</span>` : '<span class="small muted">Only accepted rows go into the redline.</span>'}</div></div>`;
+}
+
+/* ============ Timeline ============ */
+function renderTimeline() {
+  const id = S.matter, m = M[id]; if (!m) return emptyMatter();
+  const head = `${crumbs(m)}<h1 data-testid="timeline-title">Timeline · ${m.name}</h1>`;
+  if (m.ai.st === 'restricted') return head + aiOff(m) + matterDeadlines(id);
+  if (m.indexing) return head + indexing(m);
+  const evs = [...m.events, ...(S.extraEv[id] || [])].sort((a, b) => a.d < b.d ? -1 : a.d > b.d ? 1 : 0);
+  const shown = evs.filter(e => S.tlf === 'all' || e.k === S.tlf);
+  const keys = m.keyDates(m);
+  return head + `<p class="sub">Built from ${num(docsOf(m))} documents · ${evs.length} key events shown of ${m.totalEvents + (S.extraEv[id] || []).length} extracted · every event links to its source.</p>
+    ${keys.length ? `<div class="grid g3" data-testid="key-dates" style="margin-bottom:12px">${keys.map(k => `<div class="card"><div class="kpi-label">${k.n}</div><div style="font-weight:700;font-size:16px">${k.v}</div><div class="small muted">${k.d}</div>${k.verify ? `<div class="small" style="margin-top:4px">${k.verify.startsWith('Verified') ? '✓ ' : '⚠ '}${k.verify}</div>` : ''}</div>`).join('')}</div>` : ''}
+    ${matterDeadlines(id)}
+    <div class="row" style="margin:12px 0" role="group" aria-label="Filter events">${[['all', 'All'], ['document', 'Documents'], ['testimony', 'Testimony'], ['filing', 'Filings']].map(([v, l]) => `<button class="chipbtn" data-act="tlf" data-f="${v}" data-filter="${v}" aria-pressed="${S.tlf === v}">${l}</button>`).join('')}<span class="sep" style="flex:1"></span><button class="btn" data-act="addev">Add event</button><button class="btn" data-act="exportchron" data-f="Word">Export (Word)</button><button class="btn" data-act="exportchron" data-f="Excel">Export (Excel)</button></div>
+    ${S.addEv ? `<div class="card" style="margin-bottom:10px"><div class="row"><label class="lbl" for="ev-date">Date</label><input id="ev-date" type="date" class="input" value="${TODAY}"><label class="lbl" for="ev-text">Event</label><input id="ev-text" class="input" style="flex:1" value="Call with client about treatment"><button class="btn primary" data-act="saveev">Save event</button></div></div>` : ''}
+    ${S.chron ? `<p class="small" data-testid="chron-status"><strong>Exported:</strong> ${m.short}_chronology_2026-11-11.${S.chron === 'Word' ? 'docx' : 'xlsx'} with source cites</p>` : ''}
+    <div class="tl" data-testid="timeline">${shown.length ? shown.map((e, i) => { const n = evs.indexOf(e) + 1; return `<div class="ev ${S.ev[id] === n ? 'sel' : ''}" data-row="ev" data-id="${n}" data-testid="ev-${n}"><strong>${fmtD(e.d)}</strong> · ${e.t} ${e.s ? cite(id, e.s) : pill('', 'Added by hand')} <span class="small faint">${e.k}</span></div>`; }).join('') : '<p class="empty-note">No events of this type.</p>'}</div>`;
+}
+function matterDeadlines(id) {
+  const list = DL.filter(d => d.m === id); if (!list.length) return '';
+  return `<div class="list" style="margin-bottom:6px">${list.map(d => { const s = dlState(d); return `<div class="card" data-testid="deadline" style="background:${s.st === 'new' ? 'var(--warn-weak)' : 'var(--panel)'}"><div class="row between"><strong>${d.what}: ${fmtD(d.date)}</strong>${s.st === 'new' ? pill('warn', 'Needs verification') : pill('good', 'Verified')}</div><div class="small muted">Rule: ${d.rule} · Source: ${d.srcTxt} · Responsible: ${short(d.resp)}</div><div class="small">${s.st === 'new' ? 'Extracted by AI; a docketing clerk or paralegal must verify before it is posted.' : `Verified by ${short(s.by)}, ${fmtD(s.on)} · reminders ${[7, 3, 1].map(n => fmtS(addDays(d.date, -n))).join(', ')}`}</div></div>`; }).join('')}</div>`;
+}
+
+/* ============ Search ============ */
+function searchResults() {
+  const q = S.q.trim().toLowerCase(), out = [];
+  myMatters().forEach(id => { if (S.qscope !== 'all' && S.qscope !== id) return; const m = M[id]; if (m.ai.st === 'restricted') return;
+    Object.entries(m.src).forEach(([sid, s]) => { if (!q || (s.t + ' ' + s.q).toLowerCase().includes(q)) out.push({ id, sid, s }); }); });
+  return out;
+}
+function renderSearchResults() {
+  const res = searchResults(), mats = new Set(res.map(r => r.id)).size, walls = hiddenByWall().length;
+  const restricted = myMatters().filter(id => M[id].ai.st === 'restricted').length;
+  return `<p class="small" data-testid="search-count"><strong>${res.length} results</strong> in ${mats} matter${mats === 1 ? '' : 's'} for "${S.q}"${walls ? ` · ${walls} matter hidden by ethical wall` : ''}${restricted ? ` · ${restricted} AI-restricted matter excluded` : ''}</p>
+    <div class="list">${res.length ? res.map(r => `<div class="card small"><div class="row between"><strong>${r.s.t}</strong><button class="btn" data-act="gomatter" data-id="${r.id}">Open in ${M[r.id].short}</button></div><div class="muted">${M[r.id].name} · ${r.s.bates !== '—' ? r.s.bates + ' · ' : ''}${r.s.pg} · ${r.s.dms}</div><div style="margin-top:4px">"${r.s.q}"</div></div>`).join('') : '<p class="empty-note">No documents match. Try another word, or search all matters.</p>'}</div>`;
+}
+function renderSearch() {
+  return `<h1>Search</h1><p class="sub">Keyword and meaning search across every matter you can access in ${WS[ws()].name}. Results respect ethical walls and client AI restrictions.</p>
+    <div class="card"><div class="row"><label class="lbl" for="search-q">Search for</label><input id="search-q" class="input" style="flex:1" value="${S.q}" placeholder="e.g. brake, receipt, liability"><label class="lbl" for="search-scope">In</label><select id="search-scope" class="input" data-change="qscope"><option value="all">All matters you can access</option>${myMatters().map(id => `<option value="${id}" ${S.qscope === id ? 'selected' : ''}>${M[id].name}</option>`).join('')}</select></div></div>
+    <div data-testid="search-results" id="search-results" style="margin-top:12px" aria-live="polite">${renderSearchResults()}</div>`;
+}
+
+/* ============ Docket ============ */
+function dlRow(d, showActions = true) {
+  const s = dlState(d), m = M[d.m], can = R().verifies || S.role === 'partner';
+  const status = s.st === 'new' ? pill('warn', 'Needs verification') : s.st === 'posted' ? pill('good', 'Posted to firm calendar') : pill('good', 'Verified');
+  return `<div class="card ${S.dlSel === d.id ? 'sel-row' : ''}" data-row="dl" data-id="${d.id}" data-testid="dl-${d.id}" style="cursor:pointer"><div class="row between"><strong>${d.what}</strong>${status}</div>
+    <div class="small"><strong>${fmtD(d.date)}</strong> · ${m.name} (${m.no})</div>
+    <div class="small muted">Rule: ${d.rule}</div><div class="small muted">Source: ${d.srcTxt} · Responsible: ${short(d.resp)} · Reminders: ${[7, 3, 1].map(n => fmtS(addDays(d.date, -n))).join(', ')}</div>
+    <div class="small">${s.st === 'new' ? 'Extracted by AI from the order. Not on any calendar yet.' : `Verified by ${short(s.by)}, ${fmtD(s.on)}${s.st === 'posted' ? ' · Posted to firm calendar' : ''}`}</div>
+    ${showActions ? `<div class="row" style="margin-top:6px">${s.st === 'new' ? (can ? `<button class="btn" data-act="verify" data-id="${d.id}" data-testid="verify-${d.id}">Verify against source</button>` : '<span class="small muted">Awaiting docketing verification</span>') : ''}${s.st === 'verified' && d.id.startsWith('n') && can ? `<button class="btn primary" data-act="post" data-id="${d.id}" data-testid="post-${d.id}">Post to firm calendar</button>` : ''}<button class="btn" data-act="dl" data-id="${d.id}">View source page</button></div>` : ''}</div>`;
+}
+function renderDocket() {
+  const wk = thisWeek(), q = visibleDL().filter(d => d.id.startsWith('n') && dlState(d).st !== 'posted');
+  const up = visibleDL().filter(d => !wk.includes(d) && !(d.id.startsWith('n') && dlState(d).st !== 'posted')).sort((a, b) => a.date < b.date ? -1 : 1);
+  return `<h1>Deadlines and docket</h1><p class="sub">All matters you can access · today is ${fmtD(TODAY)} · every AI-extracted date shows its rule and source and is verified by a person before it reaches the calendar.</p>
+    <div class="section" data-testid="this-week"><h2>This week · ${fmtD(WEEK_START)} – ${fmtD(WEEK_END)} <span class="badge-inline" aria-label="${wk.length} deadlines">${wk.length}</span></h2><div class="list">${wk.map(d => dlRow(d, false)).join('') || '<p class="empty-note">Nothing due this week.</p>'}</div></div>
+    <div class="section" data-testid="verify-queue"><h2>New deadlines to verify (${q.length})</h2><div class="list">${q.map(d => dlRow(d)).join('') || '<p class="empty-note">Queue is empty.</p>'}</div></div>
+    <div class="section"><h2>Upcoming (${up.length})</h2><div class="list">${up.map(d => dlRow(d, false)).join('')}</div></div>`;
+}
+
+/* ============ Intake ============ */
+function renderIntake() {
+  const id = S.intake, c = INTAKE[id], st = S.ist[id] ||= {}, isAtt = R().clears;
+  const sol = c.sol ? (() => { const due = addYears(c.sol.incident, c.sol.years); return `<div class="card" data-testid="sol"><h3>Limitation period</h3><dl class="kv"><dt>Incident</dt><dd>${fmtD(c.sol.incident)}</dd><dt>State</dt><dd>${c.sol.state}</dd><dt>Rule</dt><dd>${c.sol.rule}</dd><dt>Runs out</dt><dd><strong>${fmtD(due)}</strong></dd></dl><div style="margin-top:8px">${st.solOk ? banner('good', 'Confirmed', 'by ' + short(R().user) + ' · ' + fmtD(TODAY)) : banner('warn', 'AI-calculated: attorney must verify.', 'Confirm the state, claim type and any tolling before relying on this date.')}</div>${isAtt && !st.solOk ? '<button class="btn" style="margin-top:8px" data-act="solok">Verify date</button>' : ''}</div>`; })() : `<div class="card" data-testid="sol"><h3>Limitation period</h3><p class="small muted" style="margin:0">No limitation period applies to a planning matter. An attorney should confirm.</p></div>`;
+  const conflict = `<div class="card" data-testid="conflict"><h3>Conflict check</h3><div class="small muted">Searched ${num(FIRM.totalMatters)} past and current matters and all related parties for:</div><div style="margin:6px 0">${c.names.map(n => `<span class="chip">${n}</span>`).join('')}</div>
+    ${st.cleared ? banner('good', 'Cleared', `by ${short(st.cleared)} · ${fmtD(TODAY)}`) : banner('warn', 'No direct matches found — attorney must clear.', c.near.length ? `${c.near.length} near match${c.near.length === 1 ? '' : 'es'} to review (see side panel).` : 'No near matches.')}
+    ${c.near.length ? `<ul class="small" style="margin:8px 0 0;padding-left:18px">${c.near.map(n => `<li><strong>${n.n}</strong> · ${n.m} · ${n.rel}</li>`).join('')}</ul>` : ''}
+    <div class="row" style="margin-top:8px">${st.cleared ? '' : isAtt ? `<button class="btn primary" data-act="clear" data-testid="clear-conflict">Clear conflict (attorney)</button>` : `<button class="btn" data-act="reqclear" data-testid="request-clear" ${st.requested ? 'disabled' : ''}>${st.requested ? 'Clearance requested' : 'Request attorney clearance'}</button>`}</div>${st.requested && !st.cleared ? `<p class="small" style="margin:6px 0 0"><strong>Clearance requested</strong> from R. Hartwell · ${fmtD(TODAY)}</p>` : ''}</div>`;
+  const slots = (id === 'c3' ? DO_SLOTS : SLOTS.filter(s => SLOT_FOR[id].includes(s.id)));
+  const booking = `<div class="card" data-testid="booking"><h3>Book consult</h3>${st.booked ? banner('good', 'Booked:', `${fmtD(st.booked.at)} ${st.booked.t} with ${P[st.booked.who].n}. Confirmation sent to ${c.n}.`) : `<div class="row">${slots.map(s => `<button class="btn" data-act="book" data-id="${s.id}" data-testid="slot-${s.id}">${fmtD(s.at)} ${s.t} · ${short(s.who)}</button>`).join('')}</div>`}</div>`;
+  const fit = `<div style="margin-top:8px">${c.fit.ok ? banner('good', 'Likely fit for the firm:', c.fit.why.join('; ') + '.') : banner('warn', 'Not a fit:', c.fit.why.join('; ') + '.')}</div>`;
+  return `<h1>Intake · ${c.n}</h1><p class="sub">Call ${fmtD(c.when)}, ${c.time} · taken by ${short(c.by)} · summary written by AI from the call notes; check it with the caller.</p>
+    <div class="grid g2"><div class="card" data-testid="intake-summary"><h3>Summary</h3><p class="small" style="margin:0 0 8px">${c.facts}</p><dl class="kv"><dt>Contact</dt><dd>${c.contact}</dd><dt>Referral</dt><dd>${c.ref}</dd><dt>Insurers</dt><dd>${c.insurer}</dd><dt>Injuries</dt><dd>${c.injury}</dd><dt>Lost wages</dt><dd>${c.wages}</dd><dt>Type</dt><dd>${c.kind}</dd></dl>${fit}</div>
+    ${conflict}${sol}${booking}</div>
+    <div class="row" style="margin-top:12px"><button class="btn" data-act="decline" data-testid="decline">${st.declined ? 'Non-engagement letter queued for attorney signature' : 'Decline (send non-engagement letter)'}</button><button class="btn" data-act="clio" ${st.cleared ? '' : 'disabled'}>${st.clio ? 'Matter opened in Clio: 1042-019' : 'Open matter in Clio'}</button>${st.cleared ? '' : '<span class="small muted">Opening a matter needs a cleared conflict check.</span>'}</div>`;
+}
+
+/* ============ Time ============ */
+const tst = id => S.time[id] || { st: 'suggested' };
+function visibleTime() { const r = R(); return TIME.filter(t => (r.sees === 'all' || r.areas.length === ALL.length || S.role === 'billing') ? true : t.tk === ME()); }
+function amount(t) { const m = M[t.m]; return m.billing === 'Flat fee' ? null : (tst(t.id).hours ?? t.hours) * P[t.tk].rate; }
+function renderTime() {
+  const rows = visibleTime();
+  const hrs = t => tst(t.id).hours ?? t.hours;
+  const sug = sum(rows, hrs), app = sum(rows.filter(t => tst(t.id).st === 'approved'), hrs), rej = sum(rows.filter(t => tst(t.id).st === 'rejected'), hrs);
+  const canApprove = ['billing', 'partner', 'associate', 'immigration', 'estate', 'paralegal', 'ethics'].includes(S.role);
+  return `<h1>Time</h1><p class="sub">Suggested entries from measured active time in Briefcase. ${S.role === 'billing' || R().sees === 'all' ? 'All timekeepers.' : 'Your entries only.'} Nothing posts to Clio until approved.</p>
+    ${banner('info', 'Bill actual time only (ABA Formal Op. 512).', 'Hours are the lawyer\'s measured active time; model processing time is excluded and never billed as lawyer work. Flat-fee matters record time but bill nothing extra.')}
+    <div class="grid g4" style="margin:12px 0" data-testid="time-strip"><div class="card stat"><span class="kpi-label">Suggested</span><span class="kpi">${h1(sug)} h</span></div><div class="card stat"><span class="kpi-label">Approved</span><span class="kpi">${h1(app)} h</span><span class="small muted">Approved ${h1(app)} h of ${h1(sug)} h</span></div><div class="card stat"><span class="kpi-label">Rejected</span><span class="kpi">${h1(rej)} h</span></div><div class="card stat"><span class="kpi-label">Captured this week vs last</span><span class="kpi">${h1(app)} h</span><span class="small muted">same point last week: ${h1(LAST_WEEK_CAPTURED)} h</span></div></div>
+    <div class="row" style="margin-bottom:8px"><button class="btn" data-act="approveall" ${canApprove ? '' : 'disabled'}>Approve all suggested</button><span class="small muted">Approver: billing manager posts after the responsible attorney agrees.</span></div>
+    <div class="card"><div class="tablewrap"><table class="cards-sm" data-testid="time-table"><thead><tr><th>Date · Timekeeper</th><th>Client-matter</th><th>UTBMS</th><th>Narrative · measured time</th><th class="num">Hours</th><th class="num">Rate</th><th class="num">Amount</th><th>Status</th></tr></thead><tbody>
+    ${rows.map(t => { const s = tst(t.id), m = M[t.m], amt = amount(t), ed = S.editing === t.id;
+      return `<tr data-testid="row-${t.id}" class="${s.st === 'approved' ? 'sel-row' : ''}"><td data-label="Timekeeper">${fmtS(t.date)}<div><strong>${short(t.tk)}</strong></div></td><td data-label="Matter">${m.no}<div class="small muted">${m.short} · ${m.billing}</div></td><td data-label="UTBMS">${t.task !== '—' ? t.task + ' / ' : ''}${t.act}</td>
+      <td data-label="Narrative">${ed ? `<label class="sr" for="narr-${t.id}">Narrative</label><textarea id="narr-${t.id}" class="input" rows="3" style="width:100%">${s.narr ?? t.narr}</textarea>` : `<span class="small">${s.narr ?? t.narr}</span>`}<div class="small faint">Measured ${h1(t.hours)} h active (${t.from}–${t.to}) · AI processing ${t.ai} min excluded</div></td>
+      <td data-label="Hours" class="num">${ed ? `<label class="sr" for="hrs-${t.id}">Hours</label><input id="hrs-${t.id}" class="input" style="width:64px" type="number" step="0.1" min="0" value="${hrs(t)}">` : h1(hrs(t))}</td><td data-label="Rate" class="num">$${P[t.tk].rate}</td><td data-label="Amount" class="num">${amt == null ? '<span class="small">Flat fee: $0 extra</span>' : money(amt)}</td>
+      <td data-label="Status">${s.st === 'approved' ? `<span class="state good">✓ Approved · sent to Clio ${s.at}</span> <button class="linkbtn" data-act="tundo" data-id="${t.id}">Undo</button>` : s.st === 'rejected' ? `<span class="state bad">✕ Rejected</span> <button class="linkbtn" data-act="tundo" data-id="${t.id}">Undo</button>` : ed ? `<button class="btn primary" data-act="tsave" data-id="${t.id}">Save</button>` : `<div class="row" style="gap:6px"><button class="btn primary" data-act="tapprove" data-id="${t.id}" data-testid="approve-${t.id}" ${canApprove ? '' : 'disabled'}>Approve</button><button class="btn" data-act="tedit" data-id="${t.id}">Edit</button><button class="btn" data-act="treject" data-id="${t.id}">Reject</button></div>`}<div class="small faint">Approver: ${short(M[t.m].resp)}${M[t.m].resp === t.tk ? ' (own matter)' : ''}</div></td></tr>`; }).join('')}
+    </tbody></table></div></div>`;
+}
+
+/* ============ Knowledge ============ */
+function renderKnowledge() {
+  const canEdit = ['km', 'partner', 'ethics'].includes(S.role);
+  return `<h1>Firm knowledge</h1><p class="sub">Templates, playbooks and the brief bank Briefcase draws on. Only authoritative versions are offered in Draft.</p>
+    <div class="card"><h3>Templates</h3><div class="tablewrap"><table class="cards-sm" data-testid="tpl-table"><thead><tr><th>Template</th><th>Version</th><th>Status</th><th class="num">Uses (30 days)</th><th>Owner</th><th></th></tr></thead><tbody>
+    ${Object.entries(TPL).map(([id, t]) => { const st = S.tplSt[id] || t.st; return `<tr data-testid="tpl-${id}" class="clickable ${S.tplSel === id ? 'sel-row' : ''}" data-row="tpl" data-id="${id}"><td data-label="Template"><strong>${t.n}</strong><div class="small faint">${t.langs}</div></td><td data-label="Version">${t.v}</td><td data-label="Status">${pill(st === 'Authoritative' ? 'good' : st === 'Superseded' ? 'warn' : '', st)}</td><td data-label="Uses" class="num">${t.uses}</td><td data-label="Owner">${short(t.owner)}</td><td data-label="">${st === 'Superseded' && canEdit ? `<button class="btn" data-act="retire" data-id="${id}" data-testid="retire-${id}">Retire</button>` : st === 'Retired' ? '<span class="small muted">Hidden from Draft</span>' : ''}</td></tr>`; }).join('')}</tbody></table></div></div>
+    <div class="grid g2" style="margin-top:12px"><div class="card"><h3>Playbooks</h3>${PLAYBOOKS.map(p => `<div class="row between small" style="padding:4px 0"><span>${p[0]} · ${p[1]}</span><span class="muted">${p[2]} positions</span></div>`).join('')}</div>
+    <div class="card"><h3>Brief bank</h3><p class="small muted" style="margin:0">2,140 filed briefs, tagged by court and outcome. Indexed from NetDocuments (part of the ${num(FIRM_DOCS())} firm documents).</p></div></div>`;
+}
+
+/* ============ Firm insights ============ */
+function people() { return Object.entries(P).filter(([, p]) => !p.ext); }
+function firmNums() {
+  const ppl = people().map(([, p]) => p), act = ppl.filter(p => p.act);
+  const saved30 = sum(ppl, p => p.saved), tkSaved = sum(ppl.filter(p => p.law || p.tk), p => p.saved), flatSaved = sum(ppl.filter(p => p.flat), p => p.saved);
+  const seats = ppl.length, cost = seats * FIRM.seatPrice;
+  return { seats, active: act.length, saved30, perWeek: saved30 / 30 * 7, tkSaved, value: tkSaved * FIRM.blended, flatSaved, flatMargin: flatSaved * FIRM.blended, cost, polOk: act.filter(p => p.pol).length, lawyers: ppl.filter(p => p.law).length, staff: ppl.filter(p => !p.law).length };
+}
+function renderFirm() {
+  const f = firmNums(), byPrac = {};
+  people().forEach(([, p]) => { if (p.saved) byPrac[p.prac] = (byPrac[p.prac] || 0) + p.saved; });
+  const pending = people().filter(([, p]) => p.act && !p.pol).map(([id]) => P[id].n);
+  const exportsNoSign = Object.values(S.draft).filter(d => d.exp && d.st !== 'approved').length;
+  const reg = Object.entries(M).filter(([, m]) => m.ws === 'firm').filter(([, m]) => S.reg === 'all' || m.ai.st === S.reg);
+  const audit = AUDIT.filter(a => S.audit === 'all' || a[3] === S.audit || a[4] === S.audit || a[2] === S.audit);
+  return `<h1>Firm insights</h1><p class="sub">${WS.firm.name} · last 30 days · ${f.lawyers} lawyers, ${f.staff} staff</p>
+    <div class="grid g3" data-testid="money"><div class="card" data-testid="hours-saved"><div class="kpi-label">Firm hours saved, last 30 days</div><div class="kpi">${f.saved30} h</div><div class="small muted">≈ ${h1(f.perWeek)} h per week · measured time-to-draft vs firm baseline</div></div>
+      <div class="card"><div class="kpi-label">Timekeeper hours freed × blended rate ($${FIRM.blended}/h)</div><div class="kpi">${money(f.value)}</div><div class="small muted">${f.tkSaved} lawyer and paralegal hours. On hourly matters this is capacity, not revenue: bill actual time only.</div></div>
+      <div class="card"><div class="kpi-label">Margin gained on flat-fee matters</div><div class="kpi">${money(f.flatMargin)}</div><div class="small muted">${f.flatSaved} h saved on immigration and estates flat fees</div></div>
+      <div class="card"><div class="kpi-label">Subscription</div><div class="kpi">${money(f.cost)}/mo</div><div class="small muted">${f.seats} seats × $${FIRM.seatPrice} · ${money2(f.cost / f.saved30)} per hour saved</div></div>
+      <div class="card"><div class="kpi-label">Net return (flat-fee margin only)</div><div class="kpi">${(f.flatMargin / f.cost).toFixed(1)}×</div><div class="small muted">${money(f.flatMargin - f.cost)} after subscription</div></div>
+      <div class="card"><div class="kpi-label">Realization (from Clio)</div><div class="kpi">${FIRM.realization}%</div><div class="small muted">prior 30 days ${FIRM.realizationPrior}% (up ${FIRM.realization - FIRM.realizationPrior} points)</div></div></div>
+    <div class="card" style="margin-top:12px"><h3>Hours saved by practice (last 30 days)</h3>${Object.entries(byPrac).sort((a, b) => b[1] - a[1]).map(([k, v]) => `<div class="row" style="flex-wrap:nowrap;margin:4px 0"><span class="small" style="width:110px;flex:none">${k}</span><div class="bar-track" style="flex:1" aria-hidden="true"><div class="bar-fill" style="width:${Math.round(100 * v / f.saved30 * 2.5)}%"></div></div><span class="small" style="width:48px;text-align:right">${v} h</span></div>`).join('')}</div>
+    <div class="card" style="margin-top:12px"><h3>Usage by person</h3><div class="tablewrap"><table class="cards-sm" data-testid="usage-table"><thead><tr><th>Person</th><th class="num">Sessions</th><th class="num">Questions</th><th class="num">Drafts</th><th class="num">Hours saved</th><th>Last active</th><th>Status</th></tr></thead><tbody>${people().map(([id, p]) => `<tr><td data-label="Person"><strong>${p.n}</strong><div class="small faint">${p.t}</div></td><td data-label="Sessions" class="num">${p.ses}</td><td data-label="Questions" class="num">${p.qs}</td><td data-label="Drafts" class="num">${p.dr}</td><td data-label="Saved" class="num">${p.saved} h</td><td data-label="Last active">${p.last ? fmtS(p.last) : '—'}</td><td data-label="Status">${p.act ? pill('good', 'Active') : `${pill('warn', 'Not onboarded')} <button class="btn" data-act="invite" data-id="${id}">${S.invites[id] ? 'Invite sent' : 'Send invite'}</button>`}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:6px 0 0">${f.active} of ${f.seats} seats active · ${f.seats - f.active} not yet onboarded.</p></div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card" data-testid="policy"><h3>Firm AI policy</h3><dl class="kv"><dt>Version</dt><dd>v2.1, effective ${fmtD('2026-09-01')}</dd><dt>Accepted</dt><dd>${f.polOk} of ${f.active} active users${pending.length ? ' · pending: ' + pending.join(', ') : ''}</dd><dt>Public AI tools</dt><dd>Blocked on firm network; 3 blocked visits to public chatbots last 7 days (signal from IT web filter)</dd></dl><div class="row" style="margin-top:8px"><button class="btn" data-toast="Downloaded AI policy v2.1 (PDF)">Download policy</button><button class="btn" data-toast="Reminder sent to ${pending.join(', ') || 'nobody'}">Remind pending</button></div></div>
+      <div class="card" data-testid="no-training"><h3>Client confidentiality and ABA Formal Op. 512</h3><p class="small" style="margin:0 0 8px">${DATAFLOW}</p><ul class="small" style="margin:0 0 8px;padding-left:18px"><li>✓ Competence: training completed by ${f.active} of ${f.seats} users</li><li>✓ Confidentiality: zero retention, no training, ethical walls enforced</li><li>⚠ Communication: ${reg.length ? Object.values(M).filter(m => m.ws === 'firm' && m.ai.st === 'pending').length : 0} client disclosure awaiting reply</li><li>✓ Fees: time entries use measured lawyer time only</li><li>✓ Supervision: AI drafts need attorney approval (queue below)</li></ul><div class="row"><button class="btn" data-toast="Downloaded engagement-letter AI disclosure (DOCX)">Client disclosure language (Download)</button><button class="btn" data-toast="Downloaded ABA Op. 512 checklist (PDF)">ABA 512 checklist (PDF)</button></div></div>
+      <div class="card" data-testid="ethics"><h3>Ethics risk and supervision</h3><dl class="kv"><dt>Answers blocked (no source)</dt><dd>${FIRM.blocked30} in 30 days</dd><dt>Drafts exported without sign-off</dt><dd>${exportsNoSign} (exports are watermarked DRAFT)</dd></dl><h3 style="margin-top:10px">Supervision queue</h3>${SUPERVISION.map(s => `<div class="row between small" style="padding:4px 0"><span>${short(s.who)} · ${M[s.m].short}: ${s.what}</span>${S.sv[s.id] ? `<span class="state good">✓ Reviewed by ${short(S.sv[s.id])}</span>` : `<button class="btn" data-act="sv" data-id="${s.id}">Mark reviewed</button>`}</div>`).join('')}</div>
+      <div class="card"><h3>AI-use register by matter</h3><div class="row" style="margin-bottom:6px"><label class="lbl" for="reg-filter">Show</label><select id="reg-filter" class="input" data-change="reg"><option value="all" ${S.reg === 'all' ? 'selected' : ''}>All matters</option><option value="restricted" ${S.reg === 'restricted' ? 'selected' : ''}>Client restricts AI</option><option value="pending" ${S.reg === 'pending' ? 'selected' : ''}>Consent pending</option><option value="consent" ${S.reg === 'consent' ? 'selected' : ''}>Consent on file</option></select><button class="btn" data-act="exportreg" data-testid="export-register">${S.done.reg ? 'Exported AI-use register (CSV) ✓' : 'Export register for client audit'}</button></div>
+        <div class="tablewrap" data-testid="register"><table class="cards-sm"><thead><tr><th>Matter</th><th>Client position</th><th>AI status</th><th class="num">AI uses (30 d)</th></tr></thead><tbody>${reg.map(([id, m]) => `<tr><td data-label="Matter">${m.name}<div class="small faint">${m.no}</div></td><td data-label="Client" class="small">${m.ai.note}</td><td data-label="AI status">${m.ai.st === 'restricted' ? pill('bad', 'AI off (blocked)') : m.ai.st === 'pending' ? pill('warn', 'Internal research only') : pill('good', 'AI on')}</td><td data-label="Uses" class="num">${m.aiUses}</td></tr>`).join('')}</tbody></table></div></div></div>
+    <div class="card" data-testid="audit-log" style="margin-top:12px"><div class="row between"><h3 style="margin:0">Audit log</h3><div class="row"><label class="lbl" for="audit-filter">Filter</label><select id="audit-filter" class="input" data-change="audit"><option value="all">All activity</option><optgroup label="Matter">${Object.entries(M).filter(([, m]) => m.ws === 'firm').map(([id, m]) => `<option value="${id}" ${S.audit === id ? 'selected' : ''}>${m.name}</option>`).join('')}</optgroup><optgroup label="Action">${['ask', 'draft', 'export', 'review', 'blocked', 'intake', 'policy', 'admin'].map(a => `<option value="${a}" ${S.audit === a ? 'selected' : ''}>${a}</option>`).join('')}</optgroup></select><button class="btn" data-toast="Exported audit log (CSV) for client or carrier">Export CSV</button><button class="btn" data-toast="Exported audit log (PDF) for client or carrier">Export PDF</button></div></div>
+      <div class="tablewrap"><table class="cards-sm"><thead><tr><th>When</th><th>Who</th><th>Matter</th><th>Action</th></tr></thead><tbody>${audit.map(a => `<tr><td data-label="When" class="small">${fmtS(a[0])} ${a[1]}</td><td data-label="Who" class="small">${short(a[2])}</td><td data-label="Matter" class="small">${a[3] ? M[a[3]].name : 'Firm'}</td><td data-label="Action" class="small">${a[5]}</td></tr>`).join('') || '<tr><td colspan="4" class="empty-note">No activity for this filter.</td></tr>'}</tbody></table></div><button class="linkbtn" data-toast="Full audit log: 18,240 events since go-live (mock)">View full log</button></div>`;
+}
+
+/* ============ Admin ============ */
+function renderAdmin() {
+  const f = firmNums(), isIT = S.role === 'it';
+  const integ = INTEG.map(i => ({ ...i, st: i.id === 'im' && S.imConnected ? 'ok' : i.st }));
+  return `<h1>Admin and settings</h1><p class="sub">Where your data lives, which model sees what, who can access it, and your plan.</p>
+    <div class="card" data-testid="dataflow"><h3>Data flow</h3>${banner('info', 'In one sentence:', DATAFLOW)}<ol class="small" style="margin:8px 0 0;padding-left:18px"><li>Documents are indexed and stored only in your dedicated instance (encrypted with your firm's key).</li><li>For each question, the instance retrieves the relevant excerpts from documents the user is allowed to see.</li><li>Only the question and those excerpts go to the model; the reply comes back and is checked for citations.</li><li>Nothing is retained by the model provider and nothing is used for training.</li></ol></div>
+    <div class="grid g2" style="margin-top:12px">
+      <div class="card" data-testid="hosting"><h3>Hosting</h3><dl class="kv"><dt>Instance</dt><dd>Dedicated to ${WS.firm.name}</dd><dt>Region</dt><dd>${MODEL.region}</dd><dt>Encryption</dt><dd>AES-256 at rest with firm-owned key (AWS KMS, BYOK); TLS 1.2+ in transit</dd><dt>Backups</dt><dd>Nightly, kept 35 days, encrypted</dd><dt>Exit</dt><dd>Full export, then deletion within 30 days with a certificate</dd></dl></div>
+      <div class="card" data-testid="model"><h3>Model</h3><dl class="kv"><dt>Model</dt><dd>${MODEL.name} (${MODEL.vendor})</dd><dt>Served via</dt><dd>${MODEL.via}, ${MODEL.region}</dd><dt>Retention</dt><dd>Zero data retention; prompts and outputs not stored or logged by the provider</dd><dt>Training</dt><dd>Never used for training</dd></dl><h3 style="margin-top:10px">Alternative: in-instance open-weight model</h3><p class="small muted" style="margin:0">Runs on a GPU node inside your instance so nothing leaves it. Trade-offs: weaker on long documents, slower answers, about $1,900/month extra.</p><div class="row" style="margin-top:6px"><button class="btn" ${isIT ? '' : 'disabled'} data-toast="Quote requested for in-instance model">Request quote</button></div><p class="small muted" style="margin:8px 0 0">Change log: ${fmtS('2026-09-15')} moved to ${MODEL.name}; ${fmtS('2026-03-02')} region pinned to us-east-1.</p></div>
+      <div class="card" data-testid="trust"><h3>Trust documents</h3>${[['SOC 2 Type II report (period ending Jun 30, 2026)', 'PDF'], ['ISO 27001 certificate', 'PDF'], ['Penetration test summary (Aug 2026)', 'PDF'], ['Data processing agreement (signed ' + fmtS('2025-04-01') + ')', 'PDF'], ['Subprocessor list', 'below']].map(([n, k]) => `<div class="row between small" style="padding:3px 0"><span>${n}</span>${k === 'PDF' ? `<button class="btn" data-toast="Downloaded ${n}">Download</button>` : ''}</div>`).join('')}
+        <table class="small" style="margin-top:6px"><tbody><tr><td>Amazon Web Services</td><td>Hosting and model inference (Bedrock), us-east-1</td></tr><tr><td>Anthropic</td><td>Model developer; no access to prompts via Bedrock</td></tr><tr><td>Microsoft</td><td>Sign-in (Entra ID); no document content</td></tr></tbody></table></div>
+      <div class="card"><h3>Permissions</h3><p class="small" style="margin:0">Document permissions come from NetDocuments workspace ACLs. Ethical walls and matter teams sync from Clio every 5 minutes (last sync 2 min ago, healthy). A user sees an excerpt only if both allow it.</p></div></div>
+    <div class="card" data-testid="integrations" style="margin-top:12px"><h3>Integrations</h3><div class="tablewrap"><table class="cards-sm"><thead><tr><th>System</th><th>Used for</th><th>Status</th><th>Last sync</th><th class="num">Docs indexed</th><th>Notes</th></tr></thead><tbody>${integ.map(i => `<tr><td data-label="System"><strong>${i.n}</strong></td><td data-label="Used for" class="small">${i.what}</td><td data-label="Status">${i.st === 'ok' ? pill('good', 'Connected') : i.st === 'warn' ? pill('warn', 'Connected · 3 errors') : `${pill('', 'Not connected')} <button class="btn" data-act="connect" ${isIT || S.role === 'partner' ? '' : 'disabled'}>Connect</button>`}</td><td data-label="Last sync" class="small">${i.st === 'off' ? '—' : i.id === 'im' ? 'just now' : i.sync}</td><td data-label="Docs" class="num">${i.docs ? num(i.docs) : '—'}</td><td data-label="Notes" class="small">${i.id === 'im' && S.imConnected ? 'Connected · first index queued' : i.note}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:6px 0 0">${num(FIRM_DOCS())} firm documents indexed in total.</p></div>
+    <div class="card" data-testid="users" style="margin-top:12px"><h3>Users and roles</h3><div class="tablewrap"><table class="cards-sm"><thead><tr><th>Name</th><th>Briefcase role</th><th>SSO group (Entra ID)</th><th>Last sign-in</th><th>MFA</th></tr></thead><tbody>${people().map(([id, p]) => `<tr><td data-label="Name">${p.n}</td><td data-label="Role" class="small">${p.t}</td><td data-label="SSO group" class="small">${p.sso}</td><td data-label="Last sign-in" class="small">${p.last ? fmtS(p.last) : 'Never'}</td><td data-label="MFA" class="small">${p.act ? 'On' : 'Not set up'}</td></tr>`).join('')}</tbody></table></div><p class="small muted" style="margin:6px 0 0">Admin: partners, firm administrator, IT. Firm insights: partners, firm administrator, billing. Session log kept 1 year.</p></div>
+    <div class="card" data-testid="plan" style="margin-top:12px"><h3>Plan and billing</h3><div class="grid g4"><div class="stat"><span class="kpi-label">Seats</span><span class="kpi">${f.seats} seats</span><span class="small muted">${f.active} active · ${f.seats - f.active} not onboarded</span></div><div class="stat"><span class="kpi-label">Monthly cost</span><span class="kpi">${money(f.cost)}</span><span class="small muted">$${FIRM.seatPrice} per seat</span></div><div class="stat"><span class="kpi-label">Cost per active user</span><span class="kpi">${money2(f.cost / f.active)}</span></div><div class="stat"><span class="kpi-label">Cost per hour saved</span><span class="kpi">${money2(f.cost / f.saved30)}</span><span class="small muted">${f.saved30} h saved, last 30 days</span></div></div>
+      <h3 style="margin-top:12px">Invoices</h3>${INVOICES.map(([d, s], i) => `<div class="row between small" style="padding:3px 0"><span>${fmtD(d)} · ${s} seats · ${money(s * FIRM.seatPrice)} · Paid</span><button class="btn" data-act="invoice" data-id="${i}" ${i === 0 ? 'data-testid="invoice-dl"' : ''}>${S.done['inv' + i] ? 'Downloaded ✓' : 'Download invoice'}</button></div>`).join('')}
+      <h3 style="margin-top:12px">Onboarding</h3><ul class="small" style="margin:0 0 8px;padding-left:18px"><li>✓ SSO with Microsoft Entra ID and MFA</li><li>✓ NetDocuments and Clio connected</li><li>⚠ ${f.seats - f.active} users not onboarded (invite from Firm insights)</li><li>⚠ AI policy accepted by ${f.polOk} of ${f.active} active users</li></ul>
+      <button class="btn primary" data-act="secpack" data-testid="security-pack">${S.done.secpack ? 'Security pack downloaded ✓' : 'Download security pack for partners'}</button></div>`;
+}
+
+/* ============ Right side bar: context for the current screen ============ */
+function sourceDetail(id) {
+  const m = M[id], sid = S.src[id] || null, s = sid && m.src[sid];
+  if (!s) return `<div class="card small" data-testid="source-detail"><strong>Select a citation</strong><div class="muted">Click a numbered citation to see the exact page and passage.</div></div>`;
+  return `<div class="card small" data-testid="source-detail"><strong>${srcIndex(m, sid)}. ${s.t}</strong><dl class="kv" style="margin-top:6px"><dt>Bates / ref</dt><dd>${s.bates}</dd><dt>DMS no.</dt><dd>${s.dms}</dd><dt>Volume</dt><dd>${s.vol}</dd><dt>Location</dt><dd>${s.pg}</dd></dl>
+    <div class="page" aria-label="Page preview with the cited passage highlighted"><div class="ph"><span>${s.bates !== '—' ? s.bates : s.dms}</span><span>${s.pg}</span></div><div class="ln"></div><div class="ln s"></div><mark>${s.q}</mark><div class="ln"></div><div class="ln s"></div></div>
+    ${s.note ? `<div class="muted" style="margin-top:6px">${s.note}</div>` : ''}<button class="btn" style="margin-top:8px" data-toast="Opened ${s.t} in NetDocuments at ${s.pg}">Open in NetDocuments</button></div>`;
+}
+function matterCard(id) {
+  const m = M[id], next = DL.filter(d => d.m === id && d.date >= TODAY).sort((a, b) => a.date < b.date ? -1 : 1)[0];
+  return `<div class="card small" data-testid="matter-card"><strong>${m.name}</strong><dl class="kv" style="margin-top:6px"><dt>Client</dt><dd>${m.client}</dd><dt>Matter no.</dt><dd>${m.no}</dd><dt>Responsible</dt><dd>${P[m.resp].n}</dd><dt>Team</dt><dd>${m.team.map(short).join(', ')}</dd><dt>Forum</dt><dd>${m.court}</dd><dt>Billing</dt><dd>${m.billing}</dd><dt>Next deadline</dt><dd>${next ? fmtD(next.date) + ' (' + next.what.toLowerCase() + ')' : 'None docketed'}</dd><dt>AI use</dt><dd>${aiBadge(m)}</dd></dl></div>`;
+}
+const access = id => { const m = M[id]; return `<div class="privacy">${ICON.lock}<span>Only the ${m.team.length}-person matter team can see these documents${m.wall ? `; ethical wall screens ${m.wall.map(short).join(', ')}` : ''}.</span></div>`; };
+function rightFor(tab) {
+  const id = S.matter, m = M[id];
+  if (!allowed(TAB_AREA(tab))) return `<h2>Access</h2><div class="card small" data-testid="right-denied">Viewing as ${R().label}. Switch "View as" in the bottom bar to see this area as another role.</div>`;
+  if (['ask', 'draft', 'review', 'timeline'].includes(tab) && m && (m.ai.st === 'restricted' || m.indexing)) return `<h2>Matter</h2>${matterCard(id)}<h2>Access</h2>${access(id)}`;
+  switch (tab) {
+    case 'ask': { const th = m.threads[S.thread[id] || 0]; const ids = th ? [...new Set(th.turns.flatMap(t => ((textOf(m, t.a) + (t.conflict || '')).match(/\{s\d+\}/g) || []).map(x => x.slice(1, -1))))] : [];
+      return `<h2>Source</h2>${sourceDetail(id)}<h2>Sources in this thread (${ids.length})</h2><div class="list small" data-testid="sources">${ids.map(s => `<button class="item" data-act="cite" data-m="${id}" data-src="${s}"><span class="dot">${srcIndex(m, s)}</span><span><strong>${m.src[s].t}</strong><small>Bates/ref ${m.src[s].bates} · ${m.src[s].pg}</small></span></button>`).join('') || '<p class="empty-note">No sources yet.</p>'}</div><h2>Matter</h2>${matterCard(id)}<h2>Access</h2>${access(id)}`; }
+    case 'draft': { const d = ds(id), t = TPL[d.tpl], b = draftBody(id, d.tpl);
+      return `<h2>Template</h2><div class="card small" data-testid="draft-template"><strong>${t.n}</strong><dl class="kv" style="margin-top:6px"><dt>Version</dt><dd>${t.v}</dd><dt>Status</dt><dd>${S.tplSt[d.tpl] || t.st}</dd><dt>Owner</dt><dd>${short(t.owner)}</dd><dt>Languages</dt><dd>${t.langs}</dd></dl></div>
+        <h2>Fields filled and their sources</h2><div class="card small" data-testid="draft-vars"><table><tbody>${b.vars.map(([k, v, s]) => `<tr><td class="muted">${k}</td><td>${v}${s && m.src[s] ? `<div class="faint">${m.src[s].t}, ${m.src[s].pg}</div>` : ''}</td></tr>`).join('')}</tbody></table></div>
+        <h2>Client</h2><div class="card small"><dl class="kv"><dt>Client</dt><dd>${m.client}</dd><dt>Language</dt><dd>${m.lang === 'es' ? 'Spanish' : 'English'}</dd><dt>Prefers</dt><dd>${m.channel === 'whatsapp' ? 'WhatsApp' : 'Email'}</dd><dt>Reviewer</dt><dd>${P[m.resp].n}</dd></dl></div>`; }
+    case 'review': { if (!m.clauses) return `<h2>Playbook</h2><div class="card small" data-testid="clause-detail">No agreement in ${m.name}, so no playbook applies.</div><h2>Matter</h2>${matterCard(id)}`;
+      const cid = S.clause[id] || m.clauses.find(c => c[4] !== 'OK')[0], c = m.clauses.find(x => x[0] === cid);
+      return `<h2>Playbook</h2><div class="card small"><strong>${m.req.playbook}</strong><div class="muted">${m.clauses.length} positions checked · approvers named per clause</div></div>
+        <h2>Clause ${c[1]} · ${c[2]}</h2><div class="card small" data-testid="clause-detail"><div class="page"><div class="ph"><span>${m.src.s1 ? m.src.s1.t : m.name}</span><span>${c[1]}</span></div><div class="ln s"></div><mark>${c[3]}</mark><div class="ln"></div></div>
+        <dl class="kv" style="margin-top:8px"><dt>Risk</dt><dd>${RISK[c[4]][1]}</dd><dt>Preferred</dt><dd>${c[5]}</dd>${c[6] ? `<dt>Fallback</dt><dd>${c[6]}</dd><dt>Walk away</dt><dd>${c[7]}</dd><dt>Deviation approver</dt><dd>${c[8]}</dd>` : ''}</dl></div>`; }
+    case 'timeline': { const evs = [...m.events, ...(S.extraEv[id] || [])].sort((a, b) => a.d < b.d ? -1 : 1), sel = S.ev[id];
+      return `<h2>Source document</h2>${sourceDetail(id)}<h2>Sources, in timeline order</h2><div class="list small" data-testid="tl-sources">${evs.filter(e => e.s).map(e => `<button class="item" data-act="cite" data-m="${id}" data-src="${e.s}" ${S.src[id] === e.s ? 'aria-current="true"' : ''}><span class="dot">${srcIndex(m, e.s)}</span><span><strong>${m.src[e.s].t}</strong><small>${fmtS(e.d)} · ${m.src[e.s].pg}</small></span></button>`).join('')}</div><h2>Matter</h2>${matterCard(id)}`; }
+    case 'search': return `<h2>Search scope</h2><div class="card small" data-testid="search-scope-info"><dl class="kv"><dt>Matters</dt><dd>${myMatters().length} you can access</dd><dt>Ethical walls</dt><dd>${hiddenByWall().length ? hiddenByWall().length + ' matter hidden' : 'None apply to you'}</dd><dt>AI-restricted</dt><dd>Excluded from semantic search</dd><dt>Firm documents</dt><dd>${num(FIRM_DOCS())} indexed</dd></dl></div><h2>Tips</h2><p class="small muted">Use quotes for exact phrases. Results show Bates numbers and DMS numbers so you can cite them.</p>`;
+    case 'docket': { const d = DL.find(x => x.id === S.dlSel) || thisWeek()[0]; if (!d || !canSee(d.m)) return '<h2>Deadline</h2><p class="empty-note">Select a deadline.</p>'; const mm = M[d.m], s = d.src && mm.src[d.src];
+      return `<h2>Deadline source</h2><div class="card small" data-testid="dl-source"><strong>${d.what}</strong><div class="muted">${mm.name} · ${fmtD(d.date)}</div><div class="page"><div class="ph"><span>${d.srcTxt}</span><span>${s ? s.pg : ''}</span></div><div class="ln"></div><mark>${s ? s.q : 'Opposition due 14 days before the motion day.'}</mark><div class="ln s"></div></div><dl class="kv" style="margin-top:8px"><dt>Rule</dt><dd>${d.rule}</dd><dt>Status</dt><dd>${dlState(d).st === 'new' ? 'Needs verification' : 'Verified by ' + short(dlState(d).by)}</dd></dl></div>
+        <h2>Calendar sync</h2><div class="card small">Posts to the shared Outlook "Docket" calendar and the responsible attorney's calendar, with reminders 7, 3 and 1 days before. Last sync 3 min ago.</div>`; }
+    case 'intake': { const c = INTAKE[S.intake];
+      return `<h2>Conflict search detail</h2><div class="card small" data-testid="conflict-detail"><dl class="kv"><dt>Searched</dt><dd>${num(FIRM.totalMatters)} matters (Clio), 19,340 parties and related parties, closed files since 2008</dd><dt>Names</dt><dd>${c.names.join(', ')}</dd><dt>Method</dt><dd>Exact plus fuzzy (≥ 75% similarity)</dd></dl>${c.near.length ? c.near.map(n => `<div style="margin-top:8px"><strong>${n.n}</strong> · ${n.sim}% name similarity<div class="muted">${n.m} · ${n.rel}</div></div>`).join('') : '<p class="muted">No near matches.</p>'}</div>
+        <h2>Call notes (source)</h2><div class="card small">Call notes, ${fmtD(c.when)} ${c.time}, ${short(c.by)} · 6 min recording, transcript in Clio</div>
+        <h2>Intake checklist</h2><ul class="small" style="padding-left:18px;margin:0"><li>✓ Contact details</li><li>✓ Facts and parties</li><li>${(S.ist[S.intake] || {}).cleared ? '✓' : '○'} Conflict cleared by attorney</li><li>${(S.ist[S.intake] || {}).booked ? '✓' : '○'} Consult booked</li><li>○ Engagement or non-engagement letter</li></ul>`; }
+    case 'time': { const rows = visibleTime(), tks = [...new Set(rows.map(t => t.tk))];
+      return `<h2>Timekeeper summary</h2><div class="card small" data-testid="tk-summary"><table><thead><tr><th>Timekeeper</th><th class="num">Hours</th><th class="num">Amount</th></tr></thead><tbody>${tks.map(k => { const r = rows.filter(t => t.tk === k); return `<tr><td>${short(k)}<div class="faint">${P[k].t} · $${P[k].rate}/h</div></td><td class="num">${h1(sum(r, t => tst(t.id).hours ?? t.hours))}</td><td class="num">${money(sum(r, t => amount(t) || 0))}</td></tr>`; }).join('')}</tbody></table></div>
+        <h2>Rules</h2><p class="small muted">Suggestions use measured active time per matter. AI processing time is excluded. Flat-fee matters record time for profitability only.</p>`; }
+    case 'knowledge': { const t = TPL[S.tplSel];
+      return `<h2>${t.n}</h2><div class="card small" data-testid="tpl-usage"><dl class="kv"><dt>Status</dt><dd>${S.tplSt[S.tplSel] || t.st}</dd><dt>Version</dt><dd>${t.v}</dd><dt>Uses</dt><dd>${t.uses} in 30 days</dd></dl><h3 style="margin-top:8px">Recent drafts that used it (${t.used.length} drafts)</h3>${t.used.length ? '<ul style="padding-left:18px;margin:0">' + t.used.map(u => `<li>${u[0]} · ${fmtS(u[1])} · ${short(u[2])}</li>`).join('') + '</ul>' : '<p class="muted">None flagged.</p>'}${t.used.length ? '<p class="muted">Authors were notified to re-check these drafts.</p>' : ''}</div>`; }
+    case 'firm': { const f = firmNums(); const consents = Object.values(M).filter(m => m.ws === 'firm' && m.ai.st === 'pending').length;
+      return `<h2>Period</h2><label class="sr" for="period">Period</label><select id="period" class="input" data-change="period" style="width:100%"><option value="30" ${S.period === '30' ? 'selected' : ''}>Last 30 days</option><option value="90" ${S.period === '90' ? 'selected' : ''}>Last quarter</option></select>
+        <h2>Policy status</h2><div class="card small">AI policy v2.1 · accepted by ${f.polOk} of ${f.active} active users</div>
+        <h2>Open risks</h2><ul class="small" data-testid="open-risks" style="padding-left:18px;margin:0"><li>${f.seats - f.active} users not onboarded</li><li>${f.active - f.polOk} user has not accepted the AI policy</li><li>${consents} client AI disclosure awaiting reply</li><li>${SUPERVISION.filter(s => !S.sv[s.id]).length} items in the supervision queue</li></ul>
+        <h2>Exports</h2><div class="list" data-testid="firm-exports"><button class="btn" data-toast="Exported AI-use register (CSV)">AI-use register (CSV)</button><button class="btn" data-toast="Exported audit log (PDF)">Audit log for client or carrier (PDF)</button><button class="btn" data-toast="Exported ABA 512 evidence pack (PDF)">ABA 512 evidence pack (PDF)</button></div>`; }
+    case 'admin': return `<h2>Instance health</h2><div class="card small" data-testid="health"><dl class="kv"><dt>Status</dt><dd>✓ Healthy</dd><dt>Version</dt><dd>Briefcase 2.4.1 (built on AnythingLLM)</dd><dt>Uptime (30 d)</dt><dd>99.97%</dd><dt>Last backup</dt><dd>${fmtD(TODAY)} 02:00, encrypted</dd><dt>Index queue</dt><dd>12 files</dd><dt>Answer time</dt><dd>2.1 s median</dd><dt>Security tickets</dt><dd>0 open</dd><dt>Sync errors</dt><dd>3 (Outlook, password-protected PDFs)</dd></dl></div>`;
+  }
+  return '';
+}
+
+/* ============ Render ============ */
+const PANELS = { ask: renderAsk, draft: renderDraft, review: renderReview, timeline: renderTimeline, search: renderSearch, docket: renderDocket, intake: renderIntake, time: renderTime, knowledge: renderKnowledge, firm: renderFirm, admin: renderAdmin };
+function renderRail() {
+  const inh = ws() === 'inhouse';
+  $$('.rail button[data-view]').forEach(b => { const v = b.dataset.view, area = v === 'home' ? 'matter' : v;
+    b.hidden = inh && ['docket', 'intake', 'time', 'firm', 'admin'].includes(v);
+    const ok = allowed(area), base = b.getAttribute('title');
+    b.querySelector('.lock')?.remove();
+    if (!ok) b.insertAdjacentHTML('beforeend', '<svg class="i lock" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 018 0v4"/></svg>');
+    if (v === 'docket') { const n = thisWeek().length; b.querySelector('.badge').textContent = n; b.querySelector('.badge').hidden = !n || !ok; b.setAttribute('aria-label', `Deadlines, ${n} due this week${ok ? '' : ' (no access for your role)'}`); }
+    else b.setAttribute('aria-label', base + (ok ? '' : ' (no access for your role)'));
+  });
+  $('#avatar').textContent = P[ME()].n.split(' ').map(x => x[0]).join('');
+  $('#avatar').title = 'Signed in as ' + P[ME()].n + ' (' + R().label + ')';
+}
+function render() {
+  const keep = document.activeElement && (document.activeElement.id || (document.activeElement.dataset.act && document.activeElement.dataset.act + '|' + (document.activeElement.dataset.id || document.activeElement.dataset.src || '')));
+  renderRail(); renderSide();
+  Object.entries(PANELS).forEach(([id, fn]) => { const el = $('#panel-' + id); if (!el || el.hidden) return; el.innerHTML = allowed(TAB_AREA(id)) ? fn() : denied(id); });
+  $('#right').innerHTML = rightFor(S.tab);
+  const u = P[ME()];
+  $('#bb-flow').innerHTML = `Documents stay in your instance; excerpts to ${MODEL.name} via Bedrock, zero retention <button class="linkbtn" data-goto="admin" style="font-size:12px">details</button>`;
+  $('#bb-saved').textContent = u.ext ? 'In-house workspace' : `You: ≈${h1(u.saved / 30 * 7)} h saved per week (30-day avg)`;
+  if (keep) { let el = document.getElementById(keep); if (!el && keep.includes('|')) { const [a, i] = keep.split('|'); el = $(`[data-act="${a}"]${i ? `[data-id="${i}"],[data-act="${a}"][data-src="${i}"]` : ''}`); } if (el && !el.disabled) el.focus({ preventScroll: true }); }
+}
+
+/* ============ Actions ============ */
+const nowT = () => '11:04';
+const ACT = {
+  cite: a => { S.src[a.dataset.m] = a.dataset.src; render(); },
+  openright: () => UI.openDrawer('right'),
+  scope: () => { S.scopeOpen = !S.scopeOpen; render(); },
+  loadvol: a => { const f = M[S.matter].folders.find(x => x.id === a.dataset.id); f.st = 'indexed'; f.inc = 1; UI.toast(`${f.n.split(' (')[0]} indexed: ${num(f.docs)} documents, ${f.bates}`); render(); },
+  togglepriv: () => { const f = M[S.matter].folders.find(x => x.priv); f.inc = f.inc ? 0 : 1; render(); },
+  thread: a => { S.thread[S.matter] = +a.dataset.i; render(); },
+  send: () => askSend(),
+  copy: a => { const sel = $('#copyas-' + a.dataset.i); UI.toast({ plain: 'Copied as plain text', bates: 'Copied with Bates cites (e.g. COASTAL_000412)', bluebook: 'Copied with record cites (e.g. Marsh Dep. 47:3–9)' }[sel ? sel.value : 'plain']); },
+  todraft: a => { S.carry[S.matter] = +a.dataset.i; const d = ds(S.matter); d.tpl = 't4'; UI.selectTab('draft'); },
+  approve: () => { const d = ds(S.matter); d.st = 'approved'; d.by = ME(); UI.toast('Draft approved by ' + P[ME()].n); render(); },
+  sendreview: () => { const d = ds(S.matter); d.st = 'sent'; UI.toast('Sent to ' + P[M[S.matter].resp].n + ' for review'); render(); },
+  translate: () => { const d = ds(S.matter); d.tr = !d.tr; render(); },
+  trreview: () => { const d = ds(S.matter); d.trSt = 'reviewed'; d.trBy = ME(); render(); },
+  export: () => { const m = M[S.matter], d = ds(S.matter); d.exp = `${m.short}_${TPL[d.tpl].n.split(':')[0].toLowerCase().replace(/\s+/g, '-')}_${TODAY}.docx`; UI.toast('Exported to Word on firm letterhead'); render(); },
+  sendclient: () => { const d = ds(S.matter); d.sent = { email: 'email', portal: 'client portal', whatsapp: 'WhatsApp', print: 'print and mail' }[d.channel]; render(); },
+  batch: () => { ds(S.matter).batch = true; render(); },
+  accept: a => { rv(S.matter)[a.dataset.id] = 'accepted'; S.clause[S.matter] = a.dataset.id; render(); },
+  ignore: a => { rv(S.matter)[a.dataset.id] = 'ignored'; S.clause[S.matter] = a.dataset.id; render(); },
+  clauseundo: a => { delete rv(S.matter)[a.dataset.id]; render(); },
+  redline: () => { const r = rv(S.matter); r.redline = M[S.matter].clauses.filter(c => r[c[0]] === 'accepted').length; render(); },
+  gomatter: a => { S.matter = a.dataset.id; UI.selectTab('ask'); },
+  tlf: a => { S.tlf = a.dataset.f; render(); },
+  addev: () => { S.addEv = !S.addEv; render(); },
+  saveev: () => { const d = $('#ev-date').value, t = $('#ev-text').value.trim(); if (d && t) (S.extraEv[S.matter] ||= []).push({ d, t, k: 'document', s: null }); S.addEv = false; render(); },
+  exportchron: a => { S.chron = a.dataset.f; render(); },
+  verify: a => { S.dl[a.dataset.id] = { st: 'verified', by: ME(), on: TODAY }; S.dlSel = a.dataset.id; render(); },
+  post: a => { S.dl[a.dataset.id] = { ...dlState(DL.find(d => d.id === a.dataset.id)), st: 'posted' }; S.dlSel = a.dataset.id; UI.toast('Posted to firm calendar with reminders'); render(); },
+  dl: a => { S.dlSel = a.dataset.id; render(); },
+  solok: () => { S.ist[S.intake].solOk = 1; render(); },
+  clear: () => { S.ist[S.intake].cleared = ME(); render(); },
+  reqclear: () => { S.ist[S.intake].requested = 1; render(); },
+  book: a => { const s = [...SLOTS, ...DO_SLOTS].find(x => x.id === a.dataset.id); S.ist[S.intake].booked = s; render(); },
+  decline: () => { S.ist[S.intake].declined = 1; render(); },
+  clio: () => { S.ist[S.intake].clio = 1; render(); },
+  tapprove: a => { S.time[a.dataset.id] = { ...tst(a.dataset.id), st: 'approved', at: nowT() }; render(); },
+  treject: a => { S.time[a.dataset.id] = { ...tst(a.dataset.id), st: 'rejected' }; render(); },
+  tundo: a => { S.time[a.dataset.id] = { ...tst(a.dataset.id), st: 'suggested' }; render(); },
+  tedit: a => { S.editing = a.dataset.id; render(); },
+  tsave: a => { const id = a.dataset.id; S.time[id] = { ...tst(id), narr: $('#narr-' + id).value, hours: Math.max(0, parseFloat($('#hrs-' + id).value) || 0) }; S.editing = null; render(); },
+  approveall: () => { visibleTime().forEach(t => { if (tst(t.id).st === 'suggested') S.time[t.id] = { ...tst(t.id), st: 'approved', at: nowT() }; }); render(); },
+  retire: a => { S.tplSt[a.dataset.id] = 'Retired'; S.tplSel = a.dataset.id; UI.toast(TPL[a.dataset.id].n + ' retired; authors of 3 recent drafts notified'); render(); },
+  invite: a => { S.invites[a.dataset.id] = 1; render(); },
+  sv: a => { S.sv[a.dataset.id] = ME(); render(); },
+  exportreg: () => { S.done.reg = 1; UI.toast('AI-use register exported (CSV)'); render(); },
+  exportinv: () => { S.done['inv-' + S.matter] = 1; render(); },
+  invoice: a => { S.done['inv' + a.dataset.id] = 1; render(); },
+  secpack: () => { S.done.secpack = 1; render(); },
+  connect: () => { S.imConnected = true; render(); }
+};
+const ROW = {
+  clause: id => { S.clause[S.matter] = id; render(); },
+  ev: n => { const m = M[S.matter], evs = [...m.events, ...(S.extraEv[S.matter] || [])].sort((a, b) => a.d < b.d ? -1 : 1), e = evs[n - 1]; S.ev[S.matter] = +n; if (e && e.s) S.src[S.matter] = e.s; render(); },
+  dl: id => { S.dlSel = id; render(); },
+  tpl: id => { S.tplSel = id; render(); }
+};
+const CHG = {
+  tpl: v => { ds(S.matter).tpl = v; ds(S.matter).st = 'needs'; ds(S.matter).exp = null; render(); },
+  channel: v => { ds(S.matter).channel = v; render(); },
+  copyas: () => {},
+  reg: v => { S.reg = v; render(); },
+  audit: v => { S.audit = v; render(); },
+  qscope: v => { S.qscope = v; $('#search-results').innerHTML = renderSearchResults(); },
+  period: v => { S.period = v; UI.toast(v === '30' ? 'Showing last 30 days' : 'Quarter view (mock uses the same data)'); }
+};
+function askSend() {
+  const inp = $('#ask-input'); const q = inp && inp.value.trim(); if (!q) { inp && inp.focus(); return; }
+  const m = M[S.matter], words = q.toLowerCase().split(/\W+/).filter(w => w.length > 3);
+  const hits = Object.keys(m.src).filter(s => words.some(w => (m.src[s].t + ' ' + m.src[s].q).toLowerCase().includes(w))).slice(0, 2);
+  const th = m.threads[S.thread[S.matter] || 0] || (m.threads[0] = { t: 'New thread', turns: [] });
+  th.turns.push(hits.length ? { q, a: 'Relevant passages: ' + hits.map(s => `"${m.src[s].q}"{${s}}`).join(' ') } : { q, kind: 'notfound', a: 'No passage in this matter mentions that. Try other words or widen the scope.' });
+  render();
+}
+document.addEventListener('click', e => {
+  const a = e.target.closest('[data-act]');
+  if (a) { if (a.disabled) return; const fn = ACT[a.dataset.act]; if (fn) fn(a, e); return; }
+  const r = e.target.closest('[data-row]'); if (r && ROW[r.dataset.row]) ROW[r.dataset.row](r.dataset.id);
+});
+document.addEventListener('change', e => { const a = e.target.closest('[data-change]'); if (a && CHG[a.dataset.change]) CHG[a.dataset.change](a.value, a); });
+document.addEventListener('input', e => { if (e.target.id === 'search-q') { S.q = e.target.value; $('#search-results').innerHTML = renderSearchResults(); } });
+document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id === 'ask-input') { e.preventDefault(); askSend(); } });
+
+/* ============ Shell hooks ============ */
+window.onTab = id => { S.tab = id; if (id !== 'intake') { /* keep queue */ } render(); };
+window.onSelect = id => {
+  if (INTAKE[id]) { S.intake = id; render(); return; }
+  S.matter = id;
+  if (TAB_AREA(S.tab) !== 'matter') UI.selectTab('ask'); else render();
+};
+window.onRail = () => {};
+window.onRole = role => {
+  S.role = role;
+  if (!canSee(S.matter)) S.matter = myMatters()[0];
+  render();
+};
+window.onReady = () => {
+  $('#role').innerHTML = Object.entries(ROLES).map(([k, r]) => `<option value="${k}" ${k === S.role ? 'selected' : ''}>${r.label}</option>`).join('');
+  document.body.dataset.role = S.role;
+  render();
+};
+
 </script>
 </body>
 </html>

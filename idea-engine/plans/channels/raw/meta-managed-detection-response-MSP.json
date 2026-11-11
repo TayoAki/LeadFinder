@@ -1,0 +1,4 @@
+{
+  "detail": "no meta-ad-library credential in this org \u2014 meta-ad-library.meta-ads.library.search is a marketplace endpoint\n  connect one:  treg connections connect --provider meta-ad-library\n  or add a key: treg secret add meta-ad-library --env-var META_AD_LIBRARY_API_KEY\n  or register the tool yourself: treg tool add meta-ad-library --base-url https://graph.facebook.com/v21.0 \u2026\nanother provider serves meta-ads.library.search:\n  crawl4ai.meta-ads.library.search  ~$0.00165/call  (callable now on treg's key)\n  scrapecreators.x.v1-facebook-adlibrary-search-ads  ~$0.00188/call  (callable now on treg's key)\n  apify.meta-ads.library.search  ~$0.005/call  (callable now on treg's key)"
+}
+treg: HTTP 404 — treg refused the call; call id 6278341fa7854f148f64ae8288b3d69d (quote it to support; `treg calls` shows the record)

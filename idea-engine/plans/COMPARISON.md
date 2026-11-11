@@ -10,7 +10,7 @@ Same model for all three: Monte Carlo, 3,000–5,000 runs, 24 months, 1,000 cold
 | Paying customers at month 24 (P50) | ~174 | ~134 | **~178** |
 | MRR at month 12 (P50) | ~70k | **~214k** | ~88k |
 | Setup fees over 24 months (P50) | ~298k | ~233k | **~566k** |
-| Search demand to switch | **Yes** ("zendesk alternative" +225%) | Small and falling | Almost none |
+| Search demand to switch | **Yes** ("zendesk alternative" +225%) | Small and falling | Few switch searches, but the category is growing fastest ("harvey ai" 40,500/mo +95%; see channels/CHANNELS.md) |
 | Tight complaints counted | 83 of 180 | 155 of 164 | 98 of 200 |
 | #1 complaint | Seat price and unused features (24 tight) | Price opaque or too high (43) | Per-seat price and seat minimums (30) |
 | Biggest risk | SLA timers and Chatwoot's AI agent sit under its enterprise licence; buyer pools measured are small | Margin depends on untested AI triage + auto-containment; MSP cycles 3–10 weeks | Lawyers say general ChatGPT/Claude is as good as legal tools; Mintplex hosts AnythingLLM itself for 50–99 USD/mo |

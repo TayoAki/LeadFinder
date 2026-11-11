@@ -1,6 +1,6 @@
 {
  "app": "Watchpost: managed threat detection and response for small businesses (built on Wazuh)",
- "score": 8.4,
+ "score": 10,
  "personas": {
   "owner": {
    "department": "Executive",
@@ -10,21 +10,21 @@
   },
   "office_mgr": {
    "department": "Operations",
-   "pass": 4,
+   "pass": 6,
    "total": 6,
-   "score": 6.7
+   "score": 10
   },
   "it_mgr": {
    "department": "IT",
-   "pass": 6,
+   "pass": 8,
    "total": 8,
-   "score": 7.5
+   "score": 10
   },
   "msp_tech": {
    "department": "IT services (MSP)",
-   "pass": 5,
+   "pass": 8,
    "total": 8,
-   "score": 6.3
+   "score": 10
   },
   "msp_owner": {
    "department": "IT services (MSP leadership)",
@@ -34,21 +34,21 @@
   },
   "compliance": {
    "department": "Compliance",
-   "pass": 6,
+   "pass": 8,
    "total": 8,
-   "score": 7.5
+   "score": 10
   },
   "finance": {
    "department": "Finance",
-   "pass": 2,
+   "pass": 4,
    "total": 4,
-   "score": 5
+   "score": 10
   },
   "msp_account_mgr": {
    "department": "IT services (MSP sales / account management)",
-   "pass": 0,
+   "pass": 2,
    "total": 2,
-   "score": 0
+   "score": 10
   },
   "practice_manager_regulated": {
    "department": "Operations (multi-site)",
@@ -81,99 +81,7 @@
    "score": 10
   }
  },
- "failures": [
-  {
-   "name": "Notifications open a real panel",
-   "ok": false,
-   "why": "not visible: #pop [data-testid='notifications']:has-text('reception@')",
-   "persona": "office_mgr",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Search a host from the rail and see alert noise",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "it_mgr",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Export evidence with history",
-   "ok": false,
-   "why": "not visible: [data-testid='export-history']:has-text('HIPAA · Last 12 months')",
-   "persona": "compliance",
-   "viewport": "desktop"
-  },
-  {
-   "name": "See plan and invoices",
-   "ok": false,
-   "why": "not visible: [data-testid='plan']:has-text('Practice')",
-   "persona": "finance",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Generate a white-labelled QBR for Ridgeline",
-   "ok": false,
-   "why": "not visible: [data-testid='qbr-preview']:has-text('Ridgeline Machining')",
-   "persona": "msp_account_mgr",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Notifications open a real panel",
-   "ok": false,
-   "why": "not visible: #pop [data-testid='notifications']:has-text('reception@')",
-   "persona": "office_mgr",
-   "viewport": "phone"
-  },
-  {
-   "name": "Search a host from the rail and see alert noise",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "it_mgr",
-   "viewport": "phone"
-  },
-  {
-   "name": "Switch to Harbor Auto and every tab follows",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "msp_tech",
-   "viewport": "phone"
-  },
-  {
-   "name": "Harbor incidents, compliance and insurance are Harbor's",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "msp_tech",
-   "viewport": "phone"
-  },
-  {
-   "name": "Open a queue item lands on that client's incident",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "msp_tech",
-   "viewport": "phone"
-  },
-  {
-   "name": "Export evidence with history",
-   "ok": false,
-   "why": "not visible: [data-testid='export-history']:has-text('HIPAA · Last 12 months')",
-   "persona": "compliance",
-   "viewport": "phone"
-  },
-  {
-   "name": "See plan and invoices",
-   "ok": false,
-   "why": "not visible: [data-testid='plan']:has-text('Practice')",
-   "persona": "finance",
-   "viewport": "phone"
-  },
-  {
-   "name": "Generate a white-labelled QBR for Ridgeline",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "msp_account_mgr",
-   "viewport": "phone"
-  }
- ],
+ "failures": [],
  "global": [
   {
    "viewport": "desktop",

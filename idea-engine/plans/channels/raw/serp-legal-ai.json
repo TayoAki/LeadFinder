@@ -1,0 +1,702 @@
+{
+  "search_metadata": {
+    "id": "6af4e91666900e194810aa0b",
+    "status": "Success",
+    "json_endpoint": "https://serpapi.com/searches/_FAl6ynSH0qCe6IJLlFHOVb3ND5e4GoH526P0XgnBBE/6af4e91666900e194810aa0b.json",
+    "markdown_endpoint": "https://serpapi.com/searches/_FAl6ynSH0qCe6IJLlFHOVb3ND5e4GoH526P0XgnBBE/6af4e91666900e194810aa0b.md",
+    "pixel_position_endpoint": "https://serpapi.com/searches/_FAl6ynSH0qCe6IJLlFHOVb3ND5e4GoH526P0XgnBBE/6af4e91666900e194810aa0b.json_with_pixel_position",
+    "created_at": "2026-11-11 22:15:50 UTC",
+    "processed_at": "2026-11-11 22:15:50 UTC",
+    "google_ads_url": "https://www.google.com/search?q=legal+ai&hl=en&gl=us",
+    "raw_html_file": "https://serpapi.com/searches/_FAl6ynSH0qCe6IJLlFHOVb3ND5e4GoH526P0XgnBBE/6af4e91666900e194810aa0b.html",
+    "total_time_taken": 0.94
+  },
+  "search_parameters": {
+    "engine": "google_ads",
+    "q": "legal ai",
+    "location_requested": "Austin, Texas, United States",
+    "location_used": "Austin,Texas,United States",
+    "google_domain": "google.com",
+    "hl": "en",
+    "gl": "us",
+    "device": "desktop"
+  },
+  "search_information": {
+    "query_displayed": "legal ai",
+    "total_results": 74,
+    "time_taken_displayed": 0.34,
+    "organic_results_state": "Results for exact spelling"
+  },
+  "inline_videos": [
+    {
+      "position": 1,
+      "title": "Legal AI Use Cases \u2013 Choosing the Right Tool, Task, and ...",
+      "link": "https://www.youtube.com/watch?v=sy3tELckPbA",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuBooJZrl9JKzVgYMk5YHBFz_kXu54nT8mpA4JSHBrJuIiro231z0xyA&s",
+      "channel": "Practising Law Institute",
+      "duration": "10:17",
+      "platform": "YouTube",
+      "date": "Aug 6, 2026",
+      "snippet": "Legal AI tools can generate text, revise writing, summarize, extract, and analyze text. They assist with legal research, document review, and drafting.",
+      "short_clip": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcTcqlIdcWopl4aS65gP00TBg3hboWMmqN_WOg"
+    },
+    {
+      "position": 2,
+      "title": "Why Some Lawyers Embrace AI \u2014 and Others Won't Touch It",
+      "link": "https://www.youtube.com/watch?v=LD9NptQj0yg",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJyav4tC824oMDxiO7ZaaQSoR25lBb8gmb-6c7Nsuu8Fx0k29oS8LKw&s",
+      "channel": "AI and the Future of Law Podcast",
+      "duration": "12:33",
+      "platform": "YouTube",
+      "date": "Mar 4, 2026"
+    },
+    {
+      "position": 3,
+      "title": "New Tools for Lawyers, LLM Biases, and Avoiding Brainrot",
+      "link": "https://www.youtube.com/watch?v=QTYgM9BEAK8",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-ykCGl5T_dyrcU-iSY_sfRfKGaoxJ_hDdyBf63JDiIYpysWRcX8J7RA&s",
+      "channel": "Coopers' Code",
+      "duration": "35:46",
+      "platform": "YouTube",
+      "date": "Aug 18, 2025",
+      "snippet": "Legal AI tools offer new ways to learn and process information, but users must verify AI-generated content and be aware of inherent biases.",
+      "short_clip": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcQ4YQ9i083kZsuZkdCjNgSVriUbUq6q58eDhg"
+    },
+    {
+      "position": 4,
+      "title": "Legal Research Support for Law Firms: AI Hallucinates 1 in 6 ...",
+      "link": "https://www.youtube.com/watch?v=i9lqUy9r4Gc",
+      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3EtMefkSggO48jJfCQFwu1CtfezaNY8gXsv9mZSeigCOdv-TxRJQUg&s",
+      "channel": "Remote Legal Team",
+      "duration": "5:35",
+      "platform": "YouTube",
+      "date": "2 weeks ago",
+      "snippet": "AI legal tools hallucinate 17-33% of the time. Lawyers must verify AI output to avoid fines and maintain professional competence.",
+      "short_clip": "https://encrypted-vtbn0.gstatic.com/video?q=tbn:ANd9GcS6jG2x762OrmlUZ6WHxmaYRddfV690UlJluw"
+    }
+  ],
+  "related_questions": [
+    {
+      "question": "What is the 30% rule in AI?",
+      "type": "ai_overview",
+      "page_token": "AkGCSXicHdBdToMwAADgeAmP4ONGYUO3ZDHBUXA6lLZA25eFteyPAs2oNvLoWXzyMB7AG_juAUz8jvC9f6hjW39f0IMxup-Px9ba0b7r9qoaia4Zl_1bK8aiVGpbinruX_vgdicWYW-Du84GaYZCpqRilL8Qqp8lQK8VWaGq5UfkMZC4swG7pkXL5Dl1TUIgV7hWNIcrhy9hgSLVVdEMP8VSM3e2LE68fyyUzRRsSJw_FSH0UwdYHB_8KkZpOghAYrgk0T2oiilldNUTT095zSaiVUcZyTiDuiPh4SFt8il35ICpANSZ-etQG9SqQYQ3FgOGocPB9hQcxMA1BvWQNibFeeDjhp8lgEl0XAU4nFhEJExa1axrcJ8V5o1QmRSZDoSXrFkGMcsDj7o5utqJ14V39T-22OwaM9fnbv8pzlVpKrkpzdfp9-fyD8Gvf7k",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=AkGCSXicHdBdToMwAADgeAmP4ONGYUO3ZDHBUXA6lLZA25eFteyPAs2oNvLoWXzyMB7AG_juAUz8jvC9f6hjW39f0IMxup-Px9ba0b7r9qoaia4Zl_1bK8aiVGpbinruX_vgdicWYW-Du84GaYZCpqRilL8Qqp8lQK8VWaGq5UfkMZC4swG7pkXL5Dl1TUIgV7hWNIcrhy9hgSLVVdEMP8VSM3e2LE68fyyUzRRsSJw_FSH0UwdYHB_8KkZpOghAYrgk0T2oiilldNUTT095zSaiVUcZyTiDuiPh4SFt8il35ICpANSZ-etQG9SqQYQ3FgOGocPB9hQcxMA1BvWQNibFeeDjhp8lgEl0XAU4nFhEJExa1axrcJ8V5o1QmRSZDoSXrFkGMcsDj7o5utqJ14V39T-22OwaM9fnbv8pzlVpKrkpzdfp9-fyD8Gvf7k",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSAzMCUgcnVsZSBpbiBBST8iLCJsayI6IkdoaDNhR0YwY3lCMGFHVWdNekFsSUhKMWJHVWdhVzRnWVdrIiwiYnMiOiJjMldOc1FyQ01CaUVjYzJrdUVnVnVVVnhsRG81U0tpVGZZTE9zZmx0Zm9pcEpDbkZ0N2NaeEJiWC0tNjdFMmV4cm95SzRJQm9DS2ZqRHI2ekJIWW9TcGxuMmFvZjhEOVVMS1E0M05vLW1VV0pPN0ZyMEFYU2lhYTJwVVpaUEppc2x2a3lXeWhPWkpTS2k5aFhoanloVmc3bEVEb05sWDVoMWJEcklua1hETC0tLWpRVlY0SDBfLXhxQTkxUy1MbHY4cWpiRUdXLXpUWm0ydUZ4WVQ3N0FBIiwiaWQiOiJmY19GdW4wYXM2aUtZM0JrUElQekpma3dRTV81In0=",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJXaGF0IGlzIHRoZSAzMCUgcnVsZSBpbiBBST8iLCJsayI6IkdoaDNhR0YwY3lCMGFHVWdNekFsSUhKMWJHVWdhVzRnWVdrIiwiYnMiOiJjMldOc1FyQ01CaUVjYzJrdUVnVnVVVnhsRG81U0tpVGZZTE9zZmx0Zm9pcEpDbkZ0N2NaeEJiWC0tNjdFMmV4cm95SzRJQm9DS2ZqRHI2ekJIWW9TcGxuMmFvZjhEOVVMS1E0M05vLW1VV0pPN0ZyMEFYU2lhYTJwVVpaUEppc2x2a3lXeWhPWkpTS2k5aFhoanloVmc3bEVEb05sWDVoMWJEcklua1hETC0tLWpRVlY0SDBfLXhxQTkxUy1MbHY4cWpiRUdXLXpUWm0ydUZ4WVQ3N0FBIiwiaWQiOiJmY19GdW4wYXM2aUtZM0JrUElQekpma3dRTV81In0%3D"
+    },
+    {
+      "question": "How is AI being used in the legal field?",
+      "type": "ai_overview",
+      "page_token": "iSCnfnicHdBLToNAAADQeAmP0GVhgGLSpDEifx0iMwyF2TQw_Bk-aWmpLD2LKw_jAbyBew-g8Qjvvb3zum-_bqJqmsbTVhDmeV6Xw1DyfM2GTkhOrz0TWMJ5mrB2q96p4L5gO-M0a4_DrPkEGTHP-J5XbiiCFyg7C2u8JxoYVyrzAhniAq3RYTqCWEQFNiYAjY2FpHIOCFhgFHaozybEeYdaZ8l1l3jkSoLFTWhDbU83IbbGCzE1JWuRzMh4eQ5dKd6HVygNUiQ_KIntItYgPaiBltjj2RPROSdhAE1-oZGz8dpYSWXXoU0swRrEWKpsv3ewKVKQNlrFFjpi0C5-N_k41FTc0WMGTM-qXQ0byoyCzCYNl6k9qrQFZtr_OYjroKYU_aDdpHyYsYnQqmCXnbz6H9sdim7ajseh_GDHPJny7JBMn83P9-0v0wx_-g",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=iSCnfnicHdBLToNAAADQeAmP0GVhgGLSpDEifx0iMwyF2TQw_Bk-aWmpLD2LKw_jAbyBew-g8Qjvvb3zum-_bqJqmsbTVhDmeV6Xw1DyfM2GTkhOrz0TWMJ5mrB2q96p4L5gO-M0a4_DrPkEGTHP-J5XbiiCFyg7C2u8JxoYVyrzAhniAq3RYTqCWEQFNiYAjY2FpHIOCFhgFHaozybEeYdaZ8l1l3jkSoLFTWhDbU83IbbGCzE1JWuRzMh4eQ5dKd6HVygNUiQ_KIntItYgPaiBltjj2RPROSdhAE1-oZGz8dpYSWXXoU0swRrEWKpsv3ewKVKQNlrFFjpi0C5-N_k41FTc0WMGTM-qXQ0byoyCzCYNl6k9qrQFZtr_OYjroKYU_aDdpHyYsYnQqmCXnbz6H9sdim7ajseh_GDHPJny7JBMn83P9-0v0wx_-g",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJIb3cgaXMgQUkgYmVpbmcgdXNlZCBpbiB0aGUgbGVnYWwgZmllbGQ/IiwibGsiOiJHaEZoYVNCcGJpQnNaV2RoYkNCbWFXVnNaQSIsImJzIjoiYzJXTnNRckNNQmlFY2Mya3VFZ1Z1VVZ4bERvNVNLaVRmWUxPc2ZsdGZvaXBKQ25GdDdjWnhCYlgtLTY3RTJleHJveUs0SUJvQ0tmakRyNnpCSFlvU3BsbjJhb2Y4RDlVTEtRNDNOby1tVVdKTzdGcjBBWFNpYWEycFVaWlBKaXNsdmt5V3loT1pKU0tpOWhYaGp5aFZnN2xFRG9ObFg1aDFiRHJJbmtYREwtLS1qUVZWNEgwXy14cUE5MVMtTGx2OHFqYkVHVy16VFptMnVGeFlUNzdBQSIsImlkIjoiZmNfRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU1fNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJIb3cgaXMgQUkgYmVpbmcgdXNlZCBpbiB0aGUgbGVnYWwgZmllbGQ%2FIiwibGsiOiJHaEZoYVNCcGJpQnNaV2RoYkNCbWFXVnNaQSIsImJzIjoiYzJXTnNRckNNQmlFY2Mya3VFZ1Z1VVZ4bERvNVNLaVRmWUxPc2ZsdGZvaXBKQ25GdDdjWnhCYlgtLTY3RTJleHJveUs0SUJvQ0tmakRyNnpCSFlvU3BsbjJhb2Y4RDlVTEtRNDNOby1tVVdKTzdGcjBBWFNpYWEycFVaWlBKaXNsdmt5V3loT1pKU0tpOWhYaGp5aFZnN2xFRG9ObFg1aDFiRHJJbmtYREwtLS1qUVZWNEgwXy14cUE5MVMtTGx2OHFqYkVHVy16VFptMnVGeFlUNzdBQSIsImlkIjoiZmNfRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU1fNSJ9"
+    },
+    {
+      "question": "Where can I find an AI law internship?",
+      "type": "ai_overview",
+      "page_token": "oa-LPnicHdBfTsIwAIDxeAmP4CNQ_qkkxGTQFRfo2LoN6Avp2o2xttuAxgKPnsUnD-MBvIHvHkDiAb78ku_9Q-0r-X23LoxpTqN221rb2tX1TmUtXus2O10q3uZMqZRxORo-DsFLzsfwZJ1JbZ0gDuFGCbWqPLpQnk1i05nHg0smXSRWxhcAz1fKGfiof0nU8yGtinOqk64PaeBHXh650uA1BQkCjKiFjVUxw3ugM_R0JlOxxsjkZOZGZAICUVFJoVmKDjhEPa97s1mGmtfVFHb5VF049A6pphMfbqzoeMtQJkUYG8QSHImZvOISSwacgEAcBteYuB0K0tIp-JU2BMhroE1AEmdIND0K4GK09xwC-za81dh1hjhWMovdE9WDBZ7iks3c9UZ7G1wW0EdN-JDzt3Hv4f_YeJtrM2qO9e6THzNmMrFl5qv8_bn_A7gSgQU",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=oa-LPnicHdBfTsIwAIDxeAmP4CNQ_qkkxGTQFRfo2LoN6Avp2o2xttuAxgKPnsUnD-MBvIHvHkDiAb78ku_9Q-0r-X23LoxpTqN221rb2tX1TmUtXus2O10q3uZMqZRxORo-DsFLzsfwZJ1JbZ0gDuFGCbWqPLpQnk1i05nHg0smXSRWxhcAz1fKGfiof0nU8yGtinOqk64PaeBHXh650uA1BQkCjKiFjVUxw3ugM_R0JlOxxsjkZOZGZAICUVFJoVmKDjhEPa97s1mGmtfVFHb5VF049A6pphMfbqzoeMtQJkUYG8QSHImZvOISSwacgEAcBteYuB0K0tIp-JU2BMhroE1AEmdIND0K4GK09xwC-za81dh1hjhWMovdE9WDBZ7iks3c9UZ7G1wW0EdN-JDzt3Hv4f_YeJtrM2qO9e6THzNmMrFl5qv8_bn_A7gSgQU",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJXaGVyZSBjYW4gSSBmaW5kIGFuIEFJIGxhdyBpbnRlcm5zaGlwPyIsImxrIjoiR2hGaGFTQnNZWGNnYVc1MFpYSnVjMmhwY0EiLCJicyI6ImMyV05zUXJDTUJpRWNjMmt1RWdWdVVWeGxEbzVTS2lUZllMT3NmbHRmb2lwSkNuRnQ3Y1p4QmJYLS02N0UyZXhyb3lLNElCb0NLZmpEcjZ6QkhZb1NwbG4yYW9mOEQ5VUxLUTQzTm8tbVVXSk83RnIwQVhTaWFhMnBVWlpQSmlzbHZreVd5aE9aSlNLaTloWGhqeWhWZzdsRURvTmxYNWgxYkRySW5rWERMLS0talFWVjRIMF8teHFBOTFTLUxsdjhxamJFR1ctelRabTJ1RnhZVDc3QUEiLCJpZCI6ImZjX0Z1bjBhczZpS1kzQmtQSVB6SmZrd1FNXzUifQ==",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJXaGVyZSBjYW4gSSBmaW5kIGFuIEFJIGxhdyBpbnRlcm5zaGlwPyIsImxrIjoiR2hGaGFTQnNZWGNnYVc1MFpYSnVjMmhwY0EiLCJicyI6ImMyV05zUXJDTUJpRWNjMmt1RWdWdVVWeGxEbzVTS2lUZllMT3NmbHRmb2lwSkNuRnQ3Y1p4QmJYLS02N0UyZXhyb3lLNElCb0NLZmpEcjZ6QkhZb1NwbG4yYW9mOEQ5VUxLUTQzTm8tbVVXSk83RnIwQVhTaWFhMnBVWlpQSmlzbHZreVd5aE9aSlNLaTloWGhqeWhWZzdsRURvTmxYNWgxYkRySW5rWERMLS0talFWVjRIMF8teHFBOTFTLUxsdjhxamJFR1ctelRabTJ1RnhZVDc3QUEiLCJpZCI6ImZjX0Z1bjBhczZpS1kzQmtQSVB6SmZrd1FNXzUifQ%3D%3D"
+    },
+    {
+      "question": "How much does an AI lawyer cost?",
+      "type": "ai_overview",
+      "page_token": "GNBfanicHdBRboIwGADg7BI7go9qxblpYharVONmDdD-YF8MtCBCgYpkRB53lj3tMDvAbrD3HWDJviN87x_6XObfd0HaNOY6Gwzatu2fquqk476sikF4vZVyIEOto1Dms8njBD0ncm5fW7ysWuxw1z5opf1SDRlzt5QsmtieJt6IXnZ5eoiCAwIkbyEnOPQQFfzhRZVqyfOUyDVoz9c2Xy3amKiWZbzbb0yiCkIjMNjPp3Dg04CuUcJ1PtoHptkzdduV9MLgaQgIVhToK2QC84LcghH1xUYwaqeXneWMHW4IWDuLAaXKpzbrcMFHU8MDdynzq0eGAkUZTmUnjIfyzikaxwM88QpRK0To-rzFnj1uXabWYKk60ttOsgUSmTJCSwu4Wwuf2FEGWgGUvUS-za3e_9j8mBTNzNTV6VPWcdjE6hg2X9nvz_0fYEKBGA",
+      "serpapi_ai_overview_link": "https://serpapi.com/search.json?engine=google_ai_overview&page_token=GNBfanicHdBRboIwGADg7BI7go9qxblpYharVONmDdD-YF8MtCBCgYpkRB53lj3tMDvAbrD3HWDJviN87x_6XObfd0HaNOY6Gwzatu2fquqk476sikF4vZVyIEOto1Dms8njBD0ncm5fW7ysWuxw1z5opf1SDRlzt5QsmtieJt6IXnZ5eoiCAwIkbyEnOPQQFfzhRZVqyfOUyDVoz9c2Xy3amKiWZbzbb0yiCkIjMNjPp3Dg04CuUcJ1PtoHptkzdduV9MLgaQgIVhToK2QC84LcghH1xUYwaqeXneWMHW4IWDuLAaXKpzbrcMFHU8MDdynzq0eGAkUZTmUnjIfyzikaxwM88QpRK0To-rzFnj1uXabWYKk60ttOsgUSmTJCSwu4Wwuf2FEGWgGUvUS-za3e_9j8mBTNzNTV6VPWcdjE6hg2X9nvz_0fYEKBGA",
+      "next_page_token": "eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJIb3cgbXVjaCBkb2VzIGFuIEFJIGxhd3llciBjb3N0PyIsImxrIjoiR2h4b2IzY2diWFZqYUNCa2IyVnpJR0ZwSUd4aGQzbGxjaUJqYjNOMCIsImJzIjoiYzJXTnNRckNNQmlFY2Mya3VFZ1Z1VVZ4bERvNVNLaVRmWUxPc2ZsdGZvaXBKQ25GdDdjWnhCYlgtLTY3RTJleHJveUs0SUJvQ0tmakRyNnpCSFlvU3BsbjJhb2Y4RDlVTEtRNDNOby1tVVdKTzdGcjBBWFNpYWEycFVaWlBKaXNsdmt5V3loT1pKU0tpOWhYaGp5aFZnN2xFRG9ObFg1aDFiRHJJbmtYREwtLS1qUVZWNEgwXy14cUE5MVMtTGx2OHFqYkVHVy16VFptMnVGeFlUNzdBQSIsImlkIjoiZmNfRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU1fNSJ9",
+      "serpapi_link": "https://serpapi.com/search.json?device=desktop&engine=google_related_questions&google_domain=google.com&next_page_token=eyJvbnMiOiIxMDA0MSIsImZjIjoiRXFFQkNtSkJSRVJpVjJWWk9XOHpNbmRaVUZGUFlpMU1aamh2VDNwV1lVdG1OMkY0VDJKSmFVUmFiR3RXY2pkQ01WQjRjRTFxT0RGM1FsQkxMWG93VGtsalZVY3pWblpUVGxkck5qQmFkV1pMWlRWUGRIZzJka3RsY1RCMk1rOUhNV3cyVkRNd1VSSVhSblZ1TUdGek5tbExXVE5DYTFCSlVIcEtabXQzVVUwYUlrRklUakJGTjBkdFpsOUtjSFpOTXpCVGRVZHdibVJyV2xsRlpERmpkR2s0ZVdjIiwiZmN2IjoiMyIsImVpIjoiRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU0iLCJxYyI6IkNnaHNaV2RoYkNCaGFSQUFmVzdqREQ4IiwicXVlc3Rpb24iOiJIb3cgbXVjaCBkb2VzIGFuIEFJIGxhd3llciBjb3N0PyIsImxrIjoiR2h4b2IzY2diWFZqYUNCa2IyVnpJR0ZwSUd4aGQzbGxjaUJqYjNOMCIsImJzIjoiYzJXTnNRckNNQmlFY2Mya3VFZ1Z1VVZ4bERvNVNLaVRmWUxPc2ZsdGZvaXBKQ25GdDdjWnhCYlgtLTY3RTJleHJveUs0SUJvQ0tmakRyNnpCSFlvU3BsbjJhb2Y4RDlVTEtRNDNOby1tVVdKTzdGcjBBWFNpYWEycFVaWlBKaXNsdmt5V3loT1pKU0tpOWhYaGp5aFZnN2xFRG9ObFg1aDFiRHJJbmtYREwtLS1qUVZWNEgwXy14cUE5MVMtTGx2OHFqYkVHVy16VFptMnVGeFlUNzdBQSIsImlkIjoiZmNfRnVuMGFzNmlLWTNCa1BJUHpKZmt3UU1fNSJ9"
+    }
+  ],
+  "ai_overview": {
+    "text_blocks": [
+      {
+        "type": "paragraph",
+        "snippet": "Legal AI tools use artificial intelligence to automate research, summarize case law, draft documents, and review contracts.",
+        "snippet_highlighted_words": [
+          "use artificial intelligence to automate research, summarize case law, draft documents, and review contracts"
+        ],
+        "reference_indexes": [
+          0,
+          1
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "Key Types of Legal AI Solutions"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "General LLMs & Legal Workspaces: Platforms like ChatGPT (with features like Astra for Law), Anthropic's Claude, and Google Gemini assist with general writing, analysis, and large-document reviews.",
+            "reference_indexes": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "snippet": "Dedicated Legal Research & Litigation: Tools like Cetient and Paxton search federal and state case law databases, analyze millions of legal decisions, and draft jurisdiction-aware briefs.",
+            "snippet_links": [
+              {
+                "text": "Cetient",
+                "link": "https://www.cetient.com/"
+              },
+              {
+                "text": "Paxton",
+                "link": "https://www.paxton.ai/"
+              }
+            ],
+            "reference_indexes": [
+              0,
+              5
+            ]
+          },
+          {
+            "snippet": "Firm-Wide Operating Systems: Systems like Filevine (LOIS) connect a firm's data, manage deadlines, and build context-aware drafts across active cases.",
+            "snippet_links": [
+              {
+                "text": "Filevine",
+                "link": "https://www.filevine.com/"
+              }
+            ],
+            "reference_indexes": [
+              6,
+              7
+            ]
+          },
+          {
+            "snippet": "In-House & Contract Workflows: Tools like Wordsmith capture, route, and resolve legal requests from internal business teams.",
+            "snippet_links": [
+              {
+                "text": "Wordsmith",
+                "link": "https://www.wordsmith.ai/"
+              }
+            ],
+            "reference_indexes": [
+              8
+            ]
+          },
+          {
+            "snippet": "Consumer-Facing Assistants: Platforms like AI Lawyer offer quick document summaries, basic translations, and standard template generation for individuals.",
+            "snippet_links": [
+              {
+                "text": "AI Lawyer",
+                "link": "https://ailawyer.pro/"
+              }
+            ],
+            "reference_indexes": [
+              9
+            ]
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "snippet": "Main Use Cases"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Legal Research: Scanning thousands of cases or statutes in seconds to surface relevant precedents."
+          },
+          {
+            "snippet": "Contract Analysis: Flagging high-risk clauses, policy non-compliance, and routine deviations."
+          },
+          {
+            "snippet": "Drafting & Summarization: Generating first drafts of motions, deposition outlines, discovery responses, or client letters."
+          },
+          {
+            "snippet": "Back-Office Triage: Managing intake requests, scheduling, and multi-department compliance.",
+            "reference_indexes": [
+              1,
+              5,
+              7,
+              8,
+              10,
+              11
+            ]
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "snippet": "If you'd like to narrow this down, let me know:"
+      },
+      {
+        "type": "list",
+        "list": [
+          {
+            "snippet": "Are you looking for consumer help (like a personal contract or question) or law firm/enterprise tools?"
+          },
+          {
+            "snippet": "What specific task do you want to automate (e.g., research, contract review, or drafting)?"
+          }
+        ]
+      }
+    ],
+    "references": [
+      {
+        "index": 0,
+        "title": "Legal Research AI - Cetient",
+        "link": "https://www.cetient.com/",
+        "snippet": "Cetient uses AI to search, analyze, and summarize US case law and draft documents. Think of ChatGPT that has direct access to legal databases like LexisNexis or We...",
+        "source": "Legal Research AI - Cetient",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.cetient.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSO1zvQFE5F50tvJWusES-pDVjJVIzKlimRHbHJsKRp-jrT9tDT8wT2mFq77Nb7Ne3frZ3Zkl1lyNS60W0-C6ZWvc1DeqsiwAWx3r4V8hEWqFwcSnClZM10O0TNApLEdCV-cWSRg9dQgyAzthDC-S7CRsk"
+      },
+      {
+        "index": 1,
+        "title": "How Is AI Impacting the Legal Profession? - Vanderbilt Law School",
+        "link": "https://law.vanderbilt.edu/master-legal-studies/articles/how-is-ai-impacting-the-legal-profession/",
+        "snippet": "Faster legal research: AI in legal research can scan thousands of cases in seconds, highlighting relevant precedents for quicker decision making. Automated contrac...",
+        "source": "Vanderbilt Law School",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://law.vanderbilt.edu&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmfqd2-ginqRaWcQ66MENxx6wzzuZgzM9IlGmjMlxxLyRmXktzqwY4fLQI-Sn7W24AjJvEFmykzS4_0PnoOBFzrj0L2_IG2TRNvwyfhaFTktzkwvMO9afGv5br4fPFSO5fOWuxjX4HKm61K_FF4CGewuw"
+      },
+      {
+        "index": 2,
+        "title": "AI Tools for Legal Work: Claude, Gemini, Copilot, and More",
+        "link": "https://www.americanbar.org/groups/law_practice/resources/law-technology-today/2024/ai-tools-for-legal-work-claude-gemini-copilot-and-more/",
+        "snippet": "ChatGPT: OpenAI chatbot, drafts text/marketing (Free, Plus $20/mo); knowledge cutoff limits. Claude AI: Anthropic chatbot, complex tasks/coding/translation (Free, ...",
+        "source": "American Bar Association",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://www.americanbar.org&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL"
+      },
+      {
+        "index": 3,
+        "title": "AI for Law Firms: Legal Research and Workflows | OpenAI | OpenAI",
+        "link": "https://openai.com/solutions/industries/law/",
+        "snippet": "OpenAI offers Astra for Law, combining GPT-6 Astra with legal tools, settings, and context for professional legal work via Trusted Access in ChatGPT and Codex. Fea...",
+        "source": "OpenAI",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://openai.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSCzR7XcSoUYLcL2JTpABQPrKxrHRXi6SmVyhqB_lZ5CHoa1gHLX6FoZEQtMiXFVTbuiq0PzJJ6I70eKxxv8O73YVkZSYaoFlpQejYN90WwT-C4ZrjA2KuQuLEXvahgM1sL46Kn4Tf7u0e2VTU6ciV6Hok"
+      },
+      {
+        "index": 4,
+        "title": "Claude vs ChatGPT for Lawyers: 2026 Comparison Guide - LegesGPT",
+        "link": "https://www.legesgpt.com/blog/claude-vs-chatgpt-for-lawyers",
+        "snippet": "Is Claude or ChatGPT better for lawyers? Claude is better for long-document work and drafting quality, thanks to its 1-million-token context window and strong pros...",
+        "source": "LegesGPT",
+        "source_icon": "https://encrypted-tbn3.gstatic.com/faviconV2?url=https://www.legesgpt.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQAQjobsY9y_NOcP-W8detJyk7LOfukYB-CbsGy8_3TviTe8o57CfDI71o1p5LecYwDqqJg0sfQHf3yqDI65J_YYtLka4ioyHJFdvcyvy2aAS0oe3m1ZFNNnFis7GnfJXKUYCWrJjfH2EDS0APcXmWe8JY"
+      },
+      {
+        "index": 5,
+        "title": "PAXTON | AI for Litigation Teams",
+        "link": "https://www.paxton.ai/",
+        "snippet": "Paxton: AI workspace for litigation teams combining case files and legal research. Capabilities: Research grounded in primary law and matter files; court- and juri...",
+        "source": "Paxton AI",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.paxton.ai&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSyNB2NPUPr27aPH92PRUMUWm4SI0KCE3-7-3ssZPyvxWdTq0vGSVOa8SuCJPbNR-0LmR31N9me5APQSf1RmO2dUrFkrunD9q9SQRE-hhGjVnIl-5ISgonyS-hfkjtba4b8i59cPU5zBCfL4MUKwdscusw"
+      },
+      {
+        "index": 6,
+        "title": "Legal AI Platform for Law Firms & Legal Teams | LOIS",
+        "link": "https://www.filevine.com/",
+        "snippet": "Product: LOIS (Legal Operating Intelligence System) by Filevine. Target Audience: Law firms and legal teams (trusted by FedEx, Vercel, Utah Jazz, Kroger, others). ...",
+        "source": "Filevine",
+        "source_icon": "https://encrypted-tbn1.gstatic.com/faviconV2?url=https://www.filevine.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQCADNO1T_szZESxDymhaGk2rxilk5N-kW30dZQisEqV6OGkTaSn4hkoL1vLWZ69HUZJ4tAKm9Ox6h8Hskp1HBI85CbW7lOkxW3Kbe5q8-Kmkv5e5i7-r3ZPkN419OnUmdMPMMy0Z6Xa_3o3SBISxlZ0yI"
+      },
+      {
+        "index": 7,
+        "title": "Legal AI: The Best AI Platforms for Lawyers in 2026 [Spotlight on ...",
+        "link": "https://www.youtube.com/watch?v=aDQbEaqBkDc",
+        "snippet": "and easy verification ai must provide explainable reasoning. and site sources. so lawyers can trace back conclusions to underlying documents. and fifth the ability",
+        "source": "YouTube",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.youtube.com&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqFfyyQX4mFr_0V0QtFrIvGo4tDnvBSt6NVUWe30Q9lNA1-QkizH-aTXdVLyxV2ww-YeEDTC8gjXq5SZRKakykzZV-3_6tCW6KNnsf_e3Z_a1IiiAD-67ZqxXEAbHjv_lqGeGPhoKkeScHdhYoihU7zWQ"
+      },
+      {
+        "index": 8,
+        "title": "Wordsmith \u2014 AI for In-House Legal Teams",
+        "link": "https://www.wordsmith.ai/",
+        "snippet": "Product: Wordsmith (AI for In-House Legal Teams) Function: Captures, triages, resolves, and records legal requests from business teams (sales, finance, HR). Workfl...",
+        "source": "Wordsmith",
+        "source_icon": "https://encrypted-tbn2.gstatic.com/faviconV2?url=https://www.wordsmith.ai&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ56MQEszHUYomslkUKV1dfY8nXjev3UmsmMgBgHGvIcT78738KUsvO593DEnIHb6rgOeJjP4oBmpIA0zdk2N0OQXmkd-tpEZAAAooKbAZEdOAuDKn0VdEAmwhVs_VsvyPzIeZjP3Tlk4NGq2Pw1ixYq8M"
+      },
+      {
+        "index": 9,
+        "title": "AI Lawyer: your personal legal AI assistant | AI Lawyer",
+        "link": "https://ailawyer.pro/",
+        "snippet": "Platform: AI Lawyer (web, iOS, Android) backed by NVIDIA Inception and Google for Startups. Features: Internet-powered rapid research, AI document handling (summar...",
+        "source": "AI Lawyer",
+        "source_icon": "https://encrypted-tbn0.gstatic.com/faviconV2?url=https://ailawyer.pro&client=AIM&size=128&type=FAVICON&fallback_opts=TYPE,SIZE,URL",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcR_gqegla6r8Raf1g_YyyJU7XPlxzrwm-isXVtkTylZDb1uH01a9dCmqXhXSedIHoQVYa0KD8bV03gtV17FhQih69X7XXoqvH9SEbTxqdtQxbKpnKTwCXRNqvt050cAG6AAto8zPYAZtkLiyYXu-4b5bJw"
+      },
+      {
+        "index": 10,
+        "title": "Module 9: Part 1 | Legal AI Use Cases \u2013 Choosing the Right Tool, Task ...",
+        "link": "https://www.youtube.com/watch?v=sy3tELckPbA",
+        "snippet": "tool maybe even based on prior Q&As's. it's been trained on that it has access to that through retrieval augmented generation or or in legal aid organizations. and",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTzUrlu6_C1f6kG1q7IDNU8qTCr7djyuJEfA8j2Amxu0Xbhskarm9D7QAqVDfzIN6ZsFOEHhF_jlL0CRtNEzyP5wC6hIBVLrXcEm7SX-JTmZo2Nh3J3ptx0yvawq-khzbjlhQo8sCfZDE3TwEd8tba5x50"
+      },
+      {
+        "index": 11,
+        "title": "How AI and Global Talent Are Reshaping Entry-Level Legal Work",
+        "link": "https://www.youtube.com/shorts/w1PvvN6xm3A",
+        "snippet": "How AI and Global Talent Are Reshaping Entry-Level Legal Work a lot of the entrylevel researching and first drafts. you give a second or third lawyer an account wi",
+        "source": "YouTube",
+        "source_icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAAAhUlEQVR4AWNwL_ChCFPHgP8MxqxA7ArEKVBcCcUNIAznI-RdQXrABgAZpv8ZjP6Tg0F6QQbsosCAXSADHmGVVPIC0jKEDHgAMuAbmgRE445D___feYzXIJBeBigH04BVW_9DAcgwqEGYaik2gGIvUByIlEbjDooTEiwps5GRlNmolpkowgBVP9wMSzSKGAAAAABJRU5ErkJggg.png",
+        "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSVHBL5CjScKT_zmu2Onm_NtxlNs4s4jLUb6ZZqehsyBpWzqTQAWAIdlrslCDds5RBpXly0umcMh-J4eyUDIcPK0O5umPGuVWTZu6OAB75tqAQtZ230InAQSWfiHwsvrO7-aVz1D4rcN7cg0BGl2rX8HuE"
+      }
+    ]
+  },
+  "organic_results": [
+    {
+      "position": 1,
+      "title": "Artificial Intelligence | Articles, Tips and Tech for Law Firms ...",
+      "link": "https://www.attorneyatwork.com/legal-technology/emerging-technology/artificial-intelligence/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESmQEBxCJF15D6rwc2D20hH5AmYdrTzLmoWxpS7w2qeNGNEQ8ZeBcy6Rit83nSxZ-VFsxGUqbb8uILfZElhEyWNKXMAwSpjiUU8iRB4kolFGmdzRrhYG1fvxMMMNiFEXmEkqp0jqdjtxp3zmmnF1bBy3BBL5xTtZ4HZyeU5H1QAN-VoPHUMhkOThBkoE_J3Zr7FQE6rEXsqbx_B48&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECCkQAQ&uoh=1",
+      "displayed_link": "https://www.attorneyatwork.com \u203a emerging-technology",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAA51BMVEUjHyAaFRZBP0FNTE5HQTw4KRNDNB88Lx83LB8uJiAhHiAgHSAyLCl5en2Gh4qEhYh-fn9IOyhFNR9ENR8oIiCBgoUeFxQxKCBXTkNDQkQfGhs_LxRaV1VTU1VPSUUtIhY7KAMYDgZ2dHRubnFjXVhdXF5bVEsRFSAJEiBnY155gImbekurdhPFiRu7ghucbhxXQR7VoU7_sAXbo0m2hjb_tBf_uRfTkhq8klJyfo4AACHsoxlLU15-WRsAHTikj3PhozuMYx2piVzblhHLm1KYinjopCsAABlvUBsUJjqWaR0AECDenCN0PirIAAABu0lEQVR4AUyPBQLDIBAEoYJbkbpr_v_CLvGJZ07JAF0sV2tW4UISRWZoY513YRNjahGTVnkdfCnF222WgkfGUtrpzuld3MMBdzgqpXPVUcDCiXQ6d9JfIGt0tTu8qV1i-eC6zOtuJ7t4lMZLjjErip4gnDAMrxkMckc0j0Jh2uDrtO2_KmsqR2LC--10358Xj-0JvTLpejFGREQZ-QQv8HyfmJokx1TUomOH23M9SZShr851YIKhJyT9uJnzLwqpu2nZae6wkVscu6pozr6u-OfXd2nvJ-6_5ic4i1KRNT7t-t8TPSVKDEMBAH22bb-ZIqnjUc39b6du8nty_Teien2pXeoAGqY1bxv7_Lm_3N2W-PpmO64HIMLk5HRr-7fD9xH_9x3KGJtzDpBQWry8fJO4EMvVeoOEuOEE-T3O9t_GSYOQAxwFDlLmPoIDvo41tY1vYZPFTpJK3P2cMMkAfsypEy1SOKZ9n2pqm6LAwEROxHwcli1eXOxKDAQHghxXGCFQdkve3Xl5kd0SwjlX-I2lKJ1tvbxsvexcjHOmAEHTL5YtyddWHnBbOfUBhOZcUhd-NWB7kblSloM1jLZDdiCxt6gAAAAASUVORK5CYII.png",
+      "snippet": "AI specialists for law firms implementing automated workflows and digital solutions to improve practice management. uncover critical facts and ensure justice.",
+      "snippet_highlighted_words": [
+        "AI specialists for law firms"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "AI specialists for law firms implementing automated workflows and digital solutions to improve practice management. uncover critical facts and ensure justice.",
+          "source_info_link": "https://www.attorneyatwork.com/legal-technology/emerging-technology/artificial-intelligence/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAA51BMVEUjHyAaFRZBP0FNTE5HQTw4KRNDNB88Lx83LB8uJiAhHiAgHSAyLCl5en2Gh4qEhYh-fn9IOyhFNR9ENR8oIiCBgoUeFxQxKCBXTkNDQkQfGhs_LxRaV1VTU1VPSUUtIhY7KAMYDgZ2dHRubnFjXVhdXF5bVEsRFSAJEiBnY155gImbekurdhPFiRu7ghucbhxXQR7VoU7_sAXbo0m2hjb_tBf_uRfTkhq8klJyfo4AACHsoxlLU15-WRsAHTikj3PhozuMYx2piVzblhHLm1KYinjopCsAABlvUBsUJjqWaR0AECDenCN0PirIAAABu0lEQVR4AUyPBQLDIBAEoYJbkbpr_v_CLvGJZ07JAF0sV2tW4UISRWZoY513YRNjahGTVnkdfCnF222WgkfGUtrpzuld3MMBdzgqpXPVUcDCiXQ6d9JfIGt0tTu8qV1i-eC6zOtuJ7t4lMZLjjErip4gnDAMrxkMckc0j0Jh2uDrtO2_KmsqR2LC--10358Xj-0JvTLpejFGREQZ-QQv8HyfmJokx1TUomOH23M9SZShr851YIKhJyT9uJnzLwqpu2nZae6wkVscu6pozr6u-OfXd2nvJ-6_5ic4i1KRNT7t-t8TPSVKDEMBAH22bb-ZIqnjUc39b6du8nty_Teien2pXeoAGqY1bxv7_Lm_3N2W-PpmO64HIMLk5HRr-7fD9xH_9x3KGJtzDpBQWry8fJO4EMvVeoOEuOEE-T3O9t_GSYOQAxwFDlLmPoIDvo41tY1vYZPFTpJK3P2cMMkAfsypEy1SOKZ9n2pqm6LAwEROxHwcli1eXOxKDAQHghxXGCFQdkve3Xl5kd0SwjlX-I2lKJ1tvbxsvexcjHOmAEHTL5YtyddWHnBbOfUBhOZcUhd-NWB7kblSloM1jLZDdiCxt6gAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Ct0BL2dvdG8_dXJsPUNBRVNtUUVCeENKRjF5NnhoMkVTSFY1X25kQ3VsZEFEMHZmQllkMTFnUUdFX1JHdVZyYmw5SW80V293WEdkQ0dsa1RDWjlqcDVIbktqRTN3SUxPTi1oT21aYWF4d1dxaVdJeFZSenhYT2dvWnFxMzRROEprRmdVd1o1NUxtT2tqNzE2dU8xcVNSNV84QmRtazFYeC1IYUFZYlI1V0dxRjJXNzBaNno0WlZ3MGJsdUI1dFlWMUt5NVhnZlctQ29FbUJYS1o4UlQyWnBPN2dWTW9Zc0kSBBoCCAAa1AQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCuBAgAEAAYACAAKh4KBWxlZ2FsFTsXZkAaB2xlZ2FsbHkaB2xlZ2FsYWkqMAoCYWkVS7d2QBoDYWlkGhdhcnRpZmljaWFsIGludGVsbGlnZW5jZRoHbGVnYWxhaTLdAS9nb3RvP3VybD1DQUVTbVFFQnhDSkYxeTZ4aDJFU0hWNV9uZEN1bGRBRDB2ZkJZZDExZ1FHRV9SR3VWcmJsOUlvNFdvd1hHZENHbGtUQ1o5anA1SG5LakUzd0lMT04taE9tWmFheHdXcWlXSXhWUnp4WE9nb1pxcTM0UThKa0ZnVXdaNTVMbU9rajcxNnVPMXFTUjVfOEJkbWsxWHgtSGFBWWJSNVdHcUYyVzcwWjZ6NFpWdzBibHVCNXRZVjFLeTVYZ2ZXLUNvRW1CWEtaOFJUMlpwTzdnVk1vWXNJOko8Yj5BcnRpZmljaWFsIEludGVsbGlnZW5jZTwvYj4gfCBBcnRpY2xlcywgVGlwcyBhbmQgVGVjaCBmb3IgTGF3IEZpcm1zIC4uLkKlATxiPkFJIHNwZWNpYWxpc3RzIGZvciBsYXcgZmlybXM8L2I-IGltcGxlbWVudGluZyBhdXRvbWF0ZWQgd29ya2Zsb3dzIGFuZCBkaWdpdGFsIHNvbHV0aW9ucyB0byBpbXByb3ZlIHByYWN0aWNlIG1hbmFnZW1lbnQuIHVuY292ZXIgY3JpdGljYWwgZmFjdHMgYW5kIGVuc3VyZSBqdXN0aWNlLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Ct0BL2dvdG8_dXJsPUNBRVNtUUVCeENKRjF5NnhoMkVTSFY1X25kQ3VsZEFEMHZmQllkMTFnUUdFX1JHdVZyYmw5SW80V293WEdkQ0dsa1RDWjlqcDVIbktqRTN3SUxPTi1oT21aYWF4d1dxaVdJeFZSenhYT2dvWnFxMzRROEprRmdVd1o1NUxtT2tqNzE2dU8xcVNSNV84QmRtazFYeC1IYUFZYlI1V0dxRjJXNzBaNno0WlZ3MGJsdUI1dFlWMUt5NVhnZlctQ29FbUJYS1o4UlQyWnBPN2dWTW9Zc0kSBBoCCAAa1AQSAggAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkCuBAgAEAAYACAAKh4KBWxlZ2FsFTsXZkAaB2xlZ2FsbHkaB2xlZ2FsYWkqMAoCYWkVS7d2QBoDYWlkGhdhcnRpZmljaWFsIGludGVsbGlnZW5jZRoHbGVnYWxhaTLdAS9nb3RvP3VybD1DQUVTbVFFQnhDSkYxeTZ4aDJFU0hWNV9uZEN1bGRBRDB2ZkJZZDExZ1FHRV9SR3VWcmJsOUlvNFdvd1hHZENHbGtUQ1o5anA1SG5LakUzd0lMT04taE9tWmFheHdXcWlXSXhWUnp4WE9nb1pxcTM0UThKa0ZnVXdaNTVMbU9rajcxNnVPMXFTUjVfOEJkbWsxWHgtSGFBWWJSNVdHcUYyVzcwWjZ6NFpWdzBibHVCNXRZVjFLeTVYZ2ZXLUNvRW1CWEtaOFJUMlpwTzdnVk1vWXNJOko8Yj5BcnRpZmljaWFsIEludGVsbGlnZW5jZTwvYj4gfCBBcnRpY2xlcywgVGlwcyBhbmQgVGVjaCBmb3IgTGF3IEZpcm1zIC4uLkKlATxiPkFJIHNwZWNpYWxpc3RzIGZvciBsYXcgZmlybXM8L2I-IGltcGxlbWVudGluZyBhdXRvbWF0ZWQgd29ya2Zsb3dzIGFuZCBkaWdpdGFsIHNvbHV0aW9ucyB0byBpbXByb3ZlIHByYWN0aWNlIG1hbmFnZW1lbnQuIHVuY292ZXIgY3JpdGljYWwgZmFjdHMgYW5kIGVuc3VyZSBqdXN0aWNlLiICEAFIAFgAaAA",
+      "source": "Attorney at Work"
+    },
+    {
+      "position": 2,
+      "title": "Legal AI: Applications & Benefits in 2026",
+      "link": "https://briefpoint.ai/legal-ai/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESXAHEIkXXNOAj6Ra2uLjPqi8VZ-5rngDF8MH5W0u8T0M9Mnz08xn4gx89oJ6u578zKfFyi6pSEMBNZtxQK1puFEpIowV6JeM9xA9N9pRbjQ-Fz8MBP-_qQW9KAYWj&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECCsQAQ&uoh=1",
+      "displayed_link": "https://briefpoint.ai \u203a Practice Pointers",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAASFBMVEX___-v39Ss3tPY7-omt5w9u6I2uqCAz76449pIvqaN1MTU7uhkxrJAvKPw-feW1sid2czf8u7K6uOI0sJWw6zn9vJ4zbsXtZnvDhjmAAAAa0lEQVR4AdXOQRJFMBBF0ffz000HAcH-d2pCvUpXZQHO9E4uvubnBdA_Sk07UK9W0wBK4usAGmWqiGTGnObKYiOa1rihyXY4s5UHd6lM3N3gZEbTA86grAVeiPqSE97xyimiab16NIUFX3MDircHvH-Td5YAAAAASUVORK5CYII.png",
+      "date": "Jan 16, 2025",
+      "snippet": "Legal AI is a technology that uses artificial intelligence to make legal work faster and more efficient. It handles tasks like reviewing ...",
+      "snippet_highlighted_words": [
+        "Legal AI"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Legal AI is a technology that uses artificial intelligence to make legal work faster and more efficient. It handles tasks like reviewing ...",
+          "source_info_link": "https://briefpoint.ai/legal-ai/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAASFBMVEX___-v39Ss3tPY7-omt5w9u6I2uqCAz76449pIvqaN1MTU7uhkxrJAvKPw-feW1sid2czf8u7K6uOI0sJWw6zn9vJ4zbsXtZnvDhjmAAAAa0lEQVR4AdXOQRJFMBBF0ffz000HAcH-d2pCvUpXZQHO9E4uvubnBdA_Sk07UK9W0wBK4usAGmWqiGTGnObKYiOa1rihyXY4s5UHd6lM3N3gZEbTA86grAVeiPqSE97xyimiab16NIUFX3MDircHvH-Td5YAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CooBL2dvdG8_dXJsPUNBRVNYQUhFSWtYWGxRMjM3QnZsYlFJME9QQWtfOGF6VlVNZGJEM2ZjYUp3MXFSRVQ0VzMxR3REaWUwXzFLbFdyc251TUV1SlU4RXROM3BoWjBabkI2bWw1MEtFWXV0UjFaQkpxaE9Mc3pUc0p2TTFpVGtRUGMxekhrVEJtSGswEgQaAggAGusDEgIIABoAIgAqADIGCAESAnVzOgBCBAgBEABKAFoAcgB6AIJAxQMIABAAGAAgACoeCgVsZWdhbBW2e8JAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFXrEv0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWkyigEvZ290bz91cmw9Q0FFU1hBSEVJa1hYbFEyMzdCdmxiUUkwT1BBa184YXpWVU1kYkQzZmNhSncxcVJFVDRXMzFHdERpZTBfMUtsV3JzbnVNRXVKVThFdE4zcGhaMFpuQjZtbDUwS0VZdXRSMVpCSnFoT0xzelRzSnZNMWlUa1FQYzF6SGtUQm1IazA6QTxiPkxlZ2FsIEFJPC9iPjogQXBwbGljYXRpb25zICZhbXA7IEJlbmVmaXRzIGluIDIwMjYgLSBCcmllZnBvaW50QpgBPGI-TGVnYWwgQUk8L2I-IGlzIGEgdGVjaG5vbG9neSB0aGF0IHVzZXMgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdG8gbWFrZSBsZWdhbCB3b3JrIGZhc3RlciBhbmQgbW9yZSBlZmZpY2llbnQuIEl0IGhhbmRsZXMgdGFza3MgbGlrZSByZXZpZXdpbmcmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CooBL2dvdG8_dXJsPUNBRVNYQUhFSWtYWGxRMjM3QnZsYlFJME9QQWtfOGF6VlVNZGJEM2ZjYUp3MXFSRVQ0VzMxR3REaWUwXzFLbFdyc251TUV1SlU4RXROM3BoWjBabkI2bWw1MEtFWXV0UjFaQkpxaE9Mc3pUc0p2TTFpVGtRUGMxekhrVEJtSGswEgQaAggAGusDEgIIABoAIgAqADIGCAESAnVzOgBCBAgBEABKAFoAcgB6AIJAxQMIABAAGAAgACoeCgVsZWdhbBW2e8JAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFXrEv0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWkyigEvZ290bz91cmw9Q0FFU1hBSEVJa1hYbFEyMzdCdmxiUUkwT1BBa184YXpWVU1kYkQzZmNhSncxcVJFVDRXMzFHdERpZTBfMUtsV3JzbnVNRXVKVThFdE4zcGhaMFpuQjZtbDUwS0VZdXRSMVpCSnFoT0xzelRzSnZNMWlUa1FQYzF6SGtUQm1IazA6QTxiPkxlZ2FsIEFJPC9iPjogQXBwbGljYXRpb25zICZhbXA7IEJlbmVmaXRzIGluIDIwMjYgLSBCcmllZnBvaW50QpgBPGI-TGVnYWwgQUk8L2I-IGlzIGEgdGVjaG5vbG9neSB0aGF0IHVzZXMgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdG8gbWFrZSBsZWdhbCB3b3JrIGZhc3RlciBhbmQgbW9yZSBlZmZpY2llbnQuIEl0IGhhbmRsZXMgdGFza3MgbGlrZSByZXZpZXdpbmcmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "Briefpoint",
+      "read_more_link": "https://briefpoint.ai/legal-ai/#:~:text=Legal%20AI%20is%20a%20technology,agreements%20or%20answering%20client%20questions."
+    },
+    {
+      "position": 3,
+      "title": "AI legal assistant for law firms: streamline contracts",
+      "link": "https://www.aloi.law/ai-legal-assistant",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESZAHEIkXX0SnELfKItl0Iswd8YGPsiJndTQJHPzqSzdv4esca0RF5rwXH2OUQWjXqscw71NDjA8R68vLaM05ItBhoIMRRHtI2Z3NYVCChjUPnVIwexEzJqIgZhq4qFLZ3N6Sa-Wk&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECDEQAQ&uoh=1",
+      "displayed_link": "https://www.aloi.law \u203a ai-legal-assistant",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAKlBMVEVHcEwbGxsaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr4MuZbAAAADnRSTlMAB0Xo_zNsvBqApgyUg2fq4ngAAACmSURBVHgBJMG1QQRQAAWw4O70aI_22MN1A3QEenQEenSA2wDt0X2wn4Aq6KSonoS5fkVddqjPFsXhNLWLCs6XuVhS0BxypaAlD62pgOotvMz0rqGuX83iMbUrd9M0Ho7qzUpFW_Km5S4zHGSNhJcswEXWDc_6yjLwklmGs6aougtZ6fwZOhddMbpRaBahOQPNkeheQHgQ0_uYgYMIOrSAxQx2tEgBANXxMwFMuQeOAAAAAElFTkSuQmCC.png",
+      "snippet": "An AI legal assistant helps lawyers draft, review, and negotiate faster by turning internal contracts, redlines, and approvals into searchable guidance.",
+      "snippet_highlighted_words": [
+        "helps lawyers draft, review, and negotiate faster"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "An AI legal assistant helps lawyers draft, review, and negotiate faster by turning internal contracts, redlines, and approvals into searchable guidance.",
+          "source_info_link": "https://www.aloi.law/ai-legal-assistant",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcBAMAAACAI8KnAAAAKlBMVEVHcEwbGxsaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhoaGhr4MuZbAAAADnRSTlMAB0Xo_zNsvBqApgyUg2fq4ngAAACmSURBVHgBJMG1QQRQAAWw4O70aI_22MN1A3QEenQEenSA2wDt0X2wn4Aq6KSonoS5fkVddqjPFsXhNLWLCs6XuVhS0BxypaAlD62pgOotvMz0rqGuX83iMbUrd9M0Ho7qzUpFW_Km5S4zHGSNhJcswEXWDc_6yjLwklmGs6aougtZ6fwZOhddMbpRaBahOQPNkeheQHgQ0_uYgYMIOrSAxQx2tEgBANXxMwFMuQeOAAAAAElFTkSuQmCC.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CpUBL2dvdG8_dXJsPUNBRVNaQUhFSWtYWFR3SkR3a2ViM1hIcGdTZzZWUEdJbnoyMkxPODltdm9FYnRZT1g3ZXZhVnhURGtOYUN4YXpkRVpkVXptM1hYTVpvc1U3MnZld0k3YnZRRmRUZGo4eV9CdWFSRjhISWlOcWhCRGhXdHk0QnEySFZjNzE2ZG00TE1BTFFLckRqMlESBBoCCAAa_gMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA2gMIABAAGAAgACoeCgVsZWdhbBVyi9ZAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFTZBw0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWkylQEvZ290bz91cmw9Q0FFU1pBSEVJa1hYVHdKRHdrZWIzWEhwZ1NnNlZQR0luejIyTE84OW12b0VidFlPWDdldmFWeFREa05hQ3hhemRFWmRVem0zWFhNWm9zVTcydmV3STdidlFGZFRkajh5X0J1YVJGOEhJaU5xaEJEaFd0eTRCcTJIVmM3MTZkbTRMTUFMUUtyRGoyUTpEPGI-QUkgbGVnYWw8L2I-IGFzc2lzdGFudCBmb3IgbGF3IGZpcm1zOiBzdHJlYW1saW5lIGNvbnRyYWN0cyAtIEFsb2lCnwFBbiBBSSBsZWdhbCBhc3Npc3RhbnQgPGI-aGVscHMgbGF3eWVycyBkcmFmdCwgcmV2aWV3LCBhbmQgbmVnb3RpYXRlIGZhc3RlcjwvYj4gYnkgdHVybmluZyBpbnRlcm5hbCBjb250cmFjdHMsIHJlZGxpbmVzLCBhbmQgYXBwcm92YWxzIGludG8gc2VhcmNoYWJsZSBndWlkYW5jZS4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CpUBL2dvdG8_dXJsPUNBRVNaQUhFSWtYWFR3SkR3a2ViM1hIcGdTZzZWUEdJbnoyMkxPODltdm9FYnRZT1g3ZXZhVnhURGtOYUN4YXpkRVpkVXptM1hYTVpvc1U3MnZld0k3YnZRRmRUZGo4eV9CdWFSRjhISWlOcWhCRGhXdHk0QnEySFZjNzE2ZG00TE1BTFFLckRqMlESBBoCCAAa_gMSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJA2gMIABAAGAAgACoeCgVsZWdhbBVyi9ZAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFTZBw0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWkylQEvZ290bz91cmw9Q0FFU1pBSEVJa1hYVHdKRHdrZWIzWEhwZ1NnNlZQR0luejIyTE84OW12b0VidFlPWDdldmFWeFREa05hQ3hhemRFWmRVem0zWFhNWm9zVTcydmV3STdidlFGZFRkajh5X0J1YVJGOEhJaU5xaEJEaFd0eTRCcTJIVmM3MTZkbTRMTUFMUUtyRGoyUTpEPGI-QUkgbGVnYWw8L2I-IGFzc2lzdGFudCBmb3IgbGF3IGZpcm1zOiBzdHJlYW1saW5lIGNvbnRyYWN0cyAtIEFsb2lCnwFBbiBBSSBsZWdhbCBhc3Npc3RhbnQgPGI-aGVscHMgbGF3eWVycyBkcmFmdCwgcmV2aWV3LCBhbmQgbmVnb3RpYXRlIGZhc3RlcjwvYj4gYnkgdHVybmluZyBpbnRlcm5hbCBjb250cmFjdHMsIHJlZGxpbmVzLCBhbmQgYXBwcm92YWxzIGludG8gc2VhcmNoYWJsZSBndWlkYW5jZS4iAhABSABYAGgA",
+      "source": "Aloi"
+    },
+    {
+      "position": 4,
+      "title": "Making Sense of Legal AI: What It Means for Your Practice ...",
+      "link": "https://www.law.com/2018/03/30/making-sense-of-legal-ai-what-it-means-for-your-practice-and-whats-ahead/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESpQEBxCJF1002OzSCrrkFnjhyxZi1Pq2Mzs7YneJO7cgL78C9QHig7ORZyd6eMRXTuJSK4tcbhtkLs_lSnmkm1LAhmJizitvdUJ5a-de994ZJG6oajNeiji8k-gFZha8xy2Yu8ZxHih0Qhh0wg5Fa9wPV-GyoOuMKXE-xjIwXu3T2D3Q0hukrUBQtHv7Evi2mTInJeTLeJBfJakUsa7Z966zPGZzG2Ns&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECDUQAQ&uoh=1",
+      "displayed_link": "https://www.law.com \u203a 2018/03/30 \u203a making-sense-of-le...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACcklEQVR4Ac1WNZjWQBAd3J2KBneocJdzw6XC-paSkgptcCeC9wXW4e7anrv9nizz0D3JZclF7n3fi8_Oy6w9UsbqK2MpW99D2ZrG57fMRqb4zQbK0l9TlnGRr3dS3rnR5BuyjblMkxMnkEyRMeZljplJnrHIGM5_dZwbyjCFR6ZYxFHK1YbQfyHvymwO_sIUvjDLeE9Zl6eRCvjDJRxUh0CfWUU52nyFP_c9uUSNRZhTHftcLvvAwitikE9EW5KQd1RyejC1Bwbcn4_65hkilsiIVNrqkk8-VYsX32pdv2toSYo-uYYs4mBnUy0tC8hkbAEk05Yjn36uEa--1zq-R3KgNZFuLyCJQSkLMPGivQA0MrDAFL1zdE8cteF65wLALP2stMJpiU4FpDKiX77pedCNWH_NSQDYTAU87rC84kEEAsBthLU9MgFZ-inCxhJhBR5DQGOEFSgnXEQoINYjBDREOAbKCE7GSQAWolEbr4uhJVc9cdz2Wy4CtIcEG-UkAEhnrG7QdqvAcYKH60xAcywl4smML6xpTDiMgctbCAYSHu7PQ5RumAvxjdxQL6ZbDDikWIrL0ppo2flhBMBA_vEAsWRaqbxr994Rw3mQgUX77ivFNLampEGtnaQ_gHuFgezNZXr4oUqprPALLfE0iGulmPuvykWvHB0C4pSrTSQZcK9QFg61_dQesM5wryEIeEGrLw50csTT4F4DTF5Gq69OoC4B6wz3GkTyNey6lQDrDPfqY9mlP1cErDPcKwyk98RxDDipzz0A4wIGEh5ONTEWGcxzTDXfAAMJDwcbBScDM4HtFET_YmPB2o7lFSucIn4AdPN6Uo_O3KIAAAAASUVORK5CYII.png",
+      "date": "Mar 30, 2018",
+      "snippet": "There's so much happening in legal AI right now that it can be hard to separate hype from reality. We have a crash course for you on this ...",
+      "snippet_highlighted_words": [
+        "There's so much happening in legal AI right now"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "There's so much happening in legal AI right now that it can be hard to separate hype from reality. We have a crash course for you on this ...",
+          "source_info_link": "https://www.law.com/2018/03/30/making-sense-of-legal-ai-what-it-means-for-your-practice-and-whats-ahead/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACcklEQVR4Ac1WNZjWQBAd3J2KBneocJdzw6XC-paSkgptcCeC9wXW4e7anrv9nizz0D3JZclF7n3fi8_Oy6w9UsbqK2MpW99D2ZrG57fMRqb4zQbK0l9TlnGRr3dS3rnR5BuyjblMkxMnkEyRMeZljplJnrHIGM5_dZwbyjCFR6ZYxFHK1YbQfyHvymwO_sIUvjDLeE9Zl6eRCvjDJRxUh0CfWUU52nyFP_c9uUSNRZhTHftcLvvAwitikE9EW5KQd1RyejC1Bwbcn4_65hkilsiIVNrqkk8-VYsX32pdv2toSYo-uYYs4mBnUy0tC8hkbAEk05Yjn36uEa--1zq-R3KgNZFuLyCJQSkLMPGivQA0MrDAFL1zdE8cteF65wLALP2stMJpiU4FpDKiX77pedCNWH_NSQDYTAU87rC84kEEAsBthLU9MgFZ-inCxhJhBR5DQGOEFSgnXEQoINYjBDREOAbKCE7GSQAWolEbr4uhJVc9cdz2Wy4CtIcEG-UkAEhnrG7QdqvAcYKH60xAcywl4smML6xpTDiMgctbCAYSHu7PQ5RumAvxjdxQL6ZbDDikWIrL0ppo2flhBMBA_vEAsWRaqbxr994Rw3mQgUX77ivFNLampEGtnaQ_gHuFgezNZXr4oUqprPALLfE0iGulmPuvykWvHB0C4pSrTSQZcK9QFg61_dQesM5wryEIeEGrLw50csTT4F4DTF5Gq69OoC4B6wz3GkTyNey6lQDrDPfqY9mlP1cErDPcKwyk98RxDDipzz0A4wIGEh5ONTEWGcxzTDXfAAMJDwcbBScDM4HtFET_YmPB2o7lFSucIn4AdPN6Uo_O3KIAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=Cu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE2UG5ZcU5VOEpXcWFqNXd2a201U256RHI4RWp6WGpTVURUVmM5andkVldlNmVULUJkWEtkNnc3dmtXWFpFV1RHTEFnSTVId2pXYjR0NGpvOGlEbEhYVmVPbk1IVzFrQkh1amU3X1RoM21ZOFZ4NFBJTHIyczJVUUxfZlI5RU5TY0FnYm10Z3FSakNEMm1zUGRiMnI5aTRuVHJsLVNUdDlYRWI0NVpGX0UzcmhQLVRoby1yekFYTjJlZzdyN3Q1QVp1V3N2MWI1UGNzSnBibm45LXRuM21zEgQaAggAGtQEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQLAECAAQABgAIAAqHgoFbGVnYWwV6QqsQBoHbGVnYWxseRoHbGVnYWxhaSowCgJhaRVoh4JAGgNhaWQaF2FydGlmaWNpYWwgaW50ZWxsaWdlbmNlGgdsZWdhbGFpMu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE2UG5ZcU5VOEpXcWFqNXd2a201U256RHI4RWp6WGpTVURUVmM5andkVldlNmVULUJkWEtkNnc3dmtXWFpFV1RHTEFnSTVId2pXYjR0NGpvOGlEbEhYVmVPbk1IVzFrQkh1amU3X1RoM21ZOFZ4NFBJTHIyczJVUUxfZlI5RU5TY0FnYm10Z3FSakNEMm1zUGRiMnI5aTRuVHJsLVNUdDlYRWI0NVpGX0UzcmhQLVRoby1yekFYTjJlZzdyN3Q1QVp1V3N2MWI1UGNzSnBibm45LXRuM21zOkRNYWtpbmcgU2Vuc2Ugb2YgPGI-TGVnYWwgQUk8L2I-OiBXaGF0IEl0IE1lYW5zIGZvciBZb3VyIFByYWN0aWNlIC4uLkKdATxiPlRoZXJlJiMzOTtzIHNvIG11Y2ggaGFwcGVuaW5nIGluIGxlZ2FsIEFJIHJpZ2h0IG5vdzwvYj4gdGhhdCBpdCBjYW4gYmUgaGFyZCB0byBzZXBhcmF0ZSBoeXBlIGZyb20gcmVhbGl0eS4gV2UgaGF2ZSBhIGNyYXNoIGNvdXJzZSBmb3IgeW91IG9uIHRoaXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=Cu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE2UG5ZcU5VOEpXcWFqNXd2a201U256RHI4RWp6WGpTVURUVmM5andkVldlNmVULUJkWEtkNnc3dmtXWFpFV1RHTEFnSTVId2pXYjR0NGpvOGlEbEhYVmVPbk1IVzFrQkh1amU3X1RoM21ZOFZ4NFBJTHIyczJVUUxfZlI5RU5TY0FnYm10Z3FSakNEMm1zUGRiMnI5aTRuVHJsLVNUdDlYRWI0NVpGX0UzcmhQLVRoby1yekFYTjJlZzdyN3Q1QVp1V3N2MWI1UGNzSnBibm45LXRuM21zEgQaAggAGtQEEgAaACIAKgAyBggDEgJ1czoAQgQIARAASgBaAHIAegCCQLAECAAQABgAIAAqHgoFbGVnYWwV6QqsQBoHbGVnYWxseRoHbGVnYWxhaSowCgJhaRVoh4JAGgNhaWQaF2FydGlmaWNpYWwgaW50ZWxsaWdlbmNlGgdsZWdhbGFpMu0BL2dvdG8_dXJsPUNBRVNwUUVCeENKRjE2UG5ZcU5VOEpXcWFqNXd2a201U256RHI4RWp6WGpTVURUVmM5andkVldlNmVULUJkWEtkNnc3dmtXWFpFV1RHTEFnSTVId2pXYjR0NGpvOGlEbEhYVmVPbk1IVzFrQkh1amU3X1RoM21ZOFZ4NFBJTHIyczJVUUxfZlI5RU5TY0FnYm10Z3FSakNEMm1zUGRiMnI5aTRuVHJsLVNUdDlYRWI0NVpGX0UzcmhQLVRoby1yekFYTjJlZzdyN3Q1QVp1V3N2MWI1UGNzSnBibm45LXRuM21zOkRNYWtpbmcgU2Vuc2Ugb2YgPGI-TGVnYWwgQUk8L2I-OiBXaGF0IEl0IE1lYW5zIGZvciBZb3VyIFByYWN0aWNlIC4uLkKdATxiPlRoZXJlJiMzOTtzIHNvIG11Y2ggaGFwcGVuaW5nIGluIGxlZ2FsIEFJIHJpZ2h0IG5vdzwvYj4gdGhhdCBpdCBjYW4gYmUgaGFyZCB0byBzZXBhcmF0ZSBoeXBlIGZyb20gcmVhbGl0eS4gV2UgaGF2ZSBhIGNyYXNoIGNvdXJzZSBmb3IgeW91IG9uIHRoaXMmbmJzcDsuLi4iAhABSABYAGgA",
+      "source": "Law.com"
+    },
+    {
+      "position": 5,
+      "title": "Free Legal AI Tools for Lawyers: What Works, What Doesn't ...",
+      "link": "https://lacbaresourcehub.org/resource/themis-solutions-inc-dba-clio-free-legal-ai-tools-for-lawyers-what-works-what-doesnt-and-what-to-watch-for",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESzgEBxCJF18wVKgYLlPaVlnGWWO6zAtW3-3UV9jUCc0_UlwysHa-ubNfWtJ_j6GdvJPuOY9bt5_ix7dIXfpKFxd2heCL3bZJJxKoxdo4TR4WgLVkMA9NP_ZGh6aazHw2LHdBt7cx0Aj6siRVtRGc1PupNsBtAdQ3sTuUIBWLQEZK6C1RPdLHqtqFCSEiRthptlTHuaoY-FtQLSY1657dAhn30-LEOIDXbEaYqZUE3wl_75wOhk60FuLgWIiH3PRFMe1GDrIxiAD-nPf_rgpRsKQ&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECDIQAQ&uoh=1",
+      "displayed_link": "https://lacbaresourcehub.org \u203a resource \u203a themis-solution...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABE0lEQVR4AWLABQCl0DNDRWEYwPFs27a2tjh1lmzbbspNWVtTY7Zrqu69H-zc_7U9_A7fh-J3oj-WcIok4__WAoMwi2-MQsAb1hFpLdAbNfjEFGKMuunGPxbgrx_oiyl8YACBVop4oAJP2EWs4uMPVuDlwJjuaMC74kWCAmsBVhKdaxOIolio-cFzsfpehR5kYxhhiEGsuQRT6qBY3KAR7UhAI9bRjClMm0uwBQHzWMcp1jCDLuxgDGdq3sYJ0lGIPCQiA9nIQiaKka733V-dwPUlylDqRLAPLhUPAj6wgAQ7A0vwhyHNxwDUYR8HSDUT6I9YVCITIeaye6EabzhBNDxRjjpEwN2e-bwh4BaPmIKHubNyuE1h-pFZ2nQAAAAASUVORK5CYII.png",
+      "snippet": "A practical guide to using free AI tools for legal research, drafting, contract review, and everyday law firm tasks.",
+      "snippet_highlighted_words": [
+        "AI",
+        "legal"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "A practical guide to using free AI tools for legal research, drafting, contract review, and everyday law firm tasks.",
+          "source_info_link": "https://lacbaresourcehub.org/resource/themis-solutions-inc-dba-clio-free-legal-ai-tools-for-lawyers-what-works-what-doesnt-and-what-to-watch-for",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8_9hAAABE0lEQVR4AWLABQCl0DNDRWEYwPFs27a2tjh1lmzbbspNWVtTY7Zrqu69H-zc_7U9_A7fh-J3oj-WcIok4__WAoMwi2-MQsAb1hFpLdAbNfjEFGKMuunGPxbgrx_oiyl8YACBVop4oAJP2EWs4uMPVuDlwJjuaMC74kWCAmsBVhKdaxOIolio-cFzsfpehR5kYxhhiEGsuQRT6qBY3KAR7UhAI9bRjClMm0uwBQHzWMcp1jCDLuxgDGdq3sYJ0lGIPCQiA9nIQiaKka733V-dwPUlylDqRLAPLhUPAj6wgAQ7A0vwhyHNxwDUYR8HSDUT6I9YVCITIeaye6EabzhBNDxRjjpEwN2e-bwh4BaPmIKHubNyuE1h-pFZ2nQAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CqQCL2dvdG8_dXJsPUNBRVN6Z0VCeENKRjE3LXZBdXpNNlpvX1NkSUZuYjZQLTBINEV1aDRVMEMwNEJOampINUUxNTBMMDZoRkRRelZLb0J0Y05MV2hjWWZ0YjVSS2FzMzlOZGpKSHk0dGdvbG5mQzFLeHFUUW5HX0VnZVVnUjB1RXZpZ2FWdUd1ME8yT2hMNHZMcU9WLTllSDdVZVJ1TWZRVmpyMzV0SzFYZGV0ZHJQaHF3UGx1ckFrVzhlSGhKanFLaVY5U2dGOFJJVU5qajNLV1pkSmxMWmFzMmItSjVVVlAwVjRvc2hrWmcwRTUzRG5Nb3FKNTdkMndKejkyY3dPbWFQQXZvc3o5cTlXTHZ1TnZBaXhLMzdkY1ZacjFDREdRQ3NrURIEGgIIABr0BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDQBAgAEAAYACAAKh4KBWxlZ2FsFe6PpkAaB2xlZ2FsbHkaB2xlZ2FsYWkqMAoCYWkVUJu6QBoDYWlkGhdhcnRpZmljaWFsIGludGVsbGlnZW5jZRoHbGVnYWxhaTKkAi9nb3RvP3VybD1DQUVTemdFQnhDSkYxNy12QXV6TTZab19TZElGbmI2UC0wSDRFdWg0VTBDMDRCTmpqSDVFMTUwTDA2aEZEUXpWS29CdGNOTFdoY1lmdGI1UkthczM5TmRqSkh5NHRnb2xuZkMxS3hxVFFuR19FZ2VVZ1IwdUV2aWdhVnVHdTBPMk9oTDR2THFPVi05ZUg3VWVSdU1mUVZqcjM1dEsxWGRldGRyUGhxd1BsdXJBa1c4ZUhoSmpxS2lWOVNnRjhSSVVOamozS1daZEpsTFphczJiLUo1VVZQMFY0b3Noa1pnMEU1M0RuTW9xSjU3ZDJ3Sno5MmN3T21hUEF2b3N6OXE5V0x2dU52QWl4SzM3ZGNWWnIxQ0RHUUNza1E6SEZyZWUgPGI-TGVnYWwgQUk8L2I-IFRvb2xzIGZvciBMYXd5ZXJzOiBXaGF0IFdvcmtzLCBXaGF0IERvZXNuJiMzOTt0IC4uLkKCAUEgcHJhY3RpY2FsIGd1aWRlIHRvIHVzaW5nIGZyZWUgPGI-QUk8L2I-IHRvb2xzIGZvciA8Yj5sZWdhbDwvYj4gcmVzZWFyY2gsIGRyYWZ0aW5nLCBjb250cmFjdCByZXZpZXcsIGFuZCBldmVyeWRheSBsYXcgZmlybSB0YXNrcy4iAhABSABYAGgA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CqQCL2dvdG8_dXJsPUNBRVN6Z0VCeENKRjE3LXZBdXpNNlpvX1NkSUZuYjZQLTBINEV1aDRVMEMwNEJOampINUUxNTBMMDZoRkRRelZLb0J0Y05MV2hjWWZ0YjVSS2FzMzlOZGpKSHk0dGdvbG5mQzFLeHFUUW5HX0VnZVVnUjB1RXZpZ2FWdUd1ME8yT2hMNHZMcU9WLTllSDdVZVJ1TWZRVmpyMzV0SzFYZGV0ZHJQaHF3UGx1ckFrVzhlSGhKanFLaVY5U2dGOFJJVU5qajNLV1pkSmxMWmFzMmItSjVVVlAwVjRvc2hrWmcwRTUzRG5Nb3FKNTdkMndKejkyY3dPbWFQQXZvc3o5cTlXTHZ1TnZBaXhLMzdkY1ZacjFDREdRQ3NrURIEGgIIABr0BBIAGgAiACoAMgYIAxICdXM6AEIECAEQAEoAWgByAHoAgkDQBAgAEAAYACAAKh4KBWxlZ2FsFe6PpkAaB2xlZ2FsbHkaB2xlZ2FsYWkqMAoCYWkVUJu6QBoDYWlkGhdhcnRpZmljaWFsIGludGVsbGlnZW5jZRoHbGVnYWxhaTKkAi9nb3RvP3VybD1DQUVTemdFQnhDSkYxNy12QXV6TTZab19TZElGbmI2UC0wSDRFdWg0VTBDMDRCTmpqSDVFMTUwTDA2aEZEUXpWS29CdGNOTFdoY1lmdGI1UkthczM5TmRqSkh5NHRnb2xuZkMxS3hxVFFuR19FZ2VVZ1IwdUV2aWdhVnVHdTBPMk9oTDR2THFPVi05ZUg3VWVSdU1mUVZqcjM1dEsxWGRldGRyUGhxd1BsdXJBa1c4ZUhoSmpxS2lWOVNnRjhSSVVOamozS1daZEpsTFphczJiLUo1VVZQMFY0b3Noa1pnMEU1M0RuTW9xSjU3ZDJ3Sno5MmN3T21hUEF2b3N6OXE5V0x2dU52QWl4SzM3ZGNWWnIxQ0RHUUNza1E6SEZyZWUgPGI-TGVnYWwgQUk8L2I-IFRvb2xzIGZvciBMYXd5ZXJzOiBXaGF0IFdvcmtzLCBXaGF0IERvZXNuJiMzOTt0IC4uLkKCAUEgcHJhY3RpY2FsIGd1aWRlIHRvIHVzaW5nIGZyZWUgPGI-QUk8L2I-IHRvb2xzIGZvciA8Yj5sZWdhbDwvYj4gcmVzZWFyY2gsIGRyYWZ0aW5nLCBjb250cmFjdCByZXZpZXcsIGFuZCBldmVyeWRheSBsYXcgZmlybSB0YXNrcy4iAhABSABYAGgA",
+      "source": "lacbaresourcehub.org"
+    },
+    {
+      "position": 6,
+      "title": "What legal AI do you use and for what use case ? : r/legaltech",
+      "link": "https://www.reddit.com/r/legaltech/comments/1wgqyhi/what_legal_ai_do_you_use_and_for_what_use_case/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESoAEBxCJF13e9KHgHC33yb_E0Tjc_JK9J8H97mdC677rscgi4OkMfiFDtgBxC0agj7Indrpyhgx_IGuTSLxrbwjXd7aKnwGD5TOkqd0YiF9SjLyFXpPSAzcY7-zqqVu1pWpezcqLjf2kB-OUoyJGGxU63XW403opcXrpaeF1j97-8VkyAH0XZtNxmpoy2BXIXrSc-e9wFj7cQB0F5pE5tDVxZ&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECDMQAQ&uoh=1",
+      "displayed_link": "9 comments",
+      "date": "1 month ago",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAqFBMVEVHcEz_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_PAD_____RQD_PAD_QAD_MQDS4Of_RAD_NwD6-vv4_v_K2N_z-fra5uzm7_H72NLq9vkCCAvweWDol4r_hm3-mYX9YTj-cFDW7PP45uP4qJjbUTNBR0rRtbD_wLO-MgW1vsHfzc_gFQDUqKf_WAb_UgAxODwAHilxLR1scnTHa13kHQCLRbHLAAAADHRSTlMA_kAZ4YjF7WQ0GH3klhKFAAABhUlEQVQokW2T53aDMAyFoSGQpMfyJmaEnb1X-_5vVttkkDT3BxJ8xyBdCce5a9j3A9cN_P7QedcggIeCwQvqeU8EhIA3erKvDgJa1ZTD10cmVghNxYOOugzWY4RQiQF6Fna_tz5fNigMDfRsnd1z5zleNs0Yc52bmh89ECzWF4FpllkGge5dB0wpxrQqV_vlqqyoMPf68dDp6-KLJCmLKbppWpRJUlCAvuODmKEPmgnwnYCTTwwhwgPHJXVocrlv3xtO98rGmriOyyFVEqE5zaR9-Fv96KtKgbu6E5w3UsrdAScGJvSwU6Fscqx78XW1M6XC-RHsSQnHeajUTFfrm1ZIlaZKJbItRCZKpWlFTCvGBMriOFWbxeJ0Wiw2YRrHEbUmGPtIFkVxHE-sdBI1GbH2WeNFzsYsYtfJ5KoDY7m4GW9HJrKxFosiZmJmmNcukBkBJvnWnGHRNifGdbitkakJOBZQF0UNoh3YfYm-bwPlRIu3-TvryOvd1_kf6iz1C3z9Hf4AClYvY_ay9KgAAAAASUVORK5CYII.png",
+      "snippet": "Typical use cases include contract review and risk spotting, clause and obligation extraction, matter/document summarization, first-draft ...",
+      "snippet_highlighted_words": [
+        "contract review and risk spotting"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Typical use cases include contract review and risk spotting, clause and obligation extraction, matter/document summarization, first-draft ...",
+          "source_info_link": "https://www.reddit.com/r/legaltech/comments/1wgqyhi/what_legal_ai_do_you_use_and_for_what_use_case/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAqFBMVEVHcEz_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_RQD_PAD_____RQD_PAD_QAD_MQDS4Of_RAD_NwD6-vv4_v_K2N_z-fra5uzm7_H72NLq9vkCCAvweWDol4r_hm3-mYX9YTj-cFDW7PP45uP4qJjbUTNBR0rRtbD_wLO-MgW1vsHfzc_gFQDUqKf_WAb_UgAxODwAHilxLR1scnTHa13kHQCLRbHLAAAADHRSTlMA_kAZ4YjF7WQ0GH3klhKFAAABhUlEQVQokW2T53aDMAyFoSGQpMfyJmaEnb1X-_5vVttkkDT3BxJ8xyBdCce5a9j3A9cN_P7QedcggIeCwQvqeU8EhIA3erKvDgJa1ZTD10cmVghNxYOOugzWY4RQiQF6Fna_tz5fNigMDfRsnd1z5zleNs0Yc52bmh89ECzWF4FpllkGge5dB0wpxrQqV_vlqqyoMPf68dDp6-KLJCmLKbppWpRJUlCAvuODmKEPmgnwnYCTTwwhwgPHJXVocrlv3xtO98rGmriOyyFVEqE5zaR9-Fv96KtKgbu6E5w3UsrdAScGJvSwU6Fscqx78XW1M6XC-RHsSQnHeajUTFfrm1ZIlaZKJbItRCZKpWlFTCvGBMriOFWbxeJ0Wiw2YRrHEbUmGPtIFkVxHE-sdBI1GbH2WeNFzsYsYtfJ5KoDY7m4GW9HJrKxFosiZmJmmNcukBkBJvnWnGHRNifGdbitkakJOBZQF0UNoh3YfYm-bwPlRIu3-TvryOvd1_kf6iz1C3z9Hf4AClYvY_ay9KgAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CuYBL2dvdG8_dXJsPUNBRVNvQUVCeENKRjE4MEFIZHRRWlpLNTR5QXkxZkVEZTRYRjhxWmQ4WTRIMWNyZmUwOG5NbjZxTFVTNFpmLXN5YWFkcm9lcGlPS1YtUnhOYjNhRlVOR2daODJSd19sWW1OUE1STjEydTVLWm02bmFXQmp3WURxQjQxNXlDUmcxZmp2MlNGcjZyeTU0VlY3MENVcWxmd2p0RnREOVF3VXp1cG9WOVlpcERlWVpmSXdqYmlfQ0ZtalByVThoT25RUF9QSnJGWlR1NWx4ODBXd1JpaHNTb0toa1pTXy0SBBoCCAAaygQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJApgQIABAAGAAgACoeCgVsZWdhbBUmxJJAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFQK2nUAaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWky5gEvZ290bz91cmw9Q0FFU29BRUJ4Q0pGMTgwQUhkdFFaWks1NHlBeTFmRURlNFhGOHFaZDhZNEgxY3JmZTA4bk1uNnFMVVM0WmYtc3lhYWRyb2VwaU9LVi1SeE5iM2FGVU5HZ1o4MlJ3X2xZbU5QTVJOMTJ1NUtabTZuYVdCandZRHFCNDE1eUNSZzFmanYyU0ZyNnJ5NTRWVjcwQ1VxbGZ3anRGdEQ5UXdVenVwb1Y5WWlwRGVZWmZJd2piaV9DRm1qUHJVOGhPblFQX1BKckZaVHU1bHg4MFd3Umloc1NvS2hrWlNfLTpFV2hhdCA8Yj5sZWdhbCBBSTwvYj4gZG8geW91IHVzZSBhbmQgZm9yIHdoYXQgdXNlIGNhc2UgPyA6IHIvbGVnYWx0ZWNoQpkBVHlwaWNhbCB1c2UgY2FzZXMgaW5jbHVkZSA8Yj5jb250cmFjdCByZXZpZXcgYW5kIHJpc2sgc3BvdHRpbmc8L2I-LCBjbGF1c2UgYW5kIG9ibGlnYXRpb24gZXh0cmFjdGlvbiwgbWF0dGVyL2RvY3VtZW50IHN1bW1hcml6YXRpb24sIGZpcnN0LWRyYWZ0Jm5ic3A7Li4uIgIQAUgAWABoAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CuYBL2dvdG8_dXJsPUNBRVNvQUVCeENKRjE4MEFIZHRRWlpLNTR5QXkxZkVEZTRYRjhxWmQ4WTRIMWNyZmUwOG5NbjZxTFVTNFpmLXN5YWFkcm9lcGlPS1YtUnhOYjNhRlVOR2daODJSd19sWW1OUE1STjEydTVLWm02bmFXQmp3WURxQjQxNXlDUmcxZmp2MlNGcjZyeTU0VlY3MENVcWxmd2p0RnREOVF3VXp1cG9WOVlpcERlWVpmSXdqYmlfQ0ZtalByVThoT25RUF9QSnJGWlR1NWx4ODBXd1JpaHNTb0toa1pTXy0SBBoCCAAaygQSABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJApgQIABAAGAAgACoeCgVsZWdhbBUmxJJAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFQK2nUAaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWky5gEvZ290bz91cmw9Q0FFU29BRUJ4Q0pGMTgwQUhkdFFaWks1NHlBeTFmRURlNFhGOHFaZDhZNEgxY3JmZTA4bk1uNnFMVVM0WmYtc3lhYWRyb2VwaU9LVi1SeE5iM2FGVU5HZ1o4MlJ3X2xZbU5QTVJOMTJ1NUtabTZuYVdCandZRHFCNDE1eUNSZzFmanYyU0ZyNnJ5NTRWVjcwQ1VxbGZ3anRGdEQ5UXdVenVwb1Y5WWlwRGVZWmZJd2piaV9DRm1qUHJVOGhPblFQX1BKckZaVHU1bHg4MFd3Umloc1NvS2hrWlNfLTpFV2hhdCA8Yj5sZWdhbCBBSTwvYj4gZG8geW91IHVzZSBhbmQgZm9yIHdoYXQgdXNlIGNhc2UgPyA6IHIvbGVnYWx0ZWNoQpkBVHlwaWNhbCB1c2UgY2FzZXMgaW5jbHVkZSA8Yj5jb250cmFjdCByZXZpZXcgYW5kIHJpc2sgc3BvdHRpbmc8L2I-LCBjbGF1c2UgYW5kIG9ibGlnYXRpb24gZXh0cmFjdGlvbiwgbWF0dGVyL2RvY3VtZW50IHN1bW1hcml6YXRpb24sIGZpcnN0LWRyYWZ0Jm5ic3A7Li4uIgIQAUgAWABoAA",
+      "source": "Reddit \u00b7 r/legaltech",
+      "read_more_link": "https://www.reddit.com/r/legaltech/comments/1wgqyhi/what_legal_ai_do_you_use_and_for_what_use_case/#:~:text=Typical%20use%20cases%20include%20contract,and%20comparing%20documents%20or%20versions."
+    },
+    {
+      "position": 7,
+      "title": "How the legal profession can benefit from AI technology",
+      "link": "https://www.techtarget.com/news/How-the-legal-profession-can-benefit-from-AI-technology/834460/",
+      "redirect_link": "https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=CAESnAEBxCJF1wmURdzjO0FgTvtroy5547t9SOvRgrFGu4luKMUkLNdLRTAL4PaKLIlvE0xMXAxoz95ICE3sBSOcfMq3OsccmtplbS8jfKUdSTf19ah0MSIRCZwR1BQMFwPfFHBeKe0lSBvDXVuBPsGtMaJTbcmspzvxAYKoI95_P4MmwL7m5BkcNKuQnEj_NUXHBd-54n7GZvQnen2rRuI&ved=2ahUKEwjOhZnN-ICYAxWNIEQIHcwLOTgQFnoECDQQAQ&uoh=1",
+      "displayed_link": "https://www.techtarget.com \u203a news \u203a How-the-legal-pro...",
+      "favicon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEUeuaweuawAtacduaz___8RuKvo9_X2_PzQ7uszvrFbx72f3NaE08s_7YfVAAAAAnRSTlPtOLVB-AcAAACWSURBVCiR1dPLEoAgCAVQEiFf__-9iZJYY-67K_IsYBiCA_AjcMCnVd1YVSeZHuYvYA7Mk4UQDL1kQvY-PtFpqKG7W0GU8NmTSJAluWqb1nlNxxbDU18irlH7CCLWTq3nQJuWEKlPu0b8NRKRopYTlpRS7Kjla7eFxm6zrS8b5jeiK0GSaJSFBiLZnd03YbjO_qh3v8MFf9ILPZtyjVAAAAAASUVORK5CYII.png",
+      "date": "Mar 11, 2025",
+      "snippet": "Lawyers can benefit from AI technology in many ways, but they must be careful to double-check briefs and other documents they create with ...",
+      "snippet_highlighted_words": [
+        "Lawyers can benefit from AI technology"
+      ],
+      "about_this_result": {
+        "source": {
+          "description": "Lawyers can benefit from AI technology in many ways, but they must be careful to double-check briefs and other documents they create with ...",
+          "source_info_link": "https://www.techtarget.com/news/How-the-legal-profession-can-benefit-from-AI-technology/834460/",
+          "icon": "https://serpapi.com/images/i/iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y-mAAAAJ1BMVEUeuaweuawAtacduaz___8RuKvo9_X2_PzQ7uszvrFbx72f3NaE08s_7YfVAAAAAnRSTlPtOLVB-AcAAACWSURBVCiR1dPLEoAgCAVQEiFf__-9iZJYY-67K_IsYBiCA_AjcMCnVd1YVSeZHuYvYA7Mk4UQDL1kQvY-PtFpqKG7W0GU8NmTSJAluWqb1nlNxxbDU18irlH7CCLWTq3nQJuWEKlPu0b8NRKRopYTlpRS7Kjla7eFxm6zrS8b5jeiK0GSaJSFBiLZnd03YbjO_qh3v8MFf9ILPZtyjVAAAAAASUVORK5CYII.png"
+        },
+        "languages": [
+          "en"
+        ],
+        "regions": [
+          "US"
+        ]
+      },
+      "about_page_link": "https://www.google.com/search/about-this-result?origin=www.google.com&req=CuEBL2dvdG8_dXJsPUNBRVNuQUVCeENKRjF6YkhMcnlMbDNPd2RtQ0ZOeGc3M0pFUk5YSHNMVE1pUVk2RlBfcExybjk3NHRfaVQwaUxEcUtnYzhDdTVKOEtwdVVwNW1LN01yVEZYMjN1TmZxRU5VTjVwQ1RpMnJIM2ZtVm95eExJWFZsQjc0ZXF5RDhyRmhHamtlQmpSLXNQUUt0ZnR2Q1pQbnpoWC1QM0RwMlo3RVB1eXJtYzVpNG9RVG9YR2w2cFlmcFZhTjhXbWhMUVNqZGZWV3RKWlF5NmIyTmNCand4RjNREgQaAggAGscEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAoQQIABAAGAAgACoeCgVsZWdhbBVIQJRAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFZBdv0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWky4QEvZ290bz91cmw9Q0FFU25BRUJ4Q0pGMXpiSExyeUxsM093ZG1DRk54ZzczSkVSTlhIc0xUTWlRWTZGUF9wTHJuOTc0dF9pVDBpTERxS2djOEN1NUo4S3B1VXA1bUs3TXJURlgyM3VOZnFFTlVONXBDVGkyckgzZm1Wb3l4TElYVmxCNzRlcXlEOHJGaEdqa2VCalItc1BRS3RmdHZDWlBuemhYLVAzRHAyWjdFUHV5cm1jNWk0b1FUb1hHbDZwWWZwVmFOOFdtaExRU2pkZlZXdEpaUXk2YjJOY0Jqd3hGM1E6RUhvdyB0aGUgPGI-bGVnYWw8L2I-IHByb2Zlc3Npb24gY2FuIGJlbmVmaXQgZnJvbSA8Yj5BSTwvYj4gdGVjaG5vbG9neUKZATxiPkxhd3llcnMgY2FuIGJlbmVmaXQgZnJvbSBBSSB0ZWNobm9sb2d5PC9iPiBpbiBtYW55IHdheXMsIGJ1dCB0aGV5IG11c3QgYmUgY2FyZWZ1bCB0byBkb3VibGUtY2hlY2sgYnJpZWZzIGFuZCBvdGhlciBkb2N1bWVudHMgdGhleSBjcmVhdGUgd2l0aCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "about_page_serpapi_link": "https://serpapi.com/search.json?engine=google_about_this_result&google_domain=google.com&req_token=CuEBL2dvdG8_dXJsPUNBRVNuQUVCeENKRjF6YkhMcnlMbDNPd2RtQ0ZOeGc3M0pFUk5YSHNMVE1pUVk2RlBfcExybjk3NHRfaVQwaUxEcUtnYzhDdTVKOEtwdVVwNW1LN01yVEZYMjN1TmZxRU5VTjVwQ1RpMnJIM2ZtVm95eExJWFZsQjc0ZXF5RDhyRmhHamtlQmpSLXNQUUt0ZnR2Q1pQbnpoWC1QM0RwMlo3RVB1eXJtYzVpNG9RVG9YR2w2cFlmcFZhTjhXbWhMUVNqZGZWV3RKWlF5NmIyTmNCand4RjNREgQaAggAGscEEgIIABoAIgAqADIGCAMSAnVzOgBCBAgBEABKAFoAcgB6AIJAoQQIABAAGAAgACoeCgVsZWdhbBVIQJRAGgdsZWdhbGx5GgdsZWdhbGFpKjAKAmFpFZBdv0AaA2FpZBoXYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UaB2xlZ2FsYWky4QEvZ290bz91cmw9Q0FFU25BRUJ4Q0pGMXpiSExyeUxsM093ZG1DRk54ZzczSkVSTlhIc0xUTWlRWTZGUF9wTHJuOTc0dF9pVDBpTERxS2djOEN1NUo4S3B1VXA1bUs3TXJURlgyM3VOZnFFTlVONXBDVGkyckgzZm1Wb3l4TElYVmxCNzRlcXlEOHJGaEdqa2VCalItc1BRS3RmdHZDWlBuemhYLVAzRHAyWjdFUHV5cm1jNWk0b1FUb1hHbDZwWWZwVmFOOFdtaExRU2pkZlZXdEpaUXk2YjJOY0Jqd3hGM1E6RUhvdyB0aGUgPGI-bGVnYWw8L2I-IHByb2Zlc3Npb24gY2FuIGJlbmVmaXQgZnJvbSA8Yj5BSTwvYj4gdGVjaG5vbG9neUKZATxiPkxhd3llcnMgY2FuIGJlbmVmaXQgZnJvbSBBSSB0ZWNobm9sb2d5PC9iPiBpbiBtYW55IHdheXMsIGJ1dCB0aGV5IG11c3QgYmUgY2FyZWZ1bCB0byBkb3VibGUtY2hlY2sgYnJpZWZzIGFuZCBvdGhlciBkb2N1bWVudHMgdGhleSBjcmVhdGUgd2l0aCZuYnNwOy4uLiICEAFIAFgAaAA",
+      "source": "TechTarget",
+      "read_more_link": "https://www.techtarget.com/news/How-the-legal-profession-can-benefit-from-AI-technology/834460/#:~:text=Lawyers%20can%20benefit%20from%20AI,they%20create%20with%20generative%20AI."
+    }
+  ],
+  "perspectives": [
+    {
+      "author": "r/pcmasterrace",
+      "source": "Reddit",
+      "extensions": [
+        "140+ comments "
+      ],
+      "title": "Lawyer builds private AI server with eight used Nvidia V100 GPUs \u2014 up to 215 tokens per second to keep legal files offline",
+      "link": "https://www.reddit.com/r/pcmasterrace/comments/1xsn86z/lawyer_builds_private_ai_server_with_eight_used/",
+      "date": "1 day ago"
+    },
+    {
+      "author": "Atozy",
+      "source": "YouTube",
+      "duration": "13:08",
+      "extensions": [
+        "406K+ views "
+      ],
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5aLc8Y_d7ohd9KyljteLz0C3ppMPoccZ4iO8AsM9dyEM0eHWS10A8ePhEa0q9uAtCVu-6ezrCBmtX88h2Ydi6vjL0qEeP0g&s"
+      ],
+      "title": "Judges Get Caught Using AI In Court",
+      "link": "https://www.youtube.com/watch?v=2VCn9b69xnI",
+      "date": "3 days ago",
+      "video": "https://encrypted-vtbn0.gstatic.com/video?q=tbn%3AANd9GcSOWTNwn_c_2pGQCTbJr5moSyaj_7NnROvT5A"
+    },
+    {
+      "author": "Rebecca Zung",
+      "source": "YouTube",
+      "duration": "15:22",
+      "extensions": [
+        "80+ views "
+      ],
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVOA_4JVL_UiKZUVjDDC4pE-pg4rMHQpMUe4YEcOPV6lEtzzoTUYoV99MA0AS-GuWydu0Omh1uiOBrz4XuRcYGSS5fpop55WM&s"
+      ],
+      "title": "Why Nobody Is Talking About What AI Just Did to Attorney Client Privilege",
+      "link": "https://www.youtube.com/watch?v=XrrlSJavfz8",
+      "date": "1 day ago",
+      "video": "https://encrypted-vtbn0.gstatic.com/video?q=tbn%3AANd9GcQaHbyynGvZ2pZfezDaWJ5IzV8eDipibOGzZA"
+    },
+    {
+      "author": "r/Ask_Lawyers",
+      "source": "Reddit",
+      "extensions": [
+        "50+ comments "
+      ],
+      "title": "How much of AI do you use in your work?",
+      "link": "https://www.reddit.com/r/Ask_Lawyers/comments/1xt5wrc/how_much_of_ai_do_you_use_in_your_work/",
+      "date": "20 hours ago"
+    },
+    {
+      "author": "Tom Pfennig",
+      "source": "LinkedIn",
+      "duration": "1:11",
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRraNSpKjIHXPGRZUOmXrAj_PGeS7Ttshy9RCb9SaQV4R-dslBt7P743HOon2S7M9XvpUwQgQORmSg-qEsoOTLOam3LDG_4NsPXdyvs8lve5XVriw&s"
+      ],
+      "title": "\ud835\uddd4\ud835\udddc \ud835\udde0\ud835\uddf6\ud835\uddf4\ud835\uddf5\ud835\ude01 \ud835\uddda\ud835\uddf6\ud835\ude03\ud835\uddf2 \ud835\uddec\ud835\uddfc\ud835\ude02\ud835\uddff \ud835\uddd5\ud835\uddf2\ud835\ude00\ud835\ude01 \ud835\udde3\ud835\uddee\ud835\uddff\ud835\ude01\ud835\uddfb\ud835\uddf2\ud835\uddff\ud835\ude00 \ud835\uddd4 \ud835\udde5\ud835\uddf2\ud835\uddee\ud835\ude00\ud835\uddfc\ud835\uddfb \ud835\udde7\ud835\uddfc \ud835\udddf\ud835\uddf2\ud835\uddee\ud835\ude03\ud835\uddf2 \u2013 \ud835\uddea\ud835\uddf5\ud835\uddee\ud835\ude01 \ud835\udde0\ud835\uddee\ud835\uddf8\ud835\uddf2\ud835\ude00 \ud835\udde7\ud835\uddf5\ud835\uddf2\ud835\uddfa \ud835\udde6\ud835\ude01\ud835\uddee\ud835\ude06? Partners have curated their client relationships over decades. They have been building a strong book of business. Equipped with powerful AI tools, they",
+      "link": "https://www.linkedin.com/posts/tom-pfennig-transforming-legal_%F0%9D%97%94%F0%9D%97%9C-%F0%9D%97%A0%F0%9D%97%B6%F0%9D%97%B4%F0%9D%97%B5%F0%9D%98%81-%F0%9D%97%9A%F0%9D%97%B6%F0%9D%98%83%F0%9D%97%B2-%F0%9D%97%AC%F0%9D%97%BC%F0%9D%98%82%F0%9D%97%BF-%F0%9D%97%95%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81-activity-7525527339649118209-GlEj",
+      "date": "2 days ago"
+    },
+    {
+      "author": "The National Law Review",
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSTXeWHHslJIWd4OYPJ2kgb9a963ZZsYiY-haHTOs1h9JNXysrIXna281Yyd6pKkMq3uY2q5KKqsO7vh6xn2sX7rBGLg324dT1fMdn-YvB9t8Kljj4&s"
+      ],
+      "title": "AI in Corporate Law and M&A: Where Technology Meets Judgment",
+      "link": "https://natlawreview.com/commentary-and-opinions/ai-corporate-law-and-ma-where-technology-meets-judgment",
+      "date": "10 hours ago"
+    },
+    {
+      "author": "Colin S. Levy",
+      "source": "LinkedIn",
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRZGeRCM6VHsmJDA8xqcu1PYG5FvykxBhUBsl5901iQSlBxqF3mQVCJ8Qk_6o2EFRWwrD69pumXsWIWN7UpVR-07VOSqxgE3zBx2EdgZq7yXnCG6mY&s"
+      ],
+      "title": "Choosing AI Models and Tools for Legal Work",
+      "link": "https://www.linkedin.com/pulse/choosing-ai-models-tools-legal-work-colin-s-levy-hac0c",
+      "date": "1 month ago"
+    },
+    {
+      "author": "r/uklaw",
+      "source": "Reddit",
+      "extensions": [
+        "40+ comments "
+      ],
+      "title": "Anyone else getting fed up with hysterical litigants in person using AI to create notices that they believe have some sort of legal standing?",
+      "link": "https://www.reddit.com/r/uklaw/comments/1xsugg6/anyone_else_getting_fed_up_with_hysterical/",
+      "date": "1 day ago"
+    },
+    {
+      "author": "astrophilesz",
+      "source": "Instagram",
+      "extensions": [
+        "930+ likes "
+      ],
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTPOks3hwoCwn9_si7lJsuqUZ44ll5Qr1xloOBcsPxhP76nGpixAIGOsFtyodYm_w_lzISy2uOxHTaPtfJHOnYxj1z8fGrhdkz_WPJJrD3a39CjDg&s"
+      ],
+      "title": "Your face belongs to you. Your voice belongs to you. And Denmark wants to make sure artificial intelligence cannot take either without your permission. Denmark has introduced a groundbreaking proposal to amend its copyright law, giving people greater legal control over realistic AI-generated copies of their appearance, voice, and other personal characteristics. The legislation, formally introduced in Parliament on October 8, 2026, aims to address one of the fastest-growing problems of artificial intelligence: deepfakes that can make ordinary people appear to say or do things that never happened. Today\u2019s AI systems can recreate someone\u2019s voice from recordings, generate convincing videos of their face, and produce fabricated content that can be difficult to distinguish from reality. These technologies have raised serious concerns about identity theft, financial scams, harassment, and the spread of misinformation. Under Denmark\u2019s proposal, publishing realistic digital imitations of so",
+      "link": "https://www.instagram.com/p/DfglXbRDZwL/",
+      "date": "2 days ago"
+    },
+    {
+      "author": "LegalEagle",
+      "source": "YouTube",
+      "duration": "26:43",
+      "extensions": [
+        "860.2K+ views "
+      ],
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcReoeTbrFZTMLQ9GFUkIo-oyi8cvYVGIkYwMT8W4rqZKTZNsDdzK_GWprXUly7a9qcQXiCMGnJ3iDVdWVl52HGYsZveXiGkWkY&s"
+      ],
+      "title": "Legal System Is Drowning in A.I. Slop",
+      "link": "https://www.youtube.com/watch?v=iTi3IZDrZC4&vl=en",
+      "date": "1 month ago",
+      "video": "https://encrypted-vtbn0.gstatic.com/video?q=tbn%3AANd9GcQqhQBaqWvmL9f5m2OLW4Grqv5RX7d1_Xondg"
+    },
+    {
+      "author": "Alex Banks",
+      "source": "LinkedIn",
+      "duration": "0:22",
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSZOfXTxwFA57Jtp2vntyXfLvWsXRCMp7FdSEvGQ3_0HF9JWraieqXUgjOeSj_I_f4Pg99Hm32JmQD1oQ7nqrWpzwid-nn9wOpTjCffHe6sEnTUmlI&s=10"
+      ],
+      "title": "AI labs are bulk-buying second-hand books, training models on the contents, then destroying them. Booksellers fear rare and out-of-print titles are being pulped in the process. The practice traces back to a June 2025 court ruling. Judge William Alsup found Ant",
+      "link": "https://www.linkedin.com/posts/a-banks_ai-labs-are-bulk-buying-second-hand-books-activity-7526267973930663936-fYdT",
+      "date": "9 hours ago"
+    },
+    {
+      "author": "Association of Corporate Counsel",
+      "source": "LinkedIn",
+      "extensions": [
+        "40+ reactions "
+      ],
+      "thumbnails": [
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRxmtUpXnSgFf-ysifFgmTDoH2Ri4htyRyN4HYDG8DZrQQAjGKYrXR6VR10HA0_ohiFHaIGgzIqRlO1HEv3oXwq7FEyWCsM31yAImJtuUHntcx0a1U&s"
+      ],
+      "title": "The Law Department of 2030: Leading Through the AI Transformation",
+      "link": "https://www.linkedin.com/pulse/law-department-2030-leading-through-ai-transformation-mpnue",
+      "date": "5 days ago"
+    }
+  ]
+}
+treg: charged $0.015 · call id 1ad39630be22455dbf8b53111d3d3e74

@@ -1,57 +1,499 @@
 {
  "app": "Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)",
- "score": 10,
+ "score": 6.3,
  "personas": {
   "partner": {
    "department": "Firm leadership",
-   "pass": 2,
-   "total": 2,
-   "score": 10
+   "pass": 3,
+   "total": 8,
+   "score": 3.8
   },
   "associate": {
    "department": "Litigation",
-   "pass": 2,
-   "total": 2,
-   "score": 10
+   "pass": 5,
+   "total": 10,
+   "score": 5
   },
   "paralegal": {
    "department": "Litigation support",
-   "pass": 2,
-   "total": 2,
-   "score": 10
+   "pass": 3,
+   "total": 10,
+   "score": 3
   },
   "intake": {
    "department": "Front office",
-   "pass": 2,
-   "total": 2,
-   "score": 10
+   "pass": 6,
+   "total": 8,
+   "score": 7.5
   },
   "billing": {
    "department": "Billing / finance",
-   "pass": 2,
-   "total": 2,
+   "pass": 8,
+   "total": 8,
    "score": 10
   },
   "it_ops": {
    "department": "IT / legal operations",
-   "pass": 2,
-   "total": 2,
+   "pass": 8,
+   "total": 8,
    "score": 10
   },
   "solo_immigration": {
    "department": "Solo practice (immigration)",
-   "pass": 2,
-   "total": 2,
-   "score": 10
+   "pass": 1,
+   "total": 10,
+   "score": 1
   },
   "in_house": {
    "department": "In-house legal",
    "pass": 2,
-   "total": 2,
+   "total": 10,
+   "score": 2
+  },
+  "firm_administrator": {
+   "department": "Operations",
+   "pass": 8,
+   "total": 8,
    "score": 10
+  },
+  "ethics_gc": {
+   "department": "Risk management",
+   "pass": 3,
+   "total": 8,
+   "score": 3.8
+  },
+  "docketing": {
+   "department": "Docketing / calendaring",
+   "pass": 8,
+   "total": 8,
+   "score": 10
+  },
+  "km_librarian": {
+   "department": "Knowledge management",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "legal_secretary": {
+   "department": "Attorney support",
+   "pass": 4,
+   "total": 8,
+   "score": 5
+  },
+  "estate_planning": {
+   "department": "Transactional practice",
+   "pass": 0,
+   "total": 8,
+   "score": 0
+  },
+  "lit_support": {
+   "department": "Litigation support / e-discovery",
+   "pass": 4,
+   "total": 8,
+   "score": 5
   }
  },
- "failures": [],
+ "failures": [
+  {
+   "name": "Matter switch rebinds the answer and matter card",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Herrera I-130')",
+   "persona": "partner",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Switching to Estate of D. Liu replaces the Reyes answer",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Estate of D. Liu')",
+   "persona": "associate",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Switching matter rebuilds the timeline",
+   "ok": false,
+   "why": "not visible: [data-testid='timeline-title']:has-text('Herrera I-130')",
+   "persona": "paralegal",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Clicking an event shows its source",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Next caller in the queue gets her own summary; decline path",
+   "ok": false,
+   "why": "not visible: [data-testid='intake-summary']:has-text('Bayview Apartments')",
+   "persona": "intake",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Draft is bound to the selected matter and needs review",
+   "ok": false,
+   "why": "not visible: [data-testid='draft-doc']:has-text('IOE0912345678')",
+   "persona": "solo_immigration",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Side-by-side Spanish is marked not yet reviewed",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Approve, review translation, send by WhatsApp",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Batch letters go to a review queue",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "desktop"
+  },
+  {
+   "name": "In-house workspace with request header",
+   "ok": false,
+   "why": "not visible: [data-testid='workspace-name']:has-text('Northwind Robotics')",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Another request shows its own clauses",
+   "ok": false,
+   "why": "not visible: [data-testid='review-table']:has-text('Residuals')",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Loading state while a contract is indexing",
+   "ok": false,
+   "why": "not visible: [data-testid='indexing']:has-text('2 of 3 files')",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "AI is actually off inside the restricted matter",
+   "ok": false,
+   "why": "not visible: [data-testid='ai-off']:has-text('guidelines §12.3')",
+   "persona": "ethics_gc",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Draft and review are blocked there too",
+   "ok": false,
+   "why": "not visible: #panel-draft [data-testid='ai-off']",
+   "persona": "ethics_gc",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Select Estate of D. Liu and get the cited inventory",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Estate of D. Liu')",
+   "persona": "estate_planning",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Export the cited inventory",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "estate_planning",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Probate deadline rolled to a business day, flagged to verify",
+   "ok": false,
+   "why": "not visible: [data-testid='timeline-title']:has-text('Estate of D. Liu')",
+   "persona": "estate_planning",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Right bar matter card is the estate's",
+   "ok": false,
+   "why": "not visible: .right [data-testid='matter-card']:has-text('Grace Liu, executor')",
+   "persona": "estate_planning",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Matter switch rebinds the answer and matter card",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Herrera I-130')",
+   "persona": "partner",
+   "viewport": "phone"
+  },
+  {
+   "name": "Money view, usage by person and AI policy",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "partner",
+   "viewport": "phone"
+  },
+  {
+   "name": "Filter the audit log by matter",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "partner",
+   "viewport": "phone"
+  },
+  {
+   "name": "Right bar shows period, open risks and exports on Firm",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "partner",
+   "viewport": "phone"
+  },
+  {
+   "name": "Switching to Estate of D. Liu replaces the Reyes answer",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Estate of D. Liu')",
+   "persona": "associate",
+   "viewport": "phone"
+  },
+  {
+   "name": "Search opens a real results panel",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "associate",
+   "viewport": "phone"
+  },
+  {
+   "name": "Associates cannot open Admin",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "associate",
+   "viewport": "phone"
+  },
+  {
+   "name": "Citation opens the exact page with Bates number",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "associate",
+   "viewport": "phone"
+  },
+  {
+   "name": "Reyes timeline with key dates and verified deadline",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "phone"
+  },
+  {
+   "name": "Filter to testimony and export",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "phone"
+  },
+  {
+   "name": "Bell badge equals the deadlines listed this week",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "phone"
+  },
+  {
+   "name": "Switching matter rebuilds the timeline",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "phone"
+  },
+  {
+   "name": "Clicking an event shows its source",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "paralegal",
+   "viewport": "phone"
+  },
+  {
+   "name": "Next caller in the queue gets her own summary; decline path",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "intake",
+   "viewport": "phone"
+  },
+  {
+   "name": "Draft is bound to the selected matter and needs review",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "phone"
+  },
+  {
+   "name": "Side-by-side Spanish is marked not yet reviewed",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "phone"
+  },
+  {
+   "name": "Approve, review translation, send by WhatsApp",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "phone"
+  },
+  {
+   "name": "Batch letters go to a review queue",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "phone"
+  },
+  {
+   "name": "Selecting Reyes switches the draft away from Herrera",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "solo_immigration",
+   "viewport": "phone"
+  },
+  {
+   "name": "In-house workspace with request header",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Accept a row updates the redline button",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Another request shows its own clauses",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Loading state while a contract is indexing",
+   "ok": false,
+   "why": "not visible: [data-testid='indexing']:has-text('2 of 3 files')",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Clause detail with fallback and approver in the right bar",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "AI is actually off inside the restricted matter",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "phone"
+  },
+  {
+   "name": "Draft and review are blocked there too",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "phone"
+  },
+  {
+   "name": "Open risks in the right bar",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "phone"
+  },
+  {
+   "name": "Generate a client update letter for Reyes",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Send to the partner for review, then export on letterhead",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Secretaries cannot approve or send to the client",
+   "ok": false,
+   "why": "not visible: button:has-text('Send and record in matter'):disabled",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Fields and sources in the right bar",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Select Estate of D. Liu and get the cited inventory",
+   "ok": false,
+   "why": "not visible: [data-testid='matter-title']:has-text('Estate of D. Liu')",
+   "persona": "estate_planning",
+   "viewport": "phone"
+  },
+  {
+   "name": "Export the cited inventory",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "estate_planning",
+   "viewport": "phone"
+  },
+  {
+   "name": "Probate deadline rolled to a business day, flagged to verify",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "estate_planning",
+   "viewport": "phone"
+  },
+  {
+   "name": "Right bar matter card is the estate's",
+   "ok": false,
+   "why": "not visible: .right [data-testid='matter-card']:has-text('Grace Liu, executor')",
+   "persona": "estate_planning",
+   "viewport": "phone"
+  },
+  {
+   "name": "See productions and Bates ranges in scope",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "lit_support",
+   "viewport": "phone"
+  },
+  {
+   "name": "Load a new production volume",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "lit_support",
+   "viewport": "phone"
+  },
+  {
+   "name": "Exclude the privileged folder and check the Ask scope",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "lit_support",
+   "viewport": "phone"
+  },
+  {
+   "name": "Sources list Bates numbers",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "lit_support",
+   "viewport": "phone"
+  }
+ ],
  "global": [
   {
    "viewport": "desktop",
@@ -90,12 +532,22 @@
   },
   {
    "viewport": "desktop",
-   "check": "every tab (8) opens a filled panel",
+   "check": "every tab (4) opens a filled panel",
    "ok": true
   },
   {
    "viewport": "desktop",
    "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "tab list contains only tabs",
+   "ok": true
+  },
+  {
+   "viewport": "desktop",
+   "check": "right side bar changes with the tab (4 distinct of 4)",
    "ok": true
   },
   {
@@ -136,12 +588,37 @@
   },
   {
    "viewport": "phone",
-   "check": "every tab (8) opens a filled panel",
+   "check": "every tab (4) opens a filled panel",
    "ok": true
   },
   {
    "viewport": "phone",
    "check": "tabs work from the keyboard",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "tab list contains only tabs",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "right side bar changes with the tab (4 distinct of 4)",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "phone drawers open and close (button + Escape)",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "drawer toggles are on screen",
+   "ok": true
+  },
+  {
+   "viewport": "phone",
+   "check": "bottom bar is one line on phone (38px)",
    "ok": true
   },
   {

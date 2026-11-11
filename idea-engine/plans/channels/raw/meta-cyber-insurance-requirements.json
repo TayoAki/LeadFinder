@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 396,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: meta-ads-search: the Ad Library has no active ads for 'cyber insurance requirements' in US",
+      "module: meta-ads-search: 'cyber insurance requirements' \u00b7 US \u00b7 active \u00b7 0 ad(s) \u00b7 one view \u00b7 direct"
+    ]
+  },
+  "recipe": "meta-ads-search",
+  "rows": [],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1442,
+      "requests": 1462,
+      "search": 2992
+    },
+    "units": 3
+  },
+  "version": 2
+}
+treg: charged $0 · call id 6ee682ee2f554e16bfe00c99bf81cb3a

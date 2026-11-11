@@ -1,0 +1,3995 @@
+{
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "2.1578 sec.",
+  "cost": 0.09,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11112218-2171-0367-0000-ae1f845d9130",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "2.1175 sec.",
+    "cost": 0.09,
+    "result_count": 28,
+    "path": [
+     "v3",
+     "keywords_data",
+     "google_ads",
+     "search_volume",
+     "live"
+    ],
+    "data": {
+     "api": "keywords_data",
+     "function": "search_volume",
+     "se": "google_ads",
+     "keywords": [
+      "ai for lawyers",
+      "legal ai",
+      "harvey ai",
+      "ai legal assistant",
+      "chatgpt for lawyers",
+      "eve legal",
+      "spellbook ai",
+      "clio ai",
+      "legal ai tools",
+      "ai for law firms",
+      "huntress",
+      "managed detection and response",
+      "mdr security",
+      "managed soc",
+      "cmmc",
+      "cmmc compliance",
+      "cyber insurance",
+      "ftc safeguards rule",
+      "soc as a service",
+      "ai customer service",
+      "ai customer support",
+      "ai agent customer service",
+      "zendesk alternative",
+      "chatwoot",
+      "gorgias",
+      "intercom fin",
+      "help desk software",
+      "customer service software"
+     ],
+     "location_code": 2840,
+     "language_code": "en",
+     "date_from": "2024-10-01",
+     "date_to": "2026-10-01"
+    },
+    "result": [
+     {
+      "keyword": "ai for lawyers",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 41,
+      "search_volume": 3600,
+      "low_top_of_page_bid": 8.56,
+      "high_top_of_page_bid": 56.11,
+      "cpc": 53.97,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 6600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 3600
+       }
+      ]
+     },
+     {
+      "keyword": "legal ai",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 39,
+      "search_volume": 18100,
+      "low_top_of_page_bid": 5.74,
+      "high_top_of_page_bid": 33.08,
+      "cpc": 27.59,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 14800
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 14800
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 14800
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 18100
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 18100
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 18100
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 18100
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 14800
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 12100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 14800
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 18100
+       }
+      ]
+     },
+     {
+      "keyword": "harvey ai",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 43,
+      "search_volume": 40500,
+      "low_top_of_page_bid": 8.2,
+      "high_top_of_page_bid": 66.88,
+      "cpc": 12.13,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 60500
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 60500
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 40500
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 18100
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 14800
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 9900
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 12100
+       }
+      ]
+     },
+     {
+      "keyword": "ai legal assistant",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 47,
+      "search_volume": 1000,
+      "low_top_of_page_bid": 8.65,
+      "high_top_of_page_bid": 49.22,
+      "cpc": 38.76,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 590
+       }
+      ]
+     },
+     {
+      "keyword": "chatgpt for lawyers",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 47,
+      "search_volume": 590,
+      "low_top_of_page_bid": 10.84,
+      "high_top_of_page_bid": 66.64,
+      "cpc": 51.04,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "eve legal",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 36,
+      "search_volume": 5400,
+      "low_top_of_page_bid": 10.46,
+      "high_top_of_page_bid": 37,
+      "cpc": 24.79,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 6600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 6600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1900
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 720
+       }
+      ]
+     },
+     {
+      "keyword": "spellbook ai",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 46,
+      "search_volume": 1600,
+      "low_top_of_page_bid": 12.99,
+      "high_top_of_page_bid": 82.99,
+      "cpc": 31.96,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1600
+       }
+      ]
+     },
+     {
+      "keyword": "clio ai",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 37,
+      "search_volume": 880,
+      "low_top_of_page_bid": 6.56,
+      "high_top_of_page_bid": 68.24,
+      "cpc": 34.92,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 210
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 320
+       }
+      ]
+     },
+     {
+      "keyword": "legal ai tools",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 48,
+      "search_volume": 1600,
+      "low_top_of_page_bid": 15,
+      "high_top_of_page_bid": 88.76,
+      "cpc": 65.19,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 720
+       }
+      ]
+     },
+     {
+      "keyword": "ai for law firms",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 31,
+      "search_volume": 1900,
+      "low_top_of_page_bid": 4.79,
+      "high_top_of_page_bid": 32.39,
+      "cpc": 30.65,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 2400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1900
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "huntress",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 23,
+      "search_volume": 33100,
+      "low_top_of_page_bid": 23.1,
+      "high_top_of_page_bid": 49.68,
+      "cpc": 35.24,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 49500
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 33100
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 33100
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 33100
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 33100
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 40500
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 22200
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 22200
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 22200
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 27100
+       }
+      ]
+     },
+     {
+      "keyword": "managed detection and response",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 39,
+      "search_volume": 480,
+      "low_top_of_page_bid": 30,
+      "high_top_of_page_bid": 153.38,
+      "cpc": 188.65,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1600
+       }
+      ]
+     },
+     {
+      "keyword": "mdr security",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 44,
+      "search_volume": 260,
+      "low_top_of_page_bid": 30,
+      "high_top_of_page_bid": 90,
+      "cpc": 84.46,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 590
+       }
+      ]
+     },
+     {
+      "keyword": "managed soc",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 25,
+      "search_volume": 210,
+      "low_top_of_page_bid": 35.23,
+      "high_top_of_page_bid": 341.44,
+      "cpc": 337.04,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 390
+       }
+      ]
+     },
+     {
+      "keyword": "cmmc",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 31,
+      "search_volume": 27100,
+      "low_top_of_page_bid": 4,
+      "high_top_of_page_bid": 17.19,
+      "cpc": 18.51,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 33100
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 22200
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 18100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 18100
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 22200
+       }
+      ]
+     },
+     {
+      "keyword": "cmmc compliance",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 47,
+      "search_volume": 9900,
+      "low_top_of_page_bid": 6.54,
+      "high_top_of_page_bid": 30,
+      "cpc": 28.86,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 12100
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 12100
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 9900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 9900
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 9900
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 9900
+       }
+      ]
+     },
+     {
+      "keyword": "cyber insurance",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 34,
+      "search_volume": 2900,
+      "low_top_of_page_bid": 10.89,
+      "high_top_of_page_bid": 67.51,
+      "cpc": 52.14,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 5400
+       }
+      ]
+     },
+     {
+      "keyword": "ftc safeguards rule",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 7,
+      "search_volume": 590,
+      "low_top_of_page_bid": 2.9,
+      "high_top_of_page_bid": 17.1,
+      "cpc": 7.51,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 880
+       }
+      ]
+     },
+     {
+      "keyword": "soc as a service",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 38,
+      "search_volume": 260,
+      "low_top_of_page_bid": 25.63,
+      "high_top_of_page_bid": 168.54,
+      "cpc": 144.76,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 880
+       }
+      ]
+     },
+     {
+      "keyword": "ai customer service",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 24,
+      "search_volume": 4400,
+      "low_top_of_page_bid": 25.43,
+      "high_top_of_page_bid": 144.46,
+      "cpc": 107.06,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 6600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 6600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 6600
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 8100
+       }
+      ]
+     },
+     {
+      "keyword": "ai customer support",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 29,
+      "search_volume": 880,
+      "low_top_of_page_bid": 28.54,
+      "high_top_of_page_bid": 120,
+      "cpc": 105.68,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 880
+       }
+      ]
+     },
+     {
+      "keyword": "ai agent customer service",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 24,
+      "search_volume": 90,
+      "low_top_of_page_bid": 25,
+      "high_top_of_page_bid": 120,
+      "cpc": 115.89,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 140
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "zendesk alternative",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 17,
+      "search_volume": 1600,
+      "low_top_of_page_bid": 40,
+      "high_top_of_page_bid": 74,
+      "cpc": 118.95,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 12100
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1300
+       }
+      ]
+     },
+     {
+      "keyword": "chatwoot",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 14,
+      "search_volume": 2400,
+      "low_top_of_page_bid": 0.06,
+      "high_top_of_page_bid": 10.28,
+      "cpc": 1.28,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "gorgias",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 18,
+      "search_volume": 27100,
+      "low_top_of_page_bid": 5.54,
+      "high_top_of_page_bid": 42.3,
+      "cpc": 10.18,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 27100
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 22200
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 33100
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 40500
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 27100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 22200
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 27100
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 22200
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 27100
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 27100
+       }
+      ]
+     },
+     {
+      "keyword": "intercom fin",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 49,
+      "search_volume": 1300,
+      "low_top_of_page_bid": 11,
+      "high_top_of_page_bid": 82.72,
+      "cpc": 20.4,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 320
+       }
+      ]
+     },
+     {
+      "keyword": "help desk software",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 24,
+      "search_volume": 4400,
+      "low_top_of_page_bid": 33,
+      "high_top_of_page_bid": 105.45,
+      "cpc": 104.29,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 6600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 9900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 2900
+       }
+      ]
+     },
+     {
+      "keyword": "customer service software",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 20,
+      "search_volume": 1300,
+      "low_top_of_page_bid": 11.95,
+      "high_top_of_page_bid": 97.91,
+      "cpc": 106.49,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 3600
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 2400
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "cf298983091c45dc98216b0d864f9898",
+  "charged_micro": 90000,
+  "routed_tool": "treg.google.keywords.volume"
+ }
+}

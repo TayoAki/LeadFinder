@@ -1,0 +1,62 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 767,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: meta-ads-search: the Ad Library has no active ads for 'zendesk alternative' in US",
+      "module: meta-ads-search: 'zendesk alternative' \u00b7 US \u00b7 active \u00b7 0 ad(s) \u00b7 one view \u00b7 direct"
+    ]
+  },
+  "recipe": "meta-ads-search",
+  "rows": [],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://www.facebook.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1449,
+      "requests": 1422,
+      "search": 2922
+    },
+    "units": 3
+  },
+  "version": 2
+}
+treg: charged $0 · call id bec565eab3d44c39ab560b328798e05d

@@ -1,17 +1,17 @@
 # Persona walkthrough: Watchpost: managed threat detection and response for small businesses (built on Wazuh)
 
-**Automated score: 8.4/10** (persona tasks on desktop and phone + global checks)
+**Automated score: 10/10** (persona tasks on desktop and phone + global checks)
 
 | Persona | Department | Tasks passed | Score |
 |---|---|---|---|
 | owner | Executive | 4/4 | 10/10 |
-| office_mgr | Operations | 4/6 | 6.7/10 |
-| it_mgr | IT | 6/8 | 7.5/10 |
-| msp_tech | IT services (MSP) | 5/8 | 6.3/10 |
+| office_mgr | Operations | 6/6 | 10/10 |
+| it_mgr | IT | 8/8 | 10/10 |
+| msp_tech | IT services (MSP) | 8/8 | 10/10 |
 | msp_owner | IT services (MSP leadership) | 4/4 | 10/10 |
-| compliance | Compliance | 6/8 | 7.5/10 |
-| finance | Finance | 2/4 | 5/10 |
-| msp_account_mgr | IT services (MSP sales / account management) | 0/2 | 0/10 |
+| compliance | Compliance | 8/8 | 10/10 |
+| finance | Finance | 4/4 | 10/10 |
+| msp_account_mgr | IT services (MSP sales / account management) | 2/2 | 10/10 |
 | practice_manager_regulated | Operations (multi-site) | 2/2 | 10/10 |
 | external_auditor | External (audit / assessor) | 2/2 | 10/10 |
 | insurance_broker | External (insurance) | 2/2 | 10/10 |
@@ -50,16 +50,4 @@
 
 ## Failures
 
-- desktop · office_mgr · Notifications open a real panel: not visible: #pop [data-testid='notifications']:has-text('reception@')
-- desktop · it_mgr · Search a host from the rail and see alert noise: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- desktop · compliance · Export evidence with history: not visible: [data-testid='export-history']:has-text('HIPAA · Last 12 months')
-- desktop · finance · See plan and invoices: not visible: [data-testid='plan']:has-text('Practice')
-- desktop · msp_account_mgr · Generate a white-labelled QBR for Ridgeline: not visible: [data-testid='qbr-preview']:has-text('Ridgeline Machining')
-- phone · office_mgr · Notifications open a real panel: not visible: #pop [data-testid='notifications']:has-text('reception@')
-- phone · it_mgr · Search a host from the rail and see alert noise: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- phone · msp_tech · Switch to Harbor Auto and every tab follows: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- phone · msp_tech · Harbor incidents, compliance and insurance are Harbor's: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- phone · msp_tech · Open a queue item lands on that client's incident: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- phone · compliance · Export evidence with history: not visible: [data-testid='export-history']:has-text('HIPAA · Last 12 months')
-- phone · finance · See plan and invoices: not visible: [data-testid='plan']:has-text('Practice')
-- phone · msp_account_mgr · Generate a white-labelled QBR for Ridgeline: TimeoutError: locator.click: Timeout 2500ms exceeded.
+None.
