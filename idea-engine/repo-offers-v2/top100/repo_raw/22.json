@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 769,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: strapi/strapi \u00b7 73463 stars \u00b7 1 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2015-09-30T15:34:48Z",
+      "description": "\ud83d\ude80 Strapi is the leading open-source headless CMS. It\u2019s 100% JavaScript/TypeScript, fully customizable, and developer-first.",
+      "forks": 10023,
+      "homepage": "https://strapi.io",
+      "kind": "repo",
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "name": "strapi/strapi",
+      "notes": null,
+      "open_issues": 645,
+      "published": null,
+      "pushed": "2026-11-11T20:15:23Z",
+      "stars": 73463,
+      "tag": null,
+      "topics": "api, cms, cms-framework, content-management, content-management-system, customizable, dashboard, graphql, hacktoberfest, headless-cms, jamstack, javascript, mysql, no-code, nodejs, posgresql, rest, strapi, typescript",
+      "url": "https://github.com/strapi/strapi"
+    },
+    {
+      "archived": null,
+      "created": null,
+      "description": null,
+      "forks": null,
+      "homepage": null,
+      "kind": "release",
+      "language": null,
+      "license": null,
+      "name": "v5.61.0",
+      "notes": "## 5.61.0 (2026-11-04)\n\n### \ud83d\ude80 New feature\n\n- **audit-logs:** record history restores, discarded drafts, settings updates and media events ([#28178](https://github.com/strapi/strapi/pull/28178))\n\n### \ud83d\udd25 Bug fix\n\n- **admin:** add missing english keys and french translations ([#28354](https://github.com \u2026",
+      "open_issues": null,
+      "published": "2026-11-04T13:07:59Z",
+      "pushed": null,
+      "stars": null,
+      "tag": "v5.61.0",
+      "topics": null,
+      "url": "https://github.com/strapi/strapi/releases/tag/v5.61.0"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1457,
+      "requests": 1442,
+      "search": 2915
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id c6f6ac4289e546d28524240f0af4e26c
+treg: anything confusing or wrong about this call, even if it worked? treg feedback submit <quality|pricing|friction|other> "what you saw" --call-id c6f6ac4289e546d28524240f0af4e26c; omit private data, then keep going with the task.

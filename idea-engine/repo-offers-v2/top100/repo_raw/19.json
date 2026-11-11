@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 611,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: knadh/listmonk \u00b7 24255 stars \u00b7 1 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2019-06-26T05:08:39Z",
+      "description": "High performance, self-hosted, newsletter and mailing list manager with a modern dashboard. Single binary app.",
+      "forks": 2786,
+      "homepage": "https://listmonk.app",
+      "kind": "repo",
+      "language": "Go",
+      "license": "AGPL-3.0",
+      "name": "knadh/listmonk",
+      "notes": null,
+      "open_issues": 59,
+      "published": null,
+      "pushed": "2026-11-11T12:25:51Z",
+      "stars": 24255,
+      "tag": null,
+      "topics": "campaign, campaign-management, email-marketing, email-subscription, listmonk, mailing-list, newsletter, newsletter-management, newsletter-software, self-hosted, sms-gateway, smtp, transactional-emails",
+      "url": "https://github.com/knadh/listmonk"
+    },
+    {
+      "archived": null,
+      "created": null,
+      "description": null,
+      "forks": null,
+      "homepage": null,
+      "kind": "release",
+      "language": null,
+      "license": null,
+      "name": "v7.0.0-beta.2",
+      "notes": "[![listmonk-logo](https://user-images.githubusercontent.com/547147/134940003-1de03d83-8c7b-459b-8056-baa8d5f3b448.png)](https://listmonk.app)\r\n\r\nv7 (beta.2) is a major release with a significant number of improvements and fixes. It's one of the biggest releases to date and has taken several months o \u2026",
+      "open_issues": null,
+      "published": "2026-11-10T11:03:52Z",
+      "pushed": null,
+      "stars": null,
+      "tag": "v7.0.0-beta.2",
+      "topics": null,
+      "url": "https://github.com/knadh/listmonk/releases/tag/v7.0.0-beta.2"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1450,
+      "requests": 1449,
+      "search": 2949
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id 0e384d3709214c0daf42b0bd073bc3f6

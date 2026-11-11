@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 1176,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: WordPress/WordPress \u00b7 21536 stars \u00b7 0 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2011-12-01T07:05:17Z",
+      "description": "WordPress, Git-ified. This repository is just a mirror of the WordPress subversion repository. Please do not send pull requests. Submit pull requests to https://github.com/WordPress/wordpress-develop and patches to https://core.trac.wordpress.org/ instead.",
+      "forks": 13038,
+      "homepage": "https://wordpress.org",
+      "kind": "repo",
+      "language": "PHP",
+      "license": "NOASSERTION",
+      "name": "WordPress/WordPress",
+      "notes": null,
+      "open_issues": 3,
+      "published": null,
+      "pushed": "2026-11-11T18:17:06Z",
+      "stars": 21536,
+      "tag": null,
+      "topics": "",
+      "url": "https://github.com/WordPress/WordPress"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1449,
+      "requests": 1434,
+      "search": 2931
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id 7e94125381af498e90cc0c540065b459
