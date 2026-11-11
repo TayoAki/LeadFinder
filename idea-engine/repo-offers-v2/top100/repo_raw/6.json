@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 1023,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: calcom/cal.diy \u00b7 49944 stars \u00b7 1 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2021-03-22T13:47:42Z",
+      "description": "Scheduling infrastructure for absolutely everyone.",
+      "forks": 15624,
+      "homepage": "https://cal.diy",
+      "kind": "repo",
+      "language": "TypeScript",
+      "license": "MIT",
+      "name": "calcom/cal.diy",
+      "notes": null,
+      "open_issues": 1632,
+      "published": null,
+      "pushed": "2026-11-11T18:58:53Z",
+      "stars": 49944,
+      "tag": null,
+      "topics": "next-auth, nextjs, open-source, postgresql, prisma, t3-stack, tailwindcss, trpc, turborepo, typescript, zod",
+      "url": "https://github.com/calcom/cal.diy"
+    },
+    {
+      "archived": null,
+      "created": null,
+      "description": null,
+      "forks": null,
+      "homepage": null,
+      "kind": "release",
+      "language": null,
+      "license": null,
+      "name": "v6.2.0",
+      "notes": "## What's Changed\r\n* fix: show invite link settings modal when clicking edit invite link in team members view by @anikdhabal in https://github.com/calcom/cal.com/pull/27917\r\n* fix: exclude test files from CODEOWNERS foundation approval by @hariombalhara in https://github.com/calcom/cal.com/pull/2791 \u2026",
+      "open_issues": null,
+      "published": "2026-03-01T23:49:01Z",
+      "pushed": null,
+      "stars": null,
+      "tag": "v6.2.0",
+      "topics": null,
+      "url": "https://github.com/calcom/cal.diy/releases/tag/v6.2.0"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1445,
+      "requests": 1473,
+      "search": 2973
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id 0f90eace497d46edb19d7d08718759ca
+treg: after using this result, run treg review 0f90eace497d46edb19d7d08718759ca <useful|partly|not_useful|not_sure> [--reason "..."]; omit private data, then keep going with the task.

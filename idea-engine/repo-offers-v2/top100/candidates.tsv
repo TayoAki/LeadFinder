@@ -1,0 +1,151 @@
+id	repo	industry	offer	buyer	incumbents	price_mo
+1	tastyigniter/TastyIgniter	Restaurants	Commission-free ordering site + Google ordering + SMS win-back	Independent restaurants	Owner.com; ChowNow; Toast	199
+2	Comfy-Org/ComfyUI	Restaurants/E-com	AI menu & product photo makeover	Restaurants on delivery apps	Photoroom; Snappr	49
+3	pipecat-ai/pipecat	Local services	Bilingual AI phone receptionist	Home-service contractors	Smith.ai; Ruby Receptionists; Podium	249
+4	livekit/agents	Dental	AI patient recall & reminder calls/texts	Dental practices	Weave; RevenueWell; Lighthouse 360	299
+5	alextselegidis/easyappointments	Beauty/wellness	Booking + reminders + deposits	Salons and spas	Vagaro; Boulevard; Mindbody	99
+6	calcom/cal.diy	Professional services	Branded scheduling + intake + payments	Consultants/coaches	Calendly; Acuity (Squarespace)	49
+7	formbricks/formbricks	Local services	Review requests + private feedback	Multi-location local businesses	Podium; Birdeye	149
+8	docusealco/docuseal	Professional services	White-label e-sign for firms	Insurance agencies/law firms	DocuSign	79
+9	documenso/documenso	Agencies	Proposals + e-sign + payment	Marketing/creative agencies	PandaDoc; Proposify	99
+10	HiEventsDev/Hi.Events	Events	Fee-free ticketing	Venues/event organisers	Eventbrite	79
+11	pretix/pretix	Events	Ticketing for festivals/conferences	Festival & conference organisers	Eventbrite; Cvent	199
+12	TandoorRecipes/recipes	Restaurants	Recipe costing + reprice plan	Restaurants/caterers	MarketMan; meez	99
+13	chatwoot/chatwoot	E-commerce	Support inbox + AI replies for Shopify brands	Shopify brands	Gorgias; Zendesk; Intercom	199
+14	zammad/zammad	IT/MSP	Managed helpdesk	MSPs/IT teams	Zendesk; Freshworks	149
+15	freescout-help-desk/freescout	SMB	Shared inbox	Small support teams	Help Scout; Front	79
+16	twentyhq/twenty	Agencies	Vertical CRM setup	Agencies/brokerages	HubSpot; Salesforce	199
+17	espocrm/espocrm	Insurance	Insurance agency CRM	Independent insurance agencies	AgencyZoom; Applied Epic	149
+18	mautic/mautic	SMB marketing	Marketing automation managed	SMBs	HubSpot; ActiveCampaign; Keap	199
+19	knadh/listmonk	E-commerce	Managed email marketing	DTC brands	Mailchimp; Klaviyo	149
+20	TryGhost/Ghost	Media/creators	Paid newsletter + membership site	Creators/local publishers	Substack; beehiiv; Patreon	99
+21	WordPress/WordPress	SMB	Managed website + care plan	Local businesses	Wix; Squarespace; GoDaddy	99
+22	strapi/strapi	Agencies	Headless CMS hosting	Agencies	Contentful	299
+23	payloadcms/payload	Agencies	Headless CMS hosting	Agencies	Contentful; Sanity	299
+24	medusajs/medusa	Distribution	B2B ordering portal	Wholesale distributors	Shopify Plus; BigCommerce; Pepperi	499
+25	saleor/saleor	E-commerce	Headless storefront	Mid-market brands	Shopify Plus; commercetools	999
+26	bagisto/bagisto	E-commerce	Marketplace build	Marketplace startups	Sharetribe; CS-Cart	299
+27	getlago/lago	SaaS	Usage-based billing	B2B SaaS	Chargebee; Zuora; Stripe Billing	499
+28	juspay/hyperswitch	Payments	Payment orchestration	Merchants	Spreedly; Primer	999
+29	akaunting/akaunting	SMB finance	Bookkeeping service on open books	Small businesses	QuickBooks; Xero	299
+30	frappe/erpnext	Manufacturing	ERP implementation	Small manufacturers/distributors	NetSuite; Acumatica	999
+31	odoo/odoo	SMB	ERP implementation	SMBs	NetSuite; Odoo Enterprise	999
+32	frappe/hrms	HR	HR + payroll	SMBs	BambooHR; Gusto; Rippling	199
+33	orangehrm/orangehrm	HR	HR system	Mid-size companies	BambooHR; Workday	199
+34	kimai/kimai	Construction/agencies	Time tracking + job costing	Contractors/agencies	Harvest; Toggl; ClockShark	79
+35	grokability/snipe-it	Education/IT	Asset tracking	Schools/IT departments	Asset Panda; ServiceNow	149
+36	glpi-project/glpi	IT/MSP	ITSM + asset mgmt	MSPs	ServiceNow; Freshservice	199
+37	amidaware/tacticalrmm	IT/MSP	Hosted RMM	MSPs	NinjaOne; ConnectWise; Datto	299
+38	rustdesk/rustdesk	IT/MSP	Branded remote support	MSPs/IT support	TeamViewer; AnyDesk	99
+39	Ylianst/MeshCentral	IT/MSP	Remote device mgmt	MSPs	TeamViewer; Splashtop	99
+40	wazuh/wazuh	Cybersecurity	Managed SOC/SIEM for SMB	SMBs (via MSPs)	Arctic Wolf; Huntress; Blumira	999
+41	fleetdm/fleet	IT	Device mgmt	Mac-heavy companies	Jamf; Kandji	299
+42	juanfont/headscale	IT	Zero-trust network	SMBs	Tailscale; Twingate	199
+43	netbirdio/netbird	IT	Zero-trust network	SMBs	Tailscale; Zscaler	199
+44	goauthentik/authentik	IT	SSO + MFA	SMBs	Okta; JumpCloud	299
+45	keycloak/keycloak	Software	Managed identity	SaaS teams	Auth0 (Okta)	499
+46	dani-garcia/vaultwarden	IT/MSP	Managed password vault	MSP clients	1Password; Keeper; LastPass	99
+47	louislam/uptime-kuma	Agencies	Uptime + status pages	Web agencies	Pingdom; Better Stack; Statuspage	49
+48	dgtlmoon/changedetection.io	E-commerce	Competitor price monitoring	Online retailers	Prisync; Visualping	99
+49	nextcloud/server	Legal/medical	Private cloud file sharing	Law and medical firms	Dropbox; Box	199
+50	paperless-ngx/paperless-ngx	Accounting	Document mgmt	Accounting firms	SmartVault; Karbon	149
+51	Stirling-Tools/Stirling-PDF	Professional services	Self-hosted PDF suite	Law/accounting firms	Adobe Acrobat	99
+52	docling-project/docling	Finance ops	Invoice/AP capture	SMB finance teams	Bill.com; Dext	299
+53	Zipstack/unstract	Insurance	Document extraction	Insurance/loan processors	Rossum; Hyperscience	999
+54	jhpyle/docassemble	Legal	Client intake + doc automation	Law firms	Clio; Lawmatics	299
+55	openemr/openemr	Healthcare	Hosted EHR	Small medical practices	athenahealth; Tebra	299
+56	medplum/medplum	Healthcare	Custom patient apps	Digital health startups	Healthie; Canvas Medical	999
+57	moodle/moodle	Corporate training	Hosted LMS	Mid-size companies	Docebo; TalentLMS	299
+58	openedx/edx-platform	Education	Course academy	Associations/universities	Coursera for Business; Thinkific	999
+59	frappe/lms	Creators	Course platform	Course creators	Kajabi; Teachable	99
+60	ChurchCRM/CRM	Churches	Church management + giving	Churches	Planning Center; Pushpay; Subsplash	99
+61	civicrm/civicrm-core	Nonprofits	Donor CRM	Nonprofits	Blackbaud; Bloomerang	199
+62	Koha-Community/Koha	Libraries	Hosted library system	Libraries	OCLC; Follett	299
+63	OS4ED/openSIS-Classic	K-12	Student information system	Private/charter schools	PowerSchool	299
+64	microrealestate/microrealestate	Real estate	Property mgmt for small landlords	Landlords 10-200 units	AppFolio; Buildium; DoorLoop	99
+65	Qloapps/QloApps	Hospitality	Booking engine + PMS	Independent hotels/B&Bs	Cloudbeds; SiteMinder; Mews	199
+66	traccar/traccar	Logistics	Fleet GPS tracking	Small fleets	Samsara; Motive	199
+67	fleetbase/fleetbase	Logistics	Delivery dispatch	Local delivery businesses	Onfleet; Tookan	299
+68	blakeblackshear/frigate	Security	AI camera monitoring	Retail/restaurants	Verkada; Rhombus	199
+69	home-assistant/core	Real estate	Smart short-term-rental automation	STR hosts	Hostaway; SmartRent	99
+70	thingsboard/thingsboard	Food safety	Temperature monitoring	Restaurants/pharmacies	SmartSense; ComplianceMate	149
+71	farmOS/farmOS	Agriculture	Farm records	Small farms	Granular; FarmLogs	49
+72	inventree/InvenTree	Manufacturing	Inventory + BOM	Small manufacturers	Katana; Fishbowl	199
+73	PostHog/posthog	SaaS	Product analytics managed	SaaS startups	Amplitude; Mixpanel	299
+74	matomo-org/matomo	Healthcare/gov	Privacy-compliant analytics	Hospitals/governments	Google Analytics 360; Adobe Analytics	499
+75	umami-software/umami	Agencies	White-label analytics	Agencies	Google Analytics; Fathom	49
+76	plausible/analytics	SMB	Privacy analytics	EU businesses	Google Analytics; Fathom	49
+77	openreplay/openreplay	SaaS	Session replay	SaaS/e-com	FullStory; Hotjar	299
+78	metabase/metabase	SMB	BI dashboards	SMBs	Tableau; Looker; Databox	299
+79	apache/superset	Enterprise	BI platform	Data teams	Tableau; Power BI	999
+80	airbytehq/airbyte	Data	Managed data pipelines	Mid-market	Fivetran	999
+81	n8n-io/n8n	Automation	Automation agency	SMBs	Zapier; Make	299
+82	activepieces/activepieces	Automation	Managed automations	SMBs	Zapier; Make	199
+83	langgenius/dify	Customer support	AI support agent	SMB websites	Intercom Fin; Drift	299
+84	FlowiseAI/Flowise	SMB	AI chatbot	SMB websites	Tidio; Intercom	99
+85	open-webui/open-webui	Professional services	Private ChatGPT	Law/accounting firms	ChatGPT Enterprise; Microsoft Copilot	499
+86	Mintplex-Labs/anything-llm	Legal	Private AI on firm documents	Law firms	Harvey; CoCounsel (Thomson Reuters)	999
+87	danny-avila/LibreChat	SMB	Team AI workspace	SMBs	ChatGPT Team	199
+88	m-bain/whisperX	Legal/medical	Transcription service	Law firms/clinics	Rev; Otter.ai; Nuance DAX	199
+89	SYSTRAN/faster-whisper	Media	Captions + transcripts	Podcasters/creators	Descript; Rev	49
+90	hexgrad/kokoro	E-learning	AI voice-over production	Course creators/L&D teams	ElevenLabs; Murf	99
+91	resemble-ai/chatterbox	Media	Voice cloning/dubbing	Creators/brands	ElevenLabs	199
+92	KwaiVGI/LivePortrait	Marketing	AI avatar videos	Brands/coaches	HeyGen; Synthesia	299
+93	bytedance/LatentSync	Media	Video translation/dubbing	YouTubers/course creators	HeyGen; Rask AI	199
+94	TMElyralab/MuseTalk	Marketing	Talking-head video	Brands	HeyGen; D-ID	199
+95	Wan-Video/Wan2.2	E-commerce	AI UGC video ads	DTC brands	Arcads; Creatify; Billo	499
+96	danielgatis/rembg	E-commerce	Product background removal at scale	Online sellers	Photoroom; remove.bg	49
+97	xinntao/Real-ESRGAN	Photography	Photo restoration/upscaling	Photographers/print shops	Topaz Labs	29
+98	instantX-research/InstantID	Professional	AI headshots for teams	Companies/realtors	HeadshotPro; Aragon	199
+99	remotion-dev/remotion	Real estate	Automated listing videos	Real estate agents	Animoto; Box Brownie	99
+100	browser-use/browser-use	Insurance	Quote/data-entry automation	Insurance agencies	UiPath; EZLynx	499
+101	Skyvern-AI/skyvern	Healthcare admin	Portal automation (eligibility/prior auth)	Medical billing companies	UiPath; Waystar	999
+102	unclecode/crawl4ai	Sales	Lead list building	B2B sales teams	ZoomInfo; Apollo	299
+103	mendableai/firecrawl	Data	Web data extraction	AI startups	Bright Data; Apify	299
+104	penpot/penpot	Agencies	Design platform hosting	Design agencies	Figma	199
+105	makeplane/plane	Agencies	Project management	Agencies/software teams	Jira (Atlassian); Monday.com; ClickUp	199
+106	opf/openproject	Construction	Project management	Construction/engineering firms	Procore; Smartsheet	299
+107	AppFlowy-IO/AppFlowy	Teams	Private Notion	Privacy-conscious teams	Notion	99
+108	outline/outline	Teams	Company wiki	Startups/SMBs	Confluence; Notion; Guru	99
+109	BookStackApp/BookStack	Franchises	SOP + training wiki	Franchises/multi-location	Trainual; Whale	149
+110	RocketChat/Rocket.Chat	Government/health	Secure team chat	Regulated orgs	Slack; Microsoft Teams	499
+111	mattermost/mattermost	Defense/enterprise	Secure collaboration	Regulated orgs	Slack	999
+112	jitsi/jitsi-meet	Healthcare	Telehealth video	Therapists/clinics	Doxy.me; SimplePractice	49
+113	bigbluebutton/bigbluebutton	Education	Virtual classroom	Tutoring centers	Zoom; Class	149
+114	immich-app/immich	Photography	Client photo galleries	Photographers/schools	SmugMug; Pic-Time; Pixieset	49
+115	discourse/discourse	Creators/brands	Paid community	Brands/creators	Circle; Skool; Khoros	199
+116	Leantime/leantime	SMB	Project mgmt for non-PMs	SMBs	Monday.com	99
+117	frappe/helpdesk	SMB	Helpdesk	SMBs	Zendesk; Freshdesk	99
+118	krayin/laravel-crm	SMB	CRM	SMBs	HubSpot; Pipedrive	99
+119	SuiteCRM/SuiteCRM	Mid-market	CRM implementation	Mid-market	Salesforce	499
+120	Dolibarr/dolibarr	SMB	ERP/CRM	Small businesses	Zoho One; QuickBooks	199
+121	ghostfolio/ghostfolio	Wealth	Client portfolio portal	Independent financial advisors	Addepar; Orion	299
+122	actualbudget/actual	Personal finance	Budget coaching	Financial coaches	YNAB; Monarch	29
+123	ToolJet/ToolJet	Operations	Internal tools	Ops teams	Retool	499
+124	appsmithorg/appsmith	Operations	Internal tools	Ops teams	Retool	499
+125	nocodb/nocodb	SMB	Airtable replacement	SMBs	Airtable	199
+126	baserow/baserow	SMB	Airtable replacement	SMBs	Airtable	199
+127	supabase/supabase	Software	Managed backend	App agencies	Firebase	299
+128	coollabsio/coolify	Agencies	Managed app hosting	Web agencies	Vercel; Heroku; Netlify	199
+129	novuhq/novu	SaaS	Notification infrastructure	SaaS	Courier; OneSignal	299
+130	postalserver/postal	Agencies	Transactional email	Agencies/SaaS	SendGrid; Mailgun	99
+131	SigNoz/signoz	Software	Observability	Engineering teams	Datadog; New Relic	999
+132	grafana/grafana	Software	Managed monitoring	Engineering teams	Datadog	499
+133	apache/fineract	Finance	Loan servicing core	Credit unions/microlenders	nCino; Mambu	999
+134	senaite/senaite.core	Labs	LIMS	Testing labs	LabWare; STARLIMS	499
+135	wger-project/wger	Fitness	Coaching app	Personal trainers	Trainerize; TrueCoach	49
+136	opensourcepos/opensourcepos	Retail	POS	Small retailers	Square; Lightspeed	79
+137	opencats/OpenCATS	Staffing	ATS	Staffing agencies	Bullhorn; JobAdder	199
+138	bigcapitalhq/bigcapital	SMB finance	Accounting	Small businesses	QuickBooks; Xero	99
+139	midday-ai/midday	Freelancers	Business OS (invoices/time/files)	Freelancers/agencies	FreshBooks; Bonsai	29
+140	JhumanJ/OpnForm	SMB	Forms	SMBs	Typeform; Jotform	49
+141	LimeSurvey/LimeSurvey	Research	Survey platform	Research/universities	SurveyMonkey; Qualtrics	199
+142	mfts/papermark	Finance	Data rooms	M&A advisors/startups	DocSend; Datasite	199
+143	dubinc/dub	Marketing	Branded links + attribution	Marketing teams	Bitly	99
+144	inovector/mixpost	Agencies	Social scheduling	Agencies	Hootsuite; Sprout Social	99
+145	OpenSignLabs/OpenSign	SMB	E-sign	SMBs	DocuSign	49
+146	docmost/docmost	Teams	Wiki	Teams	Confluence	99
+147	Evolution-foundation/evolution-api	Restaurants/retail	WhatsApp ordering	Latin American SMBs	WATI; Twilio	99
+148	baptisteArno/typebot.io	SMB	Chatbots	SMBs	ManyChat; Landbot	99
+149	gitroomhq/postiz-app	SMB	Social scheduling	SMBs	Buffer; Hootsuite	49
+150	invoiceninja/invoiceninja	SMB	Invoicing	Freelancers	FreshBooks	29

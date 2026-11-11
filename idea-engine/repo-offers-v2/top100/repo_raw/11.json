@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 806,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: pretix/pretix \u00b7 2567 stars \u00b7 0 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2014-09-08T13:10:38Z",
+      "description": "Ticket shop application for conferences, festivals, concerts, tech events, shows, exhibitions, workshops, barcamps, etc.",
+      "forks": 676,
+      "homepage": "https://pretix.eu",
+      "kind": "repo",
+      "language": "Python",
+      "license": "NOASSERTION",
+      "name": "pretix/pretix",
+      "notes": null,
+      "open_issues": 170,
+      "published": null,
+      "pushed": "2026-11-11T18:35:14Z",
+      "stars": 2567,
+      "tag": null,
+      "topics": "conferences, django, events, html, javascript, pretix, python, shop, tickets, web",
+      "url": "https://github.com/pretix/pretix"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1448,
+      "requests": 1488,
+      "search": 2923
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id e3ca4d08b61b4b36bd0e6718f9099ee7

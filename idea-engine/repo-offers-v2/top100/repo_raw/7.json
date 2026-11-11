@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "blocked": [],
+    "elapsed_ms": 778,
+    "from_cache": false,
+    "llm_calls": 0,
+    "pages_fetched": 2,
+    "partial": false,
+    "warnings": [
+      "module: github-repo: formbricks/formbricks \u00b7 13234 stars \u00b7 1 releases"
+    ]
+  },
+  "recipe": "github-repo",
+  "rows": [
+    {
+      "archived": false,
+      "created": "2022-06-06T04:25:21Z",
+      "description": "Open Source Qualtrics Alternative",
+      "forks": 2607,
+      "homepage": "https://formbricks.com",
+      "kind": "repo",
+      "language": "TypeScript",
+      "license": "NOASSERTION",
+      "name": "formbricks/formbricks",
+      "notes": null,
+      "open_issues": 168,
+      "published": null,
+      "pushed": "2026-11-11T20:46:52Z",
+      "stars": 13234,
+      "tag": null,
+      "topics": "experience-management, form, forms, nextjs, open-source, react, reactjs, survey, survey-analysis, survey-data, survey-form, surveys, tailwindcss, turborepo, typeform, typescript, xm",
+      "url": "https://github.com/formbricks/formbricks"
+    },
+    {
+      "archived": null,
+      "created": null,
+      "description": null,
+      "forks": null,
+      "homepage": null,
+      "kind": "release",
+      "language": null,
+      "license": null,
+      "name": "6.2.0-rc.1",
+      "notes": "## What's Changed\r\n* feat(types): add the shared show-conditions schema and evaluator [ENG-3925] by @pandeymangg in https://github.com/formbricks/formbricks/pull/9618\r\n* docs(self-hosting): document AAAA records and IPv6 firewall rules for one-click setup [ENG-3467] by @xernobyl in https://github.co \u2026",
+      "open_issues": null,
+      "published": "2026-11-09T06:49:26Z",
+      "pushed": null,
+      "stars": null,
+      "tag": "6.2.0-rc.1",
+      "topics": null,
+      "url": "https://github.com/formbricks/formbricks/releases/tag/6.2.0-rc.1"
+    }
+  ],
+  "usage": {
+    "boxes": [
+      "gate",
+      "recipe"
+    ],
+    "cache": "miss",
+    "engine": "recipe",
+    "lines": [
+      {
+        "about": "the call",
+        "boxes": [
+          "gate"
+        ],
+        "cache": "miss",
+        "call": "recipes",
+        "engine": "gate",
+        "units": 1
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      },
+      {
+        "attempts": 1,
+        "cache": "api",
+        "call": "scrape",
+        "engine": "api",
+        "proxy": "isp",
+        "units": 1,
+        "url": "https://api.github.com/\u2026"
+      }
+    ],
+    "remaining_before": {
+      "concurrent": 1440,
+      "requests": 1490,
+      "search": 2950
+    },
+    "units": 3
+  },
+  "version": 1
+}
+treg: charged $0.00165 · call id 6e07762c070c4b429d1003172a111d86
