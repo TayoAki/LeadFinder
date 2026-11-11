@@ -80,7 +80,8 @@
      ],
      "expect": [
       "[data-testid='macro-0']:has-text('Pause instead of cancel')",
-      "#reply-box:has-text('Want me to pause it for you?')"
+      "#reply-box:has-text('Want me to pause it for you?')",
+      "[data-testid='send-draft']"
      ]
     },
     {

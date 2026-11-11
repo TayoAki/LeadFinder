@@ -1,0 +1,190 @@
+{
+  "overall": 5,
+  "overall_note": "Minimum persona score. Layout follows the wireframe (rail, sidebar, tabs, main, right bar, bottom bar; on phone the rail becomes a bottom nav and the side bars become drawers). All personas.json expectations pass, there is no horizontal page scroll at 390px, and automated contrast and 24px target checks pass in light and dark. The score is held down by cross-tenant state leaks, stale context, read-only links that expose internal data, and timeline facts that contradict each other.",
+  "personas": [
+    {
+      "id": "owner",
+      "score": 7,
+      "defects": [
+        {"issue": "The hero says 'Protected' while 4 devices are silent (including NAS-BACKUP, labelled a ransomware risk) and HIPAA shows only 7 of 13 controls met. An owner who later learns the backup server was unmonitored will stop trusting the headline.", "fix": "Qualify the headline, e.g. 'Protected on 60 of 64 devices · 3 things need your team', and make it amber while a high-impact device is silent."},
+        {"issue": "Three different action counts: hero '3 things need your team', rail badge 3, right bar 'YOUR NEXT ACTIONS (7)'. Nothing explains that the '!' rows are the urgent 3.", "fix": "Label the groups in the right bar: 'Urgent (3)' and 'This month (4)'. Make the hero say '3 urgent'."},
+        {"issue": "'Computers protected 60 of 64' (KPI) and '60 of 64 computers reporting' (card) repeat the same fact, while 'protected' and 'reporting' are used as if they mean the same thing.", "fix": "Keep one tile. Use one word ('reporting') and define it in the tooltip."},
+        {"issue": "The response promise contradicts itself: the KPI says 'we promise 30 min', the right bar on Incidents says 'reviews every high alert within 15 minutes'.", "fix": "Use one SLA figure everywhere (e.g. 15 min to analyst review, 30 min to containment) and name both."}
+      ]
+    },
+    {
+      "id": "office_mgr",
+      "score": 7,
+      "defects": [
+        {"issue": "Her one task ('Give the new reception@ password to the front desk') depends on 'Your IT manager has it in the password vault'. She can't finish it herself and has no button to ask Marco.", "fix": "Add 'Ask Marco for the password' (it sends a request) or deliver the temporary password to her directly by SMS."},
+        {"issue": "The notification panel's '3 need action' mixes her task with IT-only tasks (install update, reconnect devices). She can't tell which ones are hers.", "fix": "Add an owner tag to each action ('You', 'IT: Marco') and filter the panel to 'Mine' by default for the office role."},
+        {"issue": "'Ask an analyst about this' only shows a toast that disappears. There is no thread, no reply place and no proof she asked.", "fix": "Open a short chat or thread panel on the incident showing the question, the analyst on duty and the reply SLA."},
+        {"issue": "The response promise says 15 min in one place and 30 min in another (see owner).", "fix": "Use one SLA figure everywhere."}
+      ]
+    },
+    {
+      "id": "it_mgr",
+      "score": 6,
+      "defects": [
+        {"issue": "Under Devices, filtering Location to Office 2 still shows 'Fix first: DC-01, FILE-01' (Office 1 servers). This is stale context.", "fix": "Filter the Fix first card by site, or label it 'Company-wide' with a note that none apply to Office 2."},
+        {"issue": "Visible placeholder text: 'KB50xxxxx placeholder' and 'vendor advisory placeholder'. A real IT manager distrusts it at once.", "fix": "Show a realistic KB or CVE ID with a link (e.g. KB5044281 / CVE-2026-xxxx, written as real data)."},
+        {"issue": "FRONTDESK-05 is silent because 'Agent uninstalled by a local admin (m.reyes)', and the right bar says 'we alert on this', yet there is no incident for it.", "fix": "Raise an incident for agent tampering and link it from the device row."},
+        {"issue": "XRAY-PC-3 (an imaging PC holding patient images, silent 6 days) is rated 'Low' with a green dot next to an amber 'Not reporting' pill. The mixed signals make it unclear what to do.", "fix": "Rate risk by data held (PHI means at least Medium). Don't use green for any device that isn't reporting."},
+        {"issue": "'Devices to know about' includes healthy devices (HYGIENE-LT-1, CHAIR-PC-7 marked Protected/Low). That is noise.", "fix": "List only devices with an issue. Leave the healthy ones to the CSV export."}
+      ]
+    },
+    {
+      "id": "msp_tech",
+      "score": 5,
+      "defects": [
+        {"issue": "Cross-tenant leak: Harbor Auto's (FTC/PCI) Compliance export history shows 'Oct 2, 2026: HIPAA · Q3 2026 · ZIP (41 files)' and 'Last exported Oct 2, 2026', which is BrightSmile's export. The same leak appears for Ridgeline.", "fix": "Store the export history per org (S.exports[org]). Show 'No exports yet' when it is empty."},
+        {"issue": "On the All-client queue, the bottom bar still says 'Harbor Auto: 85 of 88 devices reporting'. The context is stale.", "fix": "When the context is all clients, show the portfolio totals in the bottom bar ('6 clients · 493 of 499 devices reporting')."},
+        {"issue": "In the queue, every row (including contained ones) has an action button labelled 'Open' next to a STATUS column. It reads as a status.", "fix": "Rename the button 'View' and keep only Open/Closed wording in the status column."},
+        {"issue": "Sunrise incident: the client is told to confirm Ben did not approve an MFA prompt 'at 06:50', but the timeline has no 06:50 event (06:35 Ohio, 06:55 Romania, 07:04 blocked).", "fix": "Add the 06:50 MFA prompt to the timeline, or change the task to match the 06:55 event."},
+        {"issue": "Phone: the queue table is clipped (the STATUS pill is cut off at 'Action ne'; the PSA ticket and View columns are off screen).", "fix": "Below 760px, render each queue row as a card (client, title, severity, status, ticket, button)."},
+        {"issue": "Harbor's Fix first is a firewall firmware update, but the text says 'it does not reboot your servers'.", "fix": "Make the wording depend on device type ('does not restart your firewall')."}
+      ]
+    },
+    {
+      "id": "msp_owner",
+      "score": 6,
+      "defects": [
+        {"issue": "The Partner tab is portfolio-wide, yet the context line says 'Client: Harbor Auto Group' and the bottom bar shows Harbor's devices.", "fix": "On the Partner tab, set the context line to 'Northwind IT · all 6 clients'."},
+        {"issue": "The 'HEALTH 30D' sparklines have no axis, metric or legend, so the owner can't tell what is going up.", "fix": "Name the metric (e.g. 'alerts/day' or 'devices reporting %') in the header and add a tooltip."},
+        {"issue": "The white-label preview tells Harbor 'Protected' while Harbor has an open High incident (mailbox rule forwarding sales@ email to an outside address, which is possible exfiltration). That claim exposes the MSP.", "fix": "Make status depend on open High incidents ('Action needed: 1 high incident')."},
+        {"issue": "There is one resale rate per device for all clients, with no per-client price override, no contract or renewal dates, and no churn-risk signal. These are the persona's core concerns (recurring revenue, keeping clients).", "fix": "Add a per-client price override, a renewal date column and an 'at risk' flag (e.g. open highs or a low QBR score)."}
+      ]
+    },
+    {
+      "id": "compliance",
+      "score": 6,
+      "defects": [
+        {"issue": "'All 13 controls listed below' for the HIPAA Security Rule overclaims: the rule has many more standards and implementation specs. A compliance lead will distrust the score.", "fix": "Say 'the 13 controls Watchpost provides evidence for' and add a line saying the rest are outside the service."},
+        {"issue": "§164.316(b)(2)(i) is used to say logs must be kept 6 years. That rule covers policies and documentation, not raw logs, so experts will challenge it.", "fix": "Reword: 'Keep HIPAA documentation (policies, risk analyses, incident records) 6 years. Turn on archive to retain incident evidence for 6 years.'"},
+        {"issue": "PCI DSS is shown as 'not in scope for BrightSmile', but dental practices take card payments, so this is likely wrong.", "fix": "Mark it 'Not yet scoped: do you take card payments?' and let the user set it."},
+        {"issue": "'Data backup plan: Met' while the backup NAS has stopped reporting.", "fix": "Lower it to 'Partly met' while NAS-BACKUP is silent and link to the device."},
+        {"issue": "The evidence row shows 'Collected / Collected Mar 2, 2026 ET' (duplicated label). Export history leaks across clients (see msp_tech).", "fix": "Drop the repeated word. Keep exports per org."}
+      ]
+    },
+    {
+      "id": "finance",
+      "score": 7,
+      "defects": [
+        {"issue": "Insurance answers EDR with 'Wazuh agent inventory'. Many underwriters don't accept open-source SIEM agents as EDR, which risks a wrong answer on a signed application.", "fix": "Describe the capability ('Wazuh agent with active response: isolate, kill process') and flag 'confirm with carrier whether this meets their EDR definition'."},
+        {"issue": "There is no money view: no premium trend or expected saving, no deductible or retention, no annual total for Watchpost ($11,988/yr), and no cancellation terms beyond 'month to month after Mar 31'.", "fix": "Add an annual cost line, the policy retention, and a 'controls that lower premium' estimate based on the broker's last quote."},
+        {"issue": "The invoice uses 'card ending 4242', the well-known test card, which looks fake to a finance buyer.", "fix": "Use a realistic last-4 or ACH."}
+      ]
+    },
+    {
+      "id": "msp_account_mgr",
+      "score": 6,
+      "defects": [
+        {"issue": "The QBR shows only current-quarter numbers: no prior-quarter comparison, no trend, no dollar value or cost avoided, and no renewal date. It doesn't help a renewal or upsell conversation.", "fix": "Add 'vs Q3' arrows, a renewal date, and an upsell recommendation (e.g. 'CMMC L2 readiness', '6-year archive add-on') with price."},
+        {"issue": "The account manager sees wholesale cost and margins on a screen likely shared in a client meeting.", "fix": "Add a 'Client-safe view' toggle that hides wholesale and margin columns."},
+        {"issue": "'Pick a client in the sidebar' plus a single 'Generate QBR for X' button, and also a QBR button on every table row: two ways to do the same thing.", "fix": "Keep the per-row QBR buttons and remove the separate card, or make the card list recent QBRs."}
+      ]
+    },
+    {
+      "id": "practice_manager_regulated",
+      "score": 6,
+      "defects": [
+        {"issue": "With the 'Unused 30+ days' filter on, the list says 'Everyone not listed signed in this month with MFA'. That is false: billing@ has no MFA and is hidden by the filter.", "fix": "Make the sentence depend on the filter ('2 accounts match this filter')."},
+        {"issue": "j.alvarez 'left Sep 30' is still active 42 days later, but there is no leaver feed (HR/payroll) and no onboarding view, so the persona's main outcome ('leavers lose access on day one, new staff work on day one') is not supported.", "fix": "Add a Joiners & leavers list (from HR or a manual entry) with a due date per action and an overdue flag."},
+        {"issue": "After 'Disable requested', the row still shows the '! Unused' warning pill. The status is ambiguous.", "fix": "Replace it with 'Pending IT · due Nov 12'."}
+      ]
+    },
+    {
+      "id": "external_auditor",
+      "score": 5,
+      "defects": [
+        {"issue": "Ridgeline's export history (seen by the auditor) shows 'HIPAA · Q3 2026 · ZIP (41 files)', which is another client's export. An assessor would treat this as an integrity failure.", "fix": "Store exports per org. For auditors, show a read-only 'Exports and downloads log' with SHA-256 hashes."},
+        {"issue": "A read-only auditor can open 'Export evidence' and 'Create export', and the bell shows the client's internal phone tree ('Joe Ridge: Phone + SMS').", "fix": "Hide create-export and notifications for ext roles. Show only the download log."},
+        {"issue": "The evidence row says 'Owner: Your team' and incidents say 'escalated to you' or 'What you need to do', which is copy written for the client, not the assessor.", "fix": "Use third-person copy for ext roles ('Control owner: Ridgeline IT', 'escalated to client')."},
+        {"issue": "A C3PAO assessor is invited for CMMC Level 1, which is self-assessed. The sidebar also lists 4 'Mapping only' frameworks that are irrelevant to the scope.", "fix": "Name the role 'Assessor / prime-contractor reviewer' for L1 and hide out-of-scope frameworks from ext links."}
+      ]
+    },
+    {
+      "id": "insurance_broker",
+      "score": 6,
+      "defects": [
+        {"issue": "The broker's bell opens BrightSmile's internal notifications (password-vault hint, IT tasks, escalation phone tree). This is outside the 'Insurance, Incidents' scope.", "fix": "Remove the bell for ext roles, or show only share-link events."},
+        {"issue": "Incident history covers only the last 30 days. Underwriters ask about incidents in the past 3 to 5 years.", "fix": "Add an 'Incident history (36 months)' summary with counts by severity and any notifiable breaches."},
+        {"issue": "The timeline says 'Dec 15, 2026: send pack to broker' while the broker already has a live link. The broker also gets breach-cost sales copy.", "fix": "Show 'Shared with broker Nov 11' on ext views and hide the 'What a breach could cost' card for the broker role."},
+        {"issue": "The signed attestation is only a toast. The broker can't see who signed it, what it covers, or its validity date.", "fix": "Show an attestation summary (signer, date, scope, valid until) before download."}
+      ]
+    },
+    {
+      "id": "general_counsel",
+      "score": 5,
+      "defects": [
+        {"issue": "Factual contradiction: the timeline says 'PC isolated by analyst Rosa K.' at 9:46, but Rosa's shift is 10:00–18:00 (Priya N. covers 02:00–10:00). The right bar says 'Infected devices are isolated automatically' while the timeline says an analyst did it. Counsel builds a legal record on this.", "fix": "Make the timeline name the analyst on shift and state 'auto-isolated, confirmed by Priya N.'."},
+        {"issue": "'Notification clock: Not started' gives no discovery date, deadline-if-breach, state-law view (e.g. 30-day states) or documented HIPAA 4-factor risk assessment, so counsel can't sign off.", "fix": "Add discovery date/time, the latest notice dates under HIPAA and state laws, the 4-factor assessment and who made it, plus 'Download incident record (PDF)'."},
+        {"issue": "'No access to PHI' is stated for a program that ran on a front-desk PC without the evidence basis (exfil checks, process tree, network logs).", "fix": "List the evidence that supports the conclusion, with links to the logs."},
+        {"issue": "Counsel's bell shows the client's internal operational tasks and phone tree.", "fix": "Hide notifications for ext roles."}
+      ]
+    },
+    {
+      "id": "security_champion_employee",
+      "score": 6,
+      "defects": [
+        {"issue": "An employee who should have 'no access to company security data' sees in the sidebar per-office device counts ('60 of 64 devices reporting', 'Office 2 19 of 20') and 'HIPAA · 64 devices · 41 users' in the context line.", "fix": "For staff, replace the sidebar with 'Your reports' and tips, and trim the context line to the company name."},
+        {"issue": "After sending with 'I clicked a link', the 'What did you do?' select resets to 'I only opened the email' while the verdict says 'Because you clicked'. The form and the verdict disagree.", "fix": "Keep the submitted values, or replace the form with a read-only summary of what was reported."},
+        {"issue": "The verdict appears instantly as 'Checked by Rosa K. in 2 minutes', and the form sends with empty From/Subject.", "fix": "Show a 'Sent · an analyst is checking (usually <5 min)' state first, and validate or allow 'paste the email'."},
+        {"issue": "Typo: 'Rosa K. until 18:00 ET, then Sam T..'", "fix": "Remove the double period."}
+      ]
+    }
+  ],
+  "global_defects": [
+    {"issue": "Export history is global state (S.exports), so every org (Harbor, Ridgeline) shows BrightSmile's HIPAA export. This is a cross-tenant data leak.", "fix": "Key exports, and any other per-client state (incOpen, disableReq, mfaNudged, uploads), by org id."},
+    {"issue": "External read-only roles (broker, counsel, auditor) get the rail bell with the client's internal tasks and escalation phone tree.", "fix": "Build the rail from the role's scope. No notifications or search for ext roles."},
+    {"issue": "Response SLA is inconsistent: 'we promise 30 min' vs 'reviews every high alert within 15 minutes'. Also 'isolated automatically' vs 'isolated by analyst'.", "fix": "Define one SLA object (review 15 min, contain 30 min, auto-isolate on high) and render it everywhere."},
+    {"issue": "Analyst names in timelines don't match the shift roster (Rosa K. at 09:46 when Priya N. is on).", "fix": "Derive the analyst name from the shift table and the event time."},
+    {"issue": "The 'Protected' headline is shown even with open High incidents or silent high-impact devices.", "fix": "Compute status: 'Action needed' if there is an open High incident, 'Partly protected' if a high-impact device is silent."},
+    {"issue": "On the portfolio-wide tabs (All-client queue, Partner), the context line and bottom bar keep showing the last selected client.", "fix": "On those tabs, show portfolio totals."},
+    {"issue": "The tablist has role=tab but arrow keys don't move between tabs (ARIA tabs pattern).", "fix": "Add Left/Right/Home/End key handling on .tabs."},
+    {"issue": "Phone: wide tables (queue, partner, devices) clip or hide columns, and the tab strip cuts off ('Acco…') with no scroll hint.", "fix": "Use card rows under 760px and add an edge fade or 'More' tab to the tab strip."},
+    {"issue": "Placeholder strings are visible ('KB50xxxxx placeholder', 'vendor advisory placeholder').", "fix": "Replace them with realistic identifiers."}
+  ],
+  "missing_personas": [
+    {
+      "id": "procurement_vendor_risk",
+      "department": "Procurement / vendor risk",
+      "role": "Vendor-risk or procurement reviewer approving Watchpost as a supplier (often for the larger clients, such as the credit union)",
+      "cares_about": "Watchpost itself being safe to hand logs to: SOC 2 report, subprocessors, data residency, BAA/DPA, insurance, exit terms.",
+      "time_spent": "Sending and chasing security questionnaires, reviewing contracts and renewals.",
+      "struggles": "Vendors hide trust documents behind sales calls. Logs containing PHI or NPI leave the building with unclear retention.",
+      "how_helps": "A Trust page with SOC 2 Type II, pen-test summary, subprocessor list, data location, retention and deletion on exit, and a pre-filled SIG Lite/CAIQ download.",
+      "task": {"name": "Download SOC 2 report and subprocessor list, confirm data location and deletion-on-exit", "steps": [{"select": "#role", "value": "vendor_risk"}, {"click": "[data-tab='trust']"}], "expect": ["[data-testid='soc2']", "[data-testid='subprocessors']", "[data-testid='data-location']:has-text('US')"]}
+    },
+    {
+      "id": "hr_people_ops",
+      "department": "HR / People",
+      "role": "HR or people-ops lead who owns joiners, leavers and training records",
+      "cares_about": "Leavers losing access the same day, new hires trained, training records ready for insurance and audits.",
+      "time_spent": "Payroll changes, onboarding paperwork, chasing staff to finish mandatory training.",
+      "struggles": "IT learns about leavers late. Training certificates sit in inboxes.",
+      "how_helps": "A Joiners & leavers list that drives account-disable requests, plus a training-completion roster that feeds the Compliance and Insurance answers.",
+      "task": {"name": "Add a leaver dated today and see the disable request and training roster", "steps": [{"select": "#role", "value": "hr"}, {"click": "[data-tab='people']"}, {"click": "[data-testid='add-leaver']"}], "expect": ["[data-testid='leaver-row']:has-text('Disable due today')", "[data-testid='training-roster']:has-text('of 41')"]}
+    },
+    {
+      "id": "multi_entity_operator",
+      "department": "Executive (multi-entity / PE operating partner)",
+      "role": "Operating partner or COO of a group that owns several practices or dealerships (roll-up)",
+      "cares_about": "One security standard across acquired entities, insurance across the group, fast onboarding of new acquisitions.",
+      "time_spent": "Integrating acquisitions, board reporting, vendor consolidation.",
+      "struggles": "Each entity has a different IT vendor and no comparable security score.",
+      "how_helps": "A group view comparing entities on the same scorecard (coverage, open highs, compliance %, insurance readiness), with a first-30-days checklist for each new acquisition.",
+      "task": {"name": "Compare entities and open the weakest one's onboarding checklist", "steps": [{"select": "#role", "value": "group_coo"}, {"click": "[data-tab='group']"}], "expect": ["[data-testid='entity-table'] tbody tr", "[data-testid='onboarding-checklist']"]}
+    },
+    {
+      "id": "trial_evaluator",
+      "department": "Operations / IT (pre-purchase)",
+      "role": "Small-business decision maker in the first 14 days (trial or onboarding)",
+      "cares_about": "Seeing value before the first invoice, and an effortless rollout.",
+      "time_spent": "Installing agents between other jobs, comparing against the incumbent MSP or AV.",
+      "struggles": "Doesn't know whether the rollout is complete or what was found yet.",
+      "how_helps": "An onboarding tracker (agents installed vs expected, M365 connected, first findings, go-live date) and a 'what we found in week 1' summary.",
+      "task": {"name": "See rollout progress and first-week findings", "steps": [{"select": "#role", "value": "trial"}, {"click": "[data-tab='onboarding']"}], "expect": ["[data-testid='rollout']:has-text('of')", "[data-testid='week1-findings']"]}
+    }
+  ]
+}

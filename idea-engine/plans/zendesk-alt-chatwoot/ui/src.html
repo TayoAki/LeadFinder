@@ -74,6 +74,10 @@ tr.clickable{cursor:pointer} tr.clickable:hover td{background:var(--panel-2)}
 .bottombar a,.bottombar .linkish{color:var(--muted);text-decoration:underline;min-height:24px;display:inline-flex;align-items:center}
 .sim-anchor{cursor:default}
 .only-sm{display:none}
+.bottombar [hidden],.rail [hidden]{display:none!important}
+/* Dark mode: the kit's light accent/bad colours need dark text to reach AA */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .btn.primary,:root:not([data-theme="light"]) .rail .logo,:root:not([data-theme="light"]) .rail .badge{color:#0f1115} }
+:root[data-theme="dark"] .btn.primary,:root[data-theme="dark"] .rail .logo,:root[data-theme="dark"] .rail .badge{color:#0f1115}
 .ell{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
 button.tag{cursor:pointer;min-height:24px;text-align:left}
 input[type=checkbox],input[type=radio]{width:22px;height:22px;margin:0;accent-color:var(--accent);flex:none}
@@ -370,7 +374,7 @@ const D = {
     { id: 'c12', cust: 'cu14', subj: 'Refund to a gift card', ch: 'Email', inbox: 'support', status: 'resolved', resolvedBy: 'human', resolvedByName: 'sam', resolvedToday: true, resolvedNote: 'Resolved by Sam T. today', lastMin: 210, order: '#3995', intent: 'refund', lang: 'en',
       msgs: [ { from: 'customer', t: 'Can my refund go to a gift card instead of my credit card?', at: '07:05' }, { from: 'agent', who: 'sam', t: 'Yes, I\'ve issued a $45 gift card to your email instead.', at: '07:40' } ] },
     { id: 'c13', cust: 'cu12', subj: 'Tracking not updating', ch: 'WhatsApp', inbox: 'support', status: 'pending', assignee: 'maya', waitMin: null, lastCustomerMin: 1500, lastMin: 1380, order: '#4020', intent: 'wismo', lang: 'en',
-      msgs: [ { from: 'customer', t: 'My tracking hasn\'t moved since Sunday.', at: 'Nov 18, 09:42' }, { from: 'agent', who: 'maya', t: 'Sorry Alex! USPS shows it in Memphis since Nov 15. I\'ve asked USPS to check and will update you tomorrow.', at: 'Nov 18, 11:20' } ] },
+      msgs: [ { from: 'customer', t: 'My tracking hasn\'t moved since Sunday.', at: 'Nov 18, 09:42' }, { from: 'agent', who: 'maya', t: 'Sorry Alex! USPS shows it in Memphis since Nov 15. I\'ve asked USPS to check and will update you tomorrow.', at: 'Nov 18, 11:20', receipt: '✓✓ Read 11:31' } ] },
     { id: 'c14', cust: 'cu13', subj: 'Got decaf instead of Colombia', ch: 'Email', inbox: 'support', status: 'resolved', resolvedBy: 'human', resolvedByName: 'priya', resolvedToday: false, resolvedNote: 'Resolved by Priya K. Nov 17 · replacement #4006-R sent', lastMin: 2900, order: '#4006', intent: 'wrong_item', lang: 'en',
       msgs: [ { from: 'customer', t: 'I got decaf instead of the Colombia I ordered.', at: 'Nov 17' }, { from: 'agent', who: 'priya', t: 'So sorry Kenji! Replacement #4006-R is on its way with FedEx; keep the decaf.', at: 'Nov 17' } ] },
     { id: 'c15', cust: 'cu15', subj: 'French press ratio', ch: 'Chat', inbox: 'support', status: 'resolved', resolvedBy: 'ai', resolvedToday: true, resolvedNote: 'Resolved by AI · customer confirmed', lastMin: 60, order: '#4001', intent: 'product', lang: 'en',
@@ -606,7 +610,7 @@ function msgHtml(c, m, i) {
   const cu = cust(c), who = m.from === 'customer' ? cu.name : m.from === 'ai' ? '✦ AI agent' : user(m.who).name;
   const lang = c.lang !== 'en' && m.tr ? `<span class="tag info">${cu.lang} (detected)</span>` : '';
   const trBtn = m.tr ? `<button class="linkbtn small" data-act="tr" data-k="${c.id}-${i}" data-testid="tr-toggle-${i}" aria-expanded="${!!S.tr[c.id + '-' + i]}">${S.tr[c.id + '-' + i] ? 'Hide translation' : 'Show translation'}</button>` : '';
-  return `<div class="msg ${m.from === 'ai' ? 'ai' : m.from === 'agent' ? 'me' : ''}"><div class="who">${esc(who)} <span>${m.at}</span>${lang}</div>${esc(m.t)}${m.sources ? `<div class="small muted" style="margin-top:4px">Sources: ${esc(m.sources)}</div>` : ''}${trBtn ? `<div>${trBtn}</div>` : ''}${S.tr[c.id + '-' + i] ? `<div class="tr" data-testid="tr-${i}">English: ${esc(m.tr)}</div>` : ''}</div>`;
+  return `<div class="msg ${m.from === 'ai' ? 'ai' : m.from === 'agent' ? 'me' : ''}"><div class="who">${esc(who)} <span>${m.at}</span>${lang}${m.receipt ? `<span>${m.receipt}</span>` : ''}</div>${esc(m.t)}${m.sources ? `<div class="small muted" style="margin-top:4px">Sources: ${esc(m.sources)}</div>` : ''}${trBtn ? `<div>${trBtn}</div>` : ''}${S.tr[c.id + '-' + i] ? `<div class="tr" data-testid="tr-${i}">English: ${esc(m.tr)}</div>` : ''}</div>`;
 }
 function handoffHtml(c) {
   const h = c.handoff; let reason;
@@ -625,12 +629,13 @@ function composerHtml(c) {
       <label class="lbl" for="tpl" style="margin:0">Approved template</label><select id="tpl" class="field" data-testid="template-select"><option>Order update: “Hi {{name}}, here's an update on order {{order}}: {{status}}”</option><option>Follow-up: “Hi {{name}}, are you still having trouble with {{order}}?”</option></select>
       <div class="row between"><span class="small muted">Free-form replies unlock when ${esc(cu.name)} writes back.</span><button class="btn primary" data-act="sendTemplate">Send template</button></div></div>`;
   }
-  const hasDraft = c.draft && !sent;
+  const ins = S.inserted?.[c.id];
+  const hasDraft = c.draft && !sent && !ins;
   const draft = hasDraft ? fillDraft(c, S.short?.[c.id] ? c.draftShort || c.draft : c.draft) : '';
-  const inserted = S.inserted?.[c.id] || '';
-  const text = S.mode === 'note' ? '' : (inserted ? (draft ? draft + '\n\n' : '') + inserted : draft);
+  const text = S.mode === 'note' ? '' : ins ? ins.text : draft;
   const tr = c.draftTr && hasDraft ? `<button class="linkbtn small" data-act="tr" data-k="${c.id}-draft" data-testid="tr-toggle-draft" aria-expanded="${!!S.tr[c.id + '-draft']}">${S.tr[c.id + '-draft'] ? 'Hide translation' : 'Show English translation of the draft'}</button>${S.tr[c.id + '-draft'] ? `<div class="tr" data-testid="tr-draft">English: ${esc(fillDraft(c, c.draftTr))}</div>` : ''}` : '';
   const label = S.mode === 'note' ? '<div class="ai-label" style="color:var(--muted)">Internal note · only your team sees this</div>'
+    : ins ? `<div class="ai-label" style="color:var(--muted)">Macro “${esc(ins.name)}” (replaced the AI draft)${c.draft && !sent ? ' <button class="linkbtn small" data-act="restoreDraft">Restore AI draft</button>' : ''}</div>`
     : hasDraft ? `<div class="ai-label">✦ AI draft${c.lang !== 'en' ? ` · in ${cu.lang}` : ''} <span class="small muted" style="font-weight:500">Sources: ${esc(c.sources)}</span></div>`
     : `<div class="ai-label" style="color:var(--muted)">${c.handoff?.rule === 'gap' ? 'No AI draft: no article covers this yet' : 'Reply'}</div>`;
   const att = (c.attachments && hasDraft) ? `<div class="small" data-testid="attachments">Attached: ${c.attachments.map(x => `<span class="chip">📎 ${esc(x)}</span>`).join('')}</div>` : '';
@@ -980,7 +985,7 @@ function notifications() {
   return list.filter(n => n.conv ? can('conversation') : can(n.goto));
 }
 function renderRail() {
-  const n = notifications(), unread = S.alertsRead ? n.filter(x => x.conv).length : n.length;
+  const n = notifications(), unread = can('conversation') ? n.filter(x => x.conv).length : (S.alertsRead ? 0 : n.length);
   $('#alert-badge').textContent = unread; $('#alert-badge').hidden = !unread;
   $('#rail-alerts').setAttribute('aria-label', `Notifications, ${unread} need attention`);
   $$('.rail [data-tab-target]').forEach(btn => btn.hidden = !can(btn.dataset.tabTarget));
@@ -1015,7 +1020,7 @@ function renderAll() { renderSide(); renderPanel(S.tab); renderRight(); renderBo
 // The kit sets body[data-tab], so every click re-runs selectTab(current tab). Only re-render when the tab really changes (or go() forces it),
 // otherwise the sidebar would be replaced before the kit looks up the clicked .side .item.
 function go(t) { S.force = true; UI.selectTab(t); }
-window.onTab = id => { if (id === S.tab && !S.force && S.ready) { syncRail(); return; } S.force = false; S.ready = true; S.tab = id; closePop(true); renderSide(); renderPanel(id); renderRight(); syncRail(); };
+window.onTab = id => { if (id === S.tab && !S.force && S.ready) { syncRail(); return; } S.force = false; S.ready = true; S.tab = id; closePop(true); renderSide(); renderPanel(id); renderRight(); syncRail(); $('.content').scrollTop = 0; };
 window.onSelect = id => {
   if (id.startsWith('sub:')) { const [, t, k] = id.split(':'); S.sub[t] = k; renderPanel(t); renderRight(); renderSide(); $('.content').scrollTop = 0; return; }
   openConv(id);
@@ -1053,20 +1058,21 @@ const ACT = {
   tr: a => { S.tr[a.dataset.k] = !S.tr[a.dataset.k]; renderConversation(); },
   regen: () => { S.short = S.short || {}; S.short[S.conv] = !S.short[S.conv]; renderConversation(); UI.toast('Draft regenerated from the same sources'); },
   shorten: () => { S.short = S.short || {}; S.short[S.conv] = !S.short[S.conv]; renderConversation(); },
-  macro: a => { const m = D.macros[+a.dataset.i]; S.inserted = S.inserted || {}; S.inserted[S.conv] = m.text; S.mode = 'reply'; renderConversation(); const ta = $('#reply-box'); ta.textContent = ta.value; ta.focus(); UI.toast(`Inserted macro “${m.name}”`); },
+  restoreDraft: () => { delete S.inserted[S.conv]; renderConversation(); },
+  macro: a => { const m = D.macros[+a.dataset.i]; S.inserted = S.inserted || {}; S.inserted[S.conv] = { name: m.name, text: m.text }; S.mode = 'reply'; renderConversation(); const ta = $('#reply-box'); ta.textContent = ta.value; ta.focus(); UI.toast(`Inserted macro “${m.name}”`); },
   send: a => {
     const c = conv(S.conv), ta = $('#reply-box'), text = ta.value.trim(), after = $('#after-status').value;
     if (!text) { UI.toast('Write something first'); return; }
     const by = me().name;
     if (S.mode === 'note') { addEvent(c.id, { cls: 'note', who: `Internal note · ${by}`, t: text }); renderConversation(); return; }
-    const act = c.draft && !S.events[c.id]?.some(e => e.sent) ? c.action : null;
+    const act = c.draft && !S.inserted?.[c.id] && !S.events[c.id]?.some(e => e.sent) ? c.action : null;
     if (act) {
       if (act.type === 'replacement') addEvent(c.id, { cls: 'event', who: 'Event', t: `Replacement order ${act.newId} created in Shopify (${money(act.amount)}) by ${by}`, repl: act.newId });
       if (act.type === 'claim') addEvent(c.id, { cls: 'event', who: 'Event', t: `UPS claim ${act.claimId} opened for ${c.order} by ${by}`, claim: act.claimId });
       if (act.type === 'refund') addEvent(c.id, { cls: 'event', who: 'Event', t: `Refund of ${money(act.amount, 2)} issued in Shopify on ${c.order} by ${by}`, refund: money(act.amount, 2) });
       if (act.type === 'pause') addEvent(c.id, { cls: 'event', who: 'Event', t: `Subscription SUB-221 paused until Feb 1 by ${by}` });
     }
-    addEvent(c.id, { cls: 'me', who: `${by} · sent via ${c.ch}`, t: text, sent: true });
+    addEvent(c.id, { cls: 'me', who: `${by} · sent via ${c.ch}${c.ch === 'WhatsApp' ? ' · ✓ Delivered' : ''}`, t: text, sent: true });
     if (act && act.type === 'sales') addEvent(c.id, { cls: 'event', who: 'CRM', t: 'Lead synced to CRM: Carter\'s Corner Café · ~15 kg/month · owner Carla M.', crm: true });
     c.status = after; if (after === 'resolved') { c.resolvedBy = 'human'; c.resolvedNote = `Resolved by ${by}`; c.resolvedToday = true; }
     c.waitMin = null; c.unread = false; if (S.inserted) delete S.inserted[c.id];
