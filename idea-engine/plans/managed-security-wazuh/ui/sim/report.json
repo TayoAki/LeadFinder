@@ -46,8 +46,8 @@
   },
   "msp_account_mgr": {
    "department": "IT services (MSP sales / account management)",
-   "pass": 2,
-   "total": 2,
+   "pass": 4,
+   "total": 4,
    "score": 10
   },
   "practice_manager_regulated": {
@@ -76,8 +76,32 @@
   },
   "security_champion_employee": {
    "department": "All staff",
+   "pass": 4,
+   "total": 4,
+   "score": 10
+  },
+  "procurement_vendor_risk": {
+   "department": "Procurement / vendor risk",
    "pass": 2,
    "total": 2,
+   "score": 10
+  },
+  "hr_people_ops": {
+   "department": "HR / People",
+   "pass": 2,
+   "total": 2,
+   "score": 10
+  },
+  "multi_entity_operator": {
+   "department": "Executive (multi-entity / PE operating partner)",
+   "pass": 4,
+   "total": 4,
+   "score": 10
+  },
+  "trial_evaluator": {
+   "department": "Operations / IT (pre-purchase)",
+   "pass": 4,
+   "total": 4,
    "score": 10
   }
  },

@@ -11,12 +11,16 @@
 | msp_owner | IT services (MSP leadership) | 4/4 | 10/10 |
 | compliance | Compliance | 8/8 | 10/10 |
 | finance | Finance | 4/4 | 10/10 |
-| msp_account_mgr | IT services (MSP sales / account management) | 2/2 | 10/10 |
+| msp_account_mgr | IT services (MSP sales / account management) | 4/4 | 10/10 |
 | practice_manager_regulated | Operations (multi-site) | 2/2 | 10/10 |
 | external_auditor | External (audit / assessor) | 2/2 | 10/10 |
 | insurance_broker | External (insurance) | 2/2 | 10/10 |
 | general_counsel | Legal / privacy | 2/2 | 10/10 |
-| security_champion_employee | All staff | 2/2 | 10/10 |
+| security_champion_employee | All staff | 4/4 | 10/10 |
+| procurement_vendor_risk | Procurement / vendor risk | 2/2 | 10/10 |
+| hr_people_ops | HR / People | 2/2 | 10/10 |
+| multi_entity_operator | Executive (multi-entity / PE operating partner) | 4/4 | 10/10 |
+| trial_evaluator | Operations / IT (pre-purchase) | 4/4 | 10/10 |
 
 ## Global checks
 

@@ -1,150 +1,962 @@
 {
  "app": "Watchpost: managed threat detection and response for small businesses (built on Wazuh)",
  "personas": [
-  {"id": "owner", "department": "Executive", "role": "Owner of a 40-person dental group (3 offices)",
+  {
+   "id": "owner",
+   "department": "Executive",
+   "role": "Owner of a 40-person dental group (3 offices)",
    "cares_about": "Keeping the practice open, protecting patient data, passing the cyber-insurance renewal, not ending up in the news.",
    "time_spent": "Running the business; looks at security only when an email or invoice forces it.",
    "struggles": "Security reports are full of jargon; can't tell whether they're actually protected.",
    "how_helps": "Overview says in one sentence whether they're protected and what, if anything, the team must do, with plain-English labels, insurance and HIPAA status, and one dated monthly report.",
    "tasks": [
-    {"name": "See own company status, open tasks and the monthly summary (no MSP data)", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='overview']"}],
-     "expect": ["[data-testid='ctx']:has-text('BrightSmile Dental Group')", "[data-testid='status']:has-text('Protected · 3 things need your team')", "[data-testid='summary']:has-text('214 times')", "[data-testid='k-threats']:has-text('2')", "[data-testid='k-devices']:has-text('60 of 64')", "[data-testid='outcomes']:has-text('HIPAA')", "[data-testid='monthly-report']:has-text('October 2026')", ".tabs:not(:has([data-tab='partner']))", ".app:not(:has([data-select='harbor']))", ".rail [data-view='alerts'] .badge:has-text('3')"]},
-    {"name": "Own plan price is shown, partner pricing is not", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='billing']"}],
-     "expect": ["[data-testid='plan']:has-text('$999/mo')", "[data-testid='plan']:has-text('64')", "#panel-billing:not(:has-text('wholesale'))", ".app:not(:has([data-testid='margin-table']))"]}
-   ]},
-  {"id": "office_mgr", "department": "Operations", "role": "Office manager who is the 'accidental IT person'",
+    {
+     "name": "Own company status is honest about silent devices and labels urgent items",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='overview']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('BrightSmile Dental Group')",
+      "[data-testid='status']:has-text('Partly protected · 4 urgent')",
+      "[data-testid='status']:has-text('NAS-BACKUP')",
+      "[data-testid='k-threats']:has-text('2')",
+      "[data-testid='k-devices']:has-text('60 of 64')",
+      "[data-testid='urgent-actions']",
+      "[data-testid='month-actions']",
+      ".rail [data-view='alerts'] .badge:has-text('4')",
+      "[data-testid='sla']:has-text('15 minutes')",
+      ".tabs:not(:has([data-tab='partner']))",
+      ".app:not(:has([data-select='harbor']))"
+     ]
+    },
+    {
+     "name": "Own plan, annual cost and real payment method",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='billing']"
+      }
+     ],
+     "expect": [
+      "[data-testid='plan']:has-text('$999/mo')",
+      "[data-testid='annual']:has-text('$11,988')",
+      "#panel-billing:has-text('7319')",
+      "#panel-billing:not(:has-text('4242'))",
+      "#panel-billing:not(:has-text('wholesale'))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "office_mgr",
+   "department": "Operations",
+   "role": "Office manager who is the 'accidental IT person'",
    "cares_about": "Staff can work, no downtime, knowing what to do when something happens.",
    "time_spent": "Scheduling, vendors, front desk, fixing printers and passwords.",
    "struggles": "Gets alerts she doesn't understand and doesn't know if she must act.",
    "how_helps": "The incident that needs her opens first, says what analysts already did and exactly what she must do, and lets her mark it done or ask an analyst.",
    "tasks": [
-    {"name": "The action-needed incident opens first and can be marked done", "steps": [{"select": "#role", "value": "office"}, {"click": "[data-tab='incidents']"}],
-     "expect": ["[data-testid='incident-bs1'][aria-expanded='true']", "#inc-detail-bs1 [data-testid='we-did']:has-text('214')", "#inc-detail-bs1 [data-testid='you-do']:has-text('new reception@ password')", "[data-testid='incident-bs1'] .sev:has-text('Medium')", "[data-testid='done-bs1']"]},
-    {"name": "Marking done updates the badge and the hero", "steps": [{"select": "#role", "value": "office"}, {"click": "[data-tab='incidents']"}, {"click": "[data-testid='done-bs1']"}, {"click": "[data-tab='overview']"}],
-     "expect": [".rail [data-view='alerts'] .badge:has-text('2')", "[data-testid='status']:has-text('2 things need your team')", ".tabs:not(:has([data-tab='billing']))"]},
-    {"name": "Notifications open a real panel", "steps": [{"select": "#role", "value": "office"}, {"click": ".rail [data-view='alerts']"}],
-     "expect": ["#pop [data-testid='notifications']:has-text('reception@')", "#pop [data-testid='notif-count']:has-text('need action')", "#pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"]}
-   ]},
-  {"id": "it_mgr", "department": "IT", "role": "In-house IT manager",
+    {
+     "name": "Her open task comes first, she can ask Marco and an analyst",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "office"
+      },
+      {
+       "click": "[data-tab='incidents']"
+      },
+      {
+       "click": "[data-testid='ask-it']"
+      },
+      {
+       "click": "[data-testid='ask-bs1']"
+      }
+     ],
+     "expect": [
+      "[data-testid='incident-bs1'][aria-expanded='true']",
+      "#inc-detail-bs1 [data-testid='we-did']:has-text('Sam T.')",
+      "[data-testid='pw-requested']:has-text('Marco Diaz')",
+      "[data-testid='thread-bs1']:has-text('reply due by 14:35')",
+      "[data-testid='incident-bs1'] .who:has-text('Office manager')"
+     ]
+    },
+    {
+     "name": "Notifications default to her own tasks",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "office"
+      },
+      {
+       "click": ".rail [data-view='alerts']"
+      }
+     ],
+     "expect": [
+      "#pop [data-testid='notif-mine'][aria-pressed='true']",
+      "#pop [data-testid='notifications']:has-text('reception@')",
+      "#pop [data-testid='notifications']:not(:has-text('KB5068861'))"
+     ]
+    },
+    {
+     "name": "Marking done updates badge and headline",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "office"
+      },
+      {
+       "click": "[data-tab='incidents']"
+      },
+      {
+       "click": "[data-testid='done-bs1']"
+      },
+      {
+       "click": "[data-tab='overview']"
+      }
+     ],
+     "expect": [
+      ".rail [data-view='alerts'] .badge:has-text('3')",
+      "[data-testid='status']:has-text('3 urgent')",
+      ".tabs:not(:has([data-tab='billing']))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "it_mgr",
+   "department": "IT",
+   "role": "In-house IT manager",
    "cares_about": "Full coverage, patched systems, fewer false alarms.",
    "time_spent": "Tickets, patching, onboarding laptops, chasing devices that fall off monitoring.",
    "struggles": "Alert fatigue and blind spots (devices that stopped reporting).",
    "how_helps": "Devices tab lists silent devices by business impact with reasons, install commands and the one update to fix first; Incidents shows how much noise analysts filtered; search finds a host across logs.",
    "tasks": [
-    {"name": "Find silent devices by impact and the top fix", "steps": [{"select": "#role", "value": "it"}, {"click": "[data-tab='devices']"}],
-     "expect": ["[data-testid='not-reporting']:has-text('4 devices')", "[data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')", "[data-testid='top-vuln']:has-text('1 critical update missing on 2 machines')", "[data-testid='copy-install']", "[data-testid='install-help']:has-text('PowerShell')"]},
-    {"name": "Filter devices by office", "steps": [{"select": "#role", "value": "it"}, {"click": "[data-tab='devices']"}, {"select": "#dev-site", "value": "Office 2 (Elm Ave)"}],
-     "expect": ["[data-testid='not-reporting']:has-text('1 device')", "[data-testid='device-table']:has-text('XRAY-PC-3')", "[data-testid='device-table']:has-text('of 20 devices')"]},
-    {"name": "Search a host from the rail and see alert noise", "steps": [{"select": "#role", "value": "it"}, {"click": ".rail [data-view='search']"}, {"click": "#pop [data-q='FRONTDESK-02']"}],
-     "expect": ["#search-results:has-text('invoice_8812.pdf.exe')", "#search-results:has-text('FRONTDESK-02')"]},
-    {"name": "See alerts reviewed vs escalated", "steps": [{"select": "#role", "value": "it"}, {"click": "[data-tab='incidents']"}],
-     "expect": ["[data-testid='noise']:has-text('1,240')", "[data-testid='noise']:has-text('3')"]}
-   ]},
-  {"id": "msp_tech", "department": "IT services (MSP)", "role": "MSP technician managing several clients",
+    {
+     "name": "Silent devices by impact, real KB and CVE, tamper incident linked",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "it"
+      },
+      {
+       "click": "[data-tab='devices']"
+      }
+     ],
+     "expect": [
+      "[data-testid='not-reporting']:has-text('4 devices')",
+      "[data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')",
+      "[data-testid='top-vuln']:has-text('KB5068861')",
+      "[data-testid='top-vuln']:has-text('CVE-2026-41132')",
+      "#panel-devices:not(:has-text('placeholder'))",
+      "[data-open-inc='brightsmile:bs4']",
+      "[data-testid='device-table']:not(:has-text('HYGIENE-LT-1'))",
+      "[data-testid='copy-install']"
+     ]
+    },
+    {
+     "name": "Office 2 filter changes the fix-first card too",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "it"
+      },
+      {
+       "click": "[data-tab='devices']"
+      },
+      {
+       "select": "#dev-site",
+       "value": "Office 2 (Elm Ave)"
+      }
+     ],
+     "expect": [
+      "[data-testid='not-reporting']:has-text('1 device')",
+      "[data-testid='top-vuln']:has-text('Nothing critical here')",
+      "[data-testid='top-vuln']:has-text('Company-wide')",
+      "[data-testid='device-table']:has-text('XRAY-PC-3')",
+      "[data-testid='device-table'] .risk.medium"
+     ]
+    },
+    {
+     "name": "Search a host from the rail",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "it"
+      },
+      {
+       "click": ".rail [data-view='search']"
+      },
+      {
+       "click": "#pop [data-q='FRONTDESK-02']"
+      }
+     ],
+     "expect": [
+      "#search-results:has-text('invoice_8812.pdf.exe')"
+     ]
+    },
+    {
+     "name": "Alert noise and the tamper incident",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "it"
+      },
+      {
+       "click": "[data-tab='incidents']"
+      },
+      {
+       "click": "[data-testid='incident-bs4']"
+      }
+     ],
+     "expect": [
+      "[data-testid='noise']:has-text('1,240')",
+      "[data-testid='noise']:has-text('agent tamper alert')",
+      "#inc-detail-bs4 [data-testid='you-do']:has-text('reinstall')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "msp_tech",
+   "department": "IT services (MSP)",
+   "role": "MSP technician managing several clients",
    "cares_about": "Handling many clients without a 24/7 SOC of their own.",
    "time_spent": "Switching between client consoles, RMM and PSA tickets.",
    "struggles": "Tool sprawl; no one watching at night.",
    "how_helps": "Client list with computed status, a cross-client incident queue, PSA ticket numbers, and every tab bound to the selected client, with the analyst on duty and the next shift shown.",
    "tasks": [
-    {"name": "Switch to Harbor Auto and every tab follows", "steps": [{"select": "#role", "value": "msp_tech"}, {"click": "[data-select='harbor']"}, {"click": "[data-tab='devices']"}],
-     "expect": ["[data-testid='ctx']:has-text('Harbor Auto Group')", "[data-testid='not-reporting']:has-text('3 devices')", "[data-testid='device-table']:has-text('SALES-PC-11')", "[data-testid='bb-devices']:has-text('85 of 88')", "#panel-devices:not(:has-text('NAS-BACKUP'))"]},
-    {"name": "Harbor incidents, compliance and insurance are Harbor's", "steps": [{"select": "#role", "value": "msp_tech"}, {"click": "[data-select='harbor']"}, {"click": "[data-tab='compliance']"}],
-     "expect": ["[data-testid='framework']:has-text('FTC Safeguards')", "[data-testid='framework']:has-text('314.4(c)(5)')", "[data-testid='auditor']:has-text('Keystone')"]},
-    {"name": "Cross-client queue with PSA tickets", "steps": [{"select": "#role", "value": "msp_tech"}, {"click": "[data-select='all']"}],
-     "expect": ["[data-testid='queue']:has-text('Harbor Auto')", "[data-testid='queue']:has-text('Sunrise CU')", "[data-testid='queue']:has-text('#51022')", "[data-testid='next-shift']:has-text('Sam T.')", ".tabs:not(:has([data-tab='partner']))"]},
-    {"name": "Open a queue item lands on that client's incident", "steps": [{"select": "#role", "value": "msp_tech"}, {"click": "[data-select='all']"}, {"click": "[data-open-inc='sunrise:s1']"}],
-     "expect": ["[data-testid='ctx']:has-text('Sunrise Credit Union')", "[data-testid='incident-s1'][aria-expanded='true']", "#inc-detail-s1:has-text('PSA ticket #51019')"]}
-   ]},
-  {"id": "msp_owner", "department": "IT services (MSP leadership)", "role": "MSP owner",
+    {
+     "name": "Switch to Harbor Auto and every tab follows",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='harbor']"
+      },
+      {
+       "click": "[data-tab='devices']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('Harbor Auto Group')",
+      "[data-testid='not-reporting']:has-text('3 devices')",
+      "[data-testid='device-table']:has-text('SALES-PC-11')",
+      "[data-testid='bb-devices']:has-text('85 of 88')",
+      "[data-testid='top-vuln']:has-text('restart your firewall')",
+      "#panel-devices:not(:has-text('NAS-BACKUP'))"
+     ]
+    },
+    {
+     "name": "Harbor compliance has no other client's exports",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='harbor']"
+      },
+      {
+       "click": "[data-tab='compliance']"
+      }
+     ],
+     "expect": [
+      "[data-testid='framework']:has-text('314.4(c)(5)')",
+      "[data-testid='last-export']:has-text('No exports yet')",
+      "[data-testid='download-log']:not(:has-text('HIPAA'))",
+      "[data-testid='auditor']:has-text('Keystone')"
+     ]
+    },
+    {
+     "name": "All-client queue shows portfolio context",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='all']"
+      }
+     ],
+     "expect": [
+      "[data-testid='queue']:has-text('#51022')",
+      "[data-testid='queue'] button:has-text('View')",
+      "[data-testid='ctx']:has-text('all 6 clients')",
+      "[data-testid='bb-devices']:has-text('493 of 499')",
+      "[data-testid='next-shift']:has-text('Sam T.')",
+      ".tabs:not(:has([data-tab='partner']))"
+     ]
+    },
+    {
+     "name": "View a queue item lands on that client's incident with a consistent timeline",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='all']"
+      },
+      {
+       "click": "[data-open-inc='sunrise:s1']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('Sunrise Credit Union')",
+      "[data-testid='incident-s1'][aria-expanded='true']",
+      "#inc-detail-s1 [data-testid='timeline']:has-text('06:50')",
+      "#inc-detail-s1:has-text('PSA ticket #51019')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "msp_owner",
+   "department": "IT services (MSP leadership)",
+   "role": "MSP owner",
    "cares_about": "Margin on security, recurring revenue, keeping clients.",
    "time_spent": "Sales, vendor deals, client reviews.",
    "struggles": "Big MDR vendors leave thin margins and lock-in contracts.",
    "how_helps": "Partner tab shows wholesale, resale capped at the direct price, profit and margin per client, white-label settings with a client preview, and channel protection.",
    "tasks": [
-    {"name": "Check margin per client with resale capped at direct price", "steps": [{"select": "#role", "value": "msp_owner"}, {"click": "[data-tab='partner']"}],
-     "expect": ["[data-testid='margin']:has-text('Margin')", "[data-testid='margin-row-harbor']:has-text('$528')", "[data-testid='margin-row-harbor']:has-text('$968')", "[data-testid='margin-row-vega']:has-text('capped at direct')", "[data-testid='margin-row-vega']:has-text('$1,879')", "[data-testid='partner-billing']"]},
-    {"name": "Change resale price and preview white-label as a client", "steps": [{"select": "#role", "value": "msp_owner"}, {"click": "[data-tab='partner']"}, {"select": "#resale-rate", "value": "14"}, {"click": "[data-testid='wl-preview-btn']"}],
-     "expect": ["[data-testid='margin-row-harbor']:has-text('capped at direct')", "[data-testid='margin-row-harbor']:has-text('$999')", "[data-testid='wl-preview']:has-text('Northwind Secure')", "[data-testid='wl-preview']:has-text('Harbor Auto Group')"]}
-   ]},
-  {"id": "compliance", "department": "Compliance", "role": "Compliance lead (HIPAA / FTC Safeguards / CMMC)",
+    {
+     "name": "Portfolio margins, renewals and churn risk",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_owner"
+      },
+      {
+       "click": "[data-tab='partner']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('Northwind IT · all 6 clients')",
+      "[data-testid='bb-devices']:has-text('6 clients')",
+      "[data-testid='margin-row-harbor']:has-text('$968')",
+      "[data-testid='margin-row-vega']:has-text('capped at direct')",
+      "[data-testid='margin-row-vega']:has-text('$1,879')",
+      "[data-testid='at-risk-harbor']:has-text('open high incident')",
+      "[data-testid='margin-table']:has-text('Alerts/day')",
+      "[data-testid='partner-billing']"
+     ]
+    },
+    {
+     "name": "Per-client price override and an honest white-label preview",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_owner"
+      },
+      {
+       "click": "[data-tab='partner']"
+      },
+      {
+       "select": "#price-kline",
+       "value": "14"
+      },
+      {
+       "click": "[data-testid='wl-preview-btn']"
+      }
+     ],
+     "expect": [
+      "[data-testid='margin-row-kline']:has-text('$308')",
+      "[data-testid='wl-preview']:has-text('Action needed')",
+      "[data-testid='wl-preview']:has-text('Harbor Auto Group')",
+      "[data-testid='wl-preview']:not(:has-text('Protected'))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "compliance",
+   "department": "Compliance",
+   "role": "Compliance lead (HIPAA / FTC Safeguards / CMMC)",
    "cares_about": "Passing audits and showing evidence quickly.",
    "time_spent": "Policies, risk assessments, collecting screenshots for auditors.",
    "struggles": "Evidence is scattered; mapping controls by hand.",
    "how_helps": "Compliance tab lists every control per framework with the right citations, evidence source and date, BAA status, honest log retention, and an export with history.",
    "tasks": [
-    {"name": "HIPAA view shows BAA, 6-year retention gap and all controls", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}],
-     "expect": ["[data-testid='baa']:has-text('Signed Mar 2, 2026')", "[data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')", "[data-testid='fw-score']:has-text('of 13 controls met')", "[data-testid='audit-dates']:has-text('Mar 1, 2027')", "[data-testid='auditor']:has-text('Dana Whitfield')"]},
-    {"name": "Framework switch swaps controls and citations", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}, {"select": "#fw", "value": "pci"}],
-     "expect": ["[data-testid='framework']:has-text('PCI DSS v4.0')", "[data-testid='framework']:has-text('Req. 10.5.1')", "[data-testid='framework']:not(:has-text('§164'))", "[data-testid='fw-score']:has-text('of 11 controls met')"]},
-    {"name": "Export evidence with history", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='compliance']"}, {"select": "#fw", "value": "hipaa"}, {"click": "[data-testid='export-evidence']"}, {"click": "[data-testid='export-go']"}],
-     "expect": [".toast.show:has-text('Evidence pack exported')", "[data-testid='export-history']:has-text('HIPAA · Last 12 months')"]},
-    {"name": "One training upload fixes compliance and insurance", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='insurance']"}, {"click": "#panel-insurance [data-upload-training]"}],
-     "expect": ["[data-testid='q-training']:has-text('certificates on file')", "[data-testid='readiness']:has-text('7 of 10')"]}
-   ]},
-  {"id": "finance", "department": "Finance", "role": "CFO / controller",
+    {
+     "name": "HIPAA scope is honest, retention wording correct, backup partly met",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='compliance']"
+      },
+      {
+       "click": "[data-ctrl='hipaa:§164.316(b)(2)(i)']"
+      }
+     ],
+     "expect": [
+      "[data-testid='baa']:has-text('Signed Mar 2, 2026')",
+      "[data-testid='fw-score']:has-text('of 13 evidenced controls met')",
+      "[data-testid='fw-scope']:has-text('outside this service')",
+      "[data-testid='ctrl-164-316-b-2-i']:has-text('policies, risk analyses, incident records')",
+      "[data-testid='ctrl-164-308-a-7-ii-A']:has-text('Partly met')",
+      "#cd-hipaa-164-316-b-2-i:has-text('Raw logs are kept 12 months')"
+     ]
+    },
+    {
+     "name": "PCI is offered as not yet scoped and can be brought into scope",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='compliance']"
+      },
+      {
+       "select": "#fw",
+       "value": "pci"
+      },
+      {
+       "click": "[data-testid='pci-yes']"
+      }
+     ],
+     "expect": [
+      "[data-testid='framework']:has-text('PCI DSS v4.0')",
+      "[data-testid='framework']:has-text('Req. 10.5.1')",
+      "[data-testid='framework']:not(:has-text('§164'))",
+      "[data-testid='ctx']:has-text('HIPAA + PCI DSS')"
+     ]
+    },
+    {
+     "name": "Export evidence with per-client history",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='compliance']"
+      },
+      {
+       "select": "#fw",
+       "value": "hipaa"
+      },
+      {
+       "click": "[data-testid='export-evidence']"
+      },
+      {
+       "click": "[data-testid='export-go']"
+      }
+     ],
+     "expect": [
+      ".toast.show:has-text('Evidence pack exported')",
+      "[data-testid='export-history']:has-text('HIPAA · Last 12 months')",
+      "[data-testid='export-history']:has-text('SHA-256')"
+     ]
+    },
+    {
+     "name": "One training upload fixes compliance and insurance",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='insurance']"
+      },
+      {
+       "click": "#panel-insurance [data-upload-training]"
+      }
+     ],
+     "expect": [
+      "[data-testid='q-training']:has-text('certificates on file')",
+      "[data-testid='readiness']:has-text('6 of 10')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "finance",
+   "department": "Finance",
+   "role": "CFO / controller",
    "cares_about": "Insurance premiums, predictable cost, avoiding a breach bill.",
    "time_spent": "Budgets, renewals, vendor contracts.",
    "struggles": "Cyber-insurance questionnaires ask for proof (MFA, EDR, backups) nobody can produce quickly.",
    "how_helps": "Insurance tab shows all 10 questions with dated evidence, MFA gaps as warnings, carrier, policy, premium and broker, and a Plan & billing tab with the flat price.",
    "tasks": [
-    {"name": "All questions shown, MFA gap is a warning", "steps": [{"select": "#role", "value": "owner"}, {"click": "[data-tab='insurance']"}],
-     "expect": ["[data-testid='renewal']:has-text('Jan 15, 2027')", "[data-testid='readiness']:has-text('6 of 10')", "[data-testid='q-count']:has-text('All 10 questions shown')", "[data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')", "[data-testid='q-ir']", "[data-testid='policy']:has-text('BSC-CY-204417')", "[data-testid='broker']:has-text('Lena Ortiz')", "[data-testid='renewal-checklist']"]},
-    {"name": "See plan and invoices", "steps": [{"select": "#role", "value": "owner"}, {"click": ".rail [data-view='billing']"}],
-     "expect": ["[data-testid='plan']:has-text('Practice')", "#panel-billing:has-text('Price locked until')"]}
-   ]},
-  {"id": "msp_account_mgr", "department": "IT services (MSP sales / account management)", "role": "MSP account manager / vCIO running client business reviews",
+    {
+     "name": "All questions, EDR caveat, policy retention and premium estimate",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": "[data-tab='insurance']"
+      }
+     ],
+     "expect": [
+      "[data-testid='renewal']:has-text('Jan 15, 2027')",
+      "[data-testid='readiness']:has-text('5 of 10')",
+      "[data-testid='q-count']:has-text('All 10 questions shown')",
+      "[data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')",
+      "[data-testid='q-edr-note']:has-text('EDR definition')",
+      "[data-testid='q-backup']:has-text('NAS-BACKUP')",
+      "[data-testid='policy']:has-text('retention $25,000')",
+      "[data-testid='premium-estimate']:has-text('$6,100')",
+      "[data-testid='broker']:has-text('Lena Ortiz')"
+     ]
+    },
+    {
+     "name": "Plan, annual cost and invoices",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
+      {
+       "click": ".rail [data-view='billing']"
+      }
+     ],
+     "expect": [
+      "[data-testid='plan']:has-text('Practice')",
+      "[data-testid='annual']:has-text('$11,988')",
+      "#panel-billing:has-text('Price locked until')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "msp_account_mgr",
+   "department": "IT services (MSP sales / account management)",
+   "role": "MSP account manager / vCIO running client business reviews",
    "cares_about": "Renewals, upsells and showing each client the value of the security line item.",
    "time_spent": "Quarterly business reviews, proposals, client calls.",
    "struggles": "Turning technical data into a client-ready story; assembling QBR decks by hand from several tools.",
    "how_helps": "One-click branded QBR per client with threats stopped, coverage, compliance score and open recommendations.",
    "tasks": [
-    {"name": "Generate a white-labelled QBR for Ridgeline", "steps": [{"select": "#role", "value": "msp_am"}, {"click": "[data-select='ridgeline']"}, {"click": "[data-tab='partner']"}, {"click": "[data-testid='qbr']"}],
-     "expect": ["[data-testid='qbr-preview']:has-text('Ridgeline Machining')", "[data-testid='qbr-preview']:has-text('Northwind Secure')", "[data-testid='qbr-preview']:has-text('Threats stopped: 1')", "[data-testid='qbr-preview']:has-text('41 of 41')", "[data-testid='ctx']:has-text('Ridgeline')"]}
-   ]},
-  {"id": "practice_manager_regulated", "department": "Operations (multi-site)", "role": "Practice / branch operations manager responsible for staff onboarding and offboarding",
+    {
+     "name": "Generate a QBR with quarter-over-quarter, renewal and upsell",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_am"
+      },
+      {
+       "click": "[data-tab='partner']"
+      },
+      {
+       "click": "[data-qbr='ridgeline']"
+      }
+     ],
+     "expect": [
+      "[data-testid='qbr-preview']:has-text('Ridgeline Machining')",
+      "[data-testid='qbr-preview']:has-text('Northwind Secure')",
+      "[data-testid='qbr-preview']:has-text('vs Q3')",
+      "[data-testid='qbr-preview']:has-text('renews Apr 30, 2027')",
+      "[data-testid='upsell']:has-text('CMMC Level 2')",
+      "[data-testid='ctx']:has-text('all 6 clients')"
+     ]
+    },
+    {
+     "name": "Client-safe view hides costs and margins",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_am"
+      },
+      {
+       "click": "[data-tab='partner']"
+      },
+      {
+       "click": "[data-testid='client-safe']"
+      }
+     ],
+     "expect": [
+      "[data-testid='margin-table']:not(:has-text('Wholesale'))",
+      "[data-testid='margin-table']:has-text('Client price')",
+      ".app:not(:has([data-testid='margin']))",
+      ".app:not(:has([data-testid='partner-billing']))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "practice_manager_regulated",
+   "department": "Operations (multi-site)",
+   "role": "Practice / branch operations manager responsible for staff onboarding and offboarding",
    "cares_about": "Staff leaving do not keep access; new staff are working on day one.",
    "time_spent": "HR paperwork, scheduling, onboarding/offboarding staff accounts with IT.",
    "struggles": "Forgotten accounts of ex-employees; no visibility of who still has access.",
    "how_helps": "Accounts tab lists unused and no-MFA accounts with a one-click disable request that feeds the to-do list and compliance status.",
    "tasks": [
-    {"name": "Find accounts unused 30+ days and request disable", "steps": [{"select": "#role", "value": "office"}, {"click": "[data-tab='accounts']"}, {"click": "[data-testid='filter-dormant']"}, {"click": "[data-testid='disable-j-alvarez']"}],
-     "expect": ["[data-testid='acct-j-alvarez']:has-text('Disable requested')", "[data-testid='acct-m-reyes']:has-text('Unused')", "[data-testid='accounts']:has-text('Showing 2 of 41')", "[data-testid='ctx']:has-text('BrightSmile')"]}
-   ]},
-  {"id": "external_auditor", "department": "External (audit / assessor)", "role": "HIPAA auditor or CMMC third-party assessor (C3PAO) with read-only access",
+    {
+     "name": "Filtered note is honest and requests show as pending",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "office"
+      },
+      {
+       "click": "[data-tab='accounts']"
+      },
+      {
+       "click": "[data-testid='filter-dormant']"
+      },
+      {
+       "click": "[data-testid='disable-j-alvarez']"
+      }
+     ],
+     "expect": [
+      "[data-testid='acct-note']:has-text('2 accounts match')",
+      "[data-testid='acct-j-alvarez']:has-text('Pending IT')",
+      "[data-testid='acct-j-alvarez']:not(:has-text('Unused'))",
+      "#panel-accounts [data-testid='leavers']:has-text('Overdue')",
+      "#panel-accounts [data-testid='joiners']:has-text('Sofia Lin')",
+      "[data-testid='ctx']:has-text('BrightSmile')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "external_auditor",
+   "department": "External (audit / assessor)",
+   "role": "Prime-contractor supplier reviewer (CMMC Level 1 is self-assessed) or HIPAA auditor with read-only access",
    "cares_about": "Verifiable, timestamped evidence mapped to controls, without chasing the client.",
    "time_spent": "Evidence review, sampling controls, interviews.",
    "struggles": "Screenshots without provenance; evidence arriving late and incomplete.",
    "how_helps": "Time-limited read-only link scoped to one client, control-by-control evidence with collection timestamps, and an export log.",
    "tasks": [
-    {"name": "Open a CMMC control and download its evidence", "steps": [{"select": "#role", "value": "auditor"}, {"select": "#fw", "value": "cmmc"}, {"click": "[data-ctrl='cmmc:AC.L1-b.1.i']"}, {"click": "[data-testid='evidence-dl-AC-L1-b-1-i']"}],
-     "expect": ["[data-testid='framework']:has-text('CMMC Level 1')", "#cd-cmmc-AC-L1-b-1-i:has-text('Collected Nov 11, 2026')", ".toast.show:has-text('collected')", "[data-testid='ctx']:has-text('Ridgeline Machining')", "[data-testid='ctx']:has-text('Read-only')", ".tabs:not(:has([data-tab='partner']))", ".app:not(:has([data-testid='done-r1']))"]}
-   ]},
-  {"id": "insurance_broker", "department": "External (insurance)", "role": "Cyber-insurance broker or carrier underwriter",
+    {
+     "name": "Download CMMC evidence; log shows only this client; no internal tools",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "auditor"
+      },
+      {
+       "select": "#fw",
+       "value": "cmmc"
+      },
+      {
+       "click": "[data-ctrl='cmmc:AC.L1-b.1.i']"
+      },
+      {
+       "click": "[data-testid='evidence-dl-AC-L1-b-1-i']"
+      }
+     ],
+     "expect": [
+      "[data-testid='framework']:has-text('CMMC Level 1')",
+      "#cd-cmmc-AC-L1-b-1-i:has-text('Ridgeline staff')",
+      ".toast.show:has-text('SHA-256')",
+      "[data-testid='download-log']:has-text('Exports and downloads log')",
+      "[data-testid='download-log']:has-text('AC.L1-b.1.i evidence')",
+      "[data-testid='download-log']:not(:has-text('HIPAA'))",
+      ".app:not(:has([data-testid='export-evidence']))",
+      ".rail:not(:has([data-view='alerts']))",
+      "#fw:not(:has(option[value='hipaa']))",
+      "[data-testid='ctx']:has-text('Ridgeline Machining')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "insurance_broker",
+   "department": "External (insurance)",
+   "role": "Cyber-insurance broker or carrier underwriter",
    "cares_about": "Accurate answers on MFA, EDR, backups and incident history to place and price cover.",
    "time_spent": "Collecting questionnaires and chasing clients before renewal dates.",
    "struggles": "Self-attested answers they cannot verify; late submissions.",
    "how_helps": "Broker-shared read-only pack with live, dated evidence and a signed provider attestation.",
    "tasks": [
-    {"name": "Check MFA/EDR/backup answers with dates and get the attestation", "steps": [{"select": "#role", "value": "broker"}, {"click": "[data-testid='attestation']"}],
-     "expect": ["[data-testid='q-mfa']:has-text('Partly')", "[data-testid='q-edr']:has-text('60 reporting')", "[data-testid='q-backup']:has-text('Nov 1, 2026')", ".toast.show:has-text('attestation')", ".app:not(:has([data-testid='email-broker']))", "[data-testid='ctx']:has-text('BrightSmile')"]}
-   ]},
-  {"id": "general_counsel", "department": "Legal / privacy", "role": "Outside counsel or privacy officer handling breach notification",
+    {
+     "name": "Dated answers, 36-month history and attestation summary",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "broker"
+      },
+      {
+       "click": "[data-testid='attestation']"
+      }
+     ],
+     "expect": [
+      "[data-testid='q-mfa']:has-text('Partly')",
+      "[data-testid='q-edr']:has-text('60 reporting')",
+      "[data-testid='q-backup']:has-text('Nov 1, 2026')",
+      "[data-testid='attestation-summary']:has-text('Maya Chen')",
+      "[data-testid='attestation-summary']:has-text('Feb 11, 2027')",
+      "#panel-insurance [data-testid='history36']:has-text('Notifiable breaches: 0')",
+      ".toast.show:has-text('attestation')",
+      ".app:not(:has([data-testid='email-broker']))",
+      ".rail:not(:has([data-view='alerts']))",
+      "#panel-insurance:not(:has-text('What a breach could cost'))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "general_counsel",
+   "department": "Legal / privacy",
+   "role": "Outside counsel or privacy officer handling breach notification",
    "cares_about": "Knowing quickly whether an incident is a reportable breach (HIPAA 60-day, state laws, FTC Safeguards 30-day notice for 500+ consumers).",
    "time_spent": "Contracts, privacy notices, incident response calls.",
    "struggles": "Unclear facts on what data was accessed and when; deadlines start before they are told.",
    "how_helps": "Each incident shows whether regulated data was touched, a timeline and the notification clock status.",
    "tasks": [
-    {"name": "Open an incident and see data accessed, timeline and notice clock", "steps": [{"select": "#role", "value": "counsel"}, {"click": "[data-testid='incident-bs2']"}],
-     "expect": ["#inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')", "#inc-detail-bs2 [data-testid='breach']:has-text('Notification clock')", "#inc-detail-bs2 [data-testid='timeline']:has-text('9:46')", "[data-testid='ctx']:has-text('Read-only')", ".app:not(:has([data-testid='done-bs1']))"]}
-   ]},
-  {"id": "security_champion_employee", "department": "All staff", "role": "Front-desk or shop-floor employee who reports suspicious email",
+    {
+     "name": "Deadlines, 4-factor assessment, evidence basis and roster-consistent timeline",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "counsel"
+      },
+      {
+       "click": "[data-testid='incident-bs2']"
+      }
+     ],
+     "expect": [
+      "#inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')",
+      "#inc-detail-bs2 [data-testid='deadlines']:has-text('Jan 3, 2027')",
+      "#inc-detail-bs2 [data-testid='four-factor']",
+      "#inc-detail-bs2 [data-testid='evidence-basis']",
+      "#inc-detail-bs2 [data-testid='timeline']:has-text('isolated automatically')",
+      "#inc-detail-bs2 [data-testid='timeline']:has-text('Isolation confirmed by Priya N.')",
+      "[data-testid='incident-record-bs2']",
+      ".rail:not(:has([data-view='alerts']))",
+      ".app:not(:has([data-testid='done-bs1']))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "security_champion_employee",
+   "department": "All staff",
+   "role": "Front-desk or shop-floor employee who reports suspicious email",
    "cares_about": "Not getting blamed; knowing quickly whether an email is safe.",
    "time_spent": "Customer-facing work, email, scheduling software.",
    "struggles": "Does not know whom to tell; fears clicking something bad.",
    "how_helps": "A 'Report suspicious email' page that works on a phone, with a fast plain-English verdict and next steps, and no access to company security data.",
    "tasks": [
-    {"name": "Report a suspicious email after clicking and see the verdict", "steps": [{"select": "#role", "value": "staff"}, {"select": "#rep-did", "value": "link"}, {"click": "[data-testid='report-send']"}],
-     "expect": ["[data-testid='verdict']:has-text('Phishing')", "[data-testid='verdict']:has-text('reset your password')", ".tabs:not(:has([data-tab='devices']))", ".app:not(:has([data-testid='status']))"]}
-   ]}
+    {
+     "name": "Empty report is caught",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "staff"
+      },
+      {
+       "click": "[data-testid='report-send']"
+      }
+     ],
+     "expect": [
+      "#panel-report .err:has-text('paste the whole email')",
+      "[data-testid='ctx']:not(:has-text('64 devices'))",
+      "[data-testid='my-reports']"
+     ]
+    },
+    {
+     "name": "Report after clicking: pending, then verdict that matches the form",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "staff"
+      },
+      {
+       "select": "#rep-did",
+       "value": "link"
+      },
+      {
+       "click": "[data-sample]"
+      },
+      {
+       "click": "[data-testid='report-send']"
+      },
+      {
+       "click": "[data-testid='mock-reply']"
+      }
+     ],
+     "expect": [
+      "[data-testid='report-summary']:has-text('I clicked a link')",
+      "[data-testid='verdict']:has-text('Phishing')",
+      "[data-testid='verdict']:has-text('reset your password')",
+      ".tabs:not(:has([data-tab='devices']))",
+      ".app:not(:has-text('60 of 64'))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "procurement_vendor_risk",
+   "department": "Procurement / vendor risk",
+   "role": "Vendor-risk or procurement reviewer approving Watchpost as a supplier (here for Sunrise Credit Union)",
+   "cares_about": "Watchpost itself being safe to hand logs to: SOC 2 report, subprocessors, data residency, BAA/DPA, insurance, exit terms.",
+   "time_spent": "Sending and chasing security questionnaires, reviewing contracts and renewals.",
+   "struggles": "Vendors hide trust documents behind sales calls; logs containing PHI or NPI leave the building with unclear retention.",
+   "how_helps": "A read-only Trust page with SOC 2 Type II, pen-test summary, subprocessors, data location, retention and deletion on exit, and pre-filled SIG Lite/CAIQ.",
+   "tasks": [
+    {
+     "name": "Get SOC 2, subprocessors, data location and exit terms",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "vendor_risk"
+      },
+      {
+       "click": "[data-tab='trust']"
+      }
+     ],
+     "expect": [
+      "[data-testid='soc2']:has-text('SOC 2 Type II')",
+      "[data-testid='subprocessors']:has-text('Amazon Web Services')",
+      "[data-testid='data-location']:has-text('US')",
+      "[data-testid='exit-terms']:has-text('certificate of destruction')",
+      "[data-testid='sig-lite']",
+      "[data-testid='ctx']:has-text('Sunrise Credit Union')",
+      ".rail:not(:has([data-view='alerts']))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hr_people_ops",
+   "department": "HR / People",
+   "role": "HR or people-ops lead who owns joiners, leavers and training records",
+   "cares_about": "Leavers losing access the same day, new hires trained, training records ready for insurance and audits.",
+   "time_spent": "Payroll changes, onboarding paperwork, chasing staff to finish mandatory training.",
+   "struggles": "IT learns about leavers late; training certificates sit in inboxes.",
+   "how_helps": "A Joiners & leavers list that drives account-disable requests, and a training roster that feeds Compliance and Insurance.",
+   "tasks": [
+    {
+     "name": "Add a leaver dated today and check the training roster",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "hr"
+      },
+      {
+       "click": "[data-tab='people']"
+      },
+      {
+       "click": "[data-testid='add-leaver']"
+      }
+     ],
+     "expect": [
+      "#panel-people [data-testid='leaver-row']:has-text('Chris Moore')",
+      "#panel-people [data-testid='leaver-row']:has-text('Disable due today')",
+      "[data-testid='training-roster']:has-text('38 of 41')",
+      "#panel-people [data-testid='joiners']:has-text('Sofia Lin')",
+      "[data-testid='ctx']:has-text('BrightSmile')",
+      ".tabs:not(:has([data-tab='devices']))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "multi_entity_operator",
+   "department": "Executive (multi-entity / PE operating partner)",
+   "role": "COO of a group that owns several practices (Keystone Health Partners)",
+   "cares_about": "One security standard across acquired entities, insurance across the group, fast onboarding of new acquisitions.",
+   "time_spent": "Integrating acquisitions, board reporting, vendor consolidation.",
+   "struggles": "Each entity has a different IT vendor and no comparable security score.",
+   "how_helps": "A group scorecard comparing entities on the same numbers, the weakest one flagged, and its first-30-days checklist.",
+   "tasks": [
+    {
+     "name": "Compare entities and see the weakest one's onboarding checklist",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "group_coo"
+      },
+      {
+       "click": "[data-tab='group']"
+      }
+     ],
+     "expect": [
+      "[data-testid='entity-table'] tbody tr",
+      "[data-testid='entity-table']:has-text('Lakeside Pediatrics')",
+      "[data-testid='entity-table']:has-text('Northwind IT (MSP)')",
+      "[data-testid='onboarding-checklist']:has-text('Maple Family Dental')",
+      "[data-testid='ctx']:has-text('Keystone Health Partners')",
+      "[data-testid='bb-devices']:has-text('3 entities')"
+     ]
+    },
+    {
+     "name": "Drill into an entity",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "group_coo"
+      },
+      {
+       "click": "[data-tab='group']"
+      },
+      {
+       "click": "[data-select-org='brightsmile']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('BrightSmile Dental Group')",
+      "[data-testid='status']:has-text('Partly protected')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "trial_evaluator",
+   "department": "Operations / IT (pre-purchase)",
+   "role": "Small-business decision maker in the first 14 days (Maple Family Dental, trial)",
+   "cares_about": "Seeing value before the first invoice and an effortless rollout.",
+   "time_spent": "Installing agents between other jobs; comparing against the incumbent IT contractor or antivirus.",
+   "struggles": "Doesn't know whether the rollout is complete or what has been found yet.",
+   "how_helps": "An onboarding tracker (agents installed vs expected, Microsoft 365 and firewall connected, go-live date) and a week-1 findings summary.",
+   "tasks": [
+    {
+     "name": "See rollout progress and first-week findings",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "trial"
+      },
+      {
+       "click": "[data-tab='onboarding']"
+      }
+     ],
+     "expect": [
+      "[data-testid='rollout']:has-text('31 of 38')",
+      "[data-testid='week1-findings']:has-text('MFA')",
+      "#panel-onboarding:has-text('first invoice Nov 16, 2026')",
+      "[data-testid='ctx']:has-text('Maple Family Dental')",
+      ".app:not(:has([data-select='harbor']))"
+     ]
+    },
+    {
+     "name": "Overview is honest during onboarding",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "trial"
+      },
+      {
+       "click": "[data-tab='overview']"
+      }
+     ],
+     "expect": [
+      "[data-testid='status']:has-text('Onboarding')",
+      "[data-testid='k-devices']:has-text('31 of 38')"
+     ]
+    }
+   ]
+  }
  ]
 }
