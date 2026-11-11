@@ -57,6 +57,33 @@ const { chromium } = require('playwright'); const fs = require('fs'); const path
     await page.locator('.tabs [role="tab"]').first().focus(); await page.keyboard.press('ArrowRight');
     const kb = await page.locator('.tabs [role="tab"]').nth(1).getAttribute('aria-selected');
     global.push({ viewport: vp.name, check: 'tabs work from the keyboard', ok: kb === 'true' });
+    const strays = await page.locator('.tabs > :not([role="tab"])').count();
+    global.push({ viewport: vp.name, check: 'tab list contains only tabs', ok: strays === 0 });
+    // right bar must change with the tab (context, not a fixed card)
+    const rightTexts = new Set();
+    for (let i = 0; i < tabs; i++) { const id = await page.locator('.tabs [role="tab"]').nth(i).getAttribute('data-tab');
+      if (await page.locator('.tabs [role="tab"]').nth(i).isHidden()) continue;
+      await page.evaluate(id => UI.selectTab(id), id); rightTexts.add((await page.locator('.right').innerText()).trim().slice(0, 400)); }
+    global.push({ viewport: vp.name, check: `right side bar changes with the tab (${rightTexts.size} distinct of ${tabs})`, ok: rightTexts.size >= Math.min(tabs, 4) });
+    if (vp.name === 'phone') {
+      let closable = true;
+      for (const [tog, sel] of [['.toggle-side', '.side'], ['.toggle-right', '.right']]) {
+        if (!(await page.locator(tog).count())) continue;
+        await page.locator(tog).first().click(); await page.waitForTimeout(250);
+        if (!(await page.locator(sel + '.open').count())) { closable = false; continue; }
+        await page.keyboard.press('Escape'); await page.waitForTimeout(250);
+        if (await page.locator(sel + '.open').count()) closable = false;
+        await page.locator(tog).first().click(); await page.waitForTimeout(250);
+        const btn = page.locator(sel + ' .drawer-close');
+        if (await btn.count()) { await btn.first().click(); await page.waitForTimeout(250); }
+        if (await page.locator(sel + '.open').count()) closable = false;
+      }
+      global.push({ viewport: vp.name, check: 'phone drawers open and close (button + Escape)', ok: closable });
+      const togglesVisible = await page.evaluate(() => [...document.querySelectorAll('.toggle-side,.toggle-right')].every(b => { const r = b.getBoundingClientRect(); return r.right <= window.innerWidth && r.left >= 0 && r.width > 0; }));
+      global.push({ viewport: vp.name, check: 'drawer toggles are on screen', ok: togglesVisible });
+      const barH = await page.locator('.bottombar').evaluate(e => e.getBoundingClientRect().height);
+      global.push({ viewport: vp.name, check: `bottom bar is one line on phone (${Math.round(barH)}px)`, ok: barH <= 44 });
+    }
     const unlabeled = await page.evaluate(() => [...document.querySelectorAll('button')].filter(b => b.offsetParent && !(b.textContent.trim() || b.getAttribute('aria-label'))).length);
     global.push({ viewport: vp.name, check: 'every visible button has a label', ok: unlabeled === 0 });
     global.push({ viewport: vp.name, check: 'no JavaScript errors', ok: errors.length === 0, why: errors.join(' | ') });

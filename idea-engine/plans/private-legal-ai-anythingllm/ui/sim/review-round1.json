@@ -1,0 +1,431 @@
+{
+ "overall": 3,
+ "personas": [
+  {
+   "id": "partner",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "Firm tab shows 'Hours saved 146' (30 days) while the bottom bar shows 'Hours saved this week: 11.5'. 146/30 days is ~34/week, so the two numbers contradict each other unless one is personal and one is firm-wide, and neither label says which.",
+     "fix": "Label scope explicitly: bottom bar 'Your hours saved this week: 11.5'; Firm KPI 'Firm hours saved, last 30 days: 146 (≈34/week)'. Make the numbers reconcile."
+    },
+    {
+     "issue": "No money view. A managing partner thinks in profitability per lawyer and realization, not raw hours; 'hours saved' alone does not say whether the firm gained or lost revenue (on hourly billing, saved hours can be lost revenue).",
+     "fix": "Add a KPI row: hours saved by matter type, value at blended rate, flat-fee matters where saved time is margin, subscription cost and net ROI; show per-lawyer usage table."
+    },
+    {
+     "issue": "Persona needs 'who uses it' but the Firm tab only shows '15 / 17 active users' with no list of who, how often, or which 2 are not onboarded.",
+     "fix": "Add a usage table (lawyer, sessions, questions, drafts, last active) with the 2 non-onboarded users named and a 'Send invite' action."
+    },
+    {
+     "issue": "'2 not yet onboarded' is coloured green (good) although it is a gap to fix.",
+     "fix": "Use neutral or warn colour for adoption gaps."
+    },
+    {
+     "issue": "The partner's core worry, lawyers using public ChatGPT on client files, is not addressed anywhere (no shadow-AI policy, no attestation, no usage-policy acceptance).",
+     "fix": "Add a 'Firm AI policy' card: policy version, % of lawyers who accepted it, link to policy, and optional network signal of public AI use if IT provides it."
+    },
+    {
+     "issue": "Confidentiality card says 'Written in your engagement-letter language (ABA Formal Op. 512 checklist attached)' but there is no attachment or link and the sentence is unclear (what is written in engagement-letter language?).",
+     "fix": "Replace with 'Client disclosure language for engagement letters (Download)' and 'ABA Formal Op. 512 checklist: competence, confidentiality, communication, fees, supervision (Download PDF)', each with a real button and the status of each item."
+    },
+    {
+     "issue": "Audit log shows only 3 rows, no filter, no export, no link to the full log; a partner cannot use it as proof for a client or insurer.",
+     "fix": "Add 'View full log', filter by user/matter/action, and 'Export CSV/PDF for client or carrier'."
+    },
+    {
+     "issue": "Ethics risk is invisible: no count of answers that were blocked for lacking a source, no count of drafts exported without review, no supervision view (ABA 512 supervisory duties).",
+     "fix": "Add 'Blocked answers (no source): n', 'Drafts exported without reviewer sign-off: n', and a supervision queue for associates' AI-assisted work."
+    },
+    {
+     "issue": "Right side bar on the Firm tab still shows Reyes v. Coastal sources and matter details, which are irrelevant to a firm-level view.",
+     "fix": "On Firm tab, right bar should show period selector, policy status, open risks and the export actions."
+    }
+   ]
+  },
+  {
+   "id": "associate",
+   "score": 4,
+   "defects": [
+    {
+     "issue": "Critical: selecting 'Herrera I-130' in the sidebar changes the heading to Herrera but leaves the Reyes Q&A, Reyes citations and Reyes right-bar sources on screen (see sim/review/desktop-select-herrera.png). For a product selling 'answers only from this matter' and ethical walls, this looks like cross-matter leakage.",
+     "fix": "On matter switch, replace the answer, sources and matter card with that matter's thread (or an empty state 'No questions yet in Herrera I-130')."
+    },
+    {
+     "issue": "Right-bar 'Matter' card always says Client: Elena Reyes / Responsible: A. Chen, regardless of the selected matter.",
+     "fix": "Bind the matter card to the selected matter."
+    },
+    {
+     "issue": "Citation chips are ~17x16 px, below the 24x24 px target size (WCAG 2.5.8) and hard to hit on a trackpad or phone.",
+     "fix": "Make chips at least 24x24 px hit area (padding or pseudo-element)."
+    },
+    {
+     "issue": "Only one answer is shown; there is no conversation history, no example of what happens when the documents do not contain the answer (the main hallucination guard), and no indication of confidence or contradicting evidence.",
+     "fix": "Show a second turn where the answer is 'Not found in this matter's 1,284 documents. Closest: …' and a 'Conflicting evidence' note when sources disagree; keep a thread list per matter."
+    },
+    {
+     "issue": "Source detail shows a text snippet but not the page image/highlight; an associate preparing a motion needs to verify quickly, and 'Open document' only toasts.",
+     "fix": "Show a page thumbnail with the cited passage highlighted in the right bar, plus Bates number and production volume."
+    },
+    {
+     "issue": "No Bates numbers or production/document IDs in citations; litigators cite by Bates, not file name.",
+     "fix": "Add Bates range (e.g. COASTAL_000412) and DMS document number to each source row."
+    },
+    {
+     "issue": "Composer is an input styled as a button (class btn) with no Send button and no scope control (this matter / selected folders / prior briefs).",
+     "fix": "Add a visible Send button, Enter hint, and a scope chip ('Searching: this matter, 1,284 docs')."
+    },
+    {
+     "issue": "'Copy with citations' gives no indication of citation format.",
+     "fix": "Offer 'Copy as: plain / with Bates cites / Bluebook-style record cites'."
+    }
+   ]
+  },
+  {
+   "id": "paralegal",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "Date error: 'Expert disclosures due Fri, Nov 14'. With today being Nov 11, 2026, Nov 14 is a Saturday. A paralegal will immediately distrust the calendar.",
+     "fix": "Use a correct weekday (e.g. 'Fri, Nov 13, 2026') and always show the year on deadlines."
+    },
+    {
+     "issue": "The bell badge says '2' (aria 'Deadlines, 2 this week') but the Timeline shows only one deadline.",
+     "fix": "Show both deadlines, or set the badge to 1."
+    },
+    {
+     "issue": "Deadline card says 'added to your calendar' but does not show the rule used (e.g. FRCP 26(a)(2)/scheduling order ¶), who is responsible, or reminder dates; deadlines generated by AI must be verified by a person.",
+     "fix": "Show source page, rule, responsible person, reminders (7/3/1 days), and a 'Verified by' field with a Verify button."
+    },
+    {
+     "issue": "The chronology has only 4 events, no filters (by witness, document type, date range), no 'add/edit event', no export to Word/Excel (the deliverable attorneys actually use), and no counts of documents reviewed.",
+     "fix": "Add filter chips, edit/add event, 'Export chronology (Word/Excel) with cites', and '4 key events from 1,284 docs, 37 total events' summary."
+    },
+    {
+     "issue": "Timeline does not show the matter name in its heading; it relies on a sidebar selection that, as shown, does not update the content.",
+     "fix": "Header: 'Timeline · Reyes v. Coastal Freight' and rebuild on matter switch."
+    },
+    {
+     "issue": "Right bar shows generic sources list rather than the event's source with page preview when a timeline row is clicked; no highlighting of which source belongs to which row.",
+     "fix": "Clicking an event should highlight the source in the right bar with its excerpt; keep order matched to timeline."
+    },
+    {
+     "issue": "Statute of limitations / other key dates for Reyes (collision Mar 24, 2025) not shown, while Intake shows SOL for a new caller.",
+     "fix": "Add 'Key dates' (SOL, trial date, discovery cut-off) at top of Timeline."
+    }
+   ]
+  },
+  {
+   "id": "intake",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "'SOL: Nov 2, 2028' is shown with no jurisdiction, no year of the accident ('rear-ended Nov 2') and no rule. Limitation periods vary by state and claim type; an AI-calculated SOL without attorney check is a malpractice risk.",
+     "fix": "Show 'Accident: Nov 2, 2026 · State: NJ (assumed from Route 9 - confirm) · 2-year PI SOL → Nov 2, 2028 · needs attorney confirmation'."
+    },
+    {
+     "issue": "Conflict check returns a definitive 'Clear' after a name search; there is no list of names searched, no near-matches/fuzzy hits, no related parties (driver, insurer, employer), and no attorney sign-off. Conflicts clearance is a lawyer decision.",
+     "fix": "Show every searched name, near-match results (e.g. 'Swift Parcel Inc. – closed 2021, adverse'), and status 'No hits – pending attorney clearance' with a 'Request clearance' button."
+    },
+    {
+     "issue": "Summary has no caller contact, referral source, intake date/time, insurer, injury severity or case-value signals the firm uses to accept/decline.",
+     "fix": "Add contact, source, insurer, medical treatment, lost wages and a 'Fit for firm' indicator with reasons."
+    },
+    {
+     "issue": "'Book consult' toasts 'Thu 10:00' without saying with whom or offering times.",
+     "fix": "Show available attorney slots and confirmation with attorney name."
+    },
+    {
+     "issue": "No path for declined cases (non-engagement letter) or for creating the matter in Clio.",
+     "fix": "Add 'Decline (send non-engagement letter)' and 'Open matter in Clio' actions."
+    },
+    {
+     "issue": "Right bar shows Reyes sources and Reyes client during intake of a different person — confusing and suggests the tool mixes clients.",
+     "fix": "Right bar on Intake: call notes source, conflict-search details, and intake checklist."
+    },
+    {
+     "issue": "Only one caller is visible; intake handles a queue.",
+     "fix": "Add an intake queue in the sidebar when on this tab (new callers, status)."
+    }
+   ]
+  },
+  {
+   "id": "billing",
+   "score": 3,
+   "defects": [
+    {
+     "issue": "Ethics/fees problem: entries like 1.4h 'Reviewed fleet maintenance records; analysis of notice…' appear to bill work the AI did. ABA Formal Op. 512 says hourly billing must reflect actual time spent; time saved by AI cannot be billed, and AI cost pass-through needs disclosure.",
+     "fix": "Base suggestions on measured active lawyer time in the app, show 'Measured 1.4h active (10:02–11:26)', and add a note 'AI-assisted; bill actual time only (ABA Op. 512)'. Allow flat-fee/value billing tags."
+    },
+    {
+     "issue": "No timekeeper column, although the audit log shows three different lawyers (A. Chen, M. Vega, J. Patel) did these tasks.",
+     "fix": "Add Timekeeper, date, rate and amount columns."
+    },
+    {
+     "issue": "No UTBMS task/activity codes, no rate, no amount, no billable/non-billable flag; a billing manager cannot produce a prebill from this.",
+     "fix": "Add UTBMS code (e.g. L120/A104), rate, amount, billable toggle."
+    },
+    {
+     "issue": "Clicking Approve only shows a toast; the row and button do not change state, so one cannot tell what was approved (risk of double posting).",
+     "fix": "Change the row to 'Approved · sent to Clio 10:31' with an Undo, and disable the button."
+    },
+    {
+     "issue": "No edit, no bulk 'Approve all', no reject, no who-must-approve (billing manager vs timekeeper).",
+     "fix": "Add inline edit of hours/narrative, Approve all, Reject, and an approver column."
+    },
+    {
+     "issue": "The Brightline MSA entry implies a corporate client/vendor review, but in-house work is not billed; matter/client billing numbers are missing.",
+     "fix": "Show client-matter number (e.g. 1042-003) per row."
+    },
+    {
+     "issue": "No view of realization or captured vs suggested time, which is the billing manager's KPI.",
+     "fix": "Add a header strip: 'Suggested 2.6h · Approved 0.0h · Captured this week vs last'."
+    },
+    {
+     "issue": "Phone: the table squeezes work narrative into a 100px column, making long narratives hard to read and Approve buttons crowd the hours.",
+     "fix": "On phone, render each entry as a card (matter, timekeeper, hours, narrative, actions)."
+    }
+   ]
+  },
+  {
+   "id": "it_ops",
+   "score": 4,
+   "defects": [
+    {
+     "issue": "Contradiction: Ask tab and bottom bar say questions and documents 'never leave your firm's instance', but Admin says the model is an 'Enterprise model API with zero data retention' – i.e. prompts do leave the instance to a third-party API. An IT reviewer will flag this as misleading.",
+     "fix": "Say precisely: 'Documents stored only in your instance. Question + retrieved excerpts sent to <vendor/model, region> under zero-retention; no training.' Make the on-prem/open-weight option a clear alternative with its trade-offs."
+    },
+    {
+     "issue": "Model vendor, model name/version, region and retention period are not named.",
+     "fix": "Show 'Model: <provider> <model> via Azure OpenAI (East US), retention 0 days, abuse monitoring opt-out: yes' and a model change log."
+    },
+    {
+     "issue": "No security evidence: SOC 2 / ISO 27001, pen test, subprocessor list, DPA, backups, encryption key ownership (BYOK), data deletion on termination.",
+     "fix": "Add 'Trust documents' card with downloads and a subprocessor list; key management; export & deletion policy."
+    },
+    {
+     "issue": "Integrations pills: iManage is grey with no label explaining state; green pills have no legend; no sync status, last sync, or which matters/folders are indexed.",
+     "fix": "Add a status column (Connected, Not connected – Connect, last sync 4 min ago, 18,402 docs indexed, errors)."
+    },
+    {
+     "issue": "'Matter-level permissions mirror Clio' while documents live in NetDocuments: unclear which system is the source of truth for permissions and ethical walls.",
+     "fix": "State 'Permissions inherited from NetDocuments workspace ACLs; ethical walls synced from Clio' and show sync health."
+    },
+    {
+     "issue": "No user and role management (who can see Firm/Admin), no SSO group mapping, no session log.",
+     "fix": "Add Users & roles table with SSO group mapping and last sign-in."
+    },
+    {
+     "issue": "The signed-in user is 'Alex (associate)' yet Admin and Firm tabs are visible and look editable — suggests no role-based access.",
+     "fix": "Hide or mark Admin/Firm as read-only for non-admin roles; show current role in header."
+    },
+    {
+     "issue": "The Settings rail icon looks like a sun (theme toggle), not a gear.",
+     "fix": "Use a standard gear icon."
+    },
+    {
+     "issue": "Right bar shows Reyes case sources on the Admin tab.",
+     "fix": "Right bar for Admin: instance health, version, last backup, open security tickets."
+    }
+   ]
+  },
+  {
+   "id": "solo_immigration",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "False attestation: after translating, the letter body says 'Traducción revisada por la abogada antes de enviar' (translation reviewed by the attorney) while the toast says it is only 'ready for attorney review'. The document claims a review that has not happened.",
+     "fix": "Show a 'Not yet reviewed' banner and only add the reviewed note after the attorney clicks 'Mark reviewed'."
+    },
+    {
+     "issue": "Translation replaces the English text; no side-by-side EN/ES view, no way back to English, no highlighting of legal terms kept in English (e.g. 'National Benefits Center').",
+     "fix": "Show side-by-side panes with toggle; flag terms left untranslated with a glossary."
+    },
+    {
+     "issue": "Letter facts (receipt date, receipt number, processing time) are not cited to the matter's documents (I-797C notice, USCIS processing-times page), unlike the Ask tab promise.",
+     "fix": "Add citation chips on facts: receipt number → I-797C p.1; processing time → USCIS processing times as of date."
+    },
+    {
+     "issue": "Processing time '14 months' from Sep 12, 2025 means a decision is due about now (Nov 2026), yet the letter only says 'we will contact you'; stale/unhelpful for the client.",
+     "fix": "Compute and state 'expected by about Nov 2026; we will check status and follow up' with the as-of date."
+    },
+    {
+     "issue": "Draft is not tied to the selected matter: it shows Herrera even when Reyes is selected, and 'Use in a draft' from the Reyes answer lands on an immigration letter.",
+     "fix": "Draft tab should list templates for the current matter and carry over the Ask answer when coming from Ask."
+    },
+    {
+     "issue": "No template picker, no send/delivery options (email, client portal, print) or WhatsApp/SMS which immigration clients commonly use.",
+     "fix": "Add template dropdown and 'Send to client' with channel choice and record in matter."
+    },
+    {
+     "issue": "Right bar on Draft shows Reyes sources instead of the template and client facts used.",
+     "fix": "Right bar: template version, fields filled and their sources, client language preference."
+    },
+    {
+     "issue": "Volume is the persona's goal but there is no batch mode (e.g. status letters to all I-130 clients).",
+     "fix": "Add 'Generate for all 23 pending I-130 clients' with review queue."
+    }
+   ]
+  },
+  {
+   "id": "in_house",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "Only 4 clauses are listed for a full vendor MSA; she cannot tell if the rest were checked (indemnity, IP, confidentiality, termination, SLA, insurance, assignment).",
+     "fix": "Show 'Checked 27 clauses · 3 need changes · 1 missing' with collapsible OK rows and a 'Missing clauses' section."
+    },
+    {
+     "issue": "'Their draft' column paraphrases; no section number or quote from the contract, and nothing in the right bar links to the clause location.",
+     "fix": "Show contract §ref and the exact quoted text; clicking a row shows the clause and the playbook position in the right bar."
+    },
+    {
+     "issue": "'Suggested' column repeats the word 'Suggested:' in each cell and does not show fallback positions or who may approve deviations.",
+     "fix": "Remove the prefix; add preferred / fallback / walk-away positions and an approver (e.g. CFO for liability cap)."
+    },
+    {
+     "issue": "No per-row accept/reject/edit before 'Create redline'; redline 'with 3 changes' is created blindly.",
+     "fix": "Add per-row Accept / Edit / Ignore and show count of accepted changes on the button."
+    },
+    {
+     "issue": "UI language is law-firm-centric (Matters, Intake, Time, Firm tab, 'firm templates'); a solo in-house counsel has no billing, intake or matters in this sense.",
+     "fix": "Offer an in-house workspace mode: Contracts queue, Requester (Sales), Deal value, Due date; hide Time/Intake."
+    },
+    {
+     "issue": "No sales context: who requested it, deal value, deadline, counterparty paper vs ours; turnaround is her key outcome.",
+     "fix": "Add a request header: requester, deal, due date, turnaround SLA, status."
+    },
+    {
+     "issue": "Right bar shows litigation sources (brake report, deposition) during contract review.",
+     "fix": "Right bar on Review: playbook positions and the MSA's clause preview."
+    },
+    {
+     "issue": "Phone: 4-column table wraps into narrow columns with very long rows.",
+     "fix": "On phone render each clause as a card with risk badge first."
+    }
+   ]
+  }
+ ],
+ "global_defects": [
+  {
+   "issue": "The right side bar never changes: every tab (Draft, Review, Intake, Time, Firm, Admin) shows Reyes v. Coastal sources, Reyes client and the Reyes ethical-wall note. This is the single biggest context error and, for a confidentiality product, looks like cross-matter leakage.",
+   "fix": "Make the right bar contextual per tab: Ask/Timeline = cited sources; Draft = template + fact sources; Review = playbook + clause preview; Intake = conflict search details; Time = timekeeper totals; Firm = period, policy, exports; Admin = instance health/trust docs."
+  },
+  {
+   "issue": "Selecting another matter in the sidebar updates only the title; the answer, sources and matter card stay on Reyes (sim/review/desktop-select-herrera.png).",
+   "fix": "Rebind all matter-scoped content on selection; show empty states where no data exists."
+  },
+  {
+   "issue": "Privacy claim contradiction: 'never leave your firm's instance' (Ask, bottom bar) vs 'Enterprise model API' (Admin).",
+   "fix": "Use one accurate, precise data-flow statement everywhere and link it to Admin."
+  },
+  {
+   "issue": "8 tabs mix matter-scoped tools (Ask, Draft, Review, Timeline) with firm-wide areas (Intake, Time, Firm, Admin), while the wireframe shows a short tab row. On phone the tab row overflows and the 'Sources' toggle is pushed off-screen at the end of the scroll (left ≈ 613px on a 390px screen).",
+   "fix": "Keep 4 matter tabs in the tab row; move Intake, Time, Firm, Admin to the left rail (rail already has Settings). On phone, put the Sources button in the header, not at the end of the tab scroller."
+  },
+  {
+   "issue": "No visible signed-in role or firm name; avatar 'AC' is the only identity cue, and an associate sees Firm and Admin.",
+   "fix": "Show firm name + user role in the sidebar top or bottom bar; gate Firm/Admin by role."
+  },
+  {
+   "issue": "Rail icons: the 'Settings' icon looks like a sun; 'Search' only toasts; the bell goes to Timeline of whichever matter is open, not a cross-matter deadlines list.",
+   "fix": "Use a gear icon; make Search open a firm-wide search panel; bell opens a cross-matter deadline list."
+  },
+  {
+   "issue": "Numbers do not reconcile: Matters '214 active' vs '4,812 past and current matters' vs '18,402 firm documents' while one matter alone has 1,284 docs and briefs bank has 2,140; hours saved 146/30d vs 11.5/week.",
+   "fix": "Use a consistent data set (e.g. 214 active, 4,812 total matters, ~410,000 documents) and label scope of each metric."
+  },
+  {
+   "issue": "Dates lack years and one weekday is wrong (Fri Nov 14 is a Saturday in 2026); 'Today'/'Yesterday' in the audit log is fine but deadlines need full dates.",
+   "fix": "Always show weekday + full date for deadlines and check against today (Nov 11, 2026)."
+  },
+  {
+   "issue": "Accessibility: citation chips ~17x16px; emoji lock as the only icon in privacy notes; green text on light-green background is small (12px) bold; toast is the only feedback for most actions.",
+   "fix": "24px minimum targets, SVG icon with aria-hidden, check contrast ≥ 4.5:1, persistent state changes in addition to toasts."
+  },
+  {
+   "issue": "Phone: bottom status bar wraps to two lines and eats vertical space above the rail; the right drawer opens over content with no visible close button.",
+   "fix": "Collapse the status bar to a single 'Private · healthy' chip on phone; add a close (X) button and swipe/Escape to close the drawer."
+  },
+  {
+   "issue": "No human-review step anywhere for AI output (draft, translation, deadline, conflict, time entry); ABA 512 requires lawyer verification and supervision.",
+   "fix": "Add a consistent 'Needs review → Reviewed by <name>, <time>' state on every AI output and log it in the audit log."
+  },
+  {
+   "issue": "No empty, loading or error states (e.g. document indexing in progress, integration disconnected, 'answer not found').",
+   "fix": "Add at least one example of each state in the mockup."
+  }
+ ],
+ "missing_personas": [
+  {
+   "id": "firm_administrator",
+   "department": "Operations",
+   "role": "Firm administrator / office manager (often the actual buyer at 5-30 lawyer firms)",
+   "cares_about": "Overhead per lawyer, vendor cost vs value, staff productivity, smooth onboarding.",
+   "time_spent": "Vendor contracts, HR, onboarding staff, managing software subscriptions and IT providers.",
+   "struggles": "Can't compare AI vendors on cost and risk; seats bought and not used.",
+   "how_helps": "Plan and seat usage view with cost per active user, invoices, onboarding checklist and the trust pack to give the partners.",
+   "task": "Open a Billing & plan page: see seats (17 bought, 15 active), monthly cost, cost per hour saved, download invoice and the security pack."
+  },
+  {
+   "id": "ethics_gc",
+   "department": "Risk management",
+   "role": "Firm general counsel / ethics or risk partner",
+   "cares_about": "Malpractice exposure, compliance with ABA Op. 512 and state bar guidance, insurer questionnaires.",
+   "time_spent": "Conflicts clearance, policy writing, answering malpractice carrier and client outside-counsel-guideline questionnaires.",
+   "struggles": "Clients' outside counsel guidelines restrict or require disclosure of AI; no record of which matters used AI.",
+   "how_helps": "Per-matter AI-use register, client consent/OCG flags that block AI on restricted matters, and exportable evidence for carriers and clients.",
+   "task": "Filter matters by 'client restricts AI', confirm AI is disabled there, and export the AI-use register for a client audit."
+  },
+  {
+   "id": "docketing",
+   "department": "Docketing / calendaring",
+   "role": "Docketing clerk",
+   "cares_about": "Zero missed deadlines; rules-based calculation.",
+   "time_spent": "Reading court orders and notices, entering and checking deadlines across all matters.",
+   "struggles": "Orders arrive by email/e-filing and must be read and calculated by hand; double entry with the calendar system.",
+   "how_helps": "Extracts deadlines from new orders with the rule applied and the source page, for clerk verification before posting to the calendar.",
+   "task": "Open a cross-matter 'New deadlines to verify' queue, check the source page, verify and post to the firm calendar."
+  },
+  {
+   "id": "km_librarian",
+   "department": "Knowledge management",
+   "role": "KM attorney / law librarian",
+   "cares_about": "Quality and currency of templates, precedents and playbooks the AI draws on.",
+   "time_spent": "Curating the brief bank and templates, retiring outdated forms, training lawyers.",
+   "struggles": "AI may reuse outdated templates or superseded briefs; no way to mark the authoritative version.",
+   "how_helps": "Knowledge sources view with authoritative/outdated flags, usage counts and which answers cited each document.",
+   "task": "Open Firm knowledge > Templates, mark a superseded template as retired and see which recent drafts used it."
+  },
+  {
+   "id": "legal_secretary",
+   "department": "Attorney support",
+   "role": "Legal secretary / legal assistant to two partners",
+   "cares_about": "Getting letters, filings and client updates out on time and correctly formatted.",
+   "time_spent": "Formatting documents, correspondence, scheduling, filing.",
+   "struggles": "Re-typing facts from the file into letters; firm style formatting.",
+   "how_helps": "Drafts in firm style with facts filled from the matter and cited, ready for the attorney's sign-off.",
+   "task": "Generate a client update letter for a matter, send it to the partner for review, then export to Word on firm letterhead."
+  },
+  {
+   "id": "estate_planning",
+   "department": "Transactional practice",
+   "role": "Estate planning attorney (matter 'Estate of D. Liu' appears in the list but no persona covers it)",
+   "cares_about": "Accurate asset inventories, deadlines in probate, client communication with families.",
+   "time_spent": "Reviewing financial statements, wills, trusts; preparing inventories and court filings.",
+   "struggles": "Pulling assets and beneficiaries out of hundreds of statements.",
+   "how_helps": "Ask the estate's documents for an asset and beneficiary list with citations; export an inventory.",
+   "task": "Select 'Estate of D. Liu', ask for all accounts with balances at date of death, and export the cited inventory table."
+  },
+  {
+   "id": "lit_support",
+   "department": "Litigation support / e-discovery",
+   "role": "Litigation support manager",
+   "cares_about": "Defensible review, privilege protection, production deadlines.",
+   "time_spent": "Loading productions, running searches, privilege logs.",
+   "struggles": "Large productions; privileged documents leaking into answers or drafts.",
+   "how_helps": "Index productions by Bates range, exclude privileged sets from Ask, and draft privilege-log entries with cites.",
+   "task": "Load a production volume, confirm Bates ranges indexed, mark a privileged folder as excluded and check the Ask scope."
+  }
+ ]
+}

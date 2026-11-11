@@ -1,0 +1,419 @@
+{
+ "overall": 4,
+ "personas": [
+  {
+   "id": "agent",
+   "score": 6,
+   "defects": [
+    {
+     "issue": "Right bar customer summary is hardcoded: every customer shows 'Customer since 2024 · 6 orders · $214 lifetime' and the same two previous conversations, even Ben Carter whose order card says 'Prospect / No orders yet'. The agent cannot trust the context.",
+     "fix": "Drive customer stats, previous conversations and suggested macros from each conversation record; for a prospect show 'No orders' and hide Refund/Send replacement."
+    },
+    {
+     "issue": "AI draft for Daniel says 'I've set up a free replacement... shipping today' while the handoff says a >$100 policy check is still needed and no replacement order exists. Sending it makes a promise nobody has fulfilled.",
+     "fix": "Draft should state the pending action and pair it with an inline 'Create replacement #4021-R ($112) and send' button that does both; show the policy check result (approve/deny) above the draft."
+    },
+    {
+     "issue": "Handoff reason says 'replacement over $100' but the AI guardrail says 'refunds over $100'. Policies don't match.",
+     "fix": "Use one rule wording in both places, e.g. 'Refunds or replacements over $100 go to a human'."
+    },
+    {
+     "issue": "Order card lacks tracking number/carrier link and order date, the #1 thing a WISMO agent needs.",
+     "fix": "Add carrier, tracking link, ship date and expected delivery to the order card."
+    },
+    {
+     "issue": "'Refund' and 'Send replacement' in the right bar fire instantly with no amount, reason or confirmation.",
+     "fix": "Open a small confirm step with amount (full/partial), reason and note; show the result in the thread as a system event."
+    },
+    {
+     "issue": "Send only shows a toast; the conversation stays open, the draft stays in the box and nothing moves to the next ticket.",
+     "fix": "After send, append the message to the thread, set status (Pending/Resolved), and offer 'Send and next' to open the next ticket in the view."
+    },
+    {
+     "issue": "'My open conversations' contains Ana Lopez, already 'Resolved by AI', so the open queue is wrong; it also shows 3 items while Reports says Maya has 14 open.",
+     "fix": "Exclude resolved items from open views and make counts consistent with Reports."
+    },
+    {
+     "issue": "Conversation list has no wait time/last-message time or priority sort; only some rows show SLA.",
+     "fix": "Show relative time on every row and sort by SLA due/wait time; mark the AI-resolved row with a clear 'Resolved by AI' chip instead of the bare 'AI' text."
+    },
+    {
+     "issue": "Composer has no internal note, attachment, regenerate/shorten or 'why did the AI write this' (sources).",
+     "fix": "Add Reply / Internal note toggle, attach, Regenerate, and a 'Sources: order #4021, Returns policy' line under the AI label."
+    },
+    {
+     "issue": "Suggested macros are the same three for every ticket (e.g. 'Pause subscription' on a wrong-grind ticket) and are not clickable.",
+     "fix": "Rank macros by the ticket's intent and make chips insert into the composer."
+    }
+   ]
+  },
+  {
+   "id": "lead",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "SLA data is inconsistent: Daniel (due in 38m) and Lucía (due in 52m) carry SLA timers but are not in 'SLA at risk', while Ben (due in 44m) is. Five tickets have timers; the badge and view say 3.",
+     "fix": "Define 'at risk' (e.g. under 45 min left or under 25% of target) in the view header and apply it to all tickets; counts must match the badge and workload table."
+    },
+    {
+     "issue": "Reassign instantly assigns to Leo with no choice and no visible result (the row and header don't change).",
+     "fix": "Open an assignee picker showing each agent's open count and status with the lowest-load agent preselected; update the assignee in the header and list after."
+    },
+    {
+     "issue": "No assignee shown in the conversation header or list rows, so a lead can't see who owns a ticket.",
+     "fix": "Show the assignee avatar/name on rows and in the thread subtitle."
+    },
+    {
+     "issue": "SLA timers are static text ('due in 12m') with no breached state, target, or count of breaches today.",
+     "fix": "Live countdown, red 'Breached 4m ago' state, and an SLA summary (met % today, breaches today) at the top of the SLA view."
+    },
+    {
+     "issue": "Workload table (Reports) is read-only: can't click an agent to see or rebalance their queue; 'At SLA risk' is shown by orange colour only.",
+     "fix": "Make agent rows link to a filtered view with bulk reassign; add an icon/text marker for risk, not colour alone; add totals row and CSAT sample size (n)."
+    },
+    {
+     "issue": "Reports workload says Maya has 14 open, but signed-in Maya sees 3 in 'My open conversations'.",
+     "fix": "Reconcile mock data or label the sidebar as a filtered subset."
+    },
+    {
+     "issue": "Notification bell only shows a toast; no list to act on.",
+     "fix": "Open a notification panel with the 3 at-risk tickets linking to them."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here; in Reports a lead wants filters and the at-risk list there.",
+     "fix": "Make the right bar contextual per tab: in Reports show date range, channel/agent filters and the live SLA-at-risk list with reassign buttons."
+    }
+   ]
+  },
+  {
+   "id": "head_cx",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "Reports say 'Last 30 days' while AI tab, billing and bottom bar say 'this month'; the 61%/1,842 numbers are presented under both periods.",
+     "fix": "Use one period selector (This month / Last 30 days / custom) shared by Reports, AI agent and Billing, and state it on every KPI."
+    },
+    {
+     "issue": "'Cost per ticket $0.20' is software cost only (599/3,019) and 'was ~$1.18 on Zendesk' is an estimate shown as a historical fact.",
+     "fix": "Rename to 'Software cost per conversation', label the comparison 'Zendesk estimate', and optionally add fully loaded cost (incl. agent hours) for the board."
+    },
+    {
+     "issue": "No trend charts: a single number per KPI cannot show the AI ramp or peak-season effect.",
+     "fix": "Add a 12-week line chart of AI resolution rate, volume and CSAT."
+    },
+    {
+     "issue": "CSAT is not split by AI vs human, so the Head of CX can't prove AI quality isn't hurting satisfaction.",
+     "fix": "Show CSAT for AI-resolved vs human-resolved and the AI reopen rate."
+    },
+    {
+     "issue": "'Resolved by AI' is undefined (customer confirmed? no reply in 72h? reopened?).",
+     "fix": "Add a tooltip/definition and show reopen-within-7-days rate."
+    },
+    {
+     "issue": "Savings vs Zendesk are only in Billing and the bottom bar, not on the Reports page the Head of CX shows the board.",
+     "fix": "Add a 'Savings vs Zendesk' KPI and an 'Export board summary (PDF)' button on Reports."
+    },
+    {
+     "issue": "Nothing helps peak-season staffing (volume forecast, hours saved by AI, agents needed).",
+     "fix": "Add 'Agent hours saved by AI' and a simple volume forecast for the next 8 weeks."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here.",
+     "fix": "In Reports, right bar shows filters, definitions and export/share actions."
+    }
+   ]
+  },
+  {
+   "id": "finance",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "'Flat price' and 'no per-resolution fees' are undercut by '1,842 of 3,000 AI resolutions (fair use)' with no statement of what happens above 3,000.",
+     "fix": "State the rule explicitly: e.g. 'Above 3,000 we never charge; we contact you to discuss the next plan' or show the exact overage price; show a forecast for month-end usage."
+    },
+    {
+     "issue": "Contradictory claims: AI tab states 'Zendesk rate: ~$1.50–2.00 each' as a fact; Billing says 'third-party estimate; Zendesk doesn't publish the rate'.",
+     "fix": "Use one hedged wording everywhere ('Estimated Zendesk AI cost: ~$1.50–2.00 per resolution, source: ...') with a link to the source."
+    },
+    {
+     "issue": "Comparison uses list price and assumes the old plan would have had all 1,842 resolutions billed; 'Same month on your old Zendesk plan' overstates certainty.",
+     "fix": "Title it 'Estimated Zendesk cost for the same volume'; make 'upload one to replace the estimate' a real Upload invoice button and show which inputs came from the customer's contract."
+    },
+    {
+     "issue": "No invoice history, payment method, next invoice date, renewal/notice terms or tax.",
+     "fix": "Add an invoices table (date, amount, PDF), payment method, next charge date, 'Cancel any time, 30 days notice' terms."
+    },
+    {
+     "issue": "During migration they still pay Zendesk; the overlap cost (Zendesk + FlatDesk this month) isn't shown.",
+     "fix": "Add a 'Transition month' line: Zendesk still billed until cancel date X; recommend cancellation date after go-live."
+    },
+    {
+     "issue": "'Up to 10 agents' gives no price for agent 11 or the next tier; finance can't budget growth.",
+     "fix": "Show the plan ladder (e.g. 10 / 25 agents and price) and a 12-month budget projection."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here.",
+     "fix": "In Billing, right bar shows plan details, next invoice, budget vs actual YTD and who the billing contact is."
+    }
+   ]
+  },
+  {
+   "id": "founder",
+   "score": 4,
+   "defects": [
+    {
+     "issue": "Story contradicts itself: Migration says not live yet (go-live Fri Nov 20, email/DNS pending, WhatsApp switch Thursday) but the inbox has live tickets, 1,842 AI resolutions this month, a $599 bill and 'All channels connected'.",
+     "fix": "Pick one state. Either pre-go-live (inbox shows 'Parallel run: replies sent via Zendesk until go-live', bottom bar 'Email: pending DNS') or post-go-live (migration shows Completed with a summary)."
+    },
+    {
+     "issue": "'Day 6 of 7' and 'Scheduled Thu' have no reference date; the founder can't tell if they are on track or which Thursday.",
+     "fix": "Show 'Started Nov 14 · today Nov 19 · go-live Fri Nov 20' and full dates for every scheduled step."
+    },
+    {
+     "issue": "86% overall progress has no basis (4 of 6 steps done = 67%).",
+     "fix": "Explain the weighting or show 'Steps 4 of 6 done' plus remaining time."
+    },
+    {
+     "issue": "No proof that history arrived intact (spot-check), no rollback plan, no named migration manager to contact.",
+     "fix": "Add 'Spot-check 10 random old tickets', 'Rollback: switch MX back in 5 min', and a named migration contact with a Message button."
+    },
+    {
+     "issue": "Peak-season risk is not addressed (Black Friday is Nov 27, one week after go-live).",
+     "fix": "Show a 'Peak readiness' checklist and the freeze window, or recommend go-live date relative to peak."
+    },
+    {
+     "issue": "Nothing links support to revenue (orders saved, repeat purchase, revenue at risk in open tickets).",
+     "fix": "Add 'Revenue in open tickets' and 'Orders saved by replacements' to Reports or the founder's view."
+    },
+    {
+     "issue": "The 'Send to IT' button doesn't say to whom or what IT will receive.",
+     "fix": "Show recipient email and a preview of DNS/forwarding instructions, plus status 'Sent to it@... 2h ago, not done yet'."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here.",
+     "fix": "In Migration, right bar shows the migration contact, next 3 actions with owners and a timeline."
+    }
+   ]
+  },
+  {
+   "id": "it_admin",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "No user/role management: who is admin, who sees Billing/Admin. A signed-in agent (Maya) can open Billing and Admin.",
+     "fix": "Add Users & roles (Agent, Lead, Admin, Billing) with SCIM provisioning status, and hide Billing/Admin for agents."
+    },
+    {
+     "issue": "No compliance evidence: SOC 2/ISO, DPA, subprocessor list, retention policy, audit log.",
+     "fix": "Add a 'Trust & compliance' card with downloads (SOC2 report, DPA, subprocessors) and an Audit log link."
+    },
+    {
+     "issue": "No statement on AI data handling: which LLM provider, whether customer data trains models, where prompts are processed.",
+     "fix": "Add 'AI data processing' card: model provider, region, 'not used for training', PII redaction toggle."
+    },
+    {
+     "issue": "Data region only shows US; no EU option, no backup/RPO info.",
+     "fix": "Show available regions and backup schedule; 'Request region move' action."
+    },
+    {
+     "issue": "'Single sign-on: Google Workspace SAML' plus '2FA enforced' is ambiguous (is password login disabled?).",
+     "fix": "State 'Password login disabled; SSO enforced for all 7 users' and list IdP options (Okta, Azure AD)."
+    },
+    {
+     "issue": "Export has no scope, format detail, schedule or API; 'any time' but no scheduled backups.",
+     "fix": "Add scope checkboxes, scheduled export to S3, and link to API docs."
+    },
+    {
+     "issue": "Rail icon is 'Settings' (gear) but the tab is 'Admin'; Reports rail icon is a document icon.",
+     "fix": "Use consistent naming (Settings or Admin) and a chart icon for Reports."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here.",
+     "fix": "In Admin, right bar shows security posture summary (SSO, 2FA, last export, last login anomalies)."
+    }
+   ]
+  },
+  {
+   "id": "ops_whatsapp",
+   "score": 4,
+   "defects": [
+    {
+     "issue": "No translation: the Spanish message and Spanish AI draft have no English gloss, so a non-Spanish-speaking ops manager or agent can't verify what is sent.",
+     "fix": "Add 'Show translation' under each message and the draft, with detected language chip."
+    },
+    {
+     "issue": "WhatsApp specifics missing: 24-hour reply window, template requirement after it closes, phone number, read receipts.",
+     "fix": "Show '24h window: 19h left' in the header and switch the composer to approved templates when closed."
+    },
+    {
+     "issue": "Migration says 'WhatsApp number switch-over: Scheduled Thu' but the WhatsApp channel is already live in the inbox with conversations.",
+     "fix": "Make channel status consistent; if pending, show 'WhatsApp: connecting Thu' in the bottom bar and the channel view."
+    },
+    {
+     "issue": "AI draft claims 'Ya abrí una reclamación con UPS' (claim opened) although nothing in the UI shows a claim.",
+     "fix": "Only claim actions that exist; add a 'Open carrier claim' action with a claim ID shown in the order card."
+    },
+    {
+     "issue": "Phone: once the Customer drawer is opened it cannot be closed: its toggle is off-screen in the scrolled tab strip (button at x=586 on a 390px screen) and then covered by the drawer, Escape only works when a tab has focus, and there is no close button or tap-outside scrim. Screenshot: sim/review/phone-right-open.png.",
+     "fix": "Add a visible close (X) button in both drawers, a tap-to-close scrim, global Escape handling, and move the Customer toggle out of the scrolling tab strip into the conversation header."
+    },
+    {
+     "issue": "WhatsApp view has no unread/missed-message count, which is what this persona is measured on.",
+     "fix": "Show unread and 'waiting > 1h' counts per channel in the view selector."
+    },
+    {
+     "issue": "Customer card doesn't show preferred language or phone number for WhatsApp.",
+     "fix": "Add language and channel identifiers to the customer card."
+    }
+   ]
+  },
+  {
+   "id": "knowledge",
+   "score": 5,
+   "defects": [
+    {
+     "issue": "Gap list has no way to see the underlying conversations or what the AI answered, so the manager can't write an accurate article.",
+     "fix": "Make each row expandable to 3 sample conversations and the AI's handoff reason."
+    },
+    {
+     "issue": "'Draft article' only shows a toast; no editor, no review/publish step, no indication the AI will use it.",
+     "fix": "Open a draft in an editor in place with 'Publish to help centre and AI' and show the row as 'Draft in review'."
+    },
+    {
+     "issue": "No deflection metrics: article views, AI answers using each article, gap trend after publishing.",
+     "fix": "Add a 'Deflection' card: help-centre self-serve rate, top articles used by AI, and gap counts before/after."
+    },
+    {
+     "issue": "Gap counts for 7 days (41, 23...) sit next to month KPIs with no total; '5 gaps' only shows the top 5.",
+     "fix": "Show '5 of 18 gaps', sort control, and period selector shared with Reports."
+    },
+    {
+     "issue": "Mixed action column ('Route to sales' vs 'Draft article') without explanation.",
+     "fix": "Add a 'Suggested action' column header and explain why the wholesale question is routed."
+    },
+    {
+     "issue": "Imported help centre shows '212 articles' but no stale/outdated flag or missing translations (ES/FR).",
+     "fix": "Flag stale articles and missing Spanish/French versions."
+    },
+    {
+     "issue": "Right side bar shows the Daniel Kim customer card on this tab (it is only set by onSelect), which is irrelevant here.",
+     "fix": "In the AI agent tab, right bar shows the selected gap's sample conversations and article suggestions."
+    }
+   ]
+  }
+ ],
+ "global_defects": [
+  {
+   "issue": "Right side bar never changes with the tab: it always shows the last selected customer (Daniel Kim) on AI agent, Migration, Reports, Billing and Admin.",
+   "fix": "Make the right bar contextual per tab (Conversation: customer/order; AI: gap details; Migration: contact and next steps; Reports: filters and SLA list; Billing: plan and invoices; Admin: security summary), as the wireframe's right bar serves the main content."
+  },
+  {
+   "issue": "Left sidebar always shows the conversation list on every tab; the wireframe sidebar should list items for the current section.",
+   "fix": "Swap sidebar content per tab (e.g. Reports: report list; Admin: settings sections; Migration: migration steps) or collapse it outside the inbox."
+  },
+  {
+   "issue": "Rail and tabs duplicate navigation and fall out of sync: clicking the Reports tab leaves the Home rail icon highlighted; Search and Notifications rail items only show toasts.",
+   "fix": "Use the rail for sections and tabs for sub-views within the section, or sync aria-current both ways; make Search and Notifications open real panels."
+  },
+  {
+   "issue": "Data inconsistencies across screens: 1,842 AI resolutions 'this month' vs Reports 'last 30 days'; live inbox and bill while migration not live; SLA counts 3 vs 5 timers; Maya 3 vs 14 open; hardcoded customer stats.",
+   "fix": "Build all panels from one mock data object and add a consistency check in the sim (counts, periods, statuses)."
+  },
+  {
+   "issue": "Accessibility: 'faint' text (#8a919c) is 3.18:1 on white and 2.86:1 on panel-2, failing WCAG AA for the 12px metadata, step counts and footnotes; SLA risk is colour-only in the workload table; the tablist contains non-tab buttons (☰, Customer); tabs lack aria-controls and panels lack role=tabpanel.",
+   "fix": "Darken --faint to about #6b7280 (4.8:1+), add text/icon for risk, move toggles out of role=tablist, add aria-controls/role=tabpanel/aria-labelledby."
+  },
+  {
+   "issue": "Phone: drawers (conversations and customer) have no close button or scrim and the Customer toggle is unreachable off-screen; Escape only closes when a tab has focus.",
+   "fix": "Add close buttons and scrim, global Escape, keep the Customer toggle visible in the thread header."
+  },
+  {
+   "issue": "Phone: chrome takes about 190px of 844px (tab strip 60, wrapped bottom bar 77, rail 56); six tabs need horizontal scrolling with no affordance; the list of conversations is hidden behind an unlabeled ☰.",
+   "fix": "On phone collapse the bottom bar to one line (or hide it), show a 'Conversations' labelled button, and fade the tab-strip edge or use a select for tabs."
+  },
+  {
+   "issue": "No role-based views: agent, lead, finance and IT all see the same everything, signed in as Maya (agent).",
+   "fix": "Add role switcher in the mock and hide Billing/Admin from agents; default tab per role."
+  },
+  {
+   "issue": "'AI on' pill in the sidebar header is ambiguous (on for what? can I turn it off?).",
+   "fix": "Rename to 'AI agent: answering email, chat, WhatsApp' with a link to the AI agent tab."
+  },
+  {
+   "issue": "Bottom bar shows 'Saved vs Zendesk ~$2,969' to agents but no period or that it is an estimate.",
+   "fix": "Label it 'Est. saved vs Zendesk, Nov' and link it to Billing."
+  }
+ ],
+ "missing_personas": [
+  {
+   "id": "support_ops_admin",
+   "department": "Support operations",
+   "role": "Helpdesk admin / support ops specialist",
+   "cares_about": "Routing, automations and macros that keep handle time down and the AI behaving safely; a clean cutover with no lost triggers.",
+   "time_spent": "Building triggers, views, SLAs, macros and integrations; fixing broken automations after changes.",
+   "struggles": "Zendesk triggers/automations and app integrations don't map 1:1 on migration; AI rules are a black box.",
+   "how_helps": "A Rules page that shows each migrated Zendesk trigger/SLA policy next to its FlatDesk equivalent, plus AI guardrails and handoff rules they can edit and test.",
+   "task": "Open Admin > Rules, see migrated triggers with mapping status, edit the '$100 handoff' guardrail and test it on a sample ticket."
+  },
+  {
+   "id": "qa_coach",
+   "department": "Support (quality)",
+   "role": "QA / training specialist",
+   "cares_about": "Reply quality and brand voice from both humans and the AI; fewer wrong promises and refunds.",
+   "time_spent": "Sampling and scoring conversations, writing feedback, running onboarding for new agents.",
+   "struggles": "No easy way to sample AI replies and see where it promised something wrong.",
+   "how_helps": "An AI review queue with random samples, a scorecard and 'fix the answer' that feeds the AI's knowledge.",
+   "task": "Open a 'Review AI replies' view, score 5 AI-resolved conversations and flag one with a correction."
+  },
+  {
+   "id": "privacy_legal",
+   "department": "Legal / Privacy",
+   "role": "Privacy officer / DPO",
+   "cares_about": "GDPR/CCPA compliance, DPAs, data deletion requests, AI processing disclosures.",
+   "time_spent": "Reviewing vendor contracts, handling access and deletion requests, maintaining records of processing.",
+   "struggles": "Can't confirm where helpdesk and AI data is processed or delete a customer everywhere.",
+   "how_helps": "Admin shows DPA, subprocessors, AI provider and training policy, and a one-click 'delete/export this customer' that covers conversations and AI logs.",
+   "task": "Find the DPA and subprocessor list, then process a deletion request for one customer from the customer card."
+  },
+  {
+   "id": "wholesale_sales",
+   "department": "Sales",
+   "role": "Wholesale / B2B sales rep",
+   "cares_about": "Converting café and office inquiries into accounts quickly.",
+   "time_spent": "Email follow-ups, quoting, CRM updates.",
+   "struggles": "Wholesale leads arrive in the support inbox and get answered late or by the AI with the wrong info.",
+   "how_helps": "'Route to sales' sends the lead to a Sales inbox with SLA and CRM sync; the AI tags B2B intent.",
+   "task": "Open the Sales view, see Ben Carter's café inquiry routed from support, and reply with a price list."
+  },
+  {
+   "id": "retention_marketing",
+   "department": "Marketing / Retention",
+   "role": "Retention / lifecycle marketer",
+   "cares_about": "Subscription churn, repeat purchase, reviews and Instagram DM sentiment.",
+   "time_spent": "Analyzing churn reasons, running win-back flows, managing social inboxes.",
+   "struggles": "Cancel reasons and product complaints are buried in tickets.",
+   "how_helps": "Reports tag contact reasons (cancel, damaged, wrong grind) with trends and revenue at stake, and save offers (pause instead of cancel) tracked to outcomes.",
+   "task": "Open Reports > Contact reasons, see 'Cancel subscription' trend and how many were saved by a pause offer."
+  },
+  {
+   "id": "fulfillment_ops",
+   "department": "Fulfillment / Warehouse",
+   "role": "Fulfillment lead (or 3PL coordinator)",
+   "cares_about": "Fewer mis-picks and damaged shipments; fast replacements.",
+   "time_spent": "Managing pick/pack, carrier claims and replacement orders.",
+   "struggles": "Hears about wrong grind or ripped bags only when finance sees refunds.",
+   "how_helps": "Auto-tagged fulfillment issues (wrong item, damaged) with order/SKU and a weekly digest, plus replacement orders created from the helpdesk.",
+   "task": "Filter conversations by 'Fulfillment issue' and see counts by SKU and carrier for the week."
+  },
+  {
+   "id": "bpo_manager",
+   "department": "Outsourced support",
+   "role": "BPO / outsourced team manager",
+   "cares_about": "Meeting contracted SLAs with a shared seat pool and clear billing.",
+   "time_spent": "Scheduling shifts across clients, monitoring queues.",
+   "struggles": "Seat-based pricing and per-client access separation.",
+   "how_helps": "Flat plan with agent groups and restricted access per brand/inbox.",
+   "task": "Add 3 outsourced agents to a limited 'Overflow' group that sees only email after 6pm."
+  }
+ ]
+}
