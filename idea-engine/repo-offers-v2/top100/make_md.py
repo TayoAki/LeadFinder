@@ -1,6 +1,6 @@
 import json
 d=json.load(open('ranked.json'))
-R=d['ranked'][:100]; X=d['excluded']; rest=d['ranked'][100:]
+R=d['ranked']; X=d['excluded']; rest=[]
 by={r['id']:r for r in d['ranked']}
 def m(v):
     if v is None: return '—'
@@ -39,14 +39,12 @@ SL=[(1,"Owner.com passed ~100M dollars ARR (Sacra estimate, Jul 2026; 2.3B dolla
 for i,why in SL:
     r=by[i]; L.append(f"- **#{r['rank']} {r['repo']}: {r['offer']}** ({r['buyer']}, {int(r['price_mo'])} dollars/mo). {why}")
 L+=["","**Pick for this campaign:** TastyIgniter (Keep the 30%). It's the only shortlist offer where a single company has already proven 100M dollars ARR on the same product, same buyer, same price band. It also matches the latina-kitchen avatar and a lead list with phone numbers. If you'd rather chase the biggest ceiling regardless of avatar, take private AI for law firms (#86 above), but the kitchen avatar won't fit it.","",
-"## Top 100","",
-"| # | Repo | ★ | Licence | Offer → buyer | Price/mo | Who proves it (rev. M$) | US buyers | Share needed | Searches/mo | Score | 100M test |",
-"|---|---|---|---|---|---|---|---|---|---|---|---|"]
+"## Full ranking (all 135 that survived the gates; the top 100 are ranks 1-100)","","**Confidence** rates the *evidence*, not the idea. It sums three parts, each worth 0-2:","- **Revenue proof:** 2 = filed or company-reported, same outcome, 2024 or later; 1 = estimate or older; 0 = missing or whole-company.","- **Buyer count:** 2 = Census count for the exact industry; 1 = Census size band or another sourced count; 0 = none.","- **Licence:** 2 = detected by GitHub; 1 = read by hand; 0 = unverified.","","A total of 5-6 is High, 3-4 is Medium and 0-2 is Low. See `confidence.py`.","",
+"| # | Repo | ★ | Licence | Offer → buyer | Price/mo | Who proves it (rev. M$) | US buyers | Share needed | Searches/mo | Score | 100M test | Confidence |",
+"|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
 for r in R:
     inc=f"{r['incumbent'] or '—'} ({m(r['revenue_musd'])}{' est' if r['revenue_basis']=='estimate' else ''}{', whole co.' if r['revenue_scope']!='same outcome' else ''})"
-    L.append(f"| {r['rank']} | [{r['repo']}](https://github.com/{r['repo']}) | {m((r['stars'] or 0)/1000)}k | {r['licence']} | {r['offer']} → {r['buyer']} | {int(r['price_mo'])} | {inc} | {m(r['us_buyers'])} | {str(r['share_needed_pct'])+'%' if r['share_needed_pct'] else '—'} | {m(r['search_volume'])} | {r['score']:g} | {'✅' if r['passes_100m'] else '—'} |")
-L+=["",f"## Ranked 101–{100+len(rest)}",""]
-for r in rest: L.append(f"- {r['rank']}. {r['repo']}: {r['offer']} (score {r['score']:g})")
+    L.append(f"| {r['rank']} | [{r['repo']}](https://github.com/{r['repo']}) | {m((r['stars'] or 0)/1000)}k | {r['licence']} | {r['offer']} → {r['buyer']} | {int(r['price_mo'])} | {inc} | {m(r['us_buyers'])} | {str(r['share_needed_pct'])+'%' if r['share_needed_pct'] else '—'} | {m(r['search_volume'])} | {r['score']:g} | {'✅' if r['passes_100m'] else '—'} | {r['confidence']} |")
 L+=["","## Excluded (15): licence, archived or abandoned",""]
 for r in X: L.append(f"- **{r['repo']}**: {', '.join(r['gates'])}. {r['note'].strip()[:220]}")
 open('TOP100.md','w').write('\n'.join(L)+'\n')

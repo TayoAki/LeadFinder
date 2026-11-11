@@ -64,7 +64,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "HubSpot, Mailchimp and many CRMs ship free marketing-automation tiers; Mautic hosting is a services business. ",
-   "rank": 1
+   "rank": 1,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 82,
@@ -110,7 +116,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "The incumbents have cheap SMB tiers (Zapier, Make), so a managed service must win on done-for-you setup rather than on price. ",
-   "rank": 2
+   "rank": 2,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 46,
@@ -166,7 +178,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Bitwarden (Vaultwarden's upstream) sells low-cost MSP plans; Vaultwarden is an unofficial reimplementation, so a security incident is a large liability.",
-   "rank": 3
+   "rank": 3,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 21,
@@ -232,7 +250,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "GoDaddy revenue is mostly domains/hosting; Wix/Squarespace DIY builders and AI site generators push prices down. ",
-   "rank": 4
+   "rank": 4,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 32,
@@ -298,7 +322,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Rippling also reports $1B ARR (2026). Payroll needs tax-filing compliance and liability that Frappe HRMS does not provide for US payroll.",
-   "rank": 5
+   "rank": 5,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 29,
@@ -354,7 +384,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Segment also includes Mailchimp; bookkeeping services built on QuickBooks/Xero are the norm and accountants are trained on them, not Akaunting. Licence not verified this run; check before use.",
-   "rank": 6
+   "rank": 6,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 0
+   },
+   "confidence": "Medium"
   },
   {
    "id": 138,
@@ -410,7 +446,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Xero not checked; accountants and bank feeds lock SMBs into QuickBooks/Xero, and free tools (Wave, Zoho Books free tier) undercut a $99 price.",
-   "rank": 7
+   "rank": 7,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 120,
@@ -466,7 +508,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Figure is Intuit's disclosed QuickBooks Online Accounting revenue (Global Business Solutions segment total $11,077M incl. Mailchimp); Zoho not checked. Accountants anchor SMBs to QuickBooks, a strong switching barrier for Dolibarr.",
-   "rank": 8
+   "rank": 8,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 118,
@@ -522,7 +570,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "HubSpot and others offer free CRM tiers to SMBs, so a paid hosted Krayin needs a vertical or service angle.",
-   "rank": 9
+   "rank": 9,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 43,
@@ -578,7 +632,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Zscaler revenue is mostly enterprise, not SMB. SMB zero-trust is a crowded field (Tailscale, Twingate, Cloudflare Zero Trust free tier). ",
-   "rank": 10
+   "rank": 10,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 102,
@@ -624,7 +684,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "ZoomInfo growth is flat (+3%) while Apollo (about $150M ARR in 2025) sells cheaply. Scraped contact data raises CAN-SPAM, GDPR and site-terms risk.",
-   "rank": 11
+   "rank": 11,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 126,
@@ -670,7 +736,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Baserow sells its own hosted plans, so a reseller competes with the vendor; same Airtable figure as row 125. ",
-   "rank": 12
+   "rank": 12,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 24,
@@ -736,7 +808,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Shopify Plus segment not disclosed. Distributors' ERPs (Epicor, Infor, NetSuite) often include B2B portals. ",
-   "rank": 13
+   "rank": 13,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 31,
@@ -787,7 +865,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Odoo itself reported ~EUR 620M 2025 revenue / ~EUR 650M billings; Odoo's own partner network and Community edition compete directly, and Enterprise modules carry a proprietary licence. ",
-   "rank": 14
+   "rank": 14,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 40,
@@ -838,7 +922,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Huntress reported $250M ARR (Jul 2026, huntress.com) aimed squarely at SMB/MSP. A managed SOC needs 24/7 human analysts, so this is a services business, not software margin. ",
-   "rank": 15
+   "rank": 15,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 145,
@@ -884,7 +974,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Many SMBs already get e-sign bundled in tools they own (Adobe Acrobat, Google Workspace eSignature, Dropbox Sign), squeezing a $49 standalone offer. ",
-   "rank": 16
+   "rank": 16,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 117,
@@ -940,7 +1036,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Zendesk figure is ~$2B ARR per CEO statement (private, no filing); Freshworks reported $838.8M FY2025 (https://www.freshworks.com/pressrelease/freshworks-reports-fourth-quarter-and-full-year-2025-results/); both have cheap/free SMB tiers, and incumbents are pushing AI agents that a basic open-source helpdesk lacks.",
-   "rank": 17
+   "rank": 17,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 116,
@@ -986,7 +1088,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Crowded category with free tiers (monday, Trello, Asana, ClickUp); a hosted Leantime must win on simplicity for non-PMs rather than features.",
-   "rank": 18
+   "rank": 18,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 106,
@@ -1042,7 +1150,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Procore is deeply embedded with general contractors and their subs. OpenProject has no construction-specific features (RFIs, submittals, drawings), so it is a weak substitute.",
-   "rank": 19
+   "rank": 19,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 44,
@@ -1098,7 +1212,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Many SMBs already get SSO+MFA via Microsoft Entra ID (M365) or Google Workspace that they own. ",
-   "rank": 20
+   "rank": 20,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 3,
@@ -1154,7 +1274,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Figure is Podium's AI-agent ARR only (total company ARR not disclosed); crowded AI-receptionist market with many low-cost entrants.",
-   "rank": 21
+   "rank": 21,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 1,
@@ -1205,7 +1331,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Toast revenue is mostly payments/POS, online-ordering slice not disclosed; pure-play Owner.com says it passed $100M ARR (2026, reported). Toast and Owner already bundle commission-free ordering, and the independent count is shrinking.",
-   "rank": 22
+   "rank": 22,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 86,
@@ -1246,7 +1378,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Sacra estimates Harvey at $300M (May 2026). Thomson Reuters does not disclose CoCounsel separately, and Westlaw/Lexis subscribers increasingly get AI bundled in.",
-   "rank": 23
+   "rank": 23,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 107,
@@ -1292,7 +1430,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Notion's figure is press-reported (Forbes), not a filing. Notion is free for small teams, and the privacy-conscious niche is small and hard to target.",
-   "rank": 24
+   "rank": 24,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 79,
@@ -1348,7 +1492,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Microsoft does not disclose Power BI revenue and Salesforce does not disclose Tableau's, and many data teams already get Power BI in their M365 E5 licence.",
-   "rank": 25
+   "rank": 25,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 78,
@@ -1414,7 +1564,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Salesforce does not disclose Tableau revenue on its own (only a combined Integration & Analytics line), and Looker is not broken out at Google. Looker Studio and Power BI Desktop are free, and Domo's revenue is flat. ",
-   "rank": 26
+   "rank": 26,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 49,
@@ -1460,7 +1616,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Most firms already have OneDrive/SharePoint in M365; medical use needs a HIPAA BAA.",
-   "rank": 27
+   "rank": 27,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 131,
@@ -1516,7 +1678,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "SigNoz sells its own cloud; New Relic not checked. Large, real budget but buyers are technical and often self-host OSS stacks. ",
-   "rank": 28
+   "rank": 28,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 7,
@@ -1572,7 +1740,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Birdeye reported $100M ARR (2023). Google Business Profile review links are free, and review-gating private feedback can breach Google/FTC review rules. ",
-   "rank": 29
+   "rank": 29,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 52,
@@ -1628,7 +1802,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "QuickBooks/Xero ship bill capture (e.g. Hubdoc with Xero), so many SMBs get basic AP capture in a tool they own.",
-   "rank": 30
+   "rank": 30,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 83,
@@ -1679,7 +1859,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Fin alone passed $100M ARR (April 2026), and Sacra estimates all of Intercom at about $400M. Help-desk tools that SMBs already own (Zendesk, Gorgias, HubSpot) are bundling AI agents. Licence bars multi-tenant SaaS without a commercial licence and requires keeping the logo; one instance per client is the safe route.",
-   "rank": 31
+   "rank": 31,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 111,
@@ -1725,7 +1911,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Mattermost sells its own enterprise and federal editions, so a reseller competes with the maintainer. Defense work needs FedRAMP/IL accreditation and a cleared operator, which a small service provider cannot easily obtain. ",
-   "rank": 32
+   "rank": 32,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 42,
@@ -1781,7 +1973,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "GetLatka model estimate; Tailscale does not disclose (says ARR doubled). Tailscale's free tier covers most tiny teams, and hosting Headscale still needs Tailscale clients.",
-   "rank": 33
+   "rank": 33,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 149,
@@ -1827,7 +2025,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Buffer not checked; Postiz sells its own cloud and free/cheap schedulers (Buffer free tier, Meta Business Suite) cover many SMBs; platform API limits are a risk.",
-   "rank": 34
+   "rank": 34,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 146,
@@ -1873,7 +2077,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Confluence revenue: segment not disclosed (Atlassian); Notion used as same-outcome comp (~$600M ARR Dec 2025 per Forbes via Latka). Teams often get a wiki free in Notion/Google/Microsoft 365.",
-   "rank": 35
+   "rank": 35,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 105,
@@ -1939,7 +2149,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Plane offers a free cloud tier and paid self-host editions from the maintainer, and Jira, monday and ClickUp all have free plans.",
-   "rank": 36
+   "rank": 36,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 8,
@@ -1985,7 +2201,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "E-sign is commoditised (Adobe, Microsoft, Dropbox bundles); many agency/law platforms already include e-sign.",
-   "rank": 37
+   "rank": 37,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 13,
@@ -2051,7 +2273,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Zendesk is private since 2022 (last filing 2021). Gorgias (~$69M ARR 2024, Sacra est.) and Shopify Inbox (free) already serve Shopify brands. ",
-   "rank": 38
+   "rank": 38,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 140,
@@ -2107,7 +2335,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Typeform ~$100M ARR per CEO interview (Jotform not checked); free form tools (Google Forms, Microsoft Forms, Tally) are a strong substitute at $49/mo. ",
-   "rank": 39
+   "rank": 39,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 132,
@@ -2153,7 +2387,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Grafana Labs sells Grafana Cloud (with a free tier) and Grafana's AGPL licence affects hosted resale, so managed Grafana competes with the vendor directly.",
-   "rank": 40
+   "rank": 40,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 14,
@@ -2209,7 +2449,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Freshworks reported $838.8M revenue in 2025 (filing). Most MSPs already run a PSA ticketing module bundled with their RMM (ConnectWise, HaloPSA, Autotask).",
-   "rank": 41
+   "rank": 41,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 88,
@@ -2260,7 +2506,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Rev's revenue is unknown, with estimates ranging $34M-$206M. Clinic transcription involves PHI, so a BAA and HIPAA hosting are needed, and EHRs are bundling ambient scribes.",
-   "rank": 42
+   "rank": 42,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 33,
@@ -2316,7 +2568,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Mid-size firms usually get HR inside payroll suites (Paylocity, Paycom, Rippling), making a standalone HR system a hard sell.",
-   "rank": 43
+   "rank": 43,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 139,
@@ -2362,7 +2620,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "FreshBooks is private and estimates conflict ($100M-$310M), so low confidence; Bonsai not checked. Midday offers its own hosted plan, so a reseller competes with the vendor.",
-   "rank": 44
+   "rank": 44,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 15,
@@ -2408,7 +2672,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Help Scout ARR not reliably found. Google Workspace/Gmail delegation and free help-desk tiers cover basic shared-inbox needs.",
-   "rank": 45
+   "rank": 45,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 69,
@@ -2454,7 +2724,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "SmartRent sells to multifamily, not STR hosts; Hostaway revenue not disclosed. Hosts already get lock/thermostat automation through PMS integrations.",
-   "rank": 46
+   "rank": 46,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 110,
@@ -2510,7 +2786,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Salesforce does not disclose Slack revenue and Microsoft does not disclose Teams revenue. Regulated orgs already get Teams in M365 GCC/GCC-High, so they need a reason to pay for another tool, and FedRAMP or HIPAA compliance is required. ",
-   "rank": 47
+   "rank": 47,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 16,
@@ -2566,7 +2848,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Salesforce revenue covers far more than CRM setup; HubSpot ($3.13B 2025) free CRM tier undercuts paid setup for small agencies. ",
-   "rank": 48
+   "rank": 48,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 19,
@@ -2622,7 +2910,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Shopify Email is bundled free/cheap and Klaviyo is deeply integrated; listmonk lacks e-commerce flows out of the box.",
-   "rank": 49
+   "rank": 49,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 104,
@@ -2668,7 +2962,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Design agencies are locked in by client Figma files and plugins. Penpot offers its own hosted cloud for free, so paid hosting has little room.",
-   "rank": 50
+   "rank": 50,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 119,
@@ -2714,7 +3014,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Salesforce revenue is total company (CRM is the core but not a separate segment); SuiteCRM is a SugarCRM fork with AGPL licence, so hosting is fine but implementation services compete with many existing SuiteCRM partners.",
-   "rank": 51
+   "rank": 51,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 30,
@@ -2770,7 +3076,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "NetSuite segment not disclosed by Oracle; Acumatica revenue not found reliably (Vista-owned since 2025).",
-   "rank": 52
+   "rank": 52,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 68,
@@ -2821,7 +3133,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "$1B is company-reported annualized bookings, not revenue (revenue undisclosed). Biometric/face-recognition laws (e.g. Illinois BIPA) limit AI camera features.",
-   "rank": 53
+   "rank": 53,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 128,
@@ -2887,7 +3205,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Heroku segment not disclosed (Salesforce); Netlify not checked. Coolify has its own paid cloud, and agencies already get generous free tiers on Vercel/Netlify.",
-   "rank": 54
+   "rank": 54,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 36,
@@ -2943,7 +3267,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "EX ARR figure seen only via secondary summary of the FY2025 release (verify); ServiceNow not retrieved. MSPs mostly use bundled PSA/RMM suites rather than GLPI.",
-   "rank": 55
+   "rank": 55,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 5,
@@ -2999,7 +3329,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Mindbody figure is pre-Vista-acquisition and fitness-heavy; salon booking tools (Vagaro, Square Appointments, Fresha) are cheap or free, so price pressure is high.",
-   "rank": 56
+   "rank": 56,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 54,
@@ -3050,7 +3386,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Clio already bundles intake (Clio Grow) and document automation, so firms on Clio get this in a tool they own.",
-   "rank": 57
+   "rank": 57,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 41,
@@ -3101,7 +3443,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Fleet already sells its own managed cloud; Apple Business Essentials and Kandji cover low-end Mac MDM. ",
-   "rank": 58
+   "rank": 58,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 144,
@@ -3157,7 +3505,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Sprout FY2025 $457.5M from a screener (company said it beat FY guidance of $454.9-$455.7M); Hootsuite est. ~$400M (2024). Mixpost's paid licence is sold by its maker; platform API access limits (X/Meta) are an operating risk.",
-   "rank": 59
+   "rank": 59,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 39,
@@ -3213,7 +3567,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Revenue reported as EUR 671.4m, converted at approx 1.08 USD/EUR (conversion is mine). MSPs already get remote access bundled in their RMM/PSA stack (NinjaOne, ConnectWise, N-able), so a standalone remote tool is a hard sell.",
-   "rank": 60
+   "rank": 60,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 91,
@@ -3259,7 +3619,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Voice cloning needs consent and rights management for each voice, and state laws such as Tennessee's ELVIS Act create right-of-publicity exposure.",
-   "rank": 61
+   "rank": 61,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 115,
@@ -3310,7 +3676,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Khoros estimates range $250M-$411M and it sells enterprise brand communities, not creator paid communities; the closer comp Circle is ~$55M ARR end-2025 (Sacra est., https://sacra.com/research/circle-at-68m-arr/), and Skool/Circle already bundle payments, so self-hosted Discourse must beat them on cost/ownership.",
-   "rank": 62
+   "rank": 62,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 64,
@@ -3361,7 +3733,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Small landlords have many free/cheap tools (TurboTenant, Avail, Buildium starter). ",
-   "rank": 63
+   "rank": 63,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 11,
@@ -3417,7 +3795,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Cvent is now private (Blackstone) so later figures not disclosed; festival ticketing is dominated by bundled platforms (Ticketmaster, Eventbrite). ",
-   "rank": 64
+   "rank": 64,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 103,
@@ -3473,7 +3857,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Firecrawl's core is AGPL-3.0 and Firecrawl itself sells a hosted API, so a reseller competes directly with the maintainer.",
-   "rank": 65
+   "rank": 65,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 51,
@@ -3519,7 +3909,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Stirling-PDF is free to self-host and Acrobat is often bundled; hard to charge $99/mo for PDF tools. ",
-   "rank": 66
+   "rank": 66,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 130,
@@ -3575,7 +3971,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "SendGrid segment not disclosed (Twilio); Mailgun figure is the deal-implied revenue at Sinch's 2021 acquisition. Self-hosted email delivery faces IP reputation/deliverability risk, a major blocker vs SendGrid/Mailgun/SES.",
-   "rank": 67
+   "rank": 67,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 58,
@@ -3626,7 +4028,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Open edX hosting providers already exist; Open edX is costly to run, so $999/mo may be thin.",
-   "rank": 68
+   "rank": 68,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 60,
@@ -3692,7 +4100,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Pushpay was taken private in 2023, so no newer figures. Planning Center is cheap and modular; giving vendors earn on payment fees, so churches expect low software prices.",
-   "rank": 69
+   "rank": 69,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 25,
@@ -3748,7 +4162,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Shopify Plus segment not disclosed. Mid-market brands mostly stay on Shopify/BigCommerce; headless builds are costly to maintain.",
-   "rank": 70
+   "rank": 70,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 143,
@@ -3794,7 +4214,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Dub sells its own hosted product (Dub.co), so a reseller competes with the vendor; free link shorteners exist. ",
-   "rank": 71
+   "rank": 71,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 123,
@@ -3840,7 +4266,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "ToolJet is itself sold as a hosted/cloud product by its maker, so a reseller competes with the vendor's own cloud plus Retool's free tier.",
-   "rank": 72
+   "rank": 72,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 124,
@@ -3886,7 +4318,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Appsmith offers its own cloud and paid plans, so a hosted offer competes with the vendor directly; same Retool figure as row 123.",
-   "rank": 73
+   "rank": 73,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 66,
@@ -3927,7 +4365,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Cheap GPS trackers are a commodity, and truck fleets need FMCSA-registered ELDs, which Traccar is not.",
-   "rank": 74
+   "rank": 74,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 57,
@@ -3983,7 +4427,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Docebo FY figure is nine-month plus Q4 from company releases. Many HRIS suites bundle an LMS; Moodle partners already offer hosting.",
-   "rank": 75
+   "rank": 75,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 61,
@@ -4034,7 +4484,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Figure is the release's rounded '$1.2 billion'. Low-cost donor CRMs (Bloomerang, Little Green Light) and free tiers are common.",
-   "rank": 76
+   "rank": 76,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 136,
@@ -4080,7 +4536,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Square segment figure not checked; Square offers free POS software and makes money on payments, so a paid open-source POS faces a free incumbent plus hardware/payments integration needs. Footer credit must stay.",
-   "rank": 77
+   "rank": 77,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 4,
@@ -4126,7 +4588,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Practice-management systems and Weave/RevenueWell already bundle automated recall; ~13% of dentists are DSO-affiliated and buy centrally.",
-   "rank": 78
+   "rank": 78,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 70,
@@ -4161,7 +4629,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "SmartSense revenue not broken out; segment also includes Ventus and Jolt. Needs reliable sensor hardware and alerting, not just software. ",
-   "rank": 79
+   "rank": 79,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 85,
@@ -4212,7 +4686,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "$20B+ is OpenAI's whole annualized revenue, not ChatGPT Enterprise. Microsoft Copilot revenue is not disclosed, and many firms already get Copilot or Copilot Chat through M365. Branding must stay for deployments over 50 users unless an enterprise licence is bought.",
-   "rank": 80
+   "rank": 80,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 59,
@@ -4268,7 +4748,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Company-stated '$100M+ ARR' (c. 2021-22); newer figures are only conflicting estimates. Crowded market with free plans (Teachable, Thinkific).",
-   "rank": 81
+   "rank": 81,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 141,
@@ -4324,7 +4810,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Qualtrics last public-year revenue (2022), leadership said in Oct 2025 it is heading toward $2B; many universities already hold campus-wide Qualtrics licences, and LimeSurvey sells its own cloud. ",
-   "rank": 82
+   "rank": 82,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 9,
@@ -4380,7 +4872,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "HoneyBook/Bonsai/PandaDoc free tiers already combine proposal, e-sign and payment for small agencies.",
-   "rank": 83
+   "rank": 83,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 87,
@@ -4421,7 +4919,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "$20B+ is OpenAI's whole annualized revenue, not ChatGPT Team. ChatGPT Team/Business is cheap per seat and Gemini comes bundled in Google Workspace, so a self-hosted UI has to win on privacy.",
-   "rank": 84
+   "rank": 84,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 6,
@@ -4477,7 +4981,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Google Calendar and Microsoft Bookings now include free booking pages, and Calendly/Acuity free tiers cover most solo needs.",
-   "rank": 85
+   "rank": 85,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 133,
@@ -4528,7 +5038,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Buyer count is shrinking through consolidation, and regulated lenders demand vendor due diligence, integrations with cores and compliance that a small Fineract host may struggle to pass; Mambu not checked.",
-   "rank": 86
+   "rank": 86,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 127,
@@ -4574,7 +5090,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Firebase revenue is not disclosed within Google; the closest same-outcome figure is Supabase's own cloud, which a managed-Supabase offer competes with directly at low prices.",
-   "rank": 87
+   "rank": 87,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 22,
@@ -4620,7 +5142,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Salesforce agreed to acquire Contentful (2025); Strapi Cloud already sells managed hosting of the same open-source product. ",
-   "rank": 88
+   "rank": 88,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 23,
@@ -4666,7 +5194,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Sanity passed $40M ARR in 2024 (investor-reported). Payload and Sanity both sell their own managed cloud, so a third-party hosting wedge is thin.",
-   "rank": 89
+   "rank": 89,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 62,
@@ -4701,7 +5235,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "OCLC figure from its Form 990 (Jul 2023-Jun 2024). Established Koha hosting vendors exist; public procurement is slow.",
-   "rank": 90
+   "rank": 90,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 113,
@@ -4747,7 +5287,13 @@
    "demand_s": 3,
    "gates": [],
    "note": "Zoom's revenue is company-wide, with no education or tutoring segment. Zoom, Google Meet and Teams have free or cheap education tiers, and Class's revenue was not found.",
-   "rank": 91
+   "rank": 91,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 20,
@@ -4813,7 +5359,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Substack and beehiiv offer free tiers (Substack takes 10% only of paid revenue), so a $99/mo fee is a hard sell to small creators.",
-   "rank": 92
+   "rank": 92,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 114,
@@ -4879,7 +5431,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Pixieset is about $19M (Latka) and Pic-Time's revenue was not found. Pixieset has a free tier and the incumbents bundle print-sales fulfilment, which a $49 self-hosted gallery lacks.",
-   "rank": 93
+   "rank": 93,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 122,
@@ -4925,7 +5483,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "YNAB revenue estimates conflict ($1.1M Zippia vs $49M Growjo) so treat as low confidence; buyer pool of financial coaches is small and price-sensitive at $29/mo.",
-   "rank": 94
+   "rank": 94,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 45,
@@ -4971,7 +5535,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Auth0 segment not disclosed by Okta; $200M is the press-reported projected 2021 ARR at acquisition. Cheap developer auth competition (Clerk, Cognito, Supabase, Firebase).",
-   "rank": 95
+   "rank": 95,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 73,
@@ -5027,7 +5597,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "PostHog Cloud has a large free tier and PostHog sells hosting itself; parts of the repo (ee/) are under a proprietary licence. ",
-   "rank": 96
+   "rank": 96,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 10,
@@ -5073,7 +5649,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Eventbrite revenue fell ~10% in 2025 and it removed organizer fees in 2024, eroding the fee-free pitch. Free use must show 'Powered by Hi.Events'; white-label needs a paid licence.",
-   "rank": 97
+   "rank": 97,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 100,
@@ -5124,7 +5706,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "UiPath's revenue is company-wide, with no insurance-agency segment. EZLynx (Applied Systems) does not disclose revenue and already offers comparative rating, and carriers' portal terms of service may bar bots.",
-   "rank": 98
+   "rank": 98,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 101,
@@ -5175,7 +5763,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Payer portal terms of service and HIPAA, which requires a BAA, apply. The 2026 CMS prior-auth API rules will shift work from portals to APIs, shrinking the need for portal scraping.",
-   "rank": 99
+   "rank": 99,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 137,
@@ -5231,7 +5825,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Bullhorn figure is old (2020, from a Wikipedia mirror); JobAdder not checked. OpenCATS is dated and lacks job-board/VMS integrations staffing firms expect. ",
-   "rank": 100
+   "rank": 100,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 99,
@@ -5277,7 +5877,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Remotion requires a paid company licence for companies with more than 3 employees. BoxBrownie's revenue was not found, and MLS and portal tools increasingly generate listing videos automatically. Paid company licence needed above 3 employees.",
-   "rank": 101
+   "rank": 101,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 17,
@@ -5323,7 +5929,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Agencies are locked into agency-management systems (Applied Epic, Vertafore) with carrier download integrations a generic CRM lacks; agency count slowly falling.",
-   "rank": 102
+   "rank": 102,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 65,
@@ -5379,7 +5991,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Revenue reported as A$224.3m, converted at approx 0.65 USD/AUD (conversion is mine). Mews says >$100M annualized net revenue. A booking engine needs certified OTA channel-manager links, which takes time to build. ",
-   "rank": 103
+   "rank": 103,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "High"
   },
   {
    "id": 38,
@@ -5435,7 +6053,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Revenue not found (search budget exhausted before this could be searched; not found). RMM suites already bundle remote access; RustDesk server Pro licence needed for some branded features (from prior knowledge, not verified this run).",
-   "rank": 104
+   "rank": 104,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 112,
@@ -5486,7 +6110,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Not found: SimplePractice estimates vary from $24M to $135M and none is company-reported, and Doxy.me's revenue was not found. Doxy.me has a free tier and SimplePractice bundles telehealth, so a $49 standalone tool must still meet HIPAA BAA requirements.",
-   "rank": 105
+   "rank": 105,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 35,
@@ -5542,7 +6172,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "Not found (search budget exhausted before this could be searched; not found). School districts often get asset tracking via existing MDM/ITSM tools or free Snipe-IT self-hosting.",
-   "rank": 106
+   "rank": 106,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 89,
@@ -5588,7 +6224,13 @@
    "demand_s": 2,
    "gates": [],
    "note": "YouTube, Riverside and CapCut give creators auto-captions for free, and $49/mo is high for this segment.",
-   "rank": 107
+   "rank": 107,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 142,
@@ -5639,7 +6281,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Datasite estimates range $158M-$270M; DocSend segment not disclosed (Dropbox). Papermark sells its own hosted product, and M&A buyers prize security certifications a small host lacks. ",
-   "rank": 108
+   "rank": 108,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 74,
@@ -5695,7 +6343,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Segment covers all of Adobe Experience Cloud, far more than analytics; GA360 revenue not disclosed. Matomo itself sells a hosted cloud.",
-   "rank": 109
+   "rank": 109,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 34,
@@ -5751,7 +6405,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Not found (search budget exhausted before this could be searched; not found). Construction suites (Procore, QuickBooks Time) already bundle time tracking and job costing.",
-   "rank": 110
+   "rank": 110,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 27,
@@ -5812,7 +6472,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Figure is the whole Stripe RFA suite run-rate (Billing alone not disclosed); Zuora FY2025 revenue $459.8M (filing). Stripe Billing is one click for most SaaS already on Stripe.",
-   "rank": 111
+   "rank": 111,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 2,
@@ -5863,7 +6529,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Photoroom is a cheap self-serve app, and delivery apps (DoorDash/Uber Eats) have offered photo programs, so a $49/mo service competes with near-free DIY.",
-   "rank": 112
+   "rank": 112,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 121,
@@ -5904,7 +6576,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Orion not checked; advisors face SEC/custody data-feed and compliance requirements, and Ghostfolio lacks custodian integrations that Addepar/Orion provide.",
-   "rank": 113
+   "rank": 113,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 53,
@@ -5960,7 +6638,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "No dollar revenue found (Hyperscience discloses growth % only; Rossum not found). Enterprise buyers need accuracy SLAs and compliance; long sales cycles.",
-   "rank": 114
+   "rank": 114,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 134,
@@ -6001,7 +6685,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "LabWare is private (estimates $124M-$150M, last company-reported $84M in 2008); STARLIMS revenue not found; accredited labs need validation/ISO 17025 support, a switching barrier.",
-   "rank": 115
+   "rank": 115,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 95,
@@ -6067,7 +6757,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Creatify is $9M ARR (company-reported). Meta and TikTok are adding free AI ad-video generation inside their ad managers, and AI UGC needs disclosure under FTC rules.",
-   "rank": 116
+   "rank": 116,
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 135,
@@ -6123,7 +6819,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Small incumbent revenue (Trainerize >$20M ARR in 2022, TrueCoach est. a few $M) and a low $49 price point; many trainers already get apps through their gym.",
-   "rank": 117
+   "rank": 117,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 109,
@@ -6169,7 +6871,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Trainual and Whale are small (Whale's revenue was not found), which signals a modest market. Franchisors often mandate a system-wide LMS, so individual units cannot choose their own tool.",
-   "rank": 118
+   "rank": 118,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 129,
@@ -6215,7 +6923,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Courier revenue not found; Novu sells its own cloud, and estimates for this niche are small. ",
-   "rank": 119
+   "rank": 119,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 63,
@@ -6261,7 +6975,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "PowerSchool went private in 2024 (last public year 2023). An SIS must handle state reporting and student data privacy rules, which is heavy for a small vendor. Tiny project (351 stars); licence not verified.",
-   "rank": 120
+   "rank": 120,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 0
+   },
+   "confidence": "Medium"
   },
   {
    "id": 77,
@@ -6317,7 +7037,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "No official FullStory ARR has been published since 2021. Hotjar is part of the private Contentsquare, which reports only 'several hundred million' ARR, and Microsoft Clarity gives session replay away free, which caps what SMBs will pay. ",
-   "rank": 121
+   "rank": 121,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 96,
@@ -6373,7 +7099,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "remove.bg belongs to Canva, which does not disclose its revenue. Background removal is free in Shopify, Canva, Amazon Seller tools and on phones, so the item is commoditised.",
-   "rank": 122
+   "rank": 122,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 47,
@@ -6439,7 +7171,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Revenue not found (Dealroom range $1-10M only); Pingdom (SolarWinds) and Statuspage (Atlassian) segment not disclosed. Free tiers (UptimeRobot, Better Stack free) are common.",
-   "rank": 123
+   "rank": 123,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 50,
@@ -6490,7 +7228,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Revenue not found for Karbon or SmartVault. Practice-management suites (Karbon, TaxDome) and M365 already include document storage.",
-   "rank": 124
+   "rank": 124,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 55,
@@ -6541,7 +7285,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "Private; CEO says revenue is 'in the billions' but no figure is disclosed. A hosted EHR needs ONC certification, billing/RCM and HIPAA, and buyers expect vendor-grade support.",
-   "rank": 125
+   "rank": 125,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 72,
@@ -6587,7 +7337,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "No revenue figures found for Katana or Fishbowl. Katana entry plan ~$299/mo, QuickBooks inventory covers the low end.",
-   "rank": 126
+   "rank": 126,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 67,
@@ -6643,7 +7399,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Estimates conflict ($9M-$35M). DoorDash Drive/Uber Direct and Shopify apps cover many local merchants.",
-   "rank": 127
+   "rank": 127,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 12,
@@ -6689,7 +7451,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Revenue not found reliably (MarketMan estimates conflict: $5.1M ZoomInfo vs $25-50M LeadIQ). POS/inventory suites (Toast, MarketMan) include recipe costing. ",
-   "rank": 128
+   "rank": 128,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 71,
@@ -6730,7 +7498,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Granular segment not disclosed by Corteva; FarmLogs not found. Small farms have low willingness to pay and farmOS is free.",
-   "rank": 129
+   "rank": 129,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 1,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 48,
@@ -6786,7 +7560,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "No large incumbent found; category is small. Scraping competitor sites can breach site terms; Shopify app-store tools are cheap.",
-   "rank": 130
+   "rank": 130,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 26,
@@ -6842,7 +7622,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Sharetribe revenue not found. Small, low-budget buyer segment with high failure rate.",
-   "rank": 131
+   "rank": 131,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 28,
@@ -6888,7 +7674,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Primer revenue not disclosed. Orchestration only matters to large multi-PSP merchants; Stripe/Adyen offer routing natively.",
-   "rank": 132
+   "rank": 132,
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 75,
@@ -6934,7 +7726,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "GA revenue not disclosed; Fathom not found. GA4 is free, and Umami offers its own cloud.",
-   "rank": 133
+   "rank": 133,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 76,
@@ -6980,7 +7778,13 @@
    "demand_s": 1,
    "gates": [],
    "note": "GA is free; Plausible sells its own EU-hosted cloud, and its AGPL licence limits closed white-label resale.",
-   "rank": 134
+   "rank": 134,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Low"
   },
   {
    "id": 56,
@@ -7021,7 +7825,13 @@
    "demand_s": 0,
    "gates": [],
    "note": "Healthie self-reports only 'double-digit $M ARR'; Canvas not found. Medplum already sells its own hosted platform.",
-   "rank": 135
+   "rank": 135,
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Low"
   }
  ],
  "excluded": [
@@ -7090,7 +7900,13 @@
    "gates": [
     "licence (Tactical RMM License (source-available))"
    ],
-   "note": "Revenue not found (search budget exhausted before this could be searched; not found). Tactical RMM's agent licence restricts some commercial/hosted use (from prior knowledge, not verified this run); check licence before reselling. Licence forbids reselling it as a hosted service to MSPs (prior knowledge, not re-verified)."
+   "note": "Revenue not found (search budget exhausted before this could be searched; not found). Tactical RMM's agent licence restricts some commercial/hosted use (from prior knowledge, not verified this run); check licence before reselling. Licence forbids reselling it as a hosted service to MSPs (prior knowledge, not re-verified).",
+   "conf_parts": {
+    "revenue": 0,
+    "buyers": 2,
+    "licence": 0
+   },
+   "confidence": "Low"
   },
   {
    "id": 80,
@@ -7137,7 +7953,13 @@
    "gates": [
     "licence (Elastic License 2.0 (platform))"
    ],
-   "note": "Fivetran and dbt Labs are merging (about $600M combined ARR), and Airbyte Cloud already sells a managed version of the same repo, so a reseller competes with the vendor. ELv2 forbids offering it as a managed service (prior knowledge, not re-verified)."
+   "note": "Fivetran and dbt Labs are merging (about $600M combined ARR), and Airbyte Cloud already sells a managed version of the same repo, so a reseller competes with the vendor. ELv2 forbids offering it as a managed service (prior knowledge, not re-verified).",
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 1,
+    "licence": 0
+   },
+   "confidence": "Medium"
   },
   {
    "id": 81,
@@ -7184,7 +8006,13 @@
    "gates": [
     "licence (Sustainable Use License)"
    ],
-   "note": "Zapier's revenue is a Sacra estimate and is not company-reported. n8n's Sustainable Use License limits hosting n8n as a paid service for others, so the offer should be framed as an agency building workflows, not as resold hosting. Fair-code licence restricts reselling as hosted software."
+   "note": "Zapier's revenue is a Sacra estimate and is not company-reported. n8n's Sustainable Use License limits hosting n8n as a paid service for others, so the offer should be framed as an agency building workflows, not as resold hosting. Fair-code licence restricts reselling as hosted software.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 84,
@@ -7241,7 +8069,13 @@
    "gates": [
     "archived"
    ],
-   "note": "Tidio is about $48M (Latka estimate). Site builders and Shopify Inbox give SMBs basic AI chat for free, which squeezes a $99/mo offer. Repo archived."
+   "note": "Tidio is about $48M (Latka estimate). Site builders and Shopify Inbox give SMBs basic AI chat for free, which squeezes a $99/mo offer. Repo archived.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 90,
@@ -7298,7 +8132,13 @@
    "gates": [
     "stale repo"
    ],
-   "note": "Check Kokoro's model licence (Apache-2.0) and voice-data provenance. ElevenLabs and Murf are cheap self-serve tools, so this must be sold as a production service."
+   "note": "Check Kokoro's model licence (Apache-2.0) and voice-data provenance. ElevenLabs and Murf are cheap self-serve tools, so this must be sold as a production service.",
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 92,
@@ -7355,7 +8195,13 @@
    "gates": [
     "licence (MIT code, non-commercial face models)"
    ],
-   "note": "LivePortrait's InsightFace-based weights may carry non-commercial terms, so check the licence before selling. HeyGen is also about $100M ARR. Depends on InsightFace models licensed for non-commercial use."
+   "note": "LivePortrait's InsightFace-based weights may carry non-commercial terms, so check the licence before selling. HeyGen is also about $100M ARR. Depends on InsightFace models licensed for non-commercial use.",
+   "conf_parts": {
+    "revenue": 2,
+    "buyers": 0,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 93,
@@ -7412,7 +8258,13 @@
    "gates": [
     "stale repo"
    ],
-   "note": "YouTube is rolling out free auto-dubbing to creators, which undercuts paid translation. Rask AI is small (about $2.6M estimate)."
+   "note": "YouTube is rolling out free auto-dubbing to creators, which undercuts paid translation. Rask AI is small (about $2.6M estimate).",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 2
+   },
+   "confidence": "Medium"
   },
   {
    "id": 94,
@@ -7469,7 +8321,13 @@
    "gates": [
     "stale repo"
    ],
-   "note": "MuseTalk's code licence is permissive, but it relies on third-party models with mixed licences. D-ID's revenue was not found. Check model-weight licences."
+   "note": "MuseTalk's code licence is permissive, but it relies on third-party models with mixed licences. D-ID's revenue was not found. Check model-weight licences.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 1
+   },
+   "confidence": "Low"
   },
   {
    "id": 97,
@@ -7516,7 +8374,13 @@
    "gates": [
     "stale repo"
    ],
-   "note": "The figure is a CEO-described figure relayed by a secondary profile. Lightroom and Photoshop already include Super Resolution for Adobe subscribers."
+   "note": "The figure is a CEO-described figure relayed by a secondary profile. Lightroom and Photoshop already include Super Resolution for Adobe subscribers.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 2
+   },
+   "confidence": "High"
   },
   {
    "id": 98,
@@ -7564,7 +8428,13 @@
     "licence (Apache-2.0 code, non-commercial face models)",
     "stale repo"
    ],
-   "note": "InstantID's code is Apache-2.0, but it depends on InsightFace antelopev2 models licensed for non-commercial research only, which is a licence blocker. HeadshotPro's revenue was not found. Depends on InsightFace models licensed for non-commercial use."
+   "note": "InstantID's code is Apache-2.0, but it depends on InsightFace antelopev2 models licensed for non-commercial research only, which is a licence blocker. HeadshotPro's revenue was not found. Depends on InsightFace models licensed for non-commercial use.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 2,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 108,
@@ -7621,7 +8491,13 @@
    "gates": [
     "licence (BSL 1.1)"
    ],
-   "note": "Notion and Confluence have free tiers, and Outline's BSL licence restricts offering it as a competing hosted service. Guru's revenue was not found. Business Source License restricts offering a competing hosted service."
+   "note": "Notion and Confluence have free tiers, and Outline's BSL licence restricts offering it as a competing hosted service. Guru's revenue was not found. Business Source License restricts offering a competing hosted service.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 125,
@@ -7668,7 +8544,13 @@
    "gates": [
     "licence (Sustainable Use License (2024 relicense, unverified))"
    ],
-   "note": "Secondary sources report Airtable being acquired by Bending Spoons in 2026 (unverified), which could trigger price changes and switching demand; NocoDB sells its own cloud. Believed relicensed to a fair-code licence in 2024 (prior knowledge, not re-verified)."
+   "note": "Secondary sources report Airtable being acquired by Bending Spoons in 2026 (unverified), which could trigger price changes and switching demand; NocoDB sells its own cloud. Believed relicensed to a fair-code licence in 2024 (prior knowledge, not re-verified).",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 0
+   },
+   "confidence": "Low"
   },
   {
    "id": 147,
@@ -7725,7 +8607,13 @@
    "gates": [
     "licence (Apache-2.0 + conditions)"
    ],
-   "note": "Twilio total FY2025 revenue $5,070M (https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results) but WhatsApp not disclosed, so not used; Evolution API uses unofficial WhatsApp Web connections, which risks number bans and breaches Meta's terms - a major blocker. Unofficial WhatsApp Web sessions breach Meta's terms and risk number bans; v2.4+ needs licence-server activation."
+   "note": "Twilio total FY2025 revenue $5,070M (https://investors.twilio.com/news-releases/news-release-details/twilio-announces-fourth-quarter-and-full-year-2025-results) but WhatsApp not disclosed, so not used; Evolution API uses unofficial WhatsApp Web connections, which risks number bans and breaches Meta's terms - a major blocker. Unofficial WhatsApp Web sessions breach Meta's terms and risk number bans; v2.4+ needs licence-server activation.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 0,
+    "licence": 1
+   },
+   "confidence": "Low"
   },
   {
    "id": 148,
@@ -7782,7 +8670,13 @@
    "gates": [
     "licence (Functional Source License)"
    ],
-   "note": "ManyChat estimates conflict widely (it raised $140M in 2025); Landbot not checked. Typebot sells its own cloud, and Meta channel access is via official APIs that incumbents already integrate. FSL forbids selling it as a competing service."
+   "note": "ManyChat estimates conflict widely (it raised $140M in 2025); Landbot not checked. Typebot sells its own cloud, and Meta channel access is via official APIs that incumbents already integrate. FSL forbids selling it as a competing service.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   },
   {
    "id": 150,
@@ -7829,7 +8723,13 @@
    "gates": [
     "licence (Elastic License 2.0)"
    ],
-   "note": "Low-confidence FreshBooks estimate (range $100M-$310M); Invoice Ninja sells its own hosted plans and free invoicing (Wave, PayPal, Stripe invoices) undercuts a $29 offer. ELv2 forbids hosting it as a service for third parties."
+   "note": "Low-confidence FreshBooks estimate (range $100M-$310M); Invoice Ninja sells its own hosted plans and free invoicing (Wave, PayPal, Stripe invoices) undercuts a $29 offer. ELv2 forbids hosting it as a service for third parties.",
+   "conf_parts": {
+    "revenue": 1,
+    "buyers": 1,
+    "licence": 1
+   },
+   "confidence": "Medium"
   }
  ]
 }
