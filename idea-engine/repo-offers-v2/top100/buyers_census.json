@@ -1,0 +1,506 @@
+{
+ "1": {
+  "count": 606091,
+  "basis": "Census CBP 2022: restaurants and other eating places (7225)"
+ },
+ "2": {
+  "count": 606091,
+  "basis": "Census CBP 2022: restaurants (7225)"
+ },
+ "12": {
+  "count": 619137,
+  "basis": "Census CBP 2022: restaurants + caterers (7225+722320)"
+ },
+ "3": {
+  "count": 371047,
+  "basis": "Census CBP 2022: plumbing/HVAC, electrical, roofing, painting, landscaping (238220+238210+238160+238320+561730)"
+ },
+ "4": {
+  "count": 136140,
+  "basis": "Census CBP 2022: dental offices (621210)"
+ },
+ "5": {
+  "count": 124129,
+  "basis": "Census CBP 2022: hair, nail and skin care (81211)"
+ },
+ "6": {
+  "count": 215682,
+  "basis": "Census CBP 2022: management/technical consulting (5416)"
+ },
+ "8": {
+  "count": 302072,
+  "basis": "Census CBP 2022: insurance agencies + law offices (524210+541110)"
+ },
+ "9": {
+  "count": 54626,
+  "basis": "Census CBP 2022: advertising/PR + graphic design (5418+541430)"
+ },
+ "10": {
+  "count": 9120,
+  "basis": "Census CBP 2022: event promoters (7113)"
+ },
+ "11": {
+  "count": 15267,
+  "basis": "Census CBP 2022: promoters + convention/trade-show organisers (7113+561920)"
+ },
+ "13": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "19": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "25": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "48": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "95": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "96": {
+  "count": 55633,
+  "basis": "Census CBP 2022: online retailers (454110)"
+ },
+ "14": {
+  "count": 77173,
+  "basis": "Census CBP 2022: IT services firms (MSP proxy) (541512+541513+541519)"
+ },
+ "36": {
+  "count": 77173,
+  "basis": "Census CBP 2022: IT services firms (MSP proxy) (541512+541513+541519)"
+ },
+ "37": {
+  "count": 77173,
+  "basis": "Census CBP 2022: IT services firms (MSP proxy) (541512+541513+541519)"
+ },
+ "38": {
+  "count": 77173,
+  "basis": "Census CBP 2022: IT services firms (MSP proxy) (541512+541513+541519)"
+ },
+ "39": {
+  "count": 77173,
+  "basis": "Census CBP 2022: IT services firms (MSP proxy) (541512+541513+541519)"
+ },
+ "16": {
+  "count": 204279,
+  "basis": "Census CBP 2022: ad agencies + real estate brokerages (5418+531210)"
+ },
+ "17": {
+  "count": 135100,
+  "basis": "Census CBP 2022: insurance agencies (524210)"
+ },
+ "100": {
+  "count": 135100,
+  "basis": "Census CBP 2022: insurance agencies (524210)"
+ },
+ "22": {
+  "count": 68038,
+  "basis": "Census CBP 2022: custom software/web dev firms (541511)"
+ },
+ "23": {
+  "count": 68038,
+  "basis": "Census CBP 2022: custom software/web dev firms (541511)"
+ },
+ "127": {
+  "count": 68038,
+  "basis": "Census CBP 2022: custom software/web dev firms (541511)"
+ },
+ "47": {
+  "count": 83970,
+  "basis": "Census CBP 2022: web dev + design firms (541511+541430)"
+ },
+ "128": {
+  "count": 83970,
+  "basis": "Census CBP 2022: web dev + design firms (541511+541430)"
+ },
+ "24": {
+  "count": 388706,
+  "basis": "Census CBP 2022: merchant wholesalers (42)"
+ },
+ "27": {
+  "count": 17438,
+  "basis": "Census CBP 2022: software publishers (511210)"
+ },
+ "45": {
+  "count": 17438,
+  "basis": "Census CBP 2022: software publishers (511210)"
+ },
+ "73": {
+  "count": 17438,
+  "basis": "Census CBP 2022: software publishers (511210)"
+ },
+ "129": {
+  "count": 17438,
+  "basis": "Census CBP 2022: software publishers (511210)"
+ },
+ "130": {
+  "count": 85476,
+  "basis": "Census CBP 2022: web dev firms + software publishers (541511+511210)"
+ },
+ "131": {
+  "count": 85476,
+  "basis": "Census CBP 2022: software publishers + dev firms (511210+541511)"
+ },
+ "132": {
+  "count": 85476,
+  "basis": "Census CBP 2022: software publishers + dev firms (511210+541511)"
+ },
+ "77": {
+  "count": 73071,
+  "basis": "Census CBP 2022: software publishers + online retailers (511210+454110)"
+ },
+ "30": {
+  "count": 285500,
+  "basis": "Census CBP 2022: manufacturing establishments (31-33)"
+ },
+ "72": {
+  "count": 285500,
+  "basis": "Census CBP 2022: manufacturing establishments (31-33)"
+ },
+ "34": {
+  "count": 800651,
+  "basis": "Census CBP 2022: construction establishments (23)"
+ },
+ "106": {
+  "count": 352438,
+  "basis": "Census CBP 2022: construction + engineering firms (236+237+541330)"
+ },
+ "35": {
+  "count": 22378,
+  "basis": "Census CBP 2022: private K-12 schools (6111)"
+ },
+ "63": {
+  "count": 22378,
+  "basis": "Census CBP 2022: private K-12 schools (6111)"
+ },
+ "49": {
+  "count": 377728,
+  "basis": "Census CBP 2022: law offices + physician offices (541110+6211)"
+ },
+ "50": {
+  "count": 135960,
+  "basis": "Census CBP 2022: accounting/tax/bookkeeping firms (5412)"
+ },
+ "51": {
+  "count": 302932,
+  "basis": "Census CBP 2022: law + accounting firms (541110+5412)"
+ },
+ "85": {
+  "count": 302932,
+  "basis": "Census CBP 2022: law + accounting firms (541110+5412)"
+ },
+ "53": {
+  "count": 146057,
+  "basis": "Census CBP 2022: insurance agencies + mortgage brokers (524210+522310)"
+ },
+ "54": {
+  "count": 166972,
+  "basis": "Census CBP 2022: law offices (541110)"
+ },
+ "86": {
+  "count": 166972,
+  "basis": "Census CBP 2022: law offices (541110)"
+ },
+ "55": {
+  "count": 210756,
+  "basis": "Census CBP 2022: physician offices (6211)"
+ },
+ "88": {
+  "count": 377728,
+  "basis": "Census CBP 2022: law + physician offices (541110+6211)"
+ },
+ "58": {
+  "count": 25739,
+  "basis": "Census CBP 2022: business/professional associations + colleges (81391+81392+6113)"
+ },
+ "60": {
+  "count": 185556,
+  "basis": "Census CBP 2022: religious organisations (813110)"
+ },
+ "61": {
+  "count": 66959,
+  "basis": "Census CBP 2022: grantmaking, social advocacy and civic orgs (8132+8133+8134)"
+ },
+ "64": {
+  "count": 74908,
+  "basis": "Census CBP 2022: lessors of residential buildings (531110)"
+ },
+ "65": {
+  "count": 59384,
+  "basis": "Census CBP 2022: hotels/motels + B&Bs (721110+721191)"
+ },
+ "66": {
+  "count": 179922,
+  "basis": "Census CBP 2022: trucking + local couriers (484+4922)"
+ },
+ "67": {
+  "count": 5366,
+  "basis": "Census CBP 2022: local couriers and messengers (4922)"
+ },
+ "68": {
+  "count": 705164,
+  "basis": "Census CBP 2022: restaurants + grocery stores (7225+4451)"
+ },
+ "70": {
+  "count": 648798,
+  "basis": "Census CBP 2022: restaurants + pharmacies (7225+446110)"
+ },
+ "74": {
+  "count": 7713,
+  "basis": "Census CBP 2022: hospitals (622)"
+ },
+ "75": {
+  "count": 106732,
+  "basis": "Census CBP 2022: ad agencies + web dev firms (5418+541511)"
+ },
+ "97": {
+  "count": 26545,
+  "basis": "Census CBP 2022: photography studios + commercial printers (541921+323111)"
+ },
+ "98": {
+  "count": 165585,
+  "basis": "Census CBP 2022: real estate brokerages (531210)"
+ },
+ "104": {
+  "count": 15932,
+  "basis": "Census CBP 2022: graphic design firms (541430)"
+ },
+ "105": {
+  "count": 106732,
+  "basis": "Census CBP 2022: ad agencies + dev firms (5418+541511)"
+ },
+ "112": {
+  "count": 53902,
+  "basis": "Census CBP 2022: mental-health practitioners + psychiatrists (621330+621112)"
+ },
+ "113": {
+  "count": 10285,
+  "basis": "Census CBP 2022: tutoring and exam prep (611691)"
+ },
+ "114": {
+  "count": 11115,
+  "basis": "Census CBP 2022: photography studios (541921)"
+ },
+ "121": {
+  "count": 24303,
+  "basis": "Census CBP 2022: investment advice firms (523930)"
+ },
+ "133": {
+  "count": 33450,
+  "basis": "Census CBP 2022: credit unions + consumer lenders (522130+522291)"
+ },
+ "134": {
+  "count": 7488,
+  "basis": "Census CBP 2022: testing laboratories (541380)"
+ },
+ "135": {
+  "count": 40786,
+  "basis": "Census CBP 2022: fitness centres (713940)"
+ },
+ "136": {
+  "count": 1045890,
+  "basis": "Census CBP 2022: retail establishments (44-45)"
+ },
+ "137": {
+  "count": 39366,
+  "basis": "Census CBP 2022: temporary staffing agencies (561320)"
+ },
+ "141": {
+  "count": 8628,
+  "basis": "Census CBP 2022: market research firms + colleges (541910+6113)"
+ },
+ "142": {
+  "count": 4035,
+  "basis": "Census CBP 2022: investment banking (523110)"
+ },
+ "144": {
+  "count": 38694,
+  "basis": "Census CBP 2022: advertising/PR agencies (5418)"
+ },
+ "7": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "15": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "18": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "21": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "29": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "31": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "32": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "46": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "81": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "82": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "83": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "84": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "87": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "116": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "117": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "118": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "120": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "125": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "126": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "138": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "140": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "145": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "148": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "149": {
+  "count": 3236056,
+  "basis": "Census CBP 2022: establishments with 5-49 employees (all industries)"
+ },
+ "42": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "43": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "44": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "40": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "52": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "78": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "102": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "107": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "108": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "143": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "146": {
+  "count": 1155833,
+  "basis": "Census CBP 2022: establishments with 20-499 employees (all industries)"
+ },
+ "33": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "57": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "80": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "119": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "123": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "124": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "79": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "41": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "110": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ },
+ "111": {
+  "count": 186007,
+  "basis": "Census CBP 2022: establishments with 100-999 employees (all industries)"
+ }
+}

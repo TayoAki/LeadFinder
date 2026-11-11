@@ -1,0 +1,262 @@
+{
+ "7": {
+  "licence": "AGPL-3.0 core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "10": {
+  "licence": "AGPL-3.0 + attribution terms",
+  "ok": true,
+  "why": "Free use must show 'Powered by Hi.Events'; white-label needs a paid licence."
+ },
+ "11": {
+  "licence": "AGPL-3.0 + additional terms",
+  "ok": true,
+  "why": ""
+ },
+ "12": {
+  "licence": "AGPL-3.0",
+  "ok": true,
+  "why": ""
+ },
+ "13": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "16": {
+  "licence": "AGPL-3.0 core + commercial enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "18": {
+  "licence": "GPL-3.0",
+  "ok": true,
+  "why": ""
+ },
+ "21": {
+  "licence": "GPL-2.0+",
+  "ok": true,
+  "why": ""
+ },
+ "22": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "24": {
+  "licence": "MIT",
+  "ok": true,
+  "why": ""
+ },
+ "29": {
+  "licence": "unverified (possibly BSL)",
+  "ok": true,
+  "why": "Licence not verified this run; check before use."
+ },
+ "31": {
+  "licence": "LGPL-3.0 (Community)",
+  "ok": true,
+  "why": ""
+ },
+ "37": {
+  "licence": "Tactical RMM License (source-available)",
+  "ok": false,
+  "why": "Licence forbids reselling it as a hosted service to MSPs (prior knowledge, not re-verified)."
+ },
+ "40": {
+  "licence": "GPL-2.0",
+  "ok": true,
+  "why": ""
+ },
+ "41": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "43": {
+  "licence": "BSD-3 client + AGPL-3.0 management",
+  "ok": true,
+  "why": ""
+ },
+ "44": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "51": {
+  "licence": "MIT core + proprietary extras",
+  "ok": true,
+  "why": ""
+ },
+ "63": {
+  "licence": "unverified",
+  "ok": true,
+  "why": "Tiny project (351 stars); licence not verified."
+ },
+ "64": {
+  "licence": "MIT",
+  "ok": true,
+  "why": ""
+ },
+ "65": {
+  "licence": "OSL-3.0",
+  "ok": true,
+  "why": ""
+ },
+ "70": {
+  "licence": "Apache-2.0 (Community Edition)",
+  "ok": true,
+  "why": ""
+ },
+ "73": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "77": {
+  "licence": "AGPL-3.0 core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "78": {
+  "licence": "AGPL-3.0 core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "80": {
+  "licence": "Elastic License 2.0 (platform)",
+  "ok": false,
+  "why": "ELv2 forbids offering it as a managed service (prior knowledge, not re-verified)."
+ },
+ "81": {
+  "licence": "Sustainable Use License",
+  "ok": false,
+  "why": "Fair-code licence restricts reselling as hosted software."
+ },
+ "82": {
+  "licence": "MIT core + enterprise folder",
+  "ok": true,
+  "why": ""
+ },
+ "83": {
+  "licence": "Modified Apache-2.0",
+  "ok": true,
+  "why": "Licence bars multi-tenant SaaS without a commercial licence and requires keeping the logo; one instance per client is the safe route."
+ },
+ "84": {
+  "licence": "Apache-2.0",
+  "ok": true,
+  "why": "Repo archived."
+ },
+ "85": {
+  "licence": "BSD-3 + branding clause",
+  "ok": true,
+  "why": "Branding must stay for deployments over 50 users unless an enterprise licence is bought."
+ },
+ "92": {
+  "licence": "MIT code, non-commercial face models",
+  "ok": false,
+  "why": "Depends on InsightFace models licensed for non-commercial use."
+ },
+ "94": {
+  "licence": "MIT code",
+  "ok": true,
+  "why": "Check model-weight licences."
+ },
+ "98": {
+  "licence": "Apache-2.0 code, non-commercial face models",
+  "ok": false,
+  "why": "Depends on InsightFace models licensed for non-commercial use."
+ },
+ "99": {
+  "licence": "Remotion License",
+  "ok": true,
+  "why": "Paid company licence needed above 3 employees."
+ },
+ "108": {
+  "licence": "BSL 1.1",
+  "ok": false,
+  "why": "Business Source License restricts offering a competing hosted service."
+ },
+ "110": {
+  "licence": "MIT core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "111": {
+  "licence": "AGPL-3.0 / source-available enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "125": {
+  "licence": "Sustainable Use License (2024 relicense, unverified)",
+  "ok": false,
+  "why": "Believed relicensed to a fair-code licence in 2024 (prior knowledge, not re-verified)."
+ },
+ "126": {
+  "licence": "MIT core + premium",
+  "ok": true,
+  "why": ""
+ },
+ "129": {
+  "licence": "MIT core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "131": {
+  "licence": "MIT core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "136": {
+  "licence": "MIT + footer attribution",
+  "ok": true,
+  "why": "Footer credit must stay."
+ },
+ "137": {
+  "licence": "OpenCATS Public License",
+  "ok": true,
+  "why": ""
+ },
+ "140": {
+  "licence": "AGPL-3.0",
+  "ok": true,
+  "why": ""
+ },
+ "141": {
+  "licence": "GPL-2.0+",
+  "ok": true,
+  "why": ""
+ },
+ "142": {
+  "licence": "AGPL-3.0 core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "143": {
+  "licence": "AGPL-3.0 core + enterprise",
+  "ok": true,
+  "why": ""
+ },
+ "145": {
+  "licence": "AGPL-3.0",
+  "ok": true,
+  "why": ""
+ },
+ "147": {
+  "licence": "Apache-2.0 + conditions",
+  "ok": false,
+  "why": "Unofficial WhatsApp Web sessions breach Meta's terms and risk number bans; v2.4+ needs licence-server activation."
+ },
+ "148": {
+  "licence": "Functional Source License",
+  "ok": false,
+  "why": "FSL forbids selling it as a competing service."
+ },
+ "150": {
+  "licence": "Elastic License 2.0",
+  "ok": false,
+  "why": "ELv2 forbids hosting it as a service for third parties."
+ }
+}

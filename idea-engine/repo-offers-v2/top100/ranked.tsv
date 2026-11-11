@@ -1,0 +1,136 @@
+rank	id	repo	stars	licence	industry	offer	buyer	price_mo	incumbent	revenue_musd	revenue_year	revenue_basis	us_buyers	ceiling_musd	share_needed_pct	search_volume	max_cpc	passes_100m	adj	score
+1	18	mautic/mautic	10968	GPL-3.0	SMB marketing	Marketing automation managed	SMBs	199.0	HubSpot	3130	2025	filing	3236056	7727.7	1.3	9320	73.18	True	-1	8
+2	82	activepieces/activepieces	25481	MIT core + enterprise folder	Automation	Managed automations	SMBs	199.0	Zapier	310	2024	estimate	3236056	7727.7	1.3	7190	24.56	True	-1	7.5
+3	46	dani-garcia/vaultwarden	70594	AGPL-3.0	IT/MSP	Managed password vault	MSP clients	99.0	1Password	400	2025	reported	3236056	3844.4	2.6	5280	24.1	True	-1	7.5
+4	21	WordPress/WordPress	21536	GPL-2.0+	SMB	Managed website + care plan	Local businesses	99.0	GoDaddy	4951.1	2025	filing	3236056	3844.4	2.6	27790	14.12	True	-2	7
+5	32	frappe/hrms	9047	GPL-3.0	HR	HR + payroll	SMBs	199.0	Gusto	1000	2026 (TTM Feb)	reported	3236056	7727.7	1.3	23860	285.23	True	-2	7
+6	29	akaunting/akaunting	10301	unverified (possibly BSL)	SMB finance	Bookkeeping service on open books	Small businesses	299.0	Intuit (Global Business Solutions segment, incl. QuickBooks)	11077	FY2025	filing	3236056	11611.0	0.9	20390	44.67	True	-2	7
+7	138	bigcapitalhq/bigcapital	4107	AGPL-3.0	SMB finance	Accounting	Small businesses	99.0	Intuit (QuickBooks Online Accounting)	4120.0	FY2025	filing	3236056	3844.4	2.6	20390	44.67	True	-2	7
+8	120	Dolibarr/dolibarr	7851	GPL-3.0	SMB	ERP/CRM	Small businesses	199.0	Intuit (QuickBooks Online Accounting)	4120.0	FY2025	filing	3236056	7727.7	1.3	19730	44.67	True	-2	7
+9	118	krayin/laravel-crm	24137	MIT	SMB	CRM	SMBs	99.0	HubSpot	3131.3	2025	reported	3236056	3844.4	2.6	9590	73.18	True	-2	7
+10	43	netbirdio/netbird	30894	BSD-3 client + AGPL-3.0 management	IT	Zero-trust network	SMBs	199.0	Zscaler	2673.1	FY2025	filing	1155833	2760.1	3.6	3180	59.03	True	-1	7
+11	102	unclecode/crawl4ai	87232	Apache-2.0	Sales	Lead list building	B2B sales teams	299.0	ZoomInfo	1249.5	2025	filing	1155833	4147.1	2.4	2080	125.15	True	-1	7
+12	126	baserow/baserow	6320	MIT core + premium	SMB	Airtable replacement	SMBs	199.0	Airtable	478.0	2024	estimate	3236056	7727.7	1.3	5120	17.65	True	-2	6.5
+13	24	medusajs/medusa	37188	MIT	Distribution	B2B ordering portal	Wholesale distributors	499.0	BigCommerce (Commerce.com)	342.3	2025	filing	388706	2327.6	4.3	1490	14.97	True	-1	6.5
+14	31	odoo/odoo	55722	LGPL-3.0 (Community)	SMB	ERP implementation	SMBs	999.0	Odoo	712	2025	estimate	3236056	38793.8	0.3	1470	110.18	True	-1	6.5
+15	40	wazuh/wazuh	17679	GPL-2.0	Cybersecurity	Managed SOC/SIEM for SMB	SMBs (via MSPs)	999.0	Arctic Wolf	438	2023	estimate	1155833	13856.1	0.7	430	83.53	True	0	6.5
+16	145	OpenSignLabs/OpenSign	7250	AGPL-3.0	SMB	E-sign	SMBs	49.0	DocuSign	3200.0	FY2026 (Jan 2026)	reported	3236056	1902.8	5.3	8420	79.41	True	-2	6
+17	117	frappe/helpdesk	3496	AGPL-3.0	SMB	Helpdesk	SMBs	99.0	Zendesk	2000.0	2025	reported	3236056	3844.4	2.6	4670	118.95	True	-2	6
+18	116	Leantime/leantime	12082	AGPL-3.0	SMB	Project mgmt for non-PMs	SMBs	99.0	monday.com	1232.0	2025	filing	3236056	3844.4	2.6	3990	27.95	True	-2	6
+19	106	opf/openproject	17284	GPL-3.0	Construction	Project management	Construction/engineering firms	299.0	Procore	1323	2025	filing	352438	1264.5	7.9	3310	92.29	True	-1	6
+20	44	goauthentik/authentik	26311	MIT core + enterprise folder	IT	SSO + MFA	SMBs	299.0	Okta	2610	FY2025	filing	1155833	4147.1	2.4	2200	52.94	True	-2	6
+21	3	pipecat-ai/pipecat	17204	BSD-2-Clause	Local services	Bilingual AI phone receptionist	Home-service contractors	249.0	Podium	150	2026	reported	371047	1108.7	9.0	700	34.91	True	1	6
+22	1	tastyigniter/TastyIgniter	3842	MIT	Restaurants	Commission-free ordering site + Google ordering + SMS win-back	Independent restaurants	199.0	Owner.com	100	2026 (Jul)	estimate	606091	1447.3	6.9	200	22.65	True	1	6
+23	86	Mintplex-Labs/anything-llm	68184	MIT	Legal	Private AI on firm documents	Law firms	999.0	Harvey	190	2026 (Jan)	reported	166972	2001.7	5.0	140	14.57	True	1	6
+24	107	AppFlowy-IO/AppFlowy	78737	AGPL-3.0	Teams	Private Notion	Privacy-conscious teams	99.0	Notion	600	2025 (Dec)	estimate	1155833	1373.1	7.3	7800	12.11	True	-2	5.5
+25	79	apache/superset	75481	Apache-2.0	Enterprise	BI platform	Data teams	999.0	Domo (Tableau/Power BI segment not disclosed)	318.9	FY2026 (Jan 2026)	filing	186007	2229.9	4.5	3880	33.25	True	-2	5.5
+26	78	metabase/metabase	50286	AGPL-3.0 core + enterprise	SMB	BI dashboards	SMBs	299.0	Domo (Tableau/Looker segment not disclosed)	318.9	FY2026 (Jan 2026)	filing	1155833	4147.1	2.4	2130	129.47	True	-2	5.5
+27	49	nextcloud/server	37481	AGPL-3.0	Legal/medical	Private cloud file sharing	Law and medical firms	199.0	Dropbox	2548	2024	filing	377728	902.0	11.1	9400	15.73	True	-2	5
+28	131	SigNoz/signoz	32595	MIT core + enterprise	Software	Observability	Engineering teams	999.0	Datadog	3430.0	2025	reported	85476	1024.7	9.8	3880	82.02	True	-2	5
+29	7	formbricks/formbricks	13234	AGPL-3.0 core + enterprise folder	Local services	Review requests + private feedback	Multi-location local businesses	149.0	Podium	150	2026	reported	3236056	5786.1	1.7	940	85.63	True	-1	5
+30	52	docling-project/docling	70450	MIT	Finance ops	Invoice/AP capture	SMB finance teams	299.0	BILL Holdings	1462.6	FY2025	filing	1155833	4147.1	2.4	910	321.39	True	-2	5
+31	83	langgenius/dify	160992	Modified Apache-2.0	Customer support	AI support agent	SMB websites	299.0	Intercom (Fin AI agent)	100	2026	reported	3236056	11611.0	0.9	350	146.84	True	-1	5
+32	111	mattermost/mattermost	39584	AGPL-3.0 / source-available enterprise	Defense/enterprise	Secure collaboration	Regulated orgs	999.0	Mattermost (Slack segment not disclosed)	33.1	2024	estimate	186007	2229.9	4.5	7600	17.51	False	-2	5
+33	42	juanfont/headscale	45593	BSD-3-Clause	IT	Zero-trust network	SMBs	199.0	Tailscale	45.2	2025	estimate	1155833	2760.1	3.6	2950	15.06	False	-1	5
+34	149	gitroomhq/postiz-app	41381	AGPL-3.0	SMB	Social scheduling	SMBs	49.0	Hootsuite	400.0	2024	estimate	3236056	1902.8	5.3	2020	17.12	True	-2	4.5
+35	146	docmost/docmost	22305	AGPL-3.0	Teams	Wiki	Teams	99.0	Notion	500.0	2025 (Sep)	reported	1155833	1373.1	7.3	1050	16.03	True	-2	4.5
+36	105	makeplane/plane	62304	AGPL-3.0	Agencies	Project management	Agencies/software teams	199.0	monday.com (Jira/Atlassian product revenue not disclosed)	1232	2025	filing	106732	254.9	39.2	11140	27.95	True	-2	4
+37	8	docusealco/docuseal	19042	AGPL-3.0	Professional services	White-label e-sign for firms	Insurance agencies/law firms	79.0	DocuSign	2976.7	FY2025	filing	302072	286.4	34.9	8420	79.41	True	-2	4
+38	13	chatwoot/chatwoot	39660	MIT core + enterprise folder	E-commerce	Support inbox + AI replies for Shopify brands	Shopify brands	199.0	Zendesk	1338.6	2021	filing	55633	132.9	75.3	4430	137.26	True	-1	4
+39	140	OpnForm/OpnForm	4003	AGPL-3.0	SMB	Forms	SMBs	49.0	Typeform	100.0	2023	reported	3236056	1902.8	5.3	4180	20.36	True	-2	4
+40	132	grafana/grafana	77843	AGPL-3.0	Software	Managed monitoring	Engineering teams	499.0	Datadog	3430.0	2025	reported	85476	511.8	19.5	3380	82.02	True	-2	4
+41	14	zammad/zammad	6109	AGPL-3.0	IT/MSP	Managed helpdesk	MSPs/IT teams	149.0	Zendesk	1338.6	2021	filing	77173	138.0	72.5	3370	118.95	True	-1	4
+42	88	m-bain/whisperX	25215	BSD-2-Clause	Legal/medical	Transcription service	Law firms/clinics	199.0	Otter.ai (Nuance DAX segment not disclosed by Microsoft)	100	2025	reported	377728	902.0	11.1	2330	15.78	True	-1	4
+43	33	orangehrm/orangehrm	1161	GPL-3.0	HR	HR system	Mid-size companies	199.0	Workday	9552	FY2026	filing	186007	444.2	22.5	1490	55.17	True	-2	4
+44	139	midday-ai/midday	15121	AGPL-3.0	Freelancers	Business OS (invoices/time/files)	Freelancers/agencies	29.0	FreshBooks	120.0	n/a	estimate	27600000	9604.8	1.0	920	29.53	True	-2	4
+45	15	freescout-help-desk/freescout	4658	AGPL-3.0	SMB	Shared inbox	Small support teams	79.0	Front	100	2025	reported	3236056	3067.8	3.3	310	143.02	True	-2	4
+46	69	home-assistant/core	92247	Apache-2.0	Real estate	Smart short-term-rental automation	STR hosts	99.0	SmartRent	174.9	2024	filing	1200000	1425.6	7.0	270	86	True	-1	4
+47	110	RocketChat/Rocket.Chat	46495	MIT core + enterprise	Government/health	Secure team chat	Regulated orgs	499.0	Mattermost (Slack/Teams segment not disclosed)	33.1	2024	estimate	186007	1113.8	9.0	22660	68.99	False	-2	4
+48	16	twentyhq/twenty	60794	AGPL-3.0 core + commercial enterprise	Agencies	Vertical CRM setup	Agencies/brokerages	199.0	Salesforce	41500	FY2026	filing	204279	487.8	20.5	11340	73.18	False	-1	4
+49	19	knadh/listmonk	24255	AGPL-3.0	E-commerce	Managed email marketing	DTC brands	149.0	Klaviyo	1234	2025	reported	55633	99.5	100.5	8040	106.47	False	-2	4
+50	104	penpot/penpot	62277	MPL-2.0	Agencies	Design platform hosting	Design agencies	199.0	Figma	1056	2025	filing	15932	38.0	262.8	5280	6.96	False	-2	4
+51	119	SuiteCRM/SuiteCRM	5858	AGPL-3.0	Mid-market	CRM implementation	Mid-market	499.0	Salesforce	41500.0	FY2026 (Jan 2026)	reported	186007	1113.8	9.0	3070	32.76	False	-1	4
+52	30	frappe/erpnext	41200	GPL-3.0	Manufacturing	ERP implementation	Small manufacturers/distributors	999.0	NetSuite (Oracle) / Acumatica	None	None	None	285500	3422.6	2.9	1520	252.74	False	-1	4
+53	68	blakeblackshear/frigate	37406	MIT	Security	AI camera monitoring	Retail/restaurants	199.0	Verkada	1000	2025	reported	705164	1683.9	5.9	1440	122.27	False	-1	4
+54	128	coollabsio/coolify	65955	Apache-2.0	Agencies	Managed app hosting	Web agencies	199.0	Vercel	305.0	2025 (Dec)	estimate	83970	200.5	49.9	6970	30.91	True	-2	3.5
+55	36	glpi-project/glpi	6581	GPL-3.0	IT/MSP	ITSM + asset mgmt	MSPs	199.0	Freshworks (Freshservice / EX)	500	2025	reported	77173	184.3	54.3	1660	56.78	True	-1	3.5
+56	5	alextselegidis/easyappointments	4491	GPL-3.0	Beauty/wellness	Booking + reminders + deposits	Salons and spas	99.0	Mindbody	350	2021	estimate	124129	147.5	67.8	1550	130.68	True	-1	3.5
+57	54	jhpyle/docassemble	1009	MIT	Legal	Client intake + doc automation	Law firms	299.0	Clio	500	2026	reported	166972	599.1	16.7	1060	79.11	True	-2	3.5
+58	41	fleetdm/fleet	7178	MIT core + enterprise folder	IT	Device mgmt	Mac-heavy companies	299.0	Jamf	627.4	2024	filing	186007	667.4	15.0	600	107.41	True	-1	3.5
+59	144	inovector/mixpost	3927	MIT	Agencies	Social scheduling	Agencies	99.0	Sprout Social	457.5	2025	reported	38694	46.0	217.5	3280	83.4	False	-1	3.5
+60	39	Ylianst/MeshCentral	7676	Apache-2.0	IT/MSP	Remote device mgmt	MSPs	99.0	TeamViewer	725	2024	reported	77173	91.7	109.1	2610	23.2	False	-1	3.5
+61	91	resemble-ai/chatterbox	27763	MIT	Media	Voice cloning/dubbing	Creators/brands	199.0	ElevenLabs	500	2026	reported	None	None	None	2380	9	False	-1	3.5
+62	115	discourse/discourse	48074	GPL-2.0	Creators/brands	Paid community	Brands/creators	199.0	Khoros	411.0	2024	estimate	None	None	None	1820	14.99	False	-1	3.5
+63	64	microrealestate/microrealestate	1226	MIT	Real estate	Property mgmt for small landlords	Landlords 10-200 units	99.0	AppFolio	794.2	2024	filing	74908	89.0	112.4	1660	69.74	False	-1	3.5
+64	11	pretix/pretix	2567	AGPL-3.0 + additional terms	Events	Ticketing for festivals/conferences	Festival & conference organisers	199.0	Cvent	630.6	2022	filing	15267	36.5	274.3	1330	76.44	False	-1	3.5
+65	103	firecrawl/firecrawl	200912	AGPL-3.0	Data	Web data extraction	AI startups	299.0	Bright Data	300	2025	reported	None	None	None	1090	16.33	False	-1	3.5
+66	51	Stirling-Tools/Stirling-PDF	96309	MIT core + proprietary extras	Professional services	Self-hosted PDF suite	Law/accounting firms	99.0	Adobe (Document Cloud segment)	3180	FY2024	filing	302932	359.9	27.8	4500	8.66	True	-2	3
+67	130	postalserver/postal	16950	MIT	Agencies	Transactional email	Agencies/SaaS	99.0	Mailgun (Sinch)	132.0	TTM Sep 2021	estimate	85476	101.5	98.5	3070	40.87	True	-1	3
+68	58	openedx/openedx-platform	8231	AGPL-3.0	Education	Course academy	Associations/universities	999.0	Coursera (Enterprise segment)	238.9	2024	filing	25739	308.6	32.4	1050	48.9	True	-1	3
+69	60	ChurchCRM/CRM	992	MIT	Churches	Church management + giving	Churches	99.0	Pushpay	214.3	FY2023	reported	185556	220.4	45.4	1040	55.39	True	-1	3
+70	25	saleor/saleor	23548	BSD-3-Clause	E-commerce	Headless storefront	Mid-market brands	999.0	commercetools	100	2022	reported	55633	666.9	15.0	950	3.28	True	-1	3
+71	143	dubinc/dub.link	25155	AGPL-3.0 core + enterprise	Marketing	Branded links + attribution	Marketing teams	99.0	Bitly	100.0	2022	reported	1155833	1373.1	7.3	640	21.86	True	-2	3
+72	123	ToolJet/ToolJet	41221	AGPL-3.0	Operations	Internal tools	Ops teams	499.0	Retool	120.0	2025 (Oct)	estimate	186007	1113.8	9.0	530	33.99	True	-2	3
+73	124	appsmithorg/appsmith	41229	Apache-2.0	Operations	Internal tools	Ops teams	499.0	Retool	120.0	2025 (Oct)	estimate	186007	1113.8	9.0	530	33.99	True	-2	3
+74	66	traccar/traccar	8113	Apache-2.0	Logistics	Fleet GPS tracking	Small fleets	199.0	Samsara	1249.2	FY2025	filing	179922	429.7	23.3	480	83.71	True	-2	3
+75	57	moodle/moodle	7603	GPL-3.0	Corporate training	Hosted LMS	Mid-size companies	299.0	Docebo	216.9	2024	filing	186007	667.4	15.0	370	83.49	True	-1	3
+76	61	civicrm/civicrm-core	796	AGPL-3.0	Nonprofits	Donor CRM	Nonprofits	199.0	Blackbaud	1200	2024	reported	66959	159.9	62.5	310	20.94	True	-1	3
+77	136	opensourcepos/opensourcepos	4522	MIT + footer attribution	Retail	POS	Small retailers	79.0	Lightspeed Commerce	1227.0	FY2026 (Mar 2026)	reported	1045890	991.5	10.1	280	53.75	True	-2	3
+78	4	livekit/agents	15183	Apache-2.0	Dental	AI patient recall & reminder calls/texts	Dental practices	299.0	Weave	204.3	2024	filing	136140	488.5	20.5	30	51.09	True	0	3
+79	70	thingsboard/thingsboard	22666	Apache-2.0 (Community Edition)	Food safety	Temperature monitoring	Restaurants/pharmacies	149.0	Digi International (IoT Solutions segment incl. SmartSense)	112	FY2025	filing	648798	1160.1	8.6	0	None	True	-1	3
+80	85	open-webui/open-webui	158405	BSD-3 + branding clause	Professional services	Private ChatGPT	Law/accounting firms	499.0	OpenAI (ChatGPT Enterprise segment not disclosed)	20000	2025	reported	302932	1814.0	5.5	4100	31.17	False	-2	3
+81	59	frappe/lms	3412	AGPL-3.0	Creators	Course platform	Course creators	99.0	Kajabi	100	2022	reported	None	None	None	2340	66.74	False	-1	3
+82	141	LimeSurvey/LimeSurvey	3794	GPL-2.0+	Research	Survey platform	Research/universities	199.0	Qualtrics	1460.0	2022	reported	8628	20.6	485.4	2270	57.26	False	-2	3
+83	9	documenso/documenso	15724	AGPL-3.0	Agencies	Proposals + e-sign + payment	Marketing/creative agencies	99.0	PandaDoc	100	2024	reported	54626	64.9	154.1	1380	106.72	False	-1	3
+84	87	LibreChat-AI/LibreChat	46999	MIT	SMB	Team AI workspace	SMBs	199.0	OpenAI (ChatGPT Team segment not disclosed)	20000	2025	reported	3236056	7727.7	1.3	590	11.85	False	-2	3
+85	6	calcom/cal.diy	49944	MIT	Professional services	Branded scheduling + intake + payments	Consultants/coaches	49.0	Calendly	349	2024	estimate	215682	126.8	78.9	4320	17.23	True	-2	2.5
+86	133	apache/fineract	2621	Apache-2.0	Finance	Loan servicing core	Credit unions/microlenders	999.0	nCino	594.8	FY2026 (Jan 2026)	filing	33450	401.0	24.9	30	23.15	True	-1	2.5
+87	127	supabase/supabase	114892	Apache-2.0	Software	Managed backend	App agencies	299.0	Supabase (Firebase: Google segment not disclosed)	101.0	2025 (Dec)	estimate	68038	244.1	41.0	1320	14.63	True	-2	2
+88	22	strapi/strapi	73463	MIT core + enterprise folder	Agencies	Headless CMS hosting	Agencies	299.0	Contentful	219	2024	estimate	68038	244.1	41.0	280	134.88	True	-1	2
+89	23	payloadcms/payload	45777	MIT	Agencies	Headless CMS hosting	Agencies	299.0	Contentful	219	2024	estimate	68038	244.1	41.0	280	134.88	True	-1	2
+90	62	Koha-Community/Koha	601	GPL-3.0	Libraries	Hosted library system	Libraries	299.0	OCLC	257.7	FY2024	filing	120000	430.6	23.2	0	None	True	-1	2
+91	113	bigbluebutton/bigbluebutton	9274	LGPL-3.0	Education	Virtual classroom	Tutoring centers	149.0	Zoom Communications	4868.8	FY2026 (Jan 2026)	filing	10285	18.4	543.8	7900	25.42	False	-2	2
+92	20	TryGhost/Ghost	55783	MIT	Media/creators	Paid newsletter + membership site	Creators/local publishers	99.0	Patreon	179	2025	estimate	None	None	None	3260	20.43	False	-2	2
+93	114	immich-app/immich	118875	AGPL-3.0	Photography	Client photo galleries	Photographers/schools	49.0	SmugMug	57	2023	estimate	11115	6.5	1530.1	2580	22.89	False	-1	2
+94	122	actualbudget/actual	30170	MIT	Personal finance	Budget coaching	Financial coaches	29.0	YNAB	49.0	2024	estimate	3000	1.0	9578.5	1310	4.91	False	-1	2
+95	45	keycloak/keycloak	37823	Apache-2.0	Software	Managed identity	SaaS teams	499.0	Auth0 (Okta)	200	2021	estimate	17438	104.4	95.8	1260	63.07	False	-1	2
+96	73	PostHog/posthog	40745	MIT core + enterprise folder	SaaS	Product analytics managed	SaaS startups	299.0	Amplitude	299.3	2024	filing	17438	62.6	159.8	1060	38.27	False	-2	2
+97	10	HiEventsDev/Hi.Events	4169	AGPL-3.0 + attribution terms	Events	Fee-free ticketing	Venues/event organisers	79.0	Eventbrite	291.8	2025	filing	9120	8.6	1156.6	960	27.14	False	-1	2
+98	100	browser-use/browser-use	120731	MIT	Insurance	Quote/data-entry automation	Insurance agencies	499.0	UiPath	1611	FY2026 (Jan 2026)	filing	135100	809.0	12.4	490	35.41	False	-1	2
+99	101	Skyvern-AI/skyvern	23388	AGPL-3.0	Healthcare admin	Portal automation (eligibility/prior auth)	Medical billing companies	999.0	Waystar	1099.3	2025	filing	None	None	None	350	35.41	False	-2	2
+100	137	opencats/OpenCATS	782	OpenCATS Public License	Staffing	ATS	Staffing agencies	199.0	Bullhorn	219.9	2020	estimate	39366	94.0	106.4	280	19.09	False	-1	2
+101	99	remotion-dev/remotion	72499	Remotion License	Real estate	Automated listing videos	Real estate agents	99.0	Animoto	31.2	2019	estimate	1453690	1727.0	5.8	80	0.97	False	-1	2
+102	17	espocrm/espocrm	3585	AGPL-3.0	Insurance	Insurance agency CRM	Independent insurance agencies	149.0	Applied Systems	630	2024	estimate	135100	241.6	41.4	130	10.37	True	-1	1.5
+103	65	Qloapps/QloApps	14481	OSL-3.0	Hospitality	Booking engine + PMS	Independent hotels/B&Bs	199.0	SiteMinder	146	FY2025	filing	59384	141.8	70.5	100	251.74	True	-1	1
+104	38	rustdesk/rustdesk	129054	AGPL-3.0	IT/MSP	Branded remote support	MSPs/IT support	99.0	TeamViewer / AnyDesk	None	None	None	77173	91.7	109.1	3220	15.36	False	-1	1
+105	112	jitsi/jitsi-meet	30220	Apache-2.0	Healthcare	Telehealth video	Therapists/clinics	49.0	SimplePractice	None	None	None	53902	31.7	315.5	2500	36.72	False	-1	1
+106	35	grokability/snipe-it	15169	AGPL-3.0	Education/IT	Asset tracking	Schools/IT departments	149.0	ServiceNow / Asset Panda	None	None	None	22378	40.0	249.9	1340	56.78	False	-1	1
+107	89	SYSTRAN/faster-whisper	26670	MIT	Media	Captions + transcripts	Podcasters/creators	49.0	Descript	55	2024	estimate	None	None	None	1210	13.8	False	-2	1
+108	142	papermark/papermark	9334	AGPL-3.0 core + enterprise	Finance	Data rooms	M&A advisors/startups	199.0	Datasite	157.9	2025	estimate	4035	9.6	1037.8	500	43.04	False	-2	1
+109	74	matomo-org/matomo	22025	GPL-3.0	Healthcare/gov	Privacy-compliant analytics	Hospitals/governments	499.0	Adobe (Digital Experience segment)	5370	FY2024	filing	7713	46.2	216.5	390	11.53	False	-1	1
+110	34	kimai/kimai	5148	AGPL-3.0	Construction/agencies	Time tracking + job costing	Contractors/agencies	79.0	Harvest / Toggl / ClockShark	None	None	None	800651	759.0	13.2	380	191.21	False	-1	1
+111	27	getlago/lago	10795	AGPL-3.0	SaaS	Usage-based billing	B2B SaaS	499.0	Stripe (Revenue & Finance Automation suite incl. Billing)	500	2025	reported	17438	104.4	95.8	370	259.32	False	-1	1
+112	2	Comfy-Org/ComfyUI	146355	GPL-3.0	Restaurants/E-com	AI menu & product photo makeover	Restaurants on delivery apps	49.0	Photoroom	94	2024	estimate	606091	356.4	28.1	300	5.79	False	-1	1
+113	121	ghostfolio/ghostfolio	9689	AGPL-3.0	Wealth	Client portfolio portal	Independent financial advisors	299.0	Addepar	275.0	2024	estimate	24303	87.2	114.7	50	49.36	False	-1	1
+114	53	Zipstack/unstract	7443	AGPL-3.0	Insurance	Document extraction	Insurance/loan processors	999.0	Hyperscience	None	None	None	146057	1750.9	5.7	40	31.24	False	-1	1
+115	134	senaite/senaite.core	404	GPL-2.0	Labs	LIMS	Testing labs	499.0	LabWare	124.0	n/a (undated)	estimate	7488	44.8	223.0	10	None	False	-1	1
+116	95	Wan-Video/Wan2.2	18553	Apache-2.0	E-commerce	AI UGC video ads	DTC brands	499.0	Arcads	10	2025	reported	55633	333.1	30.0	960	31.53	False	-1	0.5
+117	135	wger-project/wger	7264	AGPL-3.0	Fitness	Coaching app	Personal trainers	49.0	ABC Trainerize	20.0	2022	reported	40786	24.0	417.0	600	22.54	False	-1	0.5
+118	109	BookStackApp/BookStack	19139	MIT	Franchises	SOP + training wiki	Franchises/multi-location	149.0	Trainual	10	2021	reported	None	None	None	460	67.06	False	-1	0.5
+119	129	novuhq/novu	40323	MIT core + enterprise	SaaS	Notification infrastructure	SaaS	299.0	OneSignal	29.4	2025	estimate	17438	62.6	159.8	200	41.39	False	-1	0.5
+120	63	OS4ED/openSIS-Classic	351	unverified	K-12	Student information system	Private/charter schools	299.0	PowerSchool	697.7	2023	filing	22378	80.3	124.5	80	15.19	False	-2	0.5
+121	77	openreplay/openreplay	13135	AGPL-3.0 core + enterprise	SaaS	Session replay	SaaS/e-com	299.0	FullStory	93	2024	estimate	73071	262.2	38.1	620	58.29	False	-2	0
+122	96	danielgatis/rembg	25427	MIT	E-commerce	Product background removal at scale	Online sellers	49.0	Photoroom	94	2024	estimate	55633	32.7	305.7	500	5.79	False	-2	0
+123	47	louislam/uptime-kuma	93523	MIT	Agencies	Uptime + status pages	Web agencies	49.0	Better Stack	None	None	None	83970	49.4	202.5	400	36.79	False	-1	0
+124	50	paperless-ngx/paperless-ngx	48025	GPL-3.0	Accounting	Document mgmt	Accounting firms	149.0	Karbon	None	None	None	135960	243.1	41.1	310	28.94	False	-1	0
+125	55	openemr/openemr	5594	GPL-3.0	Healthcare	Hosted EHR	Small medical practices	299.0	athenahealth	None	None	None	210756	756.2	13.2	290	120.03	False	-2	0
+126	72	inventree/InvenTree	7842	MIT	Manufacturing	Inventory + BOM	Small manufacturers	199.0	Katana / Fishbowl	None	None	None	285500	681.8	14.7	130	19	False	-1	0
+127	67	fleetbase/fleetbase	4619	AGPL-3.0	Logistics	Delivery dispatch	Local delivery businesses	299.0	Onfleet	35	2024	estimate	5366	19.3	519.4	80	30.49	False	-1	0
+128	12	TandoorRecipes/recipes	8731	AGPL-3.0	Restaurants	Recipe costing + reprice plan	Restaurants/caterers	99.0	MarketMan / meez	None	None	None	619137	735.5	13.6	30	16.93	False	-1	0
+129	71	farmOS/farmOS	1389	GPL-2.0	Agriculture	Farm records	Small farms	49.0	Granular (Corteva)	None	None	None	1900487	1117.5	8.9	10	None	False	-2	0
+130	48	dgtlmoon/changedetection.io	35748	Apache-2.0	E-commerce	Competitor price monitoring	Online retailers	99.0	Prisync	6.6	2024	estimate	55633	66.1	151.3	80	16.4	False	-1	-0.5
+131	26	bagisto/bagisto	28359	MIT	E-commerce	Marketplace build	Marketplace startups	299.0	CS-Cart	3.5	2025	estimate	None	None	None	70	9.98	False	-1	-0.5
+132	28	juspay/hyperswitch	45762	Apache-2.0	Payments	Payment orchestration	Merchants	999.0	Spreedly	20.6	2024	estimate	None	None	None	20	55.28	False	-1	-0.5
+133	75	umami-software/umami	40072	MIT	Agencies	White-label analytics	Agencies	49.0	Google Analytics (Alphabet) / Fathom	None	None	None	106732	62.8	159.3	980	17.5	False	-2	-1
+134	76	plausible/analytics	29825	AGPL-3.0	SMB	Privacy analytics	EU businesses	49.0	Google Analytics (Alphabet) / Fathom	None	None	None	None	None	None	980	17.5	False	-2	-1
+135	56	medplum/medplum	2789	Apache-2.0	Healthcare	Custom patient apps	Digital health startups	999.0	Healthie	None	None	None	None	None	None	110	21.92	False	-1	-1
