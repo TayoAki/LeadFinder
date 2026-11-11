@@ -7,3 +7,4 @@ next-env.d.ts
 data/
 .claude/settings.local.json
 idea-engine/plans/zips/
+idea-engine/plans/*/ui/sim/review*/
