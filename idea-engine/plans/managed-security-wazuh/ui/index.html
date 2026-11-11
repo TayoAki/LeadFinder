@@ -656,7 +656,7 @@ const isExt = () => R().kind === 'ext';
 const portfolio = () => PORTFOLIO_TABS.includes(curTab());
 
 /* ---------------- Derived numbers ---------------- */
-const WHO_LABEL = (o, w) => { const r = R(); if (r.kind === 'biz' && r.me === w && r.org === o.id) return 'You';
+const WHO_LABEL = (o, w) => { const r = R(); if (r.kind === 'biz' && r.org === o.id && (r.me === w || (o.onboarding && w !== 'it'))) return 'You';
   if (o.channel === 'msp') return w === 'it' ? 'Northwind IT' : o.contacts[0].who.split(' (')[0];
   return ({ office: 'Office manager', it: 'IT: ' + o.itContact.split(' (')[0], owner: 'Owner' }[w] || w); };
 Object.keys(ORGS).forEach(k => ORGS[k].id = k);
@@ -967,7 +967,7 @@ function pOverview(){
   if (!summary.length) summary.push(`Quiet period: no threats needed action and all ${d.total} devices reported in.`);
   const period = ob ? `Since ${fmtDate(ob.started)} (trial day ${-daysUntil(ob.started) + 1} of ${ob.trialDays})` : 'Last 30 days (Oct 12 – Nov 11, 2026)';
   const mine = r.kind === 'biz' && r.me && r.mineDefault ? [...d.urgent, ...d.todo].filter(a => a.who === r.me) : null;
-  const other = escSummary(o, d).split(' · ').filter(x => !/threats? stopped/.test(x));
+  const other = escSummary(o, d).split(' · ').filter(x => x && !/threats? stopped/.test(x));
   const plan = d.plan;
   const thirdCard = hasTab('insurance') ? `<div class="card"><div class="outcome"><span class="ico">${svg('umbrella')}</span>${ins.premium ? `<strong>Insurance renewal ${fmtDate(ins.renewal).replace(/, \d{4}/, '')}</strong><span class="small muted">${ready} of ${qs.length} insurer answers ready · ${daysUntil(ins.renewal)} days left</span>` : `<strong>Join the group cyber policy by ${fmtDate(ins.renewal).replace(/, \d{4}/, '')}</strong><span class="small muted">${ready} of ${qs.length} insurer answers ready</span>`}<button class="link" data-goto="insurance">Open insurance</button></div></div>`
     : ob ? `<div class="card" data-testid="trial-price"><div class="outcome"><span class="ico">${svg('card')}</span><strong>After the trial: ${plan.name} ${money(plan.price)}/mo</strong><span class="small muted">${d.total} devices (${plan.note}). Go-live review ${fmtDate(ob.golive).replace(/, \d{4}/, '')}, first invoice ${fmtDate(ob.firstInvoice).replace(/, \d{4}/, '')}. Cancel any time before.</span></div></div>` : '';
@@ -1146,7 +1146,7 @@ function pCompliance(){
   const inScope = o.frameworks, maybe = (o.maybe || []).filter(f => !inScope.includes(f)), other = Object.keys(FW).filter(f => !inScope.includes(f) && !maybe.includes(f));
   const ext = isExt(), auditor = S.role === 'auditor';
   const log = [...p.exports.map(e => ({ ...e, kind: 'Export' })), ...p.downloads.map(e => ({ ...e, kind: 'Download' }))];
-  return `<div class="row between"><div><h1>Compliance</h1><p class="sub">Controls mapped to evidence Watchpost collects automatically.</p></div>
+  return `<div class="row between"><div><h1>Compliance</h1><p class="sub">Each control shows where its evidence comes from: collected by Watchpost, a customer document or an attestation.</p></div>
    <label class="field">Framework<select id="fw"><optgroup label="In scope for ${esc(o.short)}">${inScope.map(opts).join('')}</optgroup>${!ext && maybe.length ? `<optgroup label="Not yet scoped">${maybe.map(opts).join('')}</optgroup>` : ''}${!ext && other.length ? `<optgroup label="Other frameworks (mapping only)">${other.map(opts).join('')}</optgroup>` : ''}</select></label></div>
   ${maybe.includes(fw) && !ext ? `<div class="card" data-testid="pci-scope" style="margin-bottom:12px;background:var(--warn-weak)"><strong>${FW[fw].short}: not yet scoped. Do you take card payments?</strong><div class="small" style="margin:4px 0 8px">Most practices take cards at the front desk, which brings PCI DSS into scope (usually SAQ B-IP or C-VT).</div><div class="row"><button class="btn primary sm" data-scope-yes="${fw}" data-testid="pci-yes">Yes, we take cards</button><button class="btn sm" data-scope-no="${fw}">No cards</button></div></div>` : ''}
   ${other.includes(fw) ? `<p class="small pill info" style="margin:0 0 10px">${FW[fw].short} is not in scope for ${esc(o.short)}. Shown as a mapping only.</p>` : ''}
@@ -1301,7 +1301,7 @@ function renderRight(){
   if (t === 'queue') h = analystBlock() + promiseBlock() + `<h2>Integrations</h2><ul class="small" style="margin:0;padding-left:18px"><li>${MSP.psa}: ✓ connected</li><li>${MSP.rmm}: ✓ connected</li></ul>`;
   else if (t === 'group') h = `<h2>Group</h2><p class="small">${GROUP.name} · ${GROUP.orgs.map(id => ORGS[id].short).join(', ')}</p>${analystBlock()}<h2>Standard</h2><p class="small muted">Every entity is measured on the same four numbers: devices reporting, open high incidents, compliance evidence and insurance readiness.</p>`;
   else if (t === 'onboarding') h = analystBlock() + `<h2>Your onboarding contact</h2><p class="small">${ON.who} runs your week-2 check-in. Go-live review ${fmtDate(o.onboarding ? o.onboarding.golive : NOW.iso)}.</p>` + promiseBlock();
-  else if (t === 'overview') h = analystBlock() + actionsBlock(d) + promiseBlock() + `<h2>Last 30 days</h2>${chart(S.org)}` + `<h2>Alerts reach</h2>${alertsLine}`;
+  else if (t === 'overview') h = analystBlock() + actionsBlock(d) + promiseBlock() + (o.onboarding ? `<h2>Since the trial started</h2><p class="small">${o.alertsReviewed} alerts reviewed since ${fmtDate(o.onboarding.started)}; 0 escalated.</p>` : `<h2>Last 30 days</h2>${chart(S.org)}`) + `<h2>Alerts reach</h2>${alertsLine}`;
   else if (t === 'incidents') { const i = o.incidents.find(x => x.id === curInc());
     if (r.kind === 'ext') h = promiseBlock() + `<h2>Record keeping</h2><p class="small muted">Incident records and their evidence are ${o.archive6y ? 'archived 6 years' : 'kept 12 months (6-year archive available)'}. Analyst names in timelines come from the shift roster at the time of each event.</p>` + (S.role === 'broker' ? `<h2>Shared with you</h2><p class="small">Pack shared Nov 11, 2026 · link expires ${fmtDate(r.expires)}</p>` : '') + (S.role === 'counsel' ? `<h2>Contacts</h2><p class="small">Privacy officer: Dr. Alan Kim<br>Watchpost incident lead: ${ON.who} (now)</p>` : '');
     else h = analystBlock() + (i ? `<h2>Selected incident</h2><p class="small"><strong>${esc(i.title)}</strong><br>${sevBadge(i.sev)} · ${i.when}</p><p class="small muted">Analyst note: ${esc(fill(i.did[0]))}</p>${r.kind === 'msp' ? `<p class="small">PSA ticket ${i.psa} · ${MSP.psa}</p>` : ''}` : '') + promiseBlock(); }
