@@ -1,0 +1,1138 @@
+[
+ {
+  "name": "d-light-owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('BrightSmile Dental Group')",
+   "PASS [data-testid='status']:has-text('Protected · 3 things need your team')",
+   "PASS [data-testid='summary']:has-text('214 times')",
+   "PASS [data-testid='k-threats']:has-text('2')",
+   "PASS [data-testid='k-devices']:has-text('60 of 64')",
+   "PASS [data-testid='outcomes']:has-text('HIPAA')",
+   "PASS [data-testid='monthly-report']:has-text('October 2026')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-select='harbor']))",
+   "PASS .rail [data-view='alerts'] .badge:has-text('3')"
+  ]
+ },
+ {
+  "name": "d-light-owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('$999/mo')",
+   "PASS [data-testid='plan']:has-text('64')",
+   "PASS #panel-billing:not(:has-text('wholesale'))",
+   "PASS .app:not(:has([data-testid='margin-table']))"
+  ]
+ },
+ {
+  "name": "d-light-office_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='incident-bs1'][aria-expanded='true']",
+   "PASS #inc-detail-bs1 [data-testid='we-did']:has-text('214')",
+   "PASS #inc-detail-bs1 [data-testid='you-do']:has-text('new reception@ password')",
+   "PASS [data-testid='incident-bs1'] .sev:has-text('Medium')",
+   "PASS [data-testid='done-bs1']"
+  ]
+ },
+ {
+  "name": "d-light-office_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS .rail [data-view='alerts'] .badge:has-text('2')",
+   "PASS [data-testid='status']:has-text('2 things need your team')",
+   "PASS .tabs:not(:has([data-tab='billing']))"
+  ]
+ },
+ {
+  "name": "d-light-office_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #pop [data-testid='notifications']:has-text('reception@')",
+   "PASS #pop [data-testid='notif-count']:has-text('need action')",
+   "PASS #pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"
+  ]
+ },
+ {
+  "name": "d-light-it_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('4 devices')",
+   "PASS [data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')",
+   "PASS [data-testid='top-vuln']:has-text('1 critical update missing on 2 machines')",
+   "PASS [data-testid='copy-install']",
+   "PASS [data-testid='install-help']:has-text('PowerShell')"
+  ]
+ },
+ {
+  "name": "d-light-it_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('1 device')",
+   "PASS [data-testid='device-table']:has-text('XRAY-PC-3')",
+   "PASS [data-testid='device-table']:has-text('of 20 devices')"
+  ]
+ },
+ {
+  "name": "d-light-it_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #search-results:has-text('invoice_8812.pdf.exe')",
+   "PASS #search-results:has-text('FRONTDESK-02')"
+  ]
+ },
+ {
+  "name": "d-light-it_mgr-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='noise']:has-text('1,240')",
+   "PASS [data-testid='noise']:has-text('3')"
+  ]
+ },
+ {
+  "name": "d-light-msp_tech-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Harbor Auto Group')",
+   "PASS [data-testid='not-reporting']:has-text('3 devices')",
+   "PASS [data-testid='device-table']:has-text('SALES-PC-11')",
+   "PASS [data-testid='bb-devices']:has-text('85 of 88')",
+   "PASS #panel-devices:not(:has-text('NAS-BACKUP'))"
+  ]
+ },
+ {
+  "name": "d-light-msp_tech-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('FTC Safeguards')",
+   "PASS [data-testid='framework']:has-text('314.4(c)(5)')",
+   "PASS [data-testid='auditor']:has-text('Keystone')"
+  ]
+ },
+ {
+  "name": "d-light-msp_tech-3",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='queue']:has-text('Harbor Auto')",
+   "PASS [data-testid='queue']:has-text('Sunrise CU')",
+   "PASS [data-testid='queue']:has-text('#51022')",
+   "PASS [data-testid='next-shift']:has-text('Sam T.')",
+   "PASS .tabs:not(:has([data-tab='partner']))"
+  ]
+ },
+ {
+  "name": "d-light-msp_tech-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Sunrise Credit Union')",
+   "PASS [data-testid='incident-s1'][aria-expanded='true']",
+   "PASS #inc-detail-s1:has-text('PSA ticket #51019')"
+  ]
+ },
+ {
+  "name": "d-light-msp_owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin']:has-text('Margin')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$528')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$968')",
+   "PASS [data-testid='margin-row-vega']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-vega']:has-text('$1,879')",
+   "PASS [data-testid='partner-billing']"
+  ]
+ },
+ {
+  "name": "d-light-msp_owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin-row-harbor']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$999')",
+   "PASS [data-testid='wl-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='wl-preview']:has-text('Harbor Auto Group')"
+  ]
+ },
+ {
+  "name": "d-light-compliance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='baa']:has-text('Signed Mar 2, 2026')",
+   "PASS [data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')",
+   "PASS [data-testid='fw-score']:has-text('of 13 controls met')",
+   "PASS [data-testid='audit-dates']:has-text('Mar 1, 2027')",
+   "PASS [data-testid='auditor']:has-text('Dana Whitfield')"
+  ]
+ },
+ {
+  "name": "d-light-compliance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('PCI DSS v4.0')",
+   "PASS [data-testid='framework']:has-text('Req. 10.5.1')",
+   "PASS [data-testid='framework']:not(:has-text('§164'))",
+   "PASS [data-testid='fw-score']:has-text('of 11 controls met')"
+  ]
+ },
+ {
+  "name": "d-light-compliance-3",
+  "errs": [],
+  "res": [
+   "PASS .toast.show:has-text('Evidence pack exported')",
+   "PASS [data-testid='export-history']:has-text('HIPAA · Last 12 months')"
+  ]
+ },
+ {
+  "name": "d-light-compliance-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-training']:has-text('certificates on file')",
+   "PASS [data-testid='readiness']:has-text('7 of 10')"
+  ]
+ },
+ {
+  "name": "d-light-finance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='renewal']:has-text('Jan 15, 2027')",
+   "PASS [data-testid='readiness']:has-text('6 of 10')",
+   "PASS [data-testid='q-count']:has-text('All 10 questions shown')",
+   "PASS [data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')",
+   "PASS [data-testid='q-ir']",
+   "PASS [data-testid='policy']:has-text('BSC-CY-204417')",
+   "PASS [data-testid='broker']:has-text('Lena Ortiz')",
+   "PASS [data-testid='renewal-checklist']"
+  ]
+ },
+ {
+  "name": "d-light-finance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('Practice')",
+   "PASS #panel-billing:has-text('Price locked until')"
+  ]
+ },
+ {
+  "name": "d-light-msp_account_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='qbr-preview']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='qbr-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='qbr-preview']:has-text('Threats stopped: 1')",
+   "PASS [data-testid='qbr-preview']:has-text('41 of 41')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline')"
+  ]
+ },
+ {
+  "name": "d-light-practice_manager_regulated-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='acct-j-alvarez']:has-text('Disable requested')",
+   "PASS [data-testid='acct-m-reyes']:has-text('Unused')",
+   "PASS [data-testid='accounts']:has-text('Showing 2 of 41')",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "d-light-external_auditor-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('CMMC Level 1')",
+   "PASS #cd-cmmc-AC-L1-b-1-i:has-text('Collected Nov 11, 2026')",
+   "PASS .toast.show:has-text('collected')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-testid='done-r1']))"
+  ]
+ },
+ {
+  "name": "d-light-insurance_broker-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-mfa']:has-text('Partly')",
+   "PASS [data-testid='q-edr']:has-text('60 reporting')",
+   "PASS [data-testid='q-backup']:has-text('Nov 1, 2026')",
+   "PASS .toast.show:has-text('attestation')",
+   "PASS .app:not(:has([data-testid='email-broker']))",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "d-light-general_counsel-1",
+  "errs": [],
+  "res": [
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')",
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Notification clock')",
+   "PASS #inc-detail-bs2 [data-testid='timeline']:has-text('9:46')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .app:not(:has([data-testid='done-bs1']))"
+  ]
+ },
+ {
+  "name": "d-light-security_champion_employee-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='verdict']:has-text('Phishing')",
+   "PASS [data-testid='verdict']:has-text('reset your password')",
+   "PASS .tabs:not(:has([data-tab='devices']))",
+   "PASS .app:not(:has([data-testid='status']))"
+  ]
+ },
+ {
+  "name": "d-dark-owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('BrightSmile Dental Group')",
+   "PASS [data-testid='status']:has-text('Protected · 3 things need your team')",
+   "PASS [data-testid='summary']:has-text('214 times')",
+   "PASS [data-testid='k-threats']:has-text('2')",
+   "PASS [data-testid='k-devices']:has-text('60 of 64')",
+   "PASS [data-testid='outcomes']:has-text('HIPAA')",
+   "PASS [data-testid='monthly-report']:has-text('October 2026')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-select='harbor']))",
+   "PASS .rail [data-view='alerts'] .badge:has-text('3')"
+  ]
+ },
+ {
+  "name": "d-dark-owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('$999/mo')",
+   "PASS [data-testid='plan']:has-text('64')",
+   "PASS #panel-billing:not(:has-text('wholesale'))",
+   "PASS .app:not(:has([data-testid='margin-table']))"
+  ]
+ },
+ {
+  "name": "d-dark-office_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='incident-bs1'][aria-expanded='true']",
+   "PASS #inc-detail-bs1 [data-testid='we-did']:has-text('214')",
+   "PASS #inc-detail-bs1 [data-testid='you-do']:has-text('new reception@ password')",
+   "PASS [data-testid='incident-bs1'] .sev:has-text('Medium')",
+   "PASS [data-testid='done-bs1']"
+  ]
+ },
+ {
+  "name": "d-dark-office_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS .rail [data-view='alerts'] .badge:has-text('2')",
+   "PASS [data-testid='status']:has-text('2 things need your team')",
+   "PASS .tabs:not(:has([data-tab='billing']))"
+  ]
+ },
+ {
+  "name": "d-dark-office_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #pop [data-testid='notifications']:has-text('reception@')",
+   "PASS #pop [data-testid='notif-count']:has-text('need action')",
+   "PASS #pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"
+  ]
+ },
+ {
+  "name": "d-dark-it_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('4 devices')",
+   "PASS [data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')",
+   "PASS [data-testid='top-vuln']:has-text('1 critical update missing on 2 machines')",
+   "PASS [data-testid='copy-install']",
+   "PASS [data-testid='install-help']:has-text('PowerShell')"
+  ]
+ },
+ {
+  "name": "d-dark-it_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('1 device')",
+   "PASS [data-testid='device-table']:has-text('XRAY-PC-3')",
+   "PASS [data-testid='device-table']:has-text('of 20 devices')"
+  ]
+ },
+ {
+  "name": "d-dark-it_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #search-results:has-text('invoice_8812.pdf.exe')",
+   "PASS #search-results:has-text('FRONTDESK-02')"
+  ]
+ },
+ {
+  "name": "d-dark-it_mgr-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='noise']:has-text('1,240')",
+   "PASS [data-testid='noise']:has-text('3')"
+  ]
+ },
+ {
+  "name": "d-dark-msp_tech-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Harbor Auto Group')",
+   "PASS [data-testid='not-reporting']:has-text('3 devices')",
+   "PASS [data-testid='device-table']:has-text('SALES-PC-11')",
+   "PASS [data-testid='bb-devices']:has-text('85 of 88')",
+   "PASS #panel-devices:not(:has-text('NAS-BACKUP'))"
+  ]
+ },
+ {
+  "name": "d-dark-msp_tech-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('FTC Safeguards')",
+   "PASS [data-testid='framework']:has-text('314.4(c)(5)')",
+   "PASS [data-testid='auditor']:has-text('Keystone')"
+  ]
+ },
+ {
+  "name": "d-dark-msp_tech-3",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='queue']:has-text('Harbor Auto')",
+   "PASS [data-testid='queue']:has-text('Sunrise CU')",
+   "PASS [data-testid='queue']:has-text('#51022')",
+   "PASS [data-testid='next-shift']:has-text('Sam T.')",
+   "PASS .tabs:not(:has([data-tab='partner']))"
+  ]
+ },
+ {
+  "name": "d-dark-msp_tech-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Sunrise Credit Union')",
+   "PASS [data-testid='incident-s1'][aria-expanded='true']",
+   "PASS #inc-detail-s1:has-text('PSA ticket #51019')"
+  ]
+ },
+ {
+  "name": "d-dark-msp_owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin']:has-text('Margin')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$528')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$968')",
+   "PASS [data-testid='margin-row-vega']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-vega']:has-text('$1,879')",
+   "PASS [data-testid='partner-billing']"
+  ]
+ },
+ {
+  "name": "d-dark-msp_owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin-row-harbor']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$999')",
+   "PASS [data-testid='wl-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='wl-preview']:has-text('Harbor Auto Group')"
+  ]
+ },
+ {
+  "name": "d-dark-compliance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='baa']:has-text('Signed Mar 2, 2026')",
+   "PASS [data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')",
+   "PASS [data-testid='fw-score']:has-text('of 13 controls met')",
+   "PASS [data-testid='audit-dates']:has-text('Mar 1, 2027')",
+   "PASS [data-testid='auditor']:has-text('Dana Whitfield')"
+  ]
+ },
+ {
+  "name": "d-dark-compliance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('PCI DSS v4.0')",
+   "PASS [data-testid='framework']:has-text('Req. 10.5.1')",
+   "PASS [data-testid='framework']:not(:has-text('§164'))",
+   "PASS [data-testid='fw-score']:has-text('of 11 controls met')"
+  ]
+ },
+ {
+  "name": "d-dark-compliance-3",
+  "errs": [],
+  "res": [
+   "PASS .toast.show:has-text('Evidence pack exported')",
+   "PASS [data-testid='export-history']:has-text('HIPAA · Last 12 months')"
+  ]
+ },
+ {
+  "name": "d-dark-compliance-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-training']:has-text('certificates on file')",
+   "PASS [data-testid='readiness']:has-text('7 of 10')"
+  ]
+ },
+ {
+  "name": "d-dark-finance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='renewal']:has-text('Jan 15, 2027')",
+   "PASS [data-testid='readiness']:has-text('6 of 10')",
+   "PASS [data-testid='q-count']:has-text('All 10 questions shown')",
+   "PASS [data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')",
+   "PASS [data-testid='q-ir']",
+   "PASS [data-testid='policy']:has-text('BSC-CY-204417')",
+   "PASS [data-testid='broker']:has-text('Lena Ortiz')",
+   "PASS [data-testid='renewal-checklist']"
+  ]
+ },
+ {
+  "name": "d-dark-finance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('Practice')",
+   "PASS #panel-billing:has-text('Price locked until')"
+  ]
+ },
+ {
+  "name": "d-dark-msp_account_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='qbr-preview']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='qbr-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='qbr-preview']:has-text('Threats stopped: 1')",
+   "PASS [data-testid='qbr-preview']:has-text('41 of 41')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline')"
+  ]
+ },
+ {
+  "name": "d-dark-practice_manager_regulated-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='acct-j-alvarez']:has-text('Disable requested')",
+   "PASS [data-testid='acct-m-reyes']:has-text('Unused')",
+   "PASS [data-testid='accounts']:has-text('Showing 2 of 41')",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "d-dark-external_auditor-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('CMMC Level 1')",
+   "PASS #cd-cmmc-AC-L1-b-1-i:has-text('Collected Nov 11, 2026')",
+   "PASS .toast.show:has-text('collected')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-testid='done-r1']))"
+  ]
+ },
+ {
+  "name": "d-dark-insurance_broker-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-mfa']:has-text('Partly')",
+   "PASS [data-testid='q-edr']:has-text('60 reporting')",
+   "PASS [data-testid='q-backup']:has-text('Nov 1, 2026')",
+   "PASS .toast.show:has-text('attestation')",
+   "PASS .app:not(:has([data-testid='email-broker']))",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "d-dark-general_counsel-1",
+  "errs": [],
+  "res": [
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')",
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Notification clock')",
+   "PASS #inc-detail-bs2 [data-testid='timeline']:has-text('9:46')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .app:not(:has([data-testid='done-bs1']))"
+  ]
+ },
+ {
+  "name": "d-dark-security_champion_employee-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='verdict']:has-text('Phishing')",
+   "PASS [data-testid='verdict']:has-text('reset your password')",
+   "PASS .tabs:not(:has([data-tab='devices']))",
+   "PASS .app:not(:has([data-testid='status']))"
+  ]
+ },
+ {
+  "name": "m-light-owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('BrightSmile Dental Group')",
+   "PASS [data-testid='status']:has-text('Protected · 3 things need your team')",
+   "PASS [data-testid='summary']:has-text('214 times')",
+   "PASS [data-testid='k-threats']:has-text('2')",
+   "PASS [data-testid='k-devices']:has-text('60 of 64')",
+   "PASS [data-testid='outcomes']:has-text('HIPAA')",
+   "PASS [data-testid='monthly-report']:has-text('October 2026')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-select='harbor']))",
+   "PASS .rail [data-view='alerts'] .badge:has-text('3')"
+  ]
+ },
+ {
+  "name": "m-light-owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('$999/mo')",
+   "PASS [data-testid='plan']:has-text('64')",
+   "PASS #panel-billing:not(:has-text('wholesale'))",
+   "PASS .app:not(:has([data-testid='margin-table']))"
+  ]
+ },
+ {
+  "name": "m-light-office_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='incident-bs1'][aria-expanded='true']",
+   "PASS #inc-detail-bs1 [data-testid='we-did']:has-text('214')",
+   "PASS #inc-detail-bs1 [data-testid='you-do']:has-text('new reception@ password')",
+   "PASS [data-testid='incident-bs1'] .sev:has-text('Medium')",
+   "PASS [data-testid='done-bs1']"
+  ]
+ },
+ {
+  "name": "m-light-office_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS .rail [data-view='alerts'] .badge:has-text('2')",
+   "PASS [data-testid='status']:has-text('2 things need your team')",
+   "PASS .tabs:not(:has([data-tab='billing']))"
+  ]
+ },
+ {
+  "name": "m-light-office_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #pop [data-testid='notifications']:has-text('reception@')",
+   "PASS #pop [data-testid='notif-count']:has-text('need action')",
+   "PASS #pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"
+  ]
+ },
+ {
+  "name": "m-light-it_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('4 devices')",
+   "PASS [data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')",
+   "PASS [data-testid='top-vuln']:has-text('1 critical update missing on 2 machines')",
+   "PASS [data-testid='copy-install']",
+   "PASS [data-testid='install-help']:has-text('PowerShell')"
+  ]
+ },
+ {
+  "name": "m-light-it_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('1 device')",
+   "PASS [data-testid='device-table']:has-text('XRAY-PC-3')",
+   "PASS [data-testid='device-table']:has-text('of 20 devices')"
+  ]
+ },
+ {
+  "name": "m-light-it_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #search-results:has-text('invoice_8812.pdf.exe')",
+   "PASS #search-results:has-text('FRONTDESK-02')"
+  ]
+ },
+ {
+  "name": "m-light-it_mgr-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='noise']:has-text('1,240')",
+   "PASS [data-testid='noise']:has-text('3')"
+  ]
+ },
+ {
+  "name": "m-light-msp_tech-1",
+  "errs": [
+   "STEP {\"click\":\"[data-select='harbor']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Harbor Auto Group')",
+   "PASS [data-testid='not-reporting']:has-text('3 devices')",
+   "PASS [data-testid='device-table']:has-text('SALES-PC-11')",
+   "PASS [data-testid='bb-devices']:has-text('85 of 88')",
+   "PASS #panel-devices:not(:has-text('NAS-BACKUP'))"
+  ]
+ },
+ {
+  "name": "m-light-msp_tech-2",
+  "errs": [
+   "STEP {\"click\":\"[data-select='harbor']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='framework']:has-text('FTC Safeguards')",
+   "PASS [data-testid='framework']:has-text('314.4(c)(5)')",
+   "PASS [data-testid='auditor']:has-text('Keystone')"
+  ]
+ },
+ {
+  "name": "m-light-msp_tech-3",
+  "errs": [
+   "STEP {\"click\":\"[data-select='all']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='queue']:has-text('Harbor Auto')",
+   "PASS [data-testid='queue']:has-text('Sunrise CU')",
+   "PASS [data-testid='queue']:has-text('#51022')",
+   "PASS [data-testid='next-shift']:has-text('Sam T.')",
+   "PASS .tabs:not(:has([data-tab='partner']))"
+  ]
+ },
+ {
+  "name": "m-light-msp_tech-4",
+  "errs": [
+   "STEP {\"click\":\"[data-select='all']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Sunrise Credit Union')",
+   "PASS [data-testid='incident-s1'][aria-expanded='true']",
+   "PASS #inc-detail-s1:has-text('PSA ticket #51019')"
+  ]
+ },
+ {
+  "name": "m-light-msp_owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin']:has-text('Margin')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$528')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$968')",
+   "PASS [data-testid='margin-row-vega']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-vega']:has-text('$1,879')",
+   "PASS [data-testid='partner-billing']"
+  ]
+ },
+ {
+  "name": "m-light-msp_owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin-row-harbor']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$999')",
+   "PASS [data-testid='wl-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='wl-preview']:has-text('Harbor Auto Group')"
+  ]
+ },
+ {
+  "name": "m-light-compliance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='baa']:has-text('Signed Mar 2, 2026')",
+   "PASS [data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')",
+   "PASS [data-testid='fw-score']:has-text('of 13 controls met')",
+   "PASS [data-testid='audit-dates']:has-text('Mar 1, 2027')",
+   "PASS [data-testid='auditor']:has-text('Dana Whitfield')"
+  ]
+ },
+ {
+  "name": "m-light-compliance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('PCI DSS v4.0')",
+   "PASS [data-testid='framework']:has-text('Req. 10.5.1')",
+   "PASS [data-testid='framework']:not(:has-text('§164'))",
+   "PASS [data-testid='fw-score']:has-text('of 11 controls met')"
+  ]
+ },
+ {
+  "name": "m-light-compliance-3",
+  "errs": [],
+  "res": [
+   "PASS .toast.show:has-text('Evidence pack exported')",
+   "PASS [data-testid='export-history']:has-text('HIPAA · Last 12 months')"
+  ]
+ },
+ {
+  "name": "m-light-compliance-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-training']:has-text('certificates on file')",
+   "PASS [data-testid='readiness']:has-text('7 of 10')"
+  ]
+ },
+ {
+  "name": "m-light-finance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='renewal']:has-text('Jan 15, 2027')",
+   "PASS [data-testid='readiness']:has-text('6 of 10')",
+   "PASS [data-testid='q-count']:has-text('All 10 questions shown')",
+   "PASS [data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')",
+   "PASS [data-testid='q-ir']",
+   "PASS [data-testid='policy']:has-text('BSC-CY-204417')",
+   "PASS [data-testid='broker']:has-text('Lena Ortiz')",
+   "PASS [data-testid='renewal-checklist']"
+  ]
+ },
+ {
+  "name": "m-light-finance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('Practice')",
+   "PASS #panel-billing:has-text('Price locked until')"
+  ]
+ },
+ {
+  "name": "m-light-msp_account_mgr-1",
+  "errs": [
+   "STEP {\"click\":\"[data-select='ridgeline']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='qbr-preview']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='qbr-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='qbr-preview']:has-text('Threats stopped: 1')",
+   "PASS [data-testid='qbr-preview']:has-text('41 of 41')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline')"
+  ]
+ },
+ {
+  "name": "m-light-practice_manager_regulated-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='acct-j-alvarez']:has-text('Disable requested')",
+   "PASS [data-testid='acct-m-reyes']:has-text('Unused')",
+   "PASS [data-testid='accounts']:has-text('Showing 2 of 41')",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "m-light-external_auditor-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('CMMC Level 1')",
+   "PASS #cd-cmmc-AC-L1-b-1-i:has-text('Collected Nov 11, 2026')",
+   "PASS .toast.show:has-text('collected')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-testid='done-r1']))"
+  ]
+ },
+ {
+  "name": "m-light-insurance_broker-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-mfa']:has-text('Partly')",
+   "PASS [data-testid='q-edr']:has-text('60 reporting')",
+   "PASS [data-testid='q-backup']:has-text('Nov 1, 2026')",
+   "PASS .toast.show:has-text('attestation')",
+   "PASS .app:not(:has([data-testid='email-broker']))",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "m-light-general_counsel-1",
+  "errs": [],
+  "res": [
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')",
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Notification clock')",
+   "PASS #inc-detail-bs2 [data-testid='timeline']:has-text('9:46')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .app:not(:has([data-testid='done-bs1']))"
+  ]
+ },
+ {
+  "name": "m-light-security_champion_employee-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='verdict']:has-text('Phishing')",
+   "PASS [data-testid='verdict']:has-text('reset your password')",
+   "PASS .tabs:not(:has([data-tab='devices']))",
+   "PASS .app:not(:has([data-testid='status']))"
+  ]
+ },
+ {
+  "name": "m-dark-owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('BrightSmile Dental Group')",
+   "PASS [data-testid='status']:has-text('Protected · 3 things need your team')",
+   "PASS [data-testid='summary']:has-text('214 times')",
+   "PASS [data-testid='k-threats']:has-text('2')",
+   "PASS [data-testid='k-devices']:has-text('60 of 64')",
+   "PASS [data-testid='outcomes']:has-text('HIPAA')",
+   "PASS [data-testid='monthly-report']:has-text('October 2026')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-select='harbor']))",
+   "PASS .rail [data-view='alerts'] .badge:has-text('3')"
+  ]
+ },
+ {
+  "name": "m-dark-owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('$999/mo')",
+   "PASS [data-testid='plan']:has-text('64')",
+   "PASS #panel-billing:not(:has-text('wholesale'))",
+   "PASS .app:not(:has([data-testid='margin-table']))"
+  ]
+ },
+ {
+  "name": "m-dark-office_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='incident-bs1'][aria-expanded='true']",
+   "PASS #inc-detail-bs1 [data-testid='we-did']:has-text('214')",
+   "PASS #inc-detail-bs1 [data-testid='you-do']:has-text('new reception@ password')",
+   "PASS [data-testid='incident-bs1'] .sev:has-text('Medium')",
+   "PASS [data-testid='done-bs1']"
+  ]
+ },
+ {
+  "name": "m-dark-office_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS .rail [data-view='alerts'] .badge:has-text('2')",
+   "PASS [data-testid='status']:has-text('2 things need your team')",
+   "PASS .tabs:not(:has([data-tab='billing']))"
+  ]
+ },
+ {
+  "name": "m-dark-office_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #pop [data-testid='notifications']:has-text('reception@')",
+   "PASS #pop [data-testid='notif-count']:has-text('need action')",
+   "PASS #pop [data-testid='escalation-mini']:has-text('Tina Nguyen')"
+  ]
+ },
+ {
+  "name": "m-dark-it_mgr-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('4 devices')",
+   "PASS [data-testid='not-reporting'] tbody tr:first-child:has-text('NAS-BACKUP')",
+   "PASS [data-testid='top-vuln']:has-text('1 critical update missing on 2 machines')",
+   "PASS [data-testid='copy-install']",
+   "PASS [data-testid='install-help']:has-text('PowerShell')"
+  ]
+ },
+ {
+  "name": "m-dark-it_mgr-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='not-reporting']:has-text('1 device')",
+   "PASS [data-testid='device-table']:has-text('XRAY-PC-3')",
+   "PASS [data-testid='device-table']:has-text('of 20 devices')"
+  ]
+ },
+ {
+  "name": "m-dark-it_mgr-3",
+  "errs": [],
+  "res": [
+   "PASS #search-results:has-text('invoice_8812.pdf.exe')",
+   "PASS #search-results:has-text('FRONTDESK-02')"
+  ]
+ },
+ {
+  "name": "m-dark-it_mgr-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='noise']:has-text('1,240')",
+   "PASS [data-testid='noise']:has-text('3')"
+  ]
+ },
+ {
+  "name": "m-dark-msp_tech-1",
+  "errs": [
+   "STEP {\"click\":\"[data-select='harbor']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Harbor Auto Group')",
+   "PASS [data-testid='not-reporting']:has-text('3 devices')",
+   "PASS [data-testid='device-table']:has-text('SALES-PC-11')",
+   "PASS [data-testid='bb-devices']:has-text('85 of 88')",
+   "PASS #panel-devices:not(:has-text('NAS-BACKUP'))"
+  ]
+ },
+ {
+  "name": "m-dark-msp_tech-2",
+  "errs": [
+   "STEP {\"click\":\"[data-select='harbor']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='framework']:has-text('FTC Safeguards')",
+   "PASS [data-testid='framework']:has-text('314.4(c)(5)')",
+   "PASS [data-testid='auditor']:has-text('Keystone')"
+  ]
+ },
+ {
+  "name": "m-dark-msp_tech-3",
+  "errs": [
+   "STEP {\"click\":\"[data-select='all']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='queue']:has-text('Harbor Auto')",
+   "PASS [data-testid='queue']:has-text('Sunrise CU')",
+   "PASS [data-testid='queue']:has-text('#51022')",
+   "PASS [data-testid='next-shift']:has-text('Sam T.')",
+   "PASS .tabs:not(:has([data-tab='partner']))"
+  ]
+ },
+ {
+  "name": "m-dark-msp_tech-4",
+  "errs": [
+   "STEP {\"click\":\"[data-select='all']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='ctx']:has-text('Sunrise Credit Union')",
+   "PASS [data-testid='incident-s1'][aria-expanded='true']",
+   "PASS #inc-detail-s1:has-text('PSA ticket #51019')"
+  ]
+ },
+ {
+  "name": "m-dark-msp_owner-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin']:has-text('Margin')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$528')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$968')",
+   "PASS [data-testid='margin-row-vega']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-vega']:has-text('$1,879')",
+   "PASS [data-testid='partner-billing']"
+  ]
+ },
+ {
+  "name": "m-dark-msp_owner-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='margin-row-harbor']:has-text('capped at direct')",
+   "PASS [data-testid='margin-row-harbor']:has-text('$999')",
+   "PASS [data-testid='wl-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='wl-preview']:has-text('Harbor Auto Group')"
+  ]
+ },
+ {
+  "name": "m-dark-compliance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='baa']:has-text('Signed Mar 2, 2026')",
+   "PASS [data-testid='ctrl-164-316-b-2-i']:has-text('Partly met')",
+   "PASS [data-testid='fw-score']:has-text('of 13 controls met')",
+   "PASS [data-testid='audit-dates']:has-text('Mar 1, 2027')",
+   "PASS [data-testid='auditor']:has-text('Dana Whitfield')"
+  ]
+ },
+ {
+  "name": "m-dark-compliance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('PCI DSS v4.0')",
+   "PASS [data-testid='framework']:has-text('Req. 10.5.1')",
+   "PASS [data-testid='framework']:not(:has-text('§164'))",
+   "PASS [data-testid='fw-score']:has-text('of 11 controls met')"
+  ]
+ },
+ {
+  "name": "m-dark-compliance-3",
+  "errs": [],
+  "res": [
+   "PASS .toast.show:has-text('Evidence pack exported')",
+   "PASS [data-testid='export-history']:has-text('HIPAA · Last 12 months')"
+  ]
+ },
+ {
+  "name": "m-dark-compliance-4",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-training']:has-text('certificates on file')",
+   "PASS [data-testid='readiness']:has-text('7 of 10')"
+  ]
+ },
+ {
+  "name": "m-dark-finance-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='renewal']:has-text('Jan 15, 2027')",
+   "PASS [data-testid='readiness']:has-text('6 of 10')",
+   "PASS [data-testid='q-count']:has-text('All 10 questions shown')",
+   "PASS [data-testid='q-mfa'] .pill.warn:has-text('2 without MFA')",
+   "PASS [data-testid='q-ir']",
+   "PASS [data-testid='policy']:has-text('BSC-CY-204417')",
+   "PASS [data-testid='broker']:has-text('Lena Ortiz')",
+   "PASS [data-testid='renewal-checklist']"
+  ]
+ },
+ {
+  "name": "m-dark-finance-2",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='plan']:has-text('Practice')",
+   "PASS #panel-billing:has-text('Price locked until')"
+  ]
+ },
+ {
+  "name": "m-dark-msp_account_mgr-1",
+  "errs": [
+   "STEP {\"click\":\"[data-select='ridgeline']\"} page.click: Timeout 3000ms exceeded."
+  ],
+  "res": [
+   "PASS [data-testid='qbr-preview']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='qbr-preview']:has-text('Northwind Secure')",
+   "PASS [data-testid='qbr-preview']:has-text('Threats stopped: 1')",
+   "PASS [data-testid='qbr-preview']:has-text('41 of 41')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline')"
+  ]
+ },
+ {
+  "name": "m-dark-practice_manager_regulated-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='acct-j-alvarez']:has-text('Disable requested')",
+   "PASS [data-testid='acct-m-reyes']:has-text('Unused')",
+   "PASS [data-testid='accounts']:has-text('Showing 2 of 41')",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "m-dark-external_auditor-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='framework']:has-text('CMMC Level 1')",
+   "PASS #cd-cmmc-AC-L1-b-1-i:has-text('Collected Nov 11, 2026')",
+   "PASS .toast.show:has-text('collected')",
+   "PASS [data-testid='ctx']:has-text('Ridgeline Machining')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .tabs:not(:has([data-tab='partner']))",
+   "PASS .app:not(:has([data-testid='done-r1']))"
+  ]
+ },
+ {
+  "name": "m-dark-insurance_broker-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='q-mfa']:has-text('Partly')",
+   "PASS [data-testid='q-edr']:has-text('60 reporting')",
+   "PASS [data-testid='q-backup']:has-text('Nov 1, 2026')",
+   "PASS .toast.show:has-text('attestation')",
+   "PASS .app:not(:has([data-testid='email-broker']))",
+   "PASS [data-testid='ctx']:has-text('BrightSmile')"
+  ]
+ },
+ {
+  "name": "m-dark-general_counsel-1",
+  "errs": [],
+  "res": [
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Patient data accessed: No')",
+   "PASS #inc-detail-bs2 [data-testid='breach']:has-text('Notification clock')",
+   "PASS #inc-detail-bs2 [data-testid='timeline']:has-text('9:46')",
+   "PASS [data-testid='ctx']:has-text('Read-only')",
+   "PASS .app:not(:has([data-testid='done-bs1']))"
+  ]
+ },
+ {
+  "name": "m-dark-security_champion_employee-1",
+  "errs": [],
+  "res": [
+   "PASS [data-testid='verdict']:has-text('Phishing')",
+   "PASS [data-testid='verdict']:has-text('reset your password')",
+   "PASS .tabs:not(:has([data-tab='devices']))",
+   "PASS .app:not(:has([data-testid='status']))"
+  ]
+ }
+]

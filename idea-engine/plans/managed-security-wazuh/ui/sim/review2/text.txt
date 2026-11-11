@@ -1,0 +1,3195 @@
+
+
+######## owner task1: See own company status, open tasks and the monthly summary (no MSP data)
+TABS: Overview* | Incidents | Devices | Accounts | Compliance | Insurance | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Overview
+
+Last 30 days (Oct 12 – Nov 11, 2026)
+
+Protected · 3 things need your team
+
+Analysts are watching 24/7 and stopped every threat. Your team needs to: give the front desk the new reception@ password; install 1 critical update on 2 machines; reconnect 4 silent devices.
+
+Show me what to do
+Threats stopped
+2
++1 alert checked and found safe
+Computers protected ?
+60 of 64
+! 4 not reporting
+Security updates still needed
+1
+! critical, on 2 machines
+How fast we stopped threats ?
+13 min
+we promise 30 min
+Insurance renewal Jan 15
+6 of 10 insurer answers ready · 65 days left
+Open insurance
+HIPAA: 7 of 13 controls met
+Evidence collected automatically
+Open compliance
+60 of 64 computers reporting
+4 silent: NAS-BACKUP, FRONTDESK-05, LAPTOP-DRKIM, XRAY-PC-3
+Open devices
+The last 30 days in plain English
+Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.
+A front-desk PC opened a fake invoice that tried to run a program. We cut the PC off the network in 4 minutes; nothing spread.
+2 machines are missing 1 critical security update. Your IT has the steps.
+4 devices have stopped reporting. NAS-BACKUP matters most.
+October 2026 report
+Oct 1–31 · Watchpost · plain English, 4 pages
+Download October 2026 report (PDF)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+YOUR NEXT ACTIONS (7)
+! Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault. Open
+! Have IT install 1 critical update on 2 machines (DC-01, FILE-01) Open
+! Reconnect 4 devices that stopped reporting (NAS-BACKUP first) Open
+Turn on MFA for 2 accounts (billing@, m.reyes@) Open
+Disable 2 accounts unused for 30+ days Open
+Upload security-training certificates (counts for compliance and insurance) Open
+Turn on the 6-year log archive for HIPAA documentation Open
+LAST 30 DAYS
+Oct 12
+Nov 11
+Alerts reviewed: 1,240
+▲ Escalated to you: 3
+ALERTS REACH
+
+Alerts go to Tina Nguyen, then Dr. Alan Kim, then Marco Diaz. Change who gets alerts
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## owner task2: Own plan price is shown, partner pricing is not
+TABS: Overview | Incidents | Devices | Accounts | Compliance | Insurance | Plan & billing*
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Plan & billing
+
+One flat monthly price by device count. No per-alert or per-incident fees.
+
+Your plan
+$999/mo
+Practice: flat up to 100 devices · you have 64
+Next invoice
+Dec 1
+$999 · card ending 4242
+Price locked until
+Mar 31, 2027
+month to month after that
+Direct price list
+PLAN	DEVICES	PER MONTH
+Starter	1–25	$349
+Small office	26–50	$599
+Practice Your plan	51–100	$999
+Multi-site	101–200	$1,799
+Over 200	201+	$1,799 + $8/extra device
+
+Adding devices past 100 moves you to the next plan the following month; we warn you 30 days ahead.
+
+Invoices
+Nov 1, 2026 · $999
+Download invoice
+Oct 1, 2026 · $999
+Download invoice
+Sep 1, 2026 · $999
+Download invoice
+--RIGHT--
+BILLING CONTACT
+
+Dr. Alan Kim · invoices emailed on the 1st
+
+PLAN FIT
+
+64 devices on Practice (up to 100). 36 devices of headroom.
+
+WHAT'S INCLUDED
+24/7 analysts and response
+Compliance evidence and insurance pack
+Monthly plain-English report
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## office_mgr task1: The action-needed incident opens first and can be marked done
+TABS: Overview | Incidents* | Devices | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Incidents
+
+Each incident says what our analysts already did and what, if anything, you need to do. Tasks for you are listed first.
+
+Alert noise, last 30 days
+filtered by analysts so you don't have to
+
+1,240 alerts reviewed by analysts → 3 escalated to you (2 real threats, 1 confirmed safe)
+
+214 blocked sign-in attempts on reception@brightsmiledental.com
+! Action needed
+◆ Medium
+severity
+Yesterday 22:10 · Microsoft 365 · contained in 21 min
+✓ What we already did
+Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.
+Reset the reception@brightsmiledental.com password at 22:31 as a precaution and signed out every session.
+! What you need to do
+Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault.
+Mark done
+Ask an analyst about this
+Breach assessment
+
+Patient data accessed: No. No sign-in succeeded, so the mailbox was not opened.
+
+Notification clock: Not started. There was no access to protected health information, so HIPAA breach notification (60 days) does not apply.
+
+Timeline (ET)
+22:10 · 1st blocked attempt
+22:24 · Analyst Sam T. reviewed; 214 attempts, all blocked
+22:31 · Password reset, sessions revoked
+22:35 · SMS sent to office manager
+Malicious invoice attachment ran on FRONTDESK-02
+✓ Contained
+▲ High
+severity
+Nov 4, 9:42 · Office 1 (Main St) · contained in 4 min
+New admin account "svc-backup" created on DC-01
+Confirmed OK by IT
+ℹ Info
+severity
+Nov 3, 16:05 · Office 1 (Main St)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+SELECTED INCIDENT
+
+214 blocked sign-in attempts on reception@brightsmiledental.com
+◆ Medium
+severity
+ · Yesterday 22:10
+
+Analyst note: Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.
+
+RESPONSE PROMISE
+
+A human analyst reviews every high alert within 15 minutes, 24/7. Infected devices are isolated automatically.
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## office_mgr task2: Marking done updates the badge and the hero
+TABS: Overview* | Incidents | Devices | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Overview
+
+Last 30 days (Oct 12 – Nov 11, 2026)
+
+Protected · 2 things need your team
+
+Analysts are watching 24/7 and stopped every threat. Your team needs to: install 1 critical update on 2 machines; reconnect 4 silent devices.
+
+Show me what to do
+Threats stopped
+2
++1 alert checked and found safe
+Computers protected ?
+60 of 64
+! 4 not reporting
+Security updates still needed
+1
+! critical, on 2 machines
+How fast we stopped threats ?
+13 min
+we promise 30 min
+Insurance renewal Jan 15
+6 of 10 insurer answers ready · 65 days left
+Open insurance
+HIPAA: 7 of 13 controls met
+Evidence collected automatically
+Open compliance
+60 of 64 computers reporting
+4 silent: NAS-BACKUP, FRONTDESK-05, LAPTOP-DRKIM, XRAY-PC-3
+Open devices
+The last 30 days in plain English
+Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.
+A front-desk PC opened a fake invoice that tried to run a program. We cut the PC off the network in 4 minutes; nothing spread.
+2 machines are missing 1 critical security update. Your IT has the steps.
+4 devices have stopped reporting. NAS-BACKUP matters most.
+October 2026 report
+Oct 1–31 · Watchpost · plain English, 4 pages
+Download October 2026 report (PDF)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+YOUR NEXT ACTIONS (6)
+! Have IT install 1 critical update on 2 machines (DC-01, FILE-01) Open
+! Reconnect 4 devices that stopped reporting (NAS-BACKUP first) Open
+Turn on MFA for 2 accounts (billing@, m.reyes@) Open
+Disable 2 accounts unused for 30+ days Open
+Upload security-training certificates (counts for compliance and insurance) Open
+Turn on the 6-year log archive for HIPAA documentation Open
+LAST 30 DAYS
+Oct 12
+Nov 11
+Alerts reviewed: 1,240
+▲ Escalated to you: 3
+ALERTS REACH
+
+Alerts go to Tina Nguyen, then Dr. Alan Kim, then Marco Diaz. Change who gets alerts
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## office_mgr task3: Notifications open a real panel
+TABS: Overview* | Incidents | Devices | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Overview
+
+Last 30 days (Oct 12 – Nov 11, 2026)
+
+Protected · 3 things need your team
+
+Analysts are watching 24/7 and stopped every threat. Your team needs to: give the front desk the new reception@ password; install 1 critical update on 2 machines; reconnect 4 silent devices.
+
+Show me what to do
+Threats stopped
+2
++1 alert checked and found safe
+Computers protected ?
+60 of 64
+! 4 not reporting
+Security updates still needed
+1
+! critical, on 2 machines
+How fast we stopped threats ?
+13 min
+we promise 30 min
+Insurance renewal Jan 15
+6 of 10 insurer answers ready · 65 days left
+Open insurance
+HIPAA: 7 of 13 controls met
+Evidence collected automatically
+Open compliance
+60 of 64 computers reporting
+4 silent: NAS-BACKUP, FRONTDESK-05, LAPTOP-DRKIM, XRAY-PC-3
+Open devices
+The last 30 days in plain English
+Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.
+A front-desk PC opened a fake invoice that tried to run a program. We cut the PC off the network in 4 minutes; nothing spread.
+2 machines are missing 1 critical security update. Your IT has the steps.
+4 devices have stopped reporting. NAS-BACKUP matters most.
+October 2026 report
+Oct 1–31 · Watchpost · plain English, 4 pages
+Download October 2026 report (PDF)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+YOUR NEXT ACTIONS (7)
+! Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault. Open
+! Have IT install 1 critical update on 2 machines (DC-01, FILE-01) Open
+! Reconnect 4 devices that stopped reporting (NAS-BACKUP first) Open
+Turn on MFA for 2 accounts (billing@, m.reyes@) Open
+Disable 2 accounts unused for 30+ days Open
+Upload security-training certificates (counts for compliance and insurance) Open
+Turn on the 6-year log archive for HIPAA documentation Open
+LAST 30 DAYS
+Oct 12
+Nov 11
+Alerts reviewed: 1,240
+▲ Escalated to you: 3
+ALERTS REACH
+
+Alerts go to Tina Nguyen, then Dr. Alan Kim, then Marco Diaz. Change who gets alerts
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## it_mgr task1: Find silent devices by impact and the top fix
+TABS: Overview | Incidents | Devices* | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Devices
+
+Coverage and what to fix first.
+
+Location
+All locations
+Office 1 (Main St)
+Office 2 (Elm Ave)
+Office 3 (Lakeview)
+Remote
+Show
+All listed
+Not reporting
+Update missing
+Not reporting
+! 4 devices
+
+Sorted by business impact, not by days silent.
+
+DEVICE	SILENT	LIKELY REASON · LAST USER / IP
+NAS-BACKUP
+Backup server: ransomware risk
+Office 1 (Main St)
+	1 day	Agent stopped after a firmware update
+svc-backup · 10.1.0.20
+FRONTDESK-05
+Office 3 (Lakeview)
+	2 days	Agent uninstalled by a local admin
+m.reyes · 10.3.0.45
+LAPTOP-DRKIM
+Remote
+	3 days	Off network; last seen on a home connection
+a.kim · 73.21.x.x
+XRAY-PC-3
+Office 2 (Elm Ave)
+	6 days	Powered off (imaging room closed)
+xray · 10.2.0.31
+Copy agent install command
+Deploy via Intune / GPO
+Fix first
+▲ Critical
+
+1 critical update missing on 2 machines: Windows Server 2022 cumulative security update (KB50xxxxx placeholder) on DC-01, FILE-01. Actively exploited. Missing for 9 days.
+
+Why first: Both servers hold patient records and the flaw is being exploited in the wild.
+
+Who installs it: your IT. Watchpost finds missing updates and confirms the fix; it does not reboot your servers.
+
+Create ticket for IT
+Devices to know about
+Export all 64 (CSV)
+
+Showing 9 of 64 devices. The other 55 are protected and up to date.
+
+DEVICE	LOCATION	STATUS	RISK
+NAS-BACKUP
+Backup storage
+	Office 1 (Main St)	! Not reporting 1d	▲ High
+DC-01
+Windows Server 2022
+	Office 1 (Main St)	! Update missing	▲ High
+FILE-01
+Windows Server 2022
+	Office 1 (Main St)	! Update missing	▲ High
+FRONTDESK-05
+Windows PC
+	Office 3 (Lakeview)	! Not reporting 2d	▲ High
+LAPTOP-DRKIM
+Windows laptop
+	Remote	! Not reporting 3d	◆ Medium
+XRAY-PC-3
+Imaging PC
+	Office 2 (Elm Ave)	! Not reporting 6d	● Low
+FRONTDESK-02
+Windows PC
+	Office 1 (Main St)	✓ Cleaned after incident	● Low
+HYGIENE-LT-1
+Windows laptop
+	Office 2 (Elm Ave)	✓ Protected	● Low
+CHAIR-PC-7
+Windows PC
+	Office 3 (Lakeview)	✓ Protected	● Low
+--RIGHT--
+AGENT INSTALL HELP
+
+Windows (PowerShell, as admin):
+
+Invoke-WebRequest -Uri https://get.watchpost.example/win -OutFile wp.msi; msiexec /i wp.msi ORG_KEY=BRIGHTSMILE-7F3K /q
+
+macOS: download the .pkg and run it; approve the system extension.
+
+Linux: curl -s https://get.watchpost.example/linux | sudo bash -s brightsmile
+
+Many devices at once: Intune app package or Group Policy MSI.
+
+WHY A DEVICE GOES SILENT
+Powered off or off network
+Agent stopped after an update (restart service "WazuhSvc")
+Agent removed by a local admin (we alert on this)
+NEED A HAND?
+Ask support to help reinstall
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## it_mgr task2: Filter devices by office
+TABS: Overview | Incidents | Devices* | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Devices
+
+Coverage and what to fix first · Office 2 (Elm Ave).
+
+Location
+All locations
+Office 1 (Main St)
+Office 2 (Elm Ave)
+Office 3 (Lakeview)
+Remote
+Show
+All listed
+Not reporting
+Update missing
+Not reporting
+! 1 device
+
+Sorted by business impact, not by days silent.
+
+DEVICE	SILENT	LIKELY REASON · LAST USER / IP
+XRAY-PC-3
+Office 2 (Elm Ave)
+	6 days	Powered off (imaging room closed)
+xray · 10.2.0.31
+Copy agent install command
+Deploy via Intune / GPO
+Fix first
+▲ Critical
+
+1 critical update missing on 2 machines: Windows Server 2022 cumulative security update (KB50xxxxx placeholder) on DC-01, FILE-01. Actively exploited. Missing for 9 days.
+
+Why first: Both servers hold patient records and the flaw is being exploited in the wild.
+
+Who installs it: your IT. Watchpost finds missing updates and confirms the fix; it does not reboot your servers.
+
+Create ticket for IT
+Devices to know about
+Export all 20 (CSV)
+
+Showing 2 of 20 devices at Office 2 (Elm Ave). The other 18 are protected and up to date.
+
+DEVICE	LOCATION	STATUS	RISK
+XRAY-PC-3
+Imaging PC
+	Office 2 (Elm Ave)	! Not reporting 6d	● Low
+HYGIENE-LT-1
+Windows laptop
+	Office 2 (Elm Ave)	✓ Protected	● Low
+--RIGHT--
+AGENT INSTALL HELP
+
+Windows (PowerShell, as admin):
+
+Invoke-WebRequest -Uri https://get.watchpost.example/win -OutFile wp.msi; msiexec /i wp.msi ORG_KEY=BRIGHTSMILE-7F3K /q
+
+macOS: download the .pkg and run it; approve the system extension.
+
+Linux: curl -s https://get.watchpost.example/linux | sudo bash -s brightsmile
+
+Many devices at once: Intune app package or Group Policy MSI.
+
+WHY A DEVICE GOES SILENT
+Powered off or off network
+Agent stopped after an update (restart service "WazuhSvc")
+Agent removed by a local admin (we alert on this)
+NEED A HAND?
+Ask support to help reinstall
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## it_mgr task3: Search a host from the rail and see alert noise
+TABS: Overview* | Incidents | Devices | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Overview
+
+Last 30 days (Oct 12 – Nov 11, 2026)
+
+Protected · 3 things need your team
+
+Analysts are watching 24/7 and stopped every threat. Your team needs to: give the front desk the new reception@ password; install 1 critical update on 2 machines; reconnect 4 silent devices.
+
+Show me what to do
+Threats stopped
+2
++1 alert checked and found safe
+Computers protected ?
+60 of 64
+! 4 not reporting
+Security updates still needed
+1
+! critical, on 2 machines
+How fast we stopped threats ?
+13 min
+we promise 30 min
+Insurance renewal Jan 15
+6 of 10 insurer answers ready · 65 days left
+Open insurance
+HIPAA: 7 of 13 controls met
+Evidence collected automatically
+Open compliance
+60 of 64 computers reporting
+4 silent: NAS-BACKUP, FRONTDESK-05, LAPTOP-DRKIM, XRAY-PC-3
+Open devices
+The last 30 days in plain English
+Someone tried to sign in to the front-desk mailbox (reception@) 214 times from Nigeria. We blocked every attempt and reset the password.
+A front-desk PC opened a fake invoice that tried to run a program. We cut the PC off the network in 4 minutes; nothing spread.
+2 machines are missing 1 critical security update. Your IT has the steps.
+4 devices have stopped reporting. NAS-BACKUP matters most.
+October 2026 report
+Oct 1–31 · Watchpost · plain English, 4 pages
+Download October 2026 report (PDF)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+YOUR NEXT ACTIONS (7)
+! Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault. Open
+! Have IT install 1 critical update on 2 machines (DC-01, FILE-01) Open
+! Reconnect 4 devices that stopped reporting (NAS-BACKUP first) Open
+Turn on MFA for 2 accounts (billing@, m.reyes@) Open
+Disable 2 accounts unused for 30+ days Open
+Upload security-training certificates (counts for compliance and insurance) Open
+Turn on the 6-year log archive for HIPAA documentation Open
+LAST 30 DAYS
+Oct 12
+Nov 11
+Alerts reviewed: 1,240
+▲ Escalated to you: 3
+ALERTS REACH
+
+Alerts go to Tina Nguyen, then Dr. Alan Kim, then Marco Diaz. Change who gets alerts
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## it_mgr task4: See alerts reviewed vs escalated
+TABS: Overview | Incidents* | Devices | Accounts | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Incidents
+
+Each incident says what our analysts already did and what, if anything, you need to do. Tasks for you are listed first.
+
+Alert noise, last 30 days
+filtered by analysts so you don't have to
+
+1,240 alerts reviewed by analysts → 3 escalated to you (2 real threats, 1 confirmed safe)
+
+214 blocked sign-in attempts on reception@brightsmiledental.com
+! Action needed
+◆ Medium
+severity
+Yesterday 22:10 · Microsoft 365 · contained in 21 min
+✓ What we already did
+Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.
+Reset the reception@brightsmiledental.com password at 22:31 as a precaution and signed out every session.
+! What you need to do
+Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault.
+Mark done
+Ask an analyst about this
+Breach assessment
+
+Patient data accessed: No. No sign-in succeeded, so the mailbox was not opened.
+
+Notification clock: Not started. There was no access to protected health information, so HIPAA breach notification (60 days) does not apply.
+
+Timeline (ET)
+22:10 · 1st blocked attempt
+22:24 · Analyst Sam T. reviewed; 214 attempts, all blocked
+22:31 · Password reset, sessions revoked
+22:35 · SMS sent to office manager
+Malicious invoice attachment ran on FRONTDESK-02
+✓ Contained
+▲ High
+severity
+Nov 4, 9:42 · Office 1 (Main St) · contained in 4 min
+New admin account "svc-backup" created on DC-01
+Confirmed OK by IT
+ℹ Info
+severity
+Nov 3, 16:05 · Office 1 (Main St)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+SELECTED INCIDENT
+
+214 blocked sign-in attempts on reception@brightsmiledental.com
+◆ Medium
+severity
+ · Yesterday 22:10
+
+Analyst note: Blocked all 214 sign-in attempts from Nigeria (IP range 102.89.x.x) at Microsoft 365. None succeeded.
+
+RESPONSE PROMISE
+
+A human analyst reviews every high alert within 15 minutes, 24/7. Infected devices are isolated automatically.
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## msp_tech task1: Switch to Harbor Auto and every tab follows
+TABS: All-client queue | Overview | Incidents | Devices* | Accounts | Compliance | Insurance
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Harbor Auto Group
+· FTC Safeguards + PCI DSS · 88 devices · 70 users
+--CONTENT--
+Devices
+
+Coverage and what to fix first.
+
+Location
+All locations
+Harbor Ford
+Harbor Kia
+Show
+All listed
+Not reporting
+Update missing
+Not reporting
+! 3 devices
+
+Sorted by business impact, not by days silent.
+
+DEVICE	SILENT	LIKELY REASON · LAST USER / IP
+FI-LAPTOP-2
+Holds credit applications
+Harbor Kia
+	2 days	Off network (finance manager travelling)
+k.shaw · 98.4.x.x
+SALES-PC-11
+Harbor Ford
+	4 days	Agent service stopped
+d.ruiz · 10.10.4.11
+SVC-KIOSK-1
+Harbor Ford
+	1 day	Powered off overnight
+kiosk · 10.10.8.3
+Copy agent install command
+Deploy via RMM
+Fix first
+▲ Critical
+
+1 critical update missing on 1 machine: VPN appliance firmware: remote code execution (vendor advisory placeholder) on FW-FORD-01. Actively exploited. Missing for 16 days.
+
+Why first: Internet-facing VPN; flaw is actively exploited against dealerships.
+
+Who installs it: your RMM. Watchpost finds missing updates and confirms the fix; it does not reboot your servers.
+
+Push to RMM
+Devices to know about
+Export all 88 (CSV)
+
+Showing 6 of 88 devices. The other 82 are protected and up to date.
+
+DEVICE	LOCATION	STATUS	RISK
+FW-FORD-01
+Firewall / VPN
+	Harbor Ford	! Firmware update missing	▲ High
+FI-LAPTOP-2
+Windows laptop
+	Harbor Kia	! Not reporting 2d	▲ High
+SALES-PC-11
+Windows PC
+	Harbor Ford	! Not reporting 4d	◆ Medium
+DMS-SRV-01
+Dealer management server
+	Harbor Ford	✓ Protected	◆ Medium
+SVC-KIOSK-1
+Service kiosk
+	Harbor Ford	! Not reporting 1d	● Low
+SALES-PC-02
+Windows PC
+	Harbor Kia	✓ Protected	● Low
+--RIGHT--
+AGENT INSTALL HELP
+
+Windows (PowerShell, as admin):
+
+Invoke-WebRequest -Uri https://get.watchpost.example/win -OutFile wp.msi; msiexec /i wp.msi ORG_KEY=HARBOR-7F3K /q
+
+macOS: download the .pkg and run it; approve the system extension.
+
+Linux: curl -s https://get.watchpost.example/linux | sudo bash -s harbor
+
+Many devices at once: NinjaOne RMM script "Watchpost agent".
+
+WHY A DEVICE GOES SILENT
+Powered off or off network
+Agent stopped after an update (restart service "WazuhSvc")
+Agent removed by a local admin (we alert on this)
+NEED A HAND?
+Ask support to help reinstall
+--BB--
+Monitoring live
+Harbor Auto: 85 of 88 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## msp_tech task2: Harbor incidents, compliance and insurance are Harbor's
+TABS: All-client queue | Overview | Incidents | Devices | Accounts | Compliance* | Insurance
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Harbor Auto Group
+· FTC Safeguards + PCI DSS · 88 devices · 70 users
+--CONTENT--
+Compliance
+
+Controls mapped to evidence Watchpost collects automatically.
+
+Framework
+FTC Safeguards Rule (16 CFR 314)
+PCI DSS v4.0
+HIPAA Security Rule
+CMMC Level 1 (FAR 52.204-21)
+NCUA Part 748 / GLBA
+FTC Safeguards Rule (16 CFR 314)
+7 of 11 controls met
+
+3 partly met · 1 gap · all 11 controls listed below
+
+314.4(a)
+Qualified individual designated
+✓ Met
+314.4(b)
+Written risk assessment
+✓ Met
+314.4(c)(1)
+Access controls and periodic review
+! Partly met
+314.4(c)(3)
+Encrypt customer information
+✓ Met
+314.4(c)(5)
+MFA for anyone accessing customer information
+! Partly met
+314.4(c)(8)
+Monitor and log user activity
+✓ Met
+314.4(d)(2)
+Continuous monitoring (or annual pen test)
+! Partly met
+314.4(e)
+Security awareness training
+✓ Met
+314.4(h)
+Written incident response plan
+✓ Met
+314.4(i)
+Annual report to board or owner
+✕ Gap
+314.4(j)
+Notify the FTC within 30 days (500+ customers)
+✓ Met
+Export evidence for auditor
+Last exported Oct 2, 2026
+--RIGHT--
+AUDIT DATES
+Last
+May 10, 2026 · FTC Safeguards risk assessment
+Next
+May 10, 2027 (180 days)
+BAA STATUS
+
+Not required (no health data in scope)
+
+AUDITOR
+
+Owen Price
+Keystone Assurance
+owen@keystone-assure.example
+
+Share read-only link with auditor
+LOG RETENTION
+
+Logs: 12 months, last 3 months instantly searchable. Longer archive available on request.
+--BB--
+Monitoring live
+Harbor Auto: 85 of 88 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## msp_tech task3: Cross-client queue with PSA tickets
+TABS: All-client queue* | Overview | Incidents | Devices | Accounts | Compliance | Insurance
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+All 6 clients
+· partner console
+--CONTENT--
+All-client queue
+
+Every open incident and silent device across your 6 clients, worst first.
+
+Open incidents needing a client action
+2
+Devices not reporting (all clients)
+6
+Clients needing attention
+2 of 6
+Incident queue (last 30 days)
+CLIENT	INCIDENT	SEVERITY	STATUS	PSA TICKET	
+OPEN
+
+Harbor Auto	Mailbox rule forwarding sales@ email to an outside address
+Today 08:12 · PSA #51022
+	▲ High
+severity
+	! Action needed	#51022 · ConnectWise	Open
+Sunrise CU	Impossible-travel sign-in for loan officer b.ochoa@
+Today 06:55 · PSA #51019
+	◆ Medium
+severity
+	! Action needed	#51019 · ConnectWise	Open
+Ridgeline	USB stick spread a worm to CNC-PROG-2
+Oct 29, 07:15 · PSA #49901
+	▲ High
+severity
+	✓ Contained	#49901 · ConnectWise	Open
+Harbor Auto	Password-guessing attack on the dealer portal blocked
+Nov 6, 03:40 · PSA #50877
+	◆ Medium
+severity
+	✓ Contained	#50877 · ConnectWise	Open
+Vega	Remote Desktop brute-force blocked on a jump host
+Oct 22, 01:10 · PSA #49610
+	◆ Medium
+severity
+	✓ Contained	#49610 · ConnectWise	Open
+Devices not reporting
+CLIENT	DEVICE	SILENT FOR	LIKELY REASON
+Harbor Auto	FI-LAPTOP-2 Holds credit applications	2 days	Off network (finance manager travelling)
+Harbor Auto	SALES-PC-11	4 days	Agent service stopped
+Sunrise CU	TELLER-B2-04	3 days	Missed reboot after update; agent not started
+Sunrise CU	TELLER-B3-01	2 days	Missed reboot after update; agent not started
+Sunrise CU	LOAN-LT-07	1 day	Off network
+Harbor Auto	SVC-KIOSK-1	1 day	Powered off overnight
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+COVERAGE TONIGHT
+
+Every client's alerts are triaged by the same 24/7 desk. You only get escalations, as PSA tickets in ConnectWise PSA.
+
+INTEGRATIONS
+ConnectWise PSA: ✓ connected
+NinjaOne RMM: ✓ connected
+--BB--
+Monitoring live
+Harbor Auto: 85 of 88 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## msp_tech task4: Open a queue item lands on that client's incident
+TABS: All-client queue | Overview | Incidents* | Devices | Accounts | Compliance | Insurance
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Sunrise Credit Union
+· NCUA / GLBA + PCI DSS · 120 devices · 95 users
+--CONTENT--
+Incidents
+
+Each incident says what our analysts already did and what, if anything, you need to do. Tasks for you are listed first.
+
+Alert noise, last 30 days
+filtered by analysts so you don't have to
+
+3,920 alerts reviewed by analysts → 1 escalated to you (1 real threat)
+
+Impossible-travel sign-in for loan officer b.ochoa@
+! Action needed
+◆ Medium
+severity
+Today 06:55 · Microsoft 365 · contained in 9 min
+· PSA #51019
+✓ What we already did
+Blocked the session from Romania and required a new MFA prompt.
+! What you need to do
+Confirm with Ben Ochoa that he did not approve an MFA prompt at 06:50 (2 minutes).
+Mark done
+Ask an analyst about this
+Breach assessment
+
+Member data accessed: No. The blocked session never reached member records.
+
+Notification clock: Not started. NCUA 72-hour cyber-incident report is not triggered unless member data or operations were affected.
+
+Timeline (ET)
+06:35 · Sign-in from Ohio
+06:55 · Sign-in from Romania
+07:04 · Session blocked
+PSA ticket #51019 · ConnectWise PSA
+Push update to PSA
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+SELECTED INCIDENT
+
+Impossible-travel sign-in for loan officer b.ochoa@
+◆ Medium
+severity
+ · Today 06:55
+
+Analyst note: Blocked the session from Romania and required a new MFA prompt.
+
+PSA ticket #51019 · ConnectWise PSA
+
+RESPONSE PROMISE
+
+A human analyst reviews every high alert within 15 minutes, 24/7. Infected devices are isolated automatically.
+--BB--
+Monitoring live
+Sunrise CU: 117 of 120 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## msp_owner task1: Check margin per client with resale capped at direct price
+TABS: All-client queue | Overview | Incidents | Devices | Accounts | Compliance | Insurance | Partner*
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Harbor Auto Group
+· FTC Safeguards + PCI DSS · 88 devices · 70 users
+--CONTENT--
+Partner
+
+Northwind IT · wholesale $6/device/month, no minimum, month to month.
+
+Wholesale cost (6 clients)
+$2,994
+499 devices × $6
+You bill clients
+$5,058
+per month
+Gross profit / month
+$2,064
+Margin 41%
+Annual recurring profit
+$24,768
+at current client list
+Margin per client
+Your resale price per device
+$8/device
+$9/device
+$10/device
+$11/device
+$12/device
+$14/device
+
+Your price is capped at Watchpost's direct price for the same client, so a client never finds it cheaper direct. Clients you register cannot buy direct (channel protection).
+
+CLIENT	DEVICES	DIRECT PRICE	WHOLESALE	YOUR PRICE	PROFIT	MARGIN	HEALTH 30D	
+QBR
+
+Harbor Auto
+88 devices
+	88	$999	$528	$968	$440	45%	 ! attention	QBR
+Kline & Ortiz
+22 devices
+	22	$349	$132	$242	$110	45%	 ✓ OK	QBR
+Ridgeline
+41 devices
+	41	$599	$246	$451	$205	45%	 ✓ OK	QBR
+Sunrise CU
+120 devices
+	120	$1,799	$720	$1,320	$600	45%	 ! attention	QBR
+Lakeside Peds
+18 devices
+	18	$349	$108	$198	$90	45%	 ✓ OK	QBR
+Vega
+210 devices
+	210	$1,879	$1,260	$1,879 capped at direct	$619	33%	 ✓ OK	QBR
+Total	499		$2,994	$5,058	$2,064	41%		
+Quarterly business review
+Generate QBR for Harbor Auto
+
+Pick a client in the sidebar, then generate a branded review with outcomes, trends and recommendations.
+
+White-label
+✓ On for all 6 clients
+Brand name
+Northwind Secure
+Logo
+N
+northwind-logo.svg Replace
+Portal domain
+security.northwind-it.com ✓ DNS verified
+Alert sender
+alerts@northwind-it.com ✓ SPF/DKIM
+Reports
+Your logo + colours; no Watchpost name
+Brand colour
+Blue
+Purple
+Amber
+Preview as client (Harbor Auto)
+--RIGHT--
+PARTNER BILLING
+Next wholesale invoice
+Dec 1 · $2,994
+Terms
+Month to month, no minimum
+Rate
+$6/device
+WHITE-LABEL SETTINGS
+Brand
+Northwind Secure
+Domain
+security.northwind-it.com ✓
+Sender
+alerts@northwind-it.com
+Colour
+N
+#1d4ed8
+CHANNEL PROTECTION
+
+Your 6 registered clients are locked to Northwind IT. Watchpost will not sell to them direct.
+
+INTEGRATIONS
+
+ConnectWise PSA ✓ · NinjaOne RMM ✓
+--BB--
+Monitoring live
+Harbor Auto: 85 of 88 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## msp_owner task2: Change resale price and preview white-label as a client
+TABS: All-client queue | Overview | Incidents | Devices | Accounts | Compliance | Insurance | Partner*
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Harbor Auto Group
+· FTC Safeguards + PCI DSS · 88 devices · 70 users
+--CONTENT--
+Partner
+
+Northwind IT · wholesale $6/device/month, no minimum, month to month.
+
+Wholesale cost (6 clients)
+$2,994
+499 devices × $6
+You bill clients
+$5,692
+per month
+Gross profit / month
+$2,698
+Margin 47%
+Annual recurring profit
+$32,376
+at current client list
+Margin per client
+Your resale price per device
+$8/device
+$9/device
+$10/device
+$11/device
+$12/device
+$14/device
+
+Your price is capped at Watchpost's direct price for the same client, so a client never finds it cheaper direct. Clients you register cannot buy direct (channel protection).
+
+CLIENT	DEVICES	DIRECT PRICE	WHOLESALE	YOUR PRICE	PROFIT	MARGIN	HEALTH 30D	
+QBR
+
+Harbor Auto
+88 devices
+	88	$999	$528	$999 capped at direct	$471	47%	 ! attention	QBR
+Kline & Ortiz
+22 devices
+	22	$349	$132	$308	$176	57%	 ✓ OK	QBR
+Ridgeline
+41 devices
+	41	$599	$246	$574	$328	57%	 ✓ OK	QBR
+Sunrise CU
+120 devices
+	120	$1,799	$720	$1,680	$960	57%	 ! attention	QBR
+Lakeside Peds
+18 devices
+	18	$349	$108	$252	$144	57%	 ✓ OK	QBR
+Vega
+210 devices
+	210	$1,879	$1,260	$1,879 capped at direct	$619	33%	 ✓ OK	QBR
+Total	499		$2,994	$5,692	$2,698	47%		
+Quarterly business review
+Generate QBR for Harbor Auto
+
+Pick a client in the sidebar, then generate a branded review with outcomes, trends and recommendations.
+
+White-label
+✓ On for all 6 clients
+Brand name
+Northwind Secure
+Logo
+N
+northwind-logo.svg Replace
+Portal domain
+security.northwind-it.com ✓ DNS verified
+Alert sender
+alerts@northwind-it.com ✓ SPF/DKIM
+Reports
+Your logo + colours; no Watchpost name
+Brand colour
+Blue
+Purple
+Amber
+Preview as client (Harbor Auto)
+N · Northwind Secure
+security.northwind-it.com
+What Harbor Auto Group sees
+Protected · 3 need your team
+
+85 of 88 computers reporting · 2 threats stopped
+
+No Watchpost branding, no wholesale price and no other clients are shown to the client.
+--RIGHT--
+PARTNER BILLING
+Next wholesale invoice
+Dec 1 · $2,994
+Terms
+Month to month, no minimum
+Rate
+$6/device
+WHITE-LABEL SETTINGS
+Brand
+Northwind Secure
+Domain
+security.northwind-it.com ✓
+Sender
+alerts@northwind-it.com
+Colour
+N
+#1d4ed8
+CHANNEL PROTECTION
+
+Your 6 registered clients are locked to Northwind IT. Watchpost will not sell to them direct.
+
+INTEGRATIONS
+
+ConnectWise PSA ✓ · NinjaOne RMM ✓
+--BB--
+Monitoring live
+Harbor Auto: 85 of 88 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## compliance task1: HIPAA view shows BAA, 6-year retention gap and all controls
+TABS: Overview | Incidents | Devices | Accounts | Compliance* | Insurance | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Compliance
+
+Controls mapped to evidence Watchpost collects automatically.
+
+Framework
+HIPAA Security Rule
+FTC Safeguards Rule (16 CFR 314)
+CMMC Level 1 (FAR 52.204-21)
+PCI DSS v4.0
+NCUA Part 748 / GLBA
+Business associate agreement (BAA) with Watchpost
+Required because Watchpost's logs can contain patient information.
+✓ Signed Mar 2, 2026
+Download BAA
+HIPAA Security Rule
+7 of 13 controls met
+
+4 partly met · 2 gaps · all 13 controls listed below
+
+§164.308(a)(1)(ii)(A)
+Risk analysis
+✓ Met
+§164.308(a)(1)(ii)(B)
+Risk management (security updates)
+✕ Gap
+§164.308(a)(1)(ii)(D)
+Information system activity review
+✓ Met
+§164.308(a)(5)(i)
+Security awareness training
+✕ Gap
+§164.308(a)(5)(ii)(B)
+Protection from malicious software
+! Partly met
+§164.308(a)(5)(ii)(C)
+Log-in monitoring
+✓ Met
+§164.308(a)(6)(ii)
+Security incident response and reporting
+✓ Met
+§164.308(a)(7)(ii)(A)
+Data backup plan
+✓ Met
+§164.308(b)(1)
+Business associate agreement with Watchpost
+✓ Met
+§164.312(a)(1)
+Access control (remove unused accounts)
+! Partly met
+§164.312(b)
+Audit controls (logs collected)
+✓ Met
+§164.312(d)
+Person or entity authentication (MFA)
+! Partly met
+§164.316(b)(2)(i)
+Documentation kept 6 years
+! Partly met
+Export evidence for auditor
+Last exported Oct 2, 2026
+--RIGHT--
+AUDIT DATES
+Last
+Mar 2, 2026 · HIPAA risk assessment
+Next
+Mar 1, 2027 (110 days)
+BAA STATUS
+
+✓ Signed Mar 2, 2026 with Watchpost
+
+AUDITOR
+
+Dana Whitfield, CHPS
+Northgate Compliance Partners
+dana@northgate-compliance.example
+
+Share read-only link with auditor
+LOG RETENTION
+
+Logs: 12 months, last 3 months instantly searchable. ! 6-year archive off. HIPAA requires documentation be kept 6 years.
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## compliance task2: Framework switch swaps controls and citations
+TABS: Overview | Incidents | Devices | Accounts | Compliance* | Insurance | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Compliance
+
+Controls mapped to evidence Watchpost collects automatically.
+
+Framework
+HIPAA Security Rule
+FTC Safeguards Rule (16 CFR 314)
+CMMC Level 1 (FAR 52.204-21)
+PCI DSS v4.0
+NCUA Part 748 / GLBA
+
+PCI DSS is not in scope for BrightSmile. Shown as a mapping only.
+
+PCI DSS v4.0
+5 of 11 controls met
+
+3 partly met · 3 gaps · all 11 controls listed below
+
+Req. 1.2
+Network security controls configured
+✕ Gap
+Req. 2.2
+Secure system configuration (benchmarks)
+! Partly met
+Req. 5.2
+Anti-malware deployed on all systems
+! Partly met
+Req. 6.3.3
+Critical patches within one month
+✕ Gap
+Req. 8.4.2
+MFA for all access to card data
+! Partly met
+Req. 10.2
+Audit logs enabled
+✓ Met
+Req. 10.4.1
+Daily log review
+✓ Met
+Req. 10.5.1
+Keep logs 12 months (3 months at hand)
+✓ Met
+Req. 11.5.2
+File integrity monitoring
+✓ Met
+Req. 12.6
+Security awareness program
+✕ Gap
+Req. 12.10.1
+Incident response plan
+✓ Met
+Export evidence for auditor
+Last exported Oct 2, 2026
+--RIGHT--
+AUDIT DATES
+Last
+Mar 2, 2026 · HIPAA risk assessment
+Next
+Mar 1, 2027 (110 days)
+BAA STATUS
+
+✓ Signed Mar 2, 2026 with Watchpost
+
+AUDITOR
+
+Dana Whitfield, CHPS
+Northgate Compliance Partners
+dana@northgate-compliance.example
+
+Share read-only link with auditor
+LOG RETENTION
+
+Logs: 12 months, last 3 months instantly searchable. ! 6-year archive off. HIPAA requires documentation be kept 6 years.
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## compliance task3: Export evidence with history
+TABS: Overview | Incidents | Devices | Accounts | Compliance* | Insurance | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Compliance
+
+Controls mapped to evidence Watchpost collects automatically.
+
+Framework
+HIPAA Security Rule
+FTC Safeguards Rule (16 CFR 314)
+CMMC Level 1 (FAR 52.204-21)
+PCI DSS v4.0
+NCUA Part 748 / GLBA
+Business associate agreement (BAA) with Watchpost
+Required because Watchpost's logs can contain patient information.
+✓ Signed Mar 2, 2026
+Download BAA
+HIPAA Security Rule
+7 of 13 controls met
+
+4 partly met · 2 gaps · all 13 controls listed below
+
+§164.308(a)(1)(ii)(A)
+Risk analysis
+✓ Met
+§164.308(a)(1)(ii)(B)
+Risk management (security updates)
+✕ Gap
+§164.308(a)(1)(ii)(D)
+Information system activity review
+✓ Met
+§164.308(a)(5)(i)
+Security awareness training
+✕ Gap
+§164.308(a)(5)(ii)(B)
+Protection from malicious software
+! Partly met
+§164.308(a)(5)(ii)(C)
+Log-in monitoring
+✓ Met
+§164.308(a)(6)(ii)
+Security incident response and reporting
+✓ Met
+§164.308(a)(7)(ii)(A)
+Data backup plan
+✓ Met
+§164.308(b)(1)
+Business associate agreement with Watchpost
+✓ Met
+§164.312(a)(1)
+Access control (remove unused accounts)
+! Partly met
+§164.312(b)
+Audit controls (logs collected)
+✓ Met
+§164.312(d)
+Person or entity authentication (MFA)
+! Partly met
+§164.316(b)(2)(i)
+Documentation kept 6 years
+! Partly met
+Export evidence for auditor
+Last exported Nov 11, 2026
+Export evidence
+Framework
+HIPAA
+Period
+Last 12 months
+Q3 2026
+Oct 1–31, 2026
+Format
+ZIP + PDF index
+PDF only
+Create export
+Export history
+Nov 11, 2026: HIPAA · Last 12 months · ZIP + PDF index
+Oct 2, 2026: HIPAA · Q3 2026 · ZIP (41 files)
+--RIGHT--
+AUDIT DATES
+Last
+Mar 2, 2026 · HIPAA risk assessment
+Next
+Mar 1, 2027 (110 days)
+BAA STATUS
+
+✓ Signed Mar 2, 2026 with Watchpost
+
+AUDITOR
+
+Dana Whitfield, CHPS
+Northgate Compliance Partners
+dana@northgate-compliance.example
+
+Share read-only link with auditor
+LOG RETENTION
+
+Logs: 12 months, last 3 months instantly searchable. ! 6-year archive off. HIPAA requires documentation be kept 6 years.
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## compliance task4: One training upload fixes compliance and insurance
+TABS: Overview | Incidents | Devices | Accounts | Compliance | Insurance* | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Cyber insurance
+
+The renewal questionnaire, answered from live data with dated evidence.
+
+Renewal date
+Jan 15, 2027
+65 days left
+Questionnaire readiness
+7 of 10
+! 3 answers need work
+Current policy
+Beacon Specialty Insurance
+Policy BSC-CY-204417 · limit $1,000,000
+Premium $6,840/yr · broker Lena Ortiz, Harborview Risk Advisors
+Insurer questions
+All 10 questions shown
+MFA on email for all users?
+Evidence: Microsoft 365 · dated Nov 11, 2026
+! Partly: 39 of 41 users; 2 without MFA (billing@, m.reyes@)
+MFA on remote access (VPN / remote desktop)?
+Evidence: VPN config · dated Nov 11, 2026
+✓ Yes
+EDR / endpoint protection on all devices?
+Evidence: Wazuh agent inventory · dated Nov 11, 2026
+! Partly: installed on 64, 60 reporting, 4 not reporting
+24/7 monitoring by a security operations team?
+Evidence: Watchpost service record · dated Nov 11, 2026
+✓ Yes: Watchpost SOC, staffed around the clock
+Offline or immutable backups, tested?
+Evidence: Backup report · dated Nov 1, 2026
+✓ Yes: restore tested Nov 1, 2026
+Critical updates installed within 30 days?
+Evidence: Wazuh vulnerability detection · dated Nov 11, 2026
+! Partly: 1 critical update pending on 2 machine(s) (9 days)
+Security awareness training for staff?
+Evidence: Customer upload · dated Nov 11, 2026
+✓ Yes: certificates on file
+Email filtering and DMARC?
+Evidence: DNS record · dated Nov 11, 2026
+✓ Yes: DMARC enforced
+Admin accounts limited and reviewed?
+Evidence: Directory export · dated Nov 1, 2026
+✓ Yes: 3 admin accounts, reviewed monthly
+Written incident response plan?
+Evidence: Uploaded plan · dated Jun 12, 2026
+✓ Yes: updated Jun 12, 2026
+Download evidence pack
+Email pack to broker
+Download signed attestation
+Controls that usually lower premiums
+MFA on email and remote access for every user
+24/7 managed detection and response (you have it)
+Tested offline backups
+Critical updates within 30 days
+What a breach could cost
+
+Healthcare had the highest average breach cost of any industry, about $9.8M per breach across all company sizes (IBM Cost of a Data Breach Report 2024). Small practices pay far less in absolute terms, but notification, forensics and downtime alone often exceed a year of premiums.
+--RIGHT--
+RENEWAL CHECKLIST
+! MFA on email for all users?
+✓ MFA on remote access (VPN / remote desktop)?
+! EDR / endpoint protection on all devices?
+✓ 24/7 monitoring by a security operations team?
+✓ Offline or immutable backups, tested?
+! Critical updates installed within 30 days?
+✓ Security awareness training for staff?
+✓ Email filtering and DMARC?
+✓ Admin accounts limited and reviewed?
+✓ Written incident response plan?
+TIMELINE
+
+Dec 15, 2026: send pack to broker
+Jan 5, 2027: underwriter questions
+Jan 15, 2027: renewal
+
+BROKER
+
+Lena Ortiz · Harborview Risk Advisors
+lena@harborview-risk.example
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## finance task1: All questions shown, MFA gap is a warning
+TABS: Overview | Incidents | Devices | Accounts | Compliance | Insurance* | Plan & billing
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Cyber insurance
+
+The renewal questionnaire, answered from live data with dated evidence.
+
+Renewal date
+Jan 15, 2027
+65 days left
+Questionnaire readiness
+6 of 10
+! 4 answers need work
+Current policy
+Beacon Specialty Insurance
+Policy BSC-CY-204417 · limit $1,000,000
+Premium $6,840/yr · broker Lena Ortiz, Harborview Risk Advisors
+Insurer questions
+All 10 questions shown
+MFA on email for all users?
+Evidence: Microsoft 365 · dated Nov 11, 2026
+! Partly: 39 of 41 users; 2 without MFA (billing@, m.reyes@)
+MFA on remote access (VPN / remote desktop)?
+Evidence: VPN config · dated Nov 11, 2026
+✓ Yes
+EDR / endpoint protection on all devices?
+Evidence: Wazuh agent inventory · dated Nov 11, 2026
+! Partly: installed on 64, 60 reporting, 4 not reporting
+24/7 monitoring by a security operations team?
+Evidence: Watchpost service record · dated Nov 11, 2026
+✓ Yes: Watchpost SOC, staffed around the clock
+Offline or immutable backups, tested?
+Evidence: Backup report · dated Nov 1, 2026
+✓ Yes: restore tested Nov 1, 2026
+Critical updates installed within 30 days?
+Evidence: Wazuh vulnerability detection · dated Nov 11, 2026
+! Partly: 1 critical update pending on 2 machine(s) (9 days)
+Security awareness training for staff?
+Evidence: Customer upload needed · not collected yet
+✕ Document missing: upload certificates
+Email filtering and DMARC?
+Evidence: DNS record · dated Nov 11, 2026
+✓ Yes: DMARC enforced
+Admin accounts limited and reviewed?
+Evidence: Directory export · dated Nov 1, 2026
+✓ Yes: 3 admin accounts, reviewed monthly
+Written incident response plan?
+Evidence: Uploaded plan · dated Jun 12, 2026
+✓ Yes: updated Jun 12, 2026
+Download evidence pack
+Email pack to broker
+Download signed attestation
+Upload training certificates
+Controls that usually lower premiums
+MFA on email and remote access for every user
+24/7 managed detection and response (you have it)
+Tested offline backups
+Critical updates within 30 days
+What a breach could cost
+
+Healthcare had the highest average breach cost of any industry, about $9.8M per breach across all company sizes (IBM Cost of a Data Breach Report 2024). Small practices pay far less in absolute terms, but notification, forensics and downtime alone often exceed a year of premiums.
+--RIGHT--
+RENEWAL CHECKLIST
+! MFA on email for all users?
+✓ MFA on remote access (VPN / remote desktop)?
+! EDR / endpoint protection on all devices?
+✓ 24/7 monitoring by a security operations team?
+✓ Offline or immutable backups, tested?
+! Critical updates installed within 30 days?
+✕ Security awareness training for staff?
+✓ Email filtering and DMARC?
+✓ Admin accounts limited and reviewed?
+✓ Written incident response plan?
+TIMELINE
+
+Dec 15, 2026: send pack to broker
+Jan 5, 2027: underwriter questions
+Jan 15, 2027: renewal
+
+BROKER
+
+Lena Ortiz · Harborview Risk Advisors
+lena@harborview-risk.example
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## finance task2: See plan and invoices
+TABS: Overview | Incidents | Devices | Accounts | Compliance | Insurance | Plan & billing*
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Plan & billing
+
+One flat monthly price by device count. No per-alert or per-incident fees.
+
+Your plan
+$999/mo
+Practice: flat up to 100 devices · you have 64
+Next invoice
+Dec 1
+$999 · card ending 4242
+Price locked until
+Mar 31, 2027
+month to month after that
+Direct price list
+PLAN	DEVICES	PER MONTH
+Starter	1–25	$349
+Small office	26–50	$599
+Practice Your plan	51–100	$999
+Multi-site	101–200	$1,799
+Over 200	201+	$1,799 + $8/extra device
+
+Adding devices past 100 moves you to the next plan the following month; we warn you 30 days ahead.
+
+Invoices
+Nov 1, 2026 · $999
+Download invoice
+Oct 1, 2026 · $999
+Download invoice
+Sep 1, 2026 · $999
+Download invoice
+--RIGHT--
+BILLING CONTACT
+
+Dr. Alan Kim · invoices emailed on the 1st
+
+PLAN FIT
+
+64 devices on Practice (up to 100). 36 devices of headroom.
+
+WHAT'S INCLUDED
+24/7 analysts and response
+Compliance evidence and insurance pack
+Monthly plain-English report
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Plan: Practice · $999/mo · 64 of 100 devices
+--POP--
+
+
+
+######## msp_account_mgr task1: Generate a white-labelled QBR for Ridgeline
+TABS: All-client queue | Overview | Incidents | Devices | Compliance | Insurance | Partner*
+--SIDE--
+Northwind IT · 6 clients
+! 2 attention
+
+4 OK · 2 need attention · 2 open incidents
+
+Search clients
+ 
+All
+Needs attention
+≡
+All clients
+Cross-client incident queue
+2
+NEEDS ATTENTION (2)
+!
+Harbor Auto Group
+Needs attention.
+3 to fix · 88 devices
+1 open
+!
+Sunrise Credit Union
+Needs attention.
+3 to fix · 120 devices
+1 open
+ALL OK (4)
+✓
+Kline & Ortiz CPAs
+OK.
+All OK · 22 devices
+✓
+Ridgeline Machining
+OK.
+All OK · 41 devices
+✓
+Lakeside Pediatrics
+OK.
+All OK · 18 devices
+✓
+Vega Logistics
+OK.
+All OK · 210 devices
+--CTX--
+N
+Northwind Secure
+·
+Client:
+Ridgeline Machining
+· CMMC L1 · 41 devices · 30 users
+--CONTENT--
+Partner
+
+Northwind IT · wholesale $6/device/month, no minimum, month to month.
+
+Wholesale cost (6 clients)
+$2,994
+499 devices × $6
+You bill clients
+$5,058
+per month
+Gross profit / month
+$2,064
+Margin 41%
+Annual recurring profit
+$24,768
+at current client list
+Margin per client
+Your resale price per device
+$8/device
+$9/device
+$10/device
+$11/device
+$12/device
+$14/device
+
+Your price is capped at Watchpost's direct price for the same client, so a client never finds it cheaper direct. Clients you register cannot buy direct (channel protection).
+
+CLIENT	DEVICES	DIRECT PRICE	WHOLESALE	YOUR PRICE	PROFIT	MARGIN	HEALTH 30D	
+QBR
+
+Harbor Auto
+88 devices
+	88	$999	$528	$968	$440	45%	 ! attention	QBR
+Kline & Ortiz
+22 devices
+	22	$349	$132	$242	$110	45%	 ✓ OK	QBR
+Ridgeline
+41 devices
+	41	$599	$246	$451	$205	45%	 ✓ OK	QBR
+Sunrise CU
+120 devices
+	120	$1,799	$720	$1,320	$600	45%	 ! attention	QBR
+Lakeside Peds
+18 devices
+	18	$349	$108	$198	$90	45%	 ✓ OK	QBR
+Vega
+210 devices
+	210	$1,879	$1,260	$1,879 capped at direct	$619	33%	 ✓ OK	QBR
+Total	499		$2,994	$5,058	$2,064	41%		
+Quarterly business review
+Generate QBR for Ridgeline
+N · Northwind Secure · Quarterly review for Ridgeline Machining
+
+Q4 2026 (to date) · prepared by Casey R., Northwind IT
+
+Threats stopped: 1 (average 6 min to contain)
+Alerts reviewed for you: 860
+Coverage: 41 of 41 devices reporting
+CMMC L1: 13 of 15 controls met
+
+Recommendations
+
+Turn on MFA for 1 account (shop-floor)
+Upload security-training certificates (counts for compliance and insurance)
+Download QBR (PDF)
+Export slides
+White-label
+✓ On for all 6 clients
+Brand name
+Northwind Secure
+Logo
+N
+northwind-logo.svg Replace
+Portal domain
+security.northwind-it.com ✓ DNS verified
+Alert sender
+alerts@northwind-it.com ✓ SPF/DKIM
+Reports
+Your logo + colours; no Watchpost name
+Brand colour
+Blue
+Purple
+Amber
+Preview as client (Ridgeline)
+--RIGHT--
+PARTNER BILLING
+Next wholesale invoice
+Dec 1 · $2,994
+Terms
+Month to month, no minimum
+Rate
+$6/device
+WHITE-LABEL SETTINGS
+Brand
+Northwind Secure
+Domain
+security.northwind-it.com ✓
+Sender
+alerts@northwind-it.com
+Colour
+N
+#1d4ed8
+CHANNEL PROTECTION
+
+Your 6 registered clients are locked to Northwind IT. Watchpost will not sell to them direct.
+
+INTEGRATIONS
+
+ConnectWise PSA ✓ · NinjaOne RMM ✓
+--BB--
+Monitoring live
+Ridgeline: 41 of 41 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+Northwind IT · 6 clients · 2 open incidents
+--POP--
+
+
+
+######## practice_manager_regulated task1: Find accounts unused 30+ days and request disable
+TABS: Overview | Incidents | Devices | Accounts* | Compliance | Insurance
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Accounts
+
+Who can sign in, who hasn't for a while, and who has no MFA.
+
+Users
+41
+Without MFA
+2
+Unused 30+ days, still active
+1
+Admin accounts
+3
+Accounts to review
+All listed
+Unused 30+ days
+No MFA
+
+Showing 2 of 41 users. Everyone not listed signed in this month with MFA.
+
+ACCOUNT	LAST SIGN-IN	MFA	ACTION
+j.alvarez@brightsmiledental.com
+Hygienist (left Sep 30)
+	42 days ago ! Unused	✓ On	✓ Disable requested · IT notified
+m.reyes@brightsmiledental.com
+Dental assistant
+	35 days ago ! Unused	! Off	Request disable
+--RIGHT--
+OFFBOARDING CHECKLIST
+Disable sign-in on the last day
+Remove from shared mailboxes
+Collect laptop and badge
+Transfer files to manager
+WHO HANDLES REQUESTS
+
+Disable requests go to Marco Diaz, IT manager, who confirms within 1 business day.
+
+YOUR NEXT ACTIONS (7)
+! Give the new reception@ password to the front-desk team (2 minutes). Your IT manager has it in the password vault. Open
+! Have IT install 1 critical update on 2 machines (DC-01, FILE-01) Open
+! Reconnect 4 devices that stopped reporting (NAS-BACKUP first) Open
+Turn on MFA for 2 accounts (billing@, m.reyes@) Open
+Disable 1 account unused for 30+ days Open
+Upload security-training certificates (counts for compliance and insurance) Open
+Turn on the 6-year log archive for HIPAA documentation Open
+--BB--
+Monitoring live
+60 of 64 devices reporting
+SOC: Rosa K. now · Sam T. from 18:00
+--POP--
+
+
+
+######## external_auditor task1: Open a CMMC control and download its evidence
+TABS: Compliance* | Incidents
+--SIDE--
+Shared read-only link
+Read-only
+Company
+Ridgeline Machining
+Shared by
+Northwind IT
+Expires
+Dec 11, 2026
+Scope
+Compliance, Incidents
+FRAMEWORKS
+H
+HIPAA
+Mapping only
+F
+FTC Safeguards
+Mapping only
+C
+CMMC L1
+In scope
+P
+PCI DSS
+Mapping only
+N
+NCUA / GLBA
+Mapping only
+
+Every view and download on this link is logged for the owner.
+--CTX--
+N
+Northwind Secure
+·
+Shared view of
+Ridgeline Machining
+· CMMC L1 · 41 devices · 30 users
+Read-only
+--CONTENT--
+Compliance
+
+Controls mapped to evidence Watchpost collects automatically.
+
+Framework
+CMMC Level 1 (FAR 52.204-21)
+HIPAA Security Rule
+FTC Safeguards Rule (16 CFR 314)
+PCI DSS v4.0
+NCUA Part 748 / GLBA
+CMMC Level 1 (FAR 52.204-21)
+13 of 15 controls met
+
+1 partly met · 1 gap · all 15 controls listed below
+
+AC.L1-b.1.i
+Limit system access to authorized users
+✓ Met
+
+No unused accounts older than 30 days
+
+Evidence source
+Microsoft 365 / AD sign-in data
+Collected
+Collected Nov 11, 2026 06:00 ET
+Owner
+Your team
+Download evidence
+AC.L1-b.1.ii
+Limit access to permitted transactions
+✓ Met
+AC.L1-b.1.iii
+Verify and control external connections
+✓ Met
+AC.L1-b.1.iv
+Control information posted publicly
+✓ Met
+IA.L1-b.1.v
+Identify users and devices
+✓ Met
+IA.L1-b.1.vi
+Authenticate users and devices
+! Partly met
+MP.L1-b.1.vii
+Sanitize media before disposal
+✓ Met
+PE.L1-b.1.viii
+Limit physical access
+✓ Met
+PE.L1-b.1.ix
+Escort visitors and keep access logs
+✓ Met
+SC.L1-b.1.x
+Monitor communications at boundaries
+✓ Met
+SC.L1-b.1.xi
+Separate public-facing systems
+✕ Gap
+SI.L1-b.1.xii
+Identify and fix flaws on time
+✓ Met
+SI.L1-b.1.xiii
+Malicious code protection
+✓ Met
+SI.L1-b.1.xiv
+Update malicious code protection
+✓ Met
+SI.L1-b.1.xv
+Periodic and real-time scans
+✓ Met
+Export evidence for auditor
+Last exported Oct 2, 2026
+--RIGHT--
+AUDIT DATES
+Last
+Apr 2, 2026 · CMMC Level 1 self-assessment (SPRS)
+Next
+Dec 8, 2026 (27 days)
+BAA STATUS
+
+Not required (no health data in scope)
+
+AUDITOR
+
+Alex Moreno
+TriState C3PAO (assessor)
+alex@tristate-c3pao.example
+
+LOG RETENTION
+
+Logs: 12 months, last 3 months instantly searchable. Longer archive available on request.
+--BB--
+Read-only link · expires Dec 11, 2026
+Ridgeline Machining
+--POP--
+
+
+
+######## insurance_broker task1: Check MFA/EDR/backup answers with dates and get the attestation
+TABS: Insurance* | Incidents
+--SIDE--
+Shared read-only link
+Read-only
+Company
+BrightSmile Dental Group
+Shared by
+BrightSmile owner
+Expires
+Jan 15, 2027
+Scope
+Insurance, Incidents
+
+Every view and download on this link is logged for the owner.
+--CTX--
+W
+Watchpost
+·
+Shared view of
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+Read-only
+--CONTENT--
+Cyber insurance
+
+The renewal questionnaire, answered from live data with dated evidence.
+
+Renewal date
+Jan 15, 2027
+65 days left
+Questionnaire readiness
+6 of 10
+! 4 answers need work
+Current policy
+Beacon Specialty Insurance
+Policy BSC-CY-204417 · limit $1,000,000
+Premium $6,840/yr · broker Lena Ortiz, Harborview Risk Advisors
+Insurer questions
+All 10 questions shown
+MFA on email for all users?
+Evidence: Microsoft 365 · dated Nov 11, 2026
+! Partly: 39 of 41 users; 2 without MFA (billing@, m.reyes@)
+MFA on remote access (VPN / remote desktop)?
+Evidence: VPN config · dated Nov 11, 2026
+✓ Yes
+EDR / endpoint protection on all devices?
+Evidence: Wazuh agent inventory · dated Nov 11, 2026
+! Partly: installed on 64, 60 reporting, 4 not reporting
+24/7 monitoring by a security operations team?
+Evidence: Watchpost service record · dated Nov 11, 2026
+✓ Yes: Watchpost SOC, staffed around the clock
+Offline or immutable backups, tested?
+Evidence: Backup report · dated Nov 1, 2026
+✓ Yes: restore tested Nov 1, 2026
+Critical updates installed within 30 days?
+Evidence: Wazuh vulnerability detection · dated Nov 11, 2026
+! Partly: 1 critical update pending on 2 machine(s) (9 days)
+Security awareness training for staff?
+Evidence: Customer upload needed · not collected yet
+✕ Document missing: upload certificates
+Email filtering and DMARC?
+Evidence: DNS record · dated Nov 11, 2026
+✓ Yes: DMARC enforced
+Admin accounts limited and reviewed?
+Evidence: Directory export · dated Nov 1, 2026
+✓ Yes: 3 admin accounts, reviewed monthly
+Written incident response plan?
+Evidence: Uploaded plan · dated Jun 12, 2026
+✓ Yes: updated Jun 12, 2026
+Download evidence pack
+Download signed attestation
+Controls that usually lower premiums
+MFA on email and remote access for every user
+24/7 managed detection and response (you have it)
+Tested offline backups
+Critical updates within 30 days
+What a breach could cost
+
+Healthcare had the highest average breach cost of any industry, about $9.8M per breach across all company sizes (IBM Cost of a Data Breach Report 2024). Small practices pay far less in absolute terms, but notification, forensics and downtime alone often exceed a year of premiums.
+--RIGHT--
+RENEWAL CHECKLIST
+! MFA on email for all users?
+✓ MFA on remote access (VPN / remote desktop)?
+! EDR / endpoint protection on all devices?
+✓ 24/7 monitoring by a security operations team?
+✓ Offline or immutable backups, tested?
+! Critical updates installed within 30 days?
+✕ Security awareness training for staff?
+✓ Email filtering and DMARC?
+✓ Admin accounts limited and reviewed?
+✓ Written incident response plan?
+TIMELINE
+
+Dec 15, 2026: send pack to broker
+Jan 5, 2027: underwriter questions
+Jan 15, 2027: renewal
+
+BROKER
+
+Lena Ortiz · Harborview Risk Advisors
+lena@harborview-risk.example
+--BB--
+Read-only link · expires Jan 15, 2027
+BrightSmile Dental Group
+--POP--
+
+
+
+######## general_counsel task1: Open an incident and see data accessed, timeline and notice clock
+TABS: Incidents* | Compliance
+--SIDE--
+Shared read-only link
+Read-only
+Company
+BrightSmile Dental Group
+Shared by
+BrightSmile owner
+Expires
+Dec 31, 2026
+Scope
+Incidents, Compliance
+FRAMEWORKS
+H
+HIPAA
+In scope
+F
+FTC Safeguards
+Mapping only
+C
+CMMC L1
+Mapping only
+P
+PCI DSS
+Mapping only
+N
+NCUA / GLBA
+Mapping only
+
+Every view and download on this link is logged for the owner.
+--CTX--
+W
+Watchpost
+·
+Shared view of
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+Read-only
+--CONTENT--
+Incidents
+
+Each incident says what our analysts already did and what, if anything, you need to do. Tasks for you are listed first.
+
+Alert noise, last 30 days
+filtered by analysts so you don't have to
+
+1,240 alerts reviewed by analysts → 3 escalated to you (2 real threats, 1 confirmed safe)
+
+214 blocked sign-in attempts on reception@brightsmiledental.com
+! Action needed
+◆ Medium
+severity
+Yesterday 22:10 · Microsoft 365 · contained in 21 min
+Malicious invoice attachment ran on FRONTDESK-02
+✓ Contained
+▲ High
+severity
+Nov 4, 9:42 · Office 1 (Main St) · contained in 4 min
+✓ What we already did
+Isolated FRONTDESK-02 from the network at 9:46 (4 minutes after the file ran).
+Stopped the program, removed the file and checked all 64 devices for it (none found).
+Blocked the sender domain for the whole company.
+What you need to do
+Nothing urgent. The PC is clean and back online.
+Optional: share the 1-page phishing tip sheet with front-desk staff.
+Download the tip sheet (PDF)
+Breach assessment
+
+Patient data accessed: No. The program was stopped before it reached the practice-management system or shared drives.
+
+Notification clock: Not started. Forensic review found no access to protected health information.
+
+Timeline (ET)
+9:42 · Attachment opened, program started
+9:43 · Watchpost alert (high)
+9:46 · PC isolated by analyst Rosa K.
+10:20 · Scan of all 64 devices: clean
+11:05 · PC returned to service
+New admin account "svc-backup" created on DC-01
+Confirmed OK by IT
+ℹ Info
+severity
+Nov 3, 16:05 · Office 1 (Main St)
+--RIGHT--
+ANALYSTS ON DUTY · 24/7
+RK
+Now: Rosa K.
+Day desk · 10:00–18:00 ET
+ST
+Next: Sam T.
+Evening desk · 18:00–02:00 ET
+Then Priya N. 02:00–10:00 ET. Hotline answered 24/7: +1 (888) 555-0142
+Call the SOC
+Chat with Rosa
+SELECTED INCIDENT
+
+Malicious invoice attachment ran on FRONTDESK-02
+▲ High
+severity
+ · Nov 4, 9:42
+
+Analyst note: Isolated FRONTDESK-02 from the network at 9:46 (4 minutes after the file ran).
+
+RESPONSE PROMISE
+
+A human analyst reviews every high alert within 15 minutes, 24/7. Infected devices are isolated automatically.
+--BB--
+Read-only link · expires Dec 31, 2026
+BrightSmile Dental Group
+--POP--
+
+
+
+######## security_champion_employee task1: Report a suspicious email after clicking and see the verdict
+TABS: Report an email*
+--SIDE--
+BrightSmile
+W
+Watchpost
+YOUR LOCATIONS
+All locations
+60 of 64 devices reporting
+!
+Office 1 (Main St)
+27 of 28 reporting
+!
+Office 2 (Elm Ave)
+19 of 20 reporting
+!
+Office 3 (Lakeview)
+11 of 12 reporting
+!
+Remote
+3 of 4 reporting
+YOUR WATCHPOST TEAM
+Now: Rosa K. · Next: Sam T. (18:00)
+24/7 hotline +1 (888) 555-0142
+--CTX--
+W
+Watchpost
+·
+Company:
+BrightSmile Dental Group
+· HIPAA · 64 devices · 41 users
+--CONTENT--
+Report a suspicious email
+
+Not sure about an email? Send it to our analysts. You will not get in trouble for reporting, even if you clicked.
+
+From
+Subject
+What did you do?
+I only opened the email
+I clicked a link
+I typed my password
+I opened the attachment
+Send to analysts
+Or forward it to report@brightsmiledental.com
+Analyst verdict: Phishing
+✕ Do not click
+
+Checked by Rosa K. in 2 minutes. This is a fake invoice. We removed it from 3 other inboxes at BrightSmile.
+
+What to do now
+Delete the email. Do not reply.
+Because you clicked: we reset your password as a precaution. You will get a text with a temporary one in 5 minutes.
+Thank you. Reports like yours protect everyone.
+Your recent reports
+Oct 30 · "Shared document: Q4 schedule"
+✓ Safe
+Oct 12 · "Your mailbox is full"
+✕ Phishing
+--RIGHT--
+WHAT HAPPENS NEXT
+An analyst checks the email (usually under 5 minutes, 24/7).
+You get a verdict here and by text.
+If it's bad, we remove it from everyone's inbox.
+SIGNS OF PHISHING
+Urgent payment or password requests
+Look-alike addresses (paypa1 vs paypal)
+Unexpected attachments
+ANALYST ON DUTY
+
+Rosa K. until 18:00 ET, then Sam T..
+--BB--
+Analysts on duty 24/7 · Rosa K. now
+--POP--
+

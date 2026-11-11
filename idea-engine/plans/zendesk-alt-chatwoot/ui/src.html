@@ -1012,7 +1012,10 @@ function syncRail() { const b = $$('.rail button[data-tab-target]').find(x => x.
 /* ============================================================ wiring ============================================================ */
 function renderPanel(t) { ({ conversation: renderConversation, ai: renderAI, migration: renderMigration, reports: renderReports, billing: renderBilling, admin: renderAdmin })[t](); }
 function renderAll() { renderSide(); renderPanel(S.tab); renderRight(); renderBottom(); renderRail(); }
-window.onTab = id => { S.tab = id; closePop(true); renderSide(); renderPanel(id); renderRight(); syncRail(); };
+// The kit sets body[data-tab], so every click re-runs selectTab(current tab). Only re-render when the tab really changes (or go() forces it),
+// otherwise the sidebar would be replaced before the kit looks up the clicked .side .item.
+function go(t) { S.force = true; UI.selectTab(t); }
+window.onTab = id => { if (id === S.tab && !S.force && S.ready) { syncRail(); return; } S.force = false; S.ready = true; S.tab = id; closePop(true); renderSide(); renderPanel(id); renderRight(); syncRail(); };
 window.onSelect = id => {
   if (id.startsWith('sub:')) { const [, t, k] = id.split(':'); S.sub[t] = k; renderPanel(t); renderRight(); renderSide(); $('.content').scrollTop = 0; return; }
   openConv(id);
@@ -1021,7 +1024,7 @@ function openConv(id) {
   const c = conv(id); S.conv = id; S.form = null; S.picker = null; S.pickSel = null; S.mode = 'reply';
   if (!viewList(S.view).includes(c)) S.view = c.inbox === 'sales' && S.role === 'sales' ? 'sales' : (allowedViews().some(v => v[0] === 'all') ? 'all' : S.view);
   closePop(true);
-  if (S.tab !== 'conversation') UI.selectTab('conversation'); else { renderSide(); renderConversation(); renderRight(); }
+  if (S.tab !== 'conversation') go('conversation'); else { renderSide(); renderConversation(); renderRight(); }
   $('.content').scrollTop = 0;
 }
 window.onRail = v => { if (v === 'search' || v === 'alerts') openPop(v); else closePop(true); };
@@ -1034,7 +1037,7 @@ window.onRole = r => {
   S.view = R.view; S.picker = null; S.form = null;
   const first = viewList(S.view)[0]; if (first) S.conv = first.id;
   renderRoleNote(); renderBottom(); renderRail();
-  UI.selectTab(R.start);
+  go(R.start);
 };
 window.onReady = () => {
   $('.tabs').dataset.visibleTabs = D.roles.owner.tabs.join(' '); renderRoleNote();
@@ -1077,7 +1080,7 @@ const ACT = {
   pickSel: a => { S.pickSel = a.value; renderConversation(); },
   pickCancel: () => { S.picker = null; renderConversation(); },
   assignConfirm: () => { const to = user(S.pickSel); S.picker.forEach(id => { const c = conv(id); const from = c.assignee ? user(c.assignee).name : 'Unassigned'; c.assignee = to.id; addEvent(id, { cls: 'event', who: 'Event', t: `Reassigned from ${from} to ${to.name} by ${me().name}` }); }); UI.toast(`Reassigned to ${to.name}`); S.picker = null; renderAll(); },
-  reassignFrom: a => { S.conv = a.dataset.id; S.picker = [a.dataset.id]; S.pickSel = null; UI.closeDrawers(); UI.selectTab('conversation'); },
+  reassignFrom: a => { S.conv = a.dataset.id; S.picker = [a.dataset.id]; S.pickSel = null; UI.closeDrawers(); go('conversation'); },
   resolve: () => { const c = conv(S.conv); c.status = 'resolved'; c.resolvedBy = 'human'; c.resolvedToday = true; c.resolvedNote = `Resolved by ${me().name}`; c.waitMin = null; addEvent(c.id, { cls: 'event', who: 'Event', t: `Marked resolved by ${me().name}` }); renderAll(); },
   reopen: () => { const c = conv(S.conv); c.status = 'open'; c.waitMin = 0; renderAll(); },
   form: a => { S.form = a.dataset.v || null; renderRight(); },
@@ -1088,7 +1091,7 @@ const ACT = {
   privacyCancel: () => { S.privacy = null; renderRight(); },
   privacyConfirm: () => { const k = $('#privacy-kind').value, nm = cust(conv(S.conv)).name; S.privacy.kind = k; S.privacy.done = true; D.audit.unshift({ at: 'Nov 19, ' + now(), who: me().name, what: `${k === 'delete' ? 'Deletion' : 'Export'} request processed for ${nm}` }); renderRight(); },
   openConv: a => openConv(a.dataset.id),
-  gotoTab: a => { closePop(true); UI.selectTab(a.dataset.id); },
+  gotoTab: a => { closePop(true); go(a.dataset.id); },
   gap: a => { S.gap = a.dataset.id; renderAI(); renderRight(); },
   draftArticle: a => { S.editor = a.dataset.id; S.gap = a.dataset.id; renderAI(); renderRight(); },
   closeEditor: () => { S.editor = null; renderAI(); },
@@ -1097,9 +1100,9 @@ const ACT = {
   qa: a => { S.qa[a.dataset.id] = a.dataset.v; renderAI(); renderSide(); },
   qaSave: a => { S.qaFix[a.dataset.id] = $('#qf-' + a.dataset.id).value; renderAI(); UI.toast('Correction sent to AI knowledge'); },
   spot: () => { S.spot = true; renderMigration(); },
-  goRules: () => { S.sub.admin = 'rules'; UI.selectTab('admin'); },
-  goUsers: () => { S.sub.admin = 'users'; UI.selectTab('admin'); },
-  agentQueue: a => { S.view = 'agent:' + a.dataset.id; const f = viewList(S.view)[0]; if (f) S.conv = f.id; UI.selectTab('conversation'); },
+  goRules: () => { S.sub.admin = 'rules'; go('admin'); },
+  goUsers: () => { S.sub.admin = 'users'; go('admin'); },
+  agentQueue: a => { S.view = 'agent:' + a.dataset.id; const f = viewList(S.view)[0]; if (f) S.conv = f.id; go('conversation'); },
   exportBoard: () => UI.toast(`Board summary PDF generated: ${P().label}`),
   doc: a => { D.audit.unshift({ at: 'Nov 19, ' + now(), who: me().name, what: `Downloaded ${a.dataset.v}` }); renderRight(); UI.toast(`Downloading ${a.dataset.v} (mock)`); },
   guardTest: () => { const l = +$('#guard-limit').value; S.draftLimit = l; S.guardTest = 112 > l ? `Sample #4021 ($112, wrong item): hands off to a human, because $112 is over the $${l} limit.` : `Sample #4021 ($112, wrong item): AI can handle it and creates the replacement itself, because $112 is within the $${l} limit.`; renderAdmin(); },
