@@ -1,0 +1,136 @@
+{
+  "overall": 5,
+  "overall_note": "Minimum persona score. Every scripted task passes at 1440x900, at 390x844 (using the drawer) and in dark mode. No horizontal overflow, no text contrast failures and no touch targets under 24px were found. The scores are held down by credibility defects: access statements that contradict what the viewer is plainly doing, broken citation numbering, stale state after context switches, and legal claims a practitioner would challenge.",
+  "personas": [
+    {"id": "partner", "score": 6, "defects": [
+      {"issue": "'Net return (flat-fee margin only) 5.4x' with '$7,830 after subscription': 7,830 / 1,780 = 4.4x. 5.4x is the gross ratio (9,610 / 1,780).", "fix": "Show 4.4x net, or relabel the figure as 'Gross return 5.4x'."},
+      {"issue": "The Period selector in the right bar ('Last quarter') changes nothing. Every card still says 'last 30 days'.", "fix": "Recompute or swap the dataset and the subtitles when the period changes, or remove the control."},
+      {"issue": "Herrera matter card says 'Only the 3-person matter team can see these documents' (M. Vega, B. Torres, B. Moore) while Ruth Hartwell, who is not on the team, is reading them.", "fix": "Make the access line viewer-aware, e.g. 'Matter team (3) + you via Managing partner firm-wide access'. Or remove the partner's access and show the wall."},
+      {"issue": "Harbor Health 'AI limited to internal research' while client consent is pending is undefined. 6 AI uses are logged, and an AI-extracted HHS OCR deadline from the client's letter sits in the docket queue.", "fix": "Define 'internal research' (no client documents sent to the model) and keep AI extraction off the matter until the client replies. Otherwise mark it 'AI on, disclosure pending'."},
+      {"issue": "'Drafts exported without sign-off: 0 (exports are watermarked DRAFT)' reads as a contradiction, because the legal secretary can export an unapproved letter.", "fix": "Show 'Unapproved drafts exported: 1 (watermarked DRAFT)' and list it."}
+    ]},
+    {"id": "associate", "score": 6, "defects": [
+      {"issue": "Citation numbers are out of order. Reyes answer 2 cites [5] before [4]. The Liu answer opens with [7], then [5], then table cites 1, 2, 4, 3, 6. The source list follows the same order.", "fix": "Number citations per answer in order of first appearance, starting at 1."},
+      {"issue": "Liu answer footer says 'Answered from 2 sources in this matter' while it cites 7 sources.", "fix": "Derive the count from the citations actually used."},
+      {"issue": "The associate can open Herrera, Liu and Meridian, yet each matter card says only the 2-3 person team (which excludes A. Chen) can see the documents. On a product sold on ethical walls, this undermines trust.", "fix": "Either list only the matters the associate is staffed on, or explain the access path (e.g. 'firm-open matter')."},
+      {"issue": "After a production volume loads, the earlier 'Not found in this matter's 1,284 documents' answer is relabeled '2,116 documents' without being re-run. It now claims to have searched documents it never saw, including the new production that could contain the phone records.", "fix": "Freeze each answer's scope at answer time and show 'Scope changed since this answer: re-run'."},
+      {"issue": "Thread chip 'Damages documents (empty)' is unexplained noise.", "fix": "Hide empty threads or say what is missing."}
+    ]},
+    {"id": "paralegal", "score": 7, "defects": [
+      {"issue": "The export banner leaks across matters. After exporting the Reyes chronology and switching to Herrera, the timeline shows 'Exported: Herrera_chronology_2026-11-11.docx', which was never exported.", "fix": "Keep export state per matter and clear it on switch."},
+      {"issue": "The Calder deadline lists a reminder on Nov 5, 2026. The request email is dated Fri, Nov 6 and was verified Nov 6, so the reminder comes before the deadline existed.", "fix": "Drop reminders dated before creation, or move the email date to Nov 5 (Calder Review says it was received Thu, Nov 5)."},
+      {"issue": "Scheduling order pin cites disagree: the timeline and docket cite p. 2 for close of fact discovery, but the draft's field sources cite 'p. 3, ¶¶3, 5, 8' for both dates.", "fix": "Use one pin cite per paragraph everywhere."},
+      {"issue": "The SOL card shows a warning icon next to 'verified by A. Chen'. A paralegal cannot tell whether it is safe.", "fix": "Use the check icon once verified, with 'AI-calculated' as plain metadata."}
+    ]},
+    {"id": "intake", "score": 6, "defects": [
+      {"issue": "A consult can be booked (with A. Chen) while the conflict is still 'pending attorney clearance', with no warning. Under Model Rule 1.18, taking a prospective client's confidences before clearance risks disqualification.", "fix": "Block booking, or warn 'Conflict not cleared: limit consult to non-confidential facts' until the clearance is recorded."},
+      {"issue": "After 'Decline' for Maria Santos, a consult slot is still offered for booking.", "fix": "Hide booking once the caller is declined, or show 'Declined: booking disabled'."},
+      {"issue": "Intake sees 'MATTERS YOU CAN ACCESS (6)', including a HIPAA matter, yet is denied matter tools. Reyes stays highlighted.", "fix": "Hide the matter list for roles without matter access, or retitle it 'Firm matters (names only)' with no selection."},
+      {"issue": "The landlord-tenant summary shows irrelevant fields (Insurers, Injuries and Lost wages as '—').", "fix": "Adapt the fields to the case type (e.g. deposit amount, move-out date, lease)."}
+    ]},
+    {"id": "billing", "score": 6, "defects": [
+      {"issue": "The page says 'The responsible attorney approves; the billing manager posts to Clio', but the billing manager's Approve button approves and sends to Clio directly.", "fix": "For billing, offer 'Request approval' / 'Post approved', and show the attorney-approval state."},
+      {"issue": "On the contingency matter (Reyes), amounts such as $420 and the A. Chen total of $1,050 look billable.", "fix": "Show '$0 billed: contingency (time kept for fee application)' and keep the value separately as 'lodestar'."},
+      {"issue": "The A. Chen entry was measured 09:58-11:22 but 'Approved · sent to Clio 11:04', which is before the work ended. The newest audit log entry is 10:12. M. Vega 'exported approved letter' at 10:05, before her 10:30-10:54 revision session.", "fix": "Set a single 'now' (e.g. 11:40) and keep every timestamp consistent with it."},
+      {"issue": "'Captured this week vs last 1.4 h' is unclear. It looks like approved hours only, while suggested hours from Mon to Wed already total 6.5 h.", "fix": "Label it 'Approved this week (Mon-Wed): 1.4 h vs 5.1 h same point last week'."},
+      {"issue": "There is no realization, WIP or unbilled view, although the persona cares about realization.", "fix": "Add a WIP and realization strip by matter to the Time right bar."}
+    ]},
+    {"id": "it_ops", "score": 7, "defects": [
+      {"issue": "The subprocessor list leaves out the vendor that operates the instance (Briefcase, AnythingLLM/Mintplex support) and says nothing about vendor staff access to the instance or its keys.", "fix": "Add the vendor row, the support access model (just-in-time, logged, firm-approved) and break-glass procedures."},
+      {"issue": "Clicking 'Connect' on iManage connects it instantly, with no OAuth, scope or ACL-mapping step.", "fix": "Show a connect flow (consent, libraries, ACL source, test sync) and keep a 'Connecting…' state."},
+      {"issue": "Admin access rules disagree: the Users table footnote says 'Admin: partners, firm administrator, IT', while the denial page names Managing partner, Firm admin, IT and Risk partner/GC.", "fix": "Use one access matrix and show it the same way in both places."},
+      {"issue": "There are no settings for user provisioning (SCIM), retention of chat logs, SIEM/audit export or IP restrictions.", "fix": "Add a 'Security settings' card covering SCIM, log retention, SIEM export and IP allowlist."}
+    ]},
+    {"id": "solo_immigration", "score": 5, "defects": [
+      {"issue": "The persona is a solo immigration attorney, but the mock casts her as 'Partner (immigration)' in a 12-lawyer firm, with a team, a KM owner and a supervision queue. The solo buyer's context (one seat, no IT, own pricing) is missing.", "fix": "Add a solo tenant ('Vega Immigration Law, 1 lawyer'), with single-seat pricing, no team fields, and self-review gates."},
+      {"issue": "The client letter says 'we expect a decision around Thu, Nov 12, 2026' (tomorrow), based on USCIS posted processing time. That time is a percentile benchmark, not a predicted date, so the letter sets a false expectation and creates a client-communication risk.", "fix": "Reword as 'USCIS reports most cases are completed within about 14 months; your case is now within that window. We will check on Mon, Nov 16, 2026'."},
+      {"issue": "The batch queue lists Herrera first even though her letter was just sent. The batch says 23 letters, while the Firm supervision queue shows 'Batch of 6 I-130 status letters'.", "fix": "Exclude clients already sent and reconcile the batch counts."},
+      {"issue": "Spanish dates use English-style commas ('el viernes, 12 de septiembre de 2025').", "fix": "Write 'el viernes 12 de septiembre de 2025'."}
+    ]},
+    {"id": "in_house", "score": 6, "defects": [
+      {"issue": "SLA business-day math is inconsistent. REQ-2609 was received Mon, Nov 9 with a 2-business-day SLA but shows due Thu, Nov 12 (Wed, Nov 11 unless Veterans Day is skipped). REQ-2611, received Tue, Nov 10 with 3 business days, shows Fri, Nov 13 (which does not skip Nov 11).", "fix": "Pick one holiday calendar and recompute both. Show 'excludes Veterans Day' if it is used."},
+      {"issue": "The Acme request reuses the law-firm matter card: 'AI use: AI consent on file', 'Forum —', 'Billing Internal', 'Only the 1-person matter team'.", "fix": "Use an in-house card: requester, business owner, deal value, counterparty, approvers, AI policy (company)."},
+      {"issue": "The persona's core struggle ('the playbook lives in her head') has no answer. Playbooks are read-only and cannot be captured from accepted or ignored decisions.", "fix": "Add 'Edit playbook' and 'Save this decision as a fallback' actions."},
+      {"issue": "The 'View as' switch silently swaps the tenant from Hartwell & Vega to Northwind Robotics.", "fix": "Label the role 'In-house counsel (separate customer: Northwind)' or add a workspace switcher."}
+    ]},
+    {"id": "firm_administrator", "score": 6, "defects": [
+      {"issue": "Plan, seats, cost and invoices sit at the very bottom of a long, IT-oriented Admin page. The right bar shows Instance health instead of seats and cost.", "fix": "For the Firm administrator role, put Plan and billing first and show seats, cost per active user and next invoice in the right bar."},
+      {"issue": "There is no decision support for the seat problem: no 'remove 2 unused seats saves $178/mo', no renewal date and no contract term.", "fix": "Add a seat-optimisation line and the contract and renewal dates."},
+      {"issue": "Net return 5.4x is mislabeled (see partner). The firm administrator relies on this number to justify cost.", "fix": "Correct it to 4.4x net."},
+      {"issue": "The administrator sees 'Matters you can access (6)' but is denied matter tools.", "fix": "Hide the list or retitle it."}
+    ]},
+    {"id": "ethics_gc", "score": 5, "defects": [
+      {"issue": "Meridian: the panel says 'Briefcase will not send any of its documents to a model', but the sidebar still shows 3,906 indexed docs and search covers the matter. A GC must know whether the client's documents are embedded or indexed by AI at all, since the OCG prohibits generative AI on its files.", "fix": "State 'Not indexed for AI: no embeddings, keyword search via NetDocuments only', or show the purge date of the existing embeddings."},
+      {"issue": "Harbor Health has a client disclosure pending, yet an 'Extracted by AI' deadline from the client's OCR letter and 6 AI uses are logged.", "fix": "Block AI extraction on pending matters, or record the basis for allowing it."},
+      {"issue": "There is no reference to New Jersey's own guidance, although the firm is in Newark. The NJ Supreme Court's Preliminary Guidelines on lawyers' use of AI (Jan 2024) are absent, and only ABA 512 is cited.", "fix": "Add NJ guidance to the checklist and the evidence pack (and make the state configurable)."},
+      {"issue": "The GC (P. Grant) opens Meridian while the card says only the 3-person team (Hartwell, Kim, Nair) can see it.", "fix": "Show 'Risk partner: AI-status view only, no documents', or explain the access."},
+      {"issue": "There is no insurer questionnaire mapping, although the persona names carrier questionnaires.", "fix": "Add 'Carrier questionnaire answers' export mapped to common malpractice-insurer AI questions."}
+    ]},
+    {"id": "docketing", "score": 7, "defects": [
+      {"issue": "The Calder reminder (Nov 5) is dated before the request email (Nov 6) and before verification (Nov 6).", "fix": "Correct the dates."},
+      {"issue": "A queued item can only be verified and posted. There is no way to correct a wrong extracted date or reject the extraction.", "fix": "Add 'Edit date/rule' and 'Reject (not a deadline)', with the reason recorded."},
+      {"issue": "No court-holiday calendar is visible, although today (Wed, Nov 11, 2026) is Veterans Day, a federal court holiday. Roll-forward logic only mentions weekends.", "fix": "Show the holiday calendar used (D.N.J., NJ state) and name the holidays when a date rolls."},
+      {"issue": "The final pretrial conference creates no dependent deadlines (e.g. joint final pretrial order due before the conference).", "fix": "Show derived deadlines that need verification."},
+      {"issue": "The Meridian (AI off) deadline sits in a queue headed 'every AI-extracted date…', so its origin is unclear.", "fix": "Tag it 'Entered by hand (AI off for matter)'."}
+    ]},
+    {"id": "km_librarian", "score": 6, "defects": [
+      {"issue": "The header says 'Only authoritative versions are offered in Draft', but the superseded 2023 I-130 template was used 3 times in the last 30 days (Oct 28, Oct 30, Nov 4).", "fix": "Explain how it happened (superseded only on Nov 5?), or show the superseded date and block its use."},
+      {"issue": "There are no currency fields: last reviewed, review due, or reason superseded.", "fix": "Add 'Last reviewed', 'Next review' and 'Superseded by v4 on …' columns."},
+      {"issue": "The brief bank has no status at all, so superseded briefs and briefs relying on overruled authority are not flagged, although that is the persona's stated struggle.", "fix": "Add status and 'authority check' flags to brief bank items."},
+      {"issue": "Retiring a template has no undo and records no who or when.", "fix": "Show 'Retired by N. Shah · Wed, Nov 11, 2026 · Undo'."}
+    ]},
+    {"id": "legal_secretary", "score": 6, "defects": [
+      {"issue": "The Reyes letter's channel list shows 'WhatsApp (client preference)', while Reyes prefers Email. The label is hard-coded from Herrera.", "fix": "Generate the '(client preference)' tag from the matter's preference."},
+      {"issue": "The persona supports two partners, but review is routed to the associate A. Chen with no way to choose the reviewer.", "fix": "Add a reviewer picker that defaults to the responsible attorney and lists the supported partners."},
+      {"issue": "Letter citation numbers read 9, 9, 3, 8, and both scheduling-order fields cite 'p. 3, ¶¶3, 5, 8'.", "fix": "Renumber per document and use paragraph-specific pin cites."}
+    ]},
+    {"id": "estate_planning", "score": 5, "defects": [
+      {"issue": "Inventory citations start at [7], and the footer says 'Answered from 2 sources' while 7 sources are cited.", "fix": "Number from 1 and derive the count."},
+      {"issue": "The NJ transfer inheritance tax 'return' is docketed without checking beneficiary class. Grace and Henry Liu appear to be Class A (children), who owe no NJ inheritance tax and typically use L-8/L-9 waivers rather than an IT-R return. An estates lawyer would distrust this.", "fix": "Show 'Beneficiary class: A (confirm). Return may not be required; waivers L-8/L-9 needed for release of assets', and add the federal 706 check."},
+      {"issue": "The matter card says '(nj transfer inheritance tax return)' in lowercase. Sources show 'Bates/ref — · p. 1' on non-litigation documents.", "fix": "Fix the casing and hide the Bates label when there is no Bates number (show DMS no. instead)."}
+    ]},
+    {"id": "lit_support", "score": 6, "defects": [
+      {"issue": "The privileged folder is included in Ask and drafts by default. Exclusion is opt-in.", "fix": "Exclude folders tagged privileged by default and require an explicit, logged include."},
+      {"issue": "'Load and index' on 868 documents (VOL004) is instantly 'Indexed', with no progress, OCR or error state.", "fix": "Show 'Indexing 0/868…', OCR and exception counts, then 'Indexed'."},
+      {"issue": "Earlier answers are relabeled with the new document count after scope changes (see associate).", "fix": "Stamp each answer with the scope it used and offer a re-run."},
+      {"issue": "There is no production log (date received, producing party, Bates gaps or overlaps check).", "fix": "Add received-from and date columns and a Bates gap/overlap check."}
+    ]}
+  ],
+  "global_defects": [
+    {"issue": "The access line 'Only the N-person matter team can see these documents' is shown to viewers who are not on that team (partner on Herrera; associate on Herrera, Liu and Meridian; GC on Meridian). On an ethical-walls product this is the most damaging inconsistency.", "fix": "Make the access line viewer-aware and give every non-team access path a named reason."},
+    {"issue": "Citation numbers are not sequential within answers, letters or timelines, and source counts are wrong (Liu: 2 vs 7).", "fix": "Number citations per artifact in order of first appearance and compute the counts."},
+    {"issue": "The Ask/Draft/Review/Timeline tab bar stays on non-matter screens (Firm, Admin, Docket, Time, Intake, Knowledge, Search) with no tab selected, including for roles that cannot use the tabs. On the phone, the 'Timeline' tab is clipped.", "fix": "Show matter tabs only in matter context. On other views, replace them with a breadcrumb or section title. Make tabs scrollable or shorter on the phone."},
+    {"issue": "Stale state crosses contexts: export banners carry between matters, answers are relabeled after scope changes, the 'client preference' label is hard-coded, and a role switch lands on a 'not available' page instead of the new role's home.", "fix": "Scope transient UI state per matter and per role. On a role switch, route to the role's default view."},
+    {"issue": "The Period selector is non-functional.", "fix": "Wire it up or remove it."},
+    {"issue": "Rail items locked for a role still show the notification badge (bell '2' with a lock for Billing).", "fix": "Hide badges on locked items."},
+    {"issue": "The mock has no single 'now'. Audit log, time-entry sessions and approval stamps contradict each other on Nov 11.", "fix": "Set NOW = Wed, Nov 11, 2026 11:40 and validate every timestamp against it."},
+    {"issue": "Veterans Day (Wed, Nov 11, 2026, a federal court holiday) is ignored in business-day and SLA logic and in the docket header.", "fix": "Note the holiday in the docket header and apply one holiday calendar consistently."},
+    {"issue": "Phone: navigation is an unlabeled 8-icon bottom rail with lock overlays, and the matter list and context panel are hidden behind ☰ and 'Details' with no hint of what they contain.", "fix": "Add short labels under the rail icons (or a 'More' sheet), show the current matter name in the top bar, and give the Details button a count (e.g. 'Sources 6')."}
+  ],
+  "missing_personas": [
+    {"id": "conflicts_analyst", "department": "New business intake / conflicts", "role": "Conflicts analyst or new-business attorney who clears conflicts",
+     "cares_about": "No missed conflicts, fast clearance so intake can book, defensible records for lateral hires and new matters.",
+     "time_spent": "Reviewing near matches, contacting responsible partners for waivers, running lateral-hire conflict checks.",
+     "struggles": "Fuzzy matches across corporate families and former clients; clearance decisions are buried in email.",
+     "how_helps": "A clearance queue with each near match, related-party trees, the responsible partner's waiver request and a recorded decision that unlocks booking and matter opening.",
+     "task": "Open the J. Ortiz clearance request, mark Swift Parcel Inc. 'not adverse to a current client', mark Ortiz Landscaping 'different person', and clear it. Intake's booking and 'Open matter in Clio' unlock."},
+    {"id": "records_manager", "department": "Records and information governance", "role": "Records manager",
+     "cares_about": "Retention schedules, legal holds, file closing and certified destruction, including AI indexes and chat logs.",
+     "time_spent": "Closing matters, applying holds, responding to client file-return requests.",
+     "struggles": "AI tools keep copies (embeddings, chat history) outside the retention schedule.",
+     "how_helps": "Per-matter retention and hold status that also covers Briefcase indexes and threads, with purge certificates.",
+     "task": "Close Harbor Health, see the retention date applied to its index and threads, place a legal hold on Reyes, and confirm the hold blocks purge."},
+    {"id": "solo_general", "department": "Solo / small general practice", "role": "Solo general practitioner (1 lawyer + 1 assistant)",
+     "cares_about": "Price per seat, setup without IT, fewer hours on routine letters.",
+     "time_spent": "Everything: intake, drafting, billing, client calls.",
+     "struggles": "No IT person to vet security; cannot justify enterprise pricing.",
+     "how_helps": "A one-seat plan, guided setup with the DMS or Clio, self-review gates that satisfy supervision when no other lawyer exists.",
+     "task": "As a solo, see a 1-seat plan and cost, connect Clio, and approve own draft with the self-review checklist."},
+    {"id": "professional_development", "department": "Professional development / training", "role": "Training and professional-development manager",
+     "cares_about": "Competence under ABA 512 (Comment 8 to Rule 1.1), CLE credit, onboarding new hires.",
+     "time_spent": "Running trainings, tracking completion, onboarding laterals.",
+     "struggles": "Cannot show who is trained on AI, or what bad usage patterns look like.",
+     "how_helps": "Training completion by person, common blocked-answer and no-source patterns as teaching material, and certificates.",
+     "task": "Find the 2 users without training, assign the module, and export a completion report for the risk partner."}
+  ]
+}
