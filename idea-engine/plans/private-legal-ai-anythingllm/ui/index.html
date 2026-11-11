@@ -5,31 +5,31 @@
 <title>Briefcase mockup</title>
 <style>/* Shared app shell: left rail | sidebar | (tabs + main) | right sidebar, bottom bar across. */
 :root{
-  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#6b7280;
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#555d69;
   --accent:#2f5bea; --accent-weak:#e8eefe; --good:#13795b; --good-weak:#e3f5ee; --warn:#a15c00; --warn-weak:#fff3df;
   --bad:#c0282d; --bad-weak:#fde8e8; --focus:#2f5bea; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
-  --radius:10px; --rail:64px; --side:264px; --right:312px; --bar:36px;
+  --radius:10px; --on-accent:#ffffff; --on-bad:#ffffff; --rail:64px; --side:264px; --right:312px; --bar:36px;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size:14px; line-height:1.45; color:var(--text);
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
-  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; } }
+  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; --on-accent:#0b0d10; --on-bad:#0b0d10; } }
 :root[data-theme="dark"]{
   --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
-  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; }
+  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; --on-accent:#0b0d10; --on-bad:#0b0d10; }
 *{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--bg)}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
 .app{display:grid;height:100vh;grid-template-columns:var(--rail) var(--side) minmax(0,1fr) var(--right);grid-template-rows:minmax(0,1fr) var(--bar);
   grid-template-areas:"rail side main right" "bar bar bar bar"}
 .rail{grid-area:rail;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:6px}
-.rail .logo{width:36px;height:36px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+.rail .logo{width:36px;height:36px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;margin-bottom:10px}
 .rail button{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;color:var(--muted);position:relative}
 .rail button:hover{background:var(--panel-2);color:var(--text)} .rail button[aria-current="page"]{background:var(--accent-weak);color:var(--accent)}
-.rail .badge{position:absolute;top:4px;right:4px;min-width:16px;height:16px;border-radius:8px;background:var(--bad);color:#fff;font-size:10px;display:grid;place-items:center;padding:0 4px}
+.rail .badge{position:absolute;top:4px;right:4px;min-width:16px;height:16px;border-radius:8px;background:var(--bad);color:var(--on-bad);font-size:10px;display:grid;place-items:center;padding:0 4px}
 .rail .spacer{flex:1} .avatar{width:34px;height:34px;border-radius:50%;background:var(--panel-2);display:grid;place-items:center;font-weight:600;color:var(--muted);border:1px solid var(--line)}
 svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .side{grid-area:side;background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:14px 10px}
@@ -57,7 +57,7 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:var(--muted);margin:0 0 16px}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;background:var(--panel-2);color:var(--muted);white-space:nowrap}
 .pill.good{background:var(--good-weak);color:var(--good)} .pill.bad{background:var(--bad-weak);color:var(--bad)} .pill.warn{background:var(--warn-weak);color:var(--warn)} .pill.info{background:var(--accent-weak);color:var(--accent)}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-weight:600}
-.btn:hover{background:var(--panel-2)} .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff} .btn.primary:hover{filter:brightness(1.05)}
+.btn:hover{background:var(--panel-2)} .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)} .btn.primary:hover{filter:brightness(1.05)}
 .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap} .between{justify-content:space-between} .muted{color:var(--muted)} .faint{color:var(--faint)} .small{font-size:12px}
 table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.04em} td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
@@ -100,6 +100,9 @@ body.drawer-open .backdrop{opacity:1;pointer-events:auto}
 :root{--accent:#5534d6;--accent-weak:#eeeaff;--focus:#5534d6;--faint:#5d6470}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}}
 :root[data-theme="dark"]{--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary,:root:not([data-theme="light"]) .rail .badge,:root:not([data-theme="light"]) .badge-inline{color:#111}}
+:root[data-theme="dark"] .btn.primary,:root[data-theme="dark"] .rail .badge,:root[data-theme="dark"] .badge-inline{color:#111}
+.btn[disabled]{opacity:.6;cursor:not-allowed}
 .cite{display:inline-grid;place-items:center;font-size:12px;font-weight:700;padding:0 6px;border-radius:6px;background:var(--accent-weak);color:var(--accent);margin:0 2px 0 3px;vertical-align:baseline;border:1px solid transparent;line-height:1}
 .cite:hover,.cite[aria-pressed="true"]{border-color:var(--accent)}
 .q{font-weight:600;margin-bottom:6px}
@@ -118,6 +121,7 @@ label.lbl{font-size:12px;color:var(--muted);font-weight:600}
 .privacy svg{flex:none;color:var(--good)}
 .banner{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line);background:var(--panel)}
 .banner.warn{background:var(--warn-weak);border-color:transparent} .banner.good{background:var(--good-weak);border-color:transparent} .banner.info{background:var(--accent-weak);border-color:transparent} .banner.bad{background:var(--bad-weak);border-color:transparent}
+.banner svg{flex:none;margin-top:2px}
 .banner strong{color:var(--text)} .banner .tag{font-weight:700}
 .banner.warn .tag{color:var(--warn)} .banner.good .tag{color:var(--good)} .banner.info .tag{color:var(--accent)} .banner.bad .tag{color:var(--bad)}
 .tablewrap{overflow-x:auto;max-width:100%}
@@ -165,6 +169,7 @@ details summary{cursor:pointer;font-weight:600;padding:6px 0}
   table.cards-sm td::before{content:attr(data-label);flex:none;width:92px;font-size:12px;font-weight:600;color:var(--muted)}
   table.cards-sm td[data-label=""]::before{display:none}
   .content h1{font-size:18px}
+  .content .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -365,7 +370,7 @@ const TAB_AREA = t => ['ask', 'draft', 'review', 'timeline'].includes(t) ? 'matt
 const WS = { firm: { name: 'Hartwell & Vega LLP', sub: '12 lawyers · 8 staff · Newark, NJ' }, inhouse: { name: 'Northwind Robotics · Legal', sub: 'In-house workspace · 1 lawyer' } };
 const FIRM = { activeMatters: 214, totalMatters: 4812, blended: 310, seatPrice: 89, realization: 91, realizationPrior: 88, blocked30: 27 };
 const MODEL = { name: 'Claude Sonnet 4.5', vendor: 'Anthropic', via: 'Amazon Bedrock', region: 'AWS us-east-1 (N. Virginia)' };
-const DATAFLOW = `Documents stay in your firm's private instance. Only your question and the relevant excerpts are sent to ${MODEL.name} (${MODEL.vendor}, via ${MODEL.via}, ${MODEL.region}) under zero data retention, and are never used for training.`;
+const DATAFLOW = `Documents stay in your firm's private instance. Only your question and the relevant excerpts are sent to ${MODEL.name} (${MODEL.vendor}, via ${MODEL.via} in AWS us-east-1) under zero data retention, and are never used for training.`;
 
 /* ============ Integrations / instance ============ */
 const INTEG = [
@@ -678,7 +683,7 @@ function denied(id) {
 function renderSide() {
   const r = R(), w = WS[ws()];
   const mlist = myMatters();
-  const items = mlist.map(id => { const m = M[id]; return `<button class="item" data-select="${id}" ${S.matter === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${m.short[0]}</span><span><strong>${m.name}</strong><small>${m.type} · ${num(docsOf(m))} docs</small>${m.ai.st === 'restricted' ? '<span class="tagline">AI off (client)</span>' : ''}</span></button>`; }).join('');
+  const items = mlist.map(id => { const m = M[id]; return `<button class="item" data-select="${id}" ${S.matter === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${m.short[0]}</span><span><strong>${m.name}</strong><small>${m.type} · ${num(docsOf(m))} doc${docsOf(m) === 1 ? '' : 's'}</small>${m.ai.st === 'restricted' ? '<span class="tagline">AI off (client)</span>' : ''}</span></button>`; }).join('');
   const walled = hiddenByWall().length;
   let top = '';
   if (S.tab === 'intake' && allowed('intake')) {
@@ -837,7 +842,7 @@ function dlRow(d, showActions = true) {
   return `<div class="card ${S.dlSel === d.id ? 'sel-row' : ''}" data-row="dl" data-id="${d.id}" data-testid="dl-${d.id}" style="cursor:pointer"><div class="row between"><strong>${d.what}</strong>${status}</div>
     <div class="small"><strong>${fmtD(d.date)}</strong> · ${m.name} (${m.no})</div>
     <div class="small muted">Rule: ${d.rule}</div><div class="small muted">Source: ${d.srcTxt} · Responsible: ${short(d.resp)} · Reminders: ${[7, 3, 1].map(n => fmtS(addDays(d.date, -n))).join(', ')}</div>
-    <div class="small">${s.st === 'new' ? 'Extracted by AI from the order. Not on any calendar yet.' : `Verified by ${short(s.by)}, ${fmtD(s.on)}${s.st === 'posted' ? ' · Posted to firm calendar' : ''}`}</div>
+    <div class="small">${s.st === 'new' ? 'Extracted by AI from the source document. Not on any calendar yet.' : `Verified by ${short(s.by)}, ${fmtD(s.on)}${s.st === 'posted' ? ' · Posted to firm calendar' : ''}`}</div>
     ${showActions ? `<div class="row" style="margin-top:6px">${s.st === 'new' ? (can ? `<button class="btn" data-act="verify" data-id="${d.id}" data-testid="verify-${d.id}">Verify against source</button>` : '<span class="small muted">Awaiting docketing verification</span>') : ''}${s.st === 'verified' && d.id.startsWith('n') && can ? `<button class="btn primary" data-act="post" data-id="${d.id}" data-testid="post-${d.id}">Post to firm calendar</button>` : ''}<button class="btn" data-act="dl" data-id="${d.id}">View source page</button></div>` : ''}</div>`;
 }
 function renderDocket() {
@@ -1028,7 +1033,7 @@ function renderRail() {
 function render() {
   const ae = document.activeElement, keep = ae && ae !== document.body && (ae.id ? '#' + ae.id : ae.dataset && ae.dataset.act ? `[data-act="${ae.dataset.act}"]${ae.dataset.id ? `[data-id="${ae.dataset.id}"]` : ''}${ae.dataset.src ? `[data-src="${ae.dataset.src}"]` : ''}` : null);
   renderRail(); renderSide();
-  Object.entries(PANELS).forEach(([id, fn]) => { const el = $('#panel-' + id); if (!el || el.hidden) return; el.innerHTML = allowed(TAB_AREA(id)) ? fn() : denied(id); });
+  Object.entries(PANELS).forEach(([id, fn]) => { const el = $('#panel-' + id); if (!el) return; if (el.hidden) { el.innerHTML = ''; return; } el.innerHTML = allowed(TAB_AREA(id)) ? fn() : denied(id); });
   $('#right').innerHTML = rightFor(S.tab);
   const u = P[ME()];
   $('#bb-flow').innerHTML = `Documents stay in your instance; excerpts to ${MODEL.name} via Bedrock, zero retention <button class="linkbtn" data-goto="admin" style="font-size:12px">details</button>`;
@@ -1128,6 +1133,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id
 /* ============ Shell hooks ============ */
 window.onSelect = id => {
   if (INTAKE[id]) { S.intake = id; render(); return; }
+  if (S.matter !== id) { S.tlf = 'all'; S.scopeOpen = false; S.addEv = false; }
   S.matter = id;
   if (TAB_AREA(S.tab) !== 'matter') goTab('ask'); else render();
 };

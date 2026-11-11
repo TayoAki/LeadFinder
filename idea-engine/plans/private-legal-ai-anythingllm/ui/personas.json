@@ -209,7 +209,7 @@
    "how_helps": "Ask the estate's documents for an asset and beneficiary list with citations; export a cited inventory.",
    "tasks": [
     {"name": "Select Estate of D. Liu and get the cited inventory", "steps": [{"select": "#role", "value": "estate"}, {"click": "[data-select='m4']"}, {"click": "[data-tab='ask']"}],
-     "expect": ["[data-testid='matter-title']:has-text('Estate of D. Liu')", "[data-testid='answer']:has-text('Tue, Jul 14, 2026')", "[data-testid='inventory']:has-text('Vanguard brokerage x8830')", "[data-testid='inventory']:has-text('$990,578.02')", "[data-testid='inventory']:has-text('Beneficiary designation')", "[data-testid='inventory'] .cite"]},
+     "expect": ["[data-testid='matter-title']:has-text('Estate of D. Liu')", "[data-testid='answer']:has-text('Tue, Jul 14, 2026')", "[data-testid='inventory']:has-text('Vanguard brokerage x8830')", "[data-testid='inventory']:has-text('$990,579.02')", "[data-testid='inventory']:has-text('Beneficiary designation')", "[data-testid='inventory'] .cite"]},
     {"name": "Export the cited inventory", "steps": [{"click": "[data-testid='export-inventory']"}],
      "expect": ["[data-testid='export-inventory']:has-text('Exported')"]},
     {"name": "Probate deadline rolled to a business day, flagged to verify", "steps": [{"click": "[data-tab='timeline']"}],

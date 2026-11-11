@@ -7,6 +7,9 @@
 :root{--accent:#5534d6;--accent-weak:#eeeaff;--focus:#5534d6;--faint:#5d6470}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}}
 :root[data-theme="dark"]{--accent:#b3a2ff;--accent-weak:#262046;--focus:#b3a2ff;--faint:#a7afbb}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn.primary,:root:not([data-theme="light"]) .rail .badge,:root:not([data-theme="light"]) .badge-inline{color:#111}}
+:root[data-theme="dark"] .btn.primary,:root[data-theme="dark"] .rail .badge,:root[data-theme="dark"] .badge-inline{color:#111}
+.btn[disabled]{opacity:.6;cursor:not-allowed}
 .cite{display:inline-grid;place-items:center;font-size:12px;font-weight:700;padding:0 6px;border-radius:6px;background:var(--accent-weak);color:var(--accent);margin:0 2px 0 3px;vertical-align:baseline;border:1px solid transparent;line-height:1}
 .cite:hover,.cite[aria-pressed="true"]{border-color:var(--accent)}
 .q{font-weight:600;margin-bottom:6px}
@@ -25,6 +28,7 @@ label.lbl{font-size:12px;color:var(--muted);font-weight:600}
 .privacy svg{flex:none;color:var(--good)}
 .banner{display:flex;gap:8px;align-items:flex-start;padding:10px 12px;border-radius:10px;font-size:13px;border:1px solid var(--line);background:var(--panel)}
 .banner.warn{background:var(--warn-weak);border-color:transparent} .banner.good{background:var(--good-weak);border-color:transparent} .banner.info{background:var(--accent-weak);border-color:transparent} .banner.bad{background:var(--bad-weak);border-color:transparent}
+.banner svg{flex:none;margin-top:2px}
 .banner strong{color:var(--text)} .banner .tag{font-weight:700}
 .banner.warn .tag{color:var(--warn)} .banner.good .tag{color:var(--good)} .banner.info .tag{color:var(--accent)} .banner.bad .tag{color:var(--bad)}
 .tablewrap{overflow-x:auto;max-width:100%}
@@ -72,6 +76,7 @@ details summary{cursor:pointer;font-weight:600;padding:6px 0}
   table.cards-sm td::before{content:attr(data-label);flex:none;width:92px;font-size:12px;font-weight:600;color:var(--muted)}
   table.cards-sm td[data-label=""]::before{display:none}
   .content h1{font-size:18px}
+  .content .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
 </style>
 </head>
@@ -206,7 +211,7 @@ const TAB_AREA = t => ['ask', 'draft', 'review', 'timeline'].includes(t) ? 'matt
 const WS = { firm: { name: 'Hartwell & Vega LLP', sub: '12 lawyers · 8 staff · Newark, NJ' }, inhouse: { name: 'Northwind Robotics · Legal', sub: 'In-house workspace · 1 lawyer' } };
 const FIRM = { activeMatters: 214, totalMatters: 4812, blended: 310, seatPrice: 89, realization: 91, realizationPrior: 88, blocked30: 27 };
 const MODEL = { name: 'Claude Sonnet 4.5', vendor: 'Anthropic', via: 'Amazon Bedrock', region: 'AWS us-east-1 (N. Virginia)' };
-const DATAFLOW = `Documents stay in your firm's private instance. Only your question and the relevant excerpts are sent to ${MODEL.name} (${MODEL.vendor}, via ${MODEL.via}, ${MODEL.region}) under zero data retention, and are never used for training.`;
+const DATAFLOW = `Documents stay in your firm's private instance. Only your question and the relevant excerpts are sent to ${MODEL.name} (${MODEL.vendor}, via ${MODEL.via} in AWS us-east-1) under zero data retention, and are never used for training.`;
 
 /* ============ Integrations / instance ============ */
 const INTEG = [
@@ -519,7 +524,7 @@ function denied(id) {
 function renderSide() {
   const r = R(), w = WS[ws()];
   const mlist = myMatters();
-  const items = mlist.map(id => { const m = M[id]; return `<button class="item" data-select="${id}" ${S.matter === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${m.short[0]}</span><span><strong>${m.name}</strong><small>${m.type} · ${num(docsOf(m))} docs</small>${m.ai.st === 'restricted' ? '<span class="tagline">AI off (client)</span>' : ''}</span></button>`; }).join('');
+  const items = mlist.map(id => { const m = M[id]; return `<button class="item" data-select="${id}" ${S.matter === id ? 'aria-current="true"' : ''}><span class="dot" aria-hidden="true">${m.short[0]}</span><span><strong>${m.name}</strong><small>${m.type} · ${num(docsOf(m))} doc${docsOf(m) === 1 ? '' : 's'}</small>${m.ai.st === 'restricted' ? '<span class="tagline">AI off (client)</span>' : ''}</span></button>`; }).join('');
   const walled = hiddenByWall().length;
   let top = '';
   if (S.tab === 'intake' && allowed('intake')) {
@@ -678,7 +683,7 @@ function dlRow(d, showActions = true) {
   return `<div class="card ${S.dlSel === d.id ? 'sel-row' : ''}" data-row="dl" data-id="${d.id}" data-testid="dl-${d.id}" style="cursor:pointer"><div class="row between"><strong>${d.what}</strong>${status}</div>
     <div class="small"><strong>${fmtD(d.date)}</strong> · ${m.name} (${m.no})</div>
     <div class="small muted">Rule: ${d.rule}</div><div class="small muted">Source: ${d.srcTxt} · Responsible: ${short(d.resp)} · Reminders: ${[7, 3, 1].map(n => fmtS(addDays(d.date, -n))).join(', ')}</div>
-    <div class="small">${s.st === 'new' ? 'Extracted by AI from the order. Not on any calendar yet.' : `Verified by ${short(s.by)}, ${fmtD(s.on)}${s.st === 'posted' ? ' · Posted to firm calendar' : ''}`}</div>
+    <div class="small">${s.st === 'new' ? 'Extracted by AI from the source document. Not on any calendar yet.' : `Verified by ${short(s.by)}, ${fmtD(s.on)}${s.st === 'posted' ? ' · Posted to firm calendar' : ''}`}</div>
     ${showActions ? `<div class="row" style="margin-top:6px">${s.st === 'new' ? (can ? `<button class="btn" data-act="verify" data-id="${d.id}" data-testid="verify-${d.id}">Verify against source</button>` : '<span class="small muted">Awaiting docketing verification</span>') : ''}${s.st === 'verified' && d.id.startsWith('n') && can ? `<button class="btn primary" data-act="post" data-id="${d.id}" data-testid="post-${d.id}">Post to firm calendar</button>` : ''}<button class="btn" data-act="dl" data-id="${d.id}">View source page</button></div>` : ''}</div>`;
 }
 function renderDocket() {
@@ -869,7 +874,7 @@ function renderRail() {
 function render() {
   const ae = document.activeElement, keep = ae && ae !== document.body && (ae.id ? '#' + ae.id : ae.dataset && ae.dataset.act ? `[data-act="${ae.dataset.act}"]${ae.dataset.id ? `[data-id="${ae.dataset.id}"]` : ''}${ae.dataset.src ? `[data-src="${ae.dataset.src}"]` : ''}` : null);
   renderRail(); renderSide();
-  Object.entries(PANELS).forEach(([id, fn]) => { const el = $('#panel-' + id); if (!el || el.hidden) return; el.innerHTML = allowed(TAB_AREA(id)) ? fn() : denied(id); });
+  Object.entries(PANELS).forEach(([id, fn]) => { const el = $('#panel-' + id); if (!el) return; if (el.hidden) { el.innerHTML = ''; return; } el.innerHTML = allowed(TAB_AREA(id)) ? fn() : denied(id); });
   $('#right').innerHTML = rightFor(S.tab);
   const u = P[ME()];
   $('#bb-flow').innerHTML = `Documents stay in your instance; excerpts to ${MODEL.name} via Bedrock, zero retention <button class="linkbtn" data-goto="admin" style="font-size:12px">details</button>`;
@@ -969,6 +974,7 @@ document.addEventListener('keydown', e => { if (e.key === 'Enter' && e.target.id
 /* ============ Shell hooks ============ */
 window.onSelect = id => {
   if (INTAKE[id]) { S.intake = id; render(); return; }
+  if (S.matter !== id) { S.tlf = 'all'; S.scopeOpen = false; S.addEv = false; }
   S.matter = id;
   if (TAB_AREA(S.tab) !== 'matter') goTab('ask'); else render();
 };

@@ -1,6 +1,6 @@
 {
  "app": "Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)",
- "score": 9.5,
+ "score": 10,
  "personas": {
   "partner": {
    "department": "Firm leadership",
@@ -16,9 +16,9 @@
   },
   "paralegal": {
    "department": "Litigation support",
-   "pass": 6,
+   "pass": 10,
    "total": 10,
-   "score": 6
+   "score": 10
   },
   "intake": {
    "department": "Front office",
@@ -46,9 +46,9 @@
   },
   "in_house": {
    "department": "In-house legal",
-   "pass": 8,
+   "pass": 10,
    "total": 10,
-   "score": 8
+   "score": 10
   },
   "firm_administrator": {
    "department": "Operations",
@@ -82,9 +82,9 @@
   },
   "estate_planning": {
    "department": "Transactional practice",
-   "pass": 6,
+   "pass": 8,
    "total": 8,
-   "score": 7.5
+   "score": 10
   },
   "lit_support": {
    "department": "Litigation support / e-discovery",
@@ -93,64 +93,7 @@
    "score": 10
   }
  },
- "failures": [
-  {
-   "name": "Switching matter rebuilds the timeline",
-   "ok": false,
-   "why": "not visible: [data-testid='timeline']:has-text('IOE0912345678')",
-   "persona": "paralegal",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Clicking an event shows its source",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "paralegal",
-   "viewport": "desktop"
-  },
-  {
-   "name": "In-house workspace with request header",
-   "ok": false,
-   "why": "not visible: [data-testid='workspace-name']:has-text('Northwind Robotics')",
-   "persona": "in_house",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Select Estate of D. Liu and get the cited inventory",
-   "ok": false,
-   "why": "not visible: [data-testid='inventory']:has-text('$990,578.02')",
-   "persona": "estate_planning",
-   "viewport": "desktop"
-  },
-  {
-   "name": "Switching matter rebuilds the timeline",
-   "ok": false,
-   "why": "not visible: [data-testid='timeline']:has-text('IOE0912345678')",
-   "persona": "paralegal",
-   "viewport": "phone"
-  },
-  {
-   "name": "Clicking an event shows its source",
-   "ok": false,
-   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
-   "persona": "paralegal",
-   "viewport": "phone"
-  },
-  {
-   "name": "In-house workspace with request header",
-   "ok": false,
-   "why": "not visible: [data-testid='workspace-name']:has-text('Northwind Robotics')",
-   "persona": "in_house",
-   "viewport": "phone"
-  },
-  {
-   "name": "Select Estate of D. Liu and get the cited inventory",
-   "ok": false,
-   "why": "not visible: [data-testid='inventory']:has-text('$990,578.02')",
-   "persona": "estate_planning",
-   "viewport": "phone"
-  }
- ],
+ "failures": [],
  "global": [
   {
    "viewport": "desktop",

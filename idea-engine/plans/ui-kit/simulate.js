@@ -35,6 +35,7 @@ const { chromium } = require('playwright'); const fs = require('fs'); const path
           }
         } catch (err) { ok = false; why = String(err).split('\n')[0].slice(0, 160); }
         tasks.push({ name: t.name, ok, why });
+        if (vp.name === 'phone') { await page.keyboard.press('Escape').catch(() => {}); await page.waitForTimeout(150); }
       }
       await page.screenshot({ path: path.join(out, `${vp.name}-${p.id}.png`) });
       if (vp.name === 'phone') { await page.locator('.toggle-right').click().catch(() => {}); }

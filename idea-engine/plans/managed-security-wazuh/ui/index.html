@@ -5,31 +5,31 @@
 <title>Watchpost mockup</title>
 <style>/* Shared app shell: left rail | sidebar | (tabs + main) | right sidebar, bottom bar across. */
 :root{
-  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#6b7280;
+  --bg:#f6f7f9; --panel:#ffffff; --panel-2:#f1f3f6; --line:#e3e6eb; --text:#16181d; --muted:#5d6470; --faint:#555d69;
   --accent:#2f5bea; --accent-weak:#e8eefe; --good:#13795b; --good-weak:#e3f5ee; --warn:#a15c00; --warn-weak:#fff3df;
   --bad:#c0282d; --bad-weak:#fde8e8; --focus:#2f5bea; --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.08);
-  --radius:10px; --rail:64px; --side:264px; --right:312px; --bar:36px;
+  --radius:10px; --on-accent:#ffffff; --on-bad:#ffffff; --rail:64px; --side:264px; --right:312px; --bar:36px;
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-size:14px; line-height:1.45; color:var(--text);
 }
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
   --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
-  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; } }
+  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; --on-accent:#0b0d10; --on-bad:#0b0d10; } }
 :root[data-theme="dark"]{
   --bg:#0f1115; --panel:#161a20; --panel-2:#1c2129; --line:#2a313b; --text:#e8eaee; --muted:#a7afbb; --faint:#9aa3ae;
   --accent:#7c9bff; --accent-weak:#1d2742; --good:#4cc38a; --good-weak:#13291f; --warn:#f0b357; --warn-weak:#2e2412;
-  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; }
+  --bad:#ff7a7f; --bad-weak:#341a1b; --shadow:none; --on-accent:#0b0d10; --on-bad:#0b0d10; }
 *{box-sizing:border-box} html,body{height:100%;margin:0;background:var(--bg)}
 button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 :focus-visible{outline:2px solid var(--focus);outline-offset:2px;border-radius:6px}
 .app{display:grid;height:100vh;grid-template-columns:var(--rail) var(--side) minmax(0,1fr) var(--right);grid-template-rows:minmax(0,1fr) var(--bar);
   grid-template-areas:"rail side main right" "bar bar bar bar"}
 .rail{grid-area:rail;background:var(--panel);border-right:1px solid var(--line);display:flex;flex-direction:column;align-items:center;padding:12px 0;gap:6px}
-.rail .logo{width:36px;height:36px;border-radius:9px;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;margin-bottom:10px}
+.rail .logo{width:36px;height:36px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-weight:700;margin-bottom:10px}
 .rail button{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;color:var(--muted);position:relative}
 .rail button:hover{background:var(--panel-2);color:var(--text)} .rail button[aria-current="page"]{background:var(--accent-weak);color:var(--accent)}
-.rail .badge{position:absolute;top:4px;right:4px;min-width:16px;height:16px;border-radius:8px;background:var(--bad);color:#fff;font-size:10px;display:grid;place-items:center;padding:0 4px}
+.rail .badge{position:absolute;top:4px;right:4px;min-width:16px;height:16px;border-radius:8px;background:var(--bad);color:var(--on-bad);font-size:10px;display:grid;place-items:center;padding:0 4px}
 .rail .spacer{flex:1} .avatar{width:34px;height:34px;border-radius:50%;background:var(--panel-2);display:grid;place-items:center;font-weight:600;color:var(--muted);border:1px solid var(--line)}
 svg.i{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .side{grid-area:side;background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:14px 10px}
@@ -57,7 +57,7 @@ h1{font-size:20px;margin:0 0 4px} .sub{color:var(--muted);margin:0 0 16px}
 .pill{display:inline-flex;align-items:center;gap:6px;padding:2px 8px;border-radius:999px;font-size:12px;font-weight:600;background:var(--panel-2);color:var(--muted);white-space:nowrap}
 .pill.good{background:var(--good-weak);color:var(--good)} .pill.bad{background:var(--bad-weak);color:var(--bad)} .pill.warn{background:var(--warn-weak);color:var(--warn)} .pill.info{background:var(--accent-weak);color:var(--accent)}
 .btn{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:8px;border:1px solid var(--line);background:var(--panel);font-weight:600}
-.btn:hover{background:var(--panel-2)} .btn.primary{background:var(--accent);border-color:var(--accent);color:#fff} .btn.primary:hover{filter:brightness(1.05)}
+.btn:hover{background:var(--panel-2)} .btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)} .btn.primary:hover{filter:brightness(1.05)}
 .row{display:flex;align-items:center;gap:10px;flex-wrap:wrap} .between{justify-content:space-between} .muted{color:var(--muted)} .faint{color:var(--faint)} .small{font-size:12px}
 table{width:100%;border-collapse:collapse} th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);vertical-align:top}
 th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;letter-spacing:.04em} td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}

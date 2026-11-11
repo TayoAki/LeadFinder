@@ -1,23 +1,23 @@
 # Persona walkthrough: Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)
 
-**Automated score: 9.5/10** (persona tasks on desktop and phone + global checks)
+**Automated score: 10/10** (persona tasks on desktop and phone + global checks)
 
 | Persona | Department | Tasks passed | Score |
 |---|---|---|---|
 | partner | Firm leadership | 8/8 | 10/10 |
 | associate | Litigation | 10/10 | 10/10 |
-| paralegal | Litigation support | 6/10 | 6/10 |
+| paralegal | Litigation support | 10/10 | 10/10 |
 | intake | Front office | 8/8 | 10/10 |
 | billing | Billing / finance | 8/8 | 10/10 |
 | it_ops | IT / legal operations | 8/8 | 10/10 |
 | solo_immigration | Solo practice (immigration) | 10/10 | 10/10 |
-| in_house | In-house legal | 8/10 | 8/10 |
+| in_house | In-house legal | 10/10 | 10/10 |
 | firm_administrator | Operations | 8/8 | 10/10 |
 | ethics_gc | Risk management | 8/8 | 10/10 |
 | docketing | Docketing / calendaring | 8/8 | 10/10 |
 | km_librarian | Knowledge management | 6/6 | 10/10 |
 | legal_secretary | Attorney support | 8/8 | 10/10 |
-| estate_planning | Transactional practice | 6/8 | 7.5/10 |
+| estate_planning | Transactional practice | 8/8 | 10/10 |
 | lit_support | Litigation support / e-discovery | 8/8 | 10/10 |
 
 ## Global checks
@@ -52,11 +52,4 @@
 
 ## Failures
 
-- desktop · paralegal · Switching matter rebuilds the timeline: not visible: [data-testid='timeline']:has-text('IOE0912345678')
-- desktop · paralegal · Clicking an event shows its source: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- desktop · in_house · In-house workspace with request header: not visible: [data-testid='workspace-name']:has-text('Northwind Robotics')
-- desktop · estate_planning · Select Estate of D. Liu and get the cited inventory: not visible: [data-testid='inventory']:has-text('$990,578.02')
-- phone · paralegal · Switching matter rebuilds the timeline: not visible: [data-testid='timeline']:has-text('IOE0912345678')
-- phone · paralegal · Clicking an event shows its source: TimeoutError: locator.click: Timeout 2500ms exceeded.
-- phone · in_house · In-house workspace with request header: not visible: [data-testid='workspace-name']:has-text('Northwind Robotics')
-- phone · estate_planning · Select Estate of D. Liu and get the cited inventory: not visible: [data-testid='inventory']:has-text('$990,578.02')
+None.
