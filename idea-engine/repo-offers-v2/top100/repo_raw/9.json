@@ -1,5 +1,0 @@
-{
-  "detail": "treg's database pool is saturated \u2014 retry in a moment",
-  "treg_saturated": true
-}
-treg: HTTP 503 — the provider answered; treg relayed it unchanged; call id 50d7992341204a0fad32e4332ba43352 (quote it to support; `treg calls` shows the record)
