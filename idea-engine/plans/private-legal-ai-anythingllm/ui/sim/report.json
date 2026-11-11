@@ -1,6 +1,6 @@
 {
  "app": "Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)",
- "score": 10,
+ "score": 8.1,
  "personas": {
   "partner": {
    "department": "Firm leadership",
@@ -22,8 +22,8 @@
   },
   "intake": {
    "department": "Front office",
-   "pass": 8,
-   "total": 8,
+   "pass": 6,
+   "total": 6,
    "score": 10
   },
   "billing": {
@@ -39,51 +39,51 @@
    "score": 10
   },
   "solo_immigration": {
-   "department": "Solo practice (immigration)",
+   "department": "Immigration practice",
    "pass": 10,
    "total": 10,
    "score": 10
   },
   "in_house": {
    "department": "In-house legal",
-   "pass": 10,
+   "pass": 2,
    "total": 10,
-   "score": 10
+   "score": 2
   },
   "firm_administrator": {
    "department": "Operations",
-   "pass": 8,
-   "total": 8,
-   "score": 10
-  },
-  "ethics_gc": {
-   "department": "Risk management",
-   "pass": 8,
-   "total": 8,
-   "score": 10
-  },
-  "docketing": {
-   "department": "Docketing / calendaring",
-   "pass": 8,
-   "total": 8,
-   "score": 10
-  },
-  "km_librarian": {
-   "department": "Knowledge management",
    "pass": 6,
    "total": 6,
    "score": 10
   },
+  "ethics_gc": {
+   "department": "Risk management",
+   "pass": 4,
+   "total": 8,
+   "score": 5
+  },
+  "docketing": {
+   "department": "Docketing / calendaring",
+   "pass": 0,
+   "total": 8,
+   "score": 0
+  },
+  "km_librarian": {
+   "department": "Knowledge management",
+   "pass": 0,
+   "total": 6,
+   "score": 0
+  },
   "legal_secretary": {
    "department": "Attorney support",
-   "pass": 8,
-   "total": 8,
-   "score": 10
+   "pass": 0,
+   "total": 6,
+   "score": 0
   },
   "estate_planning": {
    "department": "Transactional practice",
-   "pass": 8,
-   "total": 8,
+   "pass": 6,
+   "total": 6,
    "score": 10
   },
   "lit_support": {
@@ -91,9 +91,258 @@
    "pass": 8,
    "total": 8,
    "score": 10
+  },
+  "conflicts_analyst": {
+   "department": "New business intake / conflicts",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "records_manager": {
+   "department": "Records and information governance",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "solo_general": {
+   "department": "Solo / small general practice",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "professional_development": {
+   "department": "Professional development / training",
+   "pass": 6,
+   "total": 6,
+   "score": 10
   }
  },
- "failures": [],
+ "failures": [
+  {
+   "name": "Separate customer workspace with in-house request fields",
+   "ok": false,
+   "why": "not visible: [data-testid='request-header']:has-text('Business owner')",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Accept a row updates the redline button",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Capture a decision in the playbook",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "NDA request with its own SLA",
+   "ok": false,
+   "why": "not visible: [data-testid='review-table']:has-text('Residuals')",
+   "persona": "in_house",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Register filtered to client-restricted matters and exported",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Carrier questionnaire answers",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Queue with origin, derived deadline and holiday calendar",
+   "ok": false,
+   "why": "not visible: [data-testid='verify-queue']:has-text('Final pretrial conference')",
+   "persona": "docketing",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Verify, then post to the calendar",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Correct a date with a reason",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Reject an extraction",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Lands on Knowledge with currency fields",
+   "ok": false,
+   "why": "not visible: [data-testid='tpl-t3']:has-text('Superseded by v4 (t1) on Thu, Nov 5, 2026')",
+   "persona": "km_librarian",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Retire with who and when, and undo",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "km_librarian",
+   "viewport": "desktop"
+  },
+  {
+   "name": "See which drafts used it",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "km_librarian",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Client update letter for Reyes with sequential cites",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Choose a partner as reviewer, then export on letterhead",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Cannot send to the client before approval",
+   "ok": false,
+   "why": "not visible: button:has-text('Send and record in matter'):disabled",
+   "persona": "legal_secretary",
+   "viewport": "desktop"
+  },
+  {
+   "name": "Separate customer workspace with in-house request fields",
+   "ok": false,
+   "why": "not visible: [data-testid='request-header']:has-text('Business owner')",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Accept a row updates the redline button",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Capture a decision in the playbook",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "NDA request with its own SLA",
+   "ok": false,
+   "why": "not visible: [data-testid='review-table']:has-text('Residuals')",
+   "persona": "in_house",
+   "viewport": "phone"
+  },
+  {
+   "name": "Register filtered to client-restricted matters and exported",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "phone"
+  },
+  {
+   "name": "Carrier questionnaire answers",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "ethics_gc",
+   "viewport": "phone"
+  },
+  {
+   "name": "Queue with origin, derived deadline and holiday calendar",
+   "ok": false,
+   "why": "not visible: [data-testid='verify-queue']:has-text('Final pretrial conference')",
+   "persona": "docketing",
+   "viewport": "phone"
+  },
+  {
+   "name": "Verify, then post to the calendar",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "phone"
+  },
+  {
+   "name": "Correct a date with a reason",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "phone"
+  },
+  {
+   "name": "Reject an extraction",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "docketing",
+   "viewport": "phone"
+  },
+  {
+   "name": "Lands on Knowledge with currency fields",
+   "ok": false,
+   "why": "not visible: [data-testid='tpl-t3']:has-text('Superseded by v4 (t1) on Thu, Nov 5, 2026')",
+   "persona": "km_librarian",
+   "viewport": "phone"
+  },
+  {
+   "name": "Retire with who and when, and undo",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "km_librarian",
+   "viewport": "phone"
+  },
+  {
+   "name": "See which drafts used it",
+   "ok": false,
+   "why": "TimeoutError: locator.click: Timeout 2500ms exceeded.",
+   "persona": "km_librarian",
+   "viewport": "phone"
+  },
+  {
+   "name": "Client update letter for Reyes with sequential cites",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Choose a partner as reviewer, then export on letterhead",
+   "ok": false,
+   "why": "TimeoutError: page.selectOption: Timeout 2500ms exceeded.",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  },
+  {
+   "name": "Cannot send to the client before approval",
+   "ok": false,
+   "why": "not visible: button:has-text('Send and record in matter'):disabled",
+   "persona": "legal_secretary",
+   "viewport": "phone"
+  }
+ ],
  "global": [
   {
    "viewport": "desktop",

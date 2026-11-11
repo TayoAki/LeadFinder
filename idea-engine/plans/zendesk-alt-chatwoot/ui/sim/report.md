@@ -6,19 +6,23 @@
 |---|---|---|---|
 | agent | Support (frontline) | 12/12 | 10/10 |
 | lead | Support (management) | 12/12 | 10/10 |
-| head_cx | Customer Experience (leadership) | 6/6 | 10/10 |
-| finance | Finance | 8/8 | 10/10 |
-| founder | Executive | 10/10 | 10/10 |
-| it_admin | IT / Security | 10/10 | 10/10 |
-| ops_whatsapp | Operations | 8/8 | 10/10 |
+| head_cx | Customer Experience (leadership) | 10/10 | 10/10 |
+| finance | Finance | 10/10 | 10/10 |
+| founder | Executive | 8/8 | 10/10 |
+| it_admin | IT / Security | 12/12 | 10/10 |
+| ops_whatsapp | Operations | 10/10 | 10/10 |
 | knowledge | Support (knowledge) | 10/10 | 10/10 |
-| support_ops_admin | Support operations | 8/8 | 10/10 |
-| qa_coach | Support (quality) | 6/6 | 10/10 |
-| privacy_legal | Legal / Privacy | 8/8 | 10/10 |
-| wholesale_sales | Sales | 6/6 | 10/10 |
-| retention_marketing | Marketing / Retention | 4/4 | 10/10 |
-| fulfillment_ops | Fulfillment / Warehouse | 4/4 | 10/10 |
-| bpo_manager | Outsourced support | 8/8 | 10/10 |
+| support_ops_admin | Support operations | 10/10 | 10/10 |
+| qa_coach | Support (quality) | 10/10 | 10/10 |
+| privacy_legal | Legal / Privacy | 12/12 | 10/10 |
+| wholesale_sales | Sales | 8/8 | 10/10 |
+| retention_marketing | Marketing / Retention | 6/6 | 10/10 |
+| fulfillment_ops | Fulfillment / Warehouse | 8/8 | 10/10 |
+| bpo_manager | Outsourced support | 10/10 | 10/10 |
+| procurement | Procurement / Vendor management | 8/8 | 10/10 |
+| integrations_engineer | Engineering / IT applications | 6/6 | 10/10 |
+| product_manager | Product / Merchandising | 6/6 | 10/10 |
+| workforce_planner | Support operations (workforce management) | 4/4 | 10/10 |
 
 ## Global checks
 

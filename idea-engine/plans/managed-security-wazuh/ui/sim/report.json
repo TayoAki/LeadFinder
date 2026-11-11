@@ -22,8 +22,8 @@
   },
   "msp_tech": {
    "department": "IT services (MSP)",
-   "pass": 8,
-   "total": 8,
+   "pass": 12,
+   "total": 12,
    "score": 10
   },
   "msp_owner": {
@@ -70,8 +70,8 @@
   },
   "general_counsel": {
    "department": "Legal / privacy",
-   "pass": 2,
-   "total": 2,
+   "pass": 4,
+   "total": 4,
    "score": 10
   },
   "security_champion_employee": {
@@ -100,8 +100,8 @@
   },
   "trial_evaluator": {
    "department": "Operations / IT (pre-purchase)",
-   "pass": 4,
-   "total": 4,
+   "pass": 6,
+   "total": 6,
    "score": 10
   }
  },

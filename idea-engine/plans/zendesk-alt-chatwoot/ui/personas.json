@@ -11,59 +11,51 @@
    "how_helps": "AI-drafted reply filled with the live order and tracking, customer context in the right bar, and one button that does the action (replacement, claim, refund) and sends.",
    "tasks": [
     {
-     "name": "Open a ticket that needs a human and see THAT customer's context",
+     "name": "As Agent (Maya), only my tabs and my queue show",
      "steps": [
       {
-       "select": "#view",
-       "value": "needs-human"
-      },
+       "select": "#role",
+       "value": "agent"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='conversation ai reports']",
+      "[data-testid='role-note']:has-text('Maya R.')",
+      "[data-testid='role-note']:has-text('Hidden for this role: Migration, Billing, Admin')",
+      "[data-testid='view-count']:has-text('3')"
+     ]
+    },
+    {
+     "name": "Open Daniel's over-limit ticket: context is his, and sending needs a lead",
+     "steps": [
       {
        "click": "[data-select='c2']"
       }
      ],
      "expect": [
-      "#thread-title:has-text('Wrong grind size')",
       "[data-testid='cust-name']:has-text('Daniel Kim')",
       "[data-testid='cust-stats']:has-text('3 orders')",
       "[data-testid='order-card']:has-text('1Z84A1R70391245566')",
-      "[data-testid='handoff']:has-text('Refunds or replacements over $100 go to a human')",
-      "[data-testid='policy-check']:has-text('over the $100 limit')",
-      "[data-testid='ai-draft']"
+      "[data-testid='policy-check']:has-text(\"Needs a lead's approval: $112 is over the $100 limit\")",
+      "[data-testid='request-approval']:has-text('Request approval from Jordan P.')"
      ]
     },
     {
-     "name": "Create the replacement and send in one step; the thread and order card update",
+     "name": "Request approval: the ticket waits, and the agent cannot delete customer data",
      "steps": [
       {
-       "click": "[data-testid='send-action']"
+       "click": "[data-testid='request-approval']"
       }
      ],
      "expect": [
-      ".thread .msg.event:has-text('Replacement order #4021-R created')",
-      ".thread .msg:has-text('order #4021-R')",
-      "[data-testid='thread-status']:has-text('Pending')",
-      "[data-testid='order-card']:has-text('#4021-R created')"
+      "[data-testid='approval-waiting']:has-text('Jordan P.')",
+      ".thread .msg.event:has-text('asked Jordan P. to approve')",
+      "[data-testid='privacy-request']",
+      "#right-body:not(:has([data-testid='privacy-open']))"
      ]
     },
     {
-     "name": "A prospect shows no orders and no refund buttons",
-     "steps": [
-      {
-       "select": "#view",
-       "value": "all"
-      },
-      {
-       "click": "[data-select='c7']"
-      }
-     ],
-     "expect": [
-      "[data-testid='cust-name']:has-text('Ben Carter')",
-      "[data-testid='cust-stats']:has-text('Prospect · no orders')",
-      "[data-testid='no-order-actions']"
-     ]
-    },
-    {
-     "name": "Macros are ranked for this ticket's intent and insert into the reply",
+     "name": "Macros match the ticket's intent only",
      "steps": [
       {
        "click": "[data-select='c3']"
@@ -79,13 +71,24 @@
       }
      ],
      "expect": [
-      "[data-testid='macro-0']:has-text('Pause instead of cancel')",
+      "[data-testid='macros']:has-text('Pause instead of cancel')",
+      "[data-testid='macros']:not(:has-text('Damaged'))",
+      "[data-testid='browse-macros']",
       "#reply-box:has-text('Want me to pause it for you?')",
       "[data-testid='send-draft']"
      ]
     },
     {
-     "name": "Search finds a conversation and opens it with its customer",
+     "name": "A 22-month subscriber shows her real order count",
+     "steps": [],
+     "expect": [
+      "[data-testid='cust-stats']:has-text('23 orders · $667 lifetime')",
+      "[data-testid='cust-stats']:has-text('23 shipments')",
+      "[data-testid='ai-draft']"
+     ]
+    },
+    {
+     "name": "Search opens the right conversation with its customer",
      "steps": [
       {
        "click": ".rail [data-view='search']"
@@ -98,21 +101,6 @@
       "#thread-title:has-text('pedido')",
       "[data-testid='cust-name']:has-text('Lucía Fernández')",
       "[data-testid='cust-lang']:has-text('Spanish')"
-     ]
-    },
-    {
-     "name": "As an agent, Billing and Admin are hidden and 'Mine' shows my queue",
-     "steps": [
-      {
-       "select": "#role",
-       "value": "agent"
-      }
-     ],
-     "expect": [
-      ".tabs[data-visible-tabs='conversation ai reports']",
-      "[data-testid='role-note']:has-text('Maya R.')",
-      "[data-testid='role-note']:has-text('Billing, Admin')",
-      "[data-testid='view-count']:has-text('3')"
      ]
     }
    ]
@@ -127,7 +115,7 @@
    "how_helps": "An 'SLA at risk' view with live timers, a defined threshold and today's breach count; a picker that preselects the lowest-load agent; workload by agent that matches the inbox.",
    "tasks": [
     {
-     "name": "As a lead, start in the SLA view with a definition and today's numbers",
+     "name": "As Team lead (Jordan), start in the SLA view with arithmetic that adds up",
      "steps": [
       {
        "select": "#role",
@@ -136,71 +124,96 @@
      ],
      "expect": [
       ".tabs[data-visible-tabs='conversation ai migration reports']",
-      "[data-testid='sla-summary']:has-text('breaches today')",
-      "[data-testid='sla-summary']:has-text('less than 45 min')",
-      "[data-testid='view-count']:has-text('5')",
+      "[data-testid='sla-summary']:has-text('3 missed + 1 open breach = 4 breaches today')",
+      "[data-testid='view-count']:has-text('4')",
       ".side .item:has-text('Breached')"
      ]
     },
     {
-     "name": "Reassign a ticket; the lowest-load online agent is preselected and the header and list update",
+     "name": "An agent's over-limit request reaches the lead's notifications",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "agent"
+      },
+      {
+       "click": "[data-select='c2']"
+      },
+      {
+       "click": "[data-testid='request-approval']"
+      },
+      {
+       "select": "#role",
+       "value": "lead"
+      },
+      {
+       "click": ".rail [data-view='alerts']"
+      },
+      {
+       "click": "[data-testid='nt-ap-c2']"
+      }
+     ],
+     "expect": [
+      "#thread-title:has-text('Wrong grind size')",
+      "[data-testid='policy-check']:has-text('Requested from Jordan P. by Maya R.')",
+      "[data-testid='approve-action']",
+      "[data-testid='side-approvals']:has-text('Approvals waiting: 1')"
+     ]
+    },
+    {
+     "name": "Approve: replacement created, reply sent as Maya, approval logged",
+     "steps": [
+      {
+       "click": "[data-testid='approve-action']"
+      }
+     ],
+     "expect": [
+      ".thread .msg.event:has-text('Approved by Jordan P. (requested by Maya R.')",
+      ".thread .msg:has-text('approved by Jordan P.')",
+      "[data-testid='order-card']:has-text('#4021-R created')",
+      "[data-testid='repl-exists']",
+      "[data-testid='thread-status']:has-text('Pending')"
+     ]
+    },
+    {
+     "name": "Reassign to the lowest-load online agent",
      "steps": [
       {
        "click": "[data-select='c5']"
       },
       {
        "click": "[data-testid='reassign']"
-      }
-     ],
-     "expect": [
-      "[data-testid='assign-picker']:has-text('Priya K.')",
-      "[data-testid='assign-confirm']:has-text('Assign to Priya K.')"
-     ]
-    },
-    {
-     "name": "Confirm the reassignment",
-     "steps": [
+      },
       {
        "click": "[data-testid='assign-confirm']"
       }
      ],
      "expect": [
       "[data-testid='assignee']:has-text('Priya K.')",
-      ".side .item[data-select='c5']:has-text('Priya K.')",
-      ".thread .msg.event:has-text('Reassigned from Leo S. to Priya K.')"
+      ".side .item[data-select='c5']:has-text('Priya K.')"
      ]
     },
     {
-     "name": "Workload in Reports reflects the reassignment and the right bar lists at-risk tickets",
+     "name": "Coaching: per-agent QA, reopen and first reply, with 1:1 samples",
      "steps": [
       {
        "click": "[data-tab='reports']"
       },
       {
        "click": "[data-select='sub:reports:sla']"
+      },
+      {
+       "click": "[data-testid='coach-sam']"
       }
      ],
      "expect": [
       "[data-testid='wl-priya'] [data-testid='wl-open']:has-text('3')",
-      "[data-testid='wl-leo'] [data-testid='wl-open']:has-text('1')",
-      "[data-testid='right-sla']:has-text('Omar Haddad')",
-      "[data-testid='workload'] tr.total"
+      "[data-testid='wl-sam'] [data-testid='wl-qa']",
+      "[data-testid='coach-panel']:has-text('Refund to a gift card')"
      ]
     },
     {
-     "name": "Open an agent's queue from Reports to bulk-reassign",
-     "steps": [
-      {
-       "click": "[data-testid='queue-maya']"
-      }
-     ],
-     "expect": [
-      "[data-testid='view-count']:has-text('3')",
-      "[data-testid='bulk-reassign']:has-text('Reassign all 3')"
-     ]
-    },
-    {
-     "name": "Notifications list breached tickets and open the right one",
+     "name": "Opening a breach from notifications keeps the SLA view",
      "steps": [
       {
        "click": ".rail [data-view='alerts']"
@@ -211,7 +224,7 @@
      ],
      "expect": [
       "#thread-title:has-text('Colis endommagé')",
-      "[data-testid='cust-name']:has-text('Jean Dupont')",
+      "[data-testid='sla-summary']",
       "[data-testid='sla']:has-text('Breached')"
      ]
     }
@@ -227,24 +240,34 @@
    "how_helps": "Reports with one shared period, AI vs human CSAT with sample sizes, reopen rate, software cost per conversation, savings vs a hedged Zendesk estimate, a 12-week trend and an 8-week peak forecast.",
    "tasks": [
     {
-     "name": "Read AI rate, split CSAT, cost and savings for one stated period",
+     "name": "As Head of CX (Dana), the board overview leads with savings vs the real Zendesk bill",
      "steps": [
       {
-       "click": "[data-tab='reports']"
+       "select": "#role",
+       "value": "headcx"
       }
      ],
      "expect": [
-      "[data-testid='kpi-ai-rate']:has-text('Nov 1–19')",
-      "[data-testid='kpi-csat']:has-text('AI 91%')",
-      "[data-testid='kpi-csat']:has-text('Human')",
-      "[data-testid='kpi-cost-ticket']:has-text('Software cost per conversation')",
-      "[data-testid='kpi-savings']:has-text('Est. savings')",
-      "[data-testid='trend-chart']",
-      "[data-testid='forecast']:has-text('Black Friday')"
+      ".tabs[data-visible-tabs='ai migration reports billing']",
+      "[data-testid='kpi-savings']:has-text('what you paid Zendesk')",
+      "[data-testid='kpi-savings']:has-text('$237')",
+      "[data-testid='hypothetical']:has-text('Hypothetical')",
+      "[data-testid='kpi-csat']:has-text('vs Oct 1–19 (on Zendesk)')",
+      "[data-testid='kpi-frt']:has-text('vs Oct')",
+      "[data-testid='weekly-chart']"
      ]
     },
     {
-     "name": "Change the period once; Reports and AI agent both follow",
+     "name": "The right bar fits the board page, not the live queue",
+     "steps": [],
+     "expect": [
+      "[data-testid='right-reports']:has-text('Period comparison')",
+      "[data-testid='right-reports']:not(:has-text('SLA at risk'))",
+      "[data-testid='def-ai-resolved']"
+     ]
+    },
+    {
+     "name": "One period selector drives Reports and AI",
      "steps": [
       {
        "select": "#period-reports",
@@ -260,7 +283,20 @@
      ]
     },
     {
-     "name": "Definitions and a board export sit in the Reports right bar",
+     "name": "Billing is a read-only summary for this role",
+     "steps": [
+      {
+       "click": "[data-tab='billing']"
+      }
+     ],
+     "expect": [
+      "[data-testid='bill-total']:has-text('$599')",
+      "#panel-billing:has-text('Read-only for your role')",
+      ".side:not(:has([data-select='sub:billing:invoices']))"
+     ]
+    },
+    {
+     "name": "Export the board summary",
      "steps": [
       {
        "click": "[data-tab='reports']"
@@ -276,8 +312,6 @@
       }
      ],
      "expect": [
-      "[data-testid='kpi-ai-rate']:has-text('Nov 13–19')",
-      "[data-testid='def-ai-resolved']:has-text('72h')",
       ".toast.show:has-text('Board summary PDF generated: Last 7 days')"
      ]
     }
@@ -293,59 +327,70 @@
    "how_helps": "Flat bill with a clear rule above fair use, a hedged Zendesk comparison, the transition-month overlap, invoices, terms, plan ladder and a 12-month projection.",
    "tasks": [
     {
-     "name": "As finance, see the bill, the fair-use rule and the transition month",
+     "name": "As Finance (Theo): November bill, savings vs actual spend, transition month reconciled",
      "steps": [
       {
        "select": "#role",
-       "value": "billing"
+       "value": "finance"
       }
      ],
      "expect": [
       ".tabs[data-visible-tabs='migration reports billing']",
       "[data-testid='signed-in']:has-text('Theo B.')",
       "[data-testid='bill-total']:has-text('$599')",
-      "[data-testid='zendesk-equivalent']:has-text('Estimated Zendesk cost')",
-      "[data-testid='no-overage']:has-text('we never charge per resolution')",
+      "[data-testid='savings-actual']:has-text('$237/mo')",
+      "[data-testid='savings-actual']:has-text('$836')",
       "[data-testid='transition']:has-text('$1,404')",
-      "[data-testid='right-billing']:has-text('Next invoice')"
+      "[data-testid='zendesk-equivalent']:has-text('Hypothetical')",
+      "[data-testid='right-billing']:has-text('incl. Nov $805')"
      ]
     },
     {
-     "name": "Invoices, payment method and notice terms",
-     "steps": [
-      {
-       "click": "[data-select='sub:billing:invoices']"
-      }
-     ],
+     "name": "Fair use is a contract term with a choice, and seats warn before the next tier",
+     "steps": [],
      "expect": [
-      "[data-testid='invoices']:has-text('FD-2026-11')",
-      "[data-testid='payment-method']:has-text('Visa')",
-      "[data-testid='terms']:has-text(\"30 days' notice\")"
+      "[data-testid='no-overage']:has-text('capped at 100 resolutions a day')",
+      "[data-testid='no-overage']:has-text('No back-billing')",
+      "[data-testid='seat-warning']:has-text('Flat 25')"
      ]
     },
     {
-     "name": "Plan ladder and 12-month projection for budgeting growth",
+     "name": "12-month projection against actual and renewal Zendesk costs, with the post-lock price",
      "steps": [
       {
        "click": "[data-select='sub:billing:plans']"
       }
      ],
      "expect": [
-      "[data-testid='plan-ladder']:has-text('Flat 25')",
-      "[data-testid='projection']:has-text('12-month')"
+      "[data-testid='projection']:has-text('capped $629')",
+      "[data-testid='projection']:has-text('actual 2026 run rate')",
+      "[data-testid='projection']:has-text('renewal quote')",
+      "[data-testid='plan-ladder']"
      ]
     },
     {
-     "name": "The comparison is hedged and can be replaced with a real invoice",
+     "name": "Invoices show seats used vs included; terms link the fair-use clause",
      "steps": [
       {
-       "click": "[data-select='sub:billing:bill']"
+       "click": "[data-select='sub:billing:invoices']"
       }
      ],
      "expect": [
-      "#panel-billing:has-text(\"Zendesk doesn't publish a single per-resolution rate\")",
-      "label[for='zd-upload']",
-      "[data-testid='savings-nov']"
+      "[data-testid='invoices']:has-text('10 seats included, 9 used')",
+      "[data-testid='terms']:has-text('§4.2')",
+      "[data-testid='payment-method']:has-text('Visa')"
+     ]
+    },
+    {
+     "name": "Finance is notified at 9 of 10 seats",
+     "steps": [
+      {
+       "click": ".rail [data-view='alerts']"
+      }
+     ],
+     "expect": [
+      "#pop-alerts:has-text('Agent seats 9/10')",
+      "#pop-alerts:not(:has-text('SLA breached'))"
      ]
     }
    ]
@@ -360,20 +405,24 @@
    "how_helps": "Migration tab shows a dated, completed summary with proof (spot-check), a named contact, rollback plan, next actions with owners and a peak-readiness checklist; Reports show revenue in open tickets.",
    "tasks": [
     {
-     "name": "Migration status with dates, guarantee, peak readiness and a named contact",
+     "name": "As Owner (Hana): migration summary with proof numbers and the open peak item",
      "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
       {
        "click": "[data-tab='migration']"
       }
      ],
      "expect": [
-      "[data-testid='migration-progress']:has-text('7 of 7')",
-      "[data-testid='go-live']:has-text('Sun, Nov 1')",
+      "[data-testid='migration-progress']:has-text('Migration complete · 1 peak item open')",
+      "[data-testid='proof']:has-text('48,210 of 48,210')",
+      "[data-testid='proof']:has-text('112,904')",
       "[data-testid='guarantee']:has-text('met')",
-      "[data-testid='peak']:has-text('Black Friday Fri Nov 27 (in 8 days)')",
+      "[data-testid='peak']:has-text('in 8 days')",
       "[data-testid='mig-contact']:has-text('Elena G.')",
-      "[data-testid='rollback']:has-text('5 minutes')",
-      "[data-testid='next-actions']:has-text('Theo B.')"
+      "[data-testid='rollback']:has-text('5 minutes')"
      ]
     },
     {
@@ -388,7 +437,7 @@
      ]
     },
     {
-     "name": "See exactly who got the DNS instructions and when",
+     "name": "See exactly who got the DNS instructions",
      "steps": [
       {
        "click": "[data-select='sub:migration:dns']"
@@ -400,30 +449,16 @@
      ]
     },
     {
-     "name": "The open peak item links to where it gets done",
-     "steps": [
-      {
-       "click": "[data-select='sub:migration:overview']"
-      },
-      {
-       "click": "[data-testid='peak'] [data-act='goUsers']"
-      }
-     ],
-     "expect": [
-      "[data-testid='groups']",
-      "[data-testid='seats-admin']"
-     ]
-    },
-    {
-     "name": "Revenue at stake in open tickets",
+     "name": "Revenue: repeat orders after support, revenue kept, savings vs actual spend",
      "steps": [
       {
        "click": "[data-tab='reports']"
       }
      ],
      "expect": [
-      "[data-testid='kpi-revenue-open']:has-text('open conversations')",
-      ".side .item[aria-current='true']:has-text('Overview for the board')"
+      "[data-testid='kpi-repeat']:has-text('Orders within 7 days of a support reply')",
+      "[data-testid='kpi-revenue-open']:has-text('pause saves')",
+      "[data-testid='kpi-savings']:has-text('$237')"
      ]
     }
    ]
@@ -438,7 +473,7 @@
    "how_helps": "Admin shows enforced SSO, SCIM, roles, regions, backups, scoped scheduled exports, compliance documents, AI processing and an audit log.",
    "tasks": [
     {
-     "name": "As IT, see SSO enforcement and the audit log",
+     "name": "As IT (Raj): SSO and the security right bar",
      "steps": [
       {
        "select": "#role",
@@ -447,60 +482,80 @@
      ],
      "expect": [
       ".tabs[data-visible-tabs='migration admin']",
-      "[data-testid='role-note']:has-text('Raj M.')",
       "[data-testid='sso']:has-text('Password login disabled')",
-      "[data-testid='right-admin']:has-text('Audit log')",
-      "[data-testid='audit']:has-text('Blocked sign-in')"
+      "[data-testid='right-admin']:has-text('Latest audit entries')"
      ]
     },
     {
-     "name": "Regions, backups and a scoped, scheduled export",
+     "name": "Turn on the IP allowlist and sign Sam out everywhere",
      "steps": [
       {
-       "click": "[data-select='sub:admin:data']"
+       "click": "#ip-allow"
+      },
+      {
+       "click": "[data-testid='signout-sam']"
       }
      ],
      "expect": [
-      "[data-testid='region']:has-text('EU')",
-      "[data-testid='backups']:has-text('RPO')",
-      "[data-testid='export']:has-text('S3')"
+      "[data-testid='ip-state']:has-text('IP allowlist on')",
+      "[data-testid='signed-out-sam']",
+      "[data-testid='audit']:has-text('Signed Sam T. out')"
      ]
     },
     {
-     "name": "Users, roles and SCIM provisioning",
+     "name": "Full audit log: filter, export, SIEM stream",
      "steps": [
       {
-       "click": "[data-select='sub:admin:users']"
+       "click": "[data-select='sub:admin:audit']"
+      },
+      {
+       "select": "#audit-type",
+       "value": "Security"
+      },
+      {
+       "click": "[data-testid='siem-connect']"
       }
      ],
      "expect": [
-      "[data-testid='users']:has-text('SCIM')",
-      "[data-testid='users']:has-text('Agent: Conversation, AI agent, Reports')"
+      "[data-testid='audit-page']:has-text('IP allowlist turned on')",
+      "[data-testid='audit-page']:not(:has-text('Edited macro'))",
+      "[data-testid='siem']:has-text('Splunk')",
+      "[data-testid='export-audit']"
      ]
     },
     {
-     "name": "The rail's gear is labelled Admin and opens Admin",
+     "name": "SOC 2 Type II date and a bridge letter",
+     "steps": [
+      {
+       "click": "[data-select='sub:admin:trust']"
+      }
+     ],
+     "expect": [
+      "[data-testid='dpa']:has-text('expected Mar 2027')",
+      "[data-testid='bridge-letter']"
+     ]
+    },
+    {
+     "name": "Rules are read-only for IT (separation of duties)",
+     "steps": [
+      {
+       "click": "[data-select='sub:admin:rules']"
+      }
+     ],
+     "expect": [
+      "[data-testid='rules-readonly']",
+      "#guard-limit[disabled]"
+     ]
+    },
+    {
+     "name": "The rail gear is labelled Admin",
      "steps": [
       {
        "click": ".rail [data-view='admin']"
       }
      ],
      "expect": [
-      ".rail button[aria-label='Admin'][aria-current='page']",
-      "#panel-admin"
-     ]
-    },
-    {
-     "name": "Switch to the agent role: Admin is hidden",
-     "steps": [
-      {
-       "select": "#role",
-       "value": "agent"
-      }
-     ],
-     "expect": [
-      ".tabs[data-visible-tabs='conversation ai reports']",
-      "[data-testid='role-note']:has-text('Admin')"
+      ".rail button[aria-label='Admin'][aria-current='page']"
      ]
     }
    ]
@@ -515,28 +570,38 @@
    "how_helps": "WhatsApp is a channel with unread and waiting counts, a 24h-window timer, templates when it closes, translations under every message and draft, and drafts that only claim actions that were done.",
    "tasks": [
     {
-     "name": "WhatsApp view with unread/waiting counts; open a Spanish conversation and see that customer",
+     "name": "As WhatsApp ops (Rosa): WhatsApp view with counts from the same set",
      "steps": [
       {
-       "select": "#view",
-       "value": "whatsapp"
-      },
+       "select": "#role",
+       "value": "ops"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='conversation reports']",
+      "[data-testid='role-note']:has-text('Rosa M.')",
+      "[data-testid='channel-stats']:has-text('2 open conversations')",
+      "[data-testid='channel-stats']:has-text('1 unread')",
+      "[data-testid='channel-stats']:has-text('1 of 2 waiting >1h')"
+     ]
+    },
+    {
+     "name": "Open Lucía: the 24h window runs from her last message",
+     "steps": [
       {
        "click": "[data-select='c4']"
       }
      ],
      "expect": [
-      "[data-testid='channel-stats']:has-text('1 unread')",
-      "[data-testid='channel-stats']:has-text('waiting >1h')",
-      "[data-testid='channel']:has-text('WhatsApp')",
-      "[data-testid='wa-window']:has-text('left')",
+      "[data-testid='wa-window']:has-text('22h')",
+      "[data-testid='wa-window']:has-text(\"Lucía Fernández's last message\")",
       "[data-testid='ai-draft']:has-text('Hola')",
       "[data-testid='cust-lang']:has-text('Spanish')",
       "[data-testid='cust-phone']:has-text('+34')"
      ]
     },
     {
-     "name": "Show translations of the message and the draft",
+     "name": "Translations of message and draft",
      "steps": [
       {
        "click": "[data-testid='tr-toggle-0']"
@@ -551,7 +616,7 @@
      ]
     },
     {
-     "name": "Open the claim and send; the claim ID appears on the order card",
+     "name": "Open the claim and send: the window does not restart on our reply",
      "steps": [
       {
        "click": "[data-testid='send-action']"
@@ -559,11 +624,12 @@
      ],
      "expect": [
       "[data-testid='order-card']:has-text('UPS-CLM-88213 open')",
-      ".thread .msg.event:has-text('UPS claim UPS-CLM-88213 opened')"
+      "[data-testid='wa-window']:has-text('22h')",
+      ".thread .msg:has-text('Delivered')"
      ]
     },
     {
-     "name": "A closed 24h window switches the composer to templates",
+     "name": "A closed window shows a filled-in template preview",
      "steps": [
       {
        "click": "[data-select='c13']"
@@ -571,8 +637,8 @@
      ],
      "expect": [
       "[data-testid='wa-window']:has-text('closed')",
-      "[data-testid='template-select']",
-      "[data-testid='cust-phone']:has-text('+1 646')"
+      "[data-testid='template-preview']:has-text('Hi Alex')",
+      "[data-testid='template-preview']:has-text('#4020')"
      ]
     }
    ]
@@ -587,31 +653,38 @@
    "how_helps": "AI agent tab lists gaps for the shared period with sample conversations and handoff reasons in the right bar, an in-place editor that publishes to help centre and AI, and deflection metrics.",
    "tasks": [
     {
-     "name": "See gaps and the selected gap's details",
+     "name": "As Knowledge (Kai): open gaps and the selected gap",
      "steps": [
       {
-       "click": "[data-tab='ai']"
+       "select": "#role",
+       "value": "knowledge"
       }
      ],
      "expect": [
-      "[data-testid='gaps']:has-text('5 of 18 gaps')",
+      ".tabs[data-visible-tabs='ai']",
+      "[data-testid='gaps']:has-text('5 of 18 open gaps')",
       "[data-testid='gap-detail']:has-text('Can I change my subscription grind')"
      ]
     },
     {
-     "name": "Pick a gap: the right bar shows its sample conversations",
+     "name": "Samples follow the period",
      "steps": [
+      {
+       "select": "#period-ai",
+       "value": "d7"
+      },
       {
        "click": "[data-testid='gap-show-g2']"
       }
      ],
      "expect": [
-      "[data-testid='gap-detail']:has-text('Puerto Rico')",
-      "[data-testid='gap-detail']:has-text('Tom Rivera')"
+      "[data-testid='gap-detail']:has-text('Tom Rivera')",
+      "[data-testid='gap-detail']:not(:has-text('Luis R.'))",
+      ".side .item:has-text('17 open gaps')"
      ]
     },
     {
-     "name": "Draft and publish an article in place",
+     "name": "Publish: the gap moves to Fixed and the open count drops",
      "steps": [
       {
        "click": "[data-testid='draft-g2']"
@@ -621,35 +694,32 @@
       }
      ],
      "expect": [
-      "[data-testid='gap-status-g2']:has-text('Published')"
+      "[data-testid='fixed-gaps']:has-text('Do you ship to Puerto Rico')",
+      "[data-testid='gaps']:has-text('of 16 open gaps')",
+      ".side .item:has-text('16 open gaps')"
      ]
     },
     {
-     "name": "Deflection metrics and stale or untranslated articles",
+     "name": "Reply to the open conversation that asked it",
+     "steps": [
+      {
+       "click": "[data-testid='reply-article-g2']"
+      }
+     ],
+     "expect": [
+      "[data-testid='article-sent']"
+     ]
+    },
+    {
+     "name": "Self-serve rate is defined by sessions, not views",
      "steps": [
       {
        "click": "[data-select='sub:ai:knowledge']"
       }
      ],
      "expect": [
-      "[data-testid='deflection']:has-text('self-serve')",
+      "[data-testid='deflection']:has-text('did not open a conversation within 24h')",
       "[data-testid='stale']:has-text('Spanish 38')"
-     ]
-    },
-    {
-     "name": "Switch to the last 7 days: the gap list follows",
-     "steps": [
-      {
-       "click": "[data-select='sub:ai:gaps']"
-      },
-      {
-       "select": "#period-ai",
-       "value": "d7"
-      }
-     ],
-     "expect": [
-      "[data-testid='gaps']:has-text('5 of 17 gaps')",
-      "[data-testid='gaps']:has-text('Nov 13–19')"
      ]
     }
    ]
@@ -664,27 +734,34 @@
    "how_helps": "A Rules page that shows each migrated Zendesk trigger/SLA policy next to its FlatDesk equivalent, plus AI guardrails and handoff rules they can edit and test.",
    "tasks": [
     {
-     "name": "As support ops admin, open Admin › Rules and see trigger mapping status",
+     "name": "As Support ops (Nina): migrated objects with changed meanings flagged",
      "steps": [
       {
        "select": "#role",
        "value": "admin"
-      },
-      {
-       "click": "[data-tab='admin']"
-      },
-      {
-       "click": "[data-select='sub:admin:rules']"
       }
      ],
      "expect": [
       "[data-testid='role-note']:has-text('Nina V.')",
+      "[data-testid='mig-objects']:has-text('Automations')",
+      "[data-testid='trig-t4']:has-text('Mapped with changes')",
       "[data-testid='triggers']:has-text('Needs review')",
-      "[data-testid='triggers']:has-text('VIP tag')"
+      "[data-testid='sla-policies']:has-text('business hours')"
      ]
     },
     {
-     "name": "Change the $100 handoff guardrail and test it on a sample ticket",
+     "name": "Test a changed trigger on a sample",
+     "steps": [
+      {
+       "click": "[data-testid='trig-test-t4']"
+      }
+     ],
+     "expect": [
+      "[data-testid='trig-result-t4']:has-text('never Solved')"
+     ]
+    },
+    {
+     "name": "Change the guardrail to $150 and save",
      "steps": [
       {
        "select": "#guard-limit",
@@ -692,33 +769,41 @@
       },
       {
        "click": "[data-testid='guard-test']"
-      }
-     ],
-     "expect": [
-      "[data-testid='guard-result']:has-text('AI can handle')"
-     ]
-    },
-    {
-     "name": "Save it: the audit log and the AI tab show the new rule",
-     "steps": [
+      },
       {
        "click": "[data-testid='guard-save']"
       }
      ],
      "expect": [
       "[data-testid='audit']:has-text('$100 → $150')",
-      "[data-testid='guard-edit']:has-text('over $150 go to a human')"
+      "[data-testid='guard-edit']:has-text(\"Refunds or replacements over $150 need a lead's approval\")"
      ]
     },
     {
-     "name": "The AI agent tab uses the same rule wording",
+     "name": "Open tickets are re-checked under the new limit",
+     "steps": [
+      {
+       "click": "[data-tab='conversation']"
+      },
+      {
+       "click": "[data-select='c2']"
+      }
+     ],
+     "expect": [
+      "[data-testid='policy-check']:has-text('Under the current $150 limit')",
+      "[data-testid='send-action']"
+     ]
+    },
+    {
+     "name": "The AI tab shows the same rule",
      "steps": [
       {
        "click": "[data-tab='ai']"
       }
      ],
      "expect": [
-      "[data-testid='guardrails']:has-text('Refunds or replacements over $150 go to a human')"
+      "[data-testid='guardrails']:has-text('over $150')",
+      "[data-testid='guardrails']:has-text('was $100')"
      ]
     }
    ]
@@ -733,57 +818,93 @@
    "how_helps": "An AI review queue with random samples, a scorecard and 'fix the answer' that feeds the AI's knowledge.",
    "tasks": [
     {
-     "name": "Open the AI review queue with its scorecard",
+     "name": "As QA (Quinn): the review queue with a per-criterion scorecard and pass rate",
      "steps": [
       {
-       "click": "[data-tab='ai']"
-      },
-      {
-       "click": "[data-select='sub:ai:review']"
+       "select": "#role",
+       "value": "qa"
       }
      ],
      "expect": [
+      ".tabs[data-visible-tabs='ai reports']",
       "[data-testid='qa-queue']:has-text('Scored 0 of 5')",
-      "[data-testid='qa-rubric']:has-text('Promised only what was done')"
+      "[data-testid='qa-rubric']:has-text('Promised only what was done')",
+      "[data-testid='qa-rate']"
      ]
     },
     {
-     "name": "Score five AI replies, flagging the wrong promise",
+     "name": "Score five AI replies; fail Mei's on one criterion",
      "steps": [
       {
-       "click": "[data-testid='qa-good-c1']"
+       "click": "[data-testid='qa-score-c1']"
       },
       {
-       "click": "[data-testid='qa-good-c10']"
+       "click": "[data-testid='qa-score-c10']"
       },
       {
-       "click": "[data-testid='qa-good-c15']"
+       "click": "[data-testid='qa-score-c15']"
       },
       {
-       "click": "[data-testid='qa-good-c16']"
+       "click": "[data-testid='qa-score-c16']"
       },
       {
-       "click": "[data-testid='qa-fixbtn-c8']"
+       "click": "[data-testid='qa-crit-c8-promised']"
+      },
+      {
+       "click": "[data-testid='qa-score-c8']"
       }
      ],
      "expect": [
       "[data-testid='qa-queue']:has-text('Scored 5 of 5')",
+      "[data-testid='qa-row-c8']:has-text('Needs fix · 3/4')",
       "[data-testid='qa-fix-c8']"
      ]
     },
     {
-     "name": "Save the correction; it feeds the AI's knowledge",
+     "name": "Save the correction and send Mei the corrected reply",
      "steps": [
       {
        "click": "[data-testid='qa-save-c8']"
       },
       {
-       "click": "[data-select='sub:ai:knowledge']"
+       "click": "[data-testid='qa-reopen-c8']"
       }
      ],
      "expect": [
-      ".side .item:has-text('5 of 5 scored')",
-      "#panel-ai .row:has-text('Reviewed QA corrections'):has-text('1')"
+      "[data-testid='qa-row-c8']:has-text('Corrected reply sent to Mei Chen')",
+      "[data-testid='qa-fixed-c8']"
+     ]
+    },
+    {
+     "name": "Sample human replies too; feedback feeds the lead's coaching",
+     "steps": [
+      {
+       "click": "[data-testid='qa-mode-human']"
+      },
+      {
+       "click": "[data-testid='qa-crit-c12-brand']"
+      },
+      {
+       "click": "[data-testid='qa-score-c12']"
+      }
+     ],
+     "expect": [
+      "[data-testid='qa-row-c12']:has-text('Needs fix')",
+      "[data-testid='qa-row-c12']:has-text(\"Sam T.'s coaching notes\")"
+     ]
+    },
+    {
+     "name": "Agent QA in Reports includes the new score",
+     "steps": [
+      {
+       "click": "[data-tab='reports']"
+      },
+      {
+       "click": "[data-select='sub:reports:sla']"
+      }
+     ],
+     "expect": [
+      "[data-testid='wl-sam'] [data-testid='wl-qa']:has-text('(19)')"
      ]
     }
    ]
@@ -798,41 +919,55 @@
    "how_helps": "Admin shows DPA, subprocessors, AI provider and training policy; the customer card has a confirm step to delete or export that customer, covering conversations and AI logs, recorded in the audit log.",
    "tasks": [
     {
-     "name": "Find the DPA, subprocessors and AI processing terms",
+     "name": "As Privacy (Pat): the request register, retention and transfer basis",
      "steps": [
       {
-       "click": "[data-tab='admin']"
-      },
-      {
-       "click": "[data-select='sub:admin:trust']"
+       "select": "#role",
+       "value": "privacy"
       }
      ],
      "expect": [
-      "[data-testid='dpa']:has-text('Data Processing Agreement')",
-      "[data-testid='subprocessors']:has-text('Bedrock')",
-      "[data-testid='ai-processing']:has-text('not used to train')"
+      ".tabs[data-visible-tabs='conversation admin']",
+      "[data-testid='dsr-log']:has-text('DSR-011')",
+      "[data-testid='dsr-log']:has-text('45 days')",
+      "[data-testid='retention']:has-text('24 months')",
+      "[data-testid='transfer']:has-text('Data Privacy Framework')"
      ]
     },
     {
-     "name": "Downloading the DPA is recorded in the audit log",
+     "name": "Set automatic retention",
      "steps": [
+      {
+       "select": "#retention",
+       "value": "12"
+      }
+     ],
+     "expect": [
+      "[data-testid='retention-now']:has-text('12 months')",
+      "[data-testid='audit']:has-text('Retention changed')"
+     ]
+    },
+    {
+     "name": "One document name everywhere, no mock wording",
+     "steps": [
+      {
+       "click": "[data-select='sub:admin:trust']"
+      },
       {
        "click": "[data-testid='dpa'] [data-act='doc']"
       }
      ],
      "expect": [
-      "[data-testid='audit']:has-text('Downloaded Signed DPA')"
+      "[data-testid='audit']:has-text('Downloaded Data Processing Agreement (signed)')",
+      ".toast.show:has-text('Downloading Data Processing Agreement (signed)')",
+      ".toast.show:not(:has-text('mock'))"
      ]
     },
     {
-     "name": "Process a deletion request from THAT customer's card",
+     "name": "Deletion needs an identity check and warns about open work",
      "steps": [
       {
        "click": "[data-tab='conversation']"
-      },
-      {
-       "select": "#view",
-       "value": "all"
       },
       {
        "click": "[data-select='c2']"
@@ -844,6 +979,26 @@
        "click": "[data-testid='privacy-open']"
       },
       {
+       "click": ".right.open .drawer-close, [data-testid='clock']"
+      }
+     ],
+     "expect": [
+      "[data-testid='privacy-warning']:has-text('1 open conversation')",
+      "[data-testid='privacy-confirm'][disabled]",
+      "[data-testid='read-only']"
+     ]
+    },
+    {
+     "name": "Verify and delete: the customer is redacted everywhere",
+     "steps": [
+      {
+       "click": ".toggle-right:visible, [data-testid='clock']"
+      },
+      {
+       "select": "#privacy-verify",
+       "value": "email"
+      },
+      {
        "click": "[data-testid='privacy-confirm']"
       },
       {
@@ -851,19 +1006,25 @@
       }
      ],
      "expect": [
-      "[data-testid='privacy-result']:has-text('Deletion scheduled for Daniel Kim')",
-      "[data-testid='privacy-result']:has-text('AI logs')"
+      "[data-testid='privacy-result']:has-text('Deleted from FlatDesk Nov 19')",
+      "[data-testid='cust-deleted']:has-text('purged from backups by Dec 24')",
+      "#thread-title:has-text('Redacted conversation')",
+      "#convs:not(:has-text('Daniel Kim'))"
      ]
     },
     {
-     "name": "The request shows in the Admin audit log",
+     "name": "The register shows the completed, verified request",
      "steps": [
       {
        "click": "[data-tab='admin']"
+      },
+      {
+       "click": "[data-select='sub:admin:privacy']"
       }
      ],
      "expect": [
-      "[data-testid='audit']:has-text('Deletion request processed for Daniel Kim')"
+      "[data-testid='dsr-DSR-012']:has-text('Completed Nov 19')",
+      "[data-testid='dsr-DSR-012']:has-text('Verified: request came from the email on file')"
      ]
     }
    ]
@@ -878,7 +1039,7 @@
    "how_helps": "'Route to sales' sends the lead to a Sales inbox with SLA and CRM sync; the AI tags B2B intent and never quotes wholesale prices.",
    "tasks": [
     {
-     "name": "As sales, only the Sales inbox is visible with Ben's routed inquiry",
+     "name": "As Sales (Carla): only the Sales inbox, and only her notifications",
      "steps": [
       {
        "select": "#role",
@@ -887,13 +1048,13 @@
      ],
      "expect": [
       ".tabs[data-visible-tabs='conversation']",
-      "[data-testid='view-count']:has-text('1')",
+      ".side:has-text('1 conversation ·')",
       ".side .item[data-select='c7']:has-text('Ben Carter')",
-      "#thread-title:has-text('Wholesale')"
+      "#alert-badge:has-text('1')"
      ]
     },
     {
-     "name": "See why it was routed and the prepared price list",
+     "name": "Routed lead with sales-only macros",
      "steps": [
       {
        "click": "[data-select='c7']"
@@ -902,11 +1063,13 @@
      "expect": [
       "[data-testid='routed']:has-text('B2B intent')",
       "[data-testid='attachments']:has-text('price list')",
+      "[data-testid='macros']:has-text('Book a call')",
+      "[data-testid='macros']:not(:has-text('Damaged'))",
       "[data-testid='cust-stats']:has-text('Prospect')"
      ]
     },
     {
-     "name": "Reply with the price list; the lead syncs to the CRM",
+     "name": "Reply with the price list: the CRM deal is named with value and stage",
      "steps": [
       {
        "click": "[data-testid='send-action']"
@@ -914,7 +1077,21 @@
      ],
      "expect": [
       ".thread .msg:has-text('price list is attached')",
-      ".thread .msg:has-text('Lead synced to CRM')"
+      ".thread .msg:has-text('HubSpot deal #48213')",
+      ".thread .msg:has-text('est. $540/mo')",
+      ".thread .msg:has-text('stage: New lead')"
+     ]
+    },
+    {
+     "name": "Nothing else needs her now",
+     "steps": [
+      {
+       "click": ".rail [data-view='alerts']"
+      }
+     ],
+     "expect": [
+      "#pop-alerts:has-text('Nothing needs you right now')",
+      "#pop-alerts:not(:has-text('Jean Dupont'))"
      ]
     }
    ]
@@ -929,23 +1106,44 @@
    "how_helps": "Reports tag contact reasons with trends and track how many cancel requests a pause offer saved, with revenue kept.",
    "tasks": [
     {
-     "name": "Contact reasons and cancel saves for the period",
+     "name": "As Marketing (Mara): reasons with deltas and trends, saves at real prices, tone by channel",
      "steps": [
       {
-       "click": "[data-tab='reports']"
-      },
-      {
-       "click": "[data-select='sub:reports:reasons']"
+       "select": "#role",
+       "value": "marketing"
       }
      ],
      "expect": [
-      "[data-testid='reasons']:has-text('Cancel subscription')",
-      "[data-testid='cancel-saves']:has-text('chose pause instead of cancel')",
-      "[data-testid='cancel-trend']"
+      ".tabs[data-visible-tabs='reports']",
+      "[data-testid='reasons']:has-text('vs previous')",
+      "[data-testid='reason-cancel']",
+      "[data-testid='cancel-saves']:has-text(\"each saved customer's own plan price\")",
+      "[data-testid='sentiment']:has-text('Instagram')"
      ]
     },
     {
-     "name": "Switch to the last 7 days; both cards follow",
+     "name": "Drill into cancel requests and export for win-back",
+     "steps": [
+      {
+       "click": "[data-testid='reason-cancel']"
+      },
+      {
+       "click": ".toggle-right:visible, [data-testid='clock']"
+      },
+      {
+       "click": "[data-testid='export-reason']"
+      },
+      {
+       "click": ".right.open .drawer-close, [data-testid='clock']"
+      }
+     ],
+     "expect": [
+      "[data-testid='reason-drill']:has-text('Grace Park')",
+      ".toast.show:has-text('CSV ready')"
+     ]
+    },
+    {
+     "name": "Switch to the last 7 days: compared with the week before",
      "steps": [
       {
        "select": "#period-reports",
@@ -953,8 +1151,8 @@
       }
      ],
      "expect": [
-      "[data-testid='cancel-saves']:has-text('Nov 13–19')",
-      "[data-testid='reasons']:has-text('Nov 13–19')"
+      "[data-testid='cancel-saves']:has-text('Nov 6–12')",
+      "[data-testid='reasons']:has-text('vs Nov 6–12')"
      ]
     }
    ]
@@ -969,28 +1167,43 @@
    "how_helps": "Auto-tagged fulfilment issues with order/SKU/carrier counts for the period, a weekly digest, and links into the conversation.",
    "tasks": [
     {
-     "name": "Fulfilment issues for the last 7 days by SKU and carrier",
+     "name": "As Fulfilment (Felix): rates per 1,000 shipped, split by fault owner",
      "steps": [
       {
-       "click": "[data-tab='reports']"
-      },
-      {
-       "click": "[data-select='sub:reports:fulfillment']"
-      },
-      {
-       "select": "#period-reports",
-       "value": "d7"
+       "select": "#role",
+       "value": "fulfillment"
       }
      ],
      "expect": [
-      "#panel-reports:has-text('8 fulfilment issues reported · Nov 13–19')",
-      "[data-testid='by-sku']:has-text('HOUSE-1KG')",
-      "[data-testid='by-carrier']:has-text('USPS')",
-      "[data-testid='by-type']:has-text('Damaged in transit')"
+      ".tabs[data-visible-tabs='conversation reports']",
+      "[data-testid='by-owner']:has-text('Warehouse')",
+      "[data-testid='by-sku']:has-text('Per 1,000')",
+      "[data-testid='digest']"
      ]
     },
     {
-     "name": "Open one issue's conversation and see its order",
+     "name": "Last 7 days: send mis-picks to the 3PL and file carrier claims",
+     "steps": [
+      {
+       "select": "#period-reports",
+       "value": "d7"
+      },
+      {
+       "click": "[data-testid='send-3pl']"
+      },
+      {
+       "click": "[data-testid='file-claims']"
+      }
+     ],
+     "expect": [
+      "#panel-reports:has-text('8 fulfilment issues reported')",
+      "[data-testid='by-sku']:has-text('HOUSE-1KG')",
+      "[data-testid='sent-3pl']",
+      "[data-testid='claims-filed']"
+     ]
+    },
+    {
+     "name": "Open an issue's conversation (read-only) and come back",
      "steps": [
       {
        "click": "[data-testid='fi-open-c5']"
@@ -998,8 +1211,19 @@
      ],
      "expect": [
       "#thread-title:has-text('Damaged bag')",
-      "[data-testid='cust-name']:has-text('Omar Haddad')",
-      "[data-testid='order-card']:has-text('HOUSE-1KG')"
+      "[data-testid='read-only']",
+      "[data-testid='back-chip-main']:has-text('Fulfilment issues')"
+     ]
+    },
+    {
+     "name": "Back to the report",
+     "steps": [
+      {
+       "click": "[data-testid='back-chip-main']"
+      }
+     ],
+     "expect": [
+      "[data-testid='by-owner']"
      ]
     }
    ]
@@ -1007,63 +1231,314 @@
   {
    "id": "bpo_manager",
    "department": "Outsourced support",
-   "role": "BPO / outsourced team manager",
+   "role": "Vendor manager at an outsourced support company (ShiftCX)",
    "cares_about": "Meeting contracted SLAs with a shared seat pool and clear billing.",
    "time_spent": "Scheduling shifts across clients, monitoring queues.",
    "struggles": "Seat-based pricing and per-client access separation.",
    "how_helps": "Flat plan with agent groups and restricted access per inbox and hours; seat use is visible before inviting.",
    "tasks": [
     {
-     "name": "See current seat use and groups",
+     "name": "As Owner, add an outsourced agent with a schedule; the seat-tier warning shows first",
      "steps": [
+      {
+       "select": "#role",
+       "value": "owner"
+      },
       {
        "click": "[data-tab='admin']"
       },
       {
        "click": "[data-select='sub:admin:users']"
-      }
-     ],
-     "expect": [
-      "[data-testid='seats-admin']:has-text('7/10')",
-      "[data-testid='groups']:has-text('Sales inbox only')"
-     ]
-    },
-    {
-     "name": "Prepare an Overflow group: email only, evenings, seat impact shown",
-     "steps": [
+      },
       {
        "click": "[data-testid='bpo-open']"
       }
      ],
      "expect": [
-      "[data-testid='bpo-form']:has-text('Overflow')",
-      "[data-testid='bpo-form']:has-text('Email only')",
-      "[data-testid='bpo-form']:has-text('7 → 10 of 10')"
+      "[data-testid='seats-admin']:has-text('9/10')",
+      "[data-testid='bpo-seats']:has-text('9 → 10')",
+      "[data-testid='bpo-seats']:has-text('Flat 25')",
+      "[data-testid='bpo-form']:has-text('Thanksgiving')"
      ]
     },
     {
-     "name": "Create it: groups, seats and audit log update",
+     "name": "Create it with a time zone",
      "steps": [
+      {
+       "select": "#bpo-tz",
+       "value": "IST"
+      },
       {
        "click": "[data-testid='bpo-create']"
       }
      ],
      "expect": [
-      "[data-testid='groups']:has-text('Overflow')",
-      "[data-testid='groups']:has-text('18:00–08:00 ET')",
+      "[data-testid='groups']:has-text('Ravi P.')",
+      "[data-testid='groups']:has-text('IST')",
       "[data-testid='seats-admin']:has-text('10/10')",
-      "[data-testid='audit']:has-text('Created group Overflow')"
+      "[data-testid='audit']:has-text('Added Ravi P.')"
      ]
     },
     {
-     "name": "The peak checklist item is now done",
+     "name": "As Vendor (ShiftCX), see only the Overflow SLA report",
      "steps": [
       {
-       "click": "[data-tab='migration']"
+       "select": "#role",
+       "value": "vendor"
       }
      ],
      "expect": [
-      "[data-testid='peak']:has-text('Done Overflow group for evenings')"
+      ".tabs[data-visible-tabs='conversation reports']",
+      "[data-testid='overflow-report']:has-text('90%')",
+      "[data-testid='overflow-report']:has-text('Ravi P.')",
+      "#panel-reports:not(:has([data-testid='workload']))"
+     ]
+    },
+    {
+     "name": "Share the vendor SLA report",
+     "steps": [
+      {
+       "click": "[data-testid='share-vendor']"
+      }
+     ],
+     "expect": [
+      ".toast.show:has-text('Vendor SLA report link copied')"
+     ]
+    },
+    {
+     "name": "The vendor's inbox is only the Overflow queue",
+     "steps": [
+      {
+       "click": "[data-tab='conversation']"
+      }
+     ],
+     "expect": [
+      "[data-testid='overflow-note']:has-text('18:00')",
+      "[data-testid='view-count']:has-text('0')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "procurement",
+   "department": "Procurement / Vendor management",
+   "role": "Procurement manager",
+   "cares_about": "Contract terms that avoid another renewal trap: price caps, exit rights, uptime SLA with credits, vendor risk.",
+   "time_spent": "Reviewing order forms, negotiating renewals, tracking contract dates and vendor risk files.",
+   "struggles": "Zendesk auto-renewed annually with a seat increase; uptime and support commitments are buried in long MSAs.",
+   "how_helps": "A Contract page with the signed order form, renewal date and cap, notice deadline reminders, uptime SLA with credit history and status page, and exit/data-return terms.",
+   "tasks": [
+    {
+     "name": "As Procurement (Paul): renewal cap, uptime SLA and exit terms",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "procurement"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='billing admin']",
+      "[data-testid='renewal-cap']:has-text('$629')",
+      "[data-testid='uptime']:has-text('99.9%')",
+      "[data-testid='uptime']:has-text('25%')",
+      "[data-testid='contract']:has-text('deletion certificate')"
+     ]
+    },
+    {
+     "name": "Set a notice reminder",
+     "steps": [
+      {
+       "click": "[data-testid='set-reminder']"
+      }
+     ],
+     "expect": [
+      "[data-testid='reminder-set']:has-text('Oct 1, 2027')"
+     ]
+    },
+    {
+     "name": "Vendor risk documents",
+     "steps": [
+      {
+       "click": "[data-tab='admin']"
+      }
+     ],
+     "expect": [
+      "[data-testid='dpa']:has-text('Data Processing Agreement')",
+      "[data-testid='subprocessors']:has-text('Bedrock')"
+     ]
+    },
+    {
+     "name": "The reminder shows in procurement's notifications",
+     "steps": [
+      {
+       "click": ".rail [data-view='alerts']"
+      }
+     ],
+     "expect": [
+      "#pop-alerts:has-text('Reminder set: notice deadline Oct 1, 2027')",
+      "#pop-alerts:not(:has-text('SLA'))"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "integrations_engineer",
+   "department": "Engineering / IT applications",
+   "role": "Developer responsible for helpdesk integrations",
+   "cares_about": "Reliable integrations (Shopify, Slack, CRM, 3PL), webhooks and API limits; nothing breaks silently after the migration.",
+   "time_spent": "Maintaining webhooks, API scripts and app integrations; debugging failed syncs.",
+   "struggles": "Zendesk apps did not carry over (the Slack angry-customer alert needs review); no visibility into failed webhook deliveries.",
+   "how_helps": "An Integrations page with each connected app's health, webhook builder with test payloads and delivery log, API keys with scopes and rate limits.",
+   "tasks": [
+    {
+     "name": "As Integrations (Ivan): app health, delivery log and API limits",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "integrations"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='admin']",
+      "[data-testid='integrations']:has-text('Not set up')",
+      "[data-testid='deliveries']:has-text('503')",
+      "[data-testid='api-keys']:has-text('600 req/min')"
+     ]
+    },
+    {
+     "name": "Replace the Slack trigger with a webhook: test, then save",
+     "steps": [
+      {
+       "click": "[data-testid='hook-test']"
+      },
+      {
+       "click": "[data-testid='hook-save']"
+      }
+     ],
+     "expect": [
+      "[data-testid='deliveries']:has-text('slack-angry-customer (test)')",
+      "[data-testid='hook-saved']"
+     ]
+    },
+    {
+     "name": "The Rules page shows the trigger mapped and a passing test",
+     "steps": [
+      {
+       "click": "[data-select='sub:admin:rules']"
+      },
+      {
+       "click": "[data-testid='trig-test-t8']"
+      }
+     ],
+     "expect": [
+      "[data-testid='trig-t8']:has-text('Webhook')",
+      "[data-testid='trig-t8']:has-text('Mapped with changes')",
+      "[data-testid='trig-result-t8']:has-text('Slack #support-alerts')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "product_manager",
+   "department": "Product / Merchandising",
+   "role": "Product or merchandising manager",
+   "cares_about": "Product defects and confusing product information that drive contacts and returns; roadmap input from customers.",
+   "time_spent": "Reviewing returns, reviews and feedback; updating product pages and packaging.",
+   "struggles": "Product questions (12% of contacts) and complaints like 'decaf Swiss Water?' are buried in tickets and never reach product owners.",
+   "how_helps": "A product-feedback report by SKU (questions, defects, return reasons) with example quotes, trends and a link to fix the product page or packaging.",
+   "tasks": [
+    {
+     "name": "As Product (Pia): questions and defects by SKU",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "product"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='ai reports']",
+      "[data-testid='product-feedback']:has-text('DECAF-500G')",
+      "[data-testid='product-feedback']:has-text('Page conflict')"
+     ]
+    },
+    {
+     "name": "Flag the decaf page conflict to its owner",
+     "steps": [
+      {
+       "click": "[data-testid='prod-DECAF-500G']"
+      },
+      {
+       "click": ".toggle-right:visible, [data-testid='clock']"
+      },
+      {
+       "click": "[data-testid='flag-DECAF-500G']"
+      },
+      {
+       "click": ".right.open .drawer-close, [data-testid='clock']"
+      }
+     ],
+     "expect": [
+      "[data-testid='product-detail']:has-text('CO₂')",
+      "[data-testid='flag-done']",
+      "[data-testid='flagged-DECAF-500G']"
+     ]
+    },
+    {
+     "name": "Jump to the matching AI gap",
+     "steps": [
+      {
+       "click": ".toggle-right:visible, [data-testid='clock']"
+      },
+      {
+       "click": "[data-act='goGap']"
+      }
+     ],
+     "expect": [
+      "[data-testid='gap-detail']:has-text('Swiss Water')"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "workforce_planner",
+   "department": "Support operations (workforce management)",
+   "role": "Workforce / scheduling planner",
+   "cares_about": "Right staffing per hour across channels and time zones, especially for Black Friday and Cyber Monday.",
+   "time_spent": "Building shift schedules, forecasting by hour, managing time-off and BPO overflow.",
+   "struggles": "The forecast is weekly only; no intraday arrivals by channel; shift coverage and the AI's share are not modelled together.",
+   "how_helps": "An hourly forecast by channel after AI deflection, coverage against scheduled shifts (including Overflow), with gaps highlighted.",
+   "tasks": [
+    {
+     "name": "As Workforce (Wes): Black Friday hour by hour after AI, with gaps",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "wfm"
+      }
+     ],
+     "expect": [
+      ".tabs[data-visible-tabs='reports']",
+      "[data-testid='staffing']:has-text('Black Friday')",
+      "[data-testid='staff-summary']:has-text('uncovered hour')",
+      "[data-testid='staffing']:has-text('(1 Overflow)')",
+      "[data-testid='right-reports']:has-text('Occupancy')"
+     ]
+    },
+    {
+     "name": "Filter to chat and switch to Cyber Monday",
+     "steps": [
+      {
+       "select": "#staff-ch",
+       "value": "Chat"
+      },
+      {
+       "select": "#staff-day",
+       "value": "mon"
+      }
+     ],
+     "expect": [
+      "[data-testid='staffing']:has-text('Chat: arrivals')",
+      "[data-testid='staff-summary']"
      ]
     }
    ]

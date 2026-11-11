@@ -1,24 +1,28 @@
 # Persona walkthrough: Briefcase: private AI for law firms, working on the firm's own documents (built on AnythingLLM)
 
-**Automated score: 10/10** (persona tasks on desktop and phone + global checks)
+**Automated score: 8.1/10** (persona tasks on desktop and phone + global checks)
 
 | Persona | Department | Tasks passed | Score |
 |---|---|---|---|
 | partner | Firm leadership | 8/8 | 10/10 |
 | associate | Litigation | 10/10 | 10/10 |
 | paralegal | Litigation support | 10/10 | 10/10 |
-| intake | Front office | 8/8 | 10/10 |
+| intake | Front office | 6/6 | 10/10 |
 | billing | Billing / finance | 8/8 | 10/10 |
 | it_ops | IT / legal operations | 8/8 | 10/10 |
-| solo_immigration | Solo practice (immigration) | 10/10 | 10/10 |
-| in_house | In-house legal | 10/10 | 10/10 |
-| firm_administrator | Operations | 8/8 | 10/10 |
-| ethics_gc | Risk management | 8/8 | 10/10 |
-| docketing | Docketing / calendaring | 8/8 | 10/10 |
-| km_librarian | Knowledge management | 6/6 | 10/10 |
-| legal_secretary | Attorney support | 8/8 | 10/10 |
-| estate_planning | Transactional practice | 8/8 | 10/10 |
+| solo_immigration | Immigration practice | 10/10 | 10/10 |
+| in_house | In-house legal | 2/10 | 2/10 |
+| firm_administrator | Operations | 6/6 | 10/10 |
+| ethics_gc | Risk management | 4/8 | 5/10 |
+| docketing | Docketing / calendaring | 0/8 | 0/10 |
+| km_librarian | Knowledge management | 0/6 | 0/10 |
+| legal_secretary | Attorney support | 0/6 | 0/10 |
+| estate_planning | Transactional practice | 6/6 | 10/10 |
 | lit_support | Litigation support / e-discovery | 8/8 | 10/10 |
+| conflicts_analyst | New business intake / conflicts | 6/6 | 10/10 |
+| records_manager | Records and information governance | 6/6 | 10/10 |
+| solo_general | Solo / small general practice | 6/6 | 10/10 |
+| professional_development | Professional development / training | 6/6 | 10/10 |
 
 ## Global checks
 
@@ -52,4 +56,35 @@
 
 ## Failures
 
-None.
+- desktop · in_house · Separate customer workspace with in-house request fields: not visible: [data-testid='request-header']:has-text('Business owner')
+- desktop · in_house · Accept a row updates the redline button: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · in_house · Capture a decision in the playbook: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · in_house · NDA request with its own SLA: not visible: [data-testid='review-table']:has-text('Residuals')
+- desktop · ethics_gc · Register filtered to client-restricted matters and exported: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- desktop · ethics_gc · Carrier questionnaire answers: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · docketing · Queue with origin, derived deadline and holiday calendar: not visible: [data-testid='verify-queue']:has-text('Final pretrial conference')
+- desktop · docketing · Verify, then post to the calendar: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · docketing · Correct a date with a reason: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · docketing · Reject an extraction: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · km_librarian · Lands on Knowledge with currency fields: not visible: [data-testid='tpl-t3']:has-text('Superseded by v4 (t1) on Thu, Nov 5, 2026')
+- desktop · km_librarian · Retire with who and when, and undo: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · km_librarian · See which drafts used it: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- desktop · legal_secretary · Client update letter for Reyes with sequential cites: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- desktop · legal_secretary · Choose a partner as reviewer, then export on letterhead: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- desktop · legal_secretary · Cannot send to the client before approval: not visible: button:has-text('Send and record in matter'):disabled
+- phone · in_house · Separate customer workspace with in-house request fields: not visible: [data-testid='request-header']:has-text('Business owner')
+- phone · in_house · Accept a row updates the redline button: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · in_house · Capture a decision in the playbook: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · in_house · NDA request with its own SLA: not visible: [data-testid='review-table']:has-text('Residuals')
+- phone · ethics_gc · Register filtered to client-restricted matters and exported: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- phone · ethics_gc · Carrier questionnaire answers: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · docketing · Queue with origin, derived deadline and holiday calendar: not visible: [data-testid='verify-queue']:has-text('Final pretrial conference')
+- phone · docketing · Verify, then post to the calendar: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · docketing · Correct a date with a reason: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · docketing · Reject an extraction: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · km_librarian · Lands on Knowledge with currency fields: not visible: [data-testid='tpl-t3']:has-text('Superseded by v4 (t1) on Thu, Nov 5, 2026')
+- phone · km_librarian · Retire with who and when, and undo: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · km_librarian · See which drafts used it: TimeoutError: locator.click: Timeout 2500ms exceeded.
+- phone · legal_secretary · Client update letter for Reyes with sequential cites: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- phone · legal_secretary · Choose a partner as reviewer, then export on letterhead: TimeoutError: page.selectOption: Timeout 2500ms exceeded.
+- phone · legal_secretary · Cannot send to the client before approval: not visible: button:has-text('Send and record in matter'):disabled

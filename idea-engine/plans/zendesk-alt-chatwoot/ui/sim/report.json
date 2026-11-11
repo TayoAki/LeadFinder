@@ -16,32 +16,32 @@
   },
   "head_cx": {
    "department": "Customer Experience (leadership)",
-   "pass": 6,
-   "total": 6,
+   "pass": 10,
+   "total": 10,
    "score": 10
   },
   "finance": {
    "department": "Finance",
-   "pass": 8,
-   "total": 8,
+   "pass": 10,
+   "total": 10,
    "score": 10
   },
   "founder": {
    "department": "Executive",
-   "pass": 10,
-   "total": 10,
+   "pass": 8,
+   "total": 8,
    "score": 10
   },
   "it_admin": {
    "department": "IT / Security",
-   "pass": 10,
-   "total": 10,
+   "pass": 12,
+   "total": 12,
    "score": 10
   },
   "ops_whatsapp": {
    "department": "Operations",
-   "pass": 8,
-   "total": 8,
+   "pass": 10,
+   "total": 10,
    "score": 10
   },
   "knowledge": {
@@ -52,44 +52,68 @@
   },
   "support_ops_admin": {
    "department": "Support operations",
-   "pass": 8,
-   "total": 8,
+   "pass": 10,
+   "total": 10,
    "score": 10
   },
   "qa_coach": {
    "department": "Support (quality)",
-   "pass": 6,
-   "total": 6,
+   "pass": 10,
+   "total": 10,
    "score": 10
   },
   "privacy_legal": {
    "department": "Legal / Privacy",
-   "pass": 8,
-   "total": 8,
+   "pass": 12,
+   "total": 12,
    "score": 10
   },
   "wholesale_sales": {
    "department": "Sales",
-   "pass": 6,
-   "total": 6,
+   "pass": 8,
+   "total": 8,
    "score": 10
   },
   "retention_marketing": {
    "department": "Marketing / Retention",
-   "pass": 4,
-   "total": 4,
+   "pass": 6,
+   "total": 6,
    "score": 10
   },
   "fulfillment_ops": {
    "department": "Fulfillment / Warehouse",
-   "pass": 4,
-   "total": 4,
+   "pass": 8,
+   "total": 8,
    "score": 10
   },
   "bpo_manager": {
    "department": "Outsourced support",
+   "pass": 10,
+   "total": 10,
+   "score": 10
+  },
+  "procurement": {
+   "department": "Procurement / Vendor management",
    "pass": 8,
    "total": 8,
+   "score": 10
+  },
+  "integrations_engineer": {
+   "department": "Engineering / IT applications",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "product_manager": {
+   "department": "Product / Merchandising",
+   "pass": 6,
+   "total": 6,
+   "score": 10
+  },
+  "workforce_planner": {
+   "department": "Support operations (workforce management)",
+   "pass": 4,
+   "total": 4,
    "score": 10
   }
  },

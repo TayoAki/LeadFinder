@@ -23,7 +23,7 @@
      ],
      "expect": [
       "[data-testid='ctx']:has-text('BrightSmile Dental Group')",
-      "[data-testid='status']:has-text('Partly protected · 4 urgent')",
+      "[data-testid='status']:has-text('Action needed · 4 urgent')",
       "[data-testid='status']:has-text('NAS-BACKUP')",
       "[data-testid='k-threats']:has-text('2')",
       "[data-testid='k-devices']:has-text('60 of 64')",
@@ -32,7 +32,9 @@
       ".rail [data-view='alerts'] .badge:has-text('4')",
       "[data-testid='sla']:has-text('15 minutes')",
       ".tabs:not(:has([data-tab='partner']))",
-      ".app:not(:has([data-select='harbor']))"
+      ".app:not(:has([data-select='harbor']))",
+      "[data-testid='status']:has-text('reconnect the other 3 silent devices')",
+      "[data-testid='k-threats'] + .delta:has-text('1 open (agent removed on FRONTDESK-05)')"
      ]
     },
     {
@@ -51,7 +53,9 @@
       "[data-testid='annual']:has-text('$11,988')",
       "#panel-billing:has-text('7319')",
       "#panel-billing:not(:has-text('4242'))",
-      "#panel-billing:not(:has-text('wholesale'))"
+      "#panel-billing:not(:has-text('wholesale'))",
+      "[data-testid='cost-value']:has-text('$25,000')",
+      "[data-testid='annual']:not(:has-text('vs cyber premium'))"
      ]
     }
    ]
@@ -86,8 +90,10 @@
       "[data-testid='incident-bs1'][aria-expanded='true']",
       "#inc-detail-bs1 [data-testid='we-did']:has-text('Sam T.')",
       "[data-testid='pw-requested']:has-text('Marco Diaz')",
-      "[data-testid='thread-bs1']:has-text('reply due by 14:35')",
-      "[data-testid='incident-bs1'] .who:has-text('Office manager')"
+      "[data-testid='thread-bs1']:has-text('usually answered within 15 minutes')",
+      "[data-testid='incident-bs1'] .who:has-text('You')",
+      "#inc-detail-bs1 [data-testid='breach-line']:has-text('No patient data exposed')",
+      "#inc-detail-bs1 [data-testid='breach'] details:not([open])"
      ]
     },
     {
@@ -127,7 +133,8 @@
      "expect": [
       ".rail [data-view='alerts'] .badge:has-text('3')",
       "[data-testid='status']:has-text('3 urgent')",
-      ".tabs:not(:has([data-tab='billing']))"
+      ".tabs:not(:has([data-tab='billing']))",
+      "[data-testid='your-tasks']"
      ]
     }
    ]
@@ -213,15 +220,16 @@
       },
       {
        "click": "[data-tab='incidents']"
-      },
-      {
-       "click": "[data-testid='incident-bs4']"
       }
      ],
      "expect": [
       "[data-testid='noise']:has-text('1,240')",
-      "[data-testid='noise']:has-text('agent tamper alert')",
-      "#inc-detail-bs4 [data-testid='you-do']:has-text('reinstall')"
+      "[data-testid='noise']:has-text('1 open (agent removed on FRONTDESK-05)')",
+      "#inc-detail-bs4 [data-testid='you-do']:has-text('reinstall')",
+      "[data-testid='noise-sources']:has-text('svc-backup')",
+      "[data-testid='incident-bs4'] .sev:has-text('High')",
+      "#inc-detail-bs4 [data-testid='linked-leaver']:has-text('Mia Reyes')",
+      "[data-testid='incident-bs4'][aria-expanded='true']"
      ]
     }
    ]
@@ -317,7 +325,50 @@
       "[data-testid='ctx']:has-text('Sunrise Credit Union')",
       "[data-testid='incident-s1'][aria-expanded='true']",
       "#inc-detail-s1 [data-testid='timeline']:has-text('06:50')",
-      "#inc-detail-s1:has-text('PSA ticket #51019')"
+      "#inc-detail-s1:has-text('PSA ticket #51019')",
+      "#inc-detail-s1 [data-testid='evidence-basis']:has-text('Entra ID')",
+      "#inc-detail-s1 [data-testid='evidence-basis']:not(:has-text('process tree'))"
+     ]
+    },
+    {
+     "name": "Sunrise is Action needed and affected controls drop",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='sunrise']"
+      },
+      {
+       "click": "[data-tab='compliance']"
+      }
+     ],
+     "expect": [
+      "[data-testid='ctx']:has-text('Sunrise Credit Union')",
+      "[data-testid='ctrl-748-App-A-III-C-1']:has-text('Partly met')",
+      "[data-testid='fw-score']:not(:has-text('9 of 9'))"
+     ]
+    },
+    {
+     "name": "Harbor shows detection delay separately",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "msp_tech"
+      },
+      {
+       "click": "[data-select='harbor']"
+      },
+      {
+       "click": "[data-tab='incidents']"
+      }
+     ],
+     "expect": [
+      "[data-testid='incident-h1']:has-text('active 37 h before detection')",
+      "[data-testid='incident-h1']:has-text('contained 18 min after detection')",
+      "#inc-detail-h1 [data-testid='evidence-basis']:not(:has-text('practice-management'))",
+      "[data-testid='ctx']:has-text('Harbor')"
      ]
     }
    ]
@@ -350,7 +401,10 @@
       "[data-testid='margin-row-vega']:has-text('$1,879')",
       "[data-testid='at-risk-harbor']:has-text('open high incident')",
       "[data-testid='margin-table']:has-text('Alerts/day')",
-      "[data-testid='partner-billing']"
+      "[data-testid='partner-billing']",
+      "[data-testid='perday-harbor']:has-text('/day')",
+      "[data-testid='renewal-soon-kline']",
+      "[data-testid='margin-row-kline']:not(:has-text('At risk'))"
      ]
     },
     {
@@ -405,11 +459,14 @@
      ],
      "expect": [
       "[data-testid='baa']:has-text('Signed Mar 2, 2026')",
-      "[data-testid='fw-score']:has-text('of 13 evidenced controls met')",
+      "[data-testid='fw-score']:has-text('of 13 tracked controls met')",
       "[data-testid='fw-scope']:has-text('outside this service')",
       "[data-testid='ctrl-164-316-b-2-i']:has-text('policies, risk analyses, incident records')",
       "[data-testid='ctrl-164-308-a-7-ii-A']:has-text('Partly met')",
-      "#cd-hipaa-164-316-b-2-i:has-text('Raw logs are kept 12 months')"
+      "#cd-hipaa-164-316-b-2-i:has-text('Raw logs are kept 12 months')",
+      "[data-testid='prov-164-308-a-1-ii-A']:has-text('Customer document')",
+      "[data-testid='prov-164-312-b']:has-text('Collected by Watchpost')",
+      "[data-testid='ctrl-164-316-b-2-i']:has-text('Met')"
      ]
     },
     {
@@ -514,7 +571,8 @@
       "[data-testid='q-backup']:has-text('NAS-BACKUP')",
       "[data-testid='policy']:has-text('retention $25,000')",
       "[data-testid='premium-estimate']:has-text('$6,100')",
-      "[data-testid='broker']:has-text('Lena Ortiz')"
+      "[data-testid='broker']:has-text('Lena Ortiz')",
+      "[data-testid='q-edr-note']:has-text('EDR definition')"
      ]
     },
     {
@@ -565,7 +623,10 @@
       "[data-testid='qbr-preview']:has-text('vs Q3')",
       "[data-testid='qbr-preview']:has-text('renews Apr 30, 2027')",
       "[data-testid='upsell']:has-text('CMMC Level 2')",
-      "[data-testid='ctx']:has-text('all 6 clients')"
+      "[data-testid='ctx']:has-text('all 6 clients')",
+      "[data-testid='qbr-preview']:has-text('same 42 days of Q3')",
+      "[data-testid='qbr-preview']:has-text('(98%)')",
+      "[data-testid='upsell']:has-text('one-off $2,400')"
      ]
     },
     {
@@ -583,10 +644,12 @@
       }
      ],
      "expect": [
-      "[data-testid='margin-table']:not(:has-text('Wholesale'))",
-      "[data-testid='margin-table']:has-text('Client price')",
+      "[data-testid='client-card']:not(:has-text('Wholesale'))",
       ".app:not(:has([data-testid='margin']))",
-      ".app:not(:has([data-testid='partner-billing']))"
+      ".app:not(:has([data-testid='partner-billing']))",
+      "#panel-partner:not(:has-text('Harbor'))",
+      ".side:not(:has-text('Kline'))",
+      "[data-testid='client-card']:not(:has-text('At risk'))"
      ]
     }
    ]
@@ -623,7 +686,9 @@
       "[data-testid='acct-j-alvarez']:not(:has-text('Unused'))",
       "#panel-accounts [data-testid='leavers']:has-text('Overdue')",
       "#panel-accounts [data-testid='joiners']:has-text('Sofia Lin')",
-      "[data-testid='ctx']:has-text('BrightSmile')"
+      "[data-testid='ctx']:has-text('BrightSmile')",
+      "#panel-accounts [data-testid='removed-o-burke']:has-text('confirmed by Marco Diaz')",
+      "#panel-accounts [data-testid='escalate-m-reyes']"
      ]
     }
    ]
@@ -665,7 +730,10 @@
       ".app:not(:has([data-testid='export-evidence']))",
       ".rail:not(:has([data-view='alerts']))",
       "#fw:not(:has(option[value='hipaa']))",
-      "[data-testid='ctx']:has-text('Ridgeline Machining')"
+      "[data-testid='ctx']:has-text('Ridgeline Machining')",
+      "#cd-cmmc-AC-L1-b-1-i:has-text('Collected')",
+      "[data-testid='prov-PE-L1-b-1-viii']:has-text('Company attestation')",
+      "[data-testid='prime-review']:has-text('Apex')"
      ]
     }
    ]
@@ -700,7 +768,9 @@
       ".toast.show:has-text('attestation')",
       ".app:not(:has([data-testid='email-broker']))",
       ".rail:not(:has([data-view='alerts']))",
-      "#panel-insurance:not(:has-text('What a breach could cost'))"
+      "#panel-insurance:not(:has-text('What a breach could cost'))",
+      "#panel-insurance [data-testid='history-years']:has-text('2025')",
+      "[data-testid='attestation-text']:has-text('Partly')"
      ]
     }
    ]
@@ -734,7 +804,26 @@
       "#inc-detail-bs2 [data-testid='timeline']:has-text('Isolation confirmed by Priya N.')",
       "[data-testid='incident-record-bs2']",
       ".rail:not(:has([data-view='alerts']))",
-      ".app:not(:has([data-testid='done-bs1']))"
+      ".app:not(:has([data-testid='done-bs1']))",
+      "#inc-detail-bs2 [data-testid='four-factor']:not(:has-text('See timeline'))",
+      "#inc-detail-bs2 [data-testid='record-retention']:has-text('2032')"
+     ]
+    },
+    {
+     "name": "Agent-removal incident: exposure unknown, actor named",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "counsel"
+      },
+      {
+       "click": "[data-testid='incident-bs4']"
+      }
+     ],
+     "expect": [
+      "#inc-detail-bs4 [data-testid='breach']:has-text('Patient data accessed: Unknown since Nov 9, 16:12 (no telemetry)')",
+      "#inc-detail-bs4 [data-testid='four-factor']:has-text('Mia Reyes')",
+      "#inc-detail-bs4 [data-testid='evidence-basis']:has-text('mreyes-local')"
      ]
     }
    ]
@@ -791,7 +880,8 @@
       "[data-testid='verdict']:has-text('Phishing')",
       "[data-testid='verdict']:has-text('reset your password')",
       ".tabs:not(:has([data-tab='devices']))",
-      ".app:not(:has-text('60 of 64'))"
+      ".app:not(:has-text('60 of 64'))",
+      "[data-testid='pc-check']:has-text('clean')"
      ]
     }
    ]
@@ -823,7 +913,13 @@
       "[data-testid='exit-terms']:has-text('certificate of destruction')",
       "[data-testid='sig-lite']",
       "[data-testid='ctx']:has-text('Sunrise Credit Union')",
-      ".rail:not(:has([data-view='alerts']))"
+      ".rail:not(:has([data-view='alerts']))",
+      "[data-testid='contracting-party']:has-text('Northwind IT')",
+      "[data-testid='access-locations']:has-text('India')",
+      "[data-testid='subprocessors']:has-text('Watchpost Security India')",
+      "[data-testid='breach-commitment']:has-text('24 hours')",
+      "[data-testid='bcdr']:has-text('RTO')",
+      "[data-testid='background-checks']"
      ]
     }
    ]
@@ -857,7 +953,9 @@
       "[data-testid='training-roster']:has-text('38 of 41')",
       "#panel-people [data-testid='joiners']:has-text('Sofia Lin')",
       "[data-testid='ctx']:has-text('BrightSmile')",
-      ".tabs:not(:has([data-tab='devices']))"
+      ".tabs:not(:has([data-tab='devices']))",
+      "[data-testid='training-table']:has-text('Oct 28, 2026')",
+      "[data-testid='training-table']:has-text('Not uploaded')"
      ]
     }
    ]
@@ -888,7 +986,9 @@
       "[data-testid='entity-table']:has-text('Northwind IT (MSP)')",
       "[data-testid='onboarding-checklist']:has-text('Maple Family Dental')",
       "[data-testid='ctx']:has-text('Keystone Health Partners')",
-      "[data-testid='bb-devices']:has-text('3 entities')"
+      "[data-testid='bb-devices']:has-text('3 entities')",
+      "[data-testid='group-cost']:has-text('/mo')",
+      "[data-testid='board-pack']"
      ]
     },
     {
@@ -907,7 +1007,7 @@
      ],
      "expect": [
       "[data-testid='ctx']:has-text('BrightSmile Dental Group')",
-      "[data-testid='status']:has-text('Partly protected')"
+      "[data-testid='status']:has-text('Action needed')"
      ]
     }
    ]
@@ -937,7 +1037,8 @@
       "[data-testid='week1-findings']:has-text('MFA')",
       "#panel-onboarding:has-text('first invoice Nov 16, 2026')",
       "[data-testid='ctx']:has-text('Maple Family Dental')",
-      ".app:not(:has([data-select='harbor']))"
+      ".app:not(:has([data-select='harbor']))",
+      "#panel-onboarding:has-text('go-live review Nov 13, 2026')"
      ]
     },
     {
@@ -953,7 +1054,29 @@
      ],
      "expect": [
       "[data-testid='status']:has-text('Onboarding')",
-      "[data-testid='k-devices']:has-text('31 of 38')"
+      "[data-testid='k-devices']:has-text('31 of 38')",
+      "[data-testid='period']:has-text('Since Nov 2, 2026')",
+      "[data-testid='trial-price']:has-text('$599/mo')",
+      "[data-testid='summary']:has-text('7 still to install')",
+      "[data-testid='summary']:not(:has-text('every device'))",
+      "[data-testid='monthly-report']:has-text('week-1')"
+     ]
+    },
+    {
+     "name": "Devices lists the 7 devices with no agent",
+     "steps": [
+      {
+       "select": "#role",
+       "value": "trial"
+      },
+      {
+       "click": "[data-tab='devices']"
+      }
+     ],
+     "expect": [
+      "[data-testid='not-installed']:has-text('7 devices')",
+      "[data-testid='not-installed']:has-text('PANO-XRAY')",
+      "[data-testid='not-reporting']:not(:has-text('Every device here is reporting'))"
      ]
     }
    ]
