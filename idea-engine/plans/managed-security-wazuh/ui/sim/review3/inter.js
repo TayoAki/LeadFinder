@@ -1,0 +1,34 @@
+const {chromium}=require('/home/user/LeadFinder/node_modules/playwright');
+const U='file:///home/user/LeadFinder/idea-engine/plans/managed-security-wazuh/ui/index.html';
+const D='/home/user/LeadFinder/idea-engine/plans/managed-security-wazuh/ui/sim/review3/';
+const EXP='.app{height:auto!important;min-height:100vh} .main,.content{overflow:visible!important}';
+(async()=>{
+ const b=await chromium.launch({executablePath:'/opt/pw-browsers/chromium',args:['--no-sandbox']});
+ const pg=await b.newPage({viewport:{width:1440,height:900}});
+ const T=async s=>(await pg.locator(s).first().innerText().catch(e=>'ERR '+e.message.split('\n')[0]));
+ const go=async r=>{await pg.goto(U);await pg.selectOption('#role',r);await pg.waitForTimeout(150);};
+ const out=(k,v)=>console.log('\n===== '+k+'\n'+v);
+ await go('counsel'); await pg.click("[data-testid='incident-bs2']"); await pg.waitForTimeout(150);
+ out('counsel bs2', await T('#inc-detail-bs2'));
+ await pg.click("[data-testid='incident-bs4']").catch(()=>{}); await pg.waitForTimeout(150);
+ out('counsel bs4', await T('#inc-detail-bs4'));
+ await go('it'); await pg.click(".rail [data-view='search']"); await pg.waitForTimeout(200);
+ out('it search pop', await T('#pop'));
+ const inp=pg.locator('#pop input[type=search]').first(); if(await inp.count()){await inp.fill('NAS-BACKUP'); await pg.keyboard.press('Enter'); await pg.waitForTimeout(300); out('it search NAS', await T('#pop')); await pg.screenshot({path:D+'x-it-search.png'});}
+ await go('it'); await pg.click(".rail [data-view='alerts']"); await pg.waitForTimeout(200); out('it notif', await T('#pop'));
+ await go('owner'); await pg.click(".rail [data-view='settings']"); await pg.waitForTimeout(200); out('owner settings', await T('#pop')); await pg.screenshot({path:D+'x-owner-settings.png'});
+ await go('it'); await pg.click("[data-tab='incidents']"); await pg.click("[data-testid='incident-bs2']").catch(()=>{}); await pg.waitForTimeout(150); out('it bs2', await T('#inc-detail-bs2'));
+ await go('msp_am'); await pg.click("[data-tab='partner']"); await pg.click("[data-qbr='ridgeline']"); await pg.waitForTimeout(200); out('qbr', await T("[data-testid='qbr-preview']")); 
+ let st=await pg.addStyleTag({content:EXP}); await pg.screenshot({path:D+'x-qbr.png',fullPage:true}); await st.evaluate(e=>e.remove());
+ await go('msp_am'); await pg.click("[data-tab='partner']"); await pg.click("[data-testid='client-safe']"); await pg.waitForTimeout(200); out('client-safe', await T('#panel-partner'));
+ st=await pg.addStyleTag({content:EXP}); await pg.screenshot({path:D+'x-clientsafe.png',fullPage:true}); await st.evaluate(e=>e.remove());
+ await go('msp_owner'); await pg.click("[data-tab='partner']"); await pg.click("[data-testid='wl-preview-btn']"); await pg.waitForTimeout(200); out('wl preview', await T("[data-testid='wl-preview']"));
+ await go('staff'); await pg.selectOption('#rep-did','link'); await pg.click('[data-sample]'); await pg.click("[data-testid='report-send']"); await pg.waitForTimeout(200); out('staff pending', await T('#panel-report')); await pg.click("[data-testid='mock-reply']"); await pg.waitForTimeout(200); out('staff verdict', await T('#panel-report'));
+ await go('office'); await pg.click(".rail [data-view='alerts']"); await pg.waitForTimeout(200); out('office notif', await T('#pop'));
+ await go('office'); await pg.click("[data-tab='incidents']"); await pg.click("[data-testid='done-bs1']").catch(e=>console.log('nodone')); await pg.waitForTimeout(200); out('office after done hero', await T('[data-testid=ctx]')+' | rail badge '+await T(".rail [data-view='alerts'] .badge")); await pg.click("[data-tab='overview']"); out('office overview after done', await T("[data-testid='status']")); out('right', await T('#right'));
+ await go('msp_tech'); await pg.click("[data-select='harbor']"); await pg.click("[data-tab='compliance']"); await pg.waitForTimeout(150); out('harbor compliance', await T('#panel-compliance'));
+ await go('msp_tech'); await pg.click("[data-select='sunrise']").catch(()=>{}); await pg.waitForTimeout(150); out('sunrise overview', await T('#panel-overview'));
+ await go('owner'); await pg.click("[data-tab='compliance']"); await pg.selectOption('#fw','pci'); await pg.waitForTimeout(150); out('pci', await T('#panel-compliance'));
+ await go('it'); await pg.click("[data-tab='devices']"); await pg.selectOption('#dev-site','Office 2 (Elm Ave)'); await pg.waitForTimeout(150); out('it office2', await T('#panel-devices'));
+ await b.close();
+})();
