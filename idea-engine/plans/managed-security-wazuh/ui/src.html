@@ -661,7 +661,7 @@ function renderRail(){
   if (hasTab('report') && r.tabs[0] !== 'report') b.push(`<button data-view="report" data-tab-target="report" aria-label="Report a suspicious email" title="Report email">${svg('mail')}</button>`);
   if (r.hr) b.push(`<button data-view="accounts" data-tab-target="accounts" aria-label="Accounts" title="Accounts">${svg('users')}</button>`);
   if (internal) b.push(`<button data-view="settings" aria-label="Settings: alert contacts and integrations" title="Settings">${svg('gear')}</button>`);
-  const brandOrg = r.kind === 'msp' || ORGS[S.org].channel === 'msp';
+  const brandOrg = !r.trust && (r.kind === 'msp' || ORGS[S.org].channel === 'msp');
   const brand = brandOrg ? `<div class="logo" aria-hidden="true" style="background:${S.wlColor}">N</div>` : `<div class="logo" aria-hidden="true">W</div>`;
   $('#rail').innerHTML = brand + b.join('') + `<div class="spacer"></div><div class="avatar" title="Signed in as ${esc(r.who)}" aria-label="Signed in as ${esc(r.who)}" role="img">${r.init}</div>`;
   const rb = $$('.rail button[data-tab-target]').find(x => x.dataset.tabTarget === curTab()); if (rb) rb.setAttribute('aria-current', 'page');
