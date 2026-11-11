@@ -76,7 +76,7 @@ th{font-size:12px;color:var(--faint);font-weight:600;text-transform:uppercase;le
 body.drawer-open .backdrop{opacity:1;pointer-events:auto}
 .role-switch{font:inherit;font-size:12px;padding:3px 6px;border-radius:6px;border:1px solid var(--line);background:var(--panel-2);color:var(--text)}
 .cite{min-width:24px;min-height:24px}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sr{position:absolute;left:0;top:0;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .chip{display:inline-block;padding:2px 7px;border-radius:6px;background:var(--panel-2);border:1px solid var(--line);font-size:12px;margin:2px 4px 2px 0}
 .empty-note{color:var(--faint);font-size:12px}
 .toast{position:fixed;bottom:48px;left:50%;transform:translateX(-50%);background:var(--text);color:var(--bg);padding:9px 14px;border-radius:8px;font-size:13px;opacity:0;pointer-events:none;transition:opacity .2s}
@@ -269,7 +269,7 @@ mark{background:var(--warn-weak);color:var(--text);border-radius:3px}
   }
   window.UI.selectTab = selectTab; window.UI.closeDrawers = closeDrawers; window.UI.openDrawer = openDrawer;
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab]'); if (t) selectTab(t.dataset.tab);
+    const t = e.target.closest('[data-tab]'); if (t && t !== document.body && t !== document.documentElement) selectTab(t.dataset.tab);
     const goto = e.target.closest('[data-goto]'); if (goto) selectTab(goto.dataset.goto);
     const it = e.target.closest('.side .item[data-select]');
     if (it) { $$('.side .item[data-select]').forEach(x => x.removeAttribute('aria-current')); it.setAttribute('aria-current', 'true');

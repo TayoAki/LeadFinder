@@ -27,7 +27,7 @@
   }
   window.UI.selectTab = selectTab; window.UI.closeDrawers = closeDrawers; window.UI.openDrawer = openDrawer;
   document.addEventListener('click', e => {
-    const t = e.target.closest('[data-tab]'); if (t) selectTab(t.dataset.tab);
+    const t = e.target.closest('[data-tab]'); if (t && t !== document.body && t !== document.documentElement) selectTab(t.dataset.tab);
     const goto = e.target.closest('[data-goto]'); if (goto) selectTab(goto.dataset.goto);
     const it = e.target.closest('.side .item[data-select]');
     if (it) { $$('.side .item[data-select]').forEach(x => x.removeAttribute('aria-current')); it.setAttribute('aria-current', 'true');
