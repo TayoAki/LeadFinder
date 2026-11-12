@@ -1,0 +1,666 @@
+{
+  "success": true,
+  "credits_remaining": 209754,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "mtn90nb",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "After your question has been solved u/tomdg4, please reply to the helpful user's comment with the phrase \"Solution verified\".\n\n This will not only award a point to the contributor for their assistance but also update the post's flair to \"Solved\".\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_mtn90nb",
+      "created_utc": 1747917626,
+      "created_at_iso": "2025-05-22T12:40:26.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtn90nb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mtpbzdy",
+      "author": "umdterp732",
+      "author_fullname": null,
+      "body": "Pivot tables can't have fixed column widths",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtpbzdy",
+      "created_utc": 1747939972,
+      "created_at_iso": "2025-05-22T18:52:52.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtpbzdy/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtpgos0/",
+            "created_utc": 1747941338,
+            "created_at_iso": "2025-05-22T19:15:38.000Z",
+            "id": "mtpgos0",
+            "author": "tomdg4",
+            "author_fullname": null,
+            "body": "100%",
+            "body_html": "\n      <p>\n      100%\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mtpgos0",
+            "parent_id": "t1_mtpbzdy",
+            "permalink": "/r/PowerBI/comments/1kspol1/comment/mtpgos0/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mtpbzdy"
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "mtna5yf",
+      "author": "ArterialRed",
+      "author_fullname": null,
+      "body": "I hit enter to move to a new line to continue typing. Now I have to wait 20 minutes for the whole thing to do some unknown process before it returns an entire column of \"#ERROR\" and allowing me to type in the closing \")\".",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtna5yf",
+      "created_utc": 1747918038,
+      "created_at_iso": "2025-05-22T12:47:18.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtna5yf/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnbkn7/",
+            "created_utc": 1747918540,
+            "created_at_iso": "2025-05-22T12:55:40.000Z",
+            "id": "mtnbkn7",
+            "author": "Distinct_Treat4675",
+            "author_fullname": null,
+            "body": "I wish there was a way to pause the updates until you pressed the tick or something.",
+            "body_html": "\n      <p>\n      I wish there was a way to pause the updates until you pressed the tick or something.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mtnbkn7",
+            "parent_id": "t1_mtna5yf",
+            "permalink": "/r/PowerBI/comments/1kspol1/comment/mtnbkn7/",
+            "ups": 27,
+            "downs": 0,
+            "score": 27,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTIiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WkRjMFptVTJabUlzT2pveE9tVjRPaWd1TG4xU0tBPT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMWtzcG9sMSIsInBhcmVudFRoaW5nSWQiOiJ0MV9tdG5hNXlmIn0"
+        }
+      },
+      "ups": 166,
+      "downs": 0,
+      "score": 166
+    },
+    {
+      "id": "mtnepf5",
+      "author": "redditor3900",
+      "author_fullname": null,
+      "body": "Version control",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnepf5",
+      "created_utc": 1747919626,
+      "created_at_iso": "2025-05-22T13:13:46.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnepf5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTMiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TVdOak0yRTFaakFzT2pveE9tUXhPblF4WDIxMGJtVndaalU9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuZXBmNSJ9"
+        }
+      },
+      "ups": 60,
+      "downs": 0,
+      "score": 60
+    },
+    {
+      "id": "mtnc411",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnc411",
+      "created_utc": 1747918727,
+      "created_at_iso": "2025-05-22T12:58:47.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnc411/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTQiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TW1RMVpUaGtOR0lzT2pveE9tUXhPblF4WDIxMGJtTTBNVEU9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuYzQxMSJ9"
+        }
+      },
+      "ups": 56,
+      "downs": 0,
+      "score": 56
+    },
+    {
+      "id": "mtnfpjm",
+      "author": "Mr_N1ce",
+      "author_fullname": null,
+      "body": "Tables and matrixes... You either have each attribute on a separate level or a completely flat table, no in between (certain attributes first level, other attributes in drill down)\n\n It's also challenging to define, which levels a measure should or should not display values",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnfpjm",
+      "created_utc": 1747919967,
+      "created_at_iso": "2025-05-22T13:19:27.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnfpjm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTUiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WkRJME1qWTNOekVzT2pveE9tUXhPblF4WDIxMGJtWndhbTA9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuZnBqbSJ9"
+        }
+      },
+      "ups": 36,
+      "downs": 0,
+      "score": 36
+    },
+    {
+      "id": "mtnerxg",
+      "author": "TheRealAbear",
+      "author_fullname": null,
+      "body": "\"The data is wrong\"",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnerxg",
+      "created_utc": 1747919650,
+      "created_at_iso": "2025-05-22T13:14:10.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnerxg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TVdKbVlqSm1NRE1zT2pveE9tUXhPblF4WDIxMGJtVnllR2M9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuZXJ4ZyJ9"
+        }
+      },
+      "ups": 27,
+      "downs": 0,
+      "score": 27
+    },
+    {
+      "id": "mtnctob",
+      "author": "paultherobert",
+      "author_fullname": null,
+      "body": "The users",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnctob",
+      "created_utc": 1747918978,
+      "created_at_iso": "2025-05-22T13:02:58.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnctob/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTciLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TjJaaVpXRmlNemdzT2pveE9tUXhPblF4WDIxMGJtTjBiMkk9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuY3RvYiJ9"
+        }
+      },
+      "ups": 64,
+      "downs": 0,
+      "score": 64
+    },
+    {
+      "id": "mtndww5",
+      "author": "nineteen_eightyfour",
+      "author_fullname": null,
+      "body": "Map visuals and matrix table totals are really it for me.\n\n Oh, and I want dual relationships.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtndww5",
+      "created_utc": 1747919356,
+      "created_at_iso": "2025-05-22T13:09:16.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtndww5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTgiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WldWbE9XRTFaalFzT2pveE9tUXhPblF4WDIxMGJtUjNkelU9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRuZHd3NSJ9"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "mtnvyo6",
+      "author": "AGx-07",
+      "author_fullname": null,
+      "body": "Working around things that shouldn't require workarounds. For example, use a Pie Chart and there's useless whitespace all around it where the only solution is to turn off the background, position it as needed and then use another shape or something to serve as the background. This is doubly annoying when the text of the details is truncated (e.g. Large Sh...) but there's CLEARLY enough room for it given all that useless white space so you need to re-size it, perhaps making the pie itself larger than you really need, simply because PBI doesn't use real estate property.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnvyo6",
+      "created_utc": 1747925026,
+      "created_at_iso": "2025-05-22T14:43:46.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnvyo6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTkiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TkdNeFkyVmxPRFlzT2pveE9tUXhPblF4WDIxMGJuWjVielk9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFrc3BvbDEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXRudnlvNiJ9"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "mtniwvr",
+      "author": "Valor816",
+      "author_fullname": null,
+      "body": "I wish it could do conditional formatting like Excel does.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtniwvr",
+      "created_utc": 1747921029,
+      "created_at_iso": "2025-05-22T13:37:09.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtniwvr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpEVmpaVFE1WWpRc09qb3hPbVF4T25ReFgyMTBibWwzZG5JPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bml3dnIifQ"
+        }
+      },
+      "ups": 23,
+      "downs": 0,
+      "score": 23
+    },
+    {
+      "id": "mtnd7gb",
+      "author": "DaCor_ie",
+      "author_fullname": null,
+      "body": "For #1, use Measure Killer\n\n For #2, tighter controls around data sources and management of the schema would address that.....unless we're talking about completely different data source types e.g. sales versus returns versus orders in which case I would expect some consistency on standardized data fields e.g. date, time, location, contact info etc (thats where tightened control on schemas comes in), but outside of that some fields are going to be specific to the topic at hand",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnd7gb",
+      "created_utc": 1747919112,
+      "created_at_iso": "2025-05-22T13:05:12.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnd7gb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTExIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9UUm1Oak16Tm1Vc09qb3hPbVF4T25ReFgyMTBibVEzWjJJPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bmQ3Z2IifQ"
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "mtngag5",
+      "author": "Accomplished-Age796",
+      "author_fullname": null,
+      "body": "bookmarks",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtngag5",
+      "created_utc": 1747920162,
+      "created_at_iso": "2025-05-22T13:22:42.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtngag5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEyIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlkyVmpaVEU1TWpZc09qb3hPbVF4T25ReFgyMTBibWRoWnpVPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bmdhZzUifQ"
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "mtni24q",
+      "author": "BorisHorace",
+      "author_fullname": null,
+      "body": "How bad the matrix/table visuals are. Ive been doing more with Streamlit recently and it\u2019s crazy how much better they implement data tables. Copy and paste multiple rows/cells at a time using keyboard shortcuts, on column filtering, one click CSV exports, built in show/hide columns, ability to freeze columns, and so on.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtni24q",
+      "created_utc": 1747920748,
+      "created_at_iso": "2025-05-22T13:32:28.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtni24q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "mtng3wa",
+      "author": "Full_Metal_Analyst",
+      "author_fullname": null,
+      "body": "Changing the name of almost anything seems to be a pain in the ass, especially when using a shared semantic model with many thin reports.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtng3wa",
+      "created_utc": 1747920100,
+      "created_at_iso": "2025-05-22T13:21:40.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtng3wa/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "mtnuapq",
+      "author": "OutrageousFormal6445",
+      "author_fullname": null,
+      "body": "When you try to save and it decides to freeze, so you pray it'll somehow save itself without force exiting it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnuapq",
+      "created_utc": 1747924535,
+      "created_at_iso": "2025-05-22T14:35:35.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnuapq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "mtnfwf4",
+      "author": "conan9523",
+      "author_fullname": null,
+      "body": "Dependency on external tool like tabular editor for maintaining semantic model. Not sure how much we can work with SSMS for this.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnfwf4",
+      "created_utc": 1747920030,
+      "created_at_iso": "2025-05-22T13:20:30.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnfwf4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE2IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1tSTNNV05qTmpJc09qb3hPbVF4T25ReFgyMTBibVozWmpRPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bmZ3ZjQifQ"
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "mtnvmz7",
+      "author": "tophmcmasterson",
+      "author_fullname": null,
+      "body": "I think just generally the troubleshooting process in DAX. While improvements have been made I wish it was easier to see like step by step what is being produced in each step, similar to how you could say write a view with CTEs in SQL and see the results of each one.\n\n I know with the right syntax etc. in tools like Dax studio and so on you can do it, but it always feels like a lot of extra steps to get to the root of the issue.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnvmz7",
+      "created_utc": 1747924930,
+      "created_at_iso": "2025-05-22T14:42:10.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnvmz7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE3IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk16a3lORE14TVRFc09qb3hPbVF4T25ReFgyMTBiblp0ZWpjPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bnZtejcifQ"
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "mtnhh6w",
+      "author": "truespartan3",
+      "author_fullname": null,
+      "body": "It tells me my datamodel has circular references and it's correct...",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnhh6w",
+      "created_utc": 1747920554,
+      "created_at_iso": "2025-05-22T13:29:14.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnhh6w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "mtnj2d9",
+      "author": "verbify",
+      "author_fullname": null,
+      "body": "It's not DRY. I had twenty similar complex measures and had to repeat them.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnj2d9",
+      "created_utc": 1747921078,
+      "created_at_iso": "2025-05-22T13:37:58.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnj2d9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE5IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlltTXpNekJqT0RFc09qb3hPbVF4T25ReFgyMTBibW95WkRrPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxa3Nwb2wxIiwicGFyZW50VGhpbmdJZCI6InQxX210bmoyZDkifQ"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "mtnp6qn",
+      "author": "kagato87",
+      "author_fullname": null,
+      "body": "Specific quirks and limitations of the visuals themselves. For example, buttons can't have rich tool tips, while cards can't have single click navigation.\n\n Tables can't have dynamic columns while matrices can't have measures outside of the repeated values area. (It's one value per row after the pivot, and it needs to be a measure to respond to slicers.) nor can I stick a measure only on the total column (which would also work, even if it'd end up in the wrong spot).",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtnp6qn",
+      "created_utc": 1747923007,
+      "created_at_iso": "2025-05-22T14:10:07.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnp6qn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "mtp78c9",
+      "author": "SatansSideProject",
+      "author_fullname": null,
+      "body": "That my boss makes me take my interactive charts and put them into a PowerPoint so he can brief from the PowerPoint.\n\n PowerPoint...",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtp78c9",
+      "created_utc": 1747938593,
+      "created_at_iso": "2025-05-22T18:29:53.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtp78c9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "mtx6dyb",
+      "author": "muffinbasket87",
+      "author_fullname": null,
+      "body": "Lack of containers (akin to Tableau). It takes so long to get things laid out to exact x/y coordinates in Power BI \u2014 and then, once you get everything laid out, Power BI will just randomly adjust the height/width/x/y by 1. Infuriating.\n\n Tableau\u2019s containers made it super easy to create automatically-adjusting/spanning rows and columns. Want to make a 2x3 layout while having a tall sidebar for filters? No problem at all in Tableau, takes seconds. But to lay this out with precision in Power BI, I have a calculator open on the side to calculate the x/y position of each subsequent object based on the placement and size of the previous \u2014 and then as mentioned, PBI just changes the size and position randomly by 1 anyway. It makes me understand why some developers just eyeball everything instead of measuring it out, as bad as that looks.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mtx6dyb",
+      "created_utc": 1748041923,
+      "created_at_iso": "2025-05-23T23:12:03.000Z",
+      "parent_id": "t3_1kspol1",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtx6dyb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    }
+  ],
+  "post": {
+    "id": "1kspol1",
+    "author": "tomdg4",
+    "author_fullname": "t2_2q1g4lkm",
+    "subreddit": "PowerBI",
+    "title": "What are your biggest frustrations when working with Power BI?",
+    "downs": 0,
+    "name": "t3_1kspol1",
+    "upvote_ratio": 0.9746835443037974,
+    "ups": 75,
+    "selftext": "Hey everyone, I am curious what pain points you all run into most with Power BI \u2014 anything that regularly slows you down or makes you think \u201cthere has to be a better way\u201d? For me personally, there are two things that keep coming up: Cleaning up models \u2014 I always end up with a bunch of unused columns and leftover measures after prototyping. It\u2019s annoying to clean manually and easy to break something in the process. Reusing reports across datasets \u2014 I\u2019ve often want to take an existing report (structure, visuals, layout) and just plug in a new dataset \u2014 but it\u2019s a pain if the table or column names are slightly different. It feels like remapping a whole model by hand. I\u2019d love to hear what you run into in real life. What slows you down? What do you wish existed?",
+    "total_awards_received": 0,
+    "score": 75,
+    "created": 1747917625,
+    "num_comments": 153,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/what_are_your_biggest_frustrations_when_working/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1747917625
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFrc3BvbDE_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTIzIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqUm1aak15TVdFc09qb3dPbVY0T2lndUxtOW1KanBtY3pKb0tpaDdhVVVpUERvbk1sOHJVRkFrY0Vjakp5RWtiVklsTzFWRWV5WWtUQ0lqYlNJc00zMCtKMGRlSkMxdEpWcFRia3hESW40OVZtb29ObGNpWjNzalpuMVlPMXhjTVVWSElnPT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMWtzcG9sMSIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id 5df0b6274b804aeb9c43487270cf1594

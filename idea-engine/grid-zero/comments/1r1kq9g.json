@@ -1,0 +1,461 @@
+{
+  "success": true,
+  "credits_remaining": 209786,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "o4s9jzv",
+      "author": "OptimismNeeded",
+      "author_fullname": null,
+      "body": "I\u2019m worried about the 14% - are they not aware they hit hallucinations? \ud83d\ude02",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o4s9jzv",
+      "created_utc": 1770810973,
+      "created_at_iso": "2026-02-11T11:56:13.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4s9jzv/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4t1t50/",
+            "created_utc": 1770821190,
+            "created_at_iso": "2026-02-11T14:46:30.000Z",
+            "id": "o4t1t50",
+            "author": "founders_keepers",
+            "author_fullname": null,
+            "body": "that is indeed the scary part",
+            "body_html": "\n      <p>\n      that is indeed the scary part\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o4t1t50",
+            "parent_id": "t1_o4s9jzv",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/o4t1t50/",
+            "ups": 6,
+            "downs": 0,
+            "score": 6,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4tygh8/",
+            "created_utc": 1770830531,
+            "created_at_iso": "2026-02-11T17:22:11.000Z",
+            "id": "o4tygh8",
+            "author": "riyazhyder",
+            "author_fullname": null,
+            "body": "\ud83d\ude02",
+            "body_html": "\n      <p>\n      \ud83d\ude02\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o4tygh8",
+            "parent_id": "t1_o4s9jzv",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/o4tygh8/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o4s9jzv"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "o4rb0pd",
+      "author": "riyazhyder",
+      "author_fullname": null,
+      "body": "Most CFOs (and CIOs, obviously) are hitting the same wall, you can\u2019t run a business on probabilistic logic. That\u2019s why so many AI projects stall in pilot. Finance, audit, tax, and core business functions need deterministic, auditable execution, not \u201cmaybe\u2011it\u2011works\u201d models.\n\n For agentic AI to actually move into production, CIOs need a deterministic layer they can trust. Gartner\u2019s been clear that Neurosymbolic AI is the path forward, and a few enterprises have already started shifting in that direction.\n\n Kognitos is leading this space right now, they\u2019re also a sample vendor in Gartner\u2019s AI for Finance Hype Cycle. Worth a look, they\u2019re building the framework that finally makes AI usable for real business operations.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o4rb0pd",
+      "created_utc": 1770792202,
+      "created_at_iso": "2026-02-11T06:43:22.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4rb0pd/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/omktoba/",
+            "created_utc": 1779148878,
+            "created_at_iso": "2026-05-19T00:01:18.000Z",
+            "id": "omktoba",
+            "author": "calzonedome",
+            "author_fullname": null,
+            "body": "Interesting",
+            "body_html": "\n      <p>\n      Interesting\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_omktoba",
+            "parent_id": "t1_o4rb0pd",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/omktoba/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/onftrzy/",
+                  "created_utc": 1779548474,
+                  "created_at_iso": "2026-05-23T15:01:14.000Z",
+                  "id": "onftrzy",
+                  "author": "riyazhyder",
+                  "author_fullname": null,
+                  "body": "Ha Ha, That's a good insult that my kids love to borrow. Check my profile or my Linkedin to verify https://www.linkedin.com/in/riyazhyder/. my humanness!",
+                  "body_html": "\n      <p>\n      Ha Ha, That's a good insult that my kids love to borrow.  Check my profile or my Linkedin to verify <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://www.linkedin.com/in/riyazhyder/\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://www.linkedin.com/in/riyazhyder/</a>. my humanness!\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_onftrzy",
+                  "parent_id": "t1_omktoba",
+                  "permalink": "/r/CFO/comments/1r1kq9g/comment/onftrzy/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "omktoba"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/ondz5nh/",
+            "created_utc": 1779519481,
+            "created_at_iso": "2026-05-23T06:58:01.000Z",
+            "id": "ondz5nh",
+            "author": "TeeJay_CS",
+            "author_fullname": null,
+            "body": "This is a bot account running ads.",
+            "body_html": "\n      <p>\n      This is a bot account running ads.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ondz5nh",
+            "parent_id": "t1_o4rb0pd",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/ondz5nh/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "omktoba"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "o4xa2cd",
+      "author": "Hungry-Dentist5197",
+      "author_fullname": null,
+      "body": "In 1950s companies were using computers (humans) to compute payroll and company finances. These humans occasionally made mistakes (no one called it hallucinations.. but they were). Then there was a great invention.. we figured out how calculations can be done programmatically\u2026 that became today\u2019s computer. Then people started building AI; they wanted it to be like humans (wonder why) and now they did have something that behaves just like humans, hallucinating in finance once again. Today LLMs can do 1+1 using the most inefficient mechanism imaginable, and with the same accuracy as humans. But at scale that logic engine breaks down just like the human brain and thus we need to build a new computer on top of the LLMs now?! Nah, that will be like matrix, the movie. Too much compute for too little benefit. Let\u2019s not throw away the baby with the bath water. Neurosymbolic ai \u2014 just like Spock in Star Trek, is what the CFO really needs!",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o4xa2cd",
+      "created_utc": 1770868359,
+      "created_at_iso": "2026-02-12T03:52:39.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4xa2cd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "o5sv76w",
+      "author": "MrFINNX",
+      "author_fullname": null,
+      "body": "Not surprised at all.\n\n If you\u2019re running finance on a probabilistic layer and hoping it behaves deterministically, that\u2019s just wishful thinking.\n\n Reading, extracting, interpreting, executing logic all through LLM model\u2026 of course you\u2019re going to get hallucinations. It\u2019s not built to care about your audit trail.\n\n The scary part isn\u2019t that it makes mistakes. Humans make mistakes too. It\u2019s that the mistakes look confident. And once you put that into financial workflows, you can\u2019t \u201ckind of\u201d be right.\n\n The 97 percent saying human oversight is critical makes sense. But if oversight means manually rechecking everything the model did, then you haven\u2019t really scaled anything, yhou just moved the bottleneck.\n\n I think a lot of fintech tools rushed to market because AI demos well. Finance doesn\u2019t forgive demos. There\u2019s a difference between generating text and executing logic. Not everyone respects that line yet imho",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o5sv76w",
+      "created_utc": 1771297337,
+      "created_at_iso": "2026-02-17T03:02:17.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o5sv76w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o4zgvid",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o4zgvid",
+      "created_utc": 1770906200,
+      "created_at_iso": "2026-02-12T14:23:20.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4zgvid/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o5evi41/",
+            "created_utc": 1771107431,
+            "created_at_iso": "2026-02-14T22:17:11.000Z",
+            "id": "o5evi41",
+            "author": "yumcake",
+            "author_fullname": null,
+            "body": "Yes, the trick is that you don't rely on AI to build the output, but instead to build the process automation that yields the output. Code doesn't hallucinate it has errors, those errors oersost until tested and fixed, after which it's reliable.\n\n So you ask it to build a software tool to automate the process. Specify that it must use test driven design. The code passes testing and your review and now you're using code to automate, not AI.\n\n Specific example. Thinkcell doesn't nice waterfall charts that are the preference of many consulting firms. It only works in Excel, doesn't have automated generation and requires cut and pasting to the destination slide. AI generated Google AppScripting to call plotly.py 's waterfall function with the same presentation formatting and automated the generation and flow directly into the specified deck slide URL and X/Y coordinatedcm, took only a few hours start to finish. Not something I would do as someone that doesn't know JavaScript or python, but AI does.",
+            "body_html": "\n      <p>\n      Yes, the trick is that you don't rely on AI to build the output, but instead to build the process automation that yields the output. Code doesn't hallucinate it has errors, those errors oersost until tested and fixed, after which it's reliable.\n    </p><p>\n      So you ask it to build a software tool to automate the process. Specify that it must use test driven design. The code passes testing and your review and now you're using code to automate, not AI.\n    </p><p>\n      Specific example. Thinkcell doesn't nice waterfall charts that are the preference of many consulting firms. It only works in Excel, doesn't have automated generation and requires cut and pasting to the destination slide. AI generated Google AppScripting to call plotly.py 's waterfall function with the same presentation formatting and automated the generation and flow directly into the specified deck slide URL and X/Y coordinatedcm, took only a few hours start to finish. Not something I would do as someone that doesn't know JavaScript or python, but AI does.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o5evi41",
+            "parent_id": "t1_o4zgvid",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/o5evi41/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/ot6ktxn/",
+                  "created_utc": 1782155237,
+                  "created_at_iso": "2026-06-22T19:07:17.000Z",
+                  "id": "ot6ktxn",
+                  "author": "ElectronicTonicWater",
+                  "author_fullname": null,
+                  "body": "That's the right approach. When I was facing a similar issue I plugged a database with financial data into Claude, that shifted the hallucinations from numbers to SQL statements. The SQL statements error out if wrong, but once the SQL works, the numbers come back from a database.",
+                  "body_html": "\n      <p>\n      That's the right approach. When I was facing a similar issue I plugged a database with financial data into Claude, that shifted the hallucinations from numbers to SQL statements. The SQL statements error out if wrong, but once the SQL works, the numbers come back from a database.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ot6ktxn",
+                  "parent_id": "t1_o5evi41",
+                  "permalink": "/r/CFO/comments/1r1kq9g/comment/ot6ktxn/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/omktq7x/",
+                  "created_utc": 1779148897,
+                  "created_at_iso": "2026-05-19T00:01:37.000Z",
+                  "id": "omktq7x",
+                  "author": "calzonedome",
+                  "author_fullname": null,
+                  "body": "I resigned from my job and want to learn AI and automation before searching for new opportunities. What exact skills would you recommend acquiring and is there any structured training you recommend?",
+                  "body_html": "\n      <p>\n      I resigned from my job and want to learn AI and automation before searching for new opportunities. What exact skills would you recommend acquiring and is there any structured training you recommend?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_omktq7x",
+                  "parent_id": "t1_o5evi41",
+                  "permalink": "/r/CFO/comments/1r1kq9g/comment/omktq7x/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9DRk8vdDNfMXIxa3E5Zz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NCwwLDEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WlRJd05qYzBZamdzT2pvek9tUXhPblF4WDI5dGEzUnhOM2c9Iiwic3VicmVkZGl0IjoiQ0ZPIiwicG9zdElkIjoiMXIxa3E5ZyIsInBhcmVudFRoaW5nSWQiOiJ0MV9vbWt0cTd4In0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "omktq7x"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "omktq7x"
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    },
+    {
+      "id": "o7akp83",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o7akp83",
+      "created_utc": 1772007972,
+      "created_at_iso": "2026-02-25T08:26:12.000Z",
+      "parent_id": "t3_1r1kq9g",
+      "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o7akp83/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o7p5wly/",
+            "created_utc": 1772199483,
+            "created_at_iso": "2026-02-27T13:38:03.000Z",
+            "id": "o7p5wly",
+            "author": "Exact_Football9061",
+            "author_fullname": null,
+            "body": "How does the \"human insight\" work?",
+            "body_html": "\n      <p>\n      How does the \"human insight\" work?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o7p5wly",
+            "parent_id": "t1_o7akp83",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/o7p5wly/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/omktzsg/",
+            "created_utc": 1779148990,
+            "created_at_iso": "2026-05-19T00:03:10.000Z",
+            "id": "omktzsg",
+            "author": "calzonedome",
+            "author_fullname": null,
+            "body": "What types of automation do you suggest learning?",
+            "body_html": "\n      <p>\n      What types of automation do you suggest learning?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_omktzsg",
+            "parent_id": "t1_o7akp83",
+            "permalink": "/r/CFO/comments/1r1kq9g/comment/omktzsg/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o7akp83"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1r1kq9g",
+    "author": "founders_keepers",
+    "author_fullname": "t2_vag7drkq",
+    "subreddit": "CFO",
+    "title": "86% of CFOs have hit AI hallucination issues in finance",
+    "downs": 0,
+    "name": "t3_1r1kq9g",
+    "upvote_ratio": 1,
+    "ups": 26,
+    "selftext": "The large majority (86%) said their finance team has encountered inaccurate or hallucinated data while using AI for finance tasks. Wild. Most fintech tools use only a single reasoning layer via LLM to do everything like reading, extracting data and executing the business logic.. but since everything is probabilistic, it's a roll of dice whether it completely makes something up. The 97% of CFOs in that survey who said human oversight is still critical.. yup but that's not entirely scalable and auditors once again become the bottleneck.",
+    "total_awards_received": 0,
+    "score": 26,
+    "created": 1770776076,
+    "num_comments": 18,
+    "url": "https://www.journalofaccountancy.com/news/2026/feb/agentic-ai-is-handling-more-finance-work-but-can-cfos-trust-it/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1770776076
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 27505f90f47745d6b9f20af70533d17a

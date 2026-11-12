@@ -1,0 +1,276 @@
+{
+  "success": true,
+  "credits_remaining": 209753,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "lr94qo5",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "After your question has been solved u/Themajesticking, please reply to the helpful user's comment with the phrase \"Solution verified\".\n\n This will not only award a point to the contributor for their assistance but also update the post's flair to \"Solved\".\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_lr94qo5",
+      "created_utc": 1728569107,
+      "created_at_iso": "2024-10-10T14:05:07.000Z",
+      "parent_id": "t3_1g0jl9t",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr94qo5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "lr993y7",
+      "author": "dicotyledon",
+      "author_fullname": null,
+      "body": "You can do this with dashboard alerts. You make a card viz that shows the date diff between the latest date in your data compared to today and alert if it\u2019s over your threshold. This is the only thing I use dashboards for lol.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_lr993y7",
+      "created_utc": 1728570619,
+      "created_at_iso": "2024-10-10T14:30:19.000Z",
+      "parent_id": "t3_1g0jl9t",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr993y7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr9j7io/",
+            "created_utc": 1728574009,
+            "created_at_iso": "2024-10-10T15:26:49.000Z",
+            "id": "lr9j7io",
+            "author": "Themajesticking",
+            "author_fullname": null,
+            "body": "I should have mentioned that I'm using PBI Report Server on a standalone dark network (no internet connection) so several features are limited. Do alerts work in Report Server?",
+            "body_html": "\n      <p>\n      I should have mentioned that I'm using PBI Report Server on a standalone dark network (no internet connection) so several features are limited. Do alerts work in Report Server?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_lr9j7io",
+            "parent_id": "t1_lr993y7",
+            "permalink": "/r/PowerBI/comments/1g0jl9t/comment/lr9j7io/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr9wlno/",
+                  "created_utc": 1728578405,
+                  "created_at_iso": "2024-10-10T16:40:05.000Z",
+                  "id": "lr9wlno",
+                  "author": "dicotyledon",
+                  "author_fullname": null,
+                  "body": "Ohh yeah that\u2019s relevant \ud83e\udd23 I don\u2019t use report server, but surely it has some notification ability. I know there\u2019s some in SSRS.",
+                  "body_html": "\n      <p>\n      Ohh yeah that\u2019s relevant \ud83e\udd23  I don\u2019t use report server, but surely it has some notification ability. I know there\u2019s some in SSRS.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_lr9wlno",
+                  "parent_id": "t1_lr9j7io",
+                  "permalink": "/r/PowerBI/comments/1g0jl9t/comment/lr9wlno/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "lr9j7io"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "lr9j7io"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "lra5ojt",
+      "author": "MonkeyNin",
+      "author_fullname": null,
+      "body": "What kind of failures are you getting?\n\n For example: If it's a Web API, you can use ManualStatusHanding and try x => catch (e) => e You could make rate limiting errors sleep for 1 sec, then try again. Rather than returning rows with errors.\n\n You said it's isolated, but you might be able to do the same thing with your connector. If it returns some rows with errors without being fatal -- you could try testing for that. Here's a sketch\n\nlet Source = ...,\n maybeError = (try Source),\n rowErrors = Table.SelectRowsWithErrors( Source ),\n refreshFailed = maybeError[HasError] or Table.RowCount( rowErrors ) > 0,\n summary = [ // convert to a table\n When = DateTimeZone.FixedUtcNow(),\n Failed = refreshFailed\n ]\nin summary",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_lra5ojt",
+      "created_utc": 1728581319,
+      "created_at_iso": "2024-10-10T17:28:39.000Z",
+      "parent_id": "t3_1g0jl9t",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lra5ojt/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lra71on/",
+            "created_utc": 1728581755,
+            "created_at_iso": "2024-10-10T17:35:55.000Z",
+            "id": "lra71on",
+            "author": "Themajesticking",
+            "author_fullname": null,
+            "body": "I\u2019m connecting to several data sources and sometimes one of them goes down or has a change that causes a failure. When that happens the whole refresh is unsuccessful.",
+            "body_html": "\n      <p>\n      I\u2019m connecting to several data sources and sometimes one of them goes down or has a change that causes a failure. When that happens the whole refresh is unsuccessful.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_lra71on",
+            "parent_id": "t1_lra5ojt",
+            "permalink": "/r/PowerBI/comments/1g0jl9t/comment/lra71on/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lrllq50/",
+                  "created_utc": 1728756380,
+                  "created_at_iso": "2024-10-12T18:06:20.000Z",
+                  "id": "lrllq50",
+                  "author": "MonkeyNin",
+                  "author_fullname": null,
+                  "body": "[1] html visuals -- Actually, maybe\n\n HTML, pbiviz plugin, or some other method to compare last successful refresh time to the current system time when the refresh fails?\n\n The docs make it sound like you might be able to using inline javascript.\nYou could pass your max date / your Refresh[Date] see: https://www.html-content.com/reference/data-roles\n\n Here's a sketch of a <script> that might do what you want.\n\n It's javascript. You'll have to quote it in DAX like above.\n\n// your newest record from DAX:\nnewestRecord = new Date(`Sat Oct 12 2024 12:36:25 GMT-0500`)\nnow = new Date()\nelapsedSeconds = (now - newestRecord) / 1000\nelapsedMinutes = elapsedSeconds / 60\n\nisFresh = elapsedMinutes <= 5\nhtml = `<h1>Fresh Data</h1>`\n\nif ( ! isFresh ) {\n html = `\n <h1>\n Latest Data is ${\n elapsedMinutes.toPrecision(3)\n } minutes old\n </h1>\n `\n }\n\n Tip: For javascript strings, use the backtick character (as the quote). This reduces the need to escape things in your DAX string . Using that, you rarely have to add strings to variables in javascript.\n\n[2] Email alerts? You mentioned you were using a script.\n\n If you have permission to run powershell, you could have a script to automatically watch the refresh history\n\n For example: https://learn.microsoft.com/en-us/rest/api/power-bi/datasets/get-refresh-history-in-group\n\n You can test if the record has status == 'Failed. If true, then serviceExceptionJson will have a value\n\n You could script that to fire a BurntToast or send an email alert to check it\n\n related docs:\n\n https://www.html-content.com/reference/limitations\n\n https://github.com/Windos/BurntToast",
+                  "body_html": "\n      <h3 class=\"text-16-scalable xs:text-18-scalable\">[1] html visuals -- Actually, maybe</h3><blockquote>\n      <p>\n      HTML, pbiviz plugin, or some other method to compare last successful refresh time to the current system time when the refresh fails?\n    </p>\n    </blockquote><p>\n      The docs make it sound like you might be able to using inline javascript.<br>You could pass your max date / your <code>Refresh[Date]</code> see: <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://www.html-content.com/reference/data-roles\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://www.html-content.com/reference/data-roles</a>\n    </p><h4 class=\"font-semibold text-14-scalable xs:text-16-scalable\">\n          Here's a sketch of a &lt;script&gt; that might do what you want.\n        </h4><p>\n      It's javascript. You'll have to quote it in DAX like above.\n    </p><pre>// your newest record from DAX:\nnewestRecord = new Date(`Sat Oct 12 2024 12:36:25 GMT-0500`)\nnow = new Date()\nelapsedSeconds = (now - newestRecord) / 1000 \nelapsedMinutes = elapsedSeconds / 60\n\nisFresh = elapsedMinutes &lt;= 5\nhtml = `&lt;h1&gt;Fresh Data&lt;/h1&gt;`\n\nif ( ! isFresh ) { \n    html = `\n        &lt;h1&gt;\n        Latest Data is ${ \n            elapsedMinutes.toPrecision(3) \n        } minutes old\n        &lt;/h1&gt;\n    `\n }</pre><p>\n      Tip: <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals\" rel=\"noopener nofollow ugc\" target=\"_blank\">For javascript strings, use the backtick character (as the quote). This reduces the need to escape things in your DAX string</a> . Using that, you rarely have to add strings to variables in javascript.\n    </p><h3 class=\"text-16-scalable xs:text-18-scalable\">[2] Email alerts? You mentioned you were using a script.</h3><p>\n      If you have permission to run powershell, you could have a script to automatically watch the refresh history\n    </p><p>\n      For example: <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://learn.microsoft.com/en-us/rest/api/power-bi/datasets/get-refresh-history-in-group\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://learn.microsoft.com/en-us/rest/api/power-bi/datasets/get-refresh-history-in-group</a>\n    </p><p>\n      You can test if the record has <code>status == 'Failed</code>. If true, then <code>serviceExceptionJson</code> will have a value\n    </p><p>\n      You could script that to fire a <code>BurntToast</code> or send an email alert to check it\n    </p><p>\n      related docs:\n    </p><ul>\n        <li>\n      <p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://www.html-content.com/reference/limitations\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://www.html-content.com/reference/limitations</a>\n    </p>\n    </li><li>\n      <p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://github.com/Windos/BurntToast\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://github.com/Windos/BurntToast</a>\n    </p>\n    </li>\n      </ul>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_lrllq50",
+                  "parent_id": "t1_lra71on",
+                  "permalink": "/r/PowerBI/comments/1g0jl9t/comment/lrllq50/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "lra71on"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "lra71on"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "lr9h95h",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_lr9h95h",
+      "created_utc": 1728573365,
+      "created_at_iso": "2024-10-10T15:16:05.000Z",
+      "parent_id": "t3_1g0jl9t",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr9h95h/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr9itak/",
+            "created_utc": 1728573879,
+            "created_at_iso": "2024-10-10T15:24:39.000Z",
+            "id": "lr9itak",
+            "author": "Themajesticking",
+            "author_fullname": null,
+            "body": "The problem is that the only time the data is stale is when there's a failure in loading from one of the data sources. When this happens, NOW() will have the last successful refresh time which is stale. In other words, since the data refresh failed, there is no way to get the current time to compare against.",
+            "body_html": "\n      <p>\n      The problem is that the only time the data is stale is when there's a failure in loading from one of the data sources. When this happens, NOW() will have the last successful refresh time which is stale. In other words, since the data refresh failed, there is no way to get the current time to compare against.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_lr9itak",
+            "parent_id": "t1_lr9h95h",
+            "permalink": "/r/PowerBI/comments/1g0jl9t/comment/lr9itak/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "lr9h95h"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1g0jl9t",
+    "author": "Themajesticking",
+    "author_fullname": "t2_k1crv53",
+    "subreddit": "PowerBI",
+    "title": "Any way to display warning if data is stale from a data source error?",
+    "downs": 0,
+    "name": "t3_1g0jl9t",
+    "upvote_ratio": 1,
+    "ups": 2,
+    "selftext": "I'm using Power BI Report Server in import mode for a few reports/dashboards and have them displayed on large monitors. These dashboards are used to display real-time data (within the last 5 minutes). I have a script that clicks the refresh button on the dashboard every minute to catch the background refresh and ensure that the visuals are constantly updated on the display. I have a \"Last Refresh\" visual at the top of the dashboard which shows the last successful refresh. Is there any way to use HTML, pbiviz plugin, or some other method to compare last successful refresh time to the current system time when the refresh fails? I need a way for people to know that the data they're seeing is stale data because of a failure in refreshing from one of the data sources. As I understand it, the method would need to somehow have access to local system time as UTCNOW will have the last successful refresh time instead of the actual current system time.",
+    "total_awards_received": 0,
+    "score": 2,
+    "created": 1728569106,
+    "num_comments": 9,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/any_way_to_display_warning_if_data_is_stale_from/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1728569106
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 4a7b17ac244d4319b4e60336334519a7
+treg: anything confusing or wrong about this call, even if it worked? treg feedback submit <quality|pricing|friction|other> "what you saw" --call-id 4a7b17ac244d4319b4e60336334519a7; omit private data, then keep going with the task.

@@ -1,0 +1,690 @@
+{
+  "success": true,
+  "credits_remaining": 209774,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "nkuhlnt",
+      "author": "indranet_dnb",
+      "author_fullname": null,
+      "body": "I implement semantic layers for many companies and I like them. imo they're relatively underhyped because a lot of people think you can just throw all the data in an LLM's context\n\n and do magic but in reality getting good performance out of AI systems requires a fair bit of data standardization and semantic enrichment. If you have more specific questions I can answer but idk what you're trying to figure out",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuhlnt",
+      "created_utc": 1761166618,
+      "created_at_iso": "2025-10-22T20:56:58.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuhlnt/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkw8x4n/",
+            "created_utc": 1761188879,
+            "created_at_iso": "2025-10-23T03:07:59.000Z",
+            "id": "nkw8x4n",
+            "author": "reelznfeelz",
+            "author_fullname": null,
+            "body": "Give me a simple overview of what the semantic layer actually is? A bunch of annotations or metadata? Ive always wanted to see if you could implement a sort of semantic layer using graph databases\n\n . But haven\u2019t sat down to figure out exactly how that would work mechanism wise. Seems you could overlay a lot of \u201cdepends on\u201d or \u201csubscribes to\u201d kind of stuff on top of a relational model then make use of it.",
+            "body_html": "\n      <p>\n      Give me a simple overview of what the semantic layer actually is?  A bunch of annotations or metadata?  Ive always wanted to see if you could implement a sort of semantic layer using <search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;search&quot;},&quot;comment&quot;:{&quot;id&quot;:&quot;t1_nkw8x4n&quot;,&quot;post_id&quot;:&quot;t3_1odk2ry&quot;},&quot;meta_search&quot;:{&quot;display_query&quot;:&quot;graph databases&quot;}}\" view-events=\"post_detail/view/highlight\"><search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;pdp_term&quot;},&quot;meta_search&quot;:{&quot;raw_query&quot;:&quot;graph databases semantic layer&quot;},&quot;search&quot;:{&quot;impression_id&quot;:&quot;b8d0afe4-be58-49f9-8419-b484c016ffb1&quot;,&quot;origin_element&quot;:&quot;pdp_comment_highlighted_search_term&quot;,&quot;query&quot;:&quot;graph databases semantic layer&quot;,&quot;conversation_id&quot;:&quot;27532ff3-5a24-44f7-8143-51fa3f151b29&quot;}}\" click-events=\"search/click/full_search_button\"><a rpl=\"\" class=\"border-[var(--color-a-default)] visited:border-[var(--color-a-visited)] hover:border-[var(--color-a-hover)] hover:visited:border-[var(--color-a-visited)] !no-underline border-dotted border-b-sm border-x-0 border-t-0 p-px a\n  \n  \n  \n  \n  no-underline hover:no-underline\n  \n  cursor-pointer\" href=\"/search/?q=graph+databases+semantic+layer&amp;cId=27532ff3-5a24-44f7-8143-51fa3f151b29&amp;iId=f70610df-77df-4c6e-9ab3-056ef061203d\">graph databases<span class=\"ms-2xs align-middle\"><svg rpl=\"\" fill=\"currentColor\" height=\"12\" icon-name=\"search\" viewBox=\"0 0 20 20\" width=\"12\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"m18.736 17.464-3.483-3.483A7.961 7.961 0 0016.999 9 8 8 0 109 17a7.961 7.961 0 004.981-1.746l3.483 3.483a.9.9 0 101.272-1.273ZM9 15.2A6.207 6.207 0 012.8 9c0-3.419 2.781-6.2 6.2-6.2s6.2 2.781 6.2 6.2-2.781 6.2-6.2 6.2Z\"></path>\n    </svg></span></a></search-telemetry-tracker></search-telemetry-tracker>.  But haven\u2019t sat down to figure out exactly how that would work mechanism wise.  Seems you could overlay a lot of \u201cdepends on\u201d or \u201csubscribes to\u201d kind of stuff on top of a relational model then make use of it.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nkw8x4n",
+            "parent_id": "t1_nkuhlnt",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nkw8x4n/",
+            "ups": 6,
+            "downs": 0,
+            "score": 6,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpEZGtZV1kzT1dRc09qb3lPbVF4T25ReFgyNXJkemg0Tkc0PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjFvZGsycnkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbmt3OHg0biJ9"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl0728y/",
+            "created_utc": 1761245554,
+            "created_at_iso": "2025-10-23T18:52:34.000Z",
+            "id": "nl0728y",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "hey thanks for the great answer!\n\n Semantic layers have been around for a while now and traditionally they had been a hard sell for many companies and thus the slow adoption of them. I see that there's much more interest around them now and I'm trying to understand if the interest is stemming from the technologies maturing to the point where it's easier now to build and maintain a semantic layer or it's because of the hype around making LLMs work with analytics when you have a semantic layer, opposed to trying to do vanilla text-to-sql.",
+            "body_html": "\n      <p>\n      hey thanks for the great answer!\n    </p><p>\n      Semantic layers have been around for a while now and traditionally they had been a hard sell for many companies and thus the slow adoption of them. I see that there's much more interest around them now and I'm trying to understand if the interest is stemming from the technologies maturing to the point where it's easier now to build and maintain a semantic layer or it's because of the hype around making LLMs work with analytics when you have a semantic layer, opposed to trying to do vanilla text-to-sql.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nl0728y",
+            "parent_id": "t1_nkuhlnt",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl0728y/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNll6QXhNbU16TldRc09qb3lPbVF4T25ReFgyNXNNRGN5T0hrPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjFvZGsycnkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbmwwNzI4eSJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPRFF3TnpNM05EVXNPam94T21WNE9paEZNVDR2YVRvbE9pazNhVlE9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMW9kazJyeSIsInBhcmVudFRoaW5nSWQiOiJ0MV9ua3VobG50In0"
+        }
+      },
+      "ups": 54,
+      "downs": 0,
+      "score": 54
+    },
+    {
+      "id": "nkuo60g",
+      "author": "fauxmosexual",
+      "author_fullname": null,
+      "body": "Semantic layers are great from a governance perspective and the AI use case is kind of pointless (other than convincing your bosses that you should be allowed to spend time on semantic models).\n\n A good semantic model really bridges the BI adoption gap by providing assets that people can do drag and drop report development. In larger orgs it's also a great way to enforce standardisation of calculations like KPIs: without a semantic layer Sue from finance might have a retention rate calculation different from Bob from HR's version, and when the C-suite see two different numbers for the \"same\" thing they either pick on based on whether Bob or Sue has the better reputation, or distrust them both entirely. If Bob and Sue are dragging and dropping a measure from the same model that doesn't happen. And if Bob and Sue both think their one is best, then there can be a process for working out which one becomes the single source of truth instead of them going off into their silo and doing their own thing.\n\n Organisationally it sits at a good place too, in that it can be a product of a central data team to enable business unit-adjacent analysts and BI teams to get straight into their value-add (engineers do the engineering, business users do the questioning, presenting and interpretation) . So semantic models work really well for hub-and-spoke style organisation set ups.\n\n I haven't gotten into the AI side of things but when getting buy in for this work, pitching it as a step towards AI enablement is a great way of getting traction.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuo60g",
+      "created_utc": 1761168608,
+      "created_at_iso": "2025-10-22T21:30:08.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuo60g/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl07qbd/",
+            "created_utc": 1761245747,
+            "created_at_iso": "2025-10-23T18:55:47.000Z",
+            "id": "nl07qbd",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "sounds like there might be a win-win situation here. Semantic layers can benefit both human and agent users at the end of the day, regardless if leadership is focusing on the agent side for now.",
+            "body_html": "\n      <p>\n      sounds like there might be a win-win situation here. Semantic layers can benefit both human and agent users at the end of the day, regardless if leadership is focusing on the agent side for now.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nl07qbd",
+            "parent_id": "t1_nkuo60g",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl07qbd/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nkuo60g"
+        }
+      },
+      "ups": 20,
+      "downs": 0,
+      "score": 20
+    },
+    {
+      "id": "nkuy5fa",
+      "author": "marketlurker",
+      "author_fullname": null,
+      "body": "I always have a semantic layer. I rarely have the end users hit the core layer. The core layer is where all clean and coordinated data goes. It should be modeled against the entire company and will change about as fast as the company does (not very).\n\n The semantic layer is used for your data products. Data products mean anything that the end users need. One of the biggest challenges any data warehouse has is keeping the data between data products aligned. You always create your data products from the core layer for this very reason. As a general rule of thumb, your core layer doesn't specifically address any business need (actually it has to address all of them).\n\n You may be asking, why not just query the core? Data products are created to align with the business needs. What finance needs is not necessarily what sales needs. When you create something like a star schema, you are layering on business requirements, processes and definitions that may not be the same across the entire enterprise. Just that one data product. It is often very tempting to reuse a data product that has close but not entirely overlapping needs. Don't do it. That is a short cut to getting unreliable data products as it is hard to serve two masters.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuy5fa",
+      "created_utc": 1761171900,
+      "created_at_iso": "2025-10-22T22:25:00.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuy5fa/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl07vvf/",
+            "created_utc": 1761245792,
+            "created_at_iso": "2025-10-23T18:56:32.000Z",
+            "id": "nl07vvf",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "how is this different than having and maintaining marts?",
+            "body_html": "\n      <p>\n      how is this different than having and maintaining marts?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nl07vvf",
+            "parent_id": "t1_nkuy5fa",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl07vvf/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlkyVXdaRFZoTldNc09qb3lPbVF4T25ReFgyNXNNRGQyZG1ZPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjFvZGsycnkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbmwwN3Z2ZiJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZakV6TlRZeE5EWXNPam94T21WNE9paEZPVmxFTFE9PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjFvZGsycnkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbmt1eTVmYSJ9"
+        }
+      },
+      "ups": 11,
+      "downs": 0,
+      "score": 11
+    },
+    {
+      "id": "nkv1ovv",
+      "author": "Reverie_of_an_INTP",
+      "author_fullname": null,
+      "body": "We didn't have one and we badly needed one.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkv1ovv",
+      "created_utc": 1761173141,
+      "created_at_iso": "2025-10-22T22:45:41.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkv1ovv/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkv3tg8/",
+            "created_utc": 1761173895,
+            "created_at_iso": "2025-10-22T22:58:15.000Z",
+            "id": "nkv3tg8",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "the wording you are using is very intriguing. Why you needed it so \"badly\" ?",
+            "body_html": "\n      <p>\n      the wording you are using is very intriguing. Why you needed it so \"badly\" ?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nkv3tg8",
+            "parent_id": "t1_nkv1ovv",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nkv3tg8/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nkv1ovv"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "nkuiekq",
+      "author": "WhoIsJohnSalt",
+      "author_fullname": null,
+      "body": "If you made the data available across the business - open access - could people find it, understand it, and use it with no intervention?\n\n No? Then if you can\u2019t expect a human to be able to do that, how would you expect an AI agent to be able to do that?\n\n It\u2019s a shift that a lot of us are talking about away from \u201cData Products\u201d ie dashboards, web UX to - \u201cData As A Product\n\n \u201d.\n\n Semantic layers (and domain models) plus great MDM enables that.\n\n It\u2019s been a thing for like 20 years but still isn\u2019t adopted enough IMHO",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuiekq",
+      "created_utc": 1761166850,
+      "created_at_iso": "2025-10-22T21:00:50.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuiekq/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkvkzow/",
+            "created_utc": 1761180019,
+            "created_at_iso": "2025-10-23T00:40:19.000Z",
+            "id": "nkvkzow",
+            "author": "fauxmosexual",
+            "author_fullname": null,
+            "body": "It's kind of funny to see the excitable execs who just read about semantic models in a LinkedIn AI hype-post come in asking for this \"new\" approach.\n\n After 20 years of trying to explain why we should move to doing it more and hearing that it's not a priority over churning out more dashboards, I'll take it.",
+            "body_html": "\n      <p>\n      It's kind of funny to see the excitable execs who just read about semantic models in a LinkedIn AI hype-post come in asking for this \"new\" approach.\n    </p><p>\n      After 20 years of trying to explain why we should move to doing it more and hearing that it's not a priority over churning out more dashboards, I'll take it.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nkvkzow",
+            "parent_id": "t1_nkuiekq",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nkvkzow/",
+            "ups": 6,
+            "downs": 0,
+            "score": 6,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl08cu7/",
+                  "created_utc": 1761245929,
+                  "created_at_iso": "2025-10-23T18:58:49.000Z",
+                  "id": "nl08cu7",
+                  "author": "cpardl",
+                  "author_fullname": null,
+                  "body": "sometimes all it takes is for the right hype to exist to get something adopted even if the value delivered at the end comes from different use cases. It is kind of funny but it's also a reality with many things in the tech industry and the way markets work.",
+                  "body_html": "\n      <p>\n      sometimes all it takes is for the right hype to exist to get something adopted even if the value delivered at the end comes from different use cases. It is kind of funny but it's also a reality with many things in the tech industry and the way markets work.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_nl08cu7",
+                  "parent_id": "t1_nkvkzow",
+                  "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl08cu7/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TmpCbE16VXhZMk1zT2pvek9tUXhPblF4WDI1c01EaGpkVGM9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMW9kazJyeSIsInBhcmVudFRoaW5nSWQiOiJ0MV9ubDA4Y3U3In0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "nl08cu7"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nl08cu7"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "nkuht0e",
+      "author": "leaky_shrew",
+      "author_fullname": null,
+      "body": "Idk if they\u2019re on the rise again or not but I never understood why they went out of fashion. I\u2019ve generally been with smaller or medium sized shops so maybe it\u2019s easier to maintain/implement there, but it always seemed like the best way to enable any semblance of self service and avoid reliance on too skilled of data technologists to do any analytics",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuht0e",
+      "created_utc": 1761166677,
+      "created_at_iso": "2025-10-22T20:57:57.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuht0e/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl08z2p/",
+            "created_utc": 1761246108,
+            "created_at_iso": "2025-10-23T19:01:48.000Z",
+            "id": "nl08z2p",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "my feeling is that semantic layers have all the issues of adding another level of indirection in a system. You solve the problem by pushing it to a different layer. From what I hear, they work great for the consumer side but they do have to be maintained if you want to keep them delivering value and not frustrate people. Why this is happening? Maybe it has to do with how these technologies have been implemented or it might be a cultural/organizational thing but I do hear this a lot and from companies with very strong engineering culture.",
+            "body_html": "\n      <p>\n      my feeling is that semantic layers have all the issues of adding another level of indirection in a system. You solve the problem by pushing it to a different layer. From what I hear, they work great for the consumer side but they do have to be maintained if you want to keep them delivering value and not frustrate people. Why this is happening? Maybe it has to do with how these technologies have been implemented or it might be a cultural/organizational thing but I do hear this a lot and from companies with very strong engineering culture.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nl08z2p",
+            "parent_id": "t1_nkuht0e",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl08z2p/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllXVTJOekV3TVRnc09qb3lPbVF4T25ReFgyNXNNRGg2TW5BPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjFvZGsycnkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbmwwOHoycCJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nl08z2p"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "nkxhja7",
+      "author": "Accomplished_Goat_33",
+      "author_fullname": null,
+      "body": "Seems like a bit of confusion in here so I'll just ask: what is the difference between a semantic layer and just a tidy marts layer?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkxhja7",
+      "created_utc": 1761212932,
+      "created_at_iso": "2025-10-23T09:48:52.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkxhja7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nl0a277/",
+            "created_utc": 1761246429,
+            "created_at_iso": "2025-10-23T19:07:09.000Z",
+            "id": "nl0a277",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "There is a difference on how you access the data too and I don't see people mentioning this. The API to interact with semantic layers is very different and reminds more of a BI dashboard where you pick metrics and dimensions and pivot them around. In many implementations you don't even write sql to query them. Which means that there is something there that takes your request and turns it into SQL with joins et.al to make it work, which is another can of worms when performance gets into the discussion.\n\n Also, semantic layers have been traditionally built for BI and part of the big value they bring is that you can materialize/cache the queries very aggressively, which makes sense in a BI environment where the underlying data does not get updated that ofter. If you check the cube.dev product for example, you will see that they've built a very sophisticated caching/materialization layer there.\n\n This can reduce cost a lot but kind of conflicts with the business models of DBX/Snowflake where the money is made through selling compute.",
+            "body_html": "\n      <p>\n      There is a difference on how you access the data too and I don't see people mentioning this. The API to interact with semantic layers is very different and reminds more of a BI dashboard where you pick metrics and dimensions and pivot them around. In many implementations you don't even write sql to query them. Which means that there is something there that takes your request and turns it into SQL with joins <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"http://et.al\" rel=\"noopener nofollow ugc\" target=\"_blank\">et.al</a> to make it work, which is another can of worms when performance gets into the discussion.\n    </p><p>\n      Also, semantic layers have been traditionally built for BI and part of the big value they bring is that you can materialize/cache the queries very aggressively, which makes sense in a BI environment where the underlying data does not get updated that ofter. If you check the <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"http://cube.dev\" rel=\"noopener nofollow ugc\" target=\"_blank\">cube.dev</a> product for example, you will see that they've built a very sophisticated caching/materialization layer there.\n    </p><p>\n      This can reduce cost a lot but kind of conflicts with the business models of DBX/Snowflake where the money is made through selling compute.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nl0a277",
+            "parent_id": "t1_nkxhja7",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/nl0a277/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nkxhja7"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "npktuxp",
+      "author": "PalpitationRoutine51",
+      "author_fullname": null,
+      "body": "Manually generated Semantic layers will be replaced by AI built and governed semantic layers.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_npktuxp",
+      "created_utc": 1763507657,
+      "created_at_iso": "2025-11-18T23:14:17.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/npktuxp/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/npw5mgv/",
+            "created_utc": 1763665832,
+            "created_at_iso": "2025-11-20T19:10:32.000Z",
+            "id": "npw5mgv",
+            "author": "cpardl",
+            "author_fullname": null,
+            "body": "have you seen anything that can do that today?",
+            "body_html": "\n      <p>\n      have you seen anything that can do that today?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_npw5mgv",
+            "parent_id": "t1_npktuxp",
+            "permalink": "/r/dataengineering/comments/1odk2ry/comment/npw5mgv/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "npktuxp"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "nkuny3q",
+      "author": "Lower_Sun_7354",
+      "author_fullname": null,
+      "body": "They're great.\n\n Power BI\n\n has it built-in and they call it that. I normally design my consumption layer as \"semantic\", I just never really called it that. I'd normally call it a Kimball data model\n\n or a dimensional model. But you dont always have to make dimensions. You can present it however you want. In that sense, \"semantic\" is a bit more broad and forgiving a term.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuny3q",
+      "created_utc": 1761168539,
+      "created_at_iso": "2025-10-22T21:28:59.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuny3q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "nkuqa8e",
+      "author": "averageflatlanders",
+      "author_fullname": null,
+      "body": "https://dataengineeringcentral.substack.com/p/what-is-a-semantic-layer",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkuqa8e",
+      "created_utc": 1761169278,
+      "created_at_iso": "2025-10-22T21:41:18.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuqa8e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNRGN5TVRjMVpqa3NPam94T21ReE9uUXhYMjVyZFhGaE9HVT0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxb2RrMnJ5IiwicGFyZW50VGhpbmdJZCI6InQxX25rdXFhOGUifQ"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "nkw1h9r",
+      "author": "Gators1992",
+      "author_fullname": null,
+      "body": "Besides AI, they tie your data model and BI together. You define your tables, columns, joins and metrics in the semantic model and the consuming application just works with objects, so it's drag and drop. No need for the end consumer to figure out your model or recreate calculations every time they start a new dashboard. For you it governs how the users use your model and calculations so you don't get yelled at for having bad data when it's really some idiot made a bad join or formula.\n\n It really depends on your setup whether you get a ton of value from them, but if you have any kind of multi-subject dimensional model with a bunch of calculated fields it's worth taking a look. Dbt is kinda crap because it only works with one dbt model (i.e. OBT), not joined tables at the semantic level. Snowflake is pretty cool, but new so needs some fleshing out. I heard Cube is pretty good, but have not spent more than a few hours with it and the community one has you writing a bunch of jsons to define the model. Traditionally the semantic model has been at the BI layer included in the app. It's still that way for many like PowerBI, Looker, Microstrategy, Omni, etc. We are using PowerBI and it's pretty good, though lots of things suck about PowerBI.\n\n Also heard there is some effort to standardize the semantic model language which will help with integrations and make the models interchangeable across applications. I know Dbt and Snowflake are involved, but not sure who else.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkw1h9r",
+      "created_utc": 1761185987,
+      "created_at_iso": "2025-10-23T02:19:47.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkw1h9r/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "nn0n4da",
+      "author": "ChildhoodAny4245",
+      "author_fullname": null,
+      "body": "New approaches by some manufacturers are moving the semantic layer closer to the database backend. Snowflake, for example, does this with semantic views. This seems to be a sensible approach, as it allows the entire analytics stack to benefit. However, while Snowflake semantic views still require support from BI tool connectors, Exasol (the lightning-fast in-memory database from Germany) already offers a semantic layer that, once modeled, can be used by all BI front ends. In my opinion, solutions can only be successful in the long term if they do not force me into a certain dependency with regard to the use of specific analytics tools like Power bi or (micro)Strategy. Front ends should remain easily interchangeable, as they are usually subject to personal preferences in the business \u2013 and these can change on a daily basis.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nn0n4da",
+      "created_utc": 1762237198,
+      "created_at_iso": "2025-11-04T06:19:58.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nn0n4da/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "nkvcf00",
+      "author": "GoBadgerz",
+      "author_fullname": null,
+      "body": "Bullish on semantic layers for AI BI. AI brings comprehension, but comprehension without context is not very useful for BI. Semantic layers provide the context for the AI models.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkvcf00",
+      "created_utc": 1761176913,
+      "created_at_iso": "2025-10-22T23:48:33.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkvcf00/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "nkwkoag",
+      "author": "ruben_vanwyk",
+      "author_fullname": null,
+      "body": "What do people use these days for Semantic Layers?\n\n I know GCP has LookML, PowerBI has some sort of semantic models in Fabric and of course you can self host Cube\u2026\n\n Curious how people here go about it?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkwkoag",
+      "created_utc": 1761194039,
+      "created_at_iso": "2025-10-23T04:33:59.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkwkoag/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "nkx4qqq",
+      "author": "qrist0ph",
+      "author_fullname": null,
+      "body": "I\u2019ve built some algorithms for typical e-commerce use cases, such as out-of-stock forecasting and ABC analysis. By introducing an intermediate semantic layer, I can easily build small adapters to connect these algorithms to different types of shops and ERPs.\nSo there are also Non-AI use cases",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nkx4qqq",
+      "created_utc": 1761205121,
+      "created_at_iso": "2025-10-23T07:38:41.000Z",
+      "parent_id": "t3_1odk2ry",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkx4qqq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1odk2ry",
+    "author": "cpardl",
+    "author_fullname": "t2_fb1s1pke",
+    "subreddit": "dataengineering",
+    "title": "What's the community's take on semantic layers?",
+    "downs": 0,
+    "name": "t3_1odk2ry",
+    "upvote_ratio": 0.9846153846153847,
+    "ups": 63,
+    "selftext": "It feels to me that semantic layers are having a renaissance these days, largely driven by the need to enable AI automation in the BI layer. I'm trying to separate hype from signal and my feeling is that the community here is a great place to get help on that. Do you currently have a semantic layer or do you plan to implement one? What's the primary reason to invest into one? I'd love to hear about your experience with semantic layers and any blockers/issues you have faced. Thank you!",
+    "total_awards_received": 0,
+    "score": 63,
+    "created": 1761166082,
+    "num_comments": 68,
+    "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/whats_the_communitys_take_on_semantic_layers/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": true,
+    "locked": false,
+    "created_utc": 1761166082
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW9kazJyeT9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTUiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WWpjMk1qa3dZVFFzT2pvd09tVjRPaWhGTFZ4WlBEcFZVa2h0ZUVGME9pSXFTU1EyVWo5MVVpSXlOU3hKTVV4S1NEUXFObHR4WXlKTU0xZ2lLMVJpSWpBNFpXY2hjaUpoZUhzNUl5ZFFVM1k9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMW9kazJyeSIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id dbf1534f7f014d778bfe17782acc6afd
+treg: after using this result, run treg review dbf1534f7f014d778bfe17782acc6afd <useful|partly|not_useful|not_sure> [--reason "..."]; omit private data, then keep going with the task.

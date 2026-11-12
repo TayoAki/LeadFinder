@@ -1,0 +1,672 @@
+{
+  "success": true,
+  "credits_remaining": 209656,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "nce9cfx",
+      "author": "UsualDue",
+      "author_fullname": null,
+      "body": "you are not wrong, but using valuable time to code your own tools to save $19 per month really tells that your focus might be in the wrong place",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nce9cfx",
+      "created_utc": 1757002051,
+      "created_at_iso": "2025-09-04T16:07:31.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nce9cfx/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nch773m/",
+            "created_utc": 1757034625,
+            "created_at_iso": "2025-09-05T01:10:25.000Z",
+            "id": "nch773m",
+            "author": "YodelingVeterinarian",
+            "author_fullname": null,
+            "body": "Yeah, lets say your market value is roughly $50 / hr (this might be higher than what you are actually paying yourself). Then if you do the math on $20 / month, the break even point is probably around a year or two. If you consider that you will likely need to spend at least an hour a month on this if something breaks or isn't working, then the break even point is never.",
+            "body_html": "\n      <p>\n      Yeah, lets say your market value is roughly $50 / hr (this might be higher than what you are actually paying yourself). Then if you do the math on $20 / month, the break even point is probably around a year or two. If you consider that you will likely need to spend at least an hour a month on this if something breaks or isn't working, then the break even point is never.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nch773m",
+            "parent_id": "t1_nce9cfx",
+            "permalink": "/r/SaaS/comments/1n8c1d7/comment/nch773m/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TYWFTL3QzXzFuOGMxZDc_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2T0RjeVptSm1aVElzT2pveE9tVjRPaWcrUkU5N0tBPT0iLCJzdWJyZWRkaXQiOiJTYWFTIiwicG9zdElkIjoiMW44YzFkNyIsInBhcmVudFRoaW5nSWQiOiJ0MV9uY2U5Y2Z4In0"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "ncec1st",
+      "author": "Jeepsalesg",
+      "author_fullname": null,
+      "body": "We are an analytics vendor, so I\u2019m obviously biased, but I\u2019d like to shed some light on what goes into analytics software and why it can be expensive.\n\n When evaluating the cost, you also need to consider factors such as data privacy compliance, legal checks, server costs, team salaries, onboarding, and ongoing innovation.\n\n For example, if we serve an enterprise client with 20\u201340 million monthly page visits (not even counting event metrics) and provide tools that reduce the required workforce by 12%, that client effectively saves 12% in labor costs (not including IT department work, which is often already stretched to its limits) or if he gains 40% more data, you can evaluate from this perspective. At the same time, they expect new and innovative features, ideally with a one-year competitive advantage before others catch up.\n\n When we charge such a client $80,000 per year, it\u2019s not out of greed, but because the insights and value we deliver are worth that much. For smaller clients, our pricing is comparable to tools like Cookiebot, which represents amazing value for teams that truly work with their data.\n\n A full-time team of just five people already costs at least $300,000 per year.\n\n That said, the option to self-host always exists and can sometimes be the better alternative if the necessary development time is available. We think it\u2019s the combination of just making it work so that you can focus on the more important things and fair transparent pricing.\n\n Happy to discuss. :)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncec1st",
+      "created_utc": 1757002811,
+      "created_at_iso": "2025-09-04T16:20:11.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncec1st/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nceciop/",
+            "created_utc": 1757002942,
+            "created_at_iso": "2025-09-04T16:22:22.000Z",
+            "id": "nceciop",
+            "author": "Jeepsalesg",
+            "author_fullname": null,
+            "body": "I forgot to mention that in our case we also allow the client to spin up his own version of our analytics via docker, to better manage data ownership while getting the newest features and safety.",
+            "body_html": "\n      <p>\n      I forgot to mention that in our case we also allow the client to spin up his own version of our analytics via docker, to better manage data ownership while getting the newest features and safety.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nceciop",
+            "parent_id": "t1_ncec1st",
+            "permalink": "/r/SaaS/comments/1n8c1d7/comment/nceciop/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncec1st"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "ncf7yg4",
+      "author": "scarfwizard",
+      "author_fullname": null,
+      "body": "Bro doesn\u2019t value their time if $19 a month is too much.\n\n Just evaluating for half an hour should tell you you\u2019d be better off buying into an existing product for a month.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncf7yg4",
+      "created_utc": 1757011915,
+      "created_at_iso": "2025-09-04T18:51:55.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncf7yg4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TYWFTL3QzXzFuOGMxZDc_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTIiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TkdKaVpqVXlaRGdzT2pveE9tUXhPblF4WDI1alpqZDVaelE9Iiwic3VicmVkZGl0IjoiU2FhUyIsInBvc3RJZCI6IjFuOGMxZDciLCJwYXJlbnRUaGluZ0lkIjoidDFfbmNmN3lnNCJ9"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "ncetcbq",
+      "author": "Parking-Move2907",
+      "author_fullname": null,
+      "body": "I think the post also highlights just how good existing products like MixPanel are when folk come in saying how easy it looks.\n\n It shows that the analytics incumbents have done an amazing job of helping customers understand the problem that\u2019s being solved, the value they deliver, and then the not insignificant task of presenting complex data journeys in a way that\u2019s easy to use.\n\n And that\u2019s all before you get into the infrastructure & back office costs.\n\n We made the same \u201cassumption\u201d about our vertical 13 years ago. It looked simple. And it was until you try to scale. What works with 10 users or even 100 might start to creak & fail at a 1,000 or 10,000.\n\n Thankfully we rode out those teething pains & 200,000 users later am frequently told what we do is simple!\n\n I\u2019ll always invite others to try and enter the market. It\u2019s good for customer choice and innovation. It keeps us on our toes.\n\n I\u2019d just ask we have a conversation after 3-5 years & see if they still think it\u2019s easy!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncetcbq",
+      "created_utc": 1757007688,
+      "created_at_iso": "2025-09-04T17:41:28.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncetcbq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ncfj1qu",
+      "author": "am3141",
+      "author_fullname": null,
+      "body": "Posthog has huge free tier and you can easily run Umami on vercel and pay nothing if you traffic isn\u2019t big enough.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncfj1qu",
+      "created_utc": 1757015224,
+      "created_at_iso": "2025-09-04T19:47:04.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncfj1qu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "nci6ylj",
+      "author": "AnUninterestingEvent",
+      "author_fullname": null,
+      "body": "Software isn\u2019t priced based on how useful or feature packed it is. It\u2019s priced based on the market. Just because you find using a pen extremely useful day to day, doesn\u2019t mean it should cost $100.\n\n Notion is cheap because there a million more well known ways to write notes on a computer that are free.\n\n Figma is cheap because there are a ton of design platforms.\n\n GitHub is cheap because their competitors are mostly really low cost or free. And GitHub serves as a marketing platform for other Microsoft products.\n\n There\u2019s a handful of good analytics platforms in comparison to these, so they can charge higher prices.\n\n If a price point works for a company, then it\u2019s not overpriced. It\u2019s correctly priced.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nci6ylj",
+      "created_utc": 1757048300,
+      "created_at_iso": "2025-09-05T04:58:20.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nci6ylj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ncdrgm1",
+      "author": "Mitzu_Analytics",
+      "author_fullname": null,
+      "body": "it depends on how many events you have, if you have larger datasets, you will have to pay for storage as well everywhere",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncdrgm1",
+      "created_utc": 1756997043,
+      "created_at_iso": "2025-09-04T14:44:03.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncdrgm1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nce98xs",
+      "author": "christoff12",
+      "author_fullname": null,
+      "body": "It\u2019s doubtful you\u2019ve reached feature parity with Amplitude or Mixpanel in a weekend.\n\n There\u2019s a difference between web analytics and product analytics. The latter can get rather complicated, and the market rates for tooling reflect that.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nce98xs",
+      "created_utc": 1757002024,
+      "created_at_iso": "2025-09-04T16:07:04.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nce98xs/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncf4ehv",
+      "author": "laotoutou",
+      "author_fullname": null,
+      "body": "Then you spend time on server and software configuration, or you need to hire someone specifically to manage your infrastructure, costing an extra 10k per month in salary.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncf4ehv",
+      "created_utc": 1757010870,
+      "created_at_iso": "2025-09-04T18:34:30.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncf4ehv/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncfg8bd",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncfg8bd",
+      "created_utc": 1757014370,
+      "created_at_iso": "2025-09-04T19:32:50.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncfg8bd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncfvvbq",
+      "author": "seattext",
+      "author_fullname": null,
+      "body": "first of all there is posthig - if you ad it will be of its cheap. second. People don't buy cheap analytics tools as google analytics do it job perfectly for free. GA is 95% of market. everyone else is premium build for very specific needs product --> they can't be cheap.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncfvvbq",
+      "created_utc": 1757018951,
+      "created_at_iso": "2025-09-04T20:49:11.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncfvvbq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncg11dc",
+      "author": "VahitcanT",
+      "author_fullname": null,
+      "body": "I\u2019m not affiliated with anything but real answer is underlying db engines are expensive, and real question should be why the heck dbs are so expensive?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncg11dc",
+      "created_utc": 1757020486,
+      "created_at_iso": "2025-09-04T21:14:46.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncg11dc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncgijr4",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncgijr4",
+      "created_utc": 1757026225,
+      "created_at_iso": "2025-09-04T22:50:25.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncgijr4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncgjcxx",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncgjcxx",
+      "created_utc": 1757026512,
+      "created_at_iso": "2025-09-04T22:55:12.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncgjcxx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nchovpi",
+      "author": "chrisf_nz",
+      "author_fullname": null,
+      "body": "I'm unsure of the others but I find Hotjar a real goldmine of information regarding UX points of focus and friction.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nchovpi",
+      "created_utc": 1757040766,
+      "created_at_iso": "2025-09-05T02:52:46.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nchovpi/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nchy5zs",
+      "author": "ie485",
+      "author_fullname": null,
+      "body": "OpenPanel. Posthog. Umami.\n\n All can be self hosted for free.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nchy5zs",
+      "created_utc": 1757044475,
+      "created_at_iso": "2025-09-05T03:54:35.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nchy5zs/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nci3lk8",
+      "author": "mahach1",
+      "author_fullname": null,
+      "body": "Agree with you. Most analytics platforms monetize not because the tech is complex, but because they know churn risk is low once your data is locked in. The pricing reflects switching costs, not actual value. That\u2019s why self-hosted or lightweight in-house solutions make a lot of sense for early-stage teams.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nci3lk8",
+      "created_utc": 1757046739,
+      "created_at_iso": "2025-09-05T04:32:19.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nci3lk8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncipp57",
+      "author": "StunningEngine2",
+      "author_fullname": null,
+      "body": "Because Analytics give so much clarity to decision makers, they charge so hefty amount. They priced based the value they provide, and not based on what their costing.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncipp57",
+      "created_utc": 1757058527,
+      "created_at_iso": "2025-09-05T07:48:47.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncipp57/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nx8dc7b",
+      "author": "Technical_Gas_4678",
+      "author_fullname": null,
+      "body": "Most analytics tools are powerful but heavy and expensive, and I ended up using a small fraction of what I paid for. I mostly just want to see what users actually do and what triggers certain behaviour. I found this free tool.\n\n https://www.peeke.app",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nx8dc7b",
+      "created_utc": 1767349446,
+      "created_at_iso": "2026-01-02T10:24:06.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nx8dc7b/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncdsy7h",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncdsy7h",
+      "created_utc": 1756997461,
+      "created_at_iso": "2025-09-04T14:51:01.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncdsy7h/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TYWFTL3QzXzFuOGMxZDc_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE5IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlptVXhNMkl5TWpZc09qb3hPbVF4T25ReFgyNWpaSE41TjJnPSIsInN1YnJlZGRpdCI6IlNhYVMiLCJwb3N0SWQiOiIxbjhjMWQ3IiwicGFyZW50VGhpbmdJZCI6InQxX25jZHN5N2gifQ"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "nce8wea",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nce8wea",
+      "created_utc": 1757001928,
+      "created_at_iso": "2025-09-04T16:05:28.000Z",
+      "parent_id": "t3_1n8c1d7",
+      "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/nce8wea/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncgr1st/",
+            "created_utc": 1757029174,
+            "created_at_iso": "2025-09-04T23:39:34.000Z",
+            "id": "ncgr1st",
+            "author": "[deleted]",
+            "author_fullname": null,
+            "body": "[deleted]",
+            "body_html": null,
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgr1st",
+            "parent_id": "t1_nce8wea",
+            "permalink": "/r/SaaS/comments/1n8c1d7/comment/ncgr1st/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/comment/ncgugwr/",
+                  "created_utc": 1757030351,
+                  "created_at_iso": "2025-09-04T23:59:11.000Z",
+                  "id": "ncgugwr",
+                  "author": "i_haz_rabies",
+                  "author_fullname": null,
+                  "body": "This is so cute, two astroturfing spam bots meeting in the wild.",
+                  "body_html": "\n      <p>\n      This is so cute, two astroturfing spam bots meeting in the wild.&nbsp;\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgugwr",
+                  "parent_id": "t1_ncgr1st",
+                  "permalink": "/r/SaaS/comments/1n8c1d7/comment/ncgugwr/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TYWFTL3QzXzFuOGMxZDc_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTIwLDAsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNRGd3T0dRM1ltVXNPam96T21ReE9uUXhYMjVqWjNWbmQzST0iLCJzdWJyZWRkaXQiOiJTYWFTIiwicG9zdElkIjoiMW44YzFkNyIsInBhcmVudFRoaW5nSWQiOiJ0MV9uY2d1Z3dyIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ncgugwr"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncgugwr"
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    }
+  ],
+  "post": {
+    "id": "1n8c1d7",
+    "author": "YacineSm",
+    "author_fullname": "t2_1amrlcrciy",
+    "subreddit": "SaaS",
+    "title": "Analytics is the most overpriced category in SaaS - change my mind",
+    "downs": 0,
+    "name": "t3_1n8c1d7",
+    "upvote_ratio": 0.9411764705882353,
+    "ups": 15,
+    "selftext": "SaaS founders, let's talk about analytics pricing. Current market rates: Plausible: $228/year (basic plan) Mixpanel: $300+/year Amplitude: $732+/year Hotjar: $468/year What you actually get: Page view counting Basic visitor demographics Simple conversion funnels Standard charts/graphs The math doesn't add up: For a basic startup tracking 50k page views/month, you're paying $228-732/year for what's essentially: Database queries Chart rendering Geographic IP lookups Basic data aggregation Compare this to: Notion: $96/year (complex document management) GitHub: $48/year (entire development platform) Figma: $144/year (professional design suite) Analytics tools charge 2-5x more for significantly simpler functionality. The real kicker: Your data gets locked in their platform. Export options are limited. You're renting access to your own insights. Alternative approach I'm testing: Built our own analytics using modern stack: Own the data completely Customize everything No monthly fees Privacy-first by design Initial results: Setup time: ~1 weekend Monthly savings: $19-61/month Features: Same as paid alternatives Data ownership: 100% ours Questions for SaaS founders: What's your analytics spend vs other tools? Have you considered building internal analytics? Is vendor lock-in worth the convenience? Maybe it's time to question why we accept analytics as a high-priced necessity when the underlying tech is commoditized. Update : Fair points on the cost analysis. Let me be honest about what this actually is: You're right - $19/month won't break the bank. But here's my perspective as an indie hacker: I built this for my own projects and realized other indie makers might want the same thing. What you get for $10: Complete Next.js + Supabase analytics app Super simple setup: just add your Supabase env variables and run Works exactly like paid services (page views, referrers, real-time data) You own it completely - modify, rebrand, whatever Who this makes sense for: Indie hackers with multiple projects ($19 \u00d7 5 projects = $95/month) Developers who want to understand how analytics work under the hood People building SaaS who need to watch costs Anyone who prefers owning vs renting their tools Who should skip this: If you're happy with existing solutions If $19/month doesn't matter to your business If you don't want to self-host I'm not trying to revolutionize analytics or compete with PostHog. This is just a simple, clean implementation focused on indie hackers who want to own their stack. Made it $10 because honestly, the feedback from this community is more valuable than revenue: fikrah.xyz Perfect for the \"build vs buy\" mindset most indie makers have.",
+    "total_awards_received": 0,
+    "score": 15,
+    "created": 1756996841,
+    "num_comments": 39,
+    "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/analytics_is_the_most_overpriced_category_in_saas/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1756996841
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id d8b4029978e84b598464d3a9258a9c20

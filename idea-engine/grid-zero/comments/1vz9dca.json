@@ -1,0 +1,265 @@
+{
+  "success": true,
+  "credits_remaining": 209638,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p6321sf",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_p6321sf",
+      "created_utc": 1787777382,
+      "created_at_iso": "2026-08-26T20:49:42.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6321sf/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6330dl",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6330dl",
+      "created_utc": 1787777631,
+      "created_at_iso": "2026-08-26T20:53:51.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6330dl/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p63byhf/",
+            "created_utc": 1787780036,
+            "created_at_iso": "2026-08-26T21:33:56.000Z",
+            "id": "p63byhf",
+            "author": "Valuable_Card6470",
+            "author_fullname": null,
+            "body": "the black box part is what kills me, you cant even troubleshoot something you cant see into",
+            "body_html": "\n      <p>\n      the black box part is what kills me, you cant even troubleshoot something you cant see into\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p63byhf",
+            "parent_id": "t1_p6330dl",
+            "permalink": "/r/digital_marketing/comments/1vz9dca/comment/p63byhf/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p64x6oq/",
+            "created_utc": 1787798011,
+            "created_at_iso": "2026-08-27T02:33:31.000Z",
+            "id": "p64x6oq",
+            "author": "Marketing_Introvert",
+            "author_fullname": null,
+            "body": "They\u2019re all 60% guessing based on past results. It\u2019s kinda nuts. I could do without it requiring a new educational topic on probabilistic modeling that I now get to explain.",
+            "body_html": "\n      <p>\n      They\u2019re all 60% guessing based on past results. It\u2019s kinda nuts. I could do without it requiring a new educational topic on probabilistic modeling that I now get to explain.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p64x6oq",
+            "parent_id": "t1_p6330dl",
+            "permalink": "/r/digital_marketing/comments/1vz9dca/comment/p64x6oq/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p6330dl"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p667hcw",
+      "author": "bayouski",
+      "author_fullname": null,
+      "body": "i'd keep the explanation super simple and not lead with tracking jargon. show them Shopify next to the dashboard and explain that Shopify is recording the actual orders, while the other tool is measuring/attributing those orders through its own tracking, so the two can disagree.\n\n with a 30% gap i'd also be clear that it's bigger than you'd normally ignore and you're tracing where it starts. that way the conversation becomes which system is miscounting and why, not whether you somehow broke their sales.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p667hcw",
+      "created_utc": 1787818344,
+      "created_at_iso": "2026-08-27T08:12:24.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p667hcw/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6881t3",
+      "author": "Direct_Mail_Guy",
+      "author_fullname": null,
+      "body": "A steady 30% gap for two weeks straight isn't a bug, it's two different counting rules. Pull one day's raw orders from Shopify and hand-match them against the ad platform's conversion list before you say another word to the client.\n\n Usual suspects, in the order I'd check them: (1) attribution window - platforms default to 7-day click/1-day view and count the conversion on the click date, Shopify counts it on the order date, which alone will skew a growing account 20-30%; (2) modeled conversions - post-ATT, a chunk of what the platform reports is statistical, not observed; (3) dedupe - if you fire both pixel and CAPI without a shared event_id you double count, if the IDs mismatch you get inflation on one side; (4) Shopify's own analytics uses last non-direct click, so it hands paid social's credit to email or direct.\n\n The way out with the client is to stop defending the dashboard and give them one number you both agree on. We do this by declaring the order system the source of truth and treating every ad platform as a directional pacing tool, then reporting blended CAC (total spend / total orders) weekly. It's boring and unarguable. Also add a \"how did you hear about us\" field at checkout - not accurate, but it's a sanity check when platform numbers drift.\n\n Full disclosure: I founded DirectMail.io, so I live on the offline side of this problem, where there's no pixel at all. Our fix is identity resolution - match the mail file back to orders on name plus address hash, then compare mailed households against a holdout that got nothing. That holdout habit is worth stealing for paid social too: pause a geo or an audience for two weeks and see if revenue actually moves. If it doesn't, the dashboard was lying in the other direction the whole time.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6881t3",
+      "created_utc": 1787843665,
+      "created_at_iso": "2026-08-27T15:14:25.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6881t3/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6rsej5",
+      "author": "eldrugo85",
+      "author_fullname": null,
+      "body": "First thing i'd pin down is which direction the gap goes. i do customer insight in a big retailer and this year i built our own funnel measurement from scratch, it came out undercounting real conversions, which is the opposite of what everyone assumes when a dashboard and the checkout disagree. with the client the only thing that has ever worked for me is naming one system as the number of record, usually the one that takes the money, and treating everything else as directional. is your tool reading under shopify or over it?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6rsej5",
+      "created_utc": 1788087325,
+      "created_at_iso": "2026-08-30T10:55:25.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6rsej5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6sxmvy",
+      "author": "TCpls",
+      "author_fullname": null,
+      "body": "The dashboard is broken. This sounds entirely on your provider. Who is hiding your data, huge no-no. Call it out.\n\n Why do you have to submit a ticket? Thats insane.\n\n This is why I make my own dashboards while I manage the account. It\u2019s an easy skill to learn and avoids headaches of dealing with incompetence. Unless you\u2019re spending millions of dollars across many channels, you really don\u2019t need much.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6sxmvy",
+      "created_utc": 1788101798,
+      "created_at_iso": "2026-08-30T14:56:38.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6sxmvy/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p7crs7w",
+      "author": "Accurate-Geologist12",
+      "author_fullname": null,
+      "body": "Hmm well this is something tricky since you noticed the issue but the client doesn't want to actually believe the issue which happens in dashboards when the data model is not interacting properly or is faulty which I have seen while working with a few clients. Though in this case you could show them the actual data and the dashboard data where the discrepancy is taking place so that it actually makes sense to them and then maybe suggest how to fix this for them.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p7crs7w",
+      "created_utc": 1788347574,
+      "created_at_iso": "2026-09-02T11:12:54.000Z",
+      "parent_id": "t3_1vz9dca",
+      "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p7crs7w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1vz9dca",
+    "author": "Effective_Willow4109",
+    "author_fullname": "t2_2g7sftfcef",
+    "subreddit": "digital_marketing",
+    "title": "Anyone else's client dashboard just straight up lying to them lately?",
+    "downs": 0,
+    "name": "t3_1vz9dca",
+    "upvote_ratio": 1,
+    "ups": 5,
+    "selftext": "I manage paid social for a mid-size retail client, about eight months now. Their analytics tool started showing conversion numbers that don't match Shopify at all, off by something like 30% for two weeks straight. I opened a support ticket, got a canned response, and now the client thinks I'm the one who broke something. How do you even start explaining a tracking discrepancy to someone who just wants the number to be right?",
+    "total_awards_received": 0,
+    "score": 5,
+    "created": 1787777381,
+    "num_comments": 10,
+    "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/anyone_elses_client_dashboard_just_straight_up/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1787777381
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 1225168f673b4aff940998a5fe258da6

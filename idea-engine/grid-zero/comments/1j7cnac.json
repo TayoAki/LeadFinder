@@ -1,0 +1,681 @@
+{
+  "success": true,
+  "credits_remaining": 209654,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "mgvtun0",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgvtun0",
+      "created_utc": 1741541866,
+      "created_at_iso": "2025-03-09T17:37:46.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgvtun0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgvzw5l/",
+            "created_utc": 1741543686,
+            "created_at_iso": "2025-03-09T18:08:06.000Z",
+            "id": "mgvzw5l",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "What are the best and worst parts about it? (i used it in 2022 and it was too limited - couldn\u2019t ingest influencer campaigns, very shitty goal tracking to target (eg, MER, CPA, etc)",
+            "body_html": "\n      <p>\n      What are the best and worst parts about it? (i used it in 2022 and it was too limited - couldn\u2019t ingest influencer campaigns, very shitty goal tracking to target (eg, MER, CPA, etc)\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgvzw5l",
+            "parent_id": "t1_mgvtun0",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mgvzw5l/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mgvtun0"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "mh8tvnd",
+      "author": "timkilroy",
+      "author_fullname": null,
+      "body": "Anybody use Databox?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_mh8tvnd",
+      "created_utc": 1741717049,
+      "created_at_iso": "2025-03-11T18:17:29.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8tvnd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mh769x7",
+      "author": "TTFV",
+      "author_fullname": null,
+      "body": "We have been using Swydo for many years. It's super easy to use and fast to deploy with templates, and it integrates with most major platforms and tools.\n\n It also offers dashboards which is nice as it can eliminate a lot of back and forth with clients and/or the need to report manually more frequently.\n\n The big downside is the software is now 3-4x what it used to cost a few years ago. There is only a little more utility really so it stings a bit. But I wouldn't say pricing is out of line with other options.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mh769x7",
+      "created_utc": 1741699533,
+      "created_at_iso": "2025-03-11T13:25:33.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh769x7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8tpof/",
+            "created_utc": 1741717002,
+            "created_at_iso": "2025-03-11T18:16:42.000Z",
+            "id": "mh8tpof",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "Second time I have heard about Swydo today.",
+            "body_html": "\n      <p>\n      Second time I have heard about Swydo today.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mh8tpof",
+            "parent_id": "t1_mh769x7",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mh8tpof/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOamsyTUdVM1pXRXNPam94T21WNE9pZ2tMRngrUmc9PSIsInN1YnJlZGRpdCI6ImFnZW5jeSIsInBvc3RJZCI6IjFqN2NuYWMiLCJwYXJlbnRUaGluZ0lkIjoidDFfbWg3Njl4NyJ9"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mh8hh6f",
+      "author": "abraman22",
+      "author_fullname": null,
+      "body": "We use a few things:\n\n We use SEMrush for all keyword-related reports.\n\n We use a shared Asana dashboard to share project tasks & labor.\n\n We use Google Analytics to showcase traffic & revenue gains.\n\n We use Databox to create a custom dashboard for the clients all the data in one easy to access place (pulls in data from SEMRush, Google Ads and Google Analytics)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mh8hh6f",
+      "created_utc": 1741713568,
+      "created_at_iso": "2025-03-11T17:19:28.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8hh6f/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8u6gg/",
+            "created_utc": 1741717135,
+            "created_at_iso": "2025-03-11T18:18:55.000Z",
+            "id": "mh8u6gg",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "Do you like Databox?",
+            "body_html": "\n      <p>\n      Do you like Databox?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mh8u6gg",
+            "parent_id": "t1_mh8hh6f",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mh8u6gg/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1tTTJPR1E0WWpRc09qb3lPbVF4T25ReFgyMW9PSFUyWjJjPSIsInN1YnJlZGRpdCI6ImFnZW5jeSIsInBvc3RJZCI6IjFqN2NuYWMiLCJwYXJlbnRUaGluZ0lkIjoidDFfbWg4dTZnZyJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mh8u6gg"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mhgpbsx",
+      "author": "Luca_000",
+      "author_fullname": null,
+      "body": "I'd also like to know how you handle client communication in general.\n\n Does it differ from client to client? Is it just vis email? A software?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mhgpbsx",
+      "created_utc": 1741817577,
+      "created_at_iso": "2025-03-12T22:12:57.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mhgpbsx/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mhkq6qu/",
+            "created_utc": 1741877958,
+            "created_at_iso": "2025-03-13T14:59:18.000Z",
+            "id": "mhkq6qu",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "Weekly email plus monthly meeting",
+            "body_html": "\n      <p>\n      Weekly email plus monthly meeting\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mhkq6qu",
+            "parent_id": "t1_mhgpbsx",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mhkq6qu/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mhgpbsx"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mhsy6u1",
+      "author": "DeeperThanCraterLake",
+      "author_fullname": null,
+      "body": "Rollstack automates and sends client reporting.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mhsy6u1",
+      "created_utc": 1741982025,
+      "created_at_iso": "2025-03-14T19:53:45.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mhsy6u1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZMlF3TkRnMlpEQXNPam94T21ReE9uUXhYMjFvYzNrMmRURT0iLCJzdWJyZWRkaXQiOiJhZ2VuY3kiLCJwb3N0SWQiOiIxajdjbmFjIiwicGFyZW50VGhpbmdJZCI6InQxX21oc3k2dTEifQ"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "mgw8s9i",
+      "author": "Comfortable-Bell-985",
+      "author_fullname": null,
+      "body": "We use looker studio for all SEO and PPC clients. Any specific custom requests are handled on google sheets or excel",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgw8s9i",
+      "created_utc": 1741546342,
+      "created_at_iso": "2025-03-09T18:52:22.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgw8s9i/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "mgvsbg0",
+      "author": "masudhossain",
+      "author_fullname": null,
+      "body": "Depends what kind of client it is. SEO clients have specific tools that does reporting. Other clients have other tools.\n\n What\u2019s your client?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgvsbg0",
+      "created_utc": 1741541400,
+      "created_at_iso": "2025-03-09T17:30:00.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgvsbg0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgvszko/",
+            "created_utc": 1741541606,
+            "created_at_iso": "2025-03-09T17:33:26.000Z",
+            "id": "mgvszko",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "I work with agencies (seo, PPC, paid social, creative & dev) and I want to make a few recommendations to clients, so I am looking for solutions that people love, regardless of channel.",
+            "body_html": "\n      <p>\n      I work with agencies (seo, PPC, paid social, creative &amp; dev) and I want to make a few recommendations to clients, so I am looking for solutions that people love, regardless of channel.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgvszko",
+            "parent_id": "t1_mgvsbg0",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mgvszko/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqYzVNVFZoWWpFc09qb3lPbVF4T25ReFgyMW5kbk42YTI4PSIsInN1YnJlZGRpdCI6ImFnZW5jeSIsInBvc3RJZCI6IjFqN2NuYWMiLCJwYXJlbnRUaGluZ0lkIjoidDFfbWd2c3prbyJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mgvszko"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgz0gf9",
+      "author": "Disastrous-Student80",
+      "author_fullname": null,
+      "body": "Oviond is the best bang for the buck",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgz0gf9",
+      "created_utc": 1741580482,
+      "created_at_iso": "2025-03-10T04:21:22.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgz0gf9/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8u24g/",
+            "created_utc": 1741717101,
+            "created_at_iso": "2025-03-11T18:18:21.000Z",
+            "id": "mh8u24g",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "Never heard of it",
+            "body_html": "\n      <p>\n      Never heard of it\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mh8u24g",
+            "parent_id": "t1_mgz0gf9",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mh8u24g/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZMkU0TWpWa1pqQXNPam94T21WNE9pZ2tMRjV4Ymc9PSIsInN1YnJlZGRpdCI6ImFnZW5jeSIsInBvc3RJZCI6IjFqN2NuYWMiLCJwYXJlbnRUaGluZ0lkIjoidDFfbWd6MGdmOSJ9"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "my23gkn",
+      "author": "username_txt",
+      "author_fullname": null,
+      "body": "We\u2019ve tried a bunch of stuff over the years manual screenshots, Google Slides, Looker Studio, etc. Lately we\u2019ve been using Dataslayer to pull data into Looker or Sheets automatically. It saves a lot of time, especially for recurring reports across multiple platforms.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_my23gkn",
+      "created_utc": 1750070204,
+      "created_at_iso": "2025-06-16T10:36:44.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/my23gkn/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mz7g1b4/",
+            "created_utc": 1750621763,
+            "created_at_iso": "2025-06-22T19:49:23.000Z",
+            "id": "mz7g1b4",
+            "author": "timkilroy",
+            "author_fullname": null,
+            "body": "Never heard of dataslayer\u2026",
+            "body_html": "\n      <p>\n      Never heard of dataslayer\u2026\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mz7g1b4",
+            "parent_id": "t1_my23gkn",
+            "permalink": "/r/agency/comments/1j7cnac/comment/mz7g1b4/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpEQmtZVFppWmpBc09qb3lPbVF4T25ReFgyMTZOMmN4WWpRPSIsInN1YnJlZGRpdCI6ImFnZW5jeSIsInBvc3RJZCI6IjFqN2NuYWMiLCJwYXJlbnRUaGluZ0lkIjoidDFfbXo3ZzFiNCJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mz7g1b4"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgw8z4m",
+      "author": "Alive-Cold-9458",
+      "author_fullname": null,
+      "body": "Looker Studio with supermetrics to get non-Google data in there. 24/7 live dashboard access for clients via shared link. Automated emailed pdf version on the 1st of each month. Supplemented with manually written notes and action items which we email monthly",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgw8z4m",
+      "created_utc": 1741546400,
+      "created_at_iso": "2025-03-09T18:53:20.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgw8z4m/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "mgwc95h",
+      "author": "theeeyankeeswin",
+      "author_fullname": null,
+      "body": "client facing data studio reports is the way! supermetrics is a good start to dip your toe in, but if you get serious you need to warehouse your data in bigquery so everything loads quickly. PM if you have questions",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgwc95h",
+      "created_utc": 1741547394,
+      "created_at_iso": "2025-03-09T19:09:54.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgwc95h/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "mh16jlh",
+      "author": "nonconformist08",
+      "author_fullname": null,
+      "body": "We use Notion. Hired an expert to build our portal. And our account manager links everything in the client portal. Been using it for 3 years now.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mh16jlh",
+      "created_utc": 1741619317,
+      "created_at_iso": "2025-03-10T15:08:37.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh16jlh/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mh3fr1m",
+      "author": "_WRECKITRALPH_",
+      "author_fullname": null,
+      "body": "Hubspot dashboards",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mh3fr1m",
+      "created_utc": 1741642512,
+      "created_at_iso": "2025-03-10T21:35:12.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh3fr1m/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mha5a41",
+      "author": "a_mukhtar",
+      "author_fullname": null,
+      "body": "Small internal tools to show each step(Context: Design and Dev Studio). The core issue was the requirement to showcase and correlate them with wireframes and components. A simple tool that allows the client to confirm everything and suggest changes right there.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mha5a41",
+      "created_utc": 1741730357,
+      "created_at_iso": "2025-03-11T21:59:17.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mha5a41/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ok278bp",
+      "author": "mja311",
+      "author_fullname": null,
+      "body": "I would diagnose the reporting workflow before choosing the tool.\n\n The failure mode I see a lot:\n\n The agency has a dashboard. The client technically has access. The client still asks for screenshots, a summary, or \"can you show it this way instead?\"\n\n That usually means the report is organized around how the agency works, not how the client thinks.\n\n A useful test:\n\n Can the client answer their top question in under a minute without asking you?\n\n If not, the next tool may just become another place your team has to maintain manually.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ok278bp",
+      "created_utc": 1777989804,
+      "created_at_iso": "2026-05-05T14:03:24.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/ok278bp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mgw6g29",
+      "author": "InsecurityAnalysis",
+      "author_fullname": null,
+      "body": "If you're doing digital marketing on Google, you should be able to get a manager account, and clients will have access to a client account.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgw6g29",
+      "created_utc": 1741545637,
+      "created_at_iso": "2025-03-09T18:40:37.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgw6g29/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgw7x5k",
+      "author": "ice-j",
+      "author_fullname": null,
+      "body": "We use slides and looker studio for campaign management - we are in performance marketing",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgw7x5k",
+      "created_utc": 1741546080,
+      "created_at_iso": "2025-03-09T18:48:00.000Z",
+      "parent_id": "t3_1j7cnac",
+      "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgw7x5k/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1j7cnac",
+    "author": "timkilroy",
+    "author_fullname": "t2_qhpqs29",
+    "subreddit": "agency",
+    "title": "Client Reporting",
+    "downs": 0,
+    "name": "t3_1j7cnac",
+    "upvote_ratio": 1,
+    "ups": 18,
+    "selftext": "What does everybody use for client reporting? Do you use some kind of dashboarding software? Screenshots? How do you go over results for clients?",
+    "total_awards_received": 0,
+    "score": 18,
+    "created": 1741541233,
+    "num_comments": 65,
+    "url": "https://www.reddit.com/r/agency/comments/1j7cnac/client_reporting/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1741541233
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hZ2VuY3kvdDNfMWo3Y25hYz9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTgiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WkRCallUYzJaRGdzT2pvd09tVjRPaWdqYjBkMVFEb21lbjFjZTA1M2VEWTZLVHN3WlhsaEtIcHlKVjlUSWlOZk1tRmxKbGQ2UkNWVE55WWxaQ1pnS0d4Z2NDTm1XM3RrZFdzaloyTkdMbUpBU3p0WE1WQXVMWE1wVmxCME96QWoiLCJzdWJyZWRkaXQiOiJhZ2VuY3kiLCJwb3N0SWQiOiIxajdjbmFjIiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id 37ddd81f82b3405bb8dfe4a91a8e628f

@@ -1,0 +1,291 @@
+{
+  "success": true,
+  "credits_remaining": 209744,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "oc2neh2",
+      "author": "Taca-F",
+      "author_fullname": null,
+      "body": "Clients don't care about reporting until they don't like the results they are getting, then it's the only thing they bang on about. I should know, I've been on both sides of it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc2neh2",
+      "created_utc": 1774294199,
+      "created_at_iso": "2026-03-23T19:29:59.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc2neh2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 17,
+      "downs": 0,
+      "score": 17
+    },
+    {
+      "id": "oc3g7wi",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc3g7wi",
+      "created_utc": 1774302359,
+      "created_at_iso": "2026-03-23T21:45:59.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc3g7wi/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc3u96s/",
+            "created_utc": 1774306725,
+            "created_at_iso": "2026-03-23T22:58:45.000Z",
+            "id": "oc3u96s",
+            "author": "ketodnepr",
+            "author_fullname": null,
+            "body": "This is a solid set up; makes total sense!",
+            "body_html": "\n      <p>\n      This is a solid set up; makes total sense!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oc3u96s",
+            "parent_id": "t1_oc3g7wi",
+            "permalink": "/r/PPC/comments/1s1ppxb/comment/oc3u96s/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oc3g7wi"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "oc4hfka",
+      "author": "rightsomeofthetime",
+      "author_fullname": null,
+      "body": "I felt this post deep within my soul.\n\n Feels like a different problem every month, depending on which client is mad.\n\n You answered your own question there. Clients aren't all cardboard cut-outs of each other, the breakdown is different for every client.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc4hfka",
+      "created_utc": 1774314331,
+      "created_at_iso": "2026-03-24T01:05:31.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc4hfka/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "oc67qhq",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc67qhq",
+      "created_utc": 1774343490,
+      "created_at_iso": "2026-03-24T09:11:30.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc67qhq/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc7dg9j/",
+            "created_utc": 1774360438,
+            "created_at_iso": "2026-03-24T13:53:58.000Z",
+            "id": "oc7dg9j",
+            "author": "ketodnepr",
+            "author_fullname": null,
+            "body": "This is such a great suggestion! I keep creating new reports every time since channels and campaigns change; but having at lease approximately same structure could help get the clients more comfortable with reading data. And of course training/walk throughs.",
+            "body_html": "\n      <p>\n      This is such a great suggestion! I keep creating  new reports every time since channels and campaigns change; but having at lease approximately same structure could help get the clients more comfortable with reading data. And of course training/walk throughs.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oc7dg9j",
+            "parent_id": "t1_oc67qhq",
+            "permalink": "/r/PPC/comments/1s1ppxb/comment/oc7dg9j/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oc67qhq"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "oc9us4q",
+      "author": "powleads",
+      "author_fullname": null,
+      "body": "The breakdown shifts per client because reporting is really a trust proxy, not an information transfer. When a client trusts you, a 5-line email once a month does the job. When they don't, no dashboard will fix it \u2014 they'll just find new things to question in the data.\n\n What helped me was splitting it into two layers: one automated weekly export (numbers only, no commentary), and then a monthly call or quick video where I actually walk through what happened and what we're changing. The automated part kills the \"can you just send me the numbers\" emails. The human part kills the \"but what does this mean\" follow-ups.\n\n On the analyst vs AM question \u2014 whoever has the relationship should own the narrative. If the AM can't explain why CPA spiked last Tuesday without calling you in, they probably shouldn't be the one presenting the report. The analyst provides the truth, the AM provides the context. Problems start when those get blurred.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc9us4q",
+      "created_utc": 1774385388,
+      "created_at_iso": "2026-03-24T20:49:48.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc9us4q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "oc4nzy9",
+      "author": "potatodrinker",
+      "author_fullname": null,
+      "body": "Oh god. Been agency, been the client. Don't care what tool is used as long as we get actionable insights. CPA went down a little. So whats the next step? Nothing? That's not actionable.\n\n It's quite hard to extract these and probably the realm of the 3+ year experience operators. Anyone can show a data table or a graph.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oc4nzy9",
+      "created_utc": 1774316591,
+      "created_at_iso": "2026-03-24T01:43:11.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc4nzy9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ocuw6gl",
+      "author": "elephantgoeswest",
+      "author_fullname": null,
+      "body": "PREACH",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ocuw6gl",
+      "created_utc": 1774651061,
+      "created_at_iso": "2026-03-27T22:37:41.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/ocuw6gl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "odf288e",
+      "author": "captainplaid",
+      "author_fullname": null,
+      "body": "Honestly, for me the biggest issue is see in the agency model is the frequency of reporting. For example, most of my clients are on a weekly or biweekly call cadence. Most of the time there is genuinely nothing material to report. We shifted some budget from PMax to non-brand. We adjusted a bid. CPMs were a little high this week. Nobody cares and nobody should care.\n\n The irony is that the more frequently you talk to a client the more you end up talking about noise instead of signal. Weekly calls train everyone in the room to focus on short term fluctuations that don't mean anything, and in doing so you miss the bigger trends that actually matter. Is CAC trending up over the last three months? Is the channel mix slowly shifting in a way that's going to create a problem in Q4? Are we approaching diminishing returns on the core acquisition channel? Those are the conversations worth having and they almost never happen because everyone is too busy explaining why CPMs were up eleven percent last Tuesday.\n\n I'd rather talk to a client once a month with something real to say than weekly with nothing. The best client relationships I've had were the ones where we had enough trust and enough space between conversations to actually see what was happening in the account before opening our mouths about it.\n\n The reporting and call frequency problem is really a trust problem. If the client trusts you they don't need weekly reassurance. If they don't trust you no amount of calls or dashboards is going to fix it. So what's the solution? Maybe keep the weekly or bi-weekly calls brief and try to steer clients more towards a monthly reporting cadence. You can still meet every week or two, go over any important updates from their end, if there's nothing big changing, talk about their business more broadly. But make sure you set up time on a monthly or quarterly basis to go over real trends that are having real business imapct. It's also easier to design a dashboard or even put together a custom excel report if its less frequent.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_odf288e",
+      "created_utc": 1774918757,
+      "created_at_iso": "2026-03-31T00:59:17.000Z",
+      "parent_id": "t3_1s1ppxb",
+      "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/odf288e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1s1ppxb",
+    "author": "ketodnepr",
+    "author_fullname": "t2_pqifw",
+    "subreddit": "PPC",
+    "title": "Client reporting is the only part of my agency job that's gotten worse every year",
+    "downs": 0,
+    "name": "t3_1s1ppxb",
+    "upvote_ratio": 1,
+    "ups": 15,
+    "selftext": "Used to be copy paste into sheets, which was bad. Then we got \"proper' tools and now it's debugging connectors, explaining why our numbers don't match the platform, paying for dashboard seats nobody logs into, and somehow still ending up on a screen share manually walking through everything anyway (by the way, should this sit with me, an analyst, or with the AM?). Genuinely impressive how much infrastructure you can build around a problem and make it worse :/ The part that gets me is I still can't figure out where the actual breakdown is: is it getting the data in one place, is it how it looks when it gets to the client, is it that they don't trust it, is it the seats, is it that sharing it requires them to log into something they never will. Feels like a different problem every month depending on which client is mad.",
+    "total_awards_received": 0,
+    "score": 15,
+    "created": 1774291692,
+    "num_comments": 32,
+    "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/client_reporting_is_the_only_part_of_my_agency/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1774291692
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id d3b10dca6501417ca3c342fe64e01d10

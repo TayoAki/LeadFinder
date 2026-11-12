@@ -1,0 +1,687 @@
+{
+  "success": true,
+  "credits_remaining": 209663,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "mgeugrx",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "After your question has been solved u/NorthBrilliant5957, please reply to the helpful user's comment with the phrase \"Solution verified\".\n\n This will not only award a point to the contributor for their assistance but also update the post's flair to \"Solved\".\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_mgeugrx",
+      "created_utc": 1741300405,
+      "created_at_iso": "2025-03-06T22:33:25.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgeugrx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgf4u57",
+      "author": "AndrewJamason",
+      "author_fullname": null,
+      "body": "I just show the date and time and the users understand if they do not see the today\u2019s date then the refresh failed",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgf4u57",
+      "created_utc": 1741303926,
+      "created_at_iso": "2025-03-06T23:32:06.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf4u57/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf7xdi/",
+            "created_utc": 1741305031,
+            "created_at_iso": "2025-03-06T23:50:31.000Z",
+            "id": "mgf7xdi",
+            "author": "Ilukhan92",
+            "author_fullname": null,
+            "body": "I use this as well. I use Max Date since my report is based on day to day metrics. The Max Date tells the user the date is loaded till that date, since error will only pop-up on the new data and those rows won't load into the model.",
+            "body_html": "\n      <p>\n      I use this as well. I use Max Date since my report is based on day to day metrics. The Max Date tells the user the date is loaded till that date, since error will only pop-up on the new data and those rows won't load into the model.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgf7xdi",
+            "parent_id": "t1_mgf4u57",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgf7xdi/",
+            "ups": 10,
+            "downs": 0,
+            "score": 10,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgh24wv/",
+            "created_utc": 1741331253,
+            "created_at_iso": "2025-03-07T07:07:33.000Z",
+            "id": "mgh24wv",
+            "author": "NorthBrilliant5957",
+            "author_fullname": null,
+            "body": "Solution verified",
+            "body_html": "\n      <p>\n      Solution verified\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgh24wv",
+            "parent_id": "t1_mgf4u57",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgh24wv/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFqNTg1enE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTEsMSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOakJpTURCbE1HRXNPam95T21ReE9uUXhYMjFuYURJMGQzWT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMWo1ODV6cSIsInBhcmVudFRoaW5nSWQiOiJ0MV9tZ2gyNHd2In0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgh2c9n/",
+            "created_utc": 1741331366,
+            "created_at_iso": "2025-03-07T07:09:26.000Z",
+            "id": "mgh2c9n",
+            "author": "NorthBrilliant5957",
+            "author_fullname": null,
+            "body": "I might make the refresh date coloured if it's not today's date to make it more obvious. Maybe a message as well.\nCan I set this up when it's not refreshing though?",
+            "body_html": "\n      <p>\n      I might make the refresh date coloured if it's not today's date to make it more obvious. Maybe a message as well.<br>Can I set this up when it's not refreshing though?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgh2c9n",
+            "parent_id": "t1_mgf4u57",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgh2c9n/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mghgj9q/",
+                  "created_utc": 1741339903,
+                  "created_at_iso": "2025-03-07T09:31:43.000Z",
+                  "id": "mghgj9q",
+                  "author": "AndrewJamason",
+                  "author_fullname": null,
+                  "body": "Im not sure it will grab the today\u2019s date with the function today() if its not refreshed",
+                  "body_html": "\n      <p>\n      Im not sure it will grab the today\u2019s date with the function today() if its not refreshed\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mghgj9q",
+                  "parent_id": "t1_mgh2c9n",
+                  "permalink": "/r/PowerBI/comments/1j585zq/comment/mghgj9q/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mghglz5/",
+                  "created_utc": 1741339950,
+                  "created_at_iso": "2025-03-07T09:32:30.000Z",
+                  "id": "mghglz5",
+                  "author": "AndrewJamason",
+                  "author_fullname": null,
+                  "body": "And thanks for the point",
+                  "body_html": "\n      <p>\n      And thanks for the point\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mghglz5",
+                  "parent_id": "t1_mgh2c9n",
+                  "permalink": "/r/PowerBI/comments/1j585zq/comment/mghglz5/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "mgh2c9n"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgffuys/",
+            "created_utc": 1741307868,
+            "created_at_iso": "2025-03-07T00:37:48.000Z",
+            "id": "mgffuys",
+            "author": "petrowsy",
+            "author_fullname": null,
+            "body": "Same here. Table of only =DateTime.LocalNow. I also have a date range shown for the date of specific data being shown if I have it available.",
+            "body_html": "\n      <p>\n      Same here. Table of only =DateTime.LocalNow. I also have a date range shown for the date of specific data being shown if I have it available.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgffuys",
+            "parent_id": "t1_mgf4u57",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgffuys/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mggaw7y/",
+            "created_utc": 1741318928,
+            "created_at_iso": "2025-03-07T03:42:08.000Z",
+            "id": "mggaw7y",
+            "author": "heedmybell",
+            "author_fullname": null,
+            "body": "Me too, but DO users understand? They often appear not to. I have been toying with a flag or custom formatting on the refresh date if it does not match today's date (+ or-1 maybe to adjust for timezones)",
+            "body_html": "\n      <p>\n      Me too, but DO users understand? They often appear not to. I  have been toying with a flag or custom formatting on the refresh date if it does not match today's date (+ or-1 maybe to adjust for timezones)\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mggaw7y",
+            "parent_id": "t1_mgf4u57",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mggaw7y/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mgh24wv"
+        }
+      },
+      "ups": 43,
+      "downs": 0,
+      "score": 43
+    },
+    {
+      "id": "mgfari8",
+      "author": "COLONELmab",
+      "author_fullname": null,
+      "body": "Huh? What are you on about? The users tell me when the refresh fails.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgfari8",
+      "created_utc": 1741306043,
+      "created_at_iso": "2025-03-07T00:07:23.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfari8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 37,
+      "downs": 0,
+      "score": 37
+    },
+    {
+      "id": "mgf2d1w",
+      "author": "dicotyledon",
+      "author_fullname": null,
+      "body": "Sometimes I\u2019ll stick a banner message on the report homepage in a bright color telling people, but only if it\u2019s one of the more critical ones",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgf2d1w",
+      "created_utc": 1741303063,
+      "created_at_iso": "2025-03-06T23:17:43.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf2d1w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "mgfnk34",
+      "author": "appzguru",
+      "author_fullname": null,
+      "body": "I used to rely on warning emails to notify users about refresh failures. However, when working with data from a data warehouse, a successful refresh in Power BI doesn\u2019t necessarily mean that the data is actually up-to-date. If the data pipeline upstream has failed or is delayed, Power BI will still refresh with whatever data is available, giving the illusion that everything is fine. Without visibility into the health of the data pipeline, it\u2019s difficult to ensure that the model has received fresh data. This makes traditional failure alerts less reliable because they only indicate whether the refresh job ran, not whether it pulled in the latest data.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgfnk34",
+      "created_utc": 1741310655,
+      "created_at_iso": "2025-03-07T01:24:15.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfnk34/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgg0esk/",
+            "created_utc": 1741315167,
+            "created_at_iso": "2025-03-07T02:39:27.000Z",
+            "id": "mgg0esk",
+            "author": "anonidiotaccount",
+            "author_fullname": null,
+            "body": "I created metrics in the pbi service so I can check on my phone\n\n ETL date\n\n Some kpi from each report to check if a job failed but etl date is good (measure of way over or lower than it should be)\n\n Refresh failures\n\n Set push notifications through PowerBI phone app",
+            "body_html": "\n      <p>\n      I created metrics in the pbi service so I can check on my phone\n    </p><p>\n      ETL date\n    </p><p>\n      Some kpi from each report to check if a job failed but etl date is good (measure of way over or lower than it should be)\n    </p><p>\n      Refresh failures\n    </p><p>\n      Set push notifications through PowerBI phone app\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgg0esk",
+            "parent_id": "t1_mgfnk34",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgg0esk/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgg8u29/",
+            "created_utc": 1741318166,
+            "created_at_iso": "2025-03-07T03:29:26.000Z",
+            "id": "mgg8u29",
+            "author": "elpilot",
+            "author_fullname": null,
+            "body": "You can integrate your model refresh inside the data pipeline provided you can invoke the pbi rest apis. That way you can automate the whole process and catch, catch the error and take appropriate actions - alert, retry, whatever.",
+            "body_html": "\n      <p>\n      You can integrate your model refresh inside the data pipeline provided you can invoke the pbi rest apis. That way you can automate the whole process and catch, catch the error and take appropriate actions - alert, retry, whatever.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mgg8u29",
+            "parent_id": "t1_mgfnk34",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mgg8u29/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mgfnk34"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "mgf1paq",
+      "author": "slaincrane",
+      "author_fullname": null,
+      "body": "I usually try to avoid it from failing, try to have \"last refreshed\" visible to show when data was fetched. If it is a long time thing or something very high stake I will hide all report pages and just add a \"warning messagee\" page describing the issue.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgf1paq",
+      "created_utc": 1741302833,
+      "created_at_iso": "2025-03-06T23:13:53.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf1paq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "mgfkoaq",
+      "author": "CuriousMemo",
+      "author_fullname": null,
+      "body": "My small team (3) maintains a couple of workspaces that have highly used apps for reports. We include data source refresh timestamps on all reports and educate users that if those are more than ~1 hour old, sometime may be amiss.\n\n Our team has those semantic model refresh failure emails go to all of us, but sometimes it's not a data source issue that would trigger a failure, so we also click through reports twice a day (sucks but also a good way to catch outdated stuff that needs updating!).\n\n If something breaks we have an outage SOP that basically states if it's broken and it will take us more than an hour to fix it, we send an outage alert email to our users. We briefly note the scope of the issue and that we are working on it, if we can provide resolution estimate we do. Then we send a resolution email when restored (and when we are confident it will stay restored).\n\n We also track all outage causes and solutions so we can identify weak points in our infrastructure or practices.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgfkoaq",
+      "created_utc": 1741309602,
+      "created_at_iso": "2025-03-07T01:06:42.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfkoaq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "mgghqpi",
+      "author": "doobular_messiah",
+      "author_fullname": null,
+      "body": "Throw Microsoft under the bus and deflect blame",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgghqpi",
+      "created_utc": 1741321605,
+      "created_at_iso": "2025-03-07T04:26:45.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgghqpi/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "mgf2s6z",
+      "author": "Fat_Dietitian",
+      "author_fullname": null,
+      "body": "Notifications within each report, set in the centralized model. All reports are built with a space for the alert.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgf2s6z",
+      "created_utc": 1741303208,
+      "created_at_iso": "2025-03-06T23:20:08.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf2s6z/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFqNTg1enE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTgiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WXpCbVpURXpZaklzT2pveE9tUXhPblF4WDIxblpqSnpObm89Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFqNTg1enEiLCJwYXJlbnRUaGluZ0lkIjoidDFfbWdmMnM2eiJ9"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mgf2yay",
+      "author": "kfasek",
+      "author_fullname": null,
+      "body": "You can create a special page in the report informing users about currently open issues. I would not bother with special notifications for these.\n\n For urgent, production breaking issues however you may consider a layer on your landing page, some square covering most of page with your notification. Users then click to close it. Something like that can be done using bookmarks.\n\n You may also consider informing users using email or teams, maybe even a special channel with such notifications. These then can be posted via Power Automate when refresh fails or by you.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgf2yay",
+      "created_utc": 1741303266,
+      "created_at_iso": "2025-03-06T23:21:06.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf2yay/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mgg5aqe",
+      "author": "thegreymithrandir",
+      "author_fullname": null,
+      "body": "I create a semi transparent shape with a message the dashboard will be down for an extended period. Then that shape has a bookmark action that turns it off on click. This warns users the first time they log on to the page for the day.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgg5aqe",
+      "created_utc": 1741316893,
+      "created_at_iso": "2025-03-07T03:08:13.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgg5aqe/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mghln0n/",
+            "created_utc": 1741343084,
+            "created_at_iso": "2025-03-07T10:24:44.000Z",
+            "id": "mghln0n",
+            "author": "Dave1mo1",
+            "author_fullname": null,
+            "body": "Interested in the logic for this bookmark - does it reappear each time they open the page?\n\n I'd like to do something similar for updates to a page, with information about the updates that only appears once. Would that be possible?",
+            "body_html": "\n      <p>\n      Interested in the logic for this bookmark - does it reappear each time they open the page?\n    </p><p>\n      I'd like to do something similar for updates to a page, with information about the updates that only appears once. Would that be possible?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mghln0n",
+            "parent_id": "t1_mgg5aqe",
+            "permalink": "/r/PowerBI/comments/1j585zq/comment/mghln0n/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mghy7sg/",
+                  "created_utc": 1741349774,
+                  "created_at_iso": "2025-03-07T12:16:14.000Z",
+                  "id": "mghy7sg",
+                  "author": "thegreymithrandir",
+                  "author_fullname": null,
+                  "body": "Yes, it only appears once. I have a semi-transparent shape that covers the entire first page of the report that has the info you want to tell the user. Then create a bookmark that hides that shape. Then put that bookmark as an action on the shape. I publish the dashboard with the shape overlaying everything as the default.\n\n So, the shape will show up when users first log in because that is the default view. Once they click the shape, the bookmark hides it. There's then no way for it to pop back up because it is hidden and you don't have another bookmark or anything to bring it back. It only comes back when you reset to default view.\n\n I got some great kudos from my users, so recommend this approach :)",
+                  "body_html": "\n      <p>\n      Yes, it only appears once. I have a semi-transparent shape that covers the entire first page of the report that has the info you want to tell the user. Then create a bookmark that hides that shape. Then put that bookmark as an action on the shape. I publish the dashboard with the shape overlaying everything as the default.\n    </p><p>\n      So, the shape will show up when users first log in because that is the default view. Once they click the shape, the bookmark hides it. There's then no way for it to pop back up because it is hidden and you don't have another bookmark or anything to bring it back. It only comes back when you reset to default view.\n    </p><p>\n      I got some great kudos from my users, so recommend this approach :)\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mghy7sg",
+                  "parent_id": "t1_mghln0n",
+                  "permalink": "/r/PowerBI/comments/1j585zq/comment/mghy7sg/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "mghln0n"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mghln0n"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mgfzkg5",
+      "author": "nineteen_eightyfour",
+      "author_fullname": null,
+      "body": "Just say why. Most times for me it\u2019s IT related or my server is down bc we had a hurricane.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgfzkg5",
+      "created_utc": 1741314872,
+      "created_at_iso": "2025-03-07T02:34:32.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfzkg5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgjufbu",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgjufbu",
+      "created_utc": 1741371529,
+      "created_at_iso": "2025-03-07T18:18:49.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgjufbu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mgkek9d",
+      "author": "Snoo_21398",
+      "author_fullname": null,
+      "body": "\" someone has changed a fucking column / worksheet / SharePoint folder name.\n\n Please bare with me whilst I find out what the fuck it is and fix it.\n\n Thank you for your patience\n\n \"",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mgkek9d",
+      "created_utc": 1741377311,
+      "created_at_iso": "2025-03-07T19:55:11.000Z",
+      "parent_id": "t3_1j585zq",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgkek9d/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1j585zq",
+    "author": "NorthBrilliant5957",
+    "author_fullname": "t2_23hyxn2x",
+    "subreddit": "PowerBI",
+    "title": "How do you tell users the dashboard refresh has failed?",
+    "downs": 0,
+    "name": "t3_1j585zq",
+    "upvote_ratio": 0.9130434782608695,
+    "ups": 19,
+    "selftext": "Examples: Dashboard goes down Refresh has failed Bugs identified but not yet resolved I send an ad hoc email to share added functionality. However, I haven't found a good solution to inform users of live issues or minor issues not worthy of a bulk email. If I created a page I think users would click past it.",
+    "total_awards_received": 0,
+    "score": 19,
+    "created": 1741300404,
+    "num_comments": 33,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/how_do_you_tell_users_the_dashboard_refresh_has/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1741300404
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFqNTg1enE_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTE0IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqWm1NRGd4WlRBc09qb3dPbVY0T2lnalRDUXNSam9tTG41dFhrdG9Pa2trVVNSV0pDTTdJWGN2S3pCR1FYdytWMDBuTUZWQ1ltc3hRSFpoWlN4b0tDRWlSaUl3WERzPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxajU4NXpxIiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id 28f2c04057ae48bb9c6c42a238fe511e

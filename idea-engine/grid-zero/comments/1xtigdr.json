@@ -1,0 +1,674 @@
+{
+  "success": true,
+  "credits_remaining": 209773,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19shl57vl82bl",
+      "author": "RetardRik",
+      "author_fullname": null,
+      "body": "Have you considered manufacturing a major incident lol.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shl57vl82bl",
+      "created_utc": 1794423603,
+      "created_at_iso": "2026-11-11T19:00:03.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shl57vl82bl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dGlnZHI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TmpReU5EUTFOVFVzT2pveE9tUXhPblF4WHpFNWMyaHNOVGQyYkRneVltdz0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0aWdkciIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNobDU3dmw4MmJsIn0"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19sh8zpdd6klg",
+      "author": "Round-Walrus3175",
+      "author_fullname": null,
+      "body": "Have you considered taking a week vacation?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh8zpdd6klg",
+      "created_utc": 1794407255,
+      "created_at_iso": "2026-11-11T14:27:35.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sh8zpdd6klg/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shcfm31yv2d/",
+            "created_utc": 1794411885,
+            "created_at_iso": "2026-11-11T15:44:45.000Z",
+            "id": "19shcfm31yv2d",
+            "author": "SQLGene",
+            "author_fullname": null,
+            "body": "The American mind cannot comprehend this.\n\n *I'm an American",
+            "body_html": "\n      <p>\n      The American mind cannot comprehend this.\n    </p><p>\n      *I'm an American&nbsp;\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shcfm31yv2d",
+            "parent_id": "t1_19sh8zpdd6klg",
+            "permalink": "/r/PowerBI/comments/1xtigdr/comment/19shcfm31yv2d/",
+            "ups": 20,
+            "downs": 0,
+            "score": 20,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shcsrzr7lc5/",
+            "created_utc": 1794412377,
+            "created_at_iso": "2026-11-11T15:52:57.000Z",
+            "id": "19shcsrzr7lc5",
+            "author": "antl19",
+            "author_fullname": null,
+            "body": "This is the way!",
+            "body_html": "\n      <p>\n      This is the way!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shcsrzr7lc5",
+            "parent_id": "t1_19sh8zpdd6klg",
+            "permalink": "/r/PowerBI/comments/1xtigdr/comment/19shcsrzr7lc5/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sh8zpdd6klg"
+        }
+      },
+      "ups": 73,
+      "downs": 0,
+      "score": 73
+    },
+    {
+      "id": "19sh90ty1k1qb",
+      "author": "skyline79",
+      "author_fullname": null,
+      "body": "I was in the exact situation, one-man-army managing the whole front and back end. My solution was handing in my resignation, which made them take note. They offered more money, and that I could be a team lead with 2 additional hires\u2026 By then, mentally, I had already checked out. I just left. Not sure that helps you, but good luck.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh90ty1k1qb",
+      "created_utc": 1794407297,
+      "created_at_iso": "2026-11-11T14:28:17.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sh90ty1k1qb/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shasowe2dhh/",
+            "created_utc": 1794409683,
+            "created_at_iso": "2026-11-11T15:08:03.000Z",
+            "id": "19shasowe2dhh",
+            "author": "Moneyshot_Larry",
+            "author_fullname": null,
+            "body": "Literally happened to me.",
+            "body_html": "\n      <p>\n      Literally happened to me.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shasowe2dhh",
+            "parent_id": "t1_19sh90ty1k1qb",
+            "permalink": "/r/PowerBI/comments/1xtigdr/comment/19shasowe2dhh/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dGlnZHI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTIiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TnpZNE5qazVZallzT2pveE9tVjRPaXhZSjIxakxTMTdaVlE9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dGlnZHIiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaDkwdHkxazFxYiJ9"
+        }
+      },
+      "ups": 38,
+      "downs": 0,
+      "score": 38
+    },
+    {
+      "id": "19sh8ilk8ceyr",
+      "author": "gribblydipper",
+      "author_fullname": null,
+      "body": "Document everything you do to keep stuff running smoothly. When stuff works people think IT don't do anything and it all runs perfectly smoothly on its own.\n\n Then the business case becomes\n\n Who is going to do all this if I'm not available or at capacity?\n\n How will you mitigate the consequences when this all stops working because there is nobody to maintain it?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh8ilk8ceyr",
+      "created_utc": 1794406616,
+      "created_at_iso": "2026-11-11T14:16:56.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sh8ilk8ceyr/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shlpf9asg5g/",
+            "created_utc": 1794424358,
+            "created_at_iso": "2026-11-11T19:12:38.000Z",
+            "id": "19shlpf9asg5g",
+            "author": "Lupin0000",
+            "author_fullname": null,
+            "body": "He prop doensn't even have time to document xd",
+            "body_html": "\n      <p>\n      He prop doensn't even have time to document xd\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shlpf9asg5g",
+            "parent_id": "t1_19sh8ilk8ceyr",
+            "permalink": "/r/PowerBI/comments/1xtigdr/comment/19shlpf9asg5g/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dGlnZHI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTMsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNbUk1WW1FNU9XSXNPam95T21ReE9uUXhYekU1YzJoc2NHWTVZWE5uTldjPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxeHRpZ2RyIiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2hscGY5YXNnNWcifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19shlpf9asg5g"
+        }
+      },
+      "ups": 14,
+      "downs": 0,
+      "score": 14
+    },
+    {
+      "id": "19shaib156cox",
+      "author": "andlewis",
+      "author_fullname": null,
+      "body": "Go on an extended vacation, turn your phone off, and tell them you won\u2019t be reachable.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shaib156cox",
+      "created_utc": 1794409295,
+      "created_at_iso": "2026-11-11T15:01:35.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shaib156cox/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 11,
+      "downs": 0,
+      "score": 11
+    },
+    {
+      "id": "19shalapuc9tw",
+      "author": "andlewis",
+      "author_fullname": null,
+      "body": "Propose big visionary projects, develop a semantic ontology for AI using self-service agents. Dream big.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shalapuc9tw",
+      "created_utc": 1794409407,
+      "created_at_iso": "2026-11-11T15:03:27.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shalapuc9tw/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "19shhi8r3zjyd",
+      "author": "rrouighi",
+      "author_fullname": null,
+      "body": "Had the same situation, the answer is simpler than you think: let it burn ;)\nDon't expedite development, don't commit to early deadlines, put visibility into the backlog and let people complain about you- By then Senior leadership will miraculously find a solution for you and budget will appear\u2026 but as long as you're working like a donkey, they will just step on you and put more load",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shhi8r3zjyd",
+      "created_utc": 1794418709,
+      "created_at_iso": "2026-11-11T17:38:29.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shhi8r3zjyd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "19sh943mm3c8x",
+      "author": "PerfectdarkGoldenEye",
+      "author_fullname": null,
+      "body": "I mean since you control the stack cant you just get a claude enterprise license and start doing claude loops connected to your slack or teams and service now. I think you are in a great position.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh943mm3c8x",
+      "created_utc": 1794407419,
+      "created_at_iso": "2026-11-11T14:30:19.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sh943mm3c8x/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "19shkkzvatpz5",
+      "author": "Sad-Educator-4547",
+      "author_fullname": null,
+      "body": "another way of phrasing what you've written is everything works and there's been no issues (so far). sticking with a 1 person analytics team has been a roaring success and very cost effective. (which is what management are trying to justify to themselves)\n\n you've conditioned them into thinking that 1 person can do it all. yea you might complain that there's lots of work and you need another hand, but shit still gets done right?\n\n the backlog may be growing but if it's not enough of a priority to force a conversation around deliverables / capacity then it's not returning enough value to justify the effort/cost. you've either got to show them some potential shiny tinfoil worthy of hiring another person or accept that the backlog is an endless stream of busywork.\n\n the technical debt and governance is your responsibility, it should have been factored into timelines. It should be mopped up at intervals. book that in as priority, even if other timeline have to shift, so be it. start making the time requirements more realistic instead of cutting corners. mgmt don't see the cut corners, just the shiny tinfoil. they need to be taught what the true timelines are.\n\n the AI bit is easy. \"I already use it, this is double output\".\n\n the bus scenario is also easy to make the conversation more of a priority. step away. stop being the hero that keeps everything running. do things correctly, efficiently and sustainably. book 2 weeks holiday, write handover notes for your manager and check out. if things can run smoothly in your absence having done all the above then maybe you don't need a second. if shit hits the fan, they'll come looking for solutions.\n\n the other bit about key person risk. if you do get hit by a bus / win the lottery etc the last thing you'll be worried about is who's going to update the pipelines. it's your manager that should be worried about that.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shkkzvatpz5",
+      "created_utc": 1794422848,
+      "created_at_iso": "2026-11-11T18:47:28.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shkkzvatpz5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shmpdthcvcz/",
+            "created_utc": 1794425702,
+            "created_at_iso": "2026-11-11T19:35:02.000Z",
+            "id": "19shmpdthcvcz",
+            "author": "InanimateCarbonRodAu",
+            "author_fullname": null,
+            "body": "Yeah this is solid advice. Only you can show management what good looks like and draw professional boundaries.\n\n I\u2019m more or less in the same situation, I got my junior staff but had them quit on me just as they were really getting useful. I used that time to get a lot of the stack cleaned up and catch up on the tech debt and maintenance.\n\n Got myself positioned to use AI more and changed the way I communicated to management a lot.\n\n I\u2019d also highly recommend engaging with some professional data groups. I got recommended data Saturdays for example from a consultant I was dealing with and have been two a couple of events so far.\n\n Just getting out of my single company bubble and connecting and swapping stories with other people in my field was a massive eye opener. It really lifts you up from being stuck in a hole to rethinking how you work.",
+            "body_html": "\n      <p>\n      Yeah this is solid advice. Only you can show management what good looks like and draw professional boundaries.\n    </p><p>\n      I\u2019m more or less in the same situation, I got my junior staff but had them quit on me just as they were really getting useful. I used that time to get a lot of the stack cleaned up and catch up on the tech debt and maintenance.\n    </p><p>\n      Got myself positioned to use AI more and changed the way I communicated to management a lot.\n    </p><p>\n      I\u2019d also highly recommend engaging with some professional data groups. I got recommended data Saturdays for example from a consultant I was dealing with and have been two a couple of events so far.\n    </p><p>\n      Just getting out of my single company bubble and connecting and swapping stories with other people in my field was a massive eye opener. It really lifts you up from being stuck in a hole to rethinking how you work.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shmpdthcvcz",
+            "parent_id": "t1_19shkkzvatpz5",
+            "permalink": "/r/PowerBI/comments/1xtigdr/comment/19shmpdthcvcz/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19shkkzvatpz5"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19sha58a4t8zm",
+      "author": "lysis_",
+      "author_fullname": null,
+      "body": "I always talk about the bus scenario to leadership. It's a great point.\n\n There needs to be redundancy in any role. That is an organizational failure. Id even ask if you can get a contractor to support you",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sha58a4t8zm",
+      "created_utc": 1794408806,
+      "created_at_iso": "2026-11-11T14:53:26.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sha58a4t8zm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19sheyhqvjcu9",
+      "author": "JungStax",
+      "author_fullname": null,
+      "body": "I hear you, brother. My thoughts, for what they are worth.\n\n Build a couple big semantic models that can service many dashboard needs. Make sure they are rock solid. Find someone on the business side with a brain and get them to build the dashboards. Better yet, use analyze in excel so they can work with your semantic models in excel. When they call you for help, leave them on read for a day and then follow up, they usually figure it out with this thing they just learned about called Google. I like the self serve analytics style because the business knows the data better than I do. Risk is that the single source of truth gets murky.\n\n As for the AI silver bullet that management keeps bringing up... I'm also struggling with how to respond... You don't want to come off as anti AI, but you need to be sure the numbers are correct, which takes time, even when the SQL is written by AI. It's also a whole new technology stack to learn when we have no time. An argument could be made that setting up agents, tools, vector spaces, blah blah blah shouldn't even be our job at all. It's a whole new skillset.\n\n Silver lining is that it sounds like you have control of all the technology that you need to do a really good job.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sheyhqvjcu9",
+      "created_utc": 1794415281,
+      "created_at_iso": "2026-11-11T16:41:21.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sheyhqvjcu9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19shha9gwe4ld",
+      "author": "unique_user43",
+      "author_fullname": null,
+      "body": "the single point of failure is a negative framing that invites defensiveness. suggest a positive-facing reframe to what a 2nd headcount gets fhem: resiliancy, redundancy, a succession plan.\n\n if they are focused on ai (as they should be), run some numbers on the cost of a second headcount, how that second headcount can help the company optimize token useage much more efficiently, and actually save them money compared to just opening the token spigot",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shha9gwe4ld",
+      "created_utc": 1794418411,
+      "created_at_iso": "2026-11-11T17:33:31.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shha9gwe4ld/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19shibc2kv3d0",
+      "author": "easymre1",
+      "author_fullname": null,
+      "body": "I like to show them how easy it is for AI to get it wrong. Illustrate that underlying data changes. Fields come and go. Processes are added or changed. There must be checks and balances. I\u2019m a data engineer. That we\u2019re planning on terminating one of two of our analysts. So I explained to them that if the data feeding AI is not correct, then AI is not correct. And if AI does most of your workload, those issues can continuously pile up and aggregate if not monitored.\n\n We\u2019re keeping both of the analyst, with an understanding that since AI has made the reporting so much faster and easier, their focus is to shift more towards maintaining, cleaning, and monitoring data. More AI means more connections, probably means more data, and much more opportunity to cause variance in the numbers that make it to the end users. That stuff MUST be wrangled. And it can\u2019t be handled by a single person if they are also tasked with building pipelines and reports.\n\n I get the data in. The analysts wrangle and maintain it. AI handles a lot of the reporting workload, with some guidance by limiting its access to analysts certified schemas and semantic models.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shibc2kv3d0",
+      "created_utc": 1794419796,
+      "created_at_iso": "2026-11-11T17:56:36.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shibc2kv3d0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19sh84nesojwj",
+      "author": "QuantumSpike",
+      "author_fullname": null,
+      "body": "How bigs the company, are they profitable right now, does the company want more from the dashboards, do your reports generate extra return or prevent risk?\n\n Tech is moving fast, employing someone is a big committment.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh84nesojwj",
+      "created_utc": 1794406094,
+      "created_at_iso": "2026-11-11T14:08:14.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sh84nesojwj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19shck8xx1jnl",
+      "author": "kagato87",
+      "author_fullname": null,
+      "body": "Take some PTO. That's the fast test. A couple weeks.\n\n This is a really difficult argument because it costs money. Increasing headcount generally needs workload to justify it.\n\n Unless the workload is too much, don't sweat it. If the single point of failure is you leaving, well, it won't be your problem.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shck8xx1jnl",
+      "created_utc": 1794412058,
+      "created_at_iso": "2026-11-11T15:47:38.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shck8xx1jnl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shk6x50m3es",
+      "author": "Mountain-Corner2101",
+      "author_fullname": null,
+      "body": "Ironic",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shk6x50m3es",
+      "created_utc": 1794422322,
+      "created_at_iso": "2026-11-11T18:38:42.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shk6x50m3es/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shmla68f3d1",
+      "author": "pancak3d",
+      "author_fullname": null,
+      "body": "The \"bus factor\" isn't solved by headcount, it's solved by documentation. You need to follow good practices, and that includes producing documentation for your work. You should simply consider documentation as a mandatory step in all the work you do, it's not something you skip because there's some new report or data source that people are pounding on your door for. If you don't have an AI license, ask for one, because it can make documentation far easier.\n\n The real challenge is the size of your backlog, which includes solving technical debt and adding governance - those belong on your backlog too. The key is to simply say one of the following when things requested in your backlog:\n\n \"yes, but we don't have the funding to support that. Can you provide the funding?\"\n\n \"yes, but I cannot get to it for the next 12 months, is that OK?\"\n\n \"yes, but Projects A, B, C, D, E, F will all need to be delayed for your request, do you have their agreement?\"\n\n The mistake people make is saying \"yes I'll get that done ASAP\" to everything and acting like they are an infinite resource.\n\n If you want more knowledge in this area, you are functioning as a Product Owner for your data stack. There are many resources, trainings, etc on how to be a successful product owner.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shmla68f3d1",
+      "created_utc": 1794425549,
+      "created_at_iso": "2026-11-11T19:32:29.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shmla68f3d1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shnipwe5sqp",
+      "author": "NonparametricGig",
+      "author_fullname": null,
+      "body": "Have you considered external consultants? Many will help you get organize and get through a backlog, as well as on demand support, on a bank of hours or support plan",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shnipwe5sqp",
+      "created_utc": 1794426798,
+      "created_at_iso": "2026-11-11T19:53:18.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shnipwe5sqp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shqf0z2bbuq",
+      "author": "positive_guy_us",
+      "author_fullname": null,
+      "body": "Tell them that they don't need you because AI can write the code. Let them use AI and see the results, that's the only way they will understand the difference between fact and fiction.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shqf0z2bbuq",
+      "created_utc": 1794430696,
+      "created_at_iso": "2026-11-11T20:58:16.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shqf0z2bbuq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shaebh4i4e8",
+      "author": "Partysausage",
+      "author_fullname": null,
+      "body": "With the job market how it is and AI simply dying workloads considerably I wouldn't even wanna take on more staff and risk being replaceable. They usually keep the cheeper member of staff.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shaebh4i4e8",
+      "created_utc": 1794409146,
+      "created_at_iso": "2026-11-11T14:59:06.000Z",
+      "parent_id": "t3_1xtigdr",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shaebh4i4e8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    }
+  ],
+  "post": {
+    "id": "1xtigdr",
+    "author": "AdNecessary2634",
+    "author_fullname": "t2_av676df5",
+    "subreddit": "PowerBI",
+    "title": "How to justify headcount when you're trapped in single-person BI dependency?",
+    "downs": 0,
+    "name": "t3_1xtigdr",
+    "upvote_ratio": 0.8780487804878049,
+    "ups": 31,
+    "selftext": "Hey everyone, I\u2019m a BI Manager running our entire data stack solo (Power BI + Databricks). From pipeline architecture and data engineering to semantic modeling and stakeholder dashboards and? I\u2019m the only one holding it together I\u2019ve hit a wall, and I need advice on how to convince upper management to approve a second headcount. The Risks: Total single-point-of-failure (the \"bus factor\"), zero bandwidth for technical debt or governance, and an exploding request backlog. The Management Blind Spot: Because the dashboards keep working, leadership doesn't see the underlying fragility. The AI Objection: Management leans heavily on \"Can't AI just write your SQL and double your output? For those who have been here: How did you frame the business case to non-technical leaders, and how do you counter the \"AI solves everything\" narrative for end-to-end data work? Appreciate any frameworks or advice!",
+    "total_awards_received": 0,
+    "score": 31,
+    "created": 1794405621,
+    "num_comments": 33,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/how_to_justify_headcount_when_youre_trapped_in/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1794405621
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dGlnZHI_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTIwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1XUXhZamt3Tm1Rc09qb3dPbVY0T2l4WUoySW5QVTUzTlZ3NkwzZDdRMmhBY0ZabFJUb2lZaXc1V0R4K0l5ZGhYaTgyS0MxaVlYZ3JZa1p1VHlJcmRDVlFObVpOU21VaUtrVXRaeUpaVG5kR0prWk5RMkpaUEYxc0tWazBPRmw5Tnl0TFRtbDVXajByTGxwV0oyMXVlM1JwTkNScUpGSmpQRXRkTWlreVBXQnplMjRpWTFWUmJDd3hJMHRyVldna1ZpYytUR294UzMwbEpWMWZLVkZQTFZ4Nk0wNG5XUT09Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dGlnZHIiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+
+treg: charged $0.00188 · call id 206c6106d200400fbb7eff944ce7180f

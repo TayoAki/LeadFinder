@@ -1,0 +1,166 @@
+{
+  "success": true,
+  "credits_remaining": 209669,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ov97e3r",
+      "author": "Automatic-Example754",
+      "author_fullname": null,
+      "body": "LLMs are made of math (matrix multiplication tbs) but are very bad at actually doing math (formal symbolic manipulation tbs). Have it write Python (or better yet tidy R code) to do the calculations.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ov97e3r",
+      "created_utc": 1783051967,
+      "created_at_iso": "2026-07-03T04:12:47.000Z",
+      "parent_id": "t3_1um2wbg",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov97e3r/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov9dnxk/",
+            "created_utc": 1783054526,
+            "created_at_iso": "2026-07-03T04:55:26.000Z",
+            "id": "ov9dnxk",
+            "author": "SS_i0",
+            "author_fullname": null,
+            "body": "Thanks \u2014 that's a great way to frame it (made of math but bad at doing math). I guess I was hoping it'd be smart enough to reliably find the right column and get the metric definitions right on its own \u2014 without me having to hold its hand through every step. The math I can offload to code; it's the \"which numbers, defined how\" part that still needs babysitting. Again, would love to know if I am missing something here.",
+            "body_html": "\n      <p>\n      Thanks \u2014 that's a great way to frame it (made of math but bad at doing math). I guess I was hoping it'd be smart enough to reliably find the right column and get the metric definitions right on its own \u2014 without me having to hold its hand through every step. The math I can offload to code; it's the \"which numbers, defined how\" part that still needs babysitting. Again, would love to know if I am missing something here.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ov9dnxk",
+            "parent_id": "t1_ov97e3r",
+            "permalink": "/r/ClaudeAI/comments/1um2wbg/comment/ov9dnxk/",
+            "ups": 0,
+            "downs": 0,
+            "score": 0,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ov97e3r"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ov9pcz9",
+      "author": "Delicious_Cattle5174",
+      "author_fullname": null,
+      "body": "Here\u2019s a few solutions on the top of my mind:\n\n \u2022 XLOOKUP\n\u2022 SUMIF(S)\n\u2022 GROUPBY\n\n Good luck!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ov9pcz9",
+      "created_utc": 1783059730,
+      "created_at_iso": "2026-07-03T06:22:10.000Z",
+      "parent_id": "t3_1um2wbg",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov9pcz9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    },
+    {
+      "id": "ov91c8l",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ov91c8l",
+      "created_utc": 1783049609,
+      "created_at_iso": "2026-07-03T03:33:29.000Z",
+      "parent_id": "t3_1um2wbg",
+      "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov91c8l/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov94d7i/",
+            "created_utc": 1783050775,
+            "created_at_iso": "2026-07-03T03:52:55.000Z",
+            "id": "ov94d7i",
+            "author": "SS_i0",
+            "author_fullname": null,
+            "body": "Thanks, RAG definitely helps for pulling the right info. The part that still trips me up is the actual numbers \u2014 even with retrieval it'll sometimes double-count or define a metric differently than I would. Have you gotten it reliable for the math, or do you still end up double-checking?",
+            "body_html": "\n      <p>\n      Thanks, RAG definitely helps for pulling the right info. The part that still trips me up is the actual numbers \u2014 even with retrieval it'll sometimes double-count or define a metric differently than I would. Have you gotten it reliable for the math, or do you still end up double-checking?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ov94d7i",
+            "parent_id": "t1_ov91c8l",
+            "permalink": "/r/ClaudeAI/comments/1um2wbg/comment/ov94d7i/",
+            "ups": 0,
+            "downs": 0,
+            "score": 0,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ov91c8l"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1um2wbg",
+    "author": "SS_i0",
+    "author_fullname": "t2_2a0kihn1a8",
+    "subreddit": "ClaudeAI",
+    "title": "Anyone else get confidently wrong numbers when you ask Claude about your own spreadsheet data?",
+    "downs": 0,
+    "name": "t3_1um2wbg",
+    "upvote_ratio": 0.75,
+    "ups": 2,
+    "selftext": "I keep trying to use Claude to answer questions about my own spreadsheets \u2014 \"subscription cost by vendor,\" \"time spent per project,\" \"spend by category\" \u2014 and it sounds totally confident but the numbers are often wrong: grabs the wrong column, double-counts, or quietly makes up how a metric is defined. How do you all deal with this? Do you just not trust it with numbers, have a workaround, or does it work fine for you and I'm doing something wrong? Trying to figure out if it's just me.",
+    "total_awards_received": 0,
+    "score": 2,
+    "created": 1783048591,
+    "num_comments": 7,
+    "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/anyone_else_get_confidently_wrong_numbers_when/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1783048591
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id e5b7af90c29745c2972092ca1fa463f0

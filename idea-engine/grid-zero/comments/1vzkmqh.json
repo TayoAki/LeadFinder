@@ -1,0 +1,686 @@
+{
+  "success": true,
+  "credits_remaining": 209760,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p65n6a7",
+      "author": "TheRiteGuy",
+      "author_fullname": null,
+      "body": "It comes with the job. You do all of it. When you're building a dashboard and an ETL process, you go back and double check everything and make sure everything is working correctly. Once you get to know your data, you'll know which pitfalls to avoid and you can build them into your pipeline to make sure it's not an issue.\n\n If duplicates are an issue, you deduplicate it in the ETL process. If is date, you build that in. Try to account for all the variables that lead to the final desired results.\n\n Then you work your way back and make sure the results are showing what's expected.\n\n You check the data in your dashboard, in your work book, your process flow, you check your data base or sources. You do all the checks and then you can set it and forget it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p65n6a7",
+      "created_utc": 1787808478,
+      "created_at_iso": "2026-08-27T05:27:58.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p65n6a7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 30,
+      "downs": 0,
+      "score": 30
+    },
+    {
+      "id": "p65n52r",
+      "author": "slipperypooh",
+      "author_fullname": null,
+      "body": "I generally wait for someone to tell me its wrong, but I suck at my job and my managers dont see it that way, so here I am 14 years later.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p65n52r",
+      "created_utc": 1787808463,
+      "created_at_iso": "2026-08-27T05:27:43.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p65n52r/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p65zjpf/",
+            "created_utc": 1787814374,
+            "created_at_iso": "2026-08-27T07:06:14.000Z",
+            "id": "p65zjpf",
+            "author": "devd87",
+            "author_fullname": null,
+            "body": "\ud83e\udd23 Me too. That\u2019s what UAT is for.",
+            "body_html": "\n      <p>\n      \ud83e\udd23 Me too. That\u2019s what UAT is for.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p65zjpf",
+            "parent_id": "t1_p65n52r",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p65zjpf/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p68a9xl/",
+            "created_utc": 1787844234,
+            "created_at_iso": "2026-08-27T15:23:54.000Z",
+            "id": "p68a9xl",
+            "author": "lindo_dia_pra_dormir",
+            "author_fullname": null,
+            "body": "Approach type 0\u2026 hahahahaha",
+            "body_html": "\n      <p>\n      Approach type 0\u2026 hahahahaha\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p68a9xl",
+            "parent_id": "t1_p65n52r",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p68a9xl/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p65n52r"
+        }
+      },
+      "ups": 26,
+      "downs": 0,
+      "score": 26
+    },
+    {
+      "id": "p65ny27",
+      "author": "illveal",
+      "author_fullname": null,
+      "body": "I study the data behind it and validate with hard queries.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p65ny27",
+      "created_utc": 1787808838,
+      "created_at_iso": "2026-08-27T05:33:58.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p65ny27/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6f1nps/",
+            "created_utc": 1787924970,
+            "created_at_iso": "2026-08-28T13:49:30.000Z",
+            "id": "p6f1nps",
+            "author": "ETL_Pipeline_Dev",
+            "author_fullname": null,
+            "body": "Are you validating the reports manually for each slicer or filter value? This can become a time-consuming and tedious process when there are a large number of values, such as 100 or more.",
+            "body_html": "\n      <p>\n      Are you validating the reports manually for each slicer or filter value? This can become a time-consuming and tedious process when there are a large number of values, such as 100 or more.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p6f1nps",
+            "parent_id": "t1_p65ny27",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p6f1nps/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6gxqx9/",
+                  "created_utc": 1787942903,
+                  "created_at_iso": "2026-08-28T18:48:23.000Z",
+                  "id": "p6gxqx9",
+                  "author": "white_tiger_dream",
+                  "author_fullname": null,
+                  "body": "You should understand the data enough to understand what and how to check it. A simple example would be if I have order data coming into the database from the order system. If the total sales match, I expect my order count, sku count, payment types, to match. I only need to check one metric from my dashboard to know that they all match.",
+                  "body_html": "\n      <p>\n      You should understand the data enough to understand what and how to check it. A simple example would be if I have order data coming into the database from the order system. If the total sales match, I expect my order count, sku count, payment types, to match. I only need to check one metric from my dashboard to know that they all match.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p6gxqx9",
+                  "parent_id": "t1_p6f1nps",
+                  "permalink": "/r/tableau/comments/1vzkmqh/comment/p6gxqx9/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p6f1nps"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p6f1nps"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "p673a17",
+      "author": "Fine-Ad-1732",
+      "author_fullname": null,
+      "body": "N\u00e3o sei se funciona para todos os casos mas o que conhe\u00e7o \u00e9 gerar um hash de dados das medidas usadas em um painel para comparar com o mesmo processo feito em uma view de SQL em teoria deveria bater o numero ou zerar se vc fizer um painel para subtrair e mostrar um do outro\u2026",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p673a17",
+      "created_utc": 1787832161,
+      "created_at_iso": "2026-08-27T12:02:41.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p673a17/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p68ffqn",
+      "author": "Educational_Team_212",
+      "author_fullname": null,
+      "body": "Usually it's a mix. A lot of times a SME or someone else will see a figure that looks off and we have to ask is that accurate? We start with the front end; is there a filter/calc/aggregation error or oversight? Do the measures exist at different levels of granularity? Sometimes we will pick it apart to get a row level accounting of everything that went into a specific figure or view. If the frontend accurately shows what is in the data source, then we will look into the ETL steps, then further back to the original tables. Finally, check with reality if you are able, e.g. if the data is reporting current items on a shelf, then get an actual count of those items.\n\n We don't always have to go through all those steps before we find the source of the error. A lot of these result in finding some nuance about the data that was previously unknown; some weird caveat that only occurs 5% of the time. That caveat is then added to the ETL process or maybe fixed on the frontend with some additional logic.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p68ffqn",
+      "created_utc": 1787845551,
+      "created_at_iso": "2026-08-27T15:45:51.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p68ffqn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p69hlfo",
+      "author": "Tactical_Impulse",
+      "author_fullname": null,
+      "body": "check against finance team\u2019s excel",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p69hlfo",
+      "created_utc": 1787855029,
+      "created_at_iso": "2026-08-27T18:23:49.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p69hlfo/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6cbg1e",
+      "author": "HustlaOfCultcha",
+      "author_fullname": null,
+      "body": "I will check data against source data. For instance, if I have sales for the quarter in a dashboard and I may have that in say an ERP. If I have to, I will pull the source data into a quick excel file and run some spot check calculations and see if they are correct. Other checks can be row counts and some reverse engineering. The more difficult ones to validate can be the calculations, but I tend to follow a similar process.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6cbg1e",
+      "created_utc": 1787884378,
+      "created_at_iso": "2026-08-28T02:32:58.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6cbg1e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6cgglb",
+      "author": "cr4zybilly",
+      "author_fullname": null,
+      "body": "Most of the time, we're writing dashboards for data that already exists, so we have something to compare it to (even if that something is super ugly).\n\n When I don't, I'll write the same logic in SQL or, better, in some R functions, so I can test a bunch of variations, make sure my filters really are filtering correctly.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6cgglb",
+      "created_utc": 1787886186,
+      "created_at_iso": "2026-08-28T03:03:06.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6cgglb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6d9upy",
+      "author": "Leorisar",
+      "author_fullname": null,
+      "body": "Usually, dashboards are based on some kind of existing report created by analysts in another system or manually in Excel. It\u2019s a good reference point.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6d9upy",
+      "created_utc": 1787898953,
+      "created_at_iso": "2026-08-28T06:35:53.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6d9upy/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6egcp9",
+      "author": "dudeman618",
+      "author_fullname": null,
+      "body": "I start with the SQL, code for a single person, then a single team and I build up my queries to the whole business. Then build out the dashboard the same way by testing for a single person and a single team. I break down my original SQL to a single table and compare. I do argue with the leaders, we need a real QA team. I could be making mistakes and coding/testing around them. We need someone else to or if this out. Also, we need business people participating in the QA.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6egcp9",
+      "created_utc": 1787918448,
+      "created_at_iso": "2026-08-28T12:00:48.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6egcp9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6fv3po",
+      "author": "MicroPerpetualGrowth",
+      "author_fullname": null,
+      "body": "No one knows, really. The only single source of thurth is official Accounting data, for anything non-financial, anyone's guess is true.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6fv3po",
+      "created_utc": 1787932843,
+      "created_at_iso": "2026-08-28T16:00:43.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6fv3po/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6jxy0u",
+      "author": "minetella",
+      "author_fullname": null,
+      "body": "Let the business finds out...\n\n Then we justify this is as displayed from data we received at source\n\n Ticket closed",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6jxy0u",
+      "created_utc": 1787978707,
+      "created_at_iso": "2026-08-29T04:45:07.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6jxy0u/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6lti60",
+      "author": "Physical_Reply8510",
+      "author_fullname": null,
+      "body": "Source data. I like to build validation containers that do this for me. A lot of summarizing tools (I use Alteryx) to get as close to my tableau calc as possible.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6lti60",
+      "created_utc": 1788009905,
+      "created_at_iso": "2026-08-29T13:25:05.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6lti60/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6o26k4/",
+            "created_utc": 1788033161,
+            "created_at_iso": "2026-08-29T19:52:41.000Z",
+            "id": "p6o26k4",
+            "author": "camanoe",
+            "author_fullname": null,
+            "body": "I actually built a tool tip from alteryx that showed the underlying data and formulas. It was insane coding it but it was cool to be able to have the user answer their own question when they were asking where a metric came from.",
+            "body_html": "\n      <p>\n      I actually built a tool tip from alteryx that showed the underlying data and formulas. It was insane coding it but it was cool to be able to have the user answer their own question when they were asking where a metric came from.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p6o26k4",
+            "parent_id": "t1_p6lti60",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p6o26k4/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6o3c7n/",
+                  "created_utc": 1788033499,
+                  "created_at_iso": "2026-08-29T19:58:19.000Z",
+                  "id": "p6o3c7n",
+                  "author": "Physical_Reply8510",
+                  "author_fullname": null,
+                  "body": "You can get the underlying XML code of an Alteryx workflow and convert it semi easily with the help of AI",
+                  "body_html": "\n      <p>\n      You can get the underlying XML code of an Alteryx workflow and convert it semi easily with the help of AI\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p6o3c7n",
+                  "parent_id": "t1_p6o26k4",
+                  "permalink": "/r/tableau/comments/1vzkmqh/comment/p6o3c7n/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p6o26k4"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p6o26k4"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p6s8t95",
+      "author": "Chemical-Cell-3216",
+      "author_fullname": null,
+      "body": "Actually your question is the answer of exploratory data analysis",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6s8t95",
+      "created_utc": 1788094033,
+      "created_at_iso": "2026-08-30T12:47:13.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6s8t95/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p68a3t8",
+      "author": "lindo_dia_pra_dormir",
+      "author_fullname": null,
+      "body": "Have you heard about something very modern called \u201ctalk to the business\u201d? Somehow, they ARE the owners of the figures, so check with the USER if the numbers are approximately correct BEFORE going to production. My gosh\u2026",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p68a3t8",
+      "created_utc": 1787844190,
+      "created_at_iso": "2026-08-27T15:23:10.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p68a3t8/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p68c3fw/",
+            "created_utc": 1787844699,
+            "created_at_iso": "2026-08-27T15:31:39.000Z",
+            "id": "p68c3fw",
+            "author": "Novel-Store-3813",
+            "author_fullname": null,
+            "body": "Dude not only are you being weirdly snarky but you're talking to an AI. Take a deep breath. \ud83d\ude4f",
+            "body_html": "\n      <p>\n      Dude not only are you being weirdly snarky but you're talking to an AI. Take a deep breath. \ud83d\ude4f\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p68c3fw",
+            "parent_id": "t1_p68a3t8",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p68c3fw/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p68crg5/",
+                  "created_utc": 1787844872,
+                  "created_at_iso": "2026-08-27T15:34:32.000Z",
+                  "id": "p68crg5",
+                  "author": "lindo_dia_pra_dormir",
+                  "author_fullname": null,
+                  "body": "Oh sorry, I did not know that. I need to check my manners.",
+                  "body_html": "\n      <p>\n      Oh sorry, I did not know that. I need to check my manners.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p68crg5",
+                  "parent_id": "t1_p68c3fw",
+                  "permalink": "/r/tableau/comments/1vzkmqh/comment/p68crg5/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p68c3fw"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p68c3fw"
+        }
+      },
+      "ups": -2,
+      "downs": 0,
+      "score": -2
+    },
+    {
+      "id": "p6a1nv5",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6a1nv5",
+      "created_utc": 1787860060,
+      "created_at_iso": "2026-08-27T19:47:40.000Z",
+      "parent_id": "t3_1vzkmqh",
+      "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6a1nv5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p8ybgwh/",
+            "created_utc": 1789048577,
+            "created_at_iso": "2026-09-10T13:56:17.000Z",
+            "id": "p8ybgwh",
+            "author": "tableau-ModTeam",
+            "author_fullname": null,
+            "body": "No gratuitous self-promotion.",
+            "body_html": "\n      <p>\n      No gratuitous self-promotion.\n    </p>\n    ",
+            "distinguished": "moderator",
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p8ybgwh",
+            "parent_id": "t1_p6a1nv5",
+            "permalink": "/r/tableau/comments/1vzkmqh/comment/p8ybgwh/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p6a1nv5"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1vzkmqh",
+    "author": "Delulu62134",
+    "author_fullname": "t2_2i6yx2lvzm",
+    "subreddit": "tableau",
+    "title": "How do you guys know a dashboard number is actually correct?",
+    "downs": 0,
+    "name": "t3_1vzkmqh",
+    "upvote_ratio": 0.7586206896551724,
+    "ups": 15,
+    "selftext": "Something I've been wondering about, especially for teams dealing with a lot of ETL and Bl pipelines. A dashboard can refresh successfully, all the SQL can run without errors, and everything can look normal-but the actual number can still be wrong. For example, if a report shows $12.5M in revenue, how do you know that $12.5M is actually correct? Do you guys usually: Compare it back to the source system? Check source vs. target counts and totals? Validate the transformation logic? Look for duplicates or missing records? Check for late-arriving data? . Run automated data-quality checks after the pipeline finishes? I'm mainly curious about what people actually do in production. When you have hundreds of pipelines/reports, manually checking everything obviously doesn't sacle. Would be great to hear how other teams handle this.",
+    "total_awards_received": 0,
+    "score": 15,
+    "created": 1787807258,
+    "num_comments": 26,
+    "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/how_do_you_guys_know_a_dashboard_number_is/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1787807258
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id c1630e971f9d48d885bd2a77f99ea9b9

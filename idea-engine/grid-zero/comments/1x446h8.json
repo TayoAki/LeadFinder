@@ -1,0 +1,702 @@
+{
+  "success": true,
+  "credits_remaining": 209781,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "pfgk6zc",
+      "author": "PerfectdarkGoldenEye",
+      "author_fullname": null,
+      "body": "Can you clarify what you mean?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgk6zc",
+      "created_utc": 1791817411,
+      "created_at_iso": "2026-10-12T15:03:31.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgk6zc/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhp3qq/",
+            "created_utc": 1791827451,
+            "created_at_iso": "2026-10-12T17:50:51.000Z",
+            "id": "pfhp3qq",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Yea this was clearly a terribly vague post, lol\n\n Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n\n And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy, maybe there are lots of little integration bottlenecks...",
+            "body_html": "\n      <p>\n      Yea this was clearly a terribly vague post, lol\n    </p><p>\n      Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n    </p><p>\n      And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy, maybe there are lots of little integration bottlenecks...\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhp3qq",
+            "parent_id": "t1_pfgk6zc",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhp3qq/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pggm7yh/",
+                  "created_utc": 1791891203,
+                  "created_at_iso": "2026-10-13T11:33:23.000Z",
+                  "id": "pggm7yh",
+                  "author": "TrollingForFunsies",
+                  "author_fullname": null,
+                  "body": "I'm looking forward to the \"my AI query has been running for 3 days and now the users are complaining that the system is locked up\" tickets",
+                  "body_html": "\n      <p>\n      I'm looking forward to the \"my AI query has been running for 3 days and now the users are complaining that the system is locked up\" tickets\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pggm7yh",
+                  "parent_id": "t1_pfhp3qq",
+                  "permalink": "/r/SQLServer/comments/1x446h8/comment/pggm7yh/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TUUxTZXJ2ZXIvdDNfMXg0NDZoOD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TjJKaFpqa3hZemtzT2pvek9tUXhPblF4WDNCbloyMDNlV2c9Iiwic3VicmVkZGl0IjoiU1FMU2VydmVyIiwicG9zdElkIjoiMXg0NDZoOCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wZ2dtN3loIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pggm7yh"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pggm7yh"
+        }
+      },
+      "ups": 14,
+      "downs": 0,
+      "score": 14
+    },
+    {
+      "id": "pfgln5d",
+      "author": "itsnotaboutthecell",
+      "author_fullname": null,
+      "body": "This is an extremely vague post with no foundation for others to interact with as far as what your study or \u201cchatted\u201d with is defined as.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgln5d",
+      "created_utc": 1791817783,
+      "created_at_iso": "2026-10-12T15:09:43.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgln5d/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfho191/",
+            "created_utc": 1791827195,
+            "created_at_iso": "2026-10-12T17:46:35.000Z",
+            "id": "pfho191",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "But it made so much sense in my head before I posted it!\n\n Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n\n And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy...\n\n That make sense? Happy to edit the original post with a better framed question.",
+            "body_html": "\n      <p>\n      But it made so much sense in my head before I posted it!\n    </p><p>\n      Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n    </p><p>\n      And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy...\n    </p><p>\n      That make sense? Happy to edit the original post with a better framed question.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfho191",
+            "parent_id": "t1_pfgln5d",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfho191/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfgln5d"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "pfglre5",
+      "author": "byubreak",
+      "author_fullname": null,
+      "body": "This is the most vague question I\u2019ve read in a while.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfglre5",
+      "created_utc": 1791817813,
+      "created_at_iso": "2026-10-12T15:10:13.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfglre5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhpyoe/",
+            "created_utc": 1791827657,
+            "created_at_iso": "2026-10-12T17:54:17.000Z",
+            "id": "pfhpyoe",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Yea my bad, this was clearly a terribly vague post.\n\n Wrote this in another comment, but here is how I would add more color\n\n Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n\n And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy, maybe there are lots of little integration bottlenecks...",
+            "body_html": "\n      <p>\n      Yea my bad, this was clearly a terribly vague post.\n    </p><p>\n      Wrote this in another comment, but here is how I would add more color\n    </p><blockquote>\n      <p>\n      Anecdotally, it seems like 1) a lot of code is now being written by a coding agents/copilots and 2) a lot of business people are using LLMs. With the caveat that there will always be thorny edge cases, etc. etc., it seems sort of inevitable that the loop will get closed, so to speak, and the business user will just get ad-hoc data without a developer being in the loop.\n    </p>\n    </blockquote><blockquote>\n      <p>\n      And this is happening some places. But if my chat history is any indication, the penetration isn't as deep as I would have anticipated. So I'm just curious as to why. Maybe it's a sampling bias (these were people I chatted on LinkedIn under a \"SQL Server Developer\" search), maybe it's just not that big of a problem, maybe models are still untrustworthy, maybe there are lots of little integration bottlenecks...\n    </p>\n    </blockquote>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhpyoe",
+            "parent_id": "t1_pfglre5",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhpyoe/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhwxga/",
+                  "created_utc": 1791829355,
+                  "created_at_iso": "2026-10-12T18:22:35.000Z",
+                  "id": "pfhwxga",
+                  "author": "PerfectdarkGoldenEye",
+                  "author_fullname": null,
+                  "body": "AI has little understanding of the data without business context. Have AI try and build a data model off raw data i am doing that now and it tries to apply its own rules.",
+                  "body_html": "\n      <p>\n      AI has little understanding of the data without business context. Have AI try and build a data model off raw data i am doing that now and it tries to apply its own rules.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pfhwxga",
+                  "parent_id": "t1_pfhpyoe",
+                  "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhwxga/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TUUxTZXJ2ZXIvdDNfMXg0NDZoOD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2Wm1Wak0yTXdPRGtzT2pvek9tUXhPblF4WDNCbWFIZDRaMkU9Iiwic3VicmVkZGl0IjoiU1FMU2VydmVyIiwicG9zdElkIjoiMXg0NDZoOCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wZmh3eGdhIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pfhwxga"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfhwxga"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "pfglzjr",
+      "author": "VanTechno",
+      "author_fullname": null,
+      "body": "as in, \"use AI to create reports for you?\" Is that the question?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfglzjr",
+      "created_utc": 1791817870,
+      "created_at_iso": "2026-10-12T15:11:10.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfglzjr/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhorok/",
+            "created_utc": 1791827370,
+            "created_at_iso": "2026-10-12T17:49:30.000Z",
+            "id": "pfhorok",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Yea exactly. Seems like there's a range of formality to what people mean by \"report\", but I'm thinking of the sort of ad-hoc data requests that, depending on org size/governance, get delivered through a manually exported CSV, or an SSRS report, or a PBI dashboard.",
+            "body_html": "\n      <p>\n      Yea exactly. Seems like there's a range of formality to what people mean by \"report\", but I'm thinking of the sort of ad-hoc data requests that, depending on org size/governance, get delivered through a manually exported CSV, or an SSRS report, or a PBI dashboard.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhorok",
+            "parent_id": "t1_pfglzjr",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhorok/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TUUxTZXJ2ZXIvdDNfMXg0NDZoOD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpXWm1aakF4WlRrc09qb3lPbVF4T25ReFgzQm1hRzl5YjJzPSIsInN1YnJlZGRpdCI6IlNRTFNlcnZlciIsInBvc3RJZCI6IjF4NDQ2aDgiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGZob3JvayJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfhorok"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "pfgkrop",
+      "author": "doshka",
+      "author_fullname": null,
+      "body": "Which data?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgkrop",
+      "created_utc": 1791817559,
+      "created_at_iso": "2026-10-12T15:05:59.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgkrop/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhofvn/",
+            "created_utc": 1791827292,
+            "created_at_iso": "2026-10-12T17:48:12.000Z",
+            "id": "pfhofvn",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "I'm thinking of the sort of ad-hoc data requests that, depending on org size/governance, get delivered through a manually exported CSV, or an SSRS report, or a PBI dashboard.",
+            "body_html": "\n      <p>\n      I'm thinking of the sort of ad-hoc data requests that, depending on org size/governance, get delivered through a manually exported CSV, or an SSRS report, or a PBI dashboard.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhofvn",
+            "parent_id": "t1_pfgkrop",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhofvn/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfgkrop"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "pfgpxcv",
+      "author": "Certain-Set-4087",
+      "author_fullname": null,
+      "body": "An AI doenst fulfull one of the base requirements for a reliable data management system:\n\n data retrieved = exactly the data stored, repeatable infinitively.\n\n The AI will replace the ASP.NET thing, and read the data by skills from the database and display them by another skill for the user interface...\n\n Of course you can try to pimp the data into a language model but again a language model is something to understand language and not memorizing numbers. Theoretically it is possible, but at the expense of millions of tokens, all the data must remain in the context window of the LLM, otherwise they are lost. Or must be trained into the model, but as I said a language model is not a data store...\n\n Try some basic math operations in the LLM only, by excluding the usage of Skills. And you will be supprised what an AI will tell you...",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgpxcv",
+      "created_utc": 1791818854,
+      "created_at_iso": "2026-10-12T15:27:34.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgpxcv/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhudtf/",
+            "created_utc": 1791828736,
+            "created_at_iso": "2026-10-12T18:12:16.000Z",
+            "id": "pfhudtf",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "So you're saying in order for an AI to be a reliable data management system an interface to a reliable data management system, it would need \"skills\" that map 1-to-1 to, say, stored procedures or something?",
+            "body_html": "\n      <p>\n      So you're saying in order for an AI to be <s>a reliable data management system</s> an <em>interface</em> to a reliable data management system, it would need \"skills\" that map 1-to-1 to, say, stored procedures or something?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhudtf",
+            "parent_id": "t1_pfgpxcv",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhudtf/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfgpxcv"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pfj64cm",
+      "author": "Leiothrix",
+      "author_fullname": null,
+      "body": "Because they want it to actually work, and the output generated is actually important with real-world consequences?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfj64cm",
+      "created_utc": 1791840892,
+      "created_at_iso": "2026-10-12T21:34:52.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfj64cm/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pge5cpm/",
+            "created_utc": 1791854285,
+            "created_at_iso": "2026-10-13T01:18:05.000Z",
+            "id": "pge5cpm",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "You're saying the LLM-written SQL just isn't trustworthy, or there's other piece that's flimsy",
+            "body_html": "\n      <p>\n      You're saying the LLM-written SQL just isn't trustworthy, or there's other piece that's flimsy\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pge5cpm",
+            "parent_id": "t1_pfj64cm",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pge5cpm/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfj64cm"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pgs2ajp",
+      "author": "antegrgic16",
+      "author_fullname": null,
+      "body": "'Show me overdue orders' sounds simple until you ask what overdue means.\n\n Past the customer's requested date? Past our promised date? Not shipped at all, or partially shipped? Include orders on credit hold? Those are business decisions, and a perfectly valid query can still answer the wrong question.\n\n That's where I'd start with self-service: a handful of agreed questions backed by views or procedures with known results, clear access rules and an explanation of the filters applied. Let the model help someone ask the question and understand the result. Let the database do the calculation.\n\n Then expand when those answers are reliable. Jumping straight from raw tables to 'ask anything' makes the developer the cleanup crew for every ambiguous definition.\n\n In the two examples that worked, did someone build that layer of business definitions first?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pgs2ajp",
+      "created_utc": 1792014802,
+      "created_at_iso": "2026-10-14T21:53:22.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pgs2ajp/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pgt57hi/",
+            "created_utc": 1792026737,
+            "created_at_iso": "2026-10-15T01:12:17.000Z",
+            "id": "pgt57hi",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Yea good question.\n\n One of them owned the DB and an internal-facing ASP.NET app. He had already built a system where he could save a SPROC, click a button, and make it show up in a reports page with all the UI needed to run it. Then he incrementally exposed that functionality to agentic frontends.\n\n The other guy was working in SQL Server and then their company added Snowflake/Databricks, so his job changed to writing ETL pipelines for the analytics database. And then business people are querying that through LLMs. So you could argue that he hasn't been taken out of the loop at all -- his job has just changed from delivering ad-hoc CSVs to the front-loaded work of building ETL pipelines that tee up answers for BI tools (and now agents)",
+            "body_html": "\n      <p>\n      Yea good question.\n    </p><p>\n      One of them owned the DB and an internal-facing ASP.NET app. He had already built a system where he could save a SPROC, click a button, and make it show up in a reports page with all the UI needed to run it. Then he incrementally exposed that functionality to agentic frontends.\n    </p><p>\n      The other guy was working in SQL Server and then their company added Snowflake/Databricks, so his job changed to writing ETL pipelines for the analytics database. And then business people are querying that through LLMs. So you could argue that he hasn't been taken out of the loop at all -- his job has just changed from delivering ad-hoc CSVs to the front-loaded work of building ETL pipelines that tee up answers for BI tools (and now agents)\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pgt57hi",
+            "parent_id": "t1_pgs2ajp",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pgt57hi/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pgs2ajp"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pfgo8v1",
+      "author": "jib_reddit",
+      "author_fullname": null,
+      "body": "I have tried to get Helpdesk people to write slightly complicated Power BI Queries using our MS Co-pilot; they just couldn't do it. They don't keep trying when they hit a problem or get confused by the first slightly technical error that they see. Being a Coder/Programmer is more of a problem-solving state of mind now than ever before, that is why I am not worried about AI taking my job. I can just do in 30 mins what I used to do in 8 hours, but other people still struggle to get it done at all.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgo8v1",
+      "created_utc": 1791818436,
+      "created_at_iso": "2026-10-12T15:20:36.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgo8v1/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhqb3k/",
+            "created_utc": 1791827741,
+            "created_at_iso": "2026-10-12T17:55:41.000Z",
+            "id": "pfhqb3k",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Interesting. Is the chatbot writing the query entirely from scratch? (as opposed to, say, adding a where condition to an existing SPROC that was written by a dev)",
+            "body_html": "\n      <p>\n      Interesting. Is the chatbot writing the query entirely from scratch? (as opposed to, say, adding a where condition to an existing SPROC that was written by a dev)\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhqb3k",
+            "parent_id": "t1_pfgo8v1",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhqb3k/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhvpuo/",
+                  "created_utc": 1791829058,
+                  "created_at_iso": "2026-10-12T18:17:38.000Z",
+                  "id": "pfhvpuo",
+                  "author": "jib_reddit",
+                  "author_fullname": null,
+                  "body": "I just said to them here is the tables you want, write the report. It is more data conversion errors and and infrastructure problems they really struggled to get passed even with AI helping them.",
+                  "body_html": "\n      <p>\n      I just said to them here is the tables you want, write the report. It is more data conversion errors and and infrastructure problems they really struggled to get passed even with AI helping them.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pfhvpuo",
+                  "parent_id": "t1_pfhqb3k",
+                  "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhvpuo/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TUUxTZXJ2ZXIvdDNfMXg0NDZoOD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WW1WaVptVTVZeklzT2pvek9tUXhPblF4WDNCbWFIWndkVzg9Iiwic3VicmVkZGl0IjoiU1FMU2VydmVyIiwicG9zdElkIjoiMXg0NDZoOCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wZmh2cHVvIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pfhvpuo"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfhvpuo"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pfgnpxi",
+      "author": "jdubuhyew",
+      "author_fullname": null,
+      "body": "are you asking who has implemented a chat bot that can turn natural language into sql queries?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfgnpxi",
+      "created_utc": 1791818305,
+      "created_at_iso": "2026-10-12T15:18:25.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgnpxi/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhpnpn/",
+            "created_utc": 1791827584,
+            "created_at_iso": "2026-10-12T17:53:04.000Z",
+            "id": "pfhpnpn",
+            "author": "pootietangus",
+            "author_fullname": null,
+            "body": "Sort of the inverse question. Like why haven't more people implemented a system where business people can ask a chat bot to get them the data they need?",
+            "body_html": "\n      <p>\n      Sort of the inverse question. Like why haven't more people implemented a system where business people can ask a chat bot to get them the data they need?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pfhpnpn",
+            "parent_id": "t1_pfgnpxi",
+            "permalink": "/r/SQLServer/comments/1x446h8/comment/pfhpnpn/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfi0g1q/",
+                  "created_utc": 1791830213,
+                  "created_at_iso": "2026-10-12T18:36:53.000Z",
+                  "id": "pfi0g1q",
+                  "author": "jdubuhyew",
+                  "author_fullname": null,
+                  "body": "ah yeah, you have to get your data clean, normalized, governed etc first! that\u2019s the hardest part. data has so many more eyes on it now, but that doesn\u2019t mean the company has invested in it.",
+                  "body_html": "\n      <p>\n      ah yeah, you have to get your data clean, normalized, governed etc first! that\u2019s the hardest part. data has so many more eyes on it now, but that doesn\u2019t mean the company has invested in it.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pfi0g1q",
+                  "parent_id": "t1_pfhpnpn",
+                  "permalink": "/r/SQLServer/comments/1x446h8/comment/pfi0g1q/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9TUUxTZXJ2ZXIvdDNfMXg0NDZoOD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WVRRNE5qVmxaRElzT2pvek9tUXhPblF4WDNCbWFUQm5NWEU9Iiwic3VicmVkZGl0IjoiU1FMU2VydmVyIiwicG9zdElkIjoiMXg0NDZoOCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wZmkwZzFxIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pfi0g1q"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pfi0g1q"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pgi8iis",
+      "author": "kidehen",
+      "author_fullname": null,
+      "body": "They can!\n\n AI Agents, courtesy of loose coupling with LLMs, are powerful clients for interacting with SQL Server using a variety of existing open standards (e.g., ODBC, JDBC, HTTP etc).\n\n Here's an example:\n\n https://linkeddata.uriburner.com/weblog/?post=conceptual-data-virtualization-sql-rdf-deepseek_v4flash-1.html\n\n You can jump directly to live demos at:\nhttps://linkeddata.uriburner.com/weblog/?raw=conceptual-data-virtualization-sql-rdf-deepseek_v4flash-1.html#section-live-examples",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pgi8iis",
+      "created_utc": 1791907727,
+      "created_at_iso": "2026-10-13T16:08:47.000Z",
+      "parent_id": "t3_1x446h8",
+      "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pgi8iis/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1x446h8",
+    "author": "pootietangus",
+    "author_fullname": "t2_wwmap",
+    "subreddit": "SQLServer",
+    "title": "Why can't business users just get the data with AI?",
+    "downs": 0,
+    "name": "t3_1x446h8",
+    "upvote_ratio": 0.08695652173913043,
+    "ups": 0,
+    "selftext": "I chatted with 138 SQL Server devs who field ad-hoc data requests. Only 2 of them are completely out of the loop thanks to AI. One built a custom layer into an ASP.NET app that he also owns. The other works at a company that migrated to Databricks or Snowflake, and he just does ETL stuff now. Does this line up with what you're seeing?",
+    "total_awards_received": 0,
+    "score": 0,
+    "created": 1791817276,
+    "num_comments": 40,
+    "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/why_cant_business_users_just_get_the_data_with_ai/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1791817276
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id e95b3c27a7264c63b1a3ad20f4341d54

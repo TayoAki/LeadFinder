@@ -1,0 +1,684 @@
+{
+  "success": true,
+  "credits_remaining": 209668,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p4mhv2w",
+      "author": "trademarktower",
+      "author_fullname": null,
+      "body": "Better work on your AI skills and soft skills explaining AI and the numbers. Jobs are transitioning to architecture roles where you will be in charge of the process and not do the grunt work anymore. That puts a premium on communications and explaining the strategy.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mhv2w",
+      "created_utc": 1787148962,
+      "created_at_iso": "2026-08-19T14:16:02.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mhv2w/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4n1fyu/",
+            "created_utc": 1787154146,
+            "created_at_iso": "2026-08-19T15:42:26.000Z",
+            "id": "p4n1fyu",
+            "author": "Ok-Guitar-6854",
+            "author_fullname": null,
+            "body": "This! I've always told people that at the heart of it, our audience is never really other finance people so we need to know how to create a story with the numbers and the data and that THAT skill is what is going to be valuable and make you agile in the workplace.",
+            "body_html": "\n      <p>\n      This! I've always told people that at the heart of it, our audience is never really other finance people so we need to know how to create a story with the numbers and the data and that THAT skill is what is going to be valuable and make you agile in the workplace.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4n1fyu",
+            "parent_id": "t1_p4mhv2w",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4n1fyu/",
+            "ups": 17,
+            "downs": 0,
+            "score": 17,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p4mhv2w"
+        }
+      },
+      "ups": 128,
+      "downs": 0,
+      "score": 128
+    },
+    {
+      "id": "p4mmvdi",
+      "author": "JBKReef",
+      "author_fullname": null,
+      "body": "Rely on the story. A dashboard is needed to tell a story to non-finance people financial insights. The AI tool has stolen your workload but the intent behind the dashboard and your experience in what works to tell the story is invaluable. Rely on that to stay relevant.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mmvdi",
+      "created_utc": 1787150290,
+      "created_at_iso": "2026-08-19T14:38:10.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mmvdi/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 27,
+      "downs": 0,
+      "score": 27
+    },
+    {
+      "id": "p4mjlz4",
+      "author": "Prudent-Elk-2845",
+      "author_fullname": null,
+      "body": "The value you promised was never report creation, it is actionable insight delivery",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mjlz4",
+      "created_utc": 1787149426,
+      "created_at_iso": "2026-08-19T14:23:46.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mjlz4/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mn59c/",
+            "created_utc": 1787150363,
+            "created_at_iso": "2026-08-19T14:39:23.000Z",
+            "id": "p4mn59c",
+            "author": "NumbersRLife",
+            "author_fullname": null,
+            "body": "Im sorry but thats not true. The job descriptions need someone who is able to create reports. Thats part of the value. You could say that part is easier, but it's absolutely part of the job function, thus part of thr value delivered.",
+            "body_html": "\n      <p>\n      Im sorry but thats not true. The job descriptions need someone who is able to create reports. Thats part of the value. You could say that part is easier, but it's absolutely part of the job function, thus part of thr value delivered.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4mn59c",
+            "parent_id": "t1_p4mjlz4",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4mn59c/",
+            "ups": 14,
+            "downs": 0,
+            "score": 14,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mohg4/",
+                  "created_utc": 1787150717,
+                  "created_at_iso": "2026-08-19T14:45:17.000Z",
+                  "id": "p4mohg4",
+                  "author": "Prudent-Elk-2845",
+                  "author_fullname": null,
+                  "body": "Creating reports helps you deliver the insight, but the report itself is not what\u2019s valued by either your internal customer or your business\u2019s external customers\n\n I\u2019ve seen operators love a basic table of data is that\u2019s all they need to make decisions. So report creation itself is not valuable.",
+                  "body_html": "\n      <p>\n      Creating reports helps you deliver the insight, but the report itself is not what\u2019s valued by either your internal customer or your business\u2019s external customers\n    </p><p>\n      I\u2019ve seen operators love a basic table of data is that\u2019s all they need to make decisions. So report creation itself is not valuable.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p4mohg4",
+                  "parent_id": "t1_p4mn59c",
+                  "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4mohg4/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9GUGFuZEEvdDNfMXZzbm4ybD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2T0RKbFpEVTVNR1FzT2pvek9tUXhPblF4WDNBMGJXOW9aelE9Iiwic3VicmVkZGl0IjoiRlBhbmRBIiwicG9zdElkIjoiMXZzbm4ybCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wNG1vaGc0In0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p4mohg4"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p4mohg4"
+        }
+      },
+      "ups": 22,
+      "downs": 0,
+      "score": 22
+    },
+    {
+      "id": "p4n141p",
+      "author": "savguy01",
+      "author_fullname": null,
+      "body": "Feeling the same way but with the excel + SQL skills i have developed over the years. Obviously that is only part of what i bring to the table, but being a person who could bring an analysis from raw data form to presentation to the stakeholder is satisfying. I know AI will still allow me to do that, but it just seems like it levels the playing field a bit.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4n141p",
+      "created_utc": 1787154060,
+      "created_at_iso": "2026-08-19T15:41:00.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4n141p/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "p4mqa9b",
+      "author": "bayouski",
+      "author_fullname": null,
+      "body": "the dashboard-building part is definitely becoming less valuable on its own. but in FP&A the harder part was never really making the charts, it's deciding what should be measured, making sure the numbers reconcile, and knowing what actually matters when something moves.\n\n AI can remove a lot of the build work, but imo that just shifts the valuable skill further toward the data/finance logic behind it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mqa9b",
+      "created_utc": 1787151198,
+      "created_at_iso": "2026-08-19T14:53:18.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mqa9b/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "p4mwr9k",
+      "author": "Upset_Version8275",
+      "author_fullname": null,
+      "body": "You\u2019re exactly right. I remember when I transitioned to fp&a only 2 years ago I was brushing up on sql for the interviews. Now that part of the job doesn\u2019t even exist. Stuff my manager would have given me a day to do before now is supposed to be done in an hour.\n\n It\u2019s the same thing if you talk to software engineers except they lost even more of their job.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mwr9k",
+      "created_utc": 1787152915,
+      "created_at_iso": "2026-08-19T15:21:55.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mwr9k/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p4tluv6",
+      "author": "BrightPointBill",
+      "author_fullname": null,
+      "body": "I disagree. Your dashboard creation skills taught you what works and what doesn't. Now your using your judgement to help revise what AI comes out with.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4tluv6",
+      "created_utc": 1787233162,
+      "created_at_iso": "2026-08-20T13:39:22.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4tluv6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p4pffnq",
+      "author": "room52",
+      "author_fullname": null,
+      "body": "True , our intern makes better dashboard as me now and he just started last month lol",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4pffnq",
+      "created_utc": 1787176222,
+      "created_at_iso": "2026-08-19T21:50:22.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4pffnq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p4tguix",
+      "author": "milkman9316",
+      "author_fullname": null,
+      "body": "This is a reckoning moment for a lot of people that do this type of work.\n\n For a long time, I've seen people confuse being a spreadsheet/data jockey with FP&A. SQL, DAX, M, VBA.... These are just tools to do the job. They aren't the job.\n\n The job is supposed to be forward looking planning and analysis to support quality business execution. Being an expert on your business or your industry is FAR AND AWAY more important than knowing how to spin a flashy dashboard.\n\n Once upon a time the 'tool' guy (or gal) could get to the SFA / IC Mgr level based on their technical acumen. Those days are ending. Simply preparing analysis is now a wholly inadequate substitute for high caliber business partnership.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4tguix",
+      "created_utc": 1787231725,
+      "created_at_iso": "2026-08-20T13:15:25.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4tguix/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p4n223l",
+      "author": "re23binsd",
+      "author_fullname": null,
+      "body": "That\u2019s awesome lol now you need to make sure you\u2019re reviewing and refining the outputs. Being more efficient with the use of AI is a good thing",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4n223l",
+      "created_utc": 1787154303,
+      "created_at_iso": "2026-08-19T15:45:03.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4n223l/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p4nndn0",
+      "author": "Lost_Rolls_",
+      "author_fullname": null,
+      "body": "Pretty cool huh? No more manual drudgery",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4nndn0",
+      "created_utc": 1787159668,
+      "created_at_iso": "2026-08-19T17:14:28.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4nndn0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p4o41xd",
+      "author": "Leading-Bike6355",
+      "author_fullname": null,
+      "body": null,
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4o41xd",
+      "created_utc": 1787163829,
+      "created_at_iso": "2026-08-19T18:23:49.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4o41xd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p4oh93j",
+      "author": "Flgrip",
+      "author_fullname": null,
+      "body": "Y",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4oh93j",
+      "created_utc": 1787167156,
+      "created_at_iso": "2026-08-19T19:19:16.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4oh93j/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p4mto7a",
+      "author": "FireMike_PleaseGod",
+      "author_fullname": null,
+      "body": "What\u2019s the feature in Google?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mto7a",
+      "created_utc": 1787152097,
+      "created_at_iso": "2026-08-19T15:08:17.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mto7a/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    },
+    {
+      "id": "p4qfhud",
+      "author": "sum_if",
+      "author_fullname": null,
+      "body": "Mods... this account was created 4 months ago and has over 2000 comments and over 100 posts. Does this fit your criteria for bot moderating?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4qfhud",
+      "created_utc": 1787187371,
+      "created_at_iso": "2026-08-20T00:56:11.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4qfhud/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4qno3h/",
+            "created_utc": 1787190053,
+            "created_at_iso": "2026-08-20T01:40:53.000Z",
+            "id": "p4qno3h",
+            "author": "thepotatomaniscoming",
+            "author_fullname": null,
+            "body": "Oh fuck off. Seriously dawg? Reported for harassment.",
+            "body_html": "\n      <p>\n      Oh fuck off. Seriously dawg? Reported for harassment.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4qno3h",
+            "parent_id": "t1_p4qfhud",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4qno3h/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4qpbmy/",
+            "created_utc": 1787190596,
+            "created_at_iso": "2026-08-20T01:49:56.000Z",
+            "id": "p4qpbmy",
+            "author": "cityoflostwages",
+            "author_fullname": null,
+            "body": "Just because an account has a lot of comments and posts, does not indicate it is a bot. In fact it would generally indicate the opposite. So in this case no, it does not, and we would prefer you use the report function or modmail in the future if you wish to report potential promotional/bot activity so we can thoroughly review the account, thanks!",
+            "body_html": "\n      <p>\n      Just because an account has a lot of comments and posts, does not indicate it is a bot. In fact it would generally indicate the opposite. So in this case no, it does not, and we would prefer you use the report function or modmail in the future if you wish to report potential promotional/bot activity so we can thoroughly review the account, thanks!\n    </p>\n    ",
+            "distinguished": "moderator",
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4qpbmy",
+            "parent_id": "t1_p4qfhud",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4qpbmy/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p4qfhud"
+        }
+      },
+      "ups": -3,
+      "downs": 0,
+      "score": -3
+    },
+    {
+      "id": "p4mi4ic",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p4mi4ic",
+      "created_utc": 1787149032,
+      "created_at_iso": "2026-08-19T14:17:12.000Z",
+      "parent_id": "t3_1vsnn2l",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mi4ic/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4miymj/",
+            "created_utc": 1787149253,
+            "created_at_iso": "2026-08-19T14:20:53.000Z",
+            "id": "p4miymj",
+            "author": "xl129",
+            "author_fullname": null,
+            "body": "If he use gemini the most likely google already has his company data lol.",
+            "body_html": "\n      <p>\n      If he use gemini the most likely google already has his company data lol.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4miymj",
+            "parent_id": "t1_p4mi4ic",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4miymj/",
+            "ups": 16,
+            "downs": 0,
+            "score": 16,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4nn9yw/",
+            "created_utc": 1787159642,
+            "created_at_iso": "2026-08-19T17:14:02.000Z",
+            "id": "p4nn9yw",
+            "author": "Lost_Rolls_",
+            "author_fullname": null,
+            "body": "Oh no! Google might figure out how to have no growth and zero out employee equity! The horror",
+            "body_html": "\n      <p>\n      Oh no! Google might figure out how to have no growth and zero out employee equity! The horror\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4nn9yw",
+            "parent_id": "t1_p4mi4ic",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4nn9yw/",
+            "ups": 10,
+            "downs": 0,
+            "score": 10,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4miczz/",
+            "created_utc": 1787149094,
+            "created_at_iso": "2026-08-19T14:18:14.000Z",
+            "id": "p4miczz",
+            "author": "ravepeacefully",
+            "author_fullname": null,
+            "body": "There\u2019s nothing proprietary about this data. Sorry to be the guy who has to tell you this lol.",
+            "body_html": "\n      <p>\n      There\u2019s nothing proprietary about this data. Sorry to be the guy who has to tell you this lol.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p4miczz",
+            "parent_id": "t1_p4mi4ic",
+            "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4miczz/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mj0fi/",
+                  "created_utc": 1787149266,
+                  "created_at_iso": "2026-08-19T14:21:06.000Z",
+                  "id": "p4mj0fi",
+                  "author": "[deleted]",
+                  "author_fullname": null,
+                  "body": "[deleted]",
+                  "body_html": null,
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": true,
+                  "name": "t1_p4mj0fi",
+                  "parent_id": "t1_p4miczz",
+                  "permalink": "/r/FPandA/comments/1vsnn2l/comment/p4mj0fi/",
+                  "ups": 14,
+                  "downs": 0,
+                  "score": 14,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9GUGFuZEEvdDNfMXZzbm4ybD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTUsMiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlltRXpaakEwT1RZc09qb3pPbVF4T25ReFgzQTBiV293Wm1rPSIsInN1YnJlZGRpdCI6IkZQYW5kQSIsInBvc3RJZCI6IjF2c25uMmwiLCJwYXJlbnRUaGluZ0lkIjoidDFfcDRtajBmaSJ9"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p4mj0fi"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p4mj0fi"
+        }
+      },
+      "ups": 44,
+      "downs": 0,
+      "score": 44
+    }
+  ],
+  "post": {
+    "id": "1vsnn2l",
+    "author": "thepotatomaniscoming",
+    "author_fullname": "t2_2b672ih4z2",
+    "subreddit": "FPandA",
+    "title": "AI has made my \u201cdashboard creation\u201d skills useless",
+    "downs": 0,
+    "name": "t3_1vsnn2l",
+    "upvote_ratio": 0.9021739130434783,
+    "ups": 74,
+    "selftext": "Spent a lot of time in my career perfecting dashboards and getting them fully functional, displaying good data, and making it visually appealing and spending time analyzing them the way I like to analyze the data Now we are using an AI feature through google gemini and now I no longer need to spend time making any sort of dashboard anymore.",
+    "total_awards_received": 0,
+    "score": 74,
+    "created": 1787148833,
+    "num_comments": 41,
+    "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/ai_has_made_my_dashboard_creation_skills_useless/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1787148833
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9GUGFuZEEvdDNfMXZzbm4ybD9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TlRZek5UY3lZMllzT2pvd09tVjRPaWh5TlY0aGJ6b21WRFF4TUM1dFhEb2lTRWNwSWlneVdTTXpTRXN6TzBJeFhXVTRUMjhtS2xRaU55SWtlM28rYVRObkluMUdUU01wVW04blFYUlhQU010Iiwic3VicmVkZGl0IjoiRlBhbmRBIiwicG9zdElkIjoiMXZzbm4ybCIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id c3bc021aca3245d5aeb27c71453ce36d

@@ -1,0 +1,503 @@
+{
+  "success": true,
+  "credits_remaining": 209653,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "mqunizr",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_mqunizr",
+      "created_utc": 1746519085,
+      "created_at_iso": "2025-05-06T08:11:25.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqunizr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mquq2p9",
+      "author": "mookie_bones",
+      "author_fullname": null,
+      "body": "Have you considered just bringing the raw data into bigquery? You could use a low cost etl tool and build a few data models in DBT then swap out your sources. Long term I\u2019d imagine your costs would be considerably lower than with super metrics",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mquq2p9",
+      "created_utc": 1746520769,
+      "created_at_iso": "2025-05-06T08:39:29.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mquq2p9/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqzoi7i/",
+            "created_utc": 1746581119,
+            "created_at_iso": "2025-05-07T01:25:19.000Z",
+            "id": "mqzoi7i",
+            "author": "Dumac89",
+            "author_fullname": null,
+            "body": "+1 on bringing it into BQ, especially if it\u2019s a large amount of data. Looker Studio is notoriously slow when trying to blend between non-BQ sources (even blending BQ sources is bad enough)\n\n If they only need the basics and their data isn\u2019t insanely large then the GA4 standard connector is fine. It consumes \u201ctokens\u201d basically how complicated and how much data is processed by the API.",
+            "body_html": "\n      <p>\n      +1 on bringing it into BQ, especially if it\u2019s a large amount of data. Looker Studio is notoriously slow when trying to blend between non-BQ sources (even blending BQ sources is bad enough)\n    </p><p>\n      If they only need the basics and their data isn\u2019t insanely large then the GA4 standard connector is fine. It consumes \u201ctokens\u201d basically how complicated and how much data is processed by the API.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mqzoi7i",
+            "parent_id": "t1_mquq2p9",
+            "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mqzoi7i/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/nck9x1e/",
+            "created_utc": 1757082757,
+            "created_at_iso": "2025-09-05T14:32:37.000Z",
+            "id": "nck9x1e",
+            "author": "jared_jesionek",
+            "author_fullname": null,
+            "body": "I'm late to this. I would agree that BQ is the move if you want to stay in looker studio. If you want to do this as cost effectively as possible I'd recommend an open source stack. Extract and load with dlt + duckdb + open source business intelligence",
+            "body_html": "\n      <p>\n      I'm late to this. I would agree that BQ is the move if you want to stay in looker studio. If you want to do this as cost effectively as possible I'd recommend an open source stack. Extract and load with dlt + duckdb + open source business intelligence\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nck9x1e",
+            "parent_id": "t1_mquq2p9",
+            "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/nck9x1e/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqutqb3/",
+            "created_utc": 1746523156,
+            "created_at_iso": "2025-05-06T09:19:16.000Z",
+            "id": "mqutqb3",
+            "author": "Working_Storm_6170",
+            "author_fullname": null,
+            "body": "I have considered using big query, can you walk me through the process?",
+            "body_html": "\n      <p>\n      I have considered using big query, can you walk me through the process?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mqutqb3",
+            "parent_id": "t1_mquq2p9",
+            "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mqutqb3/",
+            "ups": 0,
+            "downs": 0,
+            "score": 0,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqva7kb/",
+                  "created_utc": 1746531901,
+                  "created_at_iso": "2025-05-06T11:45:01.000Z",
+                  "id": "mqva7kb",
+                  "author": "East-Transition2130",
+                  "author_fullname": null,
+                  "body": "With DBT and GBQ you create a single source of truth that\u2019s stored inside gbq and then you could build out your reports using the gbq connector. It should be faster and more efficient than having multiple connectors in the same looker studio and having it do a blend",
+                  "body_html": "\n      <p>\n      With DBT and GBQ you create a single source of truth that\u2019s stored inside gbq and then you could build out your reports using the gbq connector. It should be faster and more efficient than having multiple connectors in the same looker studio and having it do a blend\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mqva7kb",
+                  "parent_id": "t1_mqutqb3",
+                  "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mqva7kb/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqw0jk7/",
+                  "created_utc": 1746541280,
+                  "created_at_iso": "2025-05-06T14:21:20.000Z",
+                  "id": "mqw0jk7",
+                  "author": "mookie_bones",
+                  "author_fullname": null,
+                  "body": "You would create pipelines in a tool like stitch etl or airbyte to load data into your bigquery instance, then you\u2019d create you data models in dbt which is basically just SQL. You would then aggregate tables (written in SQL) that aggregated your metrics by day or other dimension (think pivot tables). Then your looker studio instance would point directly to those. You could have each client be stored in a \u201cclient\u201d field and use a filter to have one big table or just have an endpoint table for each.",
+                  "body_html": "\n      <p>\n      You would create pipelines in a tool like stitch etl or airbyte to load data into your bigquery instance, then you\u2019d create you data models in dbt which is basically just SQL. You would then aggregate tables (written in SQL) that aggregated your metrics by day or other dimension (think pivot tables). Then your looker studio instance would point directly to those. You could have each client be stored in a \u201cclient\u201d field and use a filter to have one big table or just have an endpoint table for each.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mqw0jk7",
+                  "parent_id": "t1_mqutqb3",
+                  "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mqw0jk7/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "mqutqb3"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mqutqb3"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "mqutood",
+      "author": "2frames_app",
+      "author_fullname": null,
+      "body": "generally it is a good solution and very flexible (it supports app scripts plugins) but be aware that there is very limited API so each report has to be created by hand (but you can copy reports). So even small change in everye report is a pain. once I automated it with JS but google started to blocking things when you are clicking too fast.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mqutood",
+      "created_utc": 1746523125,
+      "created_at_iso": "2025-05-06T09:18:45.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqutood/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mquubv6/",
+            "created_utc": 1746523545,
+            "created_at_iso": "2025-05-06T09:25:45.000Z",
+            "id": "mquubv6",
+            "author": "Working_Storm_6170",
+            "author_fullname": null,
+            "body": "Given the limitations with API and the manual work involved, what's the best way to manage Looker Studio at scale for 80+ clients?",
+            "body_html": "\n      <p>\n      Given the limitations with API and the manual work involved, what's the best way to manage Looker Studio at scale for 80+ clients?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_mquubv6",
+            "parent_id": "t1_mqutood",
+            "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mquubv6/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqwupko/",
+                  "created_utc": 1746550034,
+                  "created_at_iso": "2025-05-06T16:47:14.000Z",
+                  "id": "mqwupko",
+                  "author": "2frames_app",
+                  "author_fullname": null,
+                  "body": "Hard to say without deep analyze of your case and without knowledge of relations between your data sources. Maybe create one super report with everything you need. Copy 80+ times. Set client (or maybe allow client to use his own credentials with data controls?). Share report with client (read only) or maybe embed report.\n\n Most important - do not copy report until you have everything configured and tested for one client. It pains when you have to change one letter in report title for 80+ reports :)",
+                  "body_html": "\n      <p>\n      Hard to say without deep analyze of your case and without knowledge of relations between your data sources. Maybe create one super report with everything you need. Copy 80+ times. Set client (or maybe allow client to use his own credentials with data controls?). Share report with client (read only) or maybe embed report.\n    </p><p>\n      Most important - do not copy report until you have everything configured and tested for one client. It pains when you have to change one letter in report title for 80+ reports :)\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_mqwupko",
+                  "parent_id": "t1_mquubv6",
+                  "permalink": "/r/GoogleDataStudio/comments/1kfz6w1/comment/mqwupko/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "mquubv6"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "mquubv6"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mqxlngb",
+      "author": "willkode",
+      "author_fullname": null,
+      "body": "Looker Studio should be able to handle this just fine, depending on what metrics you want reported. Some metrics are a hit or miss if they'll populate. So you may end up manually entering data.\n\n We use a mix of Looker Studios for small clients and Big Query for larger clients who need more in-depth reporting.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mqxlngb",
+      "created_utc": 1746557676,
+      "created_at_iso": "2025-05-06T18:54:36.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqxlngb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "mqwfqql",
+      "author": "Ivan_Palii",
+      "author_fullname": null,
+      "body": "The biggest problem with Looker Studio, that it's hard to build a project list where you can compare all customers in a simple table and sort websites by metrics.\n\n Also, notice that if you want to create a separate template for each customer,you'll need to maintain 80 files. If you need to make some change, you have to do it in each report!\n\n Don't get me wrong, I love Looker Studio, I built unique templates for GSC, GA4, Google Ads, GSC + GA4, GSC + Google Ads and generated 60+ sales of these templates. However, I understand the limitations.\n\n I can suggest you try Sitechecker, but there is no integration with GBP, BWT and Google Ads yet.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mqwfqql",
+      "created_utc": 1746545714,
+      "created_at_iso": "2025-05-06T15:35:14.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqwfqql/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "mqv2ml8",
+      "author": "84db4e",
+      "author_fullname": null,
+      "body": "Google Business Profiles only do 18 months of past data available, so you\u2019ll have to store the data in a sheet if you need a longer look back period. Not a deal breaker, but more work than just pulling in direct from API.\n\n Same for Meta, except 2 years, and TikTok is 90 days. For Meta, you\u2019ll need to store daily data if you want to track \u201cover time\u201d metrics that aren\u2019t API callable: Eg, followers over time - you would have to poll every day and store the result.\n\n Having built a reporting solution connected to 60 locations and having to store data, connected with Dataslayer to sheets, it was a bit of a punish.\n\n One of the things that will be painful is maintenance; token expiries on Meta, things breaking, api changes etc, and the breadth of changes needed when things are updated. It can end up being massive time sink and a distraction to actually doing what brings in money depending on your agency size.\n\n If you aren\u2019t saving at least 50-70% rolling your own solution, you could easily \u201cspend\u201d more through your own time vs just using a good off the shelf product like Agency Analytics, not including your upfront time to set up.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mqv2ml8",
+      "created_utc": 1746528349,
+      "created_at_iso": "2025-05-06T10:45:49.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqv2ml8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "mqv9y0y",
+      "author": "East-Transition2130",
+      "author_fullname": null,
+      "body": "Generally bringing it into the Google eco system is a good idea however I really advise going through the BigQuery, DBT route. It\u2019ll solve your long term problems as well as any data quality issues etc\n\n Google recently released Looker Studio inside Looker to get the best of both worlds and if you\u2019re willing to migrate to GCP and Google sees it as a potential long term client, if you contact their sales you could potentially get some funding for it too",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_mqv9y0y",
+      "created_utc": 1746531786,
+      "created_at_iso": "2025-05-06T11:43:06.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqv9y0y/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "munuefr",
+      "author": "Ok-Jump7476",
+      "author_fullname": null,
+      "body": "I like this idea. It will definately work if you need to have a separate dashboard for each client.\nJust a tiny recommendation - utilize GA4 raw events data in BigQuery for big clients, where you need to build advanced reporting, not just a basic overview. I mean attribution stuff, page path report, user interactions, open and closed funnels, etc.\n\n more info on GA4 UI and BigQuery GA4 raw data diff here\n\n The main benefits are: cost reduction, easy to reuse for another client, no data source limits with BigQuery.\nGood luck :)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_munuefr",
+      "created_utc": 1748418264,
+      "created_at_iso": "2025-05-28T07:44:24.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/munuefr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n38sq5i",
+      "author": "iamgoaty",
+      "author_fullname": null,
+      "body": "Sounds like a solid plan for gaining control and cutting costs, especially with modular templates and direct integrations. That said, scaling Looker Studio across 80 plus clients can get tricky, particularly around connector reliability and data management overhead.\n\n We\u2019ve heard from a lot of agencies that Supermetrics connectors can be fragile at scale, especially for social. Quota limits, connector errors, and ongoing maintenance can start eating into the time savings you were aiming for.\n\n Have you looked into Whatagraph? It\u2019s purpose built for multi-client reporting, with native integrations across social, search, and analytics platforms. No Supermetrics layer required. It\u2019s designed to scale, with templating, automated scheduling, and client-level separation already built in.\n\n Happy to share more if you're curious. Feel free to DM me.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n38sq5i",
+      "created_utc": 1752579552,
+      "created_at_iso": "2025-07-15T11:39:12.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/n38sq5i/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n9deplc",
+      "author": "ReasonableFig8954",
+      "author_fullname": null,
+      "body": "Your plan to migrate 80 clients to Looker Studio sounds solid, especially with modular, reusable setups. Supermetrics is great but can hit quota limits and sometimes stability issues, and pulling GMB/Bing data via Sheets+API might get cumbersome long term. We faced similar headaches with integrations breaking and inconsistent formatting, so we built ScreenshotReports.com \u2014 it just takes screenshots from GA4, Google Ads, Meta, etc., and turns them into branded, AI-powered reports in minutes, no connectors needed. Might be worth checking out to save time and avoid integration hassles!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n9deplc",
+      "created_utc": 1755534129,
+      "created_at_iso": "2025-08-18T16:22:09.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/n9deplc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nck6f9w",
+      "author": "Swydo-com",
+      "author_fullname": null,
+      "body": "Yes, at 80 clients, pure Looker Studio is stretched thin.\n\n Scaling breakdown:\n\n 15\u201320 clients: dashboards slow, automation fails, upkeep climbs.\n\n 50+ clients: charts lag, connectors break, error-fixing becomes full-time.\n\n API data retention complexities:\n\n Google Business Profiles only retain 18 months of historical data so if you look back further, you must store that data in Sheets or a warehouse; it's not a deal-breaker, but certainly extra work.\ufffc\n\n Meta (e.g., follower counts) often lacks over-time metrics, polling daily and stashing in Sheets is your only route.\n\n TikTok retention is very short, often 90 days max; plus, their API request quotas and data delays can be frustrating. \ufffc\n\n Supermetrics works for socials, but quotas bite - GA4's 200 k tokens/day, frequent refreshes, and duplicated widgets degrade performance. Extract Data or pre-aggregating in BigQuery helps offset the strain.\n\n Sheets+API for GBP/Bing becomes brittle at scale - token expiries, API changes, and maintenance are massive time sinks, often outweighing the cost of solid off-the-shelf tools.\n\n Options when scale matters:\n\n Swydo: agency-friendly automation, alerts, flat pricing, white-labelling.\n\n Power BI or Tableau: enterprise-grade performance, modelling, branding, and control.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nck6f9w",
+      "created_utc": 1757081722,
+      "created_at_iso": "2025-09-05T14:15:22.000Z",
+      "parent_id": "t3_1kfz6w1",
+      "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/nck6f9w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1kfz6w1",
+    "author": "Working_Storm_6170",
+    "author_fullname": "t2_1dsgdiwac7",
+    "subreddit": "GoogleDataStudio",
+    "title": "Moving 80 Clients from AgencyAnalytics to Looker Studio \u2013 Is This a Good Idea? Feedback Needed",
+    "downs": 0,
+    "name": "t3_1kfz6w1",
+    "upvote_ratio": 1,
+    "ups": 17,
+    "selftext": "I\u2019m planning to migrate reporting for around 80 clients from AgencyAnalytics to Looker Studio to gain more control and reduce costs. I wanted to share my current plan and would love your input on whether this is a good idea, potential pitfalls, and recommendations. My Setup Plan: GA4, GSC, and Google Ads directly integrated into Looker Studio. Social Media (only ~10 clients use it in reports) via Supermetrics. Bing Webmaster Tools and Google Business Profiles data pulled using Google Sheets + API and then connected to Looker Studio. The goal is to make everything modular and reusable with minimal manual effort once things are in place. My Questions: Is this approach scalable for 80+ clients? Are there any known issues with Supermetrics when used this way (e.g., quota limits, stability)? Any red flags with pulling GMB/Bing data through Sheets+API long term? Other tools or connectors you\u2019d recommend over Supermetrics (especially for socials)? Any tips for template management, data source limits, or performance issues in Looker Studio at scale?",
+    "total_awards_received": 0,
+    "score": 17,
+    "created": 1746519084,
+    "num_comments": 24,
+    "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/moving_80_clients_from_agencyanalytics_to_looker/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1746519084
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 2e6bd424de3f40c4ba87c21111b50f65

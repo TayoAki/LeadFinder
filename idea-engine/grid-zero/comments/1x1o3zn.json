@@ -1,0 +1,313 @@
+{
+  "success": true,
+  "credits_remaining": 209736,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "pev4m9r",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_pev4m9r",
+      "created_utc": 1791559135,
+      "created_at_iso": "2026-10-09T15:18:55.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pev4m9r/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pev5gov",
+      "author": "Healthy-Most-1447",
+      "author_fullname": null,
+      "body": "White label usually means you can change the logo, colors, domain, emails, etc. It doesn't necessarily mean the UI/UX is fully under your control. For that you\u2019ll have to get an embedded analytics solution or build the frontend yourself. Neither are cheap.\n\n For basic agency work imo you need integrations and automation. There\u2019s no need to bother with a generic BI platform unless you have a solid reason to build something much more custom",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pev5gov",
+      "created_utc": 1791559345,
+      "created_at_iso": "2026-10-09T15:22:25.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pev5gov/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pev5z0i/",
+            "created_utc": 1791559471,
+            "created_at_iso": "2026-10-09T15:24:31.000Z",
+            "id": "pev5z0i",
+            "author": "Logical-Airline-8428",
+            "author_fullname": null,
+            "body": "Yeah I get that, sorry about the mixup I didnt word it correctly. The primary need is agency clients as I've mentioned",
+            "body_html": "\n      <p>\n      Yeah I get that, sorry about the mixup I didnt word it correctly. The primary need is agency clients as I've mentioned\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pev5z0i",
+            "parent_id": "t1_pev5gov",
+            "permalink": "/r/DigitalMarketing/comments/1x1o3zn/comment/pev5z0i/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pev5gov"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pev9ps9",
+      "author": "wasay-inc",
+      "author_fullname": null,
+      "body": "That other commenter hit the nail on the head. Most tools like AgencyAnalytics let you change colors and logos but you never get true control over the UI or layout. If you want a fully custom reporting interface that feels native to your agency, building a lightweight frontend and pulling SEO data via API is the way to go. It is an upfront dev effort but you eliminate monthly SaaS fees completely. I actually build custom reporting dashboards for agencies, so if you end up looking into the custom route let me know and I can help you figure out the setup!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pev9ps9",
+      "created_utc": 1791560398,
+      "created_at_iso": "2026-10-09T15:39:58.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pev9ps9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pewwtxp",
+      "author": "beash88",
+      "author_fullname": null,
+      "body": "Just build what you need with Claude.\n\n Literally just open Claude Code, explain what you want, and it will work with you to build it as if you are talking to a dedicated developer on Slack.\n\n I used to use Looker Studio for all my dashboards and replaced it 6 months ago with a completely custom solution. It\u2019s SO much better, so much easier to build/update, and I can basically get any metric or any layout I want because Claude just writes custom code to do it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pewwtxp",
+      "created_utc": 1791575174,
+      "created_at_iso": "2026-10-09T19:46:14.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pewwtxp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pfc9y0b",
+      "author": "Financial_Caramel654",
+      "author_fullname": null,
+      "body": "There is the solution of vibe coding a dashboard but my opinions on that are pretty strong and not in a good way. There are quite a few options but since you ahven't mentioned a size I'm gonna assume you're not looking for large enterprise level solutions. I'd recommend looking at cheaper tools like dashthis, reportingninja or swydo. Imo client experience matters a lot and vibe coded dashboards are not a good experience, it's almost always better to get a fairly cheap white label dashboard than it is to use a janky vibe coded one",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfc9y0b",
+      "created_utc": 1791759463,
+      "created_at_iso": "2026-10-11T22:57:43.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pfc9y0b/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pevf8mn",
+      "author": "kam2102",
+      "author_fullname": null,
+      "body": "sent you a dm",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pevf8mn",
+      "created_utc": 1791561749,
+      "created_at_iso": "2026-10-09T16:02:29.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pevf8mn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pfa91kz",
+      "author": "SnoooCookies",
+      "author_fullname": null,
+      "body": "What's your budget?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfa91kz",
+      "created_utc": 1791740521,
+      "created_at_iso": "2026-10-11T17:42:01.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pfa91kz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pfe85ks",
+      "author": "Future-Dance7629",
+      "author_fullname": null,
+      "body": "I used Claude to create scripts that pull all the data I want from GA4, GSC and AHrefs APIs. It combines it all into a google sheet that feeds a custom Looker report. It runs automatically a few days into the month (so gsc and ga4 are upto date). I can also run it manually with a set date range.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pfe85ks",
+      "created_utc": 1791784876,
+      "created_at_iso": "2026-10-12T06:01:16.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pfe85ks/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pgv1t7m",
+      "author": "readofia",
+      "author_fullname": null,
+      "body": "Check AgencyAnalytics or DashThis or Whatagraph. They all offer white label branding for SEO reports.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pgv1t7m",
+      "created_utc": 1792054385,
+      "created_at_iso": "2026-10-15T08:53:05.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pgv1t7m/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ph7aa8k",
+      "author": "summer_io",
+      "author_fullname": null,
+      "body": "Try out summer io - it works like Notion, where you build block by block fully customizable reports. Also, connects with Claude and ChatGPT that can pull any data in and adjust branding on the fly. Sharing is super secure and in one click.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ph7aa8k",
+      "created_utc": 1792190591,
+      "created_at_iso": "2026-10-16T22:43:11.000Z",
+      "parent_id": "t3_1x1o3zn",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/ph7aa8k/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1x1o3zn",
+    "author": "Logical-Airline-8428",
+    "author_fullname": "t2_2h8mb6pcfu",
+    "subreddit": "DigitalMarketing",
+    "title": "marketing reporting software with white label dashboards needed",
+    "downs": 0,
+    "name": "t3_1x1o3zn",
+    "upvote_ratio": 1,
+    "ups": 2,
+    "selftext": "What\u2019s the best option here? I know looker studio, but we can\u2019t use that as we want a fully personalized UI with our own branding and the whole white label experience. What other options are worth looking into? This is primarily for branded SEO reports for agency clients",
+    "total_awards_received": 0,
+    "score": 2,
+    "created": 1791559135,
+    "num_comments": 20,
+    "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/marketing_reporting_software_with_white_label/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1791559135
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 4bdcfd8618934b3f9a359106ec8330c0

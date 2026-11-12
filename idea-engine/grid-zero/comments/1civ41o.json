@@ -1,0 +1,379 @@
+{
+  "success": true,
+  "credits_remaining": 209738,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "l2etuu1",
+      "author": "Glorious_Dawn_Awaits",
+      "author_fullname": null,
+      "body": "We're getting this pop up when we try to Publish to Web (Public)\n\n \"Contact your admin to enable embed code creation to publish this report on the web, ask your Power BI admin if they will allow you to create new publish to web embed codes. Once they turn that on, you will be able to publish this report to the web. Learn more\"\n\n When the admin goes to enable it points us to getting Power BI Embed.\n\n Even on this thread we have some saying it free and other sayings its $730.\n\n Still very confused.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_l2etuu1",
+      "created_utc": 1714750656,
+      "created_at_iso": "2024-05-03T15:37:36.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2etuu1/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2fafi6/",
+            "created_utc": 1714756352,
+            "created_at_iso": "2024-05-03T17:12:32.000Z",
+            "id": "l2fafi6",
+            "author": "rwlpf",
+            "author_fullname": null,
+            "body": "Publish to the web is free, I've set this up for a client and do it on my own free tenant. Creating the embed code is the only bit which is not obvious and has to be done from the Fabric tenant settings screen.",
+            "body_html": "\n      <p>\n      Publish to the web is free, I've set this up for a client and do it on my own free tenant. Creating the embed code is the only bit which is not obvious and has to be done from the Fabric tenant settings screen.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_l2fafi6",
+            "parent_id": "t1_l2etuu1",
+            "permalink": "/r/PowerBI/comments/1civ41o/comment/l2fafi6/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2h07zp/",
+            "created_utc": 1714780465,
+            "created_at_iso": "2024-05-03T23:54:25.000Z",
+            "id": "l2h07zp",
+            "author": "ultrafunkmiester",
+            "author_fullname": null,
+            "body": "You need to have permission to publish to web in your tenant. In most organisations the ability to use publish to web is either disabled completely or restricted to certain users( quite right if you think about it). Find out who is your power bi admin and ask permission to publish to web. They should only let you if the content you plan to publish is suitable to publish to web.",
+            "body_html": "\n      <p>\n      You need to have permission to publish to web in your tenant. In most organisations the ability to use publish to web is either disabled completely or restricted to certain users( quite right if you think about it). Find out who is your power bi admin and ask permission to publish to web. They should only let you if the content you plan to publish is suitable to publish to web.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_l2h07zp",
+            "parent_id": "t1_l2etuu1",
+            "permalink": "/r/PowerBI/comments/1civ41o/comment/l2h07zp/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "l2etuu1"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "l2bszxr",
+      "author": "st4n13l",
+      "author_fullname": null,
+      "body": "It really depends on what you're trying to do, but if you simply need to embed a report in a public website and the data isn't sensitive, then you can simply use the Publish to web feature which can be done with a free license.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_l2bszxr",
+      "created_utc": 1714696014,
+      "created_at_iso": "2024-05-03T00:26:54.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2bszxr/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2cdfoc/",
+            "created_utc": 1714704409,
+            "created_at_iso": "2024-05-03T02:46:49.000Z",
+            "id": "l2cdfoc",
+            "author": "Glorious_Dawn_Awaits",
+            "author_fullname": null,
+            "body": "We can publish to an internal website but we can\u2019t sure to the public website without Power BI embedded.",
+            "body_html": "\n      <p>\n      We can publish to an internal website but we can\u2019t sure to the public website without Power BI embedded.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_l2cdfoc",
+            "parent_id": "t1_l2bszxr",
+            "permalink": "/r/PowerBI/comments/1civ41o/comment/l2cdfoc/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2d33g7/",
+                  "created_utc": 1714718406,
+                  "created_at_iso": "2024-05-03T06:40:06.000Z",
+                  "id": "l2d33g7",
+                  "author": "ultrafunkmiester",
+                  "author_fullname": null,
+                  "body": "You can use \"publish to web\". It is free. But only use it if what you are publishing is meant for public consumption. Anyone with the url of the report you publish can see it. When you publish to web it creates a report url and a dataframe where people can visit the url or you can embed the dataframe in your website.\n\n I've had clients (some well known companies) use publish to web and stick the published content on a subscription website. They were wondering why revenue was down and were a bit crestfallen when i pointed out to them that once I had visited once, i could just go directly to the PBI pages without logging in.\n\n Microsoft only charges you to publish things you want to restrict access to. Hence, the EM SKUs. So you can publish internally by using the on prem pbi report server and/or publishing it to the cloud pbi service. Both have access control via your companies Entra (Azure active directory) or windows AD. If you want to publish to end users/clients through something like your own proprietary software or a website where you log in without Microsoft credentials, then you use an EM (or Fabric) SKU.",
+                  "body_html": "\n      <p>\n      You can use \"publish to web\". It is free. But only use it if what you are publishing is meant for public consumption. Anyone with the url of the report you publish can see it. When you publish to web it creates a report url and a dataframe where people can visit the url or you can embed the dataframe in your website.\n    </p><p>\n      I've had clients (some well known companies) use publish to web and stick the published content on a subscription website. They were wondering why revenue was down and were a bit crestfallen when i pointed out to them that once I had visited once, i could just go directly to the PBI pages without logging in.\n    </p><p>\n      Microsoft only charges you to publish things you want to restrict access to. Hence, the EM SKUs. So you can publish internally by using the on prem pbi report server and/or publishing it to the cloud pbi service. Both have access control via your companies Entra (Azure active directory) or windows AD. If you want to publish to end users/clients through something like your own proprietary software or a website where you log in without Microsoft credentials, then you use an EM (or Fabric) SKU.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_l2d33g7",
+                  "parent_id": "t1_l2cdfoc",
+                  "permalink": "/r/PowerBI/comments/1civ41o/comment/l2d33g7/",
+                  "ups": 6,
+                  "downs": 0,
+                  "score": 6,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFjaXY0MW8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTEsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpUZGtaR0k1TVRRc09qb3pPbVF4T25ReFgyd3laRE16WnpjPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxY2l2NDFvIiwicGFyZW50VGhpbmdJZCI6InQxX2wyZDMzZzcifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "l2d33g7"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "l2d33g7"
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "l2bswhw",
+      "author": "Drew707",
+      "author_fullname": null,
+      "body": "First result for \"power bi embedded pricing\".\n\n An A1 is $1/hour which is $730/month.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_l2bswhw",
+      "created_utc": 1714695975,
+      "created_at_iso": "2024-05-03T00:26:15.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2bswhw/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2epj91/",
+            "created_utc": 1714749168,
+            "created_at_iso": "2024-05-03T15:12:48.000Z",
+            "id": "l2epj91",
+            "author": "sjcuthbertson",
+            "author_fullname": null,
+            "body": "However, I am fairly sure you can now use an F2 for the exact same purpose, at $292/mo or thereabouts.\n\n I'm yet to test and confirm this but it's on my to do list.",
+            "body_html": "\n      <p>\n      However, I am fairly sure you can now use an F2 for the exact same purpose, at $292/mo or thereabouts.\n    </p><p>\n      I'm yet to test and confirm this but it's on my to do list.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_l2epj91",
+            "parent_id": "t1_l2bswhw",
+            "permalink": "/r/PowerBI/comments/1civ41o/comment/l2epj91/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2euxhi/",
+                  "created_utc": 1714751026,
+                  "created_at_iso": "2024-05-03T15:43:46.000Z",
+                  "id": "l2euxhi",
+                  "author": "Drew707",
+                  "author_fullname": null,
+                  "body": "I'll have to look into this, too.",
+                  "body_html": "\n      <p>\n      I'll have to look into this, too.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_l2euxhi",
+                  "parent_id": "t1_l2epj91",
+                  "permalink": "/r/PowerBI/comments/1civ41o/comment/l2euxhi/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2jlg9p/",
+                  "created_utc": 1714830991,
+                  "created_at_iso": "2024-05-04T13:56:31.000Z",
+                  "id": "l2jlg9p",
+                  "author": "meatballio",
+                  "author_fullname": null,
+                  "body": "Can confirm. We are embedding with an F2 at my org.",
+                  "body_html": "\n      <p>\n      Can confirm. We are embedding with an F2 at my org.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_l2jlg9p",
+                  "parent_id": "t1_l2epj91",
+                  "permalink": "/r/PowerBI/comments/1civ41o/comment/l2jlg9p/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "l2epj91"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "l2epj91"
+        }
+      },
+      "ups": 15,
+      "downs": 0,
+      "score": 15
+    },
+    {
+      "id": "l2cv9ur",
+      "author": "Glorious_Dawn_Awaits",
+      "author_fullname": null,
+      "body": "Why does this article from only 3 months ago say that you can with Power Bi pro Publish to Web",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_l2cv9ur",
+      "created_utc": 1714713364,
+      "created_at_iso": "2024-05-03T05:16:04.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2cv9ur/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "l2hgkco",
+      "author": "cheynexx",
+      "author_fullname": null,
+      "body": "We use the \u201cembed to website\u201d feature to display powerbi reports on screens in our office with VuePilot. It doesn\u2019t cost anything extra, we\u2019re only paying $20 a month to Microsoft.\n\n https://www.vuepilot.com/support/article/display-power-bi-reports-on-screens/",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_l2hgkco",
+      "created_utc": 1714787580,
+      "created_at_iso": "2024-05-04T01:53:00.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2hgkco/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "l2d1rly",
+      "author": "First_Regret_1",
+      "author_fullname": null,
+      "body": "Power BI Embedded is for applications. Power BI Embed codes are for publishing reports publicly in websites.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_l2d1rly",
+      "created_utc": 1714717499,
+      "created_at_iso": "2024-05-03T06:24:59.000Z",
+      "parent_id": "t3_1civ41o",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2d1rly/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": -1,
+      "downs": 0,
+      "score": -1
+    }
+  ],
+  "post": {
+    "id": "1civ41o",
+    "author": "Glorious_Dawn_Awaits",
+    "author_fullname": "t2_szdoiskep",
+    "subreddit": "PowerBI",
+    "title": "Insane Pricing for Power BI Embed ",
+    "downs": 0,
+    "name": "t3_1civ41o",
+    "upvote_ratio": 0.8888888888888888,
+    "ups": 7,
+    "selftext": "Hi, So, I've seen a few posts about this but because of how fast the pricing models are changing everything I keep finding is out of date. All I need to know is how much it will cost to get Power BI embed publicly. I've seen pricing range from $1/mo. to $739/mo. What do I need to purchase and where to get Power BI embed on a public web page.",
+    "total_awards_received": 0,
+    "score": 7,
+    "created": 1714695368,
+    "num_comments": 17,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/insane_pricing_for_power_bi_embed/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1714695368
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 303e9970d7444b95a4bbda8226dee09f

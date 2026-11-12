@@ -1,0 +1,458 @@
+{
+  "success": true,
+  "credits_remaining": 209647,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "k8eoejz",
+      "author": "harvest277",
+      "author_fullname": null,
+      "body": "Have used and liked Metabase but def not worth paying 200k/y for. I would look into using something like Apache Superset (an open source alternative to Metabase that got its start at Airbnb). I used Metabase a long time ago so I don't remember how we dealt with the lack of \"viewer\" seats - I think it was used by a handful of power users, not a general purpose self-service platform that would need everybody to have a license.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_k8eoejz",
+      "created_utc": 1699476176,
+      "created_at_iso": "2023-11-08T20:42:56.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8eoejz/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8kz5yq/",
+            "created_utc": 1699577739,
+            "created_at_iso": "2023-11-10T00:55:39.000Z",
+            "id": "k8kz5yq",
+            "author": "RBEX86336",
+            "author_fullname": null,
+            "body": "Metabase is definitely not worth $200k. We use the open source version but manage only a small amount of users.",
+            "body_html": "\n      <p>\n      Metabase is definitely not worth $200k. We use the open source version but manage only a small amount of users.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_k8kz5yq",
+            "parent_id": "t1_k8eoejz",
+            "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8kz5yq/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "k8eoejz"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "k8e48tl",
+      "author": "Pleasant_Type_4547",
+      "author_fullname": null,
+      "body": "Why are you looking at Metabase, rather than one of the other tools you mentioned?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_k8e48tl",
+      "created_utc": 1699468925,
+      "created_at_iso": "2023-11-08T18:42:05.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8e48tl/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8e5pu1/",
+            "created_utc": 1699469454,
+            "created_at_iso": "2023-11-08T18:50:54.000Z",
+            "id": "k8e5pu1",
+            "author": "FrebTheRat",
+            "author_fullname": null,
+            "body": "We were looking to migrate to a simpler/cheaper tool. We spun up the community edition and it worked well, but couldn't deploy without SSO. 200k just to get SSO just doesn't compute for me so I thought maybe someone had some insight. Deployed for just our devs would be incredibly cheap, but including our viewers would cost more than Cognos.",
+            "body_html": "\n      <p>\n      We were looking to migrate to a simpler/cheaper tool. We spun up the community edition and it worked well, but couldn't deploy without SSO.  200k just to get SSO just doesn't compute for me so I thought maybe someone had some insight.  Deployed for just our devs would be incredibly cheap, but including our viewers would cost more than Cognos.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_k8e5pu1",
+            "parent_id": "t1_k8e48tl",
+            "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8e5pu1/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8eazzu/",
+                  "created_utc": 1699471359,
+                  "created_at_iso": "2023-11-08T19:22:39.000Z",
+                  "id": "k8eazzu",
+                  "author": "jambourine",
+                  "author_fullname": null,
+                  "body": "I'm not sure how it works exactly. Especially from a security perspective. But I use MB and frequently share reports with coworkers who don't have an MB user. It requires making the report \"public\" and sharing a link. We are using the community edition, don't know if that would impact anything.",
+                  "body_html": "\n      <p>\n      I'm not sure how it works exactly. Especially from a security perspective. But I use MB and frequently share reports with coworkers who don't have an MB user. It requires making the report \"public\" and sharing a link. We are using the community edition, don't know if that would impact anything.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_k8eazzu",
+                  "parent_id": "t1_k8e5pu1",
+                  "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8eazzu/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9CdXNpbmVzc0ludGVsbGlnZW5jZS90M18xN3FxYmdnP3NvcnQ9Q09ORklERU5DRSZzdGFydGluZ0RlcHRoPTMmY29tbWVudFBhcmVudFBvc2l0aW9ucz0xLDAsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPVFkwT1dFeVpXSXNPam96T21ReE9uUXhYMnM0WldGNmVuVT0iLCJzdWJyZWRkaXQiOiJCdXNpbmVzc0ludGVsbGlnZW5jZSIsInBvc3RJZCI6IjE3cXFiZ2ciLCJwYXJlbnRUaGluZ0lkIjoidDFfazhlYXp6dSJ9"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8ecraq/",
+                  "created_utc": 1699471990,
+                  "created_at_iso": "2023-11-08T19:33:10.000Z",
+                  "id": "k8ecraq",
+                  "author": "mrcaptncrunch",
+                  "author_fullname": null,
+                  "body": "Do you need access for the 200k?",
+                  "body_html": "\n      <p>\n      Do you need access for the 200k?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_k8ecraq",
+                  "parent_id": "t1_k8e5pu1",
+                  "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8ecraq/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "k8eazzu"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "k8eazzu"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "k8ewl9z",
+      "author": "jlaxfthlr",
+      "author_fullname": null,
+      "body": "We're using Sigma as our BI tool. Unlimited viewer licenses, you just pay for Creator/Explorer licenses. Been pretty happy with it so far. How many of those 1800 users are creator/developers? For us, it's $1000/creator/year.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_k8ewl9z",
+      "created_utc": 1699479061,
+      "created_at_iso": "2023-11-08T21:31:01.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8ewl9z/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8f7d85/",
+            "created_utc": 1699482959,
+            "created_at_iso": "2023-11-08T22:35:59.000Z",
+            "id": "k8f7d85",
+            "author": "FrebTheRat",
+            "author_fullname": null,
+            "body": "We have roughly 180 creators, so that's the same cost",
+            "body_html": "\n      <p>\n      We have roughly 180 creators, so that's the same cost\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_k8f7d85",
+            "parent_id": "t1_k8ewl9z",
+            "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8f7d85/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8kgo0t/",
+                  "created_utc": 1699570147,
+                  "created_at_iso": "2023-11-09T22:49:07.000Z",
+                  "id": "k8kgo0t",
+                  "author": "Impressive-Buyer-766",
+                  "author_fullname": null,
+                  "body": "I also use Sigma and have had a great experience. I'm sure with that many users you could get some sort of volume based discount",
+                  "body_html": "\n      <p>\n      I also use Sigma and have had a great experience. I'm sure with that many users you could get some sort of volume based discount\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_k8kgo0t",
+                  "parent_id": "t1_k8f7d85",
+                  "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8kgo0t/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "k8f7d85"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "k8f7d85"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "k8gcsx5",
+      "author": "Rob636",
+      "author_fullname": null,
+      "body": "Have you spoken to Tableau or Power BI? With 180 creator licenses and 1600 viewers, with an end of quarter discount, I\u2019m sure you can get in under $200k/yr.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_k8gcsx5",
+      "created_utc": 1699499859,
+      "created_at_iso": "2023-11-09T03:17:39.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8gcsx5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8hji8j/",
+            "created_utc": 1699528153,
+            "created_at_iso": "2023-11-09T11:09:13.000Z",
+            "id": "k8hji8j",
+            "author": "FrebTheRat",
+            "author_fullname": null,
+            "body": "We have all three right now. On prem Tableau server, on prem Cognos, and PowerBI pro. The problem is that the vast majority of our reports are simple list reports so we're paying for features we don't need in these platforms. We're looking for something cheap and lightweight so we have one tool with limited creator licenses for dashboarding (probably Tableau) and the lightweight tool for our canned and adhoc operational lists/data dumps. Metabase looked promising but their pricing makes no sense. We're getting pushed towards powerbi because our existing o365 license means it's \"free\" but I don't trust Microsoft on stable pricing and I find the platform is so tightly coupled with o365 apps that it is nearly impossible to govern and secure the data. All the sharing options and AD groups along with Automate and Apps makes it very difficult to prevent data from leaking to the wrong users, stop functional users creating bad/unvetted production processes, and stop runaway garbage apps from clogging the db. Since our infra team rolled out o365 with almost no governance, we're going to have to pair down so many features across it just to make it feasible as a secure enterprise solution.",
+            "body_html": "\n      <p>\n      We have all three right now. On prem Tableau server, on prem Cognos, and PowerBI pro.  The problem is that the vast majority of our reports are simple list reports so we're paying for features we don't need in these platforms.  We're looking for something cheap and lightweight so we have one tool with limited creator licenses for dashboarding (probably Tableau) and the lightweight tool for our canned and adhoc operational lists/data dumps. Metabase looked promising but their pricing makes no sense.  We're getting pushed towards powerbi because our existing o365 license means it's \"free\" but I don't trust Microsoft on stable pricing and I find the platform is so tightly coupled with o365 apps that it is nearly impossible to govern and secure the data. All the sharing options and AD groups along with Automate and Apps makes it very difficult to prevent data from leaking to the wrong users, stop functional users creating bad/unvetted production processes, and stop runaway garbage apps from clogging the db.  Since our infra team rolled out o365 with almost no governance, we're going to have to pair down so many features across it just to make it feasible as a secure enterprise solution.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_k8hji8j",
+            "parent_id": "t1_k8gcsx5",
+            "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/k8hji8j/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/ka4nbeb/",
+                  "created_utc": 1700549381,
+                  "created_at_iso": "2023-11-21T06:49:41.000Z",
+                  "id": "ka4nbeb",
+                  "author": "ruben_vanwyk",
+                  "author_fullname": null,
+                  "body": "Have you found a solution yet?",
+                  "body_html": "\n      <p>\n      Have you found a solution yet?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ka4nbeb",
+                  "parent_id": "t1_k8hji8j",
+                  "permalink": "/r/BusinessIntelligence/comments/17qqbgg/comment/ka4nbeb/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "k8hji8j"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "k8hji8j"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "lpyqeo6",
+      "author": "rzykov",
+      "author_fullname": null,
+      "body": "I had the same problem with the authentication.\nAfter a while, I decided to patch the latest version of Metabase to use it with fief open-source auth.\nSee this branch https://github.com/rzykov/metabase/tree/fief_v0.50.27.3 It's an alpha version. Some auth points are hard coded.\nFeel free to let me know if you need any help with it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_lpyqeo6",
+      "created_utc": 1727871295,
+      "created_at_iso": "2024-10-02T12:14:55.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/lpyqeo6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "k8ekzu6",
+      "author": "kona420",
+      "author_fullname": null,
+      "body": "I've thought the same exact thing, the pricing just isn't competitive for my use case and while a great product it is an \"also ran\" not an industry leader.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_k8ekzu6",
+      "created_utc": 1699474962,
+      "created_at_iso": "2023-11-08T20:22:42.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8ekzu6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ka4msgh",
+      "author": "ruben_vanwyk",
+      "author_fullname": null,
+      "body": "I really feel your pain! This has been my problem exactly. Also, the issue is that with Metabase, I'm not sure you can white-label even for internal use only (every thread I read on their white labelling seems very vague or opaque regarding internal use).\n\n I've also looked at Preset/Superset however it has a very weird connector to Microsoft SQL Server (which like every Enterprise uses, right?) and therefore, I haven't been able to connect it to my databases.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ka4msgh",
+      "created_utc": 1700549016,
+      "created_at_iso": "2023-11-21T06:43:36.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/ka4msgh/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "khxzjyj",
+      "author": "datakool",
+      "author_fullname": null,
+      "body": "Why you need license for 1800 users? I am guessing some of them will be creators and rest of them will be consumers. For just take license for few users for creating and for rest just expose views as embeddings to them .In this way you can just take metabase license for say 30K or so",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_khxzjyj",
+      "created_utc": 1705308945,
+      "created_at_iso": "2024-01-15T08:55:45.000Z",
+      "parent_id": "t3_17qqbgg",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/khxzjyj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "17qqbgg",
+    "author": "FrebTheRat",
+    "author_fullname": "t2_1hb8tav0",
+    "subreddit": "BusinessIntelligence",
+    "title": "Metabase licensing",
+    "downs": 0,
+    "name": "t3_17qqbgg",
+    "upvote_ratio": 1,
+    "ups": 8,
+    "selftext": "Anyone have experience with Metabase licensing. I got a few quotes for a large org and they don't really make sense. Their on prem and cloud pro licenses are the same cost which means if I just want saml SSO on prem then I have to pay a significant premium. We're at 1800 users which puts us around 200k a year. They don't have a concept of \"consumer\" or \"viewer\" licenses so the fact that about 1600 of those users aren't devs doesn't affect the pricing the way it would with tools like Tableau, PowerBI, or Cognos. Just wondering if I'm not asking the right questions, or if their licensing really just doesn't scale for a large enterprise.",
+    "total_awards_received": 0,
+    "score": 8,
+    "created": 1699463386,
+    "num_comments": 18,
+    "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/metabase_licensing/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1699463386
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id a065189db7894bb6a25909b3d3018e15

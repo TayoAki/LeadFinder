@@ -1,0 +1,682 @@
+{
+  "success": true,
+  "credits_remaining": 209782,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "os8zgbo",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_os8zgbo",
+      "created_utc": 1781726523,
+      "created_at_iso": "2026-06-17T20:02:03.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os8zgbo/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "os91xit",
+      "author": "PuzzleheadedArea1256",
+      "author_fullname": null,
+      "body": "Yes. Always assume it hallucinates. Double check the output.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os91xit",
+      "created_utc": 1781727185,
+      "created_at_iso": "2026-06-17T20:13:05.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os91xit/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os92idw/",
+            "created_utc": 1781727336,
+            "created_at_iso": "2026-06-17T20:15:36.000Z",
+            "id": "os92idw",
+            "author": "chakalaka13",
+            "author_fullname": null,
+            "body": "Is it enough to check it once per type of request or every time? Because that would render it quite useless\n\n type of request - I mean smth like \"tell me what was the conversion rate for May 2026\" or \"what % of clients ordered product X this month\"",
+            "body_html": "\n      <p>\n      Is it enough to check it once per type of request or every time? Because that would render it quite useless\n    </p><p>\n      type of request - I mean smth like \"tell me what was the conversion rate for May 2026\" or \"what % of clients ordered product X this month\"\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_os92idw",
+            "parent_id": "t1_os91xit",
+            "permalink": "/r/analytics/comments/1u8ky0f/comment/os92idw/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9a9ox/",
+                  "created_utc": 1781729394,
+                  "created_at_iso": "2026-06-17T20:49:54.000Z",
+                  "id": "os9a9ox",
+                  "author": "Fearless_Parking_436",
+                  "author_fullname": null,
+                  "body": "It doesn\u2019t know that. It will not read a huge .csv file. What you can do is create a script or webapp that visualizes your data. So that data is not modified/calculated by llm but it creates code and code deals with data. The export files are the same, it\u2019s trivial to add calculated rows.",
+                  "body_html": "\n      <p>\n      It doesn\u2019t know that. It will not read a huge .csv file. What you can do is create a script or webapp that visualizes your data. So that data is not modified/calculated by llm but it creates code and code deals with data. The export files are the same, it\u2019s trivial to add calculated rows.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_os9a9ox",
+                  "parent_id": "t1_os92idw",
+                  "permalink": "/r/analytics/comments/1u8ky0f/comment/os9a9ox/",
+                  "ups": 13,
+                  "downs": 0,
+                  "score": 13,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9amvf/",
+                  "created_utc": 1781729489,
+                  "created_at_iso": "2026-06-17T20:51:29.000Z",
+                  "id": "os9amvf",
+                  "author": "chasmasaurus",
+                  "author_fullname": null,
+                  "body": "Honestly I've had to check it Everytime. I've been trying to adopt it, but the results are pretty half-baked.",
+                  "body_html": "\n      <p>\n      Honestly I've had to check it Everytime. I've been trying to adopt it, but the results are pretty half-baked.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_os9amvf",
+                  "parent_id": "t1_os92idw",
+                  "permalink": "/r/analytics/comments/1u8ky0f/comment/os9amvf/",
+                  "ups": 8,
+                  "downs": 0,
+                  "score": 8,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osa2u4x/",
+                  "created_utc": 1781737754,
+                  "created_at_iso": "2026-06-17T23:09:14.000Z",
+                  "id": "osa2u4x",
+                  "author": "theseyeahthese",
+                  "author_fullname": null,
+                  "body": "It\u2019s not useless once you can read code well; it can type complex SQL queries\n\n much faster than you can. Instead of just asking for the answer, I ask for the query, then I execute it while reviewing it. Could I have created the correct query myself? Absolutely. Does it make mistakes? Yup. Is it faster to edit one or two spots vs. typing everything from scratch? Usually, yeah.",
+                  "body_html": "\n      <p>\n      It\u2019s not useless once you can read code well; it can type complex <search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;search&quot;},&quot;comment&quot;:{&quot;id&quot;:&quot;t1_osa2u4x&quot;,&quot;post_id&quot;:&quot;t3_1u8ky0f&quot;},&quot;meta_search&quot;:{&quot;display_query&quot;:&quot;SQL queries&quot;}}\" view-events=\"post_detail/view/highlight\"><search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;pdp_term&quot;},&quot;meta_search&quot;:{&quot;raw_query&quot;:&quot;AI generated SQL queries review&quot;},&quot;search&quot;:{&quot;impression_id&quot;:&quot;48e9d1c6-517a-4619-b459-15b8632c2609&quot;,&quot;origin_element&quot;:&quot;pdp_comment_highlighted_search_term&quot;,&quot;query&quot;:&quot;AI generated SQL queries review&quot;,&quot;conversation_id&quot;:&quot;6afb76a5-41bc-4328-bb3b-e2876ef2382e&quot;}}\" click-events=\"search/click/full_search_button\"><a rpl=\"\" class=\"border-[var(--color-a-default)] visited:border-[var(--color-a-visited)] hover:border-[var(--color-a-hover)] hover:visited:border-[var(--color-a-visited)] !no-underline border-dotted border-b-sm border-x-0 border-t-0 p-px a\n  \n  \n  \n  \n  no-underline hover:no-underline\n  \n  cursor-pointer\" href=\"/search/?q=AI+generated+SQL+queries+review&amp;cId=6afb76a5-41bc-4328-bb3b-e2876ef2382e&amp;iId=5fcf453f-4eef-47e1-b083-1405a112d023\">SQL queries<span class=\"ms-2xs align-middle\"><svg rpl=\"\" fill=\"currentColor\" height=\"12\" icon-name=\"search\" viewBox=\"0 0 20 20\" width=\"12\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"m18.736 17.464-3.483-3.483A7.961 7.961 0 0016.999 9 8 8 0 109 17a7.961 7.961 0 004.981-1.746l3.483 3.483a.9.9 0 101.272-1.273ZM9 15.2A6.207 6.207 0 012.8 9c0-3.419 2.781-6.2 6.2-6.2s6.2 2.781 6.2 6.2-2.781 6.2-6.2 6.2Z\"></path>\n    </svg></span></a></search-telemetry-tracker></search-telemetry-tracker> much faster than you can. Instead of just asking for the answer, I ask for the query, then I execute it while reviewing it. Could I have created the correct query myself? Absolutely. Does it make mistakes? Yup. Is it faster to edit one or two spots vs. typing everything from scratch? Usually, yeah.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_osa2u4x",
+                  "parent_id": "t1_os92idw",
+                  "permalink": "/r/analytics/comments/1u8ky0f/comment/osa2u4x/",
+                  "ups": 5,
+                  "downs": 0,
+                  "score": 5,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9pwgc/",
+                  "created_utc": 1781733712,
+                  "created_at_iso": "2026-06-17T22:01:52.000Z",
+                  "id": "os9pwgc",
+                  "author": "suggestedusername10",
+                  "author_fullname": null,
+                  "body": "Unless you create some serious guard rails and tell it exactly what to look for, what to avoid, then yes. I built my basic \u201cone pager\u201d summary with Claude that I run for my vendors as we prep for meetings, which I can validate with some basic charts in excel, and it gets it right 100%. But that\u2019s because I spent time setting up a very tailored prompt on how to read the data. I can ask it for deeper things and it tries at the underlying stuff, and can give me some lenses perhaps I overlooked. But leadership thinks you feed it a file without anything and it\u2019s good to go, lol. It\u2019s frustrating.",
+                  "body_html": "\n      <p>\n      Unless you create some serious guard rails and tell it exactly what to look for, what to avoid, then yes. I built my basic \u201cone pager\u201d summary with Claude that I run for my vendors as we prep for meetings, which I can validate with some basic charts in excel, and it gets it right 100%. But that\u2019s because I spent time setting up a very tailored prompt on how to read the data. I can ask it for deeper things and it tries at the underlying stuff, and can give me some lenses perhaps I overlooked. But leadership thinks you feed it a file without anything and it\u2019s good to go, lol. It\u2019s frustrating.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_os9pwgc",
+                  "parent_id": "t1_os92idw",
+                  "permalink": "/r/analytics/comments/1u8ky0f/comment/os9pwgc/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXU4a3kwZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQb3NpdGlvbk9mZnNldD00JmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpEUXlZV1JpT0RZc09qb3lPbVY0T2lob05YMG1ham9rV0RvaWZHRjBRbUZuYWxJPSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1OGt5MGYiLCJwYXJlbnRUaGluZ0lkIjoidDFfb3M5MmlkdyJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "os92idw"
+        }
+      },
+      "ups": 53,
+      "downs": 0,
+      "score": 53
+    },
+    {
+      "id": "os923r7",
+      "author": "amiracle786",
+      "author_fullname": null,
+      "body": "not at first so it will feel like magic. But thats what makes it dangerous. You will trust it and not catch when it does, after its context window\n\n fills up.\n\n Best thing to do is DO NOT synthesize the data, but have it build the object that does. Like, tell it to build an excel file that calculates the different indicators off the \"csv\" source loaded into a tab.\n\n So the math is auditable, the insight is real, and AI enabled it, but didnt just give it to you.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os923r7",
+      "created_utc": 1781727230,
+      "created_at_iso": "2026-06-17T20:13:50.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os923r7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 81,
+      "downs": 0,
+      "score": 81
+    },
+    {
+      "id": "os926v7",
+      "author": "Icedliptontbag",
+      "author_fullname": null,
+      "body": "Claude\n\n failed at an extremely basic arithmetic question for me just yesterday. I don\u2019t use it for anything I can\u2019t personally validate, and take the time to fully understand the inputs and outputs, and reconcile myself wherever I can.\n\n There\u2019s a million things that can go wrong with your e-commerce data for example. Do we count canceled or refunded orders? Do things other than orders get their own line items? Is the currency normalized to something like usd? Are any percentages in decimal format or reporting format? It typically won\u2019t figure out nuances like this unless they are well documented and it can pull from that knowledge base, and even then gets it wrong still.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os926v7",
+      "created_utc": 1781727251,
+      "created_at_iso": "2026-06-17T20:14:11.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os926v7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/oscwaw0/",
+            "created_utc": 1781780559,
+            "created_at_iso": "2026-06-18T11:02:39.000Z",
+            "id": "oscwaw0",
+            "author": "DirtyPiss",
+            "author_fullname": null,
+            "body": "LLMs can\u2019t do math or even count, it\u2019s a limitation with how input numbers get tokenized. You should never ask an LLM to do those tasks, instead outsource those tasks to hooked scripts or bash commands which will handle them determinative. Regardless your advice to not use it for anything you can\u2019t validate is good even if it is setup to do those processes correctly.",
+            "body_html": "\n      <p>\n      LLMs can\u2019t do math or even count, it\u2019s a limitation with how input numbers get tokenized. You should never ask an LLM to do those tasks, instead outsource those tasks to hooked scripts or bash commands which will handle them determinative. Regardless your advice to not use it for anything you can\u2019t validate is good even if it is setup to do those processes correctly.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oscwaw0",
+            "parent_id": "t1_os926v7",
+            "permalink": "/r/analytics/comments/1u8ky0f/comment/oscwaw0/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXU4a3kwZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlptWmpNbUZpTldJc09qb3lPbVF4T25ReFgyOXpZM2RoZHpBPSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1OGt5MGYiLCJwYXJlbnRUaGluZ0lkIjoidDFfb3Njd2F3MCJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXU4a3kwZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPREptWm1aaU1qVXNPam94T21WNE9paG9QbEpSVWc9PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1OGt5MGYiLCJwYXJlbnRUaGluZ0lkIjoidDFfb3M5MjZ2NyJ9"
+        }
+      },
+      "ups": 54,
+      "downs": 0,
+      "score": 54
+    },
+    {
+      "id": "os99j9t",
+      "author": "importantbrian",
+      "author_fullname": null,
+      "body": "It can and will. The best thing to do is have it build the code for whatever analysis you're attempting to do and then verify the code. Never trust anything that's coming directly from the LLM.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os99j9t",
+      "created_utc": 1781729193,
+      "created_at_iso": "2026-06-17T20:46:33.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os99j9t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "os97w2t",
+      "author": "No-Director-1568",
+      "author_fullname": null,
+      "body": "Never ask an LLM to do arithmetic directly, at minimum that's like hammering a screw into wood.\n\n Really should never turn one loose on a large dataset either.\n\n You should definitively learn SQL yourself, and you can leverage an LLM to help you along. I have learned most of the languages I have picked up over the years reading other peoples code, even the bad stuff, so read the SQL that gets generated.\n\n You really should log the natural language you used in the prompt and the SQL it generated - you want to keep an audit history of the LLM like it's a newb employee you don't know yet.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os97w2t",
+      "created_utc": 1781728761,
+      "created_at_iso": "2026-06-17T20:39:21.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os97w2t/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9mnnn/",
+            "created_utc": 1781732781,
+            "created_at_iso": "2026-06-17T21:46:21.000Z",
+            "id": "os9mnnn",
+            "author": "ComicOzzy",
+            "author_fullname": null,
+            "body": "I love it when you get a detailed explanation of the math involved and then it just straight up fails a simple multiplication like 50 x 1000.",
+            "body_html": "\n      <p>\n      I love it when you get a detailed explanation of the math involved and then it just straight up fails a simple multiplication like 50 x 1000.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_os9mnnn",
+            "parent_id": "t1_os97w2t",
+            "permalink": "/r/analytics/comments/1u8ky0f/comment/os9mnnn/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXU4a3kwZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk56Y3lPVEkwTnpBc09qb3lPbVF4T25ReFgyOXpPVzF1Ym00PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1OGt5MGYiLCJwYXJlbnRUaGluZ0lkIjoidDFfb3M5bW5ubiJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "os9mnnn"
+        }
+      },
+      "ups": 13,
+      "downs": 0,
+      "score": 13
+    },
+    {
+      "id": "os92okc",
+      "author": "forbiscuit",
+      "author_fullname": null,
+      "body": "Giving AI raw data to analyze = hallucination\n\n Giving AI raw data to build calculations against the data so you can analyze it instead of you building those calculation scripts = little hallucination (hallucination will exist based on bad assumptions on how metrics are calculated, so you have to provide it deeper context on how your system has been designed and whether you can vouch for the 'cleanliness' of the data)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os92okc",
+      "created_utc": 1781727380,
+      "created_at_iso": "2026-06-17T20:16:20.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os92okc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "os92n73",
+      "author": "christjan08",
+      "author_fullname": null,
+      "body": "It can absolutely hallucinate. A tool is only as good as it's weakest user.\n\n If you don't prompt it correctly it can very easily assume the wrong thing, and then you've got wrong data. I recently had this for a fulfillment centre, where I couldn't be bothered manually writing the SLA math. It was also a week that included a public holiday, so I gave Claude all the info and mentioned public holiday so don't count these 36 hours blah blah. I didn't specify that it wasn't recurring, and so it ran the same math with the holiday section for all weeks, instead of just the one. My data ended up skewed and looking a lot better than it actually was. This error could've easily been prevented with a more in-depth prompt.\n\n Knowing SQL will greatly help you sense check the queries it gives you and pick up on weird oddities that might skew your data.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os92n73",
+      "created_utc": 1781727371,
+      "created_at_iso": "2026-06-17T20:16:11.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os92n73/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "osaaol4",
+      "author": "buhBeef",
+      "author_fullname": null,
+      "body": "\u2060Retrieve and interpret data from Google/Meta Ads\n\n It's already so easy to do this on platform or with google data studio that i don't see the value add. You can pull your own numbers and ask claude questions about what they mean and get pretty decent responses (and ideas on what to do next) but I wouldn't ask it general questions and let it run wild.\n\n 2. \u2060Feed a big CSV with all of our e-commerce orders and ask for it to calculate different indicators\n\n Terrible idea. I just used Gemini on a 6 row by 13 column spreadsheet - tiny - and it screwed up a bunch of stuff.\n\n 3. \u2060I use it to get some SQL queries (though I plan to learn SQL myself)\n\n You're gonna need to understand a bit about SQL and, maybe more importantly, the db structure of what you're querying to understand why Claude's sql doesn't work or do exactly what you want, but yeah - this is a great way to learn it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osaaol4",
+      "created_utc": 1781740362,
+      "created_at_iso": "2026-06-17T23:52:42.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osaaol4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "osb99pd",
+      "author": "80hz",
+      "author_fullname": null,
+      "body": "When you realize llms are really good word slot machines you understand its limitations they don't understand logic they can't because they're just word slot machines....",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osb99pd",
+      "created_utc": 1781752635,
+      "created_at_iso": "2026-06-18T03:17:15.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osb99pd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "osbbzlm",
+      "author": "WendlersEditor",
+      "author_fullname": null,
+      "body": "So 1 and 2 are problems, you will run into problems doing this, I urge you not to do this. 3 is actually really good as long as you know how to read and validate the SQL.\n\n You can actually use 3 to get around the limitations of 1 and 2: get it to help you write a good query, get the data in a local format (e.g., csv) and use claude to write a dashboard or create a Jupyter notebook that accomplishes the analysis. You can also lean pretty heavily on Claude to walk you through the analysis, it will give you ideas you didn't previously have about what metrics are important etc. but your domain knowledge and analytics skills are important to keep it from going astray.\n\n If you just throw the data at Claude it will probably make up all sorts of crazy shit, my boss asked me to do this once and we had to show him how Claude made up order numbers, faked aggregate statistics, fabricate entire imaginary narratives around trends that it wasn't capable of seeing.\n\n LLMs are amazingly powerful and they're the future of pretty much everything in business including data analysis. There are probably great specialized tools that are going to get us closer to \"hey AI analyze my dataset\" but right now, with general purpose LLMs, you are going to need to walk through the data together with a lot of human oversight and judgment.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osbbzlm",
+      "created_utc": 1781753704,
+      "created_at_iso": "2026-06-18T03:35:04.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osbbzlm/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osbjrj7/",
+            "created_utc": 1781756928,
+            "created_at_iso": "2026-06-18T04:28:48.000Z",
+            "id": "osbjrj7",
+            "author": "SnooPears9016",
+            "author_fullname": null,
+            "body": "Yup, wanted to suggest +- the same idea. If author wants to learn, AI can help a ton to notice what can be done with data. Also big + on using it for SQL, imo can prepare good data with concrete goals for better 1 and 2 execution. Best would be atp to ask Claude to write scripts for analysis in Jupiter.",
+            "body_html": "\n      <p>\n      Yup, wanted to suggest +- the same idea. If author wants to learn, AI can help a ton to notice what can be done with data. Also big + on using it for SQL, imo can prepare good data with concrete goals for better 1 and 2 execution. Best would be atp to ask Claude to write scripts for analysis in Jupiter.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_osbjrj7",
+            "parent_id": "t1_osbbzlm",
+            "permalink": "/r/analytics/comments/1u8ky0f/comment/osbjrj7/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "osbbzlm"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oscweb2",
+      "author": "UncarvedWood",
+      "author_fullname": null,
+      "body": "The chances of an LLM hallucinating at any point during any prompt are never zero. Never rely on an LLM for anything even if it seems correct 99% of the time.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oscweb2",
+      "created_utc": 1781780598,
+      "created_at_iso": "2026-06-18T11:03:18.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/oscweb2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ose7agv",
+      "author": "Voxyfernus",
+      "author_fullname": null,
+      "body": "Yes, is part of how it works.\n\n The AI is not deterministic, so it's always \"hallucinating\"\n\n It calculates de probability of a word after another.\n\n Ask the same (creative/analysis) question 10 times and tell me how many times does it responded the same exact answer.\n\n The better is to try to use Middleware scripts, to do the calculations and AI just receives/returns the answer",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ose7agv",
+      "created_utc": 1781795266,
+      "created_at_iso": "2026-06-18T15:07:46.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/ose7agv/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "osfruct",
+      "author": "unseemly_turbidity",
+      "author_fullname": null,
+      "body": "If you're using Claude, set up the process as a skill where the data source and the query are defined, and tell it what to do if there's an error or the data is missing, and perhaps you can build in a verification or some sort. That way it has to follow the steps and won't hallucinate.\n\n Hallucinations happen when it can't find the data and guesses instead, and SQL mistakes happen when you let it guess what query to run and it guesses wrong.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osfruct",
+      "created_utc": 1781810083,
+      "created_at_iso": "2026-06-18T19:14:43.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osfruct/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "osgy05u",
+      "author": "Intelligent-Size-389",
+      "author_fullname": null,
+      "body": "You need a lot of experience to use AI imo",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osgy05u",
+      "created_utc": 1781821976,
+      "created_at_iso": "2026-06-18T22:32:56.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osgy05u/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ot22c7v",
+      "author": "pforpilot",
+      "author_fullname": null,
+      "body": "i would not let claude deal with massive raw data that it has to parse itself, most of the time, it ends up writing code to process the data which makes the analysis more deterministic and less token expensive. if it parses the data itself, its hard to know what it actually did.\n\n in our experience, its pretty good at sql, but it often assumes some obvious fields to exist (eg username on a user table), so you gotta be careful. if your prompts+harness are good, you can manage lot of this.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ot22c7v",
+      "created_utc": 1782096445,
+      "created_at_iso": "2026-06-22T02:47:25.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/ot22c7v/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "os9dpqe",
+      "author": "No_Breadfruit8393",
+      "author_fullname": null,
+      "body": "Yes",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_os9dpqe",
+      "created_utc": 1781730291,
+      "created_at_iso": "2026-06-17T21:04:51.000Z",
+      "parent_id": "t3_1u8ky0f",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9dpqe/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1u8ky0f",
+    "author": "chakalaka13",
+    "author_fullname": "t2_amjjh2m0",
+    "subreddit": "analytics",
+    "title": "Does AI hallucinate even with basic queries/data retrieval?",
+    "downs": 0,
+    "name": "t3_1u8ky0f",
+    "upvote_ratio": 0.9365079365079365,
+    "ups": 55,
+    "selftext": "Disclaimer: I'm not an analyst, so pardon me if I'm not fully aware with the state of things. My client's team has started using AI for their data stuff, because there's no real expert in-house. Use cases: Retrieve and interpret data from Google/Meta Ads Feed a big CSV with all of our e-commerce orders and ask for it to calculate different indicators I use it to get some SQL queries (though I plan to learn SQL myself) Since the data itself is pretty basic and the actions are too (retrieve this data from a Google Ads table) - is it safe to use or does AI often hallucinate even for this kind of tasks? We use Claude atm.",
+    "total_awards_received": 0,
+    "score": 55,
+    "created": 1781726523,
+    "num_comments": 68,
+    "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/does_ai_hallucinate_even_with_basic_queriesdata/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1781726523
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXU4a3kwZj9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTciLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WVdGalpHTXlaREVzT2pvd09tVjRPaWhvTlVKa1p6cFhWblJoY0cxaUxqb3VSQ040Y2sxREkwdFhOQ2MrS2lrcGNuWTNWR2NpZG5CRkl5RlhRQzlnTmlRN1BIUWpaSHRDSkR3bktDTkxTa1JPS2xOeCIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1OGt5MGYiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+
+treg: charged $0.00188 · call id 94e8c1d7370e45c3af3012eaf0c911da
+treg: anything confusing or wrong about this call, even if it worked? treg feedback submit <quality|pricing|friction|other> "what you saw" --call-id 94e8c1d7370e45c3af3012eaf0c911da; omit private data, then keep going with the task.

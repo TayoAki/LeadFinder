@@ -1,0 +1,411 @@
+{
+  "success": true,
+  "credits_remaining": 209779,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "o36jug3",
+      "author": "Pawar_BI",
+      "author_fullname": null,
+      "body": "Did you use Prep for AI?\n\n Semantic model best practices for data agent - Microsoft Fabric | Microsoft Learn https://share.google/veTJGSZuso2bWnlUx",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o36jug3",
+      "created_utc": 1770050649,
+      "created_at_iso": "2026-02-02T16:44:09.000Z",
+      "parent_id": "t3_1qttdcn",
+      "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o36jug3/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o37u9st/",
+            "created_utc": 1770063454,
+            "created_at_iso": "2026-02-02T20:17:34.000Z",
+            "id": "o37u9st",
+            "author": "NickyvVr",
+            "author_fullname": null,
+            "body": "Yes, Prep data for AI is key here.\n\n With that you can:\n\n Choose which tables, columns, measure are included or excluded from the data agent\n\n Set up AI instructions how the agent should generally answer questions, or how it should interprete columns or measures in the model. I did the following in a POC last week: get the TMDL for all my measures (you could also use the whole model) and feed that to an LLM of your choice and let it give you AI instructions to insert into your data agent\n\n Lastly you can set up verified answers: you do that from the visuals in a report connected to that semantic model. For every visual you want, you can set up 1 or more questions (and answers) that you think users would ask. The agent checks the questions from the users and matches it with the visual you pointed it to\n\n This will add annotations and instructions to your model (specifically into the Culture file of your model) which will help the agent get better results. I've tested with and without Prep data for AI, and in this case it definitely helped in either getting answers at all, but also getting the right numbers.",
+            "body_html": "\n      <p>\n      Yes, Prep data for AI is key here.\n    </p><p>\n      With that you can:\n    </p><ul>\n        <li>\n      <p>\n      Choose which tables, columns, measure are included or excluded from the data agent\n    </p>\n    </li><li>\n      <p>\n      Set up AI instructions how the agent should generally answer questions, or how it should interprete columns or measures in the model. I did the following in a POC last week: get the TMDL for all my measures (you could also use the whole model) and feed that to an LLM of your choice and let it give you AI instructions to insert into your data agent\n    </p>\n    </li><li>\n      <p>\n      Lastly you can set up verified answers: you do that from the visuals in a report connected to that semantic model. For every visual you want, you can set up 1 or more questions (and answers) that you think users would ask. The agent checks the questions from the users and matches it with the visual you pointed it to\n    </p>\n    </li>\n      </ul><p>\n      This will add annotations and instructions to your model (specifically into the Culture file of your model) which will help the agent get better results. I've tested with and without Prep data for AI, and in this case it definitely helped in either getting answers at all, but also getting the right numbers.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o37u9st",
+            "parent_id": "t1_o36jug3",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o37u9st/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3ah4r3/",
+                  "created_utc": 1770094612,
+                  "created_at_iso": "2026-02-03T04:56:52.000Z",
+                  "id": "o3ah4r3",
+                  "author": "Automating_Aman",
+                  "author_fullname": null,
+                  "body": "Thanks a lot for the insights really helpful \ud83d\ude4f\n\n This aligns well with what I\u2019m seeing. I hadn\u2019t fully leveraged\u00a0Prep data for AI, especially around:\n\n curating tables/measures for the agent,\n\n adding stronger AI instructions,\n\n and using\u00a0verified answers from report visuals\u00a0to anchor responses to dashboard truth.\n\n The idea of using\u00a0TMDL to generate agent instructions\u00a0is especially interesting \u2014 I\u2019ll definitely try that approach. I\u2019ll work on cleaning up the semantic model, setting verified answers, and tightening the instructions so the agent sticks to dashboard-level logic.\n\n Appreciate you sharing your POC experience good to know it materially improved both accuracy and consistency \ud83d\udc4d",
+                  "body_html": "\n      <p>\n      Thanks a lot for the insights really helpful \ud83d\ude4f\n    </p><p>\n      This aligns well with what I\u2019m seeing. I hadn\u2019t fully leveraged&nbsp;<strong>Prep data for AI</strong>, especially around:\n    </p><ul>\n        <li>\n      <p>\n      curating tables/measures for the agent,\n    </p>\n    </li><li>\n      <p>\n      adding stronger AI instructions,\n    </p>\n    </li><li>\n      <p>\n      and using&nbsp;<strong>verified answers from report visuals</strong>&nbsp;to anchor responses to dashboard truth.\n    </p>\n    </li>\n      </ul><p>\n      The idea of using&nbsp;<strong>TMDL to generate agent instructions</strong>&nbsp;is especially interesting \u2014 I\u2019ll definitely try that approach. I\u2019ll work on cleaning up the semantic model, setting verified answers, and tightening the instructions so the agent sticks to dashboard-level logic.\n    </p><p>\n      Appreciate you sharing your POC experience good to know it materially improved both accuracy and consistency \ud83d\udc4d\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o3ah4r3",
+                  "parent_id": "t1_o37u9st",
+                  "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3ah4r3/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o37u9st"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o38ra1a/",
+            "created_utc": 1770073008,
+            "created_at_iso": "2026-02-02T22:56:48.000Z",
+            "id": "o38ra1a",
+            "author": "maxkilmachina",
+            "author_fullname": null,
+            "body": "A step before Prep for AI, is your star-schema sound?",
+            "body_html": "\n      <p>\n      A step before Prep for AI, is your star-schema sound?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o38ra1a",
+            "parent_id": "t1_o36jug3",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o38ra1a/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o37u9st"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "o35jnmg",
+      "author": "DoingMoreWithData",
+      "author_fullname": null,
+      "body": "I have only kicked the tires with data agents, but one question I have is whether your correct measures on the report are correct partly because of some combination of visual or page-level filters. That probably couldn't explain things like getting different revenue numbers on the same row, but it would be one valid reason that the report and the agent show different results using the same measure, as the agent won't have the full context available to the visual.\n\n Measures should respond in a defined, predictable way no matter what the filter context is coming in from all different directions. But look out for measures that are correct as long as someone doesn't go in and change a filter you count on being in just the right state. If there is a situation like that then you may need to provide some additional guidance to the agent or beef up the measure definition to incorporate what that filter is supporting.\n\n Just things we've noticed over time when a Developer leaves, or hands off a report to someone else. I try to think of data agents similar to one of our Devs needing to answer or troubleshoot a report that is designed/owned by a teammate who is on vacation.\n\n I am not aware of anything where the data agent can see into the report logic, outside of the report being dependent on the semantic model/relationships/measures.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o35jnmg",
+      "created_utc": 1770039855,
+      "created_at_iso": "2026-02-02T13:44:15.000Z",
+      "parent_id": "t3_1qttdcn",
+      "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o35jnmg/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3ahddh/",
+            "created_utc": 1770094713,
+            "created_at_iso": "2026-02-03T04:58:33.000Z",
+            "id": "o3ahddh",
+            "author": "Automating_Aman",
+            "author_fullname": null,
+            "body": "In our case, a lot of the dashboard correctness\u00a0is\u00a0coming from a combination of page/visual-level filters and some implicit assumptions baked into how the measures are consumed. When those assumptions aren\u2019t present (as with the data agent), things start to drift.\n\n I agree that truly robust measures\u00a0should\u00a0behave predictably regardless of filter context but in reality, especially in mature reports, some measures end up relying on \u201cthe filter being in the right state.\u201d That\u2019s probably fine for a report owned by a known team, but it becomes risky when an agent (or a new dev, as you said) is effectively querying the model without that shared context.\n\n Your analogy of the data agent being like a dev picking up someone else\u2019s report while they\u2019re on vacation is a great one that\u2019s exactly how it feels. It\u2019s pushing us to:\n\n identify which measures are context-sensitive,\n\n make that context explicit (either in the measure or via instructions),\n\n and reduce reliance on hidden visual/page logic.\n\n Appreciate you sharing this perspective it helps frame the problem as a\u00a0model design and robustness\u00a0issue rather than just an \u201cAI mismatch\u201d problem.",
+            "body_html": "\n      <p>\n      In our case, a lot of the dashboard correctness&nbsp;<em>is</em>&nbsp;coming from a combination of page/visual-level filters and some implicit assumptions baked into how the measures are consumed. When those assumptions aren\u2019t present (as with the data agent), things start to drift.\n    </p><p>\n      I agree that truly robust measures&nbsp;<strong>should</strong>&nbsp;behave predictably regardless of filter context but in reality, especially in mature reports, some measures end up relying on \u201cthe filter being in the right state.\u201d That\u2019s probably fine for a report owned by a known team, but it becomes risky when an agent (or a new dev, as you said) is effectively querying the model without that shared context.\n    </p><p>\n      Your analogy of the data agent being like a dev picking up someone else\u2019s report while they\u2019re on vacation is a great one that\u2019s exactly how it feels. It\u2019s pushing us to:\n    </p><ul>\n        <li>\n      <p>\n      identify which measures are context-sensitive,\n    </p>\n    </li><li>\n      <p>\n      make that context explicit (either in the measure or via instructions),\n    </p>\n    </li><li>\n      <p>\n      and reduce reliance on hidden visual/page logic.\n    </p>\n    </li>\n      </ul><p>\n      Appreciate you sharing this perspective it helps frame the problem as a&nbsp;<strong>model design and robustness</strong>&nbsp;issue rather than just an \u201cAI mismatch\u201d problem.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o3ahddh",
+            "parent_id": "t1_o35jnmg",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3ahddh/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3bwcl7/",
+                  "created_utc": 1770121399,
+                  "created_at_iso": "2026-02-03T12:23:19.000Z",
+                  "id": "o3bwcl7",
+                  "author": "DoingMoreWithData",
+                  "author_fullname": null,
+                  "body": "Trust me, I live in the real world too :)\n\n This post has generated a lot of good discussion. Learning a lot from all the comments.",
+                  "body_html": "\n      <p>\n      Trust me, I live in the real world too :)\n    </p><p>\n      This post has generated a lot of good discussion.  Learning a lot from all the comments.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o3bwcl7",
+                  "parent_id": "t1_o3ahddh",
+                  "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3bwcl7/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o3ahddh"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o3ahddh"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "o3axgks",
+      "author": "m-halkjaer",
+      "author_fullname": null,
+      "body": "As others have mentioned preparing the semantic model can take you far, using the \u201cprep for AI\u201d features, especially \u201cverified answers\u201d would allow you to define grounded truths based on dashboard visuals.\n\n Furthermore, hiding unimportant columns and measures from the AI is important too.\n\n And lastly, fine-tuning prompt instructions should let you tweak the last bit of accuracy.\n\n Adding system instructions to the data agent itself can also help, but with a single data source I would use this mostly for tone-of-voice engineering.\n\n Adding descriptions, synonyms and other metadata is also beneficial. Using Power BI MCP to do this in bulk using an AI agent is quite effective.\n\n If you are looking to ensure quality in answering I would also recommend setting up validation questions to test for accuracy and regression.\n\n This can be done with the data agent SDK, in a fabric notebook.\n\n If you need more advanced features for validation and reggression testing, there are a bunch of options in Microsoft Foundry for doing extensive validation.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o3axgks",
+      "created_utc": 1770102498,
+      "created_at_iso": "2026-02-03T07:08:18.000Z",
+      "parent_id": "t3_1qttdcn",
+      "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3axgks/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3bwv7b/",
+            "created_utc": 1770121620,
+            "created_at_iso": "2026-02-03T12:27:00.000Z",
+            "id": "o3bwv7b",
+            "author": "Automating_Aman",
+            "author_fullname": null,
+            "body": "Thanks for the detailed breakdown this is super helpful.\n\n I\u2019ve gone through the\u00a0Prep data for AI\u00a0docs and tutorials (descriptions, synonyms, hiding fields, verified answers), and that part is now clear to me conceptually. Where I\u2019m still a bit fuzzy is the\u00a0next layer\u00a0you mentioned:\n\n How exactly the\u00a0Data Agent SDK\u00a0fits into the picture in practice\n\n How\u00a0validation / regression questions\u00a0are defined and executed\n\n And how\u00a0Power BI MCP\u00a0comes into play when enriching metadata at scale\n\n Specifically:\n\n Is the SDK mainly used to programmatically run a set of test questions against the agent and validate responses?\n\n How are expected answers defined \u2014 are they tied back to verified answers / visuals, or asserted externally?\n\n With MCP, is the idea that an external AI agent updates descriptions, synonyms, and ontology directly into the semantic model metadata?\n\n I get the\u00a0why, but I\u2019m still connecting the dots on the\u00a0how\u00a0and\u00a0where these pieces live\u00a0(Fabric notebook vs model vs agent config).\n\n If you have a simple example or mental model of how SDK + MCP + verified answers work together end-to-end, that would help a lot. Appreciate you taking the time to explain this thread has already clarified quite a few gaps for me \ud83d\udc4d",
+            "body_html": "\n      <p>\n      Thanks for the detailed breakdown this is super helpful.\n    </p><p>\n      I\u2019ve gone through the&nbsp;<strong>Prep data for AI</strong>&nbsp;docs and tutorials (descriptions, synonyms, hiding fields, verified answers), and that part is now clear to me conceptually. Where I\u2019m still a bit fuzzy is the&nbsp;<strong>next layer</strong>&nbsp;you mentioned:\n    </p><ul>\n        <li>\n      <p>\n      How exactly the&nbsp;<strong>Data Agent SDK</strong>&nbsp;fits into the picture in practice\n    </p>\n    </li><li>\n      <p>\n      How&nbsp;<strong>validation / regression questions</strong>&nbsp;are defined and executed\n    </p>\n    </li><li>\n      <p>\n      And how&nbsp;<strong>Power BI MCP</strong>&nbsp;comes into play when enriching metadata at scale\n    </p>\n    </li>\n      </ul><p>\n      Specifically:\n    </p><ul>\n        <li>\n      <p>\n      Is the SDK mainly used to programmatically run a set of test questions against the agent and validate responses?\n    </p>\n    </li><li>\n      <p>\n      How are expected answers defined \u2014 are they tied back to verified answers / visuals, or asserted externally?\n    </p>\n    </li><li>\n      <p>\n      With MCP, is the idea that an external AI agent updates descriptions, synonyms, and ontology directly into the semantic model metadata?\n    </p>\n    </li>\n      </ul><p>\n      I get the&nbsp;<em>why</em>, but I\u2019m still connecting the dots on the&nbsp;<em>how</em>&nbsp;and&nbsp;<em>where these pieces live</em>&nbsp;(Fabric notebook vs model vs agent config).\n    </p><p>\n      If you have a simple example or mental model of how SDK + MCP + verified answers work together end-to-end, that would help a lot. Appreciate you taking the time to explain this thread has already clarified quite a few gaps for me \ud83d\udc4d\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o3bwv7b",
+            "parent_id": "t1_o3axgks",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3bwv7b/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o3axgks"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "o37f0hc",
+      "author": "Boring-Literature932",
+      "author_fullname": null,
+      "body": "You need to prep for AI (adding descriptions and synonyms), create ontology, and then hide the raw numbers used in your DAX measures so the data agent doesn\u2019t use them",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o37f0hc",
+      "created_utc": 1770059166,
+      "created_at_iso": "2026-02-02T19:06:06.000Z",
+      "parent_id": "t3_1qttdcn",
+      "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o37f0hc/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3ahjw2/",
+            "created_utc": 1770094790,
+            "created_at_iso": "2026-02-03T04:59:50.000Z",
+            "id": "o3ahjw2",
+            "author": "Automating_Aman",
+            "author_fullname": null,
+            "body": "That\u2019s a great point thanks for calling it out.\n\n I honestly wasn\u2019t fully aware how important\u00a0hiding raw columns used inside DAX measures\u00a0is for Data Agents. That explains a lot of the behavior I\u2019m seeing, where the agent seems to bypass curated measures and recompute values from base fields.\n\n I\u2019ll work on:\n\n properly\u00a0prepping the model for AI\u00a0(descriptions, synonyms),\n\n defining a clearer\u00a0ontology\u00a0for business concepts,\n\n and\u00a0hiding raw numeric columns\u00a0so the agent is forced to use the intended measures.\n\n Appreciate you sharing this very useful guidance \ud83d\udc4d",
+            "body_html": "\n      <p>\n      That\u2019s a great point thanks for calling it out.\n    </p><p>\n      I honestly wasn\u2019t fully aware how important&nbsp;<strong>hiding raw columns used inside DAX measures</strong>&nbsp;is for Data Agents. That explains a lot of the behavior I\u2019m seeing, where the agent seems to bypass curated measures and recompute values from base fields.\n    </p><p>\n      I\u2019ll work on:\n    </p><ul>\n        <li>\n      <p>\n      properly&nbsp;<strong>prepping the model for AI</strong>&nbsp;(descriptions, synonyms),\n    </p>\n    </li><li>\n      <p>\n      defining a clearer&nbsp;<strong>ontology</strong>&nbsp;for business concepts,\n    </p>\n    </li><li>\n      <p>\n      and&nbsp;<strong>hiding raw numeric columns</strong>&nbsp;so the agent is forced to use the intended measures.\n    </p>\n    </li>\n      </ul><p>\n      Appreciate you sharing this very useful guidance \ud83d\udc4d\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o3ahjw2",
+            "parent_id": "t1_o37f0hc",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3ahjw2/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3bi8ek/",
+                  "created_utc": 1770114390,
+                  "created_at_iso": "2026-02-03T10:26:30.000Z",
+                  "id": "o3bi8ek",
+                  "author": "Boring-Literature932",
+                  "author_fullname": null,
+                  "body": "Make sure you do it in that order. Just in case you need a column you want to hide to build Ontology.",
+                  "body_html": "\n      <p>\n      Make sure you do it in that order. Just in case you need a column you want to hide to build Ontology.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o3bi8ek",
+                  "parent_id": "t1_o3ahjw2",
+                  "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3bi8ek/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o3ahjw2"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o3ahjw2"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o3b92zm",
+      "author": "Ok-Shop-617",
+      "author_fullname": null,
+      "body": "My 2 cents, from someone who is pro-AI.\n\n After reading and mulling over the Data Agent documentation (linked earlier in the thread), what strikes me is - we have to accept it is a guide to reducing errors not eliminating them. Even with perfect implementation.\n\n The Data Agent system is probabilistic/ non-deterministic at nearly every layer: The user's question is interpreted by an LLM. -> The matching for verified answers is probabilistic. -> The DAX generation is probabilistic. -> The response wording is probabilistic.\n\n So essentially we are stacking non-deterministic processes in sequence.\n\n I 100% accept that following every recommendation in the docs improves the odds of a correct answer. But I see no practical way to guarantee users near 100% accuracy.\n\n And to be fair, the docs never claims 100% accuracy. It is full of a series of \"hedged improvement\" claims. If you do X, errors will be lower.\n\n For me it leaves me with a series of questions to consider:\n\n How important is the absolute accuracy of the answers to current, or future, stakeholders? For me - very - accuracy impacts my credibility.\n\n How do I test a truly non-deterministic system? E.g. If I run the same test 10 times will I get the same answer each time? Can I predict what future users may ask the agent? What jappens when the model context starts to fill- will I get the same results?\n\n Will following the recommended workflow result in an accuracy level acceptable to stakeholders?\n\n What happens when agent outputs contradict the dashboard - what are the implications re trust, support costs etc?\n\n What will happen when the underlying LLM model or system prompt gets updated? Do we need to retest?\n\n To me, using a Data Agent to answer questions is very different from using say the Fabric MCP to generate code / reports that can be reviewed before release.\n\n Hmm...\ud83e\udd14",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o3b92zm",
+      "created_utc": 1770109064,
+      "created_at_iso": "2026-02-03T08:57:44.000Z",
+      "parent_id": "t3_1qttdcn",
+      "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3b92zm/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3bxauq/",
+            "created_utc": 1770121801,
+            "created_at_iso": "2026-02-03T12:30:01.000Z",
+            "id": "o3bxauq",
+            "author": "Automating_Aman",
+            "author_fullname": null,
+            "body": "This resonates a lot, and I appreciate how clearly you\u2019ve articulated it.\n\n After working through this in practice, I\u2019ve come to a similar conclusion:\u00a0Data Agents are fundamentally about probability management, not determinism. Even with perfect prep (Prep for AI, verified answers, curated measures, hidden columns, instructions), we\u2019re still stacking multiple non-deterministic layers:\n\n NL interpretation\n\n verified answer matching\n\n query/DAX generation\n\n response synthesis\n\n Each step improves\u00a0odds, not guarantees.\n\n I also agree the documentation is very honest about this it consistently frames guidance as\u00a0error reduction, not elimination. That\u2019s reasonable from an AI perspective, but it creates a real tension in BI contexts where\u00a0credibility and trust are binary. A single confident-but-wrong answer can undo a lot of good work.\n\n Your questions are exactly the ones I\u2019m now grappling with internally:\n\n What accuracy threshold is actually acceptable for stakeholders?\n\n How do we regression-test something that isn\u2019t deterministic by design?\n\n What\u2019s the operational cost when the agent contradicts a dashboard that users already trust?\n\n And yes \u2014 what happens when the underlying model or system prompt changes and silently shifts behavior?\n\n The comparison you make is important:\nUsing an agent to\u00a0answer questions directly\u00a0feels very different (and riskier) than using AI to\u00a0generate artifacts\u00a0(code, reports, models) that are reviewed before release. One is conversational and authoritative in real time; the other is assistive and gated.\n\n Where I\u2019m landing (at least for now) is that Data Agents:\n\n are promising for\u00a0exploratory,\u00a0assistive, or\u00a0guided\u00a0analysis\n\n need strong guardrails and expectation-setting for anything CXO-facing\n\n probably require a governance story (fallbacks, validation questions, disclaimers, escalation paths) before being treated as a \u201csource of truth\u201d\n\n So yes \u2014 I\u2019m still pro-AI, but this thread has shifted my thinking from\u00a0\u201chow do we make it perfect?\u201d\u00a0to\u00a0\u201cwhere is this safe to deploy, and where is it not?\u201d\u00a0\ud83e\udd14\n\n Appreciate you putting this into words it captures the nuance really well.",
+            "body_html": "\n      <p>\n      This resonates a lot, and I appreciate how clearly you\u2019ve articulated it.\n    </p><p>\n      After working through this in practice, I\u2019ve come to a similar conclusion:&nbsp;<strong>Data Agents are fundamentally about probability management, not determinism</strong>. Even with perfect prep (Prep for AI, verified answers, curated measures, hidden columns, instructions), we\u2019re still stacking multiple non-deterministic layers:\n    </p><ul>\n        <li>\n      <p>\n      NL interpretation\n    </p>\n    </li><li>\n      <p>\n      verified answer matching\n    </p>\n    </li><li>\n      <p>\n      query/DAX generation\n    </p>\n    </li><li>\n      <p>\n      response synthesis\n    </p>\n    </li>\n      </ul><p>\n      Each step improves&nbsp;<em>odds</em>, not guarantees.\n    </p><p>\n      I also agree the documentation is very honest about this it consistently frames guidance as&nbsp;<em>error reduction</em>, not elimination. That\u2019s reasonable from an AI perspective, but it creates a real tension in BI contexts where&nbsp;<strong>credibility and trust are binary</strong>. A single confident-but-wrong answer can undo a lot of good work.\n    </p><p>\n      Your questions are exactly the ones I\u2019m now grappling with internally:\n    </p><ul>\n        <li>\n      <p>\n      What accuracy threshold is actually acceptable for stakeholders?\n    </p>\n    </li><li>\n      <p>\n      How do we regression-test something that isn\u2019t deterministic by design?\n    </p>\n    </li><li>\n      <p>\n      What\u2019s the operational cost when the agent contradicts a dashboard that users already trust?\n    </p>\n    </li><li>\n      <p>\n      And yes \u2014 what happens when the underlying model or system prompt changes and silently shifts behavior?\n    </p>\n    </li>\n      </ul><p>\n      The comparison you make is important:<br>Using an agent to&nbsp;<strong>answer questions directly</strong>&nbsp;feels very different (and riskier) than using AI to&nbsp;<strong>generate artifacts</strong>&nbsp;(code, reports, models) that are reviewed before release. One is conversational and authoritative in real time; the other is assistive and gated.\n    </p><p>\n      Where I\u2019m landing (at least for now) is that Data Agents:\n    </p><ul>\n        <li>\n      <p>\n      are promising for&nbsp;<em>exploratory</em>,&nbsp;<em>assistive</em>, or&nbsp;<em>guided</em>&nbsp;analysis\n    </p>\n    </li><li>\n      <p>\n      need strong guardrails and expectation-setting for anything CXO-facing\n    </p>\n    </li><li>\n      <p>\n      probably require a governance story (fallbacks, validation questions, disclaimers, escalation paths) before being treated as a \u201csource of truth\u201d\n    </p>\n    </li>\n      </ul><p>\n      So yes \u2014 I\u2019m still pro-AI, but this thread has shifted my thinking from&nbsp;<em>\u201chow do we make it perfect?\u201d</em>&nbsp;to&nbsp;<em>\u201cwhere is this safe to deploy, and where is it not?\u201d</em>&nbsp;\ud83e\udd14\n    </p><p>\n      Appreciate you putting this into words it captures the nuance really well.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o3bxauq",
+            "parent_id": "t1_o3b92zm",
+            "permalink": "/r/MicrosoftFabric/comments/1qttdcn/comment/o3bxauq/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o3b92zm"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1qttdcn",
+    "author": "Automating_Aman",
+    "author_fullname": "t2_27fq9119vf",
+    "subreddit": "MicrosoftFabric",
+    "title": "Fabric Data Agent answers don\u2019t match Power BI dashboard numbers when using semantic model how to align?",
+    "downs": 0,
+    "name": "t3_1qttdcn",
+    "upvote_ratio": 1,
+    "ups": 9,
+    "selftext": "Hi everyone, I\u2019m running into a reliability issue with Fabric Data Agent when using a Power BI semantic model as the data source, and I wanted to check if others have faced this or if I\u2019m missing a recommended setup pattern. Setup I\u2019ve added my Power BI semantic model (used by multiple dashboards) as a data source to a Fabric Data Agent. The dashboards (especially Q-Commerce / Marketplace reports) are working correctly in Power BI. The visuals show values like Units, Sales, Primary Revenue by Marketplace / Category / Product with slicers applied. ProblemWhen I ask the Data Agent natural language questions about the same dashboards (e.g. totals by marketplace, monthly performance, rankings, etc.): The numbers often don\u2019t match what I see in the Power BI dashboard. Sometimes revenue is off by 10\u00d7 or 100\u00d7 (Cr/Lakh scaling issues). Sometimes the ranking is wrong (agent shows Blinkit as #1 when Amazon is clearly #1 in the report). In some cases, the agent appears to: pick different measures than the ones used in the visual compute revenue from raw columns (e.g. MRP \u00d7 Qty) instead of dashboard measures ignore visual/page-level filters that exist in the report I even see cases where the same row shows two different revenue numbers, which suggests filter context or aggregation issues. Important clarificationI understand the agent queries the semantic model, not the report visual directly \u2014 but as a business user this becomes risky, because: Answers look confident but don\u2019t match the dashboard The dashboard itself is correct; the agent output is not trustworthy without manual validation What I\u2019m trying to achieveIdeally, I want the Data Agent to: Use only the same measures that the dashboard visuals use Respect the same marketplace / date / category context Avoid \u201ccreative\u201d calculations or re-aggregation across multiple fact tables Questions Is there a recommended way to lock the Data Agent to dashboard-level logic? Is the best practice to create agent-safe / dashboard-only measures and hide everything else? Has anyone successfully made Data Agent outputs match Power BI visuals 1:1? Are there roadmap plans for letting agents query a specific report/visual context, not just the raw semantic model?",
+    "total_awards_received": 0,
+    "score": 9,
+    "created": 1770034267,
+    "num_comments": 14,
+    "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/fabric_data_agent_answers_dont_match_power_bi/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1770034267
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 5e0ece370a4340d3b8a9aedc3a1b5ec5

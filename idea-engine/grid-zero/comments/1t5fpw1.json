@@ -1,0 +1,163 @@
+{
+  "success": true,
+  "credits_remaining": 209762,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ol6hm7t",
+      "author": "chiibosoil",
+      "author_fullname": null,
+      "body": "Always do sanity check, at least the stakeholder is looking at numbers. Nothing worse than creating dashboard no one pays attention to. Trace where the differences are... it could be calculation error or could be difference in business assumptions, or even difference in data definition etc.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ol6hm7t",
+      "created_utc": 1778507679,
+      "created_at_iso": "2026-05-11T13:54:39.000Z",
+      "parent_id": "t3_1t5fpw1",
+      "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/comment/ol6hm7t/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/comment/olc8uux/",
+            "created_utc": 1778578398,
+            "created_at_iso": "2026-05-12T09:33:18.000Z",
+            "id": "olc8uux",
+            "author": "data_daria55",
+            "author_fullname": null,
+            "body": "thankx, bro",
+            "body_html": "\n      <p>\n      thankx, bro\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_olc8uux",
+            "parent_id": "t1_ol6hm7t",
+            "permalink": "/r/Powerbihelp/comments/1t5fpw1/comment/olc8uux/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ol6hm7t"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "okci4el",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_okci4el",
+      "created_utc": 1778109312,
+      "created_at_iso": "2026-05-06T23:15:12.000Z",
+      "parent_id": "t3_1t5fpw1",
+      "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/comment/okci4el/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "okmhfka",
+      "author": "Mdayofearth",
+      "author_fullname": null,
+      "body": "Context is key. You sit down and walk through the calculations on both to identify differences.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_okmhfka",
+      "created_utc": 1778242134,
+      "created_at_iso": "2026-05-08T12:08:54.000Z",
+      "parent_id": "t3_1t5fpw1",
+      "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/comment/okmhfka/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "okrbecl",
+      "author": "tampacraig",
+      "author_fullname": null,
+      "body": "Approach with curiosity and without ego, investigate, and then explain the difference. You just established yourself as a trusted advisor within your company whether you were right or wrong.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_okrbecl",
+      "created_utc": 1778295435,
+      "created_at_iso": "2026-05-09T02:57:15.000Z",
+      "parent_id": "t3_1t5fpw1",
+      "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/comment/okrbecl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1t5fpw1",
+    "author": "data_daria55",
+    "author_fullname": "t2_28it46ebtx",
+    "subreddit": "Powerbihelp",
+    "title": "what do you do when the stakeholder's Excel doesn't match your dashboard and they insist Excel is right?",
+    "downs": 0,
+    "name": "t3_1t5fpw1",
+    "upvote_ratio": 1,
+    "ups": 2,
+    "selftext": "its so classic, first i felt terrified and ashamed, but now - now im just making a poker face and say - my numbers are correct",
+    "total_awards_received": 0,
+    "score": 2,
+    "created": 1778080207,
+    "num_comments": 6,
+    "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/what_do_you_do_when_the_stakeholders_excel_doesnt/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1778080207
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 5d648e07a22445e3a14bb3b908837643

@@ -1,0 +1,496 @@
+{
+  "success": true,
+  "credits_remaining": 209670,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p9n1l0t",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_p9n1l0t",
+      "created_utc": 1789337755,
+      "created_at_iso": "2026-09-13T22:15:55.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9n1l0t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9n8d8p",
+      "author": "Aggressive_tako",
+      "author_fullname": null,
+      "body": "I'd be careful to make sure each business unit doesn't just go back to calculating it their own way on the side. It has been my experience that neither merchants nor fiance are actually willing to change their metrics, regardless of what their leadership agreed to. That same leadership will be asking the rank and file in three months to explain why their sales numbers are so different than in past quarters and be unwilling to accept \"a change in metric methodology.\" It will come back on you to defend that the new reporting isn't just wrong at something like a PO or SKU level.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9n8d8p",
+      "created_utc": 1789339756,
+      "created_at_iso": "2026-09-13T22:49:16.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9n8d8p/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9t1tas/",
+            "created_utc": 1789411601,
+            "created_at_iso": "2026-09-14T18:46:41.000Z",
+            "id": "p9t1tas",
+            "author": "CommitteeImmediate66",
+            "author_fullname": null,
+            "body": "Well the benefit of this is that they can create their own calculation on top of the metric views, but the base calculation doesn't change. We're also hoping the message lands and that they take some more ownership of the calculations they make and then come back to us for",
+            "body_html": "\n      <p>\n      Well the benefit of this is that they can create their own calculation on top of the metric views, but the base calculation doesn't change. We're also hoping the message lands and that they take some more ownership of the calculations they make and then come back to us for\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p9t1tas",
+            "parent_id": "t1_p9n8d8p",
+            "permalink": "/r/analytics/comments/1wflg2e/comment/p9t1tas/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9naola/",
+            "created_utc": 1789340441,
+            "created_at_iso": "2026-09-13T23:00:41.000Z",
+            "id": "p9naola",
+            "author": "OilShill2013",
+            "author_fullname": null,
+            "body": "That\u2019s exactly what\u2019s going to happen. Now that the analytics team is finished bugging the other teams for a centralized definition, the other teams will revert back to what they were doing before sooner rather than later. Why? Because their own definitions actually serve their needs vs a centralized definition that misses the mark slightly for every team.",
+            "body_html": "\n      <p>\n      That\u2019s exactly what\u2019s going to happen. Now that the analytics team is finished bugging the other teams for a centralized definition, the other teams will revert back to what they were doing before sooner rather than later. Why? Because their own definitions actually serve their needs vs a centralized definition that misses the mark slightly for every team.&nbsp;\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p9naola",
+            "parent_id": "t1_p9n8d8p",
+            "permalink": "/r/analytics/comments/1wflg2e/comment/p9naola/",
+            "ups": 12,
+            "downs": 0,
+            "score": 12,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p9n8d8p"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "p9n2bvq",
+      "author": "Brilliant-Process293",
+      "author_fullname": null,
+      "body": "The three meetings to agree on one number is the most real thing I've read all week.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9n2bvq",
+      "created_utc": 1789337969,
+      "created_at_iso": "2026-09-13T22:19:29.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9n2bvq/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9ocxbj/",
+            "created_utc": 1789352625,
+            "created_at_iso": "2026-09-14T02:23:45.000Z",
+            "id": "p9ocxbj",
+            "author": "CerberusByte",
+            "author_fullname": null,
+            "body": "You\u2019re only having 3 meetings? I remember we had this same situation and it honestly was a year and still the numbers didn\u2019t app up. Since moving to a company running Databricks at least the implementation is easier but the politics is not. Everyone wants to have their say and they want Genie answers to agree with what they want to do",
+            "body_html": "\n      <p>\n      You\u2019re only having 3 meetings? I remember we had this same situation and it honestly was a year and still the numbers didn\u2019t app up. Since moving to a company running Databricks at least the implementation is easier but the politics is not. Everyone wants to have their say and they want Genie answers to agree with what they want to do\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p9ocxbj",
+            "parent_id": "t1_p9n2bvq",
+            "permalink": "/r/analytics/comments/1wflg2e/comment/p9ocxbj/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p9n2bvq"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "p9s1phy",
+      "author": "wdm006",
+      "author_fullname": null,
+      "body": "The three meetings to agree on net sales are the real work. Once that math lives in one place, the \u201cdifferent SQL\u201d fights mostly stop. We also version those definitions like an API, because finance will change their mind and you want a clear before/after.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9s1phy",
+      "created_utc": 1789402580,
+      "created_at_iso": "2026-09-14T16:16:20.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9s1phy/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p9xa1zs",
+      "author": "Nearby-Cockroach8655",
+      "author_fullname": null,
+      "body": "this reads like ai",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9xa1zs",
+      "created_utc": 1789464092,
+      "created_at_iso": "2026-09-15T09:21:32.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9xa1zs/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p9ne17u",
+      "author": "OilShill2013",
+      "author_fullname": null,
+      "body": "What is the actual business impact of this effort?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9ne17u",
+      "created_utc": 1789341418,
+      "created_at_iso": "2026-09-13T23:16:58.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9ne17u/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9t9k2h",
+      "author": "pforpilot",
+      "author_fullname": null,
+      "body": "how do you handle questions that dont fall under any existing metrics? does the agent define it by itself? if so, how do you track it?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9t9k2h",
+      "created_utc": 1789413532,
+      "created_at_iso": "2026-09-14T19:18:52.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9t9k2h/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/pabonku/",
+            "created_utc": 1789629980,
+            "created_at_iso": "2026-09-17T07:26:20.000Z",
+            "id": "pabonku",
+            "author": "Responsible_Status49",
+            "author_fullname": null,
+            "body": "Not every metric needs to be defined in advance. Agents like Databricks' Genie are great at text to sql and they gather context from other parts of the platform as well. For example the table and column descriptions, whether an asset is certified or not, whether it is used in a dashboard in a certain way with a certain title for the visual, how often it is used, etc",
+            "body_html": "\n      <p>\n      Not every metric needs to be defined in advance. Agents like Databricks' Genie are great at text to sql and they gather context from other parts of the platform as well. For example the table and column descriptions, whether an asset is certified or not, whether it is used in a dashboard in a certain way with a certain title for the visual, how often it is used, etc\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pabonku",
+            "parent_id": "t1_p9t9k2h",
+            "permalink": "/r/analytics/comments/1wflg2e/comment/pabonku/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p9t9k2h"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9ue3rx",
+      "author": "Molecular_Doohickey",
+      "author_fullname": null,
+      "body": "Echoing what other people on this thread have said - the challenge is actually ensuring the organization doesn't revert to a series of silo'd definitions. Make sure leadership agrees on the now shared definition, and that it's accessible in a central location. Remind people of this shared metrics definition repository on a regular basis so people know it's authoritative and the source of truth.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9ue3rx",
+      "created_utc": 1789424288,
+      "created_at_iso": "2026-09-14T22:18:08.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9ue3rx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9xsu4q",
+      "author": "CautiousUse8597",
+      "author_fullname": null,
+      "body": "This is the most accurate description of semantic layer work I've read. \"Encoding it took an afternoon; agreeing on it took three meetings\" is exactly how it goes. The technology is the easy part. The metric view is really just the receipt for a decision the business finally made.\n\n A few things that helped us after the initial rollout, especially with Genie on top:\n\n Keep the YAML in git: Once definitions live in one place, changes to that place deserve code review. When finance decides markdowns should be handled differently next year, you want a PR with an approver from finance, not someone quietly editing it.\n\n Add descriptions and synonyms to measures and dimensions: Leadership says \"net sales,\" merch says \"net revenue,\" ops says \"sales after returns.\" If those all point to the same measure, Genie picks the right one instead of improvising.\n\n Let the metric view handle ratios: Things like margin % or average basket size should be defined as measures, not pre-calculated columns. Otherwise someone averages a percentage across stores and you're back to numbers not matching.\n\n Don't redefine metrics in Genie instructions: It's tempting to add \"net sales means X\" to the agent's prompt. Don't. The moment you do, you have a seventh definition. Point Genie at the metric view and keep instructions for defaults like \"use fiscal weeks.\"\n\n Use benchmark questions: Take the questions that used to cause those awkward leadership moments, save the correct answers as benchmarks, and rerun them whenever something changes. It's cheap proof that Genie and the dashboards still agree.\n\n Name an owner per metric: Not a team, a person. Future you will want to know who to ask when someone requests \"net sales but excluding online.\"\n\n Curious how you handled the legacy dashboards. Did you repoint them to the metric views, or retire them? That's usually where the old definitions sneak back in.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9xsu4q",
+      "created_utc": 1789472246,
+      "created_at_iso": "2026-09-15T11:37:26.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9xsu4q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9xtqrg",
+      "author": "notimportant4322",
+      "author_fullname": null,
+      "body": "How about use different terms if the calculation is different?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9xtqrg",
+      "created_utc": 1789472573,
+      "created_at_iso": "2026-09-15T11:42:53.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9xtqrg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p9zfdq8",
+      "author": "romeonoi",
+      "author_fullname": null,
+      "body": "i ran into the same net sales mess when i inherited three versions of the same report. what helped me was writing the definition in one yaml metric view in unity catalog with store, region, channel and week as dimensions and net_sales as a single sum expression.\n\n i would check the metric view lineage tab in unity catalog to confirm every dashboard points at that one definition. once i did that the leadership arguments stopped because the math had one home.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p9zfdq8",
+      "created_utc": 1789488812,
+      "created_at_iso": "2026-09-15T16:13:32.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9zfdq8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pa617u1",
+      "author": "Glitch_In_The_Data",
+      "author_fullname": null,
+      "body": "Getting everyone to agree on one definition was way harder than setting up the metric views themselves.\n\n Once the definitions are finalised and in UC, we were able to actually trust Genie agents because the numbers stopped changing baed on the query\u2026 It was very consistent. Just remember to add synonyms to the metric view so Genie understands when people use different names and still uses the same logic.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pa617u1",
+      "created_utc": 1789568065,
+      "created_at_iso": "2026-09-16T14:14:25.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/pa617u1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "paa8ksu",
+      "author": "Semaphor-Analytics",
+      "author_fullname": null,
+      "body": "Somebody always ends up recreating the old number in a side query when the \u201cofficial\u201d one doesn\u2019t fit their case. I\u2019d rather have a couple named versions with clear owners than one definition everyone quietly ignores.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_paa8ksu",
+      "created_utc": 1789608779,
+      "created_at_iso": "2026-09-17T01:32:59.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/paa8ksu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pb7z1qt",
+      "author": "Tiwaryswarnim",
+      "author_fullname": null,
+      "body": "I think there's a distinction between standardizing how a metric is calculated and understanding why different parts of the business need it in the first place.\n\n Finance might look at net sales to understand financial performance, while Merchandising might need a different view to evaluate product performance. Both can be legitimate, provided we understand what each metric represents and how they relate to one another.\n\n Every company has its own underlying business logic, but that knowledge is usually fragmented across departments, systems, documentation, and people's heads.\n\n A semantic layer can standardize the calculations, but I think the bigger challenge is maintaining the business context around them.\n\n What does this metric represent? How does it connect to other metrics and business processes? Who owns its definition? Which decisions depend on it? And when the business changes, how do those relationships evolve?\n\n For example, if Marketing changes its lead qualification criteria, that might affect Sales conversion rates and eventually revenue. Understanding that relationship requires more than having consistent definitions for leads, opportunities, and revenue individually.\n\n Ideally, the business should have a living representation of these relationships, connected to the decisions people make and the outcomes of those decisions.\n\n Otherwise, we might finally get everyone to agree on the same numbers while still having departments interpret them independently.\n\n Curious how you're approaching this beyond the metric definitions themselves. Are you also capturing the business context and relationships between metrics, or is that still largely maintained by individual teams?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pb7z1qt",
+      "created_utc": 1790017669,
+      "created_at_iso": "2026-09-21T19:07:49.000Z",
+      "parent_id": "t3_1wflg2e",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/pb7z1qt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    }
+  ],
+  "post": {
+    "id": "1wflg2e",
+    "author": "CommitteeImmediate66",
+    "author_fullname": "t2_c0q48v3z",
+    "subreddit": "analytics",
+    "title": "Semantic layer learnings",
+    "downs": 0,
+    "name": "t3_1wflg2e",
+    "upvote_ratio": 0.9142857142857143,
+    "ups": 29,
+    "selftext": "We've recently been looking at consolidating our semantic layer. An example of why my manager has decided we need to focus on this is we had \"net sales\" defined like six different ways. Finance took out returns and markdowns, the merch dashboard took out returns but not markdowns, my weekly report did something in between because I inherited the query from a guy who left two years ago. Every leadership meeting had that awkward moment where two numbers didn't match and nobody could say why except \"different SQL.\" All our analytics data is in Databricks, so we decided to rest metric views. A metric view in Databricks is basically a governed definition of a metric that lives in Unity Catalog instead of buried inside a dashboard. You point it at a source (your fact table plus whatever joins), you list your dimensions - the stuff you slice by, like store, region, category, channel, week - and then you define your measures, which is the actual metric math. The key thing is you write that math once. So net_sales = SUM(sales_amount - returns - markdowns) lives in exactly one place, and everything downstream inherits it. We defined them all through YAML. Honestly the hardest part wasn't technical at all. It was getting finance, merch, and ops in a room to agree on what net sales even means. Encoding it took an afternoon; agreeing on it took three meetings. But that's kind of the point - you do that fight once, write it down in the metric view, and you never have to have it again. When a business rule changes, you change it in one spot. We were also able to roll out genie agents because previously the definitions varied so much it was impossible to maintain them.",
+    "total_awards_received": 0,
+    "score": 29,
+    "created": 1789337755,
+    "num_comments": 24,
+    "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/semantic_layer_learnings/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1789337755
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id d6cf1c4addf34d3b97c76f2653a1b38b

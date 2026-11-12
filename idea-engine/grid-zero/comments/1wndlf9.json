@@ -1,0 +1,669 @@
+{
+  "success": true,
+  "credits_remaining": 209756,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "pbeleu1",
+      "author": "Moneyshot_Larry",
+      "author_fullname": null,
+      "body": "Yes",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbeleu1",
+      "created_utc": 1790098220,
+      "created_at_iso": "2026-09-22T17:30:20.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbeleu1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 124,
+      "downs": 0,
+      "score": 124
+    },
+    {
+      "id": "pbeq5g7",
+      "author": "Andromeda_RL",
+      "author_fullname": null,
+      "body": "A nice combination of internal validations, UAT and a standardized promotion process",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbeq5g7",
+      "created_utc": 1790099416,
+      "created_at_iso": "2026-09-22T17:50:16.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbeq5g7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbf40qa/",
+            "created_utc": 1790102919,
+            "created_at_iso": "2026-09-22T18:48:39.000Z",
+            "id": "pbf40qa",
+            "author": "alienvalentine",
+            "author_fullname": null,
+            "body": "Exactly this. I spot check results in the filter context against the source. And then I ask my power users to do the same in User Acceptance Testing. That will find 99% of issues before the report is broadly disseminated.",
+            "body_html": "\n      <p>\n      Exactly this.  I spot check results in the filter context against the source. And then I ask my power users to do the same in User Acceptance Testing.  That will find 99% of issues before the report is broadly disseminated.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pbf40qa",
+            "parent_id": "t1_pbeq5g7",
+            "permalink": "/r/PowerBI/comments/1wndlf9/comment/pbf40qa/",
+            "ups": 10,
+            "downs": 0,
+            "score": 10,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbf9tlk/",
+                  "created_utc": 1790104393,
+                  "created_at_iso": "2026-09-22T19:13:13.000Z",
+                  "id": "pbf9tlk",
+                  "author": "Andromeda_RL",
+                  "author_fullname": null,
+                  "body": "I do our yearly metrics and I will also add that having the experience to interpret the data yourself makes things far easier\n\n Less of painting your own picture and more making sure everything is in the lines",
+                  "body_html": "\n      <p>\n      I do our yearly metrics and I will also add that having the experience to interpret the data yourself makes things far easier\n    </p><p>\n      Less of painting your own picture and more making sure everything is in the lines\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pbf9tlk",
+                  "parent_id": "t1_pbf40qa",
+                  "permalink": "/r/PowerBI/comments/1wndlf9/comment/pbf9tlk/",
+                  "ups": 7,
+                  "downs": 0,
+                  "score": 7,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF3bmRsZjk_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNelF5TVRObU5tWXNPam95T21WNE9paDNaR29uV2c9PSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxd25kbGY5IiwicGFyZW50VGhpbmdJZCI6InQxX3BiZjQwcWEifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pbf40qa"
+        }
+      },
+      "ups": 44,
+      "downs": 0,
+      "score": 44
+    },
+    {
+      "id": "pbfe9du",
+      "author": "bigloser42",
+      "author_fullname": null,
+      "body": "YOLO it live on a Friday afternoon. If there are any data errors they are guaranteed to be reported about 5 minutes before EOD.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbfe9du",
+      "created_utc": 1790105529,
+      "created_at_iso": "2026-09-22T19:32:09.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbfe9du/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 27,
+      "downs": 0,
+      "score": 27
+    },
+    {
+      "id": "pbemsf7",
+      "author": "newtochas",
+      "author_fullname": null,
+      "body": "Spray and pray",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbemsf7",
+      "created_utc": 1790098567,
+      "created_at_iso": "2026-09-22T17:36:07.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbemsf7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF3bmRsZjk_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTMiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WlRKbFlXSXpZbUlzT2pveE9tUXhPblF4WDNCaVpXMXpaamM9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF3bmRsZjkiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGJlbXNmNyJ9"
+        }
+      },
+      "ups": 41,
+      "downs": 0,
+      "score": 41
+    },
+    {
+      "id": "pbeos6q",
+      "author": "blinkybillster",
+      "author_fullname": null,
+      "body": "Have a business user confirm it for you, against another system.\nYour question highlights an important part of the process that is seldom spoken about or taught at school / boot camp.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbeos6q",
+      "created_utc": 1790099067,
+      "created_at_iso": "2026-09-22T17:44:27.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbeos6q/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbgzsbe/",
+            "created_utc": 1790122352,
+            "created_at_iso": "2026-09-23T00:12:32.000Z",
+            "id": "pbgzsbe",
+            "author": "GeorgeZip01",
+            "author_fullname": null,
+            "body": "This is correct it\u2019s part of uat and if your company doesn\u2019t want to put money into testing then they should almost expect bad data.",
+            "body_html": "\n      <p>\n      This is correct it\u2019s part of uat and if your company doesn\u2019t want to put money into testing then they should almost expect bad data.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pbgzsbe",
+            "parent_id": "t1_pbeos6q",
+            "permalink": "/r/PowerBI/comments/1wndlf9/comment/pbgzsbe/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pbeos6q"
+        }
+      },
+      "ups": 17,
+      "downs": 0,
+      "score": 17
+    },
+    {
+      "id": "pbez2s2",
+      "author": "Eze-Wong",
+      "author_fullname": null,
+      "body": "I have 2 versions usually, One that's created in excel that i have prototyped the metrics, formulas and checked several times. And then I develop the powerbi schemas and make sure that each level of calc matches excel and that the final calcs align.\n\n Depends on what you do. could be a huge bear if you have a thousand KPIs, in my line of work it's not that many so it's pretty easy to follow.\n\n Also, build your DAX measures with modular pieces. That way if you need to change something, you can always fall back and validate again and fix problems without leaving a trail of mistakes.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbez2s2",
+      "created_utc": 1790101664,
+      "created_at_iso": "2026-09-22T18:27:44.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbez2s2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "pbelyg2",
+      "author": "DaCor_ie",
+      "author_fullname": null,
+      "body": "I work on the premise of \"assume its wrong until you prove its right\". If you don't you're asking for trouble",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbelyg2",
+      "created_utc": 1790098358,
+      "created_at_iso": "2026-09-22T17:32:38.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbelyg2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 23,
+      "downs": 0,
+      "score": 23
+    },
+    {
+      "id": "pbeoteb",
+      "author": "guygm",
+      "author_fullname": null,
+      "body": "Between your internal validations and publishing for users, you should have a UAT where the report is signed-off by stakeholders. Someone needs to be accountable.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbeoteb",
+      "created_utc": 1790099076,
+      "created_at_iso": "2026-09-22T17:44:36.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbeoteb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "pbemysj",
+      "author": "Drew707",
+      "author_fullname": null,
+      "body": "Thankfully most of my data has a source SaaS that has some kind of bullshit reporting, so I usually just compare the reports to what the SaaS says.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbemysj",
+      "created_utc": 1790098612,
+      "created_at_iso": "2026-09-22T17:36:52.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbemysj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pbhznp0",
+      "author": "Longjumping_Oil4285",
+      "author_fullname": null,
+      "body": "The awkward part is that a dashboard can match the source perfectly and still be wrong.\n\n SQL checks and UAT will catch broken relationships, filters and measures. But they won\u2019t necessarily catch a KPI that\u2019s technically correct and being interpreted the wrong way.\n\n I usually think of it as four links: source rows \u2192 model/filter context \u2192 measure \u2192 the decision the visual is nudging someone toward.\n\n Freezing a small, ugly test dataset helps a lot \u2014 duplicates, blanks, boundary dates, empty segments \u2014 with expected outputs for specific filter contexts. Then I\u2019d ask the business owner to sign off on the KPI meaning and thresholds, not just whether the total \u201clooks right.\u201d\n\n Numerical correctness and decision correctness aren\u2019t quite the same thing.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbhznp0",
+      "created_utc": 1790134668,
+      "created_at_iso": "2026-09-23T03:37:48.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbhznp0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pbeqt6x",
+      "author": "amok52pt",
+      "author_fullname": null,
+      "body": "Painstakingly looking at source data through SQL, Excel, having agents check samples... Sometimes a similar column names can fuck the whole thing up.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbeqt6x",
+      "created_utc": 1790099581,
+      "created_at_iso": "2026-09-22T17:53:01.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbeqt6x/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbfqxn3",
+      "author": "Jedimole",
+      "author_fullname": null,
+      "body": "I have a 3 step process, I do it in QA and validate with the requestor before I move to production",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbfqxn3",
+      "created_utc": 1790108835,
+      "created_at_iso": "2026-09-22T20:27:15.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbfqxn3/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbfuvtv",
+      "author": "Waterlines_Sie",
+      "author_fullname": null,
+      "body": "DAX queries stored in a git repo that are required to run and pass before merging into main/production branch.\n\n Then power automate running the same dax queries against the model in production on a regular basis to ensure figures stay accurate against known baseline figures.\n\n John Kerski wrote an excellent blog post about it to get me started",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbfuvtv",
+      "created_utc": 1790109863,
+      "created_at_iso": "2026-09-22T20:44:23.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbfuvtv/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbg57ut",
+      "author": "Lupin0000",
+      "author_fullname": null,
+      "body": "If you making a report, then at least u know how to validate the numbers right.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbg57ut",
+      "created_utc": 1790112711,
+      "created_at_iso": "2026-09-22T21:31:51.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbg57ut/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbir0ml",
+      "author": "thedarkpath",
+      "author_fullname": null,
+      "body": "Well you have to know and understand the data deeply, otherwise you're just making numbers look pretty which a kid can do",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbir0ml",
+      "created_utc": 1790147125,
+      "created_at_iso": "2026-09-23T07:05:25.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbir0ml/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbptqqc",
+      "author": "Coronal_Data",
+      "author_fullname": null,
+      "body": "2 person team here. We have so little time for validation, we just spot check everything the first time by doing the math manually and let the problems reveal themselves over time. We have lots of experience apologizing when we need to fix something, and pointing the finger at someone else whenever we can. Like if someone went and changed a department name in our accounting system from \"HR\" to \"HR and Benefits\" and it made that department disappear from our budget dashboard, that would be a finger pointing situation.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbptqqc",
+      "created_utc": 1790230558,
+      "created_at_iso": "2026-09-24T06:15:58.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbptqqc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbqs6b6",
+      "author": "80hz",
+      "author_fullname": null,
+      "body": "With everything else in this country being fake, I just throw and pray, let the business people fix it. they never cared enough when I was trying to do it the right way and ask for feedback beforehand",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbqs6b6",
+      "created_utc": 1790247636,
+      "created_at_iso": "2026-09-24T11:00:36.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbqs6b6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pbetyzb",
+      "author": "aristosk21",
+      "author_fullname": null,
+      "body": "Usually unit test a few cases from source till end , use also some agent to do the same and compare to the final metrics, but ofcourse I expect that the stakeholders or users who suppose to have the domain knowledge to challenge it but I don't always count on that so best to cover myself in any case for the future.Thats also the reason i ask from them clear definitions from the very beginning,get them engaged to the process somehow",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbetyzb",
+      "created_utc": 1790100377,
+      "created_at_iso": "2026-09-22T18:06:17.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbetyzb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbez7y9",
+      "author": "Plastic-Analyst-1560",
+      "author_fullname": null,
+      "body": "UAT\nBusiness knowledge\nyou can check the pipeline bit by bit but you can't never be sure unless you will have an indipendent match against another source.\nIt is the unfancy yet necessary part of the job.\nCompared, designin dashboard is rather easy.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbez7y9",
+      "created_utc": 1790101700,
+      "created_at_iso": "2026-09-22T18:28:20.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbez7y9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbezbgt",
+      "author": "Adorable-Wasabi-77",
+      "author_fullname": null,
+      "body": "Do a light Computer System Validation (CSV) to validate that it outputs the system behaves as expected",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbezbgt",
+      "created_utc": 1790101725,
+      "created_at_iso": "2026-09-22T18:28:45.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbezbgt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbf18bb",
+      "author": "Prudent-Elk-2845",
+      "author_fullname": null,
+      "body": "Data validation sign-off by business owners before UAT starts.\n\n You can preempt issues by having the business owners give some high-level goal posts that can be include in dev unit tests (e.g. US sales is X for the whole year which is Y% more than last year, A for Jan which is B% more than last Jan). Also force a walk of related measures as one of the reports. Even if not listed as a requirement originally, it will become a necessary artifact",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbf18bb",
+      "created_utc": 1790102210,
+      "created_at_iso": "2026-09-22T18:36:50.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbf18bb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbf5ory",
+      "author": "Proper-Weather520",
+      "author_fullname": null,
+      "body": "-Sanity check on counts with SQL -Dax measure check with source (are dollar value more than what is present) -Validate with business user",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbf5ory",
+      "created_utc": 1790103340,
+      "created_at_iso": "2026-09-22T18:55:40.000Z",
+      "parent_id": "t3_1wndlf9",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbf5ory/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1wndlf9",
+    "author": "No_Ambition8323",
+    "author_fullname": "t2_2kl76txdvm",
+    "subreddit": "PowerBI",
+    "title": "How do you validate that a Power BI dashboard is showing correct data?",
+    "downs": 0,
+    "name": "t3_1wndlf9",
+    "upvote_ratio": 0.8695652173913043,
+    "ups": 51,
+    "selftext": "A dashboard can look perfect and refresh successfully, but the numbers can still be wrong because of incorrect relationships, filters, DAX logic, or source data issues. How do you usually validate a Power BI dashboard before sharing it with users? Do you compare it with the source data, use SQL queries, check totals, or follow some other validation process?",
+    "total_awards_received": 0,
+    "score": 51,
+    "created": 1790092997,
+    "num_comments": 42,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/how_do_you_validate_that_a_power_bi_dashboard_is/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1790092997
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF3bmRsZjk_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTIyIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlltUTFOVGM1WmpJc09qb3dPbVY0T2loM1kwTkdXVG9uY2xkc1VrbGJJM0p6UmpvamVUNGxUMlo2YWlwc1BqRnpLRE5kSkZWeU1pVmpQVlJBYWloU2Zpcy9TVGtsTEZBM1dtWkVNRFkrVFZsblJDUnhSMG9pV0ZoU0wyb29jQ0orWnkwPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxd25kbGY5IiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id ab94726d03824bfc989263c94b22ae6c

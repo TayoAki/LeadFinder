@@ -1,0 +1,684 @@
+{
+  "success": true,
+  "credits_remaining": 209726,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19sftlyzgmv43",
+      "author": "this_for_loona",
+      "author_fullname": null,
+      "body": "I\u2019d be concerned about data use for training but google\u2019s had my stuff for years and I\u2019ve never looked at their data use policy so who am I to judge?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sftlyzgmv43",
+      "created_utc": 1794338136,
+      "created_at_iso": "2026-11-10T19:15:36.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftlyzgmv43/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgzp2upjev6/",
+            "created_utc": 1794394751,
+            "created_at_iso": "2026-11-11T10:59:11.000Z",
+            "id": "19sgzp2upjev6",
+            "author": "nimbledoor",
+            "author_fullname": null,
+            "body": "This was literally me a few days ago. \"I really shouldn't give claude access to my email and calendar even if it's convenient. Wait... Google already does so the US government does too.\"",
+            "body_html": "\n      <p>\n      This was literally me a few days ago. \"I really shouldn't give claude access to my email and calendar even if it's convenient. Wait... Google already does so the US government does too.\"\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sgzp2upjev6",
+            "parent_id": "t1_19sftlyzgmv43",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sgzp2upjev6/",
+            "ups": 6,
+            "downs": 0,
+            "score": 6,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqWTNabUpqT1RRc09qb3lPbVF4T25ReFh6RTVjMmQ2Y0RKMWNHcGxkalk9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNnenAydXBqZXY2In0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZORE5rTVRaak5XTXNPam94T21WNE9peFlKejA5YTFwRlFVQT0iLCJzdWJyZWRkaXQiOiJjbGF1ZGUiLCJwb3N0SWQiOiIxeHN2MHR1IiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2Z0bHl6Z212NDMifQ"
+        }
+      },
+      "ups": 179,
+      "downs": 0,
+      "score": 179
+    },
+    {
+      "id": "19sfslyngntvn",
+      "author": "solidmixer",
+      "author_fullname": null,
+      "body": "Where\u2019s claudeOS?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfslyngntvn",
+      "created_utc": 1794336790,
+      "created_at_iso": "2026-11-10T18:53:10.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfslyngntvn/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfsu31p9ybp/",
+            "created_utc": 1794337094,
+            "created_at_iso": "2026-11-10T18:58:14.000Z",
+            "id": "19sfsu31p9ybp",
+            "author": "FloatingFalafel",
+            "author_fullname": null,
+            "body": "Considering they released a video yesterday of Fable 5.2 building an intelligent operating system with Claude built into everything\u2026? Probably pretty soon.",
+            "body_html": "\n      <p>\n      Considering they released a video yesterday of Fable 5.2 building an intelligent operating system with Claude built into everything\u2026? Probably pretty soon.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfsu31p9ybp",
+            "parent_id": "t1_19sfslyngntvn",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfsu31p9ybp/",
+            "ups": 137,
+            "downs": 0,
+            "score": 137,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfzm6q9tf5s/",
+                  "created_utc": 1794346215,
+                  "created_at_iso": "2026-11-10T21:30:15.000Z",
+                  "id": "19sfzm6q9tf5s",
+                  "author": "Grouchy_Big3195",
+                  "author_fullname": null,
+                  "body": "Opening a file generated 5.3 million tokens. Please wait 5 hours to reset or add a credit card for extra usage.",
+                  "body_html": "\n      <p>\n      Opening a file generated 5.3 million tokens. Please wait 5 hours to reset or add a credit card for extra usage.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19sfzm6q9tf5s",
+                  "parent_id": "t1_19sfsu31p9ybp",
+                  "permalink": "/r/claude/comments/1xsv0tu/comment/19sfzm6q9tf5s/",
+                  "ups": 48,
+                  "downs": 0,
+                  "score": 48,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TkdZM016WTRNVEFzT2pvek9tUXhPblF4WHpFNWMyWjZiVFp4T1hSbU5YTT0iLCJzdWJyZWRkaXQiOiJjbGF1ZGUiLCJwb3N0SWQiOiIxeHN2MHR1IiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2Z6bTZxOXRmNXMifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpqZzBOamN3WlRNc09qb3lPbVY0T2l4WUpWbDhaVjh2UlM0PSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZnN1MzFwOXlicCJ9"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfsseds1uyp/",
+            "created_utc": 1794337031,
+            "created_at_iso": "2026-11-10T18:57:11.000Z",
+            "id": "19sfsseds1uyp",
+            "author": "nickilous",
+            "author_fullname": null,
+            "body": "Not far off I would imagine. If the tech industry hasn\u2019t clocked it already AI by its very nature is the everything app. The last app we will ever need because it will create all other apps from whole cloth. Whether that is good or bad I don\u2019t know but it is coming.",
+            "body_html": "\n      <p>\n      Not far off I would imagine. If the tech industry hasn\u2019t clocked it already AI by its very nature is the everything app. The last app we will ever need because it will create all other apps from whole cloth. Whether that is good or bad I don\u2019t know but it is coming.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfsseds1uyp",
+            "parent_id": "t1_19sfslyngntvn",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfsseds1uyp/",
+            "ups": 45,
+            "downs": 0,
+            "score": 45,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1ESXlOV1JpTm1Nc09qb3lPbVF4T25ReFh6RTVjMlp6YzJWa2N6RjFlWEE9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmc3NlZHMxdXlwIn0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZVEl5Wm1ZeU5UVXNPam94T21WNE9peFlKVHcwSzFWbFZHczZKem96ZlQxamN6TT0iLCJzdWJyZWRkaXQiOiJjbGF1ZGUiLCJwb3N0SWQiOiIxeHN2MHR1IiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2ZzbHluZ250dm4ifQ"
+        }
+      },
+      "ups": 224,
+      "downs": 0,
+      "score": 224
+    },
+    {
+      "id": "19sfv9d89bn5x",
+      "author": "Impressive_Sun_287",
+      "author_fullname": null,
+      "body": "Microsoft shares dropped by 3% in 30 minutes after Claude Whiteboards release",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfv9d89bn5x",
+      "created_utc": 1794340355,
+      "created_at_iso": "2026-11-10T19:52:35.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfv9d89bn5x/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg0ovab8937/",
+            "created_utc": 1794347661,
+            "created_at_iso": "2026-11-10T21:54:21.000Z",
+            "id": "19sg0ovab8937",
+            "author": "Herpderpyoloswag",
+            "author_fullname": null,
+            "body": "They retired Microsoft whiteboard standalone last month. It was my go to in a meeting. Now new to convert pdf to an image before I can load it on the board.",
+            "body_html": "\n      <p>\n      They retired Microsoft whiteboard standalone last month. It was my go to in a meeting. Now new to convert pdf to an image before I can load it on the board.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sg0ovab8937",
+            "parent_id": "t1_19sfv9d89bn5x",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sg0ovab8937/",
+            "ups": 11,
+            "downs": 0,
+            "score": 11,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1tSmlOMkpqWlRjc09qb3lPbVF4T25ReFh6RTVjMmN3YjNaaFlqZzVNemM9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNnMG92YWI4OTM3In0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNR0k0TURZelpUUXNPam94T21WNE9peFlKVjVmVEM1Q1JtZz0iLCJzdWJyZWRkaXQiOiJjbGF1ZGUiLCJwb3N0SWQiOiIxeHN2MHR1IiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2Z2OWQ4OWJuNXgifQ"
+        }
+      },
+      "ups": 46,
+      "downs": 0,
+      "score": 46
+    },
+    {
+      "id": "19sftoxhajimc",
+      "author": "No-Pattern-9266",
+      "author_fullname": null,
+      "body": "makes sense, pointless for anthropic to pay for tons of integrations for basic stuff, this is the new Microsoft",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sftoxhajimc",
+      "created_utc": 1794338246,
+      "created_at_iso": "2026-11-10T19:17:26.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftoxhajimc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNRFkxT0dSaE16RXNPam94T21ReE9uUXhYekU1YzJaMGIzaG9ZV3BwYldNPSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZnRveGhhamltYyJ9"
+        }
+      },
+      "ups": 100,
+      "downs": 0,
+      "score": 100
+    },
+    {
+      "id": "19sfsqtzjbvgg",
+      "author": "Prestigious-Frame442",
+      "author_fullname": null,
+      "body": "basically claude code repackaged",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfsqtzjbvgg",
+      "created_utc": 1794336972,
+      "created_at_iso": "2026-11-10T18:56:12.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfsqtzjbvgg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 32,
+      "downs": 0,
+      "score": 32
+    },
+    {
+      "id": "19sg9sfdv658l",
+      "author": "Chrismslist",
+      "author_fullname": null,
+      "body": "Claude PowerPoint, Claude Word, and Claude Excel",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg9sfdv658l",
+      "created_utc": 1794359900,
+      "created_at_iso": "2026-11-11T01:18:20.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg9sfdv658l/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOakUzTlRKaVl6WXNPam94T21ReE9uUXhYekU1YzJjNWMyWmtkalkxT0d3PSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZzlzZmR2NjU4bCJ9"
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "19sfu52iw05c4",
+      "author": "retiredbigbro",
+      "author_fullname": null,
+      "body": "I am tired, boss",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfu52iw05c4",
+      "created_utc": 1794338850,
+      "created_at_iso": "2026-11-10T19:27:30.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfu52iw05c4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 31,
+      "downs": 0,
+      "score": 31
+    },
+    {
+      "id": "19sfxsxiylam9",
+      "author": "dbenc",
+      "author_fullname": null,
+      "body": "the only thing i want is more tokens per subscription. sorry",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfxsxiylam9",
+      "created_utc": 1794343777,
+      "created_at_iso": "2026-11-10T20:49:37.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfxsxiylam9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPR1UzWW1OaE5tTXNPam94T21ReE9uUXhYekU1YzJaNGMzaHBlV3hoYlRrPSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZnhzeGl5bGFtOSJ9"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "19sg6pctgu70k",
+      "author": "-PM_ME_UR_SECRETS-",
+      "author_fullname": null,
+      "body": "Claude uses Google Sheets well enough already. Is there any reason for shifting from Google Sheets to Claude sheets? Didn\u2019t really say in the blogpost",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg6pctgu70k",
+      "created_utc": 1794355750,
+      "created_at_iso": "2026-11-11T00:09:10.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg6pctgu70k/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg8jg07xou9/",
+            "created_utc": 1794358220,
+            "created_at_iso": "2026-11-11T00:50:20.000Z",
+            "id": "19sg8jg07xou9",
+            "author": "darko777",
+            "author_fullname": null,
+            "body": "They want to own everything",
+            "body_html": "\n      <p>\n      They want to own everything\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sg8jg07xou9",
+            "parent_id": "t1_19sg6pctgu70k",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sg8jg07xou9/",
+            "ups": 11,
+            "downs": 0,
+            "score": 11,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9XTTNaVEJpTXpBc09qb3lPbVF4T25ReFh6RTVjMmM0YW1jd04zaHZkVGs9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNnOGpnMDd4b3U5In0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sg8jg07xou9"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "19sg2u4ub0cn7",
+      "author": "According_Economy210",
+      "author_fullname": null,
+      "body": "\u201eCreate certified definitions of metrics. Your data team can certify the queries everyone should use, so you don\u2019t end up building or working on dashboards with conflicting data. Charts built on these metrics carry a \"certified\" badge showing they\u2019re certified.\u201d\n\n This paragraph is very emblematic of AI writing.\nWhy produce a concise explanation if a long one can suffice at not explaining? \ud83d\udc38",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg2u4ub0cn7",
+      "created_utc": 1794350548,
+      "created_at_iso": "2026-11-10T22:42:28.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg2u4ub0cn7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNR0ptWWpJNE5ERXNPam94T21ReE9uUXhYekU1YzJjeWRUUjFZakJqYmpjPSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZzJ1NHViMGNuNyJ9"
+        }
+      },
+      "ups": 18,
+      "downs": 0,
+      "score": 18
+    },
+    {
+      "id": "19sg3gnw150jo",
+      "author": "thisisboland",
+      "author_fullname": null,
+      "body": "The page switched from English to Italian halfway down lmao",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg3gnw150jo",
+      "created_utc": 1794351390,
+      "created_at_iso": "2026-11-10T22:56:30.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg3gnw150jo/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "19sfw2mi4zf2a",
+      "author": "Royal-Replacement-45",
+      "author_fullname": null,
+      "body": "So basically, their business model is shifting toward slowly swallowing up other companies\u2019 products, slapping AI on top of everything, and replacing Microsoft and Google\u2019s offerings because they\u2019re close to hitting a plateau in model development? And when people notice, they\u2019ll justify it with the same AI safety arguments and fearmongering they used a couple of months ago.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfw2mi4zf2a",
+      "created_utc": 1794341449,
+      "created_at_iso": "2026-11-10T20:10:49.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfw2mi4zf2a/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg0sppfo1z4/",
+            "created_utc": 1794347804,
+            "created_at_iso": "2026-11-10T21:56:44.000Z",
+            "id": "19sg0sppfo1z4",
+            "author": "TehTriangle",
+            "author_fullname": null,
+            "body": "But shittier versions of them due to AI being the product manager and the designer.",
+            "body_html": "\n      <p>\n      But shittier versions of them due to AI being the product manager and the designer.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sg0sppfo1z4",
+            "parent_id": "t1_19sfw2mi4zf2a",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sg0sppfo1z4/",
+            "ups": 12,
+            "downs": 0,
+            "score": 12,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg4j9lngq2r/",
+            "created_utc": 1794352832,
+            "created_at_iso": "2026-11-10T23:20:32.000Z",
+            "id": "19sg4j9lngq2r",
+            "author": "Momo--Sama",
+            "author_fullname": null,
+            "body": "Not sure why you\u2019d think there\u2019s an imminent plateau but the rest makes sense.",
+            "body_html": "\n      <p>\n      Not sure why you\u2019d think there\u2019s an imminent plateau but the rest makes sense.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sg4j9lngq2r",
+            "parent_id": "t1_19sfw2mi4zf2a",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sg4j9lngq2r/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTEsMSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZalpsTlRKaU9XUXNPam95T21ReE9uUXhYekU1YzJjMGFqbHNibWR4TW5JPSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzZzRqOWxuZ3EyciJ9"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgsa64n8r9c/",
+            "created_utc": 1794384777,
+            "created_at_iso": "2026-11-11T08:12:57.000Z",
+            "id": "19sgsa64n8r9c",
+            "author": "Dull-Ad5443",
+            "author_fullname": null,
+            "body": "Hey man believing that ASI is coming does not mean give up building every useful applications. No one says you stop working 'cause ASI will come in few years, except for Elon. Even if wars are coming, you just need to do whatever you're doing",
+            "body_html": "\n      <p>\n      Hey man believing that ASI is coming does not mean give up building every useful applications. No one says you stop working 'cause ASI will come in few years, except for Elon. Even if wars are coming, you just need to do whatever you're doing\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sgsa64n8r9c",
+            "parent_id": "t1_19sfw2mi4zf2a",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sgsa64n8r9c/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TlRabU5EWXdaakFzT2pveE9tVjRPaXhZSlY4c2FTZzBRMU02Y0RveFBWMHdXMTgxSWl0VWNXcytjU289Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmdzJtaTR6ZjJhIn0"
+        }
+      },
+      "ups": 27,
+      "downs": 0,
+      "score": 27
+    },
+    {
+      "id": "19sg9w5ur53b6",
+      "author": "Gh0stw0lf",
+      "author_fullname": null,
+      "body": "Holy shit - absolutely RIP these SaaS adjacent tools.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg9w5ur53b6",
+      "created_utc": 1794360040,
+      "created_at_iso": "2026-11-11T01:20:40.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg9w5ur53b6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19sfuprmp4r2c",
+      "author": "SubstantialDark3291",
+      "author_fullname": null,
+      "body": "claudes new tools feel like a soft launch for claudeos, fable 5.2's demo wasn't just hype, it's already building the foundation.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfuprmp4r2c",
+      "created_utc": 1794339623,
+      "created_at_iso": "2026-11-10T19:40:23.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfuprmp4r2c/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "19sfyst6vwa9x",
+      "author": "monsterfurby",
+      "author_fullname": null,
+      "body": "Like their design thing, all of this is already possible in the normal system, in better ways. Feels kind of pointless to repackage features like that.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfyst6vwa9x",
+      "created_utc": 1794345118,
+      "created_at_iso": "2026-11-10T21:11:58.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfyst6vwa9x/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19sftz4oj6rd0",
+      "author": "ex_gatito",
+      "author_fullname": null,
+      "body": "When they introduce not nerfing old models?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sftz4oj6rd0",
+      "created_utc": 1794338628,
+      "created_at_iso": "2026-11-10T19:23:48.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftz4oj6rd0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTUiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TmpBNFlXTTRZMkVzT2pveE9tUXhPblF4WHpFNWMyWjBlalJ2YWpaeVpEQT0iLCJzdWJyZWRkaXQiOiJjbGF1ZGUiLCJwb3N0SWQiOiIxeHN2MHR1IiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2Z0ejRvajZyZDAifQ"
+        }
+      },
+      "ups": 12,
+      "downs": 0,
+      "score": 12
+    }
+  ],
+  "post": {
+    "id": "1xsv0tu",
+    "author": "app1310",
+    "author_fullname": "t2_267xfvw215",
+    "subreddit": "claude",
+    "title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+    "downs": 0,
+    "name": "t3_1xsv0tu",
+    "upvote_ratio": 0.9652542372881356,
+    "ups": 1098,
+    "selftext": null,
+    "total_awards_received": 0,
+    "score": 1098,
+    "created": 1794336229,
+    "num_comments": 149,
+    "url": "https://claude.com/it/resources/articles/sheets-whiteboards-data",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1794336229
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2T1RjMU5EbGxPRElzT2pvd09tVjRPaXhZSlR0SldrRTBheXc2TERnalBsQmtZSGc2V0hJdVR6MXNKR2xvUGtOOWRVTS9lV1pZTXlJMmRUOGhRRjVrZG1KMEtFY2pVUzRwUzFjMUkwUnFUVUY0UXlSVVZsbEhkQ3NvVkc5UUpWWmRKVUl2V1RCS1VqSlplMW9wZFZ3alpXbDdXMHd5THkxTU8xZGVlQzVNTFdBeFRtNU1KM3RXYUZnPSIsInN1YnJlZGRpdCI6ImNsYXVkZSIsInBvc3RJZCI6IjF4c3YwdHUiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+
+treg: charged $0.00188 · call id 55e6068dd02b44799f5989b8a5bf31b7

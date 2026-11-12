@@ -1,0 +1,363 @@
+{
+  "success": true,
+  "credits_remaining": 209783,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19sd8p6isg7nm",
+      "author": "kiwishane",
+      "author_fullname": null,
+      "body": "The most likely source of truth is the finance team's numbers. I wouldn't trust the CRM - there is a way you can force them to align though and that is to sync the CRM to a dashboard finance maintains and uses for their numbers. It can be done as our customers are testiment to that. My recommendation to you is to look at a way to integrate it so the CRM (\"closed won\" deals) > feeds a revenue platform > which in turn feeds into the accounting system. I'd plug my company here but I'd get banned",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sd8p6isg7nm",
+      "created_utc": 1794213151,
+      "created_at_iso": "2026-11-09T08:32:31.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sd8p6isg7nm/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19secoeifvk5d/",
+            "created_utc": 1794266931,
+            "created_at_iso": "2026-11-09T23:28:51.000Z",
+            "id": "19secoeifvk5d",
+            "author": "Leopatra_Spad83",
+            "author_fullname": null,
+            "body": "definitely this, if it didnt hit the bank account or the ledger it doesnt count.",
+            "body_html": "\n      <p>\n      definitely this, if it didnt hit the bank account or the ledger it doesnt count.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19secoeifvk5d",
+            "parent_id": "t1_19sd8p6isg7nm",
+            "permalink": "/r/SaaS/comments/1xr9fur/comment/19secoeifvk5d/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sd8p6isg7nm"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19schgzutyn5t",
+      "author": "john006868",
+      "author_fullname": null,
+      "body": "Three sources of truth is a definitions problem, not a data problem. One counts the deal closing, one counts the card clearing, one counts whenever finance updates it, so they can't agree by construction. Pick one as the board number, usually cash collected, and name one person to reconcile the other two on a fixed day each month. Writing the definition down is what ends the 30 minute debate. New tooling just gives you a fourth number.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19schgzutyn5t",
+      "created_utc": 1794176525,
+      "created_at_iso": "2026-11-08T22:22:05.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19schgzutyn5t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19schmhcjpfpf",
+      "author": "Klassy_Coder",
+      "author_fullname": null,
+      "body": "I saw this in corporate. Different people have different definitions for terms based on how the perceive their area of the business. Gross, Net, Net-Net, Earned, Written. The only way forward is to get all the executives in a room and hash out actual definitions for what each term means, then rewrite the reports to match. It's a huge job though and people rarely have the stomach for it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19schmhcjpfpf",
+      "created_utc": 1794176730,
+      "created_at_iso": "2026-11-08T22:25:30.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19schmhcjpfpf/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19scocdsvxsqp",
+      "author": "SaltMaker23",
+      "author_fullname": null,
+      "body": "Financial reports constituted by inalterable rows of transactions are the source of truth, you work from there.\n\n Financial reports are forced legally to contain all nuances, if something is missing, your report won't match the bank account and you'll be in trouble.\n\n Random people doing spreadsheets or whatever the CRM is attempting to do has no value those integration and the people involved don't care about missing stuffs and neglecting other things, it's always rushed to pretend that it works until people using the CRM stop complaining.\n\n If you don't trust your actual financial reports, then you'll have problems soon, serious ones.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19scocdsvxsqp",
+      "created_utc": 1794185769,
+      "created_at_iso": "2026-11-09T00:56:09.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19scocdsvxsqp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19scy6d8tgc77",
+      "author": "GoodLittleWifey88",
+      "author_fullname": null,
+      "body": "Usually it\u2019s not the data that\u2019s wrong, it\u2019s that nobody agreed on what \u201crevenue\u201d means",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19scy6d8tgc77",
+      "created_utc": 1794198996,
+      "created_at_iso": "2026-11-09T04:36:36.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19scy6d8tgc77/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sd8l8hjau9u",
+      "author": "kiwishane",
+      "author_fullname": null,
+      "body": "The most likely source of truth is the finance team's numbers. I wouldn't trust the CRM - there is a way you can force them to align though and that is to sync the CRM to a dashboard finance maintains and uses for their numbers. It can be done as our customers are testiment to that. My recommendation to you is to look at a way to integrate it so the CRM (\"closed won\" deals) > feeds a revenue platform > which in turn feeds into the accounting system. I'd plug my company here but I'd get banned",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sd8l8hjau9u",
+      "created_utc": 1794213004,
+      "created_at_iso": "2026-11-09T08:30:04.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sd8l8hjau9u/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sdabxofx9s2",
+      "author": "ex_mac333",
+      "author_fullname": null,
+      "body": "Everyone's right that it's a definitions problem, but there's a step that gets you through the next board meeting before anyone agrees on definitions: stop trying to make the three numbers equal, and show the bridge between them.\n\n Take one month and reconcile billing against the CRM, customer by customer. In my experience the gap almost always falls into the same handful of buckets: annual plans booked in full in one place and spread over twelve months in the other, invoiced vs actually paid, refunds and credit notes, discounts the CRM never heard of, currency converted on different dates, and customers who churned in billing but are still \"active\" in the CRM.\n\n Then put it on one slide: the billing number, each bucket with its amount, the CRM number. Once people see that a 4% gap is 3% annual plans and 1% refunds, the debate stops. And anything that doesn't fit a bucket is a real bug worth chasing.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sdabxofx9s2",
+      "created_utc": 1794215347,
+      "created_at_iso": "2026-11-09T09:09:07.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sdabxofx9s2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sdqjarzly2p",
+      "author": "Apprehensive_Art1301",
+      "author_fullname": null,
+      "body": "3 sources of truth means nobody owns the number. the comments here talking about definitions problems are right but i would also look at quote to billing handoffs if you are doing it manually. What helped in our case is having dealhub that connects quoting contracts and billing in one flow so the number is not re entered 3 times by 3 different people.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sdqjarzly2p",
+      "created_utc": 1794237145,
+      "created_at_iso": "2026-11-09T15:12:25.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sdqjarzly2p/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sdwxvilhe4i",
+      "author": "agentUi",
+      "author_fullname": null,
+      "body": "i work for agentui, you have this mismatch because each app defines revenue differently, like sales marking closed-won while billing waits for payment clearing and someone manually types corrections into a spreadsheet. we see teams fix this by setting the core billing database as the single source of truth and pulling it directly into a shared ops dashboard so nobody is debating disconnected numbers.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sdwxvilhe4i",
+      "created_utc": 1794245761,
+      "created_at_iso": "2026-11-09T17:36:01.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sdwxvilhe4i/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sdxwo0hcszn",
+      "author": "Alarmed_Education585",
+      "author_fullname": null,
+      "body": "Our board meetings used to start the same way, ten minutes debating whether the numbers were right before we could discuss anything strategic. A revenue ops consultant we found through boardy had cleaned up this exact mess at three other companies our size. He unified our billing and CRM into one pipeline in about three weeks and now our numbers reconcile automatically.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sdxwo0hcszn",
+      "created_utc": 1794247061,
+      "created_at_iso": "2026-11-09T17:57:41.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sdxwo0hcszn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sfyj2owteir",
+      "author": "CountHausCPA",
+      "author_fullname": null,
+      "body": "A big part of this is understanding that your CRM, billing system, and accounting records are measuring different things. A $120k annual SaaS contract might show up as $120k in the CRM and billing system, but under GAAP, you may only recognize $10k a month in revenue.\n\n For internal financial reporting, I would use GAAP-compliant revenue recognition as the baseline and track bookings and ARR separately. The numbers don't necessarily need to match, but every difference should be explainable and reconciled. Otherwise, you're going to keep having the same debate at every board meeting.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfyj2owteir",
+      "created_utc": 1794344754,
+      "created_at_iso": "2026-11-10T21:05:54.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19sfyj2owteir/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shlclnoa2f6",
+      "author": "Cheap-Look-7980",
+      "author_fullname": null,
+      "body": "Three sources of truth and none of them agree is not a data problem, it's an organizational problem. Someone needs to pick one system as canonical and make everything else downstream. Until that decision is made no tool will fix this.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shlclnoa2f6",
+      "created_utc": 1794423879,
+      "created_at_iso": "2026-11-11T19:04:39.000Z",
+      "parent_id": "t3_1xr9fur",
+      "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19shlclnoa2f6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1xr9fur",
+    "author": "Sure-Pay-2666",
+    "author_fullname": "t2_2lx4aaogft",
+    "subreddit": "SaaS",
+    "title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+    "downs": 0,
+    "name": "t3_1xr9fur",
+    "upvote_ratio": 0.8333333333333334,
+    "ups": 4,
+    "selftext": "Every board meeting starts with a 30 minute debate about whether the numbers are right. Revenue in the billing system doesn't match the CRM which doesn't match the spreadsheet the finance team maintains. We have three sources of truth and none of them agree. How do other companies get to a single reliable set of numbers? This can't be a unique problem but I've never seen it solved well at our stage.",
+    "total_awards_received": 0,
+    "score": 4,
+    "created": 1794172749,
+    "num_comments": 15,
+    "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/why_is_our_reporting_always_wrong_and_how_do/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1794172749
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 4a62a50be7034cd2b27e96b249726405

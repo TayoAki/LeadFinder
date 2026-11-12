@@ -1,0 +1,643 @@
+{
+  "success": true,
+  "credits_remaining": 209649,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "jmzbget",
+      "author": "Mdayofearth",
+      "author_fullname": null,
+      "body": "Create it on services that belong to the client.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzbget",
+      "created_utc": 1685968204,
+      "created_at_iso": "2023-06-05T12:30:04.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzbget/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzjb0r/",
+            "created_utc": 1685972151,
+            "created_at_iso": "2023-06-05T13:35:51.000Z",
+            "id": "jmzjb0r",
+            "author": "JKPBI",
+            "author_fullname": null,
+            "body": "Sorry, imagine these are small small clients with no real data infrastructure. Small scale dashboards that don't require a lot of horsepower but do require not being publicly accessible.\n\n So we'd be handling all the \"hosting\", as it were, of data and the dashboards.",
+            "body_html": "\n      <p>\n      Sorry, imagine these are small small clients with no real data infrastructure. Small scale dashboards that don't require a lot of horsepower but do require not being publicly accessible.\n    </p><p>\n      So we'd be handling all the \"hosting\", as it were, of data and the dashboards.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jmzjb0r",
+            "parent_id": "t1_jmzbget",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jmzjb0r/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzrf8a/",
+                  "created_utc": 1685975727,
+                  "created_at_iso": "2023-06-05T14:35:27.000Z",
+                  "id": "jmzrf8a",
+                  "author": "Mdayofearth",
+                  "author_fullname": null,
+                  "body": "That would be the company I work with now. The tables are hosted on Azure, which along with other services on the Azure end, and under 20 PowerBI pro licenses cost them under 10k a year. It's a very small company, smallest I have ever worked with; under 20 employees. They don't have dedicated IT or data services people, and contracted out to build out the data infrastructure on Azure (ADF, etc.) to populate the data warehouse.\n\n If that's too expensive, then the company's revenue is too small to require such a level of reporting\\dashboarding.",
+                  "body_html": "\n      <p>\n      That would be the company I work with now. The tables are hosted on Azure, which along with other services on the Azure end, and under 20 PowerBI pro licenses cost them under 10k a year. It's a very small company, smallest I have ever worked with; under 20 employees. They don't have dedicated IT or data services people, and contracted out to build out the data infrastructure on Azure (ADF, etc.) to populate the data warehouse.\n    </p><p>\n      If that's too expensive, then the company's revenue is too small to require such a level of reporting\\dashboarding.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jmzrf8a",
+                  "parent_id": "t1_jmzjb0r",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jmzrf8a/",
+                  "ups": 4,
+                  "downs": 0,
+                  "score": 4,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzm1bt/",
+                  "created_utc": 1685973401,
+                  "created_at_iso": "2023-06-05T13:56:41.000Z",
+                  "id": "jmzm1bt",
+                  "author": "athousandjoels",
+                  "author_fullname": null,
+                  "body": "Create it on services that belong to the client.\n\n Do you really want to be liable for handling client data outside of their tenant?",
+                  "body_html": "\n      <p>\n      Create it on services that belong to the client.\n    </p><p>\n      Do you really want to be liable for handling client data outside of their tenant?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jmzm1bt",
+                  "parent_id": "t1_jmzjb0r",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jmzm1bt/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzE0MWNsd2g_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTAsMCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9EUTVaV016TnpFc09qb3pPbVF4T25ReFgycHRlbTB4WW5RPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxNDFjbHdoIiwicGFyZW50VGhpbmdJZCI6InQxX2ptem0xYnQifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "jmzm1bt"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzhxaj/",
+            "created_utc": 1685971489,
+            "created_at_iso": "2023-06-05T13:24:49.000Z",
+            "id": "jmzhxaj",
+            "author": "alitanveer",
+            "author_fullname": null,
+            "body": "This was the path I followed with my first big client. We started with my PowerBI account because they only had Tableau on their side and I created an account for my main point of contact in my PBI tenant. But we quickly needed to address sharing content within the Org and they didn't want people to have a separate login, so I took a crash course in Tableau and built out everything for them in there. We had other ideas that Tableau couldn't accommodate and it was really expensive, so I convinced them to setup PowerBI on their side and we moved back to PowerBI. Now, half the company uses PowerBI and the internal Tableau teams are worried about their jobs because the whole enterprise is moving to PowerBI. I have dozens of reports in their system all running on their infrastructure and data gateways.\n\n The other option is PowerBI Embedded with your own app and user accounts.",
+            "body_html": "\n      <p>\n      This was the path I followed with my first big client. We started with my PowerBI account because they only had Tableau on their side and I created an account for my main point of contact in my PBI tenant. But we quickly needed to address sharing content within the Org and they didn't want people to have a separate login, so I took a crash course in Tableau and built out everything for them in there. We had other ideas that Tableau couldn't accommodate and it was really expensive, so I convinced them to setup PowerBI on their side and we moved back to PowerBI. Now, half the company uses PowerBI and the internal Tableau teams are worried about their jobs because the whole enterprise is moving to PowerBI. I have dozens of reports in their system all running on their infrastructure and data gateways.\n    </p><p>\n      The other option is PowerBI Embedded with your own app and user accounts.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jmzhxaj",
+            "parent_id": "t1_jmzbget",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jmzhxaj/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzj9mu/",
+                  "created_utc": 1685972133,
+                  "created_at_iso": "2023-06-05T13:35:33.000Z",
+                  "id": "jmzj9mu",
+                  "author": "Mdayofearth",
+                  "author_fullname": null,
+                  "body": "Salesforce is accelerating that for those Tableau teams. Good luck to them.",
+                  "body_html": "\n      <p>\n      Salesforce is accelerating that for those Tableau teams. Good luck to them.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jmzj9mu",
+                  "parent_id": "t1_jmzhxaj",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jmzj9mu/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "jmzhxaj"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "jmzm1bt"
+        }
+      },
+      "ups": 18,
+      "downs": 0,
+      "score": 18
+    },
+    {
+      "id": "jmzc1vx",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzc1vx",
+      "created_utc": 1685968531,
+      "created_at_iso": "2023-06-05T12:35:31.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzc1vx/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzj8mh/",
+            "created_utc": 1685972120,
+            "created_at_iso": "2023-06-05T13:35:20.000Z",
+            "id": "jmzj8mh",
+            "author": "JKPBI",
+            "author_fullname": null,
+            "body": "Imagine these are small small clients with no real data infrastructure. Small scale dashboards that don't require a lot of horsepower but do require not being publicly accessible.\n\n So we'd be handling all the \"hosting\", as it were, of data and the dashboards.",
+            "body_html": "\n      <p>\n      Imagine these are small small clients with no real data infrastructure. Small scale dashboards that don't require a lot of horsepower but do require not being publicly accessible.\n    </p><p>\n      So we'd be handling all the \"hosting\", as it were, of data and the dashboards.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jmzj8mh",
+            "parent_id": "t1_jmzc1vx",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jmzj8mh/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzjh62/",
+                  "created_utc": 1685972231,
+                  "created_at_iso": "2023-06-05T13:37:11.000Z",
+                  "id": "jmzjh62",
+                  "author": "[deleted]",
+                  "author_fullname": null,
+                  "body": "[deleted]",
+                  "body_html": null,
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jmzjh62",
+                  "parent_id": "t1_jmzj8mh",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jmzjh62/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "jmzj8mh"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "jmzj8mh"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "jmzd0x0",
+      "author": "Kardinals",
+      "author_fullname": null,
+      "body": "I think there are only two real options.\n\n Either let them use your own Power BI tenant (create an account for them and assign a license) or use their Power BI tenant and they assign you a licence.\n\n Use Power BI Embedded. I've seen projects where Power BI Embedded was integrated into a client portal for a large utility company. It was accessible to 70k+ utility clients for viewing in their portal where they authenticate with their users. Seems like a similar use case for you but for much fewer users. It can be a bit pricey though and would require some setup and programming, especially if you want to filter data based on the user or client (i.e. show the client only his data) but its definitely doable.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzd0x0",
+      "created_utc": 1685969048,
+      "created_at_iso": "2023-06-05T12:44:08.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzd0x0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzkcdn/",
+            "created_utc": 1685972636,
+            "created_at_iso": "2023-06-05T13:43:56.000Z",
+            "id": "jmzkcdn",
+            "author": "JKPBI",
+            "author_fullname": null,
+            "body": "How expensive is the licensure of the first option, if we're to utilize our PowerBI Service tenant and give them access as needed to dashboard we host there.. if these users only really need viewer access? I can't seem to understand the Pro, Premium, and PPU implications for this",
+            "body_html": "\n      <p>\n      How expensive is the licensure of the first option, if we're to utilize our PowerBI Service tenant and give them access as needed to dashboard we host there.. if these users only really need viewer access? I can't seem to understand the Pro, Premium, and PPU implications for this\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jmzkcdn",
+            "parent_id": "t1_jmzd0x0",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jmzkcdn/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmztp4v/",
+                  "created_utc": 1685976672,
+                  "created_at_iso": "2023-06-05T14:51:12.000Z",
+                  "id": "jmztp4v",
+                  "author": "mrbradmorty",
+                  "author_fullname": null,
+                  "body": "First option probably wouldn't work unless you have an extra $5k USD p/m to throw around. Your only realistic options are to get a Pro license for each person you're going to share with or to use PBI Embedded. I'd recommend the second as you could wack it on your website and just point people to that link.",
+                  "body_html": "\n      <p>\n      First option probably wouldn't work unless you have an extra $5k USD p/m to throw around. Your only realistic options are to get a Pro license for each person you're going to share with or to use PBI Embedded. I'd recommend the second as you could wack it on your website and just point people to that link.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jmztp4v",
+                  "parent_id": "t1_jmzkcdn",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jmztp4v/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzE0MWNsd2g_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTIsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1EQmlaVE0xWkRZc09qb3pPbVF4T25ReFgycHRlblJ3TkhZPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxNDFjbHdoIiwicGFyZW50VGhpbmdJZCI6InQxX2ptenRwNHYifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "jmztp4v"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "jmztp4v"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "jmzqs86",
+      "author": "AlpacaDC",
+      "author_fullname": null,
+      "body": "I\u2019ll just say it, there\u2019s no cheap way of doing it in the Power BI ecosystem. I am in a similar situation as you, we can\u2019t afford Embedded because it\u2019s just not worth it and we also have to share reports with small clients, sometimes while also having some sort of RLS.\n\n That\u2019s one of my biggest gripes with Power BI, there\u2019s just no viable solution for this. We\u2019re planning to ditch Power BI entirely for these types of scenarios and build our own internal dashboarding system. It\u2019ll take time, but it can be so much more customizable than PBI, faster and not dependent on questionable Microsoft decisions.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzqs86",
+      "created_utc": 1685975455,
+      "created_at_iso": "2023-06-05T14:30:55.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzqs86/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzz9u4/",
+            "created_utc": 1685978930,
+            "created_at_iso": "2023-06-05T15:28:50.000Z",
+            "id": "jmzz9u4",
+            "author": "JKPBI",
+            "author_fullname": null,
+            "body": "Ah man, hate to hear it.\n\n I'm not familiar with the Embedded solution that keeps being mentioned, but I had assumed it was just some kind of html embedded and not a whole new thing you need to pay for..\n\n Was hoping we could just embed the dashboards on a cheap password protected site..",
+            "body_html": "\n      <p>\n      Ah man, hate to hear it.\n    </p><p>\n      I'm not familiar with the Embedded solution that keeps being mentioned, but I had assumed it was just some kind of html embedded and not a whole new thing you need to pay for..\n    </p><p>\n      Was hoping we could just embed the dashboards on a cheap password protected site..\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jmzz9u4",
+            "parent_id": "t1_jmzqs86",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jmzz9u4/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn17l7j/",
+            "created_utc": 1685997071,
+            "created_at_iso": "2023-06-05T20:31:11.000Z",
+            "id": "jn17l7j",
+            "author": "thom612",
+            "author_fullname": null,
+            "body": "I've given up a lot of my ambition for PBI in my workplace because the licensing is too onerous. Microsoft really needs to figure this out.",
+            "body_html": "\n      <p>\n      I've given up a lot of my ambition for PBI in my workplace because the licensing is too onerous. Microsoft really needs to figure this out.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_jn17l7j",
+            "parent_id": "t1_jmzqs86",
+            "permalink": "/r/PowerBI/comments/141clwh/comment/jn17l7j/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn188sk/",
+                  "created_utc": 1685997326,
+                  "created_at_iso": "2023-06-05T20:35:26.000Z",
+                  "id": "jn188sk",
+                  "author": "AlpacaDC",
+                  "author_fullname": null,
+                  "body": "This. Plus, recently I've been running into too many bugs and slowness overall in the platform. Honestly I want to use PBI only for small scale and quick reporting.",
+                  "body_html": "\n      <p>\n      This. Plus, recently I've been running into too many bugs and slowness overall in the platform. Honestly I want to use PBI only for small scale and quick reporting.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_jn188sk",
+                  "parent_id": "t1_jn17l7j",
+                  "permalink": "/r/PowerBI/comments/141clwh/comment/jn188sk/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "jn17l7j"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "jn17l7j"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "jn03jnn",
+      "author": "Jorennnnnn",
+      "author_fullname": null,
+      "body": "To keep it short and simple 2 options:\n\n Host your own tenant (which is free) and add the users as either guest users or create a dedicated account for them in your tenant with a pro license Pro is only 10$ per user per month and is required for every viewer.\n\n The not so commonly known but meant for your use case: Power BI Embedded. No per user license required and actually starts at around 800$ per month when using lower tier performance (A1 license billed per hour). This is scalable and can be paused outside of business hours to cut some cost.\n\n Down side is that it does not use the Power BI service for governance, but only for development and hosting the report. All reports need be consumed from your own portal/website where user access is handled seperately.\n\n Feel free to ask any questions you may have!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jn03jnn",
+      "created_utc": 1685980610,
+      "created_at_iso": "2023-06-05T15:56:50.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn03jnn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "jmzjwcn",
+      "author": "dkoucky",
+      "author_fullname": null,
+      "body": "I share a weekly report with multiple clients. I screen grab the important visuals and include it in the email then send them the most up to date .Pbix file for them to use on desktop.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzjwcn",
+      "created_utc": 1685972429,
+      "created_at_iso": "2023-06-05T13:40:29.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzjwcn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "jmzk082",
+      "author": "JoeDaddy81013",
+      "author_fullname": null,
+      "body": "Depending on the data sources, you could also export a template file to send to them and walk them through pathing all the data sources to their systems. You can use parameters to help quickly rewire things over.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jmzk082",
+      "created_utc": 1685972479,
+      "created_at_iso": "2023-06-05T13:41:19.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzk082/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "jn07bvq",
+      "author": "Drew707",
+      "author_fullname": null,
+      "body": "100% depends on what the client already has and what they want. I have some that already have their own environments which makes it easy: we just get an account and build it out on their tenant. Others may require full data managed services for which we would provide the tenant. We are getting closer to needing embedded which we would put on our site as an app, but right now we just make them accounts.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jn07bvq",
+      "created_utc": 1685982100,
+      "created_at_iso": "2023-06-05T16:21:40.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn07bvq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "jn35yl3",
+      "author": "AdditionalAd2129",
+      "author_fullname": null,
+      "body": "This might be what you are looking for: https://app.intelexos.com/",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jn35yl3",
+      "created_utc": 1686031441,
+      "created_at_iso": "2023-06-06T06:04:01.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn35yl3/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ju2282d",
+      "author": "teamsaasbox",
+      "author_fullname": null,
+      "body": "Hi,\n\n We host a PowerBI client portal service where your clients log in and see their list of visualizations as secure embeds, and you get the admin view where you define which dashboards/visualizations which clients would see.\n\n Clients get an account (there may be multiple users per org) and only see the dashboards you specified for them.\n\n You can also customize the looks to reflect your branding. If it sounds interesting feel free to reach out for a demo.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ju2282d",
+      "created_utc": 1690712584,
+      "created_at_iso": "2023-07-30T10:23:04.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/ju2282d/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "jn157zx",
+      "author": "MotleyCruising",
+      "author_fullname": null,
+      "body": "I\u2019ve heard of groups using DashboardFox.com. It\u2019s a start-up and offered its dashboard tool for $1,500 lifetime subscription. Seems like a decent alternative to PowerBI, especially for really small orgs. But you only hope it stays around 5 years from now.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_jn157zx",
+      "created_utc": 1685996147,
+      "created_at_iso": "2023-06-05T20:15:47.000Z",
+      "parent_id": "t3_141clwh",
+      "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn157zx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    }
+  ],
+  "post": {
+    "id": "141clwh",
+    "author": "JKPBI",
+    "author_fullname": "t2_ljm1mvbu",
+    "subreddit": "PowerBI",
+    "title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+    "downs": 0,
+    "name": "t3_141clwh",
+    "upvote_ratio": 0.95,
+    "ups": 18,
+    "selftext": "Hello! I'm sure this topic has been dealt with to death but I can't seem to hone my searches to give me the exact answer. Basically, I'm a mid-level PowerBI dev that's been chatting with a consultant friend of mine that's interested in possibly hiring me on to create small-data visualizations/dashboarding that will be shared to various clients. At my job I'm in PBI everyday, and I'm pushing things to the Service for our ~75 users.. but I don't actually juggle the licensing, and these are all internal stakeholders. I know I can tell my friend I can make whatever they might need in a dashboard, but I don't want to sell them on something that PowerBI can't do (or can't do reasonably). So my question is this: How does a small shop share client-facing visuals/dashboards with the current licensing system? Imagine we're starting from scratch and that I'm not too involved yet on the terminology around licensing. I would only need the clients to view/interact and export from the dashboards. We would be open to small cost for the clients' functionality.. or, if easier, to host separate site and use it as a client 'portal' for them to be embedded on. I just don't want to have to move to Tableau unless PBI licensing is cost-prohibitive to this type of client delivery.. but I know people have to be doing it already.. Thank you! Edit based on other replies: Imagine these are small small clients with no real data infrastructure. Small scale dashboards that don't require a lot of horsepower but do require not being publicly accessible. So we'd be handling all the \"hosting\", as it were, of data and the dashboards.",
+    "total_awards_received": 0,
+    "score": 18,
+    "created": 1685967235,
+    "num_comments": 28,
+    "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/what_is_the_actual_solution_for_a_consultant_to/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1685967235
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id f7806da53c0145bab4c7e00808097a86

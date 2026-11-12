@@ -1,0 +1,671 @@
+{
+  "success": true,
+  "credits_remaining": 209664,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p5z4u76",
+      "author": "willthms",
+      "author_fullname": null,
+      "body": "Dumb question - did any of the stakeholders who asked for the excel download ask for the dashboard?\n\n It helps me when I remind myself that I\u2019m not paid to make dashboards, but to improve the decision making process. Actions speak louder than words - leadership can ask for advanced / modern analytics all day, but if they don\u2019t use it then you have your answer.\n\n The dashboard helps with high level viz and maybe puts up some guard rails for the excel analysis (at least everyone is starting from the same data). Might be a chance to link the data through PowerQuery and show them the refresh button.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5z4u76",
+      "created_utc": 1787737265,
+      "created_at_iso": "2026-08-26T09:41:05.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5z4u76/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zyxoi/",
+            "created_utc": 1787748564,
+            "created_at_iso": "2026-08-26T12:49:24.000Z",
+            "id": "p5zyxoi",
+            "author": "rwilcox",
+            "author_fullname": null,
+            "body": "This is a good question.\n\n It sounds like OP did their homework, mostly. Six discovery meetings, hopefully lots of user feedback before sweating the pixels.\n\n Was it 86-ed by a HIghly Paid Person (who didn\u2019t attend any of the meetings)?\n\n If this is a HIPPO swooping in, dumping poop and swooping out, maybe OP can save it. Maybe with some clever assurances, a few months and some political/morale rebuilding it can go to, \u201cWell everyone in the X department loves it, and Brenda has her Excel output [for the execs, or because she\u2019ll dig her heels in no matter what or maybe she really does need it with a niche use case]\u201d",
+            "body_html": "\n      <p>\n      This is a good question.\n    </p><p>\n      It sounds like OP did their homework, mostly. Six discovery meetings, hopefully lots of user feedback before sweating the pixels.\n    </p><p>\n      <em>Was</em> it 86-ed by a HIghly Paid Person (who didn\u2019t attend any of the meetings)?\n    </p><p>\n      If this is a HIPPO swooping in, dumping poop and swooping out, maybe OP can save it. Maybe with some clever assurances, a few months and some political/morale rebuilding it can go to, \u201cWell everyone in the X department loves it, and Brenda has her Excel output [for the execs, or because she\u2019ll dig her heels in no matter what or maybe she really does need it with a niche use case]\u201d\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p5zyxoi",
+            "parent_id": "t1_p5z4u76",
+            "permalink": "/r/dataanalytics/comments/1vyqm86/comment/p5zyxoi/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p66gk8w/",
+                  "created_utc": 1787822849,
+                  "created_at_iso": "2026-08-27T09:27:29.000Z",
+                  "id": "p66gk8w",
+                  "author": "Efficient_Cloud5021",
+                  "author_fullname": null,
+                  "body": "This is the most painful part: they were in the discovery meetings! We spent hours mapping out how the drill-downs would replace their manual pivot tables, and they nodded along the entire time.\n\n I think you are right about the guardrails, though. Even if they dump it to Excel, they are at least pulling from a clean, centralized data model now instead of chaotic local files. I might just have to swallow my pride, set up a PowerQuery connection for them, and accept that I improved the backend, even if the frontend adoption failed.",
+                  "body_html": "\n      <p>\n      This is the most painful part: they <em>were</em> in the discovery meetings! We spent hours mapping out how the drill-downs would replace their manual pivot tables, and they nodded along the entire time.\n    </p><p>\n      I think you are right about the guardrails, though. Even if they dump it to Excel, they are at least pulling from a clean, centralized data model now instead of chaotic local files. I might just have to swallow my pride, set up a PowerQuery connection for them, and accept that I improved the backend, even if the frontend adoption failed.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p66gk8w",
+                  "parent_id": "t1_p5zyxoi",
+                  "permalink": "/r/dataanalytics/comments/1vyqm86/comment/p66gk8w/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p5zyxoi"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p6haa04/",
+            "created_utc": 1787946257,
+            "created_at_iso": "2026-08-28T19:44:17.000Z",
+            "id": "p6haa04",
+            "author": "el_extrano",
+            "author_fullname": null,
+            "body": "I think there's a sort of lack of empathy going on here, too. Presumably, one gets into data analytics because they like tinkering with data and drawing conclusions with it. But by the logic in the OP, they would deny their users to ability to do the same thing. It's worth keeping in mind, your users are may be technical too, just in a different field.\n\n I'm an engineer and a consumer of data. My boss will ask me a question that hasn't been asked before, and it's my job to decide what data analysis to do to draw my conclusions and report back. I've had IT deny my requests for read-only access to the BI semantic model needed for Power Query, saying the BI reports were created as a \"single source of truth\" and I should just use that. If there is an export to excel, then I use that, lose any benefit from the database, but at least have my results in a couple hours. If there is no way to export to excel, I just submit a ticket for IT to do my job instead and add the analysis to the BI report, and my boss can have the results in 6 months instead of today.",
+            "body_html": "\n      <p>\n      I think there's a sort of lack of empathy going on here, too. Presumably, one gets into data analytics because they like tinkering with data and drawing conclusions with it. But by the logic in the OP, they would deny their users to ability to do the same thing. It's worth keeping in mind, your users are may be technical too, just in a different field.\n    </p><p>\n      I'm an engineer and a consumer of data. My boss will ask me a question that hasn't been asked before, and it's my job to decide what data analysis to do to draw my conclusions and report back. I've had IT deny my requests for read-only access to the BI semantic model needed for Power Query, saying the BI reports were created as a \"single source of truth\" and I should just use that. If there is an export to excel, then I use that, lose any benefit from the database, but at least have my results in a couple hours. If there is no way to export to excel, I just submit a ticket for IT to do my job instead and add the analysis to the BI report, and my boss can have the results in 6 months instead of today.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p6haa04",
+            "parent_id": "t1_p5z4u76",
+            "permalink": "/r/dataanalytics/comments/1vyqm86/comment/p6haa04/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p5zyxoi"
+        }
+      },
+      "ups": 15,
+      "downs": 0,
+      "score": 15
+    },
+    {
+      "id": "p601b8q",
+      "author": "Lady-Data-Scientist",
+      "author_fullname": null,
+      "body": "This might blow some minds, but I\u2019ve built dashboards with the goal of them being able to export to Excel. The visuals made it easy for them to spot trends. The filters meant they could drill down to exactly what they needed. And there was a data table so they could export the filtered data to Excel and explore further, or use an AI chatbot to explore further.\n\n And I\u2019ve exported to Excel (or a CSV) from dashboards created by my colleagues! It\u2019s ok if these tools are used together if you think through all the use cases.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p601b8q",
+      "created_utc": 1787749266,
+      "created_at_iso": "2026-08-26T13:01:06.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p601b8q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhYW5hbHl0aWNzL3QzXzF2eXFtODY_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WldVMk4yUTJNMlFzT2pveE9tUXhPblF4WDNBMk1ERmlPSEU9Iiwic3VicmVkZGl0IjoiZGF0YWFuYWx5dGljcyIsInBvc3RJZCI6IjF2eXFtODYiLCJwYXJlbnRUaGluZ0lkIjoidDFfcDYwMWI4cSJ9"
+        }
+      },
+      "ups": 11,
+      "downs": 0,
+      "score": 11
+    },
+    {
+      "id": "p61lgn3",
+      "author": "steeelez",
+      "author_fullname": null,
+      "body": "This is a natural growing pain in the life of a data and analytics person. \u201cI have so much power in being able to reliably and reproducibly manipulate data! What I build can replace Excel! Excel is so prone to errors and mistakes and I can engineer all that away!\u201d\n\n If I had $5 for every time I\u2019ve heard this gospel (and yea, I once preached it) I could spend a nice day in a pretty nice spa. It takes 5-10 years to fully give up, and that\u2019s not a posture of despair (even with all the sins of spreadsheet hell you wind up observing over those years). It\u2019s one of releasing arrogance, recognizing how business-oriented \u201cdata guys\u201d (or gals) across nearly every part of the business think, explore, communicate, and build things, and recognizing that different tools do different jobs.\n\n A loose analogy is, highly structured data model with programmatically defined metrics ~ printing press; Excel that lets people get their dirty fingerprints all over the raw numbers and come up with novel analyses on the fly ~ pencil. The way people feel when they have \u201ccontrol\u201d over the data is like letting them sit behind the wheel of a car. Would the train get them where they need to go faster, with less chance of getting lost? Maybe. Will giving them their \u201cexport to excel\u201d data help them digest and metabolize the data you\u2019re trying to give them better? Most places, probably, yes. Give up a little control.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p61lgn3",
+      "created_utc": 1787763965,
+      "created_at_iso": "2026-08-26T17:06:05.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p61lgn3/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "p62ypjp",
+      "author": "white_tiger_dream",
+      "author_fullname": null,
+      "body": "I feel this in my soul but I just want to add to it. I\u2019m looking for a new job now and I\u2019m VERY VERY good at Excel. But I\u2019m a senior level analyst or mid-level anything-else-data-related (engineer, architect, etc.)\n\n I have had sooooo many interviews where I want to highlight my Excel skills because based on how they describe the job I KNOW they are doing 70% of BI and analysis in Excel. Excel isn\u2019t \u201csexy\u201d so they don\u2019t want to hear about it.\n\n \u201cCan you build stuff with AI?\u201d \u201cCan you mOdErNiZe eNTerPrIsE rEpoRtInG?\u201d Bullshit, your transportation, cold storage, or specialty manufacturing company is not about to become a leader in AI for the packaged foods industry. I know y\u2019all are out here downloading it all into Excel and panicking when you max out the rows. I\u2019m actually ok with helping Brenda highlight her pivot table, but like, just be honest about it??? Why the song and dance. I\u2019m just going to start telling them macros are AI \ud83d\ude44",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p62ypjp",
+      "created_utc": 1787776519,
+      "created_at_iso": "2026-08-26T20:35:19.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p62ypjp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "p5zekjb",
+      "author": "Otherwise-Fun2014",
+      "author_fullname": null,
+      "body": "I was once asked to make the dashboard A4 compatible (views partitioned , sized and formatted so that download as PDF won't cut out any section ) so that the secratary can print it for the CxO.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5zekjb",
+      "created_utc": 1787741552,
+      "created_at_iso": "2026-08-26T10:52:32.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zekjb/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p6gzhqj/",
+            "created_utc": 1787943361,
+            "created_at_iso": "2026-08-28T18:56:01.000Z",
+            "id": "p6gzhqj",
+            "author": "jervis-bay",
+            "author_fullname": null,
+            "body": "I once spent weeks to build a dashboard.\nOnly reaction of my back-then-boss: \"This isn't mobile compatible!\".\nI was so shellshocked at that moment that I didn't respond and just silently stared. What I should have told him was to maybe spend more time in the office with his PC, and less time at the tennis club with his mobile. :-/",
+            "body_html": "\n      <p>\n      I once spent weeks to build a dashboard.<br>Only reaction of my back-then-boss: \"This isn't mobile compatible!\".<br>I was so shellshocked at that moment that I didn't respond and just silently stared. What I should have told him was to maybe spend more time in the office with his PC, and less time at the tennis club with his mobile. :-/\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": true,
+            "name": "t1_p6gzhqj",
+            "parent_id": "t1_p5zekjb",
+            "permalink": "/r/dataanalytics/comments/1vyqm86/comment/p6gzhqj/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p5zekjb"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "p5yur0e",
+      "author": "AlexanderDoak",
+      "author_fullname": null,
+      "body": "I would never attempt to rebuild Exel in a web UI. Keep it very, very basic. The only time I'd go beyond that is when the size of the datasets go beyond what Excel can handle.\n\n But, if the client requests it and pays for it... sure, whatever.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5yur0e",
+      "created_utc": 1787732254,
+      "created_at_iso": "2026-08-26T08:17:34.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5yur0e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "p5zedi9",
+      "author": "ultimatelag",
+      "author_fullname": null,
+      "body": "Classic. Yep back in the day I was like you, get the dash ready.. and they discarded it for excel\n\n Nowadays I know all they want is excel so I deliver that. If they want more, they need to have good reasons. My managers also know this but they insist going the longer route with BI cause it means more work and more billable hours.\n\n But here\u2019s a great tip, ditch BI platforms and use Claude Code to build data analytics visuals in html. Super easy to share and no overhead, and gives that interaction and nice visualisation that stakeholders crave",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5zedi9",
+      "created_utc": 1787741474,
+      "created_at_iso": "2026-08-26T10:51:14.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zedi9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "p5yz8t8",
+      "author": "a_human_oxymoron",
+      "author_fullname": null,
+      "body": "I think there might be an actual need for the exports IF they're looking for action points (depends on what you're showing). For example, I'd love to see which salespeople aren't performing and if there are patterns. But also because it's my job too and is well-versed in Excel but if they're not, I'd be annoyed too. Haha",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5yz8t8",
+      "created_utc": 1787734516,
+      "created_at_iso": "2026-08-26T08:55:16.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5yz8t8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p5zh5p8",
+      "author": "ravinfp",
+      "author_fullname": null,
+      "body": "I\u2019m going to answer this from user pov.. I had a short stint as an FP&A analyst.\n\n My boss was the type who ask for all these complicated dashboard from the Data Analytics/BI team. And it\u2019s definitely useful when we want to figure out what story or angle we want to work on.\n\n But lots of time we still need the raw data for Excel because:\n- we need a more detailed analysis. Plus sometimes the board ask for something that is unusual. Unfortunately the dashboard didn\u2019t have that specific random visualization or table yet\n- we tried to just copy the dashboard and paste it to the deck for board meetings. But then the VP or CFO request stuffs like, change the color or the font. Sometimes even adjust the number manually. So it\u2019s just easier to have a separate manual excel where we can create template for pivot etc, but still allow us to format it just in case these requests happened.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5zh5p8",
+      "created_utc": 1787742577,
+      "created_at_iso": "2026-08-26T11:09:37.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zh5p8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p5zu1at",
+      "author": "FIBO-BQ",
+      "author_fullname": null,
+      "body": "Embrace that excel will never die. Give in",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5zu1at",
+      "created_utc": 1787747061,
+      "created_at_iso": "2026-08-26T12:24:21.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zu1at/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p5zyngb",
+      "author": "AnnualReview2383",
+      "author_fullname": null,
+      "body": "It sounds like you didn't understand the requirements and user behavior before starting to build",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5zyngb",
+      "created_utc": 1787748479,
+      "created_at_iso": "2026-08-26T12:47:59.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zyngb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p607zv7",
+      "author": "DJiamuzak",
+      "author_fullname": null,
+      "body": "This isn\u2019t about you missing the mark. This is about seeing the data and wanting to dig into it more. Our dashboards are for high level but often the decisions need to be made on subsets of data.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p607zv7",
+      "created_utc": 1787751186,
+      "created_at_iso": "2026-08-26T13:33:06.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p607zv7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p626sfl",
+      "author": "jenmoocat",
+      "author_fullname": null,
+      "body": "I've been in the analytics world for decades and actually believe that most dashboards aren't helpful.\nThey are generally designed to cover/display the general things that most people need.\nThey are either designed as a minimum common denominator type thing or are overly complicated because every single person's need was programmed into it.\n\n Remember that most people will be happy for the dashboard.\n\n But there will be people, like myself, who always use the \"export to Excel\" button.\nThis is because I need to be able to quickly manipulate the data in the way that is useful for me - which is much easier than asking for a newly design dashboard tab. Because I am usually more sophisticated than most users and I need to see more than just the basics.\n\n I also want to share that I dislike the idea that \"modern analytics\" and spreadsheets are somehow unrelated.\nWhat if I want to do a quick regression to see if the dashboard data is correlated to other things?\nWhat if I want to do a time series to see how things change over time and the dashboard is only a point-in-time?\nWhat if the dashboard graphics are so complicated with so many things added that it is hard to focus on the thing that is most important to me?\n\n These might not be things that everyone wants to do, but to deride my need to do these things, saying that the dashboard is the end-all and be-all is pretty close-minded.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p626sfl",
+      "created_utc": 1787769318,
+      "created_at_iso": "2026-08-26T18:35:18.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p626sfl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p62vo6p",
+      "author": "CoffeeThenColumns",
+      "author_fullname": null,
+      "body": "I might be Brenda. Just kidding (hopefully) but this is something that I have dealt with within my role and wanted to say that sometimes questions are asked where that raw data is incredibly beneficial to what problem we are trying to solve. Also, sometimes you just have people who expect things to be presented in a particular way that there is no pleasing other than just doing what they're used to.\n\n Either way it sucks and sorry you had to experience it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p62vo6p",
+      "created_utc": 1787775739,
+      "created_at_iso": "2026-08-26T20:22:19.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p62vo6p/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p64f8qt",
+      "author": "nyquant",
+      "author_fullname": null,
+      "body": "Actually download to excel is quite useful if one wants to create a snapshot or manipulate insights that need to go into a presentation, it doesn\u2019t replace the dashboard. Take it as a challenge and create a fancy exporter that can do more than just download as csv, and the users will love your app even more.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p64f8qt",
+      "created_utc": 1787792073,
+      "created_at_iso": "2026-08-27T00:54:33.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p64f8qt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p64kiu7",
+      "author": "Prudent-Elk-2845",
+      "author_fullname": null,
+      "body": "Always have an export to excel button\n\n Even better, focus on the excel-add in experience in the semantic model\n\n The dashboard is for the mid level execs that don\u2019t know excel",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p64kiu7",
+      "created_utc": 1787793799,
+      "created_at_iso": "2026-08-27T01:23:19.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p64kiu7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p64x8qt",
+      "author": "Vycaus",
+      "author_fullname": null,
+      "body": "Honestly? Manipulation of data to put into custom need fits is what I consider mandatory, regardless of how functional and pretty the dashboard is. I will almost always have a need take a data models output and pull it into Excel for either work ook development purposes or back ground detail analysis/validation.\n\n To me, dashboards are a window to work product. Not the work product.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p64x8qt",
+      "created_utc": 1787798031,
+      "created_at_iso": "2026-08-27T02:33:51.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p64x8qt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p5z7ocz",
+      "author": "BarryDeCicco",
+      "author_fullname": null,
+      "body": "There is a huge cohort of people whose native language is Excel.\n\n For those people, ask up front and work in Excel.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p5z7ocz",
+      "created_utc": 1787738589,
+      "created_at_iso": "2026-08-26T10:03:09.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5z7ocz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p60cxhq",
+      "author": "Additional_Future_47",
+      "author_fullname": null,
+      "body": "so Brenda can make her own pivot tables and highlight the cells in yellow.\n\n My follow-up question would be to ask what pivot tables she makes and what criteria she uses to highlight specific things. Because making different aggregates of the same data and highlighting stuff is something a dashboard can do aswell.\n\n If it turns out the criteria for the aggregates or highlights are rather \"intuitive\" and can't be formalized then that is interesting information aswell. It would imply Brenda is the (informal?) decision maker and not the stakeholder.\n\n Not sure how Brenda would feel about being taken out of the loop.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p60cxhq",
+      "created_utc": 1787752554,
+      "created_at_iso": "2026-08-26T13:55:54.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p60cxhq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p61x9jb",
+      "author": "GAZ082",
+      "author_fullname": null,
+      "body": "Welcome to the real life.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p61x9jb",
+      "created_utc": 1787766912,
+      "created_at_iso": "2026-08-26T17:55:12.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p61x9jb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p65d9vl",
+      "author": "irisgenx",
+      "author_fullname": null,
+      "body": "I completely see your point, but I've learnt to build out an \"Export tab\" - just a simple table with slicers so the user can get their specific slice of the data. It enables business users to quote your analysis to other teams over email, maybe make a point/argue with evidence without having to run into PBI licensing walls. Not everyone in the company will have a Pro license to come look at your report.\n\n So I think enabling your audience, will empower you as an analyst. I'd hate to have spend all that effort to hear Kevin from finance tell someone that the dashboard \"looks great, but you can't really get data from it, so I don't use it\" because Kevin only knows how to refresh a pre-built pivot table.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p65d9vl",
+      "created_utc": 1787804112,
+      "created_at_iso": "2026-08-27T04:15:12.000Z",
+      "parent_id": "t3_1vyqm86",
+      "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p65d9vl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1vyqm86",
+    "author": "Efficient_Cloud5021",
+    "author_fullname": "t2_2lcg8zy69z",
+    "subreddit": "dataanalytics",
+    "title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+    "downs": 0,
+    "name": "t3_1vyqm86",
+    "upvote_ratio": 0.9617224880382775,
+    "ups": 193,
+    "selftext": "I just need to vent for a minute because I feel like I am losing my mind. I spent the last three weeks absolutely breaking my back over a dashboard for a major stakeholder request. I fully automated the data models and refresh schedules, complete with dynamic cross-filtering, drill-downs that update in milliseconds, and a spotless data model so that absolutely nobody would ever have to copy-paste numbers manually again. I was genuinely proud of the architecture. Cue the demo meeting this week. I am five minutes into presenting, walking them through how the interactive parameters work, and the lead stakeholder just interrupts me. \"Wow, this looks really pretty. But where is the button to export all this to Excel? We usually just pull the raw data so Brenda can make her own pivot tables and highlight the cells in yellow.\" I genuinely felt my soul leave my body. Why did we even have six discovery meetings? Why did I spend days optimizing the refresh schedules and cleaning up the logic? I essentially just spent almost a month building the world\u2019s most complicated, over-engineered CSV downloader just so they can continue doing things the exact same way they did ten years ago. It is so incredibly demoralizing to build a high-performance engine just to watch someone use it to tow a horse buggy. For those of you who have been in the trenches longer than me: Do you even bother trying to train stakeholders on how to use interactive BI tools, or do you just give up and build the \"Export to Excel\" button on Day 1? How do you bridge the gap when leadership asks for \"modern analytics\" but culturally refuses to leave their 2003 spreadsheets? Would love to hear your coping mechanisms and war stories.",
+    "total_awards_received": 0,
+    "score": 193,
+    "created": 1787731152,
+    "num_comments": 57,
+    "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/spent_3_weeks_building_a_fully_automated/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1787731152
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhYW5hbHl0aWNzL3QzXzF2eXFtODY_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTIxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk0yUm1ZV0U1WTJVc09qb3dPbVY0T2loelBsd2lVVHBpSlc4c2J5ZHJTekU1T2prM2FrQXhTakErWUVZdFVDSWxleTU3UFdkTlR6bDFTUzlDYzBZbU5UeGJQaU5ZTlY5aFlDeFZSVW9pU3pWb01VWWhKQ1ZGYUQ1UEptWmJMbmhPWEE9PSIsInN1YnJlZGRpdCI6ImRhdGFhbmFseXRpY3MiLCJwb3N0SWQiOiIxdnlxbTg2IiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id 303303496ab6469ab822f7fb31a42e3b

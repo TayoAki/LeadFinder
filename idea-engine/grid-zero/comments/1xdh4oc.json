@@ -1,0 +1,690 @@
+{
+  "success": true,
+  "credits_remaining": 209751,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19rjfe879wsed",
+      "author": "negaoazul",
+      "author_fullname": null,
+      "body": "None. If your issue with pq is the refresh, Excel is not the tool you need.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfe879wsed",
+      "created_utc": 1792769332,
+      "created_at_iso": "2026-10-23T15:28:52.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfe879wsed/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfwriae0n9/",
+            "created_utc": 1792770024,
+            "created_at_iso": "2026-10-23T15:40:24.000Z",
+            "id": "19rjfwriae0n9",
+            "author": "omgFWTbear",
+            "author_fullname": null,
+            "body": "I\u2019m usually not a fan of being critical of employees, but if \u201cdata > refresh all\u201d and watch for the query running \u2026 to disappear is beyond the employees \u2026\n\n Something something, a poor craftsman blames their tools.\n\n (I also carefully say, there\u2019s a lot of Excel elitism that yeah, we can talk about proper calibration, but this requires no \u201cunder the hood\u201d understanding in would be very similar in just about any CRM/ERP/software, beyond something that \u201cjust locks\u201d until the update loads which is the same problem in a different dress)",
+            "body_html": "\n      <p>\n      I\u2019m usually not a fan of being critical of employees, but if \u201cdata &gt; refresh all\u201d and watch for the query running \u2026 to disappear is beyond the employees \u2026\n    </p><p>\n      Something something, a poor craftsman blames their tools.\n    </p><p>\n      (I also carefully say, there\u2019s a lot of Excel elitism that yeah, we can talk about proper calibration, but this requires no \u201cunder the hood\u201d understanding in would be very similar in just about any CRM/ERP/software, beyond something that \u201cjust locks\u201d until the update loads which is the same problem in a different dress)\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rjfwriae0n9",
+            "parent_id": "t1_19rjfe879wsed",
+            "permalink": "/r/excel/comments/1xdh4oc/comment/19rjfwriae0n9/",
+            "ups": 19,
+            "downs": 0,
+            "score": 19,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjgyzxdwzib/",
+                  "created_utc": 1792771453,
+                  "created_at_iso": "2026-10-23T16:04:13.000Z",
+                  "id": "19rjgyzxdwzib",
+                  "author": "daheff_irl",
+                  "author_fullname": null,
+                  "body": "You can get PQ to drop a timestamp on updates surely? People can check that to make sure their data isn't stale",
+                  "body_html": "\n      <p>\n      You can get PQ to drop a timestamp on updates surely? People can check that to make sure their data isn't stale\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rjgyzxdwzib",
+                  "parent_id": "t1_19rjfwriae0n9",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rjgyzxdwzib/",
+                  "ups": 14,
+                  "downs": 0,
+                  "score": 14,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTAsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5HRTVNMlZsT1RNc09qb3pPbVF4T25ReFh6RTVjbXBuZVhwNFpIZDZhV0k9Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cmpneXp4ZHd6aWIifQ"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rl5w8d3qdac/",
+                  "created_utc": 1792853407,
+                  "created_at_iso": "2026-10-24T14:50:07.000Z",
+                  "id": "19rl5w8d3qdac",
+                  "author": "Plus-Possibility-220",
+                  "author_fullname": null,
+                  "body": "Or go one beyond telling people to \"data - refresh all\". Record a macro refreshing data and attach that to a big blue button with \"PRESS ME\" as the text.",
+                  "body_html": "\n      <p>\n      Or go one beyond telling people to \"data  - refresh all\". Record a macro refreshing data and attach that to a big blue button with \"PRESS ME\" as the text.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rl5w8d3qdac",
+                  "parent_id": "t1_19rjfwriae0n9",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rl5w8d3qdac/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTAsMCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNll6QXhNelU1WkRjc09qb3pPbVF4T25ReFh6RTVjbXcxZHpoa00zRmtZV009Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cmw1dzhkM3FkYWMifQ"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjh94r3je0z/",
+                  "created_utc": 1792771832,
+                  "created_at_iso": "2026-10-23T16:10:32.000Z",
+                  "id": "19rjh94r3je0z",
+                  "author": "talltime",
+                  "author_fullname": null,
+                  "body": "Could easily VBA the workbook to not open/show sheets until the refresh is successful, or ensure the pricing data is not more than x hours/days old.",
+                  "body_html": "\n      <p>\n      Could easily VBA the workbook to not open/show sheets until the refresh is successful, or ensure the pricing data is not more than x hours/days old.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rjh94r3je0z",
+                  "parent_id": "t1_19rjfwriae0n9",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rjh94r3je0z/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "19rjgyzxdwzib"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19rjgyzxdwzib"
+        }
+      },
+      "ups": 104,
+      "downs": 0,
+      "score": 104
+    },
+    {
+      "id": "19rjfif01hg3p",
+      "author": "MsPandaLady",
+      "author_fullname": null,
+      "body": "There is no such thing as fool proof. Fools continuously evolve",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfif01hg3p",
+      "created_utc": 1792769488,
+      "created_at_iso": "2026-10-23T15:31:28.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfif01hg3p/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjgpli0wuys/",
+            "created_utc": 1792771102,
+            "created_at_iso": "2026-10-23T15:58:22.000Z",
+            "id": "19rjgpli0wuys",
+            "author": "diegojones4",
+            "author_fullname": null,
+            "body": "We've moved a lot of stuff to sharepoint. I'm continuously amazed at how people can break stuff",
+            "body_html": "\n      <p>\n      We've moved a lot of stuff to sharepoint.  I'm continuously amazed at how people can break stuff\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rjgpli0wuys",
+            "parent_id": "t1_19rjfif01hg3p",
+            "permalink": "/r/excel/comments/1xdh4oc/comment/19rjgpli0wuys/",
+            "ups": 10,
+            "downs": 0,
+            "score": 10,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rji0yh351ab/",
+                  "created_utc": 1792772871,
+                  "created_at_iso": "2026-10-23T16:27:51.000Z",
+                  "id": "19rji0yh351ab",
+                  "author": "mcpasty666",
+                  "author_fullname": null,
+                  "body": "I'm amazed at how easily I was able to break SharePoint, haha.\n\n We have books that pull from several sources with PQ to generate results and formated export files. Put the latest file in the designated folder, hit refresh, voila. Worked great on network drives.\n\n Operation starts pushing SharePoint, so I rebuilt the books to start looking at folders in the cloud instead. Not long after, we start randomly getting old values in our exports, even after replacing the original files. Investigate, turns out the problem is it takes time for those new files to propagate in SharePoint cloud, even though Windows explorer shows them there and synced. It's not a long delay, like a minute or two, but long enough for someone to upload the new files and click refresh before the new data has propagated. Added timestamps to cover pages to help, but ultimately switched back to network when it kept taking up too much time to reconcile the accidents",
+                  "body_html": "\n      <p>\n      I'm amazed at how easily I was able to break SharePoint, haha.\n    </p><p>\n      We have books that pull from several sources with PQ to generate results and formated export files. Put the latest file in the designated folder, hit refresh, voila. Worked great on network drives.\n    </p><p>\n      Operation starts pushing SharePoint, so I rebuilt the books to start looking at folders in the cloud instead. Not long after, we start randomly getting old values in our exports, even after replacing the original files. Investigate, turns out the problem is it takes time for those new files to propagate in SharePoint cloud, even though Windows explorer shows them there and synced. It's not a long delay, like a minute or two, but long enough for someone to upload the new files and click refresh before the new data has propagated. Added timestamps to cover pages to help, but ultimately switched back to network when it kept taking up too much time to reconcile the accidents\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rji0yh351ab",
+                  "parent_id": "t1_19rjgpli0wuys",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rji0yh351ab/",
+                  "ups": 8,
+                  "downs": 0,
+                  "score": 8,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTEsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNll6ZzJaREJqTmpFc09qb3pPbVF4T25ReFh6RTVjbXBwTUhsb016VXhZV0k9Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cmppMHloMzUxYWIifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "19rji0yh351ab"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TVRGbE5qZ3pNRFVzT2pveE9tVjRPaXhYVEdOSGRIdDdlMEU9Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cmpmaWYwMWhnM3AifQ"
+        }
+      },
+      "ups": 66,
+      "downs": 0,
+      "score": 66
+    },
+    {
+      "id": "19rjfce6m9qkl",
+      "author": "ProspectiveWhale",
+      "author_fullname": null,
+      "body": "No method is ever truly foolproof.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfce6m9qkl",
+      "created_utc": 1792769263,
+      "created_at_iso": "2026-10-23T15:27:43.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfce6m9qkl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 23,
+      "downs": 0,
+      "score": 23
+    },
+    {
+      "id": "19rjfgebttygx",
+      "author": "Harrold_Potterson",
+      "author_fullname": null,
+      "body": "I just don\u2019t think excel is a good tool for this. Its not great as a database.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfgebttygx",
+      "created_utc": 1792769413,
+      "created_at_iso": "2026-10-23T15:30:13.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfgebttygx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTMiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WWpJM05Ua3dORFVzT2pveE9tUXhPblF4WHpFNWNtcG1aMlZpZEhSNVozZz0iLCJzdWJyZWRkaXQiOiJleGNlbCIsInBvc3RJZCI6IjF4ZGg0b2MiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlyamZnZWJ0dHlneCJ9"
+        }
+      },
+      "ups": 23,
+      "downs": 0,
+      "score": 23
+    },
+    {
+      "id": "19rjfv2awpebo",
+      "author": "firejuggler74",
+      "author_fullname": null,
+      "body": "You need a erp system.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfv2awpebo",
+      "created_utc": 1792769961,
+      "created_at_iso": "2026-10-23T15:39:21.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfv2awpebo/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjhq7g8r2df/",
+            "created_utc": 1792772470,
+            "created_at_iso": "2026-10-23T16:21:10.000Z",
+            "id": "19rjhq7g8r2df",
+            "author": "MiddleAgeWeirdoMeep",
+            "author_fullname": null,
+            "body": "I have an ERP system. Thing is, no one wants to work in it. They prefer/need excel of ad hoc calculations.",
+            "body_html": "\n      <p>\n      I have an ERP system. Thing is, no one wants to work in it. They prefer/need excel of ad hoc calculations.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rjhq7g8r2df",
+            "parent_id": "t1_19rjfv2awpebo",
+            "permalink": "/r/excel/comments/1xdh4oc/comment/19rjhq7g8r2df/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rk3li9p7we9/",
+                  "created_utc": 1792801889,
+                  "created_at_iso": "2026-10-24T00:31:29.000Z",
+                  "id": "19rk3li9p7we9",
+                  "author": "firejuggler74",
+                  "author_fullname": null,
+                  "body": "Management needs to either tell them to use it, or if its not doing what people need to do because it can't you might need to upgrade.",
+                  "body_html": "\n      <p>\n      Management needs to either tell them to use it, or if its not doing what people need to do because it can't you might need to upgrade.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rk3li9p7we9",
+                  "parent_id": "t1_19rjhq7g8r2df",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rk3li9p7we9/",
+                  "ups": 7,
+                  "downs": 0,
+                  "score": 7,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rpq9qsi8xc1/",
+                  "created_utc": 1793074527,
+                  "created_at_iso": "2026-10-27T04:15:27.000Z",
+                  "id": "19rpq9qsi8xc1",
+                  "author": "gellyrolejazz",
+                  "author_fullname": null,
+                  "body": "I feel like it's not that hard to just pull the excel data off whatever web page the erp is hosted on. If they can't figure out how to go power query to web import maybe they shouldn't use Excel and they should just use the erp.",
+                  "body_html": "\n      <p>\n      I feel like it's not that hard to just pull the excel data off whatever web page the erp is hosted on. If they can't figure out how to go power query to web import maybe they shouldn't use Excel and they should just use the erp.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rpq9qsi8xc1",
+                  "parent_id": "t1_19rjhq7g8r2df",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rpq9qsi8xc1/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTQsMCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5tWm1ZMlZrTnpJc09qb3pPbVF4T25ReFh6RTVjbkJ4T1hGemFUaDRZekU9Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cnBxOXFzaTh4YzEifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UG9zaXRpb25PZmZzZXQ9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTQsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNVEUxT1RJMU5qWXNPam95T21WNE9peFhUV296WEhZb2RWSTZLVG9xVUdWbFVGeHpVQT09Iiwic3VicmVkZGl0IjoiZXhjZWwiLCJwb3N0SWQiOiIxeGRoNG9jIiwicGFyZW50VGhpbmdJZCI6InQxXzE5cmpocTdnOHIyZGYifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19rpq9qsi8xc1"
+        }
+      },
+      "ups": 13,
+      "downs": 0,
+      "score": 13
+    },
+    {
+      "id": "19rjg6hwwd29v",
+      "author": "bradland",
+      "author_fullname": null,
+      "body": "The tool for this within Excel is a Power Query linked to a canonical source in SharePoint/OneDrive. Using a SharePoint/OneDrive URL eliminates the risk of failed updates based on a user's working location or consistency of local sync (which can be sketchy and/or slow).\n\n Refresh is part of Power Query's core workflow though. You can't really eliminate it. Excel provides tools for linking data between worksheets, but there is a trade-off to be make:\n\n Workbook Links: Refresh in real-time as updates are made to the source workbook, but it is a requirement that the source workbook remain open. Otherwise, a manual refresh is required.\n\n Power Query: Provides a mechanism to fetch, transform, and load data from another workbook, but must always (see caveat below) be manually refreshed.\n\n The one caveat to the manual PQ refresh is that you can trigger a refresh with VBA Macros + Workbook Events. I would strongly discourage this for anything more than the most conservative refresh approaches though.\n\n For example, if you hooked the Workbook_Open event, you could trigger a PQ refresh of the query any time someone opens the workbook. If users keep it open, it won't refresh though.\n\n Again, I would strongly discourage attempting to force PQ solutions into any kind of \"real-time update\" workflow. If you need real-time updates and you want to use Excel, then Workbook Links are your solution, and that introduces the requirement to keep the pricing workbook open. There is no way around that.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjg6hwwd29v",
+      "created_utc": 1792770388,
+      "created_at_iso": "2026-10-23T15:46:28.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjg6hwwd29v/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTUiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TWpnME16Y3laVEVzT2pveE9tUXhPblF4WHpFNWNtcG5ObWgzZDJReU9YWT0iLCJzdWJyZWRkaXQiOiJleGNlbCIsInBvc3RJZCI6IjF4ZGg0b2MiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlyamc2aHd3ZDI5diJ9"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19rjvtajfe20z",
+      "author": "ehansalytics",
+      "author_fullname": null,
+      "body": "I recommend power query.\n\n What I do is add a refresh time in power query that is just DateTime.LocalNow() and that loads into a sheet. If you want it bullet proof make it a column in the price table. Same value every record. If it\u2019s its own table it could succeed and the price table fail.\n\n Then either create a warning formula or make all of your key formulas dependent upon the refresh being < X hours or days old.\n\n If it\u2019s a column just pull the min or max to a single cell then do the math against NOW() for other formulas to pull from",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjvtajfe20z",
+      "created_utc": 1792791418,
+      "created_at_iso": "2026-10-23T21:36:58.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjvtajfe20z/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19rjfwi31xg3k",
+      "author": "ISEEBLACKPEOPLE",
+      "author_fullname": null,
+      "body": "You likely only want to store the data in excel and then dashboard it elsewhere. Users only use the dashboard to query or filter the data and never actually touch the data.\n\n If you can't pay for PowerBI, use AI to vibe code the dashboard imo.\n\n That said, I love the fools continue to evolve comment. There's no stopping them",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjfwi31xg3k",
+      "created_utc": 1792770014,
+      "created_at_iso": "2026-10-23T15:40:14.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfwi31xg3k/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTciLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WlRBNE0yUXdZamNzT2pveE9tUXhPblF4WHpFNWNtcG1kMmt6TVhobk0ycz0iLCJzdWJyZWRkaXQiOiJleGNlbCIsInBvc3RJZCI6IjF4ZGg0b2MiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlyamZ3aTMxeGczayJ9"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19rjjihg5zv0l",
+      "author": "Acceptable-Sense4601",
+      "author_fullname": null,
+      "body": "what database are you using?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjjihg5zv0l",
+      "created_utc": 1792774872,
+      "created_at_iso": "2026-10-23T17:01:12.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjjihg5zv0l/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19rk53x72teis",
+      "author": "hopkinswyn",
+      "author_fullname": null,
+      "body": "Add a last refresh date and time column to your query and then add a formula to your spreadsheet that says if NOW is more than 30 mins older than the MAX of the refresh column then they need to refresh.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rk53x72teis",
+      "created_utc": 1792803922,
+      "created_at_iso": "2026-10-24T01:05:22.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rk53x72teis/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19rjgvs65b8hu",
+      "author": "P1ckl3R1ck101",
+      "author_fullname": null,
+      "body": "If youre married to staying within Excel, a VBA script that auto refreshes on open would be a solution. Within the script you could check data connections and display an error or even close the workbook if it failed. Besides people just not refreshing because they forgot, you'll need to handle people working in the files offline, which is why closing the workbook on fail may be a good move.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjgvs65b8hu",
+      "created_utc": 1792771333,
+      "created_at_iso": "2026-10-23T16:02:13.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjgvs65b8hu/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjhf1fa2hts/",
+            "created_utc": 1792772052,
+            "created_at_iso": "2026-10-23T16:14:12.000Z",
+            "id": "19rjhf1fa2hts",
+            "author": "talltime",
+            "author_fullname": null,
+            "body": "I wouldn\u2019t close it but hide the worksheets down to an error state worksheet that lets them know why/what\u2019s going on and a button to re-try the refresh.\n\n Op can do PowerQuery, or just SQL query a sharepoint table or SQL server.",
+            "body_html": "\n      <p>\n      I wouldn\u2019t close it but hide the worksheets down to an error state worksheet that lets them know why/what\u2019s going on and a button to re-try the refresh.\n    </p><p>\n      Op can do PowerQuery, or just SQL query a sharepoint table or SQL server.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rjhf1fa2hts",
+            "parent_id": "t1_19rjgvs65b8hu",
+            "permalink": "/r/excel/comments/1xdh4oc/comment/19rjhf1fa2hts/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjivsou82ir/",
+                  "created_utc": 1792774024,
+                  "created_at_iso": "2026-10-23T16:47:04.000Z",
+                  "id": "19rjivsou82ir",
+                  "author": "P1ckl3R1ck101",
+                  "author_fullname": null,
+                  "body": "I like the idea of hiding the worksheets. Maybe going a step further and not allowing the user to unhide the other sheets until refresh is complete. Either way, yeah Excel ain't the place for this, but you gotta work with what you have sometimes.",
+                  "body_html": "\n      <p>\n      I like the idea of hiding the worksheets. Maybe going a step further and not allowing the user to unhide the other sheets until refresh is complete. Either way, yeah Excel ain't the place for this, but you gotta work with what you have sometimes.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19rjivsou82ir",
+                  "parent_id": "t1_19rjhf1fa2hts",
+                  "permalink": "/r/excel/comments/1xdh4oc/comment/19rjivsou82ir/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "19rjhf1fa2hts"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NvcnQ9VE9QJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlkyVTVZbVE0TVdZc09qb3hPbVY0T2l4WFRHWlBUbWRWUFZBPSIsInN1YnJlZGRpdCI6ImV4Y2VsIiwicG9zdElkIjoiMXhkaDRvYyIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXJqZ3ZzNjViOGh1In0"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19rjgzuzah2h1",
+      "author": "ChecklistAnimations",
+      "author_fullname": null,
+      "body": "I would run it with using a \"dirty\" what I don't know is when the file is considered to be so. If you make an external update and maybe just mark a file as dirty after every minute and then tell the user they need to refresh and that toggles it back to clean you could do that. You would then need something like selection change or outer event listeners to check for this flag.\n\n The problem is the continual checking. A flag works but then you need to keep the flag updated. You also can't continually check external workbooks on every interaction so it's a tough one.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjgzuzah2h1",
+      "created_utc": 1792771485,
+      "created_at_iso": "2026-10-23T16:04:45.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjgzuzah2h1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19rjird1ykxj7",
+      "author": "saltyBQ",
+      "author_fullname": null,
+      "body": "I\u2019ve added an additional power query that provides a timestamp. You could do that and add some flag or conditional formatting that gets people\u2019s attention notifying them to refresh before proceeding.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjird1ykxj7",
+      "created_utc": 1792773858,
+      "created_at_iso": "2026-10-23T16:44:18.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjird1ykxj7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19rjj08x98ouc",
+      "author": "PaulieThePolarBear",
+      "author_fullname": null,
+      "body": "Thing is, prices must always be current when a workbook is opened, without users having to remember to refresh anything, and without stale values from caching or external workbook links that fail to update silently.\n\n I want to make sure my interpretation of your wording is correct.\n\n User A opens their spreadsheet at the start of the working day and keeps it open all day.\nUser B opens their spreadsheet 5 minutes before the end of the working day.\n\n With 100% certainty, should both users expect to see exactly the same data? Said another way, are mid-day updates to the central data absolutely impossible in your business process?\n\n A Power Query connection to a central file depends on the refresh actually succeeding. The user can work with old data without knowing so\n\n There is an option to have a Power Query refresh on open. This links shows the steps to do this - https://excel-tutorial.com/auto-refresh-power-query-on-workbook-open/\n\n I have used this functionality a number of times without issue.\n\n As others have noted, you could include a refresh date within your Power Query pull of your data and have this easily visible in your sheet. Your procedure is then for your user to verify that date is current prior to doing their work.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rjj08x98ouc",
+      "created_utc": 1792774190,
+      "created_at_iso": "2026-10-23T16:49:50.000Z",
+      "parent_id": "t3_1xdh4oc",
+      "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjj08x98ouc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1xdh4oc",
+    "author": "MiddleAgeWeirdoMeep",
+    "author_fullname": "t2_21jj7j0lse",
+    "subreddit": "excel",
+    "title": "What is foolproof way to give an entire organization a \u2018single source of truth\u2019 through Excel formulas in 2026",
+    "downs": 0,
+    "name": "t3_1xdh4oc",
+    "upvote_ratio": 0.6046511627906976,
+    "ups": 9,
+    "selftext": "We maintain a central price list and want employees to retrieve current prices directly in their own workbooks with formulas. Thing is, prices must always be current when a workbook is opened, without users having to remember to refresh anything, and without stale values from caching or external workbook links that fail to update silently. It must be user friendly enough that people with ordinary Excel skills can use it. It must also be possible to trace faults. We work in Excel for Windows, although some users work in Excel for the web. Classic workbook links are still the simplest method, but the data gets embedded into every file that uses the link. And external links to a central workbook on SharePoint tend not to update reliably. A Power Query connection to a central file depends on the refresh actually succeeding. The user can work with old data without knowing so A Power BI semantic model with CUBEVALUE gives central control, but the formula syntax is too complex for most users and requires Power BI licences. A custom function delivered as an Office add-in would be the most user friendly, but we are concerned about caching of add-in files, non-volatile results that are not recalculated when a workbook is reopened What solution is truly foolproof ?",
+    "total_awards_received": 0,
+    "score": 9,
+    "created": 1792769172,
+    "num_comments": 67,
+    "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/what_is_foolproof_way_to_give_an_entire/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1792769172
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9leGNlbC90M18xeGRoNG9jP3NlZWtlci1zZXNzaW9uPWZhbHNlJnJlbmRlci1tb2RlPXBhcnRpYWwmdG9wLWxldmVsPTEmY29tbWVudHMtcmVtYWluaW5nPTc1JmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xNCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZems1T0dVek56RXNPam93T21WNE9peFhURjFMWG0wcVJDbzZLejVKYzJCMmJ6bzFYeWt1TzE4NVMwbDVRSFUzWm1WQ1l6Y2lVMHg5WXpnMU1UTnRlbGh2SWpSWWEwYzVMQ1FtYlhOc0tXTlBlU1pqZFNzb1lqNDVNbDliSWlnb2ZYVXVMQ00wU1V4QmQzbFhYSFk5S0VjMVNsTkNibUZ3ZFE9PSIsInN1YnJlZGRpdCI6ImV4Y2VsIiwicG9zdElkIjoiMXhkaDRvYyIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id c2c90b5b6da14f85aa37904b90d487cf

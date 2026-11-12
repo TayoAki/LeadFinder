@@ -1,0 +1,701 @@
+{
+  "success": true,
+  "credits_remaining": 209816,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "o6oy3fj",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_o6oy3fj",
+      "created_utc": 1771720431,
+      "created_at_iso": "2026-02-22T00:33:51.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6oy3fj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o6ozyrs",
+      "author": "j01101111sh",
+      "author_fullname": null,
+      "body": "What is with this influx of posts trashing AI without giving technical details? And set in a world where nobody checks anything?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o6ozyrs",
+      "created_utc": 1771721109,
+      "created_at_iso": "2026-02-22T00:45:09.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6ozyrs/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p1d6e/",
+            "created_utc": 1771721629,
+            "created_at_iso": "2026-02-22T00:53:49.000Z",
+            "id": "o6p1d6e",
+            "author": "GamingTitBit",
+            "author_fullname": null,
+            "body": "I mean we've all experienced LLM hallucinations? Maybe they're trying to farm karma by hitting a common experience? But yes lack of technical specs and consequences isn't helpful. And while I'd love to say no company is that stupid to trust AI fully gestures around",
+            "body_html": "\n      <p>\n      I mean we've all experienced LLM hallucinations? Maybe they're trying to farm karma by hitting a common experience? But yes lack of technical specs and consequences isn't helpful. And while I'd love to say no company is that stupid to trust AI fully <strong>gestures around</strong>\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p1d6e",
+            "parent_id": "t1_o6ozyrs",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p1d6e/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p2gfm/",
+                  "created_utc": 1771722034,
+                  "created_at_iso": "2026-02-22T01:00:34.000Z",
+                  "id": "o6p2gfm",
+                  "author": "j01101111sh",
+                  "author_fullname": null,
+                  "body": "I don't doubt this could happen. I've seen AI say dumb things, of course. But I get asked to confirm numbers all the time, even in long automated reports, so I'm just surprised there are people trusting AI with math even though that's something it's notoriously bad at and not validating anything...",
+                  "body_html": "\n      <p>\n      I don't doubt this could happen. I've seen AI say dumb things, of course. But I get asked to confirm numbers all the time, even in long automated reports, so I'm just surprised there are people trusting AI with math even though that's something it's notoriously bad at and not validating anything...\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p2gfm",
+                  "parent_id": "t1_o6p1d6e",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p2gfm/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TWpkbU5ESXdPRGtzT2pvek9tUXhPblF4WDI4MmNESm5abTA9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXJiN2ZmaSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vNnAyZ2ZtIn0"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p2pow/",
+                  "created_utc": 1771722129,
+                  "created_at_iso": "2026-02-22T01:02:09.000Z",
+                  "id": "o6p2pow",
+                  "author": "texan-janakay",
+                  "author_fullname": null,
+                  "body": "oh totally fair! Honestly the lack of detail is on me.\n\n This wasn't a random halluncinated chart, or set of charts. The model generated charts from sets of data, but didn't reconcile the totals. Even though the initial totals were correct, the aggregated data it presented wasn't correct. The charts were mislabelled when I asked for labels to be added. So while the visual trend looked reasonable, when I manually summed the underlying rows the totals didn\u2019t match the chart values.\n\n So the failure mode wasn\u2019t \u201cmade up numbers,\u201d it was \u201cplausible aggregation that was never validated.\u201d\n\n The mistake I made was treating the output as if it came from a deterministic calculation pipeline instead of a generative one. It looked like the result of computation, but it was really a formatted prediction.",
+                  "body_html": "\n      <p>\n      oh totally fair! Honestly the lack of detail is on me.\n    </p><p>\n      This wasn't a random halluncinated chart, or set of charts. The model generated charts from sets of data, but didn't reconcile the totals. Even though the initial totals were correct, the aggregated data it presented wasn't correct. The charts were mislabelled when I asked for labels to be added. So while the visual trend looked reasonable, when I manually summed the underlying rows the totals didn\u2019t match the chart values.\n    </p><p>\n      So the failure mode wasn\u2019t \u201cmade up numbers,\u201d it was \u201cplausible aggregation that was never validated.\u201d\n    </p><p>\n      The mistake I made was treating the output as if it came from a deterministic calculation pipeline instead of a generative one. It looked like the result of computation, but it was really a formatted prediction.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p2pow",
+                  "parent_id": "t1_o6p1d6e",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p2pow/",
+                  "ups": 0,
+                  "downs": 0,
+                  "score": 0,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o6p2gfm"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOV00yTmpka05EY3NPam94T21WNE9paFdiQ1phY2c9PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjFyYjdmZmkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbzZvenlycyJ9"
+        }
+      },
+      "ups": 11,
+      "downs": 0,
+      "score": 11
+    },
+    {
+      "id": "o6p000z",
+      "author": "lunacei",
+      "author_fullname": null,
+      "body": "ai;dr But seriously, using AI to write a post about how AI got it wrong feels a bit gross.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o6p000z",
+      "created_utc": 1771721122,
+      "created_at_iso": "2026-02-22T00:45:22.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p000z/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p2od5/",
+            "created_utc": 1771722115,
+            "created_at_iso": "2026-02-22T01:01:55.000Z",
+            "id": "o6p2od5",
+            "author": "tiggerlilly",
+            "author_fullname": null,
+            "body": "AI seems to have made Reddit obsolete. What\u2019s the point of posting here, if you\u2019ve already ran your thoughts through chatGPT?\n\n Honestly, I\u2019d prefer to read people\u2019s authentic garbage rather than having chat clean it up prior to posting.\n\n Isn\u2019t that the point of this place?",
+            "body_html": "\n      <p>\n      AI seems to have made Reddit obsolete.  What\u2019s the point of posting here, if you\u2019ve already ran your thoughts through chatGPT?\n    </p><p>\n      Honestly, I\u2019d prefer to read people\u2019s authentic garbage rather than having chat clean it up prior to posting.\n    </p><p>\n      Isn\u2019t that the point of this place?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p2od5",
+            "parent_id": "t1_o6p000z",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p2od5/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p7eac/",
+                  "created_utc": 1771723932,
+                  "created_at_iso": "2026-02-22T01:32:12.000Z",
+                  "id": "o6p7eac",
+                  "author": "texan-janakay",
+                  "author_fullname": null,
+                  "body": "I actually agree with you on that.\nPutting it as blog - on Medium - shares it with others. And gets me nothing, no feedback.\nPutting it here, gets me some feedback. And it actually got me the feedback I was looking for, if you scroll down to the one from analytix_guru. That was exactly what I needed.\n\n To re-iterate: The whole reason I posted here instead of just leaving it as a blog was to get reactions from people who\u2019ve dealt with real workflows. The mistake wasn\u2019t \u201cAI bad,\u201d it was me trusting generated output the same way I\u2019d trust a computed report.",
+                  "body_html": "\n      <p>\n      I actually agree with you on that.<br>Putting it as blog - on Medium - shares it with others. And gets me nothing, no feedback.<br>Putting it here, gets me some feedback. And it actually got me the feedback I was looking for, if you scroll down to the one from <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://www.reddit.com/user/analytix_guru/\" rel=\"noopener nofollow ugc\" target=\"_blank\">analytix_guru</a>. That was exactly what I needed.\n    </p><p>\n      To re-iterate: The whole reason I posted here instead of just leaving it as a blog was to get reactions from people who\u2019ve dealt with real workflows. The mistake wasn\u2019t \u201cAI bad,\u201d it was me trusting generated output the same way I\u2019d trust a computed report.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p7eac",
+                  "parent_id": "t1_o6p2od5",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p7eac/",
+                  "ups": 0,
+                  "downs": 0,
+                  "score": 0,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o6p2od5"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p5wcv/",
+            "created_utc": 1771723349,
+            "created_at_iso": "2026-02-22T01:22:29.000Z",
+            "id": "o6p5wcv",
+            "author": "lunacei",
+            "author_fullname": null,
+            "body": "Adding in some more context here since I can tell you're a real person, who may just be using AI in incorrect ways. AI can have some very obvious writing style \"tells\". It particularly loves \"it's not x, it's y\". Chat GPT is obsessed with em dashes. Both of those are dead giveaways that this was written by, or heavily edited by, AI. That's not to say you can't use it at all! I use it all the time. But if you care about what your audience thinks - you have to either very carefully edit out the \"ai-ness\" of it, or write the majority of the text yourself and have it edit only for grammar and clarity while keeping tone exactly the same.",
+            "body_html": "\n      <p>\n      Adding in some more context here since I can tell you're a real person, who may just be using AI in incorrect ways. AI can have some very obvious writing style \"tells\". It particularly loves \"it's not x, it's y\". Chat GPT is obsessed with em dashes. Both of those are dead giveaways that this was written by, or heavily edited by, AI. That's not to say you can't use it at all! I use it all the time. But if you care about what your audience thinks - you have to either very carefully edit out the \"ai-ness\" of it, or write the majority of the text yourself and have it edit only for grammar and clarity while keeping tone exactly the same.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p5wcv",
+            "parent_id": "t1_o6p000z",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p5wcv/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p8d2o/",
+                  "created_utc": 1771724311,
+                  "created_at_iso": "2026-02-22T01:38:31.000Z",
+                  "id": "o6p8d2o",
+                  "author": "texan-janakay",
+                  "author_fullname": null,
+                  "body": "I appreciate the input. I was actually trained in journalism and technical writing, so the formal tone kind of happens automatically unless I actively fight it.\n\n The irony is the only thing AI touched was the chart I trusted too much. The writing is just me trying to figure out why I didn\u2019t validate something that looked correct.",
+                  "body_html": "\n      <p>\n      I appreciate the input. I was actually trained in journalism and technical writing, so the formal tone kind of happens automatically unless I actively fight it.\n    </p><p>\n      The irony is the only thing AI touched was the chart I trusted too much. The writing is just me trying to figure out why I didn\u2019t validate something that looked correct.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p8d2o",
+                  "parent_id": "t1_o6p5wcv",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p8d2o/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o6p5wcv"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p0wyj/",
+            "created_utc": 1771721459,
+            "created_at_iso": "2026-02-22T00:50:59.000Z",
+            "id": "o6p0wyj",
+            "author": "[deleted]",
+            "author_fullname": null,
+            "body": "[deleted]",
+            "body_html": null,
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p0wyj",
+            "parent_id": "t1_o6p000z",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p0wyj/",
+            "ups": -1,
+            "downs": 0,
+            "score": -1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p12tv/",
+                  "created_utc": 1771721521,
+                  "created_at_iso": "2026-02-22T00:52:01.000Z",
+                  "id": "o6p12tv",
+                  "author": "kilopeter",
+                  "author_fullname": null,
+                  "body": "You didn't write it tho",
+                  "body_html": "\n      <p>\n      You didn't write it tho\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p12tv",
+                  "parent_id": "t1_o6p0wyj",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p12tv/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwyLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WVdFMFpHRTNaRE1zT2pvek9tUXhPblF4WDI4MmNERXlkSFk9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXJiN2ZmaSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vNnAxMnR2In0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o6p12tv"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o6p2od5"
+        }
+      },
+      "ups": 24,
+      "downs": 0,
+      "score": 24
+    },
+    {
+      "id": "o6p4qh5",
+      "author": "analytix_guru",
+      "author_fullname": null,
+      "body": "When it comes to having an LLM help me with tasks, I have it help with a toy example or simulated data to assist in making a chart/dashboard. Then I use that as my wireframe to create my own final product with my own data.\n\n I also have been using these tools within my IDE. Not sure how Excel can have an LLM incorporated, but that would be the most helpful way. I try to treat it as a colleague that I would ask for guidance on a project, so that I can complete the project on my own.\n\n I think this is where many people get in trouble, they want the LLM to complete the entire task, sometimes not knowing enough to understand if the LLM has completed a task correctly. Analysts and Developers work the best with LLMs when they can bounce ideas off them or ask it to wireframe/scaffold basic templates that they can easily review, update and leverage to accelerate their time to delivery. I have yet to ask an LLM to create something for me that I couldn't do myself in some capacity. And if I have an LLM help me with something, I always take the time to check what was provided before incorporating into my workflow.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o6p4qh5",
+      "created_utc": 1771722902,
+      "created_at_iso": "2026-02-22T01:15:02.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p4qh5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p5tqk/",
+            "created_utc": 1771723321,
+            "created_at_iso": "2026-02-22T01:22:01.000Z",
+            "id": "o6p5tqk",
+            "author": "texan-janakay",
+            "author_fullname": null,
+            "body": "YES!!!! THIS is the guidance I needed beforehand!\n\n I really like the \u201cwireframe\u201d framing. That\u2019s actually the boundary I failed to respect.\n\n I treated the generated chart like a finished artifact instead of a scaffold. If I\u2019d used it as a prototype and then rebuilt the final version against the actual dataset, the issue would\u2019ve surfaced immediately.\n\n The IDE comparison resonates too \u2014 when it\u2019s helping draft or suggest structure, it\u2019s powerful. When it\u2019s silently acting as a calculation engine, that\u2019s where the line gets blurry.\n\n I think, maybe, the tricky part is that visualization feels deterministic, so it lowers skepticism in a way that generated prose doesn\u2019t.",
+            "body_html": "\n      <p>\n      YES!!!! THIS is the guidance I needed beforehand!\n    </p><p>\n      I really like the \u201cwireframe\u201d framing. That\u2019s actually the boundary I failed to respect.\n    </p><p>\n      I treated the generated chart like a finished artifact instead of a scaffold. If I\u2019d used it as a prototype and then rebuilt the final version against the actual dataset, the issue would\u2019ve surfaced immediately.\n    </p><p>\n      The IDE comparison resonates too \u2014 when it\u2019s helping draft or suggest structure, it\u2019s powerful. When it\u2019s silently acting as a calculation engine, that\u2019s where the line gets blurry.\n    </p><p>\n      I think, maybe, the tricky part is that visualization feels deterministic, so it lowers skepticism in a way that generated prose doesn\u2019t.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p5tqk",
+            "parent_id": "t1_o6p4qh5",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p5tqk/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o6p4qh5"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "o6p29u4",
+      "author": "ohanse",
+      "author_fullname": null,
+      "body": "Fuckin you did WHAT",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o6p29u4",
+      "created_utc": 1771721964,
+      "created_at_iso": "2026-02-22T00:59:24.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p29u4/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p3og0/",
+            "created_utc": 1771722494,
+            "created_at_iso": "2026-02-22T01:08:14.000Z",
+            "id": "o6p3og0",
+            "author": "texan-janakay",
+            "author_fullname": null,
+            "body": "Yep. Yep, I did. arrgh!\nThe worst part is the chart looked completely reasonable at a glance, and at second review, which is exactly why it slipped past me.",
+            "body_html": "\n      <p>\n      Yep. Yep, I did. arrgh!<br>The worst part is the chart looked completely reasonable at a glance, and at second review, which is exactly why it slipped past me.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p3og0",
+            "parent_id": "t1_o6p29u4",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p3og0/",
+            "ups": -1,
+            "downs": 0,
+            "score": -1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p4qe1/",
+                  "created_utc": 1771722901,
+                  "created_at_iso": "2026-02-22T01:15:01.000Z",
+                  "id": "o6p4qe1",
+                  "author": "ohanse",
+                  "author_fullname": null,
+                  "body": "The guidance on validating LLM outputs/anything AI-assisted has been in place for... years? At this point.\n\n This is unprofessional.",
+                  "body_html": "\n      <p>\n      The guidance on validating LLM outputs/anything AI-assisted has been in place for... years? At this point.\n    </p><p>\n      This is unprofessional.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_o6p4qe1",
+                  "parent_id": "t1_o6p3og0",
+                  "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p4qe1/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TlRSbU5ESmxNVFlzT2pvek9tUXhPblF4WDI4MmNEUnhaVEU9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXJiN2ZmaSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vNnA0cWUxIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "o6p4qe1"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o6p4qe1"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "o6pbyjb",
+      "author": "texan-janakay",
+      "author_fullname": null,
+      "body": "One thing that surprised me was how believable the trend looked. If the chart had looked obviously broken I would have checked immediately, but it matched what I expected to see, so my brain treated it like a validated report. I knew I had fed in the correct data, so I assumed the output was correct too.\n\n For people using LLM tools in analysis/reporting: have you added any explicit reconciliation checks or guardrails when you experiment with them?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_o6pbyjb",
+      "created_utc": 1771725699,
+      "created_at_iso": "2026-02-22T02:01:39.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6pbyjb/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oheso3n",
+      "author": "Wouter_Chartbuddy",
+      "author_fullname": null,
+      "body": "I am currently building a charting engine for Google Slides, but considering a pivot to charting for LLMs, making a free MVP available.\n\n The workflow: 1) analyse with AI, 2) ask it to build a chart, 3) you get an editable chart which you can check and tweak (with clicks), to get it report-ready.\n\n Would you use this?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oheso3n",
+      "created_utc": 1776761200,
+      "created_at_iso": "2026-04-21T08:46:40.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/oheso3n/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o6oznv8",
+      "author": "texan-janakay",
+      "author_fullname": null,
+      "body": "One thing I\u2019m still trying to figure out is where the safe boundary actually is.\n\n I still found AI useful for writing the narrative summary around the report \u2014 it actually explained trends pretty well.\n\n For those of you using it in reporting/analysis workflows: what parts do you trust it with?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_o6oznv8",
+      "created_utc": 1771720998,
+      "created_at_iso": "2026-02-22T00:43:18.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6oznv8/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p2174/",
+            "created_utc": 1771721874,
+            "created_at_iso": "2026-02-22T00:57:54.000Z",
+            "id": "o6p2174",
+            "author": "Best-Hyena-680",
+            "author_fullname": null,
+            "body": "Use it for \"pre-work\", not the actual work, endpoints, or deliverables. It's great for brainstorming, drafts, prototypes, but it can also lead you down the wrong path a lot of the time if you come to rely on it too much.",
+            "body_html": "\n      <p>\n      Use it for \"pre-work\", not the actual work, endpoints, or deliverables. It's great for brainstorming, drafts, prototypes, but it can also lead you down the wrong path a lot of the time if you come to rely on it too much.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6p2174",
+            "parent_id": "t1_o6oznv8",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6p2174/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5ERmpNREV3WkRNc09qb3lPbVF4T25ReFgyODJjREl4TnpRPSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjFyYjdmZmkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbzZwMjE3NCJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXJiN2ZmaT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNMlUzWmpZNU5ETXNPam94T21WNE9paFdiQ28wV1E9PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjFyYjdmZmkiLCJwYXJlbnRUaGluZ0lkIjoidDFfbzZvem52OCJ9"
+        }
+      },
+      "ups": -4,
+      "downs": 0,
+      "score": -4
+    },
+    {
+      "id": "o6q6uhl",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o6q6uhl",
+      "created_utc": 1771738800,
+      "created_at_iso": "2026-02-22T05:40:00.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6q6uhl/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6scjss/",
+            "created_utc": 1771774969,
+            "created_at_iso": "2026-02-22T15:42:49.000Z",
+            "id": "o6scjss",
+            "author": "texan-janakay",
+            "author_fullname": null,
+            "body": "Exactly. That's actually what tripped me up. I provided the real dataset, which is why I trusted the output more than I should have.\n\n What I missed: giving an LLM the source data doesn\u2019t make it behave like a calculation engine. It generates a plausible result, and you need to independently reconcile the output.\n\n Lesson learned: data input isn\u2019t the same thing as deterministic computation.",
+            "body_html": "\n      <p>\n      Exactly. That's actually what tripped me up. I provided the real dataset, which is why I trusted the output more than I should have.\n    </p><p>\n      <strong>What I missed</strong>: giving an LLM the source data doesn\u2019t make it behave like a calculation engine. It generates a plausible result, and you need to independently reconcile the output.\n    </p><p>\n      <strong>Lesson learned:</strong> data input isn\u2019t the same thing as deterministic computation.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o6scjss",
+            "parent_id": "t1_o6q6uhl",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o6scjss/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o6q6uhl"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "o7l0qv4",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o7l0qv4",
+      "created_utc": 1772139658,
+      "created_at_iso": "2026-02-26T21:00:58.000Z",
+      "parent_id": "t3_1rb7ffi",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o7l0qv4/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o7m6t0t/",
+            "created_utc": 1772152657,
+            "created_at_iso": "2026-02-27T00:37:37.000Z",
+            "id": "o7m6t0t",
+            "author": "texan-janakay",
+            "author_fullname": null,
+            "body": "That\u2019s a good pattern!\nWith the chart tied to a data source or query, you can reconcile the totals and know where the numbers came from.",
+            "body_html": "\n      <p>\n      That\u2019s a good pattern!<br>With the chart tied to a data source or query, you can reconcile the totals and know where the numbers came from.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_o7m6t0t",
+            "parent_id": "t1_o7l0qv4",
+            "permalink": "/r/analytics/comments/1rb7ffi/comment/o7m6t0t/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "o7l0qv4"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1rb7ffi",
+    "author": "texan-janakay",
+    "author_fullname": "t2_9bzh21nt",
+    "subreddit": "analytics",
+    "title": "I trusted AI-generated charts in a report I sent. The totals didn\u2019t match the data.",
+    "downs": 0,
+    "name": "t3_1rb7ffi",
+    "upvote_ratio": 0.25,
+    "ups": 0,
+    "selftext": "I tried to automate part of a reporting workflow and learned a lesson the hard way. I had an AI tool generate charts from a dataset to save time. The charts looked clean, labeled correctly, and visually believable \u2014 honestly nicer than what I usually produce. So I sent the report. Later I checked the underlying numbers. The totals didn\u2019t match the data. Not wildly wrong \u2014 plausibly wrong. The kind of error that passes a visual check because the chart still looks reasonable. I realized the system optimized for producing a convincing visualization, not a verified calculation. It produced something that looked like a correct chart, not something guaranteed to be mathematically correct. Excel cares about arithmetic.The AI cared about producing a plausible output. The lesson for me wasn\u2019t \u201cAI is useless.\u201d It was about tool boundaries. AI was helpful for drafting summaries and explanations, but treating it as a source of truth instead of a helper was a mistake. Curious how others are handling this \u2014 where do you let AI help in reporting workflows, and where do you require deterministic validation?",
+    "total_awards_received": 0,
+    "score": 0,
+    "created": 1771720431,
+    "num_comments": 39,
+    "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/i_trusted_aigenerated_charts_in_a_report_i_sent/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1771720431
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+treg: charged $0.00188 · call id 61010787b23a4c28823e9e6bc169405f

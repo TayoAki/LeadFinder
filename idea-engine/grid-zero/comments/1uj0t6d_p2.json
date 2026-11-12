@@ -1,0 +1,188 @@
+{
+  "success": true,
+  "credits_remaining": 209402,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ouln3i7",
+      "author": "Dynamicspace",
+      "author_fullname": null,
+      "body": "Yeah, but we've been using Hex for it which give us some nice controls and handles hosting and access control too. It's a nice middle ground. The data models are dataframes built in a notebook so you've got a backend that's easy for analysts to interrogate. Then the frontend is next.js (Hex's \"generative apps\"). I enjoy using it, I've been able to build data apps that have far better UX than typical dashboards do. (Realising this is sounds like a shill but I just really like it)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouln3i7",
+      "created_utc": 1782774831,
+      "created_at_iso": "2026-06-29T23:13:51.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouln3i7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zdGFydGluZ0RlcHRoPTEmY29tbWVudFBhcmVudFBvc2l0aW9ucz0xNiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOakUwWVRJM1pEa3NPam94T21ReE9uUXhYMjkxYkc0emFUYz0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxdWowdDZkIiwicGFyZW50VGhpbmdJZCI6InQxX291bG4zaTcifQ"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oulu7og",
+      "author": "GeneralPITA",
+      "author_fullname": null,
+      "body": "Not replacing - creating. Team is small, and overcommitted. The only way we can handle external client needs and maintain dev sanity is to use anything available to us. We've been in shit-show mode for over 8 years.\n\n Old ass infrastructure none of us really fully understand and then an ass-hat for the longest reigning dev who thinks he is an expert at everything (even before AI) causing complications with years of over-engineered, fragile solutions.\n\n No documentation, just tribal knowledge, and no tests other than developer manual smoke tests. AI at least allows us to create dashboards in a few days that alert us to issues we can ignore until a boss notices.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oulu7og",
+      "created_utc": 1782776881,
+      "created_at_iso": "2026-06-29T23:48:01.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulu7og/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oumz4bn",
+      "author": "rv94",
+      "author_fullname": null,
+      "body": "It's the same at my company. Sigh, it's been a mess. We have a Looker set up that's pretty expensive with well defined table granularities, etc.\n\n Now everyone vibes their own app with the company internal AI assistant, isn't sure that the data looks right (which often isn't) and we've to go through queries and validate constantly",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oumz4bn",
+      "created_utc": 1782790526,
+      "created_at_iso": "2026-06-30T03:35:26.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumz4bn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ounv4ji",
+      "author": "llama_phobia",
+      "author_fullname": null,
+      "body": "We did primarily because users could ship something without a data peers support. Then we hit the phase of mis informed reporting, and ultimately agentic costs.\n\n Now I\u2019m in the process of deprecating commonly used AI prototype dashboards to BI tool or other deterministic process to reduce our token bills.\n\n Full circle irony when I realized I\u2019m agentically de-agentifying the work made by an agent",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ounv4ji",
+      "created_utc": 1782804424,
+      "created_at_iso": "2026-06-30T07:27:04.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ounv4ji/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ouob11m",
+      "author": "chhuiimuii",
+      "author_fullname": null,
+      "body": "My company is replacing BI tools with AI generated dashboards. They want analyst can create dashboard using ai and then can be served to customers directly. No BI tool hassle, no developer requirement.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouob11m",
+      "created_utc": 1782812498,
+      "created_at_iso": "2026-06-30T09:41:38.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouob11m/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ouoewsz",
+      "author": "Terrible-Value-tomr",
+      "author_fullname": null,
+      "body": "The thing execs are really reacting to isnt the dashboard, its that nobody trusts the number on it, and an AI app doesnt fix that, it just generates the wrong number faster and with more confidence. What made a dashboard useful was the shared definition sitting behind it, so when finance and marketing both said active user they meant the same thing. Let people vibe code their own apps off raw tables and you get fifteen slightly different definitions of the same metric and no way to tell which one is right. Ive spent whole afternoons just tracing why two people pulled different numbers for the same week, and that work goes up, not down, when everyone can spin up their own version. The teams I see making it work lock the definitions in one governed layer first and only let the AI build on top of that. Otherwise youre not replacing dashboards, youre deleting the one place the definition was written down.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouoewsz",
+      "created_utc": 1782814337,
+      "created_at_iso": "2026-06-30T10:12:17.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouoewsz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oumo9ap",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oumo9ap",
+      "created_utc": 1782786694,
+      "created_at_iso": "2026-06-30T02:31:34.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumo9ap/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zdGFydGluZ0RlcHRoPTEmY29tbWVudFBhcmVudFBvc2l0aW9ucz0yMiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOV0UyWWpJME1XRXNPam94T21ReE9uUXhYMjkxYlc4NVlYQT0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxdWowdDZkIiwicGFyZW50VGhpbmdJZCI6InQxX291bW85YXAifQ"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    }
+  ],
+  "post": null,
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD90b3AtbGV2ZWw9MSZyb290Q29tbWVudE9mZnNldD04JmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yMyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPREpoTWpJM09HRXNPam93T21WNE9paHFLRlZMWkRwbWMwVnNZR1FxUkhCU0tEb3NXbkVpU1NZeWZUQWpUVElpV3pWSWF6UmJSeko3UEM5UUxUQk1JaTFYUnpoQk9TNCtJa0JQTUNoRmZDZ21TeUowS0Zwa0p5SnhYbVZDS0U5WFkxdzFlVnd2Y1RKYiIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1ajB0NmQiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+treg: charged $0.00188 · call id afb75faa7f0143f3891a1a27bbea6bb7

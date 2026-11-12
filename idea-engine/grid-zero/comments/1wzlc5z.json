@@ -1,0 +1,303 @@
+{
+  "success": true,
+  "credits_remaining": 209772,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "pedtalp",
+      "author": "Hotsauced3",
+      "author_fullname": null,
+      "body": "The looker embedded API is now my favorite feature of looker and is underrated with Claude. You no longer have to use looker dashboards you can just build your own web apps with the security and flexibility of looker as the engine.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pedtalp",
+      "created_utc": 1791357016,
+      "created_at_iso": "2026-10-07T07:10:16.000Z",
+      "parent_id": "t3_1wzlc5z",
+      "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pedtalp/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pejiff0/",
+            "created_utc": 1791419034,
+            "created_at_iso": "2026-10-08T00:23:54.000Z",
+            "id": "pejiff0",
+            "author": "Ok_Computer8631",
+            "author_fullname": null,
+            "body": "What do you have to maintain yourself to make those apps work? Do you share those apps with people or are they primarily for your own private workflow?",
+            "body_html": "\n      <p>\n      What do you have to maintain yourself to make those apps work? Do you share those apps with people or are they primarily for your own private workflow?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pejiff0",
+            "parent_id": "t1_pedtalp",
+            "permalink": "/r/Looker/comments/1wzlc5z/comment/pejiff0/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pedtalp"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "pecqwuc",
+      "author": "TheFullyLoadedNachos",
+      "author_fullname": null,
+      "body": "Nothing groundbreaking but it's been helpful for auditing descriptions are aligned between dbt and looker, or just adding descriptions from dbt to a net new view. Then anything with the API, I used it after a company rebrand to update all schedules from old domain email to the new domain email. Tried to implement the conversational ai features in looker for an embedded use case and it was an absolute disaster, would not recommend \ud83d\ude02",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pecqwuc",
+      "created_utc": 1791341204,
+      "created_at_iso": "2026-10-07T02:46:44.000Z",
+      "parent_id": "t3_1wzlc5z",
+      "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pecqwuc/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pejijho/",
+            "created_utc": 1791419069,
+            "created_at_iso": "2026-10-08T00:24:29.000Z",
+            "id": "pejijho",
+            "author": "Ok_Computer8631",
+            "author_fullname": null,
+            "body": "What happened with the embedded use case? Was it for external clients to be able to query data using natural language?",
+            "body_html": "\n      <p>\n      What happened with the embedded use case? Was it for external clients to be able to query data using natural language?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pejijho",
+            "parent_id": "t1_pecqwuc",
+            "permalink": "/r/Looker/comments/1wzlc5z/comment/pejijho/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pf2a9zp/",
+                  "created_utc": 1791646215,
+                  "created_at_iso": "2026-10-10T15:30:15.000Z",
+                  "id": "pf2a9zp",
+                  "author": "TheFullyLoadedNachos",
+                  "author_fullname": null,
+                  "body": "That was the goal, it was while it was still in pre release so maybe it's gotten better but we had to pull the plug and used snowflake semantic views instead since that integrated better",
+                  "body_html": "\n      <p>\n      That was the goal, it was while it was still in pre release so maybe it's gotten better but we had to pull the plug and used snowflake semantic views instead since that integrated better\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pf2a9zp",
+                  "parent_id": "t1_pejijho",
+                  "permalink": "/r/Looker/comments/1wzlc5z/comment/pf2a9zp/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pejijho"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pejijho"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pedh2br",
+      "author": "Realistic_Gur_1618",
+      "author_fullname": null,
+      "body": "Mix of both, claude and by hand.\nGoogle just released some skills, included in the Lookml vscode extension, haven\u2019t used them but will get the chance next week hopefully",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pedh2br",
+      "created_utc": 1791351341,
+      "created_at_iso": "2026-10-07T05:35:41.000Z",
+      "parent_id": "t3_1wzlc5z",
+      "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pedh2br/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pejjb2x/",
+            "created_utc": 1791419311,
+            "created_at_iso": "2026-10-08T00:28:31.000Z",
+            "id": "pejjb2x",
+            "author": "Ok_Computer8631",
+            "author_fullname": null,
+            "body": "Someone up in the thread mentioned these skills https://github.com/lkrdev/lookml_skills as helpful. Lmk what you think about the lookML vscode extension too, I've been curious about that.",
+            "body_html": "\n      <p>\n      Someone up in the thread mentioned these skills <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://github.com/lkrdev/lookml_skills\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://github.com/lkrdev/lookml_skills</a> as helpful. Lmk what you think about the lookML vscode extension too, I've been curious about that.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pejjb2x",
+            "parent_id": "t1_pedh2br",
+            "permalink": "/r/Looker/comments/1wzlc5z/comment/pejjb2x/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pedh2br"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pedc1dw",
+      "author": "setemupknockem",
+      "author_fullname": null,
+      "body": "Check out the skills here https://github.com/lkrdev/lookml_skills\n\n Been using it to build views, explore, etc.\n\n Kinda the gamechanger is making all Looker dashboards LookML dashboards so you have things to reference to build new dashes.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pedc1dw",
+      "created_utc": 1791349187,
+      "created_at_iso": "2026-10-07T04:59:47.000Z",
+      "parent_id": "t3_1wzlc5z",
+      "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pedc1dw/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pejj3ms/",
+            "created_utc": 1791419246,
+            "created_at_iso": "2026-10-08T00:27:26.000Z",
+            "id": "pejj3ms",
+            "author": "Ok_Computer8631",
+            "author_fullname": null,
+            "body": "Sweet, will check it out. Curious how self-serve works in your setup. Once dashboards are LookML, who can still edit or create them? Is it just people comfortable with the repo, or can anyone on the team?",
+            "body_html": "\n      <p>\n      Sweet, will check it out. Curious how self-serve works in your setup. Once dashboards are LookML, who can still edit or create them? Is it just people comfortable with the repo, or can anyone on the team?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pejj3ms",
+            "parent_id": "t1_pedc1dw",
+            "permalink": "/r/Looker/comments/1wzlc5z/comment/pejj3ms/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pgec95r/",
+                  "created_utc": 1791856478,
+                  "created_at_iso": "2026-10-13T01:54:38.000Z",
+                  "id": "pgec95r",
+                  "author": "setemupknockem",
+                  "author_fullname": null,
+                  "body": "You can still use the UI or the repo with AI. I switch between the too depending on what I'm trying to do.",
+                  "body_html": "\n      <p>\n      You can still use the UI or the repo with AI. I switch between the too depending on what I'm trying to do.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_pgec95r",
+                  "parent_id": "t1_pejj3ms",
+                  "permalink": "/r/Looker/comments/1wzlc5z/comment/pgec95r/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "pejj3ms"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pejj3ms"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1wzlc5z",
+    "author": "Ok_Computer8631",
+    "author_fullname": "t2_2obnsaw2ao",
+    "subreddit": "Looker",
+    "title": "Anyone using AI to build or maintain LookML? What's actually working?",
+    "downs": 0,
+    "name": "t3_1wzlc5z",
+    "upvote_ratio": 1,
+    "ups": 6,
+    "selftext": "Curious how people here are handling LookML these days. Are you using AI tools (Copilot, Cursor, Claude, Gemini, etc.) to write or maintain your models, or is it still mostly by hand? If you've tried it, what's worked and what hasn't? And if you went back to writing it by hand, I'd like to hear why. For context, I work on a data analytics product and I'm trying to understand how teams actually work today. Not selling anything here, just interested in hearing about real workflows.",
+    "total_awards_received": 0,
+    "score": 6,
+    "created": 1791340558,
+    "num_comments": 12,
+    "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/anyone_using_ai_to_build_or_maintain_lookml_whats/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1791340558
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 5421e04aa3e947b1a90cf595378a5842

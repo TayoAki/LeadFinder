@@ -1,0 +1,677 @@
+{
+  "success": true,
+  "credits_remaining": 209728,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19shns0mn29i9",
+      "author": "Moneyshot_Larry",
+      "author_fullname": null,
+      "body": "You can embed HTML visuals into PowerBi. That\u2019s how we solved for RLS, refreshing data, and keeping it governed",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shns0mn29i9",
+      "created_utc": 1794427146,
+      "created_at_iso": "2026-11-11T19:59:06.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shns0mn29i9/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19sho7izg85ut/",
+            "created_utc": 1794427725,
+            "created_at_iso": "2026-11-11T20:08:45.000Z",
+            "id": "19sho7izg85ut",
+            "author": "Ok-Dimension-8556",
+            "author_fullname": null,
+            "body": "Seems to be the obvious way to do things, why throw away everything for new trendy stuff.",
+            "body_html": "\n      <p>\n      Seems to be the obvious way to do things, why throw away everything for new trendy stuff.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sho7izg85ut",
+            "parent_id": "t1_19shns0mn29i9",
+            "permalink": "/r/PowerBI/comments/1xtrjna/comment/19sho7izg85ut/",
+            "ups": 14,
+            "downs": 0,
+            "score": 14,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTAsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOVFU0WXpnNE5Ua3NPam95T21ReE9uUXhYekU1YzJodk4ybDZaemcxZFhRPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxeHRyam5hIiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2hvN2l6Zzg1dXQifQ"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shp8ej6ir38/",
+            "created_utc": 1794429103,
+            "created_at_iso": "2026-11-11T20:31:43.000Z",
+            "id": "19shp8ej6ir38",
+            "author": "scoobydiverr",
+            "author_fullname": null,
+            "body": "Or just embed it into a governed team/sharepoint",
+            "body_html": "\n      <p>\n      Or just embed it into a governed team/sharepoint\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shp8ej6ir38",
+            "parent_id": "t1_19shns0mn29i9",
+            "permalink": "/r/PowerBI/comments/1xtrjna/comment/19shp8ej6ir38/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpwjx3s142/",
+                  "created_utc": 1794430006,
+                  "created_at_iso": "2026-11-11T20:46:46.000Z",
+                  "id": "19shpwjx3s142",
+                  "author": "Moneyshot_Larry",
+                  "author_fullname": null,
+                  "body": "Lmao could you imagine scaling this in a governed SharePoint where you need to handle things like row level security?",
+                  "body_html": "\n      <p>\n      Lmao could you imagine scaling this in a governed SharePoint where you need to handle things like row level security?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_19shpwjx3s142",
+                  "parent_id": "t1_19shp8ej6ir38",
+                  "permalink": "/r/PowerBI/comments/1xtrjna/comment/19shpwjx3s142/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTAsMSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpXTmhaV0k0WXpZc09qb3pPbVF4T25ReFh6RTVjMmh3ZDJwNE0zTXhOREk9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaHB3angzczE0MiJ9"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "19shpwjx3s142"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TldGa01UWXpPV01zT2pveE9tVjRPaXhZS0VzeGQwbEtPMms2S0RvbFRVVnFTbTFNIiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaG5zMG1uMjlpOSJ9"
+        }
+      },
+      "ups": 49,
+      "downs": 0,
+      "score": 49
+    },
+    {
+      "id": "19shpeuz3dbqd",
+      "author": "SQLGene",
+      "author_fullname": null,
+      "body": "Claude Dashboards (Now Claude Data) are sensible for exploratory or throwaway reports, but are fairly limited. Their support for external data sources could get interesting.\nhttps://tabulareditor.com/blog/what-are-claude-dashboards\n\n Fabric apps gives you the flexibility of HTML visuals but still all the main benefits of Power BI semantic models.\nhttps://tabulareditor.com/blog/how-data-apps-make-semantic-models-better-in-fabric\n\n There really is no reason to be building a visualization engine or semantic model engine from scratch, regardless. Many HTML reports are probably using d3.js or similar under the hood.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shpeuz3dbqd",
+      "created_utc": 1794429344,
+      "created_at_iso": "2026-11-11T20:35:44.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpeuz3dbqd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TnpVMVkyVXdZV1VzT2pveE9tUXhPblF4WHpFNWMyaHdaWFY2TTJSaWNXUT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNocGV1ejNkYnFkIn0"
+        }
+      },
+      "ups": 21,
+      "downs": 0,
+      "score": 21
+    },
+    {
+      "id": "19shnswoieppe",
+      "author": "kthejoker",
+      "author_fullname": null,
+      "body": "Okay ... but AI?\n\n your CEO, probably",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shnswoieppe",
+      "created_utc": 1794427179,
+      "created_at_iso": "2026-11-11T19:59:39.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shnswoieppe/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 12,
+      "downs": 0,
+      "score": 12
+    },
+    {
+      "id": "19shpgle511nn",
+      "author": "NSA_GOV",
+      "author_fullname": null,
+      "body": "I work at a large bank there is no way ISS would let us deploy and host HTML visualizations especially with database connectivity across all the different system access.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shpgle511nn",
+      "created_utc": 1794429409,
+      "created_at_iso": "2026-11-11T20:36:49.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpgle511nn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTMiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TWpjd056RmtabUlzT2pveE9tUXhPblF4WHpFNWMyaHdaMnhsTlRFeGJtND0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNocGdsZTUxMW5uIn0"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shpbbsnhbj5",
+      "author": "airsoftshowoffs",
+      "author_fullname": null,
+      "body": "This is the problem with vibe coding with Claude too. Management just see the dashboard pictures and think that anyone can. Prompt the orginizations solution in 5 minutes so why pay people.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shpbbsnhbj5",
+      "created_utc": 1794429212,
+      "created_at_iso": "2026-11-11T20:33:32.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpbbsnhbj5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "19shofbz5a2ed",
+      "author": "yomerol",
+      "author_fullname": null,
+      "body": "it shows you what kind of people are at the front seat of BI platforms, and a bit of the ones doing the work, they don't really understand WHY using a BI platform, and most of them are not close to software engineering\n\n This topic comes up here almost every day, I'm tired of it, boss. But as I mentioned in some other thread, at some point we were building those HTML reports, and BI platforms solved all that about 15 years ago, plus all the other features are because there is a need and a problem to solve with that. Oversimplifying to HTML visualizations it's just pure ignorance.\n\n Just ask them: \"why won't you replace Excel with a HTML report? or a vibecode app?\", maybe JUST maybe, that will make them use their brain, who knows, they may even ask Copilot or Claude why?\n\n All in all, the best way to use PBI, Tableau, QV, etc, with LLMs, is to get into the lifecycle, learn it, and automate that. There are already a few tutorials on YT, although MS will bring it soon to PBI, and publish a MCP on Azure so it's all integrated and you can automate your lifecycle in an ordered way, and still on PBI.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shofbz5a2ed",
+      "created_utc": 1794428017,
+      "created_at_iso": "2026-11-11T20:13:37.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shofbz5a2ed/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpmyfdm4yq/",
+            "created_utc": 1794429647,
+            "created_at_iso": "2026-11-11T20:40:47.000Z",
+            "id": "19shpmyfdm4yq",
+            "author": "scorched03",
+            "author_fullname": null,
+            "body": "Im totally going to ask finance to replace excel with html. That will get them thinking",
+            "body_html": "\n      <p>\n      Im totally going to ask finance to replace excel with html. That will get them thinking\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shpmyfdm4yq",
+            "parent_id": "t1_19shofbz5a2ed",
+            "permalink": "/r/PowerBI/comments/1xtrjna/comment/19shpmyfdm4yq/",
+            "ups": 7,
+            "downs": 0,
+            "score": 7,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTUsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZaV1l5WmpVNFpEQXNPam95T21ReE9uUXhYekU1YzJod2JYbG1aRzAwZVhFPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxeHRyam5hIiwicGFyZW50VGhpbmdJZCI6InQxXzE5c2hwbXlmZG00eXEifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTUiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WXpGbVptSm1NRGtzT2pveE9tVjRPaXhZS0ZGSU5qSTVSMVE9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaG9mYno1YTJlZCJ9"
+        }
+      },
+      "ups": 12,
+      "downs": 0,
+      "score": 12
+    },
+    {
+      "id": "19shphtcdpmle",
+      "author": "One-Disk-125",
+      "author_fullname": null,
+      "body": "Reading the comments I'm pretty sure most people saying what a terrible idea this is have absolutely no idea how it actually works.\n\n It might be for you, it might not, but some of the arguments just seem to be ' I like building reports in power bi and I hate change'.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shphtcdpmle",
+      "created_utc": 1794429455,
+      "created_at_iso": "2026-11-11T20:37:35.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shphtcdpmle/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WXpOa016WXlOek1zT2pveE9tUXhPblF4WHpFNWMyaHdhSFJqWkhCdGJHVT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNocGh0Y2RwbWxlIn0"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shniufkrjj8",
+      "author": "pepepeoeoepepepe",
+      "author_fullname": null,
+      "body": "Let them, they\u2019ll be back",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shniufkrjj8",
+      "created_utc": 1794426803,
+      "created_at_iso": "2026-11-11T19:53:23.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shniufkrjj8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTciLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TmpGa01URTNNREVzT2pveE9tUXhPblF4WHpFNWMyaHVhWFZtYTNKcWFqZz0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNobml1Zmtyamo4In0"
+        }
+      },
+      "ups": 16,
+      "downs": 0,
+      "score": 16
+    },
+    {
+      "id": "19shpgskwrd7k",
+      "author": "Prudent-Elk-2845",
+      "author_fullname": null,
+      "body": "For my business users, the complexity for them to create visuals and to get real-ish time updates on what-if scenarios drives them into excel + html for small group (ie exec leaders).\n\n When things advance far enough that they need actuals reporting and the data model is stable, then it goes out PowerBI\n\n If MS could simply make the process more intuitive, you\u2019d see less pressure from excel + html.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shpgskwrd7k",
+      "created_utc": 1794429417,
+      "created_at_iso": "2026-11-11T20:36:57.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpgskwrd7k/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "19shofuly9fad",
+      "author": "masta_shonufff",
+      "author_fullname": null,
+      "body": "My question do you use one html visual to create the entire report or do you use multiple html visuals to create the report?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shofuly9fad",
+      "created_utc": 1794428036,
+      "created_at_iso": "2026-11-11T20:13:56.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shofuly9fad/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTkiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2T0dFeE5qYzJNemdzT2pveE9tUXhPblF4WHpFNWMyaHZablZzZVRsbVlXUT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNob2Z1bHk5ZmFkIn0"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shojffnzov9",
+      "author": "boatymcboatface27",
+      "author_fullname": null,
+      "body": "Nothing in life is free. Just sayin.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shojffnzov9",
+      "created_utc": 1794428170,
+      "created_at_iso": "2026-11-11T20:16:10.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shojffnzov9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllUVTRNVGRsT0dZc09qb3hPbVF4T25ReFh6RTVjMmh2YW1abWJucHZkams9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaG9qZmZuem92OSJ9"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shqwbocsvqc",
+      "author": "ch800-7",
+      "author_fullname": null,
+      "body": "Why are people even worried about this",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shqwbocsvqc",
+      "created_utc": 1794431342,
+      "created_at_iso": "2026-11-11T21:09:02.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shqwbocsvqc/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shrc49994f9/",
+            "created_utc": 1794431932,
+            "created_at_iso": "2026-11-11T21:18:52.000Z",
+            "id": "19shrc49994f9",
+            "author": "OkPerspective9454",
+            "author_fullname": null,
+            "body": "Coz soon the SLT will question why we spend $10k monthly on PBI licenses and a team of specialists to maintain reports when our competitors have neither.",
+            "body_html": "\n      <p>\n      Coz soon the SLT will question why we spend $10k monthly on PBI licenses and a team of specialists to maintain reports when our competitors have neither.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shrc49994f9",
+            "parent_id": "t1_19shqwbocsvqc",
+            "permalink": "/r/PowerBI/comments/1xtrjna/comment/19shrc49994f9/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19shqwbocsvqc"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shoe3603pgg",
+      "author": "mojomonday",
+      "author_fullname": null,
+      "body": "We\u2019re not building PowerBI from scratch? We\u2019re just embedding HTML visuals which solves the lame limitations the stock visuals does and speed dev much more without sacrificing anything.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shoe3603pgg",
+      "created_utc": 1794427970,
+      "created_at_iso": "2026-11-11T20:12:50.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shoe3603pgg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19shuxw2mm750",
+      "author": "Good_Champion6300",
+      "author_fullname": null,
+      "body": "Switching to HTML visuals from tools like PowerBI and Qliksense feels to me like each squad making their own reports in Excel, but with extra steps. Like, we have these dataviz tools to avoid that, because each squad making their own stuff can lead to bad data handling and bad decision making. Nothing stops people from building dashboards in excel or with HTML, but in the grand scheme of things, if you need scalability, performance and reliable data, you hand it to the BI team.\n\n It seems so obvious to me that I feel some of you are ragebaiting.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shuxw2mm750",
+      "created_utc": 1794436782,
+      "created_at_iso": "2026-11-11T22:39:42.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shuxw2mm750/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEzIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk4yRmxZbVl6T1RRc09qb3hPbVF4T25ReFh6RTVjMmgxZUhjeWJXMDNOVEE9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaHV4dzJtbTc1MCJ9"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "19shnbt2f195t",
+      "author": "urza5589",
+      "author_fullname": null,
+      "body": "I mean at this point I just deploy HTML visuals in PBI and it is the \"pretty good\" of both worlds,",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shnbt2f195t",
+      "created_utc": 1794426540,
+      "created_at_iso": "2026-11-11T19:49:00.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shnbt2f195t/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shnofmr315t/",
+            "created_utc": 1794427012,
+            "created_at_iso": "2026-11-11T19:56:52.000Z",
+            "id": "19shnofmr315t",
+            "author": "cvasco94",
+            "author_fullname": null,
+            "body": "How is it done and what visual do you use? If you can give a short explanation please. I would like to try it one day",
+            "body_html": "\n      <p>\n      How is it done and what visual do you use? If you can give a short explanation please. I would like to try it one day\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19shnofmr315t",
+            "parent_id": "t1_19shnbt2f195t",
+            "permalink": "/r/PowerBI/comments/1xtrjna/comment/19shnofmr315t/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MiZjb21tZW50UGFyZW50UG9zaXRpb25zPTE0LDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WmpWaE4yWmhNMkVzT2pveU9tUXhPblF4WHpFNWMyaHViMlp0Y2pNeE5YUT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNobm9mbXIzMTV0In0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19shnofmr315t"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "19shqds9cqhlu",
+      "author": "Jaapuchkeaa",
+      "author_fullname": null,
+      "body": "All ai slop, all good for poc , 0 for production\n\n Majority of them dont even know what is closing tag in html , flexing html dashboards",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shqds9cqhlu",
+      "created_utc": 1794430649,
+      "created_at_iso": "2026-11-11T20:57:29.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shqds9cqhlu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE1IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpqWXhNalEzWkRrc09qb3hPbVF4T25ReFh6RTVjMmh4WkhNNVkzRm9iSFU9Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjF4dHJqbmEiLCJwYXJlbnRUaGluZ0lkIjoidDFfMTlzaHFkczljcWhsdSJ9"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shotduf92g4",
+      "author": "ShapedSilver",
+      "author_fullname": null,
+      "body": "I think you have to have an interesting use-case for it to be worth it. Just switching to switch, I don\u2019t really get it. For example, I was messing with a dashboard that would simulate the potential outcomes of a few correlated time-series datasets. PBI, as far as I could tell, can\u2019t do what I was trying to do. But that basically became a web app.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shotduf92g4",
+      "created_utc": 1794428542,
+      "created_at_iso": "2026-11-11T20:22:22.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shotduf92g4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shswbh8rh5w",
+      "author": "Gators1992",
+      "author_fullname": null,
+      "body": "We had a director that said they were going to do all their dashboards in streamlit with AI.\u00a0 \u00a0I explained to him the maintenance involved and that his group will have to take that in as we don't support vibe slop.\u00a0 He wasn't so gung ho after that.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shswbh8rh5w",
+      "created_utc": 1794434032,
+      "created_at_iso": "2026-11-11T21:53:52.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shswbh8rh5w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19shnsjm018yq",
+      "author": "One-Disk-125",
+      "author_fullname": null,
+      "body": "No one's replacing all that\n\n Their keeping the good bit (the model) and getting rid of the rubbish bit (the visuals).",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shnsjm018yq",
+      "created_utc": 1794427165,
+      "created_at_iso": "2026-11-11T19:59:25.000Z",
+      "parent_id": "t3_1xtrjna",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shnsjm018yq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1xtrjna",
+    "author": "OkPerspective9454",
+    "author_fullname": "t2_2puwpgqttk",
+    "subreddit": "PowerBI",
+    "title": "Everyone is trying to kill Power BI... with HTML?",
+    "downs": 0,
+    "name": "t3_1xtrjna",
+    "upvote_ratio": 0.8148148148148148,
+    "ups": 68,
+    "selftext": "Power BI is much more than HTML. Out of the box, it gives you all of the following for free: Visualisation in-memory engine A semantic model and reusable measures Cross-filtering and drill-down Row-level security Dataset relationships and reusable dimensions Report authoring and reusable components The Power BI Service for hosting Building the above from scratch is hard software engineering. However, AI just made that process much easier. If you're trying to move off Power BI, start with the presentation layer. Query the semantic model via API and build your own visuals first. From there, you can work your way through the rest of the stack.",
+    "total_awards_received": 0,
+    "score": 68,
+    "created": 1794426212,
+    "num_comments": 90,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/everyone_is_trying_to_kill_power_bi_with_html/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1794426212
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF4dHJqbmE_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTE5IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk0yRTVaV0U0WWpjc09qb3dPbVY0T2l4WUtFZEJXMFJMZkhVNklqMTRKbjBwWnk1b1hUcHhPMmxqUFY0aUt6OVBkWHhaSm5sRVRFZG1KU2svYmt4bkkxWlhjQ1pzTHk4aWVFSjdQU1p2TlYwbGVVbytaa0p6WFNJMExrOTVJa2NqTVN0bk8wcHhTV3R1VjNkNE5GTS9kRVE3SXpnd1cxOUpMRkJxWVZSZUpITXJkVnBGWWlNM2IwWXpMaWNwWkh0b0lYMHBLWFptUWxwOWF3PT0iLCJzdWJyZWRkaXQiOiJQb3dlckJJIiwicG9zdElkIjoiMXh0cmpuYSIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id 4d9ebd7d12394ddfb144495a4e02d626

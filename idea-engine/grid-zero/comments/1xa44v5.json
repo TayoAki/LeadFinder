@@ -1,0 +1,322 @@
+{
+  "success": true,
+  "credits_remaining": 209734,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19roo9ha4dqv4",
+      "author": "AbleBranch6",
+      "author_fullname": null,
+      "body": "did you run Cube dev self-hosted (Cube Core in docker/k8s) or test Cube Cloud for the benchmark? we looked at setting up Cube Core with Cube Store on our own cluster, but our ops team was worried about sizing worker nodes for pre-aggregation builds once dataset volume grows...",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19roo9ha4dqv4",
+      "created_utc": 1793023399,
+      "created_at_iso": "2026-10-26T14:03:19.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19roo9ha4dqv4/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19ropdlzjz8lf/",
+            "created_utc": 1793024898,
+            "created_at_iso": "2026-10-26T14:28:18.000Z",
+            "id": "19ropdlzjz8lf",
+            "author": "Evening_Hawk_7470",
+            "author_fullname": null,
+            "body": "for this 50M-row sandbox run we just spun up Cube Core with Cube Store in Docker on an AWS EC2 instance (c6i.2xlarge). it was surprisingly lightweight for local testing once we tuned the partition indexes.\n\n that said, for production we're looking at Cube Cloud primarily for two things: multi-tenant worker isolation so heavy pre-aggregation refreshes don't steal RAM from live query serving+ automated cache warming before the 8:30 AM client login spike",
+            "body_html": "\n      <p>\n      for this 50M-row sandbox run we just spun up Cube Core with Cube Store in Docker on an AWS EC2 instance (c6i.2xlarge). it was surprisingly lightweight for local testing once we tuned the partition indexes.\n    </p><p>\n      that said, for production we're looking at Cube Cloud primarily for two things: multi-tenant worker isolation so heavy pre-aggregation refreshes don't steal RAM from live query serving+ automated cache warming before the 8:30 AM client login spike\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19ropdlzjz8lf",
+            "parent_id": "t1_19roo9ha4dqv4",
+            "permalink": "/r/dataanalysis/comments/1xa44v5/comment/19ropdlzjz8lf/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19roo9ha4dqv4"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19rookkwttjk1",
+      "author": "Evening_Hawk_7470",
+      "author_fullname": null,
+      "body": "now, quick update on the late-arriving data question: we ended up configuring a rolling 3-day partition refresh window in Cube Store, and memory usage stabilized right around 1.3 GB during simulated burst loads. Late refunds and backfilled usage rows now recalculate without wiping older monthly partitions, and p90 latency is holding under 420 ms across 50 concurrent tenant sessions. Appreciate the practical feedback from everyone in the thread so I'm putting together an anonymized version of our YAML data model and index configuration to share later this week",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": true,
+      "stickied": false,
+      "name": "t1_19rookkwttjk1",
+      "created_utc": 1793023814,
+      "created_at_iso": "2026-10-26T14:10:14.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19rookkwttjk1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pht2jgw",
+      "author": "ArielCoding",
+      "author_fullname": null,
+      "body": "Don\u2019t rebuild the old data, store the results in monthly chunks and only recalculate the last few days, so a refund that shows up 2 days late just fixes one small piece. If old data arrives much later, a scheduled job redoes only that month. For today\u2019s numbers, read straight from the live database, so they\u2019re always correct.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pht2jgw",
+      "created_utc": 1792457628,
+      "created_at_iso": "2026-10-20T00:53:48.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/pht2jgw/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19roolq41s11e/",
+            "created_utc": 1793023856,
+            "created_at_iso": "2026-10-26T14:10:56.000Z",
+            "id": "19roolq41s11e",
+            "author": "Evening_Hawk_7470",
+            "author_fullname": null,
+            "body": "that's super practical and pretty much what we're landing on as we configured a rolling refreshKey window for the last 3 days so late refunds only rebuild the current partition, leaving historical monthly partitions locked unless we run an explicit backfill and for current-day data i would also like to know like are you doing a live union fallback directly in your semantic layer, or running micro-batches every 10\u201315 mins into the pre-aggregation cache?",
+            "body_html": "\n      <p>\n      that's super practical and pretty much what we're landing on as we configured a rolling refreshKey window for the last 3 days so late refunds only rebuild the current partition, leaving historical monthly partitions locked unless we run an explicit backfill and for current-day data i would also like to know like are you doing a live union fallback directly in your semantic layer, or running micro-batches every 10\u201315 mins into the pre-aggregation cache?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19roolq41s11e",
+            "parent_id": "t1_pht2jgw",
+            "permalink": "/r/dataanalysis/comments/1xa44v5/comment/19roolq41s11e/",
+            "ups": -1,
+            "downs": 0,
+            "score": -1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pht2jgw"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19rgusfenoshw",
+      "author": "Unusual-Dress-402",
+      "author_fullname": null,
+      "body": "Interesting approach to pre-aggregations",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rgusfenoshw",
+      "created_utc": 1792644758,
+      "created_at_iso": "2026-10-22T04:52:38.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19rgusfenoshw/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "phqoulo",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "Automod prevents all posts from being displayed until moderators have reviewed them. Do not delete your post or there will be nothing for the mods to review. Mods selectively choose what is permitted to be posted in r/DataAnalysis.\n\n If your post involves Career-focused questions, including resume reviews, how to learn DA and how to get into a DA job, then the post does not belong here, but instead belongs in our sister-subreddit, r/DataAnalysisCareers.\n\n Have you read the rules?\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": false,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_phqoulo",
+      "created_utc": 1792432975,
+      "created_at_iso": "2026-10-19T18:02:55.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/phqoulo/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "phr8e6p",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_phr8e6p",
+      "created_utc": 1792437770,
+      "created_at_iso": "2026-10-19T19:22:50.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/phr8e6p/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19rooqqqe7mtg/",
+            "created_utc": 1793024044,
+            "created_at_iso": "2026-10-26T14:14:04.000Z",
+            "id": "19rooqqqe7mtg",
+            "author": "Evening_Hawk_7470",
+            "author_fullname": null,
+            "body": "fair callout. our plan is a two-tier setup: keep granular pre-aggregations for the 10 most common dashboard dimensions (which covers some 80% of daily traffic), and let in this case Cube\u2019s aggregate awareness roll up from coarser partitions when possible\n\n on the other hand for some ad-hoc queries that completely miss Cube Store, they pass through to Snowflake; but having query queueing and deduplication at the semantic layer at least stops 40 simultaneous users from triggering 40 identical warehouse cluster wake-ups",
+            "body_html": "\n      <p>\n      fair callout. our plan is a two-tier setup: keep granular pre-aggregations for the 10 most common dashboard dimensions (which covers some 80% of daily traffic), and let in this case Cube\u2019s aggregate awareness roll up from coarser partitions when possible\n    </p><p>\n      on the other hand for some ad-hoc queries that completely miss Cube Store, they pass through to Snowflake; but having query queueing and deduplication at the semantic layer at least stops 40 simultaneous users from triggering 40 identical warehouse cluster wake-ups\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rooqqqe7mtg",
+            "parent_id": "t1_phr8e6p",
+            "permalink": "/r/dataanalysis/comments/1xa44v5/comment/19rooqqqe7mtg/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "phr8e6p"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "phr3wfa",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_phr3wfa",
+      "created_utc": 1792436660,
+      "created_at_iso": "2026-10-19T19:04:20.000Z",
+      "parent_id": "t3_1xa44v5",
+      "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/phr3wfa/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/comment/19rooob2zz680/",
+            "created_utc": 1793023953,
+            "created_at_iso": "2026-10-26T14:12:33.000Z",
+            "id": "19rooob2zz680",
+            "author": "Evening_Hawk_7470",
+            "author_fullname": null,
+            "body": "our first attempt was a mess haha. we threw three high-cardinality string dimensions into a single rollup and build time shot past 25 minutes while worker RAM spiked.\n\n and then what fixed it was ordering indexes strictly by tenant_id, timestamp, and low-cardinality status enums, plus setting partition_granularity: month in the YAML data model. once the indexes matched our primary query filters, Cube Store memory dropped by nearly70% and rollup builds finished in under 2 minutes",
+            "body_html": "\n      <p>\n      our first attempt was a mess haha. we threw three high-cardinality string dimensions into a single rollup and build time shot past 25 minutes while worker RAM spiked.\n    </p><p>\n      and then what fixed it was ordering indexes strictly by tenant_id, timestamp, and low-cardinality status enums, plus setting partition_granularity: month in the YAML data model. once the indexes matched our primary query filters, Cube Store memory dropped by nearly70% and rollup builds finished in under 2 minutes\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19rooob2zz680",
+            "parent_id": "t1_phr3wfa",
+            "permalink": "/r/dataanalysis/comments/1xa44v5/comment/19rooob2zz680/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "phr3wfa"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1xa44v5",
+    "author": "Evening_Hawk_7470",
+    "author_fullname": "t2_275bukuzvs",
+    "subreddit": "dataanalysis",
+    "title": "benchmarked 5 embedded analytics setups against a 50M-row Snowflake table to replace our slow Metabase iframes. evaluation matrix, latency numbers + trade-offs\u00a0below",
+    "downs": 0,
+    "name": "t3_1xa44v5",
+    "upvote_ratio": 1,
+    "ups": 4,
+    "selftext": "a week ago, I've been asking on reddit on how other B2B SaaS teams moved away from signed Metabase iframes once they hit multi-tenant role permissions, slow morning dashboard load times also escalating Snowflake compute bills and since then, I've noticed nearly four distinct paths to investigate (i\u2019ve formatted the spreadsheet itself with ai to keep it readable enough): staying with Metabase or Apache Superset, but placing a dedicated caching tier or materialized rollups in front of the database. Moving to a dedicated spreadsheet-first or workbook-centric embedded BI platform like Sigma or Omni. Decoupling the frontend completely using a headless semantic layer (specifically testing Cube Core and Cube Cloud) to serve pre-aggregations into our own React components while keeping an optional embedded builder for enterprise users. Writing custom dbt rollups into ClickHouse or DuckDB and maintaining our own FastAPI aggregation endpoints. so I also spent the last two weeks running a sandbox bake-off with an anonymized slice of our Snowflake production dataset. below I've placed my exact test setup, the comparison spreadsheet + where each option actually landed Test Environment and Methodology Source data: 50 million rows of B2B event, order, and billing telemetry in Snowflake. Multi-tenancy: 900 simulated tenant accounts, with realistic volume skew (top 5 enterprise tenants account for 30% of total rows). Snowflake cluster: Standard X-Small warehouse, auto-suspend set to 60 seconds. Test queries: Query 1: 30-day KPI summary with two COUNT(DISTINCT) calculations. Query 2: Daily time-series trend with dynamic date-grain switching (day, week, month) across 90 days. Query 3: Multi-column tabular breakdown with role-based column masking on unit margin fields. Load profile: 50 concurrent tenant sessions running random filter combinations over a 15-minute burst window to simulate morning login traffic. Master Comparison Spreadsheet Platform / Approach Metric Modeling & Governance Multi-Tenant Security & Role Masking Caching & Pre-Aggregation Engine Observed p50 / p90 Latency (50M rows) Snowflake Compute Impact (15-min burst) Embedding Surface Flexibility Honest Downside / Bottleneck Metabase (Pro/Enterprise Embedding) GUI models or raw SQL queries; logic defined per card. Locked parameters in signed JWT for tenant_id; sandboxing handles basic row filters. Column masking requires duplicating questions. Result-cache only (TTL-based). New filter combinations bypass the cache completely. p50: 1,840 ms p90: 8,620 ms 14.8 warehouse compute credits consumed; warehouse stayed active throughout the entire test. Signed iframes and interactive embedding. Cannot use headless REST/GraphQL APIs on the same model. Cache misses on every filter change; maintaining distinct cards per customer role tier creates massive maintenance overhead. Apache Superset / Preset (Embedded) SQL Lab datasets with Jinja templating; metrics defined at dataset level. Jinja context filters for tenant_id; row-level security rules managed via security manager. Redis-backed chart cache. Misses when tenants apply custom slice-and-dice dimensions. p50: 1,620 ms p90: 7,450 ms 12.2 warehouse compute credits; repeated full partition scans on date-range changes. Embedded SDK with guest tokens into iframes. Headless API usage requires custom wrapper code. Complex permission inheritance; heavy Docker footprint to self-host and keep stable under concurrent connection spikes. Sigma Computing (Embedded) Direct warehouse modeling on tables and views; familiar spreadsheet logic. User attributes passed via signed URL/JWT; row-level security maps directly to warehouse policies. Snowflake-level result caching plus Sigma query compilation reuse. p50: 920 ms p90: 3,480 ms 8.4 warehouse compute credits; efficient query generation but still relies directly on warehouse compute for ad-hoc grouping. Embedded workbooks and individual visual embeds. Excellent spreadsheet-style exploration. Pricing model scales aggressively on enterprise user tiers; single-tenant architectural origins mean custom headless React rendering is limited. Omni (Embed) Shared semantic modeling layer (LookML heritage); defines dimensions, joins, and measures in code. Dynamic filter injection via user metadata; handles tenant and role boundaries cleanly. Query compilation caching and warehouse pushdown. No separate pre-aggregation database. p50: 810 ms p90: 2,950 ms 7.9 warehouse compute credits; relies on warehouse compute capacity for heavy aggregates. Embeddable dashboards and explore interfaces. Strong developer tooling for Looker-familiar teams. Lacks an independent pre-aggregation caching engine, so sub-second p90 latency on 50M rows requires paying for larger Snowflake warehouse sizes. Cube (Cube Core + Cube Store) SQL-first semantic layer in YAML/JS; defines cubes, joins, measures, and calculated ratios. Compile-time securityContext from JWT; access policies inject tenant_id and mask columns dynamically before SQL compiles. Distributed columnar cache (Cube Store in Rust) holding sorted Parquet rollups with aggregate awareness. p50: 85 ms p90: 410 ms (when hitting rollups) 1.1 warehouse compute credits; 94% of dashboard queries served entirely from Cube Store without waking Snowflake. 4 surfaces: Headless REST/GraphQL/SQL APIs for React, signed iframes, embedded Creator Mode for end users, and agentic chat. Writing data models in YAML requires upfront engineering; partition warmup and index sorting require careful tuning to prevent high memory usage. What We Learned From The Runs1. Where Metabase and Superset still make sense If your customer base is under 100 accounts, your dashboard has uniform permissions, and your engineering team does not have frontend cycles to touch chart components, Metabase remains the fastest path to production. However, relying on question-level result caching falls apart the moment customers use dynamic date filters, because every unique date range wakes up your cloud warehouse. 2. Where Sigma and Omni excel If your product serves finance, accounting, or operations users who want an Excel-style workbook directly inside your application, Sigma is very difficult to beat from a UX standpoint. Their spreadsheet model feels natural to non-technical analysts. Omni is an impressive evolution for teams that like LookML's modeling rigor but want modern speed and cleaner embedded authoring. The trade-off with both is that you are paying ongoing compute costs to your warehouse for every complex slice-and-dice query, unless you scale warehouse sizes. 3. Why the semantic layer approach with Cube worked best for our architecture Cube gave us two specific architectural capabilities that resolved our initial bottleneck: Aggregate Awareness in Cube Store: We defined a pre-aggregation rollup partitioned by month on tenant_id, transaction_date, and service_tier. When a tenant loads a 7-day dashboard, switches to a 90-day view, or aggregates by week, Cube Store rewrites the query to hit the local sorted Parquet partition. It served 94% of our simulated morning burst queries in under 450 ms (p90), consuming only 1.1 Snowflake credits over the 15-minute test window. Decoupled Surfaces on One Metric Model: We do not have to rebuild all 14 dashboard cards in React immediately. We can render high-traffic KPI cards natively using our own React design system through the REST API, while dropping in the embedded Creator Mode interface for our top enterprise accounts so their power users can build custom reports against the exact same governed measures. 4. The real trade-offs and gotchas with Cube This was not a free lunch, and there are two operational complexities anyone considering this path should know: Data modeling discipline: You have to explicitly model your cubes, primary keys, and join relationships in YAML or JavaScript. If your underlying database schema has messy joins or unindexed foreign keys, Cube will force you to fix your join logic before your metrics compile correctly. Index sorting and warmup overhead: In our first pre-aggregation attempt, we naively added three high-cardinality string dimensions to a single rollup. The pre-aggregation build time took over 25 minutes and consumed noticeable worker memory. We had to restructure the rollup to order indexes strictly by tenant_id, date, and low-cardinality status codes, using partition_granularity set to month with refreshKey tracking our updated_at timestamp. my question for the community. now, for those of you who do run pre-aggregations / rollups in production embedded environments: i\u2019d like to know how you guys work with late-arriving data (like payment refunds or backfilled usage events arriving 48 hours later) and do not trigger complete rebuild of historical partitions? like, are you running targeted partition refreshes on an incremental window, or maybe relying on live union fallbacks?",
+    "total_awards_received": 0,
+    "score": 4,
+    "created": 1792432975,
+    "num_comments": 12,
+    "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/benchmarked_5_embedded_analytics_setups_against_a/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1792432975
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 047dfc8ed0ba40bdaa21547dedd4d99c

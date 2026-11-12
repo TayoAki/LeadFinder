@@ -1,0 +1,332 @@
+{
+  "success": true,
+  "credits_remaining": 209741,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "kk8qs6z",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_kk8qs6z",
+      "created_utc": 1706612367,
+      "created_at_iso": "2024-01-30T10:59:27.000Z",
+      "parent_id": "t3_1ael833",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/kk8qs6z/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/koa7a19/",
+            "created_utc": 1706710581,
+            "created_at_iso": "2024-01-31T14:16:21.000Z",
+            "id": "koa7a19",
+            "author": "kairayy",
+            "author_fullname": null,
+            "body": "Thanks so much! This solved quite a bit. Especially with solving the interdependencies between slicers on the same page.",
+            "body_html": "\n      <p>\n      Thanks so much! This solved quite a bit. Especially with solving the interdependencies between slicers on the same page.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_koa7a19",
+            "parent_id": "t1_kk8qs6z",
+            "permalink": "/r/PowerBI/comments/1ael833/comment/koa7a19/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/lh37me0/",
+                  "created_utc": 1723115194,
+                  "created_at_iso": "2024-08-08T11:06:34.000Z",
+                  "id": "lh37me0",
+                  "author": "cbekker1",
+                  "author_fullname": null,
+                  "body": "Didn't work for me. Still responded to all pages filter.",
+                  "body_html": "\n      <p>\n      Didn't work for me. Still responded to all pages filter.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_lh37me0",
+                  "parent_id": "t1_koa7a19",
+                  "permalink": "/r/PowerBI/comments/1ael833/comment/lh37me0/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "koa7a19"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "koa7a19"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "kk9pywv",
+      "author": "_T0MA",
+      "author_fullname": null,
+      "body": "How many pages you have? Cant you instead \u201cFilter on this page\u201d for each page?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_kk9pywv",
+      "created_utc": 1706629008,
+      "created_at_iso": "2024-01-30T15:36:48.000Z",
+      "parent_id": "t3_1ael833",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/kk9pywv/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/koa1o4o/",
+            "created_utc": 1706708188,
+            "created_at_iso": "2024-01-31T13:36:28.000Z",
+            "id": "koa1o4o",
+            "author": "kairayy",
+            "author_fullname": null,
+            "body": "That could work but certain readers shouldn't have access to certain months. Therefore I'd like to just set the parameters/filters now in one go for the entire report, just in case I have to add more pages in the future and I accidentally forget to apply that page filter haha. I appreciate your help!",
+            "body_html": "\n      <p>\n      That could work but certain readers shouldn't have access to certain months. Therefore I'd like to just set the parameters/filters now in one go for the entire report, just in case I have to add more pages in the future and I accidentally forget to apply that page filter haha. I appreciate your help!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_koa1o4o",
+            "parent_id": "t1_kk9pywv",
+            "permalink": "/r/PowerBI/comments/1ael833/comment/koa1o4o/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/koa1z3k/",
+                  "created_utc": 1706708322,
+                  "created_at_iso": "2024-01-31T13:38:42.000Z",
+                  "id": "koa1z3k",
+                  "author": "kairayy",
+                  "author_fullname": null,
+                  "body": "In conclusion, I am trying to avoid human error (me) as much as possible haha",
+                  "body_html": "\n      <p>\n      In conclusion, I am trying to avoid human error (me) as much as possible haha\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_koa1z3k",
+                  "parent_id": "t1_koa1o4o",
+                  "permalink": "/r/PowerBI/comments/1ael833/comment/koa1z3k/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "koa1o4o"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "koa1o4o"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "kk8p2ls",
+      "author": "Lacanos",
+      "author_fullname": null,
+      "body": "You can create measures that ignore filters - would this work for you?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_kk8p2ls",
+      "created_utc": 1706611124,
+      "created_at_iso": "2024-01-30T10:38:44.000Z",
+      "parent_id": "t3_1ael833",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/kk8p2ls/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/kk8qas3/",
+            "created_utc": 1706612022,
+            "created_at_iso": "2024-01-30T10:53:42.000Z",
+            "id": "kk8qas3",
+            "author": "kairayy",
+            "author_fullname": null,
+            "body": "I believe that is the way to go but the obstacle right now is, that the dax measure needs to ignore the month filter that is on all pages, but also respond to the month slicer (same column) that is on the page.\n\n I appreciate the reply!!",
+            "body_html": "\n      <p>\n      I believe that is the way to go but the obstacle right now is, that the dax measure needs to ignore the month filter that is on all pages, but also respond to the month slicer (same column) that is on the page.\n    </p><p>\n      I appreciate the reply!!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_kk8qas3",
+            "parent_id": "t1_kk8p2ls",
+            "permalink": "/r/PowerBI/comments/1ael833/comment/kk8qas3/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/kk8qzi6/",
+                  "created_utc": 1706612510,
+                  "created_at_iso": "2024-01-30T11:01:50.000Z",
+                  "id": "kk8qzi6",
+                  "author": "Lacanos",
+                  "author_fullname": null,
+                  "body": "You can use a selectedvalue(name of field in your slicer) to still use your slicer, but if they are the same field name it might be tricky. A workaround might be to duplicate the column in power query and use the duplicate for the slicer using selectedvalue as above?",
+                  "body_html": "\n      <p>\n      You can use a selectedvalue(name of field in your slicer) to still use your slicer, but if they are the same field name it might be tricky. A workaround might be to duplicate the column in power query and use the duplicate for the slicer using selectedvalue as above?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_kk8qzi6",
+                  "parent_id": "t1_kk8qas3",
+                  "permalink": "/r/PowerBI/comments/1ael833/comment/kk8qzi6/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFhZWw4MzM_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTIsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqY3dNV1UzT0RZc09qb3pPbVF4T25ReFgydHJPSEY2YVRZPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxYWVsODMzIiwicGFyZW50VGhpbmdJZCI6InQxX2trOHF6aTYifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "kk8qzi6"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "kk8qzi6"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ko8bhwq",
+      "author": "OwnFun4911",
+      "author_fullname": null,
+      "body": "Try USERELATIONSHIP() in your measures. You can toggle table relationships (thus, filtering as well).",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ko8bhwq",
+      "created_utc": 1706671108,
+      "created_at_iso": "2024-01-31T03:18:28.000Z",
+      "parent_id": "t3_1ael833",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/ko8bhwq/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/koa2vod/",
+            "created_utc": 1706708716,
+            "created_at_iso": "2024-01-31T13:45:16.000Z",
+            "id": "koa2vod",
+            "author": "kairayy",
+            "author_fullname": null,
+            "body": "Oh this is great! I've never used this function before! This could have saved me some time with the modeling haha. Thank you!!",
+            "body_html": "\n      <p>\n      Oh this is great! I've never used this function before! This could have saved me some time with the modeling haha. Thank you!!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_koa2vod",
+            "parent_id": "t1_ko8bhwq",
+            "permalink": "/r/PowerBI/comments/1ael833/comment/koa2vod/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ko8bhwq"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1ael833",
+    "author": "kairayy",
+    "author_fullname": "t2_39g0arjw",
+    "subreddit": "PowerBI",
+    "title": "Visuals that ignore \"Filter on all Pages\"",
+    "downs": 0,
+    "name": "t3_1ael833",
+    "upvote_ratio": 1,
+    "ups": 1,
+    "selftext": "Hi everybody, I have a report that requires a filter on all Pages (Month). I now need to build a page that ignores these filters so I can compare the one month with all others. And probably the biggest challenge is, that a month slicer should also exist. Do you guys have an idea how I should go at it? Thanks in advance!!",
+    "total_awards_received": 0,
+    "score": 1,
+    "created": 1706609957,
+    "num_comments": 12,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/visuals_that_ignore_filter_on_all_pages/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1706609957
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 67b69f9dedd340b2a0e451b3dd964b95
+treg: after using this result, run treg review 67b69f9dedd340b2a0e451b3dd964b95 <useful|partly|not_useful|not_sure> [--reason "..."]; omit private data, then keep going with the task.

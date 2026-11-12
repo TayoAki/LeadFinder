@@ -1,0 +1,163 @@
+{
+  "success": true,
+  "credits_remaining": 209749,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19rt8fkif60e9",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_19rt8fkif60e9",
+      "created_utc": 1793244241,
+      "created_at_iso": "2026-10-29T03:24:01.000Z",
+      "parent_id": "t3_1xi95ud",
+      "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19rt8fkif60e9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19rtguo4bukjm",
+      "author": "hazysummersky",
+      "author_fullname": null,
+      "body": "I build them precise!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rtguo4bukjm",
+      "created_utc": 1793255567,
+      "created_at_iso": "2026-10-29T06:32:47.000Z",
+      "parent_id": "t3_1xi95ud",
+      "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19rtguo4bukjm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19s1yznyf87er",
+      "author": "Anna_GermainUX",
+      "author_fullname": null,
+      "body": "Always rely on traceability. If that data exists, then it can be traced somewhere. If you can't, you can clearly see there's a problem there.\nAs for your issue with definitions, this is a concern that annoyingly comes up a lot. Though, even college papers already solved this issue by having authors provide a definition of terms before the body. It's a good practice to implement for report-writing, specially for jargon-heavy industries.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19s1yznyf87er",
+      "created_utc": 1793667388,
+      "created_at_iso": "2026-11-03T00:56:28.000Z",
+      "parent_id": "t3_1xi95ud",
+      "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19s1yznyf87er/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19rtomv2xawzk",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rtomv2xawzk",
+      "created_utc": 1793266037,
+      "created_at_iso": "2026-10-29T09:27:17.000Z",
+      "parent_id": "t3_1xi95ud",
+      "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19rtomv2xawzk/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19ru17iq3unpf/",
+            "created_utc": 1793282951,
+            "created_at_iso": "2026-10-29T14:09:11.000Z",
+            "id": "19ru17iq3unpf",
+            "author": "amargolin",
+            "author_fullname": null,
+            "body": "Pick a refunded order and check what the dashboard says happened to its revenue.\n\n to u/doku_tree's point, i'd do it in both directions. one record that should count, followed from the source row to the dashboard figure, and one that shouldn't (refund, test order, duplicate) to confirm it's out. a dashboard that can't tell those apart is precise but not trustworthy.\n\n and tie the closed-period total back to the source system: the gap should be explained row by row, not \"about 1%\".",
+            "body_html": "\n      <blockquote>\n      <p>\n      Pick a refunded order and check what the dashboard says happened to its revenue.\n    </p>\n    </blockquote><p>\n      to <a rpl=\"\" class=\" a\n  \n  \n  \n  \n  hover:underline\n  \n  cursor-pointer\" href=\"/user/doku_tree/\">u/doku_tree</a>'s point, i'd do it in both directions. one record that should count, followed from the source row to the dashboard figure, and one that shouldn't (refund, test order, duplicate) to confirm it's out. a dashboard that can't tell those apart is precise but not trustworthy.\n    </p><p>\n      and tie the closed-period total back to the source system: the gap should be explained row by row, not \"about 1%\".\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19ru17iq3unpf",
+            "parent_id": "t1_19rtomv2xawzk",
+            "permalink": "/r/analytics/comments/1xi95ud/comment/19ru17iq3unpf/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19rtomv2xawzk"
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    }
+  ],
+  "post": {
+    "id": "1xi95ud",
+    "author": "digitxl_agency",
+    "author_fullname": "t2_1kilta3gy5",
+    "subreddit": "analytics",
+    "title": "How do you know when a dashboard is precise but not actually trustworthy?",
+    "downs": 0,
+    "name": "t3_1xi95ud",
+    "upvote_ratio": 0.6666666666666666,
+    "ups": 3,
+    "selftext": "I\u2019m interested in how other analytics teams make this distinction. A dashboard can look extremely convincing: clean trend lines exact percentages revenue to the cent consistent period comparisons multiple reports showing similar numbers But none of that necessarily proves the underlying measurement is trustworthy. Some of the warning signs I look for are: The definition is unclear. People use terms like \u201clead\u201d, \u201cconversion\u201d or \u201crevenue\u201d, but different systems or teams mean different things. Nobody can trace one real outcome end to end. The aggregate reporting looks fine, but it is difficult to follow one transaction or lead from the website through to the source system. Changes cannot be explained. Conversion moves materially and the team cannot tell whether it came from customer behaviour, implementation, consent, traffic mix or the backend. The dashboard is treated as the source of truth rather than a representation of source systems. For me, precision and confidence are different things. A report can be mathematically precise while the underlying event, definition or hand-off is wrong. Curious how others approach this. What is your quickest test for whether a dashboard is genuinely trustworthy rather than simply well presented?",
+    "total_awards_received": 0,
+    "score": 3,
+    "created": 1793244241,
+    "num_comments": 9,
+    "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/how_do_you_know_when_a_dashboard_is_precise_but/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1793244241
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id ed3943d4ae6a40ddb2cb4d76b0c9c57e

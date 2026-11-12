@@ -1,0 +1,679 @@
+{
+  "success": true,
+  "credits_remaining": 209740,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ncfkle9",
+      "author": "st4n13l",
+      "author_fullname": null,
+      "body": "That solution certainly is the best if you have no use for Fabric other than to host Power BI reports that will be embedded in an application that's already developed using your own security that's already developed.\n\n For the vast majority of organizations, this is not the case.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncfkle9",
+      "created_utc": 1757015686,
+      "created_at_iso": "2025-09-04T19:54:46.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncfkle9/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncfmd0b/",
+            "created_utc": 1757016212,
+            "created_at_iso": "2025-09-04T20:03:32.000Z",
+            "id": "ncfmd0b",
+            "author": "OtherwiseGroup3162",
+            "author_fullname": null,
+            "body": "I agree in terms of organizations who use the dashboards internally. However, I would think there are a lot of organizations like us who create external dashboards for external companies to view.",
+            "body_html": "\n      <p>\n      I agree in terms of organizations who use the dashboards internally. However, I would think there are a lot of organizations like us who create external dashboards for external companies to view.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncfmd0b",
+            "parent_id": "t1_ncfkle9",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncfmd0b/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncfkle9"
+        }
+      },
+      "ups": 13,
+      "downs": 0,
+      "score": 13
+    },
+    {
+      "id": "ncg8nbw",
+      "author": "meatballio",
+      "author_fullname": null,
+      "body": "how large of a model are you embedding? it seems like the model would need to be pretty small to support 1,000 users on an F2 or F4.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncg8nbw",
+      "created_utc": 1757022895,
+      "created_at_iso": "2025-09-04T21:54:55.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncg8nbw/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgbbqg/",
+            "created_utc": 1757023769,
+            "created_at_iso": "2025-09-04T22:09:29.000Z",
+            "id": "ncgbbqg",
+            "author": "OtherwiseGroup3162",
+            "author_fullname": null,
+            "body": "If you think about this way, there are only 50 external clients, that average around 20 users each which is how we get to 1,000 external users. So the model is not super large saying that there are only 50 instances of client data in the model. It is also somewhat light weight data to be honest, but even better that we don't have to pay for all 1,000 licenses since we only care about 50 different clients...\n\n That being said, we will likely have to upgrade once we get more customers on board, but it is still much cheaper than doing a per user model.",
+            "body_html": "\n      <p>\n      If you think about this way, there are only 50 external clients, that average around 20 users each which is how we get to 1,000 external users. So the model is not super large saying that there are only 50 instances of client data in the model. It is also somewhat light weight data to be honest, but even better that we don't have to pay for all 1,000 licenses since we only care about 50 different clients...\n    </p><p>\n      That being said, we will likely have to upgrade once we get more customers on board, but it is still much cheaper than doing a per user model.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgbbqg",
+            "parent_id": "t1_ncg8nbw",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgbbqg/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgg7d8/",
+                  "created_utc": 1757025410,
+                  "created_at_iso": "2025-09-04T22:36:50.000Z",
+                  "id": "ncgg7d8",
+                  "author": "Data-Bricks",
+                  "author_fullname": null,
+                  "body": "See my comment on the A1-A8 embedded SKU that is designed for this exact purpose (rather than licensing per user)",
+                  "body_html": "\n      <p>\n      See my comment on the A1-A8 embedded SKU that is designed for this exact purpose (rather than licensing per user)\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgg7d8",
+                  "parent_id": "t1_ncgbbqg",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgg7d8/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTEsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllqUTBOakU1WXpJc09qb3pPbVF4T25ReFgyNWpaMmMzWkRnPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25jZ2c3ZDgifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ncgg7d8"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncgg7d8"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "nd9bp6w",
+      "author": "AVatorL",
+      "author_fullname": null,
+      "body": "With multiple Fabric trials available pert tenant (at least for now), I decided that \"app owns data\" embedding is cheap enough (free) to be embedded as a demo on my website: https://www.powerofbi.org/power-bi-embedded-demo/",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nd9bp6w",
+      "created_utc": 1757423390,
+      "created_at_iso": "2025-09-09T13:09:50.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/nd9bp6w/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/nd9nbso/",
+            "created_utc": 1757427092,
+            "created_at_iso": "2025-09-09T14:11:32.000Z",
+            "id": "nd9nbso",
+            "author": "OtherwiseGroup3162",
+            "author_fullname": null,
+            "body": "Yep, looks great. We moved on to a cheap fabric sku and it is working very well. Just took a little bit to figure out the APIs, but now we are all set.",
+            "body_html": "\n      <p>\n      Yep, looks great. We moved on to a cheap fabric sku and it is working very well. Just took a little bit to figure out the APIs, but now we are all set.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nd9nbso",
+            "parent_id": "t1_nd9bp6w",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/nd9nbso/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nd9bp6w"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ncfg46t",
+      "author": "Rotato_chips",
+      "author_fullname": null,
+      "body": "What about PPU?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncfg46t",
+      "created_utc": 1757014335,
+      "created_at_iso": "2025-09-04T19:32:15.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncfg46t/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncfhd9e/",
+            "created_utc": 1757014719,
+            "created_at_iso": "2025-09-04T19:38:39.000Z",
+            "id": "ncfhd9e",
+            "author": "OtherwiseGroup3162",
+            "author_fullname": null,
+            "body": "We ended up going with a cheap fabric license ~$150-$300/month, then paying for 3 licensed users to create all of the dashboards. All of the 1,000 external users do not need any Power BI licenses to use the dashboards in our external application. They use our other authentication system separate from Power BI. The row level security still works based off of the email address login we created.",
+            "body_html": "\n      <p>\n      We ended up going with a cheap fabric license ~$150-$300/month, then paying for 3 licensed users to create all of the dashboards. All of the 1,000 external users do not need any Power BI licenses to use the dashboards in our external application. They use our other authentication system separate from Power BI. The row level security still works based off of the email address login we created.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncfhd9e",
+            "parent_id": "t1_ncfg46t",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncfhd9e/",
+            "ups": 9,
+            "downs": 0,
+            "score": 9,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgm618/",
+                  "created_utc": 1757027504,
+                  "created_at_iso": "2025-09-04T23:11:44.000Z",
+                  "id": "ncgm618",
+                  "author": "powerbitips",
+                  "author_fullname": null,
+                  "body": "Perfect solution and this is exactly what power bi embedded is for.",
+                  "body_html": "\n      <p>\n      Perfect solution and this is exactly what power bi embedded is for.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgm618",
+                  "parent_id": "t1_ncfhd9e",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgm618/",
+                  "ups": 6,
+                  "downs": 0,
+                  "score": 6,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgm40w/",
+                  "created_utc": 1757027485,
+                  "created_at_iso": "2025-09-04T23:11:25.000Z",
+                  "id": "ncgm40w",
+                  "author": "Drew707",
+                  "author_fullname": null,
+                  "body": "Are you hitting capacity caps with that many users and such a cheap capacity?",
+                  "body_html": "\n      <p>\n      Are you hitting capacity caps with that many users and such a cheap capacity?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgm40w",
+                  "parent_id": "t1_ncfhd9e",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgm40w/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTMsMCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1XTTJNMkptWWprc09qb3pPbVF4T25ReFgyNWpaMjAwTUhjPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25jZ200MHcifQ"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/nnh3cw0/",
+                  "created_utc": 1762458755,
+                  "created_at_iso": "2025-11-06T19:52:35.000Z",
+                  "id": "nnh3cw0",
+                  "author": "Ambitious_Pickle_977",
+                  "author_fullname": null,
+                  "body": "Can I ask you which license exactly you got? We are struggling with this and trying to figure out a better way to do this.",
+                  "body_html": "\n      <p>\n      Can I ask you which license exactly you got? We are struggling with this and trying to figure out a better way to do this.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_nnh3cw0",
+                  "parent_id": "t1_ncfhd9e",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/nnh3cw0/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTMsMCwyIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlltTTFZMlJqWTJJc09qb3pPbVF4T25ReFgyNXVhRE5qZHpBPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25uaDNjdzAifQ"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncx1cvz/",
+                  "created_utc": 1757258211,
+                  "created_at_iso": "2025-09-07T15:16:51.000Z",
+                  "id": "ncx1cvz",
+                  "author": "[deleted]",
+                  "author_fullname": null,
+                  "body": "[deleted]",
+                  "body_html": null,
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": true,
+                  "name": "t1_ncx1cvz",
+                  "parent_id": "t1_ncfhd9e",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncx1cvz/",
+                  "ups": 0,
+                  "downs": 0,
+                  "score": 0,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTMsMCwzIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk4yUXhaVGd3TTJFc09qb3pPbVF4T25ReFgyNWplREZqZG5vPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25jeDFjdnoifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ncgm40w"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncgm40w"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncgc42f",
+      "author": "clement1987",
+      "author_fullname": null,
+      "body": "Can you share what is this external application?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncgc42f",
+      "created_utc": 1757024026,
+      "created_at_iso": "2025-09-04T22:13:46.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgc42f/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgcf65/",
+            "created_utc": 1757024128,
+            "created_at_iso": "2025-09-04T22:15:28.000Z",
+            "id": "ncgcf65",
+            "author": "OtherwiseGroup3162",
+            "author_fullname": null,
+            "body": "It is basically an empty website with security that I use an API to embed the Power BI dashboard. So the only thing inside is the dashboard.",
+            "body_html": "\n      <p>\n      It is basically an empty website with security that I use an API to embed the Power BI dashboard. So the only thing inside is the dashboard.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgcf65",
+            "parent_id": "t1_ncgc42f",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgcf65/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgmrh4/",
+            "created_utc": 1757027706,
+            "created_at_iso": "2025-09-04T23:15:06.000Z",
+            "id": "ncgmrh4",
+            "author": "powerbitips",
+            "author_fullname": null,
+            "body": "There are embedded accelerators that do exactly this. Check out:\n\n https://powerbi.microsoft.com/en-us/blog/update-to-the-power-bi-embedded-analytics-accelerators-program/\n\n And\n\n https://microsoft.github.io/PartnerResources/skilling/microsoft-partner-showcase/entelexos",
+            "body_html": "\n      <p>\n      There are embedded accelerators that do exactly this. Check out:\n    </p><p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://powerbi.microsoft.com/en-us/blog/update-to-the-power-bi-embedded-analytics-accelerators-program/\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://powerbi.microsoft.com/en-us/blog/update-to-the-power-bi-embedded-analytics-accelerators-program/</a>\n    </p><p>\n      And\n    </p><p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://microsoft.github.io/PartnerResources/skilling/microsoft-partner-showcase/entelexos\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://microsoft.github.io/PartnerResources/skilling/microsoft-partner-showcase/entelexos</a>\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgmrh4",
+            "parent_id": "t1_ncgc42f",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgmrh4/",
+            "ups": 6,
+            "downs": 0,
+            "score": 6,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncgc42f"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncht2pa",
+      "author": "AdHead6814",
+      "author_fullname": null,
+      "body": "There are third party vendors that allow embedding your reports in their apps. My past company used Etani in Australia.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncht2pa",
+      "created_utc": 1757042401,
+      "created_at_iso": "2025-09-05T03:20:01.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncht2pa/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ncgfwbl",
+      "author": "Data-Bricks",
+      "author_fullname": null,
+      "body": "I'm not sure this is the cost 'loophole' fix for embedding content to 1000s of users that you think it is.\n\n In your example provided, the \"right\" model is to use the Power BI A1-A8 embedded SKU which is capacity based, not user based. It's literally an entire product. https://azure.microsoft.com/en-us/products/power-bi-embedded\n\n How are your users authenticating? If its a shared 'generic user' log in thats probably a EULA breach, and if you're hosting it publicly then the underlying report URL can be shared to anyone outside your portal.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ncgfwbl",
+      "created_utc": 1757025304,
+      "created_at_iso": "2025-09-04T22:35:04.000Z",
+      "parent_id": "t3_1n8jiho",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgfwbl/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncggyxm/",
+            "created_utc": 1757025675,
+            "created_at_iso": "2025-09-04T22:41:15.000Z",
+            "id": "ncggyxm",
+            "author": "elpilot",
+            "author_fullname": null,
+            "body": "I don't think there are EULA breach. Embedded is good for this use case. Organizations sharing reports with external users that don't live inside their entraid.\n\n There are steps to secure your power bi reports. You would need an app registration for your web portal to communicate with power bi using their rest apis. That way users can't go to debug mode and copy your report url.",
+            "body_html": "\n      <p>\n      I don't think there are EULA breach. Embedded is good for this use case. Organizations sharing reports with external users that don't live inside their entraid.\n    </p><p>\n      There are steps to secure your power bi reports. You would need an app registration for your web portal to communicate with power bi using their rest apis. That way users can't go to debug mode and copy your report url.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncggyxm",
+            "parent_id": "t1_ncgfwbl",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncggyxm/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgixb3/",
+                  "created_utc": 1757026357,
+                  "created_at_iso": "2025-09-04T22:52:37.000Z",
+                  "id": "ncgixb3",
+                  "author": "OtherwiseGroup3162",
+                  "author_fullname": null,
+                  "body": "This is exactly correct. We are using the APIs against the entra id. On top of that, we have a separate lookup table that allows us to figure out the row level security based on our security of that specific email address. Using those same API's, we can implement the row level security without having a Power BI user in this external application.",
+                  "body_html": "\n      <p>\n      This is exactly correct. We are using the APIs against the entra id. On top of that, we have a separate lookup table that allows us to figure out the row level security based on our security of that specific email address. Using those same API's, we can implement the row level security without having a Power BI user in this external application.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": true,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgixb3",
+                  "parent_id": "t1_ncggyxm",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgixb3/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncghct0/",
+                  "created_utc": 1757025809,
+                  "created_at_iso": "2025-09-04T22:43:29.000Z",
+                  "id": "ncghct0",
+                  "author": "Data-Bricks",
+                  "author_fullname": null,
+                  "body": "They're not using embedded though, based on OP saying they're only paying for 3 paid users?",
+                  "body_html": "\n      <p>\n      They're not using embedded though, based on OP saying they're only paying for 3 paid users?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncghct0",
+                  "parent_id": "t1_ncggyxm",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncghct0/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTYsMCwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpEZGtPRFV4WWpVc09qb3pPbVF4T25ReFgyNWpaMmhqZERBPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25jZ2hjdDAifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ncghct0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgn51a/",
+            "created_utc": 1757027830,
+            "created_at_iso": "2025-09-04T23:17:10.000Z",
+            "id": "ncgn51a",
+            "author": "powerbitips",
+            "author_fullname": null,
+            "body": "Just don\u2019t use an A sku and instead use the F and you are covered.\n\n https://learn.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity#which-sku-should-i-use",
+            "body_html": "\n      <p>\n      Just don\u2019t use an A sku and instead use the F and you are covered.\n    </p><p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://learn.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity#which-sku-should-i-use\" rel=\"noopener nofollow ugc\" target=\"_blank\">https://learn.microsoft.com/en-us/power-bi/developer/embedded/embedded-capacity#which-sku-should-i-use</a>\n    </p> <figure class=\"rte-media\">\n      <a href=\"https://preview.redd.it/embedding-dashboards-to-allow-unlimited-external-users-v0-23v7n4htd8nf1.jpeg?width=769&amp;format=pjpg&amp;auto=webp&amp;s=00e977ad5ae6ccbc6c5d9cb36a08bebb3e06874a\" rel=\"noopener ugc\" target=\"_blank\" class=\"w-fit\">\n      <img src=\"https://preview.redd.it/embedding-dashboards-to-allow-unlimited-external-users-v0-23v7n4htd8nf1.jpeg?width=769&amp;format=pjpg&amp;auto=webp&amp;s=00e977ad5ae6ccbc6c5d9cb36a08bebb3e06874a\" alt=\"Comment Image\" class=\"mb-0 max-w-[240px] min-w-[20px] rounded-1 non-lightboxed-content\" width=\"134.22545454545457\" height=\"auto\" srcset=\"https://preview.redd.it/embedding-dashboards-to-allow-unlimited-external-users-v0-23v7n4htd8nf1.jpeg?width=320&amp;crop=smart&amp;auto=webp&amp;s=8230c9eaf04f59c190892ce7ec5f4bf91fe8b46c 1x, https://preview.redd.it/embedding-dashboards-to-allow-unlimited-external-users-v0-23v7n4htd8nf1.jpeg?width=640&amp;crop=smart&amp;auto=webp&amp;s=7e1998f8ba1e4a045d55c668cb12848784074113 2x\" sizes=\"(min-width: 1415px) 750px, (min-width: 768px) 50vw, 100vw\" style=\"object-fit: cover;aspect-ratio:134.22545454545457/240\" loading=\"lazy\">\n    </a>\n      \n    </figure>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgn51a",
+            "parent_id": "t1_ncgfwbl",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgn51a/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgmv9b/",
+            "created_utc": 1757027741,
+            "created_at_iso": "2025-09-04T23:15:41.000Z",
+            "id": "ncgmv9b",
+            "author": "powerbitips",
+            "author_fullname": null,
+            "body": "On an a sku yes but not on an F sku",
+            "body_html": "\n      <p>\n      On an a sku yes but not on an F sku\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ncgmv9b",
+            "parent_id": "t1_ncgfwbl",
+            "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgmv9b/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgnbsf/",
+                  "created_utc": 1757027890,
+                  "created_at_iso": "2025-09-04T23:18:10.000Z",
+                  "id": "ncgnbsf",
+                  "author": "Data-Bricks",
+                  "author_fullname": null,
+                  "body": "My understanding of anything under F64 is that PBI is licensed in addition to Fabric?",
+                  "body_html": "\n      <p>\n      My understanding of anything under F64 is that PBI is licensed in addition to Fabric?\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ncgnbsf",
+                  "parent_id": "t1_ncgmv9b",
+                  "permalink": "/r/PowerBI/comments/1n8jiho/comment/ncgnbsf/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFuOGppaG8_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTYsMiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk4yVXhOVEV5WlRnc09qb3pPbVF4T25ReFgyNWpaMjVpYzJZPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbjhqaWhvIiwicGFyZW50VGhpbmdJZCI6InQxX25jZ25ic2YifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ncgnbsf"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ncghct0"
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    }
+  ],
+  "post": {
+    "id": "1n8jiho",
+    "author": "OtherwiseGroup3162",
+    "author_fullname": "t2_a0p65sj4",
+    "subreddit": "PowerBI",
+    "title": "Embedding Dashboards to allow unlimited external users",
+    "downs": 0,
+    "name": "t3_1n8jiho",
+    "upvote_ratio": 0.9642857142857143,
+    "ups": 26,
+    "selftext": "Is anyone still licensing Power BI users for dashboard end users? We had over 1,000 end users (consumers of dashboards) and the cost was going to be enormous. Embedding the dashboards into a different application and handling users outside of this let us only have 3 paid users (creators of dashboards). All 1,000 end users can still see dashboards in our external application. I am shocked this option was suggested to us for two months of exploring the product.",
+    "total_awards_received": 0,
+    "score": 26,
+    "created": 1757013692,
+    "num_comments": 46,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/embedding_dashboards_to_allow_unlimited_external/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1757013692
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 9c1f639821d24a6c9f00186364502649

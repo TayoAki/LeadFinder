@@ -1,0 +1,684 @@
+{
+  "success": true,
+  "credits_remaining": 209767,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "m2c4ahh",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_m2c4ahh",
+      "created_utc": 1734361087,
+      "created_at_iso": "2024-12-16T14:58:07.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c4ahh/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "m2c9ua2",
+      "author": "necrosythe",
+      "author_fullname": null,
+      "body": "Definitely common.\n\n The solution is getting people together to agree on the logic that generates the KPIs.\n\n That then all needs to be written down and agreed upon in writing/email. (cover your ass, if there's no written record of people signing off on the logic you're fucked)\n\n Then try to push back whenever people suggest using new logic. But if they are dead set, again make sure the new one is written and agreed upon.\n\n Worst case scenario you can speak to discrepancies and prove they weren't your choice. Then offer stakeholders the option of aligning logic (usually across different teams who requested different paremeters)\n\n Make it their job to fix the logic and you just be the person who makes the switch at the end.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c9ua2",
+      "created_utc": 1734363023,
+      "created_at_iso": "2024-12-16T15:30:23.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c9ua2/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cao9i/",
+            "created_utc": 1734363304,
+            "created_at_iso": "2024-12-16T15:35:04.000Z",
+            "id": "m2cao9i",
+            "author": "NoSeatGaram",
+            "author_fullname": null,
+            "body": "So in a way, building \"a single source of business logic\" which I guess you'd store in a metrics layer, right?",
+            "body_html": "\n      <p>\n      So in a way, building \"a single source of business logic\" which I guess you'd store in a metrics layer, right?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_m2cao9i",
+            "parent_id": "t1_m2c9ua2",
+            "permalink": "/r/analytics/comments/1hfkxaf/comment/m2cao9i/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2czqzf/",
+                  "created_utc": 1734371344,
+                  "created_at_iso": "2024-12-16T17:49:04.000Z",
+                  "id": "m2czqzf",
+                  "author": "_Agrias_Oaks_",
+                  "author_fullname": null,
+                  "body": "And just remember, even with a common source of truth, you will still be asked why numbers are different and eventually realize it's because the VP applied a filter to one of the dashboards but not the other.",
+                  "body_html": "\n      <p>\n      And just remember, even with a common source of truth, you will still be asked why numbers are different and eventually realize it's because the VP applied a filter to one of the dashboards but not the other.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2czqzf",
+                  "parent_id": "t1_m2cao9i",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2czqzf/",
+                  "ups": 10,
+                  "downs": 0,
+                  "score": 10,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMWhma3hhZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WWpZelpXTXlZVFlzT2pvek9tUXhPblF4WDIweVkzcHhlbVk9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMWhma3hhZiIsInBhcmVudFRoaW5nSWQiOiJ0MV9tMmN6cXpmIn0"
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2ci6p2/",
+                  "created_utc": 1734365774,
+                  "created_at_iso": "2024-12-16T16:16:14.000Z",
+                  "id": "m2ci6p2",
+                  "author": "[deleted]",
+                  "author_fullname": null,
+                  "body": "[deleted]",
+                  "body_html": null,
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2ci6p2",
+                  "parent_id": "t1_m2cao9i",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2ci6p2/",
+                  "ups": 6,
+                  "downs": 0,
+                  "score": 6,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2ci76e/",
+                  "created_utc": 1734365778,
+                  "created_at_iso": "2024-12-16T16:16:18.000Z",
+                  "id": "m2ci76e",
+                  "author": "alurkerhere",
+                  "author_fullname": null,
+                  "body": "This is the way it should work with a base layer table with whatever lowest granularity you need for your normal business cycle. Then you build the metrics on top and pre-calculate them so that your systems either pull the pre-calculated aggregates or calculate on the fly if they're not available. Then you can build on top with insights, benchmarking, etc. You want as much done in the data engineering layer as possible so people don't build their own calculations in their dashboards and create their own interpretations.\n\n There's always a trade-off between flexibility, performance, and cost. My personal opinion is base business cycle layer, semi-aggregates to calculate common combos, aggregates for end-user performance and ease of use, and then some BI tool to fill in the gaps with generated SQL from production logic. When your data becomes sufficiently complex with 40+ dimensions and millions of customers, it becomes really slow if you are not pre-calculating things. You should absolutely pre-calculate because you should only calculate those metrics once.\n\n Edit: Of course if your dataset isn't that big and your analytics and data engineering departments don't agree and don't want to agree, do whatever and leave it for someone else to figure out.",
+                  "body_html": "\n      <p>\n      This is the way it should work with a base layer table with whatever lowest granularity you need for your normal business cycle.  Then you build the metrics on top and pre-calculate them so that your systems either pull the pre-calculated aggregates or calculate on the fly if they're not available.  Then you can build on top with insights, benchmarking, etc.  You want as much done in the data engineering layer as possible so people don't build their own calculations in their dashboards and create their own interpretations.\n    </p><p>\n      There's always a trade-off between flexibility, performance, and cost.  My personal opinion is base business cycle layer, semi-aggregates to calculate common combos, aggregates for end-user performance and ease of use, and then some BI tool to fill in the gaps with generated SQL from production logic.  When your data becomes sufficiently complex with 40+ dimensions and millions of customers, it becomes really slow if you are not pre-calculating things.  You should absolutely pre-calculate because you should only calculate those metrics once.\n    </p><p>\n      &nbsp;\n    </p><p>\n      Edit: Of course if your dataset isn't that big and your analytics and data engineering departments don't agree and don't want to agree, do whatever and leave it for someone else to figure out.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2ci76e",
+                  "parent_id": "t1_m2cao9i",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2ci76e/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "m2czqzf"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMWhma3hhZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZORGc1T0dVNFlqSXNPam94T21WNE9pZDJLRHcvUUE9PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjFoZmt4YWYiLCJwYXJlbnRUaGluZ0lkIjoidDFfbTJjOXVhMiJ9"
+        }
+      },
+      "ups": 49,
+      "downs": 0,
+      "score": 49
+    },
+    {
+      "id": "m2c4yc6",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c4yc6",
+      "created_utc": 1734361323,
+      "created_at_iso": "2024-12-16T15:02:03.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c4yc6/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cc46d/",
+            "created_utc": 1734363789,
+            "created_at_iso": "2024-12-16T15:43:09.000Z",
+            "id": "m2cc46d",
+            "author": "AggravatingPudding",
+            "author_fullname": null,
+            "body": "As someone who doesn't know tableau, what do you mean by that?",
+            "body_html": "\n      <p>\n      As someone who doesn't know tableau, what do you mean by that?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_m2cc46d",
+            "parent_id": "t1_m2c4yc6",
+            "permalink": "/r/analytics/comments/1hfkxaf/comment/m2cc46d/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cccpk/",
+                  "created_utc": 1734363867,
+                  "created_at_iso": "2024-12-16T15:44:27.000Z",
+                  "id": "m2cccpk",
+                  "author": "[deleted]",
+                  "author_fullname": null,
+                  "body": "[deleted]",
+                  "body_html": null,
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2cccpk",
+                  "parent_id": "t1_m2cc46d",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2cccpk/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                },
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cxsb2/",
+                  "created_utc": 1734370729,
+                  "created_at_iso": "2024-12-16T17:38:49.000Z",
+                  "id": "m2cxsb2",
+                  "author": "Kitchen_Cookie4754",
+                  "author_fullname": null,
+                  "body": "In tableau you can create custom views of a given dashboard. For instance, you may want to change the filters to show the most recent quarter but only for one operating area or product line. Instead of opening the dashboard and making 10 clicks you can save the current selections as a view and either make it unique to your profile or a public view others can look at. You can also subscribe to a view of a dashboard and get emails of the dashboard image (with a link to the live dashboard) on a periodic basis.",
+                  "body_html": "\n      <p>\n      In tableau you can create custom views of a given dashboard. For instance, you may want to change the filters to show the most recent quarter but only for one operating area or product line. Instead of opening the dashboard and making 10 clicks you can save the current selections as a view and either make it unique to your profile or a public view others can look at. You can also subscribe to a view of a dashboard and get emails of the dashboard image (with a link to the live dashboard) on a periodic basis.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2cxsb2",
+                  "parent_id": "t1_m2cc46d",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2cxsb2/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMWhma3hhZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwLDEiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2T1RKak9UVXdaRGNzT2pvek9tUXhPblF4WDIweVkzaHpZakk9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMWhma3hhZiIsInBhcmVudFRoaW5nSWQiOiJ0MV9tMmN4c2IyIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "m2cxsb2"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "m2cxsb2"
+        }
+      },
+      "ups": 13,
+      "downs": 0,
+      "score": 13
+    },
+    {
+      "id": "m2c8mbh",
+      "author": "RandomRandomPenguin",
+      "author_fullname": null,
+      "body": "This is why I\u2019m constantly killing off dashboards. My team won\u2019t maintain a large number, so I\u2019m always removing old ones",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c8mbh",
+      "created_utc": 1734362606,
+      "created_at_iso": "2024-12-16T15:23:26.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c8mbh/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "m2cavzr",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cavzr",
+      "created_utc": 1734363376,
+      "created_at_iso": "2024-12-16T15:36:16.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cavzr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "m2c7520",
+      "author": "nineteen_eightyfour",
+      "author_fullname": null,
+      "body": "If I made them all, I wouldn\u2019t release until I could figure it out. If not, I\u2019d investigate and let everyone know",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c7520",
+      "created_utc": 1734362093,
+      "created_at_iso": "2024-12-16T15:14:53.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c7520/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "m2cbkme",
+      "author": "kimchiking2021",
+      "author_fullname": null,
+      "body": "Are your dashboards pulling from a gold/mart layer table, or directly from source via custom SQL?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cbkme",
+      "created_utc": 1734363607,
+      "created_at_iso": "2024-12-16T15:40:07.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cbkme/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "m2cfpbv",
+      "author": "QianLu",
+      "author_fullname": null,
+      "body": "Who created the dashboard? At my old job, we had a huge problem with people forking Tableau dashboards, changing it, since it's a fork it didn't get future updates, their numbers not matching up, them complaining and expecting us to fix it.\n\n I tracked time spent on this and showed my boss that more than 50% of my time for a month straight was dedicated to this. Very quickly it became \"if this team didn't build it and currently support it, we don't help you debug it. If you want to fork it, do so at your own risk. Anywhere the numbers disagree, the analytics dashboard will be the source of truth.\"",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cfpbv",
+      "created_utc": 1734364966,
+      "created_at_iso": "2024-12-16T16:02:46.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cfpbv/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "m2c5tg0",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c5tg0",
+      "created_utc": 1734361634,
+      "created_at_iso": "2024-12-16T15:07:14.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c5tg0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "m2cgp1n",
+      "author": "elputas69",
+      "author_fullname": null,
+      "body": "Implement some solid governance practices. One source of \u201ctruth\u201d and that data source is certified by your team and the business lead who owns the data. In the next layer is solid documentation, not just your data sources (which should be certified), but the formulas, filters and transformations. These can be added as comments, callouts, or in a separate hidden dashboard as text. As you drill down into the data you should always end up at the certified data source or sources, and those are documented as I mentioned above. Decertify or add disclaimers to reports and dashboards that are not in line with your governed data sources. And like one user said, have saved views or better yet, have your users save and subscribe to the various custom views so numbers and visuals are always the same.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cgp1n",
+      "created_utc": 1734365289,
+      "created_at_iso": "2024-12-16T16:08:09.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cgp1n/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2ckvlm/",
+            "created_utc": 1734366639,
+            "created_at_iso": "2024-12-16T16:30:39.000Z",
+            "id": "m2ckvlm",
+            "author": "ds_frm_timbuktu",
+            "author_fullname": null,
+            "body": "Does governance even work? How do you go about putting it in place when there are so many data assets that already exist and are getting consumed. Whats your experience with this?\nOne source of \"truth\" is the ideal objective we all work towards as we keep uncovering parallel universes in reporting",
+            "body_html": "\n      <p>\n      Does governance even work?  How do you go about putting it in place when there are so many data assets that already exist and are getting consumed.  Whats your experience with this?<br>One source of \"truth\" is the ideal objective we all work towards as we keep uncovering parallel universes in reporting\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_m2ckvlm",
+            "parent_id": "t1_m2cgp1n",
+            "permalink": "/r/analytics/comments/1hfkxaf/comment/m2ckvlm/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2d6s3o/",
+                  "created_utc": 1734373531,
+                  "created_at_iso": "2024-12-16T18:25:31.000Z",
+                  "id": "m2d6s3o",
+                  "author": "elputas69",
+                  "author_fullname": null,
+                  "body": "It\u2019s huge undertaking, but one option is to centralize reporting and have your Data and Analytics Center of Excellence work as a consulting body with data engineers, architects and analysts who deliver governed solutions to the various business functions. On the other hand, if you want to democratize analytics in your organization, then your team provides and/or certifies all data sources and the various functions and their analysts create the various dashboards, reports and other solutions using your data. Nothing worse than a high level or c-suite meeting with people quoting differing numbers. They should be able to trust your data and focus on making decisions and not vetting data. Hope this helps.",
+                  "body_html": "\n      <p>\n      It\u2019s huge undertaking, but one option is to centralize reporting and have your Data and Analytics Center of Excellence work as a consulting body with data engineers, architects and analysts who deliver governed solutions to the various business functions. On the other hand, if you want to democratize analytics in your organization, then your team provides and/or certifies all data sources and the various functions and their analysts create the various dashboards, reports and other solutions using your data. Nothing worse than a high level or c-suite meeting with people quoting differing numbers. They should be able to trust your data and focus on making decisions and not vetting data. Hope this helps.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_m2d6s3o",
+                  "parent_id": "t1_m2ckvlm",
+                  "permalink": "/r/analytics/comments/1hfkxaf/comment/m2d6s3o/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMWhma3hhZj9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WXpVeE5UYzVZV1VzT2pvek9tUXhPblF4WDIweVpEWnpNMjg9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMWhma3hhZiIsInBhcmVudFRoaW5nSWQiOiJ0MV9tMmQ2czNvIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "m2d6s3o"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "m2d6s3o"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "m2cxzkq",
+      "author": "Fun-LovingAmadeus",
+      "author_fullname": null,
+      "body": "All the time. KPI discrepancies and bad joins are keeping me employed",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cxzkq",
+      "created_utc": 1734370792,
+      "created_at_iso": "2024-12-16T17:39:52.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cxzkq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "m2c9utd",
+      "author": "AdviceNotAskedFor",
+      "author_fullname": null,
+      "body": "I deal with this all the time because the metrics people want to view things by differ just enough. Some group wants all sales. A different group wants sales of just blue cars.\u00a0 Another group wants just blue that are wheel rear drive. Another wants all cars but only those finances by seven out of eight institutions.\n\n \u00a0I use cars but that's not my field... But the point is I have dashboards built and then someone from the blue car rear wheel will stumble across the blue car and act like a confused moron.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2c9utd",
+      "created_utc": 1734363028,
+      "created_at_iso": "2024-12-16T15:30:28.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2c9utd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "m2cg4kd",
+      "author": "carlitospig",
+      "author_fullname": null,
+      "body": "That shit is like a rock in my shoe and I will do whatever it takes to fix it, my boss be damned. He hates when I get like this but my adhd just\u2026won\u2019t allow me to move past it. So my answer: however long it takes OR when I get fired.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cg4kd",
+      "created_utc": 1734365104,
+      "created_at_iso": "2024-12-16T16:05:04.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cg4kd/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "m2cjub1",
+      "author": "ds_frm_timbuktu",
+      "author_fullname": null,
+      "body": "This is what most data teams do most of the time :) now getting this sorted is theoretically easy practically impossible.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cjub1",
+      "created_utc": 1734366308,
+      "created_at_iso": "2024-12-16T16:25:08.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cjub1/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "m2cpu8q",
+      "author": "DebbieDoesData",
+      "author_fullname": null,
+      "body": "Use looker and source the KPIs from the same explore/model",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cpu8q",
+      "created_utc": 1734368210,
+      "created_at_iso": "2024-12-16T16:56:50.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cpu8q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "m2cs3mh",
+      "author": "customheart",
+      "author_fullname": null,
+      "body": "At the current company, no, because data governance is built into the dashboarding software. It\u2019s also mindnumbingly restrictive because then you cannot change the data sources for fear everyone\u2019s shared metrics will change.\n\n However, at past companies I had to review these discrepancies and explain. With each one, I documented what the definition of the metric is on the dash itself or further clarified something I already wrote. I\u2019m not wasting my time it includes this but not that over and over.\n\n I prefer the past companies\u2019 systems because of the flexibility.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_m2cs3mh",
+      "created_utc": 1734368930,
+      "created_at_iso": "2024-12-16T17:08:50.000Z",
+      "parent_id": "t3_1hfkxaf",
+      "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cs3mh/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1hfkxaf",
+    "author": "NoSeatGaram",
+    "author_fullname": "t2_1dhi2fzjw3",
+    "subreddit": "analytics",
+    "title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+    "downs": 0,
+    "name": "t3_1hfkxaf",
+    "upvote_ratio": 0.9583333333333334,
+    "ups": 44,
+    "selftext": "In my company there's far too many dashboards, and one of the problems is that KPIs never match. I am wasting so much time every week on this, so just wondering if this is a common problem in analytics. How is it for you guys?",
+    "total_awards_received": 0,
+    "score": 44,
+    "created": 1734361086,
+    "num_comments": 38,
+    "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/mismatching_numbers_in_different_dashboards_how/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1734361086
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMWhma3hhZj9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TVRBek1UY3dPRFlzT2pvd09tVjRPaWQySjNaME9Eb21WRFFqYW1Cb2J6b2tWMGNsWDA4b0xVOG9mVGduV0Zzb1RpWlhLU1JpTlRjOFB5TThRQ1FuUnpGOFFrSkRNUzB6S2tGb1hnPT0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxaGZreGFmIiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id f0a291cdbaad49048d6a14bedec28b0f

@@ -1,0 +1,321 @@
+{
+  "success": true,
+  "credits_remaining": 209733,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p0ni97i",
+      "author": "5BPvPGolemGuy",
+      "author_fullname": null,
+      "body": "AAD Groups can help in this quite a bit. Create roles in report, on service assign the group to the role and then set up approvers for the groups. As the company grows/changes people you dont have to keep adding people to rls.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0ni97i",
+      "created_utc": 1785412188,
+      "created_at_iso": "2026-07-30T11:49:48.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0ni97i/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0trqpe/",
+            "created_utc": 1785480798,
+            "created_at_iso": "2026-07-31T06:53:18.000Z",
+            "id": "p0trqpe",
+            "author": "TeamAlphaBOLD",
+            "author_fullname": null,
+            "body": "Thanks for this, genuinely helpful. I am going to try setting it up with AAD groups instead of individual assignments.",
+            "body_html": "\n      <p>\n      Thanks for this, genuinely helpful. I am going to try setting it up with AAD groups instead of individual assignments.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p0trqpe",
+            "parent_id": "t1_p0ni97i",
+            "permalink": "/r/PowerBI/comments/1var5c4/comment/p0trqpe/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0nl5tq/",
+            "created_utc": 1785413192,
+            "created_at_iso": "2026-07-30T12:06:32.000Z",
+            "id": "p0nl5tq",
+            "author": "Bruneezi",
+            "author_fullname": null,
+            "body": "Exactly this!! And also document everything!!!",
+            "body_html": "\n      <p>\n      Exactly this!! And also document everything!!!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p0nl5tq",
+            "parent_id": "t1_p0ni97i",
+            "permalink": "/r/PowerBI/comments/1var5c4/comment/p0nl5tq/",
+            "ups": 7,
+            "downs": 0,
+            "score": 7,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p0ni97i"
+        }
+      },
+      "ups": 41,
+      "downs": 0,
+      "score": 41
+    },
+    {
+      "id": "p0oj9gl",
+      "author": "Semaphor-Analytics",
+      "author_fullname": null,
+      "body": "I have seen RLS stay cleaner when the security logic lives outside the report as much as possible.\n\n Use AD groups for assignment, then keep the mapping in one table the business can review. The report role should be boring. It should read the user, map them to the allowed region or account set, and do very little else. Once every report has its own special role logic, nobody trusts changes anymore.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0oj9gl",
+      "created_utc": 1785423045,
+      "created_at_iso": "2026-07-30T14:50:45.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0oj9gl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 10,
+      "downs": 0,
+      "score": 10
+    },
+    {
+      "id": "p0ojwrz",
+      "author": "dbrownems",
+      "author_fullname": null,
+      "body": "Once your RLS requirements start getting complex, move to dynamic RLS where most users can be in the same role, and a table defines each user's access to each secured dimension.\n\n The rules of who sees what become part of your ETL and the RLS becomes very simple.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0ojwrz",
+      "created_utc": 1785423216,
+      "created_at_iso": "2026-07-30T14:53:36.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0ojwrz/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0qdvvu/",
+            "created_utc": 1785440067,
+            "created_at_iso": "2026-07-30T19:34:27.000Z",
+            "id": "p0qdvvu",
+            "author": "portuguesecasanova",
+            "author_fullname": null,
+            "body": "Can you elaborate on this? Any docs I can check on how to set it up and the tables?",
+            "body_html": "\n      <p>\n      Can you elaborate on this? Any docs I can check on how to set it up and the tables?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p0qdvvu",
+            "parent_id": "t1_p0ojwrz",
+            "permalink": "/r/PowerBI/comments/1var5c4/comment/p0qdvvu/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0qw2ig/",
+                  "created_utc": 1785444766,
+                  "created_at_iso": "2026-07-30T20:52:46.000Z",
+                  "id": "p0qw2ig",
+                  "author": "dbrownems",
+                  "author_fullname": null,
+                  "body": "For canonical Power BI Dynamic RLS dimension-security design, two resources:\n\n SQLBI (Ferrari/Russo) \u2014 Row-level security\n\n RADACAD (Reza Rad) \u2014 Dynamic RLS: Profiles & Users (Many-to-Many)",
+                  "body_html": "\n      <p>\n      For canonical <strong>Power BI Dynamic RLS</strong> dimension-security design, two resources:\n    </p><ul>\n        <li>\n      <p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://www.sqlbi.com/whitepapers/security-in-tabular-semantic-models/\" rel=\"noopener nofollow ugc\" target=\"_blank\"><strong>SQLBI (Ferrari/Russo) \u2014 Row-level security</strong></a>\n    </p>\n    </li><li>\n      <p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"https://radacad.com/dynamic-row-level-security-with-profiles-and-users-in-power-bi\" rel=\"noopener nofollow ugc\" target=\"_blank\"><strong>RADACAD (Reza Rad) \u2014 Dynamic RLS: Profiles &amp; Users (Many-to-Many)</strong></a>\n    </p>\n    </li>\n      </ul>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p0qw2ig",
+                  "parent_id": "t1_p0qdvvu",
+                  "permalink": "/r/PowerBI/comments/1var5c4/comment/p0qw2ig/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzF2YXI1YzQ_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MyZjb21tZW50UGFyZW50UG9zaXRpb25zPTIsMCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5EazNORGM1Wm1Vc09qb3pPbVF4T25ReFgzQXdjWGN5YVdjPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxdmFyNWM0IiwicGFyZW50VGhpbmdJZCI6InQxX3AwcXcyaWcifQ"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p0qw2ig"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p0qw2ig"
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "p0qco17",
+      "author": "4n7h0ny",
+      "author_fullname": null,
+      "body": "I put it on the manager, give them a spreadsheet to manage with a few columns, email, role etc. Then merge that in your data model to create and validate the RLS. Completely remove it from your plate.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0qco17",
+      "created_utc": 1785439750,
+      "created_at_iso": "2026-07-30T19:29:10.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0qco17/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "p0npk45",
+      "author": "Forgotten_Zucchini",
+      "author_fullname": null,
+      "body": "We have ad groups created by power scripts that update daily pulling the users name from the requirements in or data warehouse tables from HR tables and other system assigned roles. It works quite well. Every once I a while there is a bug or lack of process followed but easiy manageable for our 5,000+ employee company.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0npk45",
+      "created_utc": 1785414621,
+      "created_at_iso": "2026-07-30T12:30:21.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0npk45/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "p0urytl",
+      "author": "cgshore",
+      "author_fullname": null,
+      "body": "I have Booleans sit alongside the fact_sales table, defined in the SQL script. Then set the RLS statement within the fact_sales table to be:\n\n VAR currentuser = lower(userprincipalname())\n\n RETURN\nSWITCH (\nTRUE (),\n\n CURRENTUSER IN {\n\"exec1@email.com\",\n\"exec2@email.com\",\n\"exec3@email.com\",\n\"exec4@email.com\",\n} , TRUE(),\n\n currentuser = \"email1@email.com\", [is_team_member_1] = 1,\ncurrentuser = \"email2@email.com\", [is_team_member_2] = 1,\ncurrentuser = \"email3@email.com\", [is_team_member_3] = 1,\n\n TRUE(), FALSE ())\n\n The exec section allows for unfiltered access.\n\n The team member section filterrs the fact_sales table to only calc on revenue lines each team member is allowed to see.\n\n The TRUE/FALSE at the end shows a blank report for anyone who doesn't have one of the stated emails.\n\n Worth saying this logic is manageable for up to 30 users, any more than that it might start getting unweildy",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0urytl",
+      "created_utc": 1785497289,
+      "created_at_iso": "2026-07-31T11:28:09.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0urytl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p0nmy0r",
+      "author": "Sexy_Koala_Juice",
+      "author_fullname": null,
+      "body": "You don\u2019t. It\u2019s a nightmare the second you start using it",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p0nmy0r",
+      "created_utc": 1785413784,
+      "created_at_iso": "2026-07-30T12:16:24.000Z",
+      "parent_id": "t3_1var5c4",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0nmy0r/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1var5c4",
+    "author": "TeamAlphaBOLD",
+    "author_fullname": "t2_1uog4oigp0",
+    "subreddit": "PowerBI",
+    "title": "How to keep row-level security from becoming a nightmare?",
+    "downs": 0,
+    "name": "t3_1var5c4",
+    "upvote_ratio": 0.9615384615384616,
+    "ups": 24,
+    "selftext": "Every project I work on, the RLS setup starts simply. But it then turns into a mess of overlapping roles nobody remembers the logic for. Does anyone have a system that actually stays clean as it grows?",
+    "total_awards_received": 0,
+    "score": 24,
+    "created": 1785411486,
+    "num_comments": 13,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/how_to_keep_rowlevel_security_from_becoming_a/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1785411486
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 370b0f0c6790413785d8b84572cc745a

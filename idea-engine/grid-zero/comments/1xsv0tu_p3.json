@@ -1,0 +1,719 @@
+{
+  "success": true,
+  "credits_remaining": 209373,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "19sgj55oceyo3",
+      "author": "evangelism2",
+      "author_fullname": null,
+      "body": "I guess it's cool that all these things that already exist are now being built into the Claude ecosystem. The whiteboard might be cool if Claude can actually decently write to it and it's better at diagramming than existing tools. I remember a few months ago looking into diagramming tools and there's really nothing that great out there",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sgj55oceyo3",
+      "created_utc": 1794372483,
+      "created_at_iso": "2026-11-11T04:48:03.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgj55oceyo3/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sgk0nx5u2v6",
+      "author": "WrongComparison321",
+      "author_fullname": null,
+      "body": "Ah so it\u2019s fine when they blatantly copy software but how dare you try to use the models to do it mentality is going strong I see.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sgk0nx5u2v6",
+      "created_utc": 1794373660,
+      "created_at_iso": "2026-11-11T05:07:40.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgk0nx5u2v6/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sgl6xwz2wat",
+      "author": "deparko",
+      "author_fullname": null,
+      "body": "I don\u2019t see whiteboards I see sheets and data, but not whiteboards how come I\u2019m an ultra user",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sgl6xwz2wat",
+      "created_utc": 1794375240,
+      "created_at_iso": "2026-11-11T05:34:00.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgl6xwz2wat/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sgqi6c0kgzm",
+      "author": "Cryingfortheshard",
+      "author_fullname": null,
+      "body": "This is how the enshittification cycle starts.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sgqi6c0kgzm",
+      "created_utc": 1794382386,
+      "created_at_iso": "2026-11-11T07:33:06.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sgqi6c0kgzm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sh854dwtr7m",
+      "author": "obegendi",
+      "author_fullname": null,
+      "body": "Mikro and similar apps just died because this update.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sh854dwtr7m",
+      "created_utc": 1794406112,
+      "created_at_iso": "2026-11-11T14:08:32.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sh854dwtr7m/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sha8gvtnxmt",
+      "author": "username_must_have",
+      "author_fullname": null,
+      "body": "They are developing tools and the application layer at a rapid pace. They understand that the application layer is cheap, and building as many tools, perhaps tools that are self reinforcing, will aid in retaining customers that have bought into a their AI first ecosystem.\n\n I suspect they understand that revenue will not grow as fast as expected to its time to take many verticals, I suspect a lot of AI wrapper apps are going to be on life support soon. I personally find it hilarious.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sha8gvtnxmt",
+      "created_utc": 1794408927,
+      "created_at_iso": "2026-11-11T14:55:27.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sha8gvtnxmt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19shesyym6680",
+      "author": "Haunting-Side-6589",
+      "author_fullname": null,
+      "body": "is it free?...i wanna use it for my studying",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19shesyym6680",
+      "created_utc": 1794415074,
+      "created_at_iso": "2026-11-11T16:37:54.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19shesyym6680/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sg27ptrh88z",
+      "author": "l0w-budget",
+      "author_fullname": null,
+      "body": "I\u2019d just take a better haiku and sonnet actually worth using",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sg27ptrh88z",
+      "created_utc": 1794349710,
+      "created_at_iso": "2026-11-10T22:28:30.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg27ptrh88z/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg7i6tilkw5/",
+            "created_utc": 1794356828,
+            "created_at_iso": "2026-11-11T00:27:08.000Z",
+            "id": "19sg7i6tilkw5",
+            "author": "GTAIVisbest",
+            "author_fullname": null,
+            "body": "I use sonnet exclusively for DLL injection and patching old games, it seems to be OP and only rarely does it make small mistakes which are not easily testable and fixable. Is Opus really that better? If sonnet can do it and knock it out of the park easily then how could Claude improve?",
+            "body_html": "\n      <p>\n      I use sonnet exclusively for DLL injection and patching old games, it seems to be OP and only rarely does it make small mistakes which are not easily testable and fixable. Is Opus really that better? If sonnet can do it and knock it out of the park easily then how could Claude improve?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sg7i6tilkw5",
+            "parent_id": "t1_19sg27ptrh88z",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sg7i6tilkw5/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sg27ptrh88z"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "19sfvtpoupedd",
+      "author": "CherryLongjump1989",
+      "author_fullname": null,
+      "body": "These are just a really lame excuse for trying to create user lock-in. But it won\u2019t work.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfvtpoupedd",
+      "created_utc": 1794341116,
+      "created_at_iso": "2026-11-10T20:05:16.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvtpoupedd/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfwh34q3wu9/",
+            "created_utc": 1794341989,
+            "created_at_iso": "2026-11-10T20:19:49.000Z",
+            "id": "19sfwh34q3wu9",
+            "author": "Tartuffiere",
+            "author_fullname": null,
+            "body": "People were giving their WhatsApp and telegram credentials to any old shady service that would host openclaw. They will definitely give all their data to Anthropic... Unfortunately.",
+            "body_html": "\n      <p>\n      People were giving their WhatsApp and telegram credentials to any old shady service that would host openclaw. They will definitely give all their data to Anthropic... Unfortunately.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfwh34q3wu9",
+            "parent_id": "t1_19sfvtpoupedd",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfwh34q3wu9/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zMywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpqZGpNVGxpWW1Rc09qb3lPbVF4T25ReFh6RTVjMlozYURNMGNUTjNkVGs9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmd2gzNHEzd3U5In0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfxr4mob5z8/",
+            "created_utc": 1794343709,
+            "created_at_iso": "2026-11-10T20:48:29.000Z",
+            "id": "19sfxr4mob5z8",
+            "author": "dumeheyeintellectual",
+            "author_fullname": null,
+            "body": "Of course not. Neither did the iPhone, or internet, or subscription style billing, no one is that dense and you, of all people, you haven\u2019t let us down yet.",
+            "body_html": "\n      <p>\n      Of course not. Neither did the iPhone, or internet, or subscription style billing, no one is that dense and you, of all people, you haven\u2019t let us down yet.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfxr4mob5z8",
+            "parent_id": "t1_19sfvtpoupedd",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfxr4mob5z8/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zMywxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5HUXlNRE0zWVRJc09qb3lPbVF4T25ReFh6RTVjMlo0Y2pSdGIySTFlamc9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmeHI0bW9iNXo4In0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sfwh34q3wu9"
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    },
+    {
+      "id": "19sfsa8x22fwg",
+      "author": "fellingzonders",
+      "author_fullname": null,
+      "body": "Boring.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfsa8x22fwg",
+      "created_utc": 1794336353,
+      "created_at_iso": "2026-11-10T18:45:53.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfsa8x22fwg/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvm64zc7b6/",
+            "created_utc": 1794340834,
+            "created_at_iso": "2026-11-10T20:00:34.000Z",
+            "id": "19sfvm64zc7b6",
+            "author": "peisil",
+            "author_fullname": null,
+            "body": "Yep, you are.",
+            "body_html": "\n      <p>\n      Yep, you are.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfvm64zc7b6",
+            "parent_id": "t1_19sfsa8x22fwg",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfvm64zc7b6/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sfsa8x22fwg"
+        }
+      },
+      "ups": -6,
+      "downs": 0,
+      "score": -6
+    },
+    {
+      "id": "19sftkmu3uf41",
+      "author": "heroyi",
+      "author_fullname": null,
+      "body": "This might be an interesting one. Obviously you have to be careful with how much and what you share in terms of IP stuff and idk how the usage works but this could be a very nice QoL feature",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sftkmu3uf41",
+      "created_utc": 1794338086,
+      "created_at_iso": "2026-11-10T19:14:46.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftkmu3uf41/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 0,
+      "downs": 0,
+      "score": 0
+    },
+    {
+      "id": "19sfst33kmr5u",
+      "author": "Propeus",
+      "author_fullname": null,
+      "body": "Nope not giving my data to claude :D",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfst33kmr5u",
+      "created_utc": 1794337057,
+      "created_at_iso": "2026-11-10T18:57:37.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfst33kmr5u/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvwhdsbfgh/",
+            "created_utc": 1794341219,
+            "created_at_iso": "2026-11-10T20:06:59.000Z",
+            "id": "19sfvwhdsbfgh",
+            "author": "surfnvb7",
+            "author_fullname": null,
+            "body": "You're data isn't that interesting",
+            "body_html": "\n      <p>\n      You're data isn't that interesting\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfvwhdsbfgh",
+            "parent_id": "t1_19sfst33kmr5u",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfvwhdsbfgh/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zNiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk1qSmpOR1EwWVRnc09qb3lPbVF4T25ReFh6RTVjMloyZDJoa2MySm1aMmc9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmdndoZHNiZmdoIn0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfu24ymqd4y/",
+            "created_utc": 1794338740,
+            "created_at_iso": "2026-11-10T19:25:40.000Z",
+            "id": "19sfu24ymqd4y",
+            "author": "Anulisdotexe",
+            "author_fullname": null,
+            "body": ":D",
+            "body_html": "\n      <p>\n      :D\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfu24ymqd4y",
+            "parent_id": "t1_19sfst33kmr5u",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfu24ymqd4y/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvidr6f3sz/",
+            "created_utc": 1794340692,
+            "created_at_iso": "2026-11-10T19:58:12.000Z",
+            "id": "19sfvidr6f3sz",
+            "author": "Propeus",
+            "author_fullname": null,
+            "body": "Oh everybody went upset about this \ud83d\ude02 I still use Claude but not with my data chill out guys \ud83d\ude02",
+            "body_html": "\n      <p>\n      Oh everybody went upset about this \ud83d\ude02 I still use Claude but not with my data chill out guys \ud83d\ude02\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfvidr6f3sz",
+            "parent_id": "t1_19sfst33kmr5u",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfvidr6f3sz/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sfvwhdsbfgh"
+        }
+      },
+      "ups": -11,
+      "downs": 0,
+      "score": -11
+    },
+    {
+      "id": "19sfvb7bv3doi",
+      "author": "THROWAWTRY",
+      "author_fullname": null,
+      "body": "I'm gonna be honest I don't see the value proposition with whiteboards or sheets. Data I can kind of see but even then a lot of providers already have A) AI embedded in, B) work with more models including locally, C) have far more abilities to link up with internal tools, D) have a customer base that has been using it for years.\n\n Draw.io is still one of the best whiteboard tools and you can self host, the rest already have AI integration significantly cheaper than claude. Sheets well if you are programmer you've already got csv and report generators if you are BA you've been using Excel or google sheets.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfvb7bv3doi",
+      "created_utc": 1794340424,
+      "created_at_iso": "2026-11-10T19:53:44.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvb7bv3doi/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvwp9hs9a8/",
+            "created_utc": 1794341227,
+            "created_at_iso": "2026-11-10T20:07:07.000Z",
+            "id": "19sfvwp9hs9a8",
+            "author": "CherryLongjump1989",
+            "author_fullname": null,
+            "body": "The value proposition is entirely for the benefit of Anthropic\u2019s IPO. They need that killer feature that actually locks users into long term subscriptions.",
+            "body_html": "\n      <p>\n      The value proposition is entirely for the benefit of Anthropic\u2019s IPO.  They need that killer feature that actually locks users into long term subscriptions.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfvwp9hs9a8",
+            "parent_id": "t1_19sfvb7bv3doi",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfvwp9hs9a8/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zNywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpXWXdZVFZqWXpJc09qb3lPbVF4T25ReFh6RTVjMloyZDNBNWFITTVZVGc9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmdndwOWhzOWE4In0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfwa2x96m82/",
+            "created_utc": 1794341727,
+            "created_at_iso": "2026-11-10T20:15:27.000Z",
+            "id": "19sfwa2x96m82",
+            "author": "DonaldStuck",
+            "author_fullname": null,
+            "body": "I share your skepticism a little but I think you should see the whiteboard more as another way to communicate with Claude. For the software development we do, I reguarly start off with a sketch or mock up. Then I go through the data model and business rules with Claude. And then Claude can work it out in code.",
+            "body_html": "\n      <p>\n      I share your skepticism a little but I think you should see the whiteboard more as another way to communicate with Claude. For the software development we do, I reguarly start off with a sketch or mock up. Then I go through the data model and business rules with Claude. And then Claude can work it out in code.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfwa2x96m82",
+            "parent_id": "t1_19sfvb7bv3doi",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfwa2x96m82/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sfvwp9hs9a8"
+        }
+      },
+      "ups": -5,
+      "downs": 0,
+      "score": -5
+    },
+    {
+      "id": "19sfta5dsy96q",
+      "author": "getmeoutoftax",
+      "author_fullname": null,
+      "body": "It\u2019s seriously over at this point. Not only will this replace most white collar jobs, it will also replace Excel.",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19sfta5dsy96q",
+      "created_utc": 1794337694,
+      "created_at_iso": "2026-11-10T19:08:14.000Z",
+      "parent_id": "t3_1xsv0tu",
+      "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfta5dsy96q/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftj22h60w5/",
+            "created_utc": 1794338027,
+            "created_at_iso": "2026-11-10T19:13:47.000Z",
+            "id": "19sftj22h60w5",
+            "author": "Seany_face",
+            "author_fullname": null,
+            "body": "RemindMe! 10 years",
+            "body_html": "\n      <p>\n      RemindMe! 10 years\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sftj22h60w5",
+            "parent_id": "t1_19sfta5dsy96q",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sftj22h60w5/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zOCwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5qSmtNVEZsWWprc09qb3lPbVF4T25ReFh6RTVjMlowYWpJeWFEWXdkelU9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmdGoyMmg2MHc1In0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvydycpzb9/",
+            "created_utc": 1794341290,
+            "created_at_iso": "2026-11-10T20:08:10.000Z",
+            "id": "19sfvydycpzb9",
+            "author": "surfnvb7",
+            "author_fullname": null,
+            "body": "Not if paperclippy gets an AI upgrade!",
+            "body_html": "\n      <p>\n      Not if paperclippy gets an AI upgrade!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sfvydycpzb9",
+            "parent_id": "t1_19sfta5dsy96q",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sfvydycpzb9/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftip67jf9d/",
+            "created_utc": 1794338014,
+            "created_at_iso": "2026-11-10T19:13:34.000Z",
+            "id": "19sftip67jf9d",
+            "author": "Seany_face",
+            "author_fullname": null,
+            "body": "You're a silly goose",
+            "body_html": "\n      <p>\n      You're a silly goose\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sftip67jf9d",
+            "parent_id": "t1_19sfta5dsy96q",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sftip67jf9d/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9jbGF1ZGUvdDNfMXhzdjB0dT9zdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0zOCwyIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9HSXlZelEzWmpnc09qb3lPbVF4T25ReFh6RTVjMlowYVhBMk4ycG1PV1E9Iiwic3VicmVkZGl0IjoiY2xhdWRlIiwicG9zdElkIjoiMXhzdjB0dSIsInBhcmVudFRoaW5nSWQiOiJ0MV8xOXNmdGlwNjdqZjlkIn0"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftr52qka9u/",
+            "created_utc": 1794338329,
+            "created_at_iso": "2026-11-10T19:18:49.000Z",
+            "id": "19sftr52qka9u",
+            "author": "ShittyBidet123",
+            "author_fullname": null,
+            "body": "lol. excel bro. thats been cooked for years is this 2023",
+            "body_html": "\n      <p>\n      lol. excel bro. thats been cooked for years is this 2023\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_19sftr52qka9u",
+            "parent_id": "t1_19sfta5dsy96q",
+            "permalink": "/r/claude/comments/1xsv0tu/comment/19sftr52qka9u/",
+            "ups": -1,
+            "downs": 0,
+            "score": -1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "19sftj22h60w5"
+        }
+      },
+      "ups": -8,
+      "downs": 0,
+      "score": -8
+    }
+  ],
+  "post": null,
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}

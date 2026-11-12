@@ -1,0 +1,191 @@
+{
+  "success": true,
+  "credits_remaining": 209650,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ok1a5ok",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_ok1a5ok",
+      "created_utc": 1777978526,
+      "created_at_iso": "2026-05-05T10:55:26.000Z",
+      "parent_id": "t3_1t4bywx",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok1a5ok/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ok87siz",
+      "author": "Jammurger",
+      "author_fullname": null,
+      "body": "Spent a long time figuring this out. There's no single tool that does everything well without tradeoffs.\n\n Looker Studio is where most people land for the budget-conscious setup. Free, native connectors for GA4, Search Console and Google Ads, and once you build a template you duplicate it per account in minutes. The downside is the initial setup takes real time and some connectors (socials especially) either need a paid third-party connector like Supermetrics or just dont work cleanly.\n\n AgencyAnalytics sits around $12-15 per account per month and covers the broadest range out of the box \u2014 GA4, Ads, Search Console, most social platforms, white label reports, client logins. If time is the main constraint it's probably worth the cost just for what you dont have to build.\n\n For the Search Console and Google Ads side, Semust handles both in one place and the reporting is straightforward \u2014 pulls GSC data, Google Ads campaign metrics, generates reports from templates automatically. Not a full replacement for something like AgencyAnalytics if you need socials and GA4 too, but if those two channels are the bulk of what you're reporting on it cuts out a tool.\n\n For custom APIs and databases Looker Studio is still the most flexible option, just factor in connector costs if you need anything beyond the native ones.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ok87siz",
+      "created_utc": 1778065009,
+      "created_at_iso": "2026-05-06T10:56:49.000Z",
+      "parent_id": "t3_1t4bywx",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok87siz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ol6zqwt",
+      "author": "Ok-Buffalo7822",
+      "author_fullname": null,
+      "body": "Tried Looker + Sheets but it broke every other week. Supermetrics was way too expensive. Other tools that had what we needed (but too much more on top of that) with ridiculous pricing. For meta ads we just made our own platform for client reporting (pulls meta ads data, handles custom conversions, specialist comments directly on the report, set recurring schedule for delivery). Went from around 4-5h per month to around 20mins total.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ol6zqwt",
+      "created_utc": 1778512756,
+      "created_at_iso": "2026-05-11T15:19:16.000Z",
+      "parent_id": "t3_1t4bywx",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ol6zqwt/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ow3ol59/",
+            "created_utc": 1783438265,
+            "created_at_iso": "2026-07-07T15:31:05.000Z",
+            "id": "ow3ol59",
+            "author": "Haja_974_island",
+            "author_fullname": null,
+            "body": "That \"built our own\" moment is real and sometimes the only way to get exactly what you need is to stop waiting for a tool to catch up.\n\n The 4-5h ---> 20min jump is impressive and I'm interested to know what you've used?\n\n The only thing I'd watch for down the road: custom platforms are great until the person who built it leaves, or until a Meta API update breaks something at midnight before a client delivery. Been there. It also very complicated to manage if you are getting more clients.\n\n For anyone else in this thread who's hitting the same wall but doesn't have the dev bandwidth to build their own, DashThis is roughly where I landed. Not as custom as a homegrown platform, but Meta Ads is natively supported, you can add specialist comments directly on the report, and recurring delivery is built in. Took me an afternoon to set up and it's been running on autopilot since.",
+            "body_html": "\n      <p>\n      That \"built our own\" moment is real and sometimes the only way to get exactly what you need is to stop waiting for a tool to catch up.\n    </p><p>\n      The 4-5h ---&gt; 20min jump is impressive and I'm interested to know what you've used?\n    </p><p>\n      The only thing I'd watch for down the road: custom platforms are great until the person who built it leaves, or until a Meta API update breaks something at midnight before a client delivery. Been there. It also very complicated to manage if you are getting more clients.\n    </p><p>\n      For anyone else in this thread who's hitting the same wall but doesn't have the dev bandwidth to build their own, DashThis is roughly where I landed. Not as custom as a homegrown platform, but Meta Ads is natively supported, you can add specialist comments directly on the report, and recurring delivery is built in. Took me an afternoon to set up and it's been running on autopilot since.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ow3ol59",
+            "parent_id": "t1_ol6zqwt",
+            "permalink": "/r/DigitalMarketing/comments/1t4bywx/comment/ow3ol59/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ol6zqwt"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ok246vn",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ok246vn",
+      "created_utc": 1777988924,
+      "created_at_iso": "2026-05-05T13:48:44.000Z",
+      "parent_id": "t3_1t4bywx",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok246vn/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok6wy89/",
+            "created_utc": 1778041480,
+            "created_at_iso": "2026-05-06T04:24:40.000Z",
+            "id": "ok6wy89",
+            "author": "rewiringwithshah",
+            "author_fullname": null,
+            "body": "Honestly it's split between pulling and cleaning.\n\n Pulling takes maybe 30-40 min per client (logging into each platform, exporting what I need). But then cleaning/aligning eats another hour because GA4 date ranges don't match what I pulled from Search Console last week, or a client's GBP data is incomplete, or I'm trying to compare apples to apples across sources. The report building itself is pretty templated at this point. Same slide deck structure every month. It's all the prep work before that kills me.\n\n What does your workflow look like? Are you automating the pulling part, or have you just structured things so cleaning is faster?",
+            "body_html": "\n      <p>\n      Honestly it's split between pulling and cleaning.\n    </p><p>\n      Pulling takes maybe 30-40 min per client (logging into each platform, exporting what I need). But then cleaning/aligning eats another hour because GA4 date ranges don't match what I pulled from Search Console last week, or a client's GBP data is incomplete, or I'm trying to compare apples to apples across sources.  The report building itself is pretty templated at this point. Same slide deck structure every month. It's all the prep work before that kills me.\n    </p><p>\n      What does your workflow look like? Are you automating the pulling part, or have you just structured things so cleaning is faster?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ok6wy89",
+            "parent_id": "t1_ok246vn",
+            "permalink": "/r/DigitalMarketing/comments/1t4bywx/comment/ok6wy89/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ok246vn"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1t4bywx",
+    "author": "rewiringwithshah",
+    "author_fullname": "t2_2bqp296fyh",
+    "subreddit": "DigitalMarketing",
+    "title": "What tools do you use to automate client reporting without breaking the bank?",
+    "downs": 0,
+    "name": "t3_1t4bywx",
+    "upvote_ratio": 1,
+    "ups": 4,
+    "selftext": "Currently spending way too much time manually creating reports for clients. Looking for something that: Pulls data automatically (GA4, Google Ads, Search Console, Custom APIs, Databases, Socials, etc.) Creates clean reports or dashboards Doesn't cost $500+/month Actually saves time instead of becoming another tool to manage What's your setup? Are you using Looker Studio, paying for something, or have you found a better way? I am open to suggestions for different tools you use.",
+    "total_awards_received": 0,
+    "score": 4,
+    "created": 1777978525,
+    "num_comments": 23,
+    "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/what_tools_do_you_use_to_automate_client/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1777978525
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 769f6eeee0074c3091102df007238f3f

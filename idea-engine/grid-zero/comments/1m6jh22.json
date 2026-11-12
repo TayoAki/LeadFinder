@@ -1,0 +1,666 @@
+{
+  "success": true,
+  "credits_remaining": 209759,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "n4k0nl7",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "After your question has been solved u/Work_for_burritos, please reply to the helpful user's comment with the phrase \"Solution verified\".\n\n This will not only award a point to the contributor for their assistance but also update the post's flair to \"Solved\".\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_n4k0nl7",
+      "created_utc": 1753203367,
+      "created_at_iso": "2025-07-22T16:56:07.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4k0nl7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4lj7c9",
+      "author": "Dry-Aioli-6138",
+      "author_fullname": null,
+      "body": "I am a data engineer. Previously worked in FP&A dept. I think getting a decent data engineer, and a few finance savvy people who understand data, plus a database ( snowflake, or managed postgres) to serve as data store for the excel/powerbi reporting layer will get you the furthest, and will be cheapest in the long run. All in one tools suffer from 90% syndrome, where the easier 90% of the work is supported, but the 10% most difficult is impossible and going around is more difficult than if you had built from scratch. They are also walled gardens. Tangled mess of excel files doesn't scale and isn't sustainable, although well engineered excel workflows can get you almost as far as a database. Further than a badly engineered db, even.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4lj7c9",
+      "created_utc": 1753218523,
+      "created_at_iso": "2025-07-22T21:08:43.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4lj7c9/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "n4kkag5",
+      "author": "LiquorishSunfish",
+      "author_fullname": null,
+      "body": "Start by getting the workflow rigid first. Separate the data input from the data output as much as possible - clean up the pipelines.\n\n Transition your fiddlers away from engaging with the source data, and set them up with some Excel \"front ends\" leveraging Power Query so they can play around with scenarios for the data (basically setting up what-if parameterisation).\n\n My team are currently pushing a data uplift in my organisation, and we are leaning really heavily on the four phases of analytics and what is required to reach, achieve, and progress to the next stage - lots of user experience mapping and SWOT analyses and data flow diagrams etc. You have to understand the problem before you can design the solution, and you have to understand the solution before you can (should) commit to it.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kkag5",
+      "created_utc": 1753208697,
+      "created_at_iso": "2025-07-22T18:24:57.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kkag5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "n4l3fnc",
+      "author": "frazorblade",
+      "author_fullname": null,
+      "body": "If your Excel files are glued together with VLOOKUPS and other last-gen functions you might benefit from modernising your front-end Excel side with modern array formulas supported by more structured tables + Power Query.\n\n This of course means up-skilling your Excel powerusers which I\u2019ve found is a new challenge in recent years.\n\n For context I consult to a medium sized business for sales forecasts which is then analysed by their supply chain team and reported on by finance etc, so a large section of the business relies on the inputs I am responsible for.\n\n From there we can aggregate and report in various ways (Excel/PBI). It\u2019s not without challenges, but certainly doable with planning and rigidity. Those all in one tools can be great, but absolutely must be set up correctly and well considered during implementation. They\u2019re also expensive.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4l3fnc",
+      "created_utc": 1753214149,
+      "created_at_iso": "2025-07-22T19:55:49.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4l3fnc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFtNmpoMjI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTMiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TkdZMFpHVTBPRGNzT2pveE9tUXhPblF4WDI0MGJETm1ibU09Iiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFtNmpoMjIiLCJwYXJlbnRUaGluZ0lkIjoidDFfbjRsM2ZuYyJ9"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "n4kcbaf",
+      "author": "Sweetowski",
+      "author_fullname": null,
+      "body": "There are tools that allow write back in PowerBI and function as a planning solution - Maybe another possibility?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kcbaf",
+      "created_utc": 1753206499,
+      "created_at_iso": "2025-07-22T17:48:19.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kcbaf/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "n4oaj3g",
+      "author": "StandardPeace8154",
+      "author_fullname": null,
+      "body": "Resist the temptation to implement an ERP/FP&A system unless you\u2019re prepared to change your business processes or drop major time and cash on bespoke developments.\n\n Platforms that do \u201ceverything\u201d may do everything adequately (a generous assumption) but they do nothing well and so this almost always results in everyone using excel anyway OR burning cash on developments to plug those gaps.\n\n The beauty of excel is its flexibility and the weakness is a lack of structure, but you can give excel a much stronger spine by implementing tables, data validation, sheet protection etc. If you\u2019re using power query a lot you\u2019ll already have an instinct for the sort of things you want to lock down. You can then get this feeding into Power BI and there\u2019s no reason you can\u2019t build forecast/planning models in Power BI using measures and parameters.\n\n On the other hand big platforms are very rigid and there\u2019s little you can do to make them more flexible. At a certain volume/ number of users you have to bite the bullet and adopt them anyway but in my experience companies do this way earlier than is necessary or good for them.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4oaj3g",
+      "created_utc": 1753256574,
+      "created_at_iso": "2025-07-23T07:42:54.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4oaj3g/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "n4k4uy4",
+      "author": "wild_arms_",
+      "author_fullname": null,
+      "body": "I currently work for an organization that uses Workday for both financial planning & HR. At the end of the day, it's ultimately a \"report as a service\" software i.e. CSV/Excel files as output; said organization has been on a data lake project since I joined but it's been 6 yrs and hearing little about it except beta access for select users this year...which tells me that it's not yet ready for adoption/usage for end-user analysts, much less business end-users. In a past organization I worked for, SAP was the software of choice; Python scripts were written to extract data from that....to be converted to Excel again for whatever analysis/transformation.\n\n If I can go back in time, I would have tried to learn more about Databricks vs some sort of Excel/Access driven output connection.\n\n TLDR: be prepared that any on-cloud software that promises automation/reporting....can still ultimately end up as Excel outputs.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4k4uy4",
+      "created_utc": 1753204496,
+      "created_at_iso": "2025-07-22T17:14:56.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4k4uy4/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "n4kmpm5",
+      "author": "M4rmeleda",
+      "author_fullname": null,
+      "body": "Depends what you mean by scalable as excel scales to an extent. Used workdays adaptive insight and it was great with the workday>excel extension.\n\n Pros: easily track assumptions/drivers along with iterations of annual plan, drill down into GL transactions level in 1 spot, excel extension makes it easy to quickly run adhoc bva scenarios in excel\n\n Cons: heavy upfront implementation and integration effort so you should have your ducks aligned for desired reporting structure/dimensions, license cost, you\u2019ll need a system admin, and proper change management procedures.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kmpm5",
+      "created_utc": 1753209377,
+      "created_at_iso": "2025-07-22T18:36:17.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kmpm5/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "n4kvs06",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kvs06",
+      "created_utc": 1753211960,
+      "created_at_iso": "2025-07-22T19:19:20.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kvs06/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "n4k2gk1",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4k2gk1",
+      "created_utc": 1753203853,
+      "created_at_iso": "2025-07-22T17:04:13.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4k2gk1/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kfd78/",
+            "created_utc": 1753207329,
+            "created_at_iso": "2025-07-22T18:02:09.000Z",
+            "id": "n4kfd78",
+            "author": "80hz",
+            "author_fullname": null,
+            "body": "Try to be very clear on what done is. I can see the goal post moving a million times and no one being happy in the situation like this from my experience",
+            "body_html": "\n      <p>\n      Try to be very clear on what done is. I can see the goal post moving a million times and no one being happy in the situation like this from my experience\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_n4kfd78",
+            "parent_id": "t1_n4k2gk1",
+            "permalink": "/r/PowerBI/comments/1m6jh22/comment/n4kfd78/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "n4k2gk1"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "n4k2jfj",
+      "author": "SCants1",
+      "author_fullname": null,
+      "body": "Remindme! 2 days",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4k2jfj",
+      "created_utc": 1753203874,
+      "created_at_iso": "2025-07-22T17:04:34.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4k2jfj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFtNmpoMjI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTEwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9USTBPRE00TnpZc09qb3hPbVF4T25ReFgyNDBhekpxWm1vPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbTZqaDIyIiwicGFyZW50VGhpbmdJZCI6InQxX240azJqZmoifQ"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "n4ldh7t",
+      "author": "avachris12",
+      "author_fullname": null,
+      "body": "I kind have done both. We built anaplan and power bi to work together. We were passing dax queries against the power bi workspace to act like an olap cube.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4ldh7t",
+      "created_utc": 1753216926,
+      "created_at_iso": "2025-07-22T20:42:06.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4ldh7t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "n4mm07h",
+      "author": "ultrafunkmiester",
+      "author_fullname": null,
+      "body": "You need some pro help. I would suggest Fabric. Anything you can do manually in excel you can automate in pq/pbi and much more in Fabric. You can build all your forecasting in pbi but that's not a beginner level job. There are several paid for visuals that does a lot of this, which is a pretty advance forecasting scenario planning tools with write back capability. I would build it from scratch in pbi with translational flow and Fabric data source but that doesn't help you. If i was you I'd carefully look through the available \"visuals\" some are fully featured software programs that just happen to be available via pbi.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4mm07h",
+      "created_utc": 1753230857,
+      "created_at_iso": "2025-07-23T00:34:17.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4mm07h/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "n4kg7pf",
+      "author": "EndProfessional3521",
+      "author_fullname": null,
+      "body": "I've dealt with exactly this scenario\u2014responding to executive requests from Finance, Commercial, Audit, etc. We initially adopted OneStream for financial consolidation, but chose not to move our planning and forecasting processes into it. Instead, we stayed with Excel-based models because they were more flexible, allowed driver-based planning, and let the FP&A team directly manage their financial model.\n\n However, this approach created issues over the past two years. Our budgets became less transparent, with less accountability as people started saying, \"FP&A provided these numbers, not me.\" Also, budgets weren't fully reflected in our reporting systems until the end of Q1 2025, frustrating many plant managers due to limited control and visibility.\n\n To fix this, we've outlined a two-year transition:\n\n Year 1: Recognizing the complexity of fully driver-based workflows (with about 150 workflows across various business segments), we'll continue using Excel driver-based workbooks as supporting documents. We'll aggregate this data into a summarized import workbook (organized by GL, Department, Plant, and Period) within OneStream to gather, certify, and approve data.\n\n Year 2: We'll fully transition to a detailed, driver-based approach. Plants will input their specific budgeting data\u2014like market pricing, volumes, efficiency, and downtime\u2014into supporting workbooks. OneStream will then aggregate and calculate everything centrally.\n\n We also retained our dashboarding requirement, connecting OneStream directly to Power BI via a purchased data connector. This allows us to reuse OneStream's dimensions in Power BI, avoiding duplicate maintenance. Although Power BI remains our main reporting tool, it now includes budgets alongside actual results, trends, variances, and scenario analyses, significantly improving executive reporting.\n\n Looking forward, here's our timeline:\n\n 2026: Integrate the full budget and Forecasts 1\u201311 into OneStream, linked directly to Power BI.\n\n 2027: Expand OneStream to cover long-range planning and headcount planning, also integrated with Power BI.\n\n FP&A and accounting analysts now directly connect Excel to OneStream data, providing a single source of truth and significantly reducing data-management complexity.\n\n Note: This might not be the perfect solution, but it\u2019s the approach we'll follow for the next two years, given we're a 1,500-employee company generating about $4 billion in revenue.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kg7pf",
+      "created_utc": 1753207563,
+      "created_at_iso": "2025-07-22T18:06:03.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kg7pf/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "n4kd0rb",
+      "author": "Zero-meia",
+      "author_fullname": null,
+      "body": "Do you gather most of your data from the ERP? I would say to try to get the data direct from the ERP. Here at the company (~50 employees) our ERP allows us to get data from the database through ODBC.\n\n So I get most of it from ERP and residual data from Excel files through sharepoint/web. It works fine for now.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4kd0rb",
+      "created_utc": 1753206690,
+      "created_at_iso": "2025-07-22T17:51:30.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kd0rb/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4mwlzv/",
+            "created_utc": 1753234511,
+            "created_at_iso": "2025-07-23T01:35:11.000Z",
+            "id": "n4mwlzv",
+            "author": "Rwbyy",
+            "author_fullname": null,
+            "body": "Similarly, our ERP is hosted locally and we utilize sql to create and refresh powerbi datasets regularly, that then get used for reporting in dashboards.",
+            "body_html": "\n      <p>\n      Similarly, our ERP is hosted locally and we utilize sql to create and refresh powerbi datasets regularly, that then get used for reporting in dashboards.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_n4mwlzv",
+            "parent_id": "t1_n4kd0rb",
+            "permalink": "/r/PowerBI/comments/1m6jh22/comment/n4mwlzv/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "n4kd0rb"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4mpg2t",
+      "author": "jwk6",
+      "author_fullname": null,
+      "body": "It's called Excel Purgatory. Power BI is the only way out.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4mpg2t",
+      "created_utc": 1753232036,
+      "created_at_iso": "2025-07-23T00:53:56.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4mpg2t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFtNmpoMjI_c29ydD1DT05GSURFTkNFJnN0YXJ0aW5nRGVwdGg9MSZjb21tZW50UGFyZW50UG9zaXRpb25zPTE1IiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk9UYzVabUV5WVRnc09qb3hPbVF4T25ReFgyNDBiWEJuTW5RPSIsInN1YnJlZGRpdCI6IlBvd2VyQkkiLCJwb3N0SWQiOiIxbTZqaDIyIiwicGFyZW50VGhpbmdJZCI6InQxX240bXBnMnQifQ"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4naqyt",
+      "author": "Rdsknight11",
+      "author_fullname": null,
+      "body": "We\u2019ve implemented Axiom by Syntellis. Tbh I hate the program, it is a while to get adjusted and you\u2019re basically just doing things in a mix of their excel clients and online and its all spread out. It\u2019s easier for end users to input their info, but I feel like if we had actually built it out in excel + power Bi we\u2019d have a better system.\n\n No matter what FP&A is just complicated, not hard but complicated. People are looking for a silver bullet to solve the complication, but it\u2019s inherently complicated as it requires knowing all the aspects of a business",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4naqyt",
+      "created_utc": 1753239549,
+      "created_at_iso": "2025-07-23T02:59:09.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4naqyt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4njpkc",
+      "author": "hopkinswyn",
+      "author_fullname": null,
+      "body": "Full disclosure upfront our company is a re-seller of the product I\u2019m about to recommend.\n\n I\u2019m the director are a consulting firm made up of ex-finance folks specialising in Excel and Power BI solutions.\n\n We kept running into similar issues with using spreadsheets for budgeting and forecasting.\n\n We then looked into https://www.solverglobal.com/ and that turned out to be an ideal fit with an Excel front end and a SQL backend and a built-in connector for Power BI.\n\n Covers most needs.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4njpkc",
+      "created_utc": 1753243134,
+      "created_at_iso": "2025-07-23T03:58:54.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4njpkc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4ozzrw",
+      "author": "Time_Zone_8608",
+      "author_fullname": null,
+      "body": "I work for one of the largest food companies on the planet. We prefer the MS suite of reporting tools - excel and Power BI. You need better analysts who know how to build proper reporting pipelines and data analysis tools. Excel, Power BI are more than sufficient for FP&A.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4ozzrw",
+      "created_utc": 1753270127,
+      "created_at_iso": "2025-07-23T11:28:47.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4ozzrw/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4p3byz",
+      "author": "billbot77",
+      "author_fullname": null,
+      "body": "I see only two sensible options:\n\n Go bespoke fabric and get the right Devs to design build and support it...\n\n ...or buy a package and pray it delivers.\n\n As a pro consultant my career relies on people choosing door one. And remember, it's all about the semantic models",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4p3byz",
+      "created_utc": 1753271499,
+      "created_at_iso": "2025-07-23T11:51:39.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4p3byz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4p3hmx",
+      "author": "Wiegelman",
+      "author_fullname": null,
+      "body": "Remindme! 2 days",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4p3hmx",
+      "created_utc": 1753271561,
+      "created_at_iso": "2025-07-23T11:52:41.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4p3hmx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4qdfva",
+      "author": "Far_Ad_4840",
+      "author_fullname": null,
+      "body": "Depends on how much manual manipulation is needed. If it\u2019s straight data pulls and then formulas you\u2019d be fine but if you\u2019re manipulating the data a lot I think an FP&A program would be way more useful.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4qdfva",
+      "created_utc": 1753285782,
+      "created_at_iso": "2025-07-23T15:49:42.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4qdfva/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "n4u02sg",
+      "author": "GurSignificant7243",
+      "author_fullname": null,
+      "body": "Lumel is the best",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_n4u02sg",
+      "created_utc": 1753325420,
+      "created_at_iso": "2025-07-24T02:50:20.000Z",
+      "parent_id": "t3_1m6jh22",
+      "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4u02sg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1m6jh22",
+    "author": "Work_for_burritos",
+    "author_fullname": "t2_1jrrmos2rs",
+    "subreddit": "PowerBI",
+    "title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+    "downs": 0,
+    "name": "t3_1m6jh22",
+    "upvote_ratio": 0.896551724137931,
+    "ups": 46,
+    "selftext": "I\u2019m a financial controller at a mid-sized company (~250 employees) and I\u2019m deep in the trenches trying to make our FP&A process not suck. We\u2019ve outgrown our Frankenstein of Excel sheets duct-taped together with VLOOKUPs, INDEX-MATCH sorcery, and monthly \u201cpray-it-doesn\u2019t-break\u201d macros. I\u2019ve built some decent Power BI dashboards to visualize actuals, but planning/forecasting is still the wild west. Now the CEO is pushing for \u201cone tool to rule them all\u201d looking at things like Datarails, Cube, or Pigment. Sales and HR want dashboards, the CFO wants driver-based forecasting, and I just want something that doesn\u2019t implode when someone inserts a row in the wrong place. Do I keep investing in Power BI + Excel (maybe with some Power Query/Power Pivot magic), or is it actually worth moving to a full FP&A platform that claims to do \u201ceverything\u201d (but locks you into a rigid workflow and bleeds $$$)? I love how flexible Power BI is. I can wrangle messy data, build custom measures, and it actually feels like I own the process. But sometimes I wonder if I\u2019m just building a beautiful house on sand. So I guess my question is: Has anyone here successfully used Power BI + Excel as a scalable FP&A stack for forecasting, scenario planning, and reporting or do you eventually cave and move to a dedicated FP&A platform?",
+    "total_awards_received": 0,
+    "score": 46,
+    "created": 1753203367,
+    "num_comments": 35,
+    "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/anyone_else_quietly_dying_inside_trying_to_decide/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1753203367
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Qb3dlckJJL3QzXzFtNmpoMjI_c2Vla2VyLXNlc3Npb249ZmFsc2UmcmVuZGVyLW1vZGU9cGFydGlhbCZ0b3AtbGV2ZWw9MSZjb21tZW50cy1yZW1haW5pbmc9NzUmY29tbWVudFBvc2l0aW9uT2Zmc2V0PTIzIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlpqWTFPRGd5WWpBc09qb3dPbVY0T2lnMmUzNC9henBrYlNSTFFVUnZQamRRZHpvcVprTktKeTFSY0VvMFRpUnRlREkxY1RaOWVDNG1aRkoyUjBzK05sZ3hYVUIwU2lNNFB5TXpWak1pTm5aOFVrRldJbFZoTGlKT1EwUXpJaUZ3ZWlOZmMxTW9WMk5QIiwic3VicmVkZGl0IjoiUG93ZXJCSSIsInBvc3RJZCI6IjFtNmpoMjIiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+
+treg: charged $0.00188 · call id d40e0b15da364ae296c499b06565af76

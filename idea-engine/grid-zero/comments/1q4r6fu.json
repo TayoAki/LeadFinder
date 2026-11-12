@@ -1,0 +1,641 @@
+{
+  "success": true,
+  "credits_remaining": 209742,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "nxuzfe5",
+      "author": "JakeHundley",
+      "author_fullname": null,
+      "body": "Direct integration with all of our platforms to a custom Agency Analytics report that automatically emails all of our clients the previous month's report on the 3rd of every month.\n\n Client reporting takes us exactly 0 seconds per week.\n\n On the 3rd (or shortly after) I reply to all of the reports that went out and just give a sentence or two of my input. Some months I don't get to it but the clients still get their reports.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nxuzfe5",
+      "created_utc": 1767637544,
+      "created_at_iso": "2026-01-05T18:25:44.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxuzfe5/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxvptqw/",
+            "created_utc": 1767644778,
+            "created_at_iso": "2026-01-05T20:26:18.000Z",
+            "id": "nxvptqw",
+            "author": "Different_Falcon7581",
+            "author_fullname": null,
+            "body": "Hey Jake! Thanks for the reply! And do you include AI the process?",
+            "body_html": "\n      <p>\n      Hey Jake! Thanks for the reply! And do you include AI the process?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nxvptqw",
+            "parent_id": "t1_nxuzfe5",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nxvptqw/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny0jvmg/",
+                  "created_utc": 1767711010,
+                  "created_at_iso": "2026-01-06T14:50:10.000Z",
+                  "id": "ny0jvmg",
+                  "author": "JakeHundley",
+                  "author_fullname": null,
+                  "body": "No",
+                  "body_html": "\n      <p>\n      No\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ny0jvmg",
+                  "parent_id": "t1_nxvptqw",
+                  "permalink": "/r/marketingagency/comments/1q4r6fu/comment/ny0jvmg/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9tYXJrZXRpbmdhZ2VuY3kvdDNfMXE0cjZmdT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WVRoa09HSTBNMkVzT2pvek9tUXhPblF4WDI1NU1HcDJiV2M9Iiwic3VicmVkZGl0IjoibWFya2V0aW5nYWdlbmN5IiwicG9zdElkIjoiMXE0cjZmdSIsInBhcmVudFRoaW5nSWQiOiJ0MV9ueTBqdm1nIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ny0jvmg"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny0gbd2/",
+            "created_utc": 1767709888,
+            "created_at_iso": "2026-01-06T14:31:28.000Z",
+            "id": "ny0gbd2",
+            "author": "amike7",
+            "author_fullname": null,
+            "body": "Does your team send anything on a weekly cadence? If so what?",
+            "body_html": "\n      <p>\n      Does your team send anything on a weekly cadence? If so what?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ny0gbd2",
+            "parent_id": "t1_nxuzfe5",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/ny0gbd2/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny0julq/",
+                  "created_utc": 1767711001,
+                  "created_at_iso": "2026-01-06T14:50:01.000Z",
+                  "id": "ny0julq",
+                  "author": "JakeHundley",
+                  "author_fullname": null,
+                  "body": "No",
+                  "body_html": "\n      <p>\n      No\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ny0julq",
+                  "parent_id": "t1_ny0gbd2",
+                  "permalink": "/r/marketingagency/comments/1q4r6fu/comment/ny0julq/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ny0gbd2"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nycs1kn/",
+            "created_utc": 1767854199,
+            "created_at_iso": "2026-01-08T06:36:39.000Z",
+            "id": "nycs1kn",
+            "author": "Numerous_Poetry778",
+            "author_fullname": null,
+            "body": "Man! You have nailed it. Please share how we can also do this.",
+            "body_html": "\n      <p>\n      Man! You have nailed it. Please share how we can also do this.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nycs1kn",
+            "parent_id": "t1_nxuzfe5",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nycs1kn/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nydwajl/",
+                  "created_utc": 1767874765,
+                  "created_at_iso": "2026-01-08T12:19:25.000Z",
+                  "id": "nydwajl",
+                  "author": "JakeHundley",
+                  "author_fullname": null,
+                  "body": "It's just native stuff with Agency Analytics...",
+                  "body_html": "\n      <p>\n      It's just native stuff with Agency Analytics...\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_nydwajl",
+                  "parent_id": "t1_nycs1kn",
+                  "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nydwajl/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "nycs1kn"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ny0jvmg"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "nxxqvp4",
+      "author": "Spirited_Honey_3440",
+      "author_fullname": null,
+      "body": "We hook everything within Agency Analytics, then hook Agency Analytics into n8n, have Gemini spot trends in the data, write the email summary for the client, and then hook Grammarly to proofread before the last human touch, with spot-checking everything.\n\n We are testing having it go a step further and have it feed back into the marketing mediums to have it make recommendations on improvements and have it be a full cycle.\n\n Each of our account managers manages 15 to 20 accounts, and monthly reporting takes 1 hour total; our clients love the detail we provide.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nxxqvp4",
+      "created_utc": 1767666954,
+      "created_at_iso": "2026-01-06T02:35:54.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxxqvp4/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxz7y0q/",
+            "created_utc": 1767690441,
+            "created_at_iso": "2026-01-06T09:07:21.000Z",
+            "id": "nxz7y0q",
+            "author": "Different_Falcon7581",
+            "author_fullname": null,
+            "body": "Super cool! About n8n don't you find it limiting like you can't talk with the data and also the complexity of it ?",
+            "body_html": "\n      <p>\n      Super cool! About n8n don't you find it limiting like you can't talk with the data and also the complexity of it ?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nxz7y0q",
+            "parent_id": "t1_nxxqvp4",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nxz7y0q/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nxxqvp4"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nxyx2eb",
+      "author": "stagetrekker",
+      "author_fullname": null,
+      "body": "We've been working with some agencies and what we learned that first automating data pulling with direct integration with Meta & Google and ensuring that there is no hallucinations with the data. Only after that we were able to lock in reporting template/structure and then develop an automated workflow to generate reports for each client with summaries, key insights and next steps.\n\n As a result, we saw agencies could automate report generation for each client and even auto scheduling it to be sent to them periodically. They were able to save over 40+ hours a week of their team!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nxyx2eb",
+      "created_utc": 1767684299,
+      "created_at_iso": "2026-01-06T07:24:59.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxyx2eb/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxz81fk/",
+            "created_utc": 1767690496,
+            "created_at_iso": "2026-01-06T09:08:16.000Z",
+            "id": "nxz81fk",
+            "author": "Different_Falcon7581",
+            "author_fullname": null,
+            "body": "Do you know what tool they were using ?",
+            "body_html": "\n      <p>\n      Do you know what tool they were using ?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nxz81fk",
+            "parent_id": "t1_nxyx2eb",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nxz81fk/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxz8ggc/",
+                  "created_utc": 1767690744,
+                  "created_at_iso": "2026-01-06T09:12:24.000Z",
+                  "id": "nxz8ggc",
+                  "author": "stagetrekker",
+                  "author_fullname": null,
+                  "body": "Adden.ai",
+                  "body_html": "\n      <p>\n      <a rpl=\"\" class=\"relative pointer-events-auto a\n  \n  \n  \n  \n  underline\n  \n  cursor-pointer\" href=\"http://Adden.ai\" rel=\"noopener nofollow ugc\" target=\"_blank\">Adden.ai</a>\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_nxz8ggc",
+                  "parent_id": "t1_nxz81fk",
+                  "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nxz8ggc/",
+                  "ups": 2,
+                  "downs": 0,
+                  "score": 2,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9tYXJrZXRpbmdhZ2VuY3kvdDNfMXE0cjZmdT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TkdZME5UY3hNbUlzT2pvek9tUXhPblF4WDI1NGVqaG5aMk09Iiwic3VicmVkZGl0IjoibWFya2V0aW5nYWdlbmN5IiwicG9zdElkIjoiMXE0cjZmdSIsInBhcmVudFRoaW5nSWQiOiJ0MV9ueHo4Z2djIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "nxz8ggc"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nxz8ggc"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nxzo8es",
+      "author": "Hurree_Analytics",
+      "author_fullname": null,
+      "body": "Hey! We hear you, client reporting can eat up so much time if the process isn\u2019t streamlined.\n\n At Hurree, you can pull data from all your platforms via our 70+ built-in connectors and set up scheduled snapshots to automatically send reports to clients, cutting down the time it takes to create them.\n\n Riva, our AI analyst, helps summarize dashboards and forecast performance, while you can add benchmarks to see how things are doing, plus there\u2019s a chatbot for quick questions.\n\n It\u2019s all built to save time and make reporting feel less like a chore. If you want to see how it works in practice, feel free to message us anytime!",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nxzo8es",
+      "created_utc": 1767699267,
+      "created_at_iso": "2026-01-06T11:34:27.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxzo8es/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ny3e85a",
+      "author": "webmax_agency",
+      "author_fullname": null,
+      "body": "Reporting is important. I've been looking for more new solutions other than agency analytics or looker studio. Might have to create our own reporting app.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ny3e85a",
+      "created_utc": 1767739261,
+      "created_at_iso": "2026-01-06T22:41:01.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny3e85a/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/oem7t62/",
+            "created_utc": 1775484669,
+            "created_at_iso": "2026-04-06T14:11:09.000Z",
+            "id": "oem7t62",
+            "author": "Complex_Chef8121",
+            "author_fullname": null,
+            "body": "had the exact same thought at some point\n\n after trying a few tools i was like\u2026 why does none of this actually solve the real problem\n\n dashboards are fine, but they don\u2019t really help when you have to explain what\u2019s going on and what to do next\n\n that\u2019s where i kept getting stuck\n\n i even considered building something too, but then realized the hard part isn\u2019t the data or the visuals\n\n it\u2019s structuring the thinking behind the report so you\u2019re not starting from scratch every time\n\n once i focused on that, things got a bit easier even without a \u201cperfect\u201d tool\n\n what\u2019s the main thing you feel current tools are missing?",
+            "body_html": "\n      <p>\n      had the exact same thought at some point\n    </p><p>\n      after trying a few tools i was like\u2026 why does none of this actually solve the real problem\n    </p><p>\n      dashboards are fine, but they don\u2019t really help when you have to explain what\u2019s going on and what to do next\n    </p><p>\n      that\u2019s where i kept getting stuck\n    </p><p>\n      i even considered building something too, but then realized the hard part isn\u2019t the data or the visuals\n    </p><p>\n      it\u2019s structuring the thinking behind the report so you\u2019re not starting from scratch every time\n    </p><p>\n      once i focused on that, things got a bit easier even without a \u201cperfect\u201d tool\n    </p><p>\n      what\u2019s the main thing you feel current tools are missing?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oem7t62",
+            "parent_id": "t1_ny3e85a",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/oem7t62/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ny3e85a"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ny9pwdr",
+      "author": "AddisToday",
+      "author_fullname": null,
+      "body": "late to the party but wanted to add a different angle. Most tools automate data pulling and dashboards. That's table stakes. My impression, the real bottleneck is the analyst work that comes after - figuring out wha's actually wrong and whether it matters financially. /JakeHundley is right that AI can'T replace contextual judgment. But it can do the grunt work before the judgement call - pattern detection, anomaly flagging , revenue impact estimation. I've been building sanitydata.com for exactly this - it connects to GA4, detects common revenue leaks (device friction, channel waste, landing page issues etc), quantifies the $ impact and writes a white labeled reports for agencies. Not a silver bullet, but if your bottleneck is the analysis itself, not just pulling data together, might be worth a look",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ny9pwdr",
+      "created_utc": 1767818936,
+      "created_at_iso": "2026-01-07T20:48:56.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny9pwdr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o1tgnqq",
+      "author": "JoshAgencyAnalytics",
+      "author_fullname": null,
+      "body": "Reporting eats up a lot of time. On average, it takes about 2.5 hours per client when done manually. Moving to an automated reporting tool drops that to half an hour or less. Some of these tools have AI built in, which helps create high-level summaries and highlight additional insights, so you spend less time wrangling numbers and more time adding context and strategy. Many agencies use AgencyAnalytics, but it\u2019s worth testing a few options to find the tool that fits your workflow best.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o1tgnqq",
+      "created_utc": 1769435647,
+      "created_at_iso": "2026-01-26T13:54:07.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/o1tgnqq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "o4z1pkj",
+      "author": "Swydo-com",
+      "author_fullname": null,
+      "body": "The biggest unlock is probably separating reporting from interpretation.\n\n Let dashboards send automatically (AgencyAnalytics, Looker, whatever your stack is). That handles the numbers.\n\n Then instead of writing long reports, record a quick 3\u20135 min Loom covering:\n\n What changed\n\n Why it likely changed\n\n What you're doing next\n\n It's faster than writing paragraphs & feels way more human.\n\n Also stop explaining every micro-metric. Talk in trends:\n\n Overall visibility / channel direction\n\n Branded vs non-branded performance\n\n Lead indicators (calls, form fills, SQLs)\n\n Clients mostly care about: Are we progressing? Is this normal? What's next?\n\n AI fits in as a drafting assistant. Let it write the \"what changed\" section (spend up, CPA down, CTR improved). But it won't know the *why* unless you give it context.\n\n Keep a simple running monthly log:\n\n Tests launched\n\n Budget shifts\n\n Promos\n\n Landing page changes\n\n Feed that into AI with performance data & you'll get 80% there.\n\n Your judgment on why it happened & what to do next is still the main value that you bring.\n\n Do that and narrative time drops from around 45 mins to 10-15, without turning your reports into generic AI fluff.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_o4z1pkj",
+      "created_utc": 1770900966,
+      "created_at_iso": "2026-02-12T12:56:06.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/o4z1pkj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oem62qz",
+      "author": "Complex_Chef8121",
+      "author_fullname": null,
+      "body": "10 hours/week sounds about right tbh\n\n we used to be in that range before\n\n biggest time drains were:\npulling data from different platforms\nreformatting everything for each client\nand especially rewriting the same insights over and over\n\n on the AI side \u2014 we tried a few things, but most of it felt gimmicky at first\n\n what actually helped wasn\u2019t \u201cautomating the whole report\u201d, but using AI just for the last 20%:\nturning raw data into a clear summary + next steps\n\n the key for us was being very specific with inputs\n\n instead of \u201csummarize this report\u201d, more like:\n\n here\u2019s the objective\n\n here\u2019s the performance\n\n here\u2019s what changed vs last period\n\n then ask it to explain + recommend what to do next\n\n still requires human review, but it cuts a lot of the writing time\n\n i don\u2019t think reporting ever becomes fully hands-off, but you can definitely get it down from ~10h to something much more manageable\n\n are you trying to automate the whole thing or just speed up parts of the process?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oem62qz",
+      "created_utc": 1775484143,
+      "created_at_iso": "2026-04-06T14:02:23.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/oem62qz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oesvnvj",
+      "author": "AgencyTemplates",
+      "author_fullname": null,
+      "body": "We went a different route \u2014 built a Make.com flow that pulls GA4 + Meta Ads each week, writes the data to a Google Sheet, and uses GPT-4o to draft 3\u20134 sentences of performance commentary before sending the report via email. Total Monday morning time: about 5 minutes to review and send. The trick that made the AI commentary actually useful was constraining the output format in the system prompt \u2014 no generic observations, only sentences that reference a specific metric with a WoW comparison. Took a few iterations to get right. Happy to share the architecture if anyone wants to build something similar.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oesvnvj",
+      "created_utc": 1775569478,
+      "created_at_iso": "2026-04-07T13:44:38.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/oesvnvj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "okzxjab",
+      "author": "mja311",
+      "author_fullname": null,
+      "body": "I would use AI after tightening the reporting structure, not as the first step.\n\n The time sink is usually a mix of:\n\n pulling the same metrics from too many places\n\n deciding what actually matters this week\n\n rewriting the same explanation for each client\n\n turning charts into something a non-marketer can act on\n\n AI is useful for the third and fourth parts. It is much less useful if the inputs are messy.\n\n The workflow I would set up:\n\n Pick one fixed source of truth for each metric.\n\n Create a standard report skeleton by client type.\n\n Add a short client-specific section: what changed, why it changed, what we are doing next.\n\n Let AI draft that narrative from the data and account notes.\n\n Have a human review anything that sounds like a recommendation or promise.\n\n The boring screenshots/filters should be automated with dashboards or scheduled exports. The human time should go into the interpretation, because that is usually what clients are actually paying for.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_okzxjab",
+      "created_utc": 1778421724,
+      "created_at_iso": "2026-05-10T14:02:04.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/okzxjab/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "nxw376a",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_nxw376a",
+      "created_utc": 1767648516,
+      "created_at_iso": "2026-01-05T21:28:36.000Z",
+      "parent_id": "t3_1q4r6fu",
+      "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxw376a/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxz7znd/",
+            "created_utc": 1767690466,
+            "created_at_iso": "2026-01-06T09:07:46.000Z",
+            "id": "nxz7znd",
+            "author": "Different_Falcon7581",
+            "author_fullname": null,
+            "body": "Thanks for sharing ! What tool do you use ?",
+            "body_html": "\n      <p>\n      Thanks for sharing ! What tool do you use ?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_nxz7znd",
+            "parent_id": "t1_nxw376a",
+            "permalink": "/r/marketingagency/comments/1q4r6fu/comment/nxz7znd/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "nxw376a"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1q4r6fu",
+    "author": "Different_Falcon7581",
+    "author_fullname": "t2_242gso1nh2",
+    "subreddit": "marketingagency",
+    "title": "Agency owners, how do you handle client reporting ?",
+    "downs": 0,
+    "name": "t3_1q4r6fu",
+    "upvote_ratio": 0.9444444444444444,
+    "ups": 16,
+    "selftext": "Hi! I have a question regarding reporting. A friend of mine who has quite a big agency told me that reporting was taking her at least 10 hours a week. Jungling between tools, socials, draft it to make it special. Quick question : how do you include AI in it ?",
+    "total_awards_received": 0,
+    "score": 16,
+    "created": 1767632403,
+    "num_comments": 40,
+    "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/agency_owners_how_do_you_handle_client_reporting/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1767632403
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 82c2db7dae204f6da2932ddfa74080a7

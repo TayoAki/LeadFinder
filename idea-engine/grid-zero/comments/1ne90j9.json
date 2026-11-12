@@ -1,0 +1,462 @@
+{
+  "success": true,
+  "credits_remaining": 209769,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ndnxa2z",
+      "author": "Grovbolle",
+      "author_fullname": null,
+      "body": "I love how we continuously reinvent the Cube- with new wording.\n\n Most popular semantic layer is definitely a SSAS Tabular/PowerBI model in terms of adoption",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndnxa2z",
+      "created_utc": 1757609831,
+      "created_at_iso": "2025-09-11T16:57:11.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndnxa2z/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndzp15q/",
+            "created_utc": 1757770568,
+            "created_at_iso": "2025-09-13T13:36:08.000Z",
+            "id": "ndzp15q",
+            "author": "Gators1992",
+            "author_fullname": null,
+            "body": "The concepts around semantic layers have been around long before PowerBI. Business Objects had it in the 2000s and Microstrategy early on as well. The whole \"semantic layer\" terminology came around I think when the \"modern data stack\" thing came around and architecture was being broken down into functional layers (ingestion layer, transformation layer, semantic layer, etc) to be served by different tools or approaches.\n\n I started a project in 2011 at a company that had Microstrategy and they effectively had the \"semantic layer\" embedded within the application. I think that was the year that PowerBI was first released.",
+            "body_html": "\n      <p>\n      The concepts around semantic layers have been around long before PowerBI.  Business Objects had it in the 2000s and Microstrategy early on as well.  The whole \"semantic layer\" terminology came around I think when the \"modern data stack\" thing came around and architecture was being broken down into functional layers (ingestion layer, transformation layer, semantic layer, etc) to be served by different tools or approaches.\n    </p><p>\n      I started a project in 2011 at a company that had Microstrategy and they effectively had the \"semantic layer\" embedded within the application.  I think that was the year that PowerBI was first released.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ndzp15q",
+            "parent_id": "t1_ndnxa2z",
+            "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndzp15q/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndzuaah/",
+                  "created_utc": 1757772395,
+                  "created_at_iso": "2025-09-13T14:06:35.000Z",
+                  "id": "ndzuaah",
+                  "author": "Grovbolle",
+                  "author_fullname": null,
+                  "body": "Cubes are also older than PowerBI ;)",
+                  "body_html": "\n      <p>\n      Cubes are also older than PowerBI ;)\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ndzuaah",
+                  "parent_id": "t1_ndzp15q",
+                  "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndzuaah/",
+                  "ups": 4,
+                  "downs": 0,
+                  "score": 4,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW5lOTBqOT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WkRkaFpqSmxNVFVzT2pvek9tUXhPblF4WDI1a2VuVmhZV2c9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMW5lOTBqOSIsInBhcmVudFRoaW5nSWQiOiJ0MV9uZHp1YWFoIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ndzuaah"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ndzuaah"
+        }
+      },
+      "ups": 14,
+      "downs": 0,
+      "score": 14
+    },
+    {
+      "id": "ndn5beg",
+      "author": "WaterIll4397",
+      "author_fullname": null,
+      "body": "I built a massive one in powerBI (powered by databricks/spark under the hood), it was massively loved by my prior org.\n\n The key to semantic layers is they MUST hook up to pivot tables in Excel or Google sheets and be fast. If they don't, you are dead in the water.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndn5beg",
+      "created_utc": 1757601637,
+      "created_at_iso": "2025-09-11T14:40:37.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndn5beg/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "ndw4qkx",
+      "author": "m3-bs",
+      "author_fullname": null,
+      "body": "We tried Cube, but I just don\u2019t think YAML based metrics is the right abstraction.\u00a0 If felt janky every time we had a metric that was bit more complex to calculate. Overall, the modeling burden would have to fall on dbt and we just thought the extra layer and tool wasn\u2019t worth it",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndw4qkx",
+      "created_utc": 1757713717,
+      "created_at_iso": "2025-09-12T21:48:37.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndw4qkx/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndwbbro/",
+            "created_utc": 1757715902,
+            "created_at_iso": "2025-09-12T22:25:02.000Z",
+            "id": "ndwbbro",
+            "author": "full_arc",
+            "author_fullname": null,
+            "body": "So today you don't have one? Or do you have one baked into your BI tool?",
+            "body_html": "\n      <p>\n      So today you don't have one? Or do you have one baked into your BI tool?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ndwbbro",
+            "parent_id": "t1_ndw4qkx",
+            "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndwbbro/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndwbfo9/",
+                  "created_utc": 1757715939,
+                  "created_at_iso": "2025-09-12T22:25:39.000Z",
+                  "id": "ndwbfo9",
+                  "author": "m3-bs",
+                  "author_fullname": null,
+                  "body": "we don't have one",
+                  "body_html": "\n      <p>\n      we don't have one\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ndwbfo9",
+                  "parent_id": "t1_ndwbbro",
+                  "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndwbfo9/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ndwbbro"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ndwbbro"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ne0ji4a",
+      "author": "PalpitationRoutine51",
+      "author_fullname": null,
+      "body": "It was a lot of effort in maintaining semantic layer for evolving metric definition -not anymore with new age AI tools for us. It changed our lives.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ne0ji4a",
+      "created_utc": 1757780013,
+      "created_at_iso": "2025-09-13T16:13:33.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ne0ji4a/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ne0m1t8/",
+            "created_utc": 1757780776,
+            "created_at_iso": "2025-09-13T16:26:16.000Z",
+            "id": "ne0m1t8",
+            "author": "full_arc",
+            "author_fullname": null,
+            "body": "What tools do you use?",
+            "body_html": "\n      <p>\n      What tools do you use?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ne0m1t8",
+            "parent_id": "t1_ne0ji4a",
+            "permalink": "/r/dataengineering/comments/1ne90j9/comment/ne0m1t8/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ne6w47y/",
+                  "created_utc": 1757867541,
+                  "created_at_iso": "2025-09-14T16:32:21.000Z",
+                  "id": "ne6w47y",
+                  "author": "PalpitationRoutine51",
+                  "author_fullname": null,
+                  "body": "A mix of them. I started with numbersstation(now owned by Alation), dbt copilot and wisdom, but they were limited in automated update of semantic layer, good starting point but manual. currently testing Connecty - they look promising, will keep you posted.",
+                  "body_html": "\n      <p>\n      A mix of them. I started with numbersstation(now owned by Alation), dbt copilot and wisdom, but they were limited in automated update of semantic layer, good starting point but manual. currently testing Connecty - they look promising, will keep you posted.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ne6w47y",
+                  "parent_id": "t1_ne0m1t8",
+                  "permalink": "/r/dataengineering/comments/1ne90j9/comment/ne6w47y/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMW5lOTBqOT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MywwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TldFME5HUTFZalVzT2pvek9tUXhPblF4WDI1bE5uYzBOM2s9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMW5lOTBqOSIsInBhcmVudFRoaW5nSWQiOiJ0MV9uZTZ3NDd5In0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ne6w47y"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ne6w47y"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ndosswi",
+      "author": "Gators1992",
+      "author_fullname": null,
+      "body": "I have used a few.\u00a0 It's great for governance and usability of the model if it's complex.\u00a0 We are using powerbi now and it works pretty well, though just rolled out.\u00a0 We will probably build more on Snowflake Cortex to satisfy the CXX's need for everything in AI.\n\n \u00a0If you have a dimensional model with multiple subjects and cross subject calculations, it's some you should look at.\u00a0 If you just have OBTs and people primarily build their own metrics then you might not get the value from it.\u00a0 Also not all semantic implementations are equal.\u00a0 Like dbt's doesn't work with multiple tables and only works with a single dbt model per semantic model, so less useful IMO.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndosswi",
+      "created_utc": 1757618726,
+      "created_at_iso": "2025-09-11T19:25:26.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndosswi/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndqfz5y/",
+            "created_utc": 1757637840,
+            "created_at_iso": "2025-09-12T00:44:00.000Z",
+            "id": "ndqfz5y",
+            "author": "kenfar",
+            "author_fullname": null,
+            "body": "Can you expand upon this?\n\n What do you mean exactly by dimensional model subjects?\n\n And any details about how are you building semantic models that span models?\n\n Thanks!",
+            "body_html": "\n      <p>\n      Can you expand upon this?\n    </p><p>\n      What do you mean exactly by dimensional model subjects?\n    </p><p>\n      And any details about how are you building semantic models that span models?\n    </p><p>\n      Thanks!\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ndqfz5y",
+            "parent_id": "t1_ndosswi",
+            "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndqfz5y/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndugvl3/",
+                  "created_utc": 1757695938,
+                  "created_at_iso": "2025-09-12T16:52:18.000Z",
+                  "id": "ndugvl3",
+                  "author": "Gators1992",
+                  "author_fullname": null,
+                  "body": "A subject is like a concept represented in the model in Kimball terms. Like you have a fact table for sales, another for inventory, maybe one for financial results, etc. They often share dimensions (conformed dimensions) in your model and users do calculations across those tables. For example, maybe you have 2 sources of revenue (internet and retail) in different fact tables and a customer table with a row per customer. You want to get average revenue per customer by region so the region is the common dimension and formula is (internet_sales_revenue +retail_sales_revenue)/customer_count.\n\n In Powerbi I can do that calculation in my dimensional model and it will create individual queries to reference each of the tables/columns it needs to do the calculation.. If you did the same in dbt you would have to create a dbt model that's a view and join the tables there with the needed metrics, then build the semantic model on top of that single table/view with the columns included. The semantic model doesn't join dimensions/facts, just allows you to build on a single view/table.",
+                  "body_html": "\n      <p>\n      A subject is like a concept represented in the model in  Kimball terms.  Like you have a fact table for sales, another for inventory, maybe one for financial results, etc.  They often share dimensions (conformed dimensions) in your model and users do calculations across those tables.  For example, maybe you have 2 sources of revenue (internet and retail) in different fact tables and a customer table with a row per customer.  You want to get average revenue per customer by region so the region is  the common dimension and formula is (internet_sales_revenue +retail_sales_revenue)/customer_count.\n    </p><p>\n      In Powerbi I can do that calculation in my dimensional model and it will create individual queries to reference each of the tables/columns it needs to do the calculation.. If you did the same in dbt you would have to create a dbt model that's a view and join the tables there with the needed metrics, then build the semantic model on top of that single table/view with the columns included.  The semantic model doesn't join dimensions/facts, just allows you to build on a single view/table.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ndugvl3",
+                  "parent_id": "t1_ndqfz5y",
+                  "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndugvl3/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ndqfz5y"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ndqfz5y"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ndqgoq7",
+      "author": "kenfar",
+      "author_fullname": null,
+      "body": "The terminology is messy here: metadata tags may qualify as a semantic layer in some regards, but do not functionally serve as a \"layer\" unless you're filtering by them - in which case they're not really much different than a layer provided by a view.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndqgoq7",
+      "created_utc": 1757638088,
+      "created_at_iso": "2025-09-12T00:48:08.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndqgoq7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ndmvv4g",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": true,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ndmvv4g",
+      "created_utc": 1757598773,
+      "created_at_iso": "2025-09-11T13:52:53.000Z",
+      "parent_id": "t3_1ne90j9",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndmvv4g/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndmwo6y/",
+            "created_utc": 1757599025,
+            "created_at_iso": "2025-09-11T13:57:05.000Z",
+            "id": "ndmwo6y",
+            "author": "full_arc",
+            "author_fullname": null,
+            "body": "Today you have BI but mostly just write queries as hoc?",
+            "body_html": "\n      <p>\n      Today you have BI but mostly just write queries as hoc?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ndmwo6y",
+            "parent_id": "t1_ndmvv4g",
+            "permalink": "/r/dataengineering/comments/1ne90j9/comment/ndmwo6y/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ndmvv4g"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1ne90j9",
+    "author": "full_arc",
+    "author_fullname": "t2_1azripopjk",
+    "subreddit": "dataengineering",
+    "title": "Poll: Do you have a semantic layer and if so, how reliable is it?",
+    "downs": 0,
+    "name": "t3_1ne90j9",
+    "upvote_ratio": 0.6,
+    "ups": 1,
+    "selftext": "I work with organization all across the spectrum, and I\u2019m really curious to know what the typical company looks like. Things to consider: I define a semantic layer as any form of rigorous definition of metrics regardless of how it\u2019s stored. It could be metadata tags in dbt or LookML I\u2019m not thinking of data modeling as a semantic layer in this case How much work you do that bypasses the metrics definitions stored in the semantic layer. For example if you have a semantic layer but the team is just writing ad hoc queries all the time, then it\u2019s not really being used Bonus: where do you store this information? In your BI tool or in some other system?",
+    "total_awards_received": 0,
+    "score": 1,
+    "created": 1757597769,
+    "num_comments": 21,
+    "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/poll_do_you_have_a_semantic_layer_and_if_so_how/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": true,
+    "locked": false,
+    "created_utc": 1757597769
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id 126a04d8c66a47d69198225922dfe043

@@ -1,0 +1,681 @@
+{
+  "success": true,
+  "credits_remaining": 209661,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "pcrq1fe",
+      "author": "in_meme_we_trust",
+      "author_fullname": null,
+      "body": "It seems pretty much solved to me with databricks genie agents",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrq1fe",
+      "created_utc": 1790682180,
+      "created_at_iso": "2026-09-29T11:43:00.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrq1fe/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNelpoWXpZNE1HUXNPam94T21ReE9uUXhYM0JqY25FeFptVT0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxd3Q1cGJrIiwicGFyZW50VGhpbmdJZCI6InQxX3BjcnExZmUifQ"
+        }
+      },
+      "ups": 5,
+      "downs": 0,
+      "score": 5
+    },
+    {
+      "id": "pcrlww0",
+      "author": "dodovt",
+      "author_fullname": null,
+      "body": "My company uses omni and we properly serve self-service analytics and AI generated reports/reports with AI embedded on them.\n\n It's our biggest LLM use-case in the company, but far from perfect. It does answer quite well the questions though as we have a very well defined metrics catalog and semantic layer.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrlww0",
+      "created_utc": 1790680654,
+      "created_at_iso": "2026-09-29T11:17:34.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrlww0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcs61vm/",
+            "created_utc": 1790687273,
+            "created_at_iso": "2026-09-29T13:07:53.000Z",
+            "id": "pcs61vm",
+            "author": "de4all",
+            "author_fullname": null,
+            "body": "Any learning you can share from Omni. Any particular negative stuff",
+            "body_html": "\n      <p>\n      Any learning you can share from Omni. Any particular negative stuff\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pcs61vm",
+            "parent_id": "t1_pcrlww0",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pcs61vm/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pcrlww0"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pd5kiey",
+      "author": "geek180",
+      "author_fullname": null,
+      "body": "I built a pretty damn good text to sql MCP server our company is using. About half our staff are using it regularly now and it is very reliable for a wide range of questions.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pd5kiey",
+      "created_utc": 1790833103,
+      "created_at_iso": "2026-10-01T05:38:23.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pd5kiey/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pd5nmai/",
+            "created_utc": 1790834566,
+            "created_at_iso": "2026-10-01T06:02:46.000Z",
+            "id": "pd5nmai",
+            "author": "de4all",
+            "author_fullname": null,
+            "body": "What steps were considered for higher accuracy",
+            "body_html": "\n      <p>\n      What steps were considered for higher accuracy\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pd5nmai",
+            "parent_id": "t1_pd5kiey",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pd5nmai/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOVFF6TkRFM1ltVXNPam94T21WNE9paDVMQ1JvT1E9PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGQ1a2lleSJ9"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pcrew1m",
+      "author": "leogodin217",
+      "author_fullname": null,
+      "body": "As u/rapator said, a semantic layer is more important than ever with LLMs, even if it is not a full-blown separate tool. Could just be views that handle the calculations. Business context is just as important. Good data modeling with good documentation should prevent the LLM from making a lot of assumptions. If you look at sessions logs and see things like, \"Metric X must by tied to Table Y because...,\" then the business context is lacking.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrew1m",
+      "created_utc": 1790677817,
+      "created_at_iso": "2026-09-29T10:30:17.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrew1m/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pctspku/",
+            "created_utc": 1790702136,
+            "created_at_iso": "2026-09-29T17:15:36.000Z",
+            "id": "pctspku",
+            "author": "gffyhgffh45655",
+            "author_fullname": null,
+            "body": "In a perfect world, i would argue a good semantic view,column description and metrics definition should do this heavy lifting over \u201cgotcha information of each tables\u201d as to me this is similar to throw a operation manual to a transactional schema to a llm and hoping it can do all the complex join required just go get something fair simple or not.\n\n And hence what the llm ever need to do is run metrics as defined in the semantic view, to do join in a dimensional data model which is fairly easy and just to aggregate over different column that have context to tide it with business language.\n\n TLDR (again in a perfect world) Create a model and(column) documentation such that is easy to use for data analyst and thus LLM.\n\n Note: we do also trying this type of \u201ctable gotcha\u201d skills for LLM as well but i still think data modelling and column documentation, choosing what column to include in your semantic view is the priority",
+            "body_html": "\n      <p>\n      In a perfect world, i would argue a good semantic view,column description and metrics definition should do this heavy lifting over \u201cgotcha information of each tables\u201d as to me this is similar to throw a operation manual to a transactional schema to a llm and hoping it can do all the complex join required just go get something fair simple or not.\n    </p><p>\n      And hence what the llm ever need to do is run metrics as defined in the semantic view, to do join in a dimensional data model which is fairly easy and just to aggregate over different column that have context to tide it with business language.\n    </p><p>\n      TLDR (again in a perfect world) Create a model and(column) documentation such that is easy to use for data analyst and thus LLM.\n    </p><p>\n      Note: we do also trying this type of \u201ctable gotcha\u201d skills for LLM as well but i still think data modelling and column documentation, choosing what column to include in your semantic view is the priority\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pctspku",
+            "parent_id": "t1_pcrew1m",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pctspku/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MywwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNllUTTJNREl3T0dNc09qb3lPbVF4T25ReFgzQmpkSE53YTNVPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGN0c3BrdSJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZaVEU1T1daa01qSXNPam94T21WNE9paDRjVHR3YlE9PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGNyZXcxbSJ9"
+        }
+      },
+      "ups": 27,
+      "downs": 0,
+      "score": 27
+    },
+    {
+      "id": "pcrdl0q",
+      "author": "noschel",
+      "author_fullname": null,
+      "body": "if you had a look at databricks genie with its strong semantic backbone, shows that the key to this is good context.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrdl0q",
+      "created_utc": 1790677245,
+      "created_at_iso": "2026-09-29T10:20:45.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrdl0q/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 20,
+      "downs": 0,
+      "score": 20
+    },
+    {
+      "id": "pcs38ye",
+      "author": "SpookyScaryFrouze",
+      "author_fullname": null,
+      "body": "It works, you just need to document your tables, columns and kpis perfectly.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcs38ye",
+      "created_utc": 1790686444,
+      "created_at_iso": "2026-09-29T12:54:04.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcs38ye/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcsiqrr/",
+            "created_utc": 1790690833,
+            "created_at_iso": "2026-09-29T14:07:13.000Z",
+            "id": "pcsiqrr",
+            "author": "Equivalent_Lunch_944",
+            "author_fullname": null,
+            "body": "But let\u2019s be honest that\u2019s often not the case, and if it were being able to query with text instead of SQL is much less valuable",
+            "body_html": "\n      <p>\n      But let\u2019s be honest that\u2019s often not the case, and if it were being able to query with text instead of SQL is much less valuable\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pcsiqrr",
+            "parent_id": "t1_pcs38ye",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pcsiqrr/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk56aGhPRFppTkRnc09qb3lPbVF4T25ReFgzQmpjMmx4Y25JPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGNzaXFyciJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZaR0k0T1RKak5UUXNPam94T21WNE9paDRibHAwT1E9PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGNzMzh5ZSJ9"
+        }
+      },
+      "ups": 20,
+      "downs": 0,
+      "score": 20
+    },
+    {
+      "id": "pcrmp5x",
+      "author": "hadoopfromscratch",
+      "author_fullname": null,
+      "body": "Text-to-sql does work. We are using Databricks (Genie spaces). And its quite reliable",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrmp5x",
+      "created_utc": 1790680952,
+      "created_at_iso": "2026-09-29T11:22:32.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrmp5x/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "pcs3dgt",
+      "author": "ludflu",
+      "author_fullname": null,
+      "body": "because if you don't have enough domain knowledge to formulate a query then you also don't have enough domain knowledge to understand the results. (for anything more complicated that selecting from a single table, IMO)",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcs3dgt",
+      "created_utc": 1790686481,
+      "created_at_iso": "2026-09-29T12:54:41.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcs3dgt/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "pcrkbvi",
+      "author": "ppsaoda",
+      "author_fullname": null,
+      "body": "On data side, it's semantics and metadata. On platform side, AI tooling and harnesses.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrkbvi",
+      "created_utc": 1790680050,
+      "created_at_iso": "2026-09-29T11:07:30.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrkbvi/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcs8zrl/",
+            "created_utc": 1790688117,
+            "created_at_iso": "2026-09-29T13:21:57.000Z",
+            "id": "pcs8zrl",
+            "author": "BrownBearPDX",
+            "author_fullname": null,
+            "body": "Describe in meta every table and every field with join hints even if there aren\u2019t hard fks.",
+            "body_html": "\n      <p>\n      Describe in meta every table and every field with join hints even if there aren\u2019t hard fks.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pcs8zrl",
+            "parent_id": "t1_pcrkbvi",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pcs8zrl/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pcrkbvi"
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "pcsg2b0",
+      "author": "Equivalent_Lunch_944",
+      "author_fullname": null,
+      "body": "Remember when power bi had that thing where it turned text to visualizations that they were touting was the future.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcsg2b0",
+      "created_utc": 1790690100,
+      "created_at_iso": "2026-09-29T13:55:00.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcsg2b0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcsimuh/",
+            "created_utc": 1790690804,
+            "created_at_iso": "2026-09-29T14:06:44.000Z",
+            "id": "pcsimuh",
+            "author": "de4all",
+            "author_fullname": null,
+            "body": "Thats true and now I assume MS will gut PBI. They want everything to merge with Fabric",
+            "body_html": "\n      <p>\n      Thats true and now I assume MS will gut PBI. They want everything to merge with Fabric\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pcsimuh",
+            "parent_id": "t1_pcsg2b0",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pcsimuh/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNlkyUmxabVEzTldZc09qb3lPbVF4T25ReFgzQmpjMmx0ZFdnPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF3dDVwYmsiLCJwYXJlbnRUaGluZ0lkIjoidDFfcGNzaW11aCJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pcsimuh"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pe5fse1",
+      "author": "morpho4444",
+      "author_fullname": null,
+      "body": "What is wrong with this subreddit, AI is not replacing and is not as good... IN YOUR LITTLE BUBBLE... everywhere else who knows how to do this, we all know AI is doing most if not all of the coding and even pushing the PR directly into main branches including handling not only adhoc reporting, in my company, we created adhoc etl, final users can go and create their own metrics, tables and full pipelines just using chat.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pe5fse1",
+      "created_utc": 1791257082,
+      "created_at_iso": "2026-10-06T03:24:42.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pe5fse1/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pe5j7h0/",
+            "created_utc": 1791258373,
+            "created_at_iso": "2026-10-06T03:46:13.000Z",
+            "id": "pe5j7h0",
+            "author": "de4all",
+            "author_fullname": null,
+            "body": "The question is HOW part? And not AI replacing Data teams.",
+            "body_html": "\n      <p>\n      The question is HOW part? And not AI replacing Data teams.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_pe5j7h0",
+            "parent_id": "t1_pe5fse1",
+            "permalink": "/r/dataengineering/comments/1wt5pbk/comment/pe5j7h0/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTAsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNbUZrWkdKaFlXTXNPam95T21ReE9uUXhYM0JsTldvM2FEQT0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxd3Q1cGJrIiwicGFyZW50VGhpbmdJZCI6InQxX3BlNWo3aDAifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "pe5j7h0"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pct2p9g",
+      "author": "dehaenx",
+      "author_fullname": null,
+      "body": "When you don't have a semantic layer and have scattered definitions and metrics, you'll see the LLM retrieving several answers from a seemingly \"simple\" definition. For instance, if you have \"net sales\" as a term, finance, sales, CSM could all define it slightly differently, and because the LLM is just parsing through your raw data, it will return multiple results. It's best to invest in a program that could develop, and more importantly, maintain your semantic layer and keep your definitions and metrics up to date and in check all the time. Save yourself a headache and some money lol",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pct2p9g",
+      "created_utc": 1790695914,
+      "created_at_iso": "2026-09-29T15:31:54.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pct2p9g/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pd1s3gx",
+      "author": "Acceptable-Milk-314",
+      "author_fullname": null,
+      "body": "Never talked with a corporate executive have you?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pd1s3gx",
+      "created_utc": 1790791009,
+      "created_at_iso": "2026-09-30T17:56:49.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pd1s3gx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pd6tbcf",
+      "author": "pubic_discourse",
+      "author_fullname": null,
+      "body": "My take is that there need to be higher order semantic concepts, e.g. what does \u201cbig\u201d mean - how do I pin fuzzy or qualitative adjectives? People think sets of entities and language itself is in an SVO (subject verb object) structure. All these \u201csemantic layers\u201d have nothing semantic about them. They\u2019re really more of a paragraph about your table, and a row can be any abstruse unit.\nI once heard it said \u201cthe problem in analytics is the best way to store your data has nothing to do with the best way to read and interpret your data\u201d\nId love to see a solution which paradigmatically addresses that",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pd6tbcf",
+      "created_utc": 1790854561,
+      "created_at_iso": "2026-10-01T11:36:01.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pd6tbcf/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "pcra14i",
+      "author": "query-gremlin",
+      "author_fullname": null,
+      "body": "The problem often lays with the data model underneath. Incomplete or unclear data dictionaries, or lack of semantic description of the data model would make the LLM blindly guess at best.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcra14i",
+      "created_utc": 1790675618,
+      "created_at_iso": "2026-09-29T09:53:38.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcra14i/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "pctvvxy",
+      "author": "Atticus_Taintwater",
+      "author_fullname": null,
+      "body": "Because writing SQL was never the hard part\n\n Crisp easy SQL is a byproduct of everything else that's hard done right.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pctvvxy",
+      "created_utc": 1790702890,
+      "created_at_iso": "2026-09-29T17:28:10.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pctvvxy/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "19rkp3yd725nl",
+      "author": "c-phrase",
+      "author_fullname": null,
+      "body": "I have a fair bit of experience with this problem. And in fact I gave a lecture in my course about this exact area: https://youtu.be/clRu2a6NjS4\n\n I think we need to consider several different use cases.\n\n An MCP server that supports Text-to-SQL over a specific database. In this case the agent can loop around looking for the proper way to access the underlying database. It may try and fail in a loop exploring the access paths and piecing together a larger, response built from multiple queries. This fits in well with dialogue and is surprisingly effective.\n\n A coding agent can build text-to-SQL snippets that it places in deterministic code that can be touched up/verified by a developer in the resulting applications.\n\n The old fashioned, but purer problem of letting people generate SQL that gets pasted into a terminal/executed through library calls like db2.,0 API/ODBC. This is the hardest path to get useful results out of. But it confronts the direct problem in an unobscured way. So it is worth considering.\n\n There are a lot of questions around hallucinations/idiosyncrasies. Stonebreaker does not think AI will solve the problem because of idiosyncracies. Lots of issues about six sigma with this stuff especially with write queries.\n\n I am looking at the old idea of semantic tractability to try to give reliable MCP servers: https://c-phrase.com\nIt will be interesting to see how this topic evolves in the coming years.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_19rkp3yd725nl",
+      "created_utc": 1792830827,
+      "created_at_iso": "2026-10-24T08:33:47.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/19rkp3yd725nl/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pcrhk8a",
+      "author": "Hour-Measurement-835",
+      "author_fullname": null,
+      "body": "No idea on Omni or Sigma. NetSuite's mainline rows alone would trip up a naive SUM(amount).",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pcrhk8a",
+      "created_utc": 1790678946,
+      "created_at_iso": "2026-09-29T10:49:06.000Z",
+      "parent_id": "t3_1wt5pbk",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrhk8a/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1wt5pbk",
+    "author": "de4all",
+    "author_fullname": "t2_5b3y9jqyc",
+    "subreddit": "dataengineering",
+    "title": "Why text-to-SQL is not successful?",
+    "downs": 0,
+    "name": "t3_1wt5pbk",
+    "upvote_ratio": 0.7014925373134329,
+    "ups": 27,
+    "selftext": "I thought text-to-SQL will solve adhoc analysis, but still i see companies at all size are unsuccessful. Anyone using Omni / Sigma seen some success.",
+    "total_awards_received": 0,
+    "score": 27,
+    "created": 1790674724,
+    "num_comments": 88,
+    "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/why_texttosql_is_not_successful/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1790674724
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXd0NXBiaz9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTgiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WldFeU5Ua3dPRFFzT2pvd09tVjRjanB3WTNKeE1XWmxMSEJqY214M2R6QXNjR1ExYTJsbGVTeHdZM0psZHpGdExIQmpjbVJzTUhFc2NHTnpNemg1WlN4d1kzSnRjRFY0TEhCamN6TmtaM1FzY0dOeWEySjJhU3h3WTNObk1tSXdMSEJsTldaelpURXNjR04wTW5BNVp5eHdaREZ6TTJkNExIQmtOblJpWTJZc2NHTnlZVEUwYVN4d1kzUjJkbmg1TERFNWNtdHdNM2xrTnpJMWJtd3NjR055YUdzNFlRPT0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxd3Q1cGJrIiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id 56abdddc88654f77bd0c303e676fa29d

@@ -1,0 +1,684 @@
+{
+  "success": true,
+  "credits_remaining": 209644,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "ohx7pay",
+      "author": "Xavya",
+      "author_fullname": null,
+      "body": "Nice analysis, thanks for sharing.\n\n I kind of disagree about the LookML learning curve\n\n . Its SQL based and can be automatically generated for tables added to your project. So you potentially only have to think about a few metrics per table.\n\n I think it's the standard for semantic layers but admittedly am not familiar with all tools. Definitely pricey though.\n\n I despise tableau lmao",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohx7pay",
+      "created_utc": 1776990177,
+      "created_at_iso": "2026-04-24T00:22:57.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohx7pay/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohxch58/",
+            "created_utc": 1776991782,
+            "created_at_iso": "2026-04-24T00:49:42.000Z",
+            "id": "ohxch58",
+            "author": "TalkToMeNerdy",
+            "author_fullname": null,
+            "body": "Thats great insight. I\u2019ve never interacted directly with Looker enough to know the learning curve there so very good to know from someone who\u2019s been there and done that.\n\n And re: Tableau\u2026.SAME lol",
+            "body_html": "\n      <p>\n      Thats great insight. I\u2019ve never interacted directly with Looker enough to know the learning curve there so very good to know from someone who\u2019s been there and done that.\n    </p><p>\n      And re: Tableau\u2026.SAME lol\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ohxch58",
+            "parent_id": "t1_ohx7pay",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/ohxch58/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ohx7pay"
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "oi0achr",
+      "author": "ilikechipotle96",
+      "author_fullname": null,
+      "body": "I went with Superset instead of Sigma, been pretty decent. Step down it aesthetic from Tableau but otherwise it works well",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oi0achr",
+      "created_utc": 1777036318,
+      "created_at_iso": "2026-04-24T13:11:58.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi0achr/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi2oget/",
+            "created_utc": 1777060404,
+            "created_at_iso": "2026-04-24T19:53:24.000Z",
+            "id": "oi2oget",
+            "author": "TalkToMeNerdy",
+            "author_fullname": null,
+            "body": "I'm curious since I'm not familiar with Superset, what made you go with them?",
+            "body_html": "\n      <p>\n      I'm curious since I'm not familiar with Superset, what made you go with them?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oi2oget",
+            "parent_id": "t1_oi0achr",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/oi2oget/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oi0achr"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "ohwtcn3",
+      "author": "Budget-Respond8115",
+      "author_fullname": null,
+      "body": "How does Omni\n\n stack up against these ?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohwtcn3",
+      "created_utc": 1776985278,
+      "created_at_iso": "2026-04-23T23:01:18.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohwtcn3/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohxd2fw/",
+            "created_utc": 1776991978,
+            "created_at_iso": "2026-04-24T00:52:58.000Z",
+            "id": "ohxd2fw",
+            "author": "TalkToMeNerdy",
+            "author_fullname": null,
+            "body": "That\u2019s a great question. That\u2019s another one I\u2019ve never used, only heard tidbits here and there. Let me run this same model and see what I can find out\u2026",
+            "body_html": "\n      <p>\n      That\u2019s a great question. That\u2019s another one I\u2019ve never used, only heard tidbits here and there. Let me run this same model and see what I can find out\u2026\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ohxd2fw",
+            "parent_id": "t1_ohwtcn3",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/ohxd2fw/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9CdXNpbmVzc0ludGVsbGlnZW5jZS90M18xc3R0bm9yP3NvcnQ9Q09ORklERU5DRSZzdGFydGluZ0RlcHRoPTImY29tbWVudFBhcmVudFBvc2l0aW9ucz0yLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WTJSbU5qYzNNV0lzT2pveU9tUXhPblF4WDI5b2VHUXlabmM9Iiwic3VicmVkZGl0IjoiQnVzaW5lc3NJbnRlbGxpZ2VuY2UiLCJwb3N0SWQiOiIxc3R0bm9yIiwicGFyZW50VGhpbmdJZCI6InQxX29oeGQyZncifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ohxd2fw"
+        }
+      },
+      "ups": 6,
+      "downs": 0,
+      "score": 6
+    },
+    {
+      "id": "ohyuex0",
+      "author": "Fluffy-Explanation29",
+      "author_fullname": null,
+      "body": "have you also tried holistics, luzmo and qrvey?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohyuex0",
+      "created_utc": 1777012986,
+      "created_at_iso": "2026-04-24T06:43:06.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohyuex0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi2436y/",
+            "created_utc": 1777054541,
+            "created_at_iso": "2026-04-24T18:15:41.000Z",
+            "id": "oi2436y",
+            "author": "TalkToMeNerdy",
+            "author_fullname": null,
+            "body": "I haven't. Which is the best one to check out?",
+            "body_html": "\n      <p>\n      I haven't. Which is the best one to check out?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oi2436y",
+            "parent_id": "t1_ohyuex0",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/oi2436y/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ohyuex0"
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "ohz0qw2",
+      "author": "holisticsbi",
+      "author_fullname": null,
+      "body": "We put together a comparison page covering embedded analytics vendors. Apart from the tools already mentioned (Looker, Sigma, Domo, Thoughtspot, Tableau, PowerBI), we also looked into other/rising vendors Holistics\n\n , Embeddable\n\n , Metabase, Sisense, Luzmo\n\n , Reveal BI\n\n Might still be useful if you\u2019re researching options https://www.holistics.io/bi-tools/embedded-analytics/",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohz0qw2",
+      "created_utc": 1777016298,
+      "created_at_iso": "2026-04-24T07:38:18.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohz0qw2/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "ohwarru",
+      "author": "AmbitionEuphoric5600",
+      "author_fullname": null,
+      "body": "My thoughts working with 3 of these at different companies:\n\n Power BI's \"app owns data\" model works well once you've got it configured but the service principal permissions can be a real headache to debug. The licensing conversation caught me off guard, especially given the Pro licenses don't cover external embedding.\n\n Tableau's JWT auth piece is actually pretty clean now compared to the old SAML flow. Where I've personally seen projects struggle is production scale and performance tuning. It's not a quick fix when dashboards start slowing down under real load.\n\n Domo's connector breadth is legitimately strong, especially when you are juggling Salesforce, NetSuite, and a few marketing platforms at the same time. Magic ETL handles data blending well especially for non-technical users. The billing predictability thing is a real concern though, teams that go in without mapping their refresh cadence to credits upfront tend to get surprised at renewal.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohwarru",
+      "created_utc": 1776979347,
+      "created_at_iso": "2026-04-23T21:22:27.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohwarru/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi2oywx/",
+            "created_utc": 1777060555,
+            "created_at_iso": "2026-04-24T19:55:55.000Z",
+            "id": "oi2oywx",
+            "author": "TalkToMeNerdy",
+            "author_fullname": null,
+            "body": "Yup I've also done Power BI a bunch and the Pro licenses not covering embedding can really mess things up for some companies who are relying on Pro licenses for development",
+            "body_html": "\n      <p>\n      Yup I've also done Power BI a bunch and the Pro licenses not covering embedding can really mess things up for some companies who are relying on Pro licenses for development\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oi2oywx",
+            "parent_id": "t1_ohwarru",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/oi2oywx/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ohwarru"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oi08b1h",
+      "author": "rohitspujari",
+      "author_fullname": null,
+      "body": "Might also want to check out Semaphor",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oi08b1h",
+      "created_utc": 1777035676,
+      "created_at_iso": "2026-04-24T13:01:16.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi08b1h/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ohw2cp7",
+      "author": "ShaveTheTurtles",
+      "author_fullname": null,
+      "body": "Just use cube.dev\u00a0 it's a solid semantic layer",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohw2cp7",
+      "created_utc": 1776976913,
+      "created_at_iso": "2026-04-23T20:41:53.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohw2cp7/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi0xxu0/",
+            "created_utc": 1777043066,
+            "created_at_iso": "2026-04-24T15:04:26.000Z",
+            "id": "oi0xxu0",
+            "author": "lupsikpupsik",
+            "author_fullname": null,
+            "body": "+1",
+            "body_html": "\n      <p>\n      +1\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oi0xxu0",
+            "parent_id": "t1_ohw2cp7",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/oi0xxu0/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ohw2cp7"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ohxu5eo",
+      "author": "Infamous-Roof757",
+      "author_fullname": null,
+      "body": "I'm curious about Sigma offering $300/mth for unlimited viewers. What's their core pricing metric for embedded?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohxu5eo",
+      "created_utc": 1776997571,
+      "created_at_iso": "2026-04-24T02:26:11.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohxu5eo/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohzznx7/",
+            "created_utc": 1777032810,
+            "created_at_iso": "2026-04-24T12:13:30.000Z",
+            "id": "ohzznx7",
+            "author": "vmih_",
+            "author_fullname": null,
+            "body": "Yeah, on one of the projects I worked on, we were comparing Power BI with Sigma. We were on a call with one of Sigma's sales reps and we got an quote for our pretty basic setup (about 20GB of data and like 5 dashboards and writeback, which, if I remember well, is automatically supported by their architecture) was like 60k a year. I might be wrong on that. I don't have access to the quote anymore.\nCurious to hear other opinions about Sigma because I think they have a promising product, but I also feel it is built for enterprises",
+            "body_html": "\n      <p>\n      Yeah, on one of the projects I worked on, we were comparing Power BI with Sigma. We were on a call with one of Sigma's sales reps and we got an quote for our pretty basic setup (about 20GB of data and like 5 dashboards and writeback, which, if I remember well, is automatically supported by their architecture) was like 60k a year. I might be wrong on that. I don't have access to the quote anymore.<br>Curious to hear other opinions about Sigma because I think they have a promising product, but I also feel it is built for enterprises\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ohzznx7",
+            "parent_id": "t1_ohxu5eo",
+            "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/ohzznx7/",
+            "ups": 3,
+            "downs": 0,
+            "score": 3,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi1dfq6/",
+                  "created_utc": 1777047240,
+                  "created_at_iso": "2026-04-24T16:14:00.000Z",
+                  "id": "oi1dfq6",
+                  "author": "IrishHog09",
+                  "author_fullname": null,
+                  "body": "That\u2019s more in line with what we got and have signed up for. Sigma is extremely powerful/convenient, but costly if you only want it for a handful of dashboards. We plan on using it for actual analytics/modeling, and possibly for marketing with the new Reports/Boost functions, so the cost was worth it.",
+                  "body_html": "\n      <p>\n      That\u2019s more in line with what we got and have signed up for.  Sigma is extremely powerful/convenient, but costly if you only want it for a handful of dashboards.  We plan on using it for actual analytics/modeling, and possibly for marketing with the new Reports/Boost functions, so the cost was worth it.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_oi1dfq6",
+                  "parent_id": "t1_ohzznx7",
+                  "permalink": "/r/BusinessIntelligence/comments/1sttnor/comment/oi1dfq6/",
+                  "ups": 3,
+                  "downs": 0,
+                  "score": 3,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9CdXNpbmVzc0ludGVsbGlnZW5jZS90M18xc3R0bm9yP3NvcnQ9Q09ORklERU5DRSZzdGFydGluZ0RlcHRoPTMmY29tbWVudFBhcmVudFBvc2l0aW9ucz04LDAsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZaRE0yTnpnNU56WXNPam96T21ReE9uUXhYMjlwTVdSbWNUWT0iLCJzdWJyZWRkaXQiOiJCdXNpbmVzc0ludGVsbGlnZW5jZSIsInBvc3RJZCI6IjFzdHRub3IiLCJwYXJlbnRUaGluZ0lkIjoidDFfb2kxZGZxNiJ9"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "oi1dfq6"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oi1dfq6"
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ohytu0e",
+      "author": "Sea-Garden7836",
+      "author_fullname": null,
+      "body": "if u need something customer facing, take a look at my stuff, querypanel.io. i am happy to get couple of feedbacks.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ohytu0e",
+      "created_utc": 1777012697,
+      "created_at_iso": "2026-04-24T06:38:17.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohytu0e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oi1dlam",
+      "author": "analytix_guru",
+      "author_fullname": null,
+      "body": "I disagree your commentary about Qlik's learning curve and the associative engine, it's a powerful tool that doesn't get enough credit when you have used it and also used other tools like Tableau and PowerBI.\n\n The associative engine is predicated on the fact that your data should be properly modeled and pipelined prior to building out any visualizations or dashboards at you will the building for business users.\n\n The whole power bi and Tableau method of slap your data into the tool and start building does not mesh well with this methodology and how people get trained in these two tools.\n\n I cannot speak to how Qlik attempts to train users these days as I learned back in 2015-2016, but the entire first half of training in QlikView was not building charts, but rather modeling your data and properly pipelining it into Qlik before creating charts and dashboards. QlikSense was built to compete with the \"slap a dashboard together\" popularity of Tableau.\n\n This might be where your commentary around steep learning curve comes from. However I find that having the data modeling and data pipeline skills makes using any BI Viz software so much easier and effective. However I see users who have data and need a chart today, with a CSV file on their desktop. And for those people I would conceed that PBI , Tableau, or even QlikSense are better options (load data and play).\n\n Also licensing has probably changed over the years, but viewer licenses were next to nothing back in the day. It was all about managing developer licenses for those that actually used them.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oi1dlam",
+      "created_utc": 1777047281,
+      "created_at_iso": "2026-04-24T16:14:41.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi1dlam/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oi297xr",
+      "author": "Least_Assignment4190",
+      "author_fullname": null,
+      "body": "Great breakdown. Qlik recommending one tenant per customer and managing 200+ tenants is something so many people miss until it's already in implementation.\n\n If you\u2019re looking for a \"hidden gem\", check out\u00a0SplashBI. Instead of the one tenant per customer, it handles multi-tenancy natively. You get total data isolation and RLS within a single architecture, which saves so much time. Its a fixed model, so if your app suddenly jumps from 500 to 5,000 users, your CFO isn't having a heart attack during the next billing cycle.\n\n It hits that middle ground of being as fast as Sigma to get moving, but with the SOC2/ISO security enterprises actually care about.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oi297xr",
+      "created_utc": 1777056014,
+      "created_at_iso": "2026-04-24T18:40:14.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi297xr/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oihfz5t",
+      "author": "Typical_Tea_2664",
+      "author_fullname": null,
+      "body": "I do Power BI Embedded dashboards with react, d3js and regular PBI. Here is a quick example\n\n While App owns data is solid, it does require you to build in your own RLS. I create admin dashboards where you can define RLS level. (what pages a user will have access to, when slicer values they will have access to etc.) then I have global slicers on the report which are made via react components and I pass on the filters through Power BI REST API.\n\n You can make it look decent. Here is an example\n\n https://www.reddit.com/r/PowerBI/comments/1sv5oas/comment/oiffv20/?context=3\n\n Capacity pricing should also be factored in for sure. But with App Owns data, pricing is much more effective considering you're not requiring licenses for viewers. If you have things like personal bookmarks, you might have to recode that using the Power BI Rest API, but that makes it look nicer since the bookmarks look more native in a white label solution rather than having a action bar that'll look out of place in a user own data structure.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oihfz5t",
+      "created_utc": 1777255314,
+      "created_at_iso": "2026-04-27T02:01:54.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oihfz5t/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oiwv4sk",
+      "author": "arvindnatarajan",
+      "author_fullname": null,
+      "body": "Good breakdown overall! The Power BI capacity pricing math alone has derailed enough projects that it should be the first slide in every embedded scoping conversation.\n\n One gap I'd flag: Zoho Analytics doesn't appear anywhere in this thread or the comparison pages being linked, and I think it's worth at least putting on the radar. Particularly for two use cases that kept coming up here: multi-tenancy overhead and billing unpredictability.\n\n On multi-tenancy:, The Qlik \"200 customers = 200 tenants\" problem is real, and it's not unique to Qlik. A lot of the tools in this list push you toward that pattern implicitly, even when they don't recommend it explicitly. Zoho Analytics handles multi-tenancy natively. You get data isolation and row-level security within an Account-Workspace architecture. i.e., one workspace for one customer (/org/business) with multiple users/viewers per customer (/org/business). For ISVs who are onboarding dozens or hundreds of customers, this matters a lot operationally.\n\n On embedding options: There are actually three distinct modes, which map to different ISV/agency use cases:\n\n White Label Portal: no SSO, no code required. You get a branded subdomain with Zoho-hosted login. Primarily used by digital marketing agencies giving clients access to their own campaign data. Fastest to deploy by a wide margin.\n\n SSO Embedded: OAuth/SAML, full workspace inside your app. Permissions go up to Workspace Admin, so customers can build their own reports, not just view yours. This is the one that competes directly with Sigma/Looker Embedded for ISVs.\n\n Embed API: SSO-required, component-level embedding with auto-expiring URLs. View and drill-down only, no authoring. Built for high viewer-count scenarios (500 to 5,000+ viewers) where you need performance and cost predictability over feature richness.\n\n On pricing: It's per-workspace-user for Zoho Analytics. There's no consumption-based billing tied to query load (unlike Sigma hitting your warehouse, or Domo's credit model). Fixed monthly cost regardless of how many dashboards load. For ISVs with large external user bases, that math compares favorably. You pay a one-time or annual licensing fee for the white-label/embedded capability on top of the base plan, and that fee is modest, relative to the other players mentioned in the thread.\n\n Honest caveats:\n\n Brand recognition problem. If your enterprise buyer is asking for \"Tableau or Power BI\" by name, Zoho Analytics isn't going to win that procurement fight regardless of fit.\n\n If conversational analytics is the core value prop of your product (ThoughtSpot), this may not be the right fit. AI/NLP querying (called Zia) works fine though.\n\n Ecosystem integrations are strong within the Zoho stack and for common SaaS tools, online/offline databases, but if you're deep in niche enterprise connectors, verify before committing.\n\n The \"right\" tool still depends on what you're building and for whom. But Zoho Analytics fits a real gap: ISVs or agencies who need predictable pricing, native multi-tenancy, and faster time-to-production than the enterprise heavyweights, and for those who don't need the Tableau/Power BI brand name on the RFP response.\n\n Disclosure: I work in marketing at Zoho Analytics, so obviously take this with appropriate salt.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oiwv4sk",
+      "created_utc": 1777457892,
+      "created_at_iso": "2026-04-29T10:18:12.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oiwv4sk/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oj0mrli",
+      "author": "bailey_esfromashu",
+      "author_fullname": null,
+      "body": "What type of embedding are you trying to do? The architecture of how these tools work is important to consider for your use case.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oj0mrli",
+      "created_utc": 1777497856,
+      "created_at_iso": "2026-04-29T21:24:16.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oj0mrli/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oj4tyjj",
+      "author": "Cute-Argument-6072",
+      "author_fullname": null,
+      "body": "Knowi is also another vendor worth considering. It beats the above tools in terms of connector breadth. It blends data from SQL, NoSQL, APIs, and document sources without ETL and lets you embed unified dashboards directly into your app. Its security features for embedded content include multi-tenant isolation, workspace-level permissions, row-level security, and permission controls. Users can embed its natural language processing feature to ask questions in plain English and get instant visual answers. Embedded dashboards can be fully white labeled to remove Knowi branding for a complete match with the underlying application.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oj4tyjj",
+      "created_utc": 1777557698,
+      "created_at_iso": "2026-04-30T14:01:38.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oj4tyjj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "osyhf5z",
+      "author": "Gold_Experience7387",
+      "author_fullname": null,
+      "body": "I was many years at Tableau working with all their products, including embedded, and then implemented embedded analytics as CPO of a $250m saas product (we build in-house with databricks + Cube for an acceleration layer + Highcharts). There are a few entrenched problems in this market. Disclaimer, I'm the co-founder and CEO of Ridge AI (www.ridgedata.ai). The reason I started the company was from my frustration that data on the web is 15 years behind where it should be.\n\n On to the problems with embedded analytics:\n\n First off, price. Any BI vendor will take your money for embedded but not build for it. That's part of the reason the pricing gets so wonky-- the BI vendors need to protect their core business. So you see pricing like mentioned above: super high for PowerBI, vague (and then super high) for Tableau, etc. etc.\n\n But the products are not natively built for a web-based environment or designed for end-user experience-- data agents are mostly bolt-ons, for example. When linked to the dashboard, a data agent with a solid harness (validation, etc) can open up a lot more territory for users-- and cut off the need for more and more dashboards.\n\n The second big problem in embedded analytics is performance. Most of these products are server-based, so there is typically several (or many) seconds per round-trip, leading to a laggy and unsatisfying user experience. TalkToMeNerdy says with much tact, \"Performance tuning a Tableau embedded deployment is where timelines have slipped.\" There's just no way to get decent embedded performance with that architecture. Modern browser-based architectures allow for local computation and also reduce push-down charges in your database. Omni and Ridge AI are the only two embedded systems I know of with that architecture.\n\n Finally, it takes forever to set these systems up. As AI has come on the scene, all the legacy vendors have bolted on AI but few have thought through how to design embedded from the ground up. For example, in embedded analytics, visualization best practice matters a lot. Why? Because you typically have large audiences at arms' length- you can't explain every dashboard. They have to be built well from the get go. And few teams have all the specialized skills and knowledge to do that.\n\n Embedded analytics could be (should be) a lot better.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_osyhf5z",
+      "created_utc": 1782055860,
+      "created_at_iso": "2026-06-21T15:31:00.000Z",
+      "parent_id": "t3_1sttnor",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/osyhf5z/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1sttnor",
+    "author": "TalkToMeNerdy",
+    "author_fullname": "t2_1i1071o",
+    "subreddit": "BusinessIntelligence",
+    "title": "Who is doing Embedded Analytics Right? Here\u2019s what I found.",
+    "downs": 0,
+    "name": "t3_1sttnor",
+    "upvote_ratio": 0.875,
+    "ups": 18,
+    "selftext": "I've been deep in Power BI embedded implementations for clients lately and kept getting asked how it stacks up against alternatives. So I went down the rabbit hole comparing some of the top BI tools on the market. The tools I chose were Power BI, Tableau, Looker, Qlik, ThoughtSpot, Sigma, and Domo. I don't have concrete numbers to back up these selections, but from the clients I've worked with over the past decade, this list is pretty representative of what I've seen. Upfront disclaimer: My Power BI and Tableau takes are from direct implementation experience. Everything else is research, including docs, blogs, Reddit, input from clients, and other writeups. I'll flag which is which. Power BI (from experience) The \"app owns data\" model is solid in theory. Your app handles auth, end users never touch a Microsoft login. In practice, you're juggling Entra ID, service principals, backend token generation, and RLS rules. It's not impossibly hard, but it can be convoluted. Third-party cookie blocking and finicky service principal permissions have burned me more than once. The bigger gotcha: standard Fabric/Pro licenses don't cover external embedding. You need Azure A SKUs, which start at around $735/mo for A1 and scale fast. Fabric F-SKUs are now an alternative starting at around $262/mo for F2, though most production embedded workloads land at F64 or higher. If a client hasn't budgeted for capacity separately, you'll need to have that conversation. Tableau (from experience) Connected Apps with JWT is the modern standard and it's actually cleaner than the old SAML redirect song and dance. The auth piece isn't the hard part, it's the production scale. Performance tuning a Tableau embedded deployment is where timelines have slipped. Pricing is genuinely vague, and I wasn't involved in the cost convos when I was doing these deployments. From my research, embedded analytics contracts reportedly range from the low tens of thousands annually for smaller deployments into the high six figures for large enterprise deals, with usage-based analytic view pricing on top for external users.. Looker (research) The LookML modeling layer is the whole value prop. You define your data logic once then can use it consistently everywhere. Cookieless embedding (v22.20+) solves a real pain point. But the LookML learning curve is notorious, and multi-tenancy config is a closed system that's hard to change once you've committed. Pricing: no public numbers, but reported base platform pricing is around $60K/year with viewer seats at $400/user/year on top. Multiple sources describe it as \"wildly expensive\" at scale, and for embedded use cases with thousands of external viewers the math gets painful fast. Qlik (research) Qlik's associative engine is genuinely different from traditional BI. It indexes all data relationships so users can explore without predefined queries. That's powerful, but it requires a different mental model and the recommended multi-tenancy approach is one tenant per customer org. Qlik's own docs explicitly recommend this pattern, meaning 200 customers = 200 tenants. That scales badly in both operational overhead and cost. JWT auth works well once configured, but Section Access (their RLS scripting) is error-prone and needs thorough testing. ThoughtSpot (research) The AI-powered search angle is real. Users can ask questions in plain English and get answers on live data. The Visual Embed SDK is solid (TypeScript, works with React/Angular/vanilla JS). The caveats: visualization options are basic (frequently compared to Excel-level charts), charts aren't responsive across device sizes, and the pricing is easily the most opaque on this list. Developer Edition is free for a year. Paid Analytics tiers start at $25/user/month (Essentials) and $50/user/month (Pro) when billed annually, with Enterprise custom-quoted. Embedded is a separate product line, and reported embedded contracts for software vendors typically run $200K+ annually, with consumption-based pricing that can reportedly hit $5-6 per dashboard load per user. Read the contract carefully. Sigma (research) The standout here is deployment speed. Single URL iframe embedding, no custom SDK required, keep your existing auth. Customer reports consistently describe POC in hours to days and production in 1-2 weeks. The spreadsheet-like interface also means minimal training lift for business users. Pricing starts lower than most on this list (around $300/mo reported) with an unlimited viewer model that's a genuine cost advantage when you have large external user bases. Worth noting: since Sigma queries live against your warehouse, compute costs scale with usage so build that into your pricing model. Domo (research) Domo's connector breadth is legitimately impressive, with 1,000+ connectors and strong coverage across CRMs, accounting tools, marketing platforms, and cloud warehouses. Magic ETL handles cross-source blending well. Basic embedding is accessible and the \"weeks not months\" claim isn't unreasonable for simple use cases. The risk is billing predictability. Credits get consumed by data refreshes, ETL, dashboards, and storage, and from my research there are no good forecasting tools. Renewal increases of 100%+ have been reported, with some verified customer accounts describing far worse. If cost predictability is a priority, go in with eyes open. TL;DR Fastest to deploy: Sigma Most enterprise-entrenched: Power BI / Tableau Steepest learning curve: Looker (LookML) and Qlik (associative model) Most expensive ceiling: ThoughtSpot Most unpredictable billing: Domo Best connector breadth: Domo Would love to hear everyone else's experiences and thoughts about this.",
+    "total_awards_received": 0,
+    "score": 18,
+    "created": 1776974406,
+    "num_comments": 37,
+    "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/who_is_doing_embedded_analytics_right_heres_what/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1776974406
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9CdXNpbmVzc0ludGVsbGlnZW5jZS90M18xc3R0bm9yP3NlZWtlci1zZXNzaW9uPWZhbHNlJnJlbmRlci1tb2RlPXBhcnRpYWwmdG9wLWxldmVsPTEmY29tbWVudHMtcmVtYWluaW5nPTc1JmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xNyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNRGcxTm1FNE9HVXNPam93T21WNE9paGZjRjFhZERwYktFQXNMeWh6Y0RwUFNFNGlLRFloYjBoNklqNHBQeU1uVDFja0xVRkVMM2dqVW54NUxDRlpJenRqS0NKdlcxUkJaRWc0UWpObFRDaHlYemNwYVZrb0tIbE9RblE9Iiwic3VicmVkZGl0IjoiQnVzaW5lc3NJbnRlbGxpZ2VuY2UiLCJwb3N0SWQiOiIxc3R0bm9yIiwicGFyZW50VGhpbmdJZCI6bnVsbH0"
+  }
+}
+
+treg: charged $0.00188 · call id 5050f80e5b3e40cb903f7ef3010451c5

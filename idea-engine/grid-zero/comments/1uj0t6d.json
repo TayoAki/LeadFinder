@@ -1,0 +1,686 @@
+{
+  "success": true,
+  "credits_remaining": 209784,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "oujxh20",
+      "author": "AutoModerator",
+      "author_fullname": null,
+      "body": "If this post doesn't follow the rules or isn't flaired correctly, please report it to the mods. Have more questions? Join our community Discord!\n\n I am a bot, and this action was performed automatically. Please contact the moderators of this subreddit if you have any questions or concerns.",
+      "collapsed": true,
+      "distinguished": "moderator",
+      "is_submitter": false,
+      "stickied": true,
+      "name": "t1_oujxh20",
+      "created_utc": 1782758015,
+      "created_at_iso": "2026-06-29T18:33:35.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oujxh20/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "oukviys",
+      "author": "Final_Alps",
+      "author_fullname": null,
+      "body": "We do. And it\u2019s been a success. But there is nuance.\n\n We have a very well documented and limited semantic model we as data team manage. Vibes cannot touch anything beyond this semantic model. We have a pretty consistent communication with coworkers about the numbers they get. Things that did not work and keep refining the semantic model and the skills.\n\n The only things people can vibe code is for own use and own analysis. Anything more serious needs a review and collabs with the data team.\n\n Anything that is heading for the board, KPIs etc is not vibed. We build it more traditional way. But we build the KPIS into the semantic model.\n\n Finally we have an agentic tooling\n\n working that converts prompts to dashboards. It\u2019s working ok. Still in beta. It takes a lot of the self managed vibing away from the end user.\n\n Overall requests went from drowning us to near zero. The setup is pretty solid and stable. People self serve on analytical questions. And we can focus on the big things that matter: KPIs and enabling the org to self serve even better.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oukviys",
+      "created_utc": 1782766895,
+      "created_at_iso": "2026-06-29T21:01:35.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oukviys/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulwav3/",
+            "created_utc": 1782777513,
+            "created_at_iso": "2026-06-29T23:58:33.000Z",
+            "id": "oulwav3",
+            "author": "Smooth-Specialist400",
+            "author_fullname": null,
+            "body": "Great answer, do something similar. Have a deployed semantic layer and various skills and applications that can interact with it",
+            "body_html": "\n      <p>\n      Great answer, do something similar. Have a deployed semantic layer and various skills and applications that can interact with it\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oulwav3",
+            "parent_id": "t1_oukviys",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/oulwav3/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouly081/",
+            "created_utc": 1782778048,
+            "created_at_iso": "2026-06-30T00:07:28.000Z",
+            "id": "ouly081",
+            "author": "Effective-Refuse5354",
+            "author_fullname": null,
+            "body": "Sorry basic question but what is a semantic model? Like a database that you guys maintain?",
+            "body_html": "\n      <p>\n      Sorry basic question but what is a semantic model? Like a database that you guys maintain?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ouly081",
+            "parent_id": "t1_oukviys",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/ouly081/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumjgow/",
+                  "created_utc": 1782785074,
+                  "created_at_iso": "2026-06-30T02:04:34.000Z",
+                  "id": "oumjgow",
+                  "author": "pandasgorawr",
+                  "author_fullname": null,
+                  "body": "Semantic model is basically predefined metrics so that if two different people try to come up with a definition for a metric, they can both arrive at the same number. In dbt the semantic \"layer\" is all built with yaml files.",
+                  "body_html": "\n      <p>\n      Semantic model is basically predefined metrics so that if two different people try to come up with a definition for a metric, they can both arrive at the same number. In dbt the semantic \"layer\" is all built with yaml files.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_oumjgow",
+                  "parent_id": "t1_ouly081",
+                  "permalink": "/r/analytics/comments/1uj0t6d/comment/oumjgow/",
+                  "ups": 7,
+                  "downs": 0,
+                  "score": 7,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": false,
+                      "cursor": null
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwxIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk16azJOamszTkRjc09qb3lPbVY0T2locUxpRk5Qdz09Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOiJ0MV9vdWx5MDgxIn0"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZZMlV6TVdJMk1tVXNPam94T21WNE9paHFMRjlTVWpva09pb3pLQT09Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOiJ0MV9vdWt2aXlzIn0"
+        }
+      },
+      "ups": 52,
+      "downs": 0,
+      "score": 52
+    },
+    {
+      "id": "oujzw0r",
+      "author": "trippingcherry",
+      "author_fullname": null,
+      "body": "My company is trying to, but because they're literally using people with no programming experience to vibe code\n\n things there's absolutely no governance, QA is a disaster, and the devops team is a major roadblock because there's not enough resources to actually deploy these little monsters. Fun times for sure.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oujzw0r",
+      "created_utc": 1782758645,
+      "created_at_iso": "2026-06-29T18:44:05.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oujzw0r/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulnrmq/",
+            "created_utc": 1782775025,
+            "created_at_iso": "2026-06-29T23:17:05.000Z",
+            "id": "oulnrmq",
+            "author": "PipePistoleer",
+            "author_fullname": null,
+            "body": "We have non-engineers hitting our data warehouse and other databases with insane amounts of queries devoid of optimization. Management was like \u201chere\u2019s a super permissive IAM role go nuts\u201d.\n\n I pointed out every danger and potential issue I could. Nobody cared. This was the shove I needed to stop caring about work so much.",
+            "body_html": "\n      <p>\n      We have non-engineers hitting our data warehouse and other databases with insane amounts of queries devoid of optimization. Management was like \u201chere\u2019s a super permissive IAM role go nuts\u201d.\n    </p><p>\n      I pointed out every danger and potential issue I could. Nobody cared. This was the shove I needed to stop caring about work so much.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oulnrmq",
+            "parent_id": "t1_oujzw0r",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/oulnrmq/",
+            "ups": 45,
+            "downs": 0,
+            "score": 45,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouloowb/",
+                  "created_utc": 1782775307,
+                  "created_at_iso": "2026-06-29T23:21:47.000Z",
+                  "id": "ouloowb",
+                  "author": "Skumbag_eX",
+                  "author_fullname": null,
+                  "body": "Look at the bright side, in like a few months you can pronote your cost-cutting initiative to reduce snowflake cost by 60% or something.",
+                  "body_html": "\n      <p>\n      Look at the bright side, in like a few months you can pronote your cost-cutting initiative to reduce snowflake cost by 60% or something.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ouloowb",
+                  "parent_id": "t1_oulnrmq",
+                  "permalink": "/r/analytics/comments/1uj0t6d/comment/ouloowb/",
+                  "ups": 15,
+                  "downs": 0,
+                  "score": 15,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TURRNU1XWmlNVFlzT2pvek9tUXhPblF4WDI5MWJHOXZkMkk9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOiJ0MV9vdWxvb3diIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ouloowb"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oun1xxv/",
+            "created_utc": 1782791559,
+            "created_at_iso": "2026-06-30T03:52:39.000Z",
+            "id": "oun1xxv",
+            "author": "AddressSad8713",
+            "author_fullname": null,
+            "body": "How they hired people witj no programming experience?",
+            "body_html": "\n      <p>\n      How they hired people witj no programming experience?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oun1xxv",
+            "parent_id": "t1_oujzw0r",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/oun1xxv/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oun7d7q/",
+                  "created_utc": 1782793558,
+                  "created_at_iso": "2026-06-30T04:25:58.000Z",
+                  "id": "oun7d7q",
+                  "author": "trippingcherry",
+                  "author_fullname": null,
+                  "body": "Right hand to God they've hired people who don't even know SQL and I have a few colleagues who don't even know how to use Excel. I work in a healthcare niche that tends to value domain experience over all else.",
+                  "body_html": "\n      <p>\n      Right hand to God they've hired people who don't even know SQL and I have a few colleagues who don't even know how to use Excel. I work in a healthcare niche that tends to value domain experience over all else.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_oun7d7q",
+                  "parent_id": "t1_oun1xxv",
+                  "permalink": "/r/analytics/comments/1uj0t6d/comment/oun7d7q/",
+                  "ups": 8,
+                  "downs": 0,
+                  "score": 8,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwxLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TVdRek5HSTBOalFzT2pvek9tUXhPblF4WDI5MWJqZGtOM0U9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOiJ0MV9vdW43ZDdxIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "oun7d7q"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPVEF4TmpkbFpEVXNPam94T21WNE9paHFMREJQS1RvbE9pTjJYMnc9Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOiJ0MV9vdWp6dzByIn0"
+        }
+      },
+      "ups": 106,
+      "downs": 0,
+      "score": 106
+    },
+    {
+      "id": "ouk380i",
+      "author": "r6siegefan",
+      "author_fullname": null,
+      "body": "That sounds like something an insane and out of touch exec might ask for",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouk380i",
+      "created_utc": 1782759505,
+      "created_at_iso": "2026-06-29T18:58:25.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouk380i/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 36,
+      "downs": 0,
+      "score": 36
+    },
+    {
+      "id": "oulyost",
+      "author": "ZielonyZabka",
+      "author_fullname": null,
+      "body": "Sounds like the ongoing trend of 'get me wrong data faster'",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oulyost",
+      "created_utc": 1782778264,
+      "created_at_iso": "2026-06-30T00:11:04.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulyost/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oum8ilj/",
+            "created_utc": 1782781489,
+            "created_at_iso": "2026-06-30T01:04:49.000Z",
+            "id": "oum8ilj",
+            "author": "cafealpha82",
+            "author_fullname": null,
+            "body": "Story of my org. Everyone excited that they can create their own dashboard. Ppl create from everywhere like genie, copilot. It is another dashboard boom v2. I thought we finally went through dark period of creating 1000 dashboard (quantity) and started creating a few key insight/actionable dashboard with a good semantic model (quality). Ai agents opened that hellgate and i have to debug 1000+ agents each created. Ai even boosted so an analyst creating 100 visuals per day haha",
+            "body_html": "\n      <p>\n      Story of my org. Everyone excited that they can create their own dashboard. Ppl create from everywhere like genie, copilot. It is another dashboard boom v2. I thought we finally went through dark period of creating 1000 dashboard (quantity) and started creating a few key insight/actionable dashboard with a good semantic model (quality). Ai agents opened that hellgate and i have to debug 1000+ agents each created. Ai even boosted so an analyst creating 100 visuals per day haha\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oum8ilj",
+            "parent_id": "t1_oulyost",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/oum8ilj/",
+            "ups": 12,
+            "downs": 0,
+            "score": 12,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOV0pqTlRNMlpHSXNPam94T21WNE9paHFMVVJJU2c9PSIsInN1YnJlZGRpdCI6ImFuYWx5dGljcyIsInBvc3RJZCI6IjF1ajB0NmQiLCJwYXJlbnRUaGluZ0lkIjoidDFfb3VseW9zdCJ9"
+        }
+      },
+      "ups": 25,
+      "downs": 0,
+      "score": 25
+    },
+    {
+      "id": "oummy6w",
+      "author": "MongWonP",
+      "author_fullname": null,
+      "body": "yeah we're seeing the same exec pressure \u00e2\u0080\u0094 \"why can't claude\n\n just build the dashboard app.\" short answer: some teams are trying, most are hitting the governance wall others in this thread described.\n\n what's actually working for us is narrower: not replacing dashboards, but replacing the ad-hoc slack question layer. exec gets a scoped NL interface on top of our semantic metrics layer\n\n (dbt + definition_fingerprint versioning). still links to the canonical dashboard slice when the number matters for a meeting.\n\n what fails: letting non-engineers vibe-code apps that query raw tables with no metric owner, no definition drift checks, no change registry. you get faster wrong numbers.\n\n what works: tightly scoped semantic model the data team owns, agent can only reach curated metrics, every answer links back to a dashboard view or metric definition the team already trusts. the model isn't the hard part, metric governance\n\n is.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oummy6w",
+      "created_utc": 1782786251,
+      "created_at_iso": "2026-06-30T02:24:11.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oummy6w/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 7,
+      "downs": 0,
+      "score": 7
+    },
+    {
+      "id": "ouk3ogk",
+      "author": "OblongShrimp",
+      "author_fullname": null,
+      "body": "Yes, because there are certain types of people in \u2018leadership\u2019 roles who read all the same LinkedIn posts and articles, while having zero sense and understanding of how anything works.\n\n Love seeing the vibe coded disasters these always end up being.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouk3ogk",
+      "created_utc": 1782759618,
+      "created_at_iso": "2026-06-29T19:00:18.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouk3ogk/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oukz6xm/",
+            "created_utc": 1782767887,
+            "created_at_iso": "2026-06-29T21:18:07.000Z",
+            "id": "oukz6xm",
+            "author": "Cool-Egg-9882",
+            "author_fullname": null,
+            "body": "I wish there was a way to compile these examples as we come across them. Like an \u201cAmericas Funniest Home Videos\u201d but for execs that make decisions with zero research, because \u201cAI\u201d.",
+            "body_html": "\n      <p>\n      I wish there was a way to compile these examples as we come across them. Like an \u201cAmericas Funniest Home Videos\u201d but for execs that make decisions with zero research, because \u201cAI\u201d.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oukz6xm",
+            "parent_id": "t1_ouk3ogk",
+            "permalink": "/r/analytics/comments/1uj0t6d/comment/oukz6xm/",
+            "ups": 4,
+            "downs": 0,
+            "score": 4,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ouk3ogk"
+        }
+      },
+      "ups": 17,
+      "downs": 0,
+      "score": 17
+    },
+    {
+      "id": "oulnb2x",
+      "author": "ceeej777",
+      "author_fullname": null,
+      "body": "If an app is just going to display dashboards then no you\u2019d be crazy to do that. If the app is adding features that a dashboard could never do then that\u2019s a different story",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oulnb2x",
+      "created_utc": 1782774892,
+      "created_at_iso": "2026-06-29T23:14:52.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulnb2x/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NyIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOVEF5WXpKbE4yVXNPam94T21ReE9uUXhYMjkxYkc1aU1uZz0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxdWowdDZkIiwicGFyZW50VGhpbmdJZCI6InQxX291bG5iMngifQ"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "oumlkw8",
+      "author": "6spdsurfer",
+      "author_fullname": null,
+      "body": "Yes, absolutely. On the fly HTML dashboards, backed by skills utilizing MCP connections to semantic models. We knew the models needed to be pretty pristine when AI started becoming the focus, so we\u2019ve spent quite a bit of time refactoring our lakehouses and semantic models with that in mind. In initial testing, there was still too much play in the AI outputs, so we\u2019ve layered skills in, to add some business context.\n\n What some people here seem to be missing, this OS shifting focus of our team from report development and into our data and AI engineering roles, while also allowing end users to be able to make visual changes as the business needs change without having to go through PIs and being limited by bandwidth.\n\n The HTML dashboards also have a secondary benefit of being able to interpret and add commentary to the data which has been immensely helpful.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oumlkw8",
+      "created_utc": 1782785788,
+      "created_at_iso": "2026-06-30T02:16:28.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumlkw8/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZPVEZtT0daak5UVXNPam94T21ReE9uUXhYMjkxYld4cmR6Zz0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxdWowdDZkIiwicGFyZW50VGhpbmdJZCI6InQxX291bWxrdzgifQ"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "oujzmjm",
+      "author": "Big-Touch-9293",
+      "author_fullname": null,
+      "body": "I built a tool that creates dashboards automatically (major 3), also have built a deterministic natural language to report generation \u201chow many X did we do last week\u201d and it pulls governed sql. Can call ai to interpret or find indicators in related data. Can keep talking to it to drill down too.\n\n One thing I think that will happen is just having static HTML dashboards and hosting them. No need to pay for any licenses.\n\n My experience path was analyst -> data engineer -> sr SWE -> principal ai swe as a reference.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oujzmjm",
+      "created_utc": 1782758576,
+      "created_at_iso": "2026-06-29T18:42:56.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oujzmjm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9OSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOVFpsTURVek1qY3NPam94T21ReE9uUXhYMjkxYW5wdGFtMD0iLCJzdWJyZWRkaXQiOiJhbmFseXRpY3MiLCJwb3N0SWQiOiIxdWowdDZkIiwicGFyZW50VGhpbmdJZCI6InQxX291anptam0ifQ"
+        }
+      },
+      "ups": 9,
+      "downs": 0,
+      "score": 9
+    },
+    {
+      "id": "oul93jp",
+      "author": "Happy-Robin2519",
+      "author_fullname": null,
+      "body": "I see apps getting traction but not replacing dashboards \u201cjust because\u201d. For standard charts and KPI, the development effort and maintenance of an app isn\u2019t justified and AI vibes coded apps still need some development knowledge (just to deploy it). It\u2019s not the same persona and skill as dashboard builders\n\n However I see a lot of enthusiasm for natural language queries (text to sql LLM) for execs, because they need to get fast answers and go beyond standard dashboards, or slice the data in another way that chart provides. This requires some curation, but with proper guardrails and monitoring tools it can be very powerful. For instance, with Genie Spaces on Databricks, you need to define which tables to use, instructions, some metric definitions, and you can create an evaluation benchmark to ensure the SQL queries are generated properly. This complements standard dashboards quite well",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oul93jp",
+      "created_utc": 1782770663,
+      "created_at_iso": "2026-06-29T22:04:23.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oul93jp/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oulfzrc",
+      "author": "nowrongturns",
+      "author_fullname": null,
+      "body": "Meta is using next.js (nest) to replace its internal dashboard tool for data viz/reporting. People using nest to produce dashboards don\u2019t know type script. They\u2019re just vibe coding.\n\n It\u2019s been fine so far. There is some centralization to create reusable components etc so things are standardized.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oulfzrc",
+      "created_utc": 1782772734,
+      "created_at_iso": "2026-06-29T22:38:54.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulfzrc/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oulkuba",
+      "author": "Sketaverse",
+      "author_fullname": null,
+      "body": "I\u2019m building them straight in the terminal",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oulkuba",
+      "created_utc": 1782774161,
+      "created_at_iso": "2026-06-29T23:02:41.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulkuba/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oumoluz",
+      "author": "ArielCoding",
+      "author_fullname": null,
+      "body": "Spent time cleaning data and defining metrics firts, so vibe coded apps only touch a curated safe surface, without that foundation you just get faster ways to generate wrong numbers.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oumoluz",
+      "created_utc": 1782786809,
+      "created_at_iso": "2026-06-30T02:33:29.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumoluz/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ouo12mu",
+      "author": "WorldOfUmbro",
+      "author_fullname": null,
+      "body": "I think right now we\u2019re at the phase where AI is used in parallel to dashboards. We use Databricks Genie to question the data in the dashboard. Works great for deep dives. At some point, the dashboards might not be used anymore, as all questions are answered by AI. That\u2019s probably where we\u2019re going in the next two years.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouo12mu",
+      "created_utc": 1782807437,
+      "created_at_iso": "2026-06-30T08:17:17.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouo12mu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ouviybq",
+      "author": "CoveMarketing",
+      "author_fullname": null,
+      "body": "We did it before AI, and AI helps do it faster and allows us to explore alternative approaches that are sometimes beneficial.\n\n AI is the hammer for the nail, it's not the carpenter to build your roof.\n\n If you're the carpenter, you know how to use the hammer correctly. You also know when the hammer isn't the right tool.\n\n If you try and tell the hammer to build your roof, you won't get far.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ouviybq",
+      "created_utc": 1782897096,
+      "created_at_iso": "2026-07-01T09:11:36.000Z",
+      "parent_id": "t3_1uj0t6d",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouviybq/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    }
+  ],
+  "post": {
+    "id": "1uj0t6d",
+    "author": "Effective-Refuse5354",
+    "author_fullname": "t2_ev3rw5eu",
+    "subreddit": "analytics",
+    "title": "Is anyones company replacing dashboards with apps made by AI?",
+    "downs": 0,
+    "name": "t3_1uj0t6d",
+    "upvote_ratio": 0.945054945054945,
+    "ups": 81,
+    "selftext": "Because they say executives hate dashboards",
+    "total_awards_received": 0,
+    "score": 81,
+    "created": 1782758014,
+    "num_comments": 84,
+    "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/is_anyones_company_replacing_dashboards_with_apps/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1782758014
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9hbmFseXRpY3MvdDNfMXVqMHQ2ZD9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTYiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TWpSaU5USTRPVE1zT2pvd09tVjRPaWhxS0ZWTFpEb21WRFZhYnpRNFJEb3NXbkVpU1NZeWZUQWpUVElpV3pWSWF6UmJSeko3UEM5UUxqNGpYMFpkSWtCUE1DaEZmQ2w1VWlOdFN6c3dYbTl5Iiwic3VicmVkZGl0IjoiYW5hbHl0aWNzIiwicG9zdElkIjoiMXVqMHQ2ZCIsInBhcmVudFRoaW5nSWQiOm51bGx9"
+  }
+}
+
+treg: charged $0.00188 · call id ee4c98893f4b4ce6801eabf90daf0f90
+treg: anything confusing or wrong about this call, even if it worked? treg feedback submit <quality|pricing|friction|other> "what you saw" --call-id ee4c98893f4b4ce6801eabf90daf0f90; omit private data, then keep going with the task.

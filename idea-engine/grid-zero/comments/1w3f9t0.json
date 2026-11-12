@@ -1,0 +1,243 @@
+{
+  "success": true,
+  "credits_remaining": 209752,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "p6zroad",
+      "author": "sheik_sha_ha",
+      "author_fullname": null,
+      "body": "All three issues you hit are genuine Data Studio limitations rather than setup mistakes, so the frustration makes sense.\n\n For duration handling, your decimal conversion approach in Sheets is the correct fix. Data Studio has no native duration type so storing hours as a decimal number like 1.5 for 90 minutes is the standard workaround everyone uses. Nothing better exists natively.\n\n For cross table conditional formatting based on a calculated percentage from a separate table, the only reliable path is blending the two tables first and creating the calculated field inside the blend. Conditional formatting in Data Studio can only reference fields available in the chart's own data source, so the cross table reference has to be resolved at the blend level before it reaches the chart.\n\n For the AppSheet URL filtering across multiple data sources, this is the hardest limitation you have hit. Data Studio URL parameters only apply filters to charts connected to the specific data source the parameter targets. The workaround most people use is consolidating all data into a single blended source or a single BigQuery view so the URL parameter applies universally across the whole report. Moving your Sheets backend into BigQuery and joining everything there before connecting to Data Studio would solve all three issues simultaneously since BigQuery handles duration as a proper numeric type, cross table calculations in SQL are straightforward, and a single source means URL filters apply everywhere.\n\n Given your Google Workspace Enterprise setup, BigQuery should already be available to you at no extra cost under certain tiers.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p6zroad",
+      "created_utc": 1788188778,
+      "created_at_iso": "2026-08-31T15:06:18.000Z",
+      "parent_id": "t3_1w3f9t0",
+      "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p6zroad/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p70350u/",
+            "created_utc": 1788191889,
+            "created_at_iso": "2026-08-31T15:58:09.000Z",
+            "id": "p70350u",
+            "author": "CamaradArmada",
+            "author_fullname": null,
+            "body": "Thanks a lot for your response. Never heard about BigQuery, going to check it out. It is also good know it wasn't a issue on my end...",
+            "body_html": "\n      <p>\n      Thanks a lot for your response. Never heard about BigQuery, going to check it out. It is also good know it wasn't a issue on my end...\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p70350u",
+            "parent_id": "t1_p6zroad",
+            "permalink": "/r/Looker/comments/1w3f9t0/comment/p70350u/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p767l6k/",
+            "created_utc": 1788268134,
+            "created_at_iso": "2026-09-01T13:08:54.000Z",
+            "id": "p767l6k",
+            "author": "CamaradArmada",
+            "author_fullname": null,
+            "body": "Can I ask you some other questions about some bugs(?) bothering me?\n\n When I make a copy of my report, all the previous data sources appear, even after deleting them all. I don't know where its getting them. None of the graphics are using them.\n\n Sometimes a Scorecard gets stuck with the wrong data range. It usually happens when I add a date range control and then group it with the specific graphic I want. But even after grouping the old date range remains.",
+            "body_html": "\n      <p>\n      Can I ask you some other questions about some bugs(?) bothering me?\n    </p><p>\n      When I make a copy of my report, all the previous data sources appear, even after deleting them all. I don't know where its getting them. None of the graphics are using them.\n    </p><p>\n      Sometimes a Scorecard gets stuck with the wrong data range. It usually happens when I add a date range control and then group it with the specific graphic I want. But even after grouping the old date range remains.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": true,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_p767l6k",
+            "parent_id": "t1_p6zroad",
+            "permalink": "/r/Looker/comments/1w3f9t0/comment/p767l6k/",
+            "ups": 1,
+            "downs": 0,
+            "score": 1,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p77ez0c/",
+                  "created_utc": 1788279880,
+                  "created_at_iso": "2026-09-01T16:24:40.000Z",
+                  "id": "p77ez0c",
+                  "author": "sheik_sha_ha",
+                  "author_fullname": null,
+                  "body": "For the ghost data sources appearing after copying a report, Data Studio caches data source references at the report level even after you delete them from individual charts. The report copy carries those cached references over. To fully clean them up, go to Resource then Manage Added Data Sources after copying and manually remove every data source you do not need from there. Simply deleting charts that use them is not enough since the source stays registered at the report level until you remove it from that menu explicitly.\n\n For the scorecard getting stuck on the wrong date range after grouping with a date range control, this is a known grouping bug. When you group a date range control with a chart, Data Studio sometimes locks the chart to its previously set default date range rather than deferring to the control. The fix is to click the scorecard individually, go to Setup, and set the Default Date Range to Auto. This tells the scorecard to always inherit from whatever date range control is active rather than using its own hardcoded range. After setting it to Auto, regroup the control and scorecard and it should behave correctly.\n\n If the Auto setting does not stick after regrouping, try ungrouping, setting Auto on the scorecard first, saving, and then regrouping. The order of operations matters with this particular bug.",
+                  "body_html": "\n      <p>\n      For the ghost data sources appearing after copying a report, Data Studio caches data source references at the report level even after you delete them from individual charts. The report copy carries those cached references over. To fully clean them up, go to Resource then Manage Added Data Sources after copying and manually remove every data source you do not need from there. Simply deleting charts that use them is not enough since the source stays registered at the report level until you remove it from that menu explicitly.\n    </p><p>\n      For the scorecard getting stuck on the wrong date range after grouping with a date range control, this is a known grouping bug. When you group a date range control with a chart, Data Studio sometimes locks the chart to its previously set default date range rather than deferring to the control. The fix is to click the scorecard individually, go to Setup, and set the Default Date Range to Auto. This tells the scorecard to always inherit from whatever date range control is active rather than using its own hardcoded range. After setting it to Auto, regroup the control and scorecard and it should behave correctly.\n    </p><p>\n      If the Auto setting does not stick after regrouping, try ungrouping, setting Auto on the scorecard first, saving, and then regrouping. The order of operations matters with this particular bug.\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_p77ez0c",
+                  "parent_id": "t1_p767l6k",
+                  "permalink": "/r/Looker/comments/1w3f9t0/comment/p77ez0c/",
+                  "ups": 1,
+                  "downs": 0,
+                  "score": 1,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9Mb29rZXIvdDNfMXczZjl0MD9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCwxLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2TURsbFpqSmhOV0VzT2pvek9tUXhPblF4WDNBM04yVjZNR009Iiwic3VicmVkZGl0IjoiTG9va2VyIiwicG9zdElkIjoiMXczZjl0MCIsInBhcmVudFRoaW5nSWQiOiJ0MV9wNzdlejBjIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "p77ez0c"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "p77ez0c"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "p797twj",
+      "author": "ExternalCry3039",
+      "author_fullname": null,
+      "body": "Is this thing still supported? We still use it but simple things got us away to hosting on streamlit",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p797twj",
+      "created_utc": 1788296714,
+      "created_at_iso": "2026-09-01T21:05:14.000Z",
+      "parent_id": "t3_1w3f9t0",
+      "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p797twj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "p7i6rlx",
+      "author": "ArielCoding",
+      "author_fullname": null,
+      "body": "I\u2019d start by identifying all your data sources, if there\u2019s anything beyond Google Sheets, and use ETL connectors to consolidate everything into BigQuery, then run your transformations there, dbt works well that layer.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_p7i6rlx",
+      "created_utc": 1788404108,
+      "created_at_iso": "2026-09-03T02:55:08.000Z",
+      "parent_id": "t3_1w3f9t0",
+      "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p7i6rlx/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbdjdlm",
+      "author": "Novel_Look_128",
+      "author_fullname": null,
+      "body": "looker studio lacks proper out-of-the-box treatment for raw duration types so pre formatting your time into seconds in google sheets becomes important. parameterizing information for use across multiple sources into the blended data set within the dashboard far outweighs dropping multiple filters onto individual connectors in looker Studio. cloudfresh helped us structure and model our data properly before it hit Looker Studio. Moving calculations into data sources before looker studio is critical for performance and it makes dynamic client links consistent",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbdjdlm",
+      "created_utc": 1790088557,
+      "created_at_iso": "2026-09-22T14:49:17.000Z",
+      "parent_id": "t3_1w3f9t0",
+      "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/pbdjdlm/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "pbte2zn",
+      "author": "JohanCatchr",
+      "author_fullname": null,
+      "body": "I use Looker Studio almost daily, and I would avoid trying to solve all three issues inside the report.\n\n For durations, store the value as an integer number of seconds in Sheets, then set the field type to Duration in the Looker Studio data source.\n\n The conditional formatting and URL filtering issues come from the same limitation: calculations and controls remain tied to their data source. If every chart needs to react to the same client or project ID, I would consolidate the tables upstream into one normalized Sheet, or BigQuery if the system grows.\n\n Keep AppSheet for data entry, Sheets or BigQuery for modeling, and Looker Studio for presentation. It will be much easier to maintain.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_pbte2zn",
+      "created_utc": 1790273880,
+      "created_at_iso": "2026-09-24T18:18:00.000Z",
+      "parent_id": "t3_1w3f9t0",
+      "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/pbte2zn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1w3f9t0",
+    "author": "CamaradArmada",
+    "author_fullname": "t2_10ywkerk24",
+    "subreddit": "Looker",
+    "title": "A lot of issues with Looker Studio",
+    "downs": 0,
+    "name": "t3_1w3f9t0",
+    "upvote_ratio": 0.6,
+    "ups": 1,
+    "selftext": "With the help of AI, I decided to revamp my agency\u2019s time-tracking system. Since we run on Google Workspace Enterprise, I wanted to leverage native tools as much as possible: Google Sheets for the backend database, AppSheet for an intuitive employee data-entry interface, and Looker Studio to deliver clear, insightful reports to our clients. The initial setup went smoothly. Google Sheets proved to be powerful and rock-solid, and AppSheet gave us complete flexibility without forcing us to redesign our base database structure. However, once I reached Looker Studio, things got bumpy quickly. Here are the main roadblocks I encountered: Duration Data Handling: Looker Studio natively struggles to interpret standard \"Duration\" columns from Sheets\u2014a major headache for any timesheet system. I had to add workaround columns in Google Sheets to convert time into decimal formats. Cross-Table Calculations & Conditional Formatting: Setting up simple conditional formatting based on a calculated percentage (referencing a metric from a completely separate table) turned out to be nearly impossible to execute. Multi-Source Dynamic URL Filtering: My main goal was adding a button in AppSheet that opens a Looker Studio report pre-filtered for a specific client or project. While I managed a partial workaround using URL parameters, Looker Studio would only apply the filter to charts linked to one specific data source at a time, rather than dynamically updating the entire multi-source dashboard. Maybe this forum may be more helpful than AI. I would really appreciate any tips on these issues. Thank you very much.",
+    "total_awards_received": 0,
+    "score": 1,
+    "created": 1788186138,
+    "num_comments": 12,
+    "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/a_lot_of_issues_with_looker_studio/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1788186138
+  },
+  "more": {
+    "has_more": false,
+    "cursor": null
+  }
+}
+
+treg: charged $0.00188 · call id f47a6dca3e6f4ba6a2455af6fc30823a

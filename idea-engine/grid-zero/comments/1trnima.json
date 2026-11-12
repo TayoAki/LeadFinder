@@ -1,0 +1,683 @@
+{
+  "success": true,
+  "credits_remaining": 209775,
+  "credits_charged": 1,
+  "comments": [
+    {
+      "id": "oop4tja",
+      "author": "tophmcmasterson",
+      "author_fullname": null,
+      "body": "It\u2019s representing your data in a way that reflects how the business talks about it.\n\n This is generally going to be something like a well structured dimensional model with field names that actually make sense and aren\u2019t cryptic.\n\n Including metadata like descriptions or supporting documents that explain and provide context also can help.\n\n It\u2019s not a new concept at all, if you\u2019ve ever used something like Power BI the data in there has basically always been considered the semantic layer.\n\n But now AI is kind of forcing the issue to an extent, and people are finally realizing again that a bunch of random ad hoc reports that generate a table for people to export to excel makes an analytics jungle that\u2019s difficult for people to actually work with, and AI is no different.\n\n It\u2019s a means of getting away from tribal knowledge and ad hoc slop houses.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oop4tja",
+      "created_utc": 1780111764,
+      "created_at_iso": "2026-05-30T03:29:24.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oop4tja/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooq54n8/",
+            "created_utc": 1780128825,
+            "created_at_iso": "2026-05-30T08:13:45.000Z",
+            "id": "ooq54n8",
+            "author": "Dry-Aioli-6138",
+            "author_fullname": null,
+            "body": "Thanks. I had this intuition, but needed someone to spell it out for me.",
+            "body_html": "\n      <p>\n      Thanks. I had this intuition, but needed someone to spell it out for me.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ooq54n8",
+            "parent_id": "t1_oop4tja",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/ooq54n8/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZNV0ZqTVRWbFlXVXNPam94T21WNE9paGxSRTgxZFE9PSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF0cm5pbWEiLCJwYXJlbnRUaGluZ0lkIjoidDFfb29wNHRqYSJ9"
+        }
+      },
+      "ups": 51,
+      "downs": 0,
+      "score": 51
+    },
+    {
+      "id": "oop1ka0",
+      "author": "SirGreybush",
+      "author_fullname": null,
+      "body": "It\u2019s very useful with non-English language naming.\n\n Would you know that NoClt is equivalent to Customer Number?\n\n Even in English, what about CustID versus CustNo? One is a surrogate key\n\n and the other a business key.\n\n IOW, this is a good thing.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oop1ka0",
+      "created_utc": 1780110462,
+      "created_at_iso": "2026-05-30T03:07:42.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oop1ka0/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooprl8p/",
+            "created_utc": 1780121950,
+            "created_at_iso": "2026-05-30T06:19:10.000Z",
+            "id": "ooprl8p",
+            "author": "Outrageous_Let5743",
+            "author_fullname": null,
+            "body": "I hate when people use abbreviations in their columnames. I have seen opp_id that means opportunity_id, is it that diffecult to write the full name.",
+            "body_html": "\n      <p>\n      I hate when people use abbreviations in their columnames. I have seen opp_id  that means opportunity_id, is it that diffecult to write the full name.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ooprl8p",
+            "parent_id": "t1_oop1ka0",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/ooprl8p/",
+            "ups": 16,
+            "downs": 0,
+            "score": 16,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oopxp3b/",
+                  "created_utc": 1780124989,
+                  "created_at_iso": "2026-05-30T07:09:49.000Z",
+                  "id": "oopxp3b",
+                  "author": "lightnegative",
+                  "author_fullname": null,
+                  "body": "I hate it when spelling errors proliferate through the data model\n\n , is it that diffecult to name things correctly",
+                  "body_html": "\n      <p>\n      I hate it when spelling errors proliferate through the <search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;search&quot;},&quot;comment&quot;:{&quot;id&quot;:&quot;t1_oopxp3b&quot;,&quot;post_id&quot;:&quot;t3_1trnima&quot;},&quot;meta_search&quot;:{&quot;display_query&quot;:&quot;data model&quot;}}\" view-events=\"post_detail/view/highlight\"><search-telemetry-tracker data-faceplate-tracking-context=\"{&quot;action_info&quot;:{&quot;type&quot;:&quot;pdp_term&quot;},&quot;meta_search&quot;:{&quot;raw_query&quot;:&quot;data model data engineering&quot;},&quot;search&quot;:{&quot;impression_id&quot;:&quot;dfbaac50-9ec3-4c24-8387-5a89dc2a9a91&quot;,&quot;origin_element&quot;:&quot;pdp_comment_highlighted_search_term&quot;,&quot;query&quot;:&quot;data model data engineering&quot;,&quot;conversation_id&quot;:&quot;2e4ab594-896c-4842-be18-c4742d333324&quot;}}\" click-events=\"search/click/full_search_button\"><a rpl=\"\" class=\"border-[var(--color-a-default)] visited:border-[var(--color-a-visited)] hover:border-[var(--color-a-hover)] hover:visited:border-[var(--color-a-visited)] !no-underline border-dotted border-b-sm border-x-0 border-t-0 p-px a\n  \n  \n  \n  \n  no-underline hover:no-underline\n  \n  cursor-pointer\" href=\"/search/?q=data+model+data+engineering&amp;cId=2e4ab594-896c-4842-be18-c4742d333324&amp;iId=cc824518-f726-439e-852a-b573656068ee\">data model<span class=\"ms-2xs align-middle\"><svg rpl=\"\" fill=\"currentColor\" height=\"12\" icon-name=\"search\" viewBox=\"0 0 20 20\" width=\"12\" xmlns=\"http://www.w3.org/2000/svg\">\n      <path d=\"m18.736 17.464-3.483-3.483A7.961 7.961 0 0016.999 9 8 8 0 109 17a7.961 7.961 0 004.981-1.746l3.483 3.483a.9.9 0 101.272-1.273ZM9 15.2A6.207 6.207 0 012.8 9c0-3.419 2.781-6.2 6.2-6.2s6.2 2.781 6.2 6.2-2.781 6.2-6.2 6.2Z\"></path>\n    </svg></span></a></search-telemetry-tracker></search-telemetry-tracker>, is it that diffecult to name things correctly&nbsp;\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_oopxp3b",
+                  "parent_id": "t1_ooprl8p",
+                  "permalink": "/r/dataengineering/comments/1trnima/comment/oopxp3b/",
+                  "ups": 14,
+                  "downs": 0,
+                  "score": 14,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwwLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WWpKbU9XWmpOMklzT2pvek9tUXhPblF4WDI5dmNIaHdNMkk9Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMXRybmltYSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vb3B4cDNiIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "oopxp3b"
+              }
+            }
+          },
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooq5g0a/",
+            "created_utc": 1780128991,
+            "created_at_iso": "2026-05-30T08:16:31.000Z",
+            "id": "ooq5g0a",
+            "author": "Dry-Aioli-6138",
+            "author_fullname": null,
+            "body": "Customer arduous becomes CustArd. What's not to like?",
+            "body_html": "\n      <p>\n      Customer arduous becomes CustArd. What's not to like?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ooq5g0a",
+            "parent_id": "t1_oop1ka0",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/ooq5g0a/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [
+                {
+                  "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooqnuoj/",
+                  "created_utc": 1780138542,
+                  "created_at_iso": "2026-05-30T10:55:42.000Z",
+                  "id": "ooqnuoj",
+                  "author": "corny_horse",
+                  "author_fullname": null,
+                  "body": "lol I remember the thread here where someone said they got fired because they abbreviated \"cumulative_now\" to \"cum_now\"",
+                  "body_html": "\n      <p>\n      lol I remember the thread here where someone said they got fired because they abbreviated \"cumulative_now\" to \"cum_now\"\n    </p>\n    ",
+                  "distinguished": null,
+                  "is_submitter": false,
+                  "stickied": false,
+                  "collapsed": false,
+                  "name": "t1_ooqnuoj",
+                  "parent_id": "t1_ooq5g0a",
+                  "permalink": "/r/dataengineering/comments/1trnima/comment/ooqnuoj/",
+                  "ups": 9,
+                  "downs": 0,
+                  "score": 9,
+                  "replies": {
+                    "items": [],
+                    "more": {
+                      "has_more": true,
+                      "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0zJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSwxLDAiLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WTJSbE5HWTFZbVlzT2pvek9tUXhPblF4WDI5dmNXNTFiMm89Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMXRybmltYSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vb3FudW9qIn0"
+                    }
+                  }
+                }
+              ],
+              "more": {
+                "has_more": true,
+                "cursor": "ooqnuoj"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQb3NpdGlvbk9mZnNldD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZabUV3TldWbU5qRXNPam94T21WNE9paGxRMk15WWpva09teG1WUT09Iiwic3VicmVkZGl0IjoiZGF0YWVuZ2luZWVyaW5nIiwicG9zdElkIjoiMXRybmltYSIsInBhcmVudFRoaW5nSWQiOiJ0MV9vb3Axa2EwIn0"
+        }
+      },
+      "ups": 18,
+      "downs": 0,
+      "score": 18
+    },
+    {
+      "id": "oopjrua",
+      "author": "EstetLinus",
+      "author_fullname": null,
+      "body": "Think of it as a thin layer between your data warehouse and the agent. While AI models are generally good at generating SQL, their outputs can be surprisingly inconsistent. Small changes in phrasing often lead to very different queries and results.\n\n Instead of generating SQL directly, let the model query the semantic layer. This provides a more stable interface, improves consistency, and removes the need for the model to understand the underlying database schema.\n\n I\u2019ve seen a bunch of people treat the semantic layer as a markdown file and context, which is suboptimal. It\u2019s software rather than .txt-files.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oopjrua",
+      "created_utc": 1780118196,
+      "created_at_iso": "2026-05-30T05:16:36.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oopjrua/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oosfp06/",
+            "created_utc": 1780159752,
+            "created_at_iso": "2026-05-30T16:49:12.000Z",
+            "id": "oosfp06",
+            "author": "sunflowerGogh88",
+            "author_fullname": null,
+            "body": "So what format should it be ideally?",
+            "body_html": "\n      <p>\n      So what format should it be ideally?\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_oosfp06",
+            "parent_id": "t1_oopjrua",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/oosfp06/",
+            "ups": 2,
+            "downs": 0,
+            "score": 2,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MiwwIiwiY3Vyc29yIjoiWTI5dGJXVnVkSFJ5WldVNk5UVTBZalUyT1dJc09qb3lPbVF4T25ReFgyOXZjMlp3TURZPSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF0cm5pbWEiLCJwYXJlbnRUaGluZ0lkIjoidDFfb29zZnAwNiJ9"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oosfp06"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "ooq55yj",
+      "author": "[deleted]",
+      "author_fullname": null,
+      "body": "[deleted]",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooq55yj",
+      "created_utc": 1780128845,
+      "created_at_iso": "2026-05-30T08:14:05.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooq55yj/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "ooq73s7",
+      "author": "Captain_Strudels",
+      "author_fullname": null,
+      "body": "My followup question, where exactly does your semantic layer live? Is it just comments for your SQL table definitions, Confluence pages, a dedicated application to write this stuff down, something else entirely?",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooq73s7",
+      "created_utc": 1780129879,
+      "created_at_iso": "2026-05-30T08:31:19.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooq73s7/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOR0kzTjJFMFlUUXNPam94T21ReE9uUXhYMjl2Y1RjemN6Yz0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxdHJuaW1hIiwicGFyZW50VGhpbmdJZCI6InQxX29vcTczczcifQ"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "oopbpfi",
+      "author": "soundboyselecta",
+      "author_fullname": null,
+      "body": "It started by being called a data dictionary\n\n (at least the good ones that came with meaningful data sets). Saved you from guessing and bring meaning to otherwise what would be useless analysis (without it). Evolved to be more robust as it scaled to tons of interconnected entities across different business units all across an org, creating a need for a federated meaning, so there is no confusion across business units in the aftermath of its creation. Maybe AI can figure out some things with proper lineage with meta data downstream, but without proper guidance it could be shit show, with a lot of dirty laundry.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oopbpfi",
+      "created_utc": 1780114602,
+      "created_at_iso": "2026-05-30T04:16:42.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oopbpfi/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": true,
+          "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0xJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9NSIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZaV1V6TkdNNU1tTXNPam94T21ReE9uUXhYMjl2Y0dKd1ptaz0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxdHJuaW1hIiwicGFyZW50VGhpbmdJZCI6InQxX29vcGJwZmkifQ"
+        }
+      },
+      "ups": 8,
+      "downs": 0,
+      "score": 8
+    },
+    {
+      "id": "oopvjhn",
+      "author": "tech4ever4u",
+      "author_fullname": null,
+      "body": "If we replace AI with \"natural intelligence\" (humans), how do we enable self-service for end-users? Giving them raw SQL access to hundreds of tables rarely works.\n\n Instead, you usually set up a BI tool with \"datasets\" or \"cubes.\" These tools give end users a curated list of dimensions and measures, hiding the complexity of the underlying data structure. This allows users to create their own reports and apply filters using an Excel-like UI. It is important that different teams can use different cubes built from the same SQL tables, customized for their own vocabulary and needs. For example, the same sales data can be presented differently for the finance department and the marketing team.\n\n Now, returning to AI agents, everything remains the same. If you want them to recognize a user's intent, you need to provide a semantic layer that matches that intent. This means using 'datasets' or 'cubes,' but now accessing them via MCP. In this setup, the chatbot is simply another interface, in addition to the classic report builder / reports UI (so you get the best of both worlds). This setup makes AI a clear and reliable tool, instead of a genie doing magic.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oopvjhn",
+      "created_utc": 1780123912,
+      "created_at_iso": "2026-05-30T06:51:52.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oopvjhn/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "ootss3h",
+      "author": "Gators1992",
+      "author_fullname": null,
+      "body": "Conceptually it has to do with definitions and defining the data structure for other applications (and users) to consume. In practice they are usually files (yaml or json), DDL or part of your BI tool where you define the data structure, calculated metrics and define the concepts associated with it all. The concept has been around forever in BI in tools like Microstrategy, Looker and PowerBI. Also third party providers of a \"semantic layer\" added a tool to host the model between your data and consuming applications. This centralized the semantic model and allowed BI as well as many other applications like data science or whatever to consume from the same model.\n\n It's a great way to govern data usage because users consume the data in the form of objects, like defined columns and precalculated metrics rather than everyone writing their own SQL and views with potentially different answers. Like if you company has an official definition of what a customer is, you won't see someone pulling the wrong one on accident from another source.\n\n As for AI, the centralized model concept is being popularized because AI can consume from that as well so you just have it picking columns and metric names to analyze instead of having to write SQL. The sql is deterministic as defined in the model. Everyone was talking about this last year as the way to make AI better with data, but I think the models may be moving past a dependency on semantic layers. Like I recently built an analysis deck for a customer just by asking Snowflake Cortex a bunch of questions and we don't have a semantic layer at that level. I was kinda blown away by the way it understood our data model, though it has good structure and naming standards, and also understood how to analyze data in my industry. It wasn't always right but was super useful. Also I had the AI write our BI semantic descriptions rather than doing it manually just by giving it a document talking about the company (researched by another AI) and a prompt about the definition structure. Took about 3 hours to churn through, mostly because of the BI app and not the AI. It would have taken a person weeks and they likely would have gone insane.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ootss3h",
+      "created_utc": 1780174073,
+      "created_at_iso": "2026-05-30T20:47:53.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ootss3h/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 3,
+      "downs": 0,
+      "score": 3
+    },
+    {
+      "id": "oopurpv",
+      "author": "Important-Success431",
+      "author_fullname": null,
+      "body": "It is important if you're using multiple BI tools for consistency. So if you're using Power Bi, databricks and and AI tool you need to calculate you're KPIs and things upstream for consistency across tools.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oopurpv",
+      "created_utc": 1780123528,
+      "created_at_iso": "2026-05-30T06:45:28.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oopurpv/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ooqda4e",
+      "author": "Ra-mega-bbit",
+      "author_fullname": null,
+      "body": "Its just metadata: human language descriptions, of what the table and columns mean\n\n Its the: \"This weird letter code is categorical, when its a A it means that the product was launched from 2017 onwards, any other letter means its older\" And so many other bullshit like that, any AI trying to interpret would find a bunch of letters and might not find this specific correlation with date, so it would not now how to answer: \"What is my best selling products from the new launch?\"",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooqda4e",
+      "created_utc": 1780133202,
+      "created_at_iso": "2026-05-30T09:26:42.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooqda4e/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "ooqdguu",
+      "author": "likescroutons",
+      "author_fullname": null,
+      "body": "It's expanded a bit from business logic and intelligence with GenAI recently. For example, with an NL to SQL model, if there are ambigious terms or attribution, and the documentation isn't clear, the LLM needs something to actually understand when and how to use your data. Maybe a user asks for a house but you don't have a one-to-one definition of what that is. The semantic layer let's the model look up what a house is in the context of your data, what it's definition is, it's constraints, etc.\n\n Otherwise you're relying on the model reasoning to the correct answer and that's just too inconsistent.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooqdguu",
+      "created_utc": 1780133305,
+      "created_at_iso": "2026-05-30T09:28:25.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooqdguu/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "op1qbp0",
+      "author": "Good_Skirt2459",
+      "author_fullname": null,
+      "body": "It's an abstraction between your raw data and consumers which provides a way for consumers to get access to meaningful data.\n\n So for example, you might expose a function to your AI agent, \"get shipment\" which gets the data for your agent in a controlled way. You can tweak the presentation of your data to your AI and you can tweak how that data is actually fetched.\n\n Then you don't have the AI running expensive stupid queries or deriving the same data in different ways.\n\n Practically it is a convenient place to put stuff between your bot and the data. For example, access control when you want an AI support bot to only be able to access the data of the user its taking to.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_op1qbp0",
+      "created_utc": 1780277125,
+      "created_at_iso": "2026-06-01T01:25:25.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/op1qbp0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oooynw6",
+      "author": "BudgetVideo",
+      "author_fullname": null,
+      "body": "The goal of the semantic layer is so that the AI model knows the definition and layout of the data, as well as any calculations. It shows the AI how it can use the data by providing necessary context.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oooynw6",
+      "created_utc": 1780109348,
+      "created_at_iso": "2026-05-30T02:49:08.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oooynw6/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooprtac/",
+            "created_utc": 1780122057,
+            "created_at_iso": "2026-05-30T06:20:57.000Z",
+            "id": "ooprtac",
+            "author": "Outrageous_Let5743",
+            "author_fullname": null,
+            "body": "Originally it was not used for AI but for business logic documentation and metrics that can be used elsewhere like in pbi and in Excel that will always calc revenue the same way. But semantic layers are also perfect for AI.",
+            "body_html": "\n      <p>\n      Originally it was not used for AI but for business logic documentation and metrics that can be used elsewhere like in pbi and in Excel that will always calc revenue the same way. But semantic layers are also perfect for AI.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ooprtac",
+            "parent_id": "t1_oooynw6",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/ooprtac/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": false,
+                "cursor": null
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "oooynw6"
+        }
+      },
+      "ups": 4,
+      "downs": 0,
+      "score": 4
+    },
+    {
+      "id": "ooplsbp",
+      "author": "TARehman",
+      "author_fullname": null,
+      "body": "It's mostly an advertising term in my experience.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooplsbp",
+      "created_utc": 1780119138,
+      "created_at_iso": "2026-05-30T05:32:18.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooplsbp/",
+      "replies": {
+        "items": [
+          {
+            "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooqjlx1/",
+            "created_utc": 1780136483,
+            "created_at_iso": "2026-05-30T10:21:23.000Z",
+            "id": "ooqjlx1",
+            "author": "iheartmst3k",
+            "author_fullname": null,
+            "body": "This is my favorite answer. Not because there isn't an actual definition. Several replies here hit upon it.\n\n However, some companies keep trying to expand or alter the definition of a semantic layer (looking at you dbt) so that the definition fits whatever data their tool produces.\n\n It has complicated and confused what is otherwise a very simple topic. A semantic layer is context that makes the technical names meaningful to the business.",
+            "body_html": "\n      <p>\n      This is my favorite answer. Not because there isn't an actual definition. Several replies here hit upon it.&nbsp;\n    </p><p>\n      However, some companies keep trying to expand or alter the definition of a semantic layer (looking at you dbt) so that the definition fits whatever data their tool produces.\n    </p><p>\n      It has complicated and confused what is otherwise a very simple topic. A semantic layer is context that makes the technical names meaningful to the business.\n    </p>\n    ",
+            "distinguished": null,
+            "is_submitter": false,
+            "stickied": false,
+            "collapsed": false,
+            "name": "t1_ooqjlx1",
+            "parent_id": "t1_ooplsbp",
+            "permalink": "/r/dataengineering/comments/1trnima/comment/ooqjlx1/",
+            "ups": 5,
+            "downs": 0,
+            "score": 5,
+            "replies": {
+              "items": [],
+              "more": {
+                "has_more": true,
+                "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zb3J0PUNPTkZJREVOQ0Umc3RhcnRpbmdEZXB0aD0yJmNvbW1lbnRQYXJlbnRQb3NpdGlvbnM9MTMsMCIsImN1cnNvciI6IlkyOXRiV1Z1ZEhSeVpXVTZOREkzWTJFd056QXNPam95T21ReE9uUXhYMjl2Y1dwc2VERT0iLCJzdWJyZWRkaXQiOiJkYXRhZW5naW5lZXJpbmciLCJwb3N0SWQiOiIxdHJuaW1hIiwicGFyZW50VGhpbmdJZCI6InQxX29vcWpseDEifQ"
+              }
+            }
+          }
+        ],
+        "more": {
+          "has_more": true,
+          "cursor": "ooqjlx1"
+        }
+      },
+      "ups": 2,
+      "downs": 0,
+      "score": 2
+    },
+    {
+      "id": "oosf035",
+      "author": "Admirable_Writer_373",
+      "author_fullname": null,
+      "body": "It\u2019s something report/analyst types build in the absence of a decent architect",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_oosf035",
+      "created_utc": 1780159552,
+      "created_at_iso": "2026-05-30T16:45:52.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/oosf035/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ooshj3l",
+      "author": "TheDevauto",
+      "author_fullname": null,
+      "body": "You can certainly look up what semantic layer means, but without a technical explaination it is a way to represent how things are connected, similar to how we associate things in our brain. Thats also why knowledge graphs are used when working to build a semantic layer.\n\n The funny thing is the idea has been around as long as the web has, but the need for it has never been expressed well enough. Now with llms being used to do operational tasks, a semantic layer can greatly improve look up results.\n\n Its also one of those things that is not only a lot of work to build, but requires ongoing maintenance.",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooshj3l",
+      "created_utc": 1780160256,
+      "created_at_iso": "2026-05-30T16:57:36.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooshj3l/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    },
+    {
+      "id": "ooubie0",
+      "author": "GreyHairedDWGuy",
+      "author_fullname": null,
+      "body": "This is a big topic and in general it is vendor specific. It is really about mapping physical columns/tables in a database to logical constructs that a BI/reporting tool understands so that it can translate user questions into the appropriate SQL (or other language) of the bi/reporting tool.\n\n PowerBI's sematic model is an example a is Tableau. Way back, I implemented many MicroStrategy and Business Objects solutions...these also had semantic models.\n\n You now also hear about this in things like Snowflake for AI in their semantic views).\n\n Hope that helps",
+      "collapsed": false,
+      "distinguished": null,
+      "is_submitter": false,
+      "stickied": false,
+      "name": "t1_ooubie0",
+      "created_utc": 1780180198,
+      "created_at_iso": "2026-05-30T22:29:58.000Z",
+      "parent_id": "t3_1trnima",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooubie0/",
+      "replies": {
+        "items": [],
+        "more": {
+          "has_more": false,
+          "cursor": null
+        }
+      },
+      "ups": 1,
+      "downs": 0,
+      "score": 1
+    }
+  ],
+  "post": {
+    "id": "1trnima",
+    "author": "cyamnihc",
+    "author_fullname": "t2_dpc2z7ubu",
+    "subreddit": "dataengineering",
+    "title": "Semantic layer",
+    "downs": 0,
+    "name": "t3_1trnima",
+    "upvote_ratio": 0.970873786407767,
+    "ups": 194,
+    "selftext": "What exactly is it ? Annotated table and field names and definition of every field in a text doc?Seems like execs are convinced AI enablement\u2019s first step is the semantic layer. Documenting field and metric definitions which also evolve will take a long time, how is this being done at scale ? Thoughts from folks who have been successful in this exercise?",
+    "total_awards_received": 0,
+    "score": 194,
+    "created": 1780108942,
+    "num_comments": 126,
+    "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/semantic_layer/",
+    "subreddit_subscribers": null,
+    "is_video": false,
+    "archived": false,
+    "locked": false,
+    "created_utc": 1780108942
+  },
+  "more": {
+    "has_more": true,
+    "cursor": "eyJ0eXBlIjoic2hyZWRkaXRfbW9yZV9jb21tZW50cyIsInNyYyI6Ii9zdmMvc2hyZWRkaXQvbW9yZS1jb21tZW50cy9kYXRhZW5naW5lZXJpbmcvdDNfMXRybmltYT9zZWVrZXItc2Vzc2lvbj1mYWxzZSZyZW5kZXItbW9kZT1wYXJ0aWFsJnRvcC1sZXZlbD0xJmNvbW1lbnRzLXJlbWFpbmluZz03NSZjb21tZW50UG9zaXRpb25PZmZzZXQ9MTciLCJjdXJzb3IiOiJZMjl0YldWdWRIUnlaV1U2WWpOallqa3lObU1zT2pvd09tVjRPaWhsUWlNdklUcFpSeVptVUNWdGFEb3dYVjR5VnlWSExsUk5VaUlyY2lwU1RGNGxNQ0pWZHpVclRTUkRQMGNpSVhFbE9XQkxMbDArSTJaME5TSXBKRmt3VGoxWSIsInN1YnJlZGRpdCI6ImRhdGFlbmdpbmVlcmluZyIsInBvc3RJZCI6IjF0cm5pbWEiLCJwYXJlbnRUaGluZ0lkIjpudWxsfQ"
+  }
+}
+
+treg: charged $0.00188 · call id c58694cf3688454cb512880aa6c5a8b6
