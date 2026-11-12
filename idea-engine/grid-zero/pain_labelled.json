@@ -1,0 +1,4164 @@
+{
+ "generated": "2026-11-12",
+ "method": "Reddit comments via treg scrapecreators.x.v1-reddit-post-comments (trim=true, first page ~25 top-level comments + replies); hand-labelled",
+ "threads_reviewed": [
+  {
+   "id": "141clwh",
+   "sub": "PowerBI",
+   "title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "date": "2023-06-05",
+   "score": 18,
+   "num_comments": 28,
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/"
+  },
+  {
+   "id": "17qqbgg",
+   "sub": "BusinessIntelligence",
+   "title": "Metabase licensing",
+   "date": "2023-11-08",
+   "score": 8,
+   "num_comments": 18,
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/"
+  },
+  {
+   "id": "1ael833",
+   "sub": "PowerBI",
+   "title": "Visuals that ignore \"Filter on all Pages\"",
+   "date": "2024-01-30",
+   "score": 1,
+   "num_comments": 12,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/"
+  },
+  {
+   "id": "1civ41o",
+   "sub": "PowerBI",
+   "title": "Insane Pricing for Power BI Embed ",
+   "date": "2024-05-03",
+   "score": 7,
+   "num_comments": 17,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/"
+  },
+  {
+   "id": "1g0jl9t",
+   "sub": "PowerBI",
+   "title": "Any way to display warning if data is stale from a data source error?",
+   "date": "2024-10-10",
+   "score": 2,
+   "num_comments": 9,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/"
+  },
+  {
+   "id": "1hfkxaf",
+   "sub": "analytics",
+   "title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "date": "2024-12-16",
+   "score": 44,
+   "num_comments": 38,
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/"
+  },
+  {
+   "id": "1j585zq",
+   "sub": "PowerBI",
+   "title": "How do you tell users the dashboard refresh has failed?",
+   "date": "2025-03-06",
+   "score": 19,
+   "num_comments": 33,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/"
+  },
+  {
+   "id": "1j7cnac",
+   "sub": "agency",
+   "title": "Client Reporting",
+   "date": "2025-03-09",
+   "score": 18,
+   "num_comments": 65,
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/"
+  },
+  {
+   "id": "1kfz6w1",
+   "sub": "GoogleDataStudio",
+   "title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "date": "2025-05-06",
+   "score": 17,
+   "num_comments": 24,
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/"
+  },
+  {
+   "id": "1kspol1",
+   "sub": "PowerBI",
+   "title": "What are your biggest frustrations when working with Power BI?",
+   "date": "2025-05-22",
+   "score": 75,
+   "num_comments": 153,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/"
+  },
+  {
+   "id": "1m6jh22",
+   "sub": "PowerBI",
+   "title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "date": "2025-07-22",
+   "score": 46,
+   "num_comments": 35,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/"
+  },
+  {
+   "id": "1n8c1d7",
+   "sub": "SaaS",
+   "title": "Analytics is the most overpriced category in SaaS - change my mind",
+   "date": "2025-09-04",
+   "score": 15,
+   "num_comments": 39,
+   "url": "https://www.reddit.com/r/SaaS/comments/1n8c1d7/"
+  },
+  {
+   "id": "1n8jiho",
+   "sub": "PowerBI",
+   "title": "Embedding Dashboards to allow unlimited external users",
+   "date": "2025-09-04",
+   "score": 26,
+   "num_comments": 46,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/"
+  },
+  {
+   "id": "1ne90j9",
+   "sub": "dataengineering",
+   "title": "Poll: Do you have a semantic layer and if so, how reliable is it?",
+   "date": "2025-09-11",
+   "score": 1,
+   "num_comments": 21,
+   "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/"
+  },
+  {
+   "id": "1odk2ry",
+   "sub": "dataengineering",
+   "title": "What's the community's take on semantic layers?",
+   "date": "2025-10-22",
+   "score": 63,
+   "num_comments": 68,
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/"
+  },
+  {
+   "id": "1q4r6fu",
+   "sub": "marketingagency",
+   "title": "Agency owners, how do you handle client reporting ?",
+   "date": "2026-01-05",
+   "score": 16,
+   "num_comments": 40,
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/"
+  },
+  {
+   "id": "1qttdcn",
+   "sub": "MicrosoftFabric",
+   "title": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "date": "2026-02-02",
+   "score": 9,
+   "num_comments": 14,
+   "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/"
+  },
+  {
+   "id": "1r1kq9g",
+   "sub": "CFO",
+   "title": "86% of CFOs have hit AI hallucination issues in finance",
+   "date": "2026-02-11",
+   "score": 26,
+   "num_comments": 18,
+   "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/"
+  },
+  {
+   "id": "1rb7ffi",
+   "sub": "analytics",
+   "title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+   "date": "2026-02-22",
+   "score": 0,
+   "num_comments": 39,
+   "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/"
+  },
+  {
+   "id": "1s1ppxb",
+   "sub": "PPC",
+   "title": "Client reporting is the only part of my agency job that's gotten worse every year",
+   "date": "2026-03-23",
+   "score": 15,
+   "num_comments": 32,
+   "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/"
+  },
+  {
+   "id": "1sig3qv",
+   "sub": "DigitalMarketing",
+   "title": "How do you actually handle client reporting?",
+   "date": "2026-04-11",
+   "score": 19,
+   "num_comments": 48,
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/"
+  },
+  {
+   "id": "1sttnor",
+   "sub": "BusinessIntelligence",
+   "title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "date": "2026-04-23",
+   "score": 18,
+   "num_comments": 37,
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/"
+  },
+  {
+   "id": "1t4bywx",
+   "sub": "DigitalMarketing",
+   "title": "What tools do you use to automate client reporting without breaking the bank?",
+   "date": "2026-05-05",
+   "score": 4,
+   "num_comments": 23,
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/"
+  },
+  {
+   "id": "1t5fpw1",
+   "sub": "Powerbihelp",
+   "title": "what do you do when the stakeholder's Excel doesn't match your dashboard and they insist Excel is right?",
+   "date": "2026-05-06",
+   "score": 2,
+   "num_comments": 6,
+   "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/"
+  },
+  {
+   "id": "1trnima",
+   "sub": "dataengineering",
+   "title": "Semantic layer",
+   "date": "2026-05-30",
+   "score": 194,
+   "num_comments": 126,
+   "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/"
+  },
+  {
+   "id": "1u8ky0f",
+   "sub": "analytics",
+   "title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "date": "2026-06-17",
+   "score": 55,
+   "num_comments": 68,
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/"
+  },
+  {
+   "id": "1uj0t6d",
+   "sub": "analytics",
+   "title": "Is anyones company replacing dashboards with apps made by AI?",
+   "date": "2026-06-29",
+   "score": 81,
+   "num_comments": 84,
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/"
+  },
+  {
+   "id": "1um2wbg",
+   "sub": "ClaudeAI",
+   "title": "Anyone else get confidently wrong numbers when you ask Claude about your own spreadsheet data?",
+   "date": "2026-07-03",
+   "score": 2,
+   "num_comments": 7,
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/"
+  },
+  {
+   "id": "1var5c4",
+   "sub": "PowerBI",
+   "title": "How to keep row-level security from becoming a nightmare?",
+   "date": "2026-07-30",
+   "score": 24,
+   "num_comments": 13,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/"
+  },
+  {
+   "id": "1vsnn2l",
+   "sub": "FPandA",
+   "title": "AI has made my “dashboard creation” skills useless",
+   "date": "2026-08-19",
+   "score": 74,
+   "num_comments": 41,
+   "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/"
+  },
+  {
+   "id": "1vyqm86",
+   "sub": "dataanalytics",
+   "title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "date": "2026-08-26",
+   "score": 193,
+   "num_comments": 57,
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/"
+  },
+  {
+   "id": "1vz9dca",
+   "sub": "digital_marketing",
+   "title": "Anyone else's client dashboard just straight up lying to them lately?",
+   "date": "2026-08-26",
+   "score": 5,
+   "num_comments": 10,
+   "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/"
+  },
+  {
+   "id": "1vzkmqh",
+   "sub": "tableau",
+   "title": "How do you guys know a dashboard number is actually correct?",
+   "date": "2026-08-27",
+   "score": 15,
+   "num_comments": 26,
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/"
+  },
+  {
+   "id": "1w3f9t0",
+   "sub": "Looker",
+   "title": "A lot of issues with Looker Studio",
+   "date": "2026-08-31",
+   "score": 1,
+   "num_comments": 12,
+   "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/"
+  },
+  {
+   "id": "1wflg2e",
+   "sub": "analytics",
+   "title": "Semantic layer learnings",
+   "date": "2026-09-13",
+   "score": 29,
+   "num_comments": 24,
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/"
+  },
+  {
+   "id": "1wndlf9",
+   "sub": "PowerBI",
+   "title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "date": "2026-09-22",
+   "score": 51,
+   "num_comments": 42,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/"
+  },
+  {
+   "id": "1wt5pbk",
+   "sub": "dataengineering",
+   "title": "Why text-to-SQL is not successful?",
+   "date": "2026-09-29",
+   "score": 27,
+   "num_comments": 88,
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/"
+  },
+  {
+   "id": "1wzlc5z",
+   "sub": "Looker",
+   "title": "Anyone using AI to build or maintain LookML? What's actually working?",
+   "date": "2026-10-07",
+   "score": 6,
+   "num_comments": 12,
+   "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/"
+  },
+  {
+   "id": "1x1o3zn",
+   "sub": "DigitalMarketing",
+   "title": "marketing reporting software with white label dashboards needed",
+   "date": "2026-10-09",
+   "score": 2,
+   "num_comments": 20,
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/"
+  },
+  {
+   "id": "1x446h8",
+   "sub": "SQLServer",
+   "title": "Why can't business users just get the data with AI?",
+   "date": "2026-10-12",
+   "score": 0,
+   "num_comments": 40,
+   "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/"
+  },
+  {
+   "id": "1xa44v5",
+   "sub": "dataanalysis",
+   "title": "benchmarked 5 embedded analytics setups against a 50M-row Snowflake table to replace our slow Metabase iframes. evaluation matrix, latency numbers + trade-offs below",
+   "date": "2026-10-19",
+   "score": 4,
+   "num_comments": 12,
+   "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/"
+  },
+  {
+   "id": "1xdh4oc",
+   "sub": "excel",
+   "title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "date": "2026-10-23",
+   "score": 9,
+   "num_comments": 67,
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/"
+  },
+  {
+   "id": "1xi95ud",
+   "sub": "analytics",
+   "title": "How do you know when a dashboard is precise but not actually trustworthy?",
+   "date": "2026-10-29",
+   "score": 3,
+   "num_comments": 9,
+   "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/"
+  },
+  {
+   "id": "1xr9fur",
+   "sub": "SaaS",
+   "title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+   "date": "2026-11-08",
+   "score": 4,
+   "num_comments": 15,
+   "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/"
+  },
+  {
+   "id": "1xsv0tu",
+   "sub": "claude",
+   "title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "date": "2026-11-10",
+   "score": 1098,
+   "num_comments": 149,
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/"
+  },
+  {
+   "id": "1xtigdr",
+   "sub": "PowerBI",
+   "title": "How to justify headcount when you're trapped in single-person BI dependency?",
+   "date": "2026-11-11",
+   "score": 31,
+   "num_comments": 33,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/"
+  },
+  {
+   "id": "1xtrjna",
+   "sub": "PowerBI",
+   "title": "Everyone is trying to kill Power BI... with HTML?",
+   "date": "2026-11-11",
+   "score": 68,
+   "num_comments": 90,
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/"
+  }
+ ],
+ "labels": [
+  {
+   "thread_id": "1rb7ffi",
+   "subreddit": "analytics",
+   "thread_title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+   "thread_date": "2026-02-22",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-02-22",
+   "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Later I checked the underlying numbers. The totals didn’t match the data. Not wildly wrong — plausibly wrong.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1rb7ffi",
+   "subreddit": "analytics",
+   "thread_title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+   "thread_date": "2026-02-22",
+   "comment_id": "o6pbyjb",
+   "source": "comment",
+   "date": "2026-02-22",
+   "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6pbyjb/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "it matched what I expected to see, so my brain treated it like a validated report. I knew I had fed in the correct data, so I assumed the …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1rb7ffi",
+   "subreddit": "analytics",
+   "thread_title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+   "thread_date": "2026-02-22",
+   "comment_id": "o7m6t0t",
+   "source": "comment",
+   "date": "2026-02-27",
+   "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o7m6t0t/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "With the chart tied to a data source or query, you can reconcile the totals and know where the numbers came from.",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1rb7ffi",
+   "subreddit": "analytics",
+   "thread_title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+   "thread_date": "2026-02-22",
+   "comment_id": "o6p2gfm",
+   "source": "comment",
+   "date": "2026-02-22",
+   "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/comment/o6p2gfm/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "I get asked to confirm numbers all the time, even in long automated reports, so I'm just surprised there are people trusting AI with math",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "os92idw",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os92idw/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Is it enough to check it once per type of request or every time? Because that would render it quite useless",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "os9amvf",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9amvf/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Honestly I've had to check it Everytime. I've been trying to adopt it, but the results are pretty half-baked.",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "os923r7",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os923r7/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "not at first so it will feel like magic. But thats what makes it dangerous. You will trust it and not catch when it does",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "os926v7",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os926v7/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Claude   failed at an extremely basic arithmetic question for me just yesterday. I don’t use it for anything I can’t personally validate",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "ot22c7v",
+   "source": "comment",
+   "date": "2026-06-22",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/ot22c7v/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "its pretty good at sql, but it often assumes some obvious fields to exist (eg username on a user table), so you gotta be c",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "os9pwgc",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/os9pwgc/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I built my basic “one pager” summary with Claude that I run for my vendors as we prep for meetings, which I can validate with some basic charts in …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "osa2u4x",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osa2u4x/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Instead of just asking for the answer, I ask for the query, then I execute it while reviewing it.",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1u8ky0f",
+   "subreddit": "analytics",
+   "thread_title": "Does AI hallucinate even with basic queries/data retrieval?",
+   "thread_date": "2026-06-17",
+   "comment_id": "osaaol4",
+   "source": "comment",
+   "date": "2026-06-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/comment/osaaol4/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "It's already so easy to do this on platform or with google data studio that i don't see the value add.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1x446h8",
+   "subreddit": "SQLServer",
+   "thread_title": "Why can't business users just get the data with AI?",
+   "thread_date": "2026-10-12",
+   "comment_id": "pfhwxga",
+   "source": "comment",
+   "date": "2026-10-12",
+   "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfhwxga/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "AI has little understanding of the data without business context. Have AI try and build a data model off raw data i am doing that now and it tries …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1x446h8",
+   "subreddit": "SQLServer",
+   "thread_title": "Why can't business users just get the data with AI?",
+   "thread_date": "2026-10-12",
+   "comment_id": "pgs2ajp",
+   "source": "comment",
+   "date": "2026-10-14",
+   "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pgs2ajp/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "'Show me overdue orders' sounds simple until you ask what overdue means.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1x446h8",
+   "subreddit": "SQLServer",
+   "thread_title": "Why can't business users just get the data with AI?",
+   "thread_date": "2026-10-12",
+   "comment_id": "pfi0g1q",
+   "source": "comment",
+   "date": "2026-10-12",
+   "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfi0g1q/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "you have to get your data clean, normalized, governed etc first! that’s the hardest part.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1x446h8",
+   "subreddit": "SQLServer",
+   "thread_title": "Why can't business users just get the data with AI?",
+   "thread_date": "2026-10-12",
+   "comment_id": "pfgo8v1",
+   "source": "comment",
+   "date": "2026-10-12",
+   "url": "https://www.reddit.com/r/SQLServer/comments/1x446h8/comment/pfgo8v1/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I have tried to get Helpdesk people to write slightly complicated Power BI Queries using our MS Co-pilot; they just couldn't do it.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1r1kq9g",
+   "subreddit": "CFO",
+   "thread_title": "86% of CFOs have hit AI hallucination issues in finance",
+   "thread_date": "2026-02-11",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-02-11",
+   "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "The large majority (86%) said their finance team has encountered inaccurate or hallucinated data while using AI for finance tasks.",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1r1kq9g",
+   "subreddit": "CFO",
+   "thread_title": "86% of CFOs have hit AI hallucination issues in finance",
+   "thread_date": "2026-02-11",
+   "comment_id": "ot6ktxn",
+   "source": "comment",
+   "date": "2026-06-22",
+   "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/ot6ktxn/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I plugged a database with financial data into Claude, that shifted the hallucinations from numbers to SQL statements. The SQL statements error out if wrong",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1r1kq9g",
+   "subreddit": "CFO",
+   "thread_title": "86% of CFOs have hit AI hallucination issues in finance",
+   "thread_date": "2026-02-11",
+   "comment_id": "o4rb0pd",
+   "source": "comment",
+   "date": "2026-02-11",
+   "url": "https://www.reddit.com/r/CFO/comments/1r1kq9g/comment/o4rb0pd/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "Finance, audit, tax, and core business functions need deterministic, auditable execution, not “maybe‑it‑works” models.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1qttdcn",
+   "subreddit": "MicrosoftFabric",
+   "thread_title": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "thread_date": "2026-02-02",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-02-02",
+   "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1qttdcn",
+   "subreddit": "MicrosoftFabric",
+   "thread_title": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "thread_date": "2026-02-02",
+   "comment_id": "o3ahddh",
+   "source": "comment",
+   "date": "2026-02-03",
+   "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3ahddh/",
+   "pains": [
+    "P1",
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "a lot of the dashboard correctness is coming from a combination of page/visual-level filters and some implicit assumptions baked into how the measures are consumed.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1qttdcn",
+   "subreddit": "MicrosoftFabric",
+   "thread_title": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "thread_date": "2026-02-02",
+   "comment_id": "o3b92zm",
+   "source": "comment",
+   "date": "2026-02-03",
+   "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o3b92zm/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "we have to accept it is a guide to reducing errors not eliminating them. Even with perfect implementation.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1qttdcn",
+   "subreddit": "MicrosoftFabric",
+   "thread_title": "Fabric Data Agent answers don’t match Power BI dashboard numbers when using semantic model how to align?",
+   "thread_date": "2026-02-02",
+   "comment_id": "o37f0hc",
+   "source": "comment",
+   "date": "2026-02-02",
+   "url": "https://www.reddit.com/r/MicrosoftFabric/comments/1qttdcn/comment/o37f0hc/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "You need to prep for AI (adding descriptions and synonyms), create ontology, and then hide the raw numbers used in your DAX measures",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1xr9fur",
+   "subreddit": "SaaS",
+   "thread_title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+   "thread_date": "2026-11-08",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-11-08",
+   "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Every board meeting starts with a 30 minute debate about whether the numbers are right.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1xr9fur",
+   "subreddit": "SaaS",
+   "thread_title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+   "thread_date": "2026-11-08",
+   "comment_id": "19schgzutyn5t",
+   "source": "comment",
+   "date": "2026-11-08",
+   "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19schgzutyn5t/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Three sources of truth is a definitions problem, not a data problem.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1xr9fur",
+   "subreddit": "SaaS",
+   "thread_title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+   "thread_date": "2026-11-08",
+   "comment_id": "19shlclnoa2f6",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19shlclnoa2f6/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Someone needs to pick one system as canonical and make everything else downstream. Until that decision is made no tool will fix this.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1xr9fur",
+   "subreddit": "SaaS",
+   "thread_title": "Why is our reporting always wrong and how do other companies actually trust their numbers?",
+   "thread_date": "2026-11-08",
+   "comment_id": "19scy6d8tgc77",
+   "source": "comment",
+   "date": "2026-11-09",
+   "url": "https://www.reddit.com/r/SaaS/comments/1xr9fur/comment/19scy6d8tgc77/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Usually it’s not the data that’s wrong, it’s that nobody agreed on what “revenue” means",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1um2wbg",
+   "subreddit": "ClaudeAI",
+   "thread_title": "Anyone else get confidently wrong numbers when you ask Claude about your own spreadsheet data?",
+   "thread_date": "2026-07-03",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-07-03",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "it sounds totally confident but the numbers are often wrong: grabs the wrong column, double-counts, or quietly makes up how a metric is defined.",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1um2wbg",
+   "subreddit": "ClaudeAI",
+   "thread_title": "Anyone else get confidently wrong numbers when you ask Claude about your own spreadsheet data?",
+   "thread_date": "2026-07-03",
+   "comment_id": "ov9dnxk",
+   "source": "comment",
+   "date": "2026-07-03",
+   "url": "https://www.reddit.com/r/ClaudeAI/comments/1um2wbg/comment/ov9dnxk/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "The math I can offload to code; it's the \"which numbers, defined how\" part that still needs babysitting.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "I thought text-to-SQL will solve adhoc analysis, but still i see companies at all size are unsuccessful.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pcrq1fe",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrq1fe/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "It seems pretty much solved to me with databricks genie agents",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pcrmp5x",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrmp5x/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Text-to-sql does work. We are using Databricks (Genie spaces). And its quite reliable",
+   "quote_words": 13
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pd5kiey",
+   "source": "comment",
+   "date": "2026-10-01",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pd5kiey/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I built a pretty damn good text to sql MCP server our company is using. About half our staff are using it regularly now and it is very reliable",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pcrlww0",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcrlww0/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "My company uses omni and we properly serve self-service analytics and AI generated reports ... far from perfect. It does answer quite well the questions though as we have …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pcs38ye",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcs38ye/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "It works, you just need to document your tables, columns and kpis perfectly.",
+   "quote_words": 13
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pcsiqrr",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pcsiqrr/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "But let’s be honest that’s often not the case, and if it were being able to query with text instead of SQL is much less valuable",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1wt5pbk",
+   "subreddit": "dataengineering",
+   "thread_title": "Why text-to-SQL is not successful?",
+   "thread_date": "2026-09-29",
+   "comment_id": "pct2p9g",
+   "source": "comment",
+   "date": "2026-09-29",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/comment/pct2p9g/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "if you have \"net sales\" as a term, finance, sales, CSM could all define it slightly differently, and because the LLM is just parsing through your raw data, it …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1vsnn2l",
+   "subreddit": "FPandA",
+   "thread_title": "AI has made my “dashboard creation” skills useless",
+   "thread_date": "2026-08-19",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-08-19",
+   "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Now we are using an AI feature through google gemini and now I no longer need to spend time making any sort of dashboard anymore.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1vsnn2l",
+   "subreddit": "FPandA",
+   "thread_title": "AI has made my “dashboard creation” skills useless",
+   "thread_date": "2026-08-19",
+   "comment_id": "p4mqa9b",
+   "source": "comment",
+   "date": "2026-08-19",
+   "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/comment/p4mqa9b/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "the harder part was never really making the charts, it's deciding what should be measured, making sure the numbers reconcile, and knowing what actually matters when something moves.",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oukviys",
+   "source": "comment",
+   "date": "2026-06-29",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oukviys/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We do. And it’s been a success. But there is nuance.   We have a very well documented and limited semantic model we as data team manage.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oujzw0r",
+   "source": "comment",
+   "date": "2026-06-29",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oujzw0r/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "they're literally using people with no programming experience to vibe code   things there's absolutely no governance, QA is a disaster",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oulyost",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oulyost/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "Sounds like the ongoing trend of 'get me wrong data faster'",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oum8ilj",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oum8ilj/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Ppl create from everywhere like genie, copilot. It is another dashboard boom v2. ... Ai agents opened that hellgate and i have to debug 1000+ agents each created.",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oummy6w",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oummy6w/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "some teams are trying, most are hitting the governance wall others in this thread described.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oumlkw8",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumlkw8/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Yes, absolutely. On the fly HTML dashboards, backed by skills utilizing MCP connections to semantic models.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oujzmjm",
+   "source": "comment",
+   "date": "2026-06-29",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oujzmjm/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "One thing I think that will happen is just having static HTML dashboards and hosting them. No need to pay for any licenses.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oumoluz",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumoluz/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "without that foundation you just get faster ways to generate wrong numbers.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "ouo12mu",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouo12mu/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We use Databricks Genie to question the data in the dashboard. Works great for deep dives.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oumz4bn",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumz4bn/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Now everyone vibes their own app with the company internal AI assistant, isn't sure that the data looks right (which often isn't) and we've to go through queries and …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "oumz4bn",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/oumz4bn/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We have a Looker set up that's pretty expensive with well defined table granularities, etc.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "ounv4ji",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ounv4ji/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Then we hit the phase of mis informed reporting, and ultimately agentic costs.",
+   "quote_words": 13
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "ouob11m",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouob11m/",
+   "pains": [
+    "P1",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "My company is replacing BI tools with AI generated dashboards. They want analyst can create dashboard using ai and then can be served to customers directly.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "ouoewsz",
+   "source": "comment",
+   "date": "2026-06-30",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouoewsz/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "nobody trusts the number on it, and an AI app doesnt fix that, it just generates the wrong number faster and with more confidence.",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1uj0t6d",
+   "subreddit": "analytics",
+   "thread_title": "Is anyones company replacing dashboards with apps made by AI?",
+   "thread_date": "2026-06-29",
+   "comment_id": "ouln3i7",
+   "source": "comment",
+   "date": "2026-06-29",
+   "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/comment/ouln3i7/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "we've been using Hex for it which give us some nice controls and handles hosting and access control too.",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sg6pctgu70k",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg6pctgu70k/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "Claude uses Google Sheets well enough already. Is there any reason for shifting from Google Sheets to Claude sheets?",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sg9w5ur53b6",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg9w5ur53b6/",
+   "pains": [],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "Holy shit - absolutely RIP these SaaS adjacent tools.",
+   "quote_words": 9
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sfvb7bv3doi",
+   "source": "comment",
+   "date": "2026-11-10",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sfvb7bv3doi/",
+   "pains": [],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "I'm gonna be honest I don't see the value proposition with whiteboards or sheets. Data I can kind of see but even then a lot of providers already have …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sftlyzgmv43",
+   "source": "comment",
+   "date": "2026-11-10",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sftlyzgmv43/",
+   "pains": [],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "I’d be concerned about data use for training but google’s had my stuff for years",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sg2u4ub0cn7",
+   "source": "comment",
+   "date": "2026-11-10",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sg2u4ub0cn7/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "„Create certified definitions of metrics. Your data team can certify the queries everyone should use, so you don’t end up building or working on dashboards with conflicting data.",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1xsv0tu",
+   "subreddit": "claude",
+   "thread_title": "Introducing Claude Whiteboards, Claude Sheets, and Claude Data",
+   "thread_date": "2026-11-10",
+   "comment_id": "19sha8gvtnxmt",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/claude/comments/1xsv0tu/comment/19sha8gvtnxmt/",
+   "pains": [],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "I suspect a lot of AI wrapper apps are going to be on life support soon.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1trnima",
+   "subreddit": "dataengineering",
+   "thread_title": "Semantic layer",
+   "thread_date": "2026-05-30",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-05-30",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Documenting field and metric definitions which also evolve will take a long time, how is this being done at scale ?",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1trnima",
+   "subreddit": "dataengineering",
+   "thread_title": "Semantic layer",
+   "thread_date": "2026-05-30",
+   "comment_id": "ooplsbp",
+   "source": "comment",
+   "date": "2026-05-30",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/comment/ooplsbp/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "It's mostly an advertising term in my experience.",
+   "quote_words": 8
+  },
+  {
+   "thread_id": "1odk2ry",
+   "subreddit": "dataengineering",
+   "thread_title": "What's the community's take on semantic layers?",
+   "thread_date": "2025-10-22",
+   "comment_id": "nkuhlnt",
+   "source": "comment",
+   "date": "2025-10-22",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuhlnt/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "getting good performance out of AI systems requires a fair bit of data standardization and semantic enrichment.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1odk2ry",
+   "subreddit": "dataengineering",
+   "thread_title": "What's the community's take on semantic layers?",
+   "thread_date": "2025-10-22",
+   "comment_id": "nkv1ovv",
+   "source": "comment",
+   "date": "2025-10-22",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkv1ovv/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "We didn't have one and we badly needed one.",
+   "quote_words": 9
+  },
+  {
+   "thread_id": "1odk2ry",
+   "subreddit": "dataengineering",
+   "thread_title": "What's the community's take on semantic layers?",
+   "thread_date": "2025-10-22",
+   "comment_id": "nkvkzow",
+   "source": "comment",
+   "date": "2025-10-23",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkvkzow/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "After 20 years of trying to explain why we should move to doing it more and hearing that it's not a priority over churning out more dashboards, I'll take it.",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1odk2ry",
+   "subreddit": "dataengineering",
+   "thread_title": "What's the community's take on semantic layers?",
+   "thread_date": "2025-10-22",
+   "comment_id": "nkuo60g",
+   "source": "comment",
+   "date": "2025-10-22",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuo60g/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Semantic layers are great from a governance perspective and the AI use case is kind of pointless",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1odk2ry",
+   "subreddit": "dataengineering",
+   "thread_title": "What's the community's take on semantic layers?",
+   "thread_date": "2025-10-22",
+   "comment_id": "nkuht0e",
+   "source": "comment",
+   "date": "2025-10-22",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1odk2ry/comment/nkuht0e/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I’ve generally been with smaller or medium sized shops so maybe it’s easier to maintain/implement there",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1ne90j9",
+   "subreddit": "dataengineering",
+   "thread_title": "Poll: Do you have a semantic layer and if so, how reliable is it?",
+   "thread_date": "2025-09-11",
+   "comment_id": "ndw4qkx",
+   "source": "comment",
+   "date": "2025-09-12",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndw4qkx/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We tried Cube, but I just don’t think YAML based metrics is the right abstraction. ... the extra layer and tool wasn’t worth it",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1ne90j9",
+   "subreddit": "dataengineering",
+   "thread_title": "Poll: Do you have a semantic layer and if so, how reliable is it?",
+   "thread_date": "2025-09-11",
+   "comment_id": "ne0ji4a",
+   "source": "comment",
+   "date": "2025-09-13",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ne0ji4a/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "It was a lot of effort in maintaining semantic layer for evolving metric definition -not anymore with new age AI tools for us.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1ne90j9",
+   "subreddit": "dataengineering",
+   "thread_title": "Poll: Do you have a semantic layer and if so, how reliable is it?",
+   "thread_date": "2025-09-11",
+   "comment_id": "ndn5beg",
+   "source": "comment",
+   "date": "2025-09-11",
+   "url": "https://www.reddit.com/r/dataengineering/comments/1ne90j9/comment/ndn5beg/",
+   "pains": [
+    "P2",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "The key to semantic layers is they MUST hook up to pivot tables in Excel or Google sheets and be fast. If they don't, you are dead in the water.",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1xtigdr",
+   "subreddit": "PowerBI",
+   "thread_title": "How to justify headcount when you're trapped in single-person BI dependency?",
+   "thread_date": "2026-11-11",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I’m a BI Manager running our entire data stack solo (Power BI + Databricks). From pipeline architecture and data engineering to semantic modeling and stakeholder dashboards",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1xtigdr",
+   "subreddit": "PowerBI",
+   "thread_title": "How to justify headcount when you're trapped in single-person BI dependency?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shibc2kv3d0",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19shibc2kv3d0/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I like to show them how easy it is for AI to get it wrong. Illustrate that underlying data changes. Fields come and go.",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1xtigdr",
+   "subreddit": "PowerBI",
+   "thread_title": "How to justify headcount when you're trapped in single-person BI dependency?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19sheyhqvjcu9",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtigdr/comment/19sheyhqvjcu9/",
+   "pains": [
+    "P2",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Build a couple big semantic models that can service many dashboard needs. ... use analyze in excel so they can work with your semantic models",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtng3wa",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtng3wa/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Changing the name of almost anything seems to be a pain in the ass, especially when using a shared semantic model with many thin reports.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtnfwf4",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnfwf4/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Dependency on external tool like tabular editor for maintaining semantic model.",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtnj2d9",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnj2d9/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "It's not DRY. I had twenty similar complex measures and had to repeat them.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtnerxg",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtnerxg/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "The data is wrong",
+   "quote_words": 4
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtniwvr",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtniwvr/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I wish it could do conditional formatting like Excel does.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1kspol1",
+   "subreddit": "PowerBI",
+   "thread_title": "What are your biggest frustrations when working with Power BI?",
+   "thread_date": "2025-05-22",
+   "comment_id": "mtni24q",
+   "source": "comment",
+   "date": "2025-05-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1kspol1/comment/mtni24q/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "How bad the matrix/table visuals are. ... Copy and paste multiple rows/cells at a time using keyboard shortcuts, on column filtering, one click CSV exports",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1wzlc5z",
+   "subreddit": "Looker",
+   "thread_title": "Anyone using AI to build or maintain LookML? What's actually working?",
+   "thread_date": "2026-10-07",
+   "comment_id": "pedtalp",
+   "source": "comment",
+   "date": "2026-10-07",
+   "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pedtalp/",
+   "pains": [
+    "P2",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "You no longer have to use looker dashboards you can just build your own web apps with the security and flexibility of looker as the engine.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1wzlc5z",
+   "subreddit": "Looker",
+   "thread_title": "Anyone using AI to build or maintain LookML? What's actually working?",
+   "thread_date": "2026-10-07",
+   "comment_id": "pf2a9zp",
+   "source": "comment",
+   "date": "2026-10-10",
+   "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pf2a9zp/",
+   "pains": [
+    "P1",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "That was the goal ... we had to pull the plug and used snowflake semantic views instead since that integrated better",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1wzlc5z",
+   "subreddit": "Looker",
+   "thread_title": "Anyone using AI to build or maintain LookML? What's actually working?",
+   "thread_date": "2026-10-07",
+   "comment_id": "pedc1dw",
+   "source": "comment",
+   "date": "2026-10-07",
+   "url": "https://www.reddit.com/r/Looker/comments/1wzlc5z/comment/pedc1dw/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Been using it to build views, explore, etc.   Kinda the gamechanger is making all Looker dashboards LookML dashboards",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-09-13",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/",
+   "pains": [
+    "P2",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "we had \"net sales\" defined like six different ways.",
+   "quote_words": 9
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": "p9ocxbj",
+   "source": "comment",
+   "date": "2026-09-14",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9ocxbj/",
+   "pains": [
+    "P2",
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "it honestly was a year and still the numbers didn’t app up.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": "p9xsu4q",
+   "source": "comment",
+   "date": "2026-09-15",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9xsu4q/",
+   "pains": [
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "The technology is the easy part. The metric view is really just the receipt for a decision the business finally made.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": "pa617u1",
+   "source": "comment",
+   "date": "2026-09-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/pa617u1/",
+   "pains": [
+    "P1",
+    "P2"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Getting everyone to agree on one definition was way harder than setting up the metric views themselves.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": "p9naola",
+   "source": "comment",
+   "date": "2026-09-13",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/p9naola/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "the other teams will revert back to what they were doing before sooner rather than later.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1wflg2e",
+   "subreddit": "analytics",
+   "thread_title": "Semantic layer learnings",
+   "thread_date": "2026-09-13",
+   "comment_id": "paa8ksu",
+   "source": "comment",
+   "date": "2026-09-17",
+   "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/comment/paa8ksu/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Somebody always ends up recreating the old number in a side query when the “official” one doesn’t fit their case.",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": null,
+   "source": "post",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "In my company there's far too many dashboards, and one of the problems is that KPIs never match. I am wasting so much time every week on this",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": "m2czqzf",
+   "source": "comment",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2czqzf/",
+   "pains": [
+    "P3",
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "you will still be asked why numbers are different and eventually realize it's because the VP applied a filter to one of the dashboards but not the other.",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": "m2cfpbv",
+   "source": "comment",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cfpbv/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "we had a huge problem with people forking Tableau dashboards ... I tracked time spent on this and showed my boss that more than 50% of my time for …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": "m2cxzkq",
+   "source": "comment",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cxzkq/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "All the time. KPI discrepancies and bad joins are keeping me employed",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": "m2cs3mh",
+   "source": "comment",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cs3mh/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "no, because data governance is built into the dashboarding software. It’s also mindnumbingly restrictive",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1hfkxaf",
+   "subreddit": "analytics",
+   "thread_title": "Mismatching numbers in different dashboards - how much time do you lose on this?  ",
+   "thread_date": "2024-12-16",
+   "comment_id": "m2cpu8q",
+   "source": "comment",
+   "date": "2024-12-16",
+   "url": "https://www.reddit.com/r/analytics/comments/1hfkxaf/comment/m2cpu8q/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Use looker and source the KPIs from the same explore/model",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1t5fpw1",
+   "subreddit": "Powerbihelp",
+   "thread_title": "what do you do when the stakeholder's Excel doesn't match your dashboard and they insist Excel is right?",
+   "thread_date": "2026-05-06",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-05-06",
+   "url": "https://www.reddit.com/r/Powerbihelp/comments/1t5fpw1/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "first i felt terrified and ashamed, but now - now im just making a poker face and say - my numbers are correct",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1xdh4oc",
+   "subreddit": "excel",
+   "thread_title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "thread_date": "2026-10-23",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-10-23",
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/",
+   "pains": [
+    "P3",
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "prices must always be current when a workbook is opened, without users having to remember to refresh anything, and without stale values from caching or external workbook links that …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1xdh4oc",
+   "subreddit": "excel",
+   "thread_title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "thread_date": "2026-10-23",
+   "comment_id": "19rjhq7g8r2df",
+   "source": "comment",
+   "date": "2026-10-23",
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjhq7g8r2df/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I have an ERP system. Thing is, no one wants to work in it. They prefer/need excel of ad hoc calculations.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1xdh4oc",
+   "subreddit": "excel",
+   "thread_title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "thread_date": "2026-10-23",
+   "comment_id": "19rjfe879wsed",
+   "source": "comment",
+   "date": "2026-10-23",
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfe879wsed/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "None. If your issue with pq is the refresh, Excel is not the tool you need.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1xdh4oc",
+   "subreddit": "excel",
+   "thread_title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "thread_date": "2026-10-23",
+   "comment_id": "19rjfwi31xg3k",
+   "source": "comment",
+   "date": "2026-10-23",
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rjfwi31xg3k/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "If you can't pay for PowerBI, use AI to vibe code the dashboard imo.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1xdh4oc",
+   "subreddit": "excel",
+   "thread_title": "What is foolproof way to give an entire organization a ‘single source of truth’ through Excel formulas in 2026",
+   "thread_date": "2026-10-23",
+   "comment_id": "19rk53x72teis",
+   "source": "comment",
+   "date": "2026-10-24",
+   "url": "https://www.reddit.com/r/excel/comments/1xdh4oc/comment/19rk53x72teis/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Add a last refresh date and time column to your query and then add a formula to your spreadsheet that says if NOW is more than 30 mins older",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1m6jh22",
+   "subreddit": "PowerBI",
+   "thread_title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "thread_date": "2025-07-22",
+   "comment_id": null,
+   "source": "post",
+   "date": "2025-07-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "We’ve outgrown our Frankenstein of Excel sheets duct-taped together with VLOOKUPs, INDEX-MATCH sorcery, and monthly “pray-it-doesn’t-break” macros.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1m6jh22",
+   "subreddit": "PowerBI",
+   "thread_title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "thread_date": "2025-07-22",
+   "comment_id": "n4oaj3g",
+   "source": "comment",
+   "date": "2025-07-23",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4oaj3g/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Platforms that do “everything” may do everything adequately (a generous assumption) but they do nothing well",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1m6jh22",
+   "subreddit": "PowerBI",
+   "thread_title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "thread_date": "2025-07-22",
+   "comment_id": "n4ozzrw",
+   "source": "comment",
+   "date": "2025-07-23",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4ozzrw/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We prefer the MS suite of reporting tools - excel and Power BI. ... Excel, Power BI are more than sufficient for FP&A.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1m6jh22",
+   "subreddit": "PowerBI",
+   "thread_title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "thread_date": "2025-07-22",
+   "comment_id": "n4naqyt",
+   "source": "comment",
+   "date": "2025-07-23",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4naqyt/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We’ve implemented Axiom by Syntellis. Tbh I hate the program",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1m6jh22",
+   "subreddit": "PowerBI",
+   "thread_title": "Anyone else quietly dying inside trying to decide between Power BI + Excel vs \"All-in-One\" FP&A tools?",
+   "thread_date": "2025-07-22",
+   "comment_id": "n4kg7pf",
+   "source": "comment",
+   "date": "2025-07-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1m6jh22/comment/n4kg7pf/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We initially adopted OneStream for financial consolidation, but chose not to move our planning and forecasting processes into it. Instead, we stayed with Excel-based models",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1vzkmqh",
+   "subreddit": "tableau",
+   "thread_title": "How do you guys know a dashboard number is actually correct?",
+   "thread_date": "2026-08-27",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-08-27",
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/",
+   "pains": [
+    "P1",
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "A dashboard can refresh successfully, all the SQL can run without errors, and everything can look normal-but the actual number can still be wrong.",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1vzkmqh",
+   "subreddit": "tableau",
+   "thread_title": "How do you guys know a dashboard number is actually correct?",
+   "thread_date": "2026-08-27",
+   "comment_id": "p6f1nps",
+   "source": "comment",
+   "date": "2026-08-28",
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6f1nps/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Are you validating the reports manually for each slicer or filter value? This can become a time-consuming and tedious process",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1vzkmqh",
+   "subreddit": "tableau",
+   "thread_title": "How do you guys know a dashboard number is actually correct?",
+   "thread_date": "2026-08-27",
+   "comment_id": "p69hlfo",
+   "source": "comment",
+   "date": "2026-08-27",
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p69hlfo/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "check against finance team’s excel",
+   "quote_words": 5
+  },
+  {
+   "thread_id": "1vzkmqh",
+   "subreddit": "tableau",
+   "thread_title": "How do you guys know a dashboard number is actually correct?",
+   "thread_date": "2026-08-27",
+   "comment_id": "p6o26k4",
+   "source": "comment",
+   "date": "2026-08-29",
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6o26k4/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I actually built a tool tip from alteryx that showed the underlying data and formulas. It was insane coding it",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1vzkmqh",
+   "subreddit": "tableau",
+   "thread_title": "How do you guys know a dashboard number is actually correct?",
+   "thread_date": "2026-08-27",
+   "comment_id": "p6fv3po",
+   "source": "comment",
+   "date": "2026-08-28",
+   "url": "https://www.reddit.com/r/tableau/comments/1vzkmqh/comment/p6fv3po/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "No one knows, really. The only single source of thurth is official Accounting data",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": "p64kiu7",
+   "source": "comment",
+   "date": "2026-08-27",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p64kiu7/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Always have an export to excel button   Even better, focus on the excel-add in experience in the semantic model",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": "p5zh5p8",
+   "source": "comment",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zh5p8/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "But lots of time we still need the raw data for Exce",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": "p5zedi9",
+   "source": "comment",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zedi9/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Nowadays I know all they want is excel so I deliver that.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": "p5zu1at",
+   "source": "comment",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p5zu1at/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Embrace that excel will never die. Give in",
+   "quote_words": 8
+  },
+  {
+   "thread_id": "1vyqm86",
+   "subreddit": "dataanalytics",
+   "thread_title": "Spent 3 weeks building a fully automated dashboard, only to be asked for an \"Export to Excel\" button.",
+   "thread_date": "2026-08-26",
+   "comment_id": "p65d9vl",
+   "source": "comment",
+   "date": "2026-08-27",
+   "url": "https://www.reddit.com/r/dataanalytics/comments/1vyqm86/comment/p65d9vl/",
+   "pains": [
+    "P3",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "It enables business users to quote your analysis to other teams over email ... without having to run into PBI licensing walls.",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-09-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/",
+   "pains": [
+    "P4",
+    "P1"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "A dashboard can look perfect and refresh successfully, but the numbers can still be wrong because of incorrect relationships, filters, DAX logic, or source data issues.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": "pbelyg2",
+   "source": "comment",
+   "date": "2026-09-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbelyg2/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I work on the premise of \"assume its wrong until you prove its right\". If you don't you're asking for trouble",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": "pbptqqc",
+   "source": "comment",
+   "date": "2026-09-24",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbptqqc/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "2 person team here. We have so little time for validation, we just spot check everything the first time by doing the math manually and let the problems reveal …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": "pbfuvtv",
+   "source": "comment",
+   "date": "2026-09-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbfuvtv/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "DAX queries stored in a git repo that are required to run and pass before merging ... Then power automate running the same dax queries against the model in production",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": "pbhznp0",
+   "source": "comment",
+   "date": "2026-09-23",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbhznp0/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "The awkward part is that a dashboard can match the source perfectly and still be wrong.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1wndlf9",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you validate that a Power BI dashboard is showing correct data?",
+   "thread_date": "2026-09-22",
+   "comment_id": "pbez2s2",
+   "source": "comment",
+   "date": "2026-09-22",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1wndlf9/comment/pbez2s2/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I have 2 versions usually, One that's created in excel that i have prototyped the metrics, formulas and checked several times.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1g0jl9t",
+   "subreddit": "PowerBI",
+   "thread_title": "Any way to display warning if data is stale from a data source error?",
+   "thread_date": "2024-10-10",
+   "comment_id": "lr9itak",
+   "source": "comment",
+   "date": "2024-10-10",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr9itak/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "the only time the data is stale is when there's a failure in loading from one of the data sources. When this happens, NOW() will have the last successful …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1g0jl9t",
+   "subreddit": "PowerBI",
+   "thread_title": "Any way to display warning if data is stale from a data source error?",
+   "thread_date": "2024-10-10",
+   "comment_id": "lra71on",
+   "source": "comment",
+   "date": "2024-10-10",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lra71on/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "sometimes one of them goes down or has a change that causes a failure. When that happens the whole refresh is unsuccessful.",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1g0jl9t",
+   "subreddit": "PowerBI",
+   "thread_title": "Any way to display warning if data is stale from a data source error?",
+   "thread_date": "2024-10-10",
+   "comment_id": "lr993y7",
+   "source": "comment",
+   "date": "2024-10-10",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1g0jl9t/comment/lr993y7/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "You make a card viz that shows the date diff between the latest date in your data compared to today and alert if it’s over your threshold.",
+   "quote_words": 27
+  },
+  {
+   "thread_id": "1w3f9t0",
+   "subreddit": "Looker",
+   "thread_title": "A lot of issues with Looker Studio",
+   "thread_date": "2026-08-31",
+   "comment_id": "p767l6k",
+   "source": "comment",
+   "date": "2026-09-01",
+   "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p767l6k/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Sometimes a Scorecard gets stuck with the wrong data range.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1w3f9t0",
+   "subreddit": "Looker",
+   "thread_title": "A lot of issues with Looker Studio",
+   "thread_date": "2026-08-31",
+   "comment_id": "p797twj",
+   "source": "comment",
+   "date": "2026-09-01",
+   "url": "https://www.reddit.com/r/Looker/comments/1w3f9t0/comment/p797twj/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Is this thing still supported? We still use it but simple things got us away to hosting on streamlit",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1xi95ud",
+   "subreddit": "analytics",
+   "thread_title": "How do you know when a dashboard is precise but not actually trustworthy?",
+   "thread_date": "2026-10-29",
+   "comment_id": "19ru17iq3unpf",
+   "source": "comment",
+   "date": "2026-10-29",
+   "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/comment/19ru17iq3unpf/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "Pick a refunded order and check what the dashboard says happened to its revenue.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1ael833",
+   "subreddit": "PowerBI",
+   "thread_title": "Visuals that ignore \"Filter on all Pages\"",
+   "thread_date": "2024-01-30",
+   "comment_id": "koa1o4o",
+   "source": "comment",
+   "date": "2024-01-31",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/koa1o4o/",
+   "pains": [
+    "P4",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "certain readers shouldn't have access to certain months. ... just in case I have to add more pages in the future and I accidentally forget to apply that page filter",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1ael833",
+   "subreddit": "PowerBI",
+   "thread_title": "Visuals that ignore \"Filter on all Pages\"",
+   "thread_date": "2024-01-30",
+   "comment_id": "lh37me0",
+   "source": "comment",
+   "date": "2024-08-08",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1ael833/comment/lh37me0/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Didn't work for me. Still responded to all pages filter.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": null,
+   "source": "post",
+   "date": "2025-03-06",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I haven't found a good solution to inform users of live issues or minor issues not worthy of a bulk email.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": "mgfnk34",
+   "source": "comment",
+   "date": "2025-03-07",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfnk34/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "a successful refresh in Power BI doesn’t necessarily mean that the data is actually up-to-date. If the data pipeline upstream has failed or is delayed, Power BI will still refresh",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": "mggaw7y",
+   "source": "comment",
+   "date": "2025-03-07",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mggaw7y/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Me too, but DO users understand? They often appear not to.",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": "mgfari8",
+   "source": "comment",
+   "date": "2025-03-07",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgfari8/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Huh? What are you on about? The users tell me when the refresh fails.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": "mgkek9d",
+   "source": "comment",
+   "date": "2025-03-07",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgkek9d/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "someone has changed a fucking column / worksheet / SharePoint folder name.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "1j585zq",
+   "subreddit": "PowerBI",
+   "thread_title": "How do you tell users the dashboard refresh has failed?",
+   "thread_date": "2025-03-06",
+   "comment_id": "mgf4u57",
+   "source": "comment",
+   "date": "2025-03-06",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1j585zq/comment/mgf4u57/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I just show the date and time and the users understand if they do not see the today’s date then the refresh failed",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1vz9dca",
+   "subreddit": "digital_marketing",
+   "thread_title": "Anyone else's client dashboard just straight up lying to them lately?",
+   "thread_date": "2026-08-26",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/",
+   "pains": [
+    "P3",
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Their analytics tool started showing conversion numbers that don't match Shopify at all, off by something like 30% for two weeks straight. ... now the client thinks I'm the …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1vz9dca",
+   "subreddit": "digital_marketing",
+   "thread_title": "Anyone else's client dashboard just straight up lying to them lately?",
+   "thread_date": "2026-08-26",
+   "comment_id": "p63byhf",
+   "source": "comment",
+   "date": "2026-08-26",
+   "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p63byhf/",
+   "pains": [
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "the black box part is what kills me, you cant even troubleshoot something you cant see into",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1vz9dca",
+   "subreddit": "digital_marketing",
+   "thread_title": "Anyone else's client dashboard just straight up lying to them lately?",
+   "thread_date": "2026-08-26",
+   "comment_id": "p6sxmvy",
+   "source": "comment",
+   "date": "2026-08-30",
+   "url": "https://www.reddit.com/r/digital_marketing/comments/1vz9dca/comment/p6sxmvy/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "This is why I make my own dashboards while I manage the account. It’s an easy skill to learn",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofjt3rc",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofjt3rc/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Takes like 15-20 minutes with AI, we just put all the internal numbers in a word doc and tell Claude to make a beautiful PDF",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofk6tjx",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofk6tjx/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Per client it usually takes 1–2 hours weekly if you want it to actually look clean",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofjtmkk",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofjtmkk/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Data Studio (Formerly Looker Studio(Formerly Data Studio)) template. Numbers in reporting table (Cloud DB). Every client than have it's copy with his numbers and images.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofjtzvy",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofjtzvy/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Looker studio, can be frustrating to set up but works great when everything is connected.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofkeo1p",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofkeo1p/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I’m tired of wasting hours on 20-page reports that clients don't even look at.   Right now we’re mostly using Looker Studio",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofkxij7",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofkxij7/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "Data Studio (aka Looker) and ThoughtSpot. We use Supermetrics to help us connect a lot of the data from clients",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ojtoknj",
+   "source": "comment",
+   "date": "2026-05-04",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ojtoknj/",
+   "pains": [
+    "P5",
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Looker (Data studio) connectors break every other monday and some tools are ridiculously expensive. Even the ones that do work don't support custom metrics.",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "pb5a5nc",
+   "source": "comment",
+   "date": "2026-09-21",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/pb5a5nc/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I currently generate my report with ChatGPT using Catchr.io MCP.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofnsfou",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofnsfou/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We use Looker+PowerMyAnalytics or Google Sheets+PowerMyAnalytics",
+   "quote_words": 6
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofk5a28",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofk5a28/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We don’t. No reports. No monthly buzzword BS.",
+   "quote_words": 8
+  },
+  {
+   "thread_id": "1sig3qv",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "How do you actually handle client reporting?",
+   "thread_date": "2026-04-11",
+   "comment_id": "ofk2pf0",
+   "source": "comment",
+   "date": "2026-04-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1sig3qv/comment/ofk2pf0/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "the annoying part isn’t really pulling the numbers, it’s making them make sense for the client.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-01-05",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "A friend of mine who has quite a big agency told me that reporting was taking her at least 10 hours a week.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "nxuzfe5",
+   "source": "comment",
+   "date": "2026-01-05",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxuzfe5/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Direct integration with all of our platforms to a custom Agency Analytics report that automatically emails all of our clients ... Client reporting takes us exactly 0 seconds per week.",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "nxxqvp4",
+   "source": "comment",
+   "date": "2026-01-06",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/nxxqvp4/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We hook everything within Agency Analytics, then hook Agency Analytics into n8n, have Gemini spot trends in the data",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "ny3e85a",
+   "source": "comment",
+   "date": "2026-01-06",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny3e85a/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I've been looking for more new solutions other than agency analytics or looker studio. Might have to create our own reporting app.",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "oem62qz",
+   "source": "comment",
+   "date": "2026-04-06",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/oem62qz/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "10 hours/week sounds about right tbh ... biggest time drains were: pulling data from different platforms reformatting everything for each client",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "oesvnvj",
+   "source": "comment",
+   "date": "2026-04-07",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/oesvnvj/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "built a Make.com flow that pulls GA4 + Meta Ads each week, writes the data to a Google Sheet, and uses GPT-4o to draft 3–4 sentences",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1q4r6fu",
+   "subreddit": "marketingagency",
+   "thread_title": "Agency owners, how do you handle client reporting ?",
+   "thread_date": "2026-01-05",
+   "comment_id": "ny9pwdr",
+   "source": "comment",
+   "date": "2026-01-07",
+   "url": "https://www.reddit.com/r/marketingagency/comments/1q4r6fu/comment/ny9pwdr/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Most tools automate data pulling and dashboards. That's table stakes.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1s1ppxb",
+   "subreddit": "PPC",
+   "thread_title": "Client reporting is the only part of my agency job that's gotten worse every year",
+   "thread_date": "2026-03-23",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-03-23",
+   "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/",
+   "pains": [
+    "P5",
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "now it's debugging connectors, explaining why our numbers don't match the platform, paying for dashboard seats nobody logs into",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1s1ppxb",
+   "subreddit": "PPC",
+   "thread_title": "Client reporting is the only part of my agency job that's gotten worse every year",
+   "thread_date": "2026-03-23",
+   "comment_id": "oc4hfka",
+   "source": "comment",
+   "date": "2026-03-24",
+   "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc4hfka/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Feels like a different problem every month, depending on which client is mad.",
+   "quote_words": 13
+  },
+  {
+   "thread_id": "1s1ppxb",
+   "subreddit": "PPC",
+   "thread_title": "Client reporting is the only part of my agency job that's gotten worse every year",
+   "thread_date": "2026-03-23",
+   "comment_id": "oc9us4q",
+   "source": "comment",
+   "date": "2026-03-24",
+   "url": "https://www.reddit.com/r/PPC/comments/1s1ppxb/comment/oc9us4q/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "When a client trusts you, a 5-line email once a month does the job. When they don't, no dashboard will fix it",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1n8jiho",
+   "subreddit": "PowerBI",
+   "thread_title": "Embedding Dashboards to allow unlimited external users",
+   "thread_date": "2025-09-04",
+   "comment_id": null,
+   "source": "post",
+   "date": "2025-09-04",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "We had over 1,000 end users (consumers of dashboards) and the cost was going to be enormous.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1n8jiho",
+   "subreddit": "PowerBI",
+   "thread_title": "Embedding Dashboards to allow unlimited external users",
+   "thread_date": "2025-09-04",
+   "comment_id": "ncfhd9e",
+   "source": "comment",
+   "date": "2025-09-04",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncfhd9e/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We ended up going with a cheap fabric license ~$150-$300/month, then paying for 3 licensed users to create all of the dashboards.",
+   "quote_words": 22
+  },
+  {
+   "thread_id": "1n8jiho",
+   "subreddit": "PowerBI",
+   "thread_title": "Embedding Dashboards to allow unlimited external users",
+   "thread_date": "2025-09-04",
+   "comment_id": "ncgixb3",
+   "source": "comment",
+   "date": "2025-09-04",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/ncgixb3/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "we have a separate lookup table that allows us to figure out the row level security based on our security of that specific email address.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1n8jiho",
+   "subreddit": "PowerBI",
+   "thread_title": "Embedding Dashboards to allow unlimited external users",
+   "thread_date": "2025-09-04",
+   "comment_id": "nnh3cw0",
+   "source": "comment",
+   "date": "2025-11-06",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/nnh3cw0/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Can I ask you which license exactly you got? We are struggling with this and trying to figure out a better way to do this.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1n8jiho",
+   "subreddit": "PowerBI",
+   "thread_title": "Embedding Dashboards to allow unlimited external users",
+   "thread_date": "2025-09-04",
+   "comment_id": "nd9nbso",
+   "source": "comment",
+   "date": "2025-09-09",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1n8jiho/comment/nd9nbso/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "We moved on to a cheap fabric sku and it is working very well. Just took a little bit to figure out the APIs, but now we are all set.",
+   "quote_words": 30
+  },
+  {
+   "thread_id": "1civ41o",
+   "subreddit": "PowerBI",
+   "thread_title": "Insane Pricing for Power BI Embed ",
+   "thread_date": "2024-05-03",
+   "comment_id": null,
+   "source": "post",
+   "date": "2024-05-03",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "All I need to know is how much it will cost to get Power BI embed publicly. I've seen pricing range from $1/mo. to $739/mo.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1civ41o",
+   "subreddit": "PowerBI",
+   "thread_title": "Insane Pricing for Power BI Embed ",
+   "thread_date": "2024-05-03",
+   "comment_id": "l2bswhw",
+   "source": "comment",
+   "date": "2024-05-03",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2bswhw/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "An A1 is $1/hour which is $730/month.",
+   "quote_words": 7
+  },
+  {
+   "thread_id": "1civ41o",
+   "subreddit": "PowerBI",
+   "thread_title": "Insane Pricing for Power BI Embed ",
+   "thread_date": "2024-05-03",
+   "comment_id": "l2jlg9p",
+   "source": "comment",
+   "date": "2024-05-04",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2jlg9p/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "Can confirm. We are embedding with an F2 at my org.",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1civ41o",
+   "subreddit": "PowerBI",
+   "thread_title": "Insane Pricing for Power BI Embed ",
+   "thread_date": "2024-05-03",
+   "comment_id": "l2bszxr",
+   "source": "comment",
+   "date": "2024-05-03",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1civ41o/comment/l2bszxr/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "if you simply need to embed a report in a public website and the data isn't sensitive, then you can simply use the Publish to web feature which can …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1var5c4",
+   "subreddit": "PowerBI",
+   "thread_title": "How to keep row-level security from becoming a nightmare?",
+   "thread_date": "2026-07-30",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-07-30",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Every project I work on, the RLS setup starts simply. But it then turns into a mess of overlapping roles nobody remembers the logic for.",
+   "quote_words": 25
+  },
+  {
+   "thread_id": "1var5c4",
+   "subreddit": "PowerBI",
+   "thread_title": "How to keep row-level security from becoming a nightmare?",
+   "thread_date": "2026-07-30",
+   "comment_id": "p0nmy0r",
+   "source": "comment",
+   "date": "2026-07-30",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0nmy0r/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "You don’t. It’s a nightmare the second you start using it",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1var5c4",
+   "subreddit": "PowerBI",
+   "thread_title": "How to keep row-level security from becoming a nightmare?",
+   "thread_date": "2026-07-30",
+   "comment_id": "p0ni97i",
+   "source": "comment",
+   "date": "2026-07-30",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0ni97i/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "AAD Groups can help in this quite a bit. Create roles in report, on service assign the group to the role",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1var5c4",
+   "subreddit": "PowerBI",
+   "thread_title": "How to keep row-level security from becoming a nightmare?",
+   "thread_date": "2026-07-30",
+   "comment_id": "p0npk45",
+   "source": "comment",
+   "date": "2026-07-30",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1var5c4/comment/p0npk45/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "It works quite well. Every once I a while there is a bug or lack of process followed but easiy manageable for our 5,000+",
+   "quote_words": 24
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jmzqs86",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzqs86/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "there’s no cheap way of doing it in the Power BI ecosystem. ... we can’t afford Embedded because it’s just not worth it and we also have to share …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jn17l7j",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn17l7j/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I've given up a lot of my ambition for PBI in my workplace because the licensing is too onerous.",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jmztp4v",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmztp4v/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "First option probably wouldn't work unless you have an extra $5k USD p/m to throw around.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jmzrf8a",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzrf8a/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "under 20 PowerBI pro licenses cost them under 10k a year.",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jn03jnn",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn03jnn/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "Pro is only 10$ per user per month and is required for every viewer.",
+   "quote_words": 14
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jn157zx",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jn157zx/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "I’ve heard of groups using DashboardFox.com. It’s a start-up and offered its dashboard tool for $1,500 lifetime subscription.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "141clwh",
+   "subreddit": "PowerBI",
+   "thread_title": "What is the actual solution for a consultant to create dashboarding that can be shared with clients.",
+   "thread_date": "2023-06-05",
+   "comment_id": "jmzjwcn",
+   "source": "comment",
+   "date": "2023-06-05",
+   "url": "https://www.reddit.com/r/PowerBI/comments/141clwh/comment/jmzjwcn/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I share a weekly report with multiple clients. I screen grab the important visuals and include it in the email",
+   "quote_words": 20
+  },
+  {
+   "thread_id": "1x1o3zn",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "marketing reporting software with white label dashboards needed",
+   "thread_date": "2026-10-09",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-10-09",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "I know looker studio, but we can’t use that as we want a fully personalized UI with our own branding and the whole white label experience.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1x1o3zn",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "marketing reporting software with white label dashboards needed",
+   "thread_date": "2026-10-09",
+   "comment_id": "pev5gov",
+   "source": "comment",
+   "date": "2026-10-09",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pev5gov/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "For that you’ll have to get an embedded analytics solution or build the frontend yourself. Neither are cheap.",
+   "quote_words": 18
+  },
+  {
+   "thread_id": "1x1o3zn",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "marketing reporting software with white label dashboards needed",
+   "thread_date": "2026-10-09",
+   "comment_id": "pewwtxp",
+   "source": "comment",
+   "date": "2026-10-09",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pewwtxp/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Just build what you need with Claude. ... I used to use Looker Studio for all my dashboards and replaced it 6 months ago with a completely custom solution",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1x1o3zn",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "marketing reporting software with white label dashboards needed",
+   "thread_date": "2026-10-09",
+   "comment_id": "pfe85ks",
+   "source": "comment",
+   "date": "2026-10-12",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pfe85ks/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I used Claude to create scripts that pull all the data I want from GA4, GSC and AHrefs APIs. It combines it all into a google sheet that feeds …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1x1o3zn",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "marketing reporting software with white label dashboards needed",
+   "thread_date": "2026-10-09",
+   "comment_id": "pgv1t7m",
+   "source": "comment",
+   "date": "2026-10-15",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1x1o3zn/comment/pgv1t7m/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "Check AgencyAnalytics or DashThis or Whatagraph. They all offer white label branding for SEO reports.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1xa44v5",
+   "subreddit": "dataanalysis",
+   "thread_title": "benchmarked 5 embedded analytics setups against a 50M-row Snowflake table to replace our slow Metabase iframes. evaluation matrix, latency numbers + trade-offs below",
+   "thread_date": "2026-10-19",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-10-19",
+   "url": "https://www.reddit.com/r/dataanalysis/comments/1xa44v5/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "how other B2B SaaS teams moved away from signed Metabase iframes once they hit multi-tenant role permissions, slow morning dashboard load times also escalating Snowflake compute bills",
+   "quote_words": 27
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": null,
+   "source": "post",
+   "date": "2023-11-08",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We're at 1800 users which puts us around 200k a year.",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": "k8e5pu1",
+   "source": "comment",
+   "date": "2023-11-08",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8e5pu1/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "200k just to get SSO just doesn't compute for me",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": "k8eoejz",
+   "source": "comment",
+   "date": "2023-11-08",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8eoejz/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Have used and liked Metabase but def not worth paying 200k/y for.",
+   "quote_words": 12
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": "k8ewl9z",
+   "source": "comment",
+   "date": "2023-11-08",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8ewl9z/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We're using Sigma as our BI tool. Unlimited viewer licenses, you just pay for Creator/Explorer licenses. ... it's $1000/creator/year.",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": "k8hji8j",
+   "source": "comment",
+   "date": "2023-11-09",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/k8hji8j/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "the vast majority of our reports are simple list reports so we're paying for features we don't need in these platforms.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "17qqbgg",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Metabase licensing",
+   "thread_date": "2023-11-08",
+   "comment_id": "ka4msgh",
+   "source": "comment",
+   "date": "2023-11-21",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/17qqbgg/comment/ka4msgh/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "with Metabase, I'm not sure you can white-label even for internal use only",
+   "quote_words": 13
+  },
+  {
+   "thread_id": "1kfz6w1",
+   "subreddit": "GoogleDataStudio",
+   "thread_title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "thread_date": "2025-05-06",
+   "comment_id": null,
+   "source": "post",
+   "date": "2025-05-06",
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "I’m planning to migrate reporting for around 80 clients from AgencyAnalytics to Looker Studio to gain more control and reduce costs.",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1kfz6w1",
+   "subreddit": "GoogleDataStudio",
+   "thread_title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "thread_date": "2025-05-06",
+   "comment_id": "mqwfqql",
+   "source": "comment",
+   "date": "2025-05-06",
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqwfqql/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "if you want to create a separate template for each customer,you'll need to maintain 80 files.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1kfz6w1",
+   "subreddit": "GoogleDataStudio",
+   "thread_title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "thread_date": "2025-05-06",
+   "comment_id": "mqutood",
+   "source": "comment",
+   "date": "2025-05-06",
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqutood/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "there is very limited API so each report has to be created by hand (but you can copy reports). So even small change in everye report is a pain.",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1kfz6w1",
+   "subreddit": "GoogleDataStudio",
+   "thread_title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "thread_date": "2025-05-06",
+   "comment_id": "nck6f9w",
+   "source": "comment",
+   "date": "2025-09-05",
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/nck6f9w/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "at 80 clients, pure Looker Studio is stretched thin.",
+   "quote_words": 9
+  },
+  {
+   "thread_id": "1kfz6w1",
+   "subreddit": "GoogleDataStudio",
+   "thread_title": "Moving 80 Clients from AgencyAnalytics to Looker Studio – Is This a Good Idea? Feedback Needed",
+   "thread_date": "2025-05-06",
+   "comment_id": "mqxlngb",
+   "source": "comment",
+   "date": "2025-05-06",
+   "url": "https://www.reddit.com/r/GoogleDataStudio/comments/1kfz6w1/comment/mqxlngb/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Looker Studio should be able to handle this just fine, depending on what metrics you want reported.",
+   "quote_words": 17
+  },
+  {
+   "thread_id": "1j7cnac",
+   "subreddit": "agency",
+   "thread_title": "Client Reporting",
+   "thread_date": "2025-03-09",
+   "comment_id": "mgw8z4m",
+   "source": "comment",
+   "date": "2025-03-09",
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mgw8z4m/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "Looker Studio with supermetrics to get non-Google data in there. 24/7 live dashboard access for clients via shared link. Automated emailed pdf version on the 1st of each month.",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1j7cnac",
+   "subreddit": "agency",
+   "thread_title": "Client Reporting",
+   "thread_date": "2025-03-09",
+   "comment_id": "mh769x7",
+   "source": "comment",
+   "date": "2025-03-11",
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh769x7/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We have been using Swydo for many years. It's super easy to use and fast to deploy with templates",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1j7cnac",
+   "subreddit": "agency",
+   "thread_title": "Client Reporting",
+   "thread_date": "2025-03-09",
+   "comment_id": "mh8hh6f",
+   "source": "comment",
+   "date": "2025-03-11",
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh8hh6f/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We use Databox to create a custom dashboard for the clients",
+   "quote_words": 11
+  },
+  {
+   "thread_id": "1j7cnac",
+   "subreddit": "agency",
+   "thread_title": "Client Reporting",
+   "thread_date": "2025-03-09",
+   "comment_id": "mh16jlh",
+   "source": "comment",
+   "date": "2025-03-10",
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/mh16jlh/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "We use Notion. Hired an expert to build our portal.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1j7cnac",
+   "subreddit": "agency",
+   "thread_title": "Client Reporting",
+   "thread_date": "2025-03-09",
+   "comment_id": "ok278bp",
+   "source": "comment",
+   "date": "2026-05-05",
+   "url": "https://www.reddit.com/r/agency/comments/1j7cnac/comment/ok278bp/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "The agency has a dashboard. The client technically has access. The client still asks for screenshots, a summary, or \"can you show it this way instead?\"",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1t4bywx",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "What tools do you use to automate client reporting without breaking the bank?",
+   "thread_date": "2026-05-05",
+   "comment_id": null,
+   "source": "post",
+   "date": "2026-05-05",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "Currently spending way too much time manually creating reports for clients. Looking for something that ... Doesn't cost $500+/month",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1t4bywx",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "What tools do you use to automate client reporting without breaking the bank?",
+   "thread_date": "2026-05-05",
+   "comment_id": "ok6wy89",
+   "source": "comment",
+   "date": "2026-05-06",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok6wy89/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Pulling takes maybe 30-40 min per client (logging into each platform, exporting what I need). But then cleaning/aligning eats another hour",
+   "quote_words": 21
+  },
+  {
+   "thread_id": "1t4bywx",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "What tools do you use to automate client reporting without breaking the bank?",
+   "thread_date": "2026-05-05",
+   "comment_id": "ol6zqwt",
+   "source": "comment",
+   "date": "2026-05-11",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ol6zqwt/",
+   "pains": [
+    "P5",
+    "P4"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "Tried Looker + Sheets but it broke every other week. Supermetrics was way too expensive.",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1t4bywx",
+   "subreddit": "DigitalMarketing",
+   "thread_title": "What tools do you use to automate client reporting without breaking the bank?",
+   "thread_date": "2026-05-05",
+   "comment_id": "ok87siz",
+   "source": "comment",
+   "date": "2026-05-06",
+   "url": "https://www.reddit.com/r/DigitalMarketing/comments/1t4bywx/comment/ok87siz/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "counter",
+   "quote": "Looker Studio is where most people land for the budget-conscious setup. Free, native connectors for GA4, Search Console and Google Ads, and once you build a template you duplicate …",
+   "quote_words": 29
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "oi1dfq6",
+   "source": "comment",
+   "date": "2026-04-24",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi1dfq6/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "Sigma is extremely powerful/convenient, but costly if you only want it for a handful of dashboards.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "ohxu5eo",
+   "source": "comment",
+   "date": "2026-04-24",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohxu5eo/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "wtp",
+   "quote": "I'm curious about Sigma offering $300/mth for unlimited viewers.",
+   "quote_words": 9
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "ohwarru",
+   "source": "comment",
+   "date": "2026-04-23",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/ohwarru/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "The licensing conversation caught me off guard, especially given the Pro licenses don't cover ex",
+   "quote_words": 15
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "oihfz5t",
+   "source": "comment",
+   "date": "2026-04-27",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oihfz5t/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "While App owns data is solid, it does require you to build in your own RLS.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "oiwv4sk",
+   "source": "comment",
+   "date": "2026-04-29",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oiwv4sk/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "The Power BI capacity pricing math alone has derailed enough projects that it should be the first slide in every embedded scoping conversation.",
+   "quote_words": 23
+  },
+  {
+   "thread_id": "1sttnor",
+   "subreddit": "BusinessIntelligence",
+   "thread_title": "Who is doing Embedded Analytics Right? Here’s what I found.",
+   "thread_date": "2026-04-23",
+   "comment_id": "oi0achr",
+   "source": "comment",
+   "date": "2026-04-24",
+   "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1sttnor/comment/oi0achr/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "I went with Superset instead of Sigma, been pretty decent.",
+   "quote_words": 10
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shrc49994f9",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shrc49994f9/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "wtp",
+   "quote": "Coz soon the SLT will question why we spend $10k monthly on PBI licenses and a team of specialists to maintain reports when our competitors have neither.",
+   "quote_words": 27
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shpeuz3dbqd",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpeuz3dbqd/",
+   "pains": [
+    "P1",
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "competition",
+   "quote": "Claude Dashboards (Now Claude Data) are sensible for exploratory or throwaway reports, but are fairly limited.",
+   "quote_words": 16
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shpgskwrd7k",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shpgskwrd7k/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "the complexity for them to create visuals and to get real-ish time updates on what-if scenarios drives them into excel + html for small group (ie exec leaders).",
+   "quote_words": 28
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shuxw2mm750",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shuxw2mm750/",
+   "pains": [
+    "P3"
+   ],
+   "fit": "loose",
+   "kind": "pain",
+   "quote": "Switching to HTML visuals from tools like PowerBI and Qliksense feels to me like each squad making their own reports in Excel, but with extra steps.",
+   "quote_words": 26
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shns0mn29i9",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shns0mn29i9/",
+   "pains": [
+    "P5"
+   ],
+   "fit": "tight",
+   "kind": "counter",
+   "quote": "You can embed HTML visuals into PowerBi. That’s how we solved for RLS, refreshing data, and keeping it governed",
+   "quote_words": 19
+  },
+  {
+   "thread_id": "1xtrjna",
+   "subreddit": "PowerBI",
+   "thread_title": "Everyone is trying to kill Power BI... with HTML?",
+   "thread_date": "2026-11-11",
+   "comment_id": "19shswbh8rh5w",
+   "source": "comment",
+   "date": "2026-11-11",
+   "url": "https://www.reddit.com/r/PowerBI/comments/1xtrjna/comment/19shswbh8rh5w/",
+   "pains": [
+    "P1"
+   ],
+   "fit": "tight",
+   "kind": "pain",
+   "quote": "We had a director that said they were going to do all their dashboards in streamlit with AI.   I explained to him the maintenance involved",
+   "quote_words": 25
+  }
+ ]
+}
