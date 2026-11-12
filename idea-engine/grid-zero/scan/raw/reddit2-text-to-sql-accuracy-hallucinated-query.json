@@ -1,0 +1,172 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 10,
+     "total": 25
+    },
+    "nextCursor": "cur_7PczVU1zZBkSW6uoUlj0yg",
+    "posts": [
+     {
+      "author": "de4all",
+      "authorId": "5b3y9jqyc",
+      "createdUtc": 1790674724,
+      "id": "1wt5pbk",
+      "nsfw": false,
+      "numComments": 88,
+      "permalink": "/r/dataengineering/comments/1wt5pbk/why_texttosql_is_not_successful/",
+      "score": 27,
+      "selftext": "I thought text-to-SQL will solve adhoc analysis, but still i see companies at all size are unsuccessful. \n\nAnyone using Omni / Sigma seen some success.",
+      "subreddit": "dataengineering",
+      "title": "Why text-to-SQL is not successful?",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1wt5pbk/why_texttosql_is_not_successful/"
+     },
+     {
+      "author": "nothinginausername",
+      "authorId": "8zfwgs21",
+      "createdUtc": 1791989504,
+      "id": "1x5ta6r",
+      "nsfw": false,
+      "numComments": 7,
+      "permalink": "/r/LLMDevs/comments/1x5ta6r/the_fix_for_texttosql_accuracy_was_to_stop_asking/",
+      "score": 0,
+      "selftext": "If you've pointed Claude, GPT or any model at a database and asked it to write SQL, you've probably seen this: it works in the demo, then in real use it picks the wrong join, drops a filter, guesses what \"revenue\" means, or writes a different query every time you ask the same question. The SQL runs. The number is wrong. And you can't catch it, because nothing about the query looks broken.\n\nThat's the problem I built 0sql for. The model never writes SQL. It describes what it wants (which measures, which dimensions, which filters, which time range) and 0sql turns that into the SQL, from a data model you define once. If the model asks for something that doesn't exist, it gets told no, with the closest matches, and tries again. Same question, same SQL, every time. Row-level security is compiled into the statement, so the model can't talk its way around it. And 0sql never connects to your database; it only returns the SQL, your code runs it.\n\nIt works as an MCP server, so you can plug it into Claude Code, Claude Desktop or your own agent and keep everything else you've built.\n\nIt also has a plain REST API: POST a JSON spec, get SQL back, so it works from any backend\n\nThere's also a demo dataset so you can try it without connecting your own data.\n\n[https://0sql.io/try/](https://0sql.io/try/)\n\nDisclosure: I build it. It's free.\n\nIf you've hit the \"runs fine, wrong answer\" problem, I'd like to hear how you dealt with it.",
+      "subreddit": "LLMDevs",
+      "title": "The fix for text-to-SQL accuracy was to stop asking the  model for SQL",
+      "url": "https://www.reddit.com/r/LLMDevs/comments/1x5ta6r/the_fix_for_texttosql_accuracy_was_to_stop_asking/"
+     },
+     {
+      "author": "chakalaka13",
+      "authorId": "amjjh2m0",
+      "createdUtc": 1781726523,
+      "id": "1u8ky0f",
+      "nsfw": false,
+      "numComments": 68,
+      "permalink": "/r/analytics/comments/1u8ky0f/does_ai_hallucinate_even_with_basic_queriesdata/",
+      "score": 55,
+      "selftext": "Disclaimer: I'm not an analyst, so pardon me if I'm not fully aware with the state of things.\n\nMy client's team has started using AI for their data stuff, because there's no real expert in-house.\n\nUse cases:\n\n1. Retrieve and interpret data from Google/Meta Ads\n\n2. Feed a big CSV with all of our e-commerce orders and ask for it to calculate different indicators\n\n3. I use it to get some SQL queries (though I plan to learn SQL myself)\n\nSince the data itself is pretty basic and the actions are too (retrieve this data from a Google Ads table) - is it safe to use or does AI often hallucinate even for this kind of tasks?\n\nWe use Claude atm.",
+      "subreddit": "analytics",
+      "title": "Does AI hallucinate even with basic queries/data retrieval?",
+      "url": "https://www.reddit.com/r/analytics/comments/1u8ky0f/does_ai_hallucinate_even_with_basic_queriesdata/"
+     },
+     {
+      "author": "Fun-Following-1723",
+      "authorId": "2gqled2pmr",
+      "createdUtc": 1792054762,
+      "id": "1x6gmnk",
+      "nsfw": false,
+      "numComments": 23,
+      "permalink": "/r/AI_Agents/comments/1x6gmnk/how_do_production_texttosql_systems_handle/",
+      "score": 4,
+      "selftext": "I'm building a Text-to-SQL agent that supports PostgreSQL, MySQL, and SQL Server. I'm currently experimenting with SQL validation and error-recovery strategies, and I'd appreciate insights from people who have built or deployed similar systems.\n\nMy current pipeline is roughly:\n\n    User question\n        ↓\n    Inspect database schema\n        ↓\n    Provide schema context to the LLM\n        ↓\n    Generate a SELECT query\n        ↓\n    Validate that the query is read-only\n        ↓\n    Execute the query\n        ↓\n    If execution fails, send the error and schema\n    back to the LLM and retry once\n        ↓\n    Summarize the returned rows\n\nThe error-handling and retry mechanism is still being tested, so I haven't established how reliably it handles different types of failures. One behavior I've observed is that execution errors, such as incorrect table or column names, can potentially be corrected by feeding the database error back to the model.\n\nHowever, I'm also concerned about a harder failure mode: **q**ueries that execute successfully but don't correctly represent the user's intent.\n\nFor example, suppose the user asks:\n\n>Which tracks were purchased in the greatest total quantities?\n\nThe model might generate:\n\n    COUNT(invoice_line_id)\n\nwhen the intended metric is:\n\n    SUM(quantity)\n\nBoth expressions are valid SQL, but they measure different things. Counting invoice lines doesn't necessarily identify the tracks with the greatest total number of units purchased.\n\nBecause the query executes successfully, a retry mechanism triggered only by execution errors won't catch this mistake.\n\nI'd like to understand how production Text-to-SQL systems approach both error recovery and semantic correctness.\n\nSome approaches I've been considering include:\n\n* Retrying after execution errors by providing the database error and relevant schema context to the LLM.\n* Using a second LLM call to review the generated SQL against the original question before execution.\n* Adding deterministic checks for common semantic mistakes, such as choosing the wrong aggregation.\n* Generating multiple candidate queries and selecting the most appropriate one.\n* Validating the returned results against the original question.\n* Improving schema context with column descriptions, business definitions, and example queries.\n\nI'm particularly interested in what works in practice, how these approaches are evaluated, and how to balance accuracy against additional latency and cost.\n\nFor context, I'm aiming to restrict generated queries to read-only operations and a single `SELECT`. I'm still evaluating the reliability of the validation and recovery mechanisms, so I don't want to assume that they cover every failure case.\n\nFor those who have built or deployed Text-to-SQL systems, how do you test and handle these different failure modes? What would you recommend prioritizing first?",
+      "subreddit": "AI_Agents",
+      "title": "How do production Text-to-SQL systems handle semantic errors and validate generated SQL?",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1x6gmnk/how_do_production_texttosql_systems_handle/"
+     },
+     {
+      "author": "Specific-Video-3556",
+      "authorId": "2297s8dkxk",
+      "createdUtc": 1780516749,
+      "id": "1tw0tnf",
+      "nsfw": false,
+      "numComments": 16,
+      "permalink": "/r/AI_Agents/comments/1tw0tnf/shipped_nl2sql_texttosql_agents_in_production/",
+      "score": 3,
+      "selftext": "\\~2 years doing text-to-SQL here. Great on clean, small schemas; unreliable fast on real warehouses — messy field names, non-obvious joins, heavy aggregations. The failure I hate isn't an error, it's a query that runs and returns a confidently incomplete result.\n\nFor those running agents against real DBs — especially where the agent *acts* on the result, not just shows it to a human: did you let the model generate SQL freely, lock it to pre-defined/parameterized queries, put a semantic layer in front, something else? And how do you handle questions your fixed queries don't cover?\n\nTrying to read whether people optimize for \"correct on a bounded set\" vs \"can attempt anything.\" Not selling anything — genuinely want to know what's working.",
+      "subreddit": "AI_Agents",
+      "title": "Shipped NL2SQL / text-to-SQL agents in production — where did accuracy actually break?",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1tw0tnf/shipped_nl2sql_texttosql_agents_in_production/"
+     },
+     {
+      "author": "N_eo_0128",
+      "authorId": "2nm334wzuv",
+      "createdUtc": 1790608889,
+      "id": "1wshhxr",
+      "nsfw": false,
+      "numComments": 12,
+      "permalink": "/r/AI_Agents/comments/1wshhxr/building_an_agentic_texttosql_pipeline_for/",
+      "score": 5,
+      "selftext": "Hey everyone, I'm building a Text-to-SQL chatbot so users can ask natural language questions against a company's financial database.\n\nI want to make sure this workflow is robust and not over-engineered. Here is my current step-by-step pipeline:\n\n1. **Classifier:** A fast, cheap LLM rewrites the user's question and extracts entities.\n2. **Cache:** Checks if this exact question was answered before. If yes, return the answer. If no, proceed.\n3. **Schema Lookup:** Checks if it needs more context, then pulls the exact table structures/DDL needed.\n4. **Business Rules:** Injects custom company definitions (e.g., how \"premium tier\" is calculated) into the prompt.\n5. **SQL Generation:** A heavy LLM (like GPT-4o) takes all that context and writes the SQL query.\n6. **Security Check:** A Python script scans the SQL for malicious injections or drops.\n7. **Execution & Auto-Fix:** Runs the query in MySQL. If MySQL throws a syntax error, the agent catches the error and asks the LLM to fix it automatically.\n8. **Final Grader:** A fast LLM checks the final data to ensure it actually answers the user's original question.\n9. **Return:** Send the data to the user (or kick to a human reviewer if it failed).\n\n**My questions for the community:**\n\n* Is this a solid architecture for financial data, or is there a better/standard way to do this?\n* Is relying on a Python script for security (Step 6) a bad idea?\n* Will running this many LLM nodes sequentially cause massive latency issues?\n* Are there better architectures out there for this specific use case?\n\nWould love any feedback or advice on how to optimize this!",
+      "subreddit": "AI_Agents",
+      "title": "Building an agentic Text-to-SQL pipeline for financial data. Is this architecture good?",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1wshhxr/building_an_agentic_texttosql_pipeline_for/"
+     },
+     {
+      "author": "AIforFintech",
+      "authorId": "2j5hneb40g",
+      "createdUtc": 1788718151,
+      "id": "1w93hu9",
+      "nsfw": false,
+      "numComments": 22,
+      "permalink": "/r/learndatascience/comments/1w93hu9/text_to_sql_is_not_how_you_give_an_llm_access_to/",
+      "score": 27,
+      "selftext": "The obvious approach when connecting a model to internal data is letting it write the query. It feels flexible: the model figures out what it needs and goes get it. In a bank, that is a non starter.\n\nThe problem is not that models write bad SQL, it is that you lose every guarantee about what they can reach. No way to prove a query stayed inside the columns it was supposed to touch, no way to audit what the model was capable of doing, and a single prompt injection away from an unintended table.\n\nThe alternative is narrower and boring, which is the point. You define a fixed set of parameterized queries and expose them as tools. The model chooses which tool to call, never what SQL to run. Everything it can reach is something you deliberately wrote.\n\nI built an MCP server template implementing this for a common fintech case: looking up a customer across credit score, preapproved limit and risk profile, and returning a consolidated view. Layered so the database, the schema and the protocol can each be swapped without rewriting the others. Read only enforced at the application layer, row limits on every result, and a single mapping file for adapting to whatever your tables are actually called.\n\nSynthetic data generates on setup, so it runs immediately. The architecture is what you keep.\n\nHub: [https://aiforfintech.tech](https://aiforfintech.tech)  \nGithub: [https://github.com/junidepieri-design/mcp-001-fintech-data-server](https://github.com/junidepieri-design/mcp-001-fintech-data-server)\n\nHow is your team handling LLM access to internal data?  \n👊",
+      "subreddit": "learndatascience",
+      "title": "Text to SQL is not how you give an LLM access to production data",
+      "url": "https://www.reddit.com/r/learndatascience/comments/1w93hu9/text_to_sql_is_not_how_you_give_an_llm_access_to/"
+     },
+     {
+      "author": "K3shxx",
+      "authorId": "o3m2sbj1",
+      "createdUtc": 1772331885,
+      "id": "1rhlb4g",
+      "nsfw": false,
+      "numComments": 21,
+      "permalink": "/r/LangChain/comments/1rhlb4g/preventing_sql_agents_from_hallucinating_columns/",
+      "score": 9,
+      "selftext": "While trying to build a “chat with your database” LangChain agent, I realized the hard part wasn’t generating SQL — it was trusting it.\n\nThe model could write queries, but I kept hitting issues:  \n• hallucinated column names  \n• incorrect joins  \n• answers based on non-existent data  \n• and once it even produced a DELETE statement\n\nThe scary part wasn’t wrong answers — it was the idea of letting an LLM execute queries on a real DB.\n\nSo I ended up putting a guarded layer between the LLM and Postgres:\n\n* automatically reads the schema\n* constrains generation to real tables/columns\n* checks queries before execution\n* blocks destructive statements\n* executes read-only and answers only from returned rows\n\nAfter that the agent became much more predictable and I could finally run it against a real database without worrying about it nuking tables.\n\nI eventually cleaned up the setup into a small starter kit for those who want to experiment with AI-DB use cases, but I’m more curious about others’ experiences here.\n\nFor those who’ve built SQL agents — what part has been the most painful for you?\n\nSchema grounding? Query correctness? Or execution safety?\n\nIf you want, give me a natural-language database question and I’ll run it and show the SQL it generates.\n\n![img](tr4ohnllgcmg1)\n\n",
+      "subreddit": "LangChain",
+      "title": "Preventing SQL agents from hallucinating columns and destructive queries",
+      "url": "https://www.reddit.com/r/LangChain/comments/1rhlb4g/preventing_sql_agents_from_hallucinating_columns/"
+     },
+     {
+      "author": "Bhanuprakash_1947",
+      "authorId": "2lw31aewef",
+      "createdUtc": 1792332573,
+      "id": "1x945fs",
+      "nsfw": false,
+      "numComments": 21,
+      "permalink": "/r/SQL/comments/1x945fs/whats_your_first_move_when_a_sql_query_returns/",
+      "score": 14,
+      "selftext": "&#x200B;\n\nI feel like one of the tricky parts of SQL isn't getting a query to run, but knowing whether the result is actually correct.\n\nFor suppose ,a report shows 10k orders, then after adding a join to fetch customer details, the total suddenly becomes 12k. The query runs without any errors, so it's easy to miss.\n\nWould you check the join cardinality first, compare row counts, or approach it differently!?\n\nCurious how people debug this in real projects, especially when the query has multiple joins.",
+      "subreddit": "SQL",
+      "title": "What's your first move when a SQL query returns correct-looking but wrong numbers?",
+      "url": "https://www.reddit.com/r/SQL/comments/1x945fs/whats_your_first_move_when_a_sql_query_returns/"
+     },
+     {
+      "author": "Ok-Freedom3695",
+      "authorId": "9s9xzl934",
+      "createdUtc": 1774466960,
+      "id": "1s3kohg",
+      "nsfw": false,
+      "numComments": 21,
+      "permalink": "/r/dataengineering/comments/1s3kohg/text_to_sql_in_2026/",
+      "score": 0,
+      "selftext": "Hi Everyone! So ive been trying text to sql since gpt 3.5 and I cant even tell you how many architectures ive tried. It wasn't until \\~8months ago (when LLMs became reliably good at tool calling) that text to sql began to click for me. This is because the architecture I use gives the LLM a tool to execute the SQL, check the output, and refine as needed before delivering the final answer to the user. Thats really it. \n\nI open sourced this repo here: [https://github.com/Text2SqlAgent/text2sql-framework](https://github.com/Text2SqlAgent/text2sql-framework) incase anyone wants to get set up with a text to sql agent in 2mins on their DB. There are some additional tools in there which are optional, but the real core one is execute\\_sql. \n\nLet me know what you think! If anyone else has text to sql solutions Id love to hear them",
+      "subreddit": "dataengineering",
+      "title": "Text to SQL in 2026",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1s3kohg/text_to_sql_in_2026/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "a1af0660-f572-43d0-9669-63639f0847e4"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "f6172e24619d437fbd7246ca238021bc",
+  "charged_micro": 350
+ }
+}

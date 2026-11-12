@@ -1,0 +1,175 @@
+{
+ "result": {
+  "meta": {
+   "blocked": [
+    "www.reddit.com"
+   ],
+   "elapsed_ms": 140042,
+   "from_cache": false,
+   "llm_calls": 0,
+   "pages_fetched": 3,
+   "partial": false,
+   "warnings": [
+    "module: reddit: the feed /search.rss answered 429 on 3 addresses",
+    "module: reddit-search: Reddit refused our roads; used the second source (all time, its own order)"
+   ]
+  },
+  "recipe": "reddit-search",
+  "rows": [
+   {
+    "author": "cyamnihc",
+    "comments": 126,
+    "created": "2026-05-30T02:42:22Z",
+    "flair": null,
+    "id": "1trnima",
+    "link": null,
+    "score": 194,
+    "subreddit": "dataengineering",
+    "text": "What exactly is it ? Annotated table and field names and definition of every field in a text doc? Seems like execs are convinced AI enablement’s first step is the semantic layer. Documenting field and metric definitions which also evolve will take a long time, how is this being done at scale ? Thoug",
+    "title": "Semantic layer",
+    "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/semantic_layer/"
+   },
+   {
+    "author": "mehreen_aibuilder",
+    "comments": 12,
+    "created": "2026-06-13T21:54:16Z",
+    "flair": null,
+    "id": "1u53ag4",
+    "link": null,
+    "score": 14,
+    "subreddit": "OntologyEngineering",
+    "text": "Has anyone tried using AI to assist in developing a semantic YAML file? If so what has worked for you and what hasn’t? Read more",
+    "title": "How to use AI to generate a semantic layer?",
+    "url": "https://www.reddit.com/r/OntologyEngineering/comments/1u53ag4/how_to_use_ai_to_generate_a_semantic_layer/"
+   },
+   {
+    "author": "Familiar_Season1255",
+    "comments": 4,
+    "created": "2026-09-16T16:32:14Z",
+    "flair": null,
+    "id": "1wi2861",
+    "link": null,
+    "score": 5,
+    "subreddit": "analyticsengineering",
+    "text": "Lately, I’ve been focusing on consolidating our semantic layer. Here is the exact scenario that made my manager push for this: We realized \"net sales\" was defined in 6 different ways across departments. Finance subtracted returns and markdowns; Merchandising subtracted returns but ignored markdowns;",
+    "title": "Instead of another BI Tool Selection cycle, we put a Semantic Layer in front of our warehouse",
+    "url": "https://www.reddit.com/r/analyticsengineering/comments/1wi2861/instead_of_another_bi_tool_selection_cycle_we_put/"
+   },
+   {
+    "author": "CommitteeImmediate66",
+    "comments": 24,
+    "created": "2026-09-13T22:15:55Z",
+    "flair": null,
+    "id": "1wflg2e",
+    "link": null,
+    "score": 29,
+    "subreddit": "analytics",
+    "text": "We've recently been looking at consolidating our semantic layer. An example of why my manager has decided we need to focus on this is we had \"net sales\" defined like six different ways. Finance took out returns and markdowns, the merch dashboard took out returns but not markdowns, my weekly report d",
+    "title": "Semantic layer learnings",
+    "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/semantic_layer_learnings/"
+   },
+   {
+    "author": "Throwaway081920231",
+    "comments": 96,
+    "created": "2026-10-24T00:08:59Z",
+    "flair": null,
+    "id": "1xdu912",
+    "link": null,
+    "score": 347,
+    "subreddit": "dataengineering",
+    "text": "I used to build data pipelines. I deeply enjoyed ETL/ELT work and now most of that is done using AI. Now my work has shifted to building semantic layers and it’s so boring.",
+    "title": "I lament- My work has shifted from building pipelines to building semantic layer for chatbots",
+    "url": "https://www.reddit.com/r/dataengineering/comments/1xdu912/i_lament_my_work_has_shifted_from_building/"
+   },
+   {
+    "author": "NoWelder4993",
+    "comments": 28,
+    "created": "2026-09-02T17:06:35Z",
+    "flair": null,
+    "id": "1w5gcfq",
+    "link": null,
+    "score": 21,
+    "subreddit": "snowflake",
+    "text": "Does anyone leverage this feature and what was their experience like? What's the pros and cons, and how have you found it helpful for your company. Read more",
+    "title": "Snowflake Semantic Layer",
+    "url": "https://www.reddit.com/r/snowflake/comments/1w5gcfq/snowflake_semantic_layer/"
+   },
+   {
+    "author": "AbleBranch6",
+    "comments": 5,
+    "created": "2026-10-26T14:52:35Z",
+    "flair": null,
+    "id": "1xfz074",
+    "link": null,
+    "score": 3,
+    "subreddit": "businessanalysis",
+    "text": "two months ago our vp of finance asked our new claude desktop bot for last month's net arr churn, and it came back with 14.2%. tableau had it at 8.1%, and our dbt-modeled mart table in snowflake had it at 9.6%. i have edited this post with ai a bit to make it more readable and shorter. everyone spen",
+    "title": "we tested dbt semantic layer vs cube for bi for agents and metrics as code and here is what actually broke when connecting claude to our warehouse",
+    "url": "https://www.reddit.com/r/businessanalysis/comments/1xfz074/we_tested_dbt_semantic_layer_vs_cube_for_bi_for/"
+   }
+  ],
+  "usage": {
+   "boxes": [
+    "gate",
+    "recipe"
+   ],
+   "cache": "miss",
+   "engine": "recipe",
+   "lines": [
+    {
+     "about": "the call",
+     "boxes": [
+      "gate"
+     ],
+     "cache": "miss",
+     "call": "recipes",
+     "engine": "gate",
+     "units": 1
+    },
+    {
+     "cache": "api",
+     "call": "scrape",
+     "engine": "api",
+     "proxy": "none",
+     "units": 1,
+     "url": "https://www.reddit.com/…"
+    },
+    {
+     "cache": "api",
+     "call": "scrape",
+     "engine": "api",
+     "proxy": "none",
+     "units": 1,
+     "url": "https://www.reddit.com/…"
+    },
+    {
+     "cache": "api",
+     "call": "scrape",
+     "engine": "api",
+     "proxy": "none",
+     "units": 1,
+     "url": "https://www.reddit.com/…"
+    },
+    {
+     "cache": "miss",
+     "call": "records",
+     "records": 7,
+     "units": 0
+    }
+   ],
+   "records": 7,
+   "remaining_before": {
+    "concurrent": 1444,
+    "requests": 1472,
+    "search": 2959
+   },
+   "units": 4
+  },
+  "version": 2
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "54c9bac837c14ee681dcc5174bac350a",
+  "charged_micro": 900
+ }
+}

@@ -1,0 +1,6563 @@
+{
+ "result": {
+  "version": "0.1.20261103",
+  "status_code": 20000,
+  "status_message": "Ok.",
+  "time": "1.8736 sec.",
+  "cost": 0.09,
+  "tasks_count": 1,
+  "tasks_error": 0,
+  "tasks": [
+   {
+    "id": "11120044-2171-0367-0000-35fe49ec9b47",
+    "status_code": 20000,
+    "status_message": "Ok.",
+    "time": "1.8550 sec.",
+    "cost": 0.09,
+    "result_count": 48,
+    "path": [
+     "v3",
+     "keywords_data",
+     "google_ads",
+     "search_volume",
+     "live"
+    ],
+    "data": {
+     "api": "keywords_data",
+     "function": "search_volume",
+     "se": "google_ads",
+     "keywords": [
+      "ai data analyst",
+      "ai for data analysis",
+      "text to sql",
+      "chatgpt for data analysis",
+      "ai bi tool",
+      "ai dashboard",
+      "power bi copilot",
+      "thoughtspot pricing",
+      "hex pricing",
+      "metabase ai",
+      "semantic layer",
+      "lookml",
+      "looker pricing",
+      "dbt semantic layer",
+      "power bi data model",
+      "dax formulas",
+      "metabase models",
+      "data modeling tool",
+      "row zero",
+      "sigma computing",
+      "sigma computing pricing",
+      "spreadsheet dashboard",
+      "excel dashboard",
+      "google sheets dashboard",
+      "python in excel",
+      "excel to power bi",
+      "dashboard data freshness",
+      "data observability",
+      "monte carlo data",
+      "power bi refresh",
+      "client reporting dashboard",
+      "client reporting software",
+      "white label reporting dashboard",
+      "agency reporting tool",
+      "agencyanalytics",
+      "agencyanalytics pricing",
+      "databox pricing",
+      "whatagraph pricing",
+      "dashthis pricing",
+      "looker studio client reporting",
+      "embedded analytics",
+      "customer facing analytics",
+      "metabase embedding",
+      "metabase pricing",
+      "power bi embedded pricing",
+      "row level security power bi",
+      "metabase row level security",
+      "power bi pro pricing"
+     ],
+     "location_code": 2840,
+     "language_code": "en",
+     "date_from": "2024-10-01",
+     "date_to": "2026-10-01"
+    },
+    "result": [
+     {
+      "keyword": "ai data analyst",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 29,
+      "search_volume": 590,
+      "low_top_of_page_bid": 4.31,
+      "high_top_of_page_bid": 14.87,
+      "cpc": 18.92,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 320
+       }
+      ]
+     },
+     {
+      "keyword": "ai for data analysis",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 29,
+      "search_volume": 2900,
+      "low_top_of_page_bid": 7.03,
+      "high_top_of_page_bid": 20,
+      "cpc": 23.1,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 5400
+       }
+      ]
+     },
+     {
+      "keyword": "text to sql",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 4,
+      "search_volume": 480,
+      "low_top_of_page_bid": 3.63,
+      "high_top_of_page_bid": 10.96,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "chatgpt for data analysis",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 16,
+      "search_volume": 390,
+      "low_top_of_page_bid": 3.49,
+      "high_top_of_page_bid": 22.3,
+      "cpc": 19.61,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 170
+       }
+      ]
+     },
+     {
+      "keyword": "ai bi tool",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 27,
+      "search_volume": 210,
+      "low_top_of_page_bid": 12.64,
+      "high_top_of_page_bid": 45.93,
+      "cpc": 33.15,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 260
+       }
+      ]
+     },
+     {
+      "keyword": "ai dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 15,
+      "search_volume": 3600,
+      "low_top_of_page_bid": 4.41,
+      "high_top_of_page_bid": 19.4,
+      "cpc": 19.95,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 12100
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 720
+       }
+      ]
+     },
+     {
+      "keyword": "power bi copilot",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 10,
+      "search_volume": 590,
+      "low_top_of_page_bid": 2.97,
+      "high_top_of_page_bid": 24.29,
+      "cpc": 25.32,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 880
+       }
+      ]
+     },
+     {
+      "keyword": "thoughtspot pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 26,
+      "search_volume": 210,
+      "low_top_of_page_bid": 10.26,
+      "high_top_of_page_bid": 80.27,
+      "cpc": 23.34,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 210
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 140
+       }
+      ]
+     },
+     {
+      "keyword": "hex pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 1,
+      "search_volume": 1300,
+      "low_top_of_page_bid": 0.39,
+      "high_top_of_page_bid": 7.43,
+      "cpc": 3.76,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 4400
+       }
+      ]
+     },
+     {
+      "keyword": "metabase ai",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 18,
+      "search_volume": 110,
+      "low_top_of_page_bid": 6.01,
+      "high_top_of_page_bid": 33.34,
+      "cpc": 51.14,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "semantic layer",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 31,
+      "search_volume": 3600,
+      "low_top_of_page_bid": 4.54,
+      "high_top_of_page_bid": 14.4,
+      "cpc": 12.47,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 2900
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1900
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 2400
+       }
+      ]
+     },
+     {
+      "keyword": "lookml",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 2,
+      "search_volume": 1000,
+      "low_top_of_page_bid": 3.38,
+      "high_top_of_page_bid": 26.71,
+      "cpc": 35.7,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "looker pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 19,
+      "search_volume": 170,
+      "low_top_of_page_bid": 7.14,
+      "high_top_of_page_bid": 35,
+      "cpc": 15.16,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 480
+       }
+      ]
+     },
+     {
+      "keyword": "dbt semantic layer",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 37,
+      "search_volume": 1900,
+      "low_top_of_page_bid": 4.53,
+      "high_top_of_page_bid": 12.86,
+      "cpc": 18.09,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "power bi data model",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 8,
+      "search_volume": 210,
+      "low_top_of_page_bid": 2.56,
+      "high_top_of_page_bid": 8.26,
+      "cpc": 4.63,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 480
+       }
+      ]
+     },
+     {
+      "keyword": "dax formulas",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 1,
+      "search_volume": 320,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": 1.11,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 480
+       }
+      ]
+     },
+     {
+      "keyword": "metabase models",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 1,
+      "search_volume": 30,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "data modeling tool",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 30,
+      "search_volume": 1000,
+      "low_top_of_page_bid": 4.03,
+      "high_top_of_page_bid": 14.23,
+      "cpc": 10.4,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 2400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1900
+       }
+      ]
+     },
+     {
+      "keyword": "row zero",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 2,
+      "search_volume": 1600,
+      "low_top_of_page_bid": 11.5,
+      "high_top_of_page_bid": 39.29,
+      "cpc": 18.38,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 590
+       }
+      ]
+     },
+     {
+      "keyword": "sigma computing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 16,
+      "search_volume": 9900,
+      "low_top_of_page_bid": 13.03,
+      "high_top_of_page_bid": 35,
+      "cpc": 22.28,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 8100
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 9900
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 9900
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 9900
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 14800
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 12100
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 9900
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 8100
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 12100
+       }
+      ]
+     },
+     {
+      "keyword": "sigma computing pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 38,
+      "search_volume": 110,
+      "low_top_of_page_bid": 10,
+      "high_top_of_page_bid": 35,
+      "cpc": 19.61,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 320
+       }
+      ]
+     },
+     {
+      "keyword": "spreadsheet dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 62,
+      "search_volume": 50,
+      "low_top_of_page_bid": 8.13,
+      "high_top_of_page_bid": 18.65,
+      "cpc": 0.02,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "excel dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 11,
+      "search_volume": 3600,
+      "low_top_of_page_bid": 2.2,
+      "high_top_of_page_bid": 11.2,
+      "cpc": 8.15,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 6600
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 5400
+       }
+      ]
+     },
+     {
+      "keyword": "google sheets dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 23,
+      "search_volume": 1000,
+      "low_top_of_page_bid": 3.04,
+      "high_top_of_page_bid": 18.69,
+      "cpc": 11.72,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1000
+       }
+      ]
+     },
+     {
+      "keyword": "python in excel",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 2,
+      "search_volume": 1300,
+      "low_top_of_page_bid": 0.37,
+      "high_top_of_page_bid": 6.22,
+      "cpc": 2.68,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 2400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 3600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 2900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 2900
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 2400
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 2900
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 4400
+       }
+      ]
+     },
+     {
+      "keyword": "excel to power bi",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 12,
+      "search_volume": 70,
+      "low_top_of_page_bid": 2.9,
+      "high_top_of_page_bid": 12.11,
+      "cpc": 20.73,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 110
+       }
+      ]
+     },
+     {
+      "keyword": "dashboard data freshness",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": null,
+      "competition_index": null,
+      "search_volume": null,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": null
+     },
+     {
+      "keyword": "data observability",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 37,
+      "search_volume": 590,
+      "low_top_of_page_bid": 10.93,
+      "high_top_of_page_bid": 42.23,
+      "cpc": 27.66,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 1300
+       }
+      ]
+     },
+     {
+      "keyword": "monte carlo data",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 13,
+      "search_volume": 880,
+      "low_top_of_page_bid": 11.19,
+      "high_top_of_page_bid": 35.01,
+      "cpc": 85.36,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 1900
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 8100
+       }
+      ]
+     },
+     {
+      "keyword": "power bi refresh",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 5,
+      "search_volume": 70,
+      "low_top_of_page_bid": 2.69,
+      "high_top_of_page_bid": 6.56,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 90
+       }
+      ]
+     },
+     {
+      "keyword": "client reporting dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 7,
+      "search_volume": 20,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 50
+       }
+      ]
+     },
+     {
+      "keyword": "client reporting software",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 0,
+      "search_volume": 50,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "white label reporting dashboard",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": null,
+      "competition_index": null,
+      "search_volume": 10,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 0
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 0
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 10
+       }
+      ]
+     },
+     {
+      "keyword": "agency reporting tool",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 3,
+      "search_volume": 40,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": 62.51,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 140
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 140
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 90
+       }
+      ]
+     },
+     {
+      "keyword": "agencyanalytics",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 58,
+      "search_volume": 4400,
+      "low_top_of_page_bid": 11.31,
+      "high_top_of_page_bid": 48.8,
+      "cpc": 17.89,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 3600
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 4400
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 4400
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 5400
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 5400
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 4400
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 4400
+       }
+      ]
+     },
+     {
+      "keyword": "agencyanalytics pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 32,
+      "search_volume": 140,
+      "low_top_of_page_bid": 5.82,
+      "high_top_of_page_bid": 34.78,
+      "cpc": 15.69,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 210
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 260
+       }
+      ]
+     },
+     {
+      "keyword": "databox pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 49,
+      "search_volume": 110,
+      "low_top_of_page_bid": 11.9,
+      "high_top_of_page_bid": 200.09,
+      "cpc": 35.37,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 170
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 210
+       }
+      ]
+     },
+     {
+      "keyword": "whatagraph pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "MEDIUM",
+      "competition_index": 44,
+      "search_volume": 30,
+      "low_top_of_page_bid": 35.84,
+      "high_top_of_page_bid": 51.94,
+      "cpc": 50.95,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 70
+       }
+      ]
+     },
+     {
+      "keyword": "dashthis pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 16,
+      "search_volume": 30,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 50
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 40
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 40
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 40
+       }
+      ]
+     },
+     {
+      "keyword": "looker studio client reporting",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": null,
+      "competition_index": null,
+      "search_volume": null,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": null
+     },
+     {
+      "keyword": "embedded analytics",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 23,
+      "search_volume": 320,
+      "low_top_of_page_bid": 60,
+      "high_top_of_page_bid": 153.6,
+      "cpc": 113.33,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 880
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 390
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 590
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 590
+       }
+      ]
+     },
+     {
+      "keyword": "customer facing analytics",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 26,
+      "search_volume": 30,
+      "low_top_of_page_bid": 41.28,
+      "high_top_of_page_bid": 177.53,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 30
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 50
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 40
+       }
+      ]
+     },
+     {
+      "keyword": "metabase embedding",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 6,
+      "search_volume": 70,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": 68.1,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 30
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 40
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 70
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 50
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 90
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 70
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 90
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 110
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 140
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 110
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 90
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 70
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 110
+       }
+      ]
+     },
+     {
+      "keyword": "metabase pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 21,
+      "search_volume": 260,
+      "low_top_of_page_bid": 4.33,
+      "high_top_of_page_bid": 31.75,
+      "cpc": 9.33,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 390
+       }
+      ]
+     },
+     {
+      "keyword": "power bi embedded pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 16,
+      "search_volume": 210,
+      "low_top_of_page_bid": 188.61,
+      "high_top_of_page_bid": 570,
+      "cpc": 134.61,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 140
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 110
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 170
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 210
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 210
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 320
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 320
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 480
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 590
+       }
+      ]
+     },
+     {
+      "keyword": "row level security power bi",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 4,
+      "search_volume": 390,
+      "low_top_of_page_bid": 2.14,
+      "high_top_of_page_bid": 7,
+      "cpc": 11.25,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 320
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 390
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 590
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 720
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 880
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 720
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 880
+       }
+      ]
+     },
+     {
+      "keyword": "metabase row level security",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 0,
+      "search_volume": 10,
+      "low_top_of_page_bid": null,
+      "high_top_of_page_bid": null,
+      "cpc": null,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 10
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 20
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 40
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 10
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 20
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 10
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 10
+       }
+      ]
+     },
+     {
+      "keyword": "power bi pro pricing",
+      "spell": null,
+      "location_code": 2840,
+      "language_code": "en",
+      "search_partners": false,
+      "competition": "LOW",
+      "competition_index": 5,
+      "search_volume": 1300,
+      "low_top_of_page_bid": 3.77,
+      "high_top_of_page_bid": 15,
+      "cpc": 11.7,
+      "monthly_searches": [
+       {
+        "year": 2026,
+        "month": 10,
+        "search_volume": 260
+       },
+       {
+        "year": 2026,
+        "month": 9,
+        "search_volume": 590
+       },
+       {
+        "year": 2026,
+        "month": 8,
+        "search_volume": 720
+       },
+       {
+        "year": 2026,
+        "month": 7,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 6,
+        "search_volume": 1300
+       },
+       {
+        "year": 2026,
+        "month": 5,
+        "search_volume": 1000
+       },
+       {
+        "year": 2026,
+        "month": 4,
+        "search_volume": 2400
+       },
+       {
+        "year": 2026,
+        "month": 3,
+        "search_volume": 1900
+       },
+       {
+        "year": 2026,
+        "month": 2,
+        "search_volume": 1600
+       },
+       {
+        "year": 2026,
+        "month": 1,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 12,
+        "search_volume": 1000
+       },
+       {
+        "year": 2025,
+        "month": 11,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 10,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 9,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 8,
+        "search_volume": 1300
+       },
+       {
+        "year": 2025,
+        "month": 7,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 6,
+        "search_volume": 1900
+       },
+       {
+        "year": 2025,
+        "month": 5,
+        "search_volume": 1600
+       },
+       {
+        "year": 2025,
+        "month": 4,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 3,
+        "search_volume": 880
+       },
+       {
+        "year": 2025,
+        "month": 2,
+        "search_volume": 480
+       },
+       {
+        "year": 2025,
+        "month": 1,
+        "search_volume": 390
+       },
+       {
+        "year": 2024,
+        "month": 12,
+        "search_volume": 260
+       },
+       {
+        "year": 2024,
+        "month": 11,
+        "search_volume": 260
+       },
+       {
+        "year": 2024,
+        "month": 10,
+        "search_volume": 260
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "03d2f1b77c164dc495494c93c4fe5db8",
+  "charged_micro": 90000,
+  "routed_tool": "treg.google.keywords.volume"
+ }
+}

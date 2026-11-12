@@ -1,0 +1,173 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 10,
+     "total": 25
+    },
+    "nextCursor": "cur_zeffqza3hZrIEV2Ar6r7ig",
+    "posts": [
+     {
+      "author": "Throwaway081920231",
+      "authorId": "8802wk7rg",
+      "createdUtc": 1792800539,
+      "id": "1xdu912",
+      "nsfw": false,
+      "numComments": 96,
+      "permalink": "/r/dataengineering/comments/1xdu912/i_lament_my_work_has_shifted_from_building/",
+      "score": 347,
+      "selftext": "I used to build data pipelines. I deeply enjoyed ETL/ELT work and now most of that is done using AI. Now my work has shifted to building semantic layers and it’s so boring. ",
+      "subreddit": "dataengineering",
+      "title": "I lament- My work has shifted from building pipelines to building semantic layer for chatbots",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1xdu912/i_lament_my_work_has_shifted_from_building/"
+     },
+     {
+      "author": "uncertainschrodinger",
+      "authorId": "3ev69xkf",
+      "createdUtc": 1781703439,
+      "id": "1u8af6a",
+      "nsfw": false,
+      "numComments": 17,
+      "permalink": "/r/BusinessIntelligence/comments/1u8af6a/i_helped_build_an_open_source_semantic_layer_tool/",
+      "score": 7,
+      "selftext": "I feel like this year I've heard a lot of talk about semantic layer, every time the topic of \"AI data this and that\" comes up, inevitably people talk about semantic layer.\n\nThat's one of the reasons why we wanted to add a semantic layer to Bruin to allow users to define their semantic layer in the same repo that their pipelines are so that agents can get the full picture - ingestion, transformation, governance, and now the semantic layer.\n\nIt is still the early days for the semantic layer, but it works across all the platforms we support. I've tested it with my own data analyst agent and I've seen improvements in terms of how accurately it answers questions, but I'm curious what others think.\n\nHas anyone tried using agents to analyze data with and without semantic layer? Did you see any improvements?",
+      "subreddit": "BusinessIntelligence",
+      "title": "I helped build an open source semantic layer tool",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1u8af6a/i_helped_build_an_open_source_semantic_layer_tool/"
+     },
+     {
+      "author": "cyamnihc",
+      "authorId": "dpc2z7ubu",
+      "createdUtc": 1780108942,
+      "id": "1trnima",
+      "nsfw": false,
+      "numComments": 126,
+      "permalink": "/r/dataengineering/comments/1trnima/semantic_layer/",
+      "score": 194,
+      "selftext": "What exactly is it ? Annotated table and field names and definition of every field in a text doc?  \nSeems like execs are convinced AI enablement’s first step is the semantic layer. \n\nDocumenting field and metric definitions which also evolve will take a long time, how is this being done at scale ?\n\nThoughts from folks who have been successful in this exercise?",
+      "subreddit": "dataengineering",
+      "title": "Semantic layer",
+      "url": "https://www.reddit.com/r/dataengineering/comments/1trnima/semantic_layer/"
+     },
+     {
+      "author": "AbleBranch6",
+      "authorId": "29kyqyzrcm",
+      "createdUtc": 1793026355,
+      "id": "1xfz074",
+      "nsfw": false,
+      "numComments": 5,
+      "permalink": "/r/businessanalysis/comments/1xfz074/we_tested_dbt_semantic_layer_vs_cube_for_bi_for/",
+      "score": 3,
+      "selftext": "two months ago our vp of finance asked our new claude desktop bot for last month's net arr churn, and it came back with 14.2%. tableau had it at 8.1%, and our dbt-modeled mart table in snowflake had it at 9.6%. i have edited this post with ai a bit to make it more readable and shorter.\n\neveryone spent three days in a fire drill arguing about whose query was wrong. it turned out all three queries were technically valid sql, but each one was calculating the denominator differently:\n\n* the tableau workbook had business logic stuck in tableau calculated fields that filtered out paused annual contracts.\n* our dbt marts had the core tables clean, but the group by grain in the final mart table wasn't designed for arbitrary date slicing.\n* the ai agent wrote raw text-to-sql that executed a many-to-one join between subscriptions and account adjustments, fanning out the customer rows and nearly doubling the churned amount.\n\nwe realized that giving an llm raw sql credentials and pointing it at warehouse schemas is basically begging for hallucinations. syntax is never the issue; domain semantics and join fan-outs are. so we decided to test two paths for metrics as code and bi for agents: sticking with the dbt semantic layer (metricflow), and testing cube (cube core + cube store with the remote mcp server).\n\nhere is what we learned after running both against 60 enterprise test questions:\n\n1. the context window trap in bi for agents when you let an agent query data, dumping your whole schema or yaml definitions into the system prompt destroys your context budget before the conversation even starts. with dbt semantic layer, querying through the semantic layer api requires either rigid tool calls for predefined metrics or relying on a partner integration that wraps metricflow. when the agent needed an ad-hoc ratio that wasn't explicitly predeclared, it couldn't compose it easily. cube handles this with a dedicated mcp server and an endpoint called searchDataModel. instead of dumping the entire model, the agent searches for candidate measures on demand. the mcp response returns compact records filtered by the caller's permissions. our token usage per agent query dropped from roughly 18k tokens to under 1.2k tokens.\n2. dynamic calculations without breaking the semantic model (semantic sql) this was the biggest architectural difference for us. if a business user or agent asks: \"what was our net revenue per active customer last quarter?\", raw sql usually hallucinates or averages daily ratios. in cube, the agent writes semantic sql against governed views: select region, measure(net\\_revenue) / measure(active\\_customers) as rev\\_per\\_customer from sales\\_view where date >= '2026-01-01' group by 1 the model doesn't need rev\\_per\\_customer explicitly predefined in yaml. cube resolves both underlying measures, handles the primary key deduplication to prevent fan-out, and compiles one clean query pushed down to snowflake.\n3. what about lock-in and open specs? one fear we had was migrating our logic from dbt or tableau into yet another proprietary syntax. with dbt semantic layer, you are heavily anchored into dbt cloud's hosting if you want the external query api. cube core is apache 2.0 open source, but what made our infra team comfortable was the apache ossie (formerly open semantic interchange) integration. snowflake and the community backed this open yaml spec, and cube has an open converter in the apache repo. running cube ossie export turns your model into a portable ossie file, and cube ossie import brings it back. you aren't trapped if you change your mind later.\n\nwhere each approach actually fits:\n\n* if your entire analytics stack is already 100% inside dbt cloud, your metrics are purely static kpis, and you don't need a sub-second caching engine for external dashboards or dynamic agent sql, the dbt semantic layer is the simplest incremental step.\n* if you have business logic stuck in tableau, metabase, or python scripts that you need to expose uniformly to both human dashboards and ai agents via mcp without cloud warehouse compute spikes, putting cube in front of the warehouse solved our metric drift completely.\n\nand, we're now writing automated ci tests that compare agent-generated answers against certified monthly financial numbers.\n\nwould like to ask pretty much anyone else running ai agents or slack bots over governed metrics: how are you preventing users from asking ambiguous questions that no semantic model can realistically resolve?",
+      "subreddit": "businessanalysis",
+      "title": "we tested dbt semantic layer vs cube for bi for agents and metrics as code and here is what actually broke when connecting claude to our warehouse",
+      "url": "https://www.reddit.com/r/businessanalysis/comments/1xfz074/we_tested_dbt_semantic_layer_vs_cube_for_bi_for/"
+     },
+     {
+      "author": "NoWelder4993",
+      "authorId": "1gr3zoffw3",
+      "createdUtc": 1788368795,
+      "id": "1w5gcfq",
+      "nsfw": false,
+      "numComments": 28,
+      "permalink": "/r/snowflake/comments/1w5gcfq/snowflake_semantic_layer/",
+      "score": 21,
+      "selftext": "Does anyone leverage this feature and what was their experience like? What's the pros and cons, and how have you found it helpful for your company.",
+      "subreddit": "snowflake",
+      "title": "Snowflake Semantic Layer",
+      "url": "https://www.reddit.com/r/snowflake/comments/1w5gcfq/snowflake_semantic_layer/"
+     },
+     {
+      "author": "Familiar_Season1255",
+      "authorId": "1u1akgu1he",
+      "createdUtc": 1789576334,
+      "id": "1wi2861",
+      "nsfw": false,
+      "numComments": 4,
+      "permalink": "/r/analyticsengineering/comments/1wi2861/instead_of_another_bi_tool_selection_cycle_we_put/",
+      "score": 5,
+      "selftext": "Lately, I’ve been focusing on consolidating our semantic layer. Here is the exact scenario that made my manager push for this:\n\nWe realized \"net sales\" was defined in 6 different ways across departments. Finance subtracted returns and markdowns; Merchandising subtracted returns but ignored markdowns; my weekly report did something in between because I inherited a query from a guy who left two years ago. Every executive meeting had that awkward moment where two dashboards showed different numbers and nobody could explain why beyond \"different SQL.\"  \nDuring our BI tool selection review, we realized the core problem wasn't our dashboarding UI - it was the lack of a centralized data modeling layer  \nSo instead of switching visualization platforms, we put Cube in front of our warehouse as a headless semantic layer You define your \"cubes\" mapped to fact tables, list your dimensions (store, region, category, week), and write the math for your measures once in YAML.   \nNow net\\_sales lives in one place. Whether an analyst queries it via SQL, a custom app calls it via REST/GraphQL, or a BI dashboard pulls it, everyone inherits the exact same logic.\n\nOddly enough, the technical setup took less than a day. The hardest part was getting Finance, Merchandising, and Ops in a room for three meetings just to agree on what \"Net Sales\" actually means. But once you survive that battle, you lock it into code and never have to revisit it. Unexpected win- BI for Agents: We’ve recently started testing AI agents on top of our data. Previously, LLMs gave inconsistent answers because our underlying logic was fragmented. With a structured semantic layer acting as BI for Agents, the AI just requests pre-defined metrics instead of trying to write complex raw SQL from scratch\n\nHow are you all handling metric consolidation across teams? Are you using dbt, built-in BI modeling, or dedicated headless tools?",
+      "subreddit": "analyticsengineering",
+      "title": "Instead of another BI Tool Selection cycle, we put a Semantic Layer in front of our warehouse",
+      "url": "https://www.reddit.com/r/analyticsengineering/comments/1wi2861/instead_of_another_bi_tool_selection_cycle_we_put/"
+     },
+     {
+      "author": "ScopeDev",
+      "authorId": "16397ibzts",
+      "createdUtc": 1764697926,
+      "id": "1pcf8rh",
+      "nsfw": false,
+      "numComments": 12,
+      "permalink": "/r/BusinessIntelligence/comments/1pcf8rh/i_built_a_semantic_layer_that_makes_it_easier_to/",
+      "score": 25,
+      "selftext": "Hey folks,\n\nI built an open-source semantic layer in Python because I felt most BI tools were too heavy and too complicated to build data products.\n\nOne year back, I was building a product for Customer Success teams that relied heavily on Data Analytics, and I had a terrible time creating even simple dashboards for our customers. This was because we had to adapt to thousands of metrics across different databases and manage them. We had to do all of this while maintaining multi-tenant isolation, which was so painful. And customers kept asking for the ability to create their own dashboards, even though we were already drowning in custom data requests.\n\nThat's why I built [Cortex](https://docs.jointelescope.com/), a BI tool that's easy to use, embeds with a single pip install, and works great for building customer-facing dashboards.\n\nDo you think this could be useful for you or anyone you know? Would love some feedback on what could be improved as well.",
+      "subreddit": "BusinessIntelligence",
+      "title": "I built a Semantic Layer that makes it easier to build dashboards",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1pcf8rh/i_built_a_semantic_layer_that_makes_it_easier_to/"
+     },
+     {
+      "author": "CommitteeImmediate66",
+      "authorId": "c0q48v3z",
+      "createdUtc": 1789337755,
+      "id": "1wflg2e",
+      "nsfw": false,
+      "numComments": 24,
+      "permalink": "/r/analytics/comments/1wflg2e/semantic_layer_learnings/",
+      "score": 29,
+      "selftext": "We've recently been looking at consolidating our semantic layer. An example of why my manager has decided we need to focus on this is we had \"net sales\" defined like six different ways. Finance took out returns and markdowns, the merch dashboard took out returns but not markdowns, my weekly report did something in between because I inherited the query from a guy who left two years ago. Every leadership meeting had that awkward moment where two numbers didn't match and nobody could say why except \"different SQL.\" \n\nAll our analytics data is in Databricks, so we decided to rest metric views. A metric view in Databricks is basically a governed definition of a metric that lives in Unity Catalog instead of buried inside a dashboard. You point it at a source (your fact table plus whatever joins), you list your dimensions - the stuff you slice by, like store, region, category, channel, week - and then you define your measures, which is the actual metric math. The key thing is you write that math once. So net\\_sales = SUM(sales\\_amount - returns - markdowns) lives in exactly one place, and everything downstream inherits it. We defined them all through YAML. \n\nHonestly the hardest part wasn't technical at all. It was getting finance, merch, and ops in a room to agree on what net sales even means. Encoding it took an afternoon; agreeing on it took three meetings. But that's kind of the point - you do that fight once, write it down in the metric view, and you never have to have it again. When a business rule changes, you change it in one spot.\n\nWe were also able to roll out genie agents because previously the definitions varied so much it was impossible to maintain them. ",
+      "subreddit": "analytics",
+      "title": "Semantic layer learnings",
+      "url": "https://www.reddit.com/r/analytics/comments/1wflg2e/semantic_layer_learnings/"
+     },
+     {
+      "author": "batmanparam",
+      "authorId": "3626cz8f",
+      "createdUtc": 1790478240,
+      "id": "1wr94se",
+      "nsfw": false,
+      "numComments": 5,
+      "permalink": "/r/AI_Agents/comments/1wr94se/semantic_and_knowledge_layer/",
+      "score": 1,
+      "selftext": "I need to build semantic and knowledge layer on top of GBQ, the enterprise data platform where all the data lives now. \n\nOne way I have done is building the semantic, ontology  and knowledge layers as tables as I don’t need to bring another product right now as it’s too early. \n\nI am looking for some resource and guidance on building on top of gbq layers and ways to expose these layers to agents as tools , wht point in the execution these these tools need to used in the execution? ",
+      "subreddit": "AI_Agents",
+      "title": "Semantic and knowledge layer",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1wr94se/semantic_and_knowledge_layer/"
+     },
+     {
+      "author": "ViSiRiS",
+      "authorId": "oqc84",
+      "createdUtc": 1788357554,
+      "id": "1w5b6cl",
+      "nsfw": false,
+      "numComments": 11,
+      "permalink": "/r/analytics/comments/1w5b6cl/creating_a_semantic_layer_for_event_data/",
+      "score": 7,
+      "selftext": "I want to build a semantic layer (i.e. sql code -> metric definition mappings) to provide models with context that will ideally make ai-generated sql more deterministic.\n\nOur data definitions are based on event data that is constantly being updated.\n\nFor example, we might define an active user as someone who posts on the site (users with “posted” events). When we do an AB test or just update the site, event names will inevitably change (e.g. definition is now users with “new-post” events), causing my *imaginary* semantic layer to become obsolete.\n\nMy question is - what tools do you use to manage definitions for event-heavy data? Ideally something with version history that agents can access via mcp?",
+      "subreddit": "analytics",
+      "title": "Creating a semantic layer for event data",
+      "url": "https://www.reddit.com/r/analytics/comments/1w5b6cl/creating_a_semantic_layer_for_event_data/"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "ac3868b8-ab37-4039-95ae-af386e5bcf7c"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "7c5362c504894abeaaa006a21962142e",
+  "charged_micro": 350,
+  "hint": "feedback"
+ }
+}

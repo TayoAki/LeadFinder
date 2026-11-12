@@ -1,0 +1,172 @@
+{
+ "result": {
+  "output": {
+   "data": {
+    "_truncated": {
+     "shown": 10,
+     "total": 25
+    },
+    "nextCursor": "cur_g8JrOhm2Wk-XlBg5-3ipUA",
+    "posts": [
+     {
+      "author": "digitxl_agency",
+      "authorId": "1kilta3gy5",
+      "createdUtc": 1793244241,
+      "id": "1xi95ud",
+      "nsfw": false,
+      "numComments": 9,
+      "permalink": "/r/analytics/comments/1xi95ud/how_do_you_know_when_a_dashboard_is_precise_but/",
+      "score": 3,
+      "selftext": "I’m interested in how other analytics teams make this distinction.\n\nA dashboard can look extremely convincing:\n\n* clean trend lines\n* exact percentages\n* revenue to the cent\n* consistent period comparisons\n* multiple reports showing similar numbers\n\nBut none of that necessarily proves the underlying measurement is trustworthy.\n\nSome of the warning signs I look for are:\n\n**The definition is unclear.**\n\nPeople use terms like “lead”, “conversion” or “revenue”, but different systems or teams mean different things.\n\n**Nobody can trace one real outcome end to end.**\n\nThe aggregate reporting looks fine, but it is difficult to follow one transaction or lead from the website through to the source system.\n\n**Changes cannot be explained.**\n\nConversion moves materially and the team cannot tell whether it came from customer behaviour, implementation, consent, traffic mix or the backend.\n\n**The dashboard is treated as the source of truth rather than a representation of source systems.**\n\nFor me, precision and confidence are different things.\n\nA report can be mathematically precise while the underlying event, definition or hand-off is wrong.\n\nCurious how others approach this.\n\n**What is your quickest test for whether a dashboard is genuinely trustworthy rather than simply well presented?**",
+      "subreddit": "analytics",
+      "title": "How do you know when a dashboard is precise but not actually trustworthy?",
+      "url": "https://www.reddit.com/r/analytics/comments/1xi95ud/how_do_you_know_when_a_dashboard_is_precise_but/"
+     },
+     {
+      "author": "thepotatomaniscoming",
+      "authorId": "2b672ih4z2",
+      "createdUtc": 1787148833,
+      "id": "1vsnn2l",
+      "nsfw": false,
+      "numComments": 41,
+      "permalink": "/r/FPandA/comments/1vsnn2l/ai_has_made_my_dashboard_creation_skills_useless/",
+      "score": 74,
+      "selftext": "Spent a lot of time in my career perfecting dashboards and getting them fully functional, displaying good data, and making it visually appealing and spending time analyzing them the way I like to analyze the data\n\nNow we are using an AI feature through google gemini and now I no longer need to spend time making any sort of dashboard anymore. ",
+      "subreddit": "FPandA",
+      "title": "AI has made my “dashboard creation” skills useless",
+      "url": "https://www.reddit.com/r/FPandA/comments/1vsnn2l/ai_has_made_my_dashboard_creation_skills_useless/"
+     },
+     {
+      "author": "texan-janakay",
+      "authorId": "9bzh21nt",
+      "createdUtc": 1771720431,
+      "id": "1rb7ffi",
+      "nsfw": false,
+      "numComments": 39,
+      "permalink": "/r/analytics/comments/1rb7ffi/i_trusted_aigenerated_charts_in_a_report_i_sent/",
+      "score": 0,
+      "selftext": "I tried to automate part of a reporting workflow and learned a lesson the hard way.\n\nI had an AI tool generate charts from a dataset to save time. The charts looked clean, labeled correctly, and visually believable — honestly nicer than what I usually produce.\n\nSo I sent the report.\n\nLater I checked the underlying numbers.\n\nThe totals didn’t match the data.\n\nNot wildly wrong — plausibly wrong. The kind of error that passes a visual check because the chart still looks reasonable.\n\nI realized the system optimized for producing a convincing visualization, not a verified calculation. It produced something that looked like a correct chart, not something guaranteed to be mathematically correct.\n\nExcel cares about arithmetic.  \n**The AI cared about producing a plausible output.**\n\nThe lesson for me wasn’t “AI is useless.” It was about tool boundaries. AI was helpful for drafting summaries and explanations, but treating it as a source of truth instead of a helper was a mistake.\n\nCurious how others are handling this — where do you let AI help in reporting workflows, and where do you require deterministic validation?",
+      "subreddit": "analytics",
+      "title": "I trusted AI-generated charts in a report I sent. The totals didn’t match the data.",
+      "url": "https://www.reddit.com/r/analytics/comments/1rb7ffi/i_trusted_aigenerated_charts_in_a_report_i_sent/"
+     },
+     {
+      "author": "Effective-Refuse5354",
+      "authorId": "ev3rw5eu",
+      "createdUtc": 1782758014,
+      "id": "1uj0t6d",
+      "nsfw": false,
+      "numComments": 84,
+      "permalink": "/r/analytics/comments/1uj0t6d/is_anyones_company_replacing_dashboards_with_apps/",
+      "score": 81,
+      "selftext": "Because they say executives hate dashboards",
+      "subreddit": "analytics",
+      "title": "Is anyones company replacing dashboards with apps made by AI?",
+      "url": "https://www.reddit.com/r/analytics/comments/1uj0t6d/is_anyones_company_replacing_dashboards_with_apps/"
+     },
+     {
+      "author": "Klutzy-Pace-9945",
+      "authorId": "2ad5l3ws57",
+      "createdUtc": 1790160924,
+      "id": "1wo2p1l",
+      "nsfw": false,
+      "numComments": 24,
+      "permalink": "/r/DigitalMarketing/comments/1wo2p1l/is_anyone_elses_ai_visibility_dashboard_just/",
+      "score": 8,
+      "selftext": ">Been doing SEO for a few years now and lately every client call ends with someone asking why their \"AI ranking\" dropped from a tool we're paying for.  \n>  \n>So I went down a rabbit hole trying to figure out if these numbers mean anything, and honestly now I'm not sure they do.  \n>  \n>Found a study (SparkToro, ran a few thousand actual AI responses across chatgpt/claude/google ai) where the same exact prompt, run again, had less than a 1 in 100 chance of returning the same list of brands. same order twice? less than 1 in 1000.  \n>  \n>The guy who ran it put it pretty bluntly: \"any tool that gives a 'ranking position in AI' is full of baloney.\"  \n>  \n>Which. yeah. tracks with what I've been seeing.  \n>  \n>Not saying don't pay attention to AI search at all, there's other data suggesting things like brand mentions and getting cited actually do correlate with more visibility over time. just feels like \"you're ranked #3 in ChatGPT\" is a made-up number dressed up as a metric.  \n>  \n>Anyone found a tool/method that's actually held up for you, or are we all just guessing right now?",
+      "subreddit": "DigitalMarketing",
+      "title": "Is anyone else's \"AI visibility\" dashboard just... making numbers up?",
+      "url": "https://www.reddit.com/r/DigitalMarketing/comments/1wo2p1l/is_anyone_elses_ai_visibility_dashboard_just/"
+     },
+     {
+      "author": "Hamza_StrategizeLabs",
+      "authorId": "2dbn7sxzql",
+      "createdUtc": 1792674416,
+      "id": "1xci2qp",
+      "nsfw": false,
+      "numComments": 14,
+      "permalink": "/r/AI_Agents/comments/1xci2qp/our_data_says_the_opposite_of_what_everyone/",
+      "score": 0,
+      "selftext": "Every enterprise AI pilot goes almost the same way. Start it on something small. A harmless workflow. Watch how it does, and if it behaves, promote it.\n\nThat is textbook risk management. It is also, according to our data, completely backwards.\n\nWe looked at roughly 600 substantial jobs and about 30 billion tokens of activity on our platform. Completion rates did not fall as the work got harder. They went up.\n\nSimple tasks landed in the high 80s. The most complex, highest-token jobs completed at 98 to 100 percent.\n\nBeing the suspicious sort, we went hunting for the catch.\n\n\n\n**The obvious objection, stated first**\n\nSelection bias. Harder jobs attract more serious users, who stick with it and finish. That is a real explanation and I am not going to pretend the data rules it out.\n\nBut it does not fully hold either. Nobody abandons a hard job because the model could not do it. Usually they are abandoned after a long grind which is a different failure. The abandonments cluster in much less flattering, low-stakes, vaguely specified, low-token requests.\n\nWhich makes sense when you think about it. A trivial task is where the user is minimally invested. There is no clear success condition, so there is no success.\n\nA hard job has a defined shape the output has to fit. Difficulty is a proxy for seriousness, and seriousness is a proxy for completion... as we like to put it.\n\n\n\n**The other number that surprised us**\n\nAcross about 1,900 deliverable sessions, 64.5 percent of output was kept with zero edits.\n\nThat a model produced something is table stakes. What it produced was good enough to use unmodified two thirds of the time.\n\n\n\n**What this changes**\n\nIf your testing ladder runs small to big, you are testing the model on precisely the tasks where your own process is least defined. You learn the least and conclude the most.\n\nA better blueprint would be to trust it with something real, scoped properly, with a genuine human sign-off at the end. Then judge it against a standard that already exists instead of inventing one on the fly.\n\nThat gives you something real to build on.",
+      "subreddit": "AI_Agents",
+      "title": "Our data says the opposite of what everyone assumes about trusting AI",
+      "url": "https://www.reddit.com/r/AI_Agents/comments/1xci2qp/our_data_says_the_opposite_of_what_everyone/"
+     },
+     {
+      "author": "Growth_Natives",
+      "authorId": "1tioipjkdx",
+      "createdUtc": 1787653600,
+      "id": "1vxvx2e",
+      "nsfw": false,
+      "numComments": 18,
+      "permalink": "/r/analytics/comments/1vxvx2e/a_dashboard_can_be_accurate_and_still_be_the/",
+      "score": 0,
+      "selftext": "Something we've noticed while working with marketing and performance data is that a dashboard can have perfectly accurate numbers and still not help anyone make a better decision.\n\nThe usual example is when a team has plenty of data on traffic, leads, conversions, etc., but the numbers are all reporting what happened. When the numbers move, people still have to go digging to understand why.\n\nWe've found the more useful conversations tend to start with the decision someone needs to make, and then work backwards to the data needed for that decision.\n\nCurious how others approach this. When you're building or reviewing reporting, how do you decide whether a metric is actually useful versus just something that's easy to track?",
+      "subreddit": "analytics",
+      "title": "A dashboard can be accurate and still be the wrong thing to look at",
+      "url": "https://www.reddit.com/r/analytics/comments/1vxvx2e/a_dashboard_can_be_accurate_and_still_be_the/"
+     },
+     {
+      "author": "Different_Pain5781",
+      "authorId": "1p2octpcy8",
+      "createdUtc": 1764421123,
+      "id": "1p9od0u",
+      "nsfw": false,
+      "numComments": 173,
+      "permalink": "/r/BusinessIntelligence/comments/1p9od0u/can_someone_explain_why_users_ask_for_dashboards/",
+      "score": 1097,
+      "selftext": "i checked our usage logs today and bro i’m actually crying. this one manager begged me for months to make him this super important dashboard. he would ping me nonstop like it was a life or death situation.  \nso i finally build it, make it clean, make it pretty, all that.\n\nguess how many times he opened it?  \ntwo. two times. In four months.  \n\nlike why do people treat dashboards like some kinda achievement badge. they don’t use them, they just want to say they have one.\n\nhow do you all deal with ppl who act like dashboards are trophies? \n\ndo you just build them anyway or do you start saying no?\n\n",
+      "subreddit": "BusinessIntelligence",
+      "title": "can someone explain why users ask for dashboards they literally never open?",
+      "url": "https://www.reddit.com/r/BusinessIntelligence/comments/1p9od0u/can_someone_explain_why_users_ask_for_dashboards/"
+     },
+     {
+      "author": "Aggravating_Sign_471",
+      "authorId": "ikpd2z5r",
+      "createdUtc": 1784255514,
+      "id": "1uyn1l5",
+      "nsfw": false,
+      "numComments": 8,
+      "permalink": "/r/osinttools/comments/1uyn1l5/anyone_else_notice_that_ai_has_dramatically/",
+      "score": 14,
+      "selftext": "I remember first coming to this subreddit.  Everything was oooo and aaaaaaaaaahhhhhh .  Now that everyone is building their own tools and proclaiming them to be the best, quite frankly it has become more of a disappointment every time I come here now.  For the most part the number of replies is so low on a lot of these \"tools\" because they are just quite frankly boring when you see that everyone has made the best Facebook tools, only they are as redundant as other tools....\n\nSorry, just had to vent some.    ",
+      "subreddit": "osinttools",
+      "title": "Anyone else notice that AI has dramatically cursed us with all these new dashboards.",
+      "url": "https://www.reddit.com/r/osinttools/comments/1uyn1l5/anyone_else_notice_that_ai_has_dramatically/"
+     },
+     {
+      "author": "General-Paramedic492",
+      "authorId": "1337gw9t8r",
+      "createdUtc": 1792963867,
+      "id": "1xfefll",
+      "nsfw": false,
+      "numComments": 13,
+      "permalink": "/r/micro_saas/comments/1xfefll/ive_got_feedback_on_my_landing_pagedashboard/",
+      "score": 1,
+      "selftext": "A lot of you didn't really like my TrustDrop landing page and dashboard. Some people said it looked like AI slop. Whilst it wasn't nice to hear, it was great to get some feedback!\n\nThank you to u/Adventurous_Catch370 for their feedback which made me think about my product differently and improve it.\n\nI've been adding some extra features to make it more useful. You can now add products (books etc.) to your business to create unique review links for each one. There's also a review widget that you can share or put onto your website. The widget will show only approved reviews from customers.\n\nI'm still developing TrustDrop so there's still a lot I want to improve.\n\nI would really appreciate any feedback. What do you not like? What is confusing? What is unnecessary? What features are missing? I'd rather be told the truth than pretend it's perfect. \n\nI'm building this as an indie founder and I can't improve my product unless people are actually using it and telling me what they don't like.\n\nIf you have a minute please check it out and leave a comment.\n\nThank you to those of you who left feedback. It means more than you may think!\n\n[https://trustdrop-lac.vercel.app/](https://trustdrop-lac.vercel.app/)",
+      "subreddit": "micro_saas",
+      "title": "I've got feedback on my landing page/dashboard! (called AI slop)",
+      "url": "https://www.reddit.com/gallery/1xfefll"
+     }
+    ]
+   },
+   "found": true
+  },
+  "provider": "AnyAPI",
+  "costUsd": 0.00035,
+  "items": 25,
+  "replayed": false,
+  "source": {
+   "id": "anonymous-bison-9321fc54",
+   "name": "Bison",
+   "kind": "anonymous",
+   "artworkKey": "bison"
+  },
+  "resultId": "5187c267-51e3-4e98-acf1-51e2314a3e59"
+ },
+ "_treg": {
+  "http_status": 200,
+  "call_id": "5cfb397b82f3490eb2e59e177d99e940",
+  "charged_micro": 350
+ }
+}
