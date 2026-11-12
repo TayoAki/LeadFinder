@@ -1,0 +1,55 @@
+
+## Lovable: 140 ads, 90 running, 0 kept 30d+, 9 new in 7d
+   formats: {"DCO":46,"VIDEO":44}   angles(kept): {}
+
+## Base44: 140 ads, 90 running, 42 kept 30d+, 0 new in 7d
+   formats: {"DCO":88,"VIDEO":2}   angles(kept): {"discount":13,"other":17,"demo":7,"science":2,"curiosity":1,"routine":2}
+   - 259d · DCO · Base44 lets you turn ideas into real apps.
+   - 258d · DCO · Base44 lets you turn ideas into real apps.
+   - 170d · DCO · Base44 lets you turn ideas into real apps.
+   - 105d · DCO · Base44 lets you turn ideas into real apps.
+
+## Vibecode: 22 ads, 22 running, 0 kept 30d+, 22 new in 7d
+   formats: {"DCO":4,"IMAGE":17,"VIDEO":1}   angles(kept): {}
+
+## Replit: 65 ads, 15 running, 6 kept 30d+, 0 new in 7d
+   formats: {"VIDEO":15}   angles(kept): {"other":2,"founder":1,"social_proof":2,"problem":1}
+   - 36d · VIDEO · Where's my money? I cannot believe that I've been a freelancer for over three years, and I still procrastinate
+   - 32d · VIDEO · Last shoot, a student sent me a screenshot of my course on his phone, zoomed in, unreadable.
+   - 32d · VIDEO · For my birthday this year, I'm hosting a crafty evening, and I want to make a special website to go with it.
+   - 32d · VIDEO · Every country I shoot in, one person makes the trip possible.
+
+## Blink.new: 25 ads, 15 running, 0 kept 30d+, 15 new in 7d
+   formats: {"VIDEO":9,"IMAGE":5,"DCO":1}   angles(kept): {}
+
+## Bolt.new: 58 ads, 8 running, 1 kept 30d+, 15 new in 7d
+   formats: {"DCO":8}   angles(kept): {"other":1}
+   - 34d · DCO · If you can describe it, you can build it.
+
+## Bubble: 54 ads, 4 running, 0 kept 30d+, 4 new in 7d
+   formats: {"DCO":4}   angles(kept): {}
+
+## Superapp: 3 ads, 3 running, 0 kept 30d+, 0 new in 7d
+   formats: {"DCO":3}   angles(kept): {}
+
+## Rork: 50 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
+
+## Rork (native apps page): 50 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
+
+## Newly (formerly Natively): 50 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
+
+## FlutterFlow: 0 ads
+
+## Draftbit: 39 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
+
+## Adalo: 0 ads
+
+## Thunkable: 50 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
+
+## Anything (Create): 34 ads, 0 running, 0 kept 30d+, 0 new in 7d
+   formats: {}   angles(kept): {}
