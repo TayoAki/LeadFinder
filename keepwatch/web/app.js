@@ -233,6 +233,56 @@ async function viewHooks() {
   </section>`;
 }
 
+const STATUS_PILL = { scaling: 'hot', refreshed: 'warm', testing: 'cold', retired: '', one_off: '' };
+const miniStrip = list => `<div class="row" style="gap:6px;flex-wrap:wrap">${list.slice(0, 6).map(a => `
+  <button class="btn sm" data-ad="${esc(a.id)}" title="${esc(a.hook || '')}">${a.is_active ? '● ' : ''}${esc(a.rival_name)} · ${a.run_days}d</button>`).join('')}</div>`;
+
+async function viewPatterns() {
+  const p = await api('/api/patterns');
+  if (!p.counted) return empty('No ads collected yet. Track a few rivals first.');
+  const best = r => [...r.examples].sort((a, b) => b.is_active - a.is_active || b.run_days - a.run_days)[0];
+  return `
+  <section class="section">
+    ${sectionHead('What to make next', `Ranked by how many brands run the same thing, whether anyone keeps refreshing it, and how long it has lasted. From ${p.live} live ads of ${p.counted}.`)}
+    <div style="display:grid;gap:10px">${p.recommendations.length ? p.recommendations.map((r, i) => `
+      <div class="card pad" style="display:grid;gap:8px">
+        <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3>${i + 1}. ${r.kind === 'line' ? `<q>${esc(r.title)}</q>` : esc(r.title)}</h3>
+          <span class="pill ${r.iterating.length ? 'hot' : ''}">${r.kind === 'line' ? 'Same line' : 'Same format'} · ${r.brands.length} brands</span></div>
+        ${r.kind === 'format' && r.line ? `<span>Line brands share here: <q>${esc(r.line)}</q></span>` : ''}
+        <span class="small muted">${esc(r.why)}</span>
+        <span><b>Make:</b> ${esc(r.make)}</span>
+        ${miniStrip(r.examples)}
+        <div class="row"><button class="btn sm primary" data-steal="${esc(best(r).id)}">Make this</button><button class="btn sm" data-ad="${esc(best(r).id)}">See the best example</button></div>
+      </div>`).join('') : empty('No pattern shared by two or more brands yet.')}</div>
+  </section>
+  <section class="section">
+    ${sectionHead('Ideas each brand keeps refreshing', 'Ads grouped into one idea when Meta groups them or the copy says the same thing. Scaling means a version has lasted 14+ days and new versions launched in the last 14.')}
+    <div style="display:grid;gap:10px">${p.iterating.length ? p.iterating.map(g => `
+      <div class="card pad" style="display:grid;gap:10px"><h3>${esc(g.rival)} <span class="small muted">${g.concepts.length} idea${g.concepts.length === 1 ? '' : 's'} in rotation</span></h3>
+        ${g.concepts.slice(0, 5).map(c => `<div style="display:grid;gap:6px;border-top:1px solid var(--line);padding-top:8px">
+          <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><q>${esc(c.hook)}</q><span class="pill ${STATUS_PILL[c.status]}">${esc(c.status === 'scaling' ? 'Scaling' : 'Refreshed')}</span></div>
+          <span class="small muted">${c.versions} versions · ${c.live} live · ${c.fresh} new in 14 days · ${c.stopped} stopped · longest ${c.longest} days · first ${esc(c.first_launch || '?')}, latest ${esc(c.last_launch || '?')}</span>
+          ${miniStrip(c.examples)}
+          <div class="row"><button class="btn sm primary" data-steal="${esc(c.exemplar.id)}">Make my version</button></div>
+        </div>`).join('')}
+      </div>`).join('') : empty('No brand is running several versions of one idea right now.')}</div>
+  </section>
+  <section class="section">
+    ${sectionHead('Same line, several brands', 'Live hooks that say nearly the same thing across different rivals.')}
+    <div style="display:grid;gap:10px">${p.shared_hooks.length ? p.shared_hooks.map(h => `
+      <div class="card hook-row"><div class="days"><b>${h.brands.length}</b><small>brands</small></div>
+        <div><q>${esc(h.line)}</q><div class="small muted" style="margin-top:4px">${esc(h.brands.join(', '))} · ${h.live} live · longest ${h.longest} days</div></div>
+        <div class="row"><button class="btn sm primary" data-steal="${esc(best(h).id)}">Make this</button></div></div>`).join('') : empty('No two brands share a line right now.')}</div>
+  </section>
+  <section class="section">
+    ${sectionHead('Same format, several brands', 'Live ads by medium and structure. "Statement" is the catch-all for copy that fits no clearer structure.')}
+    <div class="card pad"><table class="table"><thead><tr><th>Format</th><th>Brands</th><th class="num">Live</th><th class="num">Past 30 days</th><th class="num">Longest</th><th></th></tr></thead>
+    <tbody>${p.shared_formats.map(f => `<tr><td>${esc(f.label)}</td><td>${esc(f.brands.join(', '))}</td><td class="num">${f.live}</td><td class="num">${f.kept}</td><td class="num">${f.longest}d</td>
+      <td><button class="btn sm" data-steal="${esc(best(f).id)}">Make one</button></td></tr>`).join('')}</tbody></table></div>
+    <p class="small muted">${esc(p.note)}</p>
+  </section>`;
+}
+
 function makeForm() {
   const kit = state.ws.brand_kit, me = state.me;
   const products = kit?.products || [];
@@ -578,19 +628,19 @@ async function openAd(id) {
 }
 
 // ---------- routing ----------
-const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
+const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', patterns: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
 async function route() {
   const [, page = 'overview', arg] = (location.hash.split('?')[0] || '').split('/');
   const view = VIEW_OF[page] || 'home';
   document.querySelectorAll('.rail-btn').forEach(b => b.setAttribute('aria-current', String(b.dataset.view === view)));
-  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', rebuild: 'rebuild', test: 'test' }[page];
+  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', patterns: 'patterns', rebuild: 'rebuild', test: 'test' }[page];
   $('#tabs').hidden = view !== 'home';
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
   renderSidebar();
   const el = $('#content');
   el.innerHTML = '<div class="skeleton"></div>';
   try {
-    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
+    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, patterns: viewPatterns, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
       search: viewSearch, alerts: viewAlerts, library: () => viewRebuild(), settings: viewSettings }[page] || viewOverview)();
     el.innerHTML = html;
     el.scrollTop = 0;
@@ -613,7 +663,7 @@ document.addEventListener('click', async e => {
   const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
   if (!t) return;
   if (t.dataset.view) { location.hash = { home: '#/overview', search: '#/search', alerts: '#/alerts', library: '#/library', settings: '#/settings' }[t.dataset.view]; return; }
-  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
+  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', patterns: '#/patterns', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
   if (t.dataset.rival) { location.hash = `#/rival/${t.dataset.rival}`; return; }
   if (t.dataset.steal) { $('#modal').open && $('#modal').close();
     if (t.dataset.again) { t.disabled = true; try { await runJob('/api/rebuild', { ad_id: t.dataset.steal }, 'Making another version'); route(); } catch (err) { toast(err.message, 6000); } return; }

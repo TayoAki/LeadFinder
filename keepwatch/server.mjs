@@ -9,6 +9,7 @@ import { toNodeHandler, fromNodeHeaders } from 'better-auth/node';
 import { auth, migrateAuth } from './lib/auth.mjs';
 import { getDb, workspaceForUser, workspaceByKey, saveWorkspace, rotateApiKey, rivalIdsFor, trackRival, untrackRival, getWorkspace, listWorkspaces, createWorkspace, switchWorkspace, rootWorkspace } from './lib/db.mjs';
 import * as A from './lib/analytics.mjs';
+import { patterns } from './lib/concepts.mjs';
 import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR } from './lib/rebuild.mjs';
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
 import { providerStatus, adLibrary } from './lib/providers.mjs';
@@ -151,6 +152,7 @@ const routes = {
   'POST /api/collect': ({ ws }) => startJob(ws.id, 'collect', () => collectAll({ ids: rivalIdsFor(ws.id) })),
   'GET /api/formats': ({ ws }) => { const ids = rivalIdsFor(ws.id); return { league: A.formatLeague(db, ids), survival: A.formatSurvival(db, ids) }; },
   'GET /api/hooks': ({ ws, q }) => A.hooksThatLasted(db, { rivalIds: rivalIdsFor(ws.id), limit: Math.min(50, Number(q.get('limit') || 12)) }),
+  'GET /api/patterns': ({ ws }) => patterns(db, rivalIdsFor(ws.id)),
   'GET /api/angles': ({ ws }) => A.angleTemperature(db, rivalIdsFor(ws.id)),
   'GET /api/ads': ({ ws, q }) => {
     const f = Object.fromEntries(q);
