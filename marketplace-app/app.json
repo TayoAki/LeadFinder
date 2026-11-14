@@ -1,0 +1,70 @@
+{
+  "expo": {
+    "name": "Stalls",
+    "slug": "marketplace-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "associatedDomains": [
+        "applinks:stalls.app"
+      ],
+      "bundleIdentifier": "app.stalls.ios"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "package": "app.stalls",
+      "intentFilters": [
+        {
+          "action": "VIEW",
+          "autoVerify": true,
+          "data": [
+            {
+              "scheme": "https",
+              "host": "stalls.app",
+              "pathPrefix": "/p/"
+            },
+            {
+              "scheme": "https",
+              "host": "stalls.app",
+              "pathPrefix": "/s/"
+            },
+            {
+              "scheme": "https",
+              "host": "stalls.app",
+              "pathPrefix": "/d/"
+            },
+            {
+              "scheme": "https",
+              "host": "stalls.app",
+              "pathPrefix": "/w/"
+            }
+          ],
+          "category": [
+            "BROWSABLE",
+            "DEFAULT"
+          ]
+        }
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router"
+    ],
+    "scheme": "stalls",
+    "experiments": {
+      "typedRoutes": false
+    }
+  }
+}
