@@ -8,3 +8,6 @@ data/
 .claude/settings.local.json
 idea-engine/plans/zips/
 idea-engine/plans/*/ui/sim/review*/
+
+# Shelby sample catalogue (the app imports it; the server seeds from it)
+!marketplace-app/src/data/
