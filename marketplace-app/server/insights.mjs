@@ -13,11 +13,12 @@ function stepRows(db, { from, to, names }) {
 
 // For one shopper's rows, the timestamps at which each step was reached on their best attempt:
 // every step-1 occurrence may start an attempt; later steps must follow in order and fall within
-// windowMs of that start. Furthest attempt wins; ties go to the earliest.
-function matchSteps(rows, steps, windowMs) {
+// windowMs of that start. Furthest attempt wins; ties go to the earliest. Attempts must start by
+// `startBy` (the range end) but may finish after it.
+function matchSteps(rows, steps, windowMs, startBy) {
   let best = [], bestStart = null;
   rows.forEach((start, i) => {
-    if (start.name !== steps[0]) return;
+    if (start.name !== steps[0] || start.ts > startBy) return;
     const at = [start.ts];
     for (let j = i + 1; j < rows.length && at.length < steps.length; j++) {
       const r = rows[j];
@@ -54,8 +55,8 @@ function summarise(steps, reached) {
 
 // Each shopper's best attempt: { anon, at: [ts per reached step], start: the step-1 row }.
 function attempts(db, { steps, from, to, windowMs = 7 * 864e5 }) {
-  const groups = byShopper(stepRows(db, { from, to, names: [...new Set(steps)] }));
-  return [...groups].map(([anon, rows]) => ({ anon, ...matchSteps(rows, steps, windowMs) })).filter(a => a.at.length);
+  const groups = byShopper(stepRows(db, { from, to: to + windowMs, names: [...new Set(steps)] }));
+  return [...groups].map(([anon, rows]) => ({ anon, ...matchSteps(rows, steps, windowMs, to) })).filter(a => a.at.length);
 }
 
 const breakdownKey = (start, by) => {
@@ -123,14 +124,14 @@ export function retention(db, { from, to, period = 'day', periods = 8, returnEve
 }
 
 // ---------- people and timelines ----------
-// Orders and spend come from the server's order_confirmed events; a shopper with none falls back
-// to their client-side order_placed events (so each order counts once, never twice).
+// Orders and spend: each order counts once. The server's order_confirmed is the truth; an
+// order_placed whose order_id was never confirmed (or has no id) still counts.
 function ordersOf(db, anon, from, to) {
-  const q = name => db.prepare(`SELECT COUNT(*) n, COALESCE(SUM(json_extract(props, '$.total')), 0) total FROM events
-    WHERE ${SHOPPER} AND anon = ? AND name = ? AND ts >= ? AND ts <= ?`).get(anon, name, from, to);
-  const c = q('order_confirmed');
-  const o = c.n ? c : q('order_placed');
-  return { orders: o.n, spend: Math.round(o.total * 100) / 100 };
+  const rows = db.prepare(`SELECT name, json_extract(props, '$.order_id') oid, json_extract(props, '$.total') total FROM events
+    WHERE ${SHOPPER} AND anon = ? AND name IN ('order_confirmed', 'order_placed') AND ts >= ? AND ts <= ?`).all(anon, from, to);
+  const confirmed = new Set(rows.filter(r => r.name === 'order_confirmed').map(r => String(r.oid)));
+  const counted = rows.filter(r => r.name === 'order_confirmed' || r.oid == null || !confirmed.has(String(r.oid)));
+  return { orders: counted.length, spend: Math.round(counted.reduce((n, r) => n + (Number(r.total) || 0), 0) * 100) / 100 };
 }
 
 function personRow(db, r, from, to) {
@@ -145,10 +146,12 @@ const PERSON_SQL = `SELECT anon, MAX(ts) lastSeen, COUNT(*) events, COUNT(DISTIN
   (SELECT MIN(ts) FROM events f WHERE f.anon = e.anon AND f.source = 'app') firstSeen
   FROM events e WHERE ${SHOPPER} AND ts >= ? AND ts <= ?`;
 
-// Shoppers active in the range, most recently seen first; `did` keeps those who did that event.
-export function people(db, { from, to, did, limit = 50 }) {
-  const rows = db.prepare(`${PERSON_SQL}${did ? ' AND anon IN (SELECT anon FROM events WHERE name = ? AND ts >= ? AND ts <= ?)' : ''}
-    GROUP BY anon ORDER BY lastSeen DESC LIMIT ?`).all(from, to, ...(did ? [did, from, to] : []), Math.min(500, limit));
+// Shoppers active in the range, most recently seen first. `did` keeps those who did that event in
+// the range; `didNot` drops those who did that one (did checkout_start + didNot order_placed = abandoned).
+export function people(db, { from, to, did, didNot, limit = 50 }) {
+  const did_ = `SELECT anon FROM events WHERE ${SHOPPER} AND name = ? AND ts >= ? AND ts <= ?`;
+  const rows = db.prepare(`${PERSON_SQL}${did ? ` AND anon IN (${did_})` : ''}${didNot ? ` AND anon NOT IN (${did_})` : ''}
+    GROUP BY anon ORDER BY lastSeen DESC LIMIT ?`).all(from, to, ...(did ? [did, from, to] : []), ...(didNot ? [didNot, from, to] : []), Math.min(500, limit));
   return rows.map(r => personRow(db, r, from, to));
 }
 

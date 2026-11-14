@@ -33,8 +33,8 @@ Add an **Insights** area to the admin Analytics tab with three tools.
 5. As a platform admin, I want the median time between steps, so that I know whether checkout is slow or just abandoned.
 6. As a platform admin, I want to break a funnel down by platform (web, iOS, Android), so that I can find platform-specific problems.
 7. As a platform admin, I want to break a funnel down by campaign source (`utm_source` or referral), so that I can see which channels bring buyers rather than browsers.
-8. As a platform admin, I want ready-made funnels (shopping, onboarding, Ask Shelby to cart), so that I get answers without configuring anything.
-9. As a platform admin, I want to pick a date range (today, 7, 30, 90 days), so that I can compare periods.
+8. As a platform admin, I want ready-made funnels (shopping, open to order, onboarding, Ask Shelby to cart), so that I get answers without configuring anything.
+9. As a platform admin, I want to pick a date range (last 24 hours, 7, 30, 90 days), so that I can compare periods.
 10. As a platform admin, I want a retention table by first-seen day or week, so that I can see whether shoppers come back.
 11. As a platform admin, I want to choose the return event (any action, or a specific one such as placed an order), so that I can measure repeat purchases as well as repeat visits.
 12. As a platform admin, I want retention cells shaded by percentage, so that I can read the table at a glance.
@@ -51,17 +51,18 @@ Add an **Insights** area to the admin Analytics tab with three tools.
 - **New deep module `insights`** on the server. Its interface takes a database handle and plain options, and returns plain data. It has no HTTP or UI knowledge:
   - `funnel(db, { steps, from, to, windowMs, breakdown? })`. Each step is an event name. The result is `{ steps: [{ name, people, fromPrev, fromStart, medianMsFromPrev, dropped }], breakdown?: [{ key, steps: [...] }] }`.
   - `retention(db, { from, to, period: 'day' | 'week', periods, returnEvent? })`. The result is `{ cohorts: [{ start, size, values: [count per period index 0..periods-1] }] }`. Period 0 is the first-seen period, so it equals the cohort size.
-  - `people(db, { from, to, did?, limit })` returns `[{ anon, firstSeen, lastSeen, sessions, events, orders, spend, platform, lastPath }]`, sorted by `lastSeen` descending.
-  - `timeline(db, anon, { limit })` returns `{ summary, sessions: [{ id, start, end, events: [{ ts, name, path, props }] }] }`, newest session first.
+  - `people(db, { from, to, did?, didNot?, limit })`. `did` plus `didNot` gives segments such as abandoned checkout (`did: checkout_start`, `didNot: order_placed`). People returns `[{ anon, firstSeen, lastSeen, sessions, events, orders, spend, platform, lastPath }]`, sorted by `lastSeen` descending.
+  - `timeline(db, anon, { limit })` returns the latest 1,000 actions by default, as `{ summary, sessions: [{ id, start, end, events: [{ ts, name, path, props }] }] }`, newest session first.
   - `dropoffs(db, funnelOptions, stepIndex)` returns the anon ids that reached step `stepIndex - 1` but not `stepIndex`.
 - **Funnel semantics, matching PostHog's "sequential" funnel:**
   - Every occurrence of step 1 inside the range can start an attempt. A shopper is credited with their furthest attempt; on a tie, the earliest one wins. So a shopper who browsed last week and bought today, after viewing again, still converts within a 1-day window.
-  - Each later step must occur after the previous step's matched time, and within `windowMs` of the step 1 time.
+  - Each later step must occur at or after the previous step's matched time. Same-millisecond events are common: the client and server record an order together. Each later step must also fall within `windowMs` of the step 1 time. Attempts must start inside the range but may finish after it.
   - Each shopper counts at most once per step.
   - Breakdown value is the platform column, or a property read from the step 1 event.
 - **"First seen"** for retention is the earliest event of that shopper in the whole table, not just the range. That keeps cohorts stable as the range moves.
 - **Only shopper events count.** Seller-dashboard events and events without an anonymous id are excluded everywhere.
-- **Spend** is the sum of `total` on `order_confirmed` events (server truth), falling back to `order_placed` when no confirmation exists.
+- **Spend and orders** count each order once, matched by `order_id`. An order uses its `order_confirmed` event (server truth) if one exists, and its `order_placed` event otherwise.
+- **Campaign attribution:** the app stores first-touch `utm_source`, `utm_campaign` and `ref` and attaches them to every event, so any funnel can be broken down by campaign, whatever its first step.
 - **Querying:**
   - SQL narrows the data (by range, source and event names) and orders it by shopper and time.
   - The sequential matching runs in one pass in JS. That's simple and correct, and fast enough at our scale (indexes `events_ts` and `events_name_ts` exist).

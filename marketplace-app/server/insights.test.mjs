@@ -115,11 +115,11 @@ function shoppers() {
   add('ann', 'app_open', 0, { path: '/' });
   add('ann', 'product_view', MIN, { path: '/product/2', props: { product_id: '2' } });
   add('ann', 'app_open', DAY, { session: 'ann-2', platform: 'ios', path: '/' });
-  add('ann', 'order_placed', DAY + 5 * MIN, { session: 'ann-2', platform: 'ios', path: '/checkout', props: { total: 42.5 } });
-  add('ann', 'order_confirmed', DAY + 5 * MIN, { session: 'ann-2', platform: 'ios', path: '/checkout', props: { total: 42.5 } });
+  add('ann', 'order_placed', DAY + 5 * MIN, { session: 'ann-2', platform: 'ios', path: '/checkout', props: { order_id: 'o1', total: 42.5 } });
+  add('ann', 'order_confirmed', DAY + 5 * MIN, { session: 'ann-2', platform: 'ios', path: '/checkout', props: { order_id: 'o1', total: 42.5 } });
   // bob: no confirmation reached the server, so his client-side order counts
   add('bob', 'app_open', 2 * DAY, { path: '/' });
-  add('bob', 'order_placed', 2 * DAY + MIN, { path: '/checkout', props: { total: 10 } });
+  add('bob', 'order_placed', 2 * DAY + MIN, { path: '/checkout', props: { order_id: 'o9', total: 10 } });
   add('cat', 'app_open', 3 * HOUR, { path: '/search' });
   add('sel', 'screen_view', 4 * DAY, { source: 'seller' });
   return t;
@@ -150,4 +150,36 @@ test('timeline returns one shopper\'s sessions, newest first, events in order', 
   ]);
   assert.deepEqual(t.sessions[1].events[1], { ts: T0 + MIN, name: 'product_view', path: '/product/2', platform: 'web', props: { product_id: '2' } });
   assert.equal(timeline(db, 'nobody'), null);
+});
+
+test('funnel credits the earliest attempt when two attempts reach the same step', () => {
+  const { db, add } = makeDb();
+  add('ann', 'product_view', 0); add('ann', 'add_to_cart', 10 * MIN);
+  add('ann', 'product_view', DAY); add('ann', 'add_to_cart', DAY + MIN);
+  const r = funnel(db, { ...range, steps: SHOP, windowMs: DAY / 2 });
+  assert.equal(r.steps[1].medianMsFromPrev, 10 * MIN);
+});
+
+test('funnel lets an attempt that starts inside the range finish after it, within the window', () => {
+  const { db, add } = makeDb();
+  add('ann', 'product_view', 0); add('ann', 'add_to_cart', 2 * HOUR);
+  const r = funnel(db, { from: T0 - DAY, to: T0 + HOUR, steps: SHOP, windowMs: DAY });
+  assert.deepEqual(r.steps.map(s => s.people), [1, 1, 0]);
+});
+
+test('people can be filtered to shoppers who did one event but not another (abandoned checkout)', () => {
+  const { db, add } = makeDb();
+  add('ann', 'checkout_start', 0); add('ann', 'order_placed', MIN);
+  add('bob', 'checkout_start', 0);
+  add('sel', 'checkout_start', 0, { source: 'seller' });
+  assert.deepEqual(people(db, { ...range, did: 'checkout_start', didNot: 'order_placed' }).map(p => p.anon), ['bob']);
+});
+
+test('spend counts each order once: confirmed by the server, or client-side when unconfirmed', () => {
+  const { db, add } = makeDb();
+  add('ann', 'order_placed', 0, { props: { order_id: 'o1', total: 20 } });
+  add('ann', 'order_confirmed', 0, { props: { order_id: 'o1', total: 20 } });
+  add('ann', 'order_placed', DAY, { props: { order_id: 'o2', total: 5.5 } });
+  const [p] = people(db, range);
+  assert.deepEqual([p.orders, p.spend], [2, 25.5]);
 });

@@ -27,6 +27,16 @@ const touch = () => {
   lastAt = now; store.set('shelby_session', session); store.set('shelby_session_at', String(now));
 };
 
+// First-touch attribution: how this shopper first arrived. Attached to every event so any funnel
+// can be broken down by campaign or referral, whatever its first step is.
+type Attribution = { utm_source?: string; utm_campaign?: string; ref?: string };
+let attribution: Attribution = (() => { try { return JSON.parse(store.get('shelby_attr') ?? '{}'); } catch { return {}; } })();
+export function setAttribution(a: Attribution) {
+  const clean = Object.fromEntries(Object.entries(a).filter(([, v]) => typeof v === 'string' && v)) as Attribution;
+  if (!Object.keys(clean).length || Object.keys(attribution).length) return; // first touch wins
+  attribution = clean; store.set('shelby_attr', JSON.stringify(clean));
+}
+
 let path = '/';
 let queue: Event[] = [];
 let timer: ReturnType<typeof setTimeout> | null = null;
@@ -56,7 +66,7 @@ export function track(name: string, props: Props = {}) {
   touch();
   const { width, height } = Dimensions.get('window');
   const e: Event = {
-    name, props: Object.fromEntries(Object.entries(props).filter(([, v]) => v !== undefined && v !== null)) as Props,
+    name, props: Object.fromEntries(Object.entries({ ...attribution, ...props }).filter(([, v]) => v !== undefined && v !== null)) as Props,
     ts: Date.now(), anon, session, platform: Platform.OS, path, source: 'app',
     screen: `${Math.round(width)}x${Math.round(height)}`, language: web ? navigator.language : undefined,
     title: web ? document.title : undefined,

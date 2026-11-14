@@ -3,7 +3,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { View } from 'react-native';
 import { Shelby } from '@/components/Shelby';
-import { track, screen } from '@/lib/analytics';
+import { screen, setAttribution, track } from '@/lib/analytics';
 import { absolute, api } from '@/lib/api';
 import { applyCatalog, Product, Shop } from '@/lib/data';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
@@ -27,7 +27,7 @@ function CatalogGate({ children }: { children: React.ReactNode }) {
 function ScreenTracker() {
   const pathname = usePathname();
   const q = useGlobalSearchParams<{ ref?: string; utm_source?: string; utm_medium?: string; utm_campaign?: string }>();
-  useEffect(() => { track('app_open', { ref: q.ref, utm_source: q.utm_source, utm_medium: q.utm_medium, utm_campaign: q.utm_campaign }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { setAttribution({ utm_source: q.utm_source, utm_campaign: q.utm_campaign, ref: q.ref }); track('app_open', { ref: q.ref, utm_source: q.utm_source, utm_medium: q.utm_medium, utm_campaign: q.utm_campaign }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { screen(pathname, { ref: q.ref, utm_source: q.utm_source, utm_campaign: q.utm_campaign }); }, [pathname]); // eslint-disable-line react-hooks/exhaustive-deps
   return null;
 }

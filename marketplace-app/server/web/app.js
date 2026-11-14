@@ -326,26 +326,33 @@ const EVENT_HELP = { app_open: 'Opened the app', screen_view: 'Viewed a screen',
   ask_shelby: 'Asked Shelby', wishlist_toggle: 'Saved or unsaved', follow_toggle: 'Followed or unfollowed a shop', share: 'Shared', onboarding_step: 'Onboarding step',
   onboarding_complete: 'Finished onboarding', onboarding_skip: 'Skipped onboarding', deep_link: 'Opened a shared link', seller_action: 'Seller saved something' };
 // Hash shape: #/analytics[/funnels|/retention|/people[/<anon>]][?days=7&...]
-const aq = () => new URLSearchParams(location.hash.split('?')[1] || '');
-const aSub = () => location.hash.split('?')[0].split('/').slice(2).map(decodeURIComponent);
-const aHref = (sub, params) => { const q = aq(); for (const [k, v] of Object.entries(params || {})) v === null || v === '' ? q.delete(k) : q.set(k, v); const qs = q.toString(); return `#/analytics${sub ? `/${sub}` : ''}${qs ? `?${qs}` : ''}`; };
+const ANALYTICS_TABS = ['', 'funnels', 'retention', 'people'];
+const analyticsQuery = () => new URLSearchParams(location.hash.split('?')[1] || '');
+// [tab, shopperId?] from the hash; the tab is allow-listed so the hash can never inject markup.
+function analyticsRoute() {
+  const [tab = '', id] = location.hash.split('?')[0].split('/').slice(2).map(x => { try { return decodeURIComponent(x); } catch { return ''; } });
+  return ANALYTICS_TABS.includes(tab) ? [tab, tab === 'people' ? id : undefined] : [''];
+}
+const shopperHref = anon => analyticsHref(`people/${encodeURIComponent(anon)}`, {});
+const analyticsHref = (sub, params) => { const q = analyticsQuery(); for (const [k, v] of Object.entries(params || {})) v === null || v === '' ? q.delete(k) : q.set(k, v); const qs = q.toString(); return `#/analytics${sub ? `/${sub}` : ''}${qs ? `?${qs}` : ''}`; };
 const pct = x => `${Math.round(x * 1000) / 10}%`;
 const dur = ms => ms == null ? '–' : ms < 60e3 ? `${Math.round(ms / 1e3)}s` : ms < 36e5 ? `${Math.round(ms / 6e4)}m` : ms < 864e5 ? `${Math.round(ms / 36e5 * 10) / 10}h` : `${Math.round(ms / 864e5 * 10) / 10}d`;
 const ago = ts => { const d = Date.now() - ts; return d < 6e4 ? 'just now' : `${dur(d)} ago`; };
 const eventLabel = n => EVENT_HELP[n] || n.replace(/_/g, ' ');
+const linkChip = (on, href, label) => `<a class="chip" style="display:inline-flex;align-items:center;text-decoration:none;color:inherit;${on ? 'background:var(--ink);color:#fff;border-color:var(--ink)' : ''}" href="${esc(href)}">${esc(label)}</a>`;
 function analyticsShell(active, days) {
   const tabs = [['', 'Overview'], ['funnels', 'Funnels'], ['retention', 'Retention'], ['people', 'People']];
-  const chip = (on, href, label) => `<a class="chip" style="display:inline-flex;align-items:center;text-decoration:none;color:inherit;${on ? 'background:var(--ink);color:#fff;border-color:var(--ink)' : ''}" href="${href}">${label}</a>`;
-  return `<div class="row spread"><h1>Analytics</h1><div class="chips">${[1, 7, 30, 90].map(d => chip(d === days, aHref(aSub()[0] === 'people' && aSub()[1] ? 'people' : aSub()[0], { days: d }), d === 1 ? 'Today' : `${d} days`)).join('')}</div></div>
-    <div class="chips" role="tablist" style="margin:4px 0 18px">${tabs.map(([k, l]) => chip(k === active, aHref(k), l)).join('')}</div>`;
+  const [tab] = analyticsRoute();
+  return `<div class="row spread"><h1>Analytics</h1><div class="chips">${[1, 7, 30, 90].map(d => linkChip(d === days, analyticsHref(tab, { days: d }), d === 1 ? '24 hours' : `${d} days`)).join('')}</div></div>
+    <div class="chips" role="tablist" style="margin:4px 0 18px">${tabs.map(([k, l]) => linkChip(k === active, analyticsHref(k), l)).join('')}</div>`;
 }
 async function viewAnalytics() {
   if (state.user.role !== 'admin') { main.innerHTML = '<div class="card empty">Admins only.</div>'; return; }
-  const sub = aSub()[0] || '';
+  const [sub, shopper] = analyticsRoute();
   if (sub === 'funnels') return viewFunnels();
   if (sub === 'retention') return viewRetention();
-  if (sub === 'people') return aSub()[1] ? viewTimeline(aSub()[1]) : viewPeople();
-  const days = Number(aq().get('days')) || 7;
+  if (sub === 'people') return shopper ? viewTimeline(shopper) : viewPeople();
+  const days = Number(analyticsQuery().get('days')) || 7;
   const r = await api(`/api/admin/analytics?days=${days}`);
   const top = Math.max(1, r.funnel[0]?.n || 0);
   const maxDay = Math.max(1, ...r.daily.map(d => d.visitors));
@@ -376,24 +383,24 @@ const FUNNELS = {
   shopping: ['product_view', 'add_to_cart', 'checkout_start', 'order_placed'],
   full: ['app_open', 'product_view', 'add_to_cart', 'checkout_start', 'order_placed'],
   onboarding: ['app_open', 'onboarding_step', 'onboarding_complete', 'add_to_cart'],
-  shelby: ['ask_shelby', 'product_view', 'add_to_cart', 'order_placed'],
+  shelby: ['ask_shelby', 'product_view', 'add_to_cart'],
 };
-const FUNNEL_NAMES = { shopping: 'Shopping', full: 'Open to order', onboarding: 'Onboarding', shelby: 'Ask Shelby to order', custom: 'Custom' };
+const FUNNEL_NAMES = { shopping: 'Shopping', full: 'Open to order', onboarding: 'Onboarding', shelby: 'Ask Shelby to cart', custom: 'Custom' };
 const opt = (v, label, sel) => `<option value="${esc(v)}"${String(v) === String(sel) ? ' selected' : ''}>${esc(label)}</option>`;
 async function knownEvents() { return (await api('/api/admin/insights/events')).map(e => e.name); }
 
 async function viewFunnels() {
-  const q = aq(), days = Number(q.get('days')) || 7;
+  const q = analyticsQuery(), days = Number(q.get('days')) || 7;
   const preset = q.get('preset') || (q.get('steps') ? 'custom' : 'shopping');
   const steps = preset === 'custom' ? (q.get('steps') || FUNNELS.shopping.join(',')).split(',') : FUNNELS[preset];
-  const windowDays = q.get('windowDays') || '7', breakdown = q.get('breakdown') || '';
-  const [events, r] = await Promise.all([knownEvents(), api(`/api/admin/insights/funnel?days=${days}&steps=${encodeURIComponent(steps.join(','))}&windowDays=${windowDays}${breakdown ? `&breakdown=${encodeURIComponent(breakdown)}` : ''}`)]);
+  const win = q.get('window') || '7d', breakdown = q.get('breakdown') || '';
+  const [events, r] = await Promise.all([knownEvents(), api(`/api/admin/insights/funnel?days=${days}&steps=${encodeURIComponent(steps.join(','))}&window=${encodeURIComponent(win)}${breakdown ? `&breakdown=${encodeURIComponent(breakdown)}` : ''}`)]);
   const names = [...new Set([...steps, ...events, ...Object.values(FUNNELS).flat()])];
   const top = Math.max(1, r.steps[0].people);
   main.innerHTML = `${analyticsShell('funnels', days)}
     <div class="card" style="margin-bottom:14px"><div class="row" style="gap:14px;align-items:flex-end">
       <div><label for="f-preset">Funnel</label><select id="f-preset">${Object.entries(FUNNEL_NAMES).map(([k, l]) => opt(k, l, preset)).join('')}</select></div>
-      <div><label for="f-window">Conversion window</label><select id="f-window">${[['0.0417', '1 hour'], ['1', '1 day'], ['7', '7 days'], ['30', '30 days']].map(([v, l]) => opt(v, l, windowDays)).join('')}</select></div>
+      <div><label for="f-window">Conversion window</label><select id="f-window">${[['1h', '1 hour'], ['1d', '1 day'], ['7d', '7 days'], ['30d', '30 days']].map(([v, l]) => opt(v, l, win)).join('')}</select></div>
       <div><label for="f-break">Break down by</label><select id="f-break">${[['', 'Nothing'], ['platform', 'Platform'], ['utm_source', 'Campaign source'], ['ref', 'Referral code'], ['category', 'Product category']].map(([v, l]) => opt(v, l, breakdown)).join('')}</select></div>
     </div>
     <div id="f-steps" class="row" style="margin-top:14px;gap:8px">${steps.map((s, i) => `<span class="row" style="gap:4px"><b class="help" style="margin:0">${i + 1}</b><select data-step="${i}" aria-label="Step ${i + 1}">${names.map(n => opt(n, eventLabel(n), s)).join('')}</select>${steps.length > 2 ? `<button class="btn sm" data-del="${i}" aria-label="Remove step ${i + 1}">×</button>` : ''}</span>${i < steps.length - 1 ? '<span class="help" style="margin:0">→</span>' : ''}`).join('')}
@@ -404,15 +411,15 @@ async function viewFunnels() {
         <div class="row spread"><span><b>${i + 1}. ${esc(eventLabel(s.name))}</b> <span class="help">${esc(s.name)}</span></span>
           <span><b>${s.people}</b> <span class="help">${pct(s.fromStart)} of start${i ? ` · ${pct(s.fromPrev)} from previous · median ${dur(s.medianMsFromPrev)}` : ''}</span></span></div>
         <div style="height:26px;border-radius:8px;background:var(--line);margin-top:6px"><div style="height:26px;border-radius:8px;background:var(--accent);width:${Math.max(s.people ? 1 : 0, Math.round(s.people / top * 100))}%"></div></div>
-        ${i && s.dropped ? `<details style="margin-top:6px"><summary class="help" style="cursor:pointer">${s.dropped} dropped off here: see who</summary><div class="chips" style="margin-top:8px">${r.dropped[i].map(a => `<a class="chip" style="display:inline-flex;align-items:center;text-decoration:none;color:inherit" href="${aHref(`people/${encodeURIComponent(a)}`, {})}">${esc(a.slice(0, 10))}</a>`).join('')}</div></details>` : ''}
+        ${i && s.dropped ? `<details style="margin-top:6px"><summary class="help" style="cursor:pointer">${s.dropped} dropped off here: see who</summary><div class="chips" style="margin-top:8px">${r.dropped[i].map(a => linkChip(false, shopperHref(a), a.slice(0, 10))).join('')}</div></details>` : ''}
       </div>`).join('')}
     </div>
     ${r.breakdown ? `<div class="card" style="padding:6px 12px"><table><thead><tr><th>${esc(breakdown === 'platform' ? 'Platform' : breakdown)}</th>${r.steps.map((s, i) => `<th>${i + 1}. ${esc(eventLabel(s.name))}</th>`).join('')}<th>Conversion</th></tr></thead><tbody>
       ${r.breakdown.map(b => `<tr><td><b>${esc(b.key)}</b></td>${b.steps.map(s => `<td>${s.people}</td>`).join('')}<td><b>${pct(b.steps[b.steps.length - 1].fromStart)}</b></td></tr>`).join('')}</tbody></table></div>` : ''}`;
-  const go = (params) => { location.hash = aHref('funnels', params); };
+  const go = (params) => { location.hash = analyticsHref('funnels', params); };
   const custom = list => go({ preset: 'custom', steps: list.join(',') });
   $('#f-preset').onchange = e => e.target.value === 'custom' ? custom(steps) : go({ preset: e.target.value, steps: null });
-  $('#f-window').onchange = e => go({ windowDays: e.target.value });
+  $('#f-window').onchange = e => go({ window: e.target.value });
   $('#f-break').onchange = e => go({ breakdown: e.target.value });
   document.querySelectorAll('[data-step]').forEach(el => el.onchange = () => { const l = [...steps]; l[Number(el.dataset.step)] = el.value; custom(l); });
   document.querySelectorAll('[data-del]').forEach(el => el.onclick = () => custom(steps.filter((_, i) => i !== Number(el.dataset.del))));
@@ -420,9 +427,9 @@ async function viewFunnels() {
 }
 
 async function viewRetention() {
-  const q = aq(), days = Number(q.get('days')) || 30, period = q.get('period') || 'day', returnEvent = q.get('returnEvent') || '';
-  const periods = period === 'week' ? 8 : 8;
-  const [events, r] = await Promise.all([knownEvents(), api(`/api/admin/insights/retention?days=${days}&period=${period}&periods=${periods}${returnEvent ? `&returnEvent=${encodeURIComponent(returnEvent)}` : ''}`)]);
+  const q = analyticsQuery(), days = Number(q.get('days')) || 30, period = q.get('period') || 'day', returnEvent = q.get('returnEvent') || '';
+  const periods = 8;
+  const [events, r] = await Promise.all([knownEvents(), api(`/api/admin/insights/retention?days=${days}&period=${encodeURIComponent(period)}&periods=${periods}${returnEvent ? `&returnEvent=${encodeURIComponent(returnEvent)}` : ''}`)]);
   const unit = period === 'week' ? 'Week' : 'Day';
   const cell = (v, size) => v == null ? '<td></td>' : `<td style="text-align:center;background:rgba(253,82,67,${size ? (0.08 + 0.85 * v / size).toFixed(2) : 0});color:${size && v / size > 0.55 ? '#fff' : 'inherit'}" title="${v} of ${size}">${size ? pct(v / size) : '–'}</td>`;
   const total = r.cohorts.reduce((n, c) => n + c.size, 0);
@@ -436,34 +443,40 @@ async function viewRetention() {
       <tr><td><b>All cohorts</b></td><td><b>${total}</b></td>${avg.map(v => v == null ? '<td></td>' : `<td style="text-align:center"><b>${pct(v)}</b></td>`).join('')}</tr>
       ${r.cohorts.slice().reverse().map(c => `<tr><td>${esc(c.start)}</td><td>${c.size}</td>${c.values.map(v => cell(v, c.size)).join('')}</tr>`).join('') || `<tr><td colspan="${periods + 2}" class="help">No new shoppers in this range yet.</td></tr>`}
     </tbody></table></div>`;
-  $('#r-period').onchange = e => { location.hash = aHref('retention', { period: e.target.value }); };
-  $('#r-ret').onchange = e => { location.hash = aHref('retention', { returnEvent: e.target.value }); };
+  $('#r-period').onchange = e => { location.hash = analyticsHref('retention', { period: e.target.value }); };
+  $('#r-ret').onchange = e => { location.hash = analyticsHref('retention', { returnEvent: e.target.value }); };
 }
 
 async function viewPeople() {
-  const q = aq(), days = Number(q.get('days')) || 7, did = q.get('did') || '';
-  const [events, list] = await Promise.all([knownEvents(), api(`/api/admin/insights/people?days=${days}&limit=200${did ? `&did=${encodeURIComponent(did)}` : ''}`)]);
+  const q = analyticsQuery(), days = Number(q.get('days')) || 7, did = q.get('did') || '', didNot = q.get('didNot') || '';
+  const [events, list] = await Promise.all([knownEvents(), api(`/api/admin/insights/people?days=${days}&limit=200&did=${encodeURIComponent(did)}&didNot=${encodeURIComponent(didNot)}`)]);
   main.innerHTML = `${analyticsShell('people', days)}
-    <div class="card" style="margin-bottom:14px"><label for="p-did">Show shoppers who</label><select id="p-did">${opt('', 'did anything', did)}${events.map(e => opt(e, eventLabel(e).toLowerCase(), did)).join('')}</select>
+    <div class="card" style="margin-bottom:14px"><div class="row" style="gap:14px;align-items:flex-end">
+      <div><label for="p-did">Show shoppers who</label><select id="p-did">${opt('', 'did anything', did)}${events.map(e => opt(e, eventLabel(e).toLowerCase(), did)).join('')}</select></div>
+      <div><label for="p-not">But never</label><select id="p-not">${opt('', '(no exclusion)', didNot)}${events.map(e => opt(e, eventLabel(e).toLowerCase(), didNot)).join('')}</select></div>
+      <button class="btn sm" id="p-abandon">Abandoned checkouts</button></div>
       <p class="help">${list.length} shopper${list.length === 1 ? '' : 's'}. Ids are anonymous. Click one to see everything they did.</p></div>
     <div class="card" style="padding:6px 12px;overflow-x:auto"><table><thead><tr><th>Shopper</th><th>Last seen</th><th class="hide-sm">First seen</th><th>Sessions</th><th>Actions</th><th>Orders</th><th>Spend</th><th class="hide-sm">Platform</th><th class="hide-sm">Last screen</th></tr></thead><tbody>
-      ${list.map(p => `<tr><td><a href="${aHref(`people/${encodeURIComponent(p.anon)}`, {})}"><b>${esc(p.anon.slice(0, 10))}</b></a></td><td>${ago(p.lastSeen)}</td><td class="hide-sm">${esc(new Date(p.firstSeen).toLocaleDateString())}</td>
+      ${list.map(p => `<tr><td><a href="${esc(shopperHref(p.anon))}"><b>${esc(p.anon.slice(0, 10))}</b></a></td><td>${ago(p.lastSeen)}</td><td class="hide-sm">${esc(new Date(p.firstSeen).toLocaleDateString())}</td>
         <td>${p.sessions}</td><td>${p.events}</td><td>${p.orders}</td><td>${p.spend ? money(p.spend) : '–'}</td><td class="hide-sm">${esc(p.platform)}</td><td class="hide-sm">${esc(p.lastPath)}</td></tr>`).join('') || '<tr><td colspan="9" class="help">Nobody yet.</td></tr>'}
     </tbody></table></div>`;
-  $('#p-did').onchange = e => { location.hash = aHref('people', { did: e.target.value }); };
+  $('#p-did').onchange = e => { location.hash = analyticsHref('people', { did: e.target.value }); };
+  $('#p-not').onchange = e => { location.hash = analyticsHref('people', { didNot: e.target.value }); };
+  $('#p-abandon').onclick = () => { location.hash = analyticsHref('people', { did: 'checkout_start', didNot: 'order_placed' }); };
 }
 
 async function viewTimeline(anon) {
   const t = await api(`/api/admin/insights/people/${encodeURIComponent(anon)}`);
-  const s = t.summary, days = Number(aq().get('days')) || 7;
-  const detail = props => Object.entries(props).filter(([k]) => !['role'].includes(k)).map(([k, v]) => `${k}=${v}`).join(' · ');
+  const s = t.summary, days = Number(analyticsQuery().get('days')) || 7;
+  const detail = props => Object.entries(props).filter(([k]) => k !== 'role').map(([k, v]) => `${k}=${v}`).join(' · ');
   main.innerHTML = `${analyticsShell('people', days)}
-    <p><a href="${aHref('people', {})}">← All shoppers</a></p>
+    <p><a href="${esc(analyticsHref('people', {}))}">← All shoppers</a></p>
     <h2 style="margin:0 0 4px">Shopper ${esc(anon.slice(0, 10))}</h2><p class="sub">First seen ${esc(new Date(s.firstSeen).toLocaleString())} · last seen ${ago(s.lastSeen)} · ${esc(s.platform)}</p>
     <div class="grid g3" style="margin-bottom:14px">
       <div class="card stat"><b>${s.sessions}</b><span>Sessions</span></div><div class="card stat"><b>${s.events}</b><span>Actions</span></div>
       <div class="card stat"><b>${s.orders}</b><span>Orders</span></div><div class="card stat"><b>${s.spend ? money(s.spend) : '$0'}</b><span>Spent</span></div>
     </div>
+    ${t.sessions.reduce((n, x) => n + x.events.length, 0) < s.events ? '<p class="help">Showing the latest 1,000 actions.</p>' : ''}
     ${t.sessions.map(se => `<div class="card" style="margin-bottom:12px"><div class="row spread"><b>Session · ${esc(new Date(se.start).toLocaleString())}</b><span class="help">${dur(se.end - se.start)} · ${se.events.length} actions</span></div>
       <ol style="list-style:none;padding:0;margin:10px 0 0;border-left:2px solid var(--line)">${se.events.map(e => `<li style="padding:6px 0 6px 14px;position:relative">
         <span style="position:absolute;left:-6px;top:12px;width:10px;height:10px;border-radius:50%;background:${/order|cart|checkout/.test(e.name) ? 'var(--accent)' : 'var(--ink3)'}"></span>
