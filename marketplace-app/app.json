@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Stalls",
-    "slug": "marketplace-app",
+    "name": "Shelby",
+    "slug": "shelby",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -9,19 +9,19 @@
     "ios": {
       "supportsTablet": true,
       "associatedDomains": [
-        "applinks:stalls.app"
+        "applinks:hireshelby.com"
       ],
-      "bundleIdentifier": "app.stalls.ios"
+      "bundleIdentifier": "com.hireshelby.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#FAF7F2",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false,
-      "package": "app.stalls",
+      "package": "com.hireshelby.app",
       "intentFilters": [
         {
           "action": "VIEW",
@@ -29,22 +29,22 @@
           "data": [
             {
               "scheme": "https",
-              "host": "stalls.app",
+              "host": "hireshelby.com",
               "pathPrefix": "/p/"
             },
             {
               "scheme": "https",
-              "host": "stalls.app",
+              "host": "hireshelby.com",
               "pathPrefix": "/s/"
             },
             {
               "scheme": "https",
-              "host": "stalls.app",
+              "host": "hireshelby.com",
               "pathPrefix": "/d/"
             },
             {
               "scheme": "https",
-              "host": "stalls.app",
+              "host": "hireshelby.com",
               "pathPrefix": "/w/"
             }
           ],
@@ -62,7 +62,7 @@
     "plugins": [
       "expo-router"
     ],
-    "scheme": "stalls",
+    "scheme": "shelby",
     "experiments": {
       "typedRoutes": false
     }

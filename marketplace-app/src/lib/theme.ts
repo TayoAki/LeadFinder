@@ -2,17 +2,17 @@
 export const C = {
   bg: '#FAF7F2',
   surface: '#FFFFFF',
-  ink: '#16130F',
-  ink2: '#5E574F',
-  ink3: '#8D857C',
+  ink: '#2B0627', // plum from the Shelby logo
+  ink2: '#5F5260',
+  ink3: '#8E8290',
   line: '#ECE5DB',
-  accent: '#FF5A36', // coral: buy, drops, live
-  accentSoft: '#FFE9E2',
+  accent: '#FD5243', // coral from the logo's sparkle: buy, drops, live
+  accentSoft: '#FFE7E3',
   good: '#1E8E5A',
   goodSoft: '#E3F4EB',
   warn: '#B7791F',
   warnSoft: '#FDF1DC',
-  dark: '#1D1A16',
+  dark: '#2B0627',
 };
 
 export const R = { sm: 8, md: 14, lg: 20, pill: 999 };

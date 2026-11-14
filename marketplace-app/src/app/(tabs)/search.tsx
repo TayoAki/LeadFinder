@@ -60,6 +60,11 @@ export default function Search() {
       )}
 
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
+        <Pressable onPress={() => router.push(q ? { pathname: '/ask', params: { q } } : '/ask')} accessibilityRole="button" style={{ marginHorizontal: S.lg, marginTop: S.md, padding: S.md, borderRadius: R.lg, backgroundColor: C.accentSoft, flexDirection: 'row', gap: 10, alignItems: 'center' }}>
+          <Ionicons name="sparkles" size={18} color={C.accent} />
+          <Text style={{ flex: 1, fontWeight: '700', color: C.ink }}>{q ? `Ask Shelby about "${q}"` : 'Not sure what to search? Ask Shelby'}</Text>
+          <Ionicons name="chevron-forward" size={16} color={C.ink2} />
+        </Pressable>
         {!q && (
           <View style={{ padding: S.lg }}>
             <Text style={T.tiny}>TRENDING SEARCHES</Text>

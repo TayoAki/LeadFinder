@@ -1,4 +1,4 @@
-// Deep link to a drop: https://stalls.app/d/<id>?ref=CODE
+// Deep link to a drop: https://hireshelby.com/d/<id>?ref=CODE
 import { Redirect, useLocalSearchParams } from 'expo-router';
 import React, { useEffect } from 'react';
 import { useStore } from '@/lib/store';

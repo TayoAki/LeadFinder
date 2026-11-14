@@ -53,3 +53,38 @@ All of these need backend or third-party work. None of it is UI:
   - Shop names, reviews, the "bought" ticker and seller numbers are made up for the demo.
 - **Frontend only:** all state lives in memory, and payments, notifications and sharing are simulated.
 - **"Stalls" is a working name:** it came from a quick search, not a trademark check.
+
+## Update 2026-11-14: rebranded to Shelby, essay-based onboarding, "Ask Shelby"
+
+**What changed:**
+- **Rebrand:** the app is now **Shelby**. It uses the supplied "hireshelby" logo, with the mark as the app icon, and plum and coral colours taken from the logo.
+- **Mascot:** Shelby is drawn in code from the logo's shapes. She has idle, blink, happy and thinking moods.
+- **Onboarding:** rebuilt to follow `Effective_App_Onboarding_Essay.docx`. Screenshots are in `screens/onboarding/`.
+- **Ask Shelby:** a new chat screen. Shelby suggests items and shows the reasons she picked them.
+
+### Onboarding checked against the essay
+
+| Essay principle | How Shelby's onboarding does it |
+|---|---|
+| Start from one specific outcome and a first meaningful success | The promise is "Tell me what you're shopping for and I'll find it from 10 independent shops." The first success is saving one real pick. |
+| Every question has a visible effect | Step 1 (goal) chooses step 2's question. Step 2 (interests and budget) shows on step 3 as "Based on: A gift · Home · Jewelry · Under $50", with an Edit link. |
+| Honest, predictable progress; Back keeps answers; skippable | "Shelby setup · step N of 3" with 3 bars. No hidden screens follow the 3 steps. Back keeps answers. "Just browse" and "Skip" are always visible. |
+| Do something useful before explaining features | The welcome screen shows real products. Step 3 is real picks from several shops. The only hint is "Tap ♡ to save", placed on the first card's heart. |
+| No fake processing delay | Picks appear instantly with their real reasons. "Ask Shelby" waits only for the answer and labels it "Shelby is looking…". |
+| No early review request; only consented, contextual asks | No rating prompt and no account wall. Price-watch notifications are offered only after the first save, with "Not now" as an equal choice. |
+| Explain payment honestly | There is no subscription. The welcome screen says "Shelby is free. You only pay for what you buy." |
+| Accessibility: selection not by colour alone, labelled controls | Selected options and chips show a check icon. Every option, chip and button has an accessible label. Text scales with the system font size. |
+| Measure outcomes, not just conversions | Proposed metrics: share of new users who save a pick in their first session, start a cart within 7 days, and are still buying after 30 days. Test a 3-step flow against a 1-step flow on these, not on sign-ups alone. |
+
+### Rubric re-score: 87.9 / 100 (was 88.3)
+
+| # | Criterion | Before | Now | Why it moved |
+|---|---|---|---|---|
+| 1 | Clarity of job | 10 | 10 | "Shelby" plus the bag word-mark; the welcome promise names the job |
+| 2 | First product, no signup | 9 | **8** | First launch now opens the welcome screen. It shows real products at once (1.3 s on web) and "Just browse" is one tap, but it is still one screen before the feed. |
+| 10 | Habit loop | 8 | **9** | A daily "Shelby's picks for you" row, Shelby watching prices, and notifications in Shelby's voice |
+| others | unchanged | | | |
+
+The trade-off is deliberate: a guided start, as the essay recommends, costs about 1 point on "products before anything else". To get that point back, open Home first for everyone and offer the welcome as the "Ask Shelby" card. That is a one-line change in `src/app/(tabs)/index.tsx`, and it is worth testing both versions on the "saved a pick in the first session" metric.
+
+**Mascot animation:** her reactions are drawn in code for now. The production plan is a Rive file with the same moods (idle, happy, thinking, wave), for smoother character motion in one small file. That needs a development build, not Expo Go.

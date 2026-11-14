@@ -28,7 +28,7 @@ export default function Apply() {
   const steps = ['Your shop', 'Get paid', 'First product'];
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.dark }}>
-      <SellerHeader title="Open your stall" back />
+      <SellerHeader title="Open your shop" back />
       <ScrollView style={{ backgroundColor: C.bg }} contentContainerStyle={{ padding: S.lg, paddingBottom: 60 }}>
         <View style={{ flexDirection: 'row', gap: 6 }}>
           {steps.map((s, i) => <View key={s} style={{ flex: 1 }}><View style={{ height: 6, borderRadius: 3, backgroundColor: i <= step ? C.accent : C.line }} /><Text style={[T.tiny, { marginTop: 4, color: i === step ? C.ink : C.ink3 }]}>{s}</Text></View>)}

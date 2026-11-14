@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import { BRAND } from './brand';
+import type { Goal } from './shelby';
 import { getProduct, getShop, Product } from './data';
 
 export type CartLine = { productId: string; size: string | null; qty: number };
@@ -11,6 +12,7 @@ type User = { name: string; email: string; code: string } | null;
 type Store = {
   user: User; signIn: (name?: string) => void; signOut: () => void;
   interests: string[]; setInterests: (v: string[]) => void; onboarded: boolean; setOnboarded: (v: boolean) => void;
+  goal: Goal | null; setGoal: (v: Goal | null) => void; budget: number | null; setBudget: (v: number | null) => void;
   cart: CartLine[]; add: (p: Product, size: string | null, qty?: number) => void; setQty: (i: number, qty: number) => void; remove: (i: number) => void; clearCart: () => void;
   cartCount: number;
   wishlist: string[]; toggleWish: (id: string) => void;
@@ -41,6 +43,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User>(null);
   const [interests, setInterests] = useState<string[]>([]);
   const [onboarded, setOnboarded] = useState(false);
+  const [goal, setGoal] = useState<Goal | null>(null);
+  const [budget, setBudget] = useState<number | null>(null);
   const [cart, setCart] = useState<CartLine[]>([]);
   const [wishlist, setWish] = useState<string[]>([]);
   const [following, setFollowing] = useState<string[]>(['s1', 's2']);
@@ -60,7 +64,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       user,
       signIn: (name = 'Taylor') => { setUser({ name, email: `${name.toLowerCase()}@example.com`, code: `${name.toUpperCase()}10` }); setCredit(c => c + BRAND.firstOrderOff); },
       signOut: () => setUser(null),
-      interests, setInterests, onboarded, setOnboarded,
+      interests, setInterests, onboarded, setOnboarded, goal, setGoal, budget, setBudget,
       cart,
       add: (p, size, qty = 1) => setCart(c => {
         const i = c.findIndex(l => l.productId === p.id && l.size === size);
@@ -90,7 +94,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       },
       groups,
     };
-  }, [user, interests, onboarded, cart, wishlist, following, reminders, credit, invitesSent, orders, referredBy, notif, seller]);
+  }, [user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, invitesSent, orders, referredBy, notif, seller]);
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;
 }

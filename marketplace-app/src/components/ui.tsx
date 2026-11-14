@@ -36,7 +36,7 @@ export function IconButton({ name, onPress, label, color = C.ink, badge, size = 
 
 export function Chip({ label, active, onPress, icon }: { label: string; active?: boolean; onPress?: () => void; icon?: IconName }) {
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityState={{ selected: !!active }}
+    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: !!active }}
       style={[styles.chip, active && { backgroundColor: C.ink, borderColor: C.ink }]}>
       {icon && <Ionicons name={icon} size={14} color={active ? '#fff' : C.ink} />}
       <Text style={[styles.chipText, active && { color: '#fff' }]}>{label}</Text>

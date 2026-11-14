@@ -12,7 +12,7 @@ export function Header({ title, back, logo, right, share }: { title?: string; ba
     <View style={{ height: 56, flexDirection: 'row', alignItems: 'center', paddingHorizontal: S.sm, backgroundColor: C.bg, gap: 4 }}>
       {back && <IconButton name="chevron-back" label="Back" onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))} />}
       <View style={{ flex: 1, paddingLeft: back ? 0 : S.sm }}>
-        {logo ? <Logo /> : <Text style={T.h3} numberOfLines={1}>{title}</Text>}
+        {logo ? <Logo size={32} /> : <Text style={T.h3} numberOfLines={1}>{title}</Text>}
       </View>
       {right}
       {share && <IconButton name="share-outline" label="Share" onPress={share} />}

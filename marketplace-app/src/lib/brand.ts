@@ -1,11 +1,11 @@
 // Single source for the app's name and promise. Change it here and the logo, headers,
-// share cards and invite copy all follow. Working name from idea-engine/marketplace/viral-research.md
-// (not a trademark search).
+// share cards and invite copy all follow. "Shelby" / "hireshelby" is not trademark-checked yet.
 export const BRAND = {
-  name: 'Stalls',
-  storeName: 'Stalls: Indie Shops',
+  name: 'Shelby',
+  storeName: 'Shelby: AI Shopper for Small Shops',
   tagline: 'Shop small sellers, one cart',
-  domain: 'stalls.app',
+  promise: 'Tell Shelby what you need. She finds it from independent shops.',
+  domain: 'hireshelby.com',
   referralReward: 10, // dollars to both the inviter and the friend
   firstOrderOff: 10,
 };

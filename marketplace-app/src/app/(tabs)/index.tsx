@@ -8,13 +8,21 @@ import { ProductGrid } from '@/components/ProductCard';
 import { Chip, IconButton, Pill, SectionHeader, useCountdown } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
 import { categories, categoryIcon, compact, drops, getProduct, getShop, products, recentBuys, shops } from '@/lib/data';
+import { Shelby } from '@/components/Shelby';
+import { ProductCard } from '@/components/ProductCard';
+import { pick } from '@/lib/shelby';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 
 export default function Home() {
   const { width } = useWindowDimensions();
-  const { onboarded, interests, following, reminders, toggleReminder, referredBy, setReferredBy, notif } = useStore();
+  const { onboarded, interests, following, reminders, toggleReminder, referredBy, setReferredBy, notif, goal, budget } = useStore();
   const { ref } = useLocalSearchParams<{ ref?: string }>();
+  const shown = React.useRef(false);
+  // First launch opens Shelby's welcome (its first screen already shows real products, and "Just browse" is one tap).
+  // People arriving from a friend's link skip it and land on what was shared.
+  useEffect(() => { if (!onboarded && !referredBy && !ref && !shown.current) { shown.current = true; const t = setTimeout(() => router.push('/onboarding'), 300); return () => clearTimeout(t); } }, [onboarded, referredBy, ref]);
+  const shelbyPicks = useMemo(() => pick({ categories: interests, maxPrice: budget ?? undefined, goal: goal ?? undefined }, 8), [interests, budget, goal]);
   useEffect(() => { if (ref) setReferredBy(ref); }, [ref]);
   const remind = (id: string) => { if (!reminders.includes(id) && notif === 'unknown') router.push({ pathname: '/notify', params: { reason: 'drop' } }); toggleReminder(id); };
   const [cat, setCat] = useState('All');
@@ -47,13 +55,15 @@ export default function Home() {
             <Text style={{ flex: 1, color: C.good, fontWeight: '700' }}>A friend sent you ${BRAND.referralReward} off. It's applied at checkout automatically.</Text>
           </View>
         )}
-        {!onboarded && (
-          <Pressable onPress={() => router.push('/onboarding')} style={{ margin: S.lg, marginBottom: 0, padding: S.md, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, flexDirection: 'row', alignItems: 'center', gap: 10 }}>
-            <Ionicons name="sparkles" size={20} color={C.accent} />
-            <Text style={{ flex: 1, color: C.ink, fontWeight: '600' }}>Tap 3 things you like to tune your feed</Text>
-            <Ionicons name="chevron-forward" size={18} color={C.ink3} />
-          </Pressable>
-        )}
+        {/* Shelby: ask in plain words, plus a daily row of picks (the reason to open the app each day) */}
+        <Pressable onPress={() => router.push('/ask')} accessibilityRole="button" accessibilityLabel="Ask Shelby" style={{ margin: S.lg, marginBottom: 0, padding: S.md, paddingLeft: 4, borderRadius: R.lg, backgroundColor: C.accentSoft, flexDirection: 'row', alignItems: 'center', gap: 6 }}>
+          <Shelby size={52} />
+          <View style={{ flex: 1 }}>
+            <Text style={T.h3}>Ask Shelby</Text>
+            <Text style={T.small}>"A gift for my dad under $40"</Text>
+          </View>
+          <Ionicons name="chevron-forward" size={18} color={C.ink2} />
+        </Pressable>
         {/* Shops you follow: story-style ring, the habit loop that brings people back */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 14, paddingTop: S.lg }}>
           {shops.slice(0, 8).map(s => {
@@ -85,6 +95,11 @@ export default function Home() {
             <Text style={{ color: '#CFC7BC', fontSize: 11, marginTop: 8 }}>{compact(drop.reminders + (reminders.includes(drop.id) ? 1 : 0))} people waiting</Text>
           </View>
         </Pressable>
+
+        <SectionHeader title="Shelby's picks for you" sub={onboarded ? 'Fresh every morning from shops on Shelby' : 'Tell Shelby what you like to tune these'} action={onboarded ? 'Ask' : 'Tune'} onAction={() => router.push(onboarded ? '/ask' : '/onboarding')} />
+        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.lg }}>
+          {shelbyPicks.map(p => <ProductCard key={p.id} p={p} width={150} />)}
+        </ScrollView>
 
         {/* Two-sided referral, visible on the first screen */}
         <Pressable onPress={() => router.push('/invite')} style={{ marginHorizontal: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.accentSoft, flexDirection: 'row', alignItems: 'center', gap: 12 }}>

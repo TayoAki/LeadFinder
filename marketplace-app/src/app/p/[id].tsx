@@ -1,4 +1,4 @@
-// Deep link: https://stalls.app/p/<id>?ref=CODE lands on the exact product with the friend's credit applied.
+// Deep link: https://hireshelby.com/p/<id>?ref=CODE lands on the exact product with the friend's credit applied.
 import { Redirect, useLocalSearchParams } from 'expo-router';
 import React, { useEffect } from 'react';
 import { useStore } from '@/lib/store';

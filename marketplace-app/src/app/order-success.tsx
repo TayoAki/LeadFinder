@@ -58,7 +58,7 @@ export default function OrderSuccess() {
 
         <Pressable onPress={() => router.push('/seller/apply')} style={{ marginTop: S.xl, padding: S.lg, borderRadius: R.lg, borderWidth: 1.5, borderColor: C.line, borderStyle: 'dashed' }}>
           <Text style={T.h3}>Do you make things too?</Text>
-          <Text style={[T.small, { marginTop: 2 }]}>Open your own stall in 10 minutes. 0% commission for 60 days.</Text>
+          <Text style={[T.small, { marginTop: 2 }]}>Open your own shop in 10 minutes. 0% commission for 60 days.</Text>
         </Pressable>
 
         <View style={{ flexDirection: 'row', gap: 10, marginTop: S.xl }}>

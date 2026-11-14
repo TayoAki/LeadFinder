@@ -1,4 +1,4 @@
-// Deep link to a shared wishlist: https://stalls.app/w/<code>?ref=CODE
+// Deep link to a shared wishlist: https://hireshelby.com/w/<code>?ref=CODE
 import { Redirect, useLocalSearchParams } from 'expo-router';
 import React, { useEffect } from 'react';
 import { useStore } from '@/lib/store';

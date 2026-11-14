@@ -10,7 +10,7 @@ import { C, R, S, T } from '@/lib/theme';
 const items = [
   { icon: 'flash', title: `${drops[0].title} drops in 3 hours`, sub: `${getShop(drops[0].shopId).name} · 40 made`, to: '/drops', fresh: true },
   { icon: 'storefront', title: `${getShop('s1').name} added 3 new items`, sub: 'A shop you follow', to: '/shop/s1', fresh: true },
-  { icon: 'pricetag', title: `Price drop on ${products[8].title}`, sub: 'Saved in your wishlist', to: `/product/${products[8].id}`, fresh: false },
+  { icon: 'pricetag', title: `Shelby spotted a price drop on ${products[8].title}`, sub: 'Saved in your wishlist', to: `/product/${products[8].id}`, fresh: false },
   { icon: 'gift', title: 'Your friend Sam just signed up', sub: "You'll get $10 when they buy", to: '/invite', fresh: false },
 ];
 

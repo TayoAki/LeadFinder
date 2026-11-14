@@ -18,6 +18,7 @@ export default function RootLayout() {
           <Stack.Screen name="auth" options={{ presentation: 'modal' }} />
           <Stack.Screen name="notify" options={{ presentation: 'modal' }} />
           <Stack.Screen name="onboarding" options={{ presentation: 'fullScreenModal' }} />
+          <Stack.Screen name="ask" options={{ presentation: 'modal' }} />
         </Stack>
       </StoreProvider>
     </SafeAreaProvider>
