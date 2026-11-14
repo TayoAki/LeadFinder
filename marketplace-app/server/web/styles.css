@@ -71,3 +71,5 @@ td { padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: mi
 @keyframes sh { to { background-position: -200% 0; } }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 @media (max-width: 640px) { .hide-sm { display: none; } h1 { font-size: 23px; } .top { padding: 10px 14px; } main { padding: 18px 14px 80px; } }
+#f-steps select { width: auto; min-width: 150px; height: 40px; }
+.card .row > div > select { min-width: 190px; }

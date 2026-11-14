@@ -28,7 +28,8 @@
     "web": "expo start --web",
     "typecheck": "tsc --noEmit",
     "build:web": "expo export -p web",
-    "serve": "node --experimental-sqlite --no-warnings server/server.mjs"
+    "serve": "node --experimental-sqlite --no-warnings server/server.mjs",
+    "test": "node --experimental-sqlite --no-warnings --test 'server/**/*.test.mjs'"
   },
   "private": true,
   "engines": {

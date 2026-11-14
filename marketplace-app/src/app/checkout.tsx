@@ -28,13 +28,13 @@ export default function Checkout() {
   const total = items + shipping + tax - discount;
   const guestOk = !!user || email.includes('@');
 
-  useEffect(() => { if (cart.length) track('checkout_start', { total, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  useEffect(() => { if (cart.length) track('checkout_start', { total: Math.round(total * 100) / 100, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
   // The server re-prices the cart, checks stock and splits it into one order per shop.
   const place = async () => {
     setLoading(true); setError('');
-    track('checkout_submit', { total, guest: !user });
+    track('checkout_submit', { total: Math.round(total * 100) / 100, guest: !user });
     try {
       const r = await api<{ id: string; total: number; tax: number }>('/api/orders', {
         lines: cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty })), email: user?.email ?? email, name: user?.name ?? '',

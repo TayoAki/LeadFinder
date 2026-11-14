@@ -19,6 +19,7 @@ CREATE TABLE IF NOT EXISTS events (
 );
 CREATE INDEX IF NOT EXISTS events_ts ON events(ts);
 CREATE INDEX IF NOT EXISTS events_name_ts ON events(name, ts);
+CREATE INDEX IF NOT EXISTS events_anon_ts ON events(anon, ts);
 `;
 
 const clip = (v, n) => (typeof v === 'string' ? v.slice(0, n) : '');

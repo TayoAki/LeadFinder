@@ -10,6 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
 import { EVENTS_SCHEMA, ingest, report } from './analytics.mjs';
+import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(here, 'web');
@@ -145,6 +146,13 @@ function sellerOrders(shopId) {
   return sos.map(o => ({ ...o, lines: ln.all(o.id) }));
 }
 
+// Shared query parsing for insights: ?days= (1-90) sets the range ending now; ?breakdown=platform|<prop>.
+function insightQuery(req) {
+  const sp = new URL(req.url, 'http://x').searchParams; const days = Math.min(90, Math.max(1, Number(sp.get('days')) || 7));
+  const b = sp.get('breakdown');
+  return { get: k => sp.get(k), range: { from: Date.now() - days * 864e5, to: Date.now() }, breakdown: b && /^[a-zA-Z][a-zA-Z0-9_]{0,39}$/.test(b) ? b : undefined };
+}
+
 // ---------- routes ----------
 const routes = {
   'GET /api/health': () => ({ ok: true }),
@@ -242,6 +250,23 @@ const routes = {
     FROM shops s LEFT JOIN users u ON u.id = s.owner_id ORDER BY CASE s.status WHEN 'pending' THEN 0 ELSE 1 END, s.created_at DESC`).all()
     .map(s => ({ ...shopOut(s), ownerEmail: s.owner_email, products: s.products, createdAt: s.created_at })),
   'GET /api/admin/analytics': ({ req }) => report(db, Math.min(90, Math.max(1, Number(new URL(req.url, 'http://x').searchParams.get('days')) || 7))),
+  // Shelby Insights (docs/specs/insights.md): funnels, retention, people and timelines.
+  'GET /api/admin/insights/events': () => db.prepare("SELECT name, COUNT(*) n FROM events WHERE source = 'app' GROUP BY name ORDER BY n DESC LIMIT 100").all(),
+  'GET /api/admin/insights/funnel': ({ req }) => {
+    const q = insightQuery(req); const steps = (q.get('steps') || '').split(',').map(s => s.trim()).filter(s => /^[a-z][a-z0-9_]{1,47}$/.test(s)).slice(0, 6);
+    if (steps.length < 2) fail(400, 'Pick at least two steps');
+    const opts = { ...q.range, steps, windowMs: Math.min(90, Math.max(1 / 24, Number(q.get('windowDays')) || 7)) * 864e5, breakdown: q.breakdown };
+    return { ...funnel(db, opts), dropped: steps.map((_, i) => (i ? dropoffs(db, opts, i).slice(0, 50) : [])) };
+  },
+  'GET /api/admin/insights/retention': ({ req }) => {
+    const q = insightQuery(req); const ev = q.get('returnEvent');
+    return retention(db, { ...q.range, period: q.get('period') === 'week' ? 'week' : 'day', periods: Math.min(12, Math.max(2, Number(q.get('periods')) || 8)), returnEvent: ev && /^[a-z][a-z0-9_]{1,47}$/.test(ev) ? ev : undefined });
+  },
+  'GET /api/admin/insights/people': ({ req }) => {
+    const q = insightQuery(req); const did = q.get('did');
+    return people(db, { ...q.range, did: did && /^[a-z][a-z0-9_]{1,47}$/.test(did) ? did : undefined, limit: Number(q.get('limit')) || 100 });
+  },
+  'GET /api/admin/insights/people/:anon': ({ params }) => timeline(db, params.anon) ?? fail(404, 'No shopper with that id'),
   'POST /api/admin/shops/:id/status': ({ body, params }) => {
     if (!['approved', 'pending', 'suspended'].includes(body.status)) fail(400, 'Bad status');
     db.prepare('UPDATE shops SET status = ? WHERE id = ?').run(body.status, params.id);
