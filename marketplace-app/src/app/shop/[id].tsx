@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProductGrid } from '@/components/ProductCard';
@@ -8,11 +8,13 @@ import { Chip, IconButton, Stars } from '@/components/ui';
 import { compact, drops, getShop, money, shopProducts, shopSold } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 export default function ShopPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { width } = useWindowDimensions();
   const s = getShop(id);
+  useEffect(() => { if (s) track('shop_view', { shop_id: s.id, shop: s.name, category: s.category }); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
   const { following, toggleFollow, cartCount } = useStore();
   const [tab, setTab] = useState<'Shop' | 'Reviews' | 'About'>('Shop');
   const followed = following.includes(s.id);

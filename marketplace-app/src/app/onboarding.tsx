@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Logo } from '@/components/Logo';
@@ -12,6 +12,7 @@ import { categories, categoryIcon, products, shops } from '@/lib/data';
 import { Goal, parse, pick, reasons } from '@/lib/shelby';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 // Onboarding built on the essay's rules (Effective_App_Onboarding_Essay):
 // - one specific promise, then a first real success (saving a pick) before anything is asked of the user;
@@ -70,12 +71,14 @@ export default function Onboarding() {
   const shopCount = new Set(picks.map(p => p.shopId)).size;
   const saved = picks.filter(p => st.wishlist.includes(p.id)).length;
 
+  useEffect(() => { track('onboarding_step', { step }); }, [step]);
   const finish = () => {
+    track('onboarding_complete', { goal: goal ?? 'none', budget: budget ?? 0, categories: ask.categories.join(','), saved, price_watch: watch ?? 'not_asked', shops: shopCount });
     st.setGoal(goal); st.setBudget(budget); st.setInterests(ask.categories); st.setOnboarded(true);
     if (watch === 'yes') st.setNotif('granted');
     router.back();
   };
-  const browse = () => { st.setOnboarded(true); router.back(); };
+  const browse = () => { track('onboarding_skip', { at: step }); st.setOnboarded(true); router.back(); };
   const mood: Mood = step === 'picks' ? (saved ? 'happy' : 'idle') : step === 'welcome' ? 'wave' : 'idle';
   const w = (width - S.lg * 2 - 12) / 2;
 

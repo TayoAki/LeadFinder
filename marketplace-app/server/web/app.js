@@ -13,9 +13,41 @@ function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.ad
 async function api(path, opts = {}) {
   const res = await fetch(path, { method: opts.method || 'GET', headers: opts.body ? { 'content-type': 'application/json' } : {}, body: opts.body ? JSON.stringify(opts.body) : undefined, credentials: 'same-origin' });
   const data = await res.json().catch(() => ({}));
-  if (!res.ok) throw new Error(data.error || `Request failed (${res.status})`);
+  const kind = path.replace(/\?.*$/, '').replace(/\/(p|s|so|u)_?[0-9a-f]{6,}|\/s\d+|\/p\d+/g, '/:id');
+  if (!res.ok) { track('seller_error', { endpoint: `${opts.method || 'GET'} ${kind}`, status: res.status }); throw new Error(data.error || `Request failed (${res.status})`); }
+  // Every successful write is an event (sign-up, shop saved, product published, photo uploaded, order shipped, ...).
+  if (opts.method && opts.method !== 'GET' && path !== '/api/events') track('seller_action', { endpoint: `${opts.method} ${kind}`, status: opts.body?.status ?? '' });
   return data;
 }
+
+// ---------- analytics: same pipeline as the app (stored, then forwarded to Umami and PostHog) ----------
+const rid = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
+const ls = { get: k => { try { return localStorage.getItem(k); } catch { return null; } }, set: (k, v) => { try { localStorage.setItem(k, v); } catch {} } };
+const anon = ls.get('shelby_seller_anon') || rid(); ls.set('shelby_seller_anon', anon);
+let session = ls.get('shelby_seller_session') || rid(), sessionAt = Number(ls.get('shelby_seller_session_at') || 0);
+let queue = [], qTimer = null, firstRef = document.referrer;
+function track(name, props = {}) {
+  const now = Date.now(); if (now - sessionAt > 30 * 60 * 1000) session = rid(); sessionAt = now;
+  ls.set('shelby_seller_session', session); ls.set('shelby_seller_session_at', String(now));
+  queue.push({ name, props: { ...props, role: state.user?.role ?? 'visitor' }, ts: now, anon, session, source: 'seller', platform: 'web', path: `/seller${location.hash.replace(/^#/, '').replace(/\/(p|s)_?[0-9a-f]{6,}|\/p\d+/g, '/:id') || '/'}`,
+    title: document.title, referrer: firstRef || undefined, screen: `${innerWidth}x${innerHeight}`, language: navigator.language });
+  firstRef = '';
+  if (queue.length >= 20) flush(); else if (!qTimer) qTimer = setTimeout(flush, 4000);
+}
+function flush(beacon) {
+  clearTimeout(qTimer); qTimer = null; if (!queue.length) return;
+  const body = JSON.stringify({ events: queue.splice(0, 50) });
+  if (beacon && navigator.sendBeacon) navigator.sendBeacon('/api/events', new Blob([body], { type: 'application/json' }));
+  else fetch('/api/events', { method: 'POST', headers: { 'content-type': 'application/json' }, body, keepalive: true }).catch(() => {});
+}
+addEventListener('pagehide', () => flush(true));
+document.addEventListener('visibilitychange', () => document.visibilityState === 'hidden' && flush(true));
+// Autocapture: every button, link and chip click, by its visible label (never input values).
+document.addEventListener('click', e => {
+  const el = e.target.closest('button, a, .chip, summary'); if (!el) return;
+  const label = (el.getAttribute('aria-label') || el.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 60);
+  track('tap', { ui: el.tagName.toLowerCase(), label });
+}, true);
 
 // Resize in the browser before upload: long edge 1600px, JPEG 85%. Keeps uploads small on phones.
 async function resize(file) {
@@ -30,8 +62,9 @@ async function upload(file) { const { url } = await api('/api/seller/upload', { 
 
 function chrome() {
   const signedIn = !!state.user;
-  $('#nav').hidden = !signedIn || !state.shop;
+  $('#nav').hidden = !signedIn || (!state.shop && state.user.role !== 'admin');
   $('#nav-admin').hidden = state.user?.role !== 'admin';
+  $('#nav-analytics').hidden = state.user?.role !== 'admin';
   $('#who').innerHTML = signedIn ? `<span class="hide-sm">${esc(state.user.email)}</span><button class="btn sm" id="logout">Log out</button>` : '';
   $('#logout')?.addEventListener('click', async () => { await api('/api/auth/logout', { method: 'POST' }); state.user = null; state.shop = null; location.hash = '#/login'; });
   const page = (location.hash.split('/')[1] || 'dash').split('?')[0];
@@ -287,17 +320,51 @@ async function viewAdmin() {
   document.querySelectorAll('[data-st]').forEach(b => b.onclick = async () => { await api(`/api/admin/shops/${encodeURIComponent(b.dataset.id)}/status`, { method: 'POST', body: { status: b.dataset.st } }); toast(`Shop ${b.dataset.st}`); viewAdmin(); });
 }
 
+// ---------- platform analytics (admins) ----------
+const EVENT_HELP = { app_open: 'Opened the app', screen_view: 'Viewed a screen', tap: 'Tapped a button', product_view: 'Viewed a product', shop_view: 'Viewed a shop',
+  add_to_cart: 'Added to cart', checkout_start: 'Started checkout', order_placed: 'Placed an order', order_confirmed: 'Order confirmed by server', search: 'Searched',
+  ask_shelby: 'Asked Shelby', wishlist_toggle: 'Saved or unsaved', follow_toggle: 'Followed or unfollowed a shop', share: 'Shared', onboarding_step: 'Onboarding step',
+  onboarding_complete: 'Finished onboarding', onboarding_skip: 'Skipped onboarding', deep_link: 'Opened a shared link', seller_action: 'Seller saved something' };
+async function viewAnalytics() {
+  if (state.user.role !== 'admin') { main.innerHTML = '<div class="card empty">Admins only.</div>'; return; }
+  const days = Number(new URLSearchParams(location.hash.split('?')[1]).get('days')) || 7;
+  const r = await api(`/api/admin/analytics?days=${days}`);
+  const top = Math.max(1, r.funnel[0]?.n || 0);
+  const maxDay = Math.max(1, ...r.daily.map(d => d.visitors));
+  const list = (rows, cols) => rows.length ? `<table><tbody>${rows.map(x => `<tr>${cols.map(c => `<td>${c(x)}</td>`).join('')}</tr>`).join('')}</tbody></table>` : '<p class="help">Nothing yet.</p>';
+  const link = (on, label, url) => `<span class="pill ${on ? 'approved' : ''}">${label}: ${on ? 'connected' : 'not connected'}</span>${on && url ? ` <a class="help" href="${esc(url)}" target="_blank" rel="noopener">open</a>` : ''}`;
+  main.innerHTML = `<div class="row spread"><h1>Analytics</h1><div class="chips">${[1, 7, 30, 90].map(d => `<a class="chip" style="display:inline-flex;align-items:center;text-decoration:none;color:inherit;${d === days ? 'background:var(--ink);color:#fff' : ''}" href="#/analytics?days=${d}">${d === 1 ? 'Today' : `${d} days`}</a>`).join('')}</div></div>
+    <p class="sub">Everything shoppers do in the app, last ${days} day${days > 1 ? 's' : ''}. ${link(r.connected.umami, 'Umami', r.connected.umamiUrl)} ${link(r.connected.posthog, 'PostHog', r.connected.posthogHost && r.connected.posthogHost.replace('i.posthog', 'posthog'))}</p>
+    <div class="grid g3" style="margin-bottom:14px">
+      <div class="card stat"><b>${r.totals.visitors}</b><span>Shoppers</span></div>
+      <div class="card stat"><b>${r.totals.sessions}</b><span>Sessions</span></div>
+      <div class="card stat"><b>${r.totals.events}</b><span>Actions tracked</span></div>
+    </div>
+    <div class="grid g2">
+      <div class="card"><h3 style="margin-top:0">Funnel</h3>${r.funnel.map(f => `<div style="margin:10px 0"><div class="row spread"><span>${esc(f.step)}</span><b>${f.n} <span class="help">${Math.round(f.n / top * 100)}%</span></b></div>
+        <div style="height:10px;border-radius:6px;background:var(--line)"><div style="height:10px;border-radius:6px;background:var(--accent);width:${Math.round(f.n / top * 100)}%"></div></div></div>`).join('')}</div>
+      <div class="card"><h3 style="margin-top:0">Shoppers per day</h3><div style="display:flex;align-items:flex-end;gap:4px;height:140px">${r.daily.map(d => `<div title="${esc(d.day)}: ${d.visitors} shoppers, ${d.events} actions" style="flex:1;max-width:48px;background:var(--accent);border-radius:4px 4px 0 0;height:${Math.max(3, d.visitors / maxDay * 130)}px"></div>`).join('') || '<p class="help">Nothing yet.</p>'}</div>
+        <p class="help">${r.platforms.map(p => `${esc(p.platform || 'unknown')}: ${p.people}`).join(' · ')}</p></div>
+      <div class="card"><h3 style="margin-top:0">Top actions</h3>${list(r.topEvents, [x => `<b>${esc(EVENT_HELP[x.name] || x.name)}</b><div class="help">${esc(x.name)} · ${esc(x.source)}</div>`, x => `${x.n}`, x => `<span class="help">${x.people} people</span>`])}</div>
+      <div class="card"><h3 style="margin-top:0">Top screens</h3>${list(r.topScreens, [x => esc(x.path), x => `${x.n}`])}</div>
+      <div class="card"><h3 style="margin-top:0">What people search and ask Shelby</h3>${list(r.topSearches.filter(x => x.q), [x => esc(x.q), x => `${x.n}`])}</div>
+      <div class="card"><h3 style="margin-top:0">Most viewed products</h3>${list(r.topProducts, [x => esc(x.title || x.pid), x => `${x.views}`])}</div>
+    </div>
+    <div class="card" style="margin-top:14px"><h3 style="margin-top:0">Live feed</h3>${list(r.recent, [x => `<span class="help">${esc(new Date(x.ts).toLocaleTimeString())}</span>`, x => `<b>${esc(x.name)}</b> <span class="help">${esc(x.source)} · ${esc(x.platform)} · ${esc(x.anon)}</span>`, x => `<span class="help">${esc(x.path)} ${esc(Object.entries(JSON.parse(x.props || '{}')).map(([k, v]) => `${k}=${v}`).join(' ').slice(0, 120))}</span>`])}</div>`;
+}
+
 // ---------- routing ----------
 async function loadMe() { const r = await api('/api/me'); state.user = r.user; state.shop = r.shop; }
 async function route() {
-  const [, page = '', arg] = location.hash.split('/');
+  const [, rawPage = '', arg] = location.hash.split('/'); const page = rawPage.split('?')[0];
   chrome();
+  track('screen_view', { page: page || 'home', signed_in: !!state.user });
   try {
     if (!state.user) return viewAuth(page === 'signup' ? 'signup' : 'login');
-    if (!state.shop && page !== 'admin') return viewShop();
+    if (!state.shop && page !== 'admin' && page !== 'analytics') return viewShop();
     main.innerHTML = '<div class="skeleton"></div>';
     if (page === 'products' && arg) return await viewEditor(decodeURIComponent(arg));
-    const view = { '': viewDash, products: viewProducts, orders: viewOrders, shop: viewShop, admin: viewAdmin }[page] || viewDash;
+    const view = { '': viewDash, products: viewProducts, orders: viewOrders, shop: viewShop, admin: viewAdmin, analytics: viewAnalytics }[page] || viewDash;
     await view();
   } catch (e) { main.innerHTML = `<div class="card empty">${esc(e.message)}</div>`; }
   main.focus({ preventScroll: true });

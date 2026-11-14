@@ -3,6 +3,10 @@ import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { C, R, S, T } from '@/lib/theme';
 import { money } from '@/lib/data';
+import { track } from '@/lib/analytics';
+
+// Autocapture: every shared button, icon button and chip reports its label when tapped.
+const tapped = (ui: string, label: string, fn?: () => void) => () => { track('tap', { ui, label: label.slice(0, 60) }); fn?.(); };
 
 export type IconName = React.ComponentProps<typeof Ionicons>['name'];
 
@@ -13,7 +17,7 @@ export function Button({ title, onPress, kind = 'primary', icon, style, disabled
   const bg = { primary: C.ink, accent: C.accent, ghost: 'transparent', light: C.surface }[kind];
   const fg = kind === 'ghost' || kind === 'light' ? C.ink : '#fff';
   return (
-    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} onPress={onPress} disabled={disabled || loading}
+    <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} onPress={tapped('button', title, onPress)} disabled={disabled || loading}
       style={({ pressed }) => [styles.btn, { backgroundColor: bg, opacity: disabled ? 0.4 : pressed ? 0.85 : 1, transform: [{ scale: pressed ? 0.98 : 1 }] },
         kind === 'ghost' && { borderWidth: 1, borderColor: C.line }, kind === 'light' && { borderWidth: 1, borderColor: C.line }, style]}>
       {loading ? <ActivityIndicator color={fg} /> : <>
@@ -26,7 +30,7 @@ export function Button({ title, onPress, kind = 'primary', icon, style, disabled
 
 export function IconButton({ name, onPress, label, color = C.ink, badge, size = 22, bg }: { name: IconName; onPress?: () => void; label: string; color?: string; badge?: number; size?: number; bg?: string }) {
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} hitSlop={8}
+    <Pressable onPress={tapped('icon', label, onPress)} accessibilityRole="button" accessibilityLabel={label} hitSlop={8}
       style={({ pressed }) => [styles.iconBtn, bg ? { backgroundColor: bg } : null, { opacity: pressed ? 0.6 : 1 }]}>
       <Ionicons name={name} size={size} color={color} />
       {!!badge && <View style={styles.badge}><Text style={styles.badgeText}>{badge > 9 ? '9+' : badge}</Text></View>}
@@ -36,7 +40,7 @@ export function IconButton({ name, onPress, label, color = C.ink, badge, size = 
 
 export function Chip({ label, active, onPress, icon }: { label: string; active?: boolean; onPress?: () => void; icon?: IconName }) {
   return (
-    <Pressable onPress={onPress} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: !!active }}
+    <Pressable onPress={tapped('chip', label, onPress)} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: !!active }}
       style={[styles.chip, active && { backgroundColor: C.ink, borderColor: C.ink }]}>
       {icon && <Ionicons name={icon} size={14} color={active ? '#fff' : C.ink} />}
       <Text style={[styles.chipText, active && { color: '#fff' }]}>{label}</Text>

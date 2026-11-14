@@ -9,6 +9,7 @@ import { BRAND, link } from '@/lib/brand';
 import { drops, getProduct, getShop, money, products } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 type Kind = 'product' | 'shop' | 'drop' | 'ask' | 'wishlist' | 'order' | 'invite';
 
@@ -42,7 +43,7 @@ export default function ShareSheet() {
   const send = async (via: string) => {
     if (via === 'Copy link' && Platform.OS === 'web') { try { await (navigator as any).clipboard?.writeText(url); } catch {} }
     else { try { await Share.share({ message: `${message} ${url}`, url }); } catch {} }
-    invite(); setDone(via);
+    track('share', { via, kind, id }); invite(); setDone(via);
   };
 
   const targets: [string, any, string][] = [

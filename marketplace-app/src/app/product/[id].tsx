@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, router, useLocalSearchParams } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, NativeScrollEvent, NativeSyntheticEvent, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { TrustLine } from '@/components/Logo';
@@ -9,11 +9,13 @@ import { Button, Chip, IconButton, Pill, Price, SectionHeader, Stars } from '@/c
 import { compact, getProduct, getShop, money, reviewsFor, shopProducts } from '@/lib/data';
 import { groupCart, useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 export default function ProductPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { width } = useWindowDimensions();
   const p = getProduct(id);
+  useEffect(() => { if (p) track('product_view', { product_id: p.id, title: p.title.slice(0, 80), price: p.price, shop_id: p.shopId, category: p.category, in_stock: p.stock > 0 }); }, [id]); // eslint-disable-line react-hooks/exhaustive-deps
   if (!p) return <Redirect href="/search" />;
   const shop = getShop(p.shopId);
   const { add, cart, wishlist, toggleWish, following, toggleFollow, cartCount, user } = useStore();

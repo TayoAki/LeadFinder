@@ -57,3 +57,37 @@ ADMIN_SETUP_CODE=choose-a-code npm run serve   # http://localhost:3200 and /sell
 The first seller account created with the `ADMIN_SETUP_CODE` (under "Platform admin?" on sign-up) becomes a platform admin. On first boot the database is seeded with the 10 sample shops so the app is never empty. Suspend them from the Admin tab once real sellers are live.
 
 For a native build, set `EXPO_PUBLIC_API_URL` to the deployed URL.
+
+## Analytics (`src/lib/analytics.ts`, `server/analytics.mjs`)
+
+Every action in the app and the seller dashboard is sent to `/api/events` on our own server. The server does three things with it:
+- stores the event in SQLite, which feeds the **Analytics** tab for platform admins at `/seller#/analytics`;
+- forwards it to **Umami**, which handles traffic, pages, referrers and countries;
+- forwards it to **PostHog**, which handles funnels, retention, paths and per-shopper timelines.
+
+What is tracked:
+- **Automatically:**
+  - every screen view, with `ref` and `utm_*`;
+  - every tap on a shared `Button`, `IconButton` or `Chip` (by its label);
+  - every seller-dashboard click;
+  - every successful seller write.
+- **Named events:**
+  - `app_open`, `product_view`, `shop_view`;
+  - `search`, `ask_shelby`;
+  - `add_to_cart`, `cart_qty_change`, `remove_from_cart`;
+  - `wishlist_toggle`, `follow_toggle`, `drop_reminder_toggle`;
+  - `checkout_start`, `checkout_submit`, `checkout_error`, `order_placed`, plus the server-side `order_confirmed`;
+  - `onboarding_step`, `onboarding_complete`, `onboarding_skip`;
+  - `share`, `invite_sent`, `deep_link`;
+  - `notification_permission`, `sign_in`, `sign_out`.
+
+No personal data is sent. Emails are dropped server-side, and typed form values are never captured.
+
+Server environment variables (either service can be left unset):
+
+| Variable | Meaning |
+|---|---|
+| `UMAMI_URL`, `UMAMI_WEBSITE_ID` | Your Umami instance and the website id to record against |
+| `POSTHOG_KEY`, `POSTHOG_HOST` | PostHog project API key (`phc_…`). Host defaults to `https://us.i.posthog.com`; use `https://eu.i.posthog.com` for EU projects or your own host |
+
+Use `track('event_name', { ... })` anywhere in the app to add an event.

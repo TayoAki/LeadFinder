@@ -1,12 +1,13 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
-import React, { useMemo, useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProductGrid } from '@/components/ProductCard';
 import { Chip, Stars } from '@/components/ui';
 import { categories, compact, products, shops } from '@/lib/data';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 const sorts = ['Popular', 'Newest', 'Price: low', 'Price: high', 'Top rated'] as const;
 const prices = [{ label: 'Any price', max: Infinity }, { label: 'Under $25', max: 25 }, { label: 'Under $50', max: 50 }, { label: 'Under $100', max: 100 }];
@@ -28,6 +29,12 @@ export default function Search() {
     const by = { Popular: (a: any, b: any) => b.sold - a.sold, Newest: (a: any, b: any) => Number(b.id) - Number(a.id), 'Price: low': (a: any, b: any) => a.price - b.price, 'Price: high': (a: any, b: any) => b.price - a.price, 'Top rated': (a: any, b: any) => b.rating - a.rating }[sort];
     return [...r].sort(by);
   }, [q, cat, sort, price, onSale]);
+  // One search event once the shopper pauses typing or changes a filter.
+  useEffect(() => {
+    if (!q.trim() && cat === 'All' && !price && !onSale && sort === 'Popular') return;
+    const t = setTimeout(() => track('search', { query: q.trim().slice(0, 80), category: cat, sort, max_price: prices[price].max, on_sale: onSale, results: results.length }), 900);
+    return () => clearTimeout(t);
+  }, [q, cat, sort, price, onSale]); // eslint-disable-line react-hooks/exhaustive-deps
   const shopHits = q ? shops.filter(s => s.name.toLowerCase().includes(q.toLowerCase()) || s.category.toLowerCase().includes(q.toLowerCase())) : [];
   const filterCount = (price ? 1 : 0) + (onSale ? 1 : 0) + (sort !== 'Popular' ? 1 : 0);
 

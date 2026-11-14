@@ -9,6 +9,7 @@ import { extname, resolve, normalize, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
+import { EVENTS_SCHEMA, ingest, report } from './analytics.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
 const WEB = resolve(here, 'web');
@@ -17,6 +18,7 @@ const PORT = Number(process.env.PORT || 3200);
 const SETUP_CODE = process.env.ADMIN_SETUP_CODE || ''; // entering it at sign-up makes that account a platform admin
 const PROD = process.env.NODE_ENV === 'production';
 const db = getDb();
+db.exec(EVENTS_SCHEMA);
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.map': 'application/json' };
@@ -150,7 +152,13 @@ const routes = {
     shops: db.prepare("SELECT * FROM shops WHERE status = 'approved' ORDER BY created_at").all().map(shopOut),
     products: db.prepare("SELECT p.* FROM products p JOIN shops s ON s.id = p.shop_id WHERE p.status = 'live' AND s.status = 'approved' ORDER BY p.created_at DESC").all().map(productOut),
   }),
-  'POST /api/orders': ({ body }) => placeOrder(body),
+  'POST /api/orders': ({ body, req }) => {
+    const r = placeOrder(body);
+    // Server-side truth for the funnel, even if the client's own event is lost.
+    ingest(db, req, { events: [{ name: 'order_confirmed', anon: String(body.anon || ''), session: String(body.session || ''), platform: String(body.platform || ''), path: '/checkout', props: { order_id: r.id, total: r.total, sellers: r.sellerOrders.length, ref: body.ref ? 'yes' : 'no' } }] });
+    return r;
+  },
+  'POST /api/events': ({ body, req }) => ingest(db, req, body),
 
   'POST /api/auth/signup': ({ body, res }) => {
     const email = str(body.email, 200).toLowerCase(); const pw = typeof body.password === 'string' ? body.password : '';
@@ -233,6 +241,7 @@ const routes = {
   'GET /api/admin/shops': () => db.prepare(`SELECT s.*, u.email owner_email, (SELECT COUNT(*) FROM products p WHERE p.shop_id = s.id AND p.status != 'archived') products
     FROM shops s LEFT JOIN users u ON u.id = s.owner_id ORDER BY CASE s.status WHEN 'pending' THEN 0 ELSE 1 END, s.created_at DESC`).all()
     .map(s => ({ ...shopOut(s), ownerEmail: s.owner_email, products: s.products, createdAt: s.created_at })),
+  'GET /api/admin/analytics': ({ req }) => report(db, Math.min(90, Math.max(1, Number(new URL(req.url, 'http://x').searchParams.get('days')) || 7))),
   'POST /api/admin/shops/:id/status': ({ body, params }) => {
     if (!['approved', 'pending', 'suspended'].includes(body.status)) fail(400, 'Bad status');
     db.prepare('UPDATE shops SET status = ? WHERE id = ?').run(body.status, params.id);

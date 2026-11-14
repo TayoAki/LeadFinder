@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, router } from 'expo-router';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '@/components/Header';
@@ -11,6 +11,7 @@ import { api } from '@/lib/api';
 import { getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { ids, track } from '@/lib/analytics';
 
 export default function Checkout() {
   const { groups, user, credit, referredBy, placeOrder, cart } = useStore();
@@ -27,19 +28,21 @@ export default function Checkout() {
   const total = items + shipping + tax - discount;
   const guestOk = !!user || email.includes('@');
 
+  useEffect(() => { if (cart.length) track('checkout_start', { total, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
   // The server re-prices the cart, checks stock and splits it into one order per shop.
   const place = async () => {
     setLoading(true); setError('');
+    track('checkout_submit', { total, guest: !user });
     try {
       const r = await api<{ id: string; total: number; tax: number }>('/api/orders', {
         lines: cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty })), email: user?.email ?? email, name: user?.name ?? '',
-        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined,
+        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
       });
       const o = placeOrder(discount, user ? undefined : email, r.tax, r.id);
       router.replace({ pathname: '/order-success', params: { id: o.id } });
-    } catch (e: any) { setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed'); setLoading(false); }
+    } catch (e: any) { track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) }); setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed'); setLoading(false); }
   };
 
   return (

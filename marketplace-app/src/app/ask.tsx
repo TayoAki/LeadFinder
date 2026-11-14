@@ -11,6 +11,7 @@ import { Product } from '@/lib/data';
 import { parse, pick, reasons } from '@/lib/shelby';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 type Msg = { from: 'me' | 'shelby'; text: string; picks?: Product[]; based?: string[] };
 const STARTERS = ['A gift for my dad under $40', 'Something cozy for my home', 'Earrings for my sister', 'Kitchen tools for a new cook'];
@@ -29,6 +30,7 @@ export default function AskShelby() {
     const a = parse(msg);
     const ask = { ...a, goal: a.goal ?? goal ?? undefined, maxPrice: a.maxPrice ?? budget ?? undefined };
     const picks = pick(ask, 4);
+    track('ask_shelby', { query: msg.slice(0, 80), picks: picks.length, categories: (ask.categories ?? []).join(','), max_price: ask.maxPrice, goal: ask.goal });
     // A short, real wait for the answer (an LLM call in production), never a staged "analysing" screen.
     setTimeout(() => {
       setThinking(false);

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui';
 import { drops } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { track } from '@/lib/analytics';
 
 // Pre-permission screen: asked only at a moment the ping is obviously useful (a drop reminder,
 // a shipped order), never at launch. "Not now" keeps the system prompt unused for later.
@@ -19,7 +20,7 @@ export default function Notify() {
   const { reason = 'drop' } = useLocalSearchParams<{ reason?: string }>();
   const { setNotif } = useStore();
   const c = copy[reason] ?? copy.drop;
-  const close = (v: 'granted' | 'denied') => { setNotif(v); router.back(); };
+  const close = (v: 'granted' | 'denied') => { track('notification_permission', { result: v, reason }); setNotif(v); router.back(); };
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: C.bg, justifyContent: 'center', padding: S.xl }}>
       <View style={{ alignSelf: 'center', width: 88, height: 88, borderRadius: 44, backgroundColor: C.accentSoft, alignItems: 'center', justifyContent: 'center' }}>

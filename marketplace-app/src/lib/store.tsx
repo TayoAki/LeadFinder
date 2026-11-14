@@ -1,3 +1,4 @@
+import { track } from './analytics';
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import { BRAND } from './brand';
 import type { Goal } from './shelby';
@@ -39,6 +40,8 @@ export function groupCart(cart: CartLine[]) {
   });
 }
 
+const pinfo = (id: string) => { const p = getProduct(id); return p ? { product_id: p.id, title: p.title.slice(0, 80), price: p.price, shop_id: p.shopId, category: p.category } : { product_id: id }; };
+
 export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User>(null);
   const [interests, setInterests] = useState<string[]>([]);
@@ -55,30 +58,33 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [referredBy, setReferredBy] = useState<string | null>(null);
   const [notif, setNotif] = useState<'unknown' | 'granted' | 'denied'>('unknown');
   const [seller, setSeller] = useState<'none' | 'applied' | 'approved'>('approved');
-  const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>) => (id: string) =>
+  // Toggles report on/off so wishlist, follows and drop reminders are all measurable.
+  const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>, list: string[], event: string, info: (id: string) => Record<string, any>) => (id: string) => {
+    track(event, { ...info(id), on: !list.includes(id) });
     set(v => (v.includes(id) ? v.filter(x => x !== id) : [...v, id]));
+  };
 
   const value = useMemo<Store>(() => {
     const groups = groupCart(cart);
     return {
       user,
-      signIn: (name = 'Taylor') => { setUser({ name, email: `${name.toLowerCase()}@example.com`, code: `${name.toUpperCase()}10` }); setCredit(c => c + BRAND.firstOrderOff); },
-      signOut: () => setUser(null),
+      signIn: (name = 'Taylor') => { track('sign_in'); setUser({ name, email: `${name.toLowerCase()}@example.com`, code: `${name.toUpperCase()}10` }); setCredit(c => c + BRAND.firstOrderOff); },
+      signOut: () => { track('sign_out'); setUser(null); },
       interests, setInterests, onboarded, setOnboarded, goal, setGoal, budget, setBudget,
       cart,
-      add: (p, size, qty = 1) => setCart(c => {
+      add: (p, size, qty = 1) => { track('add_to_cart', { ...pinfo(p.id), size, qty, cart_items: cart.length + 1 }); setCart(c => {
         const i = c.findIndex(l => l.productId === p.id && l.size === size);
         if (i >= 0) return c.map((l, j) => (j === i ? { ...l, qty: Math.min(p.stock, l.qty + qty) } : l));
         return [...c, { productId: p.id, size, qty }];
-      }),
-      setQty: (i, qty) => setCart(c => c.map((l, j) => (j === i ? { ...l, qty: Math.max(1, Math.min(getProduct(l.productId).stock, qty)) } : l))),
-      remove: i => setCart(c => c.filter((_, j) => j !== i)),
+      }); },
+      setQty: (i, qty) => { if (cart[i]) track('cart_qty_change', { ...pinfo(cart[i].productId), from: cart[i].qty, to: qty }); setCart(c => c.map((l, j) => (j === i ? { ...l, qty: Math.max(1, Math.min(getProduct(l.productId).stock, qty)) } : l))); },
+      remove: i => { if (cart[i]) track('remove_from_cart', pinfo(cart[i].productId)); setCart(c => c.filter((_, j) => j !== i)); },
       clearCart: () => setCart([]),
       cartCount: cart.reduce((n, l) => n + l.qty, 0),
-      wishlist, toggleWish: toggle(setWish),
-      following, toggleFollow: toggle(setFollowing),
-      reminders, toggleReminder: toggle(setReminders),
-      credit, invitesSent, invite: () => setInvites(n => n + 1),
+      wishlist, toggleWish: toggle(setWish, wishlist, 'wishlist_toggle', pinfo),
+      following, toggleFollow: toggle(setFollowing, following, 'follow_toggle', id => ({ shop_id: id })),
+      reminders, toggleReminder: toggle(setReminders, reminders, 'drop_reminder_toggle', id => ({ drop_id: id })),
+      credit, invitesSent, invite: () => { track('invite_sent', { total: invitesSent + 1 }); setInvites(n => n + 1); },
       orders,
       referredBy, setReferredBy, notif, setNotif, seller, setSeller,
       placeOrder: (discount, guestEmail, tax = 0, serverId) => {
@@ -88,6 +94,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           id: serverId ?? `${Math.floor(100000 + Math.random() * 899999)}`, placedAt: Date.now(), total: Math.round((items + tax - used) * 100) / 100, credit: used,
           sellerOrders: groups.map((g, i) => ({ shopId: g.shop.id, lines: g.lines, shipping: g.shipping, status: i === 0 ? 'Shipped' : 'Paid', tracking: i === 0 ? '1Z 999 AA1 0123 4567 84' : undefined })),
         };
+        track('order_placed', { order_id: order.id, total: order.total, credit_used: used, sellers: order.sellerOrders.length, items: cart.reduce((n, l) => n + l.qty, 0), referred: !!referredBy, guest: !user });
         setOrders(o => [order, ...o]); setCredit(c => Math.max(0, c - used)); setReferredBy(null); setCart([]);
         if (guestEmail && !user) setUser({ name: guestEmail.split('@')[0], email: guestEmail, code: 'FRIEND10' });
         return order;
