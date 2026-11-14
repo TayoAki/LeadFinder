@@ -1,6 +1,7 @@
 // Owner-only admin routes for moving data between Keepwatch instances (e.g. a local workspace onto the live site).
 // Off unless ADMIN_TOKEN is set (32+ chars). Send it as the x-admin-token header.
 //   POST /admin/import       JSON bundle → attaches rivals, ads, brand and rebuilds to the account with that email
+//   GET  /admin/users        accounts list (email, name, sign-in method, workspaces), no secrets
 //   POST /admin/upload?name= raw PNG (rebuild-*.png) or MP4 (video-*.mp4) body → stores a rebuild image or video
 import { timingSafeEqual } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
@@ -32,6 +33,18 @@ const readRaw = (req, max) => new Promise((ok, bad) => {
 export async function handleAdmin(req, res, url, send) {
   if (!adminAuthorized(req)) return send(res, 404, { error: 'not found' });
   const db = getDb();
+  if (req.method === 'GET' && url.pathname === '/admin/users') {
+    // Accounts only: never password hashes, session tokens or provider secrets.
+    const users = db.prepare('SELECT id, email, name, emailVerified, createdAt FROM user ORDER BY createdAt').all();
+    const wsOf = db.prepare('SELECT id, brand_name, plan FROM workspaces WHERE user_id = ? OR owner_user_id = ? ORDER BY id');
+    const methods = db.prepare('SELECT providerId FROM account WHERE userId = ?');
+    const lastSeen = db.prepare('SELECT MAX(updatedAt) AS at FROM session WHERE userId = ?');
+    return send(res, 200, users.map(u => ({
+      email: u.email, name: u.name, verified: !!u.emailVerified, created: u.createdAt,
+      sign_in: methods.all(u.id).map(m => m.providerId), last_seen: lastSeen.get(u.id)?.at || null,
+      workspaces: wsOf.all(u.id, u.id).map(w => ({ id: w.id, name: w.brand_name, plan: w.plan })),
+    })));
+  }
   if (req.method === 'POST' && url.pathname === '/admin/upload') {
     const name = url.searchParams.get('name') || '';
     const isVideo = /^video-[\w-]+\.mp4$/.test(name);
