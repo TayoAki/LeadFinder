@@ -12,6 +12,7 @@ import { getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
+import { checkoutWithMercur, commerce } from '@/lib/commerce';
 
 export default function Checkout() {
   const { groups, user, credit, referredBy, placeOrder, cart } = useStore();
@@ -36,10 +37,13 @@ export default function Checkout() {
     setLoading(true); setError('');
     track('checkout_submit', { total: Math.round(total * 100) / 100, guest: !user });
     try {
-      const r = await api<{ id: string; total: number; tax: number }>('/api/orders', {
-        lines: cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty })), email: user?.email ?? email, name: user?.name ?? '',
-        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
-      });
+      const lines = cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }));
+      const r = commerce()
+        ? await checkoutWithMercur(lines, { email: user?.email ?? email, name: user?.name ?? '' }, { address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' })
+        : await api<{ id: string; total: number; tax: number }>('/api/orders', {
+          lines, email: user?.email ?? email, name: user?.name ?? '',
+          address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
+        });
       const o = placeOrder(discount, user ? undefined : email, r.tax, r.id);
       router.replace({ pathname: '/order-success', params: { id: o.id } });
     } catch (e: any) { track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) }); setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed'); setLoading(false); }

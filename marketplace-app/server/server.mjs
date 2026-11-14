@@ -165,6 +165,13 @@ function insightQuery(req) {
 // ---------- routes ----------
 const routes = {
   'GET /api/health': () => ({ ok: true }),
+  // Which commerce backend the app should use. With MEDUSA_URL + MEDUSA_PUBLISHABLE_KEY set, the app
+  // reads its catalogue from Mercur and checks out there; otherwise it uses this server's own API.
+  'GET /api/config': () => ({
+    commerce: process.env.MEDUSA_URL && process.env.MEDUSA_PUBLISHABLE_KEY
+      ? { url: process.env.MEDUSA_URL.replace(/\/$/, ''), publishableKey: process.env.MEDUSA_PUBLISHABLE_KEY, sellerUrl: `${process.env.MEDUSA_URL.replace(/\/$/, '')}/seller` }
+      : null,
+  }),
   'GET /api/catalog': () => ({
     shops: db.prepare("SELECT * FROM shops WHERE status = 'approved' ORDER BY created_at").all().map(shopOut),
     products: db.prepare("SELECT p.* FROM products p JOIN shops s ON s.id = p.shop_id WHERE p.status = 'live' AND s.status = 'approved' ORDER BY p.created_at DESC").all().map(productOut),

@@ -5,6 +5,7 @@ import { View } from 'react-native';
 import { Shelby } from '@/components/Shelby';
 import { screen, setAttribution, track } from '@/lib/analytics';
 import { absolute, api } from '@/lib/api';
+import { CommerceConfig, loadMercurCatalog } from '@/lib/commerce';
 import { applyCatalog, Product, Shop } from '@/lib/data';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { WebAppBanner } from '@/components/WebAppBanner';
@@ -16,8 +17,11 @@ import { C } from '@/lib/theme';
 function CatalogGate({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   useEffect(() => {
-    api<{ shops: Shop[]; products: Product[] }>('/api/catalog', undefined, 3000)
-      .then(r => applyCatalog(r, absolute)).catch(() => {}).finally(() => setReady(true));
+    (async () => {
+      const { commerce } = await api<{ commerce: CommerceConfig | null }>('/api/config', undefined, 3000).catch(() => ({ commerce: null }));
+      if (commerce) applyCatalog(await loadMercurCatalog(commerce), u => u); // Mercur marketplace backend
+      else applyCatalog(await api<{ shops: Shop[]; products: Product[] }>('/api/catalog', undefined, 3000), absolute);
+    })().catch(() => {}).finally(() => setReady(true));
   }, []);
   if (!ready) return <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', backgroundColor: C.bg }}><Shelby size={110} mood="thinking" label="Loading Shelby" /></View>;
   return <>{children}</>;

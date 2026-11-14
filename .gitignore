@@ -11,3 +11,4 @@ idea-engine/plans/*/ui/sim/review*/
 
 # Shelby sample catalogue (the app imports it; the server seeds from it)
 !marketplace-app/src/data/
+!shelby-commerce/packages/api/src/scripts/data/
