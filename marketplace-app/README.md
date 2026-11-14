@@ -39,3 +39,21 @@ Replace `src/lib/data.ts` and `src/lib/store.tsx` with API calls that follow the
 - **Payments:** Stripe Connect, with the Payment Sheet for checkout.
 - **Push:** Expo Notifications.
 - **Deferred deep links:** a link service for the `p`, `s`, `d` and `w` paths.
+
+## Backend and seller dashboard (`server/`)
+
+The same Node process serves three things:
+- `/api/*`: the JSON API.
+- `/seller`: Shelby for Sellers, where shop owners sign up, set up their shop, upload products with photos, sizes and stock, and ship orders. Platform admins approve shops there too.
+- `/`: the Expo web build.
+
+Data lives in SQLite under `DATA_DIR` (a Railway volume at `/data`), and photos in `DATA_DIR/uploads`.
+
+```bash
+npm run build:web                       # builds dist/
+ADMIN_SETUP_CODE=choose-a-code npm run serve   # http://localhost:3200 and /seller
+```
+
+The first seller account created with the `ADMIN_SETUP_CODE` (under "Platform admin?" on sign-up) becomes a platform admin. On first boot the database is seeded with the 10 sample shops so the app is never empty. Suspend them from the Admin tab once real sellers are live.
+
+For a native build, set `EXPO_PUBLIC_API_URL` to the deployed URL.

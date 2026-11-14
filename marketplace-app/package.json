@@ -26,7 +26,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "build:web": "expo export -p web",
+    "serve": "node --experimental-sqlite --no-warnings server/server.mjs"
   },
-  "private": true
+  "private": true,
+  "engines": {
+    "node": ">=22.5"
+  }
 }

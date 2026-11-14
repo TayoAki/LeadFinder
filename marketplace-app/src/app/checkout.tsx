@@ -7,6 +7,7 @@ import { Header } from '@/components/Header';
 import { TrustLine } from '@/components/Logo';
 import { Button, Card } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
+import { api } from '@/lib/api';
 import { getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
@@ -16,6 +17,7 @@ export default function Checkout() {
   const [pay, setPay] = useState<'apple' | 'card'>('apple');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
   const items = groups.reduce((n, g) => n + g.subtotal, 0);
   const shipping = groups.reduce((n, g) => n + g.shipping, 0);
   const tax = Math.round(items * 0.0725 * 100) / 100;
@@ -27,9 +29,17 @@ export default function Checkout() {
 
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
-  const place = () => {
-    setLoading(true);
-    setTimeout(() => { const o = placeOrder(discount, user ? undefined : email, tax); router.replace({ pathname: '/order-success', params: { id: o.id } }); }, 900);
+  // The server re-prices the cart, checks stock and splits it into one order per shop.
+  const place = async () => {
+    setLoading(true); setError('');
+    try {
+      const r = await api<{ id: string; total: number; tax: number }>('/api/orders', {
+        lines: cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty })), email: user?.email ?? email, name: user?.name ?? '',
+        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined,
+      });
+      const o = placeOrder(discount, user ? undefined : email, r.tax, r.id);
+      router.replace({ pathname: '/order-success', params: { id: o.id } });
+    } catch (e: any) { setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed'); setLoading(false); }
   };
 
   return (
@@ -87,6 +97,7 @@ export default function Checkout() {
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 6 }}><Text style={T.h3}>Total</Text><Text style={{ fontSize: 20, fontWeight: '900' }}>{money(total)}</Text></View>
         <Button title={pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={pay === 'apple' ? 'primary' : 'accent'}
           style={{ marginTop: S.md }} onPress={place} loading={loading} disabled={!guestOk} testID="place-order" />
+        {!!error && <Text style={{ textAlign: 'center', color: C.accent, fontWeight: '700', fontSize: 13, marginTop: 6 }} accessibilityRole="alert">{error}</Text>}
         {!guestOk && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>Add an email for your receipt to continue</Text>}
       </SafeAreaView>
     </SafeAreaView>

@@ -1,7 +1,8 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Redirect, router } from 'expo-router';
 import React from 'react';
-import { Image, Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, Linking, Platform, Pressable, ScrollView, Text, View } from 'react-native';
+import { API_URL } from '@/lib/api';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SellerHeader } from '@/components/SellerHeader';
 import { Card, IconName } from '@/components/ui';
@@ -33,6 +34,13 @@ export default function SellerHome() {
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.dark }}>
       <SellerHeader title={shop.name} />
       <ScrollView style={{ backgroundColor: C.bg }} contentContainerStyle={{ padding: S.lg, gap: S.lg, paddingBottom: 40 }}>
+        {/* The real shop tools live on the web dashboard (photos are easier to manage on a laptop) */}
+        <Pressable onPress={() => (Platform.OS === 'web' ? (window.location.href = '/seller') : Linking.openURL(`${API_URL}/seller`))} accessibilityRole="link"
+          style={{ padding: S.lg, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1.5, borderColor: C.accent, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+          <Ionicons name="laptop-outline" size={24} color={C.accent} />
+          <View style={{ flex: 1 }}><Text style={T.h3}>Open Shelby for Sellers</Text><Text style={T.small}>Upload products, manage stock and ship real orders. This screen is a preview.</Text></View>
+          <Ionicons name="open-outline" size={18} color={C.ink2} />
+        </Pressable>
         {seller === 'applied' && (
           <Card style={{ backgroundColor: C.warnSoft, borderColor: C.warnSoft }}>
             <Text style={[T.h3, { color: C.warn }]}>Application in review</Text>

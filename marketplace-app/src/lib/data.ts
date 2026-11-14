@@ -10,10 +10,22 @@ export type Product = {
   sizes: string[]; description: string;
 };
 
-export const shops = (catalog.shops as Shop[]).map(s => (s.id === 's7' ? { ...s, rating: 0, followers: 212 } : s)); // s7 = a brand-new maker
+export const shops: Shop[] = (catalog.shops as Shop[]).map(s => (s.id === 's7' ? { ...s, rating: 0, followers: 212 } : s)); // s7 = a brand-new maker
 export const shopSold = (id: string) => products.filter(p => p.shopId === id).reduce((n, p) => n + p.sold, 0);
 export const isNewMaker = (s: Shop) => s.rating === 0;
-export const products = catalog.products as Product[];
+export const products: Product[] = [...(catalog.products as Product[])];
+
+// Swap the bundled sample for the live catalogue from the API (sellers' uploads included).
+// Arrays are replaced in place so every screen that imported them sees the live data.
+export function applyCatalog(remote: { shops: Shop[]; products: Product[] }, fix: (u: string) => string) {
+  if (!remote?.shops?.length) return false;
+  const firstImg = (id: string) => remote.products.find(p => p.shopId === id)?.image ?? '';
+  shops.splice(0, shops.length, ...remote.shops.map(s => ({ ...s, logo: fix(s.logo || firstImg(s.id)), banner: fix(s.banner || s.logo || firstImg(s.id)) })));
+  products.splice(0, products.length, ...remote.products.map(p => ({ ...p, image: fix(p.image), images: p.images.map(fix) })));
+  for (let i = drops.length - 1; i >= 0; i--) if (!products.some(p => p.id === drops[i].productId)) drops.splice(i, 1);
+  for (let i = recentBuys.length - 1; i >= 0; i--) if (!products.some(p => p.id === recentBuys[i].productId)) recentBuys.splice(i, 1);
+  return true;
+}
 export const categories = ['All', 'Home', 'Beauty', 'Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Outdoors'];
 export const categoryIcon: Record<string, string> = {
   All: 'apps', Home: 'home', Beauty: 'sparkles', Women: 'woman', Men: 'man', Shoes: 'footsteps',

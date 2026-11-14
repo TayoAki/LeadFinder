@@ -23,7 +23,7 @@ export default function ProductPage() {
   const [added, setAdded] = useState(false);
   const liked = wishlist.includes(p.id);
   const followed = following.includes(shop.id);
-  const inCarts = 3 + (Number(p.id) % 17);
+  const inCarts = 3 + ([...p.id].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 17);
   const more = shopProducts(shop.id).filter(x => x.id !== p.id).slice(0, 6);
   const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => setImg(Math.round(e.nativeEvent.contentOffset.x / width));
 

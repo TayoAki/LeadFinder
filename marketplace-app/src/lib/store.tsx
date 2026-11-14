@@ -19,7 +19,7 @@ type Store = {
   following: string[]; toggleFollow: (id: string) => void;
   reminders: string[]; toggleReminder: (id: string) => void;
   credit: number; invitesSent: number; invite: () => void;
-  orders: Order[]; placeOrder: (discount: number, guestEmail?: string, tax?: number) => Order;
+  orders: Order[]; placeOrder: (discount: number, guestEmail?: string, tax?: number, id?: string) => Order;
   referredBy: string | null; setReferredBy: (v: string | null) => void;
   notif: 'unknown' | 'granted' | 'denied'; setNotif: (v: 'granted' | 'denied') => void;
   seller: 'none' | 'applied' | 'approved'; setSeller: (v: 'none' | 'applied' | 'approved') => void;
@@ -81,11 +81,11 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       credit, invitesSent, invite: () => setInvites(n => n + 1),
       orders,
       referredBy, setReferredBy, notif, setNotif, seller, setSeller,
-      placeOrder: (discount, guestEmail, tax = 0) => {
+      placeOrder: (discount, guestEmail, tax = 0, serverId) => {
         const items = groups.reduce((n, g) => n + g.subtotal + g.shipping, 0);
         const used = Math.min(discount, items);
         const order: Order = {
-          id: `${Math.floor(100000 + Math.random() * 899999)}`, placedAt: Date.now(), total: Math.round((items + tax - used) * 100) / 100, credit: used,
+          id: serverId ?? `${Math.floor(100000 + Math.random() * 899999)}`, placedAt: Date.now(), total: Math.round((items + tax - used) * 100) / 100, credit: used,
           sellerOrders: groups.map((g, i) => ({ shopId: g.shop.id, lines: g.lines, shipping: g.shipping, status: i === 0 ? 'Shipped' : 'Paid', tracking: i === 0 ? '1Z 999 AA1 0123 4567 84' : undefined })),
         };
         setOrders(o => [order, ...o]); setCredit(c => Math.max(0, c - used)); setReferredBy(null); setCart([]);

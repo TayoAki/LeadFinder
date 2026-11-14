@@ -28,7 +28,7 @@ export default function Home() {
   const [cat, setCat] = useState('All');
   const [tick, setTick] = useState(0);
 
-  useEffect(() => { const t = setInterval(() => setTick(n => (n + 1) % recentBuys.length), 3500); return () => clearInterval(t); }, []);
+  useEffect(() => { const t = setInterval(() => setTick(n => n + 1), 3500); return () => clearInterval(t); }, []);
 
   const feed = useMemo(() => {
     const pool = cat !== 'All' ? products.filter(p => p.category === cat) : interests.length ? products.filter(p => interests.includes(p.category)) : products;
@@ -36,8 +36,8 @@ export default function Home() {
   }, [cat, interests]);
   const fromFollowed = products.filter(p => following.includes(p.shopId)).slice(0, 6);
   const drop = drops[0];
-  const cd = useCountdown(drop.at);
-  const buy = recentBuys[tick];
+  const cd = useCountdown(drop?.at ?? 0);
+  const buy = recentBuys[tick % Math.max(1, recentBuys.length)];
 
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
@@ -81,7 +81,7 @@ export default function Home() {
         </ScrollView>
 
         {/* Drop: scarcity + countdown + remind me */}
-        <Pressable onPress={() => router.push('/drops')} style={{ margin: S.lg, borderRadius: R.lg, overflow: 'hidden', backgroundColor: C.dark }}>
+        {drop && <Pressable onPress={() => router.push('/drops')} style={{ margin: S.lg, borderRadius: R.lg, overflow: 'hidden', backgroundColor: C.dark }}>
           <Image source={{ uri: getProduct(drop.productId).images[0] }} style={{ position: 'absolute', right: -20, top: 0, bottom: 0, width: '55%', opacity: 0.9 }} resizeMode="cover" />
           <View style={{ padding: S.lg, width: '62%' }}>
             <Pill text="TODAY'S DROP" tone="accent" icon="flash" />
@@ -94,7 +94,7 @@ export default function Home() {
             </Pressable>
             <Text style={{ color: '#CFC7BC', fontSize: 11, marginTop: 8 }}>{compact(drop.reminders + (reminders.includes(drop.id) ? 1 : 0))} people waiting</Text>
           </View>
-        </Pressable>
+        </Pressable>}
 
         <SectionHeader title="Shelby's picks for you" sub={onboarded ? 'Fresh every morning from shops on Shelby' : 'Tell Shelby what you like to tune these'} action={onboarded ? 'Ask' : 'Tune'} onAction={() => router.push(onboarded ? '/ask' : '/onboarding')} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.lg }}>
@@ -116,10 +116,10 @@ export default function Home() {
         </ScrollView>
 
         {/* Live social proof ticker */}
-        <View style={{ marginHorizontal: S.lg, marginTop: S.lg, flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: C.surface, borderRadius: R.pill, borderWidth: 1, borderColor: C.line, paddingHorizontal: 12, paddingVertical: 8 }} accessibilityLiveRegion="polite">
+        {buy && <View style={{ marginHorizontal: S.lg, marginTop: S.lg, flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: C.surface, borderRadius: R.pill, borderWidth: 1, borderColor: C.line, paddingHorizontal: 12, paddingVertical: 8 }} accessibilityLiveRegion="polite">
           <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: C.good }} />
           <Text numberOfLines={1} style={{ fontSize: 12, color: C.ink2, flex: 1 }}><Text style={{ fontWeight: '800', color: C.ink }}>{buy.who}</Text> bought {getProduct(buy.productId).title} · {buy.mins} min ago</Text>
-        </View>
+        </View>}
 
         <SectionHeader title={cat === 'All' ? (interests.length ? 'Picked for you' : 'Trending now') : cat} sub={cat === 'All' && interests.length ? `Because you like ${interests.slice(0, 2).join(' and ')}` : 'What people are buying this week'} action="See all" onAction={() => router.push('/search')} />
         <ProductGrid items={feed} width={width} />

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shelby for Sellers</title>
+  <link rel="icon" href="/seller/favicon.png" />
+  <link rel="stylesheet" href="/seller/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <a href="#/" class="brand" aria-label="Shelby for Sellers home"><img src="/seller/logo.png" alt="Shelby" height="30" /><span>for Sellers</span></a>
+    <nav id="nav" aria-label="Seller sections" hidden>
+      <a href="#/" data-nav="dash">Home</a>
+      <a href="#/products" data-nav="products">Products</a>
+      <a href="#/orders" data-nav="orders">Orders</a>
+      <a href="#/shop" data-nav="shop">Shop</a>
+      <a href="#/admin" data-nav="admin" id="nav-admin" hidden>Admin</a>
+    </nav>
+    <div class="who" id="who"></div>
+  </header>
+  <main id="main" tabindex="-1"><div class="skeleton"></div></main>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <script src="/seller/app.js" type="module"></script>
+</body>
+</html>
