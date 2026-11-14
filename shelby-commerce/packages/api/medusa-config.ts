@@ -19,6 +19,11 @@ const dashboardAppDir = (name: string) => {
 module.exports = withMercur({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
+    // Optional: sessions and cache in Redis when REDIS_URL is set (production); in-memory otherwise.
+    ...(process.env.REDIS_URL ? { redisUrl: process.env.REDIS_URL } : {}),
+    // "shared" (default) runs the API and background jobs in one process; split into "server" and
+    // "worker" instances when traffic needs it (see Mercur's self-host guide).
+    workerMode: (process.env.MEDUSA_WORKER_MODE as "shared" | "worker" | "server") || "shared",
     http: {
       storeCors: process.env.STORE_CORS!,
       adminCors: process.env.ADMIN_CORS!,

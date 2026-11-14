@@ -66,10 +66,11 @@ export default async function seedShelby({ container }: ExecArgs) {
   const taxRegions = await container.resolve(Modules.TAX).listTaxRegions({ country_code: "us" });
   if (!taxRegions.length) await createTaxRegionsWorkflow(container).run({ input: [{ country_code: "us", provider_id: "tp_system" }] });
 
-  let { data: [key] } = await query.graph({ entity: "api_key", fields: ["id", "token"], filters: { type: "publishable", title: "Shelby app" } });
+  const { data: keys } = await query.graph({ entity: "api_key", fields: ["id", "token"], filters: { type: "publishable", title: "Shelby app" } });
+  let key: { id: string; token: string } = keys[0];
   if (!key) {
     const { result } = await createApiKeysWorkflow(container).run({ input: { api_keys: [{ title: "Shelby app", type: "publishable", created_by: "" }] } });
-    key = result[0];
+    key = { id: result[0].id, token: result[0].token };
   }
   try {
     await linkSalesChannelsToApiKeyWorkflow(container).run({ input: { id: key.id, add: [channel.id] } });
@@ -143,8 +144,10 @@ export default async function seedShelby({ container }: ExecArgs) {
     if (i === 0) await updateStoresWorkflow(container).run({ input: { selector: { id: store.id }, update: { default_location_id: location.id } } });
     await createLocationFulfillmentSetWorkflow(container).run({ input: { location_id: location.id, fulfillment_set_data: { name: `${shop.name} delivery`, type: "shipping" } } });
     const { data: [withSet] } = await query.graph({ entity: "stock_location", fields: ["fulfillment_sets.id"], filters: { id: location.id } });
+    const fulfillmentSetId = withSet?.fulfillment_sets?.[0]?.id;
+    if (!fulfillmentSetId) throw new Error(`No fulfillment set for seller "${shop.name}"`);
     const { result: [zone] } = await createServiceZonesWorkflow(container).run({
-      input: { data: [{ fulfillment_set_id: withSet.fulfillment_sets[0].id, name: `${shop.name} US`, geo_zones: COUNTRIES.map((country_code) => ({ country_code, type: "country" as const })) }] },
+      input: { data: [{ fulfillment_set_id: fulfillmentSetId, name: `${shop.name} US`, geo_zones: COUNTRIES.map((country_code) => ({ country_code, type: "country" as const })) }] },
     });
     const rules = [{ attribute: "enabled_in_store", value: "true", operator: "eq" as const }, { attribute: "is_return", value: "false", operator: "eq" as const }];
     await createSellerShippingOptionsWorkflow(container).run({
