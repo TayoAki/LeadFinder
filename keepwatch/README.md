@@ -9,6 +9,10 @@ Keepwatch finds the Meta ads your rivals keep paying to run, shows why they work
 - **Hooks that lasted:** opening lines from ads that ran 30+ days, plus every angle rated by temperature. Open ground means no rival runs it, so you can say it first.
 - **Rebuild ("Steal this ad"):** keeps the rival ad's scene and layout, then swaps in your product, offer and colour. It never copies their name, logo, claims or wording.
 - **Ad test:** a simulated buyer panel picks between your ad and theirs. Each buyer sees both ads twice, with the order swapped.
+- **Borrow ("steal from another industry, not another competitor"):** if every idea comes from rivals, every ad looks like theirs. The Borrow tab has three steps:
+  1. **Your hill to die on:** write your stance and run the swap test. Would it still be true with a rival's name in it? It flags words any brand could claim, lines your rivals already run, no side taken, and nothing specific.
+  2. **What every rival does:** the formats, openings and angles most of your category shares (the habits buyers have stopped noticing), plus the open ground nobody uses.
+  3. **Borrow a move from another world:** 15 moves from other industries (`lib/donors.mjs`), such as dressing up as another category (beer and metal for water), owning the joke (budget airlines), turning the product into a dare (spicy-noodle challenges), lore you commit to (internet comedy accounts) and the most-asked-questions interview. Each is ranked for your brand by fit and by the rival habits it breaks. It says why it works, when it fits and when to skip it. **Write the brief** turns it into hooks, beats, a three-post series and a "don't copy" line. Template briefs are free; with `ANTHROPIC_API_KEY`, Claude writes them for 5 credits.
 - **Monday drop:** four new ads a week, built from different rivals' kept ads with different angles.
 - **MCP server:** ask Claude, ChatGPT or Cursor what your rivals keep running (`POST /mcp`).
 

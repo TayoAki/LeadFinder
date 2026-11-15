@@ -66,6 +66,12 @@ CREATE TABLE IF NOT EXISTS videos (               -- short vertical videos made 
   mode TEXT, seconds INTEGER, status TEXT, path TEXT, engine TEXT, cost_usd REAL DEFAULT 0,
   created_at TEXT DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS borrow_briefs (           -- briefs for moves borrowed from other industries
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  donor_id TEXT NOT NULL, detail TEXT, brief TEXT NOT NULL,
+  created_at TEXT DEFAULT (datetime('now'))
+);
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT);
 CREATE TABLE IF NOT EXISTS user_prefs (user_id TEXT PRIMARY KEY, current_ws INTEGER);  -- the workspace a login has open
 CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refunded; the monthly pool is the plan's allowance
@@ -97,7 +103,8 @@ const ADDED_COLUMNS = [['rebuilds', 'workspace_id', 'INTEGER'], ['panels', 'work
   ['workspaces', 'trial_ends_at', 'TEXT'], ['rebuilds', 'size', 'TEXT'], ['rebuilds', 'credits', 'INTEGER'],
   ['workspaces', 'drop_enabled', 'INTEGER DEFAULT 1'], ['workspaces', 'drop_hour', 'INTEGER DEFAULT 7'], ['workspaces', 'drop_tz', 'TEXT'],
   // several workspaces per login: extra ones point at the login's first workspace (parent_id), which holds the plan and credits
-  ['workspaces', 'owner_user_id', 'TEXT'], ['workspaces', 'parent_id', 'INTEGER']];
+  ['workspaces', 'owner_user_id', 'TEXT'], ['workspaces', 'parent_id', 'INTEGER'],
+  ['workspaces', 'stance', 'TEXT']];  // the brand's "hill to die on" (Borrow tab swap test)
 
 let db;
 export function getDb(file = resolve(DATA_DIR, 'keepwatch.db')) {
@@ -119,7 +126,7 @@ export function openMemoryDb() {
   return m;
 }
 
-const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image', 'drop_enabled', 'drop_hour', 'drop_tz'];
+const BRAND_COLS = ['brand_name', 'brand_domain', 'brand_color', 'brand_offer', 'brand_voice', 'brand_product', 'category', 'audience', 'brand_url', 'brand_kit', 'product_image', 'drop_enabled', 'drop_hour', 'drop_tz', 'stance'];
 
 /**
  * Workspaces. Every login has a first workspace (workspaces.user_id = the login) that holds the plan and the credit pool.

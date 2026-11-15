@@ -5,7 +5,7 @@
 // New accounts get a 14-day trial; Stripe (later) sets workspaces.plan to a paid plan.
 import { getDb, rivalIdsFor, rootWorkspace, familyIds } from './db.mjs';
 
-export const COST = { rival: 30, ad: 10, panel: 5, motion: 2, video: 30 };
+export const COST = { rival: 30, ad: 10, panel: 5, motion: 2, video: 30, brief: 5 }; // brief: a Claude-written Borrow brief (template briefs are free)
 
 export const PLANS = {
   trial: { name: 'Trial', price: 0, rivals: 5, credits: 200, workspaces: 1, tagline: '14 days to try everything. No card needed.' },

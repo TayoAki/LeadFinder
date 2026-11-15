@@ -1,5 +1,5 @@
 // Keepwatch UI. Plain ES modules, no build step. Hash routes:
-//   #/overview  #/rival/:id  #/hooks  #/rebuild[/:adId]  #/test  #/search  #/alerts  #/library  #/settings
+//   #/overview  #/rival/:id  #/hooks  #/patterns  #/borrow  #/rebuild[/:adId]  #/test  #/search  #/alerts  #/library  #/settings
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const fmtNum = n => (n ?? 0).toLocaleString();
@@ -281,6 +281,70 @@ async function viewPatterns() {
       <td><button class="btn sm" data-steal="${esc(best(f).id)}">Make one</button></td></tr>`).join('')}</tbody></table></div>
     <p class="small muted">${esc(p.note)}</p>
   </section>`;
+}
+
+// ---------- Borrow: steal from another industry, not another competitor ----------
+const VERDICT_PILL = { yours: 'open', nearly: 'warm', shared: 'hot', generic: 'hot' };
+function stanceResult(c) {
+  if (!c) return '';
+  return `<div style="display:grid;gap:8px;margin-top:6px">
+    <span class="pill ${VERDICT_PILL[c.verdict] || ''}" style="justify-self:start">${esc(c.label)}</span>
+    <ul class="small" style="margin:0;padding-left:18px;display:grid;gap:3px">${c.checks.map(k => `<li style="color:${k.ok ? 'var(--ink-2)' : 'var(--hot)'}">${k.ok ? '✓' : '✗'} ${esc(k.text)}</li>`).join('')}</ul>
+    ${c.swap ? `<p class="small muted" style="margin:0">Swap test, with ${esc(c.swap.rival)}'s name: <q>${esc(c.swap.line.replace(/[.!?]+$/, ''))}</q>. If that still sounds right, it isn't yours yet.</p>` : ''}
+    ${c.closest ? `<p class="small muted" style="margin:0">Closest rival line (${c.closest.sim}% alike), ${esc(c.closest.rival)}: <q>${esc(c.closest.line)}</q></p>` : ''}
+    ${c.tips?.length ? `<p class="small" style="margin:0"><b>Next:</b> ${c.tips.map(esc).join(' ')}</p>` : ''}
+  </div>`;
+}
+function briefCard(b) {
+  const list = (t, xs) => xs?.length ? `<div><span class="eyebrow">${t}</span><ol class="small" style="margin:4px 0 0;padding-left:18px;display:grid;gap:3px">${xs.map(x => `<li>${esc(x)}</li>`).join('')}</ol></div>` : '';
+  return `<article class="card pad" style="display:grid;gap:10px">
+    <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">${esc(b.title)}</h3><span class="pill">${esc(b.world)}</span></div>
+    <p class="small" style="margin:0"><b>The move:</b> ${esc(b.mechanism)}</p>
+    <p class="small muted" style="margin:0"><b>Why it works:</b> ${esc(b.take)}</p>
+    <p class="small muted" style="margin:0"><b>Format:</b> ${esc(b.format)} · <b>Breaks:</b> ${esc((b.breaks || []).join('; '))}</p>
+    ${list('Hooks', b.hooks)}${list('Beats', b.beats)}${list('Commit to the bit: the next three posts', b.series)}${list('Before you make it', b.fit_check)}
+    <p class="small muted" style="margin:0"><b>Don't copy:</b> ${esc(b.dont)}</p>
+    <p class="small muted" style="margin:0">${b.by === 'claude' ? 'Written by Claude for your brand.' : 'Written from templates with your brand facts.'}${b.note ? ` ${esc(b.note)}` : ''} Seen in: ${esc(b.seen_in)}.</p>
+  </article>`;
+}
+async function viewBorrow() {
+  const d = await api('/api/borrow');
+  const c = d.conventions;
+  state.borrow = d;
+  return `<section class="section">
+    ${sectionHead('Steal from another industry, not your rivals', 'If all your ideas come from competitors, your ads end up looking like theirs. Start from what you stand for, see the habits your whole category shares, then borrow a move from a world your rivals never look at.')}
+    <form id="stance-form" class="card pad" style="display:grid;gap:8px">
+      <span class="eyebrow">1 · Your hill to die on</span>
+      <label class="small muted" for="stance-input">One sentence: what you stand for that a rival would never say. Not a feature.</label>
+      <textarea id="stance-input" name="stance" rows="2" maxlength="400" placeholder="e.g. We will never sell you a fiber drink that tastes like homework.">${esc(d.stance)}</textarea>
+      <div class="row"><button class="btn primary" id="stance-run">Run the swap test</button></div>
+      <div id="stance-out">${stanceResult(d.check)}</div>
+    </form>
+  </section>
+  <section class="section">
+    ${sectionHead('2 · What every rival does', esc(c.note))}
+    ${c.rules.length ? `<div class="card pad" style="display:grid;gap:8px">${c.rules.map(r => `<div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><span>${esc(r.text)}</span><span class="small muted">${esc(r.brands.slice(0, 4).join(', '))}${r.brands.length > 4 ? ` +${r.brands.length - 4}` : ''}</span></div>`).join('')}
+      ${c.gaps.length ? `<div style="border-top:1px solid var(--line);padding-top:8px"><span class="eyebrow">Open ground</span><div class="row" style="flex-wrap:wrap;gap:6px;margin-top:6px">${c.gaps.map(g => `<span class="pill open">${esc(g.text)}</span>`).join('')}</div></div>` : ''}</div>`
+      : empty('Track a few rivals to see the habits your category shares.')}
+  </section>
+  <section class="section">
+    ${sectionHead('3 · Borrow a move from another world', `Ranked for your brand: it fits your situation and breaks what your rivals do. Copy why it works, never what it looks like. ${d.claude ? `A brief costs ${d.cost} credits.` : 'Briefs are free.'}`)}
+    <div style="display:grid;gap:10px">${d.donors.map((m, i) => `<article class="card pad" style="display:grid;gap:8px" ${i >= 6 ? 'data-more hidden' : ''}>
+      <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">${esc(m.name)}</h3><span class="pill">From ${esc(m.world.toLowerCase())}</span></div>
+      <p style="margin:0">${esc(m.move)}</p>
+      <p class="small muted" style="margin:0"><b>Why it works:</b> ${esc(m.why)}</p>
+      ${m.reasons.length ? `<ul class="small" style="margin:0;padding-left:18px">${m.reasons.map(r => `<li>${esc(r)}</li>`).join('')}</ul>` : ''}
+      <p class="small muted" style="margin:0"><b>Fits if:</b> ${esc(m.fits_if)} <b>Skip if:</b> ${esc(m.skip_if)}</p>
+      <p class="small muted" style="margin:0">Seen in: ${esc(m.seen_in)}</p>
+      <form class="row borrow-form" data-donor="${esc(m.id)}" style="gap:8px;flex-wrap:wrap">
+        <input name="detail" aria-label="${esc(m.ask)}" placeholder="${esc(m.ask)}" style="flex:1;min-width:220px">
+        <button class="btn sm primary">Write the brief</button>
+      </form>
+      <div class="brief-out"></div>
+    </article>`).join('')}</div>
+    ${d.donors.length > 6 ? `<button class="btn" id="borrow-more" style="margin-top:10px">Show all ${d.donors.length} moves</button>` : ''}
+  </section>
+  ${d.briefs.length ? `<section class="section">${sectionHead('Your briefs', 'Every brief you have written, newest first.')}<div style="display:grid;gap:10px">${d.briefs.map(b => briefCard(b.brief)).join('')}</div></section>` : ''}`;
 }
 
 function makeForm() {
@@ -628,19 +692,19 @@ async function openAd(id) {
 }
 
 // ---------- routing ----------
-const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', patterns: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
+const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', patterns: 'home', borrow: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
 async function route() {
   const [, page = 'overview', arg] = (location.hash.split('?')[0] || '').split('/');
   const view = VIEW_OF[page] || 'home';
   document.querySelectorAll('.rail-btn').forEach(b => b.setAttribute('aria-current', String(b.dataset.view === view)));
-  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', patterns: 'patterns', rebuild: 'rebuild', test: 'test' }[page];
+  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', patterns: 'patterns', borrow: 'borrow', rebuild: 'rebuild', test: 'test' }[page];
   $('#tabs').hidden = view !== 'home';
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
   renderSidebar();
   const el = $('#content');
   el.innerHTML = '<div class="skeleton"></div>';
   try {
-    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, patterns: viewPatterns, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
+    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, patterns: viewPatterns, borrow: viewBorrow, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
       search: viewSearch, alerts: viewAlerts, library: () => viewRebuild(), settings: viewSettings }[page] || viewOverview)();
     el.innerHTML = html;
     el.scrollTop = 0;
@@ -660,10 +724,11 @@ async function refreshChrome() {
 
 // ---------- events ----------
 document.addEventListener('click', async e => {
-  const t = e.target.closest('[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
+  const t = e.target.closest('#borrow-more,[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
   if (!t) return;
+  if (t.id === 'borrow-more') { document.querySelectorAll('[data-more]').forEach(x => { x.hidden = false; }); t.remove(); return; }
   if (t.dataset.view) { location.hash = { home: '#/overview', search: '#/search', alerts: '#/alerts', library: '#/library', settings: '#/settings' }[t.dataset.view]; return; }
-  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', patterns: '#/patterns', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
+  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', patterns: '#/patterns', borrow: '#/borrow', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
   if (t.dataset.rival) { location.hash = `#/rival/${t.dataset.rival}`; return; }
   if (t.dataset.steal) { $('#modal').open && $('#modal').close();
     if (t.dataset.again) { t.disabled = true; try { await runJob('/api/rebuild', { ad_id: t.dataset.steal }, 'Making another version'); route(); } catch (err) { toast(err.message, 6000); } return; }
@@ -705,6 +770,21 @@ document.addEventListener('click', async e => {
 document.addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target, data = Object.fromEntries(new FormData(f));
+  if (f.id === 'stance-form') {
+    const btn = $('#stance-run'); btn.disabled = true;
+    try { const r = await api('/api/borrow/stance', { method: 'POST', body: { stance: $('#stance-input').value } }); $('#stance-out').innerHTML = stanceResult(r.check); } catch (err) { toast(err.message, 6000); }
+    btn.disabled = false; return;
+  }
+  if (f.classList.contains('borrow-form')) {
+    const btn = $('button', f), out = f.parentElement.querySelector('.brief-out');
+    btn.disabled = true; btn.textContent = 'Writing…';
+    try {
+      let r = await api('/api/borrow/brief', { method: 'POST', body: { donor_id: f.dataset.donor, detail: data.detail } });
+      if (r.status === 'running') r = await pollJob(r.id);
+      out.innerHTML = briefCard(r); refreshChrome().catch(() => {});
+    } catch (err) { toast(err.message, 6000); }
+    btn.disabled = false; btn.textContent = 'Write another'; return;
+  }
   if (f.id === 'ws-form') { try { await api('/api/workspace', { method: 'POST', body: data }); toast('Saved'); await refreshChrome(); } catch (err) { toast(err.message); } }
   if (f.id === 'rival-search') {
     const out = $('#rival-results'); out.innerHTML = '<div class="skeleton"></div>';

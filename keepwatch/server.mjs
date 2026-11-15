@@ -10,6 +10,8 @@ import { auth, migrateAuth } from './lib/auth.mjs';
 import { getDb, workspaceForUser, workspaceByKey, saveWorkspace, rotateApiKey, rivalIdsFor, trackRival, untrackRival, getWorkspace, listWorkspaces, createWorkspace, switchWorkspace, rootWorkspace } from './lib/db.mjs';
 import * as A from './lib/analytics.mjs';
 import { patterns } from './lib/concepts.mjs';
+import { conventions, stanceCheck, matchDonors, writeBrief } from './lib/borrow.mjs';
+import { donorById } from './lib/donors.mjs';
 import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR } from './lib/rebuild.mjs';
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
 import { providerStatus, adLibrary } from './lib/providers.mjs';
@@ -154,6 +156,27 @@ const routes = {
   'GET /api/hooks': ({ ws, q }) => A.hooksThatLasted(db, { rivalIds: rivalIdsFor(ws.id), limit: Math.min(50, Number(q.get('limit') || 12)) }),
   'GET /api/patterns': ({ ws }) => patterns(db, rivalIdsFor(ws.id)),
   'GET /api/angles': ({ ws }) => A.angleTemperature(db, rivalIdsFor(ws.id)),
+  // Borrow: steal from another industry, not another competitor (lib/borrow.mjs, lib/donors.mjs).
+  'GET /api/borrow': ({ ws }) => {
+    const ids = rivalIdsFor(ws.id), conv = conventions(db, ids);
+    return { conventions: conv, stance: ws.stance || '', check: ws.stance ? stanceCheck(ws.stance, ws, db, ids) : null,
+      donors: matchDonors(ws, conv).map(({ hooks, beats, series, ...d }) => d), claude: hasLLM(), cost: COST.brief,
+      briefs: db.prepare('SELECT id, donor_id, created_at, brief FROM borrow_briefs WHERE workspace_id = ? ORDER BY id DESC LIMIT 30').all(ws.id).map(b => ({ ...b, brief: JSON.parse(b.brief) })) };
+  },
+  'POST /api/borrow/stance': ({ ws, body }) => {
+    const stance = String(body.stance || '').trim().slice(0, 400);
+    const saved = saveWorkspace(ws.id, { stance });
+    return { stance, check: stanceCheck(stance, saved, db, rivalIdsFor(ws.id)) };
+  },
+  'POST /api/borrow/brief': async ({ ws, body }) => {
+    if (!donorById(body.donor_id)) throw httpError(400, 'Pick a move to borrow.');
+    const detail = String(body.detail || '').trim().slice(0, 200);
+    const conv = conventions(db, rivalIdsFor(ws.id));
+    const save = brief => { const r = db.prepare('INSERT INTO borrow_briefs (workspace_id, donor_id, detail, brief) VALUES (?,?,?,?)').run(ws.id, body.donor_id, detail, JSON.stringify(brief)); return { id: Number(r.lastInsertRowid), ...brief }; };
+    if (!hasLLM()) return save(await writeBrief(body.donor_id, ws, { detail, conv }));
+    const ref = spend(ws, 'brief', `brief:${randomUUID()}`);
+    return startJob(ws.id, 'brief', async () => { const b = await writeBrief(body.donor_id, ws, { detail, conv }); if (b.by !== 'claude') refund(ws, ref); return save(b); }, () => refund(ws, ref));
+  },
   'GET /api/ads': ({ ws, q }) => {
     const f = Object.fromEntries(q);
     if (f.rivalId && !mine(ws, f.rivalId)) return [];
@@ -265,6 +288,10 @@ const MCP_TOOLS = [
     run: (ws, ids, { limit }) => A.hooksThatLasted(db, { rivalIds: ids, limit: Math.min(30, limit || 12) }).map(h => ({ hook: h.hook, rival: h.rival, run_days: h.run_days, still_running: h.still_running, angle: h.angle_label, format: h.format_label })) },
   { name: 'angles_by_temperature', description: 'Each ad angle and how many of your rivals run it now: open ground, warm, crowded, burning out.', inputSchema: strictObj(),
     run: (ws, ids) => A.angleTemperature(db, ids).map(a => ({ angle: a.label, temperature: a.temp_label, rivals_running: a.rivals_running, running: a.running, tried_and_stopped: a.tried, example: slim(a.best) })) },
+  { name: 'borrow_ideas', description: 'Steal from another industry, not a competitor: what every tracked rival does (habits to break), and moves from other industries ranked for this brand, with why each works and when to skip it.', inputSchema: strictObj({ limit: { type: 'integer', maximum: 15 } }),
+    run: (ws, ids, { limit }) => { const conv = conventions(db, ids); return { category_habits: conv.rules.map(r => r.text), open_ground: conv.gaps.map(g => g.text), moves: matchDonors(ws, conv).slice(0, Math.min(15, limit || 6)).map(d => ({ move: d.name, borrowed_from: d.world, example: d.seen_in, what: d.move, why_it_works: d.why, fits_if: d.fits_if, skip_if: d.skip_if, reasons: d.reasons })) }; } },
+  { name: 'stance_swap_test', description: 'The swap test: would this brand stance still be true with a rival\'s name in it? Returns a verdict, checks and the closest rival line.', inputSchema: strictObj({ stance: { type: 'string' } }, ['stance']),
+    run: (ws, ids, { stance }) => stanceCheck(stance, ws, db, ids) },
   { name: 'format_league', description: 'Which ad formats your rivals keep paying for vs kill (last 4 weeks), and how long each format survives.', inputSchema: strictObj(),
     run: (ws, ids) => ({ league: A.formatLeague(db, ids), survival: A.formatSurvival(db, ids).map(s => ({ format: s.label, n: s.n, median_days: s.median, still_live_at: s.at })) }) },
 ];

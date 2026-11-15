@@ -63,7 +63,7 @@ img { display: block; }
 
 .main { grid-area: main; display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 .tabs { display: flex; gap: 0; margin: 14px 18px 0; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); overflow-x: auto; flex: none; }
-.tabs button { flex: 1; min-width: 110px; padding: 10px 14px; border: 0; border-right: 1px solid var(--line); background: none; color: var(--ink-2); font-weight: 500; white-space: nowrap; }
+.tabs button { flex: 1; min-width: 88px; padding: 10px 12px; border: 0; border-right: 1px solid var(--line); background: none; color: var(--ink-2); font-weight: 500; white-space: nowrap; }
 .tabs button:last-child { border-right: 0; }
 .tabs button[aria-selected="true"] { background: var(--panel-2); color: var(--ink); box-shadow: inset 0 -2px 0 var(--accent); }
 .tabs[hidden] { display: none; }
@@ -268,3 +268,6 @@ dialog:has(.player) { width: min(440px, calc(100vw - 32px)); }
 .ws-switch { display: grid; gap: 4px; margin-bottom: 10px; }
 .ws-switch span { color: var(--ink-3); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; padding-left: 2px; }
 .ws-switch select { width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--panel); color: var(--ink); font: inherit; font-weight: 600; }
+/* Borrow tab */
+#stance-input, .borrow-form input { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 9px; padding: 9px 11px; width: 100%; box-sizing: border-box; }
+#stance-input { resize: vertical; min-height: 56px; }
