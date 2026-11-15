@@ -2,7 +2,7 @@
 
 This is the Expo (React Native) frontend for the v1 marketplace described in the PRD: one cart for many independent shops, a seller mode in the same app, and live shopping later.
 
-- **Frontend only:** data is sample data and state is in memory.
+- **Backend:** Shelby Commerce (Mercur on Medusa v2) for products, sellers, carts and orders; see below.
 - **Simulated:** payments, push notifications and sharing.
 - **How it scores:** see `../idea-engine/marketplace/SCORECARD.md` for the score against the viral rubric and `../idea-engine/marketplace/viral-research.md` for the research behind it.
 
@@ -32,15 +32,14 @@ npx tsc --noEmit        # typecheck
 | `src/lib/store.tsx` | In-memory state for cart, wishlist, follows, orders, referral and seller |
 | `src/data/catalog.json` | Sample catalogue, rebuilt by `scripts/make-catalog.py` from DummyJSON |
 
-## Swap in the real backend
+## Commerce backend: Mercur on Medusa (`../shelby-commerce`)
 
-Replace `src/lib/data.ts` and `src/lib/store.tsx` with API calls that follow the PRD's data model:
-- **Orders:** Purchase → SellerOrder → OrderItem.
-- **Payments:** Stripe Connect, with the Payment Sheet for checkout.
-- **Push:** Expo Notifications.
-- **Deferred deep links:** a link service for the `p`, `s`, `d` and `w` paths.
+Products, sellers, carts and orders live in **Shelby Commerce** ([Mercur](https://github.com/mercurjs/mercur) on [Medusa v2](https://github.com/medusajs/medusa)).
+- **How the app connects:** `src/lib/commerce.ts` loads the catalogue from Mercur's Store API into the app's `Shop`/`Product` shapes. At checkout it builds one Mercur cart across sellers, and completing it creates an order group with one order per seller.
+- **Switching it on:** the app uses Mercur when this server's `/api/config` returns a `commerce` block, which happens when `MEDUSA_URL` and `MEDUSA_PUBLISHABLE_KEY` are set. Without them it falls back to the legacy built-in backend below.
+- **Seller dashboard:** sellers use Mercur's seller panel at `<MEDUSA_URL>/seller`, and operators use `<MEDUSA_URL>/dashboard`.
 
-## Backend and seller dashboard (`server/`)
+## Legacy backend and Shelby web server (`server/`)
 
 The same Node process serves three things:
 - `/api/*`: the JSON API.

@@ -1,147 +1,55 @@
-# Mercur Basic Template
+# Shelby Commerce: the marketplace backend (Mercur on Medusa v2)
 
-This template comes configured with the bare minimum to get started building your marketplace with Mercur.
+Shelby's commerce engine is [Mercur](https://github.com/mercurjs/mercur) 2.4 (MIT), a multi-vendor layer on [Medusa](https://github.com/medusajs/medusa) 2.22. The Expo app in `../marketplace-app` is the storefront.
 
-## Quick Start
+| Surface | Path | Who uses it |
+|---|---|---|
+| Store API | `/store/*` | The Shelby app (needs the publishable key) |
+| Admin panel | `/dashboard` | Platform operators: approve sellers, review catalogue changes, set commissions, see all orders and payouts |
+| Seller panel | `/seller` | Shop owners: register, list offers, manage stock, ship orders, onboard for payouts |
 
-To spin up this template locally, follow these steps:
+How Mercur models a marketplace:
+- **Master products and offers.** There is one shared catalogue of products, and each seller sells against it with an offer that has its own SKU, price, stock and shipping.
+- **Order groups.** One cart can hold items from many sellers. At checkout it becomes an order group with one order per seller, and commissions and payouts are worked out per order.
+- **More detail:** see `AGENTS.md` and the bundled docs in `node_modules/@mercurjs/docs`.
 
-### Clone
-
-If you've already cloned this repo, skip to [Development](#development).
-
-### Development
-
-1. First [clone the repo](#clone) if you have not done so already
-
-2. Copy the example environment variables:
-
-```bash
-cd my-project
-cp packages/api/.env.template packages/api/.env
-```
-
-3. Update the `.env` file with your database connection string and other required variables:
-
-```
-DATABASE_URL=postgres://user:password@localhost:5432/mercur
-REDIS_URL=redis://localhost:6379
-JWT_SECRET=your-super-secret-jwt-key
-COOKIE_SECRET=your-super-secret-cookie-key
-```
-
-4. Install dependencies and start the dev server:
+## Run it locally
 
 ```bash
-bun install
-bun dev
+bun install --linker hoisted          # hoisted: the panels expect npm-style node_modules
+cp packages/api/.env.template packages/api/.env   # set DATABASE_URL (Postgres 14+)
+cd packages/api
+bunx medusa db:migrate
+SHELBY_SELLER_PASSWORD=choose-one bun run seed:shelby   # 10 shops, 88 products, 160 offers
+bun run dev                           # http://localhost:9000 (/dashboard, /seller)
 ```
 
-5. Open `http://localhost:9000` to access the Medusa backend
-6. Open `http://localhost:7000` to access the admin dashboard
-6. Open `http://localhost:7001` to access the vendor dashboard
+To create an operator, run `bunx medusa user -e you@example.com -p <password>`, or use `--invite` to get an invite link instead.
 
-That's it! Follow the on-screen instructions to login and create your first admin user.
+## Shelby-specific pieces
 
-## What's Inside
+- **`packages/api/src/scripts/seed-shelby.ts`:** sets up the US store and region, the "Shelby app" publishable key and the categories. It then creates the sample shops as approved sellers, each with a studio location and standard shipping at the shop's price, and the sample products as master products with one offer per size. Shop and product extras such as tagline, rating, followers, sold and compare-at price go into `metadata`. It is idempotent.
+- **`packages/api/src/scripts/data/shelby-catalog.json`:** the sample catalogue, copied from the app.
+- **`Dockerfile` + `boot.sh`:** the production image. On every boot it migrates. With `SHELBY_SEED=true` it seeds, and with `ADMIN_INVITE_EMAIL` it prints an operator invite token to the logs. Then it starts the server.
 
-This monorepo includes the following packages and apps:
+## Deploy (Railway)
 
-### Apps and Packages
+The Railway service `commerce` builds `shelby-commerce/Dockerfile`, with Postgres and Redis alongside it. Uploads go to a volume mounted at `/app/packages/api/.medusa/server/static`.
 
-- `packages/api` - The Medusa backend with all marketplace functionality
-- `apps/admin` - Admin dashboard customizations
-- `apps/vendor` - Vendor portal customizations
+| Variable | Value |
+|---|---|
+| `DATABASE_URL`, `REDIS_URL` | References to the Postgres and Redis services |
+| `JWT_SECRET`, `COOKIE_SECRET` | Long random strings |
+| `MERCUR_BACKEND_URL` | The public origin, baked into the panels at build time |
+| `FILE_BACKEND_URL` | `<origin>/static` |
+| `STORE_CORS` | The app's web origin(s) |
+| `ADMIN_CORS`, `VENDOR_CORS`, `AUTH_CORS` | The public origin |
+| `SHELBY_SEED`, `ADMIN_INVITE_EMAIL`, `SHELBY_SELLER_PASSWORD` | One-off setup, used by `boot.sh` |
 
-### Project Structure
+The app uses Mercur when its server has `MEDUSA_URL` and `MEDUSA_PUBLISHABLE_KEY` set (served at `/api/config`). Unset them to fall back to the old built-in backend.
 
-```
-├── apps/
-│   ├── admin/          # Admin dashboard extensions
-│   └── vendor/         # Vendor portal extensions
-├── packages/
-│   └── api/            # Medusa backend
-│       ├── src/
-│       │   ├── api/         # Custom API routes
-│       │   ├── jobs/        # Background jobs
-│       │   ├── links/       # Module links
-│       │   ├── modules/     # Custom modules
-│       │   ├── scripts/     # CLI scripts
-│       │   ├── subscribers/ # Event subscribers
-│       │   └── workflows/   # Business workflows
-│       └── medusa-config.ts
-├── blocks.json         # Mercur blocks configuration
-├── package.json
-└── turbo.json
-```
+## Next steps
 
-### Utilities
-
-This project has some additional tools already setup for you:
-
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [Turborepo](https://turborepo.dev/) for monorepo management
-- [Prettier](https://prettier.io) for code formatting
-
-## How It Works
-
-The Mercur basic template is built on top of [Medusa](https://medusajs.com) and is pre-configured for marketplace functionality.
-
-### Modules
-
-Custom modules allow you to extend the core functionality. See the [Modules](https://docs.medusajs.com/learn/fundamentals/modules) docs for details.
-
-### Workflows
-
-Workflows define multi-step business processes. See the [Workflows](https://docs.medusajs.com/learn/fundamentals/workflows) docs for details.
-
-### API Routes
-
-Custom API routes expose HTTP endpoints. See the [API Routes](https://docs.medusajs.com/learn/fundamentals/api-routes) docs for details.
-
-### Links
-
-Links define relationships between modules. See the [Links](https://docs.medusajs.com/learn/fundamentals/links) docs for details.
-
-## Adding Blocks
-
-You can extend your project with pre-built blocks using the Mercur CLI:
-
-```bash
-bunx @mercurjs/cli add block-name
-```
-
-Configure your block sources in `blocks.json`:
-
-```json
-{
-  "aliases": {
-    "workflows": "packages/api/src/workflows",
-    "links": "packages/api/src/links",
-    "api": "packages/api/src/api",
-    "modules": "packages/api/src/modules"
-  },
-  "registries": {}
-}
-```
-
-## Build
-
-To build all apps and packages:
-
-```bash
-bun run build
-```
-
-## AI agents
-
-This project bundles its documentation as a dependency (`@mercurjs/docs`), so AI agents can read it offline and version-matched to your installed packages. Point your agent at:
-
-- `node_modules/@mercurjs/docs/llms.txt` — an index of every page
-- `node_modules/@mercurjs/docs/content/**/*.mdx` — the full pages
-
-`CLAUDE.md` and `AGENTS.md` instruct agents to read these before making changes. The same docs are online at [docs.mercurjs.com](https://docs.mercurjs.com).
-
-## Questions
-
-If you have any issues or questions start a [GitHub discussion](https://github.com/mercurjs/mercur/discussions).
+- **Stripe Connect:** add `@mercurjs/stripe-connector-plugin` for real card payments and seller payouts. Checkout uses the system payment provider until then.
+- **Referral credit:** move Shelby's referral credit and first-order discount to Medusa promotions. The Mercur checkout doesn't apply them yet.
+- **Customer accounts:** sign in, so that order history comes from `/store/order-groups`.
