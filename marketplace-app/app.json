@@ -68,7 +68,8 @@
           "merchantIdentifier": "merchant.com.hireshelby.app",
           "enableGooglePay": true
         }
-      ]
+      ],
+      "expo-video"
     ],
     "scheme": "shelby",
     "experiments": {

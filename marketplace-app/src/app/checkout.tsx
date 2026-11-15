@@ -14,6 +14,7 @@ import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
 import { commerce, completeCheckout, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
 import { CardPayment } from '@/components/CardPayment';
+import { haptic } from '@/lib/feedback';
 
 export default function Checkout() {
   const { groups, user, credit, referredBy, placeOrder, cart } = useStore();
@@ -39,6 +40,7 @@ export default function Checkout() {
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
   const fail = (e: any) => {
+    haptic('error');
     track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) });
     setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed');
     setPrepared(null); setLoading(false);

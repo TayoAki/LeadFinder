@@ -74,7 +74,7 @@ export default function Search() {
         </Pressable>
         {!q && (
           <View style={{ padding: S.lg }}>
-            <Text style={T.tiny}>TRENDING SEARCHES</Text>
+            <Text style={[T.tiny, { fontSize: 13, color: C.ink2 }]}>Trending searches</Text>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
               {trending.map(t => <Chip key={t} label={t} icon="trending-up" onPress={() => setQ(t.split(' ')[0])} />)}
             </View>

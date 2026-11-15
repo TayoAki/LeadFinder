@@ -7,12 +7,13 @@ import { Header } from '@/components/Header';
 import { ProductGrid } from '@/components/ProductCard';
 import { Chip, IconButton, Pill, SectionHeader, useCountdown } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
-import { categories, categoryIcon, compact, drops, getProduct, getShop, products, recentBuys, shops } from '@/lib/data';
+import { categories, categoryIcon, compact, drops, getProduct, getShop, money, products, recentBuys, shops } from '@/lib/data';
 import { Shelby } from '@/components/Shelby';
 import { ProductCard } from '@/components/ProductCard';
 import { pick } from '@/lib/shelby';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { shopVideos } from '@/lib/videos';
 
 export default function Home() {
   const { width } = useWindowDimensions();
@@ -23,6 +24,7 @@ export default function Home() {
   // People arriving from a friend's link skip it and land on what was shared.
   useEffect(() => { if (!onboarded && !referredBy && !ref && !shown.current) { shown.current = true; const t = setTimeout(() => router.push('/onboarding'), 300); return () => clearTimeout(t); } }, [onboarded, referredBy, ref]);
   const shelbyPicks = useMemo(() => pick({ categories: interests, maxPrice: budget ?? undefined, goal: goal ?? undefined }, 8), [interests, budget, goal]);
+  const videos = useMemo(() => shopVideos(), []);
   useEffect(() => { if (ref) setReferredBy(ref); }, [ref]);
   const remind = (id: string) => { if (!reminders.includes(id) && notif === 'unknown') router.push({ pathname: '/notify', params: { reason: 'drop' } }); toggleReminder(id); };
   const [cat, setCat] = useState('All');
@@ -100,6 +102,24 @@ export default function Home() {
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.lg }}>
           {shelbyPicks.map(p => <ProductCard key={p.id} p={p} width={150} />)}
         </ScrollView>
+
+        {/* Shoppable videos: shops show their work; tap a clip to watch and shop without leaving it */}
+        {videos.length > 0 && <>
+          <SectionHeader title="Shop the videos" sub="Straight from the makers. Tap to watch, shop without leaving." action="Watch" onAction={() => router.push('/watch')} />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 10, paddingBottom: S.lg }}>
+            {videos.map(v => (
+              <Pressable key={v.id} onPress={() => router.push({ pathname: '/watch', params: { start: v.id } })} accessibilityRole="button" accessibilityLabel={`Watch ${v.product.title} from ${getShop(v.product.shopId).name}`}
+                style={({ pressed }) => ({ width: 118, height: 210, borderRadius: R.lg, overflow: 'hidden', backgroundColor: '#F1ECE4', opacity: pressed ? 0.9 : 1 })}>
+                <Image source={{ uri: v.poster }} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
+                <View style={{ position: 'absolute', top: 8, left: 8, width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(0,0,0,0.45)', alignItems: 'center', justifyContent: 'center' }}><Ionicons name="play" size={14} color="#fff" /></View>
+                <View style={{ position: 'absolute', left: 6, right: 6, bottom: 6, backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 10, padding: 6 }}>
+                  <Text numberOfLines={1} style={{ fontSize: 11, fontWeight: '700', color: C.ink }}>{v.product.title}</Text>
+                  <Text style={{ fontSize: 12, fontWeight: '800', color: C.ink }}>{money(v.product.price)}</Text>
+                </View>
+              </Pressable>
+            ))}
+          </ScrollView>
+        </>}
 
         {/* Two-sided referral, visible on the first screen */}
         <Pressable onPress={() => router.push('/invite')} style={{ marginHorizontal: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.accentSoft, flexDirection: 'row', alignItems: 'center', gap: 12 }}>

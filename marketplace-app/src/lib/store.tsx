@@ -1,4 +1,6 @@
+import { router } from 'expo-router';
 import { track } from './analytics';
+import { haptic, toast } from './feedback';
 import React, { createContext, useContext, useMemo, useState } from 'react';
 import { BRAND } from './brand';
 import type { Goal } from './shelby';
@@ -14,7 +16,7 @@ type Store = {
   user: User; signIn: (name?: string) => void; signOut: () => void;
   interests: string[]; setInterests: (v: string[]) => void; onboarded: boolean; setOnboarded: (v: boolean) => void;
   goal: Goal | null; setGoal: (v: Goal | null) => void; budget: number | null; setBudget: (v: number | null) => void;
-  cart: CartLine[]; add: (p: Product, size: string | null, qty?: number) => void; setQty: (i: number, qty: number) => void; remove: (i: number) => void; clearCart: () => void;
+  cart: CartLine[]; add: (p: Product, size: string | null, qty?: number, opts?: { toast?: string | false }) => void; setQty: (i: number, qty: number) => void; remove: (i: number) => void; clearCart: () => void;
   cartCount: number;
   wishlist: string[]; toggleWish: (id: string) => void;
   following: string[]; toggleFollow: (id: string) => void;
@@ -60,7 +62,12 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [seller, setSeller] = useState<'none' | 'applied' | 'approved'>('approved');
   // Toggles report on/off so wishlist, follows and drop reminders are all measurable.
   const toggle = (set: React.Dispatch<React.SetStateAction<string[]>>, list: string[], event: string, info: (id: string) => Record<string, any>) => (id: string) => {
-    track(event, { ...info(id), on: !list.includes(id) });
+    const on = !list.includes(id);
+    track(event, { ...info(id), on });
+    haptic(on ? 'add' : 'select');
+    if (on && event === 'wishlist_toggle') toast({ text: 'Saved to your wishlist', icon: 'heart', action: { label: 'View', onPress: () => router.push('/wishlist') } });
+    if (on && event === 'follow_toggle') toast({ text: 'Following. New drops show up in your feed.', icon: 'storefront' });
+    if (on && event === 'drop_reminder_toggle') toast({ text: "We'll remind you before it drops", icon: 'notifications' });
     set(v => (v.includes(id) ? v.filter(x => x !== id) : [...v, id]));
   };
 
@@ -72,13 +79,13 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       signOut: () => { track('sign_out'); setUser(null); },
       interests, setInterests, onboarded, setOnboarded, goal, setGoal, budget, setBudget,
       cart,
-      add: (p, size, qty = 1) => { track('add_to_cart', { ...pinfo(p.id), size, qty, cart_items: cart.length + 1 }); setCart(c => {
+      add: (p, size, qty = 1, opts) => { haptic('add'); if (opts?.toast !== false) toast({ text: opts?.toast ?? `Added ${p.title.length > 28 ? 'to cart' : `${p.title} to cart`}`, icon: 'bag-check', action: { label: 'View cart', onPress: () => router.push('/cart') } }); track('add_to_cart', { ...pinfo(p.id), size, qty, cart_items: cart.length + 1 }); setCart(c => {
         const i = c.findIndex(l => l.productId === p.id && l.size === size);
         if (i >= 0) return c.map((l, j) => (j === i ? { ...l, qty: Math.min(p.stock, l.qty + qty) } : l));
         return [...c, { productId: p.id, size, qty }];
       }); },
       setQty: (i, qty) => { if (cart[i]) track('cart_qty_change', { ...pinfo(cart[i].productId), from: cart[i].qty, to: qty }); setCart(c => c.map((l, j) => (j === i ? { ...l, qty: Math.max(1, Math.min(getProduct(l.productId).stock, qty)) } : l))); },
-      remove: i => { if (cart[i]) track('remove_from_cart', pinfo(cart[i].productId)); setCart(c => c.filter((_, j) => j !== i)); },
+      remove: i => { haptic('tap'); if (cart[i]) track('remove_from_cart', pinfo(cart[i].productId)); setCart(c => c.filter((_, j) => j !== i)); },
       clearCart: () => setCart([]),
       cartCount: cart.reduce((n, l) => n + l.qty, 0),
       wishlist, toggleWish: toggle(setWish, wishlist, 'wishlist_toggle', pinfo),
@@ -94,6 +101,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
           id: serverId ?? `${Math.floor(100000 + Math.random() * 899999)}`, placedAt: Date.now(), total: Math.round((items + tax - used) * 100) / 100, credit: used,
           sellerOrders: groups.map((g, i) => ({ shopId: g.shop.id, lines: g.lines, shipping: g.shipping, status: i === 0 ? 'Shipped' : 'Paid', tracking: i === 0 ? '1Z 999 AA1 0123 4567 84' : undefined })),
         };
+        haptic('success');
         track('order_placed', { order_id: order.id, total: order.total, credit_used: used, sellers: order.sellerOrders.length, items: cart.reduce((n, l) => n + l.qty, 0), referred: !!referredBy, guest: !user });
         setOrders(o => [order, ...o]); setCredit(c => Math.max(0, c - used)); setReferredBy(null); setCart([]);
         if (guestEmail && !user) setUser({ name: guestEmail.split('@')[0], email: guestEmail, code: 'FRIEND10' });

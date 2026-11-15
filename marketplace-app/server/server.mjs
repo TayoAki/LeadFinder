@@ -22,7 +22,7 @@ const db = getDb();
 db.exec(EVENTS_SCHEMA);
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json',
-  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.map': 'application/json' };
+  '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.map': 'application/json', '.mp4': 'video/mp4', '.webm': 'video/webm' };
 const CATEGORIES = ['Home', 'Beauty', 'Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Outdoors'];
 
 const send = (res, code, body, headers = {}) => {
@@ -33,10 +33,22 @@ const send = (res, code, body, headers = {}) => {
 class HttpError extends Error { constructor(code, msg) { super(msg); this.code = code; } }
 const fail = (code, msg) => { throw new HttpError(code, msg); };
 
-function serveFile(res, root, path, cache = 'public, max-age=300') {
+function serveFile(res, root, path, cache = 'public, max-age=300', req) {
   const file = normalize(resolve(root, '.' + decodeURIComponent(path)));
   if (!file.startsWith(root) || !existsSync(file) || !statSync(file).isFile()) return false;
-  res.writeHead(200, { 'content-type': TYPES[extname(file).toLowerCase()] || 'application/octet-stream', 'cache-control': cache });
+  const size = statSync(file).size;
+  const headers = { 'content-type': TYPES[extname(file).toLowerCase()] || 'application/octet-stream', 'cache-control': cache, 'accept-ranges': 'bytes' };
+  // Byte ranges: Safari/iOS will not play video without them, and seeking needs them everywhere.
+  const m = /^bytes=(\d*)-(\d*)$/.exec(req?.headers.range || '');
+  if (m && (m[1] || m[2])) {
+    let start = m[1] ? Number(m[1]) : Math.max(0, size - Number(m[2]));
+    let end = m[1] && m[2] ? Math.min(Number(m[2]), size - 1) : size - 1;
+    if (start >= size || start > end) { res.writeHead(416, { 'content-range': `bytes */${size}` }); res.end(); return true; }
+    res.writeHead(206, { ...headers, 'content-range': `bytes ${start}-${end}/${size}`, 'content-length': end - start + 1 });
+    createReadStream(file, { start, end }).pipe(res);
+    return true;
+  }
+  res.writeHead(200, { ...headers, 'content-length': size });
   createReadStream(file).pipe(res);
   return true;
 }
@@ -323,7 +335,7 @@ const server = createServer(async (req, res) => {
       return serveFile(res, WEB, '/index.html', 'no-cache');
     }
     if (existsSync(APP)) {
-      if (path !== '/' && serveFile(res, APP, path, path.startsWith('/_expo/') ? 'public, max-age=31536000, immutable' : 'public, max-age=300')) return;
+      if (path !== '/' && serveFile(res, APP, path, path.startsWith('/_expo/') ? 'public, max-age=31536000, immutable' : path.startsWith('/videos/') ? 'public, max-age=86400' : 'public, max-age=300', req)) return;
       if (serveFile(res, APP, '/index.html', 'no-cache')) return;
     }
     send(res, 404, 'Not found');

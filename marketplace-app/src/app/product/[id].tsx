@@ -10,6 +10,7 @@ import { compact, getProduct, getShop, money, reviewsFor, shopProducts } from '@
 import { groupCart, useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { track } from '@/lib/analytics';
+import { videoForProduct } from '@/lib/videos';
 
 export default function ProductPage() {
   const { id } = useLocalSearchParams<{ id: string }>();
@@ -22,7 +23,6 @@ export default function ProductPage() {
   const [img, setImg] = useState(0);
   const [size, setSize] = useState<string | null>(null);
   const [needSize, setNeedSize] = useState(false);
-  const [added, setAdded] = useState(false);
   const liked = wishlist.includes(p.id);
   const followed = following.includes(shop.id);
   const inCarts = 3 + ([...p.id].reduce((n, ch) => n + ch.charCodeAt(0), 0) % 17);
@@ -30,9 +30,15 @@ export default function ProductPage() {
   const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => setImg(Math.round(e.nativeEvent.contentOffset.x / width));
 
   const ensureSize = () => { if (p.sizes.length && !size) { setNeedSize(true); return false; } return true; };
-  const onAdd = () => { if (!ensureSize()) return; add(p, size); setAdded(true); setTimeout(() => setAdded(false), 2600); };
-  const onBuy = () => { if (!ensureSize()) return; add(p, size); router.push('/checkout'); };
+  const onAdd = () => {
+    if (!ensureSize()) return;
+    // Free-shipping progress after this item lands in the cart (the cart state updates after this call).
+    const left = Math.max(0, shop.freeOver - ((g?.subtotal ?? 0) + p.price));
+    add(p, size, 1, { toast: left > 0 ? `Added · ${money(left)} more from ${shop.name} ships free` : `Added · free shipping from ${shop.name}` });
+  };
+  const onBuy = () => { if (!ensureSize()) return; add(p, size, 1, { toast: false }); router.push('/checkout'); };
   const g = groupCart(cart).find(x => x.shop.id === shop.id);
+  const video = videoForProduct(p.id);
 
   return (
     <View style={{ flex: 1, backgroundColor: C.bg }}>
@@ -49,6 +55,12 @@ export default function ProductPage() {
               <IconButton name="bag-outline" label="Cart" badge={cartCount} bg="rgba(255,255,255,0.92)" onPress={() => router.push('/cart')} />
             </View>
           </SafeAreaView>
+          {!!video && (
+            <Pressable onPress={() => router.push({ pathname: '/watch', params: { start: video.id } })} accessibilityRole="button" accessibilityLabel="Watch the video"
+              style={{ position: 'absolute', left: S.lg, bottom: 28, flexDirection: 'row', alignItems: 'center', gap: 6, backgroundColor: 'rgba(0,0,0,0.6)', borderRadius: 999, paddingHorizontal: 14, paddingVertical: 9 }}>
+              <Ionicons name="play" size={14} color="#fff" /><Text style={{ color: '#fff', fontWeight: '800', fontSize: 13 }}>Watch it</Text>
+            </Pressable>
+          )}
           {p.images.length > 1 && (
             <View style={{ position: 'absolute', bottom: 12, alignSelf: 'center', flexDirection: 'row', gap: 6 }}>
               {p.images.map((_, i) => <View key={i} style={{ height: 6, width: i === img ? 18 : 6, borderRadius: 3, backgroundColor: i === img ? '#fff' : 'rgba(255,255,255,0.6)' }} />)}
@@ -140,13 +152,6 @@ export default function ProductPage() {
         <View style={{ marginTop: S.xl }}><TrustLine /></View>
       </ScrollView>
 
-      {added && (
-        <View style={{ position: 'absolute', left: S.lg, right: S.lg, bottom: 112, padding: S.md, borderRadius: R.lg, backgroundColor: C.ink, flexDirection: 'row', alignItems: 'center', gap: 10 }} accessibilityLiveRegion="polite">
-          <Ionicons name="checkmark-circle" size={22} color={C.accent} />
-          <Text style={{ color: '#fff', flex: 1, fontWeight: '600' }}>Added to cart{g && g.toFree ? ` · ${money(g.toFree)} more from ${shop.name} ships free` : g ? ` · free shipping from ${shop.name}` : ''}</Text>
-          <Pressable onPress={() => router.push('/cart')}><Text style={{ color: C.accent, fontWeight: '800' }}>View</Text></Pressable>
-        </View>
-      )}
       <SafeAreaView edges={['bottom']} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: C.surface, borderTopWidth: 1, borderTopColor: C.line }}>
         <View style={{ flexDirection: 'row', gap: 10, padding: S.lg }}>
           <Button title="Add to cart" kind="light" style={{ flex: 1 }} onPress={onAdd} disabled={p.stock === 0} />

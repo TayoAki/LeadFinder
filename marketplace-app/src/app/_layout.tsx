@@ -10,6 +10,7 @@ import { applyCatalog, Product, Shop } from '@/lib/data';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { WebAppBanner } from '@/components/WebAppBanner';
 import { StoreProvider } from '@/lib/store';
+import { FeedbackProvider } from '@/lib/feedback';
 import { C } from '@/lib/theme';
 
 // Load the live catalogue (what sellers have published) before the first screen; fall back to
@@ -41,6 +42,7 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <CatalogGate>
       <StoreProvider>
+      <FeedbackProvider>
         <StatusBar style="dark" />
         <WebAppBanner />
         <ScreenTracker />
@@ -51,7 +53,9 @@ export default function RootLayout() {
           <Stack.Screen name="notify" options={{ presentation: 'modal' }} />
           <Stack.Screen name="onboarding" options={{ presentation: 'fullScreenModal' }} />
           <Stack.Screen name="ask" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="watch" options={{ presentation: 'fullScreenModal', contentStyle: { backgroundColor: '#000' } }} />
         </Stack>
+      </FeedbackProvider>
       </StoreProvider>
       </CatalogGate>
     </SafeAreaProvider>

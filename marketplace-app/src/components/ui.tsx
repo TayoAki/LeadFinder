@@ -4,9 +4,10 @@ import { ActivityIndicator, Pressable, StyleProp, StyleSheet, Text, View, ViewSt
 import { C, R, S, T } from '@/lib/theme';
 import { money } from '@/lib/data';
 import { track } from '@/lib/analytics';
+import { haptic } from '@/lib/feedback';
 
 // Autocapture: every shared button, icon button and chip reports its label when tapped.
-const tapped = (ui: string, label: string, fn?: () => void) => () => { track('tap', { ui, label: label.slice(0, 60) }); fn?.(); };
+const tapped = (ui: string, label: string, fn?: () => void) => () => { haptic(ui === 'chip' ? 'select' : 'tap'); track('tap', { ui, label: label.slice(0, 60) }); fn?.(); };
 
 export type IconName = React.ComponentProps<typeof Ionicons>['name'];
 

@@ -34,7 +34,7 @@ const EXAMPLES = ['a mug for a coffee lover', 'summer dress under $40', 'earring
 function Progress({ step }: { step: number }) {
   return (
     <View accessibilityLabel={`Shelby setup, step ${step} of 3`}>
-      <Text style={T.tiny}>SHELBY SETUP · STEP {step} OF 3</Text>
+      <Text style={[T.tiny, { fontSize: 12 }]}>Step {step} of 3</Text>
       <View style={{ flexDirection: 'row', gap: 6, marginTop: 6 }}>
         {[1, 2, 3].map(i => <View key={i} style={{ flex: 1, height: 5, borderRadius: 3, backgroundColor: i <= step ? C.accent : C.line }} />)}
       </View>
@@ -156,7 +156,7 @@ export default function Onboarding() {
         </>}
 
         {step === 'picks' && <>
-          <ShelbySays mood={mood} text={saved ? (watch ? 'Saved. Your feed is ready.' : 'Nice pick! Want me to watch its price?') : `Here are ${picks.length} picks from ${shopCount} small shop${shopCount === 1 ? '' : 's'}. Tap the heart to save one.`} />
+          <ShelbySays mood={mood} text={saved ? (watch ? 'Saved. Your feed is ready.' : 'Nice pick! Want me to watch its price?') : `Here are ${picks.length} picks from ${shopCount} small shop${shopCount === 1 ? '' : 's'}. Tap one you like to save it.`} />
           {/* The real reasons, editable: no fake processing step */}
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, alignItems: 'center' }}>
             <Text style={T.small}>Based on:</Text>
@@ -165,17 +165,18 @@ export default function Onboarding() {
           </View>
           {saved > 0 && !watch && (
             <View style={{ flexDirection: 'row', gap: 8 }}>
-              <Button title="Yes, watch prices" kind="primary" icon="notifications" style={{ flex: 1, height: 44 }} onPress={() => setWatch('yes')} />
+              <Button title="Watch prices" kind="primary" icon="notifications" style={{ flex: 1, height: 44 }} onPress={() => setWatch('yes')} />
               <Button title="Not now" kind="ghost" style={{ flex: 1, height: 44 }} onPress={() => setWatch('no')} />
             </View>
           )}
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 12, rowGap: 18 }}>
             {picks.map((p, i) => (
               <View key={p.id}>
-                <ProductCard p={p} width={w} />
+                {/* Tapping a pick saves it here; leaving for the product page would abandon onboarding. */}
+                <ProductCard p={p} width={w} onPress={() => st.toggleWish(p.id)} pressLabel={`${st.wishlist.includes(p.id) ? 'Unsave' : 'Save'} ${p.title}`} />
                 {i === 0 && !saved && (
                   <View pointerEvents="none" style={{ position: 'absolute', right: 2, top: 46, backgroundColor: C.ink, borderRadius: 10, paddingHorizontal: 8, paddingVertical: 5 }}>
-                    <Text style={{ color: '#fff', fontSize: 11, fontWeight: '800' }}>Tap ♡ to save</Text>
+                    <Text style={{ color: '#fff', fontSize: 11, fontWeight: '800' }}>Tap a pick to save it</Text>
                   </View>
                 )}
               </View>
