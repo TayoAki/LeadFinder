@@ -20,7 +20,7 @@ import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]] : a), []));
-const PLACE = args.place, N_REVIEWS = Number(args.reviews || 200), PER = Number(args['per-reviewer'] || 50), TOP = Number(args.top || 15);
+const PLACE = args.place, N_REVIEWS = Number(args.reviews || 500), PER = Number(args['per-reviewer'] || 200), TOP = Number(args.top || 15);
 const CAP = Number(args['cap-usd'] || 30), MIN_SHARED = Number(args['min-shared'] || 3), DRY = !!args['dry-run'];
 if (!PLACE) { console.error('usage: node fan_overlap.mjs --place "<business name and city, or a Google Maps URL>"'); process.exit(2); }
 const slug = String(PLACE).toLowerCase().replace(/https?:\/\/\S+/, 'place').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 60);
@@ -28,7 +28,24 @@ const OUT = resolve(args.out || `fan-overlap/${slug}`);
 const TOKEN = process.env.APIFY_TOKEN || 'proxy-injected';
 // Free-tier prices (USD) from each actor's pricing page, used for the spend cap.
 const PRICE = { place: 0.004, review: 0.0006, contributorReview: 0.0015, run: 0.001 };
+PRICE.tregContributor = 0.00015; // litescrape via treg: one call = up to 200 reviews of one reviewer
+const MIN_HISTORY = Number(args['min-history'] || 3);
 let spent = 0;
+// treg CLI (https://treg.to): keys stay on treg's server; signed in with `treg login`.
+const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
+let tregState;
+async function tregOk() {
+  if (tregState !== undefined) return tregState;
+  const { execFile } = await import('node:child_process');
+  tregState = await new Promise(res => execFile(TREG, ['--version'], err => res(!err)));
+  return tregState;
+}
+async function tregCall(id, query) {
+  const { execFile } = await import('node:child_process');
+  const a = ['--json', 'call', id]; for (const [k, v] of Object.entries(query)) a.push('--query', `${k}=${v}`);
+  return new Promise((res, rej) => execFile(TREG, a, { maxBuffer: 1 << 26, timeout: 120000 }, (err, out) => {
+    if (err && !out) return rej(err); try { const j = JSON.parse(out); if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`HTTP ${j._treg.http_status}`)); res(j); } catch (e) { rej(e); } }));
+}
 const budget = (usd, what) => { if (spent + usd > CAP) throw new Error(`Stopping before ${what}: it would take spend to $${(spent + usd).toFixed(2)}, over the $${CAP} cap.`); };
 
 async function apify(actor, input, estimate, { timeoutSecs = 1800, allowPartial = false } = {}) {
@@ -77,19 +94,31 @@ try {
 
   // 2. A's newest reviews (reviewer ids stay in memory).
   const reviews = await apify('compass/google-maps-reviews-scraper', { placeIds: [A.placeId].filter(Boolean), maxReviews: N_REVIEWS, reviewsSort: 'newest', personalData: true, language: 'en' }, N_REVIEWS * PRICE.review + PRICE.run);
-  const reviewerIds = [...new Set(reviews.map(r => r.reviewerId).filter(Boolean))];
-  report.coverage = { a_reviews_fetched: reviews.length, unique_reviewers: reviewerIds.length };
+  // Only reviewers with a few reviews can show an overlap; one-review accounts are skipped.
+  const reviewerIds = [...new Set(reviews.filter(r => (r.reviewerNumberOfReviews ?? 99) >= MIN_HISTORY).map(r => r.reviewerId).filter(Boolean))];
+  report.coverage = { a_reviews_fetched: reviews.length, unique_reviewers: new Set(reviews.map(r => r.reviewerId).filter(Boolean)).size, reviewers_with_history: reviewerIds.length };
 
-  // 3. Each reviewer's public history (capped). Estimate assumes the cap is reached.
-  // Batches of 20 reviewers, 4 at a time, each with its own time limit; partial batches still count.
-  budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories');
-  const batches = []; for (let i = 0; i < reviewerIds.length; i += 20) batches.push(reviewerIds.slice(i, i + 20));
+  // 3. Each reviewer's public history. treg (litescrape, $0.00015 per reviewer, up to 200 reviews)
+  // when the treg CLI is signed in; otherwise the Apify contributor actor (pricier, $1/month free cap).
   const history = [];
-  for (let i = 0; i < batches.length; i += 4) {
-    const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('johnvc/google-maps-contributor-reviews-api', { contributorIds: b, maxResultsPerContributor: PER, hl: 'en' }, 0, { timeoutSecs: 1800, allowPartial: true })
-      .catch(e => { console.log('  batch failed:', e.message); return []; })));
-    for (const g of got) history.push(...g);
-    if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+  if (await tregOk()) {
+    budget(reviewerIds.length * PRICE.tregContributor, 'reviewer histories (treg)');
+    let i = 0, fails = 0;
+    const worker = async () => { while (i < reviewerIds.length) { const id = reviewerIds[i++];
+      try { const r = await tregCall('litescrape.google.maps.contributor_reviews', { contributor_id: id, limit: PER, timeout: 60 });
+        for (const rv of r.result?.reviews || []) history.push({ ...rv, contributor_id: id }); spent += (r._treg?.charged_micro || 0) / 1e6; }
+      catch { fails++; } } };
+    await Promise.all(Array.from({ length: 8 }, worker));
+    console.log(`• treg contributor reviews: ${reviewerIds.length} reviewers, ${history.length} reviews, ${fails} failed (total ~$${spent.toFixed(2)})`);
+  } else {
+    budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories');
+    const batches = []; for (let i = 0; i < reviewerIds.length; i += 20) batches.push(reviewerIds.slice(i, i + 20));
+    for (let i = 0; i < batches.length; i += 4) {
+      const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('johnvc/google-maps-contributor-reviews-api', { contributorIds: b, maxResultsPerContributor: PER, hl: 'en' }, 0, { timeoutSecs: 1800, allowPartial: true })
+        .catch(e => { console.log('  batch failed:', e.message); return []; })));
+      for (const g of got) history.push(...g);
+      if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+    }
   }
   // 4. Aggregate: distinct reviewers per business (ids used only to de-duplicate, then dropped).
   const byPlace = new Map(); const reachable = new Set();
@@ -97,12 +126,12 @@ try {
     const who = pick(r, 'contributor_id', 'contributorId'); const key = placeKey(r);
     if (!who || !key) continue; reachable.add(who);
     if (A.placeId && (key === A.placeId || placeName(r) === A.title)) continue;
-    const p = byPlace.get(key) || { name: placeName(r), address: placeAddr(r), reviewers: new Set(), ratings: [], dates: [] };
+    const p = byPlace.get(key) || { name: placeName(r), address: placeAddr(r), type: pick(r, 'place_info.type', 'place.type'), reviewers: new Set(), ratings: [], dates: [] };
     if (!p.reviewers.has(who)) { p.reviewers.add(who); const rt = Number(pick(r, 'rating')); if (rt) p.ratings.push(rt); const d = dateOf(r); if (d) p.dates.push(d); }
     byPlace.set(key, p);
   }
   report.coverage.histories_reachable = reachable.size; report.coverage.history_reviews = history.length;
-  let shared = [...byPlace.entries()].map(([key, p]) => ({ key, name: p.name, address: p.address, shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null }))
+  let shared = [...byPlace.entries()].map(([key, p]) => ({ key, name: p.name, address: p.address, type: p.type || null, shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null }))
     .filter(p => p.shared >= MIN_SHARED).sort((a, b) => b.shared - a.shared);
   byPlace.clear(); reviewerIds.length = 0; // drop ids
 
@@ -113,7 +142,7 @@ try {
   const aWords = words(A.categoryName);
   for (const c of cands) {
     const d = det.get(String(c.name || '').toLowerCase()) || details.find(x => x.title === c.name) || {};
-    Object.assign(c, { category: d.categoryName || null, reviews_total: d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: d.placeId || null });
+    Object.assign(c, { category: d.categoryName || c.type || null, reviews_total: d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: d.placeId || null });
     c.competitor = !!(c.category && [...words(c.category)].some(w => aWords.has(w)));
   }
   // Lift: share of A's fans who reviewed B, against how popular B is overall (more reviews =

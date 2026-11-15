@@ -11,7 +11,9 @@ description: "Answer 'if someone loves brand A, they probably love brand B, and 
 
 1. **Find brand A on Google Maps.** Uses `compass/crawler-google-places` to get the place ID, category, total reviews and rating.
 2. **Pull A's newest reviews (default 200)** with `compass/google-maps-reviews-scraper`. Reviewer IDs exist in memory only.
-3. **Pull each reviewer's public review history** with `johnvc/google-maps-contributor-reviews-api`. Default cap: 50 reviews each.
+3. **Pull each reviewer's public review history.** Only reviewers with at least 3 reviews are checked, since one-review accounts can't show an overlap.
+   - **Through treg:** `litescrape.google.maps.contributor_reviews`, about $0.00015 per reviewer for up to 200 reviews. Used when the `treg` CLI is signed in.
+   - **Otherwise:** the Apify actor `johnvc/google-maps-contributor-reviews-api`. It is much pricier, and free Apify accounts get only $1 a month on it.
 4. **Count, for every other business, how many different A reviewers reviewed it.**
    - A business needs at least 3 shared reviewers to appear (`--min-shared`).
    - Competitors (same category words as A) are removed.
@@ -27,23 +29,26 @@ Outputs: `fan-overlap/<slug>/overlap.json` and `overlap.md`.
 ## Run
 
 ```bash
-# key: add it as a network secret for api.apify.com (preferred), or export APIFY_TOKEN
+# keys: APIFY_TOKEN (or a network secret for api.apify.com), and `treg login` for the cheap reviewer histories
 node .claude/skills/fan-overlap/scripts/fan_overlap.mjs --place "Crumbl Wicker Park Chicago" --dry-run   # shows each step + estimated cost
-node .claude/skills/fan-overlap/scripts/fan_overlap.mjs --place "Crumbl Wicker Park Chicago" --cap-usd 30
+node .claude/skills/fan-overlap/scripts/fan_overlap.mjs --place "Crumbl Wicker Park Chicago" --cap-usd 5
 ```
 
 Options:
-- `--reviews 200`: how many of A's reviews to read.
-- `--per-reviewer 50`: how much of each reviewer's history to read.
+- `--reviews 500`: how many of A's reviews to read.
+- `--per-reviewer 200`: how much of each reviewer's history to read.
+- `--min-history 3`: the fewest reviews a reviewer needs to be checked.
 - `--top 15`: how many brand B results to check for leavers.
 - `--cap-usd 30`: the run stops before any step that would pass the cap.
 - `--min-shared 3`: the minimum shared reviewers for a business to appear.
 - A Google Maps URL works in place of a name.
 
-**Cost (Apify free-tier prices):**
-- A's reviews: about $0.12 per 200.
-- Reviewer histories: about $0.0015 per review, so 200 reviewers × 50 = up to about $15.
-- B checks: about $0.50.
+**Cost:**
+- A's reviews: about $0.20 per 500 (Apify).
+- Reviewer histories: about $0.05 for 300 reviewers (treg).
+- Place details and B checks: about $0.70 (Apify).
+
+That is roughly $1 per location with treg. Without treg it can be $15 or more.
 
 Always dry-run first and tell the user the estimate.
 
