@@ -9,8 +9,8 @@
 import { createHash } from 'node:crypto';
 import { getDb } from './db.mjs';
 
-export const ANGER = /\b(furious|pissed|angry|mad at|livid|disgusted|fed up|sick of|done with|hate|boycott\w*|cancell?(ed|ing)? my|unsubscrib\w*|never buying|never again|last straw|ruined|betray\w*|rip-?off|scam\w*|greed\w*|downgrade\w*|enshittif\w*|not worth it anymore|what happened to)\b/i;
-export const ALT = /\b(alternatives?|instead|switch(ing|ed)?( up)? to|rather buy|dupe|another (brand|vegan|protein)|find (a |another )?new|stopped (buying|purchasing)|leaving|left the|deleted my account|replacement|what (do|should|can) i (buy|use|get|try)|recommend\w*|anyone (know|tried|using)|moved to|my go-to now|dupes?|similar to|better option|other brands?|where (else|can i))\b/i;
+export const ANGER = /\b(furious|pissed|angry|mad at|livid|disgusted|fed up|sick of|done with|hate|boycott\w*|cancell?(ed|ing)? my|unsubscrib\w*|never buying|never again|last straw|ruined|betray\w*|rip-?off|scam\w*|greed\w*|downgrade\w*|enshittif\w*|not worth it anymore|what happened to|garbage|awful|terrible|worst|disgusting|gross|disappoint\w*|vote with (our|my) wallets?)\b/i;
+export const ALT = /\b(alternatives?|instead|switch(ing|ed)?( up| over| away)?( from now on)? to|different brand|rather buy|dupe|another (brand|vegan|protein)|find (a |another )?new|stopped (buying|purchasing)|leaving|left the|deleted my account|replacement|what (do|should|can) i (buy|use|get|try)|recommend\w*|anyone (know|tried|using)|moved to|my go-to now|dupes?|similar to|better option|other brands?|where (else|can i))\b/i;
 export const DECISIONS = [
   { key: 'political', label: 'Politics or culture war', rx: /politic\w*|woke|maga|trump|biden|democrat|republican|left-?wing|right-?wing|pride month|spokes(person|model)|endorse\w*|campaign donation/i },
   { key: 'price', label: 'Price rise or fees', rx: /price|pricing|cost|expensive|increase|hike|subscription|fee|shrinkflation|smaller (size|bag|box)|paywall/i },
