@@ -283,6 +283,64 @@ async function viewPatterns() {
   </section>`;
 }
 
+// ---------- Switchers: anger at a company + "what do I buy instead" ----------
+const VERDICT_SW = { switch_demand: 'open', anger_only: 'warm', thin: '' };
+async function viewSwitchers() {
+  const d = await api(`/api/switchers${location.hash.includes('political=1') ? '?political=1' : ''}`);
+  const list = (t, xs) => xs?.length ? `<div><span class="eyebrow">${t}</span><ul class="small" style="margin:4px 0 0;padding-left:18px;display:grid;gap:3px">${xs.map(x => `<li>${esc(x)}</li>`).join('')}</ul></div>` : '';
+  return `<section class="section">
+    ${sectionHead('Switchers: people leaving a company, and asking where to go', 'Find real anger at a company\'s decision plus "what do I buy instead", launch the alternative, and partner with creators already talking about it. Your connected AI finds the posts (add_switch_signals); you can also add one here. Drafts only: Keepwatch never posts or messages anyone.')}
+    <form id="sw-add" class="card pad row" style="gap:8px;flex-wrap:wrap">
+      <input name="company" placeholder="Company" required style="flex:1;min-width:140px">
+      <input name="url" placeholder="https:// link to the post" required style="flex:2;min-width:220px">
+      <input name="quote" placeholder="Exact words from the post" required style="flex:3;min-width:260px">
+      <button class="btn sm primary">Add post</button>
+    </form>
+    <p class="small muted">${esc(d.note)}${d.hidden_political.length ? ` Hidden because the anger is political: ${esc(d.hidden_political.join(', '))}. <a href="#/switchers?political=1">Show</a>` : ''}</p>
+    <div style="display:grid;gap:12px">${d.opportunities.length ? d.opportunities.map(o => `<article class="card pad" style="display:grid;gap:10px">
+      <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">${esc(o.company)}</h3><span class="pill ${VERDICT_SW[o.verdict]}">${esc(o.label)}</span></div>
+      <p class="small muted" style="margin:0">${o.posts} posts · ${o.switching} angry and asking for an alternative · ${o.sources} sources · ${o.recent_180d} in the last 6 months${o.political ? ' · <b>political</b>' : ''}</p>
+      <p class="small" style="margin:0"><b>What they're angry about:</b> ${o.decisions.map(x => `${esc(x.label)} (${x.n})`).join(', ')}</p>
+      ${list('What they want instead', o.wants)}
+      <div style="display:grid;gap:6px">${o.quotes.map(q => `<blockquote class="small" style="margin:0;padding-left:10px;border-left:3px solid var(--line)">"${esc(q.quote)}" <a href="${esc(q.url)}" target="_blank" rel="noopener noreferrer">${esc(q.source)}${q.engagement ? ` · ${q.engagement}` : ''}${q.posted_at ? ` · ${esc(q.posted_at)}` : ''}</a></blockquote>`).join('')}</div>
+      <details><summary class="eyebrow">Launch plan</summary><div style="display:grid;gap:8px;margin-top:8px">
+        <p class="small" style="margin:0"><b>Positioning:</b> ${esc(o.plan.positioning)}</p><p class="small muted" style="margin:0">${esc(o.plan.enemy)}</p>
+        ${list('Product (white-label path)', o.plan.product_path)}${list('Test before you build', o.plan.smoke_test)}${list('Stay legal', o.plan.legal)}</div></details>
+      <div><span class="eyebrow">Creators already posting about it (${o.voices.length})</span>
+        ${o.voices.length ? `<div style="display:grid;gap:6px;margin-top:6px">${o.voices.map(v => `<div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><span class="small"><b>${esc(v.name)}</b> · ${esc(v.platform)}${v.audience ? ` · ${esc(v.audience)}` : ''} · <a href="${esc(v.url)}" target="_blank" rel="noopener noreferrer">post</a></span><button class="btn sm" data-dm="${v.id}">Draft a DM</button></div><div class="dm-out" data-for="${v.id}"></div>`).join('')}</div>`
+          : '<p class="small muted" style="margin:4px 0 0">None saved yet. Ask your AI to find creators posting about it (add_switch_voices).</p>'}</div>
+    </article>`).join('') : empty('No posts yet. Ask your connected AI: "Find companies people are angry at in [category] and asking what to buy instead, and save them to Keepwatch."')}</div>
+  </section>`;
+}
+
+// ---------- Collabs: businesses your customers also love ----------
+async function viewCollabs() {
+  const d = await api('/api/collabs');
+  return `<section class="section">
+    ${sectionHead('Collabs: borrow a fan base that already overlaps with yours', 'Which non-competing businesses your customers also love, and a co-branded pitch for each. Best source: ask your customers. Reviews work too: count which other businesses your reviewers review. Keepwatch stores counts only, never reviewer names. Drafts only.')}
+    <form id="co-add" class="card pad row" style="gap:8px;flex-wrap:wrap">
+      <input name="name" placeholder="Business" required style="flex:2;min-width:160px">
+      <input name="category" placeholder="Category (e.g. coffee shop)" style="flex:2;min-width:160px">
+      <input name="shared" type="number" min="1" placeholder="Shared fans" required style="width:120px">
+      <select name="source"><option value="survey">Customers named it</option><option value="reviews">Shared reviewers</option><option value="social">Shared followers</option></select>
+      <button class="btn sm primary">Add</button>
+    </form>
+    <p class="small muted">${esc(d.note)}${d.filtered_competitors.length ? ` Left out as competitors: ${esc(d.filtered_competitors.join(', '))}.` : ''}</p>
+    ${d.partners.length ? `<div class="card pad"><table class="table"><thead><tr><th>Business</th><th>Category</th><th class="num">Shared fans</th><th>From</th><th></th></tr></thead><tbody>
+      ${d.partners.map(p => `<tr><td><b>${esc(p.name)}</b></td><td>${esc(p.category || '—')}</td><td class="num">${p.shared}</td><td class="small muted">${esc(p.kinds.join(', '))}</td><td><button class="btn sm primary" data-pitch="${esc(p.key)}">Draft the collab</button></td></tr><tr hidden data-pitch-row="${esc(p.key)}"><td colspan="5" class="pitch-out"></td></tr>`).join('')}
+    </tbody></table></div>` : empty('No overlap yet. Ask your connected AI: "Work out which other businesses my reviewers also review and save the counts to Keepwatch collabs", or add a customer survey answer above.')}
+  </section>`;
+}
+function pitchHtml(p) {
+  return `<div style="display:grid;gap:8px;padding:8px 0">
+    <p class="small" style="margin:0"><b>Why them:</b> ${esc(p.evidence)}</p>
+    <ul class="small" style="margin:0;padding-left:18px">${p.ideas.map(i => `<li><b>${esc(i.name)}:</b> ${esc(i.idea)}</li>`).join('')}</ul>
+    <p class="small" style="margin:0"><b>Ad:</b> ${esc(p.ad_concept.primary_text)} <span class="muted">(${esc(p.ad_concept.note)})</span></p>
+    <label class="small"><b>Email</b> · Subject: ${esc(p.email.subject)}</label>
+    <textarea readonly rows="12" style="width:100%;font:inherit;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:9px">${esc(p.email.body)}</textarea>
+    <p class="small muted" style="margin:0">${p.email.notes.map(esc).join(' ')}</p></div>`;
+}
+
 // ---------- Borrow: steal from another industry, not another competitor ----------
 const VERDICT_PILL = { yours: 'open', nearly: 'warm', shared: 'hot', generic: 'hot' };
 function stanceResult(c) {
@@ -692,19 +750,19 @@ async function openAd(id) {
 }
 
 // ---------- routing ----------
-const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', patterns: 'home', borrow: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
+const VIEW_OF = { overview: 'home', rival: 'home', hooks: 'home', patterns: 'home', borrow: 'home', switchers: 'home', collabs: 'home', rebuild: 'home', test: 'home', search: 'search', alerts: 'alerts', library: 'library', settings: 'settings' };
 async function route() {
   const [, page = 'overview', arg] = (location.hash.split('?')[0] || '').split('/');
   const view = VIEW_OF[page] || 'home';
   document.querySelectorAll('.rail-btn').forEach(b => b.setAttribute('aria-current', String(b.dataset.view === view)));
-  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', patterns: 'patterns', borrow: 'borrow', rebuild: 'rebuild', test: 'test' }[page];
+  const tab = { overview: 'overview', rival: 'playbook', hooks: 'hooks', patterns: 'patterns', borrow: 'borrow', switchers: 'switchers', collabs: 'collabs', rebuild: 'rebuild', test: 'test' }[page];
   $('#tabs').hidden = view !== 'home';
   document.querySelectorAll('#tabs button').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
   renderSidebar();
   const el = $('#content');
   el.innerHTML = '<div class="skeleton"></div>';
   try {
-    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, patterns: viewPatterns, borrow: viewBorrow, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
+    const html = await ({ overview: viewOverview, rival: () => viewPlaybook(arg), hooks: viewHooks, patterns: viewPatterns, borrow: viewBorrow, switchers: viewSwitchers, collabs: viewCollabs, rebuild: () => viewRebuild(arg), test: () => viewTest(arg),
       search: viewSearch, alerts: viewAlerts, library: () => viewRebuild(), settings: viewSettings }[page] || viewOverview)();
     el.innerHTML = html;
     el.scrollTop = 0;
@@ -724,11 +782,14 @@ async function refreshChrome() {
 
 // ---------- events ----------
 document.addEventListener('click', async e => {
-  const t = e.target.closest('#borrow-more,[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
+  const t = e.target.closest('[data-dm],[data-pitch],#borrow-more,[data-view],[data-tab],[data-rival],[data-steal],[data-ad],[data-untrack],[data-pick],[data-play],[data-video],#side-category,#collect,#drop-now,#run-panel,#try-demo,#sign-out,#copy-mcp,#rotate-key');
   if (!t) return;
+  if (t.dataset.dm) { const out = document.querySelector(`.dm-out[data-for="${t.dataset.dm}"]`); try { const r = await api('/api/switchers/dm', { method: 'POST', body: { voice_id: Number(t.dataset.dm) } });
+    out.innerHTML = `<textarea readonly rows="6" style="width:100%;font:inherit;font-size:13px;padding:8px;border:1px solid var(--line);border-radius:9px">${esc(r.message)}</textarea><p class="small muted" style="margin:4px 0 0">${r.notes.map(esc).join(' ')}</p>`; } catch (err) { toast(err.message, 6000); } return; }
+  if (t.dataset.pitch) { const row = document.querySelector(`[data-pitch-row="${CSS.escape(t.dataset.pitch)}"]`); try { const r = await api('/api/collabs/pitch', { method: 'POST', body: { key: t.dataset.pitch } }); row.hidden = false; row.querySelector('.pitch-out').innerHTML = pitchHtml(r); } catch (err) { toast(err.message, 6000); } return; }
   if (t.id === 'borrow-more') { document.querySelectorAll('[data-more]').forEach(x => { x.hidden = false; }); t.remove(); return; }
   if (t.dataset.view) { location.hash = { home: '#/overview', search: '#/search', alerts: '#/alerts', library: '#/library', settings: '#/settings' }[t.dataset.view]; return; }
-  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', patterns: '#/patterns', borrow: '#/borrow', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
+  if (t.dataset.tab) { const cur = location.hash.match(/#\/rival\/(\d+)/)?.[1]; location.hash = { overview: '#/overview', playbook: `#/rival/${cur || ''}`, hooks: '#/hooks', patterns: '#/patterns', borrow: '#/borrow', switchers: '#/switchers', collabs: '#/collabs', rebuild: '#/rebuild', test: '#/test' }[t.dataset.tab]; return; }
   if (t.dataset.rival) { location.hash = `#/rival/${t.dataset.rival}`; return; }
   if (t.dataset.steal) { $('#modal').open && $('#modal').close();
     if (t.dataset.again) { t.disabled = true; try { await runJob('/api/rebuild', { ad_id: t.dataset.steal }, 'Making another version'); route(); } catch (err) { toast(err.message, 6000); } return; }
@@ -770,6 +831,8 @@ document.addEventListener('click', async e => {
 document.addEventListener('submit', async e => {
   e.preventDefault();
   const f = e.target, data = Object.fromEntries(new FormData(f));
+  if (f.id === 'sw-add') { try { await api('/api/switchers/signals', { method: 'POST', body: { company: data.company, signals: [{ url: data.url, quote: data.quote }] } }); toast('Saved'); route(); } catch (err) { toast(err.message, 6000); } return; }
+  if (f.id === 'co-add') { try { await api('/api/collabs/overlap', { method: 'POST', body: { source: data.source, businesses: [{ name: data.name, category: data.category, shared: Number(data.shared) }] } }); toast('Saved'); route(); } catch (err) { toast(err.message, 6000); } return; }
   if (f.id === 'stance-form') {
     const btn = $('#stance-run'); btn.disabled = true;
     try { const r = await api('/api/borrow/stance', { method: 'POST', body: { stance: $('#stance-input').value } }); $('#stance-out').innerHTML = stanceResult(r.check); } catch (err) { toast(err.message, 6000); }

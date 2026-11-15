@@ -13,6 +13,8 @@ import { patterns } from './lib/concepts.mjs';
 import { conventions, stanceCheck, matchDonors, writeBrief, ruleBrief } from './lib/borrow.mjs';
 import { donorById } from './lib/donors.mjs';
 import { addManualAds, isManual } from './lib/manual.mjs';
+import { addSignals, addVoices, opportunities, launchPlan, voiceDM } from './lib/switchers.mjs';
+import { addOverlap, partners, collabPitch } from './lib/collabs.mjs';
 import { rebuildAd, getRebuild, listRebuilds, mondayDrop, mondayOf, REBUILD_DIR } from './lib/rebuild.mjs';
 import { hasLLM, makePersonas, buyerPanel, MODEL } from './lib/llm.mjs';
 import { providerStatus, adLibrary } from './lib/providers.mjs';
@@ -177,6 +179,23 @@ const routes = {
     if (!hasLLM()) return save(await writeBrief(body.donor_id, ws, { detail, conv }));
     const ref = spend(ws, 'brief', `brief:${randomUUID()}`);
     return startJob(ws.id, 'brief', async () => { const b = await writeBrief(body.donor_id, ws, { detail, conv }); if (b.by !== 'claude') refund(ws, ref); return save(b); }, () => refund(ws, ref));
+  },
+  // Switchers: anger at a company's decision + "what do I buy instead" (lib/switchers.mjs).
+  'GET /api/switchers': ({ ws, q }) => { const r = opportunities(ws.id, { includePolitical: q.get('political') === '1' }, db); return { ...r, opportunities: r.opportunities.map(o => ({ ...o, plan: launchPlan(o, ws) })) }; },
+  'POST /api/switchers/signals': ({ ws, body }) => addSignals(ws.id, body, db),
+  'POST /api/switchers/voices': ({ ws, body }) => addVoices(ws.id, body, db),
+  'POST /api/switchers/dm': ({ ws, body }) => {
+    const o = opportunities(ws.id, { includePolitical: true }, db).opportunities.find(x => x.voices.some(v => v.id === Number(body.voice_id)));
+    if (!o) throw httpError(404, 'Creator not found');
+    return voiceDM(o.voices.find(v => v.id === Number(body.voice_id)), o, ws);
+  },
+  // Collabs: businesses your customers also love (lib/collabs.mjs). Counts only, no reviewer data.
+  'GET /api/collabs': ({ ws }) => partners(ws.id, ws, { rivalNames: A.rivalKeeps(db, rivalIdsFor(ws.id)).map(r => r.rival.name) }, db),
+  'POST /api/collabs/overlap': ({ ws, body }) => addOverlap(ws.id, body, db),
+  'POST /api/collabs/pitch': ({ ws, body }) => {
+    const p = partners(ws.id, ws, { rivalNames: [], limit: 500 }, db).partners.find(x => x.key === String(body.key));
+    if (!p) throw httpError(404, 'Business not found');
+    return collabPitch(p, ws);
   },
   'GET /api/ads': ({ ws, q }) => {
     const f = Object.fromEntries(q);
@@ -375,6 +394,25 @@ const MCP_TOOLS = [
       return { job_id: job.id, note: 'Rendering. Check job_status in a minute or two.' }; } },
   { name: 'list_my_ads', description: 'Ads you have made (finished images and saved plans), newest first.', inputSchema: strictObj({ limit: { type: 'integer', maximum: 40 } }),
     run: (ws, ids, { limit }) => listRebuilds(db, { wsId: ws.id }).slice(0, Math.min(40, limit || 12)).map(r => slimRebuild(r, Boolean(r.image_path))) },
+  { name: 'add_switch_signals', description: 'Switchers: save public posts where people are angry at a company\'s decision, ideally also asking what to buy instead. Each post: https url + a short VERBATIM quote (never paraphrase or invent), optional source, posted_at (YYYY-MM-DD), engagement (upvotes/likes + comments). Do not include author names or personal details.', inputSchema: strictObj({
+      company: { type: 'string' }, signals: { type: 'array', maxItems: 200, items: strictObj({ url: { type: 'string' }, quote: { type: 'string' }, source: { type: 'string' }, posted_at: { type: 'string' }, engagement: { type: 'integer' } }, ['url', 'quote']) } }, ['company', 'signals']),
+    run: (ws, ids, a) => addSignals(ws.id, a, db) },
+  { name: 'add_switch_voices', description: 'Switchers: save public creators (accounts with an audience) posting about the company. name, platform, url of their post, audience as stated (e.g. "120k followers"), short verbatim quote.', inputSchema: strictObj({
+      company: { type: 'string' }, voices: { type: 'array', maxItems: 100, items: strictObj({ name: { type: 'string' }, platform: { type: 'string' }, url: { type: 'string' }, audience: { type: 'string' }, quote: { type: 'string' } }, ['name', 'url']) } }, ['company', 'voices']),
+    run: (ws, ids, a) => addVoices(ws.id, a, db) },
+  { name: 'switch_opportunities', description: 'Switchers: companies ranked by switching demand (anger + asking for an alternative, across sources, recently), with the decision people are angry about, what they want instead, quotes, creators, and a launch plan (positioning, white-label path, smoke test with pass/kill numbers, legal notes). Political anger is hidden unless include_political.', inputSchema: strictObj({ include_political: { type: 'boolean' } }),
+    run: (ws, ids, { include_political }) => { const r = opportunities(ws.id, { includePolitical: !!include_political }, db); return { ...r, opportunities: r.opportunities.map(o => ({ ...o, plan: launchPlan(o, getWorkspace(ws.id)) })) }; } },
+  { name: 'draft_creator_dm', description: 'Switchers: an honest first DM to a saved creator (offers a free sample and a disclosed partnership: paid, affiliate or equity). A draft only: the user sends it.', inputSchema: strictObj({ voice_id: { type: 'integer' } }, ['voice_id']),
+    run: (ws, ids, { voice_id }) => { const o = opportunities(ws.id, { includePolitical: true }, db).opportunities.find(x => x.voices.some(v => v.id === Number(voice_id))); return o ? voiceDM(o.voices.find(v => v.id === Number(voice_id)), o, getWorkspace(ws.id)) : { error: 'No saved creator with that id.' }; } },
+  { name: 'add_collab_overlap', description: 'Collabs: save which other businesses your customers also love. Either businesses [{name, category, url, shared}] already counted, or people [{also:[{name, category}]}] (one ANONYMOUS entry per customer or reviewer; counted then discarded). source: survey | reviews | social | other. Never send names or profile links of reviewers.', inputSchema: strictObj({
+      source: { type: 'string', enum: ['survey', 'reviews', 'social', 'other'] }, where: { type: 'string', description: 'Where this came from, e.g. "Google reviews, 2026-11"' },
+      businesses: { type: 'array', items: strictObj({ name: { type: 'string' }, category: { type: 'string' }, url: { type: 'string' }, shared: { type: 'integer' } }, ['name', 'shared']) },
+      people: { type: 'array', items: strictObj({ also: { type: 'array', items: strictObj({ name: { type: 'string' }, category: { type: 'string' } }, ['name']) } }, ['also']) } }),
+    run: (ws, ids, a) => addOverlap(ws.id, a, db) },
+  { name: 'collab_partners', description: 'Collabs: non-competing businesses ranked by shared fans (survey answers count double; competitors and tracked rivals filtered out).', inputSchema: strictObj({ limit: { type: 'integer', maximum: 50 } }),
+    run: (ws, ids, { limit }) => partners(ws.id, getWorkspace(ws.id), { rivalNames: A.rivalKeeps(db, ids).map(r => r.rival.name), limit: Math.min(50, limit || 20) }, db) },
+  { name: 'draft_collab', description: 'Collabs: a co-branded pitch for one partner (by its key from collab_partners): 5 collab ideas, a co-branded ad concept with image prompt, and the email to send. Drafts only: the user sends it.', inputSchema: strictObj({ key: { type: 'string' } }, ['key']),
+    run: (ws, ids, { key }) => { const p = partners(ws.id, getWorkspace(ws.id), { limit: 500 }, db).partners.find(x => x.key === String(key)); return p ? collabPitch(p, getWorkspace(ws.id)) : { error: 'No partner with that key.' }; } },
   { name: 'job_status', description: 'Status of a background job (collecting, drop) started by another tool.', inputSchema: strictObj({ job_id: { type: 'integer' } }, ['job_id']),
     run: (ws, ids, { job_id }) => { const j = jobs.get(Number(job_id)); if (!j || j.wsId !== ws.id) return { error: 'No such job (jobs are kept for an hour).' }; const { wsId, ...rest } = j; return rest; } },
 ];

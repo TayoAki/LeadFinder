@@ -72,6 +72,24 @@ CREATE TABLE IF NOT EXISTS borrow_briefs (           -- briefs for moves borrowe
   donor_id TEXT NOT NULL, detail TEXT, brief TEXT NOT NULL,
   created_at TEXT DEFAULT (datetime('now'))
 );
+CREATE TABLE IF NOT EXISTS switch_signals (          -- Switchers: public posts angry at a company's decision
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  company TEXT NOT NULL, company_key TEXT NOT NULL, url TEXT NOT NULL, quote TEXT NOT NULL, source TEXT,
+  posted_at TEXT, engagement INTEGER DEFAULT 0, anger INTEGER, wants_alt INTEGER, decision TEXT, want TEXT,
+  created_at TEXT DEFAULT (datetime('now')), UNIQUE (workspace_id, url)
+);
+CREATE TABLE IF NOT EXISTS switch_voices (           -- public creators posting about that company
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  company_key TEXT NOT NULL, name TEXT NOT NULL, platform TEXT, url TEXT NOT NULL, audience TEXT, quote TEXT,
+  created_at TEXT DEFAULT (datetime('now')), UNIQUE (workspace_id, url)
+);
+CREATE TABLE IF NOT EXISTS collab_overlap (          -- Collabs: shared-fan COUNTS per business (no reviewer data)
+  workspace_id INTEGER NOT NULL REFERENCES workspaces(id) ON DELETE CASCADE,
+  business_key TEXT NOT NULL, name TEXT NOT NULL, category TEXT, url TEXT, source TEXT NOT NULL, shared INTEGER NOT NULL DEFAULT 0, where_found TEXT,
+  updated_at TEXT DEFAULT (datetime('now')), PRIMARY KEY (workspace_id, business_key, source)
+);
 CREATE TABLE IF NOT EXISTS kv (k TEXT PRIMARY KEY, v TEXT);
 CREATE TABLE IF NOT EXISTS user_prefs (user_id TEXT PRIMARY KEY, current_ws INTEGER);  -- the workspace a login has open
 CREATE TABLE IF NOT EXISTS credit_ledger (       -- every credit spent or refunded; the monthly pool is the plan's allowance

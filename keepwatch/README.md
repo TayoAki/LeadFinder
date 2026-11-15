@@ -13,10 +13,19 @@ Keepwatch finds the Meta ads your rivals keep paying to run, shows why they work
   1. **Your hill to die on:** write your stance and run the swap test. Would it still be true with a rival's name in it? It flags words any brand could claim, lines your rivals already run, no side taken, and nothing specific.
   2. **What every rival does:** the formats, openings and angles most of your category shares (the habits buyers have stopped noticing), plus the open ground nobody uses.
   3. **Borrow a move from another world:** 15 moves from other industries (`lib/donors.mjs`), such as dressing up as another category (beer and metal for water), owning the joke (budget airlines), turning the product into a dare (spicy-noodle challenges), lore you commit to (internet comedy accounts) and the most-asked-questions interview. Each is ranked for your brand by fit and by the rival habits it breaks. It says why it works, when it fits and when to skip it. **Write the brief** turns it into hooks, beats, a three-post series and a "don't copy" line. Template briefs are free; with `ANTHROPIC_API_KEY`, Claude writes them for 5 credits.
+- **Switchers (the Black Rifle playbook, without the grift):** companies people are angry at for a decision, where they also ask "what do I buy instead".
+  - **Where the data comes from:** your connected AI saves public posts (link and verbatim quote, never author details) with `add_switch_signals`, and the creators posting about it with `add_switch_voices`.
+  - **What Keepwatch does with it:** ranks real switching demand, needing 5+ posts from 2+ sources and 3+ in the last 6 months. Each company shows what people are angry about and what they want instead, plus a launch plan: positioning, a white-label path, a smoke test with pass and kill numbers, and legal notes.
+  - **Creator DMs** are honest drafts that disclose the partnership.
+  - **Political anger** is hidden by default.
+- **Collabs (the Crumbl playbook):** non-competing businesses your customers also love, ranked by shared fans, with a co-branded pitch for each (5 ideas, an ad concept and the email).
+  - **Sources:** customer survey answers (count double), shared reviewers or shared followers.
+  - **Privacy:** only counts per business are stored, never reviewer names or profiles. Competitors and tracked rivals are filtered out.
+  - **Drafts only:** Keepwatch never sends an email or DM.
 - **Monday drop:** four new ads a week, built from different rivals' kept ads with different angles.
 - **MCP server (`POST /mcp`, auth = the workspace API key):** Claude, ChatGPT or Cursor can read **and run** the workspace.
   - **Read:** overview, playbooks, ad search, hooks, angles, formats, Borrow ideas, swap test.
-  - **Write:** `my_workspace`, `update_brand`, `find_rival`, `track_rival`, `untrack_rival`, `add_rival_ads`, `collect_ads`, `list_moves`, `write_brief`, `list_briefs`, `make_ad`, `make_drop`, `list_my_ads`, `job_status`.
+  - **Write:** `add_switch_signals`, `add_switch_voices`, `switch_opportunities`, `draft_creator_dm`, `add_collab_overlap`, `collab_partners`, `draft_collab`, `my_workspace`, `update_brand`, `find_rival`, `track_rival`, `untrack_rival`, `add_rival_ads`, `collect_ads`, `list_moves`, `write_brief`, `list_briefs`, `make_ad`, `make_drop`, `list_my_ads`, `job_status`.
   - **When a provider key is missing, the connected AI does that part itself:**
     - ads it researched in the public Ad Library go in through `add_rival_ads`. These are kept per workspace and never touch the shared, collected data.
     - briefs it wrote go in as `write_brief` with `brief`.
