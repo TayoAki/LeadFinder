@@ -24,7 +24,7 @@ function Tile({ icon, label, value, onPress }: { icon: IconName; label: string; 
 
 export default function SellerHome() {
   const { seller } = useStore();
-  if (seller === 'none') return <Redirect href="/seller/apply" />;
+  if (seller === 'none') return <Redirect href="/" />; // seller mode is for existing sellers only
   const shop = myShop();
   const orders = sellerOrders();
   const toShip = orders.filter(o => o.status === 'To ship');
@@ -105,7 +105,6 @@ export default function SellerHome() {
             </Pressable>
           ))}
         </View>
-        <Pressable onPress={() => router.push('/seller/apply')}><Text style={[T.small, { textAlign: 'center' }]}>Preview the seller sign-up flow</Text></Pressable>
       </ScrollView>
     </SafeAreaView>
   );

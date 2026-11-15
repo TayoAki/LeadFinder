@@ -155,12 +155,6 @@ export default function Home() {
           ))}
         </ScrollView>
 
-        {/* Seller-brings-buyers loop */}
-        <Pressable onPress={() => router.push('/seller/apply')} style={{ margin: S.lg, marginTop: S.xl, padding: S.xl, borderRadius: R.lg, backgroundColor: C.ink }}>
-          <Text style={{ color: '#fff', fontSize: 20, fontWeight: '900' }}>Make things? Sell them here.</Text>
-          <Text style={{ color: '#CFC7BC', marginTop: 6, lineHeight: 20 }}>Open a shop in 10 minutes. Share one link and your followers check out with Apple Pay. 0% commission for your first 60 days.</Text>
-          <Text style={{ color: C.accent, fontWeight: '800', marginTop: 12 }}>Start selling →</Text>
-        </Pressable>
       </ScrollView>
     </SafeAreaView>
   );
