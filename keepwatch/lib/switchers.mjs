@@ -108,8 +108,9 @@ export function opportunities(wsId, { includePolitical = false, now = Date.now()
 
 /** The launch plan for one opportunity, from its own evidence. */
 export function launchPlan(opp, ws = {}) {
-  const d = opp.decisions[0]?.label?.toLowerCase() || 'a recent decision';
-  const want = opp.wants[0] || `what ${opp.company} used to be before ${d}`;
+  const top = opp.decisions.find(x => x.key !== 'other');
+  const d = top ? `the ${top.label.toLowerCase()}` : 'a recent change';
+  const want = opp.wants[0] || `what ${opp.company} used to be`;
   return {
     company: opp.company, verdict: opp.verdict,
     positioning: `For people who left ${opp.company} after ${d}. We make ${want}.`,
@@ -134,7 +135,8 @@ export function launchPlan(opp, ws = {}) {
 
 /** An honest first message to a creator already talking about it. A draft: the user sends it, not us. */
 export function voiceDM(voice, opp, ws = {}) {
-  const d = opp.decisions[0]?.label?.toLowerCase() || 'the recent change';
+  const top = opp.decisions.find(x => x.key !== 'other');
+  const d = top ? `the ${top.label.toLowerCase()}` : 'the recent change';
   const brand = ws.brand_name || '[your brand]';
   const product = ws.brand_product ? ws.brand_product.split(/[,.]/)[0].trim().toLowerCase() : '[what you make]';
   return {
