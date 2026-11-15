@@ -61,7 +61,14 @@
       "output": "single"
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      [
+        "@stripe/stripe-react-native",
+        {
+          "merchantIdentifier": "merchant.com.hireshelby.app",
+          "enableGooglePay": true
+        }
+      ]
     ],
     "scheme": "shelby",
     "experiments": {

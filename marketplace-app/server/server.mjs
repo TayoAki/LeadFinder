@@ -169,7 +169,7 @@ const routes = {
   // reads its catalogue from Mercur and checks out there; otherwise it uses this server's own API.
   'GET /api/config': () => ({
     commerce: process.env.MEDUSA_URL && process.env.MEDUSA_PUBLISHABLE_KEY
-      ? { url: process.env.MEDUSA_URL.replace(/\/$/, ''), publishableKey: process.env.MEDUSA_PUBLISHABLE_KEY, sellerUrl: `${process.env.MEDUSA_URL.replace(/\/$/, '')}/seller` }
+      ? { url: process.env.MEDUSA_URL.replace(/\/$/, ''), publishableKey: process.env.MEDUSA_PUBLISHABLE_KEY, sellerUrl: `${process.env.MEDUSA_URL.replace(/\/$/, '')}/seller`, stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY || null }
       : null,
   }),
   'GET /api/catalog': () => ({

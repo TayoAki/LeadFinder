@@ -5,6 +5,63 @@ import path from 'path'
 
 loadEnv(process.env.NODE_ENV || 'development', process.cwd())
 
+// Stripe Connect (Mercur's @mercurjs/stripe-connector-plugin) switches on when STRIPE_SECRET_KEY and
+// both webhook signing secrets are set: card payments for the whole multi-seller cart, Express accounts for sellers, per-order
+// payouts minus commission, and nightly settlements to each seller's bank. Without the key the
+// marketplace keeps the system (test) payment provider.
+// All three are required by the plugin; Stripe stays off until every one is set.
+const STRIPE_KEY =
+  process.env.STRIPE_SECRET_KEY && process.env.STRIPE_OPERATOR_WEBHOOK_SECRET && process.env.STRIPE_SELLERS_WEBHOOK_SECRET
+    ? process.env.STRIPE_SECRET_KEY
+    : undefined
+const PUBLIC_URL = process.env.MERCUR_BACKEND_URL || 'http://localhost:9000'
+const stripe = STRIPE_KEY
+  ? {
+      plugins: [
+        {
+          resolve: '@mercurjs/stripe-connector-plugin',
+          options: { apiKey: STRIPE_KEY, webhookSecret: process.env.STRIPE_SELLERS_WEBHOOK_SECRET },
+        },
+      ],
+      modules: [
+        {
+          resolve: '@medusajs/medusa/payment',
+          options: {
+            providers: [
+              {
+                resolve: '@mercurjs/stripe-connector-plugin/providers/payment-stripe',
+                id: 'stripe',
+                options: { apiKey: STRIPE_KEY, webhookSecret: process.env.STRIPE_OPERATOR_WEBHOOK_SECRET },
+              },
+            ],
+          },
+        },
+        {
+          resolve: '@mercurjs/core/modules/payout',
+          options: {
+            providers: [
+              {
+                resolve: '@mercurjs/stripe-connector-plugin/providers/payout-stripe-connect',
+                id: 'stripe',
+                options: { apiKey: STRIPE_KEY, webhookSecret: process.env.STRIPE_SELLERS_WEBHOOK_SECRET, manualPayouts: true },
+              },
+            ],
+            onboarding: {
+              returnUrl: `${process.env.MERCUR_VENDOR_URL || `${PUBLIC_URL}/seller`}/stripe`,
+              refreshBaseUrl: PUBLIC_URL,
+            },
+          },
+        },
+      ],
+    }
+  : {
+      // The panels' Vite build reads this file to find plugin UI extensions (the operator's
+      // Settings -> Stripe screens, the seller's payouts onboarding). List the plugin while the
+      // panels build so those screens ship; the backend registers it only when the keys are set.
+      plugins: process.argv.some((a) => /[\\/]vite([\\/]|\.js$|$)/.test(a)) ? [{ resolve: '@mercurjs/stripe-connector-plugin', options: {} }] : [],
+      modules: [],
+    }
+
 // Resolves where a dashboard app lives:
 // - in the source tree (development): ../../apps/<name>
 // - in the production build artifact: hosts that deploy only `.medusa/server` (for example
@@ -36,7 +93,9 @@ module.exports = withMercur({
   featureFlags: {
     seller_registration: true
   },
+  plugins: stripe.plugins,
   modules: [
+    ...stripe.modules,
     {
       resolve: '@mercurjs/core/modules/admin-ui',
       options: {

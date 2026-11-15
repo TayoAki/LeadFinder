@@ -8,4 +8,6 @@ $MEDUSA db:migrate
 #   ADMIN_INVITE_EMAIL=...    create an operator invite; the token is printed to the logs
 if [ "$SHELBY_SEED" = "true" ]; then $MEDUSA exec ./src/scripts/seed-shelby.js; fi
 if [ -n "$ADMIN_INVITE_EMAIL" ]; then $MEDUSA user -e "$ADMIN_INVITE_EMAIL" --invite || echo "admin invite skipped (user may already exist)"; fi
+# Region payment providers follow the config: Stripe only when STRIPE_SECRET_KEY is set.
+$MEDUSA exec ./src/scripts/sync-payment-providers.js
 exec $MEDUSA start

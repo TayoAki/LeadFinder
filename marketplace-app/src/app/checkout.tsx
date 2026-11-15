@@ -12,7 +12,8 @@ import { getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
-import { checkoutWithMercur, commerce } from '@/lib/commerce';
+import { commerce, completeCheckout, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
+import { CardPayment } from '@/components/CardPayment';
 
 export default function Checkout() {
   const { groups, user, credit, referredBy, placeOrder, cart } = useStore();
@@ -20,11 +21,16 @@ export default function Checkout() {
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [prepared, setPrepared] = useState<PreparedCheckout | null>(null); // awaiting card confirmation
+  const stripeOn = !!commerce()?.stripePublishableKey; // real payments: Stripe's sheet collects the card
   const items = groups.reduce((n, g) => n + g.subtotal, 0);
   const shipping = groups.reduce((n, g) => n + g.shipping, 0);
-  const tax = Math.round(items * 0.0725 * 100) / 100;
-  const referral = referredBy ? BRAND.referralReward : 0;
-  const userCredit = user ? credit : 0;
+  // With Mercur, show exactly what it will charge: no tax rates or promotions are configured there
+  // yet, so no estimated tax and no Shelby credit until they are (then read them from the cart).
+  const mercur = !!commerce();
+  const tax = mercur ? 0 : Math.round(items * 0.0725 * 100) / 100;
+  const referral = referredBy && !mercur ? BRAND.referralReward : 0;
+  const userCredit = user && !mercur ? credit : 0;
   const discount = Math.min(referral + userCredit, items + shipping);
   const total = items + shipping + tax - discount;
   const guestOk = !!user || email.includes('@');
@@ -32,26 +38,45 @@ export default function Checkout() {
   useEffect(() => { if (cart.length) track('checkout_start', { total: Math.round(total * 100) / 100, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
+  const fail = (e: any) => {
+    track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) });
+    setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed');
+    setPrepared(null); setLoading(false);
+  };
+  const done = (r: { id: string; tax: number }) => {
+    const o = placeOrder(discount, user ? undefined : email, r.tax, r.id);
+    router.replace({ pathname: '/order-success', params: { id: o.id } });
+  };
+  // Mercur: complete the prepared cart (after Stripe confirmed the card, when Stripe is on).
+  const finish = async (p: PreparedCheckout) => { try { done(await completeCheckout(p)); } catch (e) { fail(e); } };
+
   // The server re-prices the cart, checks stock and splits it into one order per shop.
   const place = async () => {
     setLoading(true); setError('');
     track('checkout_submit', { total: Math.round(total * 100) / 100, guest: !user });
     try {
       const lines = cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }));
-      const r = commerce()
-        ? await checkoutWithMercur(lines, { email: user?.email ?? email, name: user?.name ?? '' }, { address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' })
-        : await api<{ id: string; total: number; tax: number }>('/api/orders', {
-          lines, email: user?.email ?? email, name: user?.name ?? '',
-          address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
-        });
-      const o = placeOrder(discount, user ? undefined : email, r.tax, r.id);
-      router.replace({ pathname: '/order-success', params: { id: o.id } });
-    } catch (e: any) { track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) }); setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed'); setLoading(false); }
+      if (commerce()) {
+        const p = await prepareCheckout(lines, { email: user?.email ?? email, name: user?.name ?? '' }, { address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' });
+        if (p.clientSecret) { track('payment_sheet_open', { total: p.total }); setPrepared(p); return; } // CardPayment takes over
+        return finish(p);
+      }
+      done(await api<{ id: string; total: number; tax: number }>('/api/orders', {
+        lines, email: user?.email ?? email, name: user?.name ?? '',
+        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
+      }));
+    } catch (e: any) { fail(e); }
   };
 
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header title="Checkout" back />
+      {!!commerce()?.stripePublishableKey && (
+        <CardPayment clientSecret={prepared?.clientSecret ?? null} publishableKey={commerce()!.stripePublishableKey!} amount={prepared?.total ?? total}
+          onPaid={() => { track('payment_confirmed', { total: prepared?.total ?? 0 }); if (prepared) finish(prepared); }}
+          onCancel={() => { track('payment_sheet_cancel'); setPrepared(null); setLoading(false); }}
+          onError={m => fail(new Error(m))} />
+      )}
       <ScrollView contentContainerStyle={{ padding: S.lg, gap: S.lg, paddingBottom: 220 }}>
         {!user && (
           <Card>
@@ -65,9 +90,18 @@ export default function Checkout() {
         <Card>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={T.h3}>Ship to</Text><Pressable onPress={() => router.push('/addresses')}><Text style={{ color: C.accent, fontWeight: '700' }}>Change</Text></Pressable></View>
           <Text style={[T.body, { marginTop: 6 }]}>{user?.name ?? 'Your name'}{'\n'}<Text style={{ color: C.ink2 }}>1208 Willow Ave, Apt 3{'\n'}Austin, TX 78702</Text></Text>
-          {pay === 'apple' && !user && <Text style={[T.small, { marginTop: 6 }]}>Apple Pay fills this in for you.</Text>}
+          {pay === 'apple' && !stripeOn && !user && <Text style={[T.small, { marginTop: 6 }]}>Apple Pay fills this in for you.</Text>}
         </Card>
 
+        {stripeOn ? (
+          <Card>
+            <Text style={T.h3}>Payment</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: S.md }}>
+              <Ionicons name="lock-closed" size={20} color={C.ink} />
+              <Text style={[T.small, { flex: 1 }]}>Card, Apple Pay or Google Pay on the next step, secured by Stripe. You're charged once; each shop is paid when it ships.</Text>
+            </View>
+          </Card>
+        ) : (
         <Card>
           <Text style={T.h3}>Pay with</Text>
           {([['apple', 'logo-apple', 'Apple Pay', 'Fastest. No card details to type.'], ['card', 'card-outline', 'Card', 'Visa ending 4242']] as const).map(([k, icon, label, sub]) => (
@@ -78,6 +112,7 @@ export default function Checkout() {
             </Pressable>
           ))}
         </Card>
+        )}
 
         <Card>
           <Text style={T.h3}>{groups.length} shop{groups.length > 1 ? 's' : ''}, one payment</Text>
@@ -96,13 +131,13 @@ export default function Checkout() {
       </ScrollView>
 
       <SafeAreaView edges={['bottom']} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: C.surface, borderTopWidth: 1, borderTopColor: C.line, padding: S.lg }}>
-        {[['Items', money(items)], ['Shipping', shipping ? money(shipping) : 'Free'], ['Estimated tax', money(tax)]].map(([a, b]) => (
+        {[['Items', money(items)], ['Shipping', shipping ? money(shipping) : 'Free'], ...(mercur ? [] : [['Estimated tax', money(tax)]])].map(([a, b]) => (
           <View key={a} style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={T.small}>{a}</Text><Text style={T.small}>{b}</Text></View>
         ))}
         {!!referral && <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>Friend's invite</Text><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>−{money(referral)}</Text></View>}
         {!!userCredit && <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>Your credit</Text><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>−{money(Math.min(userCredit, items + shipping - referral))}</Text></View>}
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 6 }}><Text style={T.h3}>Total</Text><Text style={{ fontSize: 20, fontWeight: '900' }}>{money(total)}</Text></View>
-        <Button title={pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={pay === 'apple' ? 'primary' : 'accent'}
+        <Button title={stripeOn ? `Continue to payment · ${money(total)}` : pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={!stripeOn && pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={!stripeOn && pay === 'apple' ? 'primary' : 'accent'}
           style={{ marginTop: S.md }} onPress={place} loading={loading} disabled={!guestOk} testID="place-order" />
         {!!error && <Text style={{ textAlign: 'center', color: C.accent, fontWeight: '700', fontSize: 13, marginTop: 6 }} accessibilityRole="alert">{error}</Text>}
         {!guestOk && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>Add an email for your receipt to continue</Text>}

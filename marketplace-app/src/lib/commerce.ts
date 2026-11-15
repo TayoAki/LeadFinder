@@ -4,9 +4,13 @@
 // `commerce` block; otherwise the app falls back to the built-in backend.
 import type { Product, Shop } from './data';
 
-export type CommerceConfig = { url: string; publishableKey: string; sellerUrl?: string };
+export type CommerceConfig = { url: string; publishableKey: string; sellerUrl?: string; stripePublishableKey?: string | null };
 let cfg: CommerceConfig | null = null;
 let regionId = '';
+let paymentProvider = 'pp_system_default'; // the region's provider; Stripe when the server has it on
+export const STRIPE_PROVIDER = 'pp_stripe-connector_stripe';
+// Card payments need both: Stripe on the server (region provider) and a publishable key for the app.
+export const stripeEnabled = () => paymentProvider === STRIPE_PROVIDER && !!cfg?.stripePublishableKey;
 // productId -> size ('' for one-size) -> offer id; the offer decides the seller at checkout.
 const offerFor = new Map<string, Map<string, string>>();
 
@@ -44,6 +48,8 @@ export async function loadMercurCatalog(c: CommerceConfig): Promise<{ shops: Sho
   cfg = c;
   const { regions } = await store<{ regions: { id: string; currency_code: string }[] }>('/store/regions');
   regionId = (regions.find(r => r.currency_code === 'usd') ?? regions[0]).id;
+  const { payment_providers } = await store<{ payment_providers: { id: string }[] }>(`/store/payment-providers?region_id=${regionId}`);
+  paymentProvider = payment_providers.some(p => p.id === STRIPE_PROVIDER) ? STRIPE_PROVIDER : payment_providers[0]?.id ?? 'pp_system_default';
   const [sellers, products, offers] = await Promise.all([
     all<any>('/store/sellers', 'sellers'),
     all<any>(`/store/products?region_id=${regionId}&fields=id,title,description,thumbnail,metadata,*images,*categories,*variants`, 'products'),
@@ -91,11 +97,12 @@ export async function loadMercurCatalog(c: CommerceConfig): Promise<{ shops: Sho
 
 export type CheckoutLine = { productId: string; size: string | null; qty: number };
 export type CheckoutResult = { id: string; total: number; tax: number; shipping: number; sellers: number };
+export type PreparedCheckout = { cartId: string; total: number; tax: number; shipping: number; clientSecret: string | null };
 
-// One Mercur cart for every line, one shipping method per seller, then complete: Mercur splits it
-// into one order per seller under an order group. Payment uses the system provider until Stripe
-// Connect is configured.
-export async function checkoutWithMercur(lines: CheckoutLine[], who: { email: string; name: string }, address: { address_1: string; city: string; province: string; postal_code: string }): Promise<CheckoutResult> {
+// Step 1: one Mercur cart for every line, one shipping method per seller, and a payment session.
+// With Stripe on, the session holds a PaymentIntent (authorize now, capture when sellers ship)
+// whose client secret the app confirms with Stripe before step 2.
+export async function prepareCheckout(lines: CheckoutLine[], who: { email: string; name: string }, address: { address_1: string; city: string; province: string; postal_code: string }): Promise<PreparedCheckout> {
   let { cart } = await store<any>('/store/carts', { region_id: regionId, email: who.email });
   for (const l of lines) {
     const offerId = offerFor.get(l.productId)?.get(l.size ?? '');
@@ -108,8 +115,17 @@ export async function checkoutWithMercur(lines: CheckoutLine[], who: { email: st
   for (const options of Object.values(shipping_options)) if (options[0]) await store(`/store/carts/${cart.id}/shipping-methods`, { option_id: options[0].id });
   ({ cart } = await store<any>(`/store/carts/${cart.id}`));
   const { payment_collection } = await store<any>('/store/payment-collections', { cart_id: cart.id });
-  await store(`/store/payment-collections/${payment_collection.id}/payment-sessions`, { provider_id: 'pp_system_default' });
-  const done = await store<any>(`/store/carts/${cart.id}/complete`, {}, 30000);
-  if (done.type !== 'order_group') throw new Error(done.error?.message ?? 'Payment needs another try.');
-  return { id: done.order_group.id, total: num(done.order_group.total, cart.total), tax: num(cart.tax_total), shipping: num(cart.shipping_total), sellers: num(done.order_group.seller_count, 1) };
+  const r = await store<any>(`/store/payment-collections/${payment_collection.id}/payment-sessions`, { provider_id: paymentProvider })
+    .catch(() => { throw new Error("Payments are unavailable right now, so you haven't been charged. Please try again in a minute."); });
+  const session = (r.payment_collection?.payment_sessions ?? []).find((x: any) => x.provider_id === paymentProvider);
+  const clientSecret = paymentProvider === STRIPE_PROVIDER ? session?.data?.client_secret ?? null : null;
+  if (paymentProvider === STRIPE_PROVIDER && !clientSecret) throw new Error('Card payments are unavailable right now. Please try again.');
+  return { cartId: cart.id, total: num(cart.total), tax: num(cart.tax_total), shipping: num(cart.shipping_total), clientSecret };
+}
+
+// Step 2: complete. Mercur authorizes the payment and splits the cart into one order per seller.
+export async function completeCheckout(p: PreparedCheckout): Promise<CheckoutResult> {
+  const done = await store<any>(`/store/carts/${p.cartId}/complete`, {}, 30000);
+  if (done.type !== 'order_group') throw new Error(done.error?.message ?? 'Your payment needs another try.');
+  return { id: done.order_group.id, total: num(done.order_group.total, p.total), tax: p.tax, shipping: p.shipping, sellers: num(done.order_group.seller_count, 1) };
 }
