@@ -5,9 +5,10 @@ import React, { useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '@/components/Header';
+import { PageIn } from '@/components/Motion';
 import { Disclaimer, PageNotFound, ProductRow, StickyCTA } from '@/components/PageBlocks';
 import { track } from '@/lib/analytics';
-import { byTitle, disclaimerFor, listiclePage } from '@/lib/pages';
+import { disclaimerFor, listiclePage, slotProduct } from '@/lib/pages';
 import { C, R, S, T } from '@/lib/theme';
 
 export default function Listicle() {
@@ -19,12 +20,13 @@ export default function Listicle() {
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header back title="Guide" />
+      <PageIn>
       <ScrollView contentContainerStyle={{ padding: S.lg, paddingBottom: 140 }}>
         <Text style={[T.tiny, { color: C.accent }]}>SHELBY GUIDE</Text>
         <Text style={[T.h1, { marginTop: 6 }]}>{l.title}</Text>
         <Text style={[T.body, { color: C.ink2, marginTop: 8 }]}>{l.intro}</Text>
         {l.items.map((it, i) => {
-          const p = byTitle(it.product);
+          const p = slotProduct(l, it);
           return (
             <View key={it.title} style={{ marginTop: S.xl }}>
               <View style={{ flexDirection: 'row', gap: 12, alignItems: 'flex-start' }}>
@@ -42,6 +44,7 @@ export default function Listicle() {
         })}
         <Disclaimer text={disclaimerFor(l.niche)} />
       </ScrollView>
+      </PageIn>
       <StickyCTA label={l.cta.label} icon="arrow-forward" onPress={() => { track('page_cta', { page_type: 'listicle', slug: l.slug, to: l.cta.to }); router.push(l.cta.to as any); }} />
     </SafeAreaView>
   );

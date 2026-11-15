@@ -1,5 +1,5 @@
 {
-  "_note": "Funnel pages: offers (/offer/<slug>), listicles (/list/<slug>), advertorials (/story/<slug>). Products are referenced by exact title; any that no longer exist are skipped, and a page with no products left is hidden. Copy rules: no invented testimonials, ratings or sales numbers; no medical claims; advertorials are labelled as ads.",
+  "_note": "Funnel pages: offers (/offer/<slug>), listicles (/list/<slug>), advertorials (/story/<slug>). Products are referenced by exact title; any that no longer exist are skipped, and a page with no products left is hidden. Copy rules: no invented testimonials, ratings or sales numbers; no medical claims; advertorials are labelled as ads. Category posts (`category` set) fill product slots with `pick`: n = the nth best product in that category, so they follow whatever is published.",
   "offers": [
     {
       "slug": "joyful-script-sweatshirt",
@@ -130,32 +130,115 @@
   ],
   "listicles": [
     {
-      "slug": "style-a-statement-sweatshirt",
+      "slug": "style-a-graphic-sweatshirt",
       "niche": "fashion",
-      "title": "4 easy ways to style a statement sweatshirt",
-      "intro": "A sweatshirt with a bold print does a lot on its own. Here's how to wear it, from errands to evenings out.",
+      "category": "Apparel",
+      "title": "5 easy ways to style a graphic sweatshirt or tee",
+      "intro": "A bold print does most of the work. Here's how to wear one from errands to evenings out, without overthinking it.",
       "items": [
         {
           "title": "With straight-leg jeans",
-          "body": "The classic. Tuck the front hem slightly so the print sits right at the waist.",
-          "product": "Joyful Script Sweatshirt"
+          "body": "The classic. A slight front tuck shows the waist and keeps the print centred.",
+          "pick": 0
         },
         {
           "title": "Over a collared shirt",
-          "body": "Let the collar and cuffs show for a smarter, layered look."
+          "body": "Let the collar and cuffs peek out for a smarter, layered look.",
+          "pick": 1
         },
         {
-          "title": "With a skirt and trainers",
-          "body": "A midi skirt balances the relaxed fit; keep shoes simple."
+          "title": "With a midi skirt and trainers",
+          "body": "The relaxed fit balances a flowing skirt; keep shoes simple."
+        },
+        {
+          "title": "Under an open overshirt or jacket",
+          "body": "Frame the print with a plain layer in a neutral colour.",
+          "pick": 2
         },
         {
           "title": "Oversized, as loungewear",
-          "body": "Size up one and pair with joggers for the comfiest version."
+          "body": "Size up once and pair with joggers for the comfiest version."
         }
       ],
       "cta": {
-        "label": "Get the sweatshirt",
-        "to": "/offer/joyful-script-sweatshirt"
+        "label": "Shop apparel",
+        "to": "/search?cat=Apparel"
+      }
+    },
+    {
+      "slug": "make-a-space-feel-yours",
+      "niche": "home",
+      "category": "Home",
+      "title": "6 small ways to make a space feel like yours",
+      "intro": "You don't need a renovation. A few personal pieces change how a room feels every time you walk in.",
+      "items": [
+        {
+          "title": "Start with what you use every day",
+          "body": "A mug or bottle you love turns a daily habit into a small good moment.",
+          "pick": 0
+        },
+        {
+          "title": "Put something on the walls",
+          "body": "One print at eye level makes a bare wall look finished.",
+          "pick": 1
+        },
+        {
+          "title": "Layer in soft textures",
+          "body": "A cushion or throw adds colour and comfort without commitment.",
+          "pick": 2
+        },
+        {
+          "title": "Group things in threes",
+          "body": "Odd-numbered groups of objects look natural on a shelf or table."
+        },
+        {
+          "title": "Keep one surface clear",
+          "body": "An empty spot lets the pieces you do show stand out."
+        },
+        {
+          "title": "Pick a colour and repeat it",
+          "body": "Repeat one accent colour two or three times across the room to tie it together."
+        }
+      ],
+      "cta": {
+        "label": "Shop home",
+        "to": "/search?cat=Home"
+      }
+    },
+    {
+      "slug": "accessories-that-finish-an-outfit",
+      "niche": "fashion",
+      "category": "Accessories",
+      "title": "5 accessories that finish an outfit",
+      "intro": "The fastest way to make a simple outfit look intentional is one well-chosen extra.",
+      "items": [
+        {
+          "title": "A tote that does it all",
+          "body": "Big enough for a laptop, plain enough to go with anything.",
+          "pick": 0
+        },
+        {
+          "title": "A cap for off-duty days",
+          "body": "A clean cap pulls together jeans and a tee in seconds.",
+          "pick": 1
+        },
+        {
+          "title": "A case that says something",
+          "body": "Your phone is the accessory you carry most; let it match your style.",
+          "pick": 2
+        },
+        {
+          "title": "Socks that show",
+          "body": "With cropped trousers or trainers, a little colour at the ankle goes a long way."
+        },
+        {
+          "title": "Keep it to one statement",
+          "body": "Pick the one piece you want noticed and keep the rest simple."
+        }
+      ],
+      "cta": {
+        "label": "Shop accessories",
+        "to": "/search?cat=Accessories"
       }
     },
     {
@@ -269,8 +352,9 @@
     {
       "slug": "why-we-print-on-demand",
       "niche": "fashion",
+      "category": "Apparel",
       "kicker": "From the Shelby team",
-      "title": "Why every Shelby sweatshirt is printed after you order it",
+      "title": "Why every Shelby tee and sweatshirt is printed after you order it",
       "dek": "No warehouse full of unsold stock. Just the one you picked, made for you.",
       "sections": [
         {
@@ -278,21 +362,84 @@
         },
         {
           "h": "Made when you order",
-          "p": "When you order, a print partner prints your sweatshirt and ships it straight to you. It takes a few extra days, and nothing is wasted.",
-          "product": "Joyful Script Sweatshirt"
+          "p": "When you order, a print partner prints your piece and ships it straight to you. It takes a few extra days, and nothing is wasted.",
+          "pick": 0
         },
         {
           "h": "Every size, without guessing",
-          "p": "Because nothing is made in advance, we can offer sizes from S to 5XL without leftover stock."
+          "p": "Because nothing is made in advance, we can offer a full size range without leftover stock.",
+          "pick": 1
         },
         {
           "h": "Our promise",
-          "p": "If the size isn't right, exchange it free within 30 days."
+          "p": "If something arrives faulty or misprinted, we'll replace it."
         }
       ],
       "cta": {
-        "label": "See the sweatshirt",
-        "to": "/offer/joyful-script-sweatshirt"
+        "label": "Shop apparel",
+        "to": "/search?cat=Apparel"
+      }
+    },
+    {
+      "slug": "printed-for-your-home",
+      "niche": "home",
+      "category": "Home",
+      "kicker": "From the Shelby team",
+      "title": "Printed for your home, made when you order",
+      "dek": "Mugs, prints and soft furnishings, each one made for the person who ordered it.",
+      "sections": [
+        {
+          "p": "Home pieces are personal, so we don't stack them in a warehouse. Each one is printed when it's ordered."
+        },
+        {
+          "h": "Made by print partners near you",
+          "p": "Orders go to a print partner close to the delivery address where possible, which keeps shipping times reasonable.",
+          "pick": 0
+        },
+        {
+          "h": "Designed to be used",
+          "p": "Everything here is meant for everyday use, not just display. Care instructions are on each product page.",
+          "pick": 1
+        },
+        {
+          "h": "Our promise",
+          "p": "If something arrives damaged or misprinted, we'll replace it."
+        }
+      ],
+      "cta": {
+        "label": "Shop home",
+        "to": "/search?cat=Home"
+      }
+    },
+    {
+      "slug": "small-things-made-to-order",
+      "niche": "fashion",
+      "category": "Accessories",
+      "kicker": "From the Shelby team",
+      "title": "Small things, made to order",
+      "dek": "Totes, caps and cases printed just for you, not pulled from a pile.",
+      "sections": [
+        {
+          "p": "Accessories are where a design really gets carried around, so we print each one when it's ordered."
+        },
+        {
+          "h": "Printed on demand",
+          "p": "Nothing is made in bulk, so a new design can arrive in the store the day it's ready.",
+          "pick": 0
+        },
+        {
+          "h": "Built for daily use",
+          "p": "Every product page lists materials and care, so you know what you're getting.",
+          "pick": 1
+        },
+        {
+          "h": "Our promise",
+          "p": "If something arrives faulty or misprinted, we'll replace it."
+        }
+      ],
+      "cta": {
+        "label": "Shop accessories",
+        "to": "/search?cat=Accessories"
       }
     },
     {

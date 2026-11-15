@@ -6,6 +6,7 @@ import React, { useEffect } from 'react';
 import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '@/components/Header';
+import { PageIn } from '@/components/Motion';
 import { PageNotFound } from '@/components/PageBlocks';
 import { ProductGrid } from '@/components/ProductCard';
 import { Button } from '@/components/ui';
@@ -37,6 +38,7 @@ export default function Match() {
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header back title="Your match" />
+      <PageIn>
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
         <View style={{ margin: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.buy, borderWidth: 1, borderColor: C.buyEdge }}>
           <Text style={[T.tiny, { color: C.ink }]}>YOUR MATCH</Text>
@@ -67,6 +69,7 @@ export default function Match() {
           <Button title="Retake the quiz" kind="ghost" onPress={() => { track('quiz_retake', {}); router.replace({ pathname: '/quiz', params: { from: 'result' } }); }} />
         </View>
       </ScrollView>
+      </PageIn>
     </SafeAreaView>
   );
 }

@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '@/components/Header';
+import { PageIn } from '@/components/Motion';
 import { Disclaimer, Guarantee, PageNotFound, ProductRow, StickyCTA } from '@/components/PageBlocks';
 import { track } from '@/lib/analytics';
 import { money } from '@/lib/data';
@@ -39,6 +40,7 @@ export default function Offer() {
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header back title={o.kicker} />
+      <PageIn>
       <ScrollView contentContainerStyle={{ paddingBottom: 140 }}>
         {!!hero && <Image source={{ uri: hero }} style={{ width, height: Math.min(width, 520) * 0.8, backgroundColor: C.photo }} resizeMode="cover" accessibilityIgnoresInvertColors />}
         <View style={{ padding: S.lg }}>
@@ -84,6 +86,7 @@ export default function Offer() {
           <Disclaimer text={disclaimerFor(o.niche)} />
         </View>
       </ScrollView>
+      </PageIn>
       {ready.length > 0 ? <StickyCTA label={`Add the set · ${money(total)}`} onPress={addSet} note={sized.length ? 'Then pick your size' : 'Free returns within 30 days'} />
         : sized.length > 0 && <StickyCTA label={sized.length === 1 ? 'Choose your size' : 'Choose sizes'} icon="resize-outline" onPress={() => { track('offer_choose_size', { slug: o.slug }); router.push(`/product/${sized[0].id}`); }} />}
     </SafeAreaView>

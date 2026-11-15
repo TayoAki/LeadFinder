@@ -58,14 +58,14 @@ export default function RootLayout() {
         <WebAppBanner />
         <ScreenTracker />
         <RetentionLoops />
-        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: C.bg } }}>
+        <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: C.bg }, animation: 'ios_from_right', animationDuration: 280 }}>
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="share" options={{ presentation: 'modal' }} />
           <Stack.Screen name="auth" options={{ presentation: 'modal' }} />
           <Stack.Screen name="notify" options={{ presentation: 'modal' }} />
-          <Stack.Screen name="onboarding" options={{ presentation: 'fullScreenModal' }} />
+          <Stack.Screen name="onboarding" options={{ presentation: 'fullScreenModal', animation: 'fade' }} />
           <Stack.Screen name="ask" options={{ presentation: 'modal' }} />
-          <Stack.Screen name="quiz" options={{ presentation: 'fullScreenModal' }} />
+          <Stack.Screen name="quiz" options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
           <Stack.Screen name="watch" options={{ presentation: 'fullScreenModal', contentStyle: { backgroundColor: '#000' } }} />
         </Stack>
       </FeedbackProvider>

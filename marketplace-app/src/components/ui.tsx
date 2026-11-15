@@ -1,4 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
+import { Pop } from './Motion';
 import React, { useEffect, useState } from 'react';
 import { ActivityIndicator, Pressable, StyleProp, StyleSheet, Text, View, ViewStyle } from 'react-native';
 import { C, R, S, T } from '@/lib/theme';
@@ -34,7 +35,7 @@ export function IconButton({ name, onPress, label, color = C.ink, badge, size = 
     <Pressable onPress={tapped('icon', label, onPress)} accessibilityRole="button" accessibilityLabel={label} hitSlop={8}
       style={({ pressed }) => [styles.iconBtn, bg ? { backgroundColor: bg } : null, { opacity: pressed ? 0.6 : 1 }]}>
       <Ionicons name={name} size={size} color={color} />
-      {!!badge && <View style={styles.badge}><Text style={styles.badgeText}>{badge > 9 ? '9+' : badge}</Text></View>}
+      {!!badge && <Pop k={badge} style={styles.badge}><Text style={styles.badgeText}>{badge > 9 ? '9+' : badge}</Text></Pop>}
     </Pressable>
   );
 }

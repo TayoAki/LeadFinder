@@ -6,6 +6,7 @@ import { compact, money, Product } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R } from '@/lib/theme';
 import { Pill, Price, Stars } from './ui';
+import { Rise } from './Motion';
 
 // onPress replaces the default "open the product" tap, e.g. onboarding, where a tap saves the pick
 // instead of leaving the flow.
@@ -46,7 +47,7 @@ export function ProductGrid({ items, width }: { items: Product[]; width: number 
   const w = (width - 16 * 2 - 12) / 2;
   return (
     <View style={{ flexDirection: 'row', flexWrap: 'wrap', paddingHorizontal: 16, gap: 12, rowGap: 20 }}>
-      {items.map(p => <ProductCard key={p.id} p={p} width={w} />)}
+      {items.map((p, i) => <Rise key={p.id} index={i}><ProductCard p={p} width={w} /></Rise>)}
     </View>
   );
 }

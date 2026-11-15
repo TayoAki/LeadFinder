@@ -107,7 +107,7 @@ export default function Home() {
 
         {/* Sets and guides: the offer, listicle and story pages (src/data/pages.json) */}
         {guides.length > 0 && <>
-          <SectionHeader title="Sets and guides" sub="Routines, edits and how-tos from the Shelby team" />
+          <SectionHeader title="Sets and guides" sub="Routines, edits and how-tos from the Shelby team" action="Blog" onAction={() => router.push('/blog')} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.sm }}>
             {guides.map(g => (
               <Pressable key={g.href} onPress={() => { track('home_page_card', { page_type: g.type, slug: g.slug }); router.push(g.href as any); }} accessibilityRole="link" accessibilityLabel={`${g.kicker}: ${g.title}`}
