@@ -6,7 +6,7 @@ import type { Product } from './data';
 
 export type Niche = 'fashion' | 'beauty' | 'supplements' | 'home' | 'outdoors';
 const BY_CATEGORY: Record<string, Niche> = {
-  Women: 'fashion', Men: 'fashion', Shoes: 'fashion', Bags: 'fashion', Jewelry: 'fashion', Accessories: 'fashion',
+  Apparel: 'fashion', Women: 'fashion', Men: 'fashion', Shoes: 'fashion', Bags: 'fashion', Jewelry: 'fashion', Accessories: 'fashion',
   Beauty: 'beauty', Skincare: 'beauty', Supplements: 'supplements', Wellness: 'supplements', Home: 'home', Outdoors: 'outdoors',
 };
 export const nicheOf = (p: Product): Niche => BY_CATEGORY[p.category] ?? 'home';

@@ -30,11 +30,11 @@ export function applyCatalog(remote: { shops: Shop[]; products: Product[] }, fix
   categories.splice(1, categories.length - 1, ...ORDER.filter(c => present.includes(c)), ...present.filter(c => !ORDER.includes(c)));
   return true;
 }
-const ORDER = ['Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Beauty', 'Skincare', 'Supplements', 'Wellness', 'Home', 'Outdoors'];
+const ORDER = ['Apparel', 'Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Beauty', 'Skincare', 'Supplements', 'Wellness', 'Home', 'Outdoors'];
 export const categories = ['All', 'Home', 'Beauty', 'Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Outdoors'];
 export const categoryIcon: Record<string, string> = {
   All: 'apps', Home: 'home', Beauty: 'sparkles', Women: 'woman', Men: 'man', Shoes: 'footsteps',
-  Bags: 'bag-handle', Jewelry: 'diamond', Accessories: 'glasses', Outdoors: 'trail-sign', Skincare: 'water', Supplements: 'leaf', Wellness: 'leaf',
+  Bags: 'bag-handle', Jewelry: 'diamond', Accessories: 'glasses', Outdoors: 'trail-sign', Apparel: 'shirt', Skincare: 'water', Supplements: 'leaf', Wellness: 'leaf',
 };
 
 export const getProduct = (id: string) => products.find(p => p.id === id)!;

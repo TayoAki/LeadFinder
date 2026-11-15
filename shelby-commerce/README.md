@@ -75,6 +75,28 @@ In the app:
 - **Web:** checkout opens Stripe's Payment Element (`src/components/CardPayment.web.tsx`).
 - **iOS and Android:** checkout opens Stripe's PaymentSheet (`CardPayment.tsx`, using `@stripe/stripe-react-native`; Apple Pay merchant `merchant.com.hireshelby.app`).
 
+## Supplier: Printify (print on demand)
+
+Printify products are sold under one supplier seller, **Shelby Studio**, and printed and shipped by Printify.
+
+- **Publishing:** in Printify, open the "Medusa" API store (shop `29759065`) and click **Publish** on a product. Printify sends `product:publish:started` to `<api>/hooks/printify`; the product (with one offer per enabled variant, Printify's prices and mockups) is created or updated in Mercur, and Printify is told it succeeded. Deleting or unpublishing removes it.
+- **Orders:** when an order group is placed, the Printify items are sent as a Printify order (`external_id` = the Mercur order id) by `src/subscribers/printify-order.ts`, depending on `PRINTIFY_ORDERS`:
+  - `off` (default): nothing is sent; the order is marked `metadata.printify.skipped`.
+  - `create`: the order is created in Printify; the store's approval setting decides when it is produced (keep it on **Manual** in Printify while testing).
+  - `production`: created and sent to production at once (Printify charges the account).
+  Test orders (an `@example.com` email) are never sent.
+- **Tracking:** `order:updated`, `order:sent-to-production`, `order:shipment:created` and `order:shipment:delivered` write the status and tracking links to `metadata.printify` on the Mercur order.
+- **Setup and re-sync:** `curl -X POST <api>/hooks/printify/sync -H "x-printify-secret: $PRINTIFY_WEBHOOK_SECRET"` registers the webhooks and imports every published product (add `?recreate=1` to rebuild them).
+
+| Variable (`commerce`) | |
+|---|---|
+| `PRINTIFY_API_TOKEN` | Printify → My Profile → Connections (personal access token) |
+| `PRINTIFY_SHOP_ID` | `29759065` (the "Medusa" API store) |
+| `PRINTIFY_WEBHOOK_SECRET` | any random string (`openssl rand -hex 20`); signs Printify's webhooks |
+| `PRINTIFY_ORDERS` | `off` / `create` / `production` |
+| `PRINTIFY_FLAT_SHIPPING` | shipping shoppers pay for Studio items (default 6.99; Printify quoted 9.19 for a sweatshirt) |
+| `PRINTIFY_BASE_URL` | only for Printful Enterprise: `https://enterprise.printful.com/api/pfy/public/v1` |
+
 ## Next steps
 
 - **Referral credit:** move Shelby's referral credit and first-order discount to Medusa promotions. The Mercur checkout doesn't apply them yet.
