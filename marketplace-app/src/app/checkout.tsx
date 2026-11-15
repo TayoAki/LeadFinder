@@ -12,12 +12,17 @@ import { applyCatalog, getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
-import { commerce, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
+import { commerce, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout, primeCheckout } from '@/lib/commerce';
 import { CardPayment } from '@/components/CardPayment';
 import { haptic } from '@/lib/feedback';
 
 export default function Checkout() {
-  const { groups, user, credit, referredBy, placeOrder, cart, remove } = useStore();
+  const { groups, user, credit, referredBy, placeOrder, cart, remove, address: savedAddress } = useStore();
+  // Saved address when we have one (sample address until address entry is wired to Mercur customers).
+  const addr = savedAddress ?? { name: user?.name ?? '', address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' };
+  const lines = cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }));
+  // Opening checkout does the slow work (address, each shop's shipping, payment collection) now.
+  useEffect(() => { if (commerce() && cart.length) primeCheckout(lines, addr).catch(() => {}); }, [JSON.stringify(cart)]); // eslint-disable-line react-hooks/exhaustive-deps
   const [pay, setPay] = useState<'apple' | 'card'>('apple');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -51,8 +56,10 @@ export default function Checkout() {
   };
   const fail = async (e: any) => {
     haptic('error');
-    if (/sufficient stock|out of stock|inventory/i.test(String(e?.message)) && await soldOut().catch(() => false)) {
-      setError('Sorry, something in your cart just sold out, so we removed it. Check your total and pay again.');
+    if (/sufficient stock|out of stock|inventory/i.test(String(e?.message))) {
+      const removed = await soldOut().catch(() => false);
+      setError(removed ? 'Sorry, something in your cart just sold out, so we removed it. Check your total and pay again.'
+        : "One of your items has fewer left than we showed. Try a smaller quantity, or remove it and pay again.");
       setPrepared(null); setLoading(false); return;
     }
     track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) });
@@ -71,9 +78,8 @@ export default function Checkout() {
     setLoading(true); setError('');
     track('checkout_submit', { total: Math.round(total * 100) / 100, guest: !user });
     try {
-      const lines = cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }));
       if (commerce()) {
-        const p = await prepareCheckout(lines, { email: user?.email ?? email, name: user?.name ?? '' }, { address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' });
+        const p = await prepareCheckout(lines, { email: user?.email ?? email, name: user?.name ?? '' }, addr);
         if (p.clientSecret) { track('payment_sheet_open', { total: p.total }); setPrepared(p); return; } // CardPayment takes over
         return finish(p);
       }
@@ -109,7 +115,15 @@ export default function Checkout() {
           {pay === 'apple' && !stripeOn && !user && <Text style={[T.small, { marginTop: 6 }]}>Apple Pay fills this in for you.</Text>}
         </Card>
 
-        {stripeOn ? (
+        {mercur && !stripeOn ? (
+          <Card>
+            <Text style={T.h3}>Payment</Text>
+            <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: S.md }}>
+              <Ionicons name="flask-outline" size={20} color={C.warn} />
+              <Text style={[T.small, { flex: 1 }]}>Test mode: your order is placed but no card is charged. Card and Apple Pay switch on when the store connects Stripe.</Text>
+            </View>
+          </Card>
+        ) : stripeOn ? (
           <Card>
             <Text style={T.h3}>Payment</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: S.md }}>
@@ -153,9 +167,9 @@ export default function Checkout() {
         {!!referral && <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>Friend's invite</Text><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>−{money(referral)}</Text></View>}
         {!!userCredit && <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>Your credit</Text><Text style={{ color: C.good, fontSize: 13, fontWeight: '700' }}>−{money(Math.min(userCredit, items + shipping - referral))}</Text></View>}
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 6 }}><Text style={T.h3}>Total</Text><Text style={{ fontSize: 20, fontWeight: '900' }}>{money(total)}</Text></View>
-        <Button title={stripeOn ? `Continue to payment · ${money(total)}` : pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={!stripeOn && pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={!stripeOn && pay === 'apple' ? 'primary' : 'accent'}
+        <Button title={stripeOn ? `Continue to payment · ${money(total)}` : mercur ? `Place order · ${money(total)}` : pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={!stripeOn && !mercur && pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={!stripeOn && !mercur && pay === 'apple' ? 'primary' : 'buy'}
           style={{ marginTop: S.md }} onPress={place} loading={loading} disabled={!guestOk} testID="place-order" />
-        {!!error && <Text style={{ textAlign: 'center', color: C.accent, fontWeight: '700', fontSize: 13, marginTop: 6 }} accessibilityRole="alert">{error}</Text>}
+        {!!error && <Text style={{ textAlign: 'center', color: C.sale, fontWeight: '700', fontSize: 13, marginTop: 6 }} accessibilityRole="alert">{error}</Text>}
         {!guestOk && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>Add an email for your receipt to continue</Text>}
       </SafeAreaView>
     </SafeAreaView>

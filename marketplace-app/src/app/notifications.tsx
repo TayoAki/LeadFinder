@@ -26,7 +26,7 @@ export default function Notifications() {
           <Pressable key={n.title} onPress={() => router.push(n.to as any)} style={{ flexDirection: 'row', gap: 12, padding: S.md, borderRadius: R.lg, backgroundColor: n.fresh ? C.surface : 'transparent', borderWidth: 1, borderColor: n.fresh ? C.line : 'transparent' }}>
             <View style={{ width: 40, height: 40, borderRadius: 20, backgroundColor: C.accentSoft, alignItems: 'center', justifyContent: 'center' }}><Ionicons name={n.icon as any} size={20} color={C.accent} /></View>
             <View style={{ flex: 1 }}><Text style={{ fontWeight: '700', color: C.ink }}>{n.title}</Text><Text style={T.small}>{n.sub}</Text></View>
-            {n.fresh && <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: C.accent, marginTop: 6 }} />}
+            {n.fresh && <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: C.sale, marginTop: 6 }} />}
           </Pressable>
         ))}
         <Text style={[T.h3, { marginTop: S.xl }]}>What we ping you about</Text>

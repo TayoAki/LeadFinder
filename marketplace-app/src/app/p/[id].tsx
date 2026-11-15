@@ -5,8 +5,8 @@ import { useStore } from '@/lib/store';
 import { track } from '@/lib/analytics';
 
 export default function ProductLink() {
-  const { id, ref } = useLocalSearchParams<{ id: string; ref?: string }>();
+  const { id, ref, c } = useLocalSearchParams<{ id: string; ref?: string; c?: string }>();
   const { setReferredBy } = useStore();
   useEffect(() => { track('deep_link', { kind: 'p', id, ref: ref ?? '' }); if (ref) setReferredBy(ref); }, [ref]);
-  return <Redirect href={`/product/${id}`} />;
+  return <Redirect href={c ? { pathname: '/product/[id]', params: { id, c } } : `/product/${id}`} />;
 }

@@ -213,6 +213,26 @@ Score each criterion 0–4 against the evidence described, multiply by its weigh
 | R12 | 3 | 6.0 | Full event pipeline, a funnel, retention and per-shopper timelines, Umami, and a simulator. No holdouts or experiment log yet. |
 | **Total** | | **44 / 100** | **Under 50, so rebuild the flow.** Biggest gaps by weighted points: checkout speed (R8), niche PDP proof (R4), retention (R10), order value (R9), honesty (R11). |
 
+### Score after the revamp (2026-11-15, same rules)
+
+Level 4 needs a concluded experiment on each criterion, so the most an app can score before any test finishes is **75 / 100**. The revamp moved every criterion it could; the ones still below 3 are below because the evidence says so, not because the work was skipped.
+
+| # | Before | After | Weighted | Evidence |
+|---|---|---|---|---|
+| R1 | 2 | 2 | 4.0 | No Home flash; onboarding first; relaunch opens Home in ~0.2 s from the cached catalogue. But a first visit is still 5.0 s p95 under 10 concurrent shoppers (simulation), against a 2 s target. |
+| R2 | 2 | 3 | 4.5 | Campaign landing banners (`?c=`, `src/data/campaigns.json`) repeat the ad's promise; first-touch attribution on every event; E16 wired. |
+| R3 | 2 | 2 | 3.0 | Synonyms, one-letter typos, filler words, "In my size", zero-result tracking, Ask fallback. No niche filters yet (goal for supplements, skin type for beauty). |
+| R4 | 1 | 2 | 6.0 | Niche proof blocks, details table, supplement disclaimer, size guide, real reviews only (verified buyers flagged). Most products have no seller-entered details or reviews yet, so pages are honest but thin. |
+| R5 | 2 | 3 | 7.5 | Savings line, delivery window, niche guarantee and secure checkout sit in the buy box. Missing: subscribe & save price. **Check the 30-day exchange/guarantee lines match the store's real policy before launch.** |
+| R6 | 2 | 3 | 4.5 | Saved size pre-selected (E3), sold-out sizes struck through and announced, inline prompt. |
+| R7 | 3 | 3 | 4.5 | Persistent cart mirrored to a live server cart, threshold progress, "unlock free shipping" picks, PDP bundle. Not yet synced across devices. |
+| R8 | 2 | 2 | 6.0 | Guest checkout, 1 screen, live cart, plain-language stock errors with recovery, no surprise fees. Pay → confirmed is 5.5 s p50 / 14.1 s p95 under load, and Apple/Google Pay wait on the Stripe keys. |
+| R9 | 1 | 2 | 4.0 | Bundles per niche (E7), unlock-shipping suggestions. No subscribe & save; threshold not yet calibrated to AOV. |
+| R10 | 1 | 3 | 7.5 | Push ask after the first order (holdout 5%), replenishment reminders per pack size, back-in-stock alerts, one-tap reorder, review requests. No membership. |
+| R11 | 1 | 3 | 6.0 | Fabricated ticker and counters removed; counts come from real events and only show at ≥ 3; real reviews; accurate stock; honest order status. |
+| R12 | 3 | 3 | 6.0 | Variant assignment, exposure events, `exp_*` on every event, funnel break-down by variant, two permanent holdouts, experiment log. No test concluded yet. |
+| **Total** | **44** | | **63.5 / 100** | **Fix-the-weak-dimensions band.** Next points: R8 speed and wallets (+3), R4 content (+3), R1 first-visit speed (+2), R9 subscribe & save (+2), R3 niche filters (+1.5). Then each concluded experiment lifts its criterion to 4. |
+
 Phases 1–3 above target, in order, the dimensions that lose the most points. Doing all of Phase 1 and Phase 2 should move the app into the 65–75 range, by rubric math, before any experiment wins.
 
 ---

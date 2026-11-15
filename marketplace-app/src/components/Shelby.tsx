@@ -57,7 +57,7 @@ export function Shelby({ size = 120, mood = 'idle', label }: { size?: number; mo
       </Animated.View>
       {/* the AI sparkle */}
       <Animated.View style={{ position: 'absolute', top: s * 0.02, right: s * 0.02, transform: [{ rotate: spin.interpolate({ inputRange: [0, 1], outputRange: ['0deg', '360deg'] }) }] }}>
-        <Ionicons name="sparkles" size={s * 0.26} color={C.accent} />
+        <Ionicons name="sparkles" size={s * 0.26} color={C.spark} />
       </Animated.View>
     </View>
   );

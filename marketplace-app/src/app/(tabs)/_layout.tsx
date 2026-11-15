@@ -19,7 +19,7 @@ export default function TabLayout() {
       <Tabs.Screen name="index" options={{ title: 'Home', tabBarIcon: icon('home', 'home-outline') }} />
       <Tabs.Screen name="search" options={{ title: 'Search', tabBarIcon: icon('search', 'search-outline') }} />
       <Tabs.Screen name="drops" options={{ title: 'Drops', tabBarIcon: icon('flash', 'flash-outline'), tabBarActiveTintColor: C.accent }} />
-      <Tabs.Screen name="cart" options={{ title: 'Cart', tabBarIcon: icon('bag', 'bag-outline'), tabBarBadge: cartCount || undefined, tabBarBadgeStyle: { backgroundColor: C.accent } }} />
+      <Tabs.Screen name="cart" options={{ title: 'Cart', tabBarIcon: icon('bag', 'bag-outline'), tabBarBadge: cartCount || undefined, tabBarBadgeStyle: { backgroundColor: C.sale } }} />
       <Tabs.Screen name="profile" options={{ title: 'You', tabBarIcon: icon('person-circle', 'person-circle-outline') }} />
     </Tabs>
   );

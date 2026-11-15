@@ -8,8 +8,9 @@ import { Pill, useCountdown } from '@/components/ui';
 import { compact, drops, getProduct, getShop } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { useDropCounts } from '@/lib/proof';
 
-function DropCard({ d }: { d: (typeof drops)[number] }) {
+function DropCard({ d, counts }: { d: (typeof drops)[number]; counts: Record<string, number> }) {
   const { reminders, toggleReminder, notif } = useStore();
   const cd = useCountdown(d.at);
   const on = reminders.includes(d.id);
@@ -37,20 +38,21 @@ function DropCard({ d }: { d: (typeof drops)[number] }) {
             <Ionicons name="paper-plane-outline" size={18} color={C.ink} />
           </Pressable>
         </View>
-        <Text style={[T.tiny, { marginTop: 8 }]}>{compact(d.reminders + (on ? 1 : 0))} people have a reminder set</Text>
+        {(counts[d.id] ?? 0) >= 3 && <Text style={[T.tiny, { marginTop: 8 }]}>{compact(counts[d.id])} people have a reminder set</Text>}
       </View>
     </View>
   );
 }
 
 export default function Drops() {
+  const counts = useDropCounts();
   const [waitlisted, setWaitlisted] = useState(false);
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header title="Drops" />
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
         <Text style={[T.body, { color: C.ink2, paddingHorizontal: S.lg, marginBottom: S.lg }]}>Limited runs from indie makers. Set a reminder and we'll ping you the minute it opens.</Text>
-        {drops.map(d => <DropCard key={d.id} d={d} />)}
+        {drops.map(d => <DropCard key={d.id} d={d} counts={counts} />)}
         {/* Live shopping teaser: builds the audience before phase 2 ships */}
         <View style={{ marginHorizontal: S.lg, padding: S.xl, borderRadius: R.lg, backgroundColor: C.dark }}>
           <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>

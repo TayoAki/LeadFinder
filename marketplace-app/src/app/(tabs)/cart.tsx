@@ -11,10 +11,12 @@ import { BRAND } from '@/lib/brand';
 import { getProduct, money, products } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { unlockShipping } from '@/lib/upsell';
+import { track } from '@/lib/analytics';
 
 export default function Cart() {
   const { width } = useWindowDimensions();
-  const { cart, groups, setQty, remove, user, credit, referredBy } = useStore();
+  const { cart, groups, setQty, remove, user, credit, referredBy, add } = useStore();
   const items = groups.reduce((n, g) => n + g.subtotal, 0);
   const shipping = groups.reduce((n, g) => n + g.shipping, 0);
   const pendingCredit = (user ? credit : 0) + (referredBy ? BRAND.referralReward : 0);
@@ -60,6 +62,18 @@ export default function Cart() {
               <View style={{ height: 6, backgroundColor: 'rgba(0,0,0,0.08)', borderRadius: 3, marginTop: 6 }}>
                 <View style={{ height: 6, borderRadius: 3, width: `${Math.min(100, (g.subtotal / g.shop.freeOver) * 100)}%`, backgroundColor: g.toFree ? C.warn : C.good }} />
               </View>
+              {g.toFree > 0 && unlockShipping(g.shop.id, g.toFree, g.lines.map(l => l.productId)).length > 0 && (
+                <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ gap: 8, marginTop: 8 }}>
+                  {unlockShipping(g.shop.id, g.toFree, g.lines.map(l => l.productId)).map(x => (
+                    <Pressable key={x.id} onPress={() => { track('upsell_add', { source: 'unlock_shipping', product_id: x.id }); add(x, null, 1, { toast: 'Added · free shipping unlocked' }); }} accessibilityRole="button" accessibilityLabel={`Add ${x.title}, ${money(x.price)}`}
+                      style={{ flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: C.surface, borderRadius: R.md, padding: 6, paddingRight: 10, borderWidth: 1, borderColor: C.line }}>
+                      <Image source={{ uri: x.image }} style={{ width: 36, height: 36, borderRadius: 8, backgroundColor: C.photo }} />
+                      <View><Text numberOfLines={1} style={{ fontSize: 12, fontWeight: '700', maxWidth: 120 }}>{x.title}</Text><Text style={{ fontSize: 12, color: C.ink2 }}>+ {money(x.price)}</Text></View>
+                      <Ionicons name="add-circle" size={22} color={C.ink} />
+                    </Pressable>
+                  ))}
+                </ScrollView>
+              )}
             </View>
             {g.lines.map(l => {
               const i = cart.indexOf(l);
@@ -70,7 +84,7 @@ export default function Cart() {
                   <View style={{ flex: 1 }}>
                     <Text numberOfLines={2} style={{ fontWeight: '700', color: C.ink }}>{p.title}</Text>
                     {l.size && <Text style={T.small}>Size {l.size}</Text>}
-                    {p.stock <= 5 && <Text style={{ fontSize: 12, color: C.accent, fontWeight: '700', marginTop: 2 }}>Only {p.stock} left</Text>}
+                    {p.stock <= 5 && <Text style={{ fontSize: 12, color: C.sale, fontWeight: '700', marginTop: 2 }}>Only {p.stock} left</Text>}
                     <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', marginTop: 8 }}>
                       <View style={{ flexDirection: 'row', alignItems: 'center', borderWidth: 1, borderColor: C.line, borderRadius: R.pill }}>
                         <Pressable onPress={() => (l.qty === 1 ? remove(i) : setQty(i, l.qty - 1))} accessibilityLabel="Decrease quantity" style={{ padding: 8 }}><Ionicons name={l.qty === 1 ? 'trash-outline' : 'remove'} size={16} color={C.ink} /></Pressable>
@@ -97,7 +111,7 @@ export default function Cart() {
           <Text style={{ fontWeight: '900', fontSize: 18 }}>{money(total)}</Text>
         </View>
         {pendingCredit > 0 && <Text style={{ color: C.good, fontWeight: '700', fontSize: 12, marginTop: 2 }}>{money(Math.min(pendingCredit, total))} credit applied at checkout</Text>}
-        <Button title="Checkout" kind="accent" icon="lock-closed" style={{ marginTop: S.md }} onPress={() => router.push('/checkout')} />
+        <Button title="Checkout" kind="buy" icon="lock-closed" style={{ marginTop: S.md }} onPress={() => router.push('/checkout')} />
         {!user && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>No account needed. Pay with Apple Pay as a guest.</Text>}
       </View>
     </SafeAreaView>

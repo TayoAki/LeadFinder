@@ -129,3 +129,51 @@ export function report(db, days = 7) {
     recent: db.prepare("SELECT ts, name, source, platform, path, props, substr(anon, 1, 8) anon FROM events ORDER BY id DESC LIMIT 40").all(),
   };
 }
+
+// ---------- real social proof and verified reviews ----------
+// Every number a shopper sees comes from here: counted from real events, never generated.
+export const PROOF_SCHEMA = `
+CREATE TABLE IF NOT EXISTS reviews (
+  id INTEGER PRIMARY KEY AUTOINCREMENT, product_id TEXT NOT NULL, rating INTEGER NOT NULL, text TEXT, name TEXT,
+  order_id TEXT, anon TEXT, verified INTEGER NOT NULL DEFAULT 0, created_at INTEGER NOT NULL
+);
+CREATE INDEX IF NOT EXISTS reviews_product ON reviews(product_id, created_at);
+CREATE UNIQUE INDEX IF NOT EXISTS reviews_once ON reviews(product_id, anon);
+`;
+
+const DAY = 864e5;
+export function productProof(db, productId) {
+  const now = Date.now();
+  const q = (sql, ...a) => db.prepare(sql).get(...a).n;
+  return {
+    addedToday: q("SELECT COUNT(DISTINCT anon) n FROM events WHERE name = 'add_to_cart' AND source = 'app' AND ts > ? AND json_extract(props, '$.product_id') = ?", now - DAY, productId),
+    ordered30: q("SELECT COALESCE(SUM(json_extract(props, '$.qty')), 0) n FROM events WHERE name = 'purchase_item' AND source = 'app' AND ts > ? AND json_extract(props, '$.product_id') = ?", now - 30 * DAY, productId),
+  };
+}
+// People whose latest reminder action for a drop is "on".
+export function dropReminders(db) {
+  const rows = db.prepare(`SELECT json_extract(props, '$.drop_id') drop_id, anon, json_extract(props, '$.on') on_ FROM events
+    WHERE name = 'drop_reminder_toggle' AND source = 'app' ORDER BY ts`).all();
+  const last = new Map(); for (const r of rows) last.set(`${r.drop_id}|${r.anon}`, r);
+  const out = {}; for (const r of last.values()) if (r.on_) out[r.drop_id] = (out[r.drop_id] || 0) + 1;
+  return out;
+}
+export function listReviews(db, productId) {
+  const rows = db.prepare('SELECT rating, text, name, verified, created_at FROM reviews WHERE product_id = ? ORDER BY created_at DESC LIMIT 50').all(productId);
+  const agg = db.prepare('SELECT COUNT(*) n, AVG(rating) avg FROM reviews WHERE product_id = ?').get(productId);
+  return { count: agg.n, average: agg.n ? Math.round(agg.avg * 10) / 10 : null, reviews: rows.map(r => ({ ...r, verified: !!r.verified })) };
+}
+// A review is "verified" when this device placed an order that included the product.
+export function addReview(db, b) {
+  const rating = Math.round(Number(b.rating));
+  if (!(rating >= 1 && rating <= 5)) throw Object.assign(new Error('Pick 1 to 5 stars'), { code: 400 });
+  const productId = String(b.productId || '').slice(0, 80), anon = String(b.anon || '').slice(0, 64), orderId = String(b.orderId || '').slice(0, 80);
+  if (!productId || !anon) throw Object.assign(new Error('Missing product'), { code: 400 });
+  const verified = !!db.prepare("SELECT 1 FROM events WHERE name = 'purchase_item' AND anon = ? AND json_extract(props, '$.product_id') = ? LIMIT 1").get(anon, productId);
+  const text = String(b.text || '').replace(/[\u0000-\u001f]/g, ' ').trim().slice(0, 600);
+  const name = String(b.name || '').replace(/@/g, '').trim().slice(0, 40) || 'Shelby shopper';
+  db.prepare(`INSERT INTO reviews (product_id, rating, text, name, order_id, anon, verified, created_at) VALUES (?,?,?,?,?,?,?,?)
+    ON CONFLICT(product_id, anon) DO UPDATE SET rating = excluded.rating, text = excluded.text, name = excluded.name, created_at = excluded.created_at`)
+    .run(productId, rating, text, name, orderId, anon, verified ? 1 : 0, Date.now());
+  return { ok: true, verified };
+}

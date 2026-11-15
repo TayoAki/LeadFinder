@@ -82,7 +82,7 @@ export default function Profile() {
         <View style={{ borderTopWidth: 1, borderBottomWidth: 1, borderColor: C.line }}>
           <Row icon="help-circle-outline" label="Help and buyer protection" onPress={() => router.push('/help')} />
           {user && <Row icon="log-out-outline" label="Log out" onPress={signOut} />}
-          {user && <Row icon="trash-outline" label="Delete account" tone={C.accent} onPress={() => Alert.alert('Delete account?', 'This removes your orders history and personal data.', [{ text: 'Cancel' }, { text: 'Delete', style: 'destructive', onPress: signOut }])} />}
+          {user && <Row icon="trash-outline" label="Delete account" tone={C.sale} onPress={() => Alert.alert('Delete account?', 'This removes your orders history and personal data.', [{ text: 'Cancel' }, { text: 'Delete', style: 'destructive', onPress: signOut }])} />}
         </View>
       </ScrollView>
     </SafeAreaView>

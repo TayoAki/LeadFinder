@@ -79,7 +79,7 @@ async function runUser(browser, i, shopNames) {
     const email = visible('input[aria-label="Email for receipt"]');
     if (await email.waitFor({ timeout: 5000 }).then(() => true).catch(() => false)) await email.fill(`sim${i}@example.com`);
     const t0 = Date.now();
-    await visible('[aria-label^="Pay"], [aria-label^="Continue to payment"]').click();
+    await visible('[aria-label^="Pay"], [aria-label^="Continue to payment"], [aria-label^="Place order"]').click();
     await pg.waitForURL(/order-success/, { timeout: 30000 });
     u.steps.push({ name: 'pay_to_success', ms: Date.now() - t0, ok: true });
     u.outcome = 'ordered';

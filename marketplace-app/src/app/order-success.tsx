@@ -1,6 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Button } from '@/components/ui';
@@ -8,11 +8,18 @@ import { BRAND } from '@/lib/brand';
 import { getProduct, getShop, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
+import { inHoldout } from '@/lib/experiments';
 
 // The highest-intent moment in the app: ask for the share, the invite and the notification here.
 export default function OrderSuccess() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const { orders, notif, following, toggleFollow } = useStore();
+  // Ask for push right after the first order (the moment it's obviously useful), never at launch.
+  useEffect(() => {
+    if (notif !== 'unknown' || inHoldout('holdout_push')) return;
+    const t = setTimeout(() => router.push({ pathname: '/notify', params: { reason: 'order' } }), 1400);
+    return () => clearTimeout(t);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   const o = orders.find(x => x.id === id) ?? orders[0];
   if (!o) return null;
   return (

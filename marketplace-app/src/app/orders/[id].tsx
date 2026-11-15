@@ -14,7 +14,7 @@ const steps: OrderStatus[] = ['Paid', 'Shipped', 'Out for delivery', 'Delivered'
 
 export default function OrderDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { orders } = useStore();
+  const { orders, reorder } = useStore();
   const o = orders.find(x => x.id === id);
   if (!o) return <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}><Header title="Order" back /><Text style={{ padding: S.lg }}>Order not found.</Text></SafeAreaView>;
   return (
@@ -49,12 +49,15 @@ export default function OrderDetail() {
                   <Pressable key={l.productId + l.size} onPress={() => router.push(`/product/${p.id}`)} style={{ flexDirection: 'row', gap: 12, marginTop: S.md }}>
                     <Image source={{ uri: p.image }} style={{ width: 56, height: 56, borderRadius: 10 }} />
                     <View style={{ flex: 1 }}><Text style={{ fontWeight: '600' }} numberOfLines={1}>{p.title}</Text><Text style={T.small}>{l.size ? `Size ${l.size} · ` : ''}Qty {l.qty}</Text></View>
-                    <Text style={{ fontWeight: '700' }}>{money(p.price * l.qty)}</Text>
+                    <View style={{ alignItems: 'flex-end', gap: 4 }}>
+                      <Text style={{ fontWeight: '700' }}>{money(p.price * l.qty)}</Text>
+                      <Pressable onPress={() => router.push({ pathname: '/review', params: { productId: p.id, orderId: o.id } })} accessibilityRole="button" hitSlop={8}><Text style={{ color: C.accent, fontWeight: '700', fontSize: 13 }}>Review</Text></Pressable>
+                    </View>
                   </Pressable>
                 );
               })}
               <View style={{ flexDirection: 'row', gap: 8, marginTop: S.lg }}>
-                <Button title={so.status === 'Delivered' ? 'Write a review' : 'Track'} kind="light" style={{ flex: 1, height: 42 }} onPress={() => {}} />
+                <Button title="Buy again" kind="buy" icon="repeat" style={{ flex: 1, height: 42 }} onPress={() => reorder({ ...o, sellerOrders: [so] })} />
                 <Button title="Get help" kind="ghost" style={{ flex: 1, height: 42 }} onPress={() => router.push('/help')} />
               </View>
             </Card>

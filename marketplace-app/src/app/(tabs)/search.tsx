@@ -8,6 +8,8 @@ import { Chip, Stars } from '@/components/ui';
 import { categories, compact, products, shops } from '@/lib/data';
 import { C, R, S, T } from '@/lib/theme';
 import { track } from '@/lib/analytics';
+import { matches, queryWords } from '@/lib/search';
+import { useStore } from '@/lib/store';
 
 const sorts = ['Popular', 'Newest', 'Price: low', 'Price: high', 'Top rated'] as const;
 const prices = [{ label: 'Any price', max: Infinity }, { label: 'Under $25', max: 25 }, { label: 'Under $50', max: 50 }, { label: 'Under $100', max: 100 }];
@@ -22,19 +24,22 @@ export default function Search() {
   const [onSale, setOnSale] = useState(false);
   const [showFilters, setShowFilters] = useState(false);
 
+  const { sizes: savedSizes } = useStore();
+  const [mySize, setMySize] = useState(false);
+  const hasSaved = !!(savedSizes.clothing || savedSizes.shoes);
+  // In stock in the shopper's saved size (items without sizes always qualify).
+  const inMySize = (p: (typeof products)[number]) => !p.sizes.length || [savedSizes.clothing, savedSizes.shoes].some(sz => sz && p.sizes.includes(sz) && (p.sizeStock?.[sz] ?? 1) > 0);
   const results = useMemo(() => {
-    // Ignore filler words so natural phrases ("gift for dad", "a mug for my mum") still match.
-    const STOP = new Set(['a', 'an', 'the', 'for', 'my', 'to', 'of', 'and', 'with', 'in', 'on', 'gift', 'gifts', 'present', 'ideas', 'idea', 'something', 'some', 'under', 'dad', 'mum', 'mom', 'him', 'her']);
-    const words = q.toLowerCase().split(/\s+/).filter(w => w && !STOP.has(w) && !/^\$?\d+$/.test(w));
+    const words = queryWords(q); // filler words, plurals, synonyms and one-letter typos handled
     let r = products.filter(p => (cat === 'All' || p.category === cat) && p.price <= prices[price].max && (!onSale || p.compareAt)
-      && words.every(w => `${p.title} ${p.category} ${p.description} ${shops.find(s => s.id === p.shopId)!.name}`.toLowerCase().includes(w)));
+      && matches(p, words) && (!mySize || inMySize(p)));
     const by = { Popular: (a: any, b: any) => b.sold - a.sold, Newest: (a: any, b: any) => Number(b.id) - Number(a.id), 'Price: low': (a: any, b: any) => a.price - b.price, 'Price: high': (a: any, b: any) => b.price - a.price, 'Top rated': (a: any, b: any) => b.rating - a.rating }[sort];
     return [...r].sort(by).sort((x, y) => Number(y.stock > 0) - Number(x.stock > 0)); // sold out last
-  }, [q, cat, sort, price, onSale]);
+  }, [q, cat, sort, price, onSale, mySize]);
   // One search event once the shopper pauses typing or changes a filter.
   useEffect(() => {
     if (!q.trim() && cat === 'All' && !price && !onSale && sort === 'Popular') return;
-    const t = setTimeout(() => track('search', { query: q.trim().slice(0, 80), category: cat, sort, max_price: prices[price].max, on_sale: onSale, results: results.length }), 900);
+    const t = setTimeout(() => track(results.length ? 'search' : 'search_zero', { query: q.trim().slice(0, 80), category: cat, sort, max_price: prices[price].max, on_sale: onSale, results: results.length }), 900);
     return () => clearTimeout(t);
   }, [q, cat, sort, price, onSale]); // eslint-disable-line react-hooks/exhaustive-deps
   const shopHits = q ? shops.filter(s => s.name.toLowerCase().includes(q.toLowerCase()) || s.category.toLowerCase().includes(q.toLowerCase())) : [];
@@ -50,11 +55,12 @@ export default function Search() {
         </View>
         <Pressable onPress={() => setShowFilters(v => !v)} accessibilityRole="button" accessibilityLabel="Filters" style={{ width: 46, height: 46, borderRadius: 23, backgroundColor: showFilters || filterCount ? C.ink : C.surface, borderWidth: 1, borderColor: C.line, alignItems: 'center', justifyContent: 'center' }}>
           <Ionicons name="options" size={20} color={showFilters || filterCount ? '#fff' : C.ink} />
-          {!!filterCount && <View style={{ position: 'absolute', top: -2, right: -2, width: 18, height: 18, borderRadius: 9, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center' }}><Text style={{ color: '#fff', fontSize: 10, fontWeight: '900' }}>{filterCount}</Text></View>}
+          {!!filterCount && <View style={{ position: 'absolute', top: -2, right: -2, width: 18, height: 18, borderRadius: 9, backgroundColor: C.sale, alignItems: 'center', justifyContent: 'center' }}><Text style={{ color: '#fff', fontSize: 10, fontWeight: '900' }}>{filterCount}</Text></View>}
         </Pressable>
       </View>
 
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 8, alignItems: 'center' }} style={{ flexGrow: 0, flexShrink: 0, minHeight: 44 }}>
+        {hasSaved && <Chip label="In my size" icon="resize-outline" active={mySize} onPress={() => setMySize(v => !v)} />}
         {categories.map(c => <Chip key={c} label={c} active={cat === c} onPress={() => setCat(c)} />)}
       </ScrollView>
 

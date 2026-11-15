@@ -61,8 +61,8 @@ export function CardPayment({ clientSecret, publishableKey, amount, onPaid, onCa
             <Pressable onPress={onCancel} accessibilityRole="button" accessibilityLabel="Cancel payment"><Text style={{ color: C.ink2, fontWeight: '700' }}>Cancel</Text></Pressable>
           </View>
           <View nativeID={MOUNT_ID} style={{ minHeight: 220 }} />
-          {!!message && <Text style={{ color: C.accent, fontWeight: '700' }}>{message}</Text>}
-          <Button title={paying ? 'Paying…' : `Pay ${money(amount)}`} kind="accent" icon="lock-closed" disabled={!ready} loading={paying} onPress={pay} testID="stripe-pay" />
+          {!!message && <Text style={{ color: C.sale, fontWeight: '700' }}>{message}</Text>}
+          <Button title={paying ? 'Paying…' : `Pay ${money(amount)}`} kind="buy" icon="lock-closed" disabled={!ready} loading={paying} onPress={pay} testID="stripe-pay" />
           <Text style={[T.small, { textAlign: 'center' }]}>Secured by Stripe. Each shop is paid when it ships.</Text>
         </View>
       </View>

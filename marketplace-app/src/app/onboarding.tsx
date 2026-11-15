@@ -76,9 +76,9 @@ export default function Onboarding() {
     track('onboarding_complete', { goal: goal ?? 'none', budget: budget ?? 0, categories: ask.categories.join(','), saved, price_watch: watch ?? 'not_asked', shops: shopCount });
     st.setGoal(goal); st.setBudget(budget); st.setInterests(ask.categories); st.setOnboarded(true);
     if (watch === 'yes') st.setNotif('granted');
-    router.back();
+    router.replace('/');
   };
-  const browse = () => { track('onboarding_skip', { at: step }); st.setOnboarded(true); router.back(); };
+  const browse = () => { track('onboarding_skip', { at: step }); st.setOnboarded(true); router.replace('/'); };
   const mood: Mood = step === 'picks' ? (saved ? 'happy' : 'idle') : step === 'welcome' ? 'wave' : 'idle';
   const w = (width - S.lg * 2 - 12) / 2;
 
@@ -107,7 +107,7 @@ export default function Onboarding() {
           </View>
         </ScrollView>
         <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: S.lg, backgroundColor: C.bg }}>
-          <Button title="Let's find something" kind="accent" onPress={() => setStep('goal')} testID="ob-start" />
+          <Button title="Let's find something" kind="primary" onPress={() => setStep('goal')} testID="ob-start" />
           <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 8 }}>{BRAND.name} is free. You only pay for what you buy.</Text>
         </View>
       </SafeAreaView>
@@ -186,10 +186,10 @@ export default function Onboarding() {
       </ScrollView>
 
       <View style={{ position: 'absolute', left: 0, right: 0, bottom: 0, padding: S.lg, backgroundColor: C.bg, borderTopWidth: 1, borderTopColor: C.line }}>
-        {step === 'goal' && <Button title="Continue" kind="accent" disabled={!goal} onPress={() => setStep('details')} testID="ob-next" />}
-        {step === 'details' && <Button title="Show my picks" kind="accent" disabled={goal === 'find' && !text.trim()} onPress={() => setStep('picks')} testID="ob-next" />}
+        {step === 'goal' && <Button title="Continue" kind="primary" disabled={!goal} onPress={() => setStep('details')} testID="ob-next" />}
+        {step === 'details' && <Button title="Show my picks" kind="primary" disabled={goal === 'find' && !text.trim()} onPress={() => setStep('picks')} testID="ob-next" />}
         {step === 'picks' && <>
-          <Button title={saved ? 'See my feed' : 'Save one to continue'} kind="accent" disabled={!saved} onPress={finish} testID="ob-finish" />
+          <Button title={saved ? 'See my feed' : 'Save one to continue'} kind="primary" disabled={!saved} onPress={finish} testID="ob-finish" />
           <Pressable onPress={finish}><Text style={{ textAlign: 'center', color: C.ink2, fontWeight: '600', marginTop: 10 }}>Skip, go to my feed</Text></Pressable>
         </>}
       </View>

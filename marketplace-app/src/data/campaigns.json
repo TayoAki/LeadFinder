@@ -1,0 +1,6 @@
+{
+  "_readme": "Campaign landing copy, keyed by the c= code in creator/ad links (https://<app>/p/<product id>?c=<code>&ref=<creator>). Keep each hook word-for-word what the ad or video says.",
+  "summer-linen": { "hook": "The linen dress everyone asked about", "from": "From the video" },
+  "desk-reset": { "hook": "The 5-minute desk reset", "from": "From the video" },
+  "gift-guide": { "hook": "Gifts under $40 that don't look it", "from": "From our gift guide" }
+}

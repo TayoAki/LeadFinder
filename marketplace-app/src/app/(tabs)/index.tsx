@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { router, useLocalSearchParams } from 'expo-router';
+import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useMemo, useState } from 'react';
 import { Image, Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -7,30 +7,30 @@ import { Header } from '@/components/Header';
 import { ProductGrid } from '@/components/ProductCard';
 import { Chip, IconButton, Pill, SectionHeader, useCountdown } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
-import { categories, categoryIcon, compact, drops, getProduct, getShop, money, products, recentBuys, shops } from '@/lib/data';
+import { categories, categoryIcon, compact, drops, getProduct, getShop, money, products, shops } from '@/lib/data';
 import { Shelby } from '@/components/Shelby';
 import { ProductCard } from '@/components/ProductCard';
 import { pick } from '@/lib/shelby';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { shopVideos } from '@/lib/videos';
+import { useDropCounts } from '@/lib/proof';
 
 export default function Home() {
   const { width } = useWindowDimensions();
   const { onboarded, interests, following, reminders, toggleReminder, referredBy, setReferredBy, notif, goal, budget } = useStore();
   const { ref } = useLocalSearchParams<{ ref?: string }>();
-  const shown = React.useRef(false);
   // First launch opens Shelby's welcome (its first screen already shows real products, and "Just browse" is one tap).
   // People arriving from a friend's link skip it and land on what was shared.
-  useEffect(() => { if (!onboarded && !referredBy && !ref && !shown.current) { shown.current = true; const t = setTimeout(() => router.push('/onboarding'), 300); return () => clearTimeout(t); } }, [onboarded, referredBy, ref]);
+  // New shoppers go straight to onboarding before Home ever paints (no flash); shared links skip it.
+  const firstRun = !onboarded && !referredBy && !ref;
+  const dropCounts = useDropCounts();
   const shelbyPicks = useMemo(() => pick({ categories: interests, maxPrice: budget ?? undefined, goal: goal ?? undefined }, 8), [interests, budget, goal]);
   const videos = useMemo(() => shopVideos(), []);
   useEffect(() => { if (ref) setReferredBy(ref); }, [ref]);
   const remind = (id: string) => { if (!reminders.includes(id) && notif === 'unknown') router.push({ pathname: '/notify', params: { reason: 'drop' } }); toggleReminder(id); };
   const [cat, setCat] = useState('All');
-  const [tick, setTick] = useState(0);
 
-  useEffect(() => { const t = setInterval(() => setTick(n => n + 1), 3500); return () => clearInterval(t); }, []);
 
   const feed = useMemo(() => {
     const pool = cat !== 'All' ? products.filter(p => p.category === cat) : interests.length ? products.filter(p => interests.includes(p.category)) : products;
@@ -39,8 +39,8 @@ export default function Home() {
   const fromFollowed = products.filter(p => following.includes(p.shopId)).slice(0, 6);
   const drop = drops[0];
   const cd = useCountdown(drop?.at ?? 0);
-  const buy = recentBuys[tick % Math.max(1, recentBuys.length)];
 
+  if (firstRun) return <Redirect href="/onboarding" />;
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
       <Header logo right={<IconButton name="notifications-outline" label="Notifications" onPress={() => router.push('/notifications')} badge={2} />} />
@@ -94,7 +94,7 @@ export default function Home() {
               <Ionicons name={reminders.includes(drop.id) ? 'checkmark' : 'notifications'} size={16} color="#fff" />
               <Text style={{ color: '#fff', fontWeight: '800' }}>{reminders.includes(drop.id) ? "You'll get a ping" : 'Remind me'}</Text>
             </Pressable>
-            <Text style={{ color: '#CFC7BC', fontSize: 11, marginTop: 8 }}>{compact(drop.reminders + (reminders.includes(drop.id) ? 1 : 0))} people waiting</Text>
+            {(dropCounts[drop.id] ?? 0) >= 3 && <Text style={{ color: '#CFC7BC', fontSize: 11, marginTop: 8 }}>{compact(dropCounts[drop.id])} people waiting</Text>}
           </View>
         </Pressable>}
 
@@ -135,11 +135,6 @@ export default function Home() {
           {categories.map(c => <Chip key={c} label={c} icon={categoryIcon[c] as any} active={cat === c} onPress={() => setCat(c)} />)}
         </ScrollView>
 
-        {/* Live social proof ticker */}
-        {buy && <View style={{ marginHorizontal: S.lg, marginTop: S.lg, flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: C.surface, borderRadius: R.pill, borderWidth: 1, borderColor: C.line, paddingHorizontal: 12, paddingVertical: 8 }} accessibilityLiveRegion="polite">
-          <View style={{ width: 8, height: 8, borderRadius: 4, backgroundColor: C.good }} />
-          <Text numberOfLines={1} style={{ fontSize: 12, color: C.ink2, flex: 1 }}><Text style={{ fontWeight: '800', color: C.ink }}>{buy.who}</Text> bought {getProduct(buy.productId).title} · {buy.mins} min ago</Text>
-        </View>}
 
         <SectionHeader title={cat === 'All' ? (interests.length ? 'Picked for you' : 'Trending now') : cat} sub={cat === 'All' && interests.length ? `Because you like ${interests.slice(0, 2).join(' and ')}` : 'What people are buying this week'} action="See all" onAction={() => router.push('/search')} />
         <ProductGrid items={feed} width={width} />

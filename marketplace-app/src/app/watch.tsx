@@ -19,7 +19,7 @@ function RailButton({ icon, label, onPress, active }: { icon: React.ComponentPro
   return (
     <Pressable onPress={() => { haptic('tap'); onPress(); }} accessibilityRole="button" accessibilityLabel={label} hitSlop={6} style={{ alignItems: 'center', gap: 4, minWidth: 48, minHeight: 48 }}>
       <View style={{ width: 46, height: 46, borderRadius: 23, backgroundColor: 'rgba(0,0,0,0.35)', alignItems: 'center', justifyContent: 'center' }}>
-        <Ionicons name={icon} size={24} color={active ? C.accent : '#fff'} />
+        <Ionicons name={icon} size={24} color={active ? C.sale : '#fff'} />
       </View>
       <Text style={{ color: '#fff', fontSize: 11, fontWeight: '700', textShadowColor: 'rgba(0,0,0,0.6)', textShadowRadius: 4, textShadowOffset: { width: 0, height: 1 } }}>{label}</Text>
     </Pressable>
@@ -68,12 +68,12 @@ function Clip({ v, active, height, muted, onToggleMute, onShop }: { v: ShopVideo
         </View>
         <Pressable onPress={() => { haptic('tap'); track('video_shop_open', { video_id: v.id, product_id: v.product.id }); onShop(); }} accessibilityRole="button" accessibilityLabel={`Shop ${v.product.title}, ${money(v.product.price)}`}
           style={{ flexDirection: 'row', alignItems: 'center', gap: 10, backgroundColor: 'rgba(255,255,255,0.96)', borderRadius: R.lg, padding: 8, paddingRight: 12 }}>
-          <Image source={{ uri: v.product.image }} style={{ width: 48, height: 48, borderRadius: 10, backgroundColor: '#F1ECE4' }} />
+          <Image source={{ uri: v.product.image }} style={{ width: 48, height: 48, borderRadius: 10, backgroundColor: C.photo }} />
           <View style={{ flex: 1 }}>
             <Text numberOfLines={1} style={{ fontWeight: '700', color: C.ink }}>{v.product.title}</Text>
             <Text style={{ fontWeight: '800', color: C.ink }}>{money(v.product.price)}{v.product.compareAt ? <Text style={{ color: C.ink3, textDecorationLine: 'line-through', fontWeight: '600' }}>  {money(v.product.compareAt)}</Text> : null}</Text>
           </View>
-          <View style={{ backgroundColor: C.accent, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 }}><Text style={{ color: '#fff', fontWeight: '800' }}>Shop</Text></View>
+          <View style={{ backgroundColor: C.buy, borderRadius: 999, paddingHorizontal: 14, paddingVertical: 8 }}><Text style={{ color: C.buyInk, fontWeight: '800' }}>Shop</Text></View>
         </Pressable>
       </View>
     </View>
@@ -99,7 +99,7 @@ function ShopSheet({ v, onClose }: { v: ShopVideo | null; onClose: () => void })
       <View style={{ backgroundColor: C.surface, borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: S.lg, paddingBottom: insets.bottom + S.lg, gap: S.md }}>
         <View style={{ alignSelf: 'center', width: 40, height: 5, borderRadius: 3, backgroundColor: C.line }} />
         <View style={{ flexDirection: 'row', gap: S.md }}>
-          <Image source={{ uri: p.image }} style={{ width: 88, height: 88, borderRadius: R.md, backgroundColor: '#F1ECE4' }} />
+          <Image source={{ uri: p.image }} style={{ width: 88, height: 88, borderRadius: R.md, backgroundColor: C.photo }} />
           <View style={{ flex: 1 }}>
             <Text style={[T.small, { fontWeight: '700' }]}>{shop.name}</Text>
             <Text style={T.h3} numberOfLines={2}>{p.title}</Text>
@@ -108,7 +108,7 @@ function ShopSheet({ v, onClose }: { v: ShopVideo | null; onClose: () => void })
         </View>
         {!!p.sizes.length && (
           <View>
-            <Text style={[T.small, { color: needSize ? C.accent : C.ink2, fontWeight: '700' }]}>{needSize ? 'Pick a size first' : 'Size'}</Text>
+            <Text style={[T.small, { color: needSize ? C.sale : C.ink2, fontWeight: '700' }]}>{needSize ? 'Pick a size first' : 'Size'}</Text>
             <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 8, marginTop: 8 }}>
               {p.sizes.map(s => <Chip key={s} label={s} active={size === s} onPress={() => { setSize(s); setNeedSize(false); }} />)}
             </View>
@@ -117,7 +117,7 @@ function ShopSheet({ v, onClose }: { v: ShopVideo | null; onClose: () => void })
         <Text style={T.small}>{p.stock > 0 ? `Ships in ${shop.shipsIn} from ${shop.name}` : 'Sold out'}</Text>
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button title="Details" kind="light" style={{ flex: 1 }} onPress={() => { onClose(); router.push(`/product/${p.id}`); }} />
-          <Button title={`Add · ${money(p.price)}`} kind="accent" icon="bag-add" style={{ flex: 1.4 }} onPress={addIt} disabled={p.stock === 0} testID="video-add" />
+          <Button title={`Add · ${money(p.price)}`} kind="buy" icon="bag-add" style={{ flex: 1.4 }} onPress={addIt} disabled={p.stock === 0} testID="video-add" />
         </View>
       </View>
     </Modal>
@@ -160,7 +160,7 @@ export default function Watch() {
         <Pressable onPress={() => { haptic('tap'); router.push('/cart'); }} accessibilityRole="button" accessibilityLabel={`Cart, ${cartCount} items`} hitSlop={8}
           style={{ width: 44, height: 44, borderRadius: 22, backgroundColor: 'rgba(0,0,0,0.35)', alignItems: 'center', justifyContent: 'center' }}>
           <Ionicons name="bag-outline" size={22} color="#fff" />
-          {!!cartCount && <View style={{ position: 'absolute', top: 4, right: 4, minWidth: 16, height: 16, borderRadius: 8, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center' }}><Text style={{ color: '#fff', fontSize: 10, fontWeight: '800' }}>{cartCount}</Text></View>}
+          {!!cartCount && <View style={{ position: 'absolute', top: 4, right: 4, minWidth: 16, height: 16, borderRadius: 8, backgroundColor: C.sale, alignItems: 'center', justifyContent: 'center' }}><Text style={{ color: '#fff', fontSize: 10, fontWeight: '800' }}>{cartCount}</Text></View>}
         </Pressable>
       </View>
       <ShopSheet v={shopping} onClose={() => setShopping(null)} />

@@ -9,7 +9,7 @@ import { extname, resolve, normalize, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
-import { EVENTS_SCHEMA, ingest, report } from './analytics.mjs';
+import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
 import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -20,6 +20,7 @@ const SETUP_CODE = process.env.ADMIN_SETUP_CODE || ''; // entering it at sign-up
 const PROD = process.env.NODE_ENV === 'production';
 const db = getDb();
 db.exec(EVENTS_SCHEMA);
+db.exec(PROOF_SCHEMA);
 
 const TYPES = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.css': 'text/css; charset=utf-8', '.json': 'application/json',
   '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.ttf': 'font/ttf', '.woff2': 'font/woff2', '.map': 'application/json', '.mp4': 'video/mp4', '.webm': 'video/webm' };
@@ -195,6 +196,11 @@ const routes = {
     return r;
   },
   'POST /api/events': ({ body, req }) => ingest(db, req, body),
+  // Real social proof and verified reviews (no generated numbers anywhere in the app).
+  'GET /api/proof/product/:id': ({ params }) => productProof(db, params.id),
+  'GET /api/proof/drops': () => dropReminders(db),
+  'GET /api/reviews/:id': ({ params }) => listReviews(db, params.id),
+  'POST /api/reviews': ({ body }) => { try { return addReview(db, body); } catch (e) { fail(e.code || 400, e.message); } },
 
   'POST /api/auth/signup': ({ body, res }) => {
     const email = str(body.email, 200).toLowerCase(); const pw = typeof body.password === 'string' ? body.password : '';

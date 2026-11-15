@@ -12,11 +12,11 @@ const tapped = (ui: string, label: string, fn?: () => void) => () => { haptic(ui
 export type IconName = React.ComponentProps<typeof Ionicons>['name'];
 
 export function Button({ title, onPress, kind = 'primary', icon, style, disabled, loading, testID }: {
-  title: string; onPress?: () => void; kind?: 'primary' | 'accent' | 'ghost' | 'light'; icon?: IconName;
+  title: string; onPress?: () => void; kind?: 'primary' | 'accent' | 'buy' | 'ghost' | 'light'; icon?: IconName;
   style?: StyleProp<ViewStyle>; disabled?: boolean; loading?: boolean; testID?: string;
 }) {
-  const bg = { primary: C.ink, accent: C.accent, ghost: 'transparent', light: C.surface }[kind];
-  const fg = kind === 'ghost' || kind === 'light' ? C.ink : '#fff';
+  const bg = { primary: C.ink, accent: C.accent, buy: C.buy, ghost: 'transparent', light: C.surface }[kind];
+  const fg = kind === 'ghost' || kind === 'light' ? C.ink : kind === 'buy' ? C.buyInk : '#fff';
   return (
     <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} onPress={tapped('button', title, onPress)} disabled={disabled || loading}
       style={({ pressed }) => [styles.btn, { backgroundColor: bg, opacity: disabled ? 0.4 : pressed ? 0.85 : 1, transform: [{ scale: pressed ? 0.98 : 1 }] },
@@ -39,12 +39,12 @@ export function IconButton({ name, onPress, label, color = C.ink, badge, size = 
   );
 }
 
-export function Chip({ label, active, onPress, icon }: { label: string; active?: boolean; onPress?: () => void; icon?: IconName }) {
+export function Chip({ label, active, onPress, icon, disabled }: { label: string; active?: boolean; onPress?: () => void; icon?: IconName; disabled?: boolean }) {
   return (
-    <Pressable onPress={tapped('chip', label, onPress)} accessibilityRole="button" accessibilityLabel={label} accessibilityState={{ selected: !!active }}
-      style={[styles.chip, active && { backgroundColor: C.ink, borderColor: C.ink }]}>
+    <Pressable onPress={tapped('chip', label, onPress)} disabled={disabled} accessibilityRole="button" accessibilityLabel={disabled ? `${label}, sold out` : label} accessibilityState={{ selected: !!active, disabled: !!disabled }}
+      style={[styles.chip, active && { backgroundColor: C.ink, borderColor: C.ink }, disabled && { opacity: 0.4 }]}>
       {icon && <Ionicons name={icon} size={14} color={active ? '#fff' : C.ink} />}
-      <Text style={[styles.chipText, active && { color: '#fff' }]}>{label}</Text>
+      <Text style={[styles.chipText, active && { color: '#fff' }, disabled && { textDecorationLine: 'line-through' }]}>{label}</Text>
     </Pressable>
   );
 }
@@ -63,7 +63,7 @@ export function Stars({ value, size = 12, count }: { value: number; size?: numbe
 export function Price({ price, compareAt, size = 15 }: { price: number; compareAt?: number | null; size?: number }) {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6 }}>
-      <Text style={{ fontSize: size, fontWeight: '800', color: compareAt ? C.accent : C.ink }}>{money(price)}</Text>
+      <Text style={{ fontSize: size, fontWeight: '800', color: compareAt ? C.sale : C.ink }}>{money(price)}</Text>
       {!!compareAt && <Text style={{ fontSize: size - 3, color: C.ink3, textDecorationLine: 'line-through' }}>{money(compareAt)}</Text>}
     </View>
   );
@@ -81,8 +81,8 @@ export function SectionHeader({ title, action, onAction, sub }: { title: string;
   );
 }
 
-export function Pill({ text, tone = 'accent', icon }: { text: string; tone?: 'accent' | 'good' | 'warn' | 'dark'; icon?: IconName }) {
-  const map = { accent: [C.accentSoft, C.accent], good: [C.goodSoft, C.good], warn: [C.warnSoft, C.warn], dark: ['rgba(0,0,0,0.72)', '#fff'] }[tone];
+export function Pill({ text, tone = 'accent', icon }: { text: string; tone?: 'accent' | 'sale' | 'good' | 'warn' | 'dark'; icon?: IconName }) {
+  const map = { accent: [C.accentSoft, C.accent], sale: [C.saleSoft, C.sale], good: [C.goodSoft, C.good], warn: [C.warnSoft, C.warn], dark: ['rgba(0,0,0,0.72)', '#fff'] }[tone];
   return (
     <View style={[styles.pill, { backgroundColor: map[0] }]}>
       {icon && <Ionicons name={icon} size={11} color={map[1]} />}
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
   btn: { height: 52, borderRadius: R.pill, paddingHorizontal: S.xl, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
   btnText: { fontSize: 16, fontWeight: '800' },
   iconBtn: { width: 40, height: 40, borderRadius: 20, alignItems: 'center', justifyContent: 'center' },
-  badge: { position: 'absolute', top: 2, right: 0, minWidth: 18, height: 18, borderRadius: 9, backgroundColor: C.accent, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4, borderWidth: 2, borderColor: C.bg },
+  badge: { position: 'absolute', top: 2, right: 0, minWidth: 18, height: 18, borderRadius: 9, backgroundColor: C.sale, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 4, borderWidth: 2, borderColor: C.bg },
   badgeText: { color: '#fff', fontSize: 10, fontWeight: '800' },
   chip: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingHorizontal: 14, height: 36, borderRadius: R.pill, borderWidth: 1, borderColor: C.line, backgroundColor: C.surface },
   chipText: { fontSize: 14, fontWeight: '600', color: C.ink },

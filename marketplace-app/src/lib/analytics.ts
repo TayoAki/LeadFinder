@@ -37,6 +37,10 @@ export function setAttribution(a: Attribution) {
   attribution = clean; store.set('shelby_attr', JSON.stringify(clean));
 }
 
+// Extra props attached to every event (experiment assignments register here).
+let globalProps: () => Props = () => ({});
+export const setGlobalProps = (fn: () => Props) => { globalProps = fn; };
+
 let path = '/';
 let queue: Event[] = [];
 let timer: ReturnType<typeof setTimeout> | null = null;
@@ -66,7 +70,7 @@ export function track(name: string, props: Props = {}) {
   touch();
   const { width, height } = Dimensions.get('window');
   const e: Event = {
-    name, props: Object.fromEntries(Object.entries({ ...attribution, ...props }).filter(([, v]) => v !== undefined && v !== null)) as Props,
+    name, props: Object.fromEntries(Object.entries({ ...attribution, ...globalProps(), ...props }).filter(([, v]) => v !== undefined && v !== null)) as Props,
     ts: Date.now(), anon, session, platform: Platform.OS, path, source: 'app',
     screen: `${Math.round(width)}x${Math.round(height)}`, language: web ? navigator.language : undefined,
     title: web ? document.title : undefined,
