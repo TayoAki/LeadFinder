@@ -8,5 +8,26 @@
     "audience": "Online shoppers who want deals and buying advice without the research",
     "brand_voice": "friendly, helpful, smart"
   },
-  "pages": []
+  "pages": [
+    [
+      "230482187834506",
+      "Rakuten"
+    ],
+    [
+      "294662757260700",
+      "Ibotta"
+    ],
+    [
+      "107599764450384",
+      "Pogo: Earn & Save"
+    ],
+    [
+      "1913891975415966",
+      "Fetch"
+    ],
+    [
+      "390926061079580",
+      "Klarna"
+    ]
+  ]
 }
