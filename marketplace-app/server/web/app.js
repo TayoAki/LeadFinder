@@ -1,4 +1,6 @@
-// Shelby for Sellers: shop owners set up their shop, upload products and ship orders.
+// Growth Hacker: Shelby's analytics admin (funnels, retention, experiments, people).
+// Products, prices, stock and orders live in the Mercur admin; the old seller screens below are
+// no longer routed to.
 // Vanilla JS, hash routes. Everything user-provided goes through esc() before it touches innerHTML.
 const $ = s => document.querySelector(s);
 const main = $('#main');
@@ -62,9 +64,7 @@ async function upload(file) { const { url } = await api('/api/seller/upload', { 
 
 function chrome() {
   const signedIn = !!state.user;
-  $('#nav').hidden = !signedIn || (!state.shop && state.user.role !== 'admin');
-  $('#nav-admin').hidden = state.user?.role !== 'admin';
-  $('#nav-analytics').hidden = state.user?.role !== 'admin';
+  $('#nav').hidden = !signedIn || state.user.role !== 'admin';
   $('#who').innerHTML = signedIn ? `<span class="hide-sm">${esc(state.user.email)}</span><button class="btn sm" id="logout">Log out</button>` : '';
   $('#logout')?.addEventListener('click', async () => { await api('/api/auth/logout', { method: 'POST' }); state.user = null; state.shop = null; location.hash = '#/login'; });
   const page = (location.hash.split('/')[1] || 'dash').split('?')[0];
@@ -76,8 +76,8 @@ function viewAuth(mode) {
   const signup = mode === 'signup';
   main.innerHTML = `<div class="auth card">
     <img src="/seller/mark.png" alt="" height="56" />
-    <h1 style="margin-top:12px">${signup ? 'Open your shop on Shelby' : 'Welcome back'}</h1>
-    <p class="sub">${signup ? 'Sell to people who love small shops. 0% commission for your first 60 days.' : 'Log in to manage your shop.'}</p>
+    <h1 style="margin-top:12px">Growth Hacker</h1>
+    <p class="sub">Log in to see Shelby's analytics, funnels and experiments.</p>
     <form id="f" novalidate>
       ${signup ? '<label for="name">Your name</label><input id="name" autocomplete="name" required />' : ''}
       <label for="email">Email</label><input id="email" type="email" autocomplete="email" required />
@@ -86,14 +86,14 @@ function viewAuth(mode) {
       <div class="err" id="err" role="alert"></div>
       <button class="btn primary" style="width:100%;justify-content:center;margin-top:6px">${signup ? 'Create account' : 'Log in'}</button>
     </form>
-    <p class="help" style="text-align:center;margin-top:16px">${signup ? 'Already selling? <a href="#/login">Log in</a>' : 'New here? <a href="#/signup">Open a shop</a>'}</p>
+    <p class="help" style="text-align:center;margin-top:16px">Need access? Ask an existing admin.</p>
   </div>`;
   $('#f').addEventListener('submit', async e => {
     e.preventDefault(); $('#err').textContent = '';
     try {
       const body = { email: $('#email').value, password: $('#pw').value, ...(signup ? { name: $('#name').value, setupCode: $('#code').value } : {}) };
       const { user } = await api(`/api/auth/${signup ? 'signup' : 'login'}`, { method: 'POST', body });
-      state.user = user; await loadMe(); location.hash = state.shop ? '#/' : '#/shop';
+      state.user = user; await loadMe(); location.hash = '#/analytics';
     } catch (err) { $('#err').textContent = err.message; }
   });
   (signup ? $('#name') : $('#email')).focus();
@@ -491,12 +491,10 @@ async function route() {
   chrome();
   track('screen_view', { page: page || 'home', signed_in: !!state.user });
   try {
-    if (!state.user) return viewAuth(page === 'signup' ? 'signup' : 'login');
-    if (!state.shop && page !== 'admin' && page !== 'analytics') return viewShop();
+    if (!state.user) return viewAuth('login');
+    if (state.user.role !== 'admin') { main.innerHTML = '<div class="card empty"><h2>Admins only</h2><p class="sub">Growth Hacker is for the Shelby team. Products and orders are managed in the Mercur admin.</p></div>'; return; }
     main.innerHTML = '<div class="skeleton"></div>';
-    if (page === 'products' && arg) return await viewEditor(decodeURIComponent(arg));
-    const view = { '': viewDash, products: viewProducts, orders: viewOrders, shop: viewShop, admin: viewAdmin, analytics: viewAnalytics }[page] || viewDash;
-    await view();
+    await viewAnalytics();
   } catch (e) { main.innerHTML = `<div class="card empty">${esc(e.message)}</div>`; }
   main.focus({ preventScroll: true });
 }

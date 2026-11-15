@@ -345,6 +345,8 @@ const server = createServer(async (req, res) => {
       return send(res, 200, await m.fn(ctx));
     }
     if (path.startsWith('/uploads/') && serveFile(res, UPLOAD_DIR, path.slice('/uploads'.length), 'public, max-age=31536000, immutable')) return;
+    // Growth Hacker (analytics admin). /growth is its address; /seller is kept so old links still work.
+    if (path === '/growth' || path.startsWith('/growth/')) { res.writeHead(302, { location: '/seller/' + (url.search || '') }); return res.end(); }
     if (path === '/seller' || path.startsWith('/seller/')) {
       const sub = path.slice('/seller'.length) || '/';
       if (sub !== '/' && serveFile(res, WEB, sub, 'no-cache')) return;

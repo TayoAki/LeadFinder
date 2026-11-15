@@ -74,6 +74,17 @@
     "scheme": "shelby",
     "experiments": {
       "typedRoutes": false
-    }
+    },
+    "extra": {
+      "router": {
+        "asyncRoutes": {
+          "web": true
+        }
+      },
+      "eas": {
+        "projectId": "dc3bc0b9-0e07-4d09-83ef-c8beee205836"
+      }
+    },
+    "owner": "tayom"
   }
 }

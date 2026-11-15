@@ -1,6 +1,6 @@
 :root {
-  --bg: #FAF7F2; --surface: #fff; --ink: #2B0627; --ink2: #5F5260; --ink3: #8E8290; --line: #ECE5DB;
-  --accent: #FD5243; --accent-soft: #FFE7E3; --good: #1E8E5A; --good-soft: #E3F4EB; --warn: #9A6412; --warn-soft: #FDF1DC;
+  --bg: #FAF7F2; --surface: #fff; --ink: #231F1A; --ink2: #5A5148; --ink3: #716759; --line: #ECE5DB;
+  --accent: #BF4F26; --accent-soft: #FDE9DC; --good: #1E8E5A; --good-soft: #E3F4EB; --warn: #9A6412; --warn-soft: #FDF1DC;
   --r: 14px; font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 * { box-sizing: border-box; }
