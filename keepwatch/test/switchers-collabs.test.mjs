@@ -55,3 +55,17 @@ test('collabs: counts only, competitors filtered, survey weighted, pitch uses re
   assert.match(pitch.email.body, /2 of our reviewers also reviewed you/);
   assert.equal(pitch.ideas.length, 5);
 });
+
+test('several quotes from one thread are all kept, and spread-out demand counts', () => {
+  const db = openMemoryDb(); ws1(db);
+  const u = 'https://forum.example.com/t/1';
+  addSignals(1, { company: 'OldShake', signals: [
+    { url: u, quote: 'This new formula is utter garbage', posted_at: '2026-10-01' },
+    { url: u, quote: 'Hopefully they rethink it, I am done with them', posted_at: '2026-10-02' },
+    { url: u, quote: 'Ruined. Never buying again.', posted_at: '2026-10-03' },
+    { url: 'https://reviews.example.com/a', quote: 'I will be switching up from now on to a different brand', posted_at: '2026-10-04' },
+    { url: 'https://reviews.example.com/b', quote: 'Now I will have to find another vegan protein powder', posted_at: '2026-10-05' },
+    { url: 'https://reviews.example.com/c', quote: 'I would rather buy the supermarket one', posted_at: '2026-10-06' } ] }, db);
+  const o = opportunities(1, { now }, db).opportunities[0];
+  assert.equal(o.posts, 6); assert.ok(o.angry >= 3 && o.seeking >= 3); assert.equal(o.verdict, 'switch_demand');
+});

@@ -299,7 +299,7 @@ async function viewSwitchers() {
     <p class="small muted">${esc(d.note)}${d.hidden_political.length ? ` Hidden because the anger is political: ${esc(d.hidden_political.join(', '))}. <a href="#/switchers?political=1">Show</a>` : ''}</p>
     <div style="display:grid;gap:12px">${d.opportunities.length ? d.opportunities.map(o => `<article class="card pad" style="display:grid;gap:10px">
       <div class="row" style="justify-content:space-between;gap:8px;flex-wrap:wrap"><h3 style="margin:0">${esc(o.company)}</h3><span class="pill ${VERDICT_SW[o.verdict]}">${esc(o.label)}</span></div>
-      <p class="small muted" style="margin:0">${o.posts} posts · ${o.switching} angry and asking for an alternative · ${o.sources} sources · ${o.recent_180d} in the last 6 months${o.political ? ' · <b>political</b>' : ''}</p>
+      <p class="small muted" style="margin:0">${o.posts} posts · ${o.angry} angry · ${o.seeking} asking or naming where to go · ${o.switching} both · ${o.sources} sources · ${o.recent_180d} in the last 6 months${o.political ? ' · <b>political</b>' : ''}</p>
       <p class="small" style="margin:0"><b>What they're angry about:</b> ${o.decisions.map(x => `${esc(x.label)} (${x.n})`).join(', ')}</p>
       ${list('What they want instead', o.wants)}
       <div style="display:grid;gap:6px">${o.quotes.map(q => `<blockquote class="small" style="margin:0;padding-left:10px;border-left:3px solid var(--line)">"${esc(q.quote)}" <a href="${esc(q.url)}" target="_blank" rel="noopener noreferrer">${esc(q.source)}${q.engagement ? ` · ${q.engagement}` : ''}${q.posted_at ? ` · ${esc(q.posted_at)}` : ''}</a></blockquote>`).join('')}</div>

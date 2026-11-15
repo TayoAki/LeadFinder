@@ -6,10 +6,11 @@
 // post with its link and a short verbatim quote. We keep the post URL, never the author's personal
 // details. Creators ("voices") are public accounts with an audience, saved separately.
 // Political or culture-war anger is flagged and left out of the ranking unless asked for.
+import { createHash } from 'node:crypto';
 import { getDb } from './db.mjs';
 
 export const ANGER = /\b(furious|pissed|angry|mad at|livid|disgusted|fed up|sick of|done with|hate|boycott\w*|cancell?(ed|ing)? my|unsubscrib\w*|never buying|never again|last straw|ruined|betray\w*|rip-?off|scam\w*|greed\w*|downgrade\w*|enshittif\w*|not worth it anymore|what happened to)\b/i;
-export const ALT = /\b(alternatives?|instead|switch(ing|ed)? to|replacement|what (do|should|can) i (buy|use|get|try)|recommend\w*|anyone (know|tried|using)|moved to|my go-to now|dupes?|similar to|better option|other brands?|where (else|can i))\b/i;
+export const ALT = /\b(alternatives?|instead|switch(ing|ed)?( up)? to|rather buy|dupe|another (brand|vegan|protein)|find (a |another )?new|stopped (buying|purchasing)|leaving|left the|deleted my account|replacement|what (do|should|can) i (buy|use|get|try)|recommend\w*|anyone (know|tried|using)|moved to|my go-to now|dupes?|similar to|better option|other brands?|where (else|can i))\b/i;
 export const DECISIONS = [
   { key: 'political', label: 'Politics or culture war', rx: /politic\w*|woke|maga|trump|biden|democrat|republican|left-?wing|right-?wing|pride month|spokes(person|model)|endorse\w*|campaign donation/i },
   { key: 'price', label: 'Price rise or fees', rx: /price|pricing|cost|expensive|increase|hike|subscription|fee|shrinkflation|smaller (size|bag|box)|paywall/i },
@@ -42,7 +43,10 @@ export function addSignals(wsId, { company, signals = [] } = {}, db = getDb()) {
     const url = https(s.url), quote = clip(s.quote, 500);
     if (!url || quote.length < 8) { skipped++; continue; }
     const c = classify(`${quote} ${s.context || ''}`);
-    ins.run(wsId, name, norm(name), url, quote, clip(s.source, 40) || new URL(url).hostname.replace(/^www\./, ''), day(s.posted_at),
+    // Several quotes can come from one thread: key each by link + quote (the #kw fragment is ignored by browsers).
+    const key = `${url.split('#kw-')[0]}#kw-${createHash('sha1').update(quote).digest('hex').slice(0, 8)}`;
+    db.prepare('DELETE FROM switch_signals WHERE workspace_id = ? AND url = ? AND quote = ?').run(wsId, url.split('#kw-')[0], quote); // rows saved before quote keys
+    ins.run(wsId, name, norm(name), key, quote, clip(s.source, 40) || new URL(url).hostname.replace(/^www\./, ''), day(s.posted_at),
       Math.max(0, Math.round(Number(s.engagement) || 0)), c.anger ? 1 : 0, c.wants_alt ? 1 : 0, c.decision, c.want);
     added++;
   }
@@ -81,11 +85,16 @@ export function opportunities(wsId, { includePolitical = false, now = Date.now()
     const recent = list.filter(r => r.posted_at && now - Date.parse(r.posted_at) <= 180 * DAY).length;
     const sources = new Set(list.map(r => r.source)).size;
     const score = switching.length * 3 + angry.length + sources * 2 + Math.round(5 * recent / list.length) + Math.min(5, Math.log10(1 + list.reduce((n, r) => n + r.engagement, 0)));
-    const verdict = switching.length >= 5 && sources >= 2 && recent >= 3 ? 'switch_demand' : angry.length >= 5 && switching.length < 2 ? 'anger_only' : 'thin';
+    // Switch demand: 5+ posts that are both angry and asking for an alternative, OR the company-level
+    // version of the same thing (3+ angry posts and 3+ posts asking or naming where to go). Either way
+    // from 2+ sources with 3+ in the last 6 months.
+    const seeking = list.filter(r => r.wants_alt);
+    const spread = switching.length >= 5 || (angry.length >= 3 && seeking.length >= 3);
+    const verdict = spread && sources >= 2 && recent >= 3 ? 'switch_demand' : angry.length >= 5 && seeking.length < 2 ? 'anger_only' : 'thin';
     out.push({
       company: list[0].company, key, score: Math.round(score), verdict, political,
       label: { switch_demand: 'People are leaving and asking where to go', anger_only: 'Angry, but not asking for an alternative (yet)', thin: 'Not enough evidence yet' }[verdict],
-      posts: list.length, switching: switching.length, angry: angry.length, sources, recent_180d: recent,
+      posts: list.length, switching: switching.length, angry: angry.length, seeking: seeking.length, sources, recent_180d: recent,
       decisions: top.map(([k, n]) => ({ key: k, label: DECISIONS.find(d => d.key === k)?.label || 'Other', n })),
       wants: [...new Set(list.map(r => r.want).filter(Boolean))].slice(0, 6),
       quotes: (switching.length ? switching : list).slice(0, 5).map(r => ({ quote: r.quote, url: r.url, source: r.source, engagement: r.engagement, posted_at: r.posted_at })),
