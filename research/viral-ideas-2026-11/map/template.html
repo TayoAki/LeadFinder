@@ -37,6 +37,19 @@ main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1
 .stage { position: relative; min-height: 420px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
 #net { width: 100%; height: 100%; display: block; touch-action: none; }
 [hidden] { display: none !important; }
+#affwrap { position: absolute; inset: 0; display: flex; flex-direction: column; background: var(--surface); }
+.affbar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+#aff-seed { font: 600 13px var(--body); padding: 4px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); }
+#aff { flex: 1; min-height: 0; width: 100%; display: block; touch-action: none; }
+.sw { width: 16px; height: 0; border-top: 3px solid; display: inline-block; } .sw.dash { border-top-style: dashed; }
+.ae { fill: none; } .ae.research { stroke: var(--ink); } .ae.together { stroke: var(--collab); } .ae.versus { stroke: var(--muted); stroke-dasharray: 4 3; }
+.ae.ring2 { stroke-opacity: .25; }
+.an circle { cursor: pointer; stroke: var(--surface); stroke-width: 2; }
+.an text { font: 500 11.5px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; pointer-events: none; }
+.an.seed text { font: 800 15px var(--display); }
+.an.r2 text { fill: var(--muted); font-size: 10.5px; }
+.bar-s { height: 6px; border-radius: 3px; background: var(--collab); display: inline-block; vertical-align: middle; }
+.ev { font-size: 10.5px; padding: 1px 6px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); white-space: nowrap; }
 #grid { position: absolute; inset: 0; overflow: auto; padding: 12px; background: var(--surface); }
 .hint { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--muted); pointer-events: none; }
 .zoom { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; gap: 4px; }
@@ -89,6 +102,7 @@ table.m td:hover { outline: 2px solid var(--ink); color: var(--ink); }
 </header>
 <div class="bar">
   <div class="tabs" role="group" aria-label="View">
+    <button id="tab-affinity" aria-pressed="false">Brand affinity</button>
     <button id="tab-network" aria-pressed="true">Network</button>
     <button id="tab-grid" aria-pressed="false">Overlap grid</button>
   </div>
@@ -103,6 +117,17 @@ table.m td:hover { outline: 2px solid var(--ink); color: var(--ink); }
   <div class="stage">
     <svg id="net" role="img" aria-label="Network of cult brands, the things their fans love and the hubs they share"></svg>
     <div id="grid" hidden></div>
+    <div id="affwrap" hidden>
+      <div class="affbar">
+        <label class="small" for="aff-seed">Fans of</label>
+        <select id="aff-seed"></select>
+        <label class="chip"><input type="checkbox" id="A-research" checked><span class="sw" style="border-color:var(--ink)"></span>Research evidence</label>
+        <label class="chip"><input type="checkbox" id="A-together" checked><span class="sw" style="border-color:var(--collab)"></span>Searched together</label>
+        <label class="chip"><input type="checkbox" id="A-versus"><span class="sw dash" style="border-color:var(--muted)"></span>Searched "vs"</label>
+        <label class="chip"><input type="checkbox" id="A-ring2" checked>Second ring</label>
+      </div>
+      <svg id="aff" role="img" aria-label="Brands that fans of the selected brand also love"></svg>
+    </div>
     <div class="zoom" id="zoomctl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit" aria-label="Fit to screen">⤢</button></div>
     <div class="hint" id="hint">Click a node to explore it. Shift-click two brands to compare them. Drag to move, scroll to zoom.</div>
   </div>
@@ -210,6 +235,7 @@ const link = (url, text) => url ? `<a href="${esc(url)}" target="_blank" rel="no
 const row = (n, extra = '') => `<button class="rowlink" data-go="${esc(n.id)}"><span class="dot" style="background:var(${KIND[n.kind][1]})"></span><span>${esc(n.name)}</span><span class="n">${extra}</span></button>`;
 const kindTag = n => `<span class="kind"><span class="dot" style="background:var(${KIND[n.kind][1]})"></span>${KIND[n.kind][0]}</span>`;
 function panel() {
+  if (state.view === 'affinity') return;
   const P = document.getElementById('panel');
   if (state.compare.length > 1) {
     const bs = state.compare.map(id => byId.get(id)), sets = bs.map(b => brandTypes.get(b.id));
@@ -298,18 +324,104 @@ function grid() {
   el.querySelectorAll('[data-go]').forEach(b => b.onclick = () => select(b.dataset.go));
 }
 
+
+// ---------- brand affinity ("fans of A also love B") ----------
+const AFF = /*AFFINITY*/null;
+const EVLABEL = { audience_data: 'shopper data', co_mention: 'fans mention both', list: '"brands like" lists', collab_or_retail: 'collab or stocked together', co_search: 'searched together', versus_search: 'searched "vs"' };
+const affOut = new Map(), affIn = new Map();
+for (const e of AFF.edges) { (affOut.get(e.from) || affOut.set(e.from, []).get(e.from)).push(e); (affIn.get(e.to) || affIn.set(e.to, []).get(e.to)).push(e); }
+const affSeeds = [...affOut.keys()].sort((a, b) => (a === AFF.seed ? -1 : b === AFF.seed ? 1 : a.localeCompare(b)));
+const affState = { seed: AFF.seed, pick: null };
+const seedSel = document.getElementById('aff-seed');
+seedSel.innerHTML = affSeeds.map(s => `<option ${s === AFF.seed ? 'selected' : ''}>${esc(s)}</option>`).join('');
+seedSel.onchange = () => { affState.seed = seedSel.value; affState.pick = null; affDraw(); affPanel(); };
+const aOn = k => document.getElementById(`A-${k}`).checked;
+const edgeKind = e => e.research.length ? 'research' : e.together.length ? 'together' : 'versus';
+const edgeVisible = e => (e.research.length && aOn('research')) || (e.together.length && aOn('together')) || (e.versus.length && aOn('versus'));
+const asvg = d3.select('#aff'), ag = asvg.append('g');
+const azoom = d3.zoom().scaleExtent([0.3, 4]).on('zoom', ev => ag.attr('transform', ev.transform)); asvg.call(azoom).on('dblclick.zoom', null);
+let asim;
+function affDraw() {
+  const box = document.getElementById('aff').getBoundingClientRect(), W = box.width || 800, H = box.height || 560, cx = W / 2, cy = H / 2;
+  const ring1 = (affOut.get(affState.seed) || []).filter(edgeVisible).sort((a, b) => b.score - a.score).slice(0, 30);
+  const r1 = new Set(ring1.map(e => e.to));
+  const ring2 = aOn('ring2') ? ring1.flatMap(e => (affOut.get(e.to) || []).filter(edgeVisible).filter(x => x.to !== affState.seed).sort((a, b) => b.score - a.score).slice(0, 6)) : [];
+  const nodes = new Map([[affState.seed, { id: affState.seed, ring: 0, fx: cx, fy: cy }]]);
+  for (const e of ring1) nodes.set(e.to, { id: e.to, ring: 1, score: e.score });
+  for (const e of ring2) if (!nodes.has(e.to)) nodes.set(e.to, { id: e.to, ring: 2, score: e.score });
+  const links = [...ring1.map(e => ({ e, source: e.from, target: e.to, r2: false })), ...ring2.map(e => ({ e, source: e.from, target: e.to, r2: true }))];
+  ag.selectAll('*').remove();
+  const L = ag.append('g').selectAll('line').data(links).join('line').attr('class', d => `ae ${edgeKind(d.e)}${d.r2 ? ' ring2' : ''}`).attr('stroke-width', d => d.r2 ? 1 : 1 + d.e.score * 0.45);
+  const N = ag.append('g').selectAll('g').data([...nodes.values()]).join('g').attr('class', d => `an ${d.ring === 0 ? 'seed' : d.ring === 2 ? 'r2' : ''}`)
+    .on('click', (ev, d) => { ev.stopPropagation(); affState.pick = d.id; affPanel(); affPaint(); })
+    .on('dblclick', (ev, d) => { if (affOut.has(d.id)) { affState.seed = d.id; seedSel.value = d.id; affState.pick = null; affDraw(); affPanel(); } });
+  const r = d => d.ring === 0 ? 22 : d.ring === 1 ? 7 + d.score * 1.1 : 5;
+  N.append('circle').attr('r', r).attr('fill', d => d.ring === 0 ? css('--brand') : d.ring === 1 ? (affOut.has(d.id) ? css('--brand') : css('--like')) : css('--soft'))
+    .attr('stroke', d => d.ring === 2 ? css('--line') : null);
+  N.append('text').attr('text-anchor', 'middle').attr('dy', d => r(d) + 13).text(d => d.id);
+  N.append('title').text(d => d.ring === 0 ? d.id : `${d.id}${d.score ? ` · strength ${d.score}/10` : ''}${affOut.has(d.id) ? ' · double-click to centre on its fans' : ''}`);
+  const R1 = Math.min(W, H) * 0.3, R2 = Math.min(W, H) * 0.47;
+  asim = d3.forceSimulation([...nodes.values()])
+    .force('link', d3.forceLink(links).id(d => d.id).strength(0.05))
+    .force('radial', d3.forceRadial(d => d.ring === 0 ? 0 : d.ring === 1 ? R1 * (1.25 - (d.score || 0) / 20) : R2, cx, cy).strength(0.9))
+    .force('collide', d3.forceCollide(d => r(d) + 16)).force('charge', d3.forceManyBody().strength(-40))
+    .on('tick', () => { L.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y); N.attr('transform', d => `translate(${d.x},${d.y})`); });
+  affDraw.N = N; affDraw.L = L; affPaint();
+}
+function affPaint() {
+  const p = affState.pick; if (!affDraw.N) return;
+  affDraw.N.classed('dim', d => p && d.id !== p && d.id !== affState.seed && !(affOut.get(p) || []).some(e => e.to === d.id) && !(affIn.get(p) || []).some(e => e.from === d.id));
+  affDraw.L.classed('dim', d => p && d.source.id !== p && d.target.id !== p);
+}
+asvg.on('click', () => { affState.pick = null; affPanel(); affPaint(); });
+function evList(e) {
+  const r = e.research.map(x => `<blockquote class="small">${x.quote ? `"${esc(x.quote)}" ` : ''}${link(x.url, new URL(x.url).hostname.replace(/^www\./, ''))} <span class="ev">${esc(EVLABEL[x.type] || x.type)}</span>${x.seen === 'snippet' ? ' <span class="ev">search preview</span>' : ''}</blockquote>`).join('');
+  const t = e.together.length ? `<p class="small"><span class="ev">searched together</span> ${e.together.slice(0, 4).map(x => `<q>${esc(x)}</q>`).join(', ')}</p>` : '';
+  const v = e.versus.length ? `<p class="small"><span class="ev">searched "vs"</span> ${e.versus.slice(0, 3).map(x => `<q>${esc(x)}</q>`).join(', ')}</p>` : '';
+  return r + t + v;
+}
+function affPanel() {
+  const P = document.getElementById('panel');
+  if (affState.pick && affState.pick !== affState.seed) {
+    const b = affState.pick, e = (affOut.get(affState.seed) || []).find(x => x.to === b) || (affIn.get(b) || [])[0];
+    const back = (affOut.get(b) || []).find(x => x.to === affState.seed);
+    const theirFans = (affOut.get(b) || []).sort((x, y) => y.score - x.score).slice(0, 8);
+    P.innerHTML = `<span class="kind">Brand</span><h2>${esc(b)}</h2>${AFF.nodes.find(n => n.id === b)?.category ? `<p class="small muted">${esc(AFF.nodes.find(n => n.id === b).category)}</p>` : ''}
+      ${e ? `<h3>Why fans of ${esc(e.from)} connect to it · ${e.score}/10</h3>${evList(e)}` : ''}
+      ${back ? `<h3>And the other way: fans of ${esc(b)} → ${esc(affState.seed)}</h3>${evList(back)}` : ''}
+      ${theirFans.length ? `<h3>Fans of ${esc(b)} also love</h3>${theirFans.map(x => `<button class="rowlink" data-aff="${esc(x.to)}"><span>${esc(x.to)}</span><span class="n">${x.score}</span></button>`).join('')}
+        <div class="cmp"><button class="btn primary" data-centre="${esc(b)}">Centre the map on ${esc(b)} fans</button></div>` : '<p class="muted small">No data yet on what this brand’s own fans love.</p>'}`;
+  } else {
+    const list = (affOut.get(affState.seed) || []).filter(edgeVisible).sort((a, b) => b.score - a.score);
+    const max = Math.max(1, ...list.map(e => e.score));
+    P.innerHTML = `<span class="kind">Fans of</span><h2>${esc(affState.seed)}</h2>
+      <p class="muted small">Brands their fans also love, strongest first. Strength (0-10) combines research evidence (shopper data counts most, then fans mentioning both, "brands like" lists, then collabs) with what people search together on Google and YouTube. "Vs" searches mean people compare them, which is shown but switched off by default.</p>
+      <h3>Also love (${list.length})</h3>${list.map(e => `<button class="rowlink" data-aff="${esc(e.to)}"><span>${esc(e.to)}</span><span class="n"><span class="bar-s" style="width:${Math.round(60 * e.score / max)}px"></span> ${e.score} · ${esc(EVLABEL[e.best] || e.best)}</span></button>`).join('') || '<p class="muted small">Nothing with the selected evidence types.</p>'}
+      <p class="muted small" style="margin-top:12px">Click a brand to see the evidence. Double-click a pink brand to centre the map on its fans.</p>`;
+  }
+  P.querySelectorAll('[data-aff]').forEach(x => x.onclick = () => { affState.pick = x.dataset.aff; affPanel(); affPaint(); });
+  P.querySelectorAll('[data-centre]').forEach(x => x.onclick = () => { affState.seed = x.dataset.centre; seedSel.value = affState.seed; affState.pick = null; affDraw(); affPanel(); });
+}
+for (const k of ['research', 'together', 'versus', 'ring2']) document.getElementById(`A-${k}`).addEventListener('change', () => { affDraw(); affPanel(); });
+
 // ---------- view + controls ----------
 function setView(v) {
   state.view = v;
+  document.getElementById('tab-affinity').setAttribute('aria-pressed', String(v === 'affinity'));
+  document.getElementById('affwrap').hidden = v !== 'affinity';
+  document.querySelectorAll('.bar .chip').forEach(c => { c.hidden = v === 'affinity'; }); document.getElementById('q').hidden = v === 'affinity';
+  if (v === 'affinity') { affDraw(); affPanel(); } else if (setView.prev === 'affinity') panel();
+  setView.prev = v;
   document.getElementById('tab-network').setAttribute('aria-pressed', String(v === 'network'));
   document.getElementById('tab-grid').setAttribute('aria-pressed', String(v === 'grid'));
-  document.getElementById('net').hidden = v !== 'network'; document.getElementById('zoomctl').hidden = v !== 'network'; document.getElementById('hint').hidden = v !== 'network';
+  document.getElementById('net').toggleAttribute('hidden', v !== 'network'); // SVG has no .hidden property document.getElementById('zoomctl').hidden = v !== 'network'; document.getElementById('hint').hidden = v !== 'network';
   document.getElementById('grid').hidden = v !== 'grid';
   if (v === 'grid') grid();
   if (location.hash !== `#${v}`) history.replaceState(null, '', `#${v}`);
 }
 document.getElementById('tab-network').onclick = () => setView('network');
 document.getElementById('tab-grid').onclick = () => setView('grid');
+document.getElementById('tab-affinity').onclick = () => setView('affinity');
 for (const k of ['type', 'collab', 'like', 'switch', 'political']) document.getElementById(`L-${k}`).addEventListener('change', () => { draw(); if (state.view === 'grid') grid(); panel(); });
 document.getElementById('q').addEventListener('input', e => {
   const q = e.target.value.trim().toLowerCase(); if (q.length < 2) return;
@@ -317,7 +429,8 @@ document.getElementById('q').addEventListener('input', e => {
   if (hit) { if (!visible(hit) && hit.kind !== 'brand') { document.getElementById(`L-${hit.kind}`).checked = true; draw(); } select(hit.id); }
 });
 window.addEventListener('resize', () => { if (state.view === 'network') { sim?.force('x', d3.forceX(document.getElementById('net').clientWidth / 2).strength(.04)); sim?.alpha(.2).restart(); } });
+const viewFromHash = () => ({ '#grid': 'grid', '#network': 'network' }[location.hash] || 'affinity');
 draw(); panel();
-setView(location.hash === '#grid' ? 'grid' : 'network');
-window.addEventListener('hashchange', () => setView(location.hash === '#grid' ? 'grid' : 'network'));
+setView(viewFromHash());
+window.addEventListener('hashchange', () => setView(viewFromHash()));
 </script>

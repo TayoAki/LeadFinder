@@ -1,0 +1,5810 @@
+{
+ "built": "2026-11-15",
+ "seed": "Liquid Death",
+ "nodes": [
+  {
+   "id": "Alani Nu",
+   "seed": true,
+   "category": "Energy drink / supplements",
+   "political": false,
+   "note": "Young, affluent female energy-drink buyers (TD analysts via Dow Jones) https://itiger.com/news/2514847704",
+   "deg": 30
+  },
+  {
+   "id": "Celsius",
+   "seed": true,
+   "category": "Energy drink",
+   "political": false,
+   "note": "",
+   "deg": 28
+  },
+  {
+   "id": "Bloom",
+   "category": "Energy drink / supplements",
+   "political": false,
+   "note": "",
+   "deg": 8,
+   "seed": false
+  },
+  {
+   "id": "Red Bull",
+   "seed": true,
+   "deg": 28
+  },
+  {
+   "id": "Monster Energy",
+   "seed": true,
+   "category": "Energy drink",
+   "political": false,
+   "note": "",
+   "deg": 23
+  },
+  {
+   "id": "Ghost Energy",
+   "category": "Energy drink",
+   "political": false,
+   "note": "",
+   "deg": 6,
+   "seed": false
+  },
+  {
+   "id": "Target",
+   "category": "Mass retail",
+   "political": false,
+   "note": "",
+   "deg": 10,
+   "seed": false
+  },
+  {
+   "id": "Costco",
+   "category": "Warehouse club retail",
+   "political": false,
+   "note": "",
+   "deg": 8,
+   "seed": false
+  },
+  {
+   "id": "Bang",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "Bubbl'r",
+   "deg": 6,
+   "seed": false
+  },
+  {
+   "id": "C4 Energy",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Liquid IV",
+   "seed": true,
+   "deg": 14
+  },
+  {
+   "id": "Mountain Dew",
+   "deg": 6,
+   "seed": false
+  },
+  {
+   "id": "Coca-Cola",
+   "deg": 8,
+   "seed": false
+  },
+  {
+   "id": "Pepsi",
+   "deg": 7,
+   "seed": false
+  },
+  {
+   "id": "Rockstar",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "Reign",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Prime",
+   "deg": 6,
+   "seed": false
+  },
+  {
+   "id": "Essentia",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Diet Coke",
+   "deg": 6,
+   "seed": false
+  },
+  {
+   "id": "Gatorade",
+   "category": "Sports drink",
+   "political": false,
+   "note": "",
+   "deg": 5,
+   "seed": false
+  },
+  {
+   "id": "Gorgie",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Liquid Death",
+   "seed": true,
+   "category": "Canned water / beverages",
+   "political": false,
+   "note": "Gen Z & millennial, sober-curious, punk/metal-adjacent; CivicScience: 45% buy at c-stores weekly, 66% influenced by social friends https://civicscience.com/brand-to-watch-liquid-death/",
+   "deg": 84
+  },
+  {
+   "id": "Starbucks",
+   "deg": 5,
+   "seed": false
+  },
+  {
+   "id": "High Noon",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "White Claw",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Death Wish Coffee",
+   "seed": true,
+   "deg": 9
+  },
+  {
+   "id": "Black Rifle Coffee",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Whole Foods",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "e.l.f. Cosmetics",
+   "seed": true,
+   "category": "Beauty",
+   "political": false,
+   "note": "Trend-following, budget-conscious, TikTok-heavy shoppers https://www.numerator.com/resources/blog/beauty-trends/",
+   "deg": 14
+  },
+  {
+   "id": "Stanley",
+   "category": "Drinkware",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Chipotle",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Dunkin'",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Rare Beauty",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Feastables",
+   "seed": true,
+   "deg": 8
+  },
+  {
+   "id": "Lunchly",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "MrBeast",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Reese's",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Oreo",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Garage Beer",
+   "seed": true,
+   "deg": 3
+  },
+  {
+   "id": "Michelob Ultra",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Gears of War",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "MaryRuth's",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Goodwipes",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Hey Dude",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "LaCroix",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 5,
+   "seed": false
+  },
+  {
+   "id": "Spindrift",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "Real-fruit seltzer drinkers; Numerator 'early adopters' brand https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+   "deg": 15,
+   "seed": false
+  },
+  {
+   "id": "Zevia",
+   "category": "Zero-sugar soda",
+   "political": false,
+   "note": "",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Poppi",
+   "seed": true,
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": "Younger social-first prebiotic soda drinkers (PepsiCo-owned)",
+   "deg": 29
+  },
+  {
+   "id": "Spotify",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Dr Pepper",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "Yeti",
+   "seed": true,
+   "category": "Outdoor gear / coolers",
+   "political": false,
+   "note": "",
+   "deg": 10
+  },
+  {
+   "id": "Topo Chico",
+   "seed": true,
+   "category": "Mineral water",
+   "political": false,
+   "note": "",
+   "deg": 17
+  },
+  {
+   "id": "Coke Zero",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Sanrio / Kuromi",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Arizona",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Aquafina",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Bubly",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "Evian",
+   "category": "Bottled water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Fiji Water",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Sparkling Ice",
+   "category": "Flavoured sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "DUST",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Mountain Valley",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Olipop",
+   "seed": true,
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": "Soda quitters; Numerator top brand for LGBTQ+ and early-adopter shoppers https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+   "deg": 35
+  },
+  {
+   "id": "San Pellegrino",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Smartwater",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Waterloo",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 5,
+   "seed": false
+  },
+  {
+   "id": "Fruity Pebbles",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "NASCAR",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Pop-Tarts",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Pit Viper",
+   "seed": true,
+   "deg": 4
+  },
+  {
+   "id": "LMNT",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "AG1",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "BodyArmor",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Ryse",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Sprite",
+   "deg": 4,
+   "seed": false
+  },
+  {
+   "id": "Xbox",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Twisted Tea",
+   "category": "Hard iced tea",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Nike",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Perrier",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Hydro Flask",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Owala",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Lululemon",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Open Water",
+   "category": "Canned water",
+   "political": false,
+   "note": "Eco/anti-plastic canned-water buyers https://www.similarweb.com/website/drinkopenwater.com/",
+   "deg": 7,
+   "seed": false
+  },
+  {
+   "id": "air up",
+   "category": "Flavoured water bottle",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Cirkul",
+   "category": "Flavoured water bottle",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Proud Source Water",
+   "category": "Canned/bottled water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Athletic Brewing",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "Affluent millennials, sober-curious craft beer drinkers",
+   "deg": 9,
+   "seed": false
+  },
+  {
+   "id": "Aura Bora",
+   "category": "Herbal sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "JUST Water",
+   "category": "Boxed/bottled water",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Ghia",
+   "category": "Non-alcoholic aperitif",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Recess",
+   "category": "Functional sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Path Water",
+   "category": "Aluminum-bottled water",
+   "political": false,
+   "note": "",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Native",
+   "category": "Personal care",
+   "political": false,
+   "note": "",
+   "deg": 3,
+   "seed": false
+  },
+  {
+   "id": "Sol de Janeiro",
+   "category": "Beauty / body care",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "BuzzBallz",
+   "category": "RTD cocktails",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "TikTok",
+   "category": "Social platform",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Pandora",
+   "category": "Jewelry",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Planet Fitness",
+   "category": "Gym chain",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "7-Eleven",
+   "category": "Convenience retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Walmart",
+   "category": "Mass retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Dr. Squatch",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "Humor-driven men's natural soap buyers",
+   "deg": 9,
+   "seed": false
+  },
+  {
+   "id": "Wildwonder",
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Slice",
+   "category": "Soda",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Blue Bottle Coffee",
+   "category": "Coffee",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Nordstrom",
+   "category": "Department store",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Culture Pop",
+   "category": "Probiotic soda",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "Health-Ade",
+   "category": "Kombucha / prebiotic soda",
+   "political": false,
+   "note": "",
+   "deg": 2,
+   "seed": false
+  },
+  {
+   "id": "RXBAR",
+   "category": "Protein bars",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Siete",
+   "category": "Grain-free snacks",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "G Fuel",
+   "category": "Energy drink (gaming)",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Hop Wtr",
+   "category": "Hop sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Poland Spring",
+   "category": "Bottled water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Sanzo",
+   "category": "Sparkling water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Simple Mills",
+   "category": "Better-for-you snacks",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Boxed Water",
+   "category": "Boxed water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Arrowhead",
+   "category": "Bottled water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "CanO Water",
+   "category": "Canned water",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Partake Brewing",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Ritual Zero Proof",
+   "category": "Non-alcoholic spirits",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Best Day Brewing",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Go Brewing",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Lucky Saint",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Hoplark",
+   "category": "Hop sparkling tea",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Guinness 0.0",
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "The Vitamin Shoppe",
+   "category": "Supplement retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "GNC",
+   "category": "Supplement retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Duke Cannon",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Harry's",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Manscaped",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Bath & Body Works",
+   "category": "Body care retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Oars + Alps",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Bulldog Skincare",
+   "category": "Men's grooming",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Ulta Beauty",
+   "category": "Beauty retail",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "NYX Professional Makeup",
+   "category": "Beauty",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Maybelline",
+   "category": "Beauty",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "Charlotte Tilbury",
+   "category": "Beauty",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  },
+  {
+   "id": "ColourPop",
+   "category": "Beauty",
+   "political": false,
+   "note": "",
+   "deg": 1,
+   "seed": false
+  }
+ ],
+ "edges": [
+  {
+   "from": "Alani Nu",
+   "to": "Celsius",
+   "together": [
+    "alani nu and celsius",
+    "is alani nu stronger than celsius",
+    "alani nu and celsius deal",
+    "celsius alani nu and rockstar"
+   ],
+   "versus": [
+    "alani nu vs celsius",
+    "alani nu or celsius",
+    "alani nu or celsius which is better",
+    "is alani nu or celsius better for you",
+    "alani nu compared to celsius",
+    "is alani nu better than celsius",
+    "alani nu vs celsius vs bloom",
+    "alani nu vs celsius which is healthier",
+    "alani nu vs celsius reddit",
+    "alani nu vs celsius caffeine",
+    "alani nu vs celsius ingredients",
+    "alani nu vs celsius health",
+    "alani nu vs celsius weight loss",
+    "alani nu energy drink vs celsius",
+    "alani nu energy vs celsius",
+    "alani nu vs celsius energy drink",
+    "alani nu vs celsius nutrition facts",
+    "alani nu vs celsius healthier",
+    "alani nu or celsius healthier",
+    "alani nu vs celsius taste"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Energy-drink maker Celsius says there is only a 14% overlap between its customers and buyers of Alani Nu (Circana panel data)",
+     "url": "https://itiger.com/news/2514847704",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "TD analysts: they both still over-index to young, affluent female customers",
+     "url": "https://itiger.com/news/2514847704",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: celsius.com affinity 89%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 10,
+   "best": "audience_data"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Bloom",
+   "together": [],
+   "versus": [
+    "alani nu vs bloom",
+    "alani nu vs bloom energy drink",
+    "alani nu or bloom",
+    "alani nu vs bloom pre workout",
+    "alani nu vs bloom energy",
+    "alani nu vs celsius vs bloom",
+    "alani nu super greens vs bloom greens"
+   ],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Bloom Nutrition",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 5.7,
+   "best": "co_mention"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Red Bull",
+   "together": [
+    "is alani nu stronger than redbull",
+    "is alani nu better for you than red bull"
+   ],
+   "versus": [
+    "alani nu vs redbull",
+    "is alani nu better than red bull",
+    "alani nu vs red bull",
+    "alani nu energy drink vs red bull",
+    "alani nu vs sugar free red bull",
+    "alani nu vs red bull sugar free",
+    "alani nu vs redbull caffeine content",
+    "alani nu vs red bull caffeine",
+    "alani nu vs redbull reddit",
+    "alani nu or red bull"
+   ],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Monster Energy",
+   "together": [
+    "is alani nu better for you than monster"
+   ],
+   "versus": [
+    "alani nu vs monster",
+    "is alani nu better than monster",
+    "alani nu energy drink vs monster",
+    "alani nu vs monster health",
+    "alani nu vs monster ultra",
+    "alani nu vs monster zero",
+    "alani nu vs monster caffeine",
+    "alani nu vs monster reddit",
+    "alani nu vs monster zero sugar",
+    "alani nu vs monster caffeine content",
+    "alani nu vs monster energy drink",
+    "alani nu vs white monster"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [
+    "alani nu vs ghost",
+    "alani nu vs ghost energy drink",
+    "alani nu vs ghost reddit"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Target",
+   "together": [
+    "alani nu lime slush target",
+    "alani nu target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Costco",
+   "together": [
+    "alani nu lime slush costco",
+    "alani nu witches brew costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Bang",
+   "together": [],
+   "versus": [
+    "alani nu vs bang"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "alani nu vs bubbl'r"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "C4 Energy",
+   "together": [],
+   "versus": [
+    "alani nu vs c4",
+    "alani nu vs c4 pre workout"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Liquid IV",
+   "together": [],
+   "versus": [
+    "alani nu vs liquid iv"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Mountain Dew",
+   "together": [],
+   "versus": [
+    "alani nu vs mountain dew"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Coca-Cola",
+   "together": [],
+   "versus": [
+    "alani nu coke or pepsi"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Pepsi",
+   "together": [
+    "alani nu and pepsi"
+   ],
+   "versus": [
+    "alani nu coke or pepsi"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Rockstar",
+   "together": [
+    "alani nu and rockstar",
+    "celsius alani nu and rockstar"
+   ],
+   "versus": [
+    "alani nu vs rockstar"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Reign",
+   "together": [],
+   "versus": [
+    "alani nu vs reign"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Prime",
+   "together": [
+    "alani nu and prime"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Alani Nu",
+   "together": [
+    "celsius and alani",
+    "celsius and alani same company",
+    "celsius and alani nu acquisition"
+   ],
+   "versus": [
+    "celsius vs alani",
+    "celsius or alani",
+    "celsius or alani better for you",
+    "celsius or alani which is better",
+    "celsius versus alani",
+    "is celsius better than alani",
+    "celsius vs alani which is healthier",
+    "celsius vs alani nu",
+    "celsius vs alani caffeine",
+    "celsius vs alani vs bloom",
+    "celsius vs alani caffeine content",
+    "celsius vs alani reddit",
+    "celsius vs alani vs red bull",
+    "celsius vs alani ingredients",
+    "celsius vs alani health",
+    "celsius vs bloom vs alani",
+    "is celsius vs alani",
+    "celsius vs red bull vs alani"
+   ],
+   "research": [],
+   "score": 3.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Red Bull",
+   "together": [
+    "celsius like red bull",
+    "celsius and red bull caffeine",
+    "celsius and red bull"
+   ],
+   "versus": [
+    "celsius vs red bull",
+    "celsius or red bull",
+    "celsius versus red bull",
+    "is celsius better than red bull",
+    "celsius vs alani vs red bull",
+    "is celsius vs red bull",
+    "celsius vs monster vs red bull",
+    "celsius vs red bull caffeine",
+    "celsius vs red bull vs monster",
+    "celsius vs red bull vs alani",
+    "celsius vs red bull health",
+    "celsius vs red bull sugar free",
+    "celsius vs red bull zero sugar",
+    "celsius vs red bull reddit",
+    "celsius vs sugar free red bull"
+   ],
+   "research": [],
+   "score": 3.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Monster Energy",
+   "together": [
+    "is celsius like monster",
+    "celsius and monster"
+   ],
+   "versus": [
+    "celsius vs monster",
+    "celsius or monster",
+    "celsius versus monster",
+    "is celsius better than monster",
+    "is celsius better than monster zero",
+    "is celsius better than white monster",
+    "celsius vs monster caffeine",
+    "celsius vs monster zero",
+    "celsius vs monster which is healthier",
+    "celsius vs monster zero which is healthier",
+    "celsius vs monster vs red bull",
+    "celsius vs monster health",
+    "celsius vs monster zero sugar",
+    "celsius vs monster ultra",
+    "celsius vs monster energy",
+    "celsius vs red bull vs monster",
+    "celsius vs sugar free monster",
+    "celsius vs white monster",
+    "celsius vs white monster which is healthier"
+   ],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Bloom",
+   "together": [
+    "celsius and bloom"
+   ],
+   "versus": [
+    "celsius vs bloom",
+    "celsius vs bloom energy drink",
+    "celsius or bloom",
+    "celsius or bloom energy drink",
+    "celsius versus bloom",
+    "is celsius better than bloom",
+    "celsius vs alani vs bloom",
+    "celsius vs bloom which is healthier",
+    "celsius vs bloom energy",
+    "celsius vs bloom caffeine content",
+    "celsius vs bloom vs alani"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [
+    "celsius vs ghost",
+    "celsius vs ghost energy drink",
+    "celsius vs ghost which is healthier",
+    "celsius vs ghost health",
+    "celsius vs ghost caffeine"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Coca-Cola",
+   "together": [
+    "celsius x coca cola",
+    "celcius collab coca cola"
+   ],
+   "versus": [
+    "celsius vs diet coke",
+    "celsius vs diet coke caffeine"
+   ],
+   "research": [],
+   "score": 2.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Bang",
+   "together": [],
+   "versus": [
+    "celsius vs bang"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "celsius vs bubbl'r"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Essentia",
+   "together": [
+    "celsius essentials"
+   ],
+   "versus": [
+    "celsius vs celsius essentials",
+    "celsius vs essentials"
+   ],
+   "research": [],
+   "score": 1.4,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "C4 Energy",
+   "together": [],
+   "versus": [
+    "celsius vs c4",
+    "celsius vs c4 energy drink"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Costco",
+   "together": [],
+   "versus": [
+    "celsius vs costco energy drink"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Diet Coke",
+   "together": [],
+   "versus": [
+    "celsius vs diet coke",
+    "celsius vs diet coke caffeine"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Gatorade",
+   "together": [],
+   "versus": [
+    "celsius vs gatorade"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Gorgie",
+   "together": [],
+   "versus": [
+    "celsius vs gorgie"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Liquid IV",
+   "together": [],
+   "versus": [
+    "celsius vs liquid iv",
+    "celsius vs liquid iv energy"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [
+    "celsius vs liquid death"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Pepsi",
+   "together": [
+    "celsius and pepsi"
+   ],
+   "versus": [
+    "celsius vs pepsi"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Rockstar",
+   "together": [
+    "celsius and rockstar",
+    "celsius and rockstar energy"
+   ],
+   "versus": [
+    "celsius vs rockstar"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Reign",
+   "together": [],
+   "versus": [
+    "celsius vs reign"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "Starbucks",
+   "together": [],
+   "versus": [
+    "celsius vs starbucks coffee",
+    "celsius vs starbucks energy drink",
+    "celsius vs starbucks caffeine"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "High Noon",
+   "together": [
+    "celsius and high noon mix up",
+    "celsius and high noon",
+    "celsius and high noon recall"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Celsius",
+   "to": "White Claw",
+   "together": [
+    "celsius and white claw mix up"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Black Rifle Coffee",
+   "together": [
+    "is death wish coffee stronger than black rifle coffee"
+   ],
+   "versus": [
+    "death wish coffee vs black rifle",
+    "death wish coffee vs black rifle coffee",
+    "death wish coffee or black rifle coffee",
+    "is death wish coffee better than black rifle coffee",
+    "death wish coffee vs black rifle coffee review",
+    "death wish coffee versus black rifle coffee"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Starbucks",
+   "together": [
+    "is death wish coffee stronger than starbucks"
+   ],
+   "versus": [
+    "death wish coffee vs starbucks",
+    "is death wish coffee better than starbucks",
+    "death wish coffee caffeine content vs starbucks",
+    "death wish coffee caffeine vs starbucks"
+   ],
+   "research": [],
+   "score": 2,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Costco",
+   "together": [
+    "death wish coffee at costco",
+    "death wish coffee costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Red Bull",
+   "together": [],
+   "versus": [
+    "death wish coffee vs red bull"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Liquid Death",
+   "together": [
+    "death wish coffee and liquid death"
+   ],
+   "versus": [
+    "death wish coffee vs liquid death"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Monster Energy",
+   "together": [],
+   "versus": [
+    "death wish coffee vs monster"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Target",
+   "together": [
+    "death wish coffee target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Death Wish Coffee",
+   "to": "Whole Foods",
+   "together": [
+    "death wish coffee whole foods"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Liquid Death",
+   "together": [
+    "elf cosmetics x liquid death",
+    "elf cosmetics and liquid death",
+    "elf beauty and liquid death"
+   ],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "E.l.f still manages to make headlines for unusual pairings like a “corpse paint” partnership with Liquid Death.",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ],
+   "score": 3.7,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Stanley",
+   "together": [
+    "elf cosmetics x stanley"
+   ],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "That was a proof point that helped convince E.l.f that its customers were already interested in Stanley products. (pre-collab Instagram giveaway drew ~60,000 entries)",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ],
+   "score": 2.2,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Chipotle",
+   "together": [
+    "elf cosmetics x chipotle"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Dunkin'",
+   "together": [
+    "elf cosmetics x dunkin"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Rare Beauty",
+   "together": [],
+   "versus": [
+    "elf cosmetics vs rare beauty"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Prime",
+   "together": [
+    "elf cosmetics prime and stay finishing powder"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Target",
+   "together": [
+    "elf cosmetics target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Liquid Death",
+   "together": [
+    "feastables and liquid death",
+    "feastables x liquid death",
+    "feastables x liquid death peanut butter cup sparkling water",
+    "feastables x liquid death review",
+    "feastables x liquid death mrbeast",
+    "liquid death feastables collab"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Lunchly",
+   "together": [
+    "feastables and lunchly",
+    "feastables and lunchly meme",
+    "lunchly feastables and prime"
+   ],
+   "versus": [
+    "feastables vs lunchly"
+   ],
+   "research": [],
+   "score": 2.6,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Prime",
+   "together": [
+    "feastables and prime",
+    "feastables and prime lunchables",
+    "feastables x prime",
+    "lunchly feastables and prime"
+   ],
+   "versus": [
+    "feastables vs prime",
+    "feastables or prime"
+   ],
+   "research": [],
+   "score": 3.6,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "MrBeast",
+   "together": [
+    "feastables mr beast",
+    "feastables x liquid death mrbeast",
+    "mr beast feastables collab",
+    "feastables with mrbeast",
+    "feastables and mr beast",
+    "feastables from mr beast",
+    "feastables mrbeast"
+   ],
+   "versus": [
+    "feastables vs mr beast bar",
+    "mrbeast feastables vs hershey's",
+    "mrbeast feastables old vs new"
+   ],
+   "research": [],
+   "score": 3.9,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Reese's",
+   "together": [
+    "feastables reese's"
+   ],
+   "versus": [
+    "feastables vs reese's",
+    "is feastables better than reeses",
+    "feastables vs reese's peanut butter cups"
+   ],
+   "research": [],
+   "score": 1.7,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Oreo",
+   "together": [
+    "feastables oreo"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Feastables",
+   "to": "Target",
+   "together": [
+    "feastables target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Garage Beer",
+   "to": "Liquid Death",
+   "together": [
+    "garage beer and liquid death commercial",
+    "garage beer and liquid death",
+    "garage beer x liquid death",
+    "is garage beer and liquid death the same company"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Garage Beer",
+   "to": "Michelob Ultra",
+   "together": [],
+   "versus": [
+    "garage beer vs michelob ultra",
+    "garage beer vs michelob",
+    "is garage beer better than michelob ultra",
+    "garage beer lime vs michelob ultra",
+    "garage beer compared to michelob ultra"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Gears of War",
+   "together": [
+    "liquid death and gears of war",
+    "liquid death x gears of war",
+    "liquid death collab gears of war",
+    "liquid death gears collab",
+    "liquid death and gears",
+    "liquid death and gears of war collab"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Garage Beer",
+   "together": [
+    "liquid death and garage beer commercial",
+    "liquid death and garage beer",
+    "liquid death x garage beer",
+    "liquid death and garage beer pee"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "MrBeast",
+   "together": [
+    "liquid death and mr beast",
+    "liquid death x mr beast",
+    "liquid death x mrbeast",
+    "mrbeast liquid death collab"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "MaryRuth's",
+   "together": [
+    "liquid death and mary ruth"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "e.l.f. Cosmetics",
+   "together": [
+    "liquid death and elf",
+    "liquid death and elf collab",
+    "liquid death and elf cosmetics",
+    "liquid death x elf",
+    "liquid death x e.l.f. lip embalm",
+    "liquid death x e.l.f. cosmetics",
+    "liquid death collab elf",
+    "liquid death with elf",
+    "liquid death and elf lip balm",
+    "liquid death and elf commercial",
+    "liquid death and elf corpse paint",
+    "liquid death and elf ad"
+   ],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "E.l.f still manages to make headlines for unusual pairings like a “corpse paint” partnership with Liquid Death.",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ],
+   "score": 4.4,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Goodwipes",
+   "together": [
+    "liquid death and goodwipes",
+    "liquid death x goodwipes"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Hey Dude",
+   "together": [
+    "liquid death and hey dudes",
+    "liquid death x hey dudes"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Feastables",
+   "together": [
+    "liquid death and feastables",
+    "liquid death x feastables",
+    "liquid death x feastables review"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Celsius",
+   "together": [],
+   "versus": [
+    "liquid death vs celsius",
+    "liquid death or celsius",
+    "is liquid death better than celsius",
+    "liquid death energy vs celsius",
+    "liquid death sparkling energy vs celsius"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "LaCroix",
+   "together": [],
+   "versus": [
+    "liquid death vs la croix",
+    "is liquid death better than la croix"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Spindrift",
+   "together": [],
+   "versus": [
+    "liquid death vs spindrift"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkspindrift.com affinity 86%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Spindrift",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Spindrift: Best for the seltzer drinker who wants real fruit flavor and can live with a few honest calories to get it.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Spindrift",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death ('Ultimate summer hydration clout!') alongside Spindrift",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ],
+   "score": 8.7,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Monster Energy",
+   "together": [
+    "liquid death and monster",
+    "are liquid death and monster the same company"
+   ],
+   "versus": [
+    "liquid death vs monster",
+    "is liquid death better than monster",
+    "liquid death energy vs monster",
+    "liquid death energy drink vs monster"
+   ],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Looks like a hardcore energy drink but it's actually super crisp, ice-cold mountain water in a tallboy can. (same list includes Monster Energy)",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ],
+   "score": 6.9,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Zevia",
+   "together": [],
+   "versus": [
+    "liquid death vs zevia"
+   ],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Zevia",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 4.5,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Red Bull",
+   "together": [],
+   "versus": [
+    "liquid death vs red bull",
+    "is liquid death better than red bull",
+    "liquid death energy vs red bull"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Poppi",
+   "together": [],
+   "versus": [
+    "liquid death vs poppi"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Poppi: Best for shoppers who want a fruitier, crisper take on the prebiotic soda idea rather than a rich cola.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Poppi",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside Poppi",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ],
+   "score": 5.9,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Spotify",
+   "together": [
+    "liquid death x spotify",
+    "liquid death and spotify urn",
+    "liquid death and spotify",
+    "liquid death spotify urn"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Dr Pepper",
+   "together": [
+    "liquid death like dr pepper",
+    "liquid death dr pepper",
+    "liquid death dr pepper flavor"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Mountain Dew",
+   "together": [
+    "liquid death like mountain dew"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Yeti",
+   "together": [
+    "liquid death and yeti"
+   ],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Ad the day: Liquid Death and Yeti release limited-edition casket cooler (article title)",
+     "url": "https://www.thedrum.com/news/2024/08/30/ad-the-day-liquid-death-and-yeti-release-limited-edition-casket-cooler",
+     "seen": "snippet"
+    }
+   ],
+   "score": 2.2,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Topo Chico",
+   "together": [],
+   "versus": [
+    "liquid death vs topo chico"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Coke Zero",
+   "together": [],
+   "versus": [
+    "is liquid death better than coke zero"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Sanrio / Kuromi",
+   "together": [
+    "kuromi liquid death collab",
+    "liquid death and kuromi"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Alani Nu",
+   "together": [],
+   "versus": [
+    "liquid death vs alani",
+    "liquid death vs alani nu",
+    "liquid death energy vs alani"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Alani Nu",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Alani Nu",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 5.8,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Arizona",
+   "together": [],
+   "versus": [
+    "liquid death vs arizona",
+    "arizona iced tea vs liquid death"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Aquafina",
+   "together": [],
+   "versus": [
+    "liquid death vs aquafina"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Bubly",
+   "together": [],
+   "versus": [
+    "liquid death vs bubly"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Bloom",
+   "together": [],
+   "versus": [
+    "liquid death vs bloom energy drink",
+    "liquid death energy vs bloom"
+   ],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Bloom Nutrition",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 4.8,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Coca-Cola",
+   "together": [],
+   "versus": [
+    "liquid death vs coke",
+    "liquid death coke or pepsi",
+    "liquid death vs diet coke",
+    "liquid death pepsi or coke"
+   ],
+   "research": [],
+   "score": 1.2,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Pepsi",
+   "together": [],
+   "versus": [
+    "liquid death coke or pepsi",
+    "liquid death pepsi or coke"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Death Wish Coffee",
+   "together": [],
+   "versus": [
+    "liquid death vs death wish coffee",
+    "liquid death vs death wish"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Diet Coke",
+   "together": [],
+   "versus": [
+    "liquid death vs diet coke"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Evian",
+   "together": [],
+   "versus": [
+    "liquid death vs evian"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: evian.com affinity 79%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Evian",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 6.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Fiji Water",
+   "together": [],
+   "versus": [
+    "liquid death vs fiji"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [
+    "liquid death energy drink vs ghost"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Ghost Energy",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 3.1,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Liquid IV",
+   "together": [],
+   "versus": [
+    "liquid death vs liquid iv",
+    "liquid death dust vs liquid iv",
+    "liquid iv vs liquid death electrolytes"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Sparkling Ice",
+   "together": [],
+   "versus": [
+    "liquid death vs sparkling ice"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "DUST",
+   "together": [
+    "liquid death dust"
+   ],
+   "versus": [
+    "liquid death dust vs liquid iv"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Mountain Valley",
+   "together": [],
+   "versus": [
+    "liquid death vs mountain valley"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Olipop",
+   "together": [],
+   "versus": [
+    "liquid death vs olipop"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Olipop: Best for the soda quitter who still wants a cola or root beer moment without the sugar hangover.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Another one of my favorite better ingredient energy drinks! (Liquid Death entry on a fan list that also includes OLIPOP)",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside Olipop",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ],
+   "score": 7.3,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "San Pellegrino",
+   "together": [],
+   "versus": [
+    "liquid death vs san pellegrino"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: sanpellegrino.com affinity 78%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside San Pellegrino",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Pellegrino",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 7.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "liquid death vs bubbl r"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Smartwater",
+   "together": [],
+   "versus": [
+    "liquid death vs smart water"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Waterloo",
+   "together": [],
+   "versus": [
+    "liquid death vs waterloo"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Waterloo",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Waterloo: Best for shoppers who want a sparkling water that tastes like actual fruit",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 3.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Fruity Pebbles",
+   "together": [
+    "liquid death and fruity pebbles"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "NASCAR",
+   "together": [
+    "liquid death nascar"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Pop-Tarts",
+   "together": [
+    "liquid death and pop tarts"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Pit Viper",
+   "together": [
+    "liquid death and pit viper"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Gatorade",
+   "together": [
+    "liquid iv like gatorade",
+    "liquid iv and gatorade",
+    "liquid iv and gatorade the same"
+   ],
+   "versus": [
+    "liquid iv vs gatorade",
+    "liquid iv vs gatorade zero",
+    "liquid iv or gatorade",
+    "liquid iv or gatorade zero",
+    "liquid iv versus gatorade",
+    "liquid iv versus gatorade zero",
+    "is liquid iv better than gatorade",
+    "is liquid iv better than gatorade for hydration",
+    "liquid iv vs gatorade zero powder",
+    "liquid iv vs gatorade powder",
+    "liquid iv vs gatorade when sick",
+    "liquid iv vs gatorade electrolytes",
+    "liquid iv vs gatorade for hangover",
+    "liquid iv vs gatorade for dehydration",
+    "liquid iv ingredients vs gatorade"
+   ],
+   "research": [],
+   "score": 3.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "LMNT",
+   "together": [
+    "liquid iv and lmnt"
+   ],
+   "versus": [
+    "liquid iv vs lmnt",
+    "liquid iv or lmnt",
+    "liquid iv or lmnt better",
+    "liquid iv versus lmnt",
+    "is liquid iv better than lmnt",
+    "liquid iv vs drip drop vs lmnt",
+    "liquid iv vs lmnt for hangover",
+    "liquid iv sugar free vs lmnt",
+    "liquid iv vs lmnt electrolytes",
+    "liquid iv vs lmnt reddit",
+    "liquid iv vs lmnt vs drip drop",
+    "liquid iv vs lmnt for pots",
+    "liquid iv vs nuun vs lmnt"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Prime",
+   "together": [],
+   "versus": [
+    "liquid iv vs prime"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "AG1",
+   "together": [],
+   "versus": [
+    "liquid iv vs ag1"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "BodyArmor",
+   "together": [
+    "liquid iv and body armor"
+   ],
+   "versus": [
+    "liquid iv vs body armor flash iv",
+    "liquid iv vs body armor",
+    "liquid iv vs body armor breastfeeding",
+    "liquid iv vs body armor lyte",
+    "liquid iv vs body armor flash iv packets",
+    "liquid iv vs body armour",
+    "liquid iv vs body armor flash"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Bloom",
+   "together": [],
+   "versus": [
+    "liquid iv vs bloom"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Celsius",
+   "together": [],
+   "versus": [
+    "liquid iv vs celsius",
+    "liquid iv vs celsius hydration",
+    "liquid iv vs celsius live fit"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Ryse",
+   "together": [],
+   "versus": [
+    "liquid iv vs ryse hydration"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Target",
+   "together": [
+    "liquid iv target"
+   ],
+   "versus": [
+    "liquid iv vs target brand"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Red Bull",
+   "together": [
+    "liquid iv and red bull"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid IV",
+   "to": "Sprite",
+   "together": [
+    "liquid iv and sprite"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Coca-Cola",
+   "together": [
+    "monster energy and coca cola"
+   ],
+   "versus": [
+    "is monster energy better than coke",
+    "monster energy vs coke",
+    "monster energy vs diet coke",
+    "monster energy pepsi or coke"
+   ],
+   "research": [],
+   "score": 2,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Red Bull",
+   "together": [
+    "monster energy taste like red bull",
+    "is monster energy like red bull",
+    "is monster energy stronger than red bull",
+    "monster energy and red bull"
+   ],
+   "versus": [
+    "monster energy vs red bull",
+    "monster energy vs red bull meme",
+    "monster energy vs red bull bc one all stars",
+    "monster energy or red bull",
+    "monster energy or redbull",
+    "monster energy vs red bull caffeine",
+    "monster energy vs red bull which is better",
+    "is monster energy better than red bull",
+    "is monster drink better than red bull",
+    "monster energy caffeine vs red bull",
+    "monster energy vs red bull energy",
+    "monster energy vs red bull ingredients",
+    "monster energy vs red bull net worth",
+    "monster energy vs red bull taste",
+    "monster energy vs red bull market share",
+    "monster energy vs red bull price",
+    "monster energy vs red bull revenue"
+   ],
+   "research": [],
+   "score": 4.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Celsius",
+   "together": [
+    "is monster energy stronger than celsius"
+   ],
+   "versus": [
+    "monster energy vs celsius",
+    "is monster energy better than celsius"
+   ],
+   "research": [],
+   "score": 1.4,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Alani Nu",
+   "together": [],
+   "versus": [
+    "monster energy vs alani",
+    "is alani better than monster energy",
+    "monster energy vs alani nu",
+    "monster energy vs alani caffeine content",
+    "monster drink vs alani"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [
+    "monster energy vs ghost"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Mountain Dew",
+   "together": [],
+   "versus": [
+    "monster energy vs mountain dew"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Bloom",
+   "together": [],
+   "versus": [
+    "monster energy vs bloom energy",
+    "monster energy drink vs bloom"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Prime",
+   "together": [],
+   "versus": [
+    "monster energy vs prime"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Sanrio / Kuromi",
+   "together": [
+    "monster energy x hello kitty"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Xbox",
+   "together": [
+    "monster energy supercross xbox series x"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Bang",
+   "together": [],
+   "versus": [
+    "monster energy vs bang"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "C4 Energy",
+   "together": [],
+   "versus": [
+    "monster energy vs c4"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Diet Coke",
+   "together": [],
+   "versus": [
+    "monster energy vs diet coke"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Gatorade",
+   "together": [],
+   "versus": [
+    "monster energy vs gatorade"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Pepsi",
+   "together": [],
+   "versus": [
+    "monster energy pepsi or coke"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Rockstar",
+   "together": [],
+   "versus": [
+    "monster energy vs rockstar"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "Starbucks",
+   "together": [],
+   "versus": [
+    "monster energy vs starbucks coffee"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Monster Energy",
+   "to": "NASCAR",
+   "together": [
+    "monster energy and nascar",
+    "monster energy nascar cup series"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Poppi",
+   "together": [
+    "olipop and poppi",
+    "olipop and poppi flavors",
+    "olipop vs poppi",
+    "is olipop like poppi",
+    "brands like olipop and poppi",
+    "what's the difference of poppi and olipop",
+    "olipop and poppi lawsuit",
+    "olipop or poppi",
+    "olipop or poppi better",
+    "olipop and poppi the same",
+    "olipop and poppi difference",
+    "olipop and poppi shirley temple",
+    "olipop and poppi during pregnancy",
+    "olipop and poppi soda",
+    "olipop and poppi reddit"
+   ],
+   "versus": [
+    "olipop vs poppi",
+    "olipop vs poppi vs bloom",
+    "olipop vs poppi reddit",
+    "olipop vs poppi which is healthier",
+    "olipop vs poppi vs bloom pop",
+    "olipop vs poppi shirley temple",
+    "olipop or poppi",
+    "olipop or poppi better",
+    "olipop or poppi better for you",
+    "olipop or poppi while pregnant",
+    "olipop or poppi reddit",
+    "olipop or poppi lawsuit",
+    "olipop or poppi root beer",
+    "is olipop better than poppi",
+    "olipop vs bloom vs poppi",
+    "olipop vs bloom pop vs poppi",
+    "olipop cola vs poppi cola",
+    "olipop drink vs poppi",
+    "olipop fiber vs poppi",
+    "olipop flavors vs poppi",
+    "olipop vs poppi for kids",
+    "olipop vs poppi fiber content",
+    "olipop vs poppi for weight loss",
+    "olipop vs poppi nutrition facts",
+    "poppi vs olipop for health",
+    "olipop vs poppi which came first",
+    "olipop grape vs poppi grape",
+    "olipop vs poppi ginger ale",
+    "olipop vs poppi grape soda",
+    "olipop vs poppi gut health",
+    "olipop vs poppi healthier",
+    "olipop vs poppi health",
+    "olipop ingredients vs poppi",
+    "olipop vs poppi vs kombucha",
+    "olipop vs poppi lawsuit",
+    "olipop vs poppi lemon lime",
+    "olipop vs poppi market share",
+    "poppi vs olipop marketing",
+    "olipop vs poppi which is more popular",
+    "olipop vs poppi nutrition",
+    "olipop vs poppi net worth",
+    "olipop vs poppi soda",
+    "olipop vs poppi vs culture pop",
+    "olipop vs poppi taste",
+    "olipop vs poppi root beer",
+    "olipop vs poppi revenue",
+    "olipop vs poppi reviews",
+    "olipop soda vs poppi",
+    "olipop taste vs poppi",
+    "olipop vs poppi taste which is better",
+    "olipop vs poppi weight loss"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkolipop.com lists drinkpoppi.com",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Poppi: it is the natural first stop if Olipop reads too sweet to you",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ],
+   "score": 10,
+   "best": "audience_data"
+  },
+  {
+   "from": "Olipop",
+   "to": "Bloom",
+   "together": [
+    "olipop and bloom"
+   ],
+   "versus": [
+    "olipop vs poppi vs bloom",
+    "olipop vs bloom pop",
+    "olipop vs bloom",
+    "olipop vs poppi vs bloom pop",
+    "olipop or bloom pop",
+    "olipop or bloom",
+    "is olipop better than bloom",
+    "olipop vs bloom vs poppi",
+    "olipop vs bloom pop vs poppi",
+    "olipop vs bloom shirley temple",
+    "olipop vs bloom soda",
+    "olipop vs bloom pop shirley temple",
+    "olipop vs bloom reddit"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Zevia",
+   "together": [],
+   "versus": [
+    "olipop vs zevia",
+    "olipop or zevia",
+    "is olipop better than zevia"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Goodwipes",
+   "together": [
+    "olipop x goodwipes",
+    "olipop and goodwipes"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Dr Pepper",
+   "together": [
+    "which olipop is like dr pepper",
+    "olipop dr pepper"
+   ],
+   "versus": [
+    "olipop vs dr pepper"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Mountain Dew",
+   "together": [
+    "olipop like mountain dew",
+    "olipop mountain dew"
+   ],
+   "versus": [
+    "olipop ridge rush vs mountain dew"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Sprite",
+   "together": [
+    "olipop like sprite"
+   ],
+   "versus": [
+    "olipop vs sprite"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Coke Zero",
+   "together": [],
+   "versus": [
+    "is olipop better than coke zero",
+    "olipop vs coke zero"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Coca-Cola",
+   "together": [
+    "olipop and coca cola"
+   ],
+   "versus": [
+    "is olipop better than diet coke",
+    "is olipop better than coke",
+    "olipop vs coke",
+    "olipop vs diet coke"
+   ],
+   "research": [],
+   "score": 2,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Diet Coke",
+   "together": [],
+   "versus": [
+    "is olipop better than diet coke",
+    "olipop vs diet coke"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Yeti",
+   "together": [
+    "olipop with yeti"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Alani Nu",
+   "together": [],
+   "versus": [
+    "olipop vs alani"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Bubly",
+   "together": [],
+   "versus": [
+    "olipop vs bubly"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "bubblr vs olipop"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "LaCroix",
+   "together": [],
+   "versus": [
+    "olipop vs la croix"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Sparkling Ice",
+   "together": [],
+   "versus": [
+    "olipop vs sparkling ice"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [
+    "olipop vs liquid death"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' ranks Liquid Death Mountain Water #1 and Olipop #2",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 3.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Spindrift",
+   "together": [],
+   "versus": [
+    "olipop vs spindrift"
+   ],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Spindrift",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 3.1,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Waterloo",
+   "together": [],
+   "versus": [
+    "olipop vs waterloo"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Costco",
+   "together": [
+    "olipop at costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Target",
+   "together": [
+    "olipop target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Olipop",
+   "to": "Whole Foods",
+   "together": [
+    "olipop whole foods"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Pit Viper",
+   "to": "Liquid Death",
+   "together": [
+    "pit viper and liquid death",
+    "pit viper x liquid death"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Pit Viper",
+   "to": "Mountain Dew",
+   "together": [
+    "pit viper x mountain dew"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Pit Viper",
+   "to": "Twisted Tea",
+   "together": [
+    "pit viper x twisted tea"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Olipop",
+   "together": [
+    "poppi and olipop",
+    "is poppi like olipop",
+    "brands like poppi and olipop",
+    "what's the difference of poppi and olipop",
+    "poppi and olipop flavors",
+    "poppi and olipop difference",
+    "poppi and olipop same company",
+    "poppi and olipop lawsuit",
+    "poppi and olipop shirley temple",
+    "poppi and olipop the same",
+    "poppi and olipop soda"
+   ],
+   "versus": [
+    "poppi vs olipop",
+    "poppi vs olipop vs bloom",
+    "poppi vs olipop reddit",
+    "poppi or olipop",
+    "poppi or olipop better",
+    "poppi or olipop reddit",
+    "poppi or olipop cream soda",
+    "is poppi better than olipop",
+    "poppi vs bloom vs olipop",
+    "poppi drink vs olipop",
+    "poppi fiber vs olipop",
+    "poppi vs olipop flavors",
+    "poppi vs olipop for weight loss",
+    "poppi grape vs olipop grape",
+    "poppi vs olipop healthier",
+    "poppi vs olipop health",
+    "poppi ingredients vs olipop",
+    "poppi vs olipop taste",
+    "poppi vs olipop shirley temple",
+    "poppi vs olipop soda",
+    "poppi vs olipop ingredients",
+    "poppi vs olipop cola",
+    "poppi vs olipop vs bloom pop",
+    "poppi vs olipop fiber",
+    "poppi soda vs olipop",
+    "poppi vs olipop which is better"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: drinkolipop.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkpoppi.com lists drinkolipop.com",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Olipop: Its OLISMART blend combines seven different prebiotic fibers and botanicals",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ],
+   "score": 10,
+   "best": "audience_data"
+  },
+  {
+   "from": "Poppi",
+   "to": "Bloom",
+   "together": [
+    "poppi and bloom"
+   ],
+   "versus": [
+    "poppi vs olipop vs bloom",
+    "poppi vs bloom",
+    "poppi vs bloom pop",
+    "poppi or bloom",
+    "poppi or bloom pop",
+    "bloom or poppi",
+    "is poppi better than bloom",
+    "poppi vs bloom vs olipop",
+    "poppi vs bloom shirley temple",
+    "poppi vs bloom soda",
+    "poppi vs bloom pop shirley temple",
+    "poppi vs olipop vs bloom pop",
+    "poppi soda vs bloom"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkpoppi.com lists bloomnu.com",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Bloom Pop: uses PreticX, a patented XOS prebiotic that works at a low dose",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ],
+   "score": 8.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Poppi",
+   "to": "Coca-Cola",
+   "together": [
+    "poppi and coke"
+   ],
+   "versus": [
+    "poppi vs diet coke",
+    "poppi vs coke",
+    "is poppi better than diet coke",
+    "is poppi better than coke",
+    "poppi cola vs coke",
+    "poppi soda vs coke"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Diet Coke",
+   "together": [],
+   "versus": [
+    "poppi vs diet coke",
+    "is poppi better than diet coke"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Spindrift",
+   "together": [],
+   "versus": [
+    "poppi vs spindrift"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Bubly",
+   "together": [
+    "is poppi like bubly"
+   ],
+   "versus": [
+    "poppi vs bubly"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Target",
+   "together": [
+    "poppi x target",
+    "poppi x target collab",
+    "poppi collab target",
+    "poppi and target collab",
+    "poppi and target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 3,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Starbucks",
+   "together": [
+    "poppi x starbucks",
+    "poppi and starbucks"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Dr Pepper",
+   "together": [
+    "poppi like dr pepper"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Sprite",
+   "together": [
+    "poppi like sprite"
+   ],
+   "versus": [
+    "poppi vs sprite"
+   ],
+   "research": [],
+   "score": 1.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Zevia",
+   "together": [],
+   "versus": [
+    "poppi or zevia"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Coke Zero",
+   "together": [],
+   "versus": [
+    "is poppi better than coke zero",
+    "poppi vs coke zero"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Pepsi",
+   "together": [
+    "poppi drink and pepsi",
+    "poppi and pepsi deal",
+    "poppi and pepsi"
+   ],
+   "versus": [
+    "is poppi better than pepsi max",
+    "poppi vs pepsi",
+    "poppi vs pepsi prebiotic"
+   ],
+   "research": [],
+   "score": 3.2,
+   "best": "co_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Alani Nu",
+   "together": [],
+   "versus": [
+    "poppi vs alani"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "poppi vs bubbl'r"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Celsius",
+   "together": [],
+   "versus": [
+    "poppi vs celsius"
+   ],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: celsius.com affinity 85%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.9,
+   "best": "audience_data"
+  },
+  {
+   "from": "Poppi",
+   "to": "Sparkling Ice",
+   "together": [],
+   "versus": [
+    "poppi vs sparkling ice"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "LaCroix",
+   "together": [],
+   "versus": [
+    "poppi vs la croix"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [
+    "poppi vs liquid death"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Waterloo",
+   "together": [],
+   "versus": [
+    "poppi vs waterloo"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Poppi",
+   "to": "Costco",
+   "together": [
+    "poppi and costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Monster Energy",
+   "together": [
+    "red bull x monster",
+    "red bull x monster collab",
+    "red bull and monster",
+    "red bull and monster collab",
+    "red bull and monster energy"
+   ],
+   "versus": [
+    "red bull vs monster",
+    "red bull or monster",
+    "red bull or monster to stay awake",
+    "red bull or monster healthier",
+    "red bull or monster more caffeine",
+    "red bull or monster better",
+    "red bull versus monster",
+    "red bull versus monster energy",
+    "is red bull better than monster",
+    "is red bull better than monster health wise",
+    "red bull vs hell vs monster",
+    "red bull vs monster caffeine",
+    "red bull vs monster caffeine content",
+    "red bull vs monster vs celsius",
+    "red bull vs monster energy",
+    "red bull vs monster sales",
+    "red bull vs white monster",
+    "red bull vs white monster which is worse",
+    "red bull vs white monster caffeine",
+    "red bull vs white monster which is better"
+   ],
+   "research": [],
+   "score": 4.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Celsius",
+   "together": [],
+   "versus": [
+    "red bull vs celsius",
+    "red bull or celsius",
+    "red bull versus celsius",
+    "is red bull better than celsius",
+    "is celsius better than red bull",
+    "red bull vs celsius which is healthier",
+    "red bull vs celsius caffeine content",
+    "red bull vs monster vs celsius"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Alani Nu",
+   "together": [],
+   "versus": [
+    "red bull vs alani",
+    "red bull or alani",
+    "is red bull better than alani",
+    "red bull vs alani caffeine content"
+   ],
+   "research": [],
+   "score": 1.2,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Coca-Cola",
+   "together": [
+    "red bull x coca cola",
+    "red bull and coke",
+    "red bull and diet coke"
+   ],
+   "versus": [
+    "red bull vs coke",
+    "red bull vs diet coke",
+    "red bull vs diet coke caffeine"
+   ],
+   "research": [],
+   "score": 3.2,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Pepsi",
+   "together": [
+    "red bull and pepsi"
+   ],
+   "versus": [
+    "red bull versus pepsi",
+    "red bull vs pepsi caffeine",
+    "red bull vs pepsi"
+   ],
+   "research": [],
+   "score": 1.7,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Prime",
+   "together": [],
+   "versus": [
+    "red bull versus prime"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Bloom",
+   "together": [],
+   "versus": [
+    "is red bull better than bloom",
+    "red bull vs bloom energy",
+    "red bull vs bloom",
+    "red bull vs bloom caffeine"
+   ],
+   "research": [],
+   "score": 1.2,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Mountain Dew",
+   "together": [
+    "red bull and mountain dew"
+   ],
+   "versus": [
+    "is red bull better than mountain dew",
+    "red bull vs mountain dew caffeine",
+    "red bull vs mountain dew"
+   ],
+   "research": [],
+   "score": 1.7,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Bang",
+   "together": [],
+   "versus": [
+    "red bull vs bang"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Bubbl'r",
+   "together": [],
+   "versus": [
+    "red bull vs bubblr"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Dr Pepper",
+   "together": [
+    "red bull and dr pepper",
+    "red bull and dr pepper mix"
+   ],
+   "versus": [
+    "red bull vs dr pepper caffeine",
+    "red bull vs dr pepper"
+   ],
+   "research": [],
+   "score": 2.1,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Diet Coke",
+   "together": [
+    "red bull and diet coke"
+   ],
+   "versus": [
+    "red bull vs diet coke",
+    "red bull vs diet coke caffeine"
+   ],
+   "research": [],
+   "score": 1.4,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [
+    "red bull vs ghost",
+    "red bull vs ghost energy drink",
+    "red bull vs ghost caffeine"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Gatorade",
+   "together": [
+    "red bull and gatorade",
+    "red bull and gatorade mix"
+   ],
+   "versus": [
+    "red bull vs gatorade"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [
+    "red bull vs liquid death"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Rockstar",
+   "together": [],
+   "versus": [
+    "red bull vs rockstar",
+    "red bull vs rockstar caffeine"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Reign",
+   "together": [],
+   "versus": [
+    "red bull vs reign"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Starbucks",
+   "together": [],
+   "versus": [
+    "red bull vs starbucks coffee",
+    "red bull vs starbucks energy drink"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "NASCAR",
+   "together": [
+    "red bull and nascar"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Nike",
+   "together": [
+    "red bull and nike"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Red Bull",
+   "to": "Sprite",
+   "together": [
+    "red bull and sprite",
+    "red bull and sprite mix"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "San Pellegrino",
+   "together": [
+    "are topo chico and san pellegrino the same"
+   ],
+   "versus": [
+    "topo chico vs san pellegrino",
+    "topo chico vs pellegrino",
+    "topo chico or san pellegrino",
+    "topo chico vs san pellegrino flavored sparkling water",
+    "topo chico vs san pellegrino mineral content",
+    "topo chico vs perrier vs pellegrino",
+    "topo chico or pellegrino",
+    "topo chico vs san pellegrino reddit",
+    "topo chico mineral water vs san pellegrino"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "White Claw",
+   "together": [],
+   "versus": [
+    "topo chico vs white claw",
+    "topo chico or white claw",
+    "is topo chico better than white claw",
+    "is topo chico hard seltzer better than white claw",
+    "topo chico vs white claw reddit",
+    "topo chico seltzer vs white claw",
+    "topo chico hard seltzer vs white claw"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "LaCroix",
+   "together": [],
+   "versus": [
+    "topo chico vs la croix",
+    "is topo chico better than la croix",
+    "topo chico vs la croix reddit"
+   ],
+   "research": [],
+   "score": 0.9,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "High Noon",
+   "together": [],
+   "versus": [
+    "topo chico vs high noon",
+    "topo chico or high noon",
+    "topo chico seltzer vs high noon",
+    "topo chico vs high noon reddit"
+   ],
+   "research": [],
+   "score": 1.2,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Perrier",
+   "together": [],
+   "versus": [
+    "topo chico vs perrier",
+    "is topo chico better than perrier",
+    "agua mineral topo chico vs perrier",
+    "topo chico vs maison perrier",
+    "topo chico vs perrier vs pellegrino"
+   ],
+   "research": [],
+   "score": 1.5,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Spindrift",
+   "together": [],
+   "versus": [
+    "topo chico vs spindrift",
+    "is topo chico better than spindrift"
+   ],
+   "research": [],
+   "score": 0.6,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Bubly",
+   "together": [],
+   "versus": [
+    "topo chico vs bubly"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [
+    "topo chico vs liquid death"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Mountain Valley",
+   "together": [],
+   "versus": [
+    "topo chico vs mountain valley"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Coca-Cola",
+   "together": [
+    "topo chico and coca cola",
+    "topo chico owned by coke"
+   ],
+   "versus": [
+    "topo chico pepsi or coke"
+   ],
+   "research": [],
+   "score": 1.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Pepsi",
+   "together": [],
+   "versus": [
+    "topo chico pepsi or coke"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Waterloo",
+   "together": [],
+   "versus": [
+    "topo chico vs waterloo"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Costco",
+   "together": [
+    "topo chico at costco",
+    "topo chico and costco",
+    "topo chico en costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Target",
+   "together": [
+    "topo chico target"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Topo Chico",
+   "to": "Whole Foods",
+   "together": [
+    "topo chico whole foods"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Stanley",
+   "together": [
+    "brands like yeti and stanley",
+    "yeti and stanley",
+    "yeti and stanley comparison",
+    "yeti and stanley cups"
+   ],
+   "versus": [
+    "yeti vs stanley",
+    "yeti or stanley",
+    "yeti or stanley tumbler",
+    "yeti or stanley better",
+    "yeti versus stanley",
+    "is yeti better than stanley",
+    "yeti vs hydro flask vs stanley",
+    "yeti vs stanley food jar",
+    "yeti daytrip vs stanley julienne",
+    "yeti vs owala vs stanley",
+    "yeti vs stanley tumbler",
+    "yeti vs stanley cup",
+    "yeti vs stanley vs hydroflask",
+    "yeti vs stanley cooler",
+    "yeti vs stanley lunch box",
+    "yeti vs stanley vs owala",
+    "yeti vs stanley french press"
+   ],
+   "research": [],
+   "score": 4.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Hydro Flask",
+   "together": [
+    "yeti and hydro flask"
+   ],
+   "versus": [
+    "yeti vs hydro flask",
+    "yeti or hydro flask",
+    "yeti versus hydro flask",
+    "is yeti better than hydro flask",
+    "yeti vs hydro flask water bottle",
+    "yeti vs hydro flask vs stanley",
+    "yeti vs hydro flask vs owala",
+    "yeti vs hydro flask reddit",
+    "yeti vs hydro flask food jar",
+    "yeti vs hydro flask soft cooler",
+    "yeti vs hydro flask cooler bag",
+    "yeti vs hydro flask cooler",
+    "yeti food jar vs hydro flask",
+    "yeti vs stanley vs hydroflask"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Owala",
+   "together": [
+    "yeti and owala"
+   ],
+   "versus": [
+    "yeti vs owala",
+    "yeti or owala",
+    "is yeti better than owala",
+    "yeti vs hydro flask vs owala",
+    "yeti vs owala vs stanley",
+    "yeti vs owala water bottle",
+    "yeti vs owala tumbler",
+    "yeti vs owala reddit",
+    "yeti vs owala coffee tumbler",
+    "yeti vs owala for kids",
+    "yeti vs owala coffee mug",
+    "yeti vs owala kids water bottle",
+    "yeti vs stanley vs owala"
+   ],
+   "research": [],
+   "score": 2.3,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Red Bull",
+   "together": [
+    "yeti x redbull",
+    "yeti and red bull"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 1.5,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Lululemon",
+   "together": [],
+   "versus": [
+    "yeti vs lululemon water bottle"
+   ],
+   "research": [],
+   "score": 0.3,
+   "best": "versus_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Costco",
+   "together": [
+    "yeti and costco"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "e.l.f. Cosmetics",
+   "together": [
+    "yeti and elf"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Yeti",
+   "to": "Liquid Death",
+   "together": [
+    "yeti and liquid death cooler"
+   ],
+   "versus": [],
+   "research": [],
+   "score": 0.8,
+   "best": "co_search"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Open Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkopenwater.com affinity 100%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "If the part of Liquid Death you love is the aluminum can and the anti-plastic stance, this is the one to try first.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Perrier",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse 'Top cross-interests, ranked by affinity' for Liquid Death audience: Perrier 8.59x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "air up",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: air-up.com affinity 85%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Cirkul",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkcirkul.com affinity 81%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Proud Source Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: proudsourcewater.com affinity 89%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Athletic Brewing",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Athletic Brewing: Best for the craft-beer lover who wants the taste and the ritual without the alcohol.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Aura Bora",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Aura Bora: Best for the shopper who wants the most distinctive, most fun can in the fridge",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "JUST Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "JUST Water: Best for the eco-minded shopper who wants plain spring water and cares more about the packaging than the flavor.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Ghia",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Ghia: Best for the sober-curious shopper who wants a grown-up, genuinely interesting drink to hold",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Recess",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Recess",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 4.2,
+   "best": "co_mention"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Path Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Path Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Native",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 3.5,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Sol de Janeiro",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Sol De Janeiro",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "BuzzBallz",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and BuzzBallz",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "TikTok",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: TikTok 2.71x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Pandora",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: Pandora (Fashion & Accessoires) 2.71x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Planet Fitness",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: Planet Fitness (Sports) 1.55x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "7-Eleven",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "45% purchase food or beverages from convenience stores (e.g.,7-Eleven, Speedway) at least once a week (vs 18% of those uninterested in Liquid Death)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Costco",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from ... membership club retailers (e.g., Costco, Sam's Club)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Target",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from supercenters (e.g., Walmart, Target)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Walmart",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from supercenters (e.g., Walmart, Target)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Dr. Squatch",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Liquid Death and Dr. Squatch launch Grime Reaper, their new limited-edition bar soap collaboration.",
+     "url": "https://bleedingcool.com/pop-culture/liquid-death-dr-squatch-partner-up-for-another-soap-collab",
+     "seen": "page"
+    }
+   ],
+   "score": 1.4,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "Olipop",
+   "to": "Wildwonder",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: drinkwildwonder.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Wildwonder: the rare can with both prebiotics and probiotics",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Olipop",
+   "to": "Slice",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: slicesoda.com affinity 95%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Olipop",
+   "to": "Blue Bottle Coffee",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: bluebottlecoffee.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Olipop",
+   "to": "Nordstrom",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkolipop.com lists nordstrom.com",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Olipop",
+   "to": "Culture Pop",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Culture Pop: it packs live probiotics, not only prebiotics",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Health-Ade",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Health-Ade SunSip: It is an easy, low-risk step away from Olipop.",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Ghost Energy",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' lists Olipop and Ghost Energy",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Path Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' lists Olipop and Path Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "RXBAR",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and RXBAR",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Olipop",
+   "to": "Siete",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Siete",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Poppi",
+   "to": "Gatorade",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: gatorade.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Poppi",
+   "to": "G Fuel",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: gfuel.com affinity 81%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Poppi",
+   "to": "Culture Pop",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Culture Pop: it is a probiotic soda with live cultures, and it is sweetened only with real fruit juice",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Poppi",
+   "to": "Aura Bora",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Aura Bora: a herbal sparkling water made with real herbs, fruits, and flowers",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Poppi",
+   "to": "Health-Ade",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Health-Ade: its SunSip line brings that fermentation pedigree into the prebiotic-soda aisle",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Waterloo",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: drinkwaterloo.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Waterloo: is the pick if the calories are what pushed you off Spindrift.",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Waterloo",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 7,
+   "best": "audience_data"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Sparkling Ice",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: sparklingice.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Hop Wtr",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: hopwtr.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Twisted Tea",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: twistedtea.com affinity 85%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Poland Spring",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: polandspring.com affinity 84%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Sanzo",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Sanzo: It uses real fruit with no added sugar, exactly like Spindrift",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Topo Chico",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Topo Chico: It is the bartender's default for a reason.",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "LaCroix",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "LaCroix: is the brand that made flavored seltzer normal in the US",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Liquid Death: sells mountain water in tallboy aluminium cans, still and sparkling",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 3.5,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Olipop",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Spindrift",
+   "to": "Simple Mills",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Simple Mills",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Open Water",
+   "to": "JUST Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: justwater.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Open Water",
+   "to": "Boxed Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: boxedwaterisbetter.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Open Water",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: liquiddeath.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Open Water",
+   "to": "Path Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: drinkpathwater.com affinity 80%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Open Water",
+   "to": "Arrowhead",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: arrowheadwater.com affinity 76%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Open Water",
+   "to": "CanO Water",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: canowater.com affinity 72%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Partake Brewing",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: drinkpartake.com affinity 97%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Ritual Zero Proof",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: ritualzeroproof.com affinity 96%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Best Day Brewing",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: bestdaybrewing.com affinity 92%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Best Day Brewing: is the closest thing to a like-for-like swap.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Go Brewing",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: gobrewing.com affinity 90%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Go Brewing: It is also the most restless brand here.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Lucky Saint",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: luckysaint.co affinity 78%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Lucky Saint: It is a genuine pilsner-style beer rather than a hoppy craft can, and it costs accordingly.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Hoplark",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Hoplark: is not beer, and that is the point.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Guinness 0.0",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Guinness 0.0: is the most widely available beer on this list and, for stout drinkers, the easiest recommendation to make.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Target",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for athleticbrewing.com lists target.com",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "The Vitamin Shoppe",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: vitaminshoppe.com affinity 100%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "GNC",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: gnc.com affinity 92%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "BuzzBallz",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and BuzzBallz",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Sol de Janeiro",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Sol De Janeiro",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Native",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Liquid Death",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 4.9,
+   "best": "co_mention"
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Poppi",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Poppi",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ],
+   "score": 4.2,
+   "best": "co_mention"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Duke Cannon",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: dukecannon.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Duke Cannon is probably the most direct competitor to Dr. Squatch in terms of vibe",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Harry's",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: harrys.com affinity 92%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Manscaped",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: manscaped.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Native",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: nativecos.com affinity 86%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Bath & Body Works",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: bathandbodyworks.com affinity 84%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Oars + Alps",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Oars + Alps creates clean, powerful grooming products designed for the active man.",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Bulldog Skincare",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "list",
+     "quote": "Bulldog is one of the most popular and affordable natural grooming brands out there.",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ],
+   "score": 2.8,
+   "best": "list"
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Liquid Death",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Liquid Death and Dr. Squatch launch Grime Reaper, their new limited-edition bar soap collaboration.",
+     "url": "https://bleedingcool.com/pop-culture/liquid-death-dr-squatch-partner-up-for-another-soap-collab",
+     "seen": "page"
+    },
+    {
+     "type": "collab_or_retail",
+     "quote": "Are there any other brands you admire? Friedman: Liquid Death. It has a super-irreverent attitude, which we admire.",
+     "url": "https://www.mediapost.com/publications/article/379646/dr-squatch-expands-into-lotion-extends-retail-fo.html",
+     "seen": "snippet"
+    }
+   ],
+   "score": 2.1,
+   "best": "collab_or_retail"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Ulta Beauty",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: ulta.com affinity 100%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for elfcosmetics.com lists ulta.com",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 6.3,
+   "best": "audience_data"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "NYX Professional Makeup",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: nyxcosmetics.com affinity 89%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Maybelline",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: maybelline.com affinity 87%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Charlotte Tilbury",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: charlottetilbury.com affinity 85%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "ColourPop",
+   "together": [],
+   "versus": [],
+   "research": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: colourpop.com affinity 81%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ],
+   "score": 5.6,
+   "best": "audience_data"
+  }
+ ]
+}

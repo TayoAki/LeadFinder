@@ -1,0 +1,1920 @@
+{
+ "seed": "Liquid Death",
+ "brands": {
+  "7-Eleven": {
+   "category": "Convenience retail",
+   "political": false,
+   "note": ""
+  },
+  "Alani Nu": {
+   "category": "Energy drink / supplements",
+   "political": false,
+   "note": "Young, affluent female energy-drink buyers (TD analysts via Dow Jones) https://itiger.com/news/2514847704"
+  },
+  "Arrowhead": {
+   "category": "Bottled water",
+   "political": false,
+   "note": ""
+  },
+  "Athletic Brewing": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": "Affluent millennials, sober-curious craft beer drinkers"
+  },
+  "Aura Bora": {
+   "category": "Herbal sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Bath & Body Works": {
+   "category": "Body care retail",
+   "political": false,
+   "note": ""
+  },
+  "Best Day Brewing": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": ""
+  },
+  "Bloom Nutrition": {
+   "category": "Energy drink / supplements",
+   "political": false,
+   "note": ""
+  },
+  "Blue Bottle Coffee": {
+   "category": "Coffee",
+   "political": false,
+   "note": ""
+  },
+  "Boxed Water": {
+   "category": "Boxed water",
+   "political": false,
+   "note": ""
+  },
+  "Bulldog Skincare": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": ""
+  },
+  "BuzzBallz": {
+   "category": "RTD cocktails",
+   "political": false,
+   "note": ""
+  },
+  "CanO Water": {
+   "category": "Canned water",
+   "political": false,
+   "note": ""
+  },
+  "Celsius": {
+   "category": "Energy drink",
+   "political": false,
+   "note": ""
+  },
+  "Charlotte Tilbury": {
+   "category": "Beauty",
+   "political": false,
+   "note": ""
+  },
+  "Cirkul": {
+   "category": "Flavoured water bottle",
+   "political": false,
+   "note": ""
+  },
+  "ColourPop": {
+   "category": "Beauty",
+   "political": false,
+   "note": ""
+  },
+  "Costco": {
+   "category": "Warehouse club retail",
+   "political": false,
+   "note": ""
+  },
+  "Culture Pop": {
+   "category": "Probiotic soda",
+   "political": false,
+   "note": ""
+  },
+  "Dr. Squatch": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": "Humor-driven men's natural soap buyers"
+  },
+  "Duke Cannon": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": ""
+  },
+  "Evian": {
+   "category": "Bottled water",
+   "political": false,
+   "note": ""
+  },
+  "G Fuel": {
+   "category": "Energy drink (gaming)",
+   "political": false,
+   "note": ""
+  },
+  "GNC": {
+   "category": "Supplement retail",
+   "political": false,
+   "note": ""
+  },
+  "Gatorade": {
+   "category": "Sports drink",
+   "political": false,
+   "note": ""
+  },
+  "Ghia": {
+   "category": "Non-alcoholic aperitif",
+   "political": false,
+   "note": ""
+  },
+  "Ghost Energy": {
+   "category": "Energy drink",
+   "political": false,
+   "note": ""
+  },
+  "Go Brewing": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": ""
+  },
+  "Guinness 0.0": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": ""
+  },
+  "Harry's": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": ""
+  },
+  "Health-Ade": {
+   "category": "Kombucha / prebiotic soda",
+   "political": false,
+   "note": ""
+  },
+  "Hop Wtr": {
+   "category": "Hop sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Hoplark": {
+   "category": "Hop sparkling tea",
+   "political": false,
+   "note": ""
+  },
+  "JUST Water": {
+   "category": "Boxed/bottled water",
+   "political": false,
+   "note": ""
+  },
+  "LaCroix": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Liquid Death": {
+   "category": "Canned water / beverages",
+   "political": false,
+   "note": "Gen Z & millennial, sober-curious, punk/metal-adjacent; CivicScience: 45% buy at c-stores weekly, 66% influenced by social friends https://civicscience.com/brand-to-watch-liquid-death/"
+  },
+  "Lucky Saint": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": ""
+  },
+  "Manscaped": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": ""
+  },
+  "Maybelline": {
+   "category": "Beauty",
+   "political": false,
+   "note": ""
+  },
+  "Monster Energy": {
+   "category": "Energy drink",
+   "political": false,
+   "note": ""
+  },
+  "NYX Professional Makeup": {
+   "category": "Beauty",
+   "political": false,
+   "note": ""
+  },
+  "Native": {
+   "category": "Personal care",
+   "political": false,
+   "note": ""
+  },
+  "Nordstrom": {
+   "category": "Department store",
+   "political": false,
+   "note": ""
+  },
+  "Oars + Alps": {
+   "category": "Men's grooming",
+   "political": false,
+   "note": ""
+  },
+  "Olipop": {
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": "Soda quitters; Numerator top brand for LGBTQ+ and early-adopter shoppers https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers"
+  },
+  "Open Water": {
+   "category": "Canned water",
+   "political": false,
+   "note": "Eco/anti-plastic canned-water buyers https://www.similarweb.com/website/drinkopenwater.com/"
+  },
+  "Pandora": {
+   "category": "Jewelry",
+   "political": false,
+   "note": ""
+  },
+  "Partake Brewing": {
+   "category": "Non-alcoholic beer",
+   "political": false,
+   "note": ""
+  },
+  "Path Water": {
+   "category": "Aluminum-bottled water",
+   "political": false,
+   "note": ""
+  },
+  "Perrier": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Planet Fitness": {
+   "category": "Gym chain",
+   "political": false,
+   "note": ""
+  },
+  "Poland Spring": {
+   "category": "Bottled water",
+   "political": false,
+   "note": ""
+  },
+  "Poppi": {
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": "Younger social-first prebiotic soda drinkers (PepsiCo-owned)"
+  },
+  "Proud Source Water": {
+   "category": "Canned/bottled water",
+   "political": false,
+   "note": ""
+  },
+  "RXBAR": {
+   "category": "Protein bars",
+   "political": false,
+   "note": ""
+  },
+  "Recess": {
+   "category": "Functional sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Ritual Zero Proof": {
+   "category": "Non-alcoholic spirits",
+   "political": false,
+   "note": ""
+  },
+  "San Pellegrino": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Sanzo": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Siete": {
+   "category": "Grain-free snacks",
+   "political": false,
+   "note": ""
+  },
+  "Simple Mills": {
+   "category": "Better-for-you snacks",
+   "political": false,
+   "note": ""
+  },
+  "Slice": {
+   "category": "Soda",
+   "political": false,
+   "note": ""
+  },
+  "Sol de Janeiro": {
+   "category": "Beauty / body care",
+   "political": false,
+   "note": ""
+  },
+  "Sparkling Ice": {
+   "category": "Flavoured sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Spindrift": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": "Real-fruit seltzer drinkers; Numerator 'early adopters' brand https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers"
+  },
+  "Stanley": {
+   "category": "Drinkware",
+   "political": false,
+   "note": ""
+  },
+  "Target": {
+   "category": "Mass retail",
+   "political": false,
+   "note": ""
+  },
+  "The Vitamin Shoppe": {
+   "category": "Supplement retail",
+   "political": false,
+   "note": ""
+  },
+  "TikTok": {
+   "category": "Social platform",
+   "political": false,
+   "note": ""
+  },
+  "Topo Chico": {
+   "category": "Mineral water",
+   "political": false,
+   "note": ""
+  },
+  "Twisted Tea": {
+   "category": "Hard iced tea",
+   "political": false,
+   "note": ""
+  },
+  "Ulta Beauty": {
+   "category": "Beauty retail",
+   "political": false,
+   "note": ""
+  },
+  "Walmart": {
+   "category": "Mass retail",
+   "political": false,
+   "note": ""
+  },
+  "Waterloo": {
+   "category": "Sparkling water",
+   "political": false,
+   "note": ""
+  },
+  "Wildwonder": {
+   "category": "Prebiotic soda",
+   "political": false,
+   "note": ""
+  },
+  "YETI": {
+   "category": "Outdoor gear / coolers",
+   "political": false,
+   "note": ""
+  },
+  "Zevia": {
+   "category": "Zero-sugar soda",
+   "political": false,
+   "note": ""
+  },
+  "air up": {
+   "category": "Flavoured water bottle",
+   "political": false,
+   "note": ""
+  },
+  "e.l.f. Cosmetics": {
+   "category": "Beauty",
+   "political": false,
+   "note": "Trend-following, budget-conscious, TikTok-heavy shoppers https://www.numerator.com/resources/blog/beauty-trends/"
+  }
+ },
+ "edges": [
+  {
+   "from": "Liquid Death",
+   "to": "Open Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkopenwater.com affinity 100%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "If the part of Liquid Death you love is the aluminum can and the anti-plastic stance, this is the one to try first.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Spindrift",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkspindrift.com affinity 86%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Spindrift",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Spindrift: Best for the seltzer drinker who wants real fruit flavor and can live with a few honest calories to get it.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Spindrift",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death ('Ultimate summer hydration clout!') alongside Spindrift",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Olipop",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Olipop: Best for the soda quitter who still wants a cola or root beer moment without the sugar hangover.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Another one of my favorite better ingredient energy drinks! (Liquid Death entry on a fan list that also includes OLIPOP)",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside Olipop",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Poppi",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Poppi: Best for shoppers who want a fruitier, crisper take on the prebiotic soda idea rather than a rich cola.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Poppi",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside Poppi",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "San Pellegrino",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: sanpellegrino.com affinity 78%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Summer fridge stock' list includes Liquid Death alongside San Pellegrino",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Pellegrino",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Evian",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: evian.com affinity 79%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Evian",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Perrier",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse 'Top cross-interests, ranked by affinity' for Liquid Death audience: Perrier 8.59x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "air up",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: air-up.com affinity 85%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Cirkul",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: drinkcirkul.com affinity 81%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Proud Source Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for liquiddeath.com: proudsourcewater.com affinity 89%",
+     "url": "https://www.similarweb.com/website/liquiddeath.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Waterloo",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Liquid Death Mountain Water and Waterloo",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Waterloo: Best for shoppers who want a sparkling water that tastes like actual fruit",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Athletic Brewing",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Athletic Brewing: Best for the craft-beer lover who wants the taste and the ritual without the alcohol.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Aura Bora",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Aura Bora: Best for the shopper who wants the most distinctive, most fun can in the fridge",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "JUST Water",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "JUST Water: Best for the eco-minded shopper who wants plain spring water and cares more about the packaging than the flavor.",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Ghia",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Ghia: Best for the sober-curious shopper who wants a grown-up, genuinely interesting drink to hold",
+     "url": "https://www.ringly.io/discover/brands-like-liquid-death",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Alani Nu",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Alani Nu",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Alani Nu",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Bloom Nutrition",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death Sparkling Energy alongside Bloom Nutrition",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Zevia",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Zevia",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Recess",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Liquid Death alongside Recess",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Monster Energy",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Looks like a hardcore energy drink but it's actually super crisp, ice-cold mountain water in a tallboy can. (same list includes Monster Energy)",
+     "url": "https://benable.com/afikaafrats_/summer-fridge-stock-the-most-refreshing-canned-bottled-drinks",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Ghost Energy",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Ghost Energy",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Path Water",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Path Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Native",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' (ranked by household-penetration over-index) lists Liquid Death Mountain Water and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Sol de Janeiro",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and Sol De Janeiro",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "BuzzBallz",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Liquid Death Mountain Water and BuzzBallz",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "TikTok",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: TikTok 2.71x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Pandora",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: Pandora (Fashion & Accessoires) 2.71x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Planet Fitness",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Rascasse cross-interests for Liquid Death audience: Planet Fitness (Sports) 1.55x",
+     "url": "https://rascasse.com/explore/us/liquid-death-10004216",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "7-Eleven",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "45% purchase food or beverages from convenience stores (e.g.,7-Eleven, Speedway) at least once a week (vs 18% of those uninterested in Liquid Death)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Costco",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from ... membership club retailers (e.g., Costco, Sam's Club)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Target",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from supercenters (e.g., Walmart, Target)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Walmart",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "more likely than non-customers to purchase most of their groceries from supercenters (e.g., Walmart, Target)",
+     "url": "https://civicscience.com/brand-to-watch-liquid-death/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "e.l.f. Cosmetics",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "E.l.f still manages to make headlines for unusual pairings like a “corpse paint” partnership with Liquid Death.",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "Dr. Squatch",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Liquid Death and Dr. Squatch launch Grime Reaper, their new limited-edition bar soap collaboration.",
+     "url": "https://bleedingcool.com/pop-culture/liquid-death-dr-squatch-partner-up-for-another-soap-collab",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Liquid Death",
+   "to": "YETI",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Ad the day: Liquid Death and Yeti release limited-edition casket cooler (article title)",
+     "url": "https://www.thedrum.com/news/2024/08/30/ad-the-day-liquid-death-and-yeti-release-limited-edition-casket-cooler",
+     "seen": "snippet"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Poppi",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkolipop.com lists drinkpoppi.com",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Poppi: it is the natural first stop if Olipop reads too sweet to you",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Wildwonder",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: drinkwildwonder.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Wildwonder: the rare can with both prebiotics and probiotics",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Slice",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: slicesoda.com affinity 95%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Blue Bottle Coffee",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkolipop.com: bluebottlecoffee.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Nordstrom",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkolipop.com lists nordstrom.com",
+     "url": "https://www.similarweb.com/website/drinkolipop.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Culture Pop",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Culture Pop: it packs live probiotics, not only prebiotics",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Health-Ade",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Health-Ade SunSip: It is an easy, low-risk step away from Olipop.",
+     "url": "https://www.ringly.io/discover/olipop-competitors",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Ghost Energy",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' lists Olipop and Ghost Energy",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Path Water",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' lists Olipop and Path Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "RXBAR",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and RXBAR",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Siete",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Siete",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Spindrift",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Spindrift",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Olipop",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Olipop and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning LGBTQ+ Shoppers' ranks Liquid Death Mountain Water #1 and Olipop #2",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Olipop",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: drinkolipop.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkpoppi.com lists drinkolipop.com",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Olipop: Its OLISMART blend combines seven different prebiotic fibers and botanicals",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Bloom Nutrition",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for drinkpoppi.com lists bloomnu.com",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Bloom Pop: uses PreticX, a patented XOS prebiotic that works at a low dose",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Celsius",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: celsius.com affinity 85%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Gatorade",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: gatorade.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "G Fuel",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkpoppi.com: gfuel.com affinity 81%",
+     "url": "https://www.similarweb.com/website/drinkpoppi.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Culture Pop",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Culture Pop: it is a probiotic soda with live cultures, and it is sweetened only with real fruit juice",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Aura Bora",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Aura Bora: a herbal sparkling water made with real herbs, fruits, and flowers",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Poppi",
+   "to": "Health-Ade",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Health-Ade: its SunSip line brings that fermentation pedigree into the prebiotic-soda aisle",
+     "url": "https://www.ringly.io/discover/brands-like-poppi",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Waterloo",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: drinkwaterloo.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Waterloo: is the pick if the calories are what pushed you off Spindrift.",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Waterloo",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Sparkling Ice",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: sparklingice.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Hop Wtr",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: hopwtr.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Twisted Tea",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: twistedtea.com affinity 85%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Poland Spring",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkspindrift.com: polandspring.com affinity 84%",
+     "url": "https://www.similarweb.com/website/drinkspindrift.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Sanzo",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Sanzo: It uses real fruit with no added sugar, exactly like Spindrift",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Topo Chico",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Topo Chico: It is the bartender's default for a reason.",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "LaCroix",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "LaCroix: is the brand that made flavored seltzer normal in the US",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Liquid Death: sells mountain water in tallboy aluminium cans, still and sparkling",
+     "url": "https://www.ringly.io/discover/brands-like-spindrift",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Olipop",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Olipop",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Spindrift",
+   "to": "Simple Mills",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning Early Adopters' lists Spindrift and Simple Mills",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "JUST Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: justwater.com affinity 100%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "Boxed Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: boxedwaterisbetter.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: liquiddeath.com affinity 89%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "Path Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: drinkpathwater.com affinity 80%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "Arrowhead",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: arrowheadwater.com affinity 76%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Open Water",
+   "to": "CanO Water",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drinkopenwater.com: canowater.com affinity 72%",
+     "url": "https://www.similarweb.com/website/drinkopenwater.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Partake Brewing",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: drinkpartake.com affinity 97%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Ritual Zero Proof",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: ritualzeroproof.com affinity 96%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Best Day Brewing",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: bestdaybrewing.com affinity 92%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Best Day Brewing: is the closest thing to a like-for-like swap.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Go Brewing",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: gobrewing.com affinity 90%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Go Brewing: It is also the most restless brand here.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Lucky Saint",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for athleticbrewing.com: luckysaint.co affinity 78%",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Lucky Saint: It is a genuine pilsner-style beer rather than a hoppy craft can, and it costs accordingly.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Hoplark",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Hoplark: is not beer, and that is the point.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Guinness 0.0",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Guinness 0.0: is the most widely available beer on this list and, for stout drinkers, the easiest recommendation to make.",
+     "url": "https://www.ringly.io/discover/brands-like-athletic-brewing",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Athletic Brewing",
+   "to": "Target",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for athleticbrewing.com lists target.com",
+     "url": "https://www.similarweb.com/website/athleticbrewing.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Celsius",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Energy-drink maker Celsius says there is only a 14% overlap between its customers and buyers of Alani Nu (Circana panel data)",
+     "url": "https://itiger.com/news/2514847704",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "TD analysts: they both still over-index to young, affluent female customers",
+     "url": "https://itiger.com/news/2514847704",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: celsius.com affinity 89%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "The Vitamin Shoppe",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: vitaminshoppe.com affinity 100%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "GNC",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for alaninu.com: gnc.com affinity 92%",
+     "url": "https://www.similarweb.com/website/alaninu.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "BuzzBallz",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and BuzzBallz",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Sol de Janeiro",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Sol De Janeiro",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Native",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Native (Toiletries)",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Numerator 'Top Brands Winning TikTok Users' lists Alani Nu and Liquid Death Mountain Water",
+     "url": "https://numerator.com/resources/blog/top-brands-winning-lgbtq-consumers",
+     "seen": "page"
+    },
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Liquid Death",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Bloom Nutrition",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Bloom Nutrition",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Alani Nu",
+   "to": "Poppi",
+   "evidence": [
+    {
+     "type": "co_mention",
+     "quote": "Personal 'Beverage Girlies Rise Up' favourites list includes Alani Nu alongside Poppi",
+     "url": "https://benable.com/vivianwrec/beverage-girlies-rise-up",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Duke Cannon",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: dukecannon.com affinity 98%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    },
+    {
+     "type": "list",
+     "quote": "Duke Cannon is probably the most direct competitor to Dr. Squatch in terms of vibe",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Harry's",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: harrys.com affinity 92%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Manscaped",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: manscaped.com affinity 87%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Native",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: nativecos.com affinity 86%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Bath & Body Works",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for drsquatch.com: bathandbodyworks.com affinity 84%",
+     "url": "https://www.similarweb.com/website/drsquatch.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Oars + Alps",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Oars + Alps creates clean, powerful grooming products designed for the active man.",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Bulldog Skincare",
+   "evidence": [
+    {
+     "type": "list",
+     "quote": "Bulldog is one of the most popular and affordable natural grooming brands out there.",
+     "url": "https://www.apartstyle.com/post/brands-like-dr-squatch",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "Dr. Squatch",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "Liquid Death and Dr. Squatch launch Grime Reaper, their new limited-edition bar soap collaboration.",
+     "url": "https://bleedingcool.com/pop-culture/liquid-death-dr-squatch-partner-up-for-another-soap-collab",
+     "seen": "page"
+    },
+    {
+     "type": "collab_or_retail",
+     "quote": "Are there any other brands you admire? Friedman: Liquid Death. It has a super-irreverent attitude, which we admire.",
+     "url": "https://www.mediapost.com/publications/article/379646/dr-squatch-expands-into-lotion-extends-retail-fo.html",
+     "seen": "snippet"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Ulta Beauty",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: ulta.com affinity 100%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    },
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Other Visited Websites' for elfcosmetics.com lists ulta.com",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "NYX Professional Makeup",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: nyxcosmetics.com affinity 89%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Maybelline",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: maybelline.com affinity 87%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Charlotte Tilbury",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: charlottetilbury.com affinity 85%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "ColourPop",
+   "evidence": [
+    {
+     "type": "audience_data",
+     "quote": "Similarweb 'Competitors & Similar Sites' for elfcosmetics.com: colourpop.com affinity 81%",
+     "url": "https://www.similarweb.com/website/elfcosmetics.com/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Stanley",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "That was a proof point that helped convince E.l.f that its customers were already interested in Stanley products. (pre-collab Instagram giveaway drew ~60,000 entries)",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ]
+  },
+  {
+   "from": "e.l.f. Cosmetics",
+   "to": "Liquid Death",
+   "evidence": [
+    {
+     "type": "collab_or_retail",
+     "quote": "E.l.f still manages to make headlines for unusual pairings like a “corpse paint” partnership with Liquid Death.",
+     "url": "https://www.modernretail.co/marketing/dtc-briefing-how-e-l-f-cosmetics-uses-collaborations-with-brands-like-stanley-and-liquid-death-to-generate-dtc-buzz/",
+     "seen": "page"
+    }
+   ]
+  }
+ ],
+ "ring2_seeds": [
+  "Olipop",
+  "Poppi",
+  "Spindrift",
+  "Open Water",
+  "Athletic Brewing",
+  "Alani Nu",
+  "Dr. Squatch",
+  "e.l.f. Cosmetics"
+ ],
+ "notes": "Similarweb 'Competitors & Similar Sites' affinity blends audience overlap with topical similarity; 'Other Visited Websites' is pure co-visitation. Numerator lists rank brands by over-index within a shopper segment, so co-listing means a shared over-indexing segment, not measured cross-purchase (typed 'list'). Rascasse affinities are social-audience estimates. Benable lists are individual fan curations.",
+ "queries_run": [
+  "liquid death shoppers also buy audience overlap",
+  "brands like liquid death",
+  "Numerator Liquid Death shopper profile other brands",
+  "\"liquid death\" \"celsius\" fridge girlies olipop",
+  "\"liquid death\" fans also love brands reddit",
+  "Liquid Death collaborations list e.l.f. Dr. Squatch Yeti collab",
+  "\"people who drink liquid death\" OR \"liquid death drinkers\" also",
+  "sparktoro \"liquid death\" audience",
+  "\"liquid death\" \"athletic brewing\" fans sober curious both",
+  "fridge restock \"liquid death\" \"olipop\" \"celsius\" tiktok",
+  "\"liquid death\" \"erewhon\" girl aesthetic stanley",
+  "\"liquid death\" \"death wish coffee\" fans",
+  "liquid death target audience punk metal skateboarding fans brands Vans Tony Hawk",
+  "\"liquid death\" consumers \"more likely\" to buy Numerator OR Circana OR Placer.ai OR Earnest",
+  "reddit \"liquid death\" \"athletic brewing\" non-alcoholic at bars sober",
+  "\"liquid death\" \"topo chico\" \"celsius\" favorite drinks",
+  "Liquid Death Yeti casket cooler collaboration",
+  "rascasse.com explore us olipop OR poppi OR athletic brewing OR alani nu audience",
+  "Olipop shoppers also buy Poppi overlap Numerator data",
+  "Athletic Brewing customers also buy data overlap shoppers",
+  "e.l.f. cosmetics shoppers also shop overlap data",
+  "\"alani nu\" \"bloom\" \"ghost\" \"celsius\" girlies energy drink favorites",
+  "brands like Dr. Squatch alternatives Duke Cannon Manscaped list",
+  "brands like poppi prebiotic soda list",
+  "Celsius Alani Nu consumer overlap percent households acquisition",
+  "Numerator brands winning Gen Z e.l.f. Alani Nu list",
+  "\"dr squatch\" customers also love brands audience manscaped liquid death",
+  "FETCH: similarweb.com for liquiddeath.com, drinkolipop.com, drinkpoppi.com, drinkspindrift.com, athleticbrewing.com, alaninu.com, drsquatch.com, drinkopenwater.com, elfcosmetics.com",
+  "FETCH: rascasse Liquid Death audience",
+  "FETCH: numerator top brands winning segments",
+  "FETCH: civicscience brand-to-watch-liquid-death",
+  "FETCH: ringly brands-like liquid-death/poppi/olipop-competitors/spindrift/athletic-brewing",
+  "FETCH: benable fan lists x2",
+  "FETCH: apartstyle brands-like-dr-squatch",
+  "FETCH: itiger Celsius/Alani Nu overlap"
+ ]
+}
