@@ -73,7 +73,7 @@ export default function Home() {
         ) : showQuiz && (
           <Pressable onPress={() => { track('quiz_entry_tap', { from: 'home' }); router.push({ pathname: '/quiz', params: { from: 'home' } }); }} accessibilityRole="button"
             style={{ margin: S.lg, marginBottom: 0, padding: S.lg, borderRadius: R.lg, backgroundColor: C.ink, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-            <Ionicons name="sparkles" size={24} color={C.buy} />
+            <Ionicons name="sparkles" size={24} color="#F2A584" />
             <View style={{ flex: 1 }}>
               <Text style={{ color: '#fff', fontWeight: '800', fontSize: 16 }}>Find your match in 30 seconds</Text>
               <Text style={{ color: '#D9DEEA', marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
@@ -96,7 +96,7 @@ export default function Home() {
             const img = products.find(p => p.category === c && p.stock > 0)?.image;
             return (
               <Pressable key={c} onPress={() => { track('home_category', { category: c }); router.push({ pathname: '/search', params: { cat: c } }); }} style={{ alignItems: 'center', width: 70 }} accessibilityRole="button" accessibilityLabel={`Shop ${c}`}>
-                <View style={{ padding: 2.5, borderRadius: 40, borderWidth: 2.5, borderColor: C.buy }}>
+                <View style={{ padding: 2.5, borderRadius: 40, borderWidth: 2.5, borderColor: C.brand }}>
                   <Image source={{ uri: img }} style={{ width: 58, height: 58, borderRadius: 29, backgroundColor: C.photo }} />
                 </View>
                 <Text numberOfLines={1} style={{ fontSize: 11, marginTop: 6, color: C.ink2, fontWeight: '600' }}>{c}</Text>

@@ -12,11 +12,11 @@ const tapped = (ui: string, label: string, fn?: () => void) => () => { haptic(ui
 export type IconName = React.ComponentProps<typeof Ionicons>['name'];
 
 export function Button({ title, onPress, kind = 'primary', icon, style, disabled, loading, testID }: {
-  title: string; onPress?: () => void; kind?: 'primary' | 'accent' | 'buy' | 'ghost' | 'light'; icon?: IconName;
+  title: string; onPress?: () => void; kind?: 'primary' | 'accent' | 'buy' | 'sage' | 'ghost' | 'light'; icon?: IconName;
   style?: StyleProp<ViewStyle>; disabled?: boolean; loading?: boolean; testID?: string;
 }) {
-  const bg = { primary: C.ink, accent: C.accent, buy: C.buy, ghost: 'transparent', light: C.surface }[kind];
-  const fg = kind === 'ghost' || kind === 'light' ? C.ink : kind === 'buy' ? C.buyInk : '#fff';
+  const bg = { primary: C.ink, accent: C.accent, buy: C.buy, sage: C.sage, ghost: 'transparent', light: C.surface }[kind];
+  const fg = kind === 'ghost' || kind === 'light' || kind === 'sage' ? C.ink : kind === 'buy' ? C.buyInk : '#fff';
   return (
     <Pressable testID={testID} accessibilityRole="button" accessibilityLabel={title} onPress={tapped('button', title, onPress)} disabled={disabled || loading}
       style={({ pressed }) => [styles.btn, { backgroundColor: bg, opacity: disabled ? 0.4 : pressed ? 0.85 : 1, transform: [{ scale: pressed ? 0.98 : 1 }] },

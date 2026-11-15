@@ -39,7 +39,7 @@ export default function Match() {
       <Header back title="Your match" />
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
         <View style={{ margin: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.ink }}>
-          <Text style={[T.tiny, { color: C.buy }]}>YOUR MATCH</Text>
+          <Text style={[T.tiny, { color: '#F2A584' }]}>YOUR MATCH</Text>
           <Text style={{ color: '#fff', fontSize: 28, fontWeight: '900', marginTop: 6 }}>{info.title}</Text>
           <Text style={{ color: '#D9DEEA', marginTop: 6, fontSize: 15, lineHeight: 21 }}>{info.line} Here's what fits, best match first.</Text>
         </View>
@@ -47,7 +47,7 @@ export default function Match() {
           <View style={{ marginHorizontal: S.lg, marginBottom: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, gap: 8 }}>
             <Text style={T.h3}>{p.area === 'skin' ? 'Your routine' : 'Your starter set'}</Text>
             <Text style={T.small}>{routine.map(x => x.title).join(' + ')}</Text>
-            <Button title={`Add all ${routine.length} · ${money(routine.reduce((n, x) => n + x.price, 0))}`} kind="buy" icon="bag-add"
+            <Button title={`Add all ${routine.length} · ${money(routine.reduce((n, x) => n + x.price, 0))}`} kind="sage" icon="bag-add"
               onPress={() => { routine.forEach((x, i) => add(x, null, 1, { toast: i === routine.length - 1 ? `Added ${routine.length} items` : false })); track('quiz_result_add', { icp: p.icp, items: routine.length }); }} />
           </View>
         )}

@@ -1,37 +1,38 @@
-// Colour system (colour theory, contrast-checked to WCAG AA):
-// - ORANGE is the Shelby brand and the buy colour. Orange reads as energy, warmth and value (the
-//   family of Amazon, Fanta, JBL), and it is the colour shoppers already associate with "buy".
-//   It is used ONLY for the logo and buying actions (Add to cart, Checkout, Pay, Shop now), so the
-//   isolation effect still makes the button the one thing the eye finds. Ink on orange is 6.1:1.
-// - NAVY ink is orange's complement (blue-orange): text, headers, navigation and primary buttons.
-//   Complementary contrast is what makes the orange pop; white on navy is 15.9:1.
-// - Burnt orange is the quiet text highlight (links, selection, progress): 5.2:1 on the background,
-//   where bright orange text would fail (2.6:1).
+// Colour system: "Sunset & Sage" (contrast-checked to WCAG AA).
+// - TERRACOTTA (#E66739) is the brand: logo, icons, badges. Buying actions use a deeper terracotta
+//   (#BF4F26) so white button text passes AA (4.8:1; white on #E66739 is only 3.3:1). Warm orange-red
+//   reads as energy and appetite, and it is used for buying only, so the button is what the eye finds.
+// - DEEP INDIGO (#1E2E4B) is terracotta's complement (blue vs orange): text, headers, primary buttons.
+//   Indigo on cream is 12.7:1.
+// - SAGE (#8AA382) is the calm counterweight (green opposite red on the wheel): secondary actions
+//   (indigo text on sage, 4.9:1) and trust cues (deep sage text #4D6B46, 5.6:1).
+// - SOFT BLUSH (#F6E3E0) for highlighted panels; WARM CREAM (#FAF7F2) background keeps photos the most
+//   saturated thing on screen.
 // - Red only means a real saving or a problem (sale prices, low stock, errors, count badges).
-// - Green only means trust: in stock, free shipping, returns, guarantees, success.
-// - Warm off-white background keeps product photos the most saturated thing on screen.
 export const C = {
-  bg: '#FFF8F1',
+  bg: '#FAF7F2', // warm cream
   surface: '#FFFFFF',
-  ink: '#16213E', // navy: orange's complement
-  ink2: '#4B5270',
-  ink3: '#666C86',
-  line: '#F1E4D6',
-  photo: '#F7EEE5', // product photo backdrop
-  accent: '#B04A00', // burnt orange: links, selection, progress, icons
-  accentSoft: '#FFEEDF',
-  buy: '#FF7A1A', // brand orange, buying actions only
-  buyPressed: '#F26A05',
-  buyInk: '#16213E',
-  buySoft: '#FFF0E2',
+  ink: '#1E2E4B', // deep indigo
+  ink2: '#4A5670',
+  ink3: '#646D85',
+  line: '#EDE6DC',
+  photo: '#F3EEE7', // product photo backdrop
+  accent: '#B34A22', // terracotta text: links, selection, progress, icons (5.0:1 on cream)
+  accentSoft: '#F6E3E0', // soft blush
+  buy: '#BF4F26', // deep terracotta: buying actions only
+  buyPressed: '#A8431F',
+  buyInk: '#FFFFFF',
+  buySoft: '#FBE9E2',
+  brand: '#E66739', // terracotta: logo, icons, badges (not text)
+  sage: '#8AA382', // secondary actions, with indigo text
   sale: '#C8102E', // real discounts, low stock, errors, badges
   saleSoft: '#FDE8EA',
-  good: '#157A4A',
-  goodSoft: '#E7F4EC',
+  good: '#4D6B46', // deep sage: in stock, returns, guarantees, success
+  goodSoft: '#E8EFE5',
   warn: '#8A5A00',
   warnSoft: '#FFF3D1',
-  spark: '#FF7A1A', // logo and mascot accents
-  dark: '#16213E',
+  spark: '#E66739', // logo and mascot accents
+  dark: '#1E2E4B',
 };
 
 export const R = { sm: 8, md: 14, lg: 20, pill: 999 };
