@@ -23,11 +23,13 @@ export default function Search() {
   const [showFilters, setShowFilters] = useState(false);
 
   const results = useMemo(() => {
-    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    // Ignore filler words so natural phrases ("gift for dad", "a mug for my mum") still match.
+    const STOP = new Set(['a', 'an', 'the', 'for', 'my', 'to', 'of', 'and', 'with', 'in', 'on', 'gift', 'gifts', 'present', 'ideas', 'idea', 'something', 'some', 'under', 'dad', 'mum', 'mom', 'him', 'her']);
+    const words = q.toLowerCase().split(/\s+/).filter(w => w && !STOP.has(w) && !/^\$?\d+$/.test(w));
     let r = products.filter(p => (cat === 'All' || p.category === cat) && p.price <= prices[price].max && (!onSale || p.compareAt)
       && words.every(w => `${p.title} ${p.category} ${p.description} ${shops.find(s => s.id === p.shopId)!.name}`.toLowerCase().includes(w)));
     const by = { Popular: (a: any, b: any) => b.sold - a.sold, Newest: (a: any, b: any) => Number(b.id) - Number(a.id), 'Price: low': (a: any, b: any) => a.price - b.price, 'Price: high': (a: any, b: any) => b.price - a.price, 'Top rated': (a: any, b: any) => b.rating - a.rating }[sort];
-    return [...r].sort(by);
+    return [...r].sort(by).sort((x, y) => Number(y.stock > 0) - Number(x.stock > 0)); // sold out last
   }, [q, cat, sort, price, onSale]);
   // One search event once the shopper pauses typing or changes a filter.
   useEffect(() => {

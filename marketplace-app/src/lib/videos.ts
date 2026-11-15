@@ -11,7 +11,7 @@ export function shopVideos(): ShopVideo[] {
   return raw.flatMap(v => {
     const product = products.find(p => p.title === v.title) ?? getProduct(v.productId);
     return product ? [{ id: v.id, src: absolute(v.src), poster: absolute(v.poster), caption: v.caption, product }] : [];
-  });
+  }).sort((a, b) => Number(b.product.stock > 0) - Number(a.product.stock > 0)); // sold-out clips go last
 }
 
 export const videoForProduct = (productId: string) => shopVideos().find(v => v.product.id === productId);

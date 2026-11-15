@@ -8,16 +8,16 @@ import { TrustLine } from '@/components/Logo';
 import { Button, Card } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
 import { api } from '@/lib/api';
-import { getProduct, money } from '@/lib/data';
+import { applyCatalog, getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
-import { commerce, completeCheckout, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
+import { commerce, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
 import { CardPayment } from '@/components/CardPayment';
 import { haptic } from '@/lib/feedback';
 
 export default function Checkout() {
-  const { groups, user, credit, referredBy, placeOrder, cart } = useStore();
+  const { groups, user, credit, referredBy, placeOrder, cart, remove } = useStore();
   const [pay, setPay] = useState<'apple' | 'card'>('apple');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -39,8 +39,22 @@ export default function Checkout() {
   useEffect(() => { if (cart.length) track('checkout_start', { total: Math.round(total * 100) / 100, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!cart.length && !loading) return <Redirect href="/cart" />;
 
-  const fail = (e: any) => {
+  // Someone else bought the last one between add-to-cart and pay: refresh live stock, drop what
+  // sold out, and say so in plain words (Mercur's message is about inventory items and offers).
+  const soldOut = async () => {
+    const cfg = commerce(); if (!cfg) return false;
+    applyCatalog(await loadMercurCatalog(cfg), u => u);
+    const gone = cart.map((l, i) => ({ l, i })).filter(({ l }) => (getProduct(l.productId)?.stock ?? 0) < l.qty);
+    for (const { i } of gone.reverse()) remove(i);
+    track('checkout_sold_out', { items: gone.length });
+    return gone.length > 0;
+  };
+  const fail = async (e: any) => {
     haptic('error');
+    if (/sufficient stock|out of stock|inventory/i.test(String(e?.message)) && await soldOut().catch(() => false)) {
+      setError('Sorry, something in your cart just sold out, so we removed it. Check your total and pay again.');
+      setPrepared(null); setLoading(false); return;
+    }
     track('checkout_error', { reason: e?.name === 'AbortError' ? 'timeout' : String(e?.message ?? 'unknown').slice(0, 80) });
     setError(e?.name === 'AbortError' ? "Couldn't reach Shelby. Check your connection and try again." : e?.message ?? 'Payment failed');
     setPrepared(null); setLoading(false);

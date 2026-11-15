@@ -22,7 +22,8 @@ export function ProductCard({ p, width, onPress, pressLabel }: { p: Product; wid
           <Image source={{ uri: p.image }} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
           <View style={{ position: 'absolute', left: 8, top: 8, gap: 4 }}>
             {/* One badge per card, the most decision-relevant first. */}
-            {p.stock <= 5 ? <Pill text={`Only ${p.stock} left`} tone="accent" icon="flame" />
+            {p.stock <= 0 ? <Pill text="Sold out" tone="dark" />
+              : p.stock <= 5 ? <Pill text={`Only ${p.stock} left`} tone="accent" icon="flame" />
               : p.compareAt ? <Pill text={`${Math.round((1 - p.price / p.compareAt) * 100)}% off`} tone="good" />
               : p.sold > 400 ? <Pill text={`${compact(p.sold)} sold`} tone="dark" icon="trending-up" /> : null}
           </View>

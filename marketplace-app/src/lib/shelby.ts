@@ -27,8 +27,8 @@ export function parse(text: string): Ask {
 }
 
 export function pick(a: Ask, n = 6): Product[] {
-  let pool = products.filter(p => (!a.categories.length || a.categories.includes(p.category)) && (!a.maxPrice || p.price <= a.maxPrice));
-  if (!pool.length) pool = products.filter(p => !a.maxPrice || p.price <= a.maxPrice);
+  let pool = products.filter(p => p.stock > 0 && (!a.categories.length || a.categories.includes(p.category)) && (!a.maxPrice || p.price <= a.maxPrice));
+  if (!pool.length) pool = products.filter(p => p.stock > 0 && (!a.maxPrice || p.price <= a.maxPrice));
   // Gifts favour well-reviewed items; treats favour what's selling now.
   const score = (p: Product) => (a.goal === 'gift' ? p.rating * 100 + Math.min(p.reviews, 300) : p.sold) + (p.compareAt ? 40 : 0);
   // Best first, but spread across shops and asked-for categories: no single shop fills the list.

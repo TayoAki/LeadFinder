@@ -70,7 +70,7 @@ export default function ProductPage() {
 
         <View style={{ padding: S.lg }}>
           <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
-            {p.stock <= 5 && <Pill text={`Only ${p.stock} left`} icon="flame" />}
+            {p.stock <= 0 ? <Pill text="Sold out" tone="dark" /> : p.stock <= 5 && <Pill text={`Only ${p.stock} left`} icon="flame" />}
             <Pill text={`${compact(p.sold)} sold`} tone="dark" icon="trending-up" />
             {!!p.compareAt && <Pill text={`Save ${money(p.compareAt - p.price)}`} tone="good" />}
           </View>
@@ -154,8 +154,8 @@ export default function ProductPage() {
 
       <SafeAreaView edges={['bottom']} style={{ position: 'absolute', left: 0, right: 0, bottom: 0, backgroundColor: C.surface, borderTopWidth: 1, borderTopColor: C.line }}>
         <View style={{ flexDirection: 'row', gap: 10, padding: S.lg }}>
-          <Button title="Add to cart" kind="light" style={{ flex: 1 }} onPress={onAdd} disabled={p.stock === 0} />
-          <Button title="Buy now" kind="accent" icon="logo-apple" style={{ flex: 1 }} onPress={onBuy} disabled={p.stock === 0} />
+          <Button title={p.stock > 0 ? "Add to cart" : "Sold out"} kind="light" style={{ flex: 1 }} onPress={onAdd} disabled={p.stock <= 0} />
+          <Button title="Buy now" kind="accent" icon="logo-apple" style={{ flex: 1 }} onPress={onBuy} disabled={p.stock <= 0} />
         </View>
       </SafeAreaView>
     </View>
