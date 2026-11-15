@@ -1,38 +1,40 @@
-// Colour system: "Sunset & Sage" (contrast-checked to WCAG AA).
-// - TERRACOTTA (#E66739) is the brand: logo, icons, badges. Buying actions use a deeper terracotta
-//   (#BF4F26) so white button text passes AA (4.8:1; white on #E66739 is only 3.3:1). Warm orange-red
-//   reads as energy and appetite, and it is used for buying only, so the button is what the eye finds.
-// - DEEP INDIGO (#1E2E4B) is terracotta's complement (blue vs orange): text, headers, primary buttons.
-//   Indigo on cream is 12.7:1.
-// - SAGE (#8AA382) is the calm counterweight (green opposite red on the wheel): secondary actions
-//   (indigo text on sage, 4.9:1) and trust cues (deep sage text #4D6B46, 5.6:1).
-// - SOFT BLUSH (#F6E3E0) for highlighted panels; WARM CREAM (#FAF7F2) background keeps photos the most
-//   saturated thing on screen.
-// - Red only means a real saving or a problem (sale prices, low stock, errors, count badges).
+// Colour system: warm analogous palette, orange + yellow (contrast-checked to WCAG AA).
+// - Orange and yellow sit next to each other on the colour wheel (analogous harmony), so nothing
+//   clashes; the earlier indigo was orange's complement and fought with it on a warm background.
+//   It is the palette shoppers already read as "buy" (Amazon: yellow Add to Cart, orange Buy Now).
+// - YELLOW (#FFD814) is the main buying action (Add to cart, Add the set, Checkout, Pay), with
+//   charcoal text (11.8:1) and a darker-yellow edge, because yellow on cream is only 1.3:1.
+// - TERRACOTTA ORANGE is the brand (#E66739 logo, icons) and the strong secondary action
+//   (Buy now, primary buttons: #BF4F26 with white text, 4.8:1); #B34A22 for orange text and links (5.0:1).
+// - WARM CHARCOAL (#231F1A) replaces blue for text and dark surfaces (15.3:1 on cream): a neutral
+//   that belongs to the warm family instead of competing with it.
+// - Green only means trust (in stock, returns, guarantees); red only means a saving or a problem.
 export const C = {
   bg: '#FAF7F2', // warm cream
   surface: '#FFFFFF',
-  ink: '#1E2E4B', // deep indigo
-  ink2: '#4A5670',
-  ink3: '#646D85',
+  ink: '#231F1A', // warm charcoal
+  ink2: '#5A5148',
+  ink3: '#716759',
   line: '#EDE6DC',
   photo: '#F3EEE7', // product photo backdrop
-  accent: '#B34A22', // terracotta text: links, selection, progress, icons (5.0:1 on cream)
-  accentSoft: '#F6E3E0', // soft blush
-  buy: '#BF4F26', // deep terracotta: buying actions only
-  buyPressed: '#A8431F',
-  buyInk: '#FFFFFF',
-  buySoft: '#FBE9E2',
+  accent: '#B34A22', // orange text: links, selection, progress, icons
+  accentSoft: '#FDE9DC', // soft orange panels
+  buy: '#FFD814', // yellow: main buying actions
+  buyPressed: '#F7CA00',
+  buyInk: '#231F1A',
+  buyEdge: '#E3B800', // button edge so yellow reads on cream
+  buySoft: '#FFF3C4',
   brand: '#E66739', // terracotta: logo, icons, badges (not text)
-  sage: '#8AA382', // secondary actions, with indigo text
+  primary: '#BF4F26', // deep terracotta: Buy now, primary buttons (white text)
+  sage: '#FDE1D3', // secondary actions (soft orange), charcoal text
   sale: '#C8102E', // real discounts, low stock, errors, badges
   saleSoft: '#FDE8EA',
-  good: '#4D6B46', // deep sage: in stock, returns, guarantees, success
+  good: '#4D6B46', // trust: in stock, returns, guarantees, success
   goodSoft: '#E8EFE5',
   warn: '#8A5A00',
   warnSoft: '#FFF3D1',
   spark: '#E66739', // logo and mascot accents
-  dark: '#1E2E4B',
+  dark: '#231F1A',
 };
 
 export const R = { sm: 8, md: 14, lg: 20, pill: 999 };

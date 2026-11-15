@@ -72,13 +72,13 @@ export default function Home() {
           </View>
         ) : showQuiz && (
           <Pressable onPress={() => { track('quiz_entry_tap', { from: 'home' }); router.push({ pathname: '/quiz', params: { from: 'home' } }); }} accessibilityRole="button"
-            style={{ margin: S.lg, marginBottom: 0, padding: S.lg, borderRadius: R.lg, backgroundColor: C.ink, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-            <Ionicons name="sparkles" size={24} color="#F2A584" />
+            style={{ margin: S.lg, marginBottom: 0, padding: S.lg, borderRadius: R.lg, backgroundColor: C.buy, borderWidth: 1, borderColor: C.buyEdge, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+            <Ionicons name="sparkles" size={24} color={C.ink} />
             <View style={{ flex: 1 }}>
-              <Text style={{ color: '#fff', fontWeight: '800', fontSize: 16 }}>Find your match in 30 seconds</Text>
-              <Text style={{ color: '#D9DEEA', marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
+              <Text style={{ color: C.ink, fontWeight: '800', fontSize: 16 }}>Find your match in 30 seconds</Text>
+              <Text style={{ color: C.ink2, marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#fff" />
+            <Ionicons name="chevron-forward" size={20} color={C.ink} />
           </Pressable>
         )}
         {/* Shelby: ask in plain words, plus a daily row of picks (the reason to open the app each day) */}
