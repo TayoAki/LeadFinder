@@ -11,7 +11,7 @@ import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
 import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, catalogStats, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
 import { catalogSnapshot, supplierFilter, warmCatalog } from './catalog.mjs';
-import { getPost, injectSeo, listPosts, loadBlog, sitemapXml } from './blog/index.mjs';
+import { canonicalSlug, getPost, injectSeo, listPosts, loadBlog, sitemapXml } from './blog/index.mjs';
 console.log(`[blog] ${loadBlog()} catalogue posts`);
 import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
@@ -361,6 +361,9 @@ const server = createServer(async (req, res) => {
     if (path === '/sitemap.xml') { res.writeHead(200, { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'public, max-age=3600' }); return res.end(sitemapXml(origin)); }
     if (path === '/robots.txt') { res.writeHead(200, { 'content-type': 'text/plain' }); return res.end(`User-agent: *\nAllow: /\nDisallow: /seller\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`); }
     // Blog posts: the app shell with the post's SEO head and article HTML already in it.
+    // Renamed posts: send old addresses to the new one permanently.
+    const oldPost = /^\/(list|story)\/([^/?#]+)$/.exec(path);
+    if (oldPost) { const s = decodeURIComponent(oldPost[2]), c = canonicalSlug(s); if (c && c !== s) { res.writeHead(301, { location: `/${oldPost[1]}/${c}` }); return res.end(); } }
     if (existsSync(APP) && /^\/(list|story)\//.test(path)) {
       const seo = injectSeo(readFileSync(resolve(APP, 'index.html'), 'utf8'), path, origin);
       if (seo) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300' }); return res.end(seo); }

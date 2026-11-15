@@ -75,7 +75,11 @@ export function CatalogPostScreen({ slug, kind }: { slug: string; kind: 'listicl
           <Text style={[T.small, { marginTop: 6 }]}>{post.mins} min read · {post.product_name}</Text>
           {(post.intro ?? [post.dek ?? '']).filter(Boolean).map((x, i) => <Text key={i} style={[T.body, { marginTop: S.md, fontSize: 17, lineHeight: 25, color: i ? C.ink2 : C.ink }]}>{x}</Text>)}
 
-          {product && <ProductRow p={product} source={`catalog:${slug}`} />}
+          {product ? <ProductRow p={product} source={`catalog:${slug}`} />
+            : <View style={{ marginTop: S.md, padding: S.md, borderRadius: R.lg, backgroundColor: C.buySoft, flexDirection: 'row', gap: 10, alignItems: 'center' }}>
+                <Ionicons name="information-circle-outline" size={20} color={C.ink} />
+                <Text style={[T.small, { flex: 1, color: C.ink }]}>We don't sell this exact piece yet. This guide tells you what to look for; the button below shows what we do sell.</Text>
+              </View>}
           {blocks.map((b, i) => <Section key={i} b={b} n={kind === 'listicle' ? i + 1 : undefined} />)}
 
           {post.faq.length > 0 && <>
@@ -111,7 +115,7 @@ export function CatalogPostScreen({ slug, kind }: { slug: string; kind: 'listicl
       </PageIn>
       {product
         ? <StickyCTA label={`Shop the ${product.title}`} onPress={() => go(`/product/${product.id}`, 'product')} />
-        : <StickyCTA label={shop.label} icon="storefront-outline" onPress={() => go(shop.to, 'shop')} note="This exact blank isn't in the Shelby store yet" />}
+        : <StickyCTA label={shop.label} icon="storefront-outline" onPress={() => go(shop.to, 'shop')} note="This exact piece isn't in the store yet" />}
     </SafeAreaView>
   );
 }

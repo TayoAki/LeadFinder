@@ -10,11 +10,14 @@ import { existsSync, readFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 
 const FILE = new URL('../content/catalog-posts.json.gz', import.meta.url);
-let posts = [], bySlug = new Map(), builtAt = null;
+let posts = [], bySlug = new Map(), aliasOf = new Map(), builtAt = null;
+export const canonicalSlug = (slug) => bySlug.has(slug) ? slug : aliasOf.get(slug) || null;
 export function loadBlog() {
   if (!existsSync(FILE)) return 0;
   const data = JSON.parse(gunzipSync(readFileSync(FILE)).toString());
   posts = data.posts; builtAt = data.built_at; bySlug = new Map(posts.map(p => [p.slug, p]));
+  // Old addresses (brand + model slugs) resolve to the renamed post.
+  aliasOf = new Map(posts.flatMap(p => (p.aliases || []).map(a => [a, p.slug])));
   return posts.length;
 }
 
@@ -24,11 +27,11 @@ const words = (p) => [p.title, p.description, ...(p.intro || []), p.dek, ...(p.i
 export function listPosts({ category = '', q = '', type = '', page = 1 }) {
   const terms = String(q).toLowerCase().split(/\s+/).filter(Boolean);
   const hits = posts.filter(p => (!category || p.category === category) && (!type || p.type === type)
-    && (!terms.length || terms.every(t => `${p.title} ${p.product_name} ${p.category}`.toLowerCase().includes(t))));
+    && (!terms.length || terms.every(t => `${p.title} ${p.product_name} ${p.category} ${p.search_terms || ''}`.toLowerCase().includes(t))));
   // Best match first: exact brand + model, then a model that starts with the query, then the rest.
   if (terms.length) {
     const q0 = terms.join(' ');
-    const score = (p) => { const n = p.product_name.toLowerCase(); return n === q0 ? 0 : n.startsWith(q0) || n.split(' ').some(w => terms.includes(w)) && terms.every(t => n.split(/\s+/).includes(t)) ? 1 : 2; };
+    const score = (p) => { const n = `${p.search_terms || p.product_name}`.toLowerCase(); return n === q0 ? 0 : n.startsWith(q0) || n.split(' ').some(w => terms.includes(w)) && terms.every(t => n.split(/\s+/).includes(t)) ? 1 : 2; };
     hits.sort((a, b) => score(a) - score(b) || (a.type === 'listicle' ? -1 : 1));
   }
   const per = 20, n = Math.max(1, Number(page) || 1);
@@ -37,7 +40,7 @@ export function listPosts({ category = '', q = '', type = '', page = 1 }) {
 }
 
 export function getPost(slug) {
-  const p = bySlug.get(slug);
+  const p = bySlug.get(canonicalSlug(slug));
   if (!p) return null;
   return { ...p, mins: Math.max(1, Math.round(words(p) / 200)), related: (p.related || []).map(s => bySlug.get(s)).filter(Boolean).map(summary), sibling: p.sibling && bySlug.get(p.sibling) ? summary(bySlug.get(p.sibling)) : null };
 }
@@ -60,7 +63,7 @@ export function injectSeo(html, path, origin) {
   const url = `${origin}/${m[1]}/${p.slug}`;
   const ld = [
     p.type === 'listicle'
-      ? { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: p.description, image: p.image ? [p.image] : undefined, author: { '@type': 'Organization', name: 'Shelby' }, publisher: { '@type': 'Organization', name: 'Shelby' }, mainEntityOfPage: url, dateModified: builtAt, about: { '@type': 'Product', name: p.product_title, brand: p.product_name !== p.product_title ? p.product_name.split(' ')[0] : undefined } }
+      ? { '@context': 'https://schema.org', '@type': 'Article', headline: p.title, description: p.description, image: p.image ? [p.image] : undefined, author: { '@type': 'Organization', name: 'Shelby' }, publisher: { '@type': 'Organization', name: 'Shelby' }, mainEntityOfPage: url, dateModified: builtAt, about: { '@type': 'Product', name: p.product_title } }
       : { '@context': 'https://schema.org', '@type': 'AdvertiserContentArticle', headline: p.title, description: p.description, image: p.image ? [p.image] : undefined, author: { '@type': 'Organization', name: 'Shelby' }, mainEntityOfPage: url, dateModified: builtAt },
     p.faq?.length ? { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: p.faq.map(f => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) } : null,
     { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Blog', item: `${origin}/blog` }, { '@type': 'ListItem', position: 2, name: p.category, item: `${origin}/blog?category=${encodeURIComponent(p.category)}` }, { '@type': 'ListItem', position: 3, name: p.title, item: url }] },

@@ -50,7 +50,7 @@ export function Disclaimer({ text }: { text?: string }) {
 export function Guarantee({ text }: { text: string }) {
   return (
     <View style={{ flexDirection: 'row', gap: 10, alignItems: 'center', padding: S.md, borderRadius: R.lg, backgroundColor: C.goodSoft, marginTop: S.lg }}>
-      <Ionicons name="shield-checkmark" size={22} color={C.good} />
+      <Ionicons name="cube-outline" size={22} color={C.good} />
       <Text style={{ flex: 1, color: C.good, fontWeight: '700' }}>{text}</Text>
     </View>
   );

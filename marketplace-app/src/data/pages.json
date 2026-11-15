@@ -16,7 +16,7 @@
         "Sizes S to 5XL, with a size guide on the product page",
         "Ships in 2–5 business days once printed"
       ],
-      "guarantee": "Wrong size? Exchange it free within 30 days.",
+      "guarantee": "Made to order for you. Shipping cost shows at checkout before you pay.",
       "faq": [
         {
           "q": "How does it fit?",
@@ -48,7 +48,7 @@
         "Full ingredients and doses on every product page",
         "Delivered in 2–4 days"
       ],
-      "guarantee": "30-day money-back guarantee. If it isn't for you, send it back.",
+      "guarantee": "Made to order for you. Shipping cost shows at checkout before you pay.",
       "faq": [
         {
           "q": "Can I take both together?",
@@ -59,8 +59,8 @@
           "a": "The magnesium is 60 servings; the ashwagandha is 30. Set a reorder reminder on the product page."
         },
         {
-          "q": "What if it doesn't suit me?",
-          "a": "Return it within 30 days for a full refund."
+          "q": "What if something is wrong with my order?",
+          "a": "Report it from the order page and we will look into it."
         }
       ]
     },
@@ -79,9 +79,9 @@
       "bullets": [
         "Fragrance-free across all three",
         "Morning: cleanse, cream, SPF. Night: cleanse, cream",
-        "Wrong match? Free exchange within 30 days"
+        "Full ingredients on every product page"
       ],
-      "guarantee": "Free exchange within 30 days if a product doesn't suit your skin.",
+      "guarantee": "Made to order for you. Shipping cost shows at checkout before you pay.",
       "faq": [
         {
           "q": "Is it OK for sensitive skin?",
@@ -112,18 +112,18 @@
       ],
       "bullets": [
         "Size guide on every dress",
-        "Free size exchanges within 30 days",
+        "Size chart on the product page",
         "Delivered in 2–4 days"
       ],
-      "guarantee": "Wrong size? Exchange it free within 30 days.",
+      "guarantee": "Made to order for you. Shipping cost shows at checkout before you pay.",
       "faq": [
         {
           "q": "How do the dresses fit?",
           "a": "Each product page has fit notes and a size chart. If you're between sizes, the notes say which way to go."
         },
         {
-          "q": "Can I return just one item?",
-          "a": "Yes, every item can be returned on its own within 30 days."
+          "q": "Can I buy just one item?",
+          "a": "Yes. Add only the pieces you want; the set is not required."
         }
       ]
     }
@@ -472,8 +472,8 @@
           "product": "Mineral Sunscreen SPF 30"
         },
         {
-          "h": "Our promise",
-          "p": "If a product doesn't suit your skin, exchange it free within 30 days. Every product page lists the full ingredients."
+          "h": "Check the label",
+          "p": "Every product page lists the full ingredients, so you can check them against your skin before you buy."
         }
       ],
       "cta": {
@@ -506,8 +506,8 @@
           "product": "Ashwagandha + L-Theanine"
         },
         {
-          "h": "Our promise",
-          "p": "Not for you? Return it within 30 days for a full refund."
+          "h": "Check the label",
+          "p": "Every product page lists what is in it and the dose per serving."
         }
       ],
       "cta": {

@@ -87,7 +87,7 @@ export default function Offer() {
         </View>
       </ScrollView>
       </PageIn>
-      {ready.length > 0 ? <StickyCTA label={`Add the set · ${money(total)}`} onPress={addSet} note={sized.length ? 'Then pick your size' : 'Free returns within 30 days'} />
+      {ready.length > 0 ? <StickyCTA label={`Add the set · ${money(total)}`} onPress={addSet} note={sized.length ? 'Then pick your size' : 'Made to order for you'} />
         : sized.length > 0 && <StickyCTA label={sized.length === 1 ? 'Choose your size' : 'Choose sizes'} icon="resize-outline" onPress={() => { track('offer_choose_size', { slug: o.slug }); router.push(`/product/${sized[0].id}`); }} />}
     </SafeAreaView>
   );

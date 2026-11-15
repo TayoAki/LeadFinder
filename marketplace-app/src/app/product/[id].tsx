@@ -223,7 +223,7 @@ export default function ProductPage() {
           <Pressable style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.35)' }} onPress={() => setGuide(false)} accessibilityLabel="Close size guide" />
           <View style={{ backgroundColor: C.surface, borderTopLeftRadius: 24, borderTopRightRadius: 24, padding: S.lg, paddingBottom: 40 }}>
             <Text style={T.h2}>Size guide</Text>
-            <Text style={[T.small, { marginTop: 4 }]}>Standard US sizing. {p.details?.fit ? `This item: ${p.details.fit}.` : 'Between sizes? Size exchanges are free.'}</Text>
+            <Text style={[T.small, { marginTop: 4 }]}>Standard US sizing. {p.details?.fit ? `This item: ${p.details.fit}.` : 'Between sizes? Go up one.'}</Text>
             <View style={{ marginTop: S.md, borderRadius: R.md, borderWidth: 1, borderColor: C.line }}>
               {[SIZE_GUIDES[group].head, ...SIZE_GUIDES[group].rows].map((row, i) => (
                 <View key={i} style={{ flexDirection: 'row', backgroundColor: i === 0 ? C.bg : row[0] === size ? C.buySoft : 'transparent', borderTopWidth: i ? 1 : 0, borderTopColor: C.line }}>

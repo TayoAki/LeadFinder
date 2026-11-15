@@ -29,8 +29,8 @@ export function Logo({ size = 28, light }: { size?: number; light?: boolean }) {
 export function TrustLine() {
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6, justifyContent: 'center', paddingHorizontal: 16 }}>
-      <Ionicons name="shield-checkmark" size={14} color={C.good} />
-      <Text style={{ fontSize: 12, color: C.ink2 }}>Buyer protection on every order · 30-day returns</Text>
+      <Ionicons name="cube-outline" size={14} color={C.good} />
+      <Text style={{ fontSize: 12, color: C.ink2 }}>Made to order for you · Shipping shown before you pay</Text>
     </View>
   );
 }

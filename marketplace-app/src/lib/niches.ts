@@ -24,20 +24,20 @@ export type NicheConfig = {
 export const NICHES: Record<Niche, NicheConfig> = {
   fashion: {
     label: 'Fashion', hesitation: 'Will it fit?',
-    promise: { icon: 'swap-horizontal', text: 'Free size exchanges within 30 days' },
+    promise: { icon: 'resize-outline', text: 'Check the size chart before you buy' },
     proofTitle: 'Fit and feel',
     detailKeys: [['fit', 'Fit'], ['model', 'Model wears'], ['fabric', 'Fabric'], ['care', 'Care']],
   },
   beauty: {
     label: 'Beauty', hesitation: 'Is it right for my skin?',
-    promise: { icon: 'color-palette-outline', text: 'Wrong shade? Free exchange within 30 days' },
+    promise: { icon: 'list-outline', text: 'Full ingredients listed' },
     proofTitle: 'Made for',
     detailKeys: [['skin_type', 'Skin type'], ['concern', 'Helps with'], ['shades', 'Shades'], ['key_ingredients', 'Key ingredients'], ['free_from', 'Free from'], ['how_to_use', 'How to use']],
     replenishDays: [30, 60, 90],
   },
   supplements: {
     label: 'Supplements', hesitation: 'Will it work, and is it safe?',
-    promise: { icon: 'shield-checkmark-outline', text: '30-day money-back guarantee' },
+    promise: { icon: 'list-outline', text: 'Ingredients and dose listed' },
     proofTitle: "What's inside",
     detailKeys: [['goal', 'Good for'], ['dose', 'Per serving'], ['servings', 'Servings'], ['ingredients', 'Ingredients'], ['tested', 'Testing'], ['not_for', 'Not suitable for']],
     disclaimer: 'These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure, or prevent any disease.',
@@ -45,13 +45,13 @@ export const NICHES: Record<Niche, NicheConfig> = {
   },
   home: {
     label: 'Home', hesitation: 'Will it fit my space?',
-    promise: { icon: 'refresh-outline', text: 'Free returns within 30 days' },
+    promise: { icon: 'cube-outline', text: 'Made to order for you' },
     proofTitle: 'Details',
     detailKeys: [['dimensions', 'Dimensions'], ['materials', 'Materials'], ['care', 'Care']],
   },
   outdoors: {
     label: 'Outdoors', hesitation: 'Will it hold up?',
-    promise: { icon: 'refresh-outline', text: 'Free returns within 30 days' },
+    promise: { icon: 'cube-outline', text: 'Made to order for you' },
     proofTitle: 'Details',
     detailKeys: [['materials', 'Materials'], ['weight', 'Weight'], ['care', 'Care']],
   },
