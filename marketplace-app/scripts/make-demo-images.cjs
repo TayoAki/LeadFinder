@@ -4,7 +4,7 @@ const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
-const data = require('./demo-niche-products.json');
+const data = require('../../shelby-commerce/packages/api/src/scripts/data/demo-niche-products.json');
 const out = path.join(__dirname, '..', 'public', 'demo');
 fs.mkdirSync(out, { recursive: true });
 

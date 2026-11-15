@@ -29,6 +29,7 @@
     "cloud:prebuild": "mercurjs codegen",
     "seed:shelby": "medusa exec ./src/scripts/seed-shelby.ts",
     "seed:demo-niches": "medusa exec ./src/scripts/seed-demo-niches.ts",
+    "remove:demo-niches": "medusa exec ./src/scripts/remove-demo-niches.ts",
     "payments:sync": "medusa exec ./src/scripts/sync-payment-providers.ts"
   },
   "dependencies": {

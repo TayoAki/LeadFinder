@@ -9,6 +9,7 @@
 //   DEMO_IMAGE_BASE=https://<shelby web host> bun run seed:demo-niches
 // Images are served by the Shelby app at <DEMO_IMAGE_BASE>/demo/<slug>.webp (marketplace-app/public/demo).
 // Idempotent: skips the shop and products if they exist, and re-applies details.
+// Undo it all with remove-demo-niches.ts. On Railway: SHELBY_DEMO=seed or SHELBY_DEMO=remove (boot.sh).
 import { ExecArgs } from "@medusajs/framework/types";
 import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils";
 import { AttributeType, ProductStatus, type CreateOfferDTO, type CreateProductDTO } from "@mercurjs/types";
@@ -21,7 +22,11 @@ import {
   linkSalesChannelsToStockLocationWorkflow,
 } from "@medusajs/medusa/core-flows";
 import { randomBytes } from "crypto";
-import demo from "../../../../../marketplace-app/scripts/demo-niche-products.json";
+import demoJson from "./data/demo-niche-products.json";
+import { DEMO_SHOP_EMAIL, DEMO_SHOP_HANDLE, resetStoreIndex } from "../lib/demo-content";
+
+type DemoProduct = { slug: string; title: string; category: string; price: number; compareAt: number | null; color: string; description: string; details: Record<string, string> };
+const demo = demoJson as unknown as { shop: { name: string; tagline: string; category: string; shipsIn: string; freeOver: number; shipping: number }; products: DemoProduct[] };
 
 const ONE_SIZE = "One size";
 const STOCK = 40;
@@ -96,9 +101,9 @@ export default async function seedDemoNiches({ container }: ExecArgs) {
 
   // ---------- 2. the demo shop ----------
   const shop = demo.shop;
-  const email = `${slug(shop.name)}@example.com`;
-  const { data: found } = await query.graph({ entity: "seller", fields: ["id"], filters: { email } });
-  if (found[0]) { logger.info("Demo shop already exists; details refreshed, products unchanged."); return; }
+  const email = DEMO_SHOP_EMAIL;
+  const { data: found } = await query.graph({ entity: "seller", fields: ["id"], filters: { handle: DEMO_SHOP_HANDLE } });
+  if (found[0]) { await resetStoreIndex(container); logger.info("Demo shop already exists; details refreshed, products unchanged."); return; }
 
   const { data: [channel] } = await query.graph({ entity: "sales_channel", fields: ["id"], filters: { name: "Shelby App" } });
   const regions = await container.resolve(Modules.REGION).listRegions({}, { relations: ["countries"] });
@@ -114,7 +119,7 @@ export default async function seedDemoNiches({ container }: ExecArgs) {
     input: {
       auth_identity_id: authIdentityId, member_email: email, first_name: "Daily", last_name: "Ritual",
       seller: {
-        name: shop.name, handle: slug(shop.name), email, currency_code: "usd", description: shop.tagline,
+        name: shop.name, handle: DEMO_SHOP_HANDLE, email, currency_code: "usd", description: shop.tagline,
         logo: `${imageBase}/demo/${demo.products[0].slug}.webp`, banner: `${imageBase}/demo/${demo.products[8].slug}.webp`,
         metadata: { tagline: shop.tagline, category: shop.category, ships_in: shop.shipsIn, free_over: shop.freeOver, shipping: shop.shipping, demo: true },
       },
@@ -131,7 +136,7 @@ export default async function seedDemoNiches({ container }: ExecArgs) {
   await createLocationFulfillmentSetWorkflow(container).run({ input: { location_id: location.id, fulfillment_set_data: { name: `${shop.name} delivery`, type: "shipping" } } });
   const { data: [withSet] } = await query.graph({ entity: "stock_location", fields: ["fulfillment_sets.id"], filters: { id: location.id } });
   const { result: [zone] } = await createServiceZonesWorkflow(container).run({
-    input: { data: [{ fulfillment_set_id: withSet.fulfillment_sets[0].id, name: `${shop.name} US`, geo_zones: [{ country_code: "us", type: "country" as const }] }] },
+    input: { data: [{ fulfillment_set_id: (withSet as any).fulfillment_sets[0].id, name: `${shop.name} US`, geo_zones: [{ country_code: "us", type: "country" as const }] }] },
   });
   await createSellerShippingOptionsWorkflow(container).run({
     input: {
@@ -177,5 +182,6 @@ export default async function seedDemoNiches({ container }: ExecArgs) {
     };
   });
   await createOffersWorkflow(container).run({ input: { offers } });
+  await resetStoreIndex(container); // the running store re-indexes on its next start
   logger.info(`Demo shop "${shop.name}": ${products.length} products, ${offers.length} offers. All marked metadata.demo = true.`);
 }
