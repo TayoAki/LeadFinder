@@ -9,9 +9,9 @@
 ## The process
 
 1. **Switching demand.** Four research agents found companies people are angry at for a decision **and** are asking "what do I buy instead?", across food/CPG, tech, lifestyle and services.
-   - Result: 34 companies and 209 quotes, each with its URL.
+   - Result: 35 company entries (34 after merging Garmin, which two agents both found) and 216 quotes, each with its URL.
    - Reddit, Trustpilot and Sam's Club blocked automated access, so the evidence is thinner than a scraper would give.
-2. **Cult-brand overlap.** One agent mapped what fans of 23 cult brands (Labubu, Stanley, Crumbl, Liquid Death, Owala and others) also love. The source was 107 documented collabs, which gave 12 business types.
+2. **Cult-brand overlap.** One agent mapped what fans of 23 cult brands (Labubu, Stanley, Crumbl, Liquid Death, Owala and others) also love. The source was 108 documented collabs, which gave 12 business types.
    - The most common: apparel/sneaker capsules (11 brands), flavoured drinks (10), limited-drop collectibles (10) and beauty crossovers (8).
 3. **Keyword validation.** Free Google, YouTube and Amazon autocomplete (`scripts/kwcheck.mjs`). Autocomplete shows a search exists, not how often it is searched.
    - Scores are relative across companies: 2 to 39 distinct "switching" searches each.
