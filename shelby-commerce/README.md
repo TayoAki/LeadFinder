@@ -48,8 +48,28 @@ The Railway service `commerce` builds `shelby-commerce/Dockerfile`, with Postgre
 
 The app uses Mercur when its server has `MEDUSA_URL` and `MEDUSA_PUBLISHABLE_KEY` set (served at `/api/config`). Unset them to fall back to the old built-in backend.
 
+## Payments: Stripe Connect (`@mercurjs/stripe-connector-plugin`)
+
+How it works:
+- **Charging:** the shopper is charged once for the whole multi-seller cart. The card is authorized at checkout and captured once the sellers' orders are fulfilled.
+- **Paying sellers:** each seller gets their order total minus commission as a Stripe transfer to their Express account. A nightly settlement then pays it out to their bank.
+
+Switch it on with four variables. Until all four are set, checkout uses the system test provider:
+
+| Where | Variable | From the Stripe Dashboard (test mode first) |
+|---|---|---|
+| `commerce` service | `STRIPE_SECRET_KEY` | Developers → API keys → Secret key (`sk_test_…`) |
+| `commerce` service | `STRIPE_OPERATOR_WEBHOOK_SECRET` | Signing secret of the webhook endpoint for **Your account**: `<api>/hooks/payment/pp_stripe-connector_stripe`, with events `payment_intent.succeeded`, `payment_intent.amount_capturable_updated`, `payment_intent.payment_failed`, `payment_intent.canceled`, `charge.refunded` |
+| `commerce` service | `STRIPE_SELLERS_WEBHOOK_SECRET` | Signing secret of the webhook endpoint for **Connected accounts**: `<api>/hooks/payout`, with events `account.updated`, `payout.paid`, `payout.failed`, `payout.canceled`, `payout.updated` |
+| `web` service (the app) | `STRIPE_PUBLISHABLE_KEY` | Developers → API keys → Publishable key (`pk_test_…`) |
+
+On boot, `sync-payment-providers` sets every region to Stripe only. The free system provider is never left enabled alongside Stripe, because then anyone could complete an order without paying. Connect must also be enabled in Stripe (Settings → Connect).
+
+In the app:
+- **Web:** checkout opens Stripe's Payment Element (`src/components/CardPayment.web.tsx`).
+- **iOS and Android:** checkout opens Stripe's PaymentSheet (`CardPayment.tsx`, using `@stripe/stripe-react-native`; Apple Pay merchant `merchant.com.hireshelby.app`).
+
 ## Next steps
 
-- **Stripe Connect:** add `@mercurjs/stripe-connector-plugin` for real card payments and seller payouts. Checkout uses the system payment provider until then.
 - **Referral credit:** move Shelby's referral credit and first-order discount to Medusa promotions. The Mercur checkout doesn't apply them yet.
 - **Customer accounts:** sign in, so that order history comes from `/store/order-groups`.
