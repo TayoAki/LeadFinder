@@ -1,0 +1,323 @@
+<title>Cult Fan Map</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: a full-height explorer. Toolbar on top, map on the left, the selected node's story on the right (stacked on phones). */
+:root {
+  --bg: #f5f4fa; --surface: #ffffff; --ink: #1c1930; --muted: #67627d; --line: #e2dfec; --soft: #eeecf6;
+  --brand: #d4336b; --type: #d99410; --collab: #138f7c; --like: #3a67d4; --switch: #c4501b;
+  --display: "Bricolage Grotesque", "Inter", system-ui, sans-serif; --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #13111b; --surface: #1c1928; --ink: #edebf5; --muted: #a39fb8; --line: #2f2b40; --soft: #24202f;
+  --brand: #f0628f; --type: #f2b33d; --collab: #3cc3ac; --like: #7b9cf0; --switch: #f07a45; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #13111b; --surface: #1c1928; --ink: #edebf5; --muted: #a39fb8; --line: #2f2b40; --soft: #24202f;
+  --brand: #f0628f; --type: #f2b33d; --collab: #3cc3ac; --like: #7b9cf0; --switch: #f07a45; color-scheme: dark }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.5 var(--body); display: flex; flex-direction: column;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); box-sizing: border-box; }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 8px 24px; padding-block: 14px 8px; }
+h1 { font: 800 clamp(22px, 3vw, 30px)/1.1 var(--display); margin: 0; letter-spacing: -0.01em; text-wrap: balance; }
+.sub { color: var(--muted); margin: 4px 0 0; max-width: 70ch; }
+.stats { display: flex; gap: 6px; flex-wrap: wrap; }
+.stat { font-variant-numeric: tabular-nums; font-size: 12px; color: var(--muted); }
+.stat b { color: var(--ink); font-weight: 600; }
+.bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding-block: 6px 10px; border-bottom: 1px solid var(--line); }
+.tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.tabs button { font: 600 13px var(--body); padding: 6px 12px; border: 0; background: var(--surface); color: var(--muted); cursor: pointer; }
+.tabs button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+#q { font: 14px var(--body); padding: 6px 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); color: var(--ink); width: 200px; max-width: 100%; }
+.chip { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; padding: 4px 9px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); cursor: pointer; user-select: none; }
+.chip input { margin: 0; accent-color: var(--ink); }
+.dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; flex: none; }
+button:focus-visible, input:focus-visible, .chip:focus-within { outline: 2px solid var(--like); outline-offset: 2px; }
+main { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 12px; padding-block: 12px max(12px, env(safe-area-inset-bottom, 0px)); }
+.stage { position: relative; min-height: 420px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: hidden; }
+#net { width: 100%; height: 100%; display: block; touch-action: none; }
+[hidden] { display: none !important; }
+#grid { position: absolute; inset: 0; overflow: auto; padding: 12px; background: var(--surface); }
+.hint { position: absolute; left: 12px; bottom: 10px; font-size: 12px; color: var(--muted); pointer-events: none; }
+.zoom { position: absolute; right: 10px; top: 10px; display: flex; flex-direction: column; gap: 4px; }
+.zoom button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: 600 16px var(--body); cursor: pointer; }
+aside { min-width: 0; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); overflow: auto; padding: 14px 16px; }
+aside h2 { font: 700 20px/1.2 var(--display); margin: 2px 0 4px; text-wrap: balance; }
+aside h3 { font: 600 11px var(--body); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 16px 0 6px; }
+.kind { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
+aside ul { margin: 0; padding-left: 18px; display: grid; gap: 5px; }
+aside a { color: var(--like); text-decoration: none; } aside a:hover { text-decoration: underline; }
+.pill { font-size: 11px; padding: 1px 7px; border-radius: 999px; background: var(--soft); color: var(--muted); white-space: nowrap; }
+.rowlink { all: unset; cursor: pointer; display: flex; align-items: center; gap: 8px; width: 100%; padding: 5px 6px; border-radius: 8px; box-sizing: border-box; }
+.rowlink:hover, .rowlink:focus-visible { background: var(--soft); }
+.rowlink .n { margin-left: auto; font-variant-numeric: tabular-nums; color: var(--muted); font-size: 12px; }
+blockquote { margin: 0 0 8px; padding-left: 10px; border-left: 3px solid var(--line); color: var(--ink); }
+.muted { color: var(--muted); } .small { font-size: 12.5px; }
+.cmp { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.btn { font: 600 12.5px var(--body); padding: 5px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+/* graph */
+.link { stroke: var(--line); stroke-opacity: .9; }
+.link.hot { stroke: var(--ink); stroke-opacity: .55; }
+.node circle { stroke: var(--surface); stroke-width: 1.5; cursor: pointer; }
+.node text { font: 500 11px var(--body); fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 3px; pointer-events: none; }
+.node.type text { font: 700 12.5px var(--display); }
+.node.brand text { font-weight: 600; }
+.dim { opacity: .12; }
+.node.sel circle { stroke: var(--ink); stroke-width: 3; }
+/* overlap grid */
+table.m { border-collapse: separate; border-spacing: 2px; font-size: 12px; }
+table.m th { font-weight: 600; text-align: left; white-space: nowrap; padding: 2px 6px; color: var(--ink); }
+table.m thead th { writing-mode: vertical-rl; transform: rotate(180deg); vertical-align: bottom; height: 170px; font-weight: 600; color: var(--muted); }
+table.m td { width: 26px; height: 22px; border-radius: 4px; cursor: pointer; text-align: center; font-variant-numeric: tabular-nums; color: transparent; }
+table.m td:hover { outline: 2px solid var(--ink); color: var(--ink); }
+.pairs { margin-top: 16px; display: grid; gap: 4px; max-width: 520px; }
+@media (max-width: 820px) {
+  main { grid-template-columns: 1fr; grid-template-rows: 62vh auto; }
+  aside { max-height: none; }
+  #q { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header>
+  <div>
+    <h1>Cult Fan Map</h1>
+    <p class="sub">What fans of cult brands also love, the collabs those brands ran, and where the fan bases overlap. Big amber hubs are the business types several fan bases share. Switch on <b>People switching</b> to see companies whose customers are leaving, and which hub they could borrow fans from.</p>
+  </div>
+  <div class="stats" id="stats"></div>
+</header>
+<div class="bar">
+  <div class="tabs" role="group" aria-label="View">
+    <button id="tab-network" aria-pressed="true">Network</button>
+    <button id="tab-grid" aria-pressed="false">Overlap grid</button>
+  </div>
+  <input id="q" type="search" placeholder="Find a brand or thing…" aria-label="Find a brand or thing">
+  <label class="chip"><input type="checkbox" id="L-type" checked><span class="dot" style="background:var(--type)"></span>Overlap hubs</label>
+  <label class="chip"><input type="checkbox" id="L-collab" checked><span class="dot" style="background:var(--collab)"></span>Collabs</label>
+  <label class="chip"><input type="checkbox" id="L-like" checked><span class="dot" style="background:var(--like)"></span>Fans also love</label>
+  <label class="chip"><input type="checkbox" id="L-switch"><span class="dot" style="background:var(--switch)"></span>People switching</label>
+  <label class="chip"><input type="checkbox" id="L-political"><span class="dot" style="background:var(--muted)"></span>Show political brands</label>
+</div>
+<main>
+  <div class="stage">
+    <svg id="net" role="img" aria-label="Network of cult brands, the things their fans love and the hubs they share"></svg>
+    <div id="grid" hidden></div>
+    <div class="zoom" id="zoomctl"><button id="zin" aria-label="Zoom in">+</button><button id="zout" aria-label="Zoom out">−</button><button id="zfit" aria-label="Fit to screen">⤢</button></div>
+    <div class="hint" id="hint">Click a node to explore it. Shift-click two brands to compare them. Drag to move, scroll to zoom.</div>
+  </div>
+  <aside id="panel" aria-live="polite"></aside>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+const DATA = /*DATA*/null;
+const KIND = { brand: ['Cult brand', '--brand'], type: ['Overlap hub', '--type'], collab: ['Collab', '--collab'], like: ['Fans also love', '--like'], switch: ['People switching', '--switch'] };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const byId = new Map(DATA.nodes.map(n => [n.id, n]));
+const nb = new Map(DATA.nodes.map(n => [n.id, new Set()]));
+for (const l of DATA.links) { nb.get(l.source).add(l.target); nb.get(l.target).add(l.source); }
+const brands = DATA.nodes.filter(n => n.kind === 'brand');
+const typesOfBrand = b => { const s = new Set(); for (const x of nb.get(b.id)) { const n = byId.get(x); if (n.kind === 'type') s.add(n.name); else for (const y of nb.get(x)) if (byId.get(y).kind === 'type') s.add(byId.get(y).name); } return s; };
+const brandTypes = new Map(brands.map(b => [b.id, typesOfBrand(b)]));
+const fansOf = t => brands.filter(b => brandTypes.get(b.id).has(t));
+
+document.getElementById('stats').innerHTML = [['brand', 'cult brands'], ['type', 'overlap hubs'], ['collab', 'collabs'], ['like', 'fan likes'], ['switch', 'companies people are leaving']]
+  .map(([k, l]) => `<span class="stat"><span class="dot" style="background:var(${KIND[k][1]})"></span> <b>${DATA.nodes.filter(n => n.kind === k).length}</b> ${l}</span>`).join('');
+
+// ---------- state ----------
+const state = { sel: null, compare: [], view: 'network' };
+const layer = k => k === 'brand' ? true : document.getElementById(`L-${k}`).checked;
+const visible = n => layer(n.kind) && (n.kind !== 'brand' || !n.political || document.getElementById('L-political').checked);
+
+// ---------- network ----------
+const svg = d3.select('#net'), g = svg.append('g');
+const zoom = d3.zoom().scaleExtent([0.25, 5]).on('zoom', e => { g.attr('transform', e.transform); labelsFor(e.transform.k); });
+svg.call(zoom).on('dblclick.zoom', null);
+let sim, linkSel, nodeSel, curK = 1;
+const R = n => n.kind === 'type' ? 10 + n.count * 1.6 : n.kind === 'brand' ? 9 + Math.min(10, n.deg * 0.4) : n.kind === 'switch' ? 7 : 4 + Math.min(5, (n.with?.length || 1) * 1.5);
+function draw() {
+  const box = document.getElementById('net').getBoundingClientRect();
+  const W = box.width || 800, H = box.height || 600;
+  const nodes = DATA.nodes.filter(visible).map(n => Object.assign(n, n.x == null ? { x: W / 2 + (Math.random() - .5) * 200, y: H / 2 + (Math.random() - .5) * 200 } : {}));
+  const ids = new Set(nodes.map(n => n.id));
+  const links = DATA.links.filter(l => ids.has(l.source.id || l.source) && ids.has(l.target.id || l.target)).map(l => ({ ...l, source: l.source.id || l.source, target: l.target.id || l.target }));
+  g.selectAll('*').remove();
+  linkSel = g.append('g').selectAll('line').data(links).join('line').attr('class', 'link').attr('stroke-width', d => d.kind === 'loves' ? 1.6 : 1);
+  nodeSel = g.append('g').selectAll('g').data(nodes, d => d.id).join('g').attr('class', d => `node ${d.kind}`)
+    .call(d3.drag().on('start', (e, d) => { if (!e.active) sim.alphaTarget(.2).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; }).on('end', (e, d) => { if (!e.active) sim.alphaTarget(0); d.fx = null; d.fy = null; }))
+    .on('click', (e, d) => { e.stopPropagation(); e.shiftKey ? toggleCompare(d.id) : select(d.id); });
+  nodeSel.append('circle').attr('r', R).attr('fill', d => css(KIND[d.kind][1]));
+  nodeSel.append('title').text(d => `${d.name} · ${KIND[d.kind][0]}`);
+  nodeSel.append('text').attr('dy', d => R(d) + 12).attr('text-anchor', 'middle').text(d => d.name.length > 26 ? d.name.slice(0, 25) + '…' : d.name);
+  sim = d3.forceSimulation(nodes)
+    .force('link', d3.forceLink(links).id(d => d.id).distance(l => l.kind === 'loves' ? 120 : 55).strength(l => l.kind === 'loves' ? .5 : .7))
+    .force('charge', d3.forceManyBody().strength(d => d.kind === 'type' ? -520 : d.kind === 'brand' ? -260 : -60))
+    .force('collide', d3.forceCollide(d => R(d) + 4))
+    .force('x', d3.forceX(W / 2).strength(.04)).force('y', d3.forceY(H / 2).strength(.05))
+    .on('tick', () => {
+      linkSel.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      nodeSel.attr('transform', d => `translate(${d.x},${d.y})`);
+    });
+  labelsFor(curK); paint();
+  if (!draw.fitted) { draw.fitted = true; setTimeout(fit, 1600); }
+}
+function labelsFor(k) { curK = k; if (!nodeSel) return; nodeSel.select('text').attr('display', d => (d.kind === 'brand' || d.kind === 'type' || d.kind === 'switch' || k > 1.6 || hot.has(d.id)) ? null : 'none'); }
+let hot = new Set();
+function paint() {
+  const focus = state.compare.length ? state.compare : state.sel ? [state.sel] : [];
+  hot = new Set();
+  if (focus.length === 1) { hot.add(focus[0]); for (const x of nb.get(focus[0])) hot.add(x); }
+  else if (focus.length > 1) { // shared neighbourhood: hubs both reach, and things both link to
+    for (const f of focus) hot.add(f);
+    const sets = focus.map(f => brandTypes.get(f) || new Set());
+    for (const t of [...sets[0]].filter(t => sets.every(s => s.has(t)))) hot.add(`type:${t}`);
+    for (const x of nb.get(focus[0])) if (focus.every(f => nb.get(f).has(x))) hot.add(x);
+  }
+  const on = hot.size > 0;
+  nodeSel?.classed('dim', d => on && !hot.has(d.id)).classed('sel', d => focus.includes(d.id));
+  linkSel?.classed('dim', d => on && !(hot.has(d.source.id) && hot.has(d.target.id))).classed('hot', d => on && hot.has(d.source.id) && hot.has(d.target.id));
+  labelsFor(curK);
+}
+function fit() {
+  const nodes = nodeSel?.data() || []; if (!nodes.length) return;
+  const box = document.getElementById('net').getBoundingClientRect();
+  const [x0, x1] = d3.extent(nodes, d => d.x), [y0, y1] = d3.extent(nodes, d => d.y);
+  const k = Math.min(2, .9 / Math.max((x1 - x0) / box.width, (y1 - y0) / box.height));
+  svg.transition().duration(500).call(zoom.transform, d3.zoomIdentity.translate(box.width / 2 - k * (x0 + x1) / 2, box.height / 2 - k * (y0 + y1) / 2).scale(k));
+}
+svg.on('click', () => { state.sel = null; state.compare = []; paint(); panel(); });
+document.getElementById('zin').onclick = () => svg.transition().call(zoom.scaleBy, 1.4);
+document.getElementById('zout').onclick = () => svg.transition().call(zoom.scaleBy, 1 / 1.4);
+document.getElementById('zfit').onclick = fit;
+
+// ---------- selection + panel ----------
+function select(id) { state.sel = id; state.compare = []; paint(); panel(); if (state.view === 'network') centerOn(id); }
+function toggleCompare(id) {
+  if (byId.get(id).kind !== 'brand') return select(id);
+  const c = state.compare.length ? state.compare : (state.sel && byId.get(state.sel).kind === 'brand' ? [state.sel] : []);
+  state.compare = c.includes(id) ? c.filter(x => x !== id) : [...c, id].slice(-3);
+  state.sel = null; paint(); panel();
+}
+function centerOn(id) {
+  const n = byId.get(id); if (n?.x == null) return;
+  const box = document.getElementById('net').getBoundingClientRect(), k = Math.max(curK, 1.2);
+  svg.transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(box.width / 2 - k * n.x, box.height / 2 - k * n.y).scale(k));
+}
+const link = (url, text) => url ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(text)}</a>` : esc(text);
+const row = (n, extra = '') => `<button class="rowlink" data-go="${esc(n.id)}"><span class="dot" style="background:var(${KIND[n.kind][1]})"></span><span>${esc(n.name)}</span><span class="n">${extra}</span></button>`;
+const kindTag = n => `<span class="kind"><span class="dot" style="background:var(${KIND[n.kind][1]})"></span>${KIND[n.kind][0]}</span>`;
+function panel() {
+  const P = document.getElementById('panel');
+  if (state.compare.length > 1) {
+    const bs = state.compare.map(id => byId.get(id)), sets = bs.map(b => brandTypes.get(b.id));
+    const shared = [...sets[0]].filter(t => sets.every(s => s.has(t)));
+    const sharedThings = [...nb.get(bs[0].id)].filter(x => bs.every(b => nb.get(b.id).has(x))).map(x => byId.get(x)).filter(n => n.kind !== 'type');
+    const only = bs.map((b, i) => [b, [...sets[i]].filter(t => !shared.includes(t))]);
+    P.innerHTML = `<span class="kind">Comparing</span><h2>${bs.map(b => esc(b.name)).join(' × ')}</h2>
+      <p class="muted small">${shared.length} shared hub${shared.length === 1 ? '' : 's'}. A shared hub is a business type both fan bases love: a natural place for a collab, or a new brand that sells to both.</p>
+      <h3>Both fan bases love</h3>${shared.length ? shared.map(t => row(byId.get(`type:${t}`), `${fansOf(t).length} brands`)).join('') : '<p class="muted small">No shared hub in this data.</p>'}
+      ${sharedThings.length ? `<h3>Both linked to</h3>${sharedThings.map(n => row(n)).join('')}` : ''}
+      ${only.map(([b, ts]) => `<h3>Only ${esc(b.name)}</h3><p class="small">${ts.length ? ts.map(esc).join(', ') : '<span class="muted">nothing extra</span>'}</p>`).join('')}
+      <div class="cmp"><button class="btn" data-clear>Clear comparison</button></div>`;
+    return wire(P);
+  }
+  const n = state.sel && byId.get(state.sel);
+  if (!n) {
+    const hubs = DATA.nodes.filter(x => x.kind === 'type').map(t => [t, fansOf(t.name).length]).sort((a, b) => b[1] - a[1]);
+    const pairs = [];
+    for (let i = 0; i < brands.length; i++) for (let j = i + 1; j < brands.length; j++) {
+      const a = brandTypes.get(brands[i].id), b = brandTypes.get(brands[j].id), s = [...a].filter(t => b.has(t)).length;
+      if (s) pairs.push([brands[i], brands[j], s]);
+    }
+    pairs.sort((x, y) => y[2] - x[2]);
+    P.innerHTML = `<span class="kind">Start here</span><h2>Where fan bases overlap</h2>
+      <p class="muted small">Each hub is a kind of business. The number is how many cult brands' fans connect to it (directly, or through a collab or something their fans love). Click one to see who.</p>
+      <h3>Biggest overlap hubs</h3>${hubs.map(([t, c]) => row(t, `${c} brands`)).join('')}
+      <h3>Brands whose fans overlap most</h3>${pairs.slice(0, 8).map(([a, b, s]) => `<button class="rowlink" data-pair="${esc(a.id)}|${esc(b.id)}"><span>${esc(a.name)} × ${esc(b.name)}</span><span class="n">${s} hubs</span></button>`).join('')}
+      <p class="muted small" style="margin-top:14px">Evidence: public collab announcements and fan coverage (links on every node). Most links were read from search previews; a few pages were read in full. Built ${esc(DATA.built)}.</p>`;
+    return wire(P);
+  }
+  const neigh = k => [...nb.get(n.id)].map(x => byId.get(x)).filter(x => x.kind === k && visible(x));
+  let body = '';
+  if (n.kind === 'brand') {
+    const ts = [...brandTypes.get(n.id)];
+    body = `<p class="small">${esc(n.category)}${n.political ? ' <span class="pill">politically coded</span>' : ''}</p>
+      ${n.evidence ? `<p class="small muted">${esc(n.evidence.replace(/https?:\/\/\S+/g, '').trim())} ${(n.evidence.match(/https?:\/\/\S+/) || []).map(u => link(u, 'source')).join('')}</p>` : ''}
+      <h3>Fans connect to ${ts.length} hubs</h3>${ts.map(t => row(byId.get(`type:${t}`), `${fansOf(t).length} brands`)).join('') || '<p class="muted small">None found.</p>'}
+      <h3>Collabs (${n.collabs.length})</h3><ul class="small">${n.collabs.map(c => `<li>${link(c.url, c.partner)} <span class="muted">${esc(c.category || '')}${c.year ? ` · ${c.year}` : ''}</span></li>`).join('') || '<li class="muted">None found</li>'}</ul>
+      <h3>Fans also love</h3><ul class="small">${n.likes.map(l => `<li>${link(l.url, l.thing)}</li>`).join('') || '<li class="muted">None found</li>'}</ul>
+      <div class="cmp"><button class="btn primary" data-compare="${esc(n.id)}">Compare with another brand</button></div>`;
+  } else if (n.kind === 'type') {
+    const fans = fansOf(n.name), sw = neigh('switch'), things = [...neigh('collab'), ...neigh('like')];
+    body = `<p class="small">${esc(n.why)}</p>
+      <h3>Cult brands whose fans connect here (${fans.length})</h3>${fans.map(b => row(b)).join('')}
+      ${things.length ? `<h3>Collabs and fan favourites in this hub (${things.length})</h3>${things.slice(0, 30).map(x => row(x, x.with ? x.with.join(', ') : '')).join('')}` : ''}
+      ${sw.length ? `<h3>Companies people are leaving that fit here</h3>${sw.map(x => row(x)).join('')}` : `<p class="muted small" style="margin-top:12px">Turn on "People switching" to see companies whose customers are leaving and could be won through this hub.</p>`}
+      ${n.urls?.length ? `<h3>Evidence</h3><ul class="small">${n.urls.map((u, i) => `<li>${link(u, new URL(u).hostname.replace(/^www\./, ''))}</li>`).join('')}</ul>` : ''}`;
+  } else if (n.kind === 'switch') {
+    body = `<p class="small"><b>What changed:</b> ${esc(n.decision)}</p>
+      ${n.wants.length ? `<h3>What they want instead</h3><ul class="small">${n.wants.map(w => `<li>${esc(w)}</li>`).join('')}</ul>` : ''}
+      ${n.goingTo.length ? `<h3>Where they say they're going</h3><p class="small">${n.goingTo.map(esc).join(', ')}</p>` : ''}
+      <h3>In their words</h3>${n.quotes.map(q => `<blockquote class="small">"${esc(q.quote)}" ${link(q.url, q.source || 'source')}</blockquote>`).join('')}
+      <p class="small muted">${n.searches} distinct "switching" searches on Google autocomplete · evidence ${esc(n.strength)}</p>
+      <h3>Borrow fans from</h3>${neigh('type').map(t => row(t, `${fansOf(t.name).length} brands`)).join('') || '<p class="muted small">No hub matched.</p>'}`;
+  } else {
+    body = `<p class="small">${esc(n.full || n.name)}</p>${n.category ? `<p class="small muted">${esc(n.category)}${n.year ? ` · ${n.year}` : ''}</p>` : ''}
+      <h3>Linked brands</h3>${[...nb.get(n.id)].map(x => byId.get(x)).filter(x => x.kind === 'brand').map(x => row(x)).join('')}
+      ${neigh('type').length ? `<h3>Hub</h3>${neigh('type').map(t => row(t)).join('')}` : ''}
+      ${n.url ? `<h3>Evidence</h3><p class="small">${link(n.url, new URL(n.url).hostname.replace(/^www\./, ''))} ${n.seen === 'snippet' ? '<span class="pill">from search preview</span>' : ''}</p>` : ''}`;
+  }
+  P.innerHTML = `${kindTag(n)}<h2>${esc(n.name)}</h2>${body}`;
+  wire(P);
+}
+function wire(P) {
+  P.querySelectorAll('[data-go]').forEach(b => b.onclick = () => { const id = b.dataset.go; const n = byId.get(id); if (!visible(n)) { const box = document.getElementById(`L-${n.kind}`); if (box) { box.checked = true; draw(); } } select(id); });
+  P.querySelectorAll('[data-pair]').forEach(b => b.onclick = () => { state.sel = null; state.compare = b.dataset.pair.split('|'); paint(); panel(); });
+  P.querySelectorAll('[data-compare]').forEach(b => b.onclick = () => { state.compare = [b.dataset.compare]; state.sel = null; paint();
+    P.querySelector('.cmp').innerHTML = `<p class="small muted">Now click another brand in the map${state.view === 'grid' ? ' or a row in the grid' : ''}.</p>`; pendingCompare = true; });
+  P.querySelectorAll('[data-clear]').forEach(b => b.onclick = () => { state.compare = []; paint(); panel(); });
+}
+let pendingCompare = false;
+const _select = select;
+select = id => { if (pendingCompare && byId.get(id).kind === 'brand' && state.compare.length === 1 && state.compare[0] !== id) { pendingCompare = false; state.compare = [state.compare[0], id]; paint(); panel(); return; } pendingCompare = false; _select(id); };
+
+// ---------- overlap grid ----------
+function grid() {
+  const el = document.getElementById('grid');
+  const types = [...DATA.types].sort((a, b) => fansOf(b).length - fansOf(a).length);
+  const rows = brands.filter(visible).map(b => [b, types.reduce((s, t) => s + (DATA.matrix[b.name][t] || 0), 0)]).sort((a, b) => b[1] - a[1]);
+  const max = Math.max(1, ...rows.flatMap(([b]) => types.map(t => DATA.matrix[b.name][t] || 0)));
+  const brandC = css('--brand');
+  el.innerHTML = `<p class="small muted" style="margin:0 0 8px;max-width:70ch">Rows are cult brands, columns are overlap hubs. A darker cell means more connections: 2 for a direct link, 1 for each collab or fan favourite in that hub. Click a cell to open the brand; click a column name to open the hub.</p>
+    <div style="overflow-x:auto"><table class="m"><thead><tr><th></th>${types.map(t => `<th><button class="rowlink" style="writing-mode:inherit" data-go="type:${esc(t)}">${esc(t)}</button></th>`).join('')}</tr></thead>
+    <tbody>${rows.map(([b]) => `<tr><th><button class="rowlink" data-go="${esc(b.id)}">${esc(b.name)}</button></th>${types.map(t => { const v = DATA.matrix[b.name][t] || 0;
+      return `<td title="${esc(b.name)} × ${esc(t)}: ${v}" data-go="${esc(b.id)}" style="background:${v ? `color-mix(in srgb, ${brandC} ${Math.round(18 + 82 * v / max)}%, transparent)` : 'var(--soft)'}">${v || ''}</td>`; }).join('')}</tr>`).join('')}</tbody></table></div>`;
+  el.querySelectorAll('[data-go]').forEach(b => b.onclick = () => select(b.dataset.go));
+}
+
+// ---------- view + controls ----------
+function setView(v) {
+  state.view = v;
+  document.getElementById('tab-network').setAttribute('aria-pressed', String(v === 'network'));
+  document.getElementById('tab-grid').setAttribute('aria-pressed', String(v === 'grid'));
+  document.getElementById('net').hidden = v !== 'network'; document.getElementById('zoomctl').hidden = v !== 'network'; document.getElementById('hint').hidden = v !== 'network';
+  document.getElementById('grid').hidden = v !== 'grid';
+  if (v === 'grid') grid();
+  if (location.hash !== `#${v}`) history.replaceState(null, '', `#${v}`);
+}
+document.getElementById('tab-network').onclick = () => setView('network');
+document.getElementById('tab-grid').onclick = () => setView('grid');
+for (const k of ['type', 'collab', 'like', 'switch', 'political']) document.getElementById(`L-${k}`).addEventListener('change', () => { draw(); if (state.view === 'grid') grid(); panel(); });
+document.getElementById('q').addEventListener('input', e => {
+  const q = e.target.value.trim().toLowerCase(); if (q.length < 2) return;
+  const hit = DATA.nodes.filter(visible).find(n => n.name.toLowerCase().startsWith(q)) || DATA.nodes.find(n => n.name.toLowerCase().includes(q));
+  if (hit) { if (!visible(hit) && hit.kind !== 'brand') { document.getElementById(`L-${hit.kind}`).checked = true; draw(); } select(hit.id); }
+});
+window.addEventListener('resize', () => { if (state.view === 'network') { sim?.force('x', d3.forceX(document.getElementById('net').clientWidth / 2).strength(.04)); sim?.alpha(.2).restart(); } });
+draw(); panel();
+setView(location.hash === '#grid' ? 'grid' : 'network');
+window.addEventListener('hashchange', () => setView(location.hash === '#grid' ? 'grid' : 'network'));
+</script>
