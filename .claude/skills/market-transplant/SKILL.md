@@ -1,6 +1,6 @@
 ---
 name: market-transplant
-description: "Find a marketing or offer mechanism that is proven in one market (e.g. BOGO and quiz funnels in ecommerce), check with Keepwatch whether a different market lacks it (e.g. beat makers), find an underserved group in that market with real demand evidence, and design a new brand that brings the mechanism there. Uses Keepwatch (MCP) for ad research, demand-finder for demand evidence, and the CMBA skills (idea, differentiate, journey, content, discovery) to build the brand. Triggers on: borrow an idea from another market, what works in X that nobody does in Y, transplant a funnel, find an underserved market, new brand idea from proven ads, apply ecommerce tactics to another niche, market gap research."
+description: "Find a marketing or offer mechanism that is proven in one market (e.g. BOGO and quiz funnels in ecommerce), check with Keepwatch whether a different market lacks it (e.g. beat makers), find an underserved group in that market with real demand evidence, and design a new brand that brings the mechanism there. Uses Keepwatch (MCP) for ad research, demand-finder and cmba-validate for demand evidence, and the CMBA skills (idea, differentiate, uvp, journey, content, discovery) to build the brand. Triggers on: borrow an idea from another market, what works in X that nobody does in Y, transplant a funnel, find an underserved market, new brand idea from proven ads, apply ecommerce tactics to another niche, market gap research."
 ---
 
 # Market Transplant
@@ -98,6 +98,15 @@ proven. Write `transplant/<slug>/source.md` and `evidence.json` (raw tool output
 
    A group is **underserved** only with demand evidence ≥ rung 2 on the demand-finder ladder AND
    supply that ignores them.
+5. For the 1–2 strongest groups, run **`cmba-validate`**:
+   - write the claim so it can fail;
+   - gather verbatim quotes with where each was said;
+   - list 5+ reachable 30-for-30 targets;
+   - draft the survey;
+   - give a verdict.
+
+   Its hard rule applies here too: numbers alone cap a group at AMBER. Only the group's own words
+   prove they feel the pain. A RED group is dropped.
 
 Write `transplant/<slug>/target.md`.
 
@@ -110,7 +119,7 @@ Score each candidate pair (mechanism ABSENT/RARE × underserved group) 0–2 on 
 | Proven in source | one brand, short runs | several brands, kept and refreshed |
 | Absent in target | present | absent (queries listed) |
 | Preconditions hold | a precondition fails | every precondition checked with a fact |
-| Group demand | asserted | rung 2+ evidence with links |
+| Group demand | asserted | rung 2+ evidence with links, and cmba-validate GREEN (AMBER scores 1) |
 | Copy cost | rivals could add it tomorrow | it conflicts with how target rivals make money (name the mechanism) |
 
 Keep pairs scoring ≥ 7/10 with no zero. **If none survive, say so.** Report the closest miss and
@@ -125,13 +134,16 @@ Run these skills on the winning pair. Each reads the files before it, and none r
 2. **`cmba-differentiate`** against 2–3 fetched target competitors. The transplanted mechanism is
    the candidate differentiator. It must survive the copy-cost test and the substitution test, or
    the verdict is POSITIONAL or NONE. Accept NONE if that's the answer.
-3. **`positioning-angles`**: 3–5 angles for the group.
-4. **`cmba-journey`**: the transplanted funnel as the daisy chain. In the example, the quiz becomes
+3. **`cmba-uvp`**: the positioning paragraph for the group. It reads `differentiators.md` and does
+   not re-derive it. Its Step 0 decides first-person versus brand voice. The substitution test is a
+   hard fail.
+4. **`positioning-angles`**: 3–5 angles built from that UVP.
+5. **`cmba-journey`**: the transplanted funnel as the daisy chain. In the example, the quiz becomes
    the lead magnet that solves the narrow problem, followed by six emails.
-5. **`cmba-content`**: the 90-day content plan. Pick the distribution mode honestly; most creator
+6. **`cmba-content`**: the 90-day content plan. Pick the distribution mode honestly; most creator
    markets are audience-led.
-6. **`cmba-discovery`**: only if the brand sells a service. Skip it for product brands.
-7. Keepwatch:
+7. **`cmba-discovery`**: only if the brand sells a service. Skip it for product brands.
+8. Keepwatch:
    - `update_brand` with the new brand's facts and stance (passes the swap test);
    - `list_moves` and `write_brief` for one cross-industry move;
    - `make_ad` on the strongest source ad, so the first ad is the transplanted mechanism in the
@@ -164,7 +176,7 @@ Target habits: … Open ground: …
 | Pair | Proven | Absent | Preconditions | Demand | Copy cost | Total |
 
 ## 5. The brand
-Name (working) · one-sentence stance (swap-test result) · differentiator verdict (from cmba-differentiate)
+Name (working) · one-sentence stance (swap-test result) · differentiator verdict (from cmba-differentiate) · UVP paragraph (from cmba-uvp)
 Offer · funnel (from cmba-journey) · first 3 posts (from cmba-content) · first ad (Keepwatch make_ad id)
 
 ## 6. Launch test
@@ -174,8 +186,8 @@ Post variants · landing copy · pre-registered PASS / KILL · date
 ## Assumptions & unknowns
 ```
 
-Also save the files the CMBA skills produce (`idea.md`, `differentiators.md`, `journey.md`,
-`content.md`) in the same folder.
+Also save the files the CMBA skills produce (`validation.md`, `idea.md`, `differentiators.md`,
+`uvp.md`, `journey.md`, `content.md`) in the same folder.
 
 ## Evaluation (0–4 each, 20 total; pass ≥ 15, no dimension < 2)
 
@@ -183,7 +195,7 @@ Also save the files the CMBA skills produce (`idea.md`, `differentiators.md`, `j
 |---|---|---|---|---|
 | 1 | Source proof | Mechanism asserted | Ads cited | 2+ brands, run lengths and ad ids, mechanism in move/because/when form |
 | 2 | Gap proof | "Nobody does this" | Some searching | Every signature query listed with hit counts; PRESENT mechanisms dropped |
-| 3 | Underserved proof | Demographic asserted | Demand or supply shown | Both demand (rung 2+, links) and supply-ignores shown |
+| 3 | Underserved proof | Demographic asserted | Demand or supply shown | Demand (rung 2+, links), supply-ignores, and cmba-validate verbatim quotes with 5+ reachable people |
 | 4 | Build quality | Generic brand | CMBA skills partly run | Full chain run in order, each reading the last; differentiator survives the substitution test, or is honestly NONE |
 | 5 | Falsifiability | No test | A test without thresholds | Pre-registered pass and kill numbers, a dated next action, and a named kill condition |
 
