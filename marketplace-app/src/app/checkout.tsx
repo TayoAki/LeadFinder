@@ -14,11 +14,13 @@ import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
 import { commerce, isStockError, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
 import { usePrimeCheckout } from '@/lib/usePrimeCheckout';
+import { AddressForm, formatAddress } from '@/components/AddressForm';
 import { CardPayment } from '@/components/CardPayment';
 import { haptic } from '@/lib/feedback';
 
 export default function Checkout() {
-  const { groups, user, credit, referredBy, placeOrder, cart, remove, address: savedAddress } = useStore();
+  const { groups, user, credit, referredBy, placeOrder, cart, remove, address: savedAddress, setAddress } = useStore();
+  const [editAddr, setEditAddr] = useState(false);
   // Usually already prepared when the cart was opened; re-primes if anything changed.
   const { lines, addr } = usePrimeCheckout();
   const [pay, setPay] = useState<'apple' | 'card'>('apple');
@@ -37,7 +39,8 @@ export default function Checkout() {
   const userCredit = user && !mercur ? credit : 0;
   const discount = Math.min(referral + userCredit, items + shipping);
   const total = items + shipping + tax - discount;
-  const guestOk = !!user || email.includes('@');
+  const emailOk = !!user || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  const guestOk = emailOk && !!addr && !editAddr;
 
   useEffect(() => { if (cart.length) track('checkout_start', { total: Math.round(total * 100) / 100, items: cart.reduce((n, l) => n + l.qty, 0), sellers: groups.length, guest: !user, referred: !!referredBy }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
   if (!cart.length && !loading) return <Redirect href="/cart" />;
@@ -77,13 +80,14 @@ export default function Checkout() {
     track('checkout_submit', { total: Math.round(total * 100) / 100, guest: !user });
     try {
       if (commerce()) {
-        const p = await prepareCheckout(lines, { email: user?.email ?? email, name: user?.name ?? '' }, addr);
+        if (!addr) throw new Error('Add your shipping address first.');
+        const p = await prepareCheckout(lines, { email: user?.email ?? email.trim(), name: addr.name }, addr);
         if (p.clientSecret) { track('payment_sheet_open', { total: p.total }); setPrepared(p); return; } // CardPayment takes over
         return finish(p);
       }
       done(await api<{ id: string; total: number; tax: number }>('/api/orders', {
-        lines, email: user?.email ?? email, name: user?.name ?? '',
-        address: '1208 Willow Ave, Apt 3, Austin, TX 78702', discount, ref: referredBy ?? undefined, ...ids(),
+        lines, email: user?.email ?? email.trim(), name: addr?.name ?? '',
+        address: addr ? formatAddress(addr) : '', discount, ref: referredBy ?? undefined, ...ids(),
       }));
     } catch (e: any) { fail(e); }
   };
@@ -108,8 +112,13 @@ export default function Checkout() {
           </Card>
         )}
         <Card>
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={T.h3}>Ship to</Text><Pressable onPress={() => router.push('/addresses')}><Text style={{ color: C.accent, fontWeight: '700' }}>Change</Text></Pressable></View>
-          <Text style={[T.body, { marginTop: 6 }]}>{user?.name ?? 'Your name'}{'\n'}<Text style={{ color: C.ink2 }}>1208 Willow Ave, Apt 3{'\n'}Austin, TX 78702</Text></Text>
+          <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <Text style={T.h3}>Ship to</Text>
+            {addr && !editAddr && <Pressable onPress={() => setEditAddr(true)} accessibilityRole="button" accessibilityLabel="Change shipping address"><Text style={{ color: C.accent, fontWeight: '700' }}>Change</Text></Pressable>}
+          </View>
+          {addr && !editAddr
+            ? <Text style={[T.body, { marginTop: 6 }]}>{addr.name}{'\n'}<Text style={{ color: C.ink2 }}>{formatAddress(addr)}{addr.phone ? `\n${addr.phone}` : ''}</Text></Text>
+            : <AddressForm initial={savedAddress ?? { name: user?.name ?? '' }} onSave={a => { setAddress(a); setEditAddr(false); track('checkout_address_saved', { state: a.province }); }} />}
         </Card>
 
         {mercur && !stripeOn ? (
@@ -161,7 +170,7 @@ export default function Checkout() {
         <Button title={stripeOn ? `Continue to payment · ${money(total)}` : mercur ? `Place order · ${money(total)}` : pay === 'apple' ? 'Pay with Apple Pay' : `Pay ${money(total)}`} icon={!stripeOn && !mercur && pay === 'apple' ? 'logo-apple' : 'lock-closed'} kind={!stripeOn && !mercur && pay === 'apple' ? 'primary' : 'buy'}
           style={{ marginTop: S.md }} onPress={place} loading={loading} disabled={!guestOk} testID="place-order" />
         {!!error && <Text style={{ textAlign: 'center', color: C.sale, fontWeight: '700', fontSize: 13, marginTop: 6 }} accessibilityRole="alert">{error}</Text>}
-        {!guestOk && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>Add an email for your receipt to continue</Text>}
+        {!guestOk && <Text style={{ textAlign: 'center', color: C.ink3, fontSize: 12, marginTop: 6 }}>{!addr || editAddr ? 'Add your shipping address to continue' : 'Add an email for your receipt to continue'}</Text>}
       </SafeAreaView>
     </SafeAreaView>
   );

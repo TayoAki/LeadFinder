@@ -4,13 +4,15 @@
 //   /uploads/*  product photos stored on the volume
 //   /*          the Expo web export (dist/), single-page fallback
 import { createServer } from 'node:http';
-import { createReadStream, existsSync, statSync, writeFileSync } from 'node:fs';
+import { createReadStream, existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { extname, resolve, normalize, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
 import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, catalogStats, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
 import { catalogSnapshot, supplierFilter, warmCatalog } from './catalog.mjs';
+import { getPost, injectSeo, listPosts, loadBlog, sitemapXml } from './blog/index.mjs';
+console.log(`[blog] ${loadBlog()} catalogue posts`);
 import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -179,6 +181,9 @@ function insightQuery(req) {
 // ---------- routes ----------
 const routes = {
   'GET /api/health': () => ({ ok: true }),
+  // Catalogue blog (server/blog): listicle + advertorial for every Printify blueprint.
+  'GET /api/blog/posts': ({ req }) => { const q = new URL(req.url, 'http://x').searchParams; return listPosts({ category: q.get('category') || '', q: q.get('q') || '', type: q.get('type') || '', page: q.get('page') || 1 }); },
+  'GET /api/blog/post/:id': ({ params }) => getPost(params.id) || fail(404, 'Post not found'),
   // Which commerce backend the app should use. With MEDUSA_URL + MEDUSA_PUBLISHABLE_KEY set, the app
   // reads its catalogue from Mercur and checks out there; otherwise it uses this server's own API.
   'GET /api/config': () => ({
@@ -351,6 +356,14 @@ const server = createServer(async (req, res) => {
       const sub = path.slice('/seller'.length) || '/';
       if (sub !== '/' && serveFile(res, WEB, sub, 'no-cache')) return;
       return serveFile(res, WEB, '/index.html', 'no-cache');
+    }
+    const origin = `${req.headers['x-forwarded-proto'] || 'http'}://${req.headers.host}`;
+    if (path === '/sitemap.xml') { res.writeHead(200, { 'content-type': 'application/xml; charset=utf-8', 'cache-control': 'public, max-age=3600' }); return res.end(sitemapXml(origin)); }
+    if (path === '/robots.txt') { res.writeHead(200, { 'content-type': 'text/plain' }); return res.end(`User-agent: *\nAllow: /\nDisallow: /seller\nDisallow: /api/\nSitemap: ${origin}/sitemap.xml\n`); }
+    // Blog posts: the app shell with the post's SEO head and article HTML already in it.
+    if (existsSync(APP) && /^\/(list|story)\//.test(path)) {
+      const seo = injectSeo(readFileSync(resolve(APP, 'index.html'), 'utf8'), path, origin);
+      if (seo) { res.writeHead(200, { 'content-type': 'text/html; charset=utf-8', 'cache-control': 'public, max-age=300' }); return res.end(seo); }
     }
     if (existsSync(APP)) {
       if (path !== '/' && serveFile(res, APP, path, path.startsWith('/_expo/') ? 'public, max-age=31536000, immutable' : path.startsWith('/videos/') ? 'public, max-age=86400' : 'public, max-age=300', req)) return;

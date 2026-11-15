@@ -32,12 +32,12 @@ export default function ShareSheet() {
   } else if (kind === 'drop') {
     const d = drops.find(x => x.id === id)!; image = getProduct(d.productId).images[0]; title = d.title; sub = `${d.qty} made · drops soon`; url = link(`/d/${d.id}`, ref); message = `This drop is limited to ${d.qty}. Set a reminder:`; badge = 'DROP';
   } else if (kind === 'wishlist') {
-    const first = getProduct(wishlist[0] ?? products[0].id); image = first.image; title = `${user?.name ?? 'My'} wishlist`; sub = `${wishlist.length || 1} things I'd love from indie shops`; url = link(`/w/${ref}`, ref); message = 'My wishlist (hint hint):'; badge = 'GIFT IDEAS';
+    const first = getProduct(wishlist[0] ?? products[0]?.id); image = first?.image ?? ''; title = `${user?.name ?? 'My'} wishlist`; sub = `${wishlist.length || 1} things I'd love from indie shops`; url = link(`/w/${ref}`, ref); message = 'My wishlist (hint hint):'; badge = 'GIFT IDEAS';
   } else if (kind === 'order') {
     const o = orders.find(x => x.id === id) ?? orders[0]; const p = getProduct(o.sellerOrders[0].lines[0].productId);
     image = p.images[0]; title = 'Just got my haul'; sub = `From ${BRAND.name}, in one checkout`; url = link('/', ref); message = `Shopped ${o.sellerOrders.length} small shops in one go on ${BRAND.name}. Here's $${BRAND.referralReward} off your first order:`; badge = 'MY HAUL';
   } else {
-    image = products[5].images[0]; title = `$${BRAND.referralReward} off at ${BRAND.name}`; sub = `${BRAND.tagline}. Use my link.`; url = link('/', ref); message = `Here's $${BRAND.referralReward} off your first order on ${BRAND.name}:`; badge = `$${BRAND.referralReward} OFF`;
+    image = (products[5] ?? products[0])?.images[0] ?? ''; title = `$${BRAND.referralReward} off at ${BRAND.name}`; sub = `${BRAND.tagline}. Use my link.`; url = link('/', ref); message = `Here's $${BRAND.referralReward} off your first order on ${BRAND.name}:`; badge = `$${BRAND.referralReward} OFF`;
   }
 
   const send = async (via: string) => {

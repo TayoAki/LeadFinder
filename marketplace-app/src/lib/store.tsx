@@ -15,7 +15,7 @@ export type SellerOrder = { shopId: string; lines: CartLine[]; shipping: number;
 export type Order = { id: string; placedAt: number; total: number; credit: number; sellerOrders: SellerOrder[] };
 type User = { name: string; email: string; code: string } | null;
 export type SizeGroup = 'clothing' | 'shoes';
-export type Address = { name: string; address_1: string; city: string; province: string; postal_code: string };
+export type Address = { name: string; address_1: string; address_2?: string; city: string; province: string; postal_code: string; phone?: string };
 // Replenishment: remind (and offer one-tap reorder) every `days` days for things that run out.
 export type Replenish = { productId: string; size: string | null; days: number; next: number };
 export const sizeGroup = (sizes: string[]): SizeGroup | null => (!sizes.length ? null : sizes.every(x => /^\d+(\.\d)?$/.test(x)) ? 'shoes' : 'clothing');

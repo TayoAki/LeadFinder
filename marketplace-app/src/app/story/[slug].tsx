@@ -4,6 +4,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { CatalogPostScreen } from '@/components/CatalogPost';
 import { Header } from '@/components/Header';
 import { PageIn } from '@/components/Motion';
 import { Disclaimer, PageNotFound, ProductRow, StickyCTA } from '@/components/PageBlocks';
@@ -14,8 +15,8 @@ import { C, R, S, T } from '@/lib/theme';
 export default function Story() {
   const { slug } = useLocalSearchParams<{ slug: string }>();
   const a = advertorialPage(String(slug));
-  useEffect(() => { track('page_view', { page_type: 'advertorial', slug: String(slug), found: !!a }); }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
-  if (!a) return <PageNotFound />;
+  useEffect(() => { if (a) track('page_view', { page_type: 'advertorial', slug: String(slug), found: true }); }, [slug]); // eslint-disable-line react-hooks/exhaustive-deps
+  if (!a) return <CatalogPostScreen slug={String(slug)} kind="advertorial" />; // generated catalogue post
 
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>

@@ -108,7 +108,9 @@ export async function loadMercurCatalog(c: CommerceConfig, opts: { live?: boolea
   const shops: Shop[] = sellers.map(s => ({
     id: s.id, name: s.name, tagline: s.metadata?.tagline ?? s.description ?? '', category: s.metadata?.category ?? 'Home',
     followers: 0, rating: 0, /* seeded numbers are never shown */ logo: s.logo ?? '', banner: s.banner ?? s.logo ?? '',
-    shipsIn: s.metadata?.ships_in ?? '2–3 days', freeOver: num(s.metadata?.free_over, 50), shipping: num(s.metadata?.shipping, 5.95),
+    shipsIn: s.metadata?.ships_in ?? '2–3 days', // Mercur charges each supplier's flat shipping on every order (no free-shipping rule), so the app
+    // shows that flat rate. A finite huge number, not Infinity: Infinity becomes null in the JSON cache.
+    freeOver: Number.MAX_SAFE_INTEGER, shipping: num(s.metadata?.shipping, 5.95),
   }));
 
   offerFor.clear();
@@ -141,6 +143,7 @@ export async function loadMercurCatalog(c: CommerceConfig, opts: { live?: boolea
       stock: [...sizes.values()].reduce((n, o) => n + Math.max(0, stockOf(o)), 0),
       sizes: [...sizes.keys()].filter(Boolean).sort(bySize), description: p.description ?? '',
       sizeStock: Object.fromEntries([...sizes].filter(([s]) => s).map(([s, o]) => [s, Math.max(0, stockOf(o))])),
+      blueprintId: typeof p.metadata?.printify_blueprint_id === 'number' ? p.metadata.printify_blueprint_id : undefined,
       details: p.metadata?.details && typeof p.metadata.details === 'object' ? Object.fromEntries(Object.entries(p.metadata.details).filter(([, v]) => typeof v === 'string' && v).map(([k, v]) => [k, String(v)])) : undefined,
     });
   }
@@ -204,8 +207,8 @@ type Prepared = { cartId: string; collectionId: string; clientSecret: string | n
 let primed: { key: string; at: number; p: Promise<Prepared> } | null = null;
 
 async function attachShippingAndPayment(id: string, address: Address): Promise<Prepared> {
-  const [first, ...rest] = (address.name || 'Shelby Shopper').split(' ');
-  await store(`/store/carts/${id}`, { shipping_address: { first_name: first, last_name: rest.join(' ') || '-', country_code: 'us', address_1: address.address_1, city: address.city, province: address.province, postal_code: address.postal_code } });
+  const [first, ...rest] = address.name.trim().split(/\s+/);
+  await store(`/store/carts/${id}`, { shipping_address: { first_name: first, last_name: rest.join(' ') || '-', country_code: 'us', address_1: address.address_1, address_2: address.address_2 || '', city: address.city, province: address.province, postal_code: address.postal_code, phone: address.phone || '' } });
   const [{ shipping_options }, { cart }] = await Promise.all([
     store<{ shipping_options: Record<string, { id: string }[]> }>(`/store/shipping-options?cart_id=${id}`),
     store<any>(`/store/carts/${id}?fields=*shipping_methods`),
@@ -221,7 +224,7 @@ async function attachShippingAndPayment(id: string, address: Address): Promise<P
   const { cart: t } = await store<any>(`/store/carts/${id}?fields=total,tax_total,shipping_total`);
   return { cartId: id, collectionId: payment_collection.id, clientSecret, total: num(t.total), tax: num(t.tax_total), shipping: num(t.shipping_total) };
 }
-type Address = { name: string; address_1: string; city: string; province: string; postal_code: string };
+type Address = { name: string; address_1: string; address_2?: string; city: string; province: string; postal_code: string; phone?: string };
 
 // Cart or checkout opened: do the slow work now, while the shopper reads the summary.
 export function primeCheckout(lines: CheckoutLine[], address: Address) {

@@ -31,7 +31,7 @@ export default function Invite() {
         </Card>
         <Card>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-            <Text style={T.h3}>Invite {goal} friends, unlock free shipping for a month</Text>
+            <Text style={T.h3}>Friends invited: {Math.min(invitesSent, goal)} of {goal}</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 6, marginTop: S.md }}>
             {Array.from({ length: goal }).map((_, i) => <View key={i} style={{ flex: 1, height: 8, borderRadius: 4, backgroundColor: i < invitesSent ? C.accent : C.line }} />)}

@@ -10,6 +10,7 @@ export type Product = {
   sizes: string[]; description: string;
   details?: Record<string, string>; // seller-entered facts (fit, ingredients, shades…) from product metadata
   sizeStock?: Record<string, number>; // live stock per size
+  blueprintId?: number; // Printify blueprint the product is printed on (links catalogue blog posts)
 };
 
 export const shops: Shop[] = (catalog.shops as Shop[]).map(s => (s.id === 's7' ? { ...s, rating: 0, followers: 212 } : s)); // s7 = a brand-new maker
