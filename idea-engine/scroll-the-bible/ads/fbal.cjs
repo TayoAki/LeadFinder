@@ -19,8 +19,8 @@ function adsIn(html) {
     const p = await ctx.newPage(); const extra = [];
     p.on('response', async r => { if (r.url().includes('/api/graphql')) { try { const t = await r.text(); if (t.includes('collated_results')) extra.push(...adsIn(t)); } catch {} } });
     const url = mode === 'find'
-      ? `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=US&q=${encodeURIComponent(a)}&search_type=keyword_unordered&media_type=all`
-      : `https://www.facebook.com/ads/library/?active_status=${mode === 'active' ? 'active' : 'all'}&ad_type=all&country=US&view_all_page_id=${a}&search_type=page&media_type=all`;
+      ? `https://www.facebook.com/ads/library/?active_status=all&ad_type=all&country=${process.env.COUNTRY || "US"}&q=${encodeURIComponent(a)}&search_type=keyword_unordered&media_type=all`
+      : `https://www.facebook.com/ads/library/?active_status=${mode === 'active' ? 'active' : 'all'}&ad_type=all&country=${process.env.COUNTRY || "US"}&view_all_page_id=${a}&search_type=page&media_type=all`;
     try {
       await p.goto(url, { waitUntil: 'domcontentloaded', timeout: 60000 }); await p.waitForTimeout(5000);
       for (let k = 0; k < 4; k++) { await p.mouse.wheel(0, 15000); await p.waitForTimeout(6000); }
