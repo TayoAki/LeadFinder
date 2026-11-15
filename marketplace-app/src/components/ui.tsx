@@ -50,7 +50,7 @@ export function Chip({ label, active, onPress, icon, disabled }: { label: string
 }
 
 export function Stars({ value, size = 12, count }: { value: number; size?: number; count?: number }) {
-  if (!value) return <Pill text="New maker" tone="good" icon="leaf" />;
+  if (!value) return null; // no real reviews yet: show nothing rather than a number
   return (
     <View style={{ flexDirection: 'row', alignItems: 'center', gap: 3 }} accessibilityLabel={`Rated ${value} out of 5`}>
       <Ionicons name="star" size={size} color="#F5A524" />

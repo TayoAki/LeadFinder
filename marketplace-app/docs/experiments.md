@@ -11,6 +11,7 @@ How it works:
 | E7 | A niche bundle on the PDP raises order value | on / off | AOV; product_view → add_to_cart | PDP add rate | Depends on order-value variance; ~6,700 views per arm for the add-to-cart guardrail | Running, waiting for traffic |
 | E8 | Real proof next to the price lifts add-to-cart | near / below | product_view → add_to_cart | None | ~6,700 views per arm | Running, waiting for traffic |
 | E16 | The campaign hook on landing lifts link conversion | matched / generic | campaign_landing → order_placed | None | Depends on campaign volume | Running, waiting for traffic |
+| E18 | A "Find your match" quiz on Home raises purchases | show / hide (Home card; the quiz stays reachable for everyone) | app_open → order_placed (30 d); quiz_start → quiz_complete → order_placed by `icp` | AOV, refunds | ~6,700 shoppers per arm for a 20% relative lift on a ~3% base | Running, waiting for traffic |
 | Holdout | True lift from discounts | 5% holdout / eligible | RPI₃₀ | n/a | Permanent | Live |
 | Holdout | True lift from push | 5% holdout / eligible | Repeat orders (60 d) | n/a | Permanent | Live |
 

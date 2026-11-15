@@ -15,6 +15,9 @@ import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { shopVideos } from '@/lib/videos';
 import { useDropCounts } from '@/lib/proof';
+import { icpOf, rankFor } from '@/lib/icp';
+import { track } from '@/lib/analytics';
+import { variant } from '@/lib/experiments';
 
 export default function Home() {
   const { width } = useWindowDimensions();
@@ -30,6 +33,9 @@ export default function Home() {
   useEffect(() => { if (ref) setReferredBy(ref); }, [ref]);
   const remind = (id: string) => { if (!reminders.includes(id) && notif === 'unknown') router.push({ pathname: '/notify', params: { reason: 'drop' } }); toggleReminder(id); };
   const [cat, setCat] = useState('All');
+  const { profile } = useStore();
+  const showQuiz = useMemo(() => !profile && variant('e18_quiz_entry') === 'show', [profile]);
+  const forYou = useMemo(() => (profile ? rankFor(profile).slice(0, 4) : []), [profile]);
 
 
   const feed = useMemo(() => {
@@ -56,6 +62,23 @@ export default function Home() {
             <Ionicons name="gift" size={22} color={C.good} />
             <Text style={{ flex: 1, color: C.good, fontWeight: '700' }}>A friend sent you ${BRAND.referralReward} off. It's applied at checkout automatically.</Text>
           </View>
+        )}
+        {/* Quiz: sorts the shopper into a segment (ICP) and ranks products for it; afterwards, their picks */}
+        {profile && forYou.length ? (
+          <View style={{ marginTop: S.lg }}>
+            <SectionHeader title={`For you: ${icpOf(profile).title}`} sub={icpOf(profile).line} action="Retake" onAction={() => router.push({ pathname: '/quiz', params: { from: 'home_retake' } })} />
+            <ProductGrid items={forYou} width={width} />
+          </View>
+        ) : showQuiz && (
+          <Pressable onPress={() => { track('quiz_entry_tap', { from: 'home' }); router.push({ pathname: '/quiz', params: { from: 'home' } }); }} accessibilityRole="button"
+            style={{ margin: S.lg, marginBottom: 0, padding: S.lg, borderRadius: R.lg, backgroundColor: C.ink, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
+            <Ionicons name="sparkles" size={24} color={C.buy} />
+            <View style={{ flex: 1 }}>
+              <Text style={{ color: '#fff', fontWeight: '800', fontSize: 16 }}>Find your match in 30 seconds</Text>
+              <Text style={{ color: '#E9DDE6', marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color="#fff" />
+          </Pressable>
         )}
         {/* Shelby: ask in plain words, plus a daily row of picks (the reason to open the app each day) */}
         <Pressable onPress={() => router.push('/ask')} accessibilityRole="button" accessibilityLabel="Ask Shelby" style={{ margin: S.lg, marginBottom: 0, padding: S.md, paddingLeft: 4, borderRadius: R.lg, backgroundColor: C.accentSoft, flexDirection: 'row', alignItems: 'center', gap: 6 }}>

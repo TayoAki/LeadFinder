@@ -12,6 +12,7 @@ export const EXPERIMENTS: Experiment[] = [
   { key: 'e7_bundle_pdp', variants: ['on', 'off'], active: true },
   { key: 'e8_proof_near_price', variants: ['near', 'below'], active: true },
   { key: 'e16_campaign_landing', variants: ['matched', 'generic'], active: true },
+  { key: 'e18_quiz_entry', variants: ['show', 'hide'], active: true },
   // Permanent holdouts (5%): never get discounts / marketing pushes, to measure true lift.
   { key: 'holdout_discounts', variants: ['holdout', 'eligible'], weights: [5, 95], active: true },
   { key: 'holdout_push', variants: ['holdout', 'eligible'], weights: [5, 95], active: true },

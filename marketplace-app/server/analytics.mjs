@@ -158,6 +158,16 @@ export function dropReminders(db) {
   const out = {}; for (const r of last.values()) if (r.on_) out[r.drop_id] = (out[r.drop_id] || 0) + 1;
   return out;
 }
+// Real numbers for every product at once, merged into the ready-made catalogue (server/catalog.mjs):
+// units bought in the last 30 days (purchase_item events) and the average of real reviews.
+export function catalogStats(db) {
+  const out = {};
+  for (const r of db.prepare("SELECT json_extract(props, '$.product_id') id, SUM(json_extract(props, '$.qty')) n FROM events WHERE name = 'purchase_item' AND source = 'app' AND ts > ? GROUP BY 1").all(Date.now() - 30 * DAY))
+    if (r.id) (out[r.id] ??= {}).sold30 = Number(r.n) || 0;
+  for (const r of db.prepare('SELECT product_id id, COUNT(*) n, AVG(rating) avg FROM reviews GROUP BY 1').all())
+    Object.assign(out[r.id] ??= {}, { reviews: r.n, rating: Math.round(r.avg * 10) / 10 });
+  return out;
+}
 export function listReviews(db, productId) {
   const rows = db.prepare('SELECT rating, text, name, verified, created_at FROM reviews WHERE product_id = ? ORDER BY created_at DESC LIMIT 50').all(productId);
   const agg = db.prepare('SELECT COUNT(*) n, AVG(rating) avg FROM reviews WHERE product_id = ?').get(productId);

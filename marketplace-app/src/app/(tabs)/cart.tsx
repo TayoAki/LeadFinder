@@ -10,6 +10,7 @@ import { Button, SectionHeader } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
 import { getProduct, money, products } from '@/lib/data';
 import { useStore } from '@/lib/store';
+import { usePrimeCheckout } from '@/lib/usePrimeCheckout';
 import { C, R, S, T } from '@/lib/theme';
 import { unlockShipping } from '@/lib/upsell';
 import { track } from '@/lib/analytics';
@@ -17,6 +18,7 @@ import { track } from '@/lib/analytics';
 export default function Cart() {
   const { width } = useWindowDimensions();
   const { cart, groups, setQty, remove, user, credit, referredBy, add } = useStore();
+  usePrimeCheckout(); // checkout is ready before they tap Checkout
   const items = groups.reduce((n, g) => n + g.subtotal, 0);
   const shipping = groups.reduce((n, g) => n + g.shipping, 0);
   const pendingCredit = (user ? credit : 0) + (referredBy ? BRAND.referralReward : 0);

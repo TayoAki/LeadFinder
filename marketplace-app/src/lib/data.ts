@@ -25,12 +25,16 @@ export function applyCatalog(remote: { shops: Shop[]; products: Product[] }, fix
   shops.splice(0, shops.length, ...remote.shops.map(s => ({ ...s, logo: fix(s.logo || firstImg(s.id)), banner: fix(s.banner || s.logo || firstImg(s.id)) })));
   products.splice(0, products.length, ...remote.products.map(p => ({ ...p, image: fix(p.image), images: p.images.map(fix) })));
   for (let i = drops.length - 1; i >= 0; i--) if (!products.some(p => p.id === drops[i].productId)) drops.splice(i, 1);
+  // Categories follow the catalogue: known ones in a set order, new ones after.
+  const present = [...new Set(products.map(p => p.category))];
+  categories.splice(1, categories.length - 1, ...ORDER.filter(c => present.includes(c)), ...present.filter(c => !ORDER.includes(c)));
   return true;
 }
+const ORDER = ['Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Beauty', 'Skincare', 'Supplements', 'Wellness', 'Home', 'Outdoors'];
 export const categories = ['All', 'Home', 'Beauty', 'Women', 'Men', 'Shoes', 'Bags', 'Jewelry', 'Accessories', 'Outdoors'];
 export const categoryIcon: Record<string, string> = {
   All: 'apps', Home: 'home', Beauty: 'sparkles', Women: 'woman', Men: 'man', Shoes: 'footsteps',
-  Bags: 'bag-handle', Jewelry: 'diamond', Accessories: 'glasses', Outdoors: 'trail-sign',
+  Bags: 'bag-handle', Jewelry: 'diamond', Accessories: 'glasses', Outdoors: 'trail-sign', Skincare: 'water', Supplements: 'leaf', Wellness: 'leaf',
 };
 
 export const getProduct = (id: string) => products.find(p => p.id === id)!;

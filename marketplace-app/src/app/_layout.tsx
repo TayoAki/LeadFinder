@@ -6,7 +6,7 @@ import { Shelby } from '@/components/Shelby';
 import { screen, setAttribution, track } from '@/lib/analytics';
 import '@/lib/experiments'; // assigns variants and tags every event
 import { absolute, api } from '@/lib/api';
-import { CatalogSnapshot, CommerceConfig, loadMercurCatalog, restore, snapshot } from '@/lib/commerce';
+import { CatalogSnapshot, CommerceConfig, loadMercurCatalog, prefetchCatalog, restore, snapshot } from '@/lib/commerce';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 const CATALOG_KEY = 'shelby_catalog_v1';
 import { applyCatalog, Product, Shop } from '@/lib/data';
@@ -23,10 +23,12 @@ function CatalogGate({ children }: { children: React.ReactNode }) {
   const [ready, setReady] = useState(false);
   useEffect(() => {
     (async () => {
+      const cachedRaw = AsyncStorage.getItem(CATALOG_KEY).catch(() => null);
+      prefetchCatalog();
       const { commerce } = await api<{ commerce: CommerceConfig | null }>('/api/config', undefined, 3000).catch(() => ({ commerce: null }));
       if (commerce) {
         // Open from the device cache at once when we have one; refresh live data in the background.
-        const cached = await AsyncStorage.getItem(CATALOG_KEY).then(r => (r ? (JSON.parse(r) as CatalogSnapshot) : null)).catch(() => null);
+        const cached = await cachedRaw.then(r => (r ? (JSON.parse(r) as CatalogSnapshot) : null)).catch(() => null);
         const fresh = loadMercurCatalog(commerce).then(c => { applyCatalog(c, u => u); AsyncStorage.setItem(CATALOG_KEY, JSON.stringify(snapshot(c))).catch(() => {}); });
         if (cached && cached.offers?.length && Date.now() - cached.at < 7 * 864e5) { applyCatalog(restore(commerce, cached), u => u); setReady(true); fresh.catch(() => {}); return; }
         await fresh;
@@ -63,6 +65,7 @@ export default function RootLayout() {
           <Stack.Screen name="notify" options={{ presentation: 'modal' }} />
           <Stack.Screen name="onboarding" options={{ presentation: 'fullScreenModal' }} />
           <Stack.Screen name="ask" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="quiz" options={{ presentation: 'fullScreenModal' }} />
           <Stack.Screen name="watch" options={{ presentation: 'fullScreenModal', contentStyle: { backgroundColor: '#000' } }} />
         </Stack>
       </FeedbackProvider>

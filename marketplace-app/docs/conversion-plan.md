@@ -233,6 +233,24 @@ Level 4 needs a concluded experiment on each criterion, so the most an app can s
 | R12 | 3 | 3 | 6.0 | Variant assignment, exposure events, `exp_*` on every event, funnel break-down by variant, two permanent holdouts, experiment log. No test concluded yet. |
 | **Total** | **44** | | **63.5 / 100** | **Fix-the-weak-dimensions band.** Next points: R8 speed and wallets (+3), R4 content (+3), R1 first-visit speed (+2), R9 subscribe & save (+2), R3 niche filters (+1.5). Then each concluded experiment lifts its criterion to 4. |
 
+### Score after round two (2026-11-15)
+
+**Correction to the score above:** product cards and pages were still showing seeded "434 sold" badges, star ratings and review counts from the demo import. That is fabricated proof, so R11 should have been capped at 1, and the honest previous total was **59.5**, not 63.5. Those numbers are now stripped on the server (`server/catalog.mjs`); cards show "bought this month" only from real `purchase_item` events (≥ 10), and stars only from real reviews.
+
+| # | Was | Now | Weighted | Evidence |
+|---|---|---|---|---|
+| R1 | 2 | 3 | 6.0 | The Shelby server serves one cached, gzipped catalogue (17 KB; was 6+ Mercur requests per phone), fetched alongside `/api/config`. First load p95 **1.7–1.8 s** with 10 concurrent shoppers (was 5.0 s), 1.0 s alone. |
+| R3 | 2 | 3 | 4.5 | Goal (supplements), skin type and concern (beauty, skincare) filters, built from product details and shown only where ≥ 2 results are tagged; search also matches those tags ("sleep", "acne", "spf"); filter use is tracked. |
+| R4 | 2 | 3* | 9.0 | Every product now has niche details (fit, fabric, dimensions, skin type, goal, dose…) and there is a supplements + skincare range. *This is **synthetic demo data** (`metadata.demo`, `demo_details`); it falls back to 2 until sellers enter real details. |
+| R8 | 2 | 2 | 6.0 | Checkout is now prepared when the cart opens (address, shipping, payment session, totals); Pay only saves the email and completes. Alone: Pay → confirmed **0.9 s**, cart → confirmed 2.0 s. Under 10 concurrent shoppers on one test container: 2.9–5.6 s p50, 7.5–12.9 s p95. Sold-out items are now caught at add time. Stays at 2 until Apple/Google Pay are on (Stripe keys). |
+| R9 | 2 | 2 | 4.0 | Quiz "Add all" sets only include items that match an answer. Still no subscribe & save. |
+| R11 | (1) | 3 | 6.0 | Seeded popularity removed everywhere (see correction). |
+| R12 | 3 | 3 | 6.0 | Plus: purchase events flushed immediately (they were being lost when the app closed after paying: 2 of ~25 simulated orders were recorded); every event carries the quiz segment (`icp`); funnels break down by ICP; quiz funnel events; test E18. |
+| Others | | | 28.5 | Unchanged: R2 4.5, R5 7.5, R6 4.5, R7 4.5, R10 7.5. |
+| **Total** | **59.5** | | **70 / 100** | Ceiling before experiments conclude: 75. The remaining 5: Apple/Google Pay (R8, needs Stripe keys) and subscribe & save (R9, needs Stripe billing). |
+
+**New: "Find your match" quiz** (`src/app/quiz.tsx`, `src/lib/icp.ts`). 2–4 questions sort shoppers into ICP segments (`wellness_calm`, `wellness_performance`, `wellness_foundations`, `skin_barrier`, `skin_clear`, `skin_glow`, `style_refresh`, `home_upgrade`, `active_outdoors`, `gift_hunter`), rank products by tag fit and budget, save the size, and put a "For you" row on Home. Tracked as `quiz_start → quiz_answer → quiz_complete → quiz_result_add`; tested as E18.
+
 Phases 1–3 above target, in order, the dimensions that lose the most points. Doing all of Phase 1 and Phase 2 should move the app into the 65–75 range, by rubric math, before any experiment wins.
 
 ---

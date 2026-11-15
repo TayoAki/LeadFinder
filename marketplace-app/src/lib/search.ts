@@ -8,7 +8,7 @@ const SYNONYMS: Record<string, string> = {
   tee: 'shirt', tshirt: 'shirt', top: 'shirt', blouse: 'shirt', purse: 'bag', handbag: 'bag', tote: 'bag', backpack: 'bag',
   sunglasses: 'glasses', shades: 'glasses', earrings: 'earring', necklace: 'jewelry', ring: 'jewelry',
   moisturizer: 'cream', moisturiser: 'cream', lotion: 'cream', makeup: 'beauty', lipstick: 'lip', perfume: 'fragrance',
-  vitamins: 'supplement', vitamin: 'supplement', mug: 'cup', couch: 'sofa', lamp: 'light', pan: 'pot',
+  vitamins: 'supplement', vitamin: 'supplement', supplements: 'supplement', insomnia: 'sleep', tired: 'energy', gut: 'gut', acne: 'breakout', spf: 'sun', sunscreen: 'sun', mug: 'cup', couch: 'sofa', lamp: 'light', pan: 'pot',
 };
 const norm = (w: string) => { const s = SYNONYMS[w] ?? w; return s.length > 3 && s.endsWith('s') && !s.endsWith('ss') ? s.slice(0, -1) : s; };
 
@@ -28,7 +28,7 @@ export const queryWords = (q: string) => q.toLowerCase().replace(/[^\w\s$-]/g, '
 const tokensCache = new Map<string, string[]>();
 function tokens(p: Product) {
   let t = tokensCache.get(p.id);
-  if (!t) { t = `${p.title} ${p.category} ${p.description} ${shops.find(s => s.id === p.shopId)?.name ?? ''}`.toLowerCase().replace(/[^\w\s]/g, ' ').split(/\s+/).filter(Boolean).map(norm); tokensCache.set(p.id, t); }
+  if (!t) { t = `${p.title} ${p.category} ${p.description} ${shops.find(s => s.id === p.shopId)?.name ?? ''} ${['goal', 'skin_type', 'concern'].map(k => p.details?.[k] ?? '').join(' ')}`.toLowerCase().replace(/[^\w\s]/g, ' ').split(/\s+/).filter(Boolean).map(norm); tokensCache.set(p.id, t); }
   return t;
 }
 

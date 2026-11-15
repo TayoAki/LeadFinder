@@ -12,17 +12,15 @@ import { applyCatalog, getProduct, money } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { ids, track } from '@/lib/analytics';
-import { commerce, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout, primeCheckout } from '@/lib/commerce';
+import { commerce, isStockError, completeCheckout, loadMercurCatalog, PreparedCheckout, prepareCheckout } from '@/lib/commerce';
+import { usePrimeCheckout } from '@/lib/usePrimeCheckout';
 import { CardPayment } from '@/components/CardPayment';
 import { haptic } from '@/lib/feedback';
 
 export default function Checkout() {
   const { groups, user, credit, referredBy, placeOrder, cart, remove, address: savedAddress } = useStore();
-  // Saved address when we have one (sample address until address entry is wired to Mercur customers).
-  const addr = savedAddress ?? { name: user?.name ?? '', address_1: '1208 Willow Ave, Apt 3', city: 'Austin', province: 'TX', postal_code: '78702' };
-  const lines = cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }));
-  // Opening checkout does the slow work (address, each shop's shipping, payment collection) now.
-  useEffect(() => { if (commerce() && cart.length) primeCheckout(lines, addr).catch(() => {}); }, [JSON.stringify(cart)]); // eslint-disable-line react-hooks/exhaustive-deps
+  // Usually already prepared when the cart was opened; re-primes if anything changed.
+  const { lines, addr } = usePrimeCheckout();
   const [pay, setPay] = useState<'apple' | 'card'>('apple');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
@@ -48,7 +46,7 @@ export default function Checkout() {
   // sold out, and say so in plain words (Mercur's message is about inventory items and offers).
   const soldOut = async () => {
     const cfg = commerce(); if (!cfg) return false;
-    applyCatalog(await loadMercurCatalog(cfg), u => u);
+    applyCatalog(await loadMercurCatalog(cfg, { live: true }), u => u);
     const gone = cart.map((l, i) => ({ l, i })).filter(({ l }) => (getProduct(l.productId)?.stock ?? 0) < l.qty);
     for (const { i } of gone.reverse()) remove(i);
     track('checkout_sold_out', { items: gone.length });
@@ -56,7 +54,7 @@ export default function Checkout() {
   };
   const fail = async (e: any) => {
     haptic('error');
-    if (/sufficient stock|out of stock|inventory/i.test(String(e?.message))) {
+    if (isStockError(e)) {
       const removed = await soldOut().catch(() => false);
       setError(removed ? 'Sorry, something in your cart just sold out, so we removed it. Check your total and pay again.'
         : "One of your items has fewer left than we showed. Try a smaller quantity, or remove it and pay again.");

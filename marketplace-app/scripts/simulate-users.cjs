@@ -17,7 +17,8 @@ const think = (pg, lo = 250, hi = 900) => pg.waitForTimeout(lo + rnd() * (hi - l
 
 // Persona mix (sums to 1) and how often each one tries to buy.
 const PERSONAS = [
-  { name: 'browser', share: 0.25, buy: 0 },
+  { name: 'browser', share: 0.15, buy: 0 },
+  { name: 'quizzer', share: 0.10, buy: 0.5 },
   { name: 'onboarder', share: 0.20, buy: 0.3 },
   { name: 'searcher', share: 0.15, buy: 0.4 },
   { name: 'video', share: 0.15, buy: 0.4 },
@@ -156,6 +157,26 @@ async function runUser(browser, i, shopNames) {
       await pg.locator(cardSel).filter({ visible: true }).first().waitFor({ timeout: 10000 });
     });
     if (await openProduct()) { await think(pg); if (chance(0.6)) await addToCart(); }
+  }
+  if (persona.name === 'quizzer') {
+    // "Find your match": area, then each follow-up question, then the result screen.
+    const ok = await step('quiz', async () => {
+      await go('/quiz?from=sim');
+      await pg.getByText(pick(['Feeling better', 'My skin']), { exact: true }).click({ timeout: 8000 });
+      for (let k = 0; k < 4; k++) {
+        if (await pg.getByText('YOUR MATCH').isVisible().catch(() => false)) break;
+        const opts = pg.locator('[role="button"][aria-label]').filter({ visible: true }).filter({ hasNotText: /^$/ });
+        const labels = (await opts.evaluateAll(els => els.map(e => e.getAttribute('aria-label')))).filter(l => l && !/close|previous/i.test(l));
+        await pg.getByRole('button', { name: pick(labels), exact: true }).click(); await pg.waitForTimeout(250);
+      }
+      await pg.getByText('YOUR MATCH').waitFor({ timeout: 8000 });
+    });
+    if (ok) {
+      const addAll = visible('[aria-label^="Add all"]');
+      if (await addAll.isVisible().catch(() => false) && chance(0.6)) await step('quiz_add_routine', async () => { await addAll.click(); await pg.waitForTimeout(400); });
+      else if (await openProduct()) { await think(pg, 500, 1200); await addToCart(); }
+    }
+    await go('/'); // back to the tabs, where the cart badge lives
   }
   if (persona.name === 'buyer') {
     for (let k = 0; k < 2; k++) {

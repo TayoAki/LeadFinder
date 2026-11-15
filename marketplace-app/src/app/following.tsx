@@ -24,7 +24,7 @@ export default function Following() {
               <View style={{ flex: 1 }}>
                 <Text style={T.h3}>{s.name}</Text>
                 <Text style={T.small} numberOfLines={1}>{s.tagline}</Text>
-                <View style={{ flexDirection: 'row', gap: 10, marginTop: 2 }}><Stars value={s.rating} size={11} /><Text style={T.small}>{compact(s.followers)} followers</Text></View>
+                <View style={{ flexDirection: 'row', gap: 10, marginTop: 2 }}><Stars value={s.rating} size={11} />{s.followers > 0 && <Text style={T.small}>{compact(s.followers)} followers</Text>}</View>
               </View>
               <Pressable onPress={() => toggleFollow(s.id)} style={{ paddingHorizontal: 14, height: 34, borderRadius: R.pill, backgroundColor: on ? C.surface : C.ink, borderWidth: 1, borderColor: on ? C.line : C.ink, justifyContent: 'center' }}>
                 <Text style={{ color: on ? C.ink : '#fff', fontWeight: '800', fontSize: 13 }}>{on ? 'Following' : 'Follow'}</Text>

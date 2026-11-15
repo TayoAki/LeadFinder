@@ -4,6 +4,7 @@
 // `commerce` block; otherwise the app falls back to the built-in backend.
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Product, Shop } from './data';
+import { API_URL } from './api';
 
 export type CommerceConfig = { url: string; publishableKey: string; sellerUrl?: string; stripePublishableKey?: string | null };
 let cfg: CommerceConfig | null = null;
@@ -56,22 +57,47 @@ async function all<T>(path: string, key: string): Promise<T[]> {
 
 const num = (v: unknown, d = 0) => (typeof v === 'number' && Number.isFinite(v) ? v : d);
 
-// Load Mercur's catalogue and map it to the app's shapes.
-export async function loadMercurCatalog(c: CommerceConfig): Promise<{ shops: Shop[]; products: Product[] }> {
-  cfg = c;
+type RawCatalog = { region: { id: string }; payment_providers: { id: string }[]; sellers: any[]; products: any[]; offers: any[] };
+
+// Straight from Mercur: 6+ requests. Used when the Shelby server's ready-made copy is unavailable,
+// and after a stock error, when only the live numbers will do.
+async function rawFromMercur(): Promise<RawCatalog> {
   const { regions } = await store<{ regions: { id: string; currency_code: string }[] }>('/store/regions');
-  regionId = (regions.find(r => r.currency_code === 'usd') ?? regions[0]).id;
-  const { payment_providers } = await store<{ payment_providers: { id: string }[] }>(`/store/payment-providers?region_id=${regionId}`);
-  paymentProvider = payment_providers.some(p => p.id === STRIPE_PROVIDER) ? STRIPE_PROVIDER : payment_providers[0]?.id ?? 'pp_system_default';
+  const region = regions.find(r => r.currency_code === 'usd') ?? regions[0];
+  const { payment_providers } = await store<{ payment_providers: { id: string }[] }>(`/store/payment-providers?region_id=${region.id}`);
   const [sellers, products, offers] = await Promise.all([
     all<any>('/store/sellers', 'sellers'),
-    all<any>(`/store/products?region_id=${regionId}&fields=id,title,description,thumbnail,metadata,*images,*categories,*variants`, 'products'),
-    all<any>(`/store/offers?region_id=${regionId}`, 'offers'),
+    all<any>(`/store/products?region_id=${region.id}&fields=id,title,description,thumbnail,metadata,*images,*categories,*variants`, 'products'),
+    all<any>(`/store/offers?region_id=${region.id}`, 'offers'),
   ]);
+  return { region, payment_providers, sellers, products, offers };
+}
+
+// The Shelby server's cached, trimmed copy (server/catalog.mjs): one small gzipped request.
+let early: Promise<RawCatalog> | null = null;
+// Start the download before /api/config answers (first open: the two run side by side).
+export const prefetchCatalog = () => { early ??= rawFromShelbyNow(); early.catch(() => {}); };
+const rawFromShelby = () => { const p = early ?? rawFromShelbyNow(); early = null; return p; };
+async function rawFromShelbyNow(): Promise<RawCatalog> {
+  const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 5000);
+  try {
+    const r = await fetch(`${API_URL}/api/commerce/catalog`, { signal: ctl.signal });
+    if (!r.ok) throw new Error(`catalog ${r.status}`);
+    return await r.json();
+  } finally { clearTimeout(t); }
+}
+
+// Load the catalogue and map it to the app's shapes. `live` skips the server's copy.
+export async function loadMercurCatalog(c: CommerceConfig, opts: { live?: boolean } = {}): Promise<{ shops: Shop[]; products: Product[] }> {
+  cfg = c;
+  const raw = opts.live ? await rawFromMercur() : await rawFromShelby().catch(() => rawFromMercur());
+  const { sellers, products, offers, payment_providers } = raw;
+  regionId = raw.region.id;
+  paymentProvider = payment_providers.some(p => p.id === STRIPE_PROVIDER) ? STRIPE_PROVIDER : payment_providers[0]?.id ?? 'pp_system_default';
 
   const shops: Shop[] = sellers.map(s => ({
     id: s.id, name: s.name, tagline: s.metadata?.tagline ?? s.description ?? '', category: s.metadata?.category ?? 'Home',
-    followers: num(s.metadata?.followers), rating: num(s.metadata?.rating), logo: s.logo ?? '', banner: s.banner ?? s.logo ?? '',
+    followers: 0, rating: 0, /* seeded numbers are never shown */ logo: s.logo ?? '', banner: s.banner ?? s.logo ?? '',
     shipsIn: s.metadata?.ships_in ?? '2–3 days', freeOver: num(s.metadata?.free_over, 50), shipping: num(s.metadata?.shipping, 5.95),
   }));
 
@@ -100,7 +126,8 @@ export async function loadMercurCatalog(c: CommerceConfig): Promise<{ shops: Sho
       compareAt: typeof p.metadata?.compare_at === 'number' ? p.metadata.compare_at : null,
       category: p.categories?.[0]?.name ?? 'Home', shopId: best.seller_id,
       image: p.thumbnail ?? images[0] ?? '', images: images.length ? images : [p.thumbnail].filter(Boolean),
-      rating: num(p.metadata?.rating), reviews: num(p.metadata?.reviews), sold: num(p.metadata?.sold),
+      // Real numbers only (from the Shelby server's events and reviews); 0 when unknown.
+      rating: num(p.real?.rating), reviews: num(p.real?.reviews), sold: num(p.real?.sold30),
       stock: [...sizes.values()].reduce((n, o) => n + Math.max(0, stockOf(o)), 0),
       sizes: [...sizes.keys()].filter(Boolean), description: p.description ?? '',
       sizeStock: Object.fromEntries([...sizes].filter(([s]) => s).map(([s, o]) => [s, Math.max(0, stockOf(o))])),
@@ -157,10 +184,13 @@ async function reconcile(lines: CheckoutLine[]) {
   return id;
 }
 
-// Called on every cart change (debounced by the store). Failures are retried at checkout.
-export const syncCart = (lines: CheckoutLine[]) => serial(() => (lines.length || liveCartId ? reconcile(lines) : Promise.resolve(''))).catch(() => {});
+export const isStockError = (e: unknown) => /sufficient stock|enough stock|out of stock|inventory/i.test(String((e as any)?.message ?? e));
+// Called on every cart change (debounced by the store). A stock refusal is reported straight away
+// (the shopper hears it at add time, not at Pay); other failures are retried at checkout.
+export const syncCart = (lines: CheckoutLine[], onStockError?: () => void) =>
+  serial(() => (lines.length || liveCartId ? reconcile(lines) : Promise.resolve(''))).catch(e => { lastSync = ''; if (isStockError(e)) onStockError?.(); });
 
-type Prepared = { cartId: string; collectionId: string };
+type Prepared = { cartId: string; collectionId: string; clientSecret: string | null; total: number; tax: number; shipping: number };
 let primed: { key: string; at: number; p: Promise<Prepared> } | null = null;
 
 async function attachShippingAndPayment(id: string, address: Address): Promise<Prepared> {
@@ -173,11 +203,17 @@ async function attachShippingAndPayment(id: string, address: Address): Promise<P
   const chosen = new Set((cart.shipping_methods ?? []).map((m: any) => m.shipping_option_id));
   for (const options of Object.values(shipping_options)) if (options[0] && !options.some(o => chosen.has(o.id))) await store(`/store/carts/${id}/shipping-methods`, { option_id: options[0].id });
   const { payment_collection } = await store<any>('/store/payment-collections', { cart_id: id });
-  return { cartId: id, collectionId: payment_collection.id };
+  // The payment session and the final totals, too, so Pay doesn't wait on them.
+  const r = await store<any>(`/store/payment-collections/${payment_collection.id}/payment-sessions`, { provider_id: paymentProvider })
+    .catch(() => { throw new Error("Payments are unavailable right now, so you haven't been charged. Please try again in a minute."); });
+  const session = (r.payment_collection?.payment_sessions ?? []).find((x: any) => x.provider_id === paymentProvider);
+  const clientSecret = paymentProvider === STRIPE_PROVIDER ? session?.data?.client_secret ?? null : null;
+  const { cart: t } = await store<any>(`/store/carts/${id}?fields=total,tax_total,shipping_total`);
+  return { cartId: id, collectionId: payment_collection.id, clientSecret, total: num(t.total), tax: num(t.tax_total), shipping: num(t.shipping_total) };
 }
 type Address = { name: string; address_1: string; city: string; province: string; postal_code: string };
 
-// Checkout screen opened: do the slow work now, while the shopper reads the summary.
+// Cart or checkout opened: do the slow work now, while the shopper reads the summary.
 export function primeCheckout(lines: CheckoutLine[], address: Address) {
   const key = JSON.stringify([lines, address]);
   if (primed && primed.key === key && Date.now() - primed.at < 10 * 60e3) return primed.p;
@@ -187,19 +223,12 @@ export function primeCheckout(lines: CheckoutLine[], address: Address) {
   return p;
 }
 
-// Pay tapped: confirm the cart is current, add the email, start the payment session.
+// Pay tapped: the cart is already prepared, so only the email is left to save.
 export async function prepareCheckout(lines: CheckoutLine[], who: { email: string; name: string }, address: Address): Promise<PreparedCheckout> {
   const prep = await primeCheckout(lines, address);
-  const [, r] = await Promise.all([
-    store(`/store/carts/${prep.cartId}`, { email: who.email }),
-    store<any>(`/store/payment-collections/${prep.collectionId}/payment-sessions`, { provider_id: paymentProvider })
-      .catch(() => { throw new Error("Payments are unavailable right now, so you haven't been charged. Please try again in a minute."); }),
-  ]);
-  const session = (r.payment_collection?.payment_sessions ?? []).find((x: any) => x.provider_id === paymentProvider);
-  const clientSecret = paymentProvider === STRIPE_PROVIDER ? session?.data?.client_secret ?? null : null;
-  if (paymentProvider === STRIPE_PROVIDER && !clientSecret) throw new Error('Card payments are unavailable right now. Please try again.');
-  const { cart } = await store<any>(`/store/carts/${prep.cartId}?fields=total,tax_total,shipping_total`);
-  return { cartId: prep.cartId, total: num(cart.total), tax: num(cart.tax_total), shipping: num(cart.shipping_total), clientSecret };
+  if (paymentProvider === STRIPE_PROVIDER && !prep.clientSecret) throw new Error('Card payments are unavailable right now. Please try again.');
+  await store(`/store/carts/${prep.cartId}`, { email: who.email });
+  return { cartId: prep.cartId, total: prep.total, tax: prep.tax, shipping: prep.shipping, clientSecret: prep.clientSecret };
 }
 
 // Step 2: complete. Mercur authorizes the payment and splits the cart into one order per seller.

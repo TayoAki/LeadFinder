@@ -25,7 +25,7 @@ export function ProductCard({ p, width, onPress, pressLabel }: { p: Product; wid
             {p.stock <= 0 ? <Pill text="Sold out" tone="dark" />
               : p.stock <= 5 ? <Pill text={`Only ${p.stock} left`} tone="sale" icon="flame" />
               : p.compareAt ? <Pill text={`${Math.round((1 - p.price / p.compareAt) * 100)}% off`} tone="good" />
-              : p.sold > 400 ? <Pill text={`${compact(p.sold)} sold`} tone="dark" icon="trending-up" /> : null}
+              : p.sold >= 10 ? <Pill text={`${compact(p.sold)} bought this month`} tone="dark" icon="trending-up" /> : null}
           </View>
         </View>
         <Text numberOfLines={1} style={{ fontSize: 12, color: C.ink3, marginTop: 8, fontWeight: '600' }}>{shop.name}</Text>

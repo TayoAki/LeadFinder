@@ -37,10 +37,13 @@ export function setAttribution(a: Attribution) {
   attribution = clean; store.set('shelby_attr', JSON.stringify(clean));
 }
 
-// Extra props attached to every event (experiment assignments register here).
-let globalProps: () => Props = () => ({});
-export const setGlobalProps = (fn: () => Props) => { globalProps = fn; };
+// Extra props attached to every event: experiment assignments and the shopper's quiz segment (ICP)
+// register here, so any funnel can be broken down by either.
+const providers = new Map<string, () => Props>();
+export const setGlobalProps = (fn: () => Props, key = 'experiments') => { providers.set(key, fn); };
+const globalProps = (): Props => Object.assign({}, ...[...providers.values()].map(f => f()));
 
+const URGENT = new Set(['add_to_cart', 'checkout_start', 'checkout_submit', 'checkout_error', 'order_placed', 'purchase_item', 'payment_confirmed', 'quiz_complete']);
 let path = '/';
 let queue: Event[] = [];
 let timer: ReturnType<typeof setTimeout> | null = null;
@@ -78,7 +81,11 @@ export function track(name: string, props: Props = {}) {
   if (!referrerUsed && firstReferrer) { e.referrer = firstReferrer; referrerUsed = true; }
   queue.push(e);
   if (__DEV__) console.log('[track]', name, e.props);
-  if (queue.length >= 20) flush(); else if (!timer) timer = setTimeout(() => flush(), 4000);
+  // Money events go out at once: shoppers often close the app right after paying, and a lost
+  // order_placed under-counts the funnel and the real "ordered this month" proof.
+  if (queue.length >= 20) flush();
+  else if (URGENT.has(name)) { if (timer) clearTimeout(timer); timer = setTimeout(() => flush(), 0); } // same-tick events share one request
+  else if (!timer) timer = setTimeout(() => flush(), 4000);
 }
 
 export function screen(pathname: string, params: Props = {}) {

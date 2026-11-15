@@ -42,8 +42,8 @@ export default function ShopPage() {
           <Text style={[T.body, { color: C.ink2 }]}>{s.tagline}</Text>
           <View style={{ flexDirection: 'row', gap: 16, marginTop: 10, alignItems: 'center' }}>
             <Stars value={s.rating} size={13} />
-            <Text style={T.small}><Text style={{ fontWeight: '800', color: C.ink }}>{compact(s.followers + (followed ? 1 : 0))}</Text> followers</Text>
-            <Text style={T.small}><Text style={{ fontWeight: '800', color: C.ink }}>{compact(shopSold(s.id))}</Text> sold</Text>
+            {s.followers + (followed ? 1 : 0) > 0 && <Text style={T.small}><Text style={{ fontWeight: '800', color: C.ink }}>{compact(s.followers + (followed ? 1 : 0))}</Text> followers</Text>}
+            {shopSold(s.id) >= 10 && <Text style={T.small}><Text style={{ fontWeight: '800', color: C.ink }}>{compact(shopSold(s.id))}</Text> bought this month</Text>}
             <Text style={T.small}>Ships in {s.shipsIn}</Text>
           </View>
           <View style={{ flexDirection: 'row', gap: 10, marginTop: S.lg }}>

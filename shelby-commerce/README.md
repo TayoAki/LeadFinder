@@ -21,6 +21,12 @@ cp packages/api/.env.template packages/api/.env   # set DATABASE_URL (Postgres 1
 cd packages/api
 bunx medusa db:migrate
 SHELBY_SELLER_PASSWORD=choose-one bun run seed:shelby   # 10 shops, 88 products, 160 offers
+# Optional SYNTHETIC demo data (marked metadata.demo / demo_details): a supplements + skincare
+# shop with 14 products, and fit/fabric/skin-type/goal details on every sample product, so the
+# app's niche filters, quiz and product pages can be tested. Images are served by the Shelby app.
+DEMO_IMAGE_BASE=https://<shelby web host> bun run seed:demo-niches
+# The script runs outside the server, so the store's index engine doesn't see the new offers:
+# restart the API after a full reindex (local: UPDATE index_metadata SET status='pending', fields_hash='reindex').
 bun run dev                           # http://localhost:9000 (/dashboard, /seller)
 ```
 

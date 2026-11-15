@@ -97,7 +97,6 @@ export default function ProductPage() {
         <View style={{ padding: S.lg }}>
           <View style={{ flexDirection: 'row', gap: 6, flexWrap: 'wrap' }}>
             {p.stock <= 0 ? <Pill text="Sold out" tone="dark" /> : p.stock <= 5 && <Pill text={`Only ${p.stock} left`} tone="sale" icon="flame" />}
-            <Pill text={`${compact(p.sold)} sold`} tone="dark" icon="trending-up" />
           </View>
           {showCampaign && <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8, padding: S.md, borderRadius: R.md, backgroundColor: C.buySoft, marginBottom: S.md }}><Ionicons name="play-circle" size={18} color={C.warn} /><Text style={{ flex: 1, color: C.ink, fontWeight: '700' }}>{campaign!.from}: {campaign!.hook}</Text></View>}
           <Text style={[T.h1, { fontSize: 24, marginTop: 10 }]}>{p.title}</Text>
@@ -143,7 +142,7 @@ export default function ProductPage() {
             <View style={{ flex: 1 }}>
               <Text style={T.h3}>{shop.name}</Text>
               <Text style={T.small} numberOfLines={1}>{shop.tagline}</Text>
-              <View style={{ flexDirection: 'row', gap: 10, marginTop: 2 }}><Stars value={shop.rating} size={11} /><Text style={T.small}>{compact(shop.followers + (followed ? 1 : 0))} followers</Text></View>
+              <View style={{ flexDirection: 'row', gap: 10, marginTop: 2 }}><Stars value={shop.rating} size={11} />{shop.followers + (followed ? 1 : 0) > 0 && <Text style={T.small}>{compact(shop.followers + (followed ? 1 : 0))} followers</Text>}</View>
             </View>
             <Pressable onPress={() => toggleFollow(shop.id)} accessibilityRole="button" style={{ paddingHorizontal: 14, height: 34, borderRadius: R.pill, backgroundColor: followed ? C.surface : C.ink, borderWidth: 1, borderColor: followed ? C.line : C.ink, justifyContent: 'center' }}>
               <Text style={{ color: followed ? C.ink : '#fff', fontWeight: '800', fontSize: 13 }}>{followed ? 'Following' : 'Follow'}</Text>

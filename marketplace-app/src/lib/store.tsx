@@ -5,8 +5,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { BRAND } from './brand';
 import type { Goal } from './shelby';
-import { getProduct, getShop, Product } from './data';
-import { commerce, syncCart } from './commerce';
+import { applyCatalog, getProduct, getShop, Product } from './data';
+import { commerce, loadMercurCatalog, syncCart } from './commerce';
+import { QuizProfile, setProfileProps } from './icp';
 
 export type CartLine = { productId: string; size: string | null; qty: number };
 export type OrderStatus = 'Paid' | 'Shipped' | 'Out for delivery' | 'Delivered';
@@ -37,6 +38,7 @@ type Store = {
   sizes: Partial<Record<SizeGroup, string>>; rememberSize: (sizes: string[], size: string) => void;
   address: Address | null; setAddress: (a: Address) => void;
   stockAlerts: string[]; toggleStockAlert: (productId: string) => void;
+  profile: QuizProfile | null; setProfile: (p: QuizProfile | null) => void;
   replenish: Replenish[]; setReplenish: (productId: string, size: string | null, days: number | null) => void;
   reorder: (o: Order) => void;
 };
@@ -74,6 +76,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   const [notif, setNotif] = useState<'unknown' | 'granted' | 'denied'>('unknown');
   const [seller, setSeller] = useState<'none' | 'applied' | 'approved'>('approved');
   const [sizes, setSizes] = useState<Partial<Record<SizeGroup, string>>>({});
+  const [profile, setProfileState] = useState<QuizProfile | null>(null);
   const [address, setAddress] = useState<Address | null>(null);
   const [stockAlerts, setStockAlerts] = useState<string[]>([]);
   const [replenish, setReplenishList] = useState<Replenish[]>([]);
@@ -83,6 +86,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     AsyncStorage.getItem(STATE_KEY).then(raw => {
       const s = raw ? JSON.parse(raw) : {};
+      if (s.profile) { setProfileState(s.profile); setProfileProps(s.profile); }
       if (s.user) setUser(s.user); if (s.interests) setInterests(s.interests); if (s.onboarded) setOnboarded(true);
       if (s.goal) setGoal(s.goal); if (s.budget) setBudget(s.budget);
       if (s.cart) setCart(s.cart.filter((l: CartLine) => getProduct(l.productId)));
@@ -93,13 +97,26 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
   }, []);
   useEffect(() => {
     if (!hydrated) return;
-    const t = setTimeout(() => AsyncStorage.setItem(STATE_KEY, JSON.stringify({ user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, orders: orders.slice(0, 30), notif, sizes, address, stockAlerts, replenish })).catch(() => {}), 250);
+    const t = setTimeout(() => AsyncStorage.setItem(STATE_KEY, JSON.stringify({ user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, orders: orders.slice(0, 30), notif, sizes, address, stockAlerts, replenish, profile })).catch(() => {}), 250);
     return () => clearTimeout(t);
-  }, [hydrated, user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, orders, notif, sizes, address, stockAlerts, replenish]);
+  }, [hydrated, user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, orders, notif, sizes, address, stockAlerts, replenish, profile]);
   // Live cart: mirror the cart to Mercur in the background so checkout starts almost done.
   useEffect(() => {
     if (!hydrated || !commerce()) return;
-    const t = setTimeout(() => syncCart(cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty }))), 400);
+    // The store said no: reload live stock, trim the cart to what's really left, and say so now.
+    const soldOut = async () => {
+      const cfg = commerce(); if (!cfg) return;
+      applyCatalog(await loadMercurCatalog(cfg, { live: true }), u => u);
+      const left = (l: CartLine) => { const p = getProduct(l.productId); return !p ? 0 : l.size ? p.sizeStock?.[l.size] ?? p.stock : p.stock; };
+      const gone = cart.filter(l => left(l) < l.qty);
+      if (!gone.length) return;
+      setCart(c => c.flatMap(l => (left(l) >= l.qty ? [l] : left(l) > 0 ? [{ ...l, qty: left(l) }] : [])));
+      haptic('error');
+      const names = gone.map(l => getProduct(l.productId)?.title ?? 'An item');
+      toast({ text: `${names[0]}${names.length > 1 ? ` and ${names.length - 1} more` : ''} just sold out, so we updated your cart.`, icon: 'alert-circle' });
+      track('cart_sold_out', { items: gone.length });
+    };
+    const t = setTimeout(() => syncCart(cart.map(l => ({ productId: l.productId, size: l.size, qty: l.qty })), () => { soldOut().catch(() => {}); }), 400);
     return () => clearTimeout(t);
   }, [hydrated, cart]);
   // Toggles report on/off so wishlist, follows and drop reminders are all measurable.
@@ -151,6 +168,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         return order;
       },
       groups,
+      profile, setProfile: (p: QuizProfile | null) => { setProfileState(p); setProfileProps(p); },
       sizes, rememberSize: (all, size) => { const g = sizeGroup(all); if (g) setSizes(x => ({ ...x, [g]: size })); },
       address, setAddress,
       stockAlerts, toggleStockAlert: id => {
@@ -170,7 +188,7 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
         toast({ text: lines.length ? `Added ${lines.length} item${lines.length > 1 ? 's' : ''} to your cart` : 'Those items are sold out right now', icon: 'repeat', action: lines.length ? { label: 'View cart', onPress: () => router.push('/cart') } : undefined });
       },
     };
-  }, [user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, invitesSent, orders, referredBy, notif, seller, sizes, address, stockAlerts, replenish]);
+  }, [user, interests, onboarded, goal, budget, cart, wishlist, following, reminders, credit, invitesSent, orders, referredBy, notif, seller, sizes, address, stockAlerts, replenish, profile]);
 
   if (!hydrated) return null; // a few ms: the catalogue splash is still up
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

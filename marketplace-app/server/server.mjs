@@ -9,7 +9,8 @@ import { extname, resolve, normalize, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
-import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
+import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, catalogStats, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
+import { catalogSnapshot, warmCatalog } from './catalog.mjs';
 import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -320,6 +321,15 @@ const server = createServer(async (req, res) => {
       // CORS for the native app and Expo dev server (no cookies cross-origin: seller endpoints are same-origin only)
       res.setHeader('access-control-allow-origin', '*'); res.setHeader('access-control-allow-headers', 'content-type');
       if (req.method === 'OPTIONS') return send(res, 204, '');
+      // Ready-made Mercur catalogue (server/catalog.mjs): one cached, gzipped response for first open.
+      if (req.method === 'GET' && path === '/api/commerce/catalog') {
+        const mu = process.env.MEDUSA_URL, pk = process.env.MEDUSA_PUBLISHABLE_KEY;
+        if (!mu || !pk) return send(res, 404, { error: 'Not found' });
+        const c = await catalogSnapshot(mu.replace(/\/$/, ''), pk, () => catalogStats(db));
+        if (req.headers['if-none-match'] === c.etag) { res.writeHead(304, { etag: c.etag }); return res.end(); }
+        res.writeHead(200, { 'content-type': 'application/json', 'content-encoding': 'gzip', 'content-length': c.gz.length, 'cache-control': 'public, max-age=30', etag: c.etag, vary: 'accept-encoding' });
+        return res.end(c.gz);
+      }
       const m = match(req.method, path); if (!m) return send(res, 404, { error: 'Not found' });
       const user = currentUser(req);
       const ctx = { req, res, user, params: m.params, body: ['POST', 'PUT'].includes(req.method) ? await readBody(req) : {} };
@@ -350,4 +360,7 @@ const server = createServer(async (req, res) => {
     console.error(e); send(res, 500, { error: 'Something went wrong' });
   }
 });
-server.listen(PORT, '0.0.0.0', () => console.log(`Shelby on :${PORT}`));
+server.listen(PORT, '0.0.0.0', () => {
+  console.log(`Shelby on :${PORT}`);
+  if (process.env.MEDUSA_URL && process.env.MEDUSA_PUBLISHABLE_KEY) warmCatalog(process.env.MEDUSA_URL.replace(/\/$/, ''), process.env.MEDUSA_PUBLISHABLE_KEY, () => catalogStats(db));
+});

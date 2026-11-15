@@ -9,6 +9,7 @@ import { categories, compact, products, shops } from '@/lib/data';
 import { C, R, S, T } from '@/lib/theme';
 import { track } from '@/lib/analytics';
 import { matches, queryWords } from '@/lib/search';
+import { facetsFor, FacetState, passes } from '@/lib/facets';
 import { useStore } from '@/lib/store';
 
 const sorts = ['Popular', 'Newest', 'Price: low', 'Price: high', 'Top rated'] as const;
@@ -26,22 +27,30 @@ export default function Search() {
 
   const { sizes: savedSizes } = useStore();
   const [mySize, setMySize] = useState(false);
+  const [picked, setFacet] = useState<FacetState>({});
   const hasSaved = !!(savedSizes.clothing || savedSizes.shoes);
   // In stock in the shopper's saved size (items without sizes always qualify).
   const inMySize = (p: (typeof products)[number]) => !p.sizes.length || [savedSizes.clothing, savedSizes.shoes].some(sz => sz && p.sizes.includes(sz) && (p.sizeStock?.[sz] ?? 1) > 0);
-  const results = useMemo(() => {
+  // Everything that matches before the niche filters; the filter rows are built from these.
+  const pool = useMemo(() => {
     const words = queryWords(q); // filler words, plurals, synonyms and one-letter typos handled
-    let r = products.filter(p => (cat === 'All' || p.category === cat) && p.price <= prices[price].max && (!onSale || p.compareAt)
+    return products.filter(p => (cat === 'All' || p.category === cat) && p.price <= prices[price].max && (!onSale || p.compareAt)
       && matches(p, words) && (!mySize || inMySize(p)));
+  }, [q, cat, price, onSale, mySize]); // eslint-disable-line react-hooks/exhaustive-deps
+  const facets = useMemo(() => facetsFor(pool), [pool]);
+  // A chosen filter only applies while its row is on screen (e.g. not after switching category).
+  const facet = useMemo<FacetState>(() => Object.fromEntries(Object.entries(picked).filter(([k]) => facets.some(x => x.key === k))), [picked, facets]);
+  const results = useMemo(() => {
+    const r = pool.filter(p => passes(p, facet));
     const by = { Popular: (a: any, b: any) => b.sold - a.sold, Newest: (a: any, b: any) => Number(b.id) - Number(a.id), 'Price: low': (a: any, b: any) => a.price - b.price, 'Price: high': (a: any, b: any) => b.price - a.price, 'Top rated': (a: any, b: any) => b.rating - a.rating }[sort];
     return [...r].sort(by).sort((x, y) => Number(y.stock > 0) - Number(x.stock > 0)); // sold out last
-  }, [q, cat, sort, price, onSale, mySize]);
+  }, [pool, facet, sort]);
   // One search event once the shopper pauses typing or changes a filter.
   useEffect(() => {
     if (!q.trim() && cat === 'All' && !price && !onSale && sort === 'Popular') return;
-    const t = setTimeout(() => track(results.length ? 'search' : 'search_zero', { query: q.trim().slice(0, 80), category: cat, sort, max_price: prices[price].max, on_sale: onSale, results: results.length }), 900);
+    const t = setTimeout(() => track(results.length ? 'search' : 'search_zero', { query: q.trim().slice(0, 80), category: cat, sort, max_price: prices[price].max, on_sale: onSale, results: results.length, ...Object.fromEntries(Object.entries(facet).map(([k, v]) => [`facet_${k}`, v])) }), 900);
     return () => clearTimeout(t);
-  }, [q, cat, sort, price, onSale]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [q, cat, sort, price, onSale, facet]); // eslint-disable-line react-hooks/exhaustive-deps
   const shopHits = q ? shops.filter(s => s.name.toLowerCase().includes(q.toLowerCase()) || s.category.toLowerCase().includes(q.toLowerCase())) : [];
   const filterCount = (price ? 1 : 0) + (onSale ? 1 : 0) + (sort !== 'Popular' ? 1 : 0);
 
@@ -63,6 +72,12 @@ export default function Search() {
         {hasSaved && <Chip label="In my size" icon="resize-outline" active={mySize} onPress={() => setMySize(v => !v)} />}
         {categories.map(c => <Chip key={c} label={c} active={cat === c} onPress={() => setCat(c)} />)}
       </ScrollView>
+      {facets.map(f => (
+        <ScrollView key={f.key} horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 8, alignItems: 'center' }} style={{ flexGrow: 0, flexShrink: 0, minHeight: 44 }}>
+          <Text style={[T.tiny, { color: C.ink2 }]}>{f.label.toUpperCase()}</Text>
+          {f.values.map(v => <Chip key={v} label={v} active={facet[f.key] === v} onPress={() => setFacet(s => ({ ...s, [f.key]: s[f.key] === v ? undefined : v }))} />)}
+        </ScrollView>
+      ))}
 
       {showFilters && (
         <View style={{ margin: S.lg, marginBottom: 0, padding: S.lg, backgroundColor: C.surface, borderRadius: R.lg, borderWidth: 1, borderColor: C.line, gap: 10 }}>
@@ -91,7 +106,7 @@ export default function Search() {
         {shopHits.map(s => (
           <Pressable key={s.id} onPress={() => router.push(`/shop/${s.id}`)} style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginHorizontal: S.lg, marginTop: S.md, padding: S.md, backgroundColor: C.surface, borderRadius: R.lg, borderWidth: 1, borderColor: C.line }}>
             <Image source={{ uri: s.logo }} style={{ width: 48, height: 48, borderRadius: 24 }} />
-            <View style={{ flex: 1 }}><Text style={T.h3}>{s.name}</Text><Text style={T.small}>{compact(s.followers)} followers</Text></View>
+            <View style={{ flex: 1 }}><Text style={T.h3}>{s.name}</Text><Text style={T.small}>{s.tagline}</Text></View>
             <Stars value={s.rating} />
           </Pressable>
         ))}
