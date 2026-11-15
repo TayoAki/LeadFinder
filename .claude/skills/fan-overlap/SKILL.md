@@ -9,12 +9,15 @@ description: "Answer 'if someone loves brand A, they probably love brand B, and 
 
 ## How it works (`scripts/fan_overlap.mjs`)
 
-1. **Find brand A on Google Maps.** Uses `compass/crawler-google-places` to get the place ID, category, total reviews and rating.
-2. **Pull A's newest reviews (default 200)** with `compass/google-maps-reviews-scraper`. Reviewer IDs exist in memory only.
+1. **Find brand A on Google Maps.** Uses `compass/crawler-google-places`. With `--locations N` it takes up to N locations of the same brand (e.g. "Crumbl Cookies Chicago"), so A's fans are pooled across shops. One shop alone is usually too sparse.
+2. **Pull A's newest reviews (default 200)**, split across the locations, with `compass/google-maps-reviews-scraper`. Reviewer IDs exist in memory only.
 3. **Pull each reviewer's public review history.** Only reviewers with at least 3 reviews are checked, since one-review accounts can't show an overlap.
-   - **Through treg:** `litescrape.google.maps.contributor_reviews`, about $0.00015 per reviewer for up to 200 reviews. Used when the `treg` CLI is signed in.
-   - **Otherwise:** the Apify actor `johnvc/google-maps-contributor-reviews-api`. It is much pricier, and free Apify accounts get only $1 a month on it.
-4. **Count, for every other business, how many different A reviewers reviewed it.**
+   - **Default (`--histories lexis`):** Apify `lexis-solutions/google-maps-contributor-reviews-scraper`, about $0.0015 per review read (roughly $0.02 per reviewer).
+   - **`--histories treg`:** `litescrape.google.maps.contributor_reviews`, about $0.00015 per reviewer. Far cheaper, but it returned 503 (provider down) in November 2026; failures are free.
+   - **`--histories johnvc`:** Apify `johnvc/google-maps-contributor-reviews-api`. Free Apify accounts get only $1 a month on it.
+4. **Count, for every other brand, how many different A reviewers reviewed it.**
+   - By default every location of a chain counts as one brand (`--group brand`; use `--group place` for single shops). Lift uses the brand's summed review totals.
+   - Non-businesses are skipped: parks, landmarks, sculptures, airports, stations, museums, schools, hospitals, churches and similar.
    - A business needs at least 3 shared reviewers to appear (`--min-shared`).
    - Competitors (same category words as A) are removed.
    - **Lift** scores B's share of A's fans against how popular B is overall (its total review count), relative to the median candidate. A lift of 2.0 means A's fans review it twice as much as its popularity explains.
@@ -35,7 +38,8 @@ node .claude/skills/fan-overlap/scripts/fan_overlap.mjs --place "Crumbl Wicker P
 ```
 
 Options:
-- `--reviews 500`: how many of A's reviews to read.
+- `--locations 8`: how many of brand A's locations to pool.
+- `--reviews 500`: how many of A's reviews to read (split across locations).
 - `--per-reviewer 200`: how much of each reviewer's history to read.
 - `--min-history 3`: the fewest reviews a reviewer needs to be checked.
 - `--top 15`: how many brand B results to check for leavers.

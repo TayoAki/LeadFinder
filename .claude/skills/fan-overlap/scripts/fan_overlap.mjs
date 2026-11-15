@@ -30,6 +30,12 @@ const TOKEN = process.env.APIFY_TOKEN || 'proxy-injected';
 const PRICE = { place: 0.004, review: 0.0006, contributorReview: 0.0015, run: 0.001 };
 PRICE.tregContributor = 0.00015; // litescrape via treg: one call = up to 200 reviews of one reviewer
 const MIN_HISTORY = Number(args['min-history'] || 3);
+const LOCATIONS = Number(args.locations || 1);
+// Count overlap by brand (every Starbucks = one "Starbucks") or by single place.
+const GROUP = String(args.group || 'brand');
+const brandOf = n => String(n || '').toLowerCase().replace(/\s*[-–—|@·,(].*$/, '').replace(/[’']/g, "'").replace(/\b(inc|llc|co)\b\.?/g, '').replace(/\s+/g, ' ').trim();
+// Places that are not businesses you could partner with.
+const NOT_A_BUSINESS = /park|airport|sculpture|monument|landmark|tourist attraction|museum|beach|lake|river|bridge|station|transit|hospital|school|university|college|church|government|city hall|library|stadium|arena|zoo|garden|trail|neighbou?rhood|plaza|square|parking|highway|historical|memorial|observation deck|post office|dmv|embassy/i;
 // Where reviewer histories come from: lexis (Apify, reliable, ~$0.0015/review), treg (litescrape,
 // ~$0.00015/reviewer, when its provider is up) or johnvc (Apify, $1/month free cap).
 const HIST = String(args.histories || 'lexis');
@@ -91,17 +97,20 @@ const words = s => new Set(String(s || '').toLowerCase().split(/[^a-z]+/).filter
 const LEAVING = /\b(used to (love|be|come)|not (the same|what it used to)|went downhill|gone downhill|changed (the|their)|new (recipe|owner|management|menu)|won'?t be back|never (coming|going) back|last time|instead (go|went)|switch(ed|ing) to|go(ing)? (to|elsewhere)|disappoint\w*|declin\w*|worse|shrink\w*|smaller|overpriced|price(s)? (went|have gone) up)\b/i;
 
 mkdirSync(OUT, { recursive: true });
-const report = { brand_a: PLACE, built_at: new Date().toISOString(), settings: { reviews: N_REVIEWS, per_reviewer: PER, min_shared: MIN_SHARED, top: TOP }, privacy: 'Totals per business only. No reviewer ids, names or profile links are stored. Businesses with fewer than min_shared shared reviewers are not shown.' };
+const report = { brand_a: PLACE, built_at: new Date().toISOString(), settings: { reviews: N_REVIEWS, per_reviewer: PER, min_shared: MIN_SHARED, top: TOP, locations: LOCATIONS, group: GROUP }, privacy: 'Totals per business only. No reviewer ids, names or profile links are stored. Businesses with fewer than min_shared shared reviewers are not shown.' };
 try {
   // 1. Brand A's place.
   const isUrl = /^https?:\/\//.test(PLACE);
-  const places = await apify('compass/crawler-google-places', isUrl ? { startUrls: [{ url: PLACE }], maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 } : { searchStringsArray: [PLACE], maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, PRICE.place + PRICE.run);
+  const places = await apify('compass/crawler-google-places', isUrl ? { startUrls: [{ url: PLACE }], maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 } : { searchStringsArray: [PLACE], maxCrawledPlacesPerSearch: LOCATIONS, maxReviews: 0, maxImages: 0 }, LOCATIONS * PRICE.place + PRICE.run);
   const A = places[0] || {};
-  report.place_a = { name: A.title || PLACE, category: A.categoryName || null, address: A.address || null, reviews_total: A.reviewsCount ?? null, rating: A.totalScore ?? null, place_id: A.placeId || null, url: A.url || null };
+  // Several locations of the same brand pool their reviewers (brand-level "fans of A").
+  const aPlaces = places.filter(p => p.placeId && brandOf(p.title) === brandOf(A.title));
+  report.place_a = { name: A.title || PLACE, brand: brandOf(A.title), category: A.categoryName || null, address: A.address || null, locations: aPlaces.length, reviews_total: aPlaces.reduce((n, p) => n + (p.reviewsCount || 0), 0), place_id: A.placeId || null, url: A.url || null };
   if (!A.placeId && !DRY) throw new Error(`Could not find "${PLACE}" on Google Maps. Try the full Google Maps URL.`);
 
-  // 2. A's newest reviews (reviewer ids stay in memory).
-  const reviews = await apify('compass/google-maps-reviews-scraper', { placeIds: [A.placeId].filter(Boolean), maxReviews: N_REVIEWS, reviewsSort: 'newest', personalData: true, language: 'en' }, N_REVIEWS * PRICE.review + PRICE.run);
+  // 2. A's newest reviews (reviewer ids stay in memory), split across the locations.
+  const perPlace = Math.ceil(N_REVIEWS / Math.max(1, aPlaces.length));
+  const reviews = await apify('compass/google-maps-reviews-scraper', { placeIds: aPlaces.map(p => p.placeId), maxReviews: perPlace, reviewsSort: 'newest', personalData: true, language: 'en' }, N_REVIEWS * PRICE.review + PRICE.run);
   // Only reviewers with a few reviews can show an overlap; one-review accounts are skipped.
   const reviewerIds = [...new Set(reviews.filter(r => (r.reviewerNumberOfReviews ?? 99) >= MIN_HISTORY).map(r => r.reviewerId).filter(Boolean))];
   report.coverage = { a_reviews_fetched: reviews.length, unique_reviewers: new Set(reviews.map(r => r.reviewerId).filter(Boolean)).size, reviewers_with_history: reviewerIds.length };
@@ -141,31 +150,43 @@ try {
     }
   }
   // 4. Aggregate: distinct reviewers per business (ids used only to de-duplicate, then dropped).
-  const byPlace = new Map(); const reachable = new Set();
+  const byPlace = new Map(); const reachable = new Set(); const aBrand = brandOf(A.title); let skippedNonBiz = 0;
   for (const r of history) {
-    const who = pick(r, 'contributor_id', 'contributorId'); const key = placeKey(r);
-    if (!who || !key) continue; reachable.add(who);
-    if (A.placeId && (key === A.placeId || placeName(r) === A.title)) continue;
-    const p = byPlace.get(key) || { name: placeName(r), address: placeAddr(r), type: pick(r, 'place_info.type', 'place.type'), reviews_total: pick(r, 'place_info.reviews_total'), place_id: pick(r, 'place_info.place_id'), reviewers: new Set(), ratings: [], dates: [] };
+    const who = pick(r, 'contributor_id', 'contributorId'); const loc = placeKey(r);
+    if (!who || !loc) continue; reachable.add(who);
+    const name = placeName(r), type = pick(r, 'place_info.type', 'place.type');
+    if (loc === A.placeId || brandOf(name) === aBrand) continue;
+    if (NOT_A_BUSINESS.test(String(type || ''))) { skippedNonBiz++; continue; }
+    // brand mode: every location of a chain counts as one business
+    const key = GROUP === 'brand' ? brandOf(name) || loc : loc;
+    const p = byPlace.get(key) || { name, address: placeAddr(r), type, locations: new Map(), reviewers: new Set(), ratings: [], dates: [] };
+    const L = p.locations.get(loc) || { reviews_total: Number(pick(r, 'place_info.reviews_total')) || null, place_id: pick(r, 'place_info.place_id'), address: placeAddr(r), fans: new Set() };
+    L.fans.add(who); p.locations.set(loc, L);
     if (!p.reviewers.has(who)) { p.reviewers.add(who); const rt = Number(pick(r, 'rating')); if (rt) p.ratings.push(rt); const d = dateOf(r); if (d) p.dates.push(d); }
     byPlace.set(key, p);
   }
-  report.coverage.histories_reachable = reachable.size; report.coverage.history_reviews = history.length;
-  let shared = [...byPlace.entries()].map(([key, p]) => ({ key, name: p.name, address: p.address, type: p.type || null, known_reviews_total: p.reviews_total ?? null, known_place_id: p.place_id || null, shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null }))
-    .filter(p => p.shared >= MIN_SHARED).sort((a, b) => b.shared - a.shared);
+  report.coverage.histories_reachable = reachable.size; report.coverage.history_reviews = history.length; report.coverage.non_business_reviews_skipped = skippedNonBiz;
+  let shared = [...byPlace.entries()].map(([key, p]) => {
+    const locs = [...p.locations.values()].sort((x, y) => y.fans.size - x.fans.size);
+    const known = locs.every(l => l.reviews_total != null);
+    return { key, name: p.name, address: locs.length > 1 ? `${locs.length} locations` : p.address, type: p.type || null, locations: locs.length,
+      known_reviews_total: known ? locs.reduce((n, l) => n + l.reviews_total, 0) : null, known_place_id: locs[0]?.place_id || null, check_address: locs[0]?.address || p.address,
+      shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null };
+  }).filter(p => p.shared >= MIN_SHARED).sort((a, b) => b.shared - a.shared);
+  for (const p of byPlace.values()) { p.reviewers.clear(); for (const l of p.locations.values()) l.fans.clear(); }
   byPlace.clear(); reviewerIds.length = 0; // drop ids
 
   // 5. Popularity + category for the candidates, then lift and competitor filter.
   const cands = shared.slice(0, Math.max(TOP * 3, 30));
   // Details come with lexis rows already; look them up only for candidates that lack them.
   const lacking = cands.filter(c => c.known_reviews_total == null);
-  const details = lacking.length ? await apify('compass/crawler-google-places', { searchStringsArray: lacking.map(c => [c.name, c.address].filter(Boolean).join(', ')), maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, lacking.length * PRICE.place + PRICE.run) : [];
+  const details = lacking.length ? await apify('compass/crawler-google-places', { searchStringsArray: lacking.map(c => [c.name, c.check_address].filter(Boolean).join(', ')), maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, lacking.length * PRICE.place + PRICE.run) : [];
   const det = new Map(details.map(d => [String(d.searchString || '').split(',')[0].trim().toLowerCase(), d]));
   const aWords = words(A.categoryName);
   for (const c of cands) {
     const d = det.get(String(c.name || '').toLowerCase()) || details.find(x => x.title === c.name) || {};
     Object.assign(c, { category: d.categoryName || c.type || null, reviews_total: c.known_reviews_total ?? d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: c.known_place_id || d.placeId || null });
-    delete c.known_reviews_total; delete c.known_place_id;
+    delete c.known_reviews_total; delete c.known_place_id; delete c.check_address;
     c.competitor = !!(c.category && [...words(c.category)].some(w => aWords.has(w)));
   }
   // Lift: share of A's fans who reviewed B, against how popular B is overall (more reviews =
@@ -206,8 +227,8 @@ writeFileSync(`${OUT}/overlap.json`, JSON.stringify(report, null, 1));
 const fans = report.coverage?.histories_reachable ?? 0;
 const md = [`# If someone loves ${report.place_a?.name || PLACE}…`, '', `${report.place_a?.category || ''} · ${report.place_a?.address || ''}`, '',
   `From ${report.coverage?.a_reviews_fetched ?? 0} recent Google reviews by ${report.coverage?.unique_reviewers ?? 0} people; ${fans} had public review histories. Lift 1.0 = a typical nearby business; higher = A's fans favour it more than its popularity explains. Totals only, no reviewer data kept.`, '',
-  '| They probably also love | Category | Shared fans | Lift | Are people leaving it? | Rating last 90d vs before |', '|---|---|---|---|---|---|',
-  ...(report.brand_b || []).map(b => `| ${b.name} | ${b.category || ''} | ${b.shared} | ${b.lift ?? '-'} | ${b.switching?.verdict || '-'} (${b.switching?.leaving_mentions ?? 0} reviews) | ${b.switching?.avg_last_90d ?? '-'} vs ${b.switching?.avg_before ?? '-'} |`),
+  '| They probably also love | Category | Locations | Shared fans | Lift | Are people leaving it? | Rating last 90d vs before |', '|---|---|---|---|---|---|---|',
+  ...(report.brand_b || []).map(b => `| ${b.name} | ${b.category || ''} | ${b.locations ?? 1} | ${b.shared} | ${b.lift ?? '-'} | ${b.switching?.verdict || '-'} (${b.switching?.leaving_mentions ?? 0} reviews) | ${b.switching?.avg_last_90d ?? '-'} vs ${b.switching?.avg_before ?? '-'} |`),
   '', report.error ? `**Stopped early:** ${report.error}` : '', `Spend: ~$${report.spend_usd}`].join('\n');
 writeFileSync(`${OUT}/overlap.md`, md);
 console.log(`\n${md}\n\nSaved ${OUT}/overlap.json and overlap.md`);
