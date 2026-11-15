@@ -30,6 +30,14 @@ const TOKEN = process.env.APIFY_TOKEN || 'proxy-injected';
 const PRICE = { place: 0.004, review: 0.0006, contributorReview: 0.0015, run: 0.001 };
 PRICE.tregContributor = 0.00015; // litescrape via treg: one call = up to 200 reviews of one reviewer
 const MIN_HISTORY = Number(args['min-history'] || 3);
+// Where reviewer histories come from: lexis (Apify, reliable, ~$0.0015/review), treg (litescrape,
+// ~$0.00015/reviewer, when its provider is up) or johnvc (Apify, $1/month free cap).
+const HIST = String(args.histories || 'lexis');
+async function tregCallPost(id, body) {
+  const { execFile } = await import('node:child_process');
+  return new Promise((res, rej) => execFile(TREG, ['--json', 'call', id, '--method', 'POST', '--header', 'X-Treg-Route-Max-Cost: 0.01', '--data', JSON.stringify(body)], { maxBuffer: 1 << 26, timeout: 120000 }, (err, out) => {
+    if (err && !out) return rej(err); try { const j = JSON.parse(out); if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`HTTP ${j._treg.http_status}`)); res(j); } catch (e) { rej(e); } }));
+}
 let spent = 0;
 // treg CLI (https://treg.to): keys stay on treg's server; signed in with `treg login`.
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
@@ -101,7 +109,19 @@ try {
   // 3. Each reviewer's public history. treg (litescrape, $0.00015 per reviewer, up to 200 reviews)
   // when the treg CLI is signed in; otherwise the Apify contributor actor (pricier, $1/month free cap).
   const history = [];
-  if (await tregOk()) {
+  if (HIST === 'lexis') {
+    // lexis-solutions/google-maps-contributor-reviews-scraper: ~$0.0015 per review row; each row
+    // carries the business's name, place id, category and total review count (no extra lookups).
+    budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories (lexis)');
+    const batches = []; for (let i = 0; i < reviewerIds.length; i += 25) batches.push(reviewerIds.slice(i, i + 25));
+    for (let i = 0; i < batches.length; i += 4) {
+      const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('lexis-solutions/google-maps-contributor-reviews-scraper', { startUrls: b.map(id => ({ url: `https://www.google.com/maps/contrib/${id}?hl=en` })), maxItems: PER }, 0, { timeoutSecs: 1800, allowPartial: true })
+        .catch(e => { console.log('  batch failed:', e.message); return []; })));
+      for (const g of got) for (const r of g) history.push({ contributor_id: r.reviewer?.id, rating: r.rating, date: r.createdAt,
+        place_info: { data_id: r.place?.placeId || r.place?.cid, title: r.place?.name, address: r.place?.address, type: r.place?.primaryCategory, reviews_total: r.place?.reviewCount, place_id: r.place?.placeId } });
+      if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+    }
+  } else if (HIST === 'treg' && await tregOk()) {
     budget(reviewerIds.length * PRICE.tregContributor, 'reviewer histories (treg)');
     let i = 0, fails = 0;
     const worker = async () => { while (i < reviewerIds.length) { const id = reviewerIds[i++];
@@ -126,23 +146,26 @@ try {
     const who = pick(r, 'contributor_id', 'contributorId'); const key = placeKey(r);
     if (!who || !key) continue; reachable.add(who);
     if (A.placeId && (key === A.placeId || placeName(r) === A.title)) continue;
-    const p = byPlace.get(key) || { name: placeName(r), address: placeAddr(r), type: pick(r, 'place_info.type', 'place.type'), reviewers: new Set(), ratings: [], dates: [] };
+    const p = byPlace.get(key) || { name: placeName(r), address: placeAddr(r), type: pick(r, 'place_info.type', 'place.type'), reviews_total: pick(r, 'place_info.reviews_total'), place_id: pick(r, 'place_info.place_id'), reviewers: new Set(), ratings: [], dates: [] };
     if (!p.reviewers.has(who)) { p.reviewers.add(who); const rt = Number(pick(r, 'rating')); if (rt) p.ratings.push(rt); const d = dateOf(r); if (d) p.dates.push(d); }
     byPlace.set(key, p);
   }
   report.coverage.histories_reachable = reachable.size; report.coverage.history_reviews = history.length;
-  let shared = [...byPlace.entries()].map(([key, p]) => ({ key, name: p.name, address: p.address, type: p.type || null, shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null }))
+  let shared = [...byPlace.entries()].map(([key, p]) => ({ key, name: p.name, address: p.address, type: p.type || null, known_reviews_total: p.reviews_total ?? null, known_place_id: p.place_id || null, shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null }))
     .filter(p => p.shared >= MIN_SHARED).sort((a, b) => b.shared - a.shared);
   byPlace.clear(); reviewerIds.length = 0; // drop ids
 
   // 5. Popularity + category for the candidates, then lift and competitor filter.
   const cands = shared.slice(0, Math.max(TOP * 3, 30));
-  const details = cands.length ? await apify('compass/crawler-google-places', { searchStringsArray: cands.map(c => [c.name, c.address].filter(Boolean).join(', ')), maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, cands.length * PRICE.place + PRICE.run) : [];
+  // Details come with lexis rows already; look them up only for candidates that lack them.
+  const lacking = cands.filter(c => c.known_reviews_total == null);
+  const details = lacking.length ? await apify('compass/crawler-google-places', { searchStringsArray: lacking.map(c => [c.name, c.address].filter(Boolean).join(', ')), maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, lacking.length * PRICE.place + PRICE.run) : [];
   const det = new Map(details.map(d => [String(d.searchString || '').split(',')[0].trim().toLowerCase(), d]));
   const aWords = words(A.categoryName);
   for (const c of cands) {
     const d = det.get(String(c.name || '').toLowerCase()) || details.find(x => x.title === c.name) || {};
-    Object.assign(c, { category: d.categoryName || c.type || null, reviews_total: d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: d.placeId || null });
+    Object.assign(c, { category: d.categoryName || c.type || null, reviews_total: c.known_reviews_total ?? d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: c.known_place_id || d.placeId || null });
+    delete c.known_reviews_total; delete c.known_place_id;
     c.competitor = !!(c.category && [...words(c.category)].some(w => aWords.has(w)));
   }
   // Lift: share of A's fans who reviewed B, against how popular B is overall (more reviews =
@@ -154,10 +177,19 @@ try {
 
   // 6. Are people leaving B? Newest reviews: rating trend (last 90 days vs before) + leaving language.
   const ids = brandB.map(b => b.place_id).filter(Boolean);
-  const bReviews = ids.length ? await apify('compass/google-maps-reviews-scraper', { placeIds: ids, maxReviews: 60, reviewsSort: 'newest', personalData: false, language: 'en' }, ids.length * 60 * PRICE.review + PRICE.run) : [];
+  // treg's routed Google reviews (~$0.00015 per place) first; Apify for any place it misses.
+  const bReviews = [];
+  if (await tregOk()) for (const id of ids) {
+    try { const r = await tregCallPost('treg.google.maps.reviews', { place_id: id, limit: 60, sort: 'newest' });
+      const rows = r.result?.output?.reviews || r.result?.reviews || r.result?.output || [];
+      for (const x of Array.isArray(rows) ? rows : []) bReviews.push({ placeId: id, stars: Number(x.rating ?? x.stars) || null, text: x.snippet ?? x.text ?? x.review_text ?? '', publishedAtDate: x.iso_date ?? x.published_at ?? x.publishedAtDate ?? x.date, reviewUrl: x.link ?? x.review_url ?? null });
+      spent += (r._treg?.charged_micro || 0) / 1e6; } catch { /* falls back below */ }
+  }
+  const missing = ids.filter(id => !bReviews.some(r => r.placeId === id && Number.isFinite(Date.parse(r.publishedAtDate))));
+  if (missing.length) bReviews.push(...await apify('compass/google-maps-reviews-scraper', { placeIds: missing, maxReviews: 40, reviewsSort: 'newest', personalData: false, language: 'en' }, missing.length * 40 * PRICE.review + PRICE.run).catch(e => { console.log('  B reviews:', e.message); return []; }));
   const now = Date.now();
   for (const b of brandB) {
-    const rs = bReviews.filter(r => r.placeId === b.place_id);
+    const rs = bReviews.filter(r => r.placeId === b.place_id && Number.isFinite(Date.parse(r.publishedAtDate)));
     const recent = rs.filter(r => now - Date.parse(r.publishedAtDate) < 90 * 864e5), older = rs.filter(r => now - Date.parse(r.publishedAtDate) >= 90 * 864e5);
     const avg = xs => xs.length ? Math.round(100 * xs.reduce((a, r) => a + (r.stars || 0), 0) / xs.length) / 100 : null;
     const leaving = rs.filter(r => (r.stars || 5) <= 3 && LEAVING.test(r.text || ''));
