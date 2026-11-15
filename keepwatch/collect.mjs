@@ -7,6 +7,7 @@ import { readFileSync } from 'node:fs';
 import { getDb, workspaceForUser, saveWorkspace, trackRival } from './lib/db.mjs';
 import { adLibrary } from './lib/providers.mjs';
 import { normaliseAd, extractHook, angleFor } from './lib/classify.mjs';
+import { isManual } from './lib/manual.mjs';
 
 const env = (k, d) => (process.env[k] !== undefined ? Number(process.env[k]) : d);
 const PAGES = { active: env('KW_ACTIVE_PAGES', 3), recent: env('KW_RECENT_PAGES', 2), killed: env('KW_KILLED_PAGES', 3) };
@@ -130,7 +131,7 @@ export async function collectAll({ only, ids, staleDays } = {}) {
   else if (ids) rivals = ids.length ? db.prepare(`SELECT * FROM rivals WHERE id IN (${ids.map(() => '?').join(',')})`).all(...ids) : [];
   else rivals = db.prepare(`SELECT * FROM rivals WHERE id IN (SELECT rival_id FROM workspace_rivals)
     ${staleDays ? `AND (last_collected_at IS NULL OR last_collected_at < datetime('now', '-${Number(staleDays)} days'))` : ''}`).all();
-  for (const rv of rivals) {
+  for (const rv of rivals.filter(r => !isManual(r.page_id))) { // manual rivals are filled by hand or by a connected AI
     process.stdout.write(`• ${rv.name} … `);
     try { const n = await collectRival(db, rv, run); run.ads += n; console.log(`${n} ads`); }
     catch (e) { console.log(`failed: ${e.message}`); }

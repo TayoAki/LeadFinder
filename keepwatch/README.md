@@ -14,7 +14,14 @@ Keepwatch finds the Meta ads your rivals keep paying to run, shows why they work
   2. **What every rival does:** the formats, openings and angles most of your category shares (the habits buyers have stopped noticing), plus the open ground nobody uses.
   3. **Borrow a move from another world:** 15 moves from other industries (`lib/donors.mjs`), such as dressing up as another category (beer and metal for water), owning the joke (budget airlines), turning the product into a dare (spicy-noodle challenges), lore you commit to (internet comedy accounts) and the most-asked-questions interview. Each is ranked for your brand by fit and by the rival habits it breaks. It says why it works, when it fits and when to skip it. **Write the brief** turns it into hooks, beats, a three-post series and a "don't copy" line. Template briefs are free; with `ANTHROPIC_API_KEY`, Claude writes them for 5 credits.
 - **Monday drop:** four new ads a week, built from different rivals' kept ads with different angles.
-- **MCP server:** ask Claude, ChatGPT or Cursor what your rivals keep running (`POST /mcp`).
+- **MCP server (`POST /mcp`, auth = the workspace API key):** Claude, ChatGPT or Cursor can read **and run** the workspace.
+  - **Read:** overview, playbooks, ad search, hooks, angles, formats, Borrow ideas, swap test.
+  - **Write:** `my_workspace`, `update_brand`, `find_rival`, `track_rival`, `untrack_rival`, `add_rival_ads`, `collect_ads`, `list_moves`, `write_brief`, `list_briefs`, `make_ad`, `make_drop`, `list_my_ads`, `job_status`.
+  - **When a provider key is missing, the connected AI does that part itself:**
+    - ads it researched in the public Ad Library go in through `add_rival_ads`. These are kept per workspace and never touch the shared, collected data.
+    - briefs it wrote go in as `write_brief` with `brief`.
+    - `make_ad` and `make_drop` save the plan, the Meta copy and the image prompt (free) instead of rendering.
+  - The API key spends credits, so treat it like a password. Rotate it in Settings.
 
 ## Plans and credits
 | Plan | Price | Tracked rivals | Credits a month | About |

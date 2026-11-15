@@ -178,9 +178,9 @@ export const dropScore = a => 0.7 * a.run_days + 3 * (a.collation_count || 1) + 
  * Pick `count` ads for a drop: kept ads only, not already rebuilt, with an image, in the brand's language,
  * best proven first, spread across rivals and angles (relaxing angle, then rival, if there aren't enough).
  */
-export function pickForDrop(ads, { count = 4, done = new Set(), lang = 'en' } = {}) {
+export function pickForDrop(ads, { count = 4, done = new Set(), lang = 'en', needImage = true } = {}) {
   const textOf = a => [a.hook, a.title, a.body, a.transcript].filter(Boolean).join(' ');
-  const pool = ads.filter(a => a.pile === 'kept' && !done.has(a.id) && (a.image_url || a.thumb_url))
+  const pool = ads.filter(a => a.pile === 'kept' && !done.has(a.id) && (!needImage || a.image_url || a.thumb_url))
     .map(a => ({ a, en: lang === 'en' ? looksEnglish(textOf(a)) : true }))
     .filter(x => x.en !== false)
     .sort((x, y) => (y.en === true) - (x.en === true) || dropScore(y.a) - dropScore(x.a))
@@ -214,7 +214,8 @@ export async function mondayDrop(ws, { count = 4, render = true, onEach, lang = 
   const broken = new Set();
   let picked = [];
   for (let round = 0; round < 4; round++) {
-    ({ picked } = pickForDrop(ads, { count, done: new Set([...done, ...broken]), lang }));
+    ({ picked } = pickForDrop(ads, { count, done: new Set([...done, ...broken]), lang, needImage: render }));
+    if (!render) break; // plans only: a reference image is nice to have, not required
     const checks = await Promise.all(picked.map(a => imageLoads(a.image_url || a.thumb_url)));
     picked.forEach((a, i) => { if (!checks[i]) broken.add(a.id); });
     if (checks.every(Boolean)) break;
