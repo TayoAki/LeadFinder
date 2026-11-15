@@ -31,15 +31,23 @@ const PRICE = { place: 0.004, review: 0.0006, contributorReview: 0.0015, run: 0.
 let spent = 0;
 const budget = (usd, what) => { if (spent + usd > CAP) throw new Error(`Stopping before ${what}: it would take spend to $${(spent + usd).toFixed(2)}, over the $${CAP} cap.`); };
 
-async function apify(actor, input, estimate) {
+async function apify(actor, input, estimate, { timeoutSecs = 1800, allowPartial = false } = {}) {
   budget(estimate, actor);
   if (DRY) { console.log(`[dry-run] would run ${actor} (~$${estimate.toFixed(2)})`, JSON.stringify(input).slice(0, 200)); return []; }
   const H = { 'content-type': 'application/json', authorization: `Bearer ${TOKEN}` };
   const api = async (path, opts = {}) => { const r = await fetch(`https://api.apify.com/v2${path}`, { headers: H, signal: AbortSignal.timeout(120000), ...opts });
     if (!r.ok) throw new Error(`${actor}: HTTP ${r.status} ${(await r.text()).slice(0, 300)}`); return r.status === 204 ? null : r.json(); };
-  let run = (await api(`/acts/${actor.replace('/', '~')}/runs?waitForFinish=60`, { method: 'POST', body: JSON.stringify(input) })).data;
+  let run = (await api(`/acts/${actor.replace('/', '~')}/runs?waitForFinish=60&timeout=${timeoutSecs}`, { method: 'POST', body: JSON.stringify(input) })).data;
   while (!['SUCCEEDED', 'FAILED', 'ABORTED', 'TIMED-OUT'].includes(run.status)) run = (await api(`/actor-runs/${run.id}?waitForFinish=60`)).data;
-  if (run.status !== 'SUCCEEDED') throw new Error(`${actor} run ${run.status}`);
+  // A timed-out run still holds the items it finished: keep them when the caller can use partial data.
+  if (run.status !== 'SUCCEEDED') {
+    const partial = allowPartial ? await api(`/datasets/${run.defaultDatasetId}/items?format=json&clean=true`) : [];
+    spent += Number(run.usageTotalUsd) || 0;
+    await api(`/datasets/${run.defaultDatasetId}`, { method: 'DELETE' }).catch(() => {});
+    if (!allowPartial) throw new Error(`${actor} run ${run.status}`);
+    console.log(`• ${actor}: run ${run.status}, kept ${partial.length} partial items (total ~$${spent.toFixed(2)})`);
+    return partial;
+  }
   const items = await api(`/datasets/${run.defaultDatasetId}/items?format=json&clean=true`);
   const runCost = Number(run.usageTotalUsd) || estimate; spent += runCost;
   // Delete the run's dataset so scraped personal data does not sit on Apify.
@@ -73,7 +81,16 @@ try {
   report.coverage = { a_reviews_fetched: reviews.length, unique_reviewers: reviewerIds.length };
 
   // 3. Each reviewer's public history (capped). Estimate assumes the cap is reached.
-  const history = reviewerIds.length ? await apify('johnvc/google-maps-contributor-reviews-api', { contributorIds: reviewerIds, maxResultsPerContributor: PER, hl: 'en' }, reviewerIds.length * PER * PRICE.contributorReview + PRICE.run) : [];
+  // Batches of 20 reviewers, 4 at a time, each with its own time limit; partial batches still count.
+  budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories');
+  const batches = []; for (let i = 0; i < reviewerIds.length; i += 20) batches.push(reviewerIds.slice(i, i + 20));
+  const history = [];
+  for (let i = 0; i < batches.length; i += 4) {
+    const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('johnvc/google-maps-contributor-reviews-api', { contributorIds: b, maxResultsPerContributor: PER, hl: 'en' }, 0, { timeoutSecs: 1800, allowPartial: true })
+      .catch(e => { console.log('  batch failed:', e.message); return []; })));
+    for (const g of got) history.push(...g);
+    if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+  }
   // 4. Aggregate: distinct reviewers per business (ids used only to de-duplicate, then dropped).
   const byPlace = new Map(); const reachable = new Set();
   for (const r of history) {
