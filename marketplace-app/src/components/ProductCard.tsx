@@ -2,7 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { router } from 'expo-router';
 import React from 'react';
 import { Image, Pressable, Text, View } from 'react-native';
-import { compact, getShop, Product } from '@/lib/data';
+import { compact, money, Product } from '@/lib/data';
 import { useStore } from '@/lib/store';
 import { C, R } from '@/lib/theme';
 import { Pill, Price, Stars } from './ui';
@@ -12,11 +12,10 @@ import { Pill, Price, Stars } from './ui';
 export function ProductCard({ p, width, onPress, pressLabel }: { p: Product; width: number; onPress?: () => void; pressLabel?: string }) {
   const { wishlist, toggleWish } = useStore();
   const liked = wishlist.includes(p.id);
-  const shop = getShop(p.shopId);
   // The heart sits beside (not inside) the card's pressable, so web never nests two buttons.
   return (
     <View style={{ width }}>
-      <Pressable onPress={onPress ?? (() => router.push(`/product/${p.id}`))} accessibilityLabel={pressLabel ?? `${p.title}, ${shop.name}`}
+      <Pressable onPress={onPress ?? (() => router.push(`/product/${p.id}`))} accessibilityLabel={pressLabel ?? `${p.title}, ${money(p.price)}`}
         style={({ pressed }) => ({ width, opacity: pressed ? 0.9 : 1 })}>
         <View style={{ width, height: width * 1.15, borderRadius: R.lg, backgroundColor: C.photo, overflow: 'hidden', borderWidth: onPress && liked ? 3 : 0, borderColor: C.accent }}>
           <Image source={{ uri: p.image }} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
@@ -28,7 +27,7 @@ export function ProductCard({ p, width, onPress, pressLabel }: { p: Product; wid
               : p.sold >= 10 ? <Pill text={`${compact(p.sold)} bought this month`} tone="dark" icon="trending-up" /> : null}
           </View>
         </View>
-        <Text numberOfLines={1} style={{ fontSize: 12, color: C.ink3, marginTop: 8, fontWeight: '600' }}>{shop.name}</Text>
+        <Text numberOfLines={1} style={{ fontSize: 12, color: C.ink3, marginTop: 8, fontWeight: '600' }}>{p.category}</Text>
         <Text numberOfLines={1} style={{ fontSize: 14, color: C.ink, fontWeight: '600', marginTop: 1 }}>{p.title}</Text>
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 }}>
           <Price price={p.price} compareAt={p.compareAt} size={15} />

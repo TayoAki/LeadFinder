@@ -1,5 +1,5 @@
 import { Ionicons } from '@expo/vector-icons';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import React, { useMemo, useState, useEffect } from 'react';
 import { Image, Pressable, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -19,7 +19,9 @@ const trending = ['ceramic mug', 'linen dress', 'body oil', 'trail pack', 'gold 
 export default function Search() {
   const { width } = useWindowDimensions();
   const [q, setQ] = useState('');
-  const [cat, setCat] = useState('All');
+  const params = useLocalSearchParams<{ cat?: string }>();
+  const [cat, setCat] = useState(params.cat && categories.includes(params.cat) ? params.cat : 'All');
+  useEffect(() => { if (params.cat && categories.includes(params.cat)) setCat(params.cat); }, [params.cat]);
   const [sort, setSort] = useState<(typeof sorts)[number]>('Popular');
   const [price, setPrice] = useState(0);
   const [onSale, setOnSale] = useState(false);
@@ -103,13 +105,6 @@ export default function Search() {
             </View>
           </View>
         )}
-        {shopHits.map(s => (
-          <Pressable key={s.id} onPress={() => router.push(`/shop/${s.id}`)} style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginHorizontal: S.lg, marginTop: S.md, padding: S.md, backgroundColor: C.surface, borderRadius: R.lg, borderWidth: 1, borderColor: C.line }}>
-            <Image source={{ uri: s.logo }} style={{ width: 48, height: 48, borderRadius: 24 }} />
-            <View style={{ flex: 1 }}><Text style={T.h3}>{s.name}</Text><Text style={T.small}>{s.tagline}</Text></View>
-            <Stars value={s.rating} />
-          </Pressable>
-        ))}
         <Text style={[T.small, { paddingHorizontal: S.lg, marginVertical: S.md }]}>{results.length} results{q ? ` for "${q}"` : ''}</Text>
         {results.length ? <ProductGrid items={results} width={width} /> : (
           <View style={{ alignItems: 'center', padding: S.xxl }}>

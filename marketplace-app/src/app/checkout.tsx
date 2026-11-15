@@ -110,7 +110,6 @@ export default function Checkout() {
         <Card>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={T.h3}>Ship to</Text><Pressable onPress={() => router.push('/addresses')}><Text style={{ color: C.accent, fontWeight: '700' }}>Change</Text></Pressable></View>
           <Text style={[T.body, { marginTop: 6 }]}>{user?.name ?? 'Your name'}{'\n'}<Text style={{ color: C.ink2 }}>1208 Willow Ave, Apt 3{'\n'}Austin, TX 78702</Text></Text>
-          {pay === 'apple' && !stripeOn && !user && <Text style={[T.small, { marginTop: 6 }]}>Apple Pay fills this in for you.</Text>}
         </Card>
 
         {mercur && !stripeOn ? (
@@ -126,7 +125,7 @@ export default function Checkout() {
             <Text style={T.h3}>Payment</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: S.md }}>
               <Ionicons name="lock-closed" size={20} color={C.ink} />
-              <Text style={[T.small, { flex: 1 }]}>Card, Apple Pay or Google Pay on the next step, secured by Stripe. You're charged once; each shop is paid when it ships.</Text>
+              <Text style={[T.small, { flex: 1 }]}>Card, Apple Pay or Google Pay on the next step, secured by Stripe. You're charged once.</Text>
             </View>
           </Card>
         ) : (
@@ -143,17 +142,11 @@ export default function Checkout() {
         )}
 
         <Card>
-          <Text style={T.h3}>{groups.length} shop{groups.length > 1 ? 's' : ''}, one payment</Text>
-          <Text style={[T.small, { marginTop: 2 }]}>Each shop ships separately and you'll get tracking for each.</Text>
-          {groups.map(g => (
-            <View key={g.shop.id} style={{ marginTop: S.md, paddingTop: S.md, borderTopWidth: 1, borderTopColor: C.line }}>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}><Text style={{ fontWeight: '800' }}>{g.shop.name}</Text><Text style={T.small}>Ships in {g.shop.shipsIn}</Text></View>
-              <View style={{ flexDirection: 'row', gap: 6, marginTop: 8 }}>
-                {g.lines.map(l => <Image key={l.productId + l.size} source={{ uri: getProduct(l.productId).image }} style={{ width: 44, height: 44, borderRadius: 8 }} />)}
-              </View>
-              <View style={{ flexDirection: 'row', justifyContent: 'space-between', marginTop: 6 }}><Text style={T.small}>Items {money(g.subtotal)}</Text><Text style={T.small}>Shipping {g.shipping ? money(g.shipping) : 'free'}</Text></View>
-            </View>
-          ))}
+          <Text style={T.h3}>Your order</Text>
+          <Text style={[T.small, { marginTop: 2 }]}>{groups.length > 1 ? `Arrives in ${groups.length} packages; you'll get tracking for each.` : "You'll get tracking by email."}</Text>
+          <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, marginTop: S.md }}>
+            {cart.map(l => <Image key={l.productId + l.size} source={{ uri: getProduct(l.productId).image }} style={{ width: 52, height: 52, borderRadius: 8, backgroundColor: C.photo }} accessibilityLabel={getProduct(l.productId).title} />)}
+          </View>
         </Card>
         <TrustLine />
       </ScrollView>

@@ -24,8 +24,8 @@ export default function ShareSheet() {
   let image = '', title = '', sub = '', url = '', message = '', badge = '';
   if (kind === 'product' || kind === 'ask') {
     const p = getProduct(id); const shop = getShop(p.shopId);
-    image = p.images[0]; title = p.title; sub = `${money(p.price)} · ${shop.name}`; url = link(`/p/${p.id}`, ref);
-    message = kind === 'ask' ? `Should I get this? Yes or no 👇 ${title} from ${shop.name}` : `Found this on ${BRAND.name}: ${title} from ${shop.name}`;
+    image = p.images[0]; title = p.title; sub = `${money(p.price)} · ${BRAND.name}`; url = link(`/p/${p.id}`, ref);
+    message = kind === 'ask' ? `Should I get this? Yes or no 👇 ${title} at ${BRAND.name}` : `Found this on ${BRAND.name}: ${title} at ${BRAND.name}`;
     badge = kind === 'ask' ? 'YES OR NO?' : '';
   } else if (kind === 'shop') {
     const s = getShop(id); image = s.banner; title = s.name; sub = s.tagline; url = link(`/s/${s.id}`, ref); message = `Shop ${s.name} on ${BRAND.name}`;
@@ -35,9 +35,9 @@ export default function ShareSheet() {
     const first = getProduct(wishlist[0] ?? products[0].id); image = first.image; title = `${user?.name ?? 'My'} wishlist`; sub = `${wishlist.length || 1} things I'd love from indie shops`; url = link(`/w/${ref}`, ref); message = 'My wishlist (hint hint):'; badge = 'GIFT IDEAS';
   } else if (kind === 'order') {
     const o = orders.find(x => x.id === id) ?? orders[0]; const p = getProduct(o.sellerOrders[0].lines[0].productId);
-    image = p.images[0]; title = 'Just got my haul'; sub = `From ${o.sellerOrders.length} indie shop${o.sellerOrders.length > 1 ? 's' : ''} in one checkout`; url = link('/', ref); message = `Shopped ${o.sellerOrders.length} small shops in one go on ${BRAND.name}. Here's $${BRAND.referralReward} off your first order:`; badge = 'MY HAUL';
+    image = p.images[0]; title = 'Just got my haul'; sub = `From ${BRAND.name}, in one checkout`; url = link('/', ref); message = `Shopped ${o.sellerOrders.length} small shops in one go on ${BRAND.name}. Here's $${BRAND.referralReward} off your first order:`; badge = 'MY HAUL';
   } else {
-    image = products[5].images[0]; title = `$${BRAND.referralReward} off at ${BRAND.name}`; sub = 'Indie shops, one cart. Use my link.'; url = link('/', ref); message = `Here's $${BRAND.referralReward} off your first order on ${BRAND.name}:`; badge = `$${BRAND.referralReward} OFF`;
+    image = products[5].images[0]; title = `$${BRAND.referralReward} off at ${BRAND.name}`; sub = `${BRAND.tagline}. Use my link.`; url = link('/', ref); message = `Here's $${BRAND.referralReward} off your first order on ${BRAND.name}:`; badge = `$${BRAND.referralReward} OFF`;
   }
 
   const send = async (via: string) => {
@@ -60,7 +60,7 @@ export default function ShareSheet() {
       <ScrollView contentContainerStyle={{ padding: S.lg, paddingTop: 0 }}>
         {/* The card friends actually see in their feed or chat */}
         <View style={{ borderRadius: R.lg, overflow: 'hidden', backgroundColor: C.surface, borderWidth: 1, borderColor: C.line }}>
-          <Image source={{ uri: image }} style={{ width: '100%', height: 260, backgroundColor: '#F1ECE4' }} resizeMode="cover" />
+          <Image source={{ uri: image }} style={{ width: '100%', height: 260, backgroundColor: '#F7EEE5' }} resizeMode="cover" />
           {!!badge && <View style={{ position: 'absolute', top: 12, left: 12, backgroundColor: C.accent, borderRadius: R.pill, paddingHorizontal: 10, paddingVertical: 4 }}><Text style={{ color: '#fff', fontWeight: '900', fontSize: 12 }}>{badge}</Text></View>}
           <View style={{ padding: S.lg }}>
             <Text style={T.h2}>{title}</Text>

@@ -56,7 +56,8 @@ async function runUser(browser, i, shopNames) {
     }
   };
   const visible = sel => pg.locator(sel).filter({ visible: true }).first();
-  const cardSel = shopNames.map(n => `[aria-label$=", ${n}"]`).join(',');
+  // Product cards are labelled "<title>, $<price>" (one store: no shop names on cards).
+  const cardSel = '[aria-label*=", $"]:not([aria-label^="Add "]):not([aria-label^="Shop "]):not([aria-label^="Choose "])';
   const go = async path => { await pg.evaluate(p => { history.pushState({}, '', p); dispatchEvent(new PopStateEvent('popstate')); }, path); await pg.waitForTimeout(400); };
 
   const openProduct = () => step('open_product', async () => {
@@ -90,7 +91,7 @@ async function runUser(browser, i, shopNames) {
   // Cold start: from first byte to the first usable screen (onboarding welcome or home).
   const loaded = await step('cold_start', async () => {
     await pg.goto(`${BASE}/${utm ? `?utm_source=${utm}` : ''}`, { waitUntil: 'domcontentloaded', timeout: 30000 });
-    await pg.locator('[data-testid="ob-start"]').or(pg.getByText('Shop small sellers')).first().waitFor({ timeout: 30000 });
+    await pg.locator('[data-testid="ob-start"]').or(pg.getByText('Everyday favourites')).first().waitFor({ timeout: 30000 });
   });
   if (!loaded) { u.outcome = 'bounced_on_load'; await ctx.close(); return u; }
   // Home renders first and onboarding slides over it shortly after; record how long that takes.
@@ -109,10 +110,10 @@ async function runUser(browser, i, shopNames) {
       await visible('[aria-label^="Save "]').click(); await think(pg);
       await visible('[data-testid="ob-finish"]').click(); await pg.waitForTimeout(400);
       if (await pg.getByText('Not now').first().isVisible().catch(() => false)) { await pg.getByText('Not now').first().click(); await visible('[data-testid="ob-finish"]').click(); }
-      await pg.getByText('Shop small sellers').first().waitFor({ timeout: 8000 });
+      await pg.getByText('Everyday favourites').first().waitFor({ timeout: 8000 });
     });
   } else if (onOnboarding) {
-    await step('skip_onboarding', async () => { await pg.getByText('Just browse').first().click(); await pg.getByText('Shop small sellers').first().waitFor({ timeout: 8000 }); });
+    await step('skip_onboarding', async () => { await pg.getByText('Just browse').first().click(); await pg.getByText('Everyday favourites').first().waitFor({ timeout: 8000 }); });
   }
 
   if (persona.name === 'browser' || persona.name === 'onboarder') {
@@ -164,12 +165,14 @@ async function runUser(browser, i, shopNames) {
       await go('/quiz?from=sim');
       await pg.getByText(pick(['Feeling better', 'My skin']), { exact: true }).click({ timeout: 8000 });
       for (let k = 0; k < 4; k++) {
-        if (await pg.getByText('YOUR MATCH').isVisible().catch(() => false)) break;
+        await pg.waitForTimeout(300);
+        if (/\/match\//.test(pg.url())) break; // the result is its own page
         const opts = pg.locator('[role="button"][aria-label]').filter({ visible: true }).filter({ hasNotText: /^$/ });
         const labels = (await opts.evaluateAll(els => els.map(e => e.getAttribute('aria-label')))).filter(l => l && !/close|previous/i.test(l));
-        await pg.getByRole('button', { name: pick(labels), exact: true }).click(); await pg.waitForTimeout(250);
+        if (!labels.length) break;
+        await pg.getByRole('button', { name: pick(labels), exact: true }).first().click();
       }
-      await pg.getByText('YOUR MATCH').waitFor({ timeout: 8000 });
+      await pg.waitForURL(/\/match\//, { timeout: 8000 });
     });
     if (ok) {
       const addAll = visible('[aria-label^="Add all"]');

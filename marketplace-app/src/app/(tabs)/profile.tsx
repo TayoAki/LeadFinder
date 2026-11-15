@@ -45,7 +45,7 @@ export default function Profile() {
           </View>
         )}
 
-        {/* Light habit loop: support small shops, level up, unlock perks */}
+        {/* Light habit loop: level up, unlock perks */}
         <View style={{ marginHorizontal: S.lg, marginBottom: S.md, padding: S.lg, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line }}>
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
             <Text style={T.h3}>Small-shop supporter · Level {1 + Math.floor((orders.length * 2 + following.length) / 4)}</Text>
@@ -67,9 +67,8 @@ export default function Profile() {
         <View style={{ marginTop: S.lg, borderTopWidth: 1, borderBottomWidth: 1, borderColor: C.line }}>
           <Row icon="receipt-outline" label="Orders" sub={orders.length ? `${orders.length} order${orders.length > 1 ? 's' : ''}` : 'Track and return'} onPress={() => router.push('/orders')} />
           <Row icon="heart-outline" label="Wishlist" sub={`${wishlist.length} saved · share it as a gift list`} onPress={() => router.push('/wishlist')} />
-          <Row icon="storefront-outline" label="Shops you follow" sub={`${following.length} shops`} onPress={() => router.push('/following')} />
           <Row icon="location-outline" label="Addresses" onPress={() => router.push('/addresses')} />
-          <Row icon="card-outline" label="Payment methods" sub="Apple Pay, cards" onPress={() => router.push('/payments')} />
+          <Row icon="card-outline" label="Payment methods" sub="Cards and wallets" onPress={() => router.push('/payments')} />
           <Row icon="notifications-outline" label="Notifications" onPress={() => router.push('/notifications')} />
         </View>
 

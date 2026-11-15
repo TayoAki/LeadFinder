@@ -7,9 +7,9 @@ import { C } from '@/lib/theme';
 const MARK = require('../../assets/brand/logo-mark.png');
 const WORDMARK = require('../../assets/brand/logo-wordmark.png');
 const MARK_RATIO = 417 / 392;
-const WORD_RATIO = 1955 / 628;
+const WORD_RATIO = 1839 / 628;
 
-// The supplied logo: Shelby the bag (mark) and the "hireshelby" word-mark.
+// Shelby the bag (mark, brand orange) and the "shelby" word-mark (navy, Nunito Black, OFL).
 export function LogoMark({ size = 32 }: { size?: number }) {
   return <Image source={MARK} accessibilityIgnoresInvertColors style={{ width: size * MARK_RATIO, height: size }} resizeMode="contain" />;
 }

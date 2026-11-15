@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { TrustLine } from '@/components/Logo';
 import { ProductCard } from '@/components/ProductCard';
 import { Button, Chip, IconButton, Pill, Price, SectionHeader, Stars } from '@/components/ui';
-import { compact, getProduct, getShop, money, shopProducts } from '@/lib/data';
+import { compact, getProduct, getShop, money, products } from '@/lib/data';
 import { groupCart, useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 import { track } from '@/lib/analytics';
@@ -52,7 +52,7 @@ export default function ProductPage() {
   const [needSize, setNeedSize] = useState(false);
   const liked = wishlist.includes(p.id);
   const followed = following.includes(shop.id);
-  const more = shopProducts(shop.id).filter(x => x.id !== p.id).slice(0, 6);
+  const more = products.filter(x => x.category === p.category && x.id !== p.id && x.stock > 0).slice(0, 6);
   const onScroll = (e: NativeSyntheticEvent<NativeScrollEvent>) => setImg(Math.round(e.nativeEvent.contentOffset.x / width));
 
   const ensureSize = () => { if (p.sizes.length && !size) { setNeedSize(true); return false; } return true; };
@@ -60,7 +60,7 @@ export default function ProductPage() {
     if (!ensureSize()) return;
     // Free-shipping progress after this item lands in the cart (the cart state updates after this call).
     const left = Math.max(0, shop.freeOver - ((g?.subtotal ?? 0) + p.price));
-    add(p, size, 1, { toast: left > 0 ? `Added · ${money(left)} more from ${shop.name} ships free` : `Added · free shipping from ${shop.name}` });
+    add(p, size, 1, { toast: left > 0 ? `Added to cart` : `Added · this order ships free` });
   };
   const onBuy = () => { if (!ensureSize()) return; add(p, size, 1, { toast: false }); router.push('/checkout'); };
   const g = groupCart(cart).find(x => x.shop.id === shop.id);
@@ -71,7 +71,7 @@ export default function ProductPage() {
       <ScrollView contentContainerStyle={{ paddingBottom: 130 }} showsVerticalScrollIndicator={false}>
         <View>
           <ScrollView horizontal pagingEnabled onScroll={onScroll} scrollEventThrottle={16} showsHorizontalScrollIndicator={false}>
-            {p.images.map((u, i) => <Image key={i} source={{ uri: u }} accessibilityLabel={`${p.title} photo ${i + 1}`} style={{ width, height: width * 1.05, backgroundColor: '#F1ECE4' }} resizeMode="cover" />)}
+            {p.images.map((u, i) => <Image key={i} source={{ uri: u }} accessibilityLabel={`${p.title} photo ${i + 1}`} style={{ width, height: width * 1.05, backgroundColor: '#F7EEE5' }} resizeMode="cover" />)}
           </ScrollView>
           <SafeAreaView edges={['top']} style={{ position: 'absolute', left: 0, right: 0, flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: S.md }}>
             <IconButton name="chevron-back" label="Back" bg="rgba(255,255,255,0.92)" onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))} />
@@ -110,7 +110,7 @@ export default function ProductPage() {
             {[
               ['car-outline', p.stock > 0 ? `Arrives ${deliveryWindow(shop.shipsIn)}` : 'Sold out right now'],
               [N.promise.icon, N.promise.text],
-              ['lock-closed-outline', `Secure checkout · Apple Pay or card · ${shop.freeOver ? `free shipping over ${money(shop.freeOver)}` : 'free shipping'}`],
+              ['lock-closed-outline', 'Secure checkout · guest checkout, no account needed'],
             ].map(([i, t]) => (
               <View key={t} style={{ flexDirection: 'row', gap: 8, alignItems: 'center' }}><Ionicons name={i as any} size={16} color={C.good} /><Text style={{ color: C.ink, fontSize: 13, flex: 1 }}>{t}</Text></View>
             ))}
@@ -135,20 +135,6 @@ export default function ProductPage() {
               {!!saved && size === saved && <Text style={[T.small, { marginTop: 6 }]}>Your saved size</Text>}
             </View>
           )}
-
-          {/* Seller card: the shop is the hero, follow builds the repeat loop */}
-          <Pressable onPress={() => router.push(`/shop/${shop.id}`)} style={{ marginTop: S.xl, padding: S.md, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, flexDirection: 'row', alignItems: 'center', gap: 12 }}>
-            <Image source={{ uri: shop.logo }} style={{ width: 48, height: 48, borderRadius: 24 }} />
-            <View style={{ flex: 1 }}>
-              <Text style={T.h3}>{shop.name}</Text>
-              <Text style={T.small} numberOfLines={1}>{shop.tagline}</Text>
-              <View style={{ flexDirection: 'row', gap: 10, marginTop: 2 }}><Stars value={shop.rating} size={11} />{shop.followers + (followed ? 1 : 0) > 0 && <Text style={T.small}>{compact(shop.followers + (followed ? 1 : 0))} followers</Text>}</View>
-            </View>
-            <Pressable onPress={() => toggleFollow(shop.id)} accessibilityRole="button" style={{ paddingHorizontal: 14, height: 34, borderRadius: R.pill, backgroundColor: followed ? C.surface : C.ink, borderWidth: 1, borderColor: followed ? C.line : C.ink, justifyContent: 'center' }}>
-              <Text style={{ color: followed ? C.ink : '#fff', fontWeight: '800', fontSize: 13 }}>{followed ? 'Following' : 'Follow'}</Text>
-            </Pressable>
-          </Pressable>
-
 
           {details.length > 0 && (
             <View style={{ marginTop: S.xl }}>
@@ -224,7 +210,7 @@ export default function ProductPage() {
         </View>
 
         {!!more.length && <>
-          <SectionHeader title={`More from ${shop.name}`} action="Visit shop" onAction={() => router.push(`/shop/${shop.id}`)} />
+          <SectionHeader title={`More ${p.category.toLowerCase()}`} action="See all" onAction={() => router.push('/search')} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12 }}>
             {more.map(x => <ProductCard key={x.id} p={x} width={150} />)}
           </ScrollView>
@@ -254,7 +240,7 @@ export default function ProductPage() {
           {p.stock > 0
             ? <Button title="Add to cart" kind="buy" style={{ flex: 1 }} onPress={onAdd} />
             : <Button title={stockAlerts.includes(p.id) ? "We'll tell you when it's back" : 'Notify me when back'} kind="primary" icon="notifications-outline" style={{ flex: 2 }} onPress={() => toggleStockAlert(p.id)} />}
-          {p.stock > 0 && <Button title="Buy now" kind="primary" icon="logo-apple" style={{ flex: 1 }} onPress={onBuy} />}
+          {p.stock > 0 && <Button title="Buy now" kind="primary" icon="flash" style={{ flex: 1 }} onPress={onBuy} />}
         </View>
       </SafeAreaView>
     </View>

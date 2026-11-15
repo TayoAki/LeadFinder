@@ -19,7 +19,7 @@ const STARTERS = ['A gift for my dad under $40', 'Something cozy for my home', '
 export default function AskShelby() {
   const { q } = useLocalSearchParams<{ q?: string }>();
   const { goal, budget } = useStore();
-  const [msgs, setMsgs] = useState<Msg[]>([{ from: 'shelby', text: `Hi! Tell me what you're shopping for, who it's for and your budget. I'll pick from small shops on ${BRAND.name}.` }]);
+  const [msgs, setMsgs] = useState<Msg[]>([{ from: 'shelby', text: `Hi! Tell me what you're shopping for, who it's for and your budget. I'll pick from everything at ${BRAND.name}.` }]);
   const [text, setText] = useState('');
   const [thinking, setThinking] = useState(false);
   const scroll = useRef<any>(null);

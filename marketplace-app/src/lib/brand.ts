@@ -2,9 +2,9 @@
 // share cards and invite copy all follow. "Shelby" / "hireshelby" is not trademark-checked yet.
 export const BRAND = {
   name: 'Shelby',
-  storeName: 'Shelby: AI Shopper for Small Shops',
-  tagline: 'Shop small sellers, one cart',
-  promise: 'Tell Shelby what you need. She finds it from independent shops.',
+  storeName: 'Shelby',
+  tagline: 'Everyday favourites, picked for you',
+  promise: 'Fashion, beauty, supplements and home in one store. Take the quiz and Shelby picks for you.',
   domain: 'hireshelby.com',
   referralReward: 10, // dollars to both the inviter and the friend
   firstOrderOff: 10,

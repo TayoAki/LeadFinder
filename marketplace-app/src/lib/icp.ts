@@ -110,3 +110,27 @@ export function rankFor(p: QuizProfile, pool: Product[] = products): Product[] {
 export function setProfileProps(p: QuizProfile | null) {
   setGlobalProps(() => (p ? { icp: p.icp, quiz_area: p.area } : {}), 'icp');
 }
+
+// Starting answers for each segment, so a result page can be opened directly (e.g. from an ad)
+// before someone has taken the quiz.
+const PRESETS: Record<string, Omit<QuizProfile, 'icp' | 'at'>> = {
+  wellness_calm: { area: 'supplements', goal: 'Sleep', budget: null },
+  wellness_performance: { area: 'supplements', goal: 'Energy', budget: null },
+  wellness_foundations: { area: 'supplements', goal: 'Immunity', budget: null },
+  skin_barrier: { area: 'skin', skin_type: 'Sensitive', concern: 'Redness', budget: null },
+  skin_clear: { area: 'skin', skin_type: 'Oily', concern: 'Breakouts', budget: null },
+  skin_glow: { area: 'skin', skin_type: 'Normal', concern: 'Fine lines', budget: null },
+  style_refresh: { area: 'style', budget: null },
+  home_upgrade: { area: 'home', budget: null },
+  active_outdoors: { area: 'outdoors', budget: null },
+  gift_hunter: { area: 'gift', budget: 50 },
+};
+export const presetFor = (icp: string): QuizProfile | null => (PRESETS[icp] ? { ...PRESETS[icp], icp, at: 0 } : null);
+
+// The offer and guide that fit each segment (src/data/pages.json), shown on the result page.
+export const pagesForIcp = (icp: string): { offer?: string; guide?: string; story?: string } =>
+  icp.startsWith('skin_') ? { offer: 'barrier-repair-routine', guide: 'skin-barrier-signs', story: 'why-we-simplified-skincare' }
+    : icp === 'wellness_calm' ? { offer: 'evening-wind-down', guide: 'magnesium-before-you-buy', story: 'evening-routine-that-stuck' }
+    : icp.startsWith('wellness_') ? { guide: 'magnesium-before-you-buy' }
+    : icp === 'style_refresh' ? { offer: 'summer-dress-edit', guide: 'summer-dresses-desk-to-dinner' }
+    : {};

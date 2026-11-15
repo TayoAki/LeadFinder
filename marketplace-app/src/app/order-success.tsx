@@ -13,7 +13,7 @@ import { inHoldout } from '@/lib/experiments';
 // The highest-intent moment in the app: ask for the share, the invite and the notification here.
 export default function OrderSuccess() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const { orders, notif, following, toggleFollow } = useStore();
+  const { orders, notif } = useStore();
   // Ask for push right after the first order (the moment it's obviously useful), never at launch.
   useEffect(() => {
     if (notif !== 'unknown' || inHoldout('holdout_push')) return;
@@ -48,20 +48,6 @@ export default function OrderSuccess() {
           <Text style={{ color: '#CFC7BC', marginTop: 6, lineHeight: 20 }}>Friends get ${BRAND.referralReward} off their first order. You get ${BRAND.referralReward} credit for each one who buys.</Text>
           <Button title="Share my haul" kind="accent" icon="paper-plane" style={{ marginTop: S.lg }} onPress={() => router.push({ pathname: '/share', params: { kind: 'order', id: o.id } })} />
         </View>
-
-        <Text style={[T.h3, { marginTop: S.xl }]}>Follow the shops you bought from</Text>
-        {o.sellerOrders.map(so => {
-          const s = getShop(so.shopId); const on = following.includes(s.id);
-          return (
-            <View key={s.id} style={{ flexDirection: 'row', alignItems: 'center', gap: 12, marginTop: S.md }}>
-              <Image source={{ uri: s.logo }} style={{ width: 40, height: 40, borderRadius: 20 }} />
-              <Text style={{ flex: 1, fontWeight: '700' }}>{s.name}</Text>
-              <Pressable onPress={() => toggleFollow(s.id)} style={{ paddingHorizontal: 14, height: 34, borderRadius: R.pill, backgroundColor: on ? C.surface : C.ink, borderWidth: 1, borderColor: on ? C.line : C.ink, justifyContent: 'center' }}>
-                <Text style={{ color: on ? C.ink : '#fff', fontWeight: '800', fontSize: 13 }}>{on ? 'Following' : 'Follow'}</Text>
-              </Pressable>
-            </View>
-          );
-        })}
 
         <View style={{ flexDirection: 'row', gap: 10, marginTop: S.xl }}>
           <Button title="Track order" kind="light" style={{ flex: 1 }} onPress={() => router.replace(`/orders/${o.id}`)} />

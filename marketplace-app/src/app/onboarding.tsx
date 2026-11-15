@@ -24,7 +24,7 @@ import { track } from '@/lib/analytics';
 type Step = 'welcome' | 'goal' | 'details' | 'picks';
 const GOALS: { key: Goal; title: string; sub: string; icon: any }[] = [
   { key: 'gift', title: 'Find a gift', sub: "Tell me who it's for, I'll pick", icon: 'gift' },
-  { key: 'treat', title: 'Treat myself', sub: 'Something nice, made by a small shop', icon: 'sparkles' },
+  { key: 'treat', title: 'Treat myself', sub: 'Something nice, just for me', icon: 'sparkles' },
   { key: 'find', title: 'Find something specific', sub: 'Describe it in your own words', icon: 'search' },
   { key: 'browse', title: 'Just looking around', sub: "I'll show what people love this week", icon: 'compass' },
 ];
@@ -98,7 +98,7 @@ export default function Onboarding() {
             {products.slice(0, 8).map(p => <Image key={p.id} source={{ uri: p.image }} accessibilityLabel={p.title} style={{ width: 72, height: 80, borderRadius: R.md, backgroundColor: '#EFE7DC' }} />)}
           </ScrollView>
           <View style={{ alignSelf: 'stretch', gap: 10 }}>
-            {['Tell me what you need (3 quick steps)', 'I pick from small shops and show you why', 'Save what you like. No account needed'].map((t, i) => (
+            {['Tell me what you need (3 quick steps)', 'I pick from the whole store and show you why', 'Save what you like. No account needed'].map((t, i) => (
               <View key={t} style={{ flexDirection: 'row', alignItems: 'center', gap: 10 }}>
                 <View style={{ width: 24, height: 24, borderRadius: 12, backgroundColor: C.accentSoft, alignItems: 'center', justifyContent: 'center' }}><Text style={{ color: C.accent, fontWeight: '900' }}>{i + 1}</Text></View>
                 <Text style={{ color: C.ink, flex: 1 }}>{t}</Text>
@@ -156,7 +156,7 @@ export default function Onboarding() {
         </>}
 
         {step === 'picks' && <>
-          <ShelbySays mood={mood} text={saved ? (watch ? 'Saved. Your feed is ready.' : 'Nice pick! Want me to watch its price?') : `Here are ${picks.length} picks from ${shopCount} small shop${shopCount === 1 ? '' : 's'}. Tap one you like to save it.`} />
+          <ShelbySays mood={mood} text={saved ? (watch ? 'Saved. Your feed is ready.' : 'Nice pick! Want me to watch its price?') : `Here are ${picks.length} picks for you. Tap one you like to save it.`} />
           {/* The real reasons, editable: no fake processing step */}
           <View style={{ flexDirection: 'row', flexWrap: 'wrap', gap: 6, alignItems: 'center' }}>
             <Text style={T.small}>Based on:</Text>

@@ -22,7 +22,7 @@ export default function Auth() {
       <View style={{ padding: S.xl, gap: S.md }}>
         <LogoMark size={56} />
         <Text style={[T.h1, { marginTop: S.md }]}>{step === 'start' ? `Get $${BRAND.firstOrderOff} off your first order` : 'Check your email'}</Text>
-        <Text style={[T.body, { color: C.ink2 }]}>{step === 'start' ? 'One account for every shop: saved wishlist, followed shops and order tracking.' : `We sent a 6-digit code to ${email || 'your email'}.`}</Text>
+        <Text style={[T.body, { color: C.ink2 }]}>{step === 'start' ? 'One account: saved wishlist, sizes, quiz picks and order tracking.' : `We sent a 6-digit code to ${email || 'your email'}.`}</Text>
         {step === 'start' ? <>
           <Button title="Continue with Apple" icon="logo-apple" style={{ marginTop: S.lg }} onPress={() => done('Taylor')} />
           <Button title="Continue with Google" icon="logo-google" kind="light" onPress={() => done('Taylor')} />

@@ -27,7 +27,7 @@ function RailButton({ icon, label, onPress, active }: { icon: React.ComponentPro
 }
 
 function Clip({ v, active, height, muted, onToggleMute, onShop }: { v: ShopVideo; active: boolean; height: number; muted: boolean; onToggleMute: () => void; onShop: () => void }) {
-  const { wishlist, toggleWish, following, toggleFollow } = useStore();
+  const { wishlist, toggleWish } = useStore();
   const insets = useSafeAreaInsets();
   const shop = getShop(v.product.shopId);
   const [paused, setPaused] = useState(false);
@@ -51,19 +51,15 @@ function Clip({ v, active, height, muted, onToggleMute, onShop }: { v: ShopVideo
 
       {/* Right rail */}
       <View style={{ position: 'absolute', right: S.md, bottom: insets.bottom + 150, gap: S.lg, alignItems: 'center' }}>
-        <Pressable onPress={() => { haptic('tap'); router.push(`/shop/${shop.id}`); }} accessibilityRole="button" accessibilityLabel={`Visit ${shop.name}`}>
-          <Image source={{ uri: shop.logo }} style={{ width: 46, height: 46, borderRadius: 23, borderWidth: 2, borderColor: '#fff' }} />
-        </Pressable>
         <RailButton icon={liked ? 'heart' : 'heart-outline'} label={liked ? 'Saved' : 'Save'} active={liked} onPress={() => toggleWish(v.product.id)} />
-        <RailButton icon={following.includes(shop.id) ? 'checkmark' : 'add'} label={following.includes(shop.id) ? 'Following' : 'Follow'} onPress={() => toggleFollow(shop.id)} />
-        <RailButton icon="paper-plane-outline" label="Share" onPress={() => { track('share', { via: 'video', kind: 'video', id: v.id }); Share.share({ message: `${v.product.title} from ${shop.name} on Shelby` }).catch(() => {}); }} />
+        <RailButton icon="paper-plane-outline" label="Share" onPress={() => { track('share', { via: 'video', kind: 'video', id: v.id }); Share.share({ message: `${v.product.title} on Shelby` }).catch(() => {}); }} />
         <RailButton icon={muted ? 'volume-mute' : 'volume-high'} label={muted ? 'Sound off' : 'Sound on'} onPress={onToggleMute} />
       </View>
 
       {/* Caption + product tag */}
       <View style={{ position: 'absolute', left: S.lg, right: 84, bottom: insets.bottom + S.lg, gap: S.md }}>
         <View>
-          <Text style={{ color: '#fff', fontWeight: '800', fontSize: 15 }}>{shop.name}</Text>
+          <Text style={{ color: '#fff', fontWeight: '800', fontSize: 15 }}>Shelby</Text>
           <Text style={{ color: 'rgba(255,255,255,0.9)', marginTop: 2, fontSize: 14 }} numberOfLines={2}>{v.caption}</Text>
         </View>
         <Pressable onPress={() => { haptic('tap'); track('video_shop_open', { video_id: v.id, product_id: v.product.id }); onShop(); }} accessibilityRole="button" accessibilityLabel={`Shop ${v.product.title}, ${money(v.product.price)}`}
@@ -101,7 +97,7 @@ function ShopSheet({ v, onClose }: { v: ShopVideo | null; onClose: () => void })
         <View style={{ flexDirection: 'row', gap: S.md }}>
           <Image source={{ uri: p.image }} style={{ width: 88, height: 88, borderRadius: R.md, backgroundColor: C.photo }} />
           <View style={{ flex: 1 }}>
-            <Text style={[T.small, { fontWeight: '700' }]}>{shop.name}</Text>
+            <Text style={[T.small, { fontWeight: '700' }]}>{p.category}</Text>
             <Text style={T.h3} numberOfLines={2}>{p.title}</Text>
             <Text style={{ fontWeight: '900', fontSize: 18, marginTop: 4, color: C.ink }}>{money(p.price)}</Text>
           </View>
@@ -114,7 +110,7 @@ function ShopSheet({ v, onClose }: { v: ShopVideo | null; onClose: () => void })
             </View>
           </View>
         )}
-        <Text style={T.small}>{p.stock > 0 ? `Ships in ${shop.shipsIn} from ${shop.name}` : 'Sold out'}</Text>
+        <Text style={T.small}>{p.stock > 0 ? `Ships in ${shop.shipsIn}` : 'Sold out'}</Text>
         <View style={{ flexDirection: 'row', gap: 10 }}>
           <Button title="Details" kind="light" style={{ flex: 1 }} onPress={() => { onClose(); router.push(`/product/${p.id}`); }} />
           <Button title={`Add · ${money(p.price)}`} kind="buy" icon="bag-add" style={{ flex: 1.4 }} onPress={addIt} disabled={p.stock === 0} testID="video-add" />

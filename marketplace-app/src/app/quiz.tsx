@@ -4,23 +4,19 @@
 import { Ionicons } from '@expo/vector-icons';
 import { router, useLocalSearchParams } from 'expo-router';
 import React, { useEffect, useMemo, useState } from 'react';
-import { Pressable, ScrollView, Text, useWindowDimensions, View } from 'react-native';
+import { Pressable, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { ProductGrid } from '@/components/ProductCard';
-import { Button } from '@/components/ui';
 import { track } from '@/lib/analytics';
 import { haptic } from '@/lib/feedback';
-import { AREAS, Area, icpOf, matchScore, QuizProfile, questionsFor, rankFor } from '@/lib/icp';
+import { AREAS, Area, icpOf, QuizProfile, questionsFor, rankFor } from '@/lib/icp';
 import { useStore } from '@/lib/store';
 import { C, R, S, T } from '@/lib/theme';
 
 export default function Quiz() {
-  const { width } = useWindowDimensions();
   const { from } = useLocalSearchParams<{ from?: string }>();
-  const { setProfile, add, rememberSize } = useStore();
+  const { setProfile, rememberSize } = useStore();
   const [answers, setAnswers] = useState<Partial<QuizProfile>>({});
   const [step, setStep] = useState(0);
-  const [done, setDone] = useState<QuizProfile | null>(null);
   useEffect(() => { track('quiz_start', { from: from ?? 'unknown' }); }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const questions = useMemo(() => [AREAS, ...(answers.area ? questionsFor(answers.area as Area) : [])], [answers.area]);
@@ -38,43 +34,8 @@ export default function Quiz() {
     if (profile.size) rememberSize(['XS', 'S', 'M', 'L', 'XL', 'XXL'], profile.size);
     setProfile(profile);
     track('quiz_complete', { icp: profile.icp, area: profile.area, goal: profile.goal, skin_type: profile.skin_type, concern: profile.concern, budget: profile.budget ?? 0, results: rankFor(profile).length });
-    setDone(profile);
+    router.replace(`/match/${profile.icp}`); // the result is its own page (linkable from ads)
   };
-
-  if (done) {
-    const info = icpOf(done);
-    const picks = rankFor(done).slice(0, 6);
-    // Only items that genuinely match an answer go in the set (never filler to raise the basket).
-    const routine = picks.filter(p => !p.sizes.length && matchScore(done, p) > 0).slice(0, done.area === 'skin' ? 3 : 2);
-    return (
-      <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>
-        <ScrollView contentContainerStyle={{ paddingBottom: 40 }}>
-          <View style={{ padding: S.lg, gap: 6 }}>
-            <Text style={T.tiny}>YOUR MATCH</Text>
-            <Text style={[T.h1, { fontSize: 28 }]}>{info.title}</Text>
-            <Text style={[T.body, { color: C.ink2 }]}>{info.line} Here's what fits, best match first.</Text>
-          </View>
-          {picks.length ? <ProductGrid items={picks} width={width} /> : (
-            <Text style={[T.body, { padding: S.lg, color: C.ink2 }]}>Nothing in stock fits all your answers yet. Try a higher budget, or browse everything.</Text>
-          )}
-          {routine.length >= 2 && (
-            <View style={{ margin: S.lg, padding: S.lg, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, gap: 8 }}>
-              <Text style={T.h3}>{done.area === 'skin' ? 'Your routine' : 'Your starter set'}</Text>
-              <Text style={T.small}>{routine.map(p => p.title).join(' + ')}</Text>
-              <Button title={`Add all ${routine.length} · $${routine.reduce((n, p) => n + p.price, 0).toFixed(2)}`} kind="buy" icon="bag-add"
-                onPress={() => { routine.forEach((p, i) => add(p, null, 1, { toast: i === routine.length - 1 ? `Added ${routine.length} items` : false })); track('quiz_result_add', { icp: done.icp, items: routine.length }); }} />
-            </View>
-          )}
-          <View style={{ paddingHorizontal: S.lg, gap: 10 }}>
-            <Button title="Keep shopping" kind="primary" onPress={() => router.replace('/')} />
-            <Pressable onPress={() => { setDone(null); setStep(0); setAnswers({}); track('quiz_retake', {}); }} accessibilityRole="button" style={{ alignItems: 'center', padding: S.md }}>
-              <Text style={{ color: C.accent, fontWeight: '700' }}>Retake the quiz</Text>
-            </Pressable>
-          </View>
-        </ScrollView>
-      </SafeAreaView>
-    );
-  }
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: C.bg }}>

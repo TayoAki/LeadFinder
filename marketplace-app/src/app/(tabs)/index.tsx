@@ -7,7 +7,7 @@ import { Header } from '@/components/Header';
 import { ProductGrid } from '@/components/ProductCard';
 import { Chip, IconButton, Pill, SectionHeader, useCountdown } from '@/components/ui';
 import { BRAND } from '@/lib/brand';
-import { categories, categoryIcon, compact, drops, getProduct, getShop, money, products, shops } from '@/lib/data';
+import { categories, categoryIcon, compact, drops, getProduct, money, products } from '@/lib/data';
 import { Shelby } from '@/components/Shelby';
 import { ProductCard } from '@/components/ProductCard';
 import { pick } from '@/lib/shelby';
@@ -16,12 +16,13 @@ import { C, R, S, T } from '@/lib/theme';
 import { shopVideos } from '@/lib/videos';
 import { useDropCounts } from '@/lib/proof';
 import { icpOf, rankFor } from '@/lib/icp';
+import { livePages } from '@/lib/pages';
 import { track } from '@/lib/analytics';
 import { variant } from '@/lib/experiments';
 
 export default function Home() {
   const { width } = useWindowDimensions();
-  const { onboarded, interests, following, reminders, toggleReminder, referredBy, setReferredBy, notif, goal, budget } = useStore();
+  const { onboarded, interests, reminders, toggleReminder, referredBy, setReferredBy, notif, goal, budget } = useStore();
   const { ref } = useLocalSearchParams<{ ref?: string }>();
   // First launch opens Shelby's welcome (its first screen already shows real products, and "Just browse" is one tap).
   // People arriving from a friend's link skip it and land on what was shared.
@@ -42,19 +43,19 @@ export default function Home() {
     const pool = cat !== 'All' ? products.filter(p => p.category === cat) : interests.length ? products.filter(p => interests.includes(p.category)) : products;
     return [...pool].sort((a, b) => b.sold - a.sold).slice(0, 12);
   }, [cat, interests]);
-  const fromFollowed = products.filter(p => following.includes(p.shopId)).slice(0, 6);
+  const guides = useMemo(() => livePages(), []);
   const drop = drops[0];
   const cd = useCountdown(drop?.at ?? 0);
 
   if (firstRun) return <Redirect href="/onboarding" />;
   return (
     <SafeAreaView edges={['top']} style={{ flex: 1, backgroundColor: C.bg }}>
-      <Header logo right={<IconButton name="notifications-outline" label="Notifications" onPress={() => router.push('/notifications')} badge={2} />} />
+      <Header logo right={<IconButton name="notifications-outline" label="Notifications" onPress={() => router.push('/notifications')} />} />
       <ScrollView contentContainerStyle={{ paddingBottom: 40 }} showsVerticalScrollIndicator={false}>
         <Text style={{ paddingHorizontal: S.lg, marginBottom: S.md, fontSize: 22, fontWeight: '900', color: C.ink, letterSpacing: -0.4 }}>{BRAND.tagline}.</Text>
         <Pressable onPress={() => router.push('/search')} accessibilityRole="search" style={{ marginHorizontal: S.lg, height: 46, borderRadius: R.pill, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, flexDirection: 'row', alignItems: 'center', paddingHorizontal: 16, gap: 8 }}>
           <Ionicons name="search" size={18} color={C.ink3} />
-          <Text style={{ color: C.ink3, fontSize: 15 }}>Search {products.length} items from {shops.length} indie shops</Text>
+          <Text style={{ color: C.ink3, fontSize: 15 }}>Search {products.length} products</Text>
         </Pressable>
 
         {referredBy && (
@@ -75,7 +76,7 @@ export default function Home() {
             <Ionicons name="sparkles" size={24} color={C.buy} />
             <View style={{ flex: 1 }}>
               <Text style={{ color: '#fff', fontWeight: '800', fontSize: 16 }}>Find your match in 30 seconds</Text>
-              <Text style={{ color: '#E9DDE6', marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
+              <Text style={{ color: '#D9DEEA', marginTop: 2 }}>3 quick questions, then picks for your skin, goals or size.</Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color="#fff" />
           </Pressable>
@@ -89,21 +90,37 @@ export default function Home() {
           </View>
           <Ionicons name="chevron-forward" size={18} color={C.ink2} />
         </Pressable>
-        {/* Shops you follow: story-style ring, the habit loop that brings people back */}
+        {/* Shop by category: one store, every niche a tap away */}
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 14, paddingTop: S.lg }}>
-          {shops.slice(0, 8).map(s => {
-            const followed = following.includes(s.id);
+          {categories.filter(c => c !== 'All').map(c => {
+            const img = products.find(p => p.category === c && p.stock > 0)?.image;
             return (
-              <Pressable key={s.id} onPress={() => router.push(`/shop/${s.id}`)} style={{ alignItems: 'center', width: 70 }} accessibilityLabel={`${s.name} shop`}>
-                <View style={{ padding: 2.5, borderRadius: 40, borderWidth: 2.5, borderColor: followed ? C.accent : C.line }}>
-                  <Image source={{ uri: s.logo }} style={{ width: 58, height: 58, borderRadius: 29, backgroundColor: '#eee' }} />
+              <Pressable key={c} onPress={() => { track('home_category', { category: c }); router.push({ pathname: '/search', params: { cat: c } }); }} style={{ alignItems: 'center', width: 70 }} accessibilityRole="button" accessibilityLabel={`Shop ${c}`}>
+                <View style={{ padding: 2.5, borderRadius: 40, borderWidth: 2.5, borderColor: C.buy }}>
+                  <Image source={{ uri: img }} style={{ width: 58, height: 58, borderRadius: 29, backgroundColor: C.photo }} />
                 </View>
-                {followed && <View style={{ position: 'absolute', top: 50, backgroundColor: C.accent, paddingHorizontal: 6, borderRadius: 6 }}><Text style={{ color: '#fff', fontSize: 9, fontWeight: '900' }}>NEW</Text></View>}
-                <Text numberOfLines={1} style={{ fontSize: 11, marginTop: 6, color: C.ink2, fontWeight: '600' }}>{s.name.split(' ')[0]}</Text>
+                <Text numberOfLines={1} style={{ fontSize: 11, marginTop: 6, color: C.ink2, fontWeight: '600' }}>{c}</Text>
               </Pressable>
             );
           })}
         </ScrollView>
+
+        {/* Sets and guides: the offer, listicle and story pages (src/data/pages.json) */}
+        {guides.length > 0 && <>
+          <SectionHeader title="Sets and guides" sub="Routines, edits and how-tos from the Shelby team" />
+          <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.sm }}>
+            {guides.map(g => (
+              <Pressable key={g.href} onPress={() => { track('home_page_card', { page_type: g.type, slug: g.slug }); router.push(g.href as any); }} accessibilityRole="link" accessibilityLabel={`${g.kicker}: ${g.title}`}
+                style={({ pressed }) => ({ width: 220, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line, overflow: 'hidden', opacity: pressed ? 0.9 : 1 })}>
+                <Image source={{ uri: g.image }} style={{ width: 220, height: 120, backgroundColor: C.photo }} resizeMode="cover" />
+                <View style={{ padding: S.md }}>
+                  <Text style={[T.tiny, { color: C.accent }]}>{g.kicker.toUpperCase()}</Text>
+                  <Text numberOfLines={3} style={[T.h3, { marginTop: 2 }]}>{g.title}</Text>
+                </View>
+              </Pressable>
+            ))}
+          </ScrollView>
+        </>}
 
         {/* Drop: scarcity + countdown + remind me */}
         {drop && <Pressable onPress={() => router.push('/drops')} style={{ margin: S.lg, borderRadius: R.lg, overflow: 'hidden', backgroundColor: C.dark }}>
@@ -111,7 +128,7 @@ export default function Home() {
           <View style={{ padding: S.lg, width: '62%' }}>
             <Pill text="TODAY'S DROP" tone="accent" icon="flash" />
             <Text style={{ color: '#fff', fontSize: 20, fontWeight: '900', marginTop: 10 }}>{drop.title}</Text>
-            <Text style={{ color: '#CFC7BC', fontSize: 13, marginTop: 4 }}>by {getShop(drop.shopId).name} · only {drop.qty} made</Text>
+            <Text style={{ color: '#CFC7BC', fontSize: 13, marginTop: 4 }}>Limited run · only {drop.qty} made</Text>
             <Text style={{ color: '#fff', fontSize: 26, fontWeight: '900', marginTop: 12, fontVariant: ['tabular-nums'] }}>{cd.text}</Text>
             <Pressable onPress={() => remind(drop.id)} accessibilityRole="button" style={{ marginTop: 12, alignSelf: 'flex-start', backgroundColor: reminders.includes(drop.id) ? C.good : C.accent, paddingHorizontal: 14, height: 38, borderRadius: R.pill, flexDirection: 'row', alignItems: 'center', gap: 6 }}>
               <Ionicons name={reminders.includes(drop.id) ? 'checkmark' : 'notifications'} size={16} color="#fff" />
@@ -121,18 +138,18 @@ export default function Home() {
           </View>
         </Pressable>}
 
-        <SectionHeader title="Shelby's picks for you" sub={onboarded ? 'Fresh every morning from shops on Shelby' : 'Tell Shelby what you like to tune these'} action={onboarded ? 'Ask' : 'Tune'} onAction={() => router.push(onboarded ? '/ask' : '/onboarding')} />
+        <SectionHeader title="Shelby's picks for you" sub={onboarded ? 'Fresh every morning' : 'Tell Shelby what you like to tune these'} action={onboarded ? 'Ask' : 'Tune'} onAction={() => router.push(onboarded ? '/ask' : '/onboarding')} />
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12, paddingBottom: S.lg }}>
           {shelbyPicks.map(p => <ProductCard key={p.id} p={p} width={150} />)}
         </ScrollView>
 
         {/* Shoppable videos: shops show their work; tap a clip to watch and shop without leaving it */}
         {videos.length > 0 && <>
-          <SectionHeader title="Shop the videos" sub="Straight from the makers. Tap to watch, shop without leaving." action="Watch" onAction={() => router.push('/watch')} />
+          <SectionHeader title="Shop the videos" sub="Tap to watch, shop without leaving." action="Watch" onAction={() => router.push('/watch')} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 10, paddingBottom: S.lg }}>
             {videos.map(v => (
-              <Pressable key={v.id} onPress={() => router.push({ pathname: '/watch', params: { start: v.id } })} accessibilityRole="button" accessibilityLabel={`Watch ${v.product.title} from ${getShop(v.product.shopId).name}`}
-                style={({ pressed }) => ({ width: 118, height: 210, borderRadius: R.lg, overflow: 'hidden', backgroundColor: '#F1ECE4', opacity: pressed ? 0.9 : 1 })}>
+              <Pressable key={v.id} onPress={() => router.push({ pathname: '/watch', params: { start: v.id } })} accessibilityRole="button" accessibilityLabel={`Watch ${v.product.title}`}
+                style={({ pressed }) => ({ width: 118, height: 210, borderRadius: R.lg, overflow: 'hidden', backgroundColor: '#F7EEE5', opacity: pressed ? 0.9 : 1 })}>
                 <Image source={{ uri: v.poster }} style={{ width: '100%', height: '100%' }} resizeMode="cover" />
                 <View style={{ position: 'absolute', top: 8, left: 8, width: 28, height: 28, borderRadius: 14, backgroundColor: 'rgba(0,0,0,0.45)', alignItems: 'center', justifyContent: 'center' }}><Ionicons name="play" size={14} color="#fff" /></View>
                 <View style={{ position: 'absolute', left: 6, right: 6, bottom: 6, backgroundColor: 'rgba(255,255,255,0.95)', borderRadius: 10, padding: 6 }}>
@@ -162,16 +179,6 @@ export default function Home() {
         <SectionHeader title={cat === 'All' ? (interests.length ? 'Picked for you' : 'Trending now') : cat} sub={cat === 'All' && interests.length ? `Because you like ${interests.slice(0, 2).join(' and ')}` : 'What people are buying this week'} action="See all" onAction={() => router.push('/search')} />
         <ProductGrid items={feed} width={width} />
 
-        <SectionHeader title="New from shops you follow" action="Shops" onAction={() => router.push('/following')} />
-        <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: S.lg, gap: 12 }}>
-          {fromFollowed.map(p => (
-            <Pressable key={p.id} onPress={() => router.push(`/product/${p.id}`)} style={{ width: 140 }}>
-              <Image source={{ uri: p.image }} style={{ width: 140, height: 150, borderRadius: R.md, backgroundColor: '#F1ECE4' }} />
-              <Text numberOfLines={1} style={{ fontSize: 13, fontWeight: '600', marginTop: 6 }}>{p.title}</Text>
-              <Text style={{ fontSize: 13, fontWeight: '800' }}>${p.price.toFixed(2)}</Text>
-            </Pressable>
-          ))}
-        </ScrollView>
 
       </ScrollView>
     </SafeAreaView>
