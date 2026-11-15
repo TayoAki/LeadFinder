@@ -6,7 +6,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import type { Product, Shop } from './data';
 import { API_URL } from './api';
 
-export type CommerceConfig = { url: string; publishableKey: string; sellerUrl?: string; stripePublishableKey?: string | null };
+export type CommerceConfig = { url: string; publishableKey: string; sellerUrl?: string; stripePublishableKey?: string | null; suppliers?: string[] | null };
 let cfg: CommerceConfig | null = null;
 let regionId = '';
 let paymentProvider = 'pp_system_default'; // the region's provider; Stripe when the server has it on
@@ -55,6 +55,10 @@ async function all<T>(path: string, key: string): Promise<T[]> {
   }
 }
 
+// Sizes in shopping order (XS … 5XL, then shoe sizes by number); anything else keeps its place.
+const SIZE_ORDER = ['XXS', 'XS', 'S', 'M', 'L', 'XL', '2XL', 'XXL', '3XL', '4XL', '5XL'];
+const sizeRank = (s: string) => { const t = s.split(' / ').pop()!.toUpperCase(); const i = SIZE_ORDER.indexOf(t); return i >= 0 ? i : Number.isFinite(parseFloat(t)) ? 100 + parseFloat(t) : 1000; };
+const bySize = (a: string, b: string) => sizeRank(a) - sizeRank(b) || a.localeCompare(b);
 const num = (v: unknown, d = 0) => (typeof v === 'number' && Number.isFinite(v) ? v : d);
 
 type RawCatalog = { region: { id: string }; payment_providers: { id: string }[]; sellers: any[]; products: any[]; offers: any[] };
@@ -91,7 +95,13 @@ async function rawFromShelbyNow(): Promise<RawCatalog> {
 export async function loadMercurCatalog(c: CommerceConfig, opts: { live?: boolean } = {}): Promise<{ shops: Shop[]; products: Product[] }> {
   cfg = c;
   const raw = opts.live ? await rawFromMercur() : await rawFromShelby().catch(() => rawFromMercur());
-  const { sellers, products, offers, payment_providers } = raw;
+  const { payment_providers } = raw;
+  // Same supplier filter as the server's copy (STORE_SUPPLIERS), for the direct-from-Mercur fallback.
+  const allow = c.suppliers?.length ? c.suppliers : null;
+  const products = allow ? raw.products.filter(p => allow.includes(String(p.metadata?.supplier ?? '').toLowerCase())) : raw.products;
+  const keep = new Set(products.map((p: any) => p.id));
+  const offers = allow ? raw.offers.filter(o => keep.has(o.product_id)) : raw.offers;
+  const sellers = allow ? raw.sellers.filter(s => offers.some((o: any) => o.seller_id === s.id)) : raw.sellers;
   regionId = raw.region.id;
   paymentProvider = payment_providers.some(p => p.id === STRIPE_PROVIDER) ? STRIPE_PROVIDER : payment_providers[0]?.id ?? 'pp_system_default';
 
@@ -129,7 +139,7 @@ export async function loadMercurCatalog(c: CommerceConfig, opts: { live?: boolea
       // Real numbers only (from the Shelby server's events and reviews); 0 when unknown.
       rating: num(p.real?.rating), reviews: num(p.real?.reviews), sold: num(p.real?.sold30),
       stock: [...sizes.values()].reduce((n, o) => n + Math.max(0, stockOf(o)), 0),
-      sizes: [...sizes.keys()].filter(Boolean), description: p.description ?? '',
+      sizes: [...sizes.keys()].filter(Boolean).sort(bySize), description: p.description ?? '',
       sizeStock: Object.fromEntries([...sizes].filter(([s]) => s).map(([s, o]) => [s, Math.max(0, stockOf(o))])),
       details: p.metadata?.details && typeof p.metadata.details === 'object' ? Object.fromEntries(Object.entries(p.metadata.details).filter(([, v]) => typeof v === 'string' && v).map(([k, v]) => [k, String(v)])) : undefined,
     });

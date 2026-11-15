@@ -2,19 +2,66 @@
   "_note": "Funnel pages: offers (/offer/<slug>), listicles (/list/<slug>), advertorials (/story/<slug>). Products are referenced by exact title; any that no longer exist are skipped, and a page with no products left is hidden. Copy rules: no invented testimonials, ratings or sales numbers; no medical claims; advertorials are labelled as ads.",
   "offers": [
     {
+      "slug": "joyful-script-sweatshirt",
+      "niche": "fashion",
+      "kicker": "Printed for you",
+      "title": "The Joyful Script Sweatshirt",
+      "sub": "A soft, everyday crewneck with a hand-lettered script, printed on demand when you order it.",
+      "image": "Joyful Script Sweatshirt",
+      "products": [
+        "Joyful Script Sweatshirt"
+      ],
+      "bullets": [
+        "Printed to order: nothing sits in a warehouse",
+        "Sizes S to 5XL, with a size guide on the product page",
+        "Ships in 2–5 business days once printed"
+      ],
+      "guarantee": "Wrong size? Exchange it free within 30 days.",
+      "faq": [
+        {
+          "q": "How does it fit?",
+          "a": "It's a standard unisex crewneck. If you're between sizes or like a relaxed fit, size up."
+        },
+        {
+          "q": "Why does it take a few days?",
+          "a": "Each sweatshirt is printed when you order it, then shipped. That's why there's no overstock."
+        },
+        {
+          "q": "How do I wash it?",
+          "a": "Turn it inside out, wash cold and tumble dry low to keep the print looking new."
+        }
+      ]
+    },
+    {
       "slug": "evening-wind-down",
       "niche": "supplements",
       "kicker": "The evening set",
       "title": "Wind down with a simple two-step evening routine",
       "sub": "Magnesium glycinate and ashwagandha with L-theanine: two of the most-searched evening supplements, together in one order.",
       "image": "Magnesium Glycinate Capsules",
-      "products": ["Magnesium Glycinate Capsules", "Ashwagandha + L-Theanine"],
-      "bullets": ["One capsule of each, about an hour before bed", "Full ingredients and doses on every product page", "Delivered in 2–4 days"],
+      "products": [
+        "Magnesium Glycinate Capsules",
+        "Ashwagandha + L-Theanine"
+      ],
+      "bullets": [
+        "One capsule of each, about an hour before bed",
+        "Full ingredients and doses on every product page",
+        "Delivered in 2–4 days"
+      ],
       "guarantee": "30-day money-back guarantee. If it isn't for you, send it back.",
       "faq": [
-        { "q": "Can I take both together?", "a": "Many people do, but check with your doctor first, especially if you're pregnant, nursing or take medication." },
-        { "q": "How long does a pack last?", "a": "The magnesium is 60 servings; the ashwagandha is 30. Set a reorder reminder on the product page." },
-        { "q": "What if it doesn't suit me?", "a": "Return it within 30 days for a full refund." }
+        {
+          "q": "Can I take both together?",
+          "a": "Many people do, but check with your doctor first, especially if you're pregnant, nursing or take medication."
+        },
+        {
+          "q": "How long does a pack last?",
+          "a": "The magnesium is 60 servings; the ashwagandha is 30. Set a reorder reminder on the product page."
+        },
+        {
+          "q": "What if it doesn't suit me?",
+          "a": "Return it within 30 days for a full refund."
+        }
       ]
     },
     {
@@ -24,13 +71,30 @@
       "title": "Calm, comfortable skin in three steps",
       "sub": "A gentle cleanser, a ceramide cream and a mineral SPF: the basics dermatologists most often suggest for dry or sensitive skin.",
       "image": "Ceramide Barrier Cream",
-      "products": ["Gentle Gel Cleanser", "Ceramide Barrier Cream", "Mineral Sunscreen SPF 30"],
-      "bullets": ["Fragrance-free across all three", "Morning: cleanse, cream, SPF. Night: cleanse, cream", "Wrong match? Free exchange within 30 days"],
+      "products": [
+        "Gentle Gel Cleanser",
+        "Ceramide Barrier Cream",
+        "Mineral Sunscreen SPF 30"
+      ],
+      "bullets": [
+        "Fragrance-free across all three",
+        "Morning: cleanse, cream, SPF. Night: cleanse, cream",
+        "Wrong match? Free exchange within 30 days"
+      ],
       "guarantee": "Free exchange within 30 days if a product doesn't suit your skin.",
       "faq": [
-        { "q": "Is it OK for sensitive skin?", "a": "All three are fragrance-free. Patch-test anything new on your inner arm for 24 hours first." },
-        { "q": "Can I add a serum?", "a": "Yes: a hydrating serum goes on after cleansing, before the cream." },
-        { "q": "How long until I notice a difference?", "a": "It varies by person. Give a new routine at least four weeks before judging it." }
+        {
+          "q": "Is it OK for sensitive skin?",
+          "a": "All three are fragrance-free. Patch-test anything new on your inner arm for 24 hours first."
+        },
+        {
+          "q": "Can I add a serum?",
+          "a": "Yes: a hydrating serum goes on after cleansing, before the cream."
+        },
+        {
+          "q": "How long until I notice a difference?",
+          "a": "It varies by person. Give a new routine at least four weeks before judging it."
+        }
       ]
     },
     {
@@ -40,29 +104,93 @@
       "title": "One dress, three finishing touches",
       "sub": "Pick a dress, then add the bag, earrings and shades that go with it. Your size is saved for next time.",
       "image": "Girl Summer Dress",
-      "products": ["Girl Summer Dress", "Blue Women's Handbag", "Tropical Earring", "Classic Sun Glasses"],
-      "bullets": ["Size guide on every dress", "Free size exchanges within 30 days", "Delivered in 2–4 days"],
+      "products": [
+        "Girl Summer Dress",
+        "Blue Women's Handbag",
+        "Tropical Earring",
+        "Classic Sun Glasses"
+      ],
+      "bullets": [
+        "Size guide on every dress",
+        "Free size exchanges within 30 days",
+        "Delivered in 2–4 days"
+      ],
       "guarantee": "Wrong size? Exchange it free within 30 days.",
       "faq": [
-        { "q": "How do the dresses fit?", "a": "Each product page has fit notes and a size chart. If you're between sizes, the notes say which way to go." },
-        { "q": "Can I return just one item?", "a": "Yes, every item can be returned on its own within 30 days." }
+        {
+          "q": "How do the dresses fit?",
+          "a": "Each product page has fit notes and a size chart. If you're between sizes, the notes say which way to go."
+        },
+        {
+          "q": "Can I return just one item?",
+          "a": "Yes, every item can be returned on its own within 30 days."
+        }
       ]
     }
   ],
   "listicles": [
+    {
+      "slug": "style-a-statement-sweatshirt",
+      "niche": "fashion",
+      "title": "4 easy ways to style a statement sweatshirt",
+      "intro": "A sweatshirt with a bold print does a lot on its own. Here's how to wear it, from errands to evenings out.",
+      "items": [
+        {
+          "title": "With straight-leg jeans",
+          "body": "The classic. Tuck the front hem slightly so the print sits right at the waist.",
+          "product": "Joyful Script Sweatshirt"
+        },
+        {
+          "title": "Over a collared shirt",
+          "body": "Let the collar and cuffs show for a smarter, layered look."
+        },
+        {
+          "title": "With a skirt and trainers",
+          "body": "A midi skirt balances the relaxed fit; keep shoes simple."
+        },
+        {
+          "title": "Oversized, as loungewear",
+          "body": "Size up one and pair with joggers for the comfiest version."
+        }
+      ],
+      "cta": {
+        "label": "Get the sweatshirt",
+        "to": "/offer/joyful-script-sweatshirt"
+      }
+    },
     {
       "slug": "magnesium-before-you-buy",
       "niche": "supplements",
       "title": "5 things to know before you buy a magnesium supplement",
       "intro": "Magnesium comes in a lot of forms and doses. Here's what to look at on the label, in plain words.",
       "items": [
-        { "title": "The form matters", "body": "Glycinate, citrate and oxide are the most common. Glycinate is usually described as gentle on the stomach; oxide contains more magnesium by weight but is absorbed less well.", "product": "Magnesium Glycinate Capsules" },
-        { "title": "Check the elemental dose", "body": "Labels should say how much actual magnesium is in a serving, not just the weight of the compound. Ours lists 200 mg per two capsules." },
-        { "title": "Timing is personal", "body": "Many people take magnesium in the evening as part of a wind-down routine. Taking it with food can help if your stomach is sensitive." },
-        { "title": "Pairing is common", "body": "Magnesium is often paired with L-theanine or ashwagandha in evening routines.", "product": "Ashwagandha + L-Theanine" },
-        { "title": "Ask first if you take medication", "body": "Magnesium can interact with some antibiotics and other medicines, and isn't right for everyone with kidney conditions. A pharmacist can check in a minute." }
+        {
+          "title": "The form matters",
+          "body": "Glycinate, citrate and oxide are the most common. Glycinate is usually described as gentle on the stomach; oxide contains more magnesium by weight but is absorbed less well.",
+          "product": "Magnesium Glycinate Capsules"
+        },
+        {
+          "title": "Check the elemental dose",
+          "body": "Labels should say how much actual magnesium is in a serving, not just the weight of the compound. Ours lists 200 mg per two capsules."
+        },
+        {
+          "title": "Timing is personal",
+          "body": "Many people take magnesium in the evening as part of a wind-down routine. Taking it with food can help if your stomach is sensitive."
+        },
+        {
+          "title": "Pairing is common",
+          "body": "Magnesium is often paired with L-theanine or ashwagandha in evening routines.",
+          "product": "Ashwagandha + L-Theanine"
+        },
+        {
+          "title": "Ask first if you take medication",
+          "body": "Magnesium can interact with some antibiotics and other medicines, and isn't right for everyone with kidney conditions. A pharmacist can check in a minute."
+        }
       ],
-      "cta": { "label": "See the evening set", "to": "/offer/evening-wind-down" }
+      "cta": {
+        "label": "See the evening set",
+        "to": "/offer/evening-wind-down"
+      }
     },
     {
       "slug": "skin-barrier-signs",
@@ -70,14 +198,39 @@
       "title": "6 signs your skin barrier needs a break (and a simple routine to try)",
       "intro": "Tight, stinging or suddenly flaky? Your routine may be doing too much. Here's what people with sensitive skin most often change first.",
       "items": [
-        { "title": "Your cleanser stings", "body": "A low-foam, fragrance-free gel cleanser is gentler than foaming washes with sulfates.", "product": "Gentle Gel Cleanser" },
-        { "title": "Skin feels tight after washing", "body": "That squeaky-clean feeling usually means too much has been stripped. Moisturise while skin is still damp." },
-        { "title": "Redness after new products", "body": "Pause actives (acids, retinoids) for a couple of weeks and go back to basics." },
-        { "title": "Dry patches that won't shift", "body": "Ceramide creams are designed to support the skin's own barrier lipids.", "product": "Ceramide Barrier Cream" },
-        { "title": "Everything feels dehydrated", "body": "A hyaluronic serum on damp skin, sealed with a cream, adds water-based hydration.", "product": "Hyaluronic Hydrating Serum" },
-        { "title": "You skip sunscreen", "body": "Daily SPF protects stressed skin. Mineral filters are often better tolerated by sensitive skin.", "product": "Mineral Sunscreen SPF 30" }
+        {
+          "title": "Your cleanser stings",
+          "body": "A low-foam, fragrance-free gel cleanser is gentler than foaming washes with sulfates.",
+          "product": "Gentle Gel Cleanser"
+        },
+        {
+          "title": "Skin feels tight after washing",
+          "body": "That squeaky-clean feeling usually means too much has been stripped. Moisturise while skin is still damp."
+        },
+        {
+          "title": "Redness after new products",
+          "body": "Pause actives (acids, retinoids) for a couple of weeks and go back to basics."
+        },
+        {
+          "title": "Dry patches that won't shift",
+          "body": "Ceramide creams are designed to support the skin's own barrier lipids.",
+          "product": "Ceramide Barrier Cream"
+        },
+        {
+          "title": "Everything feels dehydrated",
+          "body": "A hyaluronic serum on damp skin, sealed with a cream, adds water-based hydration.",
+          "product": "Hyaluronic Hydrating Serum"
+        },
+        {
+          "title": "You skip sunscreen",
+          "body": "Daily SPF protects stressed skin. Mineral filters are often better tolerated by sensitive skin.",
+          "product": "Mineral Sunscreen SPF 30"
+        }
       ],
-      "cta": { "label": "See the 3-step routine", "to": "/offer/barrier-repair-routine" }
+      "cta": {
+        "label": "See the 3-step routine",
+        "to": "/offer/barrier-repair-routine"
+      }
     },
     {
       "slug": "summer-dresses-desk-to-dinner",
@@ -85,15 +238,63 @@
       "title": "4 summer dresses that work from desk to dinner",
       "intro": "One dress, two settings. Swap the shoes and add one accessory.",
       "items": [
-        { "title": "The easy day dress", "body": "Light, relaxed and simple to dress up with a bag and earrings.", "product": "Girl Summer Dress" },
-        { "title": "The classic blue", "body": "A blue frock pairs with almost any accessory you already own.", "product": "Blue Frock" },
-        { "title": "The pattern piece", "body": "Tartan does the talking, so keep accessories minimal.", "product": "Tartan Dress" },
-        { "title": "The neutral", "body": "Gray goes from office to evening with a bold lip and statement earrings.", "product": "Gray Dress" }
+        {
+          "title": "The easy day dress",
+          "body": "Light, relaxed and simple to dress up with a bag and earrings.",
+          "product": "Girl Summer Dress"
+        },
+        {
+          "title": "The classic blue",
+          "body": "A blue frock pairs with almost any accessory you already own.",
+          "product": "Blue Frock"
+        },
+        {
+          "title": "The pattern piece",
+          "body": "Tartan does the talking, so keep accessories minimal.",
+          "product": "Tartan Dress"
+        },
+        {
+          "title": "The neutral",
+          "body": "Gray goes from office to evening with a bold lip and statement earrings.",
+          "product": "Gray Dress"
+        }
       ],
-      "cta": { "label": "Complete the look", "to": "/offer/summer-dress-edit" }
+      "cta": {
+        "label": "Complete the look",
+        "to": "/offer/summer-dress-edit"
+      }
     }
   ],
   "advertorials": [
+    {
+      "slug": "why-we-print-on-demand",
+      "niche": "fashion",
+      "kicker": "From the Shelby team",
+      "title": "Why every Shelby sweatshirt is printed after you order it",
+      "dek": "No warehouse full of unsold stock. Just the one you picked, made for you.",
+      "sections": [
+        {
+          "p": "Most clothing is made months ahead in big batches, and a lot of it is never sold. We wanted to do it differently."
+        },
+        {
+          "h": "Made when you order",
+          "p": "When you order, a print partner prints your sweatshirt and ships it straight to you. It takes a few extra days, and nothing is wasted.",
+          "product": "Joyful Script Sweatshirt"
+        },
+        {
+          "h": "Every size, without guessing",
+          "p": "Because nothing is made in advance, we can offer sizes from S to 5XL without leftover stock."
+        },
+        {
+          "h": "Our promise",
+          "p": "If the size isn't right, exchange it free within 30 days."
+        }
+      ],
+      "cta": {
+        "label": "See the sweatshirt",
+        "to": "/offer/joyful-script-sweatshirt"
+      }
+    },
     {
       "slug": "why-we-simplified-skincare",
       "niche": "beauty",
@@ -101,14 +302,37 @@
       "title": "Why we stopped recommending 10-step skincare routines",
       "dek": "Our most common question is \"what should I actually use?\" Our answer got shorter.",
       "sections": [
-        { "p": "When we started building Shelby's skincare range, we read hundreds of questions from shoppers. The pattern was clear: people with irritated skin were often using more products, not fewer." },
-        { "h": "Fewer products, chosen well", "p": "Dermatology guidance for sensitive and dry skin usually comes back to three steps: cleanse gently, moisturise, protect from the sun. So that's what we put together." },
-        { "h": "Step 1: a cleanser that doesn't strip", "p": "Low-foam and fragrance-free.", "product": "Gentle Gel Cleanser" },
-        { "h": "Step 2: a cream that supports the barrier", "p": "Ceramides, cholesterol and squalane, the same family of lipids your skin makes itself.", "product": "Ceramide Barrier Cream" },
-        { "h": "Step 3: daily mineral SPF", "p": "Zinc oxide with a sheer tint, so it doesn't leave a white cast.", "product": "Mineral Sunscreen SPF 30" },
-        { "h": "Our promise", "p": "If a product doesn't suit your skin, exchange it free within 30 days. Every product page lists the full ingredients." }
+        {
+          "p": "When we started building Shelby's skincare range, we read hundreds of questions from shoppers. The pattern was clear: people with irritated skin were often using more products, not fewer."
+        },
+        {
+          "h": "Fewer products, chosen well",
+          "p": "Dermatology guidance for sensitive and dry skin usually comes back to three steps: cleanse gently, moisturise, protect from the sun. So that's what we put together."
+        },
+        {
+          "h": "Step 1: a cleanser that doesn't strip",
+          "p": "Low-foam and fragrance-free.",
+          "product": "Gentle Gel Cleanser"
+        },
+        {
+          "h": "Step 2: a cream that supports the barrier",
+          "p": "Ceramides, cholesterol and squalane, the same family of lipids your skin makes itself.",
+          "product": "Ceramide Barrier Cream"
+        },
+        {
+          "h": "Step 3: daily mineral SPF",
+          "p": "Zinc oxide with a sheer tint, so it doesn't leave a white cast.",
+          "product": "Mineral Sunscreen SPF 30"
+        },
+        {
+          "h": "Our promise",
+          "p": "If a product doesn't suit your skin, exchange it free within 30 days. Every product page lists the full ingredients."
+        }
       ],
-      "cta": { "label": "Get the 3-step routine", "to": "/offer/barrier-repair-routine" }
+      "cta": {
+        "label": "Get the 3-step routine",
+        "to": "/offer/barrier-repair-routine"
+      }
     },
     {
       "slug": "evening-routine-that-stuck",
@@ -117,13 +341,32 @@
       "title": "The evening routine our customers ask about most",
       "dek": "It isn't complicated. That's probably why it sticks.",
       "sections": [
-        { "p": "Evening routines are one of the most common things shoppers ask us about. Most want something simple they'll actually keep doing." },
-        { "h": "Start with the basics", "p": "Screens off a little earlier, a consistent bedtime, a cooler room. No supplement replaces these." },
-        { "h": "Where supplements fit", "p": "Many people add magnesium glycinate to their evening, often with L-theanine or ashwagandha. We stock both with full doses on the label.", "product": "Magnesium Glycinate Capsules" },
-        { "h": "Check before you start", "p": "If you're pregnant, nursing or on medication, ask your doctor or pharmacist first.", "product": "Ashwagandha + L-Theanine" },
-        { "h": "Our promise", "p": "Not for you? Return it within 30 days for a full refund." }
+        {
+          "p": "Evening routines are one of the most common things shoppers ask us about. Most want something simple they'll actually keep doing."
+        },
+        {
+          "h": "Start with the basics",
+          "p": "Screens off a little earlier, a consistent bedtime, a cooler room. No supplement replaces these."
+        },
+        {
+          "h": "Where supplements fit",
+          "p": "Many people add magnesium glycinate to their evening, often with L-theanine or ashwagandha. We stock both with full doses on the label.",
+          "product": "Magnesium Glycinate Capsules"
+        },
+        {
+          "h": "Check before you start",
+          "p": "If you're pregnant, nursing or on medication, ask your doctor or pharmacist first.",
+          "product": "Ashwagandha + L-Theanine"
+        },
+        {
+          "h": "Our promise",
+          "p": "Not for you? Return it within 30 days for a full refund."
+        }
       ],
-      "cta": { "label": "See the evening set", "to": "/offer/evening-wind-down" }
+      "cta": {
+        "label": "See the evening set",
+        "to": "/offer/evening-wind-down"
+      }
     }
   ]
 }

@@ -7,6 +7,10 @@
 import { gzipSync } from 'node:zlib';
 
 const TTL = 60_000;
+export const supplierFilter = () => {
+  const list = (process.env.STORE_SUPPLIERS || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  return list.length ? list : null;
+};
 let cache = null; // { at, gz, etag }
 let inflight = null;
 
@@ -36,6 +40,16 @@ async function build(url, pk, stats) {
     fetchAll(url, 'products', pk, `/store/products?region_id=${region.id}&fields=id,title,description,thumbnail,metadata,*images,*categories,*variants`),
     fetchAll(url, 'offers', pk, `/store/offers?region_id=${region.id}`),
   ]);
+  // STORE_SUPPLIERS (e.g. "printify") limits the store to products from those suppliers
+  // (product.metadata.supplier). Everything else stays in Mercur, just hidden; unset shows all.
+  const allow = supplierFilter();
+  if (allow) {
+    const keep = new Set(products.filter(p => allow.includes(String(p.metadata?.supplier || '').toLowerCase())).map(p => p.id));
+    products.splice(0, products.length, ...products.filter(p => keep.has(p.id)));
+    offers.splice(0, offers.length, ...offers.filter(o => keep.has(o.product_id)));
+    const sellerIds = new Set(offers.map(o => o.seller_id));
+    sellers.splice(0, sellers.length, ...sellers.filter(s => sellerIds.has(s.id)));
+  }
   // Same shapes the app's mapper reads (src/lib/commerce.ts), minus everything it ignores.
   const real = stats ? stats() : {};
   const body = {

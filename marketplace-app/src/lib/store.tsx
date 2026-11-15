@@ -90,9 +90,9 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
       if (s.user) setUser(s.user); if (s.interests) setInterests(s.interests); if (s.onboarded) setOnboarded(true);
       if (s.goal) setGoal(s.goal); if (s.budget) setBudget(s.budget);
       if (s.cart) setCart(s.cart.filter((l: CartLine) => getProduct(l.productId)));
-      if (s.wishlist) setWish(s.wishlist); if (s.following) setFollowing(s.following); if (s.reminders) setReminders(s.reminders);
+      if (s.wishlist) setWish(s.wishlist.filter((id: string) => getProduct(id))); // products can leave the catalogue if (s.following) setFollowing(s.following); if (s.reminders) setReminders(s.reminders);
       if (s.credit) setCredit(s.credit); if (s.orders) setOrders(s.orders); if (s.notif) setNotif(s.notif);
-      if (s.sizes) setSizes(s.sizes); if (s.address) setAddress(s.address); if (s.stockAlerts) setStockAlerts(s.stockAlerts); if (s.replenish) setReplenishList(s.replenish);
+      if (s.sizes) setSizes(s.sizes); if (s.address) setAddress(s.address); if (s.stockAlerts) setStockAlerts(s.stockAlerts.filter((id: string) => getProduct(id))); if (s.replenish) setReplenishList(s.replenish.filter((r: Replenish) => getProduct(r.productId)));
     }).catch(() => {}).finally(() => setHydrated(true));
   }, []);
   useEffect(() => {

@@ -10,7 +10,7 @@ import { fileURLToPath } from 'node:url';
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
 import { getDb, id, shopOut, productOut, UPLOAD_DIR } from './db.mjs';
 import { EVENTS_SCHEMA, PROOF_SCHEMA, addReview, catalogStats, dropReminders, ingest, listReviews, productProof, report } from './analytics.mjs';
-import { catalogSnapshot, warmCatalog } from './catalog.mjs';
+import { catalogSnapshot, supplierFilter, warmCatalog } from './catalog.mjs';
 import { dropoffs, funnel, people, retention, timeline } from './insights.mjs';
 
 const here = dirname(fileURLToPath(import.meta.url));
@@ -183,7 +183,7 @@ const routes = {
   // reads its catalogue from Mercur and checks out there; otherwise it uses this server's own API.
   'GET /api/config': () => ({
     commerce: process.env.MEDUSA_URL && process.env.MEDUSA_PUBLISHABLE_KEY
-      ? { url: process.env.MEDUSA_URL.replace(/\/$/, ''), publishableKey: process.env.MEDUSA_PUBLISHABLE_KEY, sellerUrl: `${process.env.MEDUSA_URL.replace(/\/$/, '')}/seller`, stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY || null }
+      ? { url: process.env.MEDUSA_URL.replace(/\/$/, ''), publishableKey: process.env.MEDUSA_PUBLISHABLE_KEY, sellerUrl: `${process.env.MEDUSA_URL.replace(/\/$/, '')}/seller`, stripePublishableKey: process.env.STRIPE_PUBLISHABLE_KEY || null, suppliers: supplierFilter() }
       : null,
   }),
   'GET /api/catalog': () => ({

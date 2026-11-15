@@ -46,9 +46,15 @@ export default function Offer() {
           <Text style={[T.h1, { marginTop: 6 }]}>{o.title}</Text>
           <Text style={[T.body, { color: C.ink2, marginTop: 8 }]}>{o.sub}</Text>
           <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 8, marginTop: S.md }}>
-            <Text style={{ fontSize: 26, fontWeight: '900', color: C.ink }}>{money(total)}</Text>
-            {was > total && <Text style={{ fontSize: 16, color: C.ink3, textDecorationLine: 'line-through' }}>{money(was)}</Text>}
-            <Text style={T.small}>for {ready.length} item{ready.length === 1 ? '' : 's'}{sized.length ? ' + your pick of size' : ''}</Text>
+            {ready.length ? <>
+              <Text style={{ fontSize: 26, fontWeight: '900', color: C.ink }}>{money(total)}</Text>
+              {was > total && <Text style={{ fontSize: 16, color: C.ink3, textDecorationLine: 'line-through' }}>{money(was)}</Text>}
+              <Text style={T.small}>for {ready.length} item{ready.length === 1 ? '' : 's'}{sized.length ? ' + your pick of size' : ''}</Text>
+            </> : <>
+              {/* Everything here needs a size: show the starting price instead of an empty total. */}
+              <Text style={T.small}>From</Text>
+              <Text style={{ fontSize: 26, fontWeight: '900', color: C.ink }}>{money(Math.min(...sized.map(p => p.price)))}</Text>
+            </>}
           </View>
 
           <Text style={[T.h2, { marginTop: S.xl }]}>What's in it</Text>
@@ -78,7 +84,8 @@ export default function Offer() {
           <Disclaimer text={disclaimerFor(o.niche)} />
         </View>
       </ScrollView>
-      {ready.length > 0 && <StickyCTA label={`Add the set · ${money(total)}`} onPress={addSet} note={sized.length ? 'Then pick your size' : 'Free returns within 30 days'} />}
+      {ready.length > 0 ? <StickyCTA label={`Add the set · ${money(total)}`} onPress={addSet} note={sized.length ? 'Then pick your size' : 'Free returns within 30 days'} />
+        : sized.length > 0 && <StickyCTA label={sized.length === 1 ? 'Choose your size' : 'Choose sizes'} icon="resize-outline" onPress={() => { track('offer_choose_size', { slug: o.slug }); router.push(`/product/${sized[0].id}`); }} />}
     </SafeAreaView>
   );
 }

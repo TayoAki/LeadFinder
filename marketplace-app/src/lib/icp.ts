@@ -132,5 +132,5 @@ export const pagesForIcp = (icp: string): { offer?: string; guide?: string; stor
   icp.startsWith('skin_') ? { offer: 'barrier-repair-routine', guide: 'skin-barrier-signs', story: 'why-we-simplified-skincare' }
     : icp === 'wellness_calm' ? { offer: 'evening-wind-down', guide: 'magnesium-before-you-buy', story: 'evening-routine-that-stuck' }
     : icp.startsWith('wellness_') ? { guide: 'magnesium-before-you-buy' }
-    : icp === 'style_refresh' ? { offer: 'summer-dress-edit', guide: 'summer-dresses-desk-to-dinner' }
+    : icp === 'style_refresh' ? { offer: 'joyful-script-sweatshirt', guide: 'style-a-statement-sweatshirt', story: 'why-we-print-on-demand' }
     : {};

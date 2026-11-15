@@ -31,7 +31,7 @@ export default function Cart() {
           <View style={{ alignItems: 'center', padding: S.xxl }}>
             <Ionicons name="bag-handle-outline" size={48} color={C.ink3} />
             <Text style={[T.h2, { marginTop: 12 }]}>Your cart is empty</Text>
-            <Text style={[T.small, { textAlign: 'center', marginTop: 6 }]}>Mix items from any shops. You'll check out once.</Text>
+            <Text style={[T.small, { textAlign: 'center', marginTop: 6 }]}>Everything you add stays here, even if you close the app.</Text>
             <Button title="Start shopping" style={{ marginTop: S.lg }} onPress={() => router.push('/')} />
           </View>
           <SectionHeader title="You might like" />
