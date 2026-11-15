@@ -9,10 +9,37 @@ import { ActivityIndicator, Image, Pressable, ScrollView, Text, View } from 'rea
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Header } from '@/components/Header';
 import { PageIn } from '@/components/Motion';
-import { PageNotFound, ProductRow, StickyCTA } from '@/components/PageBlocks';
+import { PageNotFound, StickyCTA } from '@/components/PageBlocks';
 import { track } from '@/lib/analytics';
+import { money, type Product } from '@/lib/data';
 import { type Block, type CatalogPost as Post, fetchPost, productForBlueprint, shopLinkFor } from '@/lib/blog';
 import { C, R, S, T } from '@/lib/theme';
+
+// The design we actually sell on this item: its photos, what is printed on it, price and sizes.
+// Shown at the top so the reader sees the real product, not the plain item the guide describes.
+const designBlurb = (d: string) => d.split(/\n\s*\n|\nProduct features/i)[0].split(/(?<=[.!?])\s+/).slice(0, 2).join(' ');
+function Featured({ p, onShop }: { p: Product; onShop: () => void }) {
+  const pics = [p.image, ...p.images.filter(x => x !== p.image)].slice(0, 5);
+  return (
+    <View style={{ marginTop: S.md, padding: S.md, borderRadius: R.lg, backgroundColor: C.surface, borderWidth: 1, borderColor: C.line }}>
+      <Text style={[T.tiny, { color: C.accent }]}>THE ONE WE SELL</Text>
+      <Text style={[T.h2, { marginTop: 2 }]}>{p.title}</Text>
+      <View style={{ flexDirection: 'row', alignItems: 'baseline', gap: 6, marginTop: 2 }}>
+        <Text style={{ fontSize: 20, fontWeight: '800', color: C.ink }}>{p.sizes.length ? `From ${money(p.price)}` : money(p.price)}</Text>
+        {!!p.compareAt && <Text style={{ color: C.ink3, textDecorationLine: 'line-through' }}>{money(p.compareAt)}</Text>}
+      </View>
+      <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ marginTop: S.sm }} contentContainerStyle={{ gap: 8 }}>
+        {pics.map((u, i) => <Image key={i} source={{ uri: u }} accessibilityLabel={`${p.title}, photo ${i + 1}`} style={{ width: 150, height: 150, borderRadius: R.md, backgroundColor: C.photo }} />)}
+      </ScrollView>
+      {!!p.description && <Text style={[T.body, { marginTop: S.sm, color: C.ink2 }]}>{designBlurb(p.description)}</Text>}
+      {p.sizes.length > 0 && <Text style={[T.small, { marginTop: 6 }]}>{`Sizes ${p.sizes[0]} to ${p.sizes[p.sizes.length - 1]}`}{p.stock > 0 ? ' · in stock' : ' · sold out'}</Text>}
+      <Pressable onPress={onShop} accessibilityRole="button" style={{ marginTop: S.md, height: 46, borderRadius: R.pill, backgroundColor: C.buy, borderWidth: 1, borderColor: C.buyEdge, alignItems: 'center', justifyContent: 'center' }}>
+        <Text style={{ color: C.buyInk, fontWeight: '800', fontSize: 16 }}>{p.sizes.length ? 'Choose your size' : 'Add to cart'}</Text>
+      </Pressable>
+      <Text style={[T.tiny, { color: C.ink3, marginTop: 8, fontWeight: '400' }]}>Below: fit, fabric and care for the piece it is made on.</Text>
+    </View>
+  );
+}
 
 function Table({ t }: { t: NonNullable<Block['table']> }) {
   return (
@@ -66,16 +93,17 @@ export function CatalogPostScreen({ slug, kind }: { slug: string; kind: 'listicl
       <Header back title={kind === 'listicle' ? 'Guide' : 'Story'} />
       <PageIn>
       <ScrollView contentContainerStyle={{ paddingBottom: 140 }}>
-        {!!post.image && <Image source={{ uri: post.image }} style={{ width: '100%', height: 260, backgroundColor: C.photo }} resizeMode="contain" accessibilityLabel={post.product_title} />}
+        {!!(product?.image || post.image) && <Image source={{ uri: (product?.image || post.image) ?? undefined }} style={{ width: '100%', height: 260, backgroundColor: C.photo }} resizeMode="contain" accessibilityLabel={product?.title || post.product_title} />}
         <View style={{ padding: S.lg }}>
           {kind === 'advertorial'
             ? <View style={{ alignSelf: 'flex-start', paddingHorizontal: 8, paddingVertical: 3, borderRadius: R.sm, borderWidth: 1, borderColor: C.line }}><Text style={[T.tiny, { color: C.ink3 }]}>ADVERTISEMENT · FROM THE SHELBY TEAM</Text></View>
             : <Text style={[T.tiny, { color: C.accent }]}>{`SHELBY GUIDE · ${post.category}`.toUpperCase()}</Text>}
           <Text style={[T.h1, { marginTop: S.sm, fontSize: 28, lineHeight: 34 }]}>{post.title}</Text>
           <Text style={[T.small, { marginTop: 6 }]}>{post.mins} min read · {post.product_name}</Text>
+          {product && <Featured p={product} onShop={() => go(`/product/${product.id}`, 'featured')} />}
           {(post.intro ?? [post.dek ?? '']).filter(Boolean).map((x, i) => <Text key={i} style={[T.body, { marginTop: S.md, fontSize: 17, lineHeight: 25, color: i ? C.ink2 : C.ink }]}>{x}</Text>)}
 
-          {product ? <ProductRow p={product} source={`catalog:${slug}`} />
+          {product ? null
             : <View style={{ marginTop: S.md, padding: S.md, borderRadius: R.lg, backgroundColor: C.buySoft, flexDirection: 'row', gap: 10, alignItems: 'center' }}>
                 <Ionicons name="information-circle-outline" size={20} color={C.ink} />
                 <Text style={[T.small, { flex: 1, color: C.ink }]}>We don't sell this exact piece yet. This guide tells you what to look for; the button below shows what we do sell.</Text>
