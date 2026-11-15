@@ -174,6 +174,10 @@ export function buildPosts(raws) {
     used.add(base);
     for (const p of [listicle(f, { base }), advertorial(f, { base })]) if (p) all.push({ ...p, product_name: f.name, product_title: f.title });
   }
+  // Printify has a few differently made products with the same name: give those titles the
+  // catalogue number so every title is unique.
+  const seen = new Map(); for (const p of all) seen.set(p.seo_title, (seen.get(p.seo_title) || 0) + 1);
+  for (const p of all) if (seen.get(p.seo_title) > 1) { p.seo_title = `${p.seo_title} (no. ${p.blueprint_id})`; p.title = `${p.title} (no. ${p.blueprint_id})`; }
   const byCat = new Map();
   for (const p of all) { if (!byCat.has(p.category)) byCat.set(p.category, []); byCat.get(p.category).push(p); }
   for (const p of all) {

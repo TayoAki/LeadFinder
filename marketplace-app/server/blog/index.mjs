@@ -25,6 +25,12 @@ export function listPosts({ category = '', q = '', type = '', page = 1 }) {
   const terms = String(q).toLowerCase().split(/\s+/).filter(Boolean);
   const hits = posts.filter(p => (!category || p.category === category) && (!type || p.type === type)
     && (!terms.length || terms.every(t => `${p.title} ${p.product_name} ${p.category}`.toLowerCase().includes(t))));
+  // Best match first: exact brand + model, then a model that starts with the query, then the rest.
+  if (terms.length) {
+    const q0 = terms.join(' ');
+    const score = (p) => { const n = p.product_name.toLowerCase(); return n === q0 ? 0 : n.startsWith(q0) || n.split(' ').some(w => terms.includes(w)) && terms.every(t => n.split(/\s+/).includes(t)) ? 1 : 2; };
+    hits.sort((a, b) => score(a) - score(b) || (a.type === 'listicle' ? -1 : 1));
+  }
   const per = 20, n = Math.max(1, Number(page) || 1);
   const counts = {}; for (const p of posts) counts[p.category] = (counts[p.category] || 0) + 1;
   return { total: hits.length, page: n, pages: Math.ceil(hits.length / per), posts: hits.slice((n - 1) * per, n * per).map(summary), categories: Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([name, count]) => ({ name, count })), built_at: builtAt };
