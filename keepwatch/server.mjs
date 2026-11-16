@@ -413,6 +413,17 @@ const MCP_TOOLS = [
     run: (ws, ids, { limit }) => partners(ws.id, getWorkspace(ws.id), { rivalNames: A.rivalKeeps(db, ids).map(r => r.rival.name), limit: Math.min(50, limit || 20) }, db) },
   { name: 'draft_collab', description: 'Collabs: a co-branded pitch for one partner (by its key from collab_partners): 5 collab ideas, a co-branded ad concept with image prompt, and the email to send. Drafts only: the user sends it.', inputSchema: strictObj({ key: { type: 'string' } }, ['key']),
     run: (ws, ids, { key }) => { const p = partners(ws.id, getWorkspace(ws.id), { limit: 500 }, db).partners.find(x => x.key === String(key)); return p ? collabPitch(p, getWorkspace(ws.id)) : { error: 'No partner with that key.' }; } },
+  // ---------- workspaces: one per brand, sharing the account's plan and credits ----------
+  { name: 'list_workspaces', description: "Every workspace (brand) in this account, and which one this API key belongs to. Each workspace has its own rivals, briefs and ads; they share the plan's credits.", inputSchema: strictObj(),
+    run: ws => { const owner = ws.owner_user_id || ws.user_id; const plan = PLANS[rootWorkspace(ws).plan] || PLANS.trial; const all = listWorkspaces(owner);
+      return { plan: plan.name, allowed: plan.workspaces || 1, used: all.length, workspaces: all.map(w => ({ id: w.id, name: w.brand_name || 'My workspace', this_key: w.id === ws.id, rivals: rivalIdsFor(w.id).length })) }; } },
+  { name: 'create_workspace', description: "Create a new workspace for another brand in this account (counts against the plan's workspace limit; shares credits). Returns the new workspace's own API key: use it as the Bearer key to run that workspace. Set its brand facts with update_brand using the new key.", inputSchema: strictObj({ name: { type: 'string', description: 'The brand the workspace tracks, e.g. "Golf hats"' } }, ['name']),
+    run: (ws, ids, { name }) => { const n = String(name || '').trim(); if (!n) return { error: 'Give the workspace a name.' };
+      const owner = ws.owner_user_id || ws.user_id; const plan = PLANS[rootWorkspace(ws).plan] || PLANS.trial; const all = listWorkspaces(owner);
+      const same = all.find(w => (w.brand_name || '').toLowerCase() === n.toLowerCase()); if (same) return { error: `A workspace called "${same.brand_name}" already exists (id ${same.id}). Open it in the app (Settings → Connect your AI) for its key.` };
+      if (all.length >= (plan.workspaces || 1)) return { error: `Your ${plan.name} plan includes ${plan.workspaces || 1} workspace(s), all in use.` };
+      const created = createWorkspace(owner, n);
+      return { id: created.id, name: created.brand_name, api_key: created.api_key, note: 'Keep this key private. Rotate it any time in that workspace: Settings → Connect your AI.' }; } },
   { name: 'job_status', description: 'Status of a background job (collecting, drop) started by another tool.', inputSchema: strictObj({ job_id: { type: 'integer' } }, ['job_id']),
     run: (ws, ids, { job_id }) => { const j = jobs.get(Number(job_id)); if (!j || j.wsId !== ws.id) return { error: 'No such job (jobs are kept for an hour).' }; const { wsId, ...rest } = j; return rest; } },
 ];
