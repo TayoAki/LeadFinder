@@ -10,7 +10,7 @@ const OUT = resolve(dirname(fileURLToPath(import.meta.url)), '../data');
 const KW = ['golf outfit', 'golf outfit ideas', 'golf fits', 'golf hat', 'golf hats', 'golf gift ideas', 'gifts for golfers', 'golf trip', 'golf tips', 'golf course', 'golf aesthetic', 'golf girl outfit', 'golf dad', 'golf brands', 'golf swing tips', 'golf bachelor party', 'golf humor', 'golf etiquette'];
 const TREG = `${process.env.HOME}/.local/bin/treg`;
 let spent = 0;
-const call = q => new Promise((res, rej) => { const a = ['--json', 'call', 'tikhub.tiktok.search.videos']; for (const [k, v] of Object.entries(q)) a.push('--query', `${k}=${v}`);
+const call = q => new Promise((res, rej) => { const a = ['--json', 'call', 'tikhub.x.tiktok-web-fetch-search-photo']; for (const [k, v] of Object.entries(q)) a.push('--query', `${k}=${v}`);
   execFile(TREG, a, { maxBuffer: 1 << 27, timeout: 120000 }, (e, out) => { if (e && !out) return rej(e); try { const j = JSON.parse(out); spent += (j._treg?.charged_micro || 0) / 1e6; res(j.result?.output || j.result || {}); } catch (x) { rej(x); } }); });
 const posts = new Map();
 // TikTok's video search leaves photo posts out, so use the photo-post search (tikhub web, $0.001/call), 3 pages per keyword.
