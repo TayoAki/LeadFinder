@@ -57,7 +57,7 @@ ANGLES = [
        before='Twelve guys in twelve different hats', after='One team, one cap',
        chat=['Member-guest is in 3 weeks', 'We need a team name', 'And hats'], rank='team hat ideas', problem='Team gear needs huge minimum orders', solution='Order exactly the number you need',
        covers={'list': '5 team hat ideas for your member-guest', 'pov': 'POV: your league finally has team hats', 'question': 'What\'s your member-guest team name?', 'bold': 'You don\'t need 48 hats to have team hats', 'relatable': 'Every league captain the week before the season'}),
-  dict(id='A7', name='Types of golfers (humour)', strength=3,
+  dict(id='A7', name='Types of golfers (humour)', strength=4,  # creator trends: "We all know the guy. Tag him." 2.4M; funny/skit median 117k views
        who='Every golfer who knows these people', promise='A hat for every golfer in your group',
        evidence='"Things golfers say/do" is a recurring creator format; humour drives sends to the group chat (shares). Personalised hats turn each "type" into a product.',
        items=['The "I usually hit it 300" guy', 'The one who brings a speaker', 'The rules official', 'The one who only plays scrambles', 'The 19th-hole MVP'],
@@ -223,6 +223,24 @@ sheet(wb.create_sheet('Evidence'), ['Finding', 'Number', 'Source'], [
 ], [36, 70, 44])
 sheet(wb.create_sheet('Results log'), ['Combo', 'Date posted', 'Platform', 'Plays @48h', 'Saves @48h', 'Shares @48h', 'Comments @48h', 'Plays @7d', 'Saves @7d', 'Shares @7d', 'Followers', 'Saves/1k', 'Shares/1k', 'Plays/followers', 'Link clicks', 'Orders', 'Decision'],
       [], [16, 12, 10] + [11] * 13 + [30])
+# Creator trends (TikTok + Reels, last 120 days): which formats get reach, so the slideshows borrow what already travels.
+tp = os.path.join(OUT, 'data', 'golf-trends.json')
+if os.path.exists(tp):
+    tr = json.load(open(tp))
+    sheet(wb.create_sheet('Creator trends'), ['Format (from captions)', 'Creators', 'Videos', 'Median views', 'What it means for the slideshows'],
+          [[f['key'], f['creators'], f['videos'], f['median_views'], {
+              'rate my / rank': 'Rare (few creators) but the highest median reach: use the Rank format (F4) more.',
+              'trip / destination': 'Few creators, very high reach: backs the Buddy trip angle (A1).',
+              'funny / skit': 'Many creators and high reach: humour travels; Types of golfers (A7).',
+              'fit check / outfit': 'The most crowded format with low median reach: only post fit checks with a twist (rank them).',
+              'dad / family': 'Mid reach, but a 13M "daddy daughter day" breakout: Golf dad (A3) works when it is short and sweet.',
+              'things golfers say/do': 'Only 2 creators, huge reach: open format for A7.',
+          }.get(f['key'], '')] for f in tr['formats']], [26, 10, 10, 14, 80])
+    ws2 = wb['Creator trends']; ws2.append([]); ws2.append([f"{tr['videos']} videos from {tr['creators']} creators, last {tr['window_days']} days, {len(tr['keywords'])} golf keywords. Spend ~${tr['spend_usd']}."])
+    ws2.append(['No sound is a cross-creator trend (the most-shared sound is used by 2 creators): the trends are formats, not sounds. Pick a quiet trending song per post.'])
+    ws2.append(['Length: 0-15s videos have a median of ' + str(tr['lengths'][0]['median_views']) + ' views; most breakouts are 6-second clips. For slideshows: a strong cover + 5-7 fast slides.'])
+    ws2.append([]); ws2.append(['Breakout examples (views far above followers)'])
+    for b in tr['breakouts'][:12]: ws2.append([f"{b['views_per_follower']}x", b['views'], f"{b['seconds']}s", ' / '.join(b['formats']), b['desc'][:120]])
 path = os.path.join(OUT, 'golf-slideshow-tests.xlsx'); wb.save(path)
 with open(os.path.join(OUT, 'golf-slideshow-combos.csv'), 'w', newline='') as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
