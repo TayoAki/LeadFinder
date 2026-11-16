@@ -294,7 +294,8 @@ try {
   report.opportunities = [...check].filter(b => b.confidence !== 'low' && (leaveScore(b.leaving) || searchScore(b.switch_search))).sort((a, b) => b.opportunity - a.opportunity).slice(0, 5).map(b => ({ name: b.name, competitor: b.competitor, opportunity: b.opportunity, confidence: b.confidence, why: b.why }));
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
 
-report.spend_usd = Math.round((spent + (FROM?.spend_usd || 0)) * 100) / 100; // includes the saved run's spend when re-checking report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
+report.spend_usd = Math.round((spent + (FROM?.spend_usd || 0)) * 100) / 100; // includes the saved run spend when re-checking
+report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
 writeFileSync(`${OUT}/overlap.json`, JSON.stringify(report, null, 1));
 
 // ---- Answer
