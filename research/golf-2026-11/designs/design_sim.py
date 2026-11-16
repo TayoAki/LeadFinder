@@ -91,7 +91,7 @@ SEGMENTS = {
 ICON_PW = {'none': 0, 'flag': .3, 'crossed clubs': .1, 'tee': .1, 'golf cart': 0, 'dogleg arrow': .2}
 LETTER_PW = {'retro script': .2, 'varsity arch': .25, 'stacked block caps': .1, 'serif small caps': .1, 'handwritten': -.1, 'none': 0}
 PRICE = {True: 38, False: 34}         # Crew Cap vs Classic (brand plan)
-HURDLE = 3.4                           # calibrates average P(buy) to a few % (first-visit, unknown brand, no reviews)
+HURDLE = 5.0                           # calibrated so the average design converts ~4% (the 100-visitor simulation found 5% for the best offer)
 NOISE = 0.7                            # person-to-person spread on every part-worth
 
 # ------------------------------------------------------------------ simulate
@@ -165,7 +165,8 @@ with open(os.path.join(HERE, 'designs.csv'), 'w', newline='') as fh:
     for d in ranked: w.writerow([d[c] for c in cols[:13]] + [d['by_segment'][s] for s in seg_names])
 json.dump(dict(label='SIMULATED - not demand evidence', n_shoppers=N, segments={s: dict(share=SEGMENTS[s]['share'], source=SEGMENTS[s]['src']) for s in seg_names},
                top20=ranked[:20], parts=parts, sensitivity=sens), open(os.path.join(HERE, 'results.json'), 'w'), indent=1)
-print('TOP 15'); [print(d['rank'], d['id'], d['p_buy'], d['p_buy_ci'], d['first_choice_pct'], '|', d['theme_label'], '|', d['text'], '|', d['lettering'], d['icon'], d['size'], d['colour']) for d in ranked[:15]]
+print('TOP 15 BY P(BUY)'); [print(d['rank'], d['id'], d['p_buy'], d['p_buy_ci'], d['first_choice_pct'], '|', d['theme_label'], '|', d['text'], '|', d['lettering'], d['icon'], d['size'], d['colour']) for d in ranked[:15]]
+print('\nTOP 10 BY FIRST CHOICE'); [print(d['id'], d['first_choice_pct'], d['first_choice_ci'], d['p_buy'], '|', d['theme_label'], '|', d['text'], '|', d['lettering'], d['icon'], d['size'], d['colour']) for d in sorted(designs, key=lambda d: -d['first_choice_pct'])[:10]]
 print('\nTHEMES'); [print(x) for x in parts['theme_label']]
 for k in ['lettering', 'icon', 'size', 'colour', 'personalised']: print('\n' + k.upper()); [print(x) for x in parts[k]]
 print('\nSENSITIVITY'); [print(k, '->', v) for k, v in sens.items()]
