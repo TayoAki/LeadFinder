@@ -20,12 +20,13 @@ const CAP = Number(args['cap-usd'] || 1.5), LOOKUPS = Number(args.lookups || 120
 const OUT = resolve(args.out || `fan-overlap/ig-${HANDLE}`);
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
 let spent = 0; const log = (...a) => console.log(...a);
-const treg = (id, query) => spent > CAP ? Promise.reject(new Error('cap')) : new Promise((res, rej) => {
+// feeds stop at 85% of the cap so the profile lookups at the end always have budget
+const treg = (id, query) => spent > (/profile/.test(id) ? CAP : CAP * 0.85) ? Promise.reject(new Error('cap')) : new Promise((res, rej) => {
   const a = ['--json', 'call', id]; for (const [k, v] of Object.entries(query)) a.push('--query', `${k}=${v}`);
   execFile(TREG, a, { maxBuffer: 1 << 27, timeout: 120000 }, (err, out) => { if (err && !out) return rej(err);
     try { const j = JSON.parse(out); spent += (j._treg?.charged_micro || 0) / 1e6; if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`HTTP ${j._treg.http_status}`)); res(j.result?.output || j.result || {}); } catch (e) { rej(e); } });
 });
-const pool = async (items, n, fn) => { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length && spent <= CAP) await fn(items[i++]); })); };
+const pool = async (items, n, fn) => { let i = 0; await Promise.all(Array.from({ length: n }, async () => { while (i < items.length && spent <= CAP * 0.85 + (fn.lookup ? CAP * 0.15 : 0)) await fn(items[i++]); })); };
 
 // accounts a post points at: photo tags, caption @mentions, co-authors, paid-partnership tags
 const pointsAt = p => {
@@ -85,7 +86,7 @@ try {
   const hashtags = { with_brand: total(withBrandTags).slice(0, 25), elsewhere: total(elsewhereTags).slice(0, 25) };
   for (const m of [withBrand, elsewhere, withBrandTags, elsewhereTags]) { for (const s of m.values()) s.clear(); m.clear(); } posters.clear();
   const list = [...accounts.values()].sort((a, b) => (b.tagged_with_brand + b.tagged_elsewhere) - (a.tagged_with_brand + a.tagged_elsewhere)).slice(0, LOOKUPS);
-  await pool(list, 6, async c => {
+  const lookup = async c => {
     const o = await treg('tikhub.instagram.user.profile', { username: c.handle }).catch(() => ({}));
     const p = o.data?.data?.user || o.data?.user || {};
     c.name = p.full_name || c.handle; c.followers = Number(p.follower_count ?? p.edge_followed_by?.count) || null; c.verified = !!p.is_verified;
@@ -94,7 +95,8 @@ try {
     const brand = /\b(shop|store|official|apparel|clothing|brand|co\.|company|supply|goods|outfitters|wear|collection|made in|shipping|®|™|est\.? ?\d{4}|since \d{4}|sale|drop|club|resort|hotel|magazine|tour|golf course|country club|brewing|coffee)\b/i.test(text) || /shop|store/i.test(c.url || '');
     const person = /^[A-Z][a-z]+ [A-Z][a-z'-]+( [A-Z][a-z]+)?$/.test(c.name || '') || /\b(dad|mom|husband|wife|father|mother|i'm|he\/him|she\/her|creator|athlete|pro golfer|coach|influencer|host|comedian|actor|ugc)\b/i.test(c.bio);
     c.kind = c.private ? 'private person' : brand && !person ? 'brand' : person ? 'person' : 'unclear';
-  });
+  }; lookup.lookup = true;
+  await pool(list, 6, lookup);
   report.accounts = list.filter(c => c.kind !== 'private person');
   report.hashtags = hashtags;
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
