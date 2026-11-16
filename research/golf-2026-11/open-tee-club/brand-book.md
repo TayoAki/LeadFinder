@@ -52,7 +52,9 @@
 
 ## 3. Positioning
 
-- **Stance (draft; run the Keepwatch swap test before use):** *Golf got new players. The gear still dresses the old ones. We stitch caps for the crew you actually play with, one at a time, no minimums.*
+- **Stance:** *Golf got new players; the gear still dresses the old ones. We'll never make your crew order 24 hats.*
+  - Keepwatch swap test against 17 golf brands: both halves pass as **"Yours"**, meaning no competitor could say them.
+  - The first half alone takes no side; the "never 24 hats" half adds one. The combined line still needs re-testing for length.
 - **Tagline options:** "Your crew. Your cap." · "Open tee. Your crew." · "Golf for the group chat."
 - **Voice:**
   - warm, plain, a little cheeky;
@@ -75,13 +77,50 @@ US shipping is $4.69 for the first cap and $2.09 for each extra. Make it free ov
 
 **Before promising names:** confirm that Printify accepts per-order embroidery text through the API with one test order. Also confirm the cap's base cost.
 
-## 5. Slogan line-up
+## 5. Slogan line-up (SIMULATED panel of 100 Open Tee Club shoppers: 63% women, 62% under 35)
 
-*Filled from the Open Tee Club panel. See `panel-100-opentee.md`.*
+| Launch | Slogan | Picked first (per time shown) | Top-two | Disliked | "Trying too hard" | Role |
+|---|---|---|---|---|---|---|
+| ✅ | **Bogey. What About It?** | **35%** | **63%** | 0% | 0% | Hero line. Won 4 segments: new women golfers, culture golfers, crew organisers, fashion-first. |
+| ✅ | **Respectfully, That's OB** | 23% | 46% | 0% | 0% | Golf-literate wit |
+| ✅ | **Here for the Birdies** | 17% | 23% | 2% | 0% | Gift-buyer winner: upbeat and safe |
+| ✅ | **Slice in 4K** | 15% | 35% | 0% | 0% | Off-course winner; content and shares |
+| Later | Tough Bounce · Mind Your Mulligans (won league leaders) · Bogey Behavior | 10–15% | 23–31% | 0–6% | 0% | Second wave |
+| ❌ | Driver Bussin' · It's Giving Birdie · Range Crashout · Eagle Girl Era · Big Tee Energy | 0–4% | — | up to 44% | 17–98% | Borrowed slang, dated memes, crude, or unrealistic for beginners |
 
-## 6. Crew-name examples for ads
+The "girl" lines split shoppers: "that's me" against "infantilising / not for me". Keep them to crew names that women's groups choose themselves (below), not brand slogans.
 
-*Filled from the Open Tee Club panel.*
+## 6. Crew-name examples for ads (same panel; all 10 shown to everyone)
+
+| Crew name | "That's us" | Disliked | Would buy a crew cap* | Use for |
+|---|---|---|---|---|
+| **Range Day Girls** | **20%** | 8% | 14 of 20 | Women's groups, gifts, league leaders |
+| **Tee Time Squad** | 16% | **0%** | 4 of 16 | Off-course and Topgolf crowd, fashion-first |
+| **After Work Nine Club** | 15% | 4% | 4 of 15 | Culture golfers, after-work leagues |
+| **Fairway Friends Club** | 13% | 2% | 4 of 13 | Mixed friend groups |
+| **Golf Trip Boys** | 10% | 18% | **10 of 10** | Trip organisers only: they always buy, but it's polarising |
+| Drop | Back Nine Brunch Club, Slice Boys, Sunday Swing Girls | 1–3% | 12–29% | — | — |
+
+\*Among people who picked that name as "that's us".
+
+**The crew cap is the stronger product.** **48 of 100 would buy a personalised crew cap for their group**, including 13 of 15 crew organisers and all 6 league leaders. Only 26 would buy a slogan cap now.
+
+## 6b. The brand name (same panel)
+
+**Votes:** Open Tee Club **46**, Everybody Tee Club 30, Public Tee Club 24.
+
+**Reactions to "Open Tee Club":**
+- **Welcoming: 58**, often "if the meetups are real".
+- **Generic: 37** ("sounds like a tee-time app").
+- **Confused with the British Open: 3.**
+- **"Club" sounds exclusive: 2.**
+
+Only 32 felt the brand is "made for people like me", 46 were unsure and 22 said no. The name alone won't do it; **the Open Tee days and real crews in the photos have to carry the meaning.**
+
+**Keep the name, but sharpen it:**
+- the tagline does the work: *"Your crew. Your cap."*;
+- lead with the community meetups in every post;
+- never use Open Championship styling.
 
 ## 7. Community: Open Tee days
 
