@@ -101,9 +101,12 @@ try {
   // ---- 1. Brand A's locations
   const aBrand = brandOf(BRAND);
   let locs = [];
-  if (await tregOk()) {
+  // --place-ids id1,id2 (stores spread over many cities) skips the search; --cities "A|B|C" searches each city.
+  if (args['place-ids']) locs = String(args['place-ids']).split(',').map(s => s.trim()).filter(Boolean).map(id => ({ name: BRAND, place_id: id, category: args.category || null }));
+  if (!locs.length && await tregOk()) {
     const seen = new Set();
-    for (const q of [`${BRAND} ${CITY}`, `${BRAND} near ${CITY}`]) {
+    const cities = args.cities ? String(args.cities).split('|').map(s => s.trim()) : [CITY];
+    for (const q of cities.flatMap(c => [`${BRAND} ${c}`, ...(cities.length === 1 ? [`${BRAND} near ${c}`] : [])])) {
       const o = await treg('treg.google.serp.maps', { body: { q } }).catch(e => (log('  maps search:', e.message), {}));
       for (const p of o.places || []) if (p.place_id && !seen.has(p.place_id) && brandOf(p.name) === aBrand) { seen.add(p.place_id); locs.push({ name: p.name, address: p.address, place_id: p.place_id, category: p.category, rating: p.rating, reviews_total: p.review_count ?? null }); }
       if (locs.length >= LOCATIONS) break;
@@ -116,7 +119,7 @@ try {
     report.sources.places = 'apify crawler-google-places';
   }
   locs = locs.slice(0, LOCATIONS);
-  report.place_a = { name: locs[0]?.name || BRAND, brand: aBrand, category: locs.find(l => l.category)?.category || null, locations: locs.length, addresses: locs.map(l => l.address) };
+  report.place_a = { name: locs[0]?.name || BRAND, brand: aBrand, category: args.category || locs.find(l => l.category)?.category || null, locations: locs.length, addresses: locs.map(l => l.address) };
   if (!locs.length && !DRY) throw new Error(`No "${BRAND}" locations found${CITY ? ` in ${CITY}` : ''}. Check the brand spelling or city.`);
   log(`1. ${locs.length} ${BRAND} locations`);
 
