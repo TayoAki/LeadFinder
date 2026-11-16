@@ -16,7 +16,7 @@ const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (
 const HANDLE = String(args.handle || '').replace(/^@/, '').toLowerCase();
 if (!HANDLE) { console.error('usage: node ig_tags.mjs --handle <instagram handle>'); process.exit(2); }
 const TPAGES = Number(args['tagged-pages'] || 60), OWN = Number(args['own-pages'] || 2), MIN = Number(args['min-posters'] || 3);
-const CAP = Number(args['cap-usd'] || 1.5), LOOKUPS = Number(args.lookups || 120);
+const CAP = Number(args['cap-usd'] || 2), LOOKUPS = Number(args.lookups || 400), OUTLIER = Number(args['outlier-lift'] || 3);
 const OUT = resolve(args.out || `fan-overlap/ig-${HANDLE}`);
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
 let spent = 0; const log = (...a) => console.log(...a);
@@ -68,7 +68,8 @@ try {
     for (let p = 0; p < OWN; p++) {
       const o = await treg('tikhub.x.instagram-v2-fetch-user-posts', { username: who, ...(next ? { pagination_token: next } : {}) }).catch(() => null);
       const d = o?.data || {}; const items = d.data?.items || [];
-      for (const x of items) { for (const a of pointsAt(x)) if (a !== who && a !== HANDLE) (elsewhere.get(a) || elsewhere.set(a, new Set()).get(a)).add(who);
+      // posts that also tag/mention the brand are skipped: 'elsewhere' = their own taste, not the brand's outfit
+      for (const x of items) { const pts = pointsAt(x); if (pts.has(HANDLE) || tagsOf(x).has('#' + HANDLE)) continue; for (const a of pts) if (a !== who && a !== HANDLE) (elsewhere.get(a) || elsewhere.set(a, new Set()).get(a)).add(who);
         for (const t of tagsOf(x)) (elsewhereTags.get(t) || elsewhereTags.set(t, new Set()).get(t)).add(who); }
       got += items.length; next = d.pagination_token; if (!items.length || !next) break;
     }
@@ -85,7 +86,7 @@ try {
   for (const [h, c] of other) (accounts.get(h) || accounts.set(h, { handle: h, tagged_with_brand: 0, tagged_elsewhere: 0 }).get(h)).tagged_elsewhere = c;
   const hashtags = { with_brand: total(withBrandTags).slice(0, 25), elsewhere: total(elsewhereTags).slice(0, 25) };
   for (const m of [withBrand, elsewhere, withBrandTags, elsewhereTags]) { for (const s of m.values()) s.clear(); m.clear(); } posters.clear();
-  const list = [...accounts.values()].sort((a, b) => (b.tagged_with_brand + b.tagged_elsewhere) - (a.tagged_with_brand + a.tagged_elsewhere)).slice(0, LOOKUPS);
+  const list = [...accounts.values()].sort((a, b) => b.tagged_elsewhere - a.tagged_elsewhere || b.tagged_with_brand - a.tagged_with_brand).slice(0, LOOKUPS);
   const lookup = async c => {
     const o = await treg('tikhub.instagram.user.profile', { username: c.handle }).catch(() => ({}));
     const p = o.data?.data?.user || o.data?.user || {};
@@ -98,16 +99,27 @@ try {
   }; lookup.lookup = true;
   await pool(list, 6, lookup);
   report.accounts = list.filter(c => c.kind !== 'private person');
+  // Lift on the "other posts" count: people tagging it ÷ √(its followers), relative to the median brand (1.0 = typical).
+  // Outlier = lift >= --outlier-lift (default 3), or more than 2 robust standard deviations above the median (log scale).
+  const rate = c => c.followers && c.tagged_elsewhere ? c.tagged_elsewhere / Math.sqrt(c.followers) : null;
+  const pool2 = report.accounts.filter(c => c.kind !== 'person' && rate(c) != null);
+  const logs = pool2.map(c => Math.log(rate(c))).sort((a, b) => a - b); const mid = logs[Math.floor(logs.length / 2)];
+  const mad = (d => d[Math.floor(d.length / 2)])(logs.map(x => Math.abs(x - mid)).sort((a, b) => a - b)) || 1;
+  for (const c of report.accounts) { const r = rate(c); c.lift = r != null ? Math.round(100 * Math.exp(Math.log(r) - mid)) / 100 : null; c.z = r != null ? Math.round(10 * (Math.log(r) - mid) / (1.4826 * mad)) / 10 : null; c.outlier = c.lift != null && (c.lift >= OUTLIER || c.z >= 2); }
+  report.outlier_rule = `lift >= ${OUTLIER} or robust z >= 2 (on people tagging it in posts that don't tag @${HANDLE}, vs its follower count)`;
   report.hashtags = hashtags;
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
 report.spend_usd = Math.round(spent * 100) / 100;
 writeFileSync(`${OUT}/ig-tags.json`, JSON.stringify(report, null, 1));
 const acc = report.accounts || []; const cov = report.coverage || {};
-const row = c => `| ${c.name} (@${c.handle}) | ${c.kind} | ${c.tagged_with_brand} | ${c.tagged_elsewhere} | ${c.followers?.toLocaleString() ?? '-'} |`;
-const head = `| Account | Looks like | People tagging it WITH @${HANDLE} | People tagging it in their other posts | Followers |\n|---|---|---|---|---|`;
-const md = [`# What people tag alongside @${HANDLE}`, '', `${cov.posts_tagging_brand ?? 0} posts tagging @${HANDLE} by ${cov.posters ?? 0} accounts (${cov.shop_posters ?? 0} of them shops); ${cov.own_feeds_read ?? 0} of those people's own feeds read. Counts are distinct people, minimum ${MIN}.`, '',
-  '## Brands', '', head, ...acc.filter(c => c.kind === 'brand' || c.kind === 'unclear').map(row), '',
-  '## People and creators', '', head, ...acc.filter(c => c.kind === 'person').map(row), '',
+const row = c => `| ${c.name} (@${c.handle}) | ${c.kind} | ${c.tagged_elsewhere} | ${c.lift ?? '-'} | ${c.tagged_with_brand} | ${c.followers?.toLocaleString() ?? '-'} |`;
+const head = `| Account | Looks like | People tagging it in their OTHER posts | Lift | Tagging it WITH @${HANDLE} | Followers |\n|---|---|---|---|---|---|`;
+const brands = acc.filter(c => c.kind === 'brand' || c.kind === 'unclear');
+const md = [`# What @${HANDLE}'s people tag`, '', `${cov.posts_tagging_brand ?? 0} posts tagging @${HANDLE} by ${cov.posters ?? 0} accounts (${cov.shop_posters ?? 0} of them shops); ${cov.own_feeds_read ?? 0} of those people's own feeds read. "Other posts" skips any post that tags @${HANDLE}, so it shows their own taste. Counts are distinct people, minimum ${MIN}. Lift: how much more they tag it than its follower count predicts (1.0 = typical).`, '',
+  `## Outliers: every brand with ${report.outlier_rule || 'high lift'}`, '', head, ...brands.filter(c => c.outlier).sort((x, y) => y.lift - x.lift).map(row), '',
+  '## Most tagged in their other posts', '', head, ...brands.filter(c => c.tagged_elsewhere >= MIN).sort((x, y) => y.tagged_elsewhere - x.tagged_elsewhere).slice(0, 30).map(row), '',
+  `## Worn with @${HANDLE} (same post)`, '', head, ...brands.filter(c => c.tagged_with_brand >= MIN).sort((x, y) => y.tagged_with_brand - x.tagged_with_brand).slice(0, 20).map(row), '',
+  '## People and creators (outliers first)', '', head, ...acc.filter(c => c.kind === 'person').sort((x, y) => (y.lift ?? 0) - (x.lift ?? 0)).slice(0, 25).map(row), '',
   '## Hashtags', '', `With @${HANDLE}: ${(report.hashtags?.with_brand || []).map(([t, n]) => `${t} (${n})`).join(', ') || '-'}`, '', `In their other posts: ${(report.hashtags?.elsewhere || []).map(([t, n]) => `${t} (${n})`).join(', ') || '-'}`,
   report.error ? `\n**Stopped early:** ${report.error}` : '', `\nSpend: ~$${report.spend_usd} (treg)`].join('\n');
 writeFileSync(`${OUT}/ig-tags.md`, md);

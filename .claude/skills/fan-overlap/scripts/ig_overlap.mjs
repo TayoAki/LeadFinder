@@ -21,6 +21,7 @@ if (!HANDLE) { console.error('usage: node ig_overlap.mjs --handle <instagram han
 const POSTS = Number(args.posts || 60), FOLLOWERS = Number(args.followers || 300), FANS = Number(args.fans || 450), PAGES = Number(args.pages || 4);
 const MIN_SHARED = Number(args['min-shared'] || 3), CAP = Number(args['cap-usd'] || 3), TOP = Number(args.top || 25), LOOKUPS = Number(args.lookups || 250);
 const TAGGED_PAGES = Number(args['tagged-pages'] || 30);
+const OUTLIER = Number(args['outlier-lift'] || 3);
 const EXCLUDE = new Set(String(args.exclude || '').split(',').map(s => s.trim()).filter(Boolean));
 const OUT = resolve(args.out || `fan-overlap/ig-${HANDLE}`);
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
@@ -157,7 +158,8 @@ const row = c => `| ${c.name} (@${c.handle}) | ${c.category || ''} | ${c.shared}
 const head = '| Account | Category | Fans following | Lift | Followers | Confidence |\n|---|---|---|---|---|---|';
 const md = [`# People who follow and engage with @${HANDLE} also follow…`, '',
   `Fans: ${report.coverage?.taggers ?? 0} people who tagged @${HANDLE} in their own posts, ${report.coverage?.commenters ?? 0} commenters on ${report.coverage?.posts_read ?? 0} recent posts + ${report.coverage?.followers_sampled ?? 0} recent public followers; ${report.coverage?.fans_read ?? 0} following lists read. Lift 1.0 = a typical brand in this list; higher = followed more than its size explains.`, '',
-  '## Brands', '', head, ...(report.brand_b || []).map(row), '',
+  `## Outliers: every brand with lift >= ${OUTLIER}`, '', head, ...(report.all_brands || []).filter(c => (c.lift ?? 0) >= OUTLIER).sort((x, y) => y.lift - x.lift).map(row), '',
+  '## Top brands by affinity', '', head, ...(report.brand_b || []).map(row), '',
   report.rivals?.length ? `## Other hat / apparel brands\n\n${head}\n${report.rivals.map(row).join('\n')}\n` : '',
   report.creators?.length ? `## Creators and people they follow\n\n${head}\n${report.creators.map(row).join('\n')}\n` : '',
   report.excluded?.accounts?.length ? `Filtered out (${report.excluded.filters.join(', ')}): ${report.excluded.accounts.slice(0, 20).map(a => a.name).join(', ')}.` : '',
