@@ -1,0 +1,45 @@
+{
+ "formula": "beginner tips (R9, R10)",
+ "caption": "golf is easier than you think #golftips #beginnergolf #topgolf #golftok",
+ "sound": "upbeat classic rock (R9 used 'Stuck in the Middle')",
+ "size": [
+  1080,
+  1440
+ ],
+ "slides": [
+  {
+   "style": "stroke",
+   "photo": "photos/topgolf.jpg",
+   "text": "topgolf to the real course.\nit's easier than you think."
+  },
+  {
+   "style": "stroke",
+   "photo": "photos/range.jpg",
+   "text": "start with a range bucket",
+   "fs": 70
+  },
+  {
+   "style": "stroke",
+   "photo": "photos/fairway.jpg",
+   "text": "book a twilight nine. cheaper + calmer.",
+   "fs": 70
+  },
+  {
+   "style": "stroke",
+   "photo": "photos/green.jpg",
+   "text": "pick up at double par. nobody minds.",
+   "fs": 70
+  },
+  {
+   "style": "stroke",
+   "photo": "photos/swing.jpg",
+   "text": "let faster groups play through",
+   "fs": 70
+  },
+  {
+   "style": "stroke",
+   "photo": "photos/firsttee.jpg",
+   "text": "see you on the first tee."
+  }
+ ]
+}

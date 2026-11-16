@@ -1,0 +1,60 @@
+{
+ "formula": "gift grid (R1, R6)",
+ "caption": "golf gift ideas 🎁⛳️ #golfgifts #giftsforgolfers #christmasgifts #newgolfer #giftideas #fyp",
+ "sound": "a Christmas song (R1, R6 used 'Christmas (Baby Please Come Home)' and 'Sleigh Ride')",
+ "size": [
+  1080,
+  1920
+ ],
+ "slides": [
+  {
+   "style": "serif_box",
+   "photo": "photos/cover.jpg",
+   "text": "golf gift ideas for the new golfer in your group"
+  },
+  {
+   "style": "grid",
+   "items": [
+    {
+     "photo": "photos/balls.jpg",
+     "label": "golf balls"
+    },
+    {
+     "photo": "photos/glove.jpg",
+     "label": "a new glove"
+    },
+    {
+     "photo": "photos/rangefinder.jpg",
+     "label": "gps rangefinder"
+    },
+    {
+     "photo": "photos/crew-cap.png",
+     "label": "cap with their crew's name",
+     "mockup": true
+    }
+   ]
+  },
+  {
+   "style": "grid",
+   "items": [
+    {
+     "photo": "photos/topgolf.jpg",
+     "label": "a topgolf night"
+    },
+    {
+     "photo": "photos/swing.jpg",
+     "label": "a first lesson"
+    },
+    {
+     "photo": "photos/puttingset.jpg",
+     "label": "putting set"
+    },
+    {
+     "photo": "photos/slogan-cap.png",
+     "label": "\"here for the birdies\" cap",
+     "mockup": true
+    }
+   ]
+  }
+ ]
+}
