@@ -1,0 +1,2089 @@
+{
+ "label": "SIMULATED, not demand evidence",
+ "visitors": [
+  {
+   "id": 1,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 27,
+   "situation": "Saw '5 hat ideas for your golf trip crew'; plays with 3 college friends, no trip booked",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Likes the crew-name idea, sent link to group chat",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Group link where each friend picks a colour and pays their share"
+  },
+  {
+   "id": 2,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 31,
+   "situation": "Saw the blank-to-stitched reveal; Saturday muni foursome",
+   "looked_at_first": "Live preview tool",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Reveal made the product feel real; followed the account",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Real photo of the stitched cap on a real person"
+  },
+  {
+   "id": 3,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 24,
+   "situation": "Scrolling golf TikTok on lunch break",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Thought the reveal was cool",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "Nothing on this visit; maybe a later post with real crews"
+  },
+  {
+   "id": 4,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 35,
+   "situation": "Saw gift slideshow; thinking of a gift for his brother-in-law",
+   "looked_at_first": "Prices",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Added Classic to cart as a stocking-stuffer idea",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "An 'order by Dec X for Christmas' date"
+  },
+  {
+   "id": 5,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 29,
+   "situation": "Weekend range golfer, owns 10+ hats",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked 'BOGEY FREE SINCE NEVER'",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "A real photo and a lower first-order price"
+  },
+  {
+   "id": 6,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 22,
+   "situation": "College student, plays a few times a year",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Funny designs",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "shipping_cost"
+   ],
+   "would_have_changed_mind": "Under $25 delivered"
+  },
+  {
+   "id": 7,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 38,
+   "situation": "Plays twice a month, curious about rope hats",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted a rope hat",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend",
+    "polyester"
+   ],
+   "would_have_changed_mind": "Cotton option or close-up texture video"
+  },
+  {
+   "id": 8,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 26,
+   "situation": "Clicked bio link from the reveal post out of curiosity",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Curiosity",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Seeing someone they follow wearing one"
+  },
+  {
+   "id": 9,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 33,
+   "situation": "Has a buddies' trip in spring, not organising it",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Thought of the trip",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "not_now"
+   ],
+   "would_have_changed_mind": "Shared it with the organiser instead (no action himself)"
+  },
+  {
+   "id": 10,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 41,
+   "situation": "Casual golfer, wears free tournament hats",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked crew-name idea",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "Nothing; doesn't pay for hats"
+  },
+  {
+   "id": 11,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 28,
+   "situation": "Saw trip-crew slideshow, commented crew name for a mock-up",
+   "looked_at_first": "Live preview tool",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Wants to see his free mock-up post first",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Seeing his own crew name stitched in a real post"
+  },
+  {
+   "id": 12,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 25,
+   "situation": "Browsing golf content late at night",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Nice colours",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "Not today"
+  },
+  {
+   "id": 13,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 36,
+   "situation": "Golfs with work colleagues",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea of team hats",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Team order flow that collects names/colours"
+  },
+  {
+   "id": 14,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 30,
+   "situation": "Likes retro look but already owns Malbon bucket hat",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Aesthetic matched",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Limited drop / collab feel"
+  },
+  {
+   "id": 15,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 23,
+   "situation": "Started golf this year",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted something golf-y",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "not_now"
+   ],
+   "would_have_changed_mind": "Cheaper Classic"
+  },
+  {
+   "id": 16,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 44,
+   "situation": "Plays in a club scramble, skeptical of IG ads",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Real reviews or local course photos"
+  },
+  {
+   "id": 17,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 32,
+   "situation": "Saw gift ideas slideshow for himself, not a gift",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked 'MEET YOU AT THE TURN'",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend",
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "Seeing it worn in a non-costume way"
+  },
+  {
+   "id": 18,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 27,
+   "situation": "Couple's golf content viewer",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Browsing",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "N/A"
+  },
+  {
+   "id": 19,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 34,
+   "situation": "Thought it was a Comfort Colors product page",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Knows Comfort Colors shirts",
+   "main_objection": "Polyester ripstop, prefers cotton / doubts quality",
+   "main_objection_key": "polyester",
+   "objections_raised": [
+    "polyester",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Clear quality close-ups"
+  },
+  {
+   "id": 20,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 29,
+   "situation": "Golf twice a month, hats from Amazon",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted custom hat",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "Bundle of 2 for less"
+  },
+  {
+   "id": 21,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 37,
+   "situation": "Watched reveal 3 times, didn't click design",
+   "looked_at_first": "Live preview tool",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked process",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Example of preview vs finished cap side by side"
+  },
+  {
+   "id": 22,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 26,
+   "situation": "Bachelor party in summer, groom not organiser",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Thought of the bach",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "not_now"
+   ],
+   "would_have_changed_mind": "Organiser seeing it (forwarded link)"
+  },
+  {
+   "id": 23,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 40,
+   "situation": "Plays with son on weekends",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Dad+kid card",
+   "main_objection": "No confirmed kid/youth size",
+   "main_objection_key": "no_kid_size",
+   "objections_raised": [
+    "no_kid_size"
+   ],
+   "would_have_changed_mind": "Confirmed kid size"
+  },
+  {
+   "id": 24,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 31,
+   "situation": "Fashion-curious golfer",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Look",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Different crown shape"
+  },
+  {
+   "id": 25,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 28,
+   "situation": "Mid-scroll, clicked by accident on carousel",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "N/A"
+  },
+  {
+   "id": 26,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 35,
+   "situation": "Considering crew hats for an annual Ryder-Cup-style weekend in May",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Good fit later",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now",
+    "group_coord"
+   ],
+   "would_have_changed_mind": "Reminder in spring"
+  },
+  {
+   "id": 27,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 22,
+   "situation": "Golf meme follower",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Funny lines",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "shipping_cost"
+   ],
+   "would_have_changed_mind": "$25 tee-line offer"
+  },
+  {
+   "id": 28,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 39,
+   "situation": "Tried to see delivery date for Christmas",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Possible gift for himself",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing"
+   ],
+   "would_have_changed_mind": "Clear delivery-by date"
+  },
+  {
+   "id": 29,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 33,
+   "situation": "Plays every Sunday, quality-focused",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked sweatband",
+   "main_objection": "Polyester ripstop, prefers cotton / doubts quality",
+   "main_objection_key": "polyester",
+   "objections_raised": [
+    "polyester",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Video close-up of stitching"
+  },
+  {
+   "id": 30,
+   "segment": "Casual golfer (TikTok/IG slideshow)",
+   "segment_key": "social",
+   "source": "TikTok/IG slideshow",
+   "age": 30,
+   "situation": "Looked for reviews, found none",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Interest",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Any real customer photos"
+  },
+  {
+   "id": 31,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 46,
+   "situation": "Weekend golfer, ad's before/after caught him; buys his own hats",
+   "looked_at_first": "Prices",
+   "decision": "buy_now",
+   "purchase": {
+    "product": "Clubhouse Classic",
+    "quantity": 1,
+    "hats": 1,
+    "product_value_usd": 34,
+    "shipping_usd": 4.69,
+    "order_value_usd": 38.69
+   },
+   "main_reason": "$34 is fine for a fun hat; 'BOGEY FREE SINCE NEVER' made him laugh",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "mockup"
+   ],
+   "would_have_changed_mind": "(bought) - would have bought 2 with a bundle"
+  },
+  {
+   "id": 32,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 38,
+   "situation": "Plays in a Thursday league",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Wants league hats, will ask the guys",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Shareable crew link with per-person checkout"
+  },
+  {
+   "id": 33,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 52,
+   "situation": "Golfs with 3 old friends, annual trip to Myrtle",
+   "looked_at_first": "'For your...' cards",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Liked the trip card; trip is in April",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "Saved design he can send to the group"
+  },
+  {
+   "id": 34,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 33,
+   "situation": "Clicked ad; thought 'nice' but has no event",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Ad was clever",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "A specific occasion prompt"
+  },
+  {
+   "id": 35,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 48,
+   "situation": "Distrusts Facebook shops after a bad order",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Reviews, real photos, known payment badges"
+  },
+  {
+   "id": 36,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 55,
+   "situation": "Prefers cotton structured caps",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted crew hat",
+   "main_objection": "Polyester ripstop, prefers cotton / doubts quality",
+   "main_objection_key": "polyester",
+   "objections_raised": [
+    "polyester",
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Cotton structured option"
+  },
+  {
+   "id": 37,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 41,
+   "situation": "Bought custom hats on Amazon last year for $18",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Knows custom hats",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "shipping_cost"
+   ],
+   "would_have_changed_mind": "Free shipping on 2+"
+  },
+  {
+   "id": 38,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 29,
+   "situation": "Just saw a funny ad",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Ad was funny",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "N/A"
+  },
+  {
+   "id": 39,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 44,
+   "situation": "Wants one for Christmas from his wife; screenshots it",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Sent link to wife",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing"
+   ],
+   "would_have_changed_mind": "Gift cut-off date and gift card"
+  },
+  {
+   "id": 40,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 36,
+   "situation": "Noticed 'mock-up' label and left",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup"
+   ],
+   "would_have_changed_mind": "Real photo hero"
+  },
+  {
+   "id": 41,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 50,
+   "situation": "Organises nothing; plays solo with randoms",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "N/A",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "Nothing - no crew"
+  },
+  {
+   "id": 42,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 31,
+   "situation": "Rope hat fan but thinks it's peaking",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Look",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Classic non-rope option"
+  },
+  {
+   "id": 43,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 47,
+   "situation": "Tried preview, letters looked small",
+   "looked_at_first": "Live preview tool",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted crew name",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "Stitched sample photo of long names"
+  },
+  {
+   "id": 44,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 39,
+   "situation": "Price-checks everything",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Interest",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "Launch offer"
+  },
+  {
+   "id": 45,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 53,
+   "situation": "Bigger head, worried about fit",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked Chambray",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Fit details / head size range"
+  },
+  {
+   "id": 46,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 35,
+   "situation": "Saw ad between other golf DTC ads",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Ad stood out",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Social proof"
+  },
+  {
+   "id": 47,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 42,
+   "situation": "Looking at retro styles, prefers Melin",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Aesthetic",
+   "main_objection": "No brand cachet; would rather wear Malbon/Melin",
+   "main_objection_key": "no_cachet",
+   "objections_raised": [
+    "no_cachet"
+   ],
+   "would_have_changed_mind": "Collab or known creator wearing it"
+  },
+  {
+   "id": 48,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 28,
+   "situation": "Shared it with buddy as a joke",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Funny",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now"
+   ],
+   "would_have_changed_mind": "N/A"
+  },
+  {
+   "id": 49,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 45,
+   "situation": "Ordered gifts already",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Interest",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "not_now"
+   ],
+   "would_have_changed_mind": "N/A this season"
+  },
+  {
+   "id": 50,
+   "segment": "Golfer (Meta before/after ad)",
+   "segment_key": "meta",
+   "source": "Meta before/after ad",
+   "age": 49,
+   "situation": "Long arrival time put him off",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Interest",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing"
+   ],
+   "would_have_changed_mind": "Faster production or date guarantee"
+  },
+  {
+   "id": 51,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 34,
+   "situation": "Wife buying for husband whose foursome calls itself 'The Shankapotamuses'",
+   "looked_at_first": "'For your...' cards",
+   "decision": "buy_now",
+   "purchase": {
+    "product": "Crew Cap",
+    "quantity": 1,
+    "hats": 1,
+    "product_value_usd": 38,
+    "shipping_usd": 4.69,
+    "order_value_usd": 42.69
+   },
+   "main_reason": "Personalised with his crew name felt thoughtful and unique",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "(bought) - a delivery date would have removed worry"
+  },
+  {
+   "id": 52,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 29,
+   "situation": "Daughter buying for golf-mad dad",
+   "looked_at_first": "Prices",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Cute, but needs to check if Dad wears this style",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Gift card / 'he designs it' option"
+  },
+  {
+   "id": 53,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "TikTok/IG slideshow",
+   "age": 31,
+   "situation": "Girlfriend buying for boyfriend, saw gift slideshow",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Liked Peachy colour",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "gift_taste"
+   ],
+   "would_have_changed_mind": "Clear Christmas cut-off"
+  },
+  {
+   "id": 54,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 58,
+   "situation": "Mom shopping for adult son",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Golf gift",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Reviews, gift guarantee"
+  },
+  {
+   "id": 55,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 45,
+   "situation": "Wife; husband 'has 30 hats'",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "'Golfer who has everything' card",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste"
+   ],
+   "would_have_changed_mind": "Gift card"
+  },
+  {
+   "id": 56,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 38,
+   "situation": "Searched 'golf gifts for men', comparing 10 tabs",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Price fine",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "holiday_timing"
+   ],
+   "would_have_changed_mind": "Reviews + date"
+  },
+  {
+   "id": 57,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "TikTok/IG slideshow",
+   "age": 27,
+   "situation": "Sister buying for brother, unsure of his golf group name",
+   "looked_at_first": "Live preview tool",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Wanted crew cap",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "Classic suggestions for gifts"
+  },
+  {
+   "id": 58,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 52,
+   "situation": "Husband's style is Titleist logo caps",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Golf related",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste",
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Plain classic cap option"
+  },
+  {
+   "id": 59,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 41,
+   "situation": "Needs gift by Dec 15 office party",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Fun gift",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing"
+   ],
+   "would_have_changed_mind": "Guaranteed date"
+  },
+  {
+   "id": 60,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "TikTok/IG slideshow",
+   "age": 24,
+   "situation": "Girlfriend saw TikTok, budget $30",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Cute",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "shipping_cost"
+   ],
+   "would_have_changed_mind": "Under $30 delivered"
+  },
+  {
+   "id": 61,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 36,
+   "situation": "Wife; worried about quality from new site",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Thoughtful idea",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Real photo and reviews"
+  },
+  {
+   "id": 62,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 60,
+   "situation": "Grandma buying for grandson",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Golf gift",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste"
+   ],
+   "would_have_changed_mind": "Simpler gift picker"
+  },
+  {
+   "id": 63,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "TikTok/IG slideshow",
+   "age": 33,
+   "situation": "Partner wanted to see it in person",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Look",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup"
+   ],
+   "would_have_changed_mind": "Real product video"
+  },
+  {
+   "id": 64,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 47,
+   "situation": "Corporate gift buyer, 20 hats with company name",
+   "looked_at_first": "'For your...' cards",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Would need invoice + bulk options",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Bulk/corporate quote form"
+  },
+  {
+   "id": 65,
+   "segment": "Holiday gift buyer",
+   "segment_key": "gift",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 30,
+   "situation": "Not golfer, no idea what 'dogleg' means",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Golf gift",
+   "main_objection": "Unsure of recipient's taste or whether he'd wear it",
+   "main_objection_key": "gift_taste",
+   "objections_raised": [
+    "gift_taste",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Plain-English gift section"
+  },
+  {
+   "id": 66,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "TikTok/IG slideshow",
+   "age": 34,
+   "situation": "Organising 4-man Scottsdale trip in Feb, already collected Venmo",
+   "looked_at_first": "'For your...' cards",
+   "decision": "buy_now",
+   "purchase": {
+    "product": "Crew Pack 4",
+    "quantity": 1,
+    "hats": 4,
+    "product_value_usd": 140,
+    "shipping_usd": 10.96,
+    "order_value_usd": 150.96
+   },
+   "main_reason": "No minimum, crew name + trip + year exactly what he wanted",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust",
+    "mockup"
+   ],
+   "would_have_changed_mind": "(bought) - a real stitched photo would have made him buy faster"
+  },
+  {
+   "id": 67,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 31,
+   "situation": "Bachelor trip to Pinehurst in March, 8 guys",
+   "looked_at_first": "Live preview tool",
+   "decision": "buy_now",
+   "purchase": {
+    "product": "Crew Cap",
+    "quantity": 1,
+    "hats": 1,
+    "product_value_usd": 38,
+    "shipping_usd": 4.69,
+    "order_value_usd": 42.69
+   },
+   "main_reason": "Ordering one sample before committing to 8",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "no_reviews",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "(bought sample) - real photos would have made it the 8-pack now"
+  },
+  {
+   "id": 68,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Meta before/after ad",
+   "age": 38,
+   "situation": "12-man Bandon trip in April",
+   "looked_at_first": "Prices",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Needs to confirm headcount and colours",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Group link with per-person colour and payment"
+  },
+  {
+   "id": 69,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "TikTok/IG slideshow",
+   "age": 29,
+   "situation": "Bachelor party in Jan, groom wants matching hats",
+   "looked_at_first": "H1 'No 24-hat minimum'",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Showing groom first",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Real photo to send in the group chat"
+  },
+  {
+   "id": 70,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 42,
+   "situation": "Annual 8-man Myrtle Beach trip in March",
+   "looked_at_first": "'For your...' cards",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Liked $264 pack; needs to split cost",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "Split payment"
+  },
+  {
+   "id": 71,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Meta before/after ad",
+   "age": 36,
+   "situation": "Trip in 6 weeks, worried about timing",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Wants dates confirmed",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "Clear ship-by date"
+  },
+  {
+   "id": 72,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "TikTok/IG slideshow",
+   "age": 27,
+   "situation": "Bach trip, guys want different colours",
+   "looked_at_first": "Live preview tool",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Mixed colours is a plus",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord"
+   ],
+   "would_have_changed_mind": "Collect-colours form"
+  },
+  {
+   "id": 73,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 45,
+   "situation": "Got quote from local embroiderer for 12 cotton caps",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Comparing",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "polyester"
+   ],
+   "would_have_changed_mind": "Better 12-pack price"
+  },
+  {
+   "id": 74,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "Meta before/after ad",
+   "age": 33,
+   "situation": "Wanted course name stitched (famous course)",
+   "looked_at_first": "Live preview tool",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Crew idea",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Clarity on what text is allowed"
+  },
+  {
+   "id": 75,
+   "segment": "Golf/bachelor trip organiser",
+   "segment_key": "trip",
+   "source": "TikTok/IG slideshow",
+   "age": 39,
+   "situation": "Trip crew prefers bucket hats",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Matching gear",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Other hat styles"
+  },
+  {
+   "id": 76,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "Meta before/after ad",
+   "age": 42,
+   "situation": "Plays with 14-year-old son every Sunday",
+   "looked_at_first": "'For your...' cards",
+   "decision": "buy_now",
+   "purchase": {
+    "product": "Crew Cap",
+    "quantity": 2,
+    "hats": 2,
+    "product_value_usd": 76,
+    "shipping_usd": 6.78,
+    "order_value_usd": 82.78
+   },
+   "main_reason": "Matching 'CREW: DAD'/'CREW: CADDIE' for him and his teen",
+   "main_objection": "No confirmed kid/youth size",
+   "main_objection_key": "no_kid_size",
+   "objections_raised": [
+    "no_kid_size",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "(bought) - a youth size would have added a third for his younger kid"
+  },
+  {
+   "id": 77,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "Meta before/after ad",
+   "age": 39,
+   "situation": "Son is 8, plays junior golf",
+   "looked_at_first": "'For your...' cards",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Wants dad+kid set",
+   "main_objection": "No confirmed kid/youth size",
+   "main_objection_key": "no_kid_size",
+   "objections_raised": [
+    "no_kid_size"
+   ],
+   "would_have_changed_mind": "Confirmed kid-size cap"
+  },
+  {
+   "id": 78,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "TikTok/IG slideshow",
+   "age": 44,
+   "situation": "Two daughters on HS golf team",
+   "looked_at_first": "Prices",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Team hats idea",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Team order flow"
+  },
+  {
+   "id": 79,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "Shared link from a friend/group chat",
+   "age": 47,
+   "situation": "Friend shared link; dad of 3",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Christmas gift for family golf day",
+   "main_objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+   "main_objection_key": "holiday_timing",
+   "objections_raised": [
+    "holiday_timing",
+    "no_kid_size"
+   ],
+   "would_have_changed_mind": "Date + kid size"
+  },
+  {
+   "id": 80,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "Meta before/after ad",
+   "age": 51,
+   "situation": "Kids 6 and 9",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Dad+kid angle",
+   "main_objection": "No confirmed kid/youth size",
+   "main_objection_key": "no_kid_size",
+   "objections_raised": [
+    "no_kid_size"
+   ],
+   "would_have_changed_mind": "Kid size"
+  },
+  {
+   "id": 81,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "TikTok/IG slideshow",
+   "age": 37,
+   "situation": "Wears structured cotton caps only",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea",
+   "main_objection": "Polyester ripstop, prefers cotton / doubts quality",
+   "main_objection_key": "polyester",
+   "objections_raised": [
+    "polyester"
+   ],
+   "would_have_changed_mind": "Cotton option"
+  },
+  {
+   "id": 82,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "Meta before/after ad",
+   "age": 49,
+   "situation": "Skeptical of new brands",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Idea",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Reviews"
+  },
+  {
+   "id": 83,
+   "segment": "Golf dad",
+   "segment_key": "dad",
+   "source": "TikTok/IG slideshow",
+   "age": 35,
+   "situation": "Toddler; too early",
+   "looked_at_first": "'For your...' cards",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Cute",
+   "main_objection": "No confirmed kid/youth size",
+   "main_objection_key": "no_kid_size",
+   "objections_raised": [
+    "no_kid_size",
+    "not_now"
+   ],
+   "would_have_changed_mind": "Toddler size"
+  },
+  {
+   "id": 84,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "TikTok/IG slideshow",
+   "age": 30,
+   "situation": "Owns 6 Malbon pieces",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Retro vibe",
+   "main_objection": "No brand cachet; would rather wear Malbon/Melin",
+   "main_objection_key": "no_cachet",
+   "objections_raised": [
+    "no_cachet",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Collab with a known brand"
+  },
+  {
+   "id": 85,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "TikTok/IG slideshow",
+   "age": 34,
+   "situation": "Wears Melin, pays for brand",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Price is fine",
+   "main_objection": "No brand cachet; would rather wear Malbon/Melin",
+   "main_objection_key": "no_cachet",
+   "objections_raised": [
+    "no_cachet"
+   ],
+   "would_have_changed_mind": "Limited drop, design cred"
+  },
+  {
+   "id": 86,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "Meta before/after ad",
+   "age": 28,
+   "situation": "Follows golf fashion creators",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Followed account to see real photos",
+   "main_objection": "Hero is a mock-up, no real photo of the stitched cap",
+   "main_objection_key": "mockup",
+   "objections_raised": [
+    "mockup",
+    "no_cachet"
+   ],
+   "would_have_changed_mind": "Creator photos"
+  },
+  {
+   "id": 87,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "TikTok/IG slideshow",
+   "age": 32,
+   "situation": "Thinks rope hats are 2024",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "N/A",
+   "main_objection": "Rope/retro look feels like a passing trend or not my style",
+   "main_objection_key": "rope_trend",
+   "objections_raised": [
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Different silhouette"
+  },
+  {
+   "id": 88,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "Meta before/after ad",
+   "age": 37,
+   "situation": "lululemon golfer, polished look",
+   "looked_at_first": "'The cap' facts",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Look",
+   "main_objection": "Polyester ripstop, prefers cotton / doubts quality",
+   "main_objection_key": "polyester",
+   "objections_raised": [
+    "polyester",
+    "no_cachet"
+   ],
+   "would_have_changed_mind": "Premium fabric"
+  },
+  {
+   "id": 89,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "TikTok/IG slideshow",
+   "age": 26,
+   "situation": "Thinks jokey text cheapens it",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Aesthetic",
+   "main_objection": "No brand cachet; would rather wear Malbon/Melin",
+   "main_objection_key": "no_cachet",
+   "objections_raised": [
+    "no_cachet",
+    "rope_trend"
+   ],
+   "would_have_changed_mind": "Minimal script designs only"
+  },
+  {
+   "id": 90,
+   "segment": "Style-led golfer (Malbon/lululemon/Melin)",
+   "segment_key": "style",
+   "source": "Meta before/after ad",
+   "age": 41,
+   "situation": "Checked Instagram, few posts",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Look",
+   "main_objection": "No reviews / unknown brand, don't trust it yet",
+   "main_objection_key": "no_reviews",
+   "objections_raised": [
+    "no_reviews",
+    "no_cachet"
+   ],
+   "would_have_changed_mind": "Real community"
+  },
+  {
+   "id": 91,
+   "segment": "League / member-guest captain",
+   "segment_key": "captain",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 54,
+   "situation": "Member-guest in May, 2-man team",
+   "looked_at_first": "'For your...' cards",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Will order in spring",
+   "main_objection": "Just browsing, no current need",
+   "main_objection_key": "not_now",
+   "objections_raised": [
+    "not_now",
+    "preview_trust"
+   ],
+   "would_have_changed_mind": "Reminder email"
+  },
+  {
+   "id": 92,
+   "segment": "League / member-guest captain",
+   "segment_key": "captain",
+   "source": "Meta before/after ad",
+   "age": 48,
+   "situation": "Runs 16-man Thursday league",
+   "looked_at_first": "Prices",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Needs league vote",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "price_vs_amazon"
+   ],
+   "would_have_changed_mind": "16+ pack price"
+  },
+  {
+   "id": 93,
+   "segment": "League / member-guest captain",
+   "segment_key": "captain",
+   "source": "Google search ('golf gifts for men' etc.)",
+   "age": 57,
+   "situation": "Club captain, needs invoice for club funds",
+   "looked_at_first": "FAQ (timing/returns)",
+   "decision": "save_for_later",
+   "purchase": null,
+   "main_reason": "Needs invoice/PO",
+   "main_objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+   "main_objection_key": "group_coord",
+   "objections_raised": [
+    "group_coord",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Invoice/quote option"
+  },
+  {
+   "id": 94,
+   "segment": "League / member-guest captain",
+   "segment_key": "captain",
+   "source": "Meta before/after ad",
+   "age": 44,
+   "situation": "Scramble team of 4",
+   "looked_at_first": "Live preview tool",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "Liked crew pack",
+   "main_objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+   "main_objection_key": "preview_trust",
+   "objections_raised": [
+    "preview_trust",
+    "mockup"
+   ],
+   "would_have_changed_mind": "Real stitched photos"
+  },
+  {
+   "id": 95,
+   "segment": "League / member-guest captain",
+   "segment_key": "captain",
+   "source": "TikTok/IG slideshow",
+   "age": 50,
+   "situation": "Uses club pro shop for team hats",
+   "looked_at_first": "Prices",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "N/A",
+   "main_objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+   "main_objection_key": "price_vs_amazon",
+   "objections_raised": [
+    "price_vs_amazon",
+    "no_reviews"
+   ],
+   "would_have_changed_mind": "Better bulk price"
+  },
+  {
+   "id": 96,
+   "segment": "Non-golfer / accidental click",
+   "segment_key": "nongolf",
+   "source": "TikTok/IG slideshow",
+   "age": 23,
+   "situation": "Clicked thinking it was a dog brand",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Not a golfer / wrong click",
+   "main_objection_key": "irrelevant",
+   "objections_raised": [
+    "irrelevant"
+   ],
+   "would_have_changed_mind": "Nothing"
+  },
+  {
+   "id": 97,
+   "segment": "Non-golfer / accidental click",
+   "segment_key": "nongolf",
+   "source": "Meta before/after ad",
+   "age": 35,
+   "situation": "Accidental tap on ad",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Not a golfer / wrong click",
+   "main_objection_key": "irrelevant",
+   "objections_raised": [
+    "irrelevant"
+   ],
+   "would_have_changed_mind": "Nothing"
+  },
+  {
+   "id": 98,
+   "segment": "Non-golfer / accidental click",
+   "segment_key": "nongolf",
+   "source": "TikTok/IG slideshow",
+   "age": 19,
+   "situation": "Fashion browser, likes rope hats but not golf",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Not a golfer / wrong click",
+   "main_objection_key": "irrelevant",
+   "objections_raised": [
+    "irrelevant"
+   ],
+   "would_have_changed_mind": "Nothing"
+  },
+  {
+   "id": 99,
+   "segment": "Non-golfer / accidental click",
+   "segment_key": "nongolf",
+   "source": "Meta before/after ad",
+   "age": 62,
+   "situation": "Clicked by mistake",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Not a golfer / wrong click",
+   "main_objection_key": "irrelevant",
+   "objections_raised": [
+    "irrelevant"
+   ],
+   "would_have_changed_mind": "Nothing"
+  },
+  {
+   "id": 100,
+   "segment": "Non-golfer / accidental click",
+   "segment_key": "nongolf",
+   "source": "TikTok/IG slideshow",
+   "age": 28,
+   "situation": "Saw 'club' and thought it was a nightclub",
+   "looked_at_first": "Hero mock-up (foursome in Ivory caps)",
+   "decision": "no",
+   "purchase": null,
+   "main_reason": "None",
+   "main_objection": "Not a golfer / wrong click",
+   "main_objection_key": "irrelevant",
+   "objections_raised": [
+    "irrelevant"
+   ],
+   "would_have_changed_mind": "Nothing"
+  }
+ ],
+ "summary": {
+  "totals": {
+   "save_for_later": 22,
+   "no": 73,
+   "buy_now": 5
+  },
+  "conversion_pct": 5,
+  "by_segment": {
+   "Casual golfer (TikTok/IG slideshow)": {
+    "visitors": 30,
+    "buy_now": 0,
+    "save_for_later": 4,
+    "no": 26,
+    "conversion_pct": 0.0
+   },
+   "Golfer (Meta before/after ad)": {
+    "visitors": 20,
+    "buy_now": 1,
+    "save_for_later": 3,
+    "no": 16,
+    "conversion_pct": 5.0
+   },
+   "Holiday gift buyer": {
+    "visitors": 15,
+    "buy_now": 1,
+    "save_for_later": 3,
+    "no": 11,
+    "conversion_pct": 6.7
+   },
+   "Golf/bachelor trip organiser": {
+    "visitors": 10,
+    "buy_now": 2,
+    "save_for_later": 5,
+    "no": 3,
+    "conversion_pct": 20.0
+   },
+   "Golf dad": {
+    "visitors": 8,
+    "buy_now": 1,
+    "save_for_later": 3,
+    "no": 4,
+    "conversion_pct": 12.5
+   },
+   "Style-led golfer (Malbon/lululemon/Melin)": {
+    "visitors": 7,
+    "buy_now": 0,
+    "save_for_later": 1,
+    "no": 6,
+    "conversion_pct": 0.0
+   },
+   "League / member-guest captain": {
+    "visitors": 5,
+    "buy_now": 0,
+    "save_for_later": 3,
+    "no": 2,
+    "conversion_pct": 0.0
+   },
+   "Non-golfer / accidental click": {
+    "visitors": 5,
+    "buy_now": 0,
+    "save_for_later": 0,
+    "no": 5,
+    "conversion_pct": 0.0
+   }
+  },
+  "by_source": {
+   "TikTok/IG slideshow": {
+    "visitors": 49,
+    "buy_now": 1,
+    "save_for_later": 8,
+    "no": 40,
+    "conversion_pct": 2.0
+   },
+   "Meta before/after ad": {
+    "visitors": 34,
+    "buy_now": 2,
+    "save_for_later": 8,
+    "no": 24,
+    "conversion_pct": 5.9
+   },
+   "Google search ('golf gifts for men' etc.)": {
+    "visitors": 16,
+    "buy_now": 2,
+    "save_for_later": 5,
+    "no": 9,
+    "conversion_pct": 12.5
+   },
+   "Shared link from a friend/group chat": {
+    "visitors": 1,
+    "buy_now": 0,
+    "save_for_later": 1,
+    "no": 0,
+    "conversion_pct": 0.0
+   }
+  },
+  "orders": 5,
+  "revenue_usd": 357.81,
+  "product_revenue_usd": 326,
+  "average_order_value_usd": 71.56,
+  "hats_sold": 9,
+  "hats_per_order": 1.8,
+  "products_bought": {
+   "Clubhouse Classic": 1,
+   "Crew Cap": 3,
+   "Crew Pack 4": 1
+  },
+  "buyer_reasons": [
+   "$34 is fine for a fun hat; 'BOGEY FREE SINCE NEVER' made him laugh",
+   "Personalised with his crew name felt thoughtful and unique",
+   "No minimum, crew name + trip + year exactly what he wanted",
+   "Ordering one sample before committing to 8",
+   "Matching 'CREW: DAD'/'CREW: CADDIE' for him and his teen"
+  ],
+  "objections_ranked": [
+   {
+    "key": "no_reviews",
+    "objection": "No reviews / unknown brand, don't trust it yet",
+    "visitors": 29
+   },
+   {
+    "key": "mockup",
+    "objection": "Hero is a mock-up, no real photo of the stitched cap",
+    "visitors": 18
+   },
+   {
+    "key": "group_coord",
+    "objection": "Need to ask the crew first: sizes/colours, who pays, split payment",
+    "visitors": 15
+   },
+   {
+    "key": "not_now",
+    "objection": "Just browsing, no current need",
+    "visitors": 15
+   },
+   {
+    "key": "price_vs_amazon",
+    "objection": "$34-38 + shipping vs ~$15-25 custom hats on Amazon/Etsy",
+    "visitors": 14
+   },
+   {
+    "key": "preview_trust",
+    "objection": "Doubts the live preview matches the real stitching; no returns on personalised",
+    "visitors": 13
+   },
+   {
+    "key": "holiday_timing",
+    "objection": "No gift cut-off date; made-to-order + shipping vs holiday deadline",
+    "visitors": 11
+   },
+   {
+    "key": "rope_trend",
+    "objection": "Rope/retro look feels like a passing trend or not my style",
+    "visitors": 10
+   },
+   {
+    "key": "gift_taste",
+    "objection": "Unsure of recipient's taste or whether he'd wear it",
+    "visitors": 8
+   },
+   {
+    "key": "polyester",
+    "objection": "Polyester ripstop, prefers cotton / doubts quality",
+    "visitors": 7
+   },
+   {
+    "key": "no_cachet",
+    "objection": "No brand cachet; would rather wear Malbon/Melin",
+    "visitors": 7
+   },
+   {
+    "key": "no_kid_size",
+    "objection": "No confirmed kid/youth size",
+    "visitors": 6
+   },
+   {
+    "key": "irrelevant",
+    "objection": "Not a golfer / wrong click",
+    "visitors": 5
+   },
+   {
+    "key": "shipping_cost",
+    "objection": "Shipping added on top of the price",
+    "visitors": 4
+   }
+  ],
+  "note": "Simulated panel. Not demand evidence. Counts are judgement calls, not measurements."
+ }
+}
