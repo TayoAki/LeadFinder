@@ -1,0 +1,160 @@
+{
+ "slogans": [
+  {
+   "code": "S01",
+   "slogan": "Birdie Girl Era"
+  },
+  {
+   "code": "S02",
+   "slogan": "Birdie Behavior"
+  },
+  {
+   "code": "S03",
+   "slogan": "Eagle Girl Era"
+  },
+  {
+   "code": "S04",
+   "slogan": "Bogey Behavior"
+  },
+  {
+   "code": "S05",
+   "slogan": "One Putt. She Ate."
+  },
+  {
+   "code": "S06",
+   "slogan": "That Range Girl"
+  },
+  {
+   "code": "S07",
+   "slogan": "Driver Bussin'"
+  },
+  {
+   "code": "S08",
+   "slogan": "Big Tee Energy"
+  },
+  {
+   "code": "S09",
+   "slogan": "Tough Bounce"
+  },
+  {
+   "code": "S10",
+   "slogan": "It's Giving Birdie"
+  },
+  {
+   "code": "S11",
+   "slogan": "Bogey Crashout"
+  },
+  {
+   "code": "S12",
+   "slogan": "That Birdie Girl"
+  },
+  {
+   "code": "S13",
+   "slogan": "Mind Your Mulligans"
+  },
+  {
+   "code": "S14",
+   "slogan": "Birdies in My Bag"
+  },
+  {
+   "code": "S15",
+   "slogan": "No Cap, All Carry"
+  },
+  {
+   "code": "S16",
+   "slogan": "Range Crashout"
+  },
+  {
+   "code": "S17",
+   "slogan": "Go, Birdie Bestie"
+  },
+  {
+   "code": "S18",
+   "slogan": "Birdie in 4K"
+  },
+  {
+   "code": "S19",
+   "slogan": "Bogey. What About It?"
+  },
+  {
+   "code": "S20",
+   "slogan": "Birdie Bestie"
+  },
+  {
+   "code": "S21",
+   "slogan": "Respectfully, That's OB"
+  },
+  {
+   "code": "S22",
+   "slogan": "Shank in 4K"
+  },
+  {
+   "code": "S23",
+   "slogan": "Birdie Aura"
+  },
+  {
+   "code": "S24",
+   "slogan": "Slice in 4K"
+  },
+  {
+   "code": "S25",
+   "slogan": "Here for the Birdies"
+  }
+ ],
+ "crew_names": [
+  {
+   "code": "C01",
+   "name": "Tee Time Squad"
+  },
+  {
+   "code": "C02",
+   "name": "After Work Nine Club"
+  },
+  {
+   "code": "C03",
+   "name": "Sunday Swing Club"
+  },
+  {
+   "code": "C04",
+   "name": "Range Day Girls"
+  },
+  {
+   "code": "C05",
+   "name": "Back Nine Brunch Club"
+  },
+  {
+   "code": "C06",
+   "name": "Brunch & Birdies Club"
+  },
+  {
+   "code": "C07",
+   "name": "Sunday Swing Girls"
+  },
+  {
+   "code": "C08",
+   "name": "Golf Trip Boys"
+  },
+  {
+   "code": "C09",
+   "name": "Slice Boys"
+  },
+  {
+   "code": "C10",
+   "name": "Fairway Friends Club"
+  }
+ ],
+ "brand_names": [
+  {
+   "code": "B1",
+   "name": "Open Tee Club"
+  },
+  {
+   "code": "B2",
+   "name": "Public Tee Club"
+  },
+  {
+   "code": "B3",
+   "name": "Everybody Tee Club"
+  }
+ ]
+}

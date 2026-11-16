@@ -90,6 +90,17 @@ if os.environ.get('ICP') == 'telfar':
            'Fast-fashion deal buyer': (.15, .8, .7, 1.0, .3, .1, .2), 'Gift buyer in the community': (.10, .5, .6, .6, .5, .4, .6)}
     EXTRA = {'Telfar core fashion fan': (.3, .7, 1.0), 'Golfcore fashion buyer': (.1, 1.0, .8), 'Culture golfer (Eastside Golf crowd)': (.1, 1.3, .3),
              'Fit-check poster': (.4, .8, 1.2), 'Fast-fashion deal buyer': (.3, .8, .6), 'Gift buyer in the community': (0, 1.0, .3)}
+if os.environ.get('ICP') == 'opentee':
+    # Open Tee Club ICP. NGF 2025: women +46% since 2019 and ~60% of net new golfers; women = 35% of beginners, 43% of
+    # off-course-only players; >half of women's gains are under 30; women ~2x as likely to lapse; POC = 26% of on-course
+    # golfers (30% of female golfers); off-course (Topgolf) players 5x more interested in the course. Plus Melin/Telfar
+    # findings: plain golf attitude wins; borrowed slang loses even with fashion-first shoppers.
+    SEG = {'New woman golfer (beginner, via friends/Topgolf)': (.22, .65, 1.0, .7, .9, .4, .6), 'Off-course golf-curious (Topgolf/sim)': (.18, .75, .5, 1.0, .7, .3, .4),
+           'Culture golfer (Eastside crowd)': (.15, .5, .3, .8, 1.2, .4, .5), 'Friend-group crew organiser': (.15, .55, .5, .9, 1.6, .3, .3),
+           'Fashion-first golf-adjacent (Telfar crowd)': (.12, .8, .6, .6, .5, .2, .3), "Women's golf group / league leader": (.06, .4, 1.0, .6, 1.5, .4, .4),
+           'Gift buyer for a new golfer': (.12, .5, .5, .6, .5, .4, .7)}
+    EXTRA = {'New woman golfer (beginner, via friends/Topgolf)': (.05, 1.0, .5), 'Off-course golf-curious (Topgolf/sim)': (.15, 1.0, .4), 'Culture golfer (Eastside crowd)': (.1, 1.3, .3),
+             'Friend-group crew organiser': (.05, 1.0, .2), 'Fashion-first golf-adjacent (Telfar crowd)': (.2, .9, 1.0), "Women's golf group / league leader": (0, 1.1, .3), 'Gift buyer for a new golfer': (0, 1.0, .3)}
 N, NOISE, HURDLE = 20000, .9, 4.6
 rng = np.random.default_rng(1611)
 seg = list(SEG); sh = np.array([SEG[s][0] for s in seg]); sh /= sh.sum(); who = rng.choice(len(seg), N, p=sh)
@@ -101,7 +112,7 @@ for si, s in enumerate(seg):
     sb, bm, fz = EXTRA[s]
     base = (fz * .6 * F['fashion'] + .25 * F['familiar'] - .05 * np.maximum(0, F['chars'] - 16) + h * .6 * F['humour'] + g * .8 * F['group'] + brag * .8 * F['brag'] + plain * .6 * (F['slang'] == 0) - .6 * bm * F['borrow'])
     slang_eff = yy * ((.35 + sb) * F['slang'] - .3 * F['dated']) + (1 - yy) * ((-.55 + sb) * F['slang'] - .4 * bm * F['borrow'] - .1 * F['dated'])
-    crude_eff = -(.7 if s in ('Gift buyer', 'Golf dad', 'Gift buyer in the community') else .35) * F['crude'] * (1 - .6 * yy)
+    crude_eff = -(.7 if s.startswith('Gift buyer') or s == 'Golf dad' else .35) * F['crude'] * (1 - .6 * yy)
     women_eff = ww * (1.0 * F['women']) - (1 - ww) * (2.5 * F['women'])
     U[m] = (base[None, :] + slang_eff + crude_eff + women_eff + rng.normal(0, NOISE, (k, len(rows)))).astype(np.float32)
 first = U.argmax(1); fc = np.bincount(first, minlength=len(rows)) / N
@@ -115,7 +126,7 @@ seg_win = {s: rows[int(np.bincount(first[who == si], minlength=len(rows)).argmax
 fams = {}
 for r in rows: fams.setdefault(r['family'], []).append(r)
 famtab = sorted([dict(family=f, slogans=len(v), mean_p_buy=round(np.mean([x['p_buy'] for x in v]), 2), first_choice=round(sum(x['first_choice'] for x in v), 2), best=max(v, key=lambda x: x['p_buy'])['slogan']) for f, v in fams.items()], key=lambda x: -x['mean_p_buy'])
-json.dump(dict(label='SIMULATED - not demand evidence', shoppers=N, ranked=rank, families=famtab, segment_winners=seg_win), open(os.path.join(HERE, 'results-telfar.json' if os.environ.get('ICP') == 'telfar' else 'results.json'), 'w'), indent=1)
+json.dump(dict(label='SIMULATED - not demand evidence', shoppers=N, ranked=rank, families=famtab, segment_winners=seg_win), open(os.path.join(HERE, f"results-{os.environ['ICP']}.json" if os.environ.get('ICP') else 'results.json'), 'w'), indent=1)
 print(len(rows), 'slogans,', N, 'shoppers,', f'{young.mean()*100:.0f}% under 35, {woman.mean()*100:.0f}% women')
 print('\nTOP 40'); [print(r['rank'], r['p_buy'], r['first_choice'], r['p_share'], f"u35 {r['under35_first']} / 35+ {r['over35_first']}", '|', r['family'], '|', r['slogan']) for r in rank[:40]]
 print('\nBOTTOM 10'); [print(r['rank'], r['p_buy'], '|', r['family'], '|', r['slogan']) for r in rank[-10:]]

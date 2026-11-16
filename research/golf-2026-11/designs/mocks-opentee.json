@@ -1,0 +1,6 @@
+[
+ ["otc-logo.png", "Brand cap: Open Tee Club (script)", [["Open Tee Club", "script", 46], ["EST. 2026", "block", 15]], [31,77,58], "flag"],
+ ["otc-logo-varsity.png", "Brand cap: OPEN TEE CLUB (varsity)", [["OPEN TEE", "varsity", 30], ["CLUB", "varsity", 30]], [28,42,74], "flag"],
+ ["otc-crew-women.png", "Crew Cap example: Range Day Girls", [["Range Day Girls", "script", 42], ["SCOTTSDALE · 2026", "block", 15]], [31,77,58], "flag"],
+ ["otc-crew-mixed.png", "Crew Cap example: After Work Nine Club", [["After Work Nine Club", "script", 34], ["EST. 2026", "block", 15]], [31,77,58], "flag"]
+]
