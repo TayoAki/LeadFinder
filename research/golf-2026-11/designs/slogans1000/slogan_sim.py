@@ -136,9 +136,11 @@ if os.environ.get('ICP') == 'denimtears':
     EXTRA = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (-.1, 1.3, .6), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (-.4, 1.4, .4),
              'Culture + heritage reader (history, Wales Bonner)': (-.3, 2.0, .3), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (-.3, 1.4, .2),
              'Korea / Asia fan (Seoul, Tokyo)': (-.5, 1.2, .5), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (-.2, 1.3, .4)}
-    STYLE = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (1.0, .6, .6, .5, 1.0), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (1.2, .4, .2, .8, 1.4),
-             'Culture + heritage reader (history, Wales Bonner)': (.6, .8, .5, .5, 1.0), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (.8, 1.0, .7, .6, .8),
-             'Korea / Asia fan (Seoul, Tokyo)': (1.2, .7, .4, .3, .8), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (.7, .8, .5, 1.0, .6)}
+    # place weight set to -0.5 after the blind panel (dt-panel-results.json): a brand not from a place borrowing its name
+    # read as borrowed (Uptown Range Club 60/100, NYC Muni 44, Five Borough Muni 43).
+    STYLE = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (1.0, .6, -.5, .5, 1.0), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (1.2, .4, -.5, .8, 1.4),
+             'Culture + heritage reader (history, Wales Bonner)': (.6, .8, -.5, .5, 1.0), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (.8, 1.0, -.5, .6, .8),
+             'Korea / Asia fan (Seoul, Tokyo)': (1.2, .7, -.5, .3, .8), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (.7, .8, -.5, 1.0, .6)}
 N, NOISE, HURDLE = 20000, .9, 4.6
 rng = np.random.default_rng(1611)
 seg = list(SEG); sh = np.array([SEG[s][0] for s in seg]); sh /= sh.sum(); who = rng.choice(len(seg), N, p=sh)
