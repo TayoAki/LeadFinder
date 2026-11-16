@@ -1,0 +1,1391 @@
+{
+ "label": "SIMULATED, not demand evidence",
+ "shoppers": [
+  {
+   "id": "P001",
+   "segment": "trip/crew organiser",
+   "situation": "Runs an annual Myrtle Beach trip for 8 friends",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Crew name plus place and year is exactly the trip keepsake I've been faking with koozies."
+  },
+  {
+   "id": "P002",
+   "segment": "trip/crew organiser",
+   "situation": "Planning a 4-man Bandon trip in April",
+   "first_choice": "S04",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "memory",
+   "reason_tag": "not urgent / wait for reviews",
+   "reason": "Like it, but the trip is in April so I'll order nearer the time once there are reviews."
+  },
+  {
+   "id": "P003",
+   "segment": "trip/crew organiser",
+   "situation": "Buying for a 12-man Ryder Cup-style weekend",
+   "first_choice": "S04",
+   "second_choice": "S12",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Love it, but $500 with a no-review brand is too much risk; I'd order one sample first."
+  },
+  {
+   "id": "P004",
+   "segment": "trip/crew organiser",
+   "situation": "Organises a Saturday muni group of 10",
+   "first_choice": "S12",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew name on cap",
+   "reason": "Our group name with PUBLIC LINKS is who we are, not a fake country club."
+  },
+  {
+   "id": "P005",
+   "segment": "trip/crew organiser",
+   "situation": "Planning a golf bachelor party in Scottsdale",
+   "first_choice": "S04",
+   "second_choice": "S11",
+   "would_buy_now": "yes",
+   "emotion": "memory",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Groom's crew plus Scottsdale and the year makes a perfect party favour."
+  },
+  {
+   "id": "P006",
+   "segment": "trip/crew organiser",
+   "situation": "Already orders trip hats from a local custom shop",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "has cheaper/known alternative",
+   "reason": "My usual shop does bulk pricing and sends a proof; no reason to switch."
+  },
+  {
+   "id": "P007",
+   "segment": "trip/crew organiser",
+   "situation": "Organises a Pinehurst trip for a dads' group",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "memory",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Great idea, but I'm not betting the whole group's hats on a brand with zero reviews."
+  },
+  {
+   "id": "P008",
+   "segment": "trip/crew organiser",
+   "situation": "Group of 6 that rotates destinations yearly",
+   "first_choice": "S10",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "wants everyday wearability",
+   "reason": "Trip text makes it a one-trip hat; I'd want something the guys wear every week."
+  },
+  {
+   "id": "P009",
+   "segment": "trip/crew organiser",
+   "situation": "Next trip isn't until spring",
+   "first_choice": "S04",
+   "second_choice": "S12",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "not urgent / wait for reviews",
+   "reason": "Like it, but the trip is months out so I'll wait to see reviews."
+  },
+  {
+   "id": "P010",
+   "segment": "trip/crew organiser",
+   "situation": "Plays the same muni weekly plus one trip a year",
+   "first_choice": "S12",
+   "second_choice": "S02",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "crew name on cap",
+   "reason": "Crew name with PUBLIC LINKS fits us better than any resort logo."
+  },
+  {
+   "id": "P011",
+   "segment": "trip/crew organiser",
+   "situation": "Group chat's motto is literally 'grip it and sip it'",
+   "first_choice": "S11",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "joke already owned/seen",
+   "reason": "It's our motto, but half the group already owns a version of this."
+  },
+  {
+   "id": "P012",
+   "segment": "trip/crew organiser",
+   "situation": "Organising a first Cabot Cape Breton trip",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "memory",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Once-in-a-lifetime trip deserves a hat with the place and year."
+  },
+  {
+   "id": "P013",
+   "segment": "trip/crew organiser",
+   "situation": "Wants each guy's name on his own cap",
+   "first_choice": "S04",
+   "second_choice": "S05",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "personalisation too limited",
+   "reason": "One crew line isn't enough; I wanted individual names."
+  },
+  {
+   "id": "P014",
+   "segment": "trip/crew organiser",
+   "situation": "10th consecutive Kiawah trip with the same group",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Ten years of the same crew is worth marking with the year."
+  },
+  {
+   "id": "P015",
+   "segment": "gift buyer",
+   "situation": "Husband just made his first hole-in-one",
+   "first_choice": "S01",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "commemorates a real moment",
+   "reason": "He won't stop talking about the ace, so a hat with the date is perfect."
+  },
+  {
+   "id": "P016",
+   "segment": "gift buyer",
+   "situation": "Dad plays with her 12-year-old son",
+   "first_choice": "S05",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "family bond",
+   "reason": "CADDIE with the grandkid's name will make Dad cry."
+  },
+  {
+   "id": "P017",
+   "segment": "gift buyer",
+   "situation": "Non-golfer; boyfriend wears Malbon",
+   "first_choice": "S10",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unknown-brand risk",
+   "reason": "I can't tell if this is 'cool' and there are no reviews; I'll buy a brand he knows."
+  },
+  {
+   "id": "P018",
+   "segment": "gift buyer",
+   "situation": "Mom of a college golfer",
+   "first_choice": "S09",
+   "second_choice": "S10",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "hometown / real-club look",
+   "reason": "Our hometown with EST. looks like a real club and reminds him of home."
+  },
+  {
+   "id": "P019",
+   "segment": "gift buyer",
+   "situation": "Wife buying for a husband who plays twice a month",
+   "first_choice": "S06",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "delivery-time worry",
+   "reason": "Cute, but made to order from a shop I don't know might miss Christmas."
+  },
+  {
+   "id": "P020",
+   "segment": "gift buyer",
+   "situation": "Son buying for a dad who hates joke hats",
+   "first_choice": "S09",
+   "second_choice": "S07",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "hometown / real-club look",
+   "reason": "Hometown name looks classy, not like gag merch."
+  },
+  {
+   "id": "P021",
+   "segment": "gift buyer",
+   "situation": "Office Secret Santa with a $35 limit",
+   "first_choice": "S06",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "price / shipping too high",
+   "reason": "Funny, but $38.69 delivered breaks the limit."
+  },
+  {
+   "id": "P022",
+   "segment": "gift buyer",
+   "situation": "Grandma buying for a grandson who just started",
+   "first_choice": "S06",
+   "second_choice": "S05",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "delivery-time worry",
+   "reason": "Made to order from an unknown shop might not arrive before Christmas."
+  },
+  {
+   "id": "P023",
+   "segment": "gift buyer",
+   "situation": "Wife whose husband's crew does a yearly trip",
+   "first_choice": "S04",
+   "second_choice": "S12",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "unknown-brand risk",
+   "reason": "He'd love it, but I'd want to see a photo of the real embroidery before paying $43."
+  },
+  {
+   "id": "P024",
+   "segment": "gift buyer",
+   "situation": "Partner of a proud muni golfer",
+   "first_choice": "S02",
+   "second_choice": "S12",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "public-golf pride",
+   "reason": "He always says he's a public course guy; this is literally him."
+  },
+  {
+   "id": "P025",
+   "segment": "gift buyer",
+   "situation": "Daughter whose dad aced a hole in 1998",
+   "first_choice": "S01",
+   "second_choice": "S05",
+   "would_buy_now": "yes",
+   "emotion": "memory",
+   "reason_tag": "commemorates a real moment",
+   "reason": "Putting the date of his only ace on a hat is the most personal gift I've found."
+  },
+  {
+   "id": "P026",
+   "segment": "gift buyer",
+   "situation": "Husband buying for his wife who joined a women's league",
+   "first_choice": "S03",
+   "second_choice": "S07",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "aesthetic / colour",
+   "reason": "Looks like the cute retro hats she saves on Instagram."
+  },
+  {
+   "id": "P027",
+   "segment": "gift buyer",
+   "situation": "Small-business owner gifting staff",
+   "first_choice": "S07",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "wrong product for need",
+   "reason": "I need my company logo, not someone else's design."
+  },
+  {
+   "id": "P028",
+   "segment": "gift buyer",
+   "situation": "Dad's home course has a local nickname",
+   "first_choice": "S09",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unknown-brand risk",
+   "reason": "No photos of the real cap and no reviews; I'd rather buy at the pro shop."
+  },
+  {
+   "id": "P029",
+   "segment": "gift buyer",
+   "situation": "Girlfriend of a guy who lives on golf memes",
+   "first_choice": "S08",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "price / shipping too high",
+   "reason": "He'd laugh, but $39 delivered for a joke hat is steep."
+  },
+  {
+   "id": "P030",
+   "segment": "gift buyer",
+   "situation": "Parent of a teen girl on the HS team",
+   "first_choice": "S03",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unsure recipient would wear it",
+   "reason": "Not sure she'd actually wear it; teen taste is a gamble."
+  },
+  {
+   "id": "P031",
+   "segment": "gift buyer",
+   "situation": "Wife; husband and son play every Sunday",
+   "first_choice": "S05",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "family bond",
+   "reason": "Our son caddies for him, so CADDIE with the family name is spot on."
+  },
+  {
+   "id": "P032",
+   "segment": "gift buyer",
+   "situation": "Sister looking for a brother's stocking stuffer",
+   "first_choice": "S11",
+   "second_choice": "S08",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "price / shipping too high",
+   "reason": "Funny, but almost $40 is too much for a stocking-stuffer joke."
+  },
+  {
+   "id": "P033",
+   "segment": "golf dad",
+   "situation": "10-year-old son caddies for him on weekends",
+   "first_choice": "S05",
+   "second_choice": "S09",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "family bond",
+   "reason": "It's literally what we do together on Saturdays."
+  },
+  {
+   "id": "P034",
+   "segment": "golf dad",
+   "situation": "Son caddies for him in club events",
+   "first_choice": "S05",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "family bond",
+   "reason": "I'd wear it proudly with my kid's name under CADDIE."
+  },
+  {
+   "id": "P035",
+   "segment": "golf dad",
+   "situation": "Kids don't play; owns ten hats",
+   "first_choice": "S07",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "no need / already own hats",
+   "reason": "Fine, but nothing here makes me need another hat."
+  },
+  {
+   "id": "P036",
+   "segment": "golf dad",
+   "situation": "Weekend muni player",
+   "first_choice": "S02",
+   "second_choice": "S12",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "public-golf pride",
+   "reason": "Public course people is my identity at the muni."
+  },
+  {
+   "id": "P037",
+   "segment": "golf dad",
+   "situation": "Wants matching dad and kid hats",
+   "first_choice": "S05",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "love",
+   "reason_tag": "missing kid size/variant",
+   "reason": "Would buy two instantly if there were a kid-size matching cap."
+  },
+  {
+   "id": "P038",
+   "segment": "golf dad",
+   "situation": "Likes a joke but buys his own gear rarely",
+   "first_choice": "S06",
+   "second_choice": "S08",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "prefers to receive, not buy",
+   "reason": "Good for a gift to me, but I wouldn't buy it for myself."
+  },
+  {
+   "id": "P039",
+   "segment": "golf dad",
+   "situation": "Dresses retro, plays a private club",
+   "first_choice": "S10",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "has cheaper/known alternative",
+   "reason": "I can get a plain flag cap from brands I already trust."
+  },
+  {
+   "id": "P040",
+   "segment": "golf dad",
+   "situation": "Proud of his small hometown",
+   "first_choice": "S09",
+   "second_choice": "S10",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "hometown / real-club look",
+   "reason": "Our town name with EST. looks like a club that should exist."
+  },
+  {
+   "id": "P041",
+   "segment": "golf dad",
+   "situation": "Takes his son on an annual father-son trip",
+   "first_choice": "S04",
+   "second_choice": "S05",
+   "would_buy_now": "yes",
+   "emotion": "memory",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Father-son trip with the place and year is the souvenir I want."
+  },
+  {
+   "id": "P042",
+   "segment": "golf dad",
+   "situation": "Lives for the post-round beer",
+   "first_choice": "S07",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "no need / already own hats",
+   "reason": "Funny, but I've got a drawer full of hats already."
+  },
+  {
+   "id": "P043",
+   "segment": "golf dad",
+   "situation": "Skeptical of buying custom items online",
+   "first_choice": "S05",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Custom means no returns from a brand with no reviews; I'll wait."
+  },
+  {
+   "id": "P044",
+   "segment": "golf dad",
+   "situation": "Daughter plays high-school golf",
+   "first_choice": "S05",
+   "second_choice": "S03",
+   "would_buy_now": "yes",
+   "emotion": "love",
+   "reason_tag": "family bond",
+   "reason": "CADDIE with her name is the best way to say I'm her biggest fan."
+  },
+  {
+   "id": "P045",
+   "segment": "style-led retro golfer",
+   "situation": "Malbon collector",
+   "first_choice": "S10",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "has cheaper/known alternative",
+   "reason": "A plain flag from a no-name brand has none of the clout I pay for."
+  },
+  {
+   "id": "P046",
+   "segment": "style-led retro golfer",
+   "situation": "Wears Melin, hates novelty merch",
+   "first_choice": "S09",
+   "second_choice": "S10",
+   "would_buy_now": "yes",
+   "emotion": "status/style",
+   "reason_tag": "hometown / real-club look",
+   "reason": "Town plus EST. reads like a real club and nobody will know it's custom."
+  },
+  {
+   "id": "P047",
+   "segment": "style-led retro golfer",
+   "situation": "Follows golf fashion accounts",
+   "first_choice": "S09",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Like the look, but a made-up EST. date from an unknown brand feels try-hard."
+  },
+  {
+   "id": "P048",
+   "segment": "style-led retro golfer",
+   "situation": "lululemon and vintage polos",
+   "first_choice": "S07",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "joke already owned/seen",
+   "reason": "19th Hole is already on every rack."
+  },
+  {
+   "id": "P049",
+   "segment": "style-led retro golfer",
+   "situation": "Minimalist, wants clean logos",
+   "first_choice": "S10",
+   "second_choice": "S03",
+   "would_buy_now": "yes",
+   "emotion": "status/style",
+   "reason_tag": "aesthetic / colour",
+   "reason": "Clean, small, right colours; it just looks good."
+  },
+  {
+   "id": "P050",
+   "segment": "style-led retro golfer",
+   "situation": "Likes club-style crests",
+   "first_choice": "S03",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Looks like a real club, but I can't judge embroidery quality without photos."
+  },
+  {
+   "id": "P051",
+   "segment": "style-led retro golfer",
+   "situation": "Particular about fonts",
+   "first_choice": "S09",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "design execution doubt",
+   "reason": "Varsity arch on a rope cap feels off; want to see real photos."
+  },
+  {
+   "id": "P052",
+   "segment": "style-led retro golfer",
+   "situation": "Buys from brands with a story",
+   "first_choice": "S10",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "no brand story",
+   "reason": "A logo-less flag from an unknown brand gives me nothing to buy into."
+  },
+  {
+   "id": "P053",
+   "segment": "style-led retro golfer",
+   "situation": "Moved away, proud of his old town",
+   "first_choice": "S09",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "hometown / real-club look",
+   "reason": "My old hometown with EST. on a retro cap is exactly my style."
+  },
+  {
+   "id": "P054",
+   "segment": "style-led retro golfer",
+   "situation": "Colour-first dresser",
+   "first_choice": "S07",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Best colourway here, but I'd wait for real photos and reviews."
+  },
+  {
+   "id": "P055",
+   "segment": "style-led retro golfer",
+   "situation": "Plays in a stylish trip group but isn't the organiser",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "not the decision maker",
+   "reason": "Crew script would look like a real club for us, but I don't plan our trips."
+  },
+  {
+   "id": "P056",
+   "segment": "style-led retro golfer",
+   "situation": "Shops via Instagram only",
+   "first_choice": "S09",
+   "second_choice": "S03",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Would buy if I saw it on a real person first."
+  },
+  {
+   "id": "P057",
+   "segment": "style-led retro golfer",
+   "situation": "Wants a quiet everyday hat",
+   "first_choice": "S10",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "has cheaper/known alternative",
+   "reason": "Nice, but a plain flag cap is easy to find from known brands."
+  },
+  {
+   "id": "P058",
+   "segment": "style-led retro golfer",
+   "situation": "Into retro country-club vibe",
+   "first_choice": "S03",
+   "second_choice": "S07",
+   "would_buy_now": "yes",
+   "emotion": "status/style",
+   "reason_tag": "aesthetic / colour",
+   "reason": "FAIRWAY SOCIAL CLUB on ivory and green looks like a 1970s club hat."
+  },
+  {
+   "id": "P059",
+   "segment": "muni/public golfer",
+   "situation": "Plays the city course four times a week",
+   "first_choice": "S02",
+   "second_choice": "S12",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "public-golf pride",
+   "reason": "Finally merch for people who play public golf and love it."
+  },
+  {
+   "id": "P060",
+   "segment": "muni/public golfer",
+   "situation": "Sunday crew at a county course",
+   "first_choice": "S12",
+   "second_choice": "S02",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew name on cap",
+   "reason": "Our Sunday crew name with PUBLIC LINKS is perfect for the group."
+  },
+  {
+   "id": "P061",
+   "segment": "muni/public golfer",
+   "situation": "Very price-conscious",
+   "first_choice": "S02",
+   "second_choice": "S12",
+   "would_buy_now": "no",
+   "emotion": "pride",
+   "reason_tag": "price / shipping too high",
+   "reason": "Love the message, but my muni sells hats for $25."
+  },
+  {
+   "id": "P062",
+   "segment": "muni/public golfer",
+   "situation": "Organises a muni league night",
+   "first_choice": "S12",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew name on cap",
+   "reason": "League-night crew name on a public links hat is right for us."
+  },
+  {
+   "id": "P063",
+   "segment": "muni/public golfer",
+   "situation": "Anti-country-club and says so",
+   "first_choice": "S02",
+   "second_choice": "S10",
+   "would_buy_now": "no",
+   "emotion": "pride",
+   "reason_tag": "price / shipping too high",
+   "reason": "Love the dig at the country club, but not at nearly $40 delivered."
+  },
+  {
+   "id": "P064",
+   "segment": "muni/public golfer",
+   "situation": "Laughs at everything on the course",
+   "first_choice": "S08",
+   "second_choice": "S02",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "price / shipping too high",
+   "reason": "Funny, but not $39 delivered for a joke."
+  },
+  {
+   "id": "P065",
+   "segment": "muni/public golfer",
+   "situation": "Wants his actual muni's name",
+   "first_choice": "S09",
+   "second_choice": "S02",
+   "would_buy_now": "no",
+   "emotion": "pride",
+   "reason_tag": "personalisation too limited",
+   "reason": "I want my real course name; the fake EST. year doesn't fit."
+  },
+  {
+   "id": "P066",
+   "segment": "muni/public golfer",
+   "situation": "Buys used clubs, never pays full price",
+   "first_choice": "S02",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "price / shipping too high",
+   "reason": "Nothing here is worth nearly $40 to me."
+  },
+  {
+   "id": "P067",
+   "segment": "muni/public golfer",
+   "situation": "Crew plays the same muni every week",
+   "first_choice": "S12",
+   "second_choice": "S02",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "personalisation too limited",
+   "reason": "I'd want our course name, not a generic 'public links'."
+  },
+  {
+   "id": "P068",
+   "segment": "muni/public golfer",
+   "situation": "Beer-cart regular",
+   "first_choice": "S11",
+   "second_choice": "S02",
+   "would_buy_now": "yes",
+   "emotion": "humour",
+   "reason_tag": "relatable joke",
+   "reason": "Grip it and sip it is just how we play."
+  },
+  {
+   "id": "P069",
+   "segment": "casual humour sharer",
+   "situation": "Sends golf memes daily to the group chat",
+   "first_choice": "S08",
+   "second_choice": "S11",
+   "would_buy_now": "yes",
+   "emotion": "humour",
+   "reason_tag": "relatable joke",
+   "reason": "Shank you very much is the whole group chat in one hat."
+  },
+  {
+   "id": "P070",
+   "segment": "casual humour sharer",
+   "situation": "Plays scrambles with drinks",
+   "first_choice": "S11",
+   "second_choice": "S08",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "would share, not buy",
+   "reason": "I'd send it to the scramble group chat, but I'm not buying it."
+  },
+  {
+   "id": "P071",
+   "segment": "casual humour sharer",
+   "situation": "Shares, rarely buys",
+   "first_choice": "S08",
+   "second_choice": "S06",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "would share, not buy",
+   "reason": "I'd send the link to the chat, not buy it."
+  },
+  {
+   "id": "P072",
+   "segment": "casual humour sharer",
+   "situation": "Bargain hunter on Amazon",
+   "first_choice": "S11",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "joke already owned/seen",
+   "reason": "I've seen this joke for $18 on Amazon."
+  },
+  {
+   "id": "P073",
+   "segment": "casual humour sharer",
+   "situation": "Notorious shanker",
+   "first_choice": "S08",
+   "second_choice": "S11",
+   "would_buy_now": "yes",
+   "emotion": "humour",
+   "reason_tag": "relatable joke",
+   "reason": "I own my shanks; this is a self-own I'd wear."
+  },
+  {
+   "id": "P074",
+   "segment": "casual humour sharer",
+   "situation": "Thinks gag gifts are cringe",
+   "first_choice": "S06",
+   "second_choice": "S08",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "joke already owned/seen",
+   "reason": "Gets a laugh, but it's a dad joke I wouldn't wear."
+  },
+  {
+   "id": "P075",
+   "segment": "casual humour sharer",
+   "situation": "Drinks more than he plays",
+   "first_choice": "S11",
+   "second_choice": "S04",
+   "would_buy_now": "yes",
+   "emotion": "humour",
+   "reason_tag": "relatable joke",
+   "reason": "It's literally my golf strategy."
+  },
+  {
+   "id": "P076",
+   "segment": "casual humour sharer",
+   "situation": "Friend group talks about matching hats",
+   "first_choice": "S04",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "not the decision maker",
+   "reason": "Our group would split it, but nobody will organise the order."
+  },
+  {
+   "id": "P077",
+   "segment": "casual humour sharer",
+   "situation": "Lives at the bar after rounds",
+   "first_choice": "S07",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "would share, not buy",
+   "reason": "Good joke for the chat; not paying $39 for it."
+  },
+  {
+   "id": "P078",
+   "segment": "casual humour sharer",
+   "situation": "Cares a bit about style",
+   "first_choice": "S08",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "design execution doubt",
+   "reason": "A bold full-front slogan looks like novelty merch in person."
+  },
+  {
+   "id": "P079",
+   "segment": "casual humour sharer",
+   "situation": "Bored of golf jokes",
+   "first_choice": "S11",
+   "second_choice": "S08",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "joke already owned/seen",
+   "reason": "None of these feel fresh; these jokes have been done."
+  },
+  {
+   "id": "P080",
+   "segment": "casual humour sharer",
+   "situation": "Range-session regular",
+   "first_choice": "S08",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "design execution doubt",
+   "reason": "Funny, but bold full-front text on peach might look cheap in person."
+  },
+  {
+   "id": "P081",
+   "segment": "casual humour sharer",
+   "situation": "Plays a weekly muni league with friends",
+   "first_choice": "S12",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "not urgent / wait for reviews",
+   "reason": "Would get it for the league, but I want to see reviews first."
+  },
+  {
+   "id": "P082",
+   "segment": "casual humour sharer",
+   "situation": "Wants a funny hat for a golf weekend",
+   "first_choice": "S11",
+   "second_choice": "S08",
+   "would_buy_now": "yes",
+   "emotion": "humour",
+   "reason_tag": "relatable joke",
+   "reason": "Perfect for a boozy golf weekend."
+  },
+  {
+   "id": "P083",
+   "segment": "women golfer",
+   "situation": "Saves golf-outfit inspo daily",
+   "first_choice": "S03",
+   "second_choice": "S07",
+   "would_buy_now": "yes",
+   "emotion": "status/style",
+   "reason_tag": "aesthetic / colour",
+   "reason": "Ivory and green with script is exactly my feed's aesthetic."
+  },
+  {
+   "id": "P084",
+   "segment": "women golfer",
+   "situation": "Colour-matches her outfits",
+   "first_choice": "S07",
+   "second_choice": "S03",
+   "would_buy_now": "yes",
+   "emotion": "status/style",
+   "reason_tag": "aesthetic / colour",
+   "reason": "The peachy cap goes with everything I wear on the course."
+  },
+  {
+   "id": "P085",
+   "segment": "women golfer",
+   "situation": "Plays in a women's Thursday group",
+   "first_choice": "S03",
+   "second_choice": "S11",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "aesthetic / colour",
+   "reason": "FAIRWAY SOCIAL CLUB feels like our group; we'd all buy one."
+  },
+  {
+   "id": "P086",
+   "segment": "women golfer",
+   "situation": "Plays for the drinks and friends",
+   "first_choice": "S11",
+   "second_choice": "S03",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "joke already owned/seen",
+   "reason": "Cute, but I've already got a hat with this saying."
+  },
+  {
+   "id": "P087",
+   "segment": "women golfer",
+   "situation": "Wants pink or sage options",
+   "first_choice": "S03",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "missing colour options",
+   "reason": "Love the text but I'd want more colour choices."
+  },
+  {
+   "id": "P088",
+   "segment": "women golfer",
+   "situation": "Posts golf-day photos",
+   "first_choice": "S07",
+   "second_choice": "S03",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Pretty, but I need to see it on a real person before buying from a new brand."
+  },
+  {
+   "id": "P089",
+   "segment": "women golfer",
+   "situation": "Planning a girls' golf trip",
+   "first_choice": "S04",
+   "second_choice": "S03",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Our girls'-trip name with the place and year makes perfect matching hats."
+  },
+  {
+   "id": "P090",
+   "segment": "women golfer",
+   "situation": "Minimalist dresser",
+   "first_choice": "S10",
+   "second_choice": "S03",
+   "would_buy_now": "no",
+   "emotion": "status/style",
+   "reason_tag": "has cheaper/known alternative",
+   "reason": "Clean, but I can get a plain flag cap anywhere."
+  },
+  {
+   "id": "P091",
+   "segment": "women golfer",
+   "situation": "Only buys after seeing reviews",
+   "first_choice": "S03",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unknown-brand risk",
+   "reason": "Can't see it on a person and there are no reviews yet."
+  },
+  {
+   "id": "P092",
+   "segment": "women golfer",
+   "situation": "Proud of her hometown",
+   "first_choice": "S09",
+   "second_choice": "S03",
+   "would_buy_now": "yes",
+   "emotion": "pride",
+   "reason_tag": "hometown / real-club look",
+   "reason": "Hometown name looks like a vintage club hat."
+  },
+  {
+   "id": "P093",
+   "segment": "league/member-guest captain",
+   "situation": "Captains a member-guest team",
+   "first_choice": "S04",
+   "second_choice": "S12",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "crew/trip souvenir",
+   "reason": "Team name with the event and year is a great member-guest keepsake."
+  },
+  {
+   "id": "P094",
+   "segment": "league/member-guest captain",
+   "situation": "Needs 24 caps for a league",
+   "first_choice": "S12",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "no bulk/proof process",
+   "reason": "Need a bulk price and a proof; no option for that here."
+  },
+  {
+   "id": "P095",
+   "segment": "league/member-guest captain",
+   "situation": "Club requires logo approval",
+   "first_choice": "S04",
+   "second_choice": "S09",
+   "would_buy_now": "no",
+   "emotion": "belonging",
+   "reason_tag": "wrong product for need",
+   "reason": "Love it, but anything for the event needs club logo approval."
+  },
+  {
+   "id": "P096",
+   "segment": "league/member-guest captain",
+   "situation": "Captain of a town inter-club team",
+   "first_choice": "S09",
+   "second_choice": "S04",
+   "would_buy_now": "no",
+   "emotion": "pride",
+   "reason_tag": "no bulk/proof process",
+   "reason": "Looks official, but I need a team price and a proof for 12 caps."
+  },
+  {
+   "id": "P097",
+   "segment": "beginner",
+   "situation": "Took up golf this summer",
+   "first_choice": "S06",
+   "second_choice": "S11",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "prefers to receive, not buy",
+   "reason": "Funny and true, but I'd rather spend on lessons."
+  },
+  {
+   "id": "P098",
+   "segment": "beginner",
+   "situation": "Learning with friends who drink",
+   "first_choice": "S11",
+   "second_choice": "S06",
+   "would_buy_now": "no",
+   "emotion": "humour",
+   "reason_tag": "price / shipping too high",
+   "reason": "Fun, but I'm spending on lessons and balls right now."
+  },
+  {
+   "id": "P099",
+   "segment": "beginner",
+   "situation": "Unsure what golf hats look like",
+   "first_choice": "S10",
+   "second_choice": "S07",
+   "would_buy_now": "no",
+   "emotion": "none",
+   "reason_tag": "unsure / no need",
+   "reason": "I don't know enough yet to pick one."
+  },
+  {
+   "id": "P100",
+   "segment": "beginner",
+   "situation": "Joined a women's beginner clinic",
+   "first_choice": "S03",
+   "second_choice": "S10",
+   "would_buy_now": "yes",
+   "emotion": "belonging",
+   "reason_tag": "aesthetic / colour",
+   "reason": "Makes me feel part of the golf scene even as a beginner."
+  }
+ ],
+ "summary": {
+  "n": 100,
+  "total_would_buy_now": 39,
+  "first_choice": {
+   "S04": 17,
+   "S12": 7,
+   "S10": 9,
+   "S11": 10,
+   "S01": 2,
+   "S05": 7,
+   "S09": 12,
+   "S06": 6,
+   "S02": 6,
+   "S03": 9,
+   "S07": 8,
+   "S08": 7
+  },
+  "first_plus_second": {
+   "S01": 2,
+   "S02": 12,
+   "S03": 18,
+   "S04": 30,
+   "S05": 11,
+   "S06": 8,
+   "S07": 19,
+   "S08": 13,
+   "S09": 31,
+   "S10": 19,
+   "S11": 22,
+   "S12": 15
+  },
+  "buy_now_by_first_choice": {
+   "S01": 2,
+   "S02": 3,
+   "S03": 5,
+   "S04": 7,
+   "S05": 5,
+   "S06": 0,
+   "S07": 1,
+   "S08": 2,
+   "S09": 6,
+   "S10": 1,
+   "S11": 3,
+   "S12": 4
+  },
+  "winner_by_segment": {
+   "trip/crew organiser": {
+    "winner": "S04",
+    "first_votes": 10,
+    "of": 14,
+    "buyers": 6,
+    "ties": []
+   },
+   "gift buyer": {
+    "winner": "S09",
+    "first_votes": 3,
+    "of": 18,
+    "buyers": 8,
+    "ties": [
+     "S06"
+    ]
+   },
+   "golf dad": {
+    "winner": "S05",
+    "first_votes": 5,
+    "of": 12,
+    "buyers": 6,
+    "ties": []
+   },
+   "style-led retro golfer": {
+    "winner": "S09",
+    "first_votes": 5,
+    "of": 14,
+    "buyers": 4,
+    "ties": []
+   },
+   "muni/public golfer": {
+    "winner": "S02",
+    "first_votes": 4,
+    "of": 10,
+    "buyers": 4,
+    "ties": []
+   },
+   "casual humour sharer": {
+    "winner": "S08",
+    "first_votes": 5,
+    "of": 14,
+    "buyers": 4,
+    "ties": [
+     "S11"
+    ]
+   },
+   "women golfer": {
+    "winner": "S03",
+    "first_votes": 4,
+    "of": 10,
+    "buyers": 5,
+    "ties": []
+   },
+   "league/member-guest captain": {
+    "winner": "S04",
+    "first_votes": 2,
+    "of": 4,
+    "buyers": 1,
+    "ties": []
+   },
+   "beginner": {
+    "winner": "S03",
+    "first_votes": 1,
+    "of": 4,
+    "buyers": 1,
+    "ties": [
+     "S06",
+     "S11",
+     "S10"
+    ]
+   }
+  },
+  "emotions": {
+   "belonging": 16,
+   "memory": 6,
+   "none": 14,
+   "status/style": 18,
+   "pride": 14,
+   "humour": 24,
+   "love": 8
+  },
+  "top_reasons_by_design": {
+   "S01": [
+    [
+     "commemorates a real moment",
+     2
+    ]
+   ],
+   "S02": [
+    [
+     "public-golf pride",
+     3
+    ],
+    [
+     "price / shipping too high",
+     3
+    ]
+   ],
+   "S03": [
+    [
+     "aesthetic / colour",
+     5
+    ],
+    [
+     "unknown-brand risk",
+     2
+    ],
+    [
+     "unsure recipient would wear it",
+     1
+    ]
+   ],
+   "S04": [
+    [
+     "crew/trip souvenir",
+     7
+    ],
+    [
+     "unknown-brand risk",
+     3
+    ],
+    [
+     "not urgent / wait for reviews",
+     2
+    ]
+   ],
+   "S05": [
+    [
+     "family bond",
+     5
+    ],
+    [
+     "missing kid size/variant",
+     1
+    ],
+    [
+     "unknown-brand risk",
+     1
+    ]
+   ],
+   "S06": [
+    [
+     "delivery-time worry",
+     2
+    ],
+    [
+     "prefers to receive, not buy",
+     2
+    ],
+    [
+     "price / shipping too high",
+     1
+    ]
+   ],
+   "S07": [
+    [
+     "no need / already own hats",
+     2
+    ],
+    [
+     "unknown-brand risk",
+     2
+    ],
+    [
+     "wrong product for need",
+     1
+    ]
+   ],
+   "S08": [
+    [
+     "price / shipping too high",
+     2
+    ],
+    [
+     "relatable joke",
+     2
+    ],
+    [
+     "design execution doubt",
+     2
+    ]
+   ],
+   "S09": [
+    [
+     "hometown / real-club look",
+     6
+    ],
+    [
+     "unknown-brand risk",
+     3
+    ],
+    [
+     "design execution doubt",
+     1
+    ]
+   ],
+   "S10": [
+    [
+     "has cheaper/known alternative",
+     4
+    ],
+    [
+     "wants everyday wearability",
+     1
+    ],
+    [
+     "unknown-brand risk",
+     1
+    ]
+   ],
+   "S11": [
+    [
+     "joke already owned/seen",
+     4
+    ],
+    [
+     "relatable joke",
+     3
+    ],
+    [
+     "price / shipping too high",
+     2
+    ]
+   ],
+   "S12": [
+    [
+     "crew name on cap",
+     4
+    ],
+    [
+     "personalisation too limited",
+     1
+    ],
+    [
+     "not urgent / wait for reviews",
+     1
+    ]
+   ]
+  }
+ }
+}

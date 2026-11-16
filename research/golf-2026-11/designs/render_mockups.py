@@ -14,6 +14,7 @@ MOCKS = [  # (file, title under the image, lines [(text, font, size)], thread co
   ('1-crew-trip.png', '#1 Crew + trip + year (personalised) · D0638', [('The Bogey Boys', 'script', 44), ('BANDON · 2026', 'block', 17)], GREEN, 'dogleg'),
   ('2-milestone.png', '#2 Milestone date (personalised) · D0865', [('FIRST BIRDIE', 'block', 30), ('HOLE 7 · 2026', 'block', 17)], NAVY, 'flag'),
   ('3-19th-hole.png', 'Most-loved ready-made: 19TH HOLE · D0557', [('19th Hole', 'script', 50)], GREEN, None),
+  ('5-town-est.png', 'Broadest appeal: your town + EST. · S09', [('SAN DIEGO GOLF', 'varsity', 26), ('EST. 2026', 'block', 16)], NAVY, 'flag'),
   ('4-crew-varsity.png', 'Bold option: crew varsity · D0777', [('THE SHANKS', 'varsity', 30), ('EST. 2026', 'block', 16)], GREEN, 'flag'),
 ]
 
@@ -46,7 +47,7 @@ for fname, title, lines, col, icon in MOCKS:
     img.convert('RGB').save(os.path.join(out, fname)); tiles.append((img.convert('RGB'), title))
 # contact sheet
 tw, th = W, H + 44
-sheet = Image.new('RGB', (tw * 2, th * 2), (250, 248, 242)); sd = ImageDraw.Draw(sheet); tf = ImageFont.truetype(os.path.join(fonts, F['block']), 18)
+sheet = Image.new('RGB', (tw * 2, th * ((len(tiles) + 1) // 2)), (250, 248, 242)); sd = ImageDraw.Draw(sheet); tf = ImageFont.truetype(os.path.join(fonts, F['block']), 18)
 for i, (im, title) in enumerate(tiles):
     x, y = (i % 2) * tw, (i // 2) * th; sheet.paste(im, (x, y)); sd.text((x + 12, y + H + 10), title, fill=(30, 30, 30), font=tf)
 sheet.save(os.path.join(out, 'contact.jpg'), quality=90)
