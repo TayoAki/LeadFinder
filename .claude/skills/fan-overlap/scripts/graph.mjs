@@ -57,6 +57,7 @@ blockquote{margin:6px 0;padding:6px 10px;border-left:3px solid var(--leave);back
 .warn{color:var(--some)}text{fill:var(--ink);font-size:11px;pointer-events:none}a{color:var(--accent)}
 </style></head><body>
 <header><h1>${esc(title)}</h1><p>If someone loves the dark hub, they probably also love the circles around it. Bigger circle = more shared fans; closer = higher lift. Colour shows whether people are leaving that brand. Click any circle.</p></header>
+${opt.note ? `<div class="opps" style="padding-bottom:8px"><div class="card" style="padding:14px 16px"><b>What it means:</b> ${esc(opt.note)}</div></div>` : ''}
 <div class="wrap">
  <div class="card" id="graph">
   <div class="controls">
@@ -85,12 +86,12 @@ function side(n) {
     const run = DATA.runs.find(r => r.brand === n.name) || {};
     $('#side').innerHTML = '<h2>' + h(n.name) + '</h2><div class="kv"><span>City</span><span>' + h(n.city || '-') + '</span><span>Locations</span><span>' + h(n.locations) + '</span><span>Reviews read</span><span>' + h(n.sample?.a_reviews) + '</span><span>Fan histories</span><span>' + h(n.sample?.histories_returned) + '</span><span>Stability</span><span>' + h(run.checks?.split_half_top10_in_both) + ' of top 10 in both halves</span></div>'
       + (run.checks?.warnings?.length ? '<h3>Data checks</h3>' + run.checks.warnings.map(w => '<p class="warn">⚠ ' + h(w) + '</p>').join('') : '')
-      + '<h3>Fans also love</h3>' + L.sort((a, b) => b.shared - a.shared).map(l => '<span class="pill">' + h((l.target.name ?? l.target)) + ' · ' + l.shared + '</span>').join('');
+      + '<h3>Fans also love</h3>' + L.sort((a, b) => b.shared - a.shared).map(l => '<span class="pill">' + h(l.target.name ?? DATA.nodes.find(x => x.id === l.target)?.name ?? l.target) + ' · ' + l.shared + '</span>').join('');
     return;
   }
   const lv = n.leaving || {}, ss = n.switch_search || {};
   $('#side').innerHTML = '<h2>' + h(n.name) + (n.rival ? ' <span class="pill">rival</span>' : '') + '</h2><p style="margin:0;color:var(--muted)">' + h(n.category || '') + (n.locations > 1 ? ' · ' + n.locations + ' locations' : '') + '</p>'
-    + L.map(l => '<h3>Fans of ' + h(l.source.name ?? l.source) + '</h3><div class="kv"><span>Shared fans</span><span>' + l.shared + ' (' + l.share + '% of sample)</span><span>Lift</span><span>' + h(l.lift ?? '-') + '</span><span>Confidence</span><span>' + h(l.confidence) + '</span><span>Their avg stars</span><span>' + h(l.avg_stars ?? '-') + '</span></div>').join('')
+    + L.map(l => '<h3>Fans of ' + h(l.source.name ?? DATA.nodes.find(x => x.id === l.source)?.name ?? l.source) + '</h3><div class="kv"><span>Shared fans</span><span>' + l.shared + ' (' + l.share + '% of sample)</span><span>Lift</span><span>' + h(l.lift ?? '-') + '</span><span>Confidence</span><span>' + h(l.confidence) + '</span><span>Their avg stars</span><span>' + h(l.avg_stars ?? '-') + '</span></div>').join('')
     + '<h3>Are people leaving?</h3><div class="kv"><span>Verdict</span><span><b>' + h(lv.verdict || 'not checked') + '</b></span><span>Leaving reviews</span><span>' + h(lv.leaving_reviews ?? '-') + ' of ' + h(lv.reviews_checked ?? '-') + ' newest</span><span>Rating 90d</span><span>' + h(lv.avg_last_90d ?? '-') + ' vs ' + h(lv.avg_before ?? '-') + ' before</span></div>'
     + (lv.quotes || []).map(q => '<blockquote>"' + h(q.quote) + '"<br><small>' + h(q.stars) + '★ · ' + h(q.date) + (q.url ? ' · <a href="' + h(q.url) + '" target="_blank" rel="noopener">review</a>' : '') + '</small></blockquote>').join('')
     + '<h3>Looking to switch?</h3><div class="kv"><span>Alt. searches/mo</span><span>' + h(ss.monthly_searches ?? 'unknown') + ' (' + h(ss.level || '-') + ')</span></div>'

@@ -291,7 +291,7 @@ try {
   report.opportunities = [...check].filter(b => b.confidence !== 'low' && (leaveScore(b.leaving) || searchScore(b.switch_search))).sort((a, b) => b.opportunity - a.opportunity).slice(0, 5).map(b => ({ name: b.name, competitor: b.competitor, opportunity: b.opportunity, confidence: b.confidence, why: b.why }));
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
 
-report.spend_usd = Math.round(spent * 100) / 100; report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
+report.spend_usd = Math.round((spent + (FROM?.spend_usd || 0)) * 100) / 100; // includes the saved run's spend when re-checking report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
 writeFileSync(`${OUT}/overlap.json`, JSON.stringify(report, null, 1));
 
 // ---- Answer
@@ -306,7 +306,7 @@ const md = [
     `**Fans of ${BRAND} probably also love:** ${report.brand_b.slice(0, 6).map(b => `${b.name} (${b.share_of_fans}%, lift ${b.lift ?? '-'})`).join(', ')}.`, '',
     report.opportunities?.length ? `**Of those, people are leaving or looking to switch from:**\n${report.opportunities.map((o, i) => `${i + 1}. **${o.name}**${o.competitor ? ' (a rival)' : ''}: ${o.why}. Confidence: ${o.confidence}.`).join('\n')}` : '**None of them shows people leaving** in the last 12 months of reviews, or much search for alternatives.', '',
     '**Where the opportunity is:**',
-    report.opportunities?.length ? `- **Switchers:** ${report.opportunities.slice(0, 2).map(o => o.name).join(' and ')} ${report.opportunities.length > 1 ? 'are' : 'is'} loved by ${BRAND} fans but losing people. Read the leaver quotes below for what's missing, and build or market that to ${BRAND}'s crowd.` : '- **Switchers:** none with enough evidence in this sample.',
+    report.opportunities?.length ? `- **Switchers:** ${report.opportunities.slice(0, 2).map(o => o.name).join(' and ')} ${report.opportunities.length > 1 ? 'are' : 'is'} loved by ${BRAND} fans but losing people. Read the leaver quotes below for what's missing, and build or market that to ${BRAND}${BRAND.endsWith('s') ? "'" : "'s"} crowd.` : '- **Switchers:** none with enough evidence in this sample.',
     report.collab_partners?.length ? `- **Collab:** ${report.collab_partners.map(c => c.name).join(', ')}: fans overlap strongly and the brand is steady. A co-branded drop reaches people who already like both.` : '',
   ] : ['No brand had enough shared fans to answer yet. See the checks below.']), '',
   '## Brands A\'s fans also love', '', head, ...(report.brand_b || []).map(row), '',
