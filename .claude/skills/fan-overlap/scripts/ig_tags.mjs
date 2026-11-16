@@ -48,8 +48,11 @@ try {
   const withBrand = new Map(), withBrandTags = new Map(); const posters = new Map(); // poster -> is shop
   let tok = null, posts = 0;
   for (let p = 0; p < TPAGES; p++) {
-    const o = await treg('tikhub.x.instagram-v2-fetch-user-tagged-posts', { username: HANDLE, ...(tok ? { pagination_token: tok } : {}) }).catch(() => ({}));
-    const d = o.data || {}; const items = d.data?.items || [];
+    let o = {}, d = {}, items = [];
+    for (let tries = 0; tries < 3 && !items.length; tries++) { // a blank page is usually a transient provider miss
+      o = await treg('tikhub.x.instagram-v2-fetch-user-tagged-posts', { username: HANDLE, ...(tok ? { pagination_token: tok } : {}) }).catch(e => (log('  tagged page:', e.message), {}));
+      d = o.data || {}; items = d.data?.items || [];
+    }
     for (const x of items) {
       const w = x.user || x.owner || {}; const who = String(w.username || '').toLowerCase(); if (!who || who === HANDLE) continue;
       posts++; posters.set(who, w.account_type === 2);
