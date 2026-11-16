@@ -1,234 +1,287 @@
 #!/usr/bin/env node
-// Fan overlap: "if someone loves A, they probably love B, and are people leaving B?"
-// From public Google Maps reviews, via Apify actors:
-//   1. compass/crawler-google-places           find brand A's place (id, category, review count)
-//   2. compass/google-maps-reviews-scraper     A's newest reviews (reviewer ids, held in memory only)
-//   3. johnvc/google-maps-contributor-reviews-api   each reviewer's public review history (capped)
-//   4. aggregate: businesses A's reviewers also reviewed, weighted for popularity, competitors removed
-//   5. compass/crawler-google-places + reviews scraper for the top B's: popularity, rating trend and
-//      "leaving" language in their recent reviews
-// PRIVACY: reviewer ids, names and profile links are never written to disk; only per-business
-// totals are saved, and a business needs >= MIN_SHARED reviewers to appear. Apify datasets are
-// deleted after reading.
+// fan-overlap: "if someone loves brand A, they probably love brand B — and are people leaving B?"
 //
-// Usage:
-//   APIFY_TOKEN=... node fan_overlap.mjs --place "Crumbl Wicker Park Chicago" [--reviews 200] [--per-reviewer 50]
-//                                        [--top 15] [--cap-usd 30] [--out ./fan-overlap/<slug>] [--dry-run]
-// APIFY_TOKEN may be a dummy value when the session's network proxy injects the real key.
-import { writeFileSync, mkdirSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+//   1. find brand A's locations in a city                        treg google.serp.maps (Apify fallback)
+//   2. A's newest reviews per location (reviewer ids in memory)   treg google.maps.reviews (Apify fallback)
+//   3. each reviewer's public review history                      treg litescrape when up, else Apify lexis
+//   4. count distinct A reviewers per other brand (chains merged, non-businesses dropped)
+//   5. lift: B's share of A's fans vs B's overall popularity
+//   6. are people leaving B?  newest reviews (rating trend + leaving language)   treg google.maps.reviews
+//      are people looking to switch from B?  "B alternative / B vs / places like B"   treg keyword volume + Google autocomplete
+//   7. data checks: sample sizes, coverage, split-half stability, confidence per brand
+//   8. answer: overlap.md, overlap.json (graph.mjs turns one or more of these into an explorable graph)
+//
+// Privacy: reviewer ids are used only in memory to de-duplicate; only totals per business are saved.
+// A business needs >= --min-shared distinct reviewers to appear. Apify datasets are deleted after reading.
+//
+// usage: node fan_overlap.mjs --brand "Crumbl Cookies" --city "Chicago, IL" [--locations 10] [--reviews-per-location 100]
+//          [--per-reviewer 60] [--min-history 5] [--min-shared 3] [--top 15] [--cap-usd 5] [--out DIR] [--dry-run]
+import { mkdirSync, writeFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { execFile } from 'node:child_process';
+import { createHash } from 'node:crypto';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]] : a), []));
-const PLACE = args.place, N_REVIEWS = Number(args.reviews || 500), PER = Number(args['per-reviewer'] || 200), TOP = Number(args.top || 15);
-const CAP = Number(args['cap-usd'] || 30), MIN_SHARED = Number(args['min-shared'] || 3), DRY = !!args['dry-run'];
-if (!PLACE) { console.error('usage: node fan_overlap.mjs --place "<business name and city, or a Google Maps URL>"'); process.exit(2); }
-const slug = String(PLACE).toLowerCase().replace(/https?:\/\/\S+/, 'place').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 60);
+const BRAND = args.brand || args.place, CITY = args.city || '';
+if (!BRAND) { console.error('usage: node fan_overlap.mjs --brand "<brand>" --city "<city, state>"'); process.exit(2); }
+const LOCATIONS = Number(args.locations || 10), PER_LOC = Math.min(100, Number(args['reviews-per-location'] || 100));
+const PER = Number(args['per-reviewer'] || 60), MIN_HISTORY = Number(args['min-history'] || 5);
+const MIN_SHARED = Number(args['min-shared'] || 3), TOP = Number(args.top || 15), CAP = Number(args['cap-usd'] || 5), DRY = !!args['dry-run'];
+const slug = `${BRAND} ${CITY}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 60);
 const OUT = resolve(args.out || `fan-overlap/${slug}`);
-const TOKEN = process.env.APIFY_TOKEN || 'proxy-injected';
-// Free-tier prices (USD) from each actor's pricing page, used for the spend cap.
-const PRICE = { place: 0.004, review: 0.0006, contributorReview: 0.0015, run: 0.001 };
-PRICE.tregContributor = 0.00015; // litescrape via treg: one call = up to 200 reviews of one reviewer
-const MIN_HISTORY = Number(args['min-history'] || 3);
-const LOCATIONS = Number(args.locations || 1);
-// Count overlap by brand (every Starbucks = one "Starbucks") or by single place.
-const GROUP = String(args.group || 'brand');
-const brandOf = n => String(n || '').toLowerCase().replace(/\s*[-–—|@·,(].*$/, '').replace(/[’']/g, "'").replace(/\b(inc|llc|co)\b\.?/g, '').replace(/\s+/g, ' ').trim();
-// Places that are not businesses you could partner with.
-const NOT_A_BUSINESS = /park|airport|sculpture|monument|landmark|tourist attraction|museum|beach|lake|river|bridge|station|transit|hospital|school|university|college|church|government|city hall|library|stadium|arena|zoo|garden|trail|neighbou?rhood|plaza|square|parking|highway|historical|memorial|observation deck|post office|dmv|embassy/i;
-// Where reviewer histories come from: lexis (Apify, reliable, ~$0.0015/review), treg (litescrape,
-// ~$0.00015/reviewer, when its provider is up) or johnvc (Apify, $1/month free cap).
-const HIST = String(args.histories || 'lexis');
-async function tregCallPost(id, body) {
-  const { execFile } = await import('node:child_process');
-  return new Promise((res, rej) => execFile(TREG, ['--json', 'call', id, '--method', 'POST', '--header', 'X-Treg-Route-Max-Cost: 0.01', '--data', JSON.stringify(body)], { maxBuffer: 1 << 26, timeout: 120000 }, (err, out) => {
-    if (err && !out) return rej(err); try { const j = JSON.parse(out); if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`HTTP ${j._treg.http_status}`)); res(j); } catch (e) { rej(e); } }));
-}
-let spent = 0;
-// treg CLI (https://treg.to): keys stay on treg's server; signed in with `treg login`.
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
-let tregState;
-async function tregOk() {
-  if (tregState !== undefined) return tregState;
-  const { execFile } = await import('node:child_process');
-  tregState = await new Promise(res => execFile(TREG, ['--version'], err => res(!err)));
-  return tregState;
-}
-async function tregCall(id, query) {
-  const { execFile } = await import('node:child_process');
-  const a = ['--json', 'call', id]; for (const [k, v] of Object.entries(query)) a.push('--query', `${k}=${v}`);
-  return new Promise((res, rej) => execFile(TREG, a, { maxBuffer: 1 << 26, timeout: 120000 }, (err, out) => {
-    if (err && !out) return rej(err); try { const j = JSON.parse(out); if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`HTTP ${j._treg.http_status}`)); res(j); } catch (e) { rej(e); } }));
-}
-const budget = (usd, what) => { if (spent + usd > CAP) throw new Error(`Stopping before ${what}: it would take spend to $${(spent + usd).toFixed(2)}, over the $${CAP} cap.`); };
+const APIFY = process.env.APIFY_TOKEN;
+const PRICE = { lexisReview: 0.0015, apifyReview: 0.0006, apifyPlace: 0.004 };
 
-async function apify(actor, input, estimate, { timeoutSecs = 1800, allowPartial = false } = {}) {
+const brandOf = n => String(n || '').toLowerCase().replace(/[’']/g, "'").replace(/\s*[-–—|@·,(:].*$/, '').replace(/\b(inc|llc|co|the)\b\.?/g, '').replace(/[^a-z0-9' &]+/g, ' ').replace(/\s+/g, ' ').trim();
+// Places that are not businesses you could partner with.
+const NOT_A_BUSINESS = /park|airport|sculpture|monument|landmark|tourist attraction|museum|beach|lake|river|bridge|station|transit|hospital|school|university|college|church|place of worship|government|city hall|library|stadium|arena|zoo|garden|trail|neighbou?rhood|plaza|square|parking|highway|historical|memorial|observation deck|post office|dmv|embassy|apartment|hotel|motel|doctor|dentist|clinic|urgent care|pharmacy|bank|atm|gas station|car wash|auto|insurance|real estate|lawyer|attorney|storage|city|town|village|county|state/i;
+const LEAVING = /\b(used to (love|be|come)|not (the same|what it used to)|went downhill|gone downhill|changed (the|their)|new (recipe|owner|management|menu)|won'?t be back|never (coming|going) back|last time|instead (go|went)|switch(ed|ing) to|go(ing)? elsewhere|disappoint\w*|declin\w*|worse|shrink\w*|smaller|overpriced|price(s)? (went|have gone) up)\b/i;
+const words = s => new Set(String(s || '').toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && !['shop', 'store', 'restaurant', 'service', 'center', 'food', 'takeout', 'delivery'].includes(w)));
+const contribId = r => (String(r?.author?.url || r?.reviewerUrl || '').match(/contrib\/(\d+)/) || [])[1] || r?.reviewerId || null;
+
+let spent = 0; const spendBy = {};
+const charge = (src, usd) => { spent += usd; spendBy[src] = (spendBy[src] || 0) + usd; };
+const budget = (usd, what) => { if (spent + usd > CAP) throw new Error(`Stopping before ${what}: it would take spend to $${(spent + usd).toFixed(2)}, over the $${CAP} cap.`); };
+const log = (...a) => console.log(...a);
+
+// ---- treg (https://treg.to): keys live on treg's server; `treg login` once.
+let tregUp;
+async function tregOk() { if (tregUp === undefined) tregUp = await new Promise(r => execFile(TREG, ['balance'], e => r(!e))); return tregUp; }
+function treg(id, { body, query, maxCost = 0.02 } = {}) {
+  if (DRY) { log(`[dry-run] treg ${id}`, JSON.stringify(body || query).slice(0, 120)); return Promise.resolve({}); }
+  const a = ['--json', 'call', id];
+  if (body) a.push('--method', 'POST', '--header', `X-Treg-Route-Max-Cost: ${maxCost}`, '--data', JSON.stringify(body));
+  for (const [k, v] of Object.entries(query || {})) a.push('--query', `${k}=${v}`);
+  return new Promise((res, rej) => execFile(TREG, a, { maxBuffer: 1 << 27, timeout: 180000 }, (err, out) => {
+    if (err && !out) return rej(err);
+    try { const j = JSON.parse(out); charge('treg', (j._treg?.charged_micro || 0) / 1e6);
+      if ((j._treg?.http_status || 200) >= 400) return rej(new Error(`${id}: HTTP ${j._treg.http_status} ${j.result?.error || ''}`)); res(j.result?.output || j.result || {}); } catch (e) { rej(e); } }));
+}
+
+// ---- Apify (fallback + reviewer histories while treg's contributor provider is down)
+async function apify(actor, input, estimate, { allowPartial = false } = {}) {
   budget(estimate, actor);
-  if (DRY) { console.log(`[dry-run] would run ${actor} (~$${estimate.toFixed(2)})`, JSON.stringify(input).slice(0, 200)); return []; }
-  const H = { 'content-type': 'application/json', authorization: `Bearer ${TOKEN}` };
+  if (!APIFY) throw new Error(`${actor} needs APIFY_TOKEN`);
+  if (DRY) { log(`[dry-run] apify ${actor} (~$${estimate.toFixed(2)})`); return []; }
+  const H = { 'content-type': 'application/json', authorization: `Bearer ${APIFY}` };
   const api = async (path, opts = {}) => { const r = await fetch(`https://api.apify.com/v2${path}`, { headers: H, signal: AbortSignal.timeout(120000), ...opts });
-    if (!r.ok) throw new Error(`${actor}: HTTP ${r.status} ${(await r.text()).slice(0, 300)}`); return r.status === 204 ? null : r.json(); };
-  let run = (await api(`/acts/${actor.replace('/', '~')}/runs?waitForFinish=60&timeout=${timeoutSecs}`, { method: 'POST', body: JSON.stringify(input) })).data;
+    if (!r.ok) throw new Error(`${actor}: HTTP ${r.status} ${(await r.text()).slice(0, 200)}`); return r.status === 204 ? null : r.json(); };
+  let run = (await api(`/acts/${actor.replace('/', '~')}/runs?waitForFinish=60&timeout=1800`, { method: 'POST', body: JSON.stringify(input) })).data;
   while (!['SUCCEEDED', 'FAILED', 'ABORTED', 'TIMED-OUT'].includes(run.status)) run = (await api(`/actor-runs/${run.id}?waitForFinish=60`)).data;
-  // A timed-out run still holds the items it finished: keep them when the caller can use partial data.
-  if (run.status !== 'SUCCEEDED') {
-    const partial = allowPartial ? await api(`/datasets/${run.defaultDatasetId}/items?format=json&clean=true`) : [];
-    spent += Number(run.usageTotalUsd) || 0;
-    await api(`/datasets/${run.defaultDatasetId}`, { method: 'DELETE' }).catch(() => {});
-    if (!allowPartial) throw new Error(`${actor} run ${run.status}`);
-    console.log(`• ${actor}: run ${run.status}, kept ${partial.length} partial items (total ~$${spent.toFixed(2)})`);
-    return partial;
-  }
-  const items = await api(`/datasets/${run.defaultDatasetId}/items?format=json&clean=true`);
-  const runCost = Number(run.usageTotalUsd) || estimate; spent += runCost;
-  // Delete the run's dataset so scraped personal data does not sit on Apify.
-  await api(`/datasets/${run.defaultDatasetId}`, { method: 'DELETE' }).catch(() => {});
-  console.log(`• ${actor}: ${items.length} items, ~$${runCost.toFixed(3)} (total ~$${spent.toFixed(2)})`);
+  const ok = run.status === 'SUCCEEDED';
+  const items = ok || allowPartial ? await api(`/datasets/${run.defaultDatasetId}/items?format=json&clean=true`) : [];
+  charge('apify', Number(run.usageTotalUsd) || (ok ? estimate : 0));
+  await api(`/datasets/${run.defaultDatasetId}`, { method: 'DELETE' }).catch(() => {}); // no personal data left on Apify
+  if (!ok && !allowPartial) throw new Error(`${actor} run ${run.status}`);
+  log(`• apify ${actor.split('/')[1]}: ${items.length} items${ok ? '' : ` (${run.status}, partial)`} · total ~$${spent.toFixed(2)}`);
   return items;
 }
 
-const pick = (o, ...ks) => { for (const k of ks) { const v = k.split('.').reduce((x, p) => x?.[p], o); if (v !== undefined && v !== null && v !== '') return v; } return null; };
-const placeKey = r => String(pick(r, 'place_info.data_id', 'place.data_id', 'data_id', 'place_info.place_id', 'place.place_id', 'placeId', 'place_id', 'place_info.title', 'place.title', 'title') || '');
-const placeName = r => pick(r, 'place_info.title', 'place.title', 'place_title', 'title', 'name');
-const placeAddr = r => pick(r, 'place_info.address', 'place.address', 'address');
-const dateOf = r => { const d = pick(r, 'iso_date', 'date_iso', 'publishedAtDate', 'date'); const t = Date.parse(d); return Number.isFinite(t) ? new Date(t).toISOString().slice(0, 10) : null; };
-const words = s => new Set(String(s || '').toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && !['shop', 'store', 'restaurant', 'service', 'center'].includes(w)));
-// Leaving language, same idea as Keepwatch Switchers.
-const LEAVING = /\b(used to (love|be|come)|not (the same|what it used to)|went downhill|gone downhill|changed (the|their)|new (recipe|owner|management|menu)|won'?t be back|never (coming|going) back|last time|instead (go|went)|switch(ed|ing) to|go(ing)? (to|elsewhere)|disappoint\w*|declin\w*|worse|shrink\w*|smaller|overpriced|price(s)? (went|have gone) up)\b/i;
-
 mkdirSync(OUT, { recursive: true });
-const report = { brand_a: PLACE, built_at: new Date().toISOString(), settings: { reviews: N_REVIEWS, per_reviewer: PER, min_shared: MIN_SHARED, top: TOP, locations: LOCATIONS, group: GROUP }, privacy: 'Totals per business only. No reviewer ids, names or profile links are stored. Businesses with fewer than min_shared shared reviewers are not shown.' };
+const report = { brand_a: BRAND, city: CITY, built_at: new Date().toISOString(), settings: { locations: LOCATIONS, reviews_per_location: PER_LOC, per_reviewer: PER, min_history: MIN_HISTORY, min_shared: MIN_SHARED, top: TOP, cap_usd: CAP },
+  privacy: 'Totals per business only. Reviewer ids were used in memory to de-duplicate and then dropped; no names, ids or profile links are stored. Businesses with fewer than min_shared shared reviewers are not shown.', sources: {} };
+
 try {
-  // 1. Brand A's place.
-  const isUrl = /^https?:\/\//.test(PLACE);
-  const places = await apify('compass/crawler-google-places', isUrl ? { startUrls: [{ url: PLACE }], maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 } : { searchStringsArray: [PLACE], maxCrawledPlacesPerSearch: LOCATIONS, maxReviews: 0, maxImages: 0 }, LOCATIONS * PRICE.place + PRICE.run);
-  const A = places[0] || {};
-  // Several locations of the same brand pool their reviewers (brand-level "fans of A").
-  const aPlaces = places.filter(p => p.placeId && brandOf(p.title) === brandOf(A.title));
-  report.place_a = { name: A.title || PLACE, brand: brandOf(A.title), category: A.categoryName || null, address: A.address || null, locations: aPlaces.length, reviews_total: aPlaces.reduce((n, p) => n + (p.reviewsCount || 0), 0), place_id: A.placeId || null, url: A.url || null };
-  if (!A.placeId && !DRY) throw new Error(`Could not find "${PLACE}" on Google Maps. Try the full Google Maps URL.`);
-
-  // 2. A's newest reviews (reviewer ids stay in memory), split across the locations.
-  const perPlace = Math.ceil(N_REVIEWS / Math.max(1, aPlaces.length));
-  const reviews = await apify('compass/google-maps-reviews-scraper', { placeIds: aPlaces.map(p => p.placeId), maxReviews: perPlace, reviewsSort: 'newest', personalData: true, language: 'en' }, N_REVIEWS * PRICE.review + PRICE.run);
-  // Only reviewers with a few reviews can show an overlap; one-review accounts are skipped.
-  const reviewerIds = [...new Set(reviews.filter(r => (r.reviewerNumberOfReviews ?? 99) >= MIN_HISTORY).map(r => r.reviewerId).filter(Boolean))];
-  report.coverage = { a_reviews_fetched: reviews.length, unique_reviewers: new Set(reviews.map(r => r.reviewerId).filter(Boolean)).size, reviewers_with_history: reviewerIds.length };
-
-  // 3. Each reviewer's public history. treg (litescrape, $0.00015 per reviewer, up to 200 reviews)
-  // when the treg CLI is signed in; otherwise the Apify contributor actor (pricier, $1/month free cap).
-  const history = [];
-  if (HIST === 'lexis') {
-    // lexis-solutions/google-maps-contributor-reviews-scraper: ~$0.0015 per review row; each row
-    // carries the business's name, place id, category and total review count (no extra lookups).
-    budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories (lexis)');
-    const batches = []; for (let i = 0; i < reviewerIds.length; i += 25) batches.push(reviewerIds.slice(i, i + 25));
-    for (let i = 0; i < batches.length; i += 4) {
-      const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('lexis-solutions/google-maps-contributor-reviews-scraper', { startUrls: b.map(id => ({ url: `https://www.google.com/maps/contrib/${id}?hl=en` })), maxItems: PER }, 0, { timeoutSecs: 1800, allowPartial: true })
-        .catch(e => { console.log('  batch failed:', e.message); return []; })));
-      for (const g of got) for (const r of g) history.push({ contributor_id: r.reviewer?.id, rating: r.rating, date: r.createdAt,
-        place_info: { data_id: r.place?.placeId || r.place?.cid, title: r.place?.name, address: r.place?.address, type: r.place?.primaryCategory, reviews_total: r.place?.reviewCount, place_id: r.place?.placeId } });
-      if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+  // ---- 1. Brand A's locations
+  const aBrand = brandOf(BRAND);
+  let locs = [];
+  if (await tregOk()) {
+    const seen = new Set();
+    for (const q of [`${BRAND} ${CITY}`, `${BRAND} near ${CITY}`]) {
+      const o = await treg('treg.google.serp.maps', { body: { q } }).catch(e => (log('  maps search:', e.message), {}));
+      for (const p of o.places || []) if (p.place_id && !seen.has(p.place_id) && brandOf(p.name) === aBrand) { seen.add(p.place_id); locs.push({ name: p.name, address: p.address, place_id: p.place_id, category: p.category, rating: p.rating, reviews_total: p.review_count ?? null }); }
+      if (locs.length >= LOCATIONS) break;
     }
-  } else if (HIST === 'treg' && await tregOk()) {
-    budget(reviewerIds.length * PRICE.tregContributor, 'reviewer histories (treg)');
-    let i = 0, fails = 0;
-    const worker = async () => { while (i < reviewerIds.length) { const id = reviewerIds[i++];
-      try { const r = await tregCall('litescrape.google.maps.contributor_reviews', { contributor_id: id, limit: PER, timeout: 60 });
-        for (const rv of r.result?.reviews || []) history.push({ ...rv, contributor_id: id }); spent += (r._treg?.charged_micro || 0) / 1e6; }
-      catch { fails++; } } };
+    report.sources.places = 'treg google.serp.maps';
+  }
+  if (!locs.length && APIFY) {
+    const ps = await apify('compass/crawler-google-places', { searchStringsArray: [BRAND], locationQuery: CITY || undefined, maxCrawledPlacesPerSearch: LOCATIONS, maxReviews: 0, maxImages: 0 }, LOCATIONS * PRICE.apifyPlace);
+    locs = ps.filter(p => p.placeId && brandOf(p.title) === aBrand).map(p => ({ name: p.title, address: p.address, place_id: p.placeId, category: p.categoryName, rating: p.totalScore, reviews_total: p.reviewsCount }));
+    report.sources.places = 'apify crawler-google-places';
+  }
+  locs = locs.slice(0, LOCATIONS);
+  report.place_a = { name: locs[0]?.name || BRAND, brand: aBrand, category: locs.find(l => l.category)?.category || null, locations: locs.length, addresses: locs.map(l => l.address) };
+  if (!locs.length && !DRY) throw new Error(`No "${BRAND}" locations found${CITY ? ` in ${CITY}` : ''}. Check the brand spelling or city.`);
+  log(`1. ${locs.length} ${BRAND} locations`);
+
+  // ---- 2. A's newest reviews, per location
+  const aReviews = [];
+  for (const l of locs) {
+    let rows = [];
+    if (await tregOk()) rows = (await treg('treg.google.maps.reviews', { body: { place_id: l.place_id, limit: PER_LOC, sort: 'newest' } }).catch(() => ({}))).reviews || [];
+    if (rows.length) rows.forEach(r => aReviews.push({ who: contribId(r), n: Number(r.author?.reviews) || null, stars: r.rating, date: r.date }));
+    else if (APIFY && !DRY) (await apify('compass/google-maps-reviews-scraper', { placeIds: [l.place_id], maxReviews: PER_LOC, reviewsSort: 'newest', personalData: true, language: 'en' }, PER_LOC * PRICE.apifyReview))
+      .forEach(r => aReviews.push({ who: r.reviewerId, n: r.reviewerNumberOfReviews, stars: r.stars, date: r.publishedAtDate }));
+  }
+  report.sources.a_reviews = 'treg google.maps.reviews (Apify fallback)';
+  const counts = new Map(); for (const r of aReviews) if (r.who) counts.set(r.who, Math.max(counts.get(r.who) || 0, r.n ?? 99));
+  // reviewers with a few reviews can show an overlap; order by a stable hash so a capped run is a fair sample
+  const h = s => createHash('sha1').update(String(s)).digest('hex');
+  const pool = [...counts.entries()].filter(([, n]) => n >= MIN_HISTORY).sort((a, b) => h(a[0]).localeCompare(h(b[0])));
+  report.coverage = { a_reviews: aReviews.length, unique_reviewers: counts.size, reviewers_with_history: pool.length };
+  log(`2. ${aReviews.length} reviews, ${counts.size} reviewers, ${pool.length} with ${MIN_HISTORY}+ reviews`);
+
+  // ---- 3. Reviewer histories
+  const history = []; let fetched = 0;
+  const half = new Map(); // reviewer -> 0/1, for the split-half stability check (memory only)
+  let useTreg = false;
+  if (await tregOk() && pool.length && !DRY) { // probe: is treg's contributor provider up?
+    const probe = await Promise.all(pool.slice(0, 2).map(([id]) => treg('litescrape.google.maps.contributor_reviews', { query: { contributor_id: id, limit: PER } }).then(o => o, () => null)));
+    useTreg = probe.some(o => (o?.reviews || []).length);
+  }
+  if (useTreg) {
+    report.sources.histories = 'treg litescrape.google.maps.contributor_reviews';
+    let i = 0; const worker = async () => { while (i < pool.length) { const [id] = pool[i++];
+      if (spent > CAP) return;
+      const o = await treg('litescrape.google.maps.contributor_reviews', { query: { contributor_id: id, limit: PER } }).catch(() => null);
+      for (const r of o?.reviews || []) history.push({ who: id, place: r.place_info?.data_id || r.place_info?.place_id || r.place_info?.title, name: r.place_info?.title, address: r.place_info?.address, type: r.place_info?.type, total: r.place_info?.reviews, place_id: r.place_info?.place_id, stars: r.rating, date: r.iso_date || r.date });
+      if (o) fetched++; } };
     await Promise.all(Array.from({ length: 8 }, worker));
-    console.log(`• treg contributor reviews: ${reviewerIds.length} reviewers, ${history.length} reviews, ${fails} failed (total ~$${spent.toFixed(2)})`);
   } else {
-    budget(reviewerIds.length * PER * PRICE.contributorReview, 'reviewer histories');
-    const batches = []; for (let i = 0; i < reviewerIds.length; i += 20) batches.push(reviewerIds.slice(i, i + 20));
-    for (let i = 0; i < batches.length; i += 4) {
-      const got = await Promise.all(batches.slice(i, i + 4).map(b => apify('johnvc/google-maps-contributor-reviews-api', { contributorIds: b, maxResultsPerContributor: PER, hl: 'en' }, 0, { timeoutSecs: 1800, allowPartial: true })
-        .catch(e => { console.log('  batch failed:', e.message); return []; })));
-      for (const g of got) history.push(...g);
-      if (spent > CAP) { console.log('  stopping histories: spend cap reached'); break; }
+    report.sources.histories = 'apify lexis-solutions/google-maps-contributor-reviews-scraper (treg contributor provider unavailable)';
+    // Spend-aware: estimate each batch from the real average so far and stop at the cap (keeping $0.15 for step 5-6).
+    let avgRows = null;
+    for (let i = 0; i < pool.length; i += 25) {
+      const batch = pool.slice(i, i + 25);
+      const est = batch.reduce((n, [, c]) => n + Math.min(PER, avgRows ?? c), 0) * PRICE.lexisReview;
+      if (spent + est > CAP - 0.15) { log(`  histories: stopping at ${fetched} reviewers to stay under the $${CAP} cap`); break; }
+      if (DRY) { log(`[dry-run] apify lexis batch of ${batch.length} (~$${est.toFixed(2)})`); fetched += batch.length; continue; }
+      const rows = await apify('lexis-solutions/google-maps-contributor-reviews-scraper', { startUrls: batch.map(([id]) => ({ url: `https://www.google.com/maps/contrib/${id}?hl=en` })), maxItems: PER }, 0, { allowPartial: true }).catch(e => (log('  batch failed:', e.message), []));
+      for (const r of rows) history.push({ who: r.reviewer?.id, place: r.place?.placeId || r.place?.cid, name: r.place?.name, address: r.place?.address, type: r.place?.primaryCategory, total: r.place?.reviewCount, place_id: r.place?.placeId, stars: r.rating, date: r.createdAt });
+      fetched += batch.length; const got = new Set(rows.map(r => r.reviewer?.id)).size || 1; avgRows = Math.max(5, Math.round(history.length / Math.max(1, new Set(history.map(x => x.who)).size)));
+      log(`  ${fetched}/${pool.length} reviewers · ${history.length} history rows · ~${avgRows}/reviewer (${got} in last batch)`);
     }
   }
-  // 4. Aggregate: distinct reviewers per business (ids used only to de-duplicate, then dropped).
-  const byPlace = new Map(); const reachable = new Set(); const aBrand = brandOf(A.title); let skippedNonBiz = 0;
-  for (const r of history) {
-    const who = pick(r, 'contributor_id', 'contributorId'); const loc = placeKey(r);
-    if (!who || !loc) continue; reachable.add(who);
-    const name = placeName(r), type = pick(r, 'place_info.type', 'place.type');
-    if (loc === A.placeId || brandOf(name) === aBrand) continue;
-    if (NOT_A_BUSINESS.test(String(type || ''))) { skippedNonBiz++; continue; }
-    // brand mode: every location of a chain counts as one business
-    const key = GROUP === 'brand' ? brandOf(name) || loc : loc;
-    const p = byPlace.get(key) || { name, address: placeAddr(r), type, locations: new Map(), reviewers: new Set(), ratings: [], dates: [] };
-    const L = p.locations.get(loc) || { reviews_total: Number(pick(r, 'place_info.reviews_total')) || null, place_id: pick(r, 'place_info.place_id'), address: placeAddr(r), fans: new Set() };
-    L.fans.add(who); p.locations.set(loc, L);
-    if (!p.reviewers.has(who)) { p.reviewers.add(who); const rt = Number(pick(r, 'rating')); if (rt) p.ratings.push(rt); const d = dateOf(r); if (d) p.dates.push(d); }
-    byPlace.set(key, p);
-  }
-  report.coverage.histories_reachable = reachable.size; report.coverage.history_reviews = history.length; report.coverage.non_business_reviews_skipped = skippedNonBiz;
-  let shared = [...byPlace.entries()].map(([key, p]) => {
-    const locs = [...p.locations.values()].sort((x, y) => y.fans.size - x.fans.size);
-    const known = locs.every(l => l.reviews_total != null);
-    return { key, name: p.name, address: locs.length > 1 ? `${locs.length} locations` : p.address, type: p.type || null, locations: locs.length,
-      known_reviews_total: known ? locs.reduce((n, l) => n + l.reviews_total, 0) : null, known_place_id: locs[0]?.place_id || null, check_address: locs[0]?.address || p.address,
-      shared: p.reviewers.size, avg_rating_from_a_fans: p.ratings.length ? Math.round(10 * p.ratings.reduce((a, b) => a + b, 0) / p.ratings.length) / 10 : null, last_review: p.dates.sort().slice(-1)[0] || null };
-  }).filter(p => p.shared >= MIN_SHARED).sort((a, b) => b.shared - a.shared);
-  for (const p of byPlace.values()) { p.reviewers.clear(); for (const l of p.locations.values()) l.fans.clear(); }
-  byPlace.clear(); reviewerIds.length = 0; // drop ids
+  for (const x of history) if (x.who && !half.has(x.who)) half.set(x.who, parseInt(h(x.who + 'split').slice(0, 2), 16) & 1);
+  report.coverage.histories_requested = fetched; report.coverage.histories_returned = half.size; report.coverage.history_rows = history.length;
+  log(`3. ${half.size} reviewer histories, ${history.length} reviews`);
 
-  // 5. Popularity + category for the candidates, then lift and competitor filter.
-  const cands = shared.slice(0, Math.max(TOP * 3, 30));
-  // Details come with lexis rows already; look them up only for candidates that lack them.
-  const lacking = cands.filter(c => c.known_reviews_total == null);
-  const details = lacking.length ? await apify('compass/crawler-google-places', { searchStringsArray: lacking.map(c => [c.name, c.check_address].filter(Boolean).join(', ')), maxCrawledPlacesPerSearch: 1, maxReviews: 0, maxImages: 0 }, lacking.length * PRICE.place + PRICE.run) : [];
-  const det = new Map(details.map(d => [String(d.searchString || '').split(',')[0].trim().toLowerCase(), d]));
-  const aWords = words(A.categoryName);
-  for (const c of cands) {
-    const d = det.get(String(c.name || '').toLowerCase()) || details.find(x => x.title === c.name) || {};
-    Object.assign(c, { category: d.categoryName || c.type || null, reviews_total: c.known_reviews_total ?? d.reviewsCount ?? null, rating: d.totalScore ?? null, url: d.url || null, place_id: c.known_place_id || d.placeId || null });
-    delete c.known_reviews_total; delete c.known_place_id; delete c.check_address;
-    c.competitor = !!(c.category && [...words(c.category)].some(w => aWords.has(w)));
+  // ---- 4. Aggregate per brand (every location of a chain = one brand)
+  const byBrand = new Map(); let skippedNonBiz = 0;
+  for (const r of history) {
+    if (!r.who || !r.place || !r.name) continue;
+    const b = brandOf(r.name); if (!b || b === aBrand) continue;
+    if (NOT_A_BUSINESS.test(String(r.type || ''))) { skippedNonBiz++; continue; }
+    const g = byBrand.get(b) || { name: r.name.replace(/\s*[-–—|@·,(:].*$/, ''), type: r.type, locs: new Map(), fans: new Set(), halves: [new Set(), new Set()], stars: [] };
+    const L = g.locs.get(r.place) || { total: Number(r.total) || null, place_id: r.place_id, address: r.address, fans: new Set() };
+    L.fans.add(r.who); g.locs.set(r.place, L);
+    if (!g.fans.has(r.who)) { g.fans.add(r.who); if (r.stars) g.stars.push(Number(r.stars)); }
+    g.halves[half.get(r.who) || 0].add(r.who);
+    byBrand.set(b, g);
   }
-  // Lift: share of A's fans who reviewed B, against how popular B is overall (more reviews =
-  // more likely to be reviewed by anyone). Reported relative to the median candidate (1.0 = typical).
+  report.coverage.non_business_reviews_skipped = skippedNonBiz;
+  const fansN = half.size || 1;
+  const aWords = words(report.place_a.category);
+  let cands = [...byBrand.values()].map(g => {
+    const ls = [...g.locs.values()].sort((x, y) => y.fans.size - x.fans.size);
+    const totals = ls.map(l => l.total).filter(Boolean);
+    return { name: g.name, category: g.type || null, locations: ls.length, shared: g.fans.size, share_of_fans: Math.round(1000 * g.fans.size / fansN) / 10,
+      halves: [g.halves[0].size, g.halves[1].size], reviews_total: totals.length ? totals.reduce((a, b) => a + b, 0) : null,
+      avg_stars_from_a_fans: g.stars.length ? Math.round(10 * g.stars.reduce((a, b) => a + b, 0) / g.stars.length) / 10 : null,
+      check_place_id: ls[0]?.place_id || null, check_address: ls[0]?.address || null,
+      competitor: [...words(g.type)].some(w => aWords.has(w)) };
+  }).filter(c => c.shared >= MIN_SHARED);
+  for (const g of byBrand.values()) { g.fans.clear(); g.halves.forEach(s => s.clear()); for (const l of g.locs.values()) l.fans.clear(); } // drop ids
+  byBrand.clear(); counts.clear(); pool.length = 0; history.length = 0; half.clear();
+
+  // ---- 5. Lift: share of A's fans who reviewed B vs B's overall popularity (sqrt damps mega-chains), 1.0 = median
   const rate = c => c.reviews_total ? c.shared / Math.sqrt(c.reviews_total) : null;
   const med = (xs => xs.length ? xs[Math.floor(xs.length / 2)] : null)(cands.map(rate).filter(x => x != null).sort((a, b) => a - b));
-  for (const c of cands) c.lift = med && rate(c) != null ? Math.round(100 * rate(c) / med) / 100 : null;
-  const brandB = cands.filter(c => !c.competitor).sort((a, b) => (b.lift ?? 0) * Math.log2(1 + b.shared) - (a.lift ?? 0) * Math.log2(1 + a.shared)).slice(0, TOP);
+  for (const c of cands) {
+    c.lift = med && rate(c) != null ? Math.round(100 * rate(c) / med) / 100 : null;
+    c.confidence = c.shared >= 8 && Math.min(...c.halves) >= 3 ? 'high' : c.shared >= 5 && Math.min(...c.halves) >= 1 ? 'medium' : 'low';
+    c.affinity = Math.round(100 * (c.lift ?? 1) * Math.log2(1 + c.shared)) / 100;
+  }
+  cands.sort((a, b) => b.affinity - a.affinity);
+  const brandB = cands.filter(c => !c.competitor).slice(0, TOP);
+  const rivals = cands.filter(c => c.competitor).slice(0, 8);
+  const check = [...brandB, ...rivals];
 
-  // 6. Are people leaving B? Newest reviews: rating trend (last 90 days vs before) + leaving language.
-  const ids = brandB.map(b => b.place_id).filter(Boolean);
-  // treg's routed Google reviews (~$0.00015 per place) first; Apify for any place it misses.
-  const bReviews = [];
-  if (await tregOk()) for (const id of ids) {
-    try { const r = await tregCallPost('treg.google.maps.reviews', { place_id: id, limit: 60, sort: 'newest' });
-      const rows = r.result?.output?.reviews || r.result?.reviews || r.result?.output || [];
-      for (const x of Array.isArray(rows) ? rows : []) bReviews.push({ placeId: id, stars: Number(x.rating ?? x.stars) || null, text: x.snippet ?? x.text ?? x.review_text ?? '', publishedAtDate: x.iso_date ?? x.published_at ?? x.publishedAtDate ?? x.date, reviewUrl: x.link ?? x.review_url ?? null });
-      spent += (r._treg?.charged_micro || 0) / 1e6; } catch { /* falls back below */ }
-  }
-  const missing = ids.filter(id => !bReviews.some(r => r.placeId === id && Number.isFinite(Date.parse(r.publishedAtDate))));
-  if (missing.length) bReviews.push(...await apify('compass/google-maps-reviews-scraper', { placeIds: missing, maxReviews: 40, reviewsSort: 'newest', personalData: false, language: 'en' }, missing.length * 40 * PRICE.review + PRICE.run).catch(e => { console.log('  B reviews:', e.message); return []; }));
+  // ---- 6a. Are people leaving B? newest reviews of B's location most visited by A's fans
   const now = Date.now();
-  for (const b of brandB) {
-    const rs = bReviews.filter(r => r.placeId === b.place_id && Number.isFinite(Date.parse(r.publishedAtDate)));
-    const recent = rs.filter(r => now - Date.parse(r.publishedAtDate) < 90 * 864e5), older = rs.filter(r => now - Date.parse(r.publishedAtDate) >= 90 * 864e5);
+  for (const b of check) {
+    let rs = [];
+    if (b.check_place_id && await tregOk()) rs = ((await treg('treg.google.maps.reviews', { body: { place_id: b.check_place_id, limit: 100, sort: 'newest' } }).catch(() => ({}))).reviews || [])
+      .map(r => ({ stars: Number(r.rating) || null, text: r.text || '', date: r.date, url: r.url || null }));
+    if (!rs.length && b.check_place_id && APIFY && !DRY) rs = (await apify('compass/google-maps-reviews-scraper', { placeIds: [b.check_place_id], maxReviews: 60, reviewsSort: 'newest', personalData: false, language: 'en' }, 60 * PRICE.apifyReview).catch(() => []))
+      .map(r => ({ stars: r.stars, text: r.text || '', date: r.publishedAtDate, url: r.reviewUrl || null }));
+    rs = rs.filter(r => Number.isFinite(Date.parse(r.date)));
+    const recent = rs.filter(r => now - Date.parse(r.date) < 90 * 864e5), older = rs.filter(r => now - Date.parse(r.date) >= 90 * 864e5);
     const avg = xs => xs.length ? Math.round(100 * xs.reduce((a, r) => a + (r.stars || 0), 0) / xs.length) / 100 : null;
-    const leaving = rs.filter(r => (r.stars || 5) <= 3 && LEAVING.test(r.text || ''));
-    b.switching = { reviews_checked: rs.length, avg_last_90d: avg(recent), avg_before: avg(older), rating_change: avg(recent) != null && avg(older) != null ? Math.round(100 * (avg(recent) - avg(older))) / 100 : null,
-      leaving_mentions: leaving.length, quotes: leaving.slice(0, 3).map(r => ({ quote: String(r.text).slice(0, 240), stars: r.stars, date: String(r.publishedAtDate).slice(0, 10), url: r.reviewUrl || null })) };
-    const drop = b.switching.rating_change ?? 0;
-    b.switching.verdict = (leaving.length >= 4 || drop <= -0.4) ? 'people are leaving' : (leaving.length >= 2 || drop <= -0.2) ? 'some leaving' : 'steady';
+    const leaving = rs.filter(r => (r.stars || 5) <= 3 && LEAVING.test(r.text));
+    const change = recent.length >= 5 && older.length >= 5 ? Math.round(100 * (avg(recent) - avg(older))) / 100 : null;
+    b.leaving = { reviews_checked: rs.length, recent_90d: recent.length, avg_last_90d: avg(recent), avg_before: avg(older), rating_change: change, leaving_reviews: leaving.length,
+      share_leaving: rs.length ? Math.round(1000 * leaving.length / rs.length) / 10 : null,
+      quotes: leaving.slice(0, 3).map(r => ({ quote: String(r.text).replace(/\s+/g, ' ').slice(0, 240), stars: r.stars, date: String(r.date).slice(0, 10), url: r.url })) };
+    b.leaving.verdict = !rs.length ? 'not checked' : (leaving.length >= 4 || (change ?? 0) <= -0.4) ? 'people are leaving' : (leaving.length >= 2 || (change ?? 0) <= -0.2) ? 'some leaving' : 'steady';
+    delete b.check_place_id;
   }
-  report.brand_b = brandB; report.competitors_removed = cands.filter(c => c.competitor).map(c => ({ name: c.name, category: c.category, shared: c.shared }));
-  report.all_shared = shared.map(({ key, ...s }) => s);
+  report.sources.leaving = 'treg google.maps.reviews (newest 100 of the location A fans visit most)';
+
+  // ---- 6b. Are people looking to switch from B? search demand for alternatives (brand-level, national)
+  const SW = n => [`${n} alternative`, `${n} alternatives`, `places like ${n}`, `${n} vs`, `better than ${n}`, `${n} closing`].map(s => s.toLowerCase());
+  const kw = check.flatMap(b => SW(b.name));
+  let vol = {};
+  if (await tregOk() && kw.length) {
+    const o = await treg('treg.google.keywords.volume', { body: { keywords: kw, country: 'us' }, maxCost: 0.1 }).catch(e => (log('  volume:', e.message), {}));
+    for (const r of o.rows || o.keywords || []) vol[String(r.keyword || r.key || '').toLowerCase()] = Number(r.search_volume ?? r.volume ?? r.searchVolume) || 0;
+    report.sources.switch_search = 'treg google.keywords.volume + Google autocomplete';
+  }
+  for (const b of check) {
+    const sugg = await fetch(`https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(b.name.toLowerCase() + ' vs')}`, { signal: AbortSignal.timeout(10000) }).then(r => r.json()).then(j => j[1] || []).catch(() => []);
+    const vs = sugg.map(s => s.replace(new RegExp(`^${b.name.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+vs\\.?\\s*`), '')).filter(Boolean).slice(0, 6);
+    const terms = SW(b.name).map(k => ({ keyword: k, monthly: vol[k] ?? null })).filter(t => t.monthly);
+    const total = terms.reduce((n, t) => n + t.monthly, 0);
+    b.switch_search = { monthly_searches: Object.keys(vol).length ? total : null, terms, compared_with: vs, level: total >= 1000 ? 'high' : total >= 100 ? 'some' : Object.keys(vol).length ? 'low' : 'unknown' };
+  }
+
+  // ---- 7. Opportunity: A's fans love B (affinity) AND people are leaving / looking to switch from B
+  const leaveScore = l => ({ 'people are leaving': 2, 'some leaving': 1 })[l?.verdict] || 0;
+  const searchScore = s => ({ high: 2, some: 1 })[s?.level] || 0;
+  for (const b of check) {
+    b.opportunity = Math.round(10 * b.affinity * (1 + leaveScore(b.leaving) + 0.5 * searchScore(b.switch_search)) * ({ high: 1, medium: 0.8, low: 0.5 })[b.confidence]) / 10;
+    b.why = [`${b.share_of_fans}% of ${BRAND} fans in the sample also reviewed it (${b.shared} people)`, b.lift != null ? `lift ${b.lift}` : null,
+      b.leaving?.verdict && b.leaving.verdict !== 'steady' && b.leaving.verdict !== 'not checked' ? `${b.leaving.leaving_reviews} of its newest ${b.leaving.reviews_checked} reviews talk about leaving${b.leaving.rating_change != null ? `, rating ${b.leaving.rating_change > 0 ? '+' : ''}${b.leaving.rating_change} in 90 days` : ''}` : null,
+      searchScore(b.switch_search) ? `${b.switch_search.monthly_searches}/mo search for alternatives` : null].filter(Boolean).join('; ');
+  }
+
+  // ---- 8. Data checks
+  const top10 = brandB.slice(0, 10);
+  const stable = top10.filter(c => Math.min(...c.halves) >= 1).length;
+  const warnings = [];
+  if (report.coverage.histories_returned < 60) warnings.push(`Only ${report.coverage.histories_returned} reviewer histories: treat results as directional. Aim for 150+.`);
+  if (report.coverage.unique_reviewers < 200) warnings.push(`Only ${report.coverage.unique_reviewers} ${BRAND} reviewers found. Add locations or a bigger city.`);
+  if (!brandB.length) warnings.push(`No business reached ${MIN_SHARED} shared reviewers. Pool more locations, read more of each history (--per-reviewer), or lower --min-shared to 2 (less reliable).`);
+  if (stable < Math.min(5, top10.length)) warnings.push(`Only ${stable} of the top ${top10.length} show up in both random halves of the sample: rankings may shift with more data.`);
+  const unchecked = check.filter(b => b.leaving?.verdict === 'not checked').length; if (unchecked) warnings.push(`${unchecked} brands could not be checked for leavers (no reviews returned).`);
+  report.checks = { split_half_top10_in_both: `${stable}/${top10.length}`, confidence_counts: Object.fromEntries(['high', 'medium', 'low'].map(k => [k, brandB.filter(b => b.confidence === k).length])), warnings };
+  report.brand_b = brandB; report.rivals = rivals;
+  report.opportunities = [...check].filter(b => leaveScore(b.leaving) || searchScore(b.switch_search)).sort((a, b) => b.opportunity - a.opportunity).slice(0, 5).map(b => ({ name: b.name, competitor: b.competitor, opportunity: b.opportunity, confidence: b.confidence, why: b.why }));
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
-report.spend_usd = Math.round(spent * 100) / 100;
+
+report.spend_usd = Math.round(spent * 100) / 100; report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
 writeFileSync(`${OUT}/overlap.json`, JSON.stringify(report, null, 1));
-const fans = report.coverage?.histories_reachable ?? 0;
-const md = [`# If someone loves ${report.place_a?.name || PLACE}…`, '', `${report.place_a?.category || ''} · ${report.place_a?.address || ''}`, '',
-  `From ${report.coverage?.a_reviews_fetched ?? 0} recent Google reviews by ${report.coverage?.unique_reviewers ?? 0} people; ${fans} had public review histories. Lift 1.0 = a typical nearby business; higher = A's fans favour it more than its popularity explains. Totals only, no reviewer data kept.`, '',
-  '| They probably also love | Category | Locations | Shared fans | Lift | Are people leaving it? | Rating last 90d vs before |', '|---|---|---|---|---|---|---|',
-  ...(report.brand_b || []).map(b => `| ${b.name} | ${b.category || ''} | ${b.locations ?? 1} | ${b.shared} | ${b.lift ?? '-'} | ${b.switching?.verdict || '-'} (${b.switching?.leaving_mentions ?? 0} reviews) | ${b.switching?.avg_last_90d ?? '-'} vs ${b.switching?.avg_before ?? '-'} |`),
-  '', report.error ? `**Stopped early:** ${report.error}` : '', `Spend: ~$${report.spend_usd}`].join('\n');
+
+// ---- Answer
+const c = report.coverage || {}, A = report.place_a || {};
+const row = b => `| ${b.name}${b.locations > 1 ? ` (${b.locations} loc.)` : ''} | ${b.category || ''} | ${b.shared} (${b.share_of_fans}%) | ${b.lift ?? '-'} | ${b.confidence} | ${b.leaving?.verdict || '-'}${b.leaving?.reviews_checked ? ` · ${b.leaving.leaving_reviews}/${b.leaving.reviews_checked}` : ''} | ${b.leaving?.avg_last_90d ?? '-'} vs ${b.leaving?.avg_before ?? '-'} | ${b.switch_search?.monthly_searches ?? '-'} |`;
+const head = '| Brand | Category | Shared fans | Lift | Confidence | Leaving? (leaving reviews / checked) | Rating 90d vs before | Alt. searches/mo |\n|---|---|---|---|---|---|---|---|';
+const md = [
+  `# If someone loves ${A.name || BRAND}${CITY ? ` (${CITY})` : ''}…`, '',
+  `Sample: ${c.a_reviews ?? 0} recent Google reviews across ${A.locations ?? 0} locations, ${c.unique_reviewers ?? 0} reviewers, ${c.histories_returned ?? 0} public review histories (${c.history_rows ?? 0} reviews). Totals only; no reviewer data kept.`, '',
+  '## The answer', '',
+  ...(report.brand_b?.length ? [
+    `**Fans of ${BRAND} probably also love:** ${report.brand_b.slice(0, 6).map(b => `${b.name} (${b.share_of_fans}%, lift ${b.lift ?? '-'})`).join(', ')}.`, '',
+    report.opportunities?.length ? `**Of those, people are leaving or looking to switch from:**\n${report.opportunities.map((o, i) => `${i + 1}. **${o.name}**${o.competitor ? ' (a rival)' : ''}: ${o.why}. Confidence: ${o.confidence}.`).join('\n')}` : '**None of them shows people leaving** in their newest reviews or much search for alternatives.', '',
+    report.opportunities?.length ? `**Where the opportunity is:** ${report.opportunities[0].competitor ? `${report.opportunities[0].name}'s unhappy customers already overlap with yours. Go after them directly.` : `${report.opportunities[0].name}'s customers already love ${BRAND}, and some are unhappy with ${report.opportunities[0].name}. Collab with it while it is loved, or offer what its leavers say is missing.`}` : '',
+  ] : ['No brand had enough shared fans to answer yet. See the checks below.']), '',
+  '## Brands A\'s fans also love', '', head, ...(report.brand_b || []).map(row), '',
+  report.rivals?.length ? `## Rivals A's fans also visit\n\n${head}\n${report.rivals.map(row).join('\n')}\n` : '',
+  '## What leavers say', '', ...[...(report.brand_b || []), ...(report.rivals || [])].filter(b => b.leaving?.quotes?.length).slice(0, 6).map(b => `**${b.name}**\n${b.leaving.quotes.map(q => `- "${q.quote}" (${q.stars}★, ${q.date}${q.url ? `, [review](${q.url})` : ''})`).join('\n')}`), '',
+  '## Data checks', '', `- Split-half stability: ${report.checks?.split_half_top10_in_both ?? '-'} of the top 10 appear in both random halves of the reviewers.`,
+  `- Confidence: ${JSON.stringify(report.checks?.confidence_counts || {})} (high = 8+ shared fans and 3+ in each half).`, ...(report.checks?.warnings || []).map(w => `- ⚠ ${w}`), '',
+  `Lift 1.0 = a typical business in the sample; higher means ${BRAND} fans favour it more than its popularity explains. "Probably love" means an association in public reviews, not proof of purchase.`, '',
+  `Sources: ${Object.entries(report.sources).map(([k, v]) => `${k}: ${v}`).join('; ')}.`, report.error ? `\n**Stopped early:** ${report.error}` : '', `Spend: ~$${report.spend_usd} ${JSON.stringify(report.spend_by_source)}`].join('\n');
 writeFileSync(`${OUT}/overlap.md`, md);
-console.log(`\n${md}\n\nSaved ${OUT}/overlap.json and overlap.md`);
+log(`\n${md}\n\nSaved ${OUT}/overlap.json and overlap.md. Graph: node ${resolve(import.meta.dirname, 'graph.mjs')} ${OUT}/overlap.json`);
