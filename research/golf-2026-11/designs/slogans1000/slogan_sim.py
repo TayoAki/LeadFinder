@@ -75,6 +75,21 @@ F = {k: np.array([r[k] for r in rows], float) for k in ['slang', 'borrow', 'date
 SEG = {'Trip / crew organiser': (.14, .35, .2, .8, 1.5, .3, .3), 'Gift buyer': (.18, .4, .2, .6, .3, .4, .6), 'Golf dad': (.12, .1, 0, .8, .4, .4, .3),
        'Style-led retro golfer': (.14, .4, .25, -.3, .2, .9, .2), 'Muni / public golfer': (.10, .4, .15, 1.0, .5, .3, .2), 'Casual humour sharer': (.14, .9, .35, 1.8, .4, -.2, 0),
        'Women golfer': (.10, .6, 1.0, .5, .4, .3, .5), 'League captain': (.04, .2, .2, .6, 1.5, .4, .3), 'Beginner': (.04, .5, .4, 1.0, .3, .2, .4)}
+# ---- alternative ICP: Telfar's audience (ICP=telfar). Built from web research (Telfar: "Not for you, for everyone";
+# "Black-adjacent, queer-adjacent"; $150-257 bags; community + pre-order drops) and the Instagram tag overlap of
+# 99 people who tag @telfarglobal (Fashion Nova 19, Zara 15, Nike 11, H&M 11, Shein 8, Supreme/Coach/Fenty/Sephora 7;
+# outliers: streetwear fit pages, CultureCon; hashtags #ootd #fitcheck #streetwear #nyc). Eastside Golf (Black-founded
+# golf lifestyle, $10M+ revenue 2024, "cookout" community days) is the culture-golf bridge.
+# extra fields: slang bonus, borrowing sensitivity multiplier, fashion taste
+FASHION_FAM = {'Fit Check', 'Drip', 'Iced Out', 'Ate', 'Slay', 'That ... Girl', 'Hot Girl', 'Main ... Energy', 'Girl Era / In My Era', 'in My Bag', 'Stepper', 'Big ... Energy', 'Behavior', 'No Notes', 'Aura'}
+F['fashion'] = np.array([1.0 if r['family'] in FASHION_FAM else 0.0 for r in rows])
+EXTRA = {s: (0, 1.0, 0) for s in SEG}
+if os.environ.get('ICP') == 'telfar':
+    SEG = {'Telfar core fashion fan': (.25, .8, .6, .6, .6, .2, .3), 'Golfcore fashion buyer': (.20, .75, .55, .8, .5, .4, .3),
+           'Culture golfer (Eastside Golf crowd)': (.15, .5, .25, .8, 1.2, .4, .5), 'Fit-check poster': (.15, .9, .6, .6, .3, 0, .3),
+           'Fast-fashion deal buyer': (.15, .8, .7, 1.0, .3, .1, .2), 'Gift buyer in the community': (.10, .5, .6, .6, .5, .4, .6)}
+    EXTRA = {'Telfar core fashion fan': (.3, .7, 1.0), 'Golfcore fashion buyer': (.1, 1.0, .8), 'Culture golfer (Eastside Golf crowd)': (.1, 1.3, .3),
+             'Fit-check poster': (.4, .8, 1.2), 'Fast-fashion deal buyer': (.3, .8, .6), 'Gift buyer in the community': (0, 1.0, .3)}
 N, NOISE, HURDLE = 20000, .9, 4.6
 rng = np.random.default_rng(1611)
 seg = list(SEG); sh = np.array([SEG[s][0] for s in seg]); sh /= sh.sum(); who = rng.choice(len(seg), N, p=sh)
@@ -83,9 +98,10 @@ for si, s in enumerate(seg):
     m = who == si; k = int(m.sum()); _, py, pw, h, g, plain, brag = SEG[s]
     y = rng.random(k) < py; w = rng.random(k) < pw; young[m] = y; woman[m] = w
     yy = y[:, None].astype(float); ww = w[:, None].astype(float)
-    base = (.25 * F['familiar'] - .05 * np.maximum(0, F['chars'] - 16) + h * .6 * F['humour'] + g * .8 * F['group'] + brag * .8 * F['brag'] + plain * .6 * (F['slang'] == 0) - .6 * F['borrow'])
-    slang_eff = yy * (.35 * F['slang'] - .3 * F['dated']) + (1 - yy) * (-.55 * F['slang'] - .4 * F['borrow'] - .1 * F['dated'])
-    crude_eff = -(.7 if s in ('Gift buyer', 'Golf dad') else .35) * F['crude'] * (1 - .6 * yy)
+    sb, bm, fz = EXTRA[s]
+    base = (fz * .6 * F['fashion'] + .25 * F['familiar'] - .05 * np.maximum(0, F['chars'] - 16) + h * .6 * F['humour'] + g * .8 * F['group'] + brag * .8 * F['brag'] + plain * .6 * (F['slang'] == 0) - .6 * bm * F['borrow'])
+    slang_eff = yy * ((.35 + sb) * F['slang'] - .3 * F['dated']) + (1 - yy) * ((-.55 + sb) * F['slang'] - .4 * bm * F['borrow'] - .1 * F['dated'])
+    crude_eff = -(.7 if s in ('Gift buyer', 'Golf dad', 'Gift buyer in the community') else .35) * F['crude'] * (1 - .6 * yy)
     women_eff = ww * (1.0 * F['women']) - (1 - ww) * (2.5 * F['women'])
     U[m] = (base[None, :] + slang_eff + crude_eff + women_eff + rng.normal(0, NOISE, (k, len(rows)))).astype(np.float32)
 first = U.argmax(1); fc = np.bincount(first, minlength=len(rows)) / N
@@ -99,7 +115,7 @@ seg_win = {s: rows[int(np.bincount(first[who == si], minlength=len(rows)).argmax
 fams = {}
 for r in rows: fams.setdefault(r['family'], []).append(r)
 famtab = sorted([dict(family=f, slogans=len(v), mean_p_buy=round(np.mean([x['p_buy'] for x in v]), 2), first_choice=round(sum(x['first_choice'] for x in v), 2), best=max(v, key=lambda x: x['p_buy'])['slogan']) for f, v in fams.items()], key=lambda x: -x['mean_p_buy'])
-json.dump(dict(label='SIMULATED - not demand evidence', shoppers=N, ranked=rank, families=famtab, segment_winners=seg_win), open(os.path.join(HERE, 'results.json'), 'w'), indent=1)
+json.dump(dict(label='SIMULATED - not demand evidence', shoppers=N, ranked=rank, families=famtab, segment_winners=seg_win), open(os.path.join(HERE, 'results-telfar.json' if os.environ.get('ICP') == 'telfar' else 'results.json'), 'w'), indent=1)
 print(len(rows), 'slogans,', N, 'shoppers,', f'{young.mean()*100:.0f}% under 35, {woman.mean()*100:.0f}% women')
 print('\nTOP 40'); [print(r['rank'], r['p_buy'], r['first_choice'], r['p_share'], f"u35 {r['under35_first']} / 35+ {r['over35_first']}", '|', r['family'], '|', r['slogan']) for r in rank[:40]]
 print('\nBOTTOM 10'); [print(r['rank'], r['p_buy'], '|', r['family'], '|', r['slogan']) for r in rank[-10:]]
