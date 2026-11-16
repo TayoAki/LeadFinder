@@ -16,27 +16,31 @@
 //
 // usage: node fan_overlap.mjs --brand "Crumbl Cookies" --city "Chicago, IL" [--locations 10] [--reviews-per-location 100]
 //          [--per-reviewer 60] [--min-history 5] [--min-shared 3] [--top 15] [--cap-usd 5] [--out DIR] [--dry-run]
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, writeFileSync, readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { execFile } from 'node:child_process';
 import { createHash } from 'node:crypto';
 
 const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1] && !all[i + 1].startsWith('--') ? all[i + 1] : true]] : a), []));
-const BRAND = args.brand || args.place, CITY = args.city || '';
+const FROM = args.from ? JSON.parse(readFileSync(resolve(args.from), 'utf8')) : null; // re-check B from a saved run (no new histories)
+const BRAND = args.brand || args.place || FROM?.brand_a, CITY = args.city ?? FROM?.city ?? '';
 if (!BRAND) { console.error('usage: node fan_overlap.mjs --brand "<brand>" --city "<city, state>"'); process.exit(2); }
 const LOCATIONS = Number(args.locations || 10), PER_LOC = Math.min(100, Number(args['reviews-per-location'] || 100));
 const PER = Number(args['per-reviewer'] || 60), MIN_HISTORY = Number(args['min-history'] || 5);
 const MIN_SHARED = Number(args['min-shared'] || 3), TOP = Number(args.top || 15), CAP = Number(args['cap-usd'] || 5), DRY = !!args['dry-run'];
 const slug = `${BRAND} ${CITY}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '').slice(0, 60);
-const OUT = resolve(args.out || `fan-overlap/${slug}`);
+const OUT = resolve(args.out || (args.from ? resolve(args.from, '..') : `fan-overlap/${slug}`));
 const TREG = process.env.TREG_BIN || `${process.env.HOME}/.local/bin/treg`;
 const APIFY = process.env.APIFY_TOKEN;
 const PRICE = { lexisReview: 0.0015, apifyReview: 0.0006, apifyPlace: 0.004 };
 
-const brandOf = n => String(n || '').toLowerCase().replace(/[’']/g, "'").replace(/\s*[-–—|@·,(:].*$/, '').replace(/\b(inc|llc|co|the)\b\.?/g, '').replace(/[^a-z0-9' &]+/g, ' ').replace(/\s+/g, ' ').trim();
+const brandOf = n => String(n || '').toLowerCase().replace(/[’']/g, "'").replace(/\s+[-–—|]\s+.*$|\s*[@·,(:].*$/, '').replace(/\b(inc|llc|co|the)\b\.?/g, '').replace(/[^a-z0-9' &]+/g, ' ').replace(/\s+/g, ' ').trim();
 // Places that are not businesses you could partner with.
 const NOT_A_BUSINESS = /park|airport|sculpture|monument|landmark|tourist attraction|museum|beach|lake|river|bridge|station|transit|hospital|school|university|college|church|place of worship|government|city hall|library|stadium|arena|zoo|garden|trail|neighbou?rhood|plaza|square|parking|highway|historical|memorial|observation deck|post office|dmv|embassy|apartment|hotel|motel|doctor|dentist|clinic|urgent care|pharmacy|bank|atm|gas station|car wash|auto|insurance|real estate|lawyer|attorney|storage|city|town|village|county|state/i;
-const LEAVING = /\b(used to (love|be|come)|not (the same|what it used to)|went downhill|gone downhill|changed (the|their)|new (recipe|owner|management|menu)|won'?t be back|never (coming|going) back|last time|instead (go|went)|switch(ed|ing) to|go(ing)? elsewhere|disappoint\w*|declin\w*|worse|shrink\w*|smaller|overpriced|price(s)? (went|have gone) up)\b/i;
+// Switching language: someone saying they are leaving or have left, not just a bad visit.
+const LEAVING = /\b(used to (love|be|come|go)|not (the same|what it used to be)|(went|gone|going) downhill|won'?t be (back|returning)|will not be (back|returning)|never (coming|going|be coming) back|not (coming|going) back|(go|going|went|stick) (somewhere|elsewhere)|switch(ed|ing)? to|(go|going|went|stick) to \w+( \w+)? instead|no longer (come|go|order|visit|recommend)|lost (a|my|our) (loyal |long[- ]time )?customer|take (my|our) business|done with (this|them)|last time (i|we)('ll| will)? (come|go|order|visit)|(found|find) (a )?(better|new) (place|spot|one))\b/i;
+const COMMON_WORD_NAMES = new Set(['subway', 'target', 'chipotle', 'panera', 'jersey mike\'s', 'wingstop', 'ulta', 'apple', 'whole foods', 'sprouts', 'orange theory', 'equinox', 'planet fitness', 'crunch', 'nothing bundt cakes', 'insomnia cookies', 'tropical smoothie', 'gap', 'express', 'shell', 'chase', 'sonic', 'jewel', 'ross', 'marshalls', 'five below', 'dollar tree', 'family dollar']);
+const searchName = n => (String(n).replace(/\s+(coffee company|coffee|mexican grill|louisiana kitchen|pizza|bread|restaurant|bakery|cafe|kitchen|grill)$/i, '') || n).toLowerCase();
 const words = s => new Set(String(s || '').toLowerCase().split(/[^a-z]+/).filter(w => w.length > 3 && !['shop', 'store', 'restaurant', 'service', 'center', 'food', 'takeout', 'delivery'].includes(w)));
 const contribId = r => (String(r?.author?.url || r?.reviewerUrl || '').match(/contrib\/(\d+)/) || [])[1] || r?.reviewerId || null;
 
@@ -83,6 +87,17 @@ const report = { brand_a: BRAND, city: CITY, built_at: new Date().toISOString(),
   privacy: 'Totals per business only. Reviewer ids were used in memory to de-duplicate and then dropped; no names, ids or profile links are stored. Businesses with fewer than min_shared shared reviewers are not shown.', sources: {} };
 
 try {
+  let brandB, rivals;
+  if (FROM) {
+    // Reuse the saved overlap (steps 1-5); only re-run the B checks. Find B's place again if the old file lacks its id.
+    Object.assign(report, { place_a: FROM.place_a, coverage: FROM.coverage, sources: { ...FROM.sources }, rechecked_from: FROM.built_at });
+    brandB = FROM.brand_b || []; rivals = FROM.rivals || [];
+    for (const b of [...brandB, ...rivals]) if (!b.check_place_id && b.check_address) {
+      const o = await treg('treg.google.serp.maps', { body: { q: `${b.name} ${b.check_address}` } }).catch(() => ({}));
+      b.check_place_id = (o.places || []).find(p => brandOf(p.name) === brandOf(b.name))?.place_id || o.places?.[0]?.place_id || null;
+    }
+    log(`re-checking ${brandB.length + rivals.length} brands from ${args.from}`);
+  } else {
   // ---- 1. Brand A's locations
   const aBrand = brandOf(BRAND);
   let locs = [];
@@ -163,7 +178,7 @@ try {
     if (!r.who || !r.place || !r.name) continue;
     const b = brandOf(r.name); if (!b || b === aBrand) continue;
     if (NOT_A_BUSINESS.test(String(r.type || ''))) { skippedNonBiz++; continue; }
-    const g = byBrand.get(b) || { name: r.name.replace(/\s*[-–—|@·,(:].*$/, ''), type: r.type, locs: new Map(), fans: new Set(), halves: [new Set(), new Set()], stars: [] };
+    const g = byBrand.get(b) || { name: r.name.replace(/\s+[-–—|]\s+.*$|\s*[@·,(:].*$/, ''), type: r.type, locs: new Map(), fans: new Set(), halves: [new Set(), new Set()], stars: [] };
     const L = g.locs.get(r.place) || { total: Number(r.total) || null, place_id: r.place_id, address: r.address, fans: new Set() };
     L.fans.add(r.who); g.locs.set(r.place, L);
     if (!g.fans.has(r.who)) { g.fans.add(r.who); if (r.stars) g.stars.push(Number(r.stars)); }
@@ -194,34 +209,46 @@ try {
     c.affinity = Math.round(100 * (c.lift ?? 1) * Math.log2(1 + c.shared)) / 100;
   }
   cands.sort((a, b) => b.affinity - a.affinity);
-  const brandB = cands.filter(c => !c.competitor).slice(0, TOP);
-  const rivals = cands.filter(c => c.competitor).slice(0, 8);
+  brandB = cands.filter(c => !c.competitor).slice(0, TOP);
+  rivals = cands.filter(c => c.competitor).slice(0, 8);
+  }
   const check = [...brandB, ...rivals];
 
   // ---- 6a. Are people leaving B? newest reviews of B's location most visited by A's fans
   const now = Date.now();
   for (const b of check) {
     let rs = [];
-    if (b.check_place_id && await tregOk()) rs = ((await treg('treg.google.maps.reviews', { body: { place_id: b.check_place_id, limit: 100, sort: 'newest' } }).catch(() => ({}))).reviews || [])
-      .map(r => ({ stars: Number(r.rating) || null, text: r.text || '', date: r.date, url: r.url || null }));
+    // B's location most visited by A's fans, plus up to 2 more of B's locations in the same city (one store can be an outlier)
+    const ids = [b.check_place_id].filter(Boolean);
+    if (await tregOk()) {
+      const o = await treg('treg.google.serp.maps', { body: { q: `${b.name} ${CITY}` } }).catch(() => ({}));
+      for (const p of o.places || []) if (ids.length < 3 && p.place_id && !ids.includes(p.place_id) && brandOf(p.name) === brandOf(b.name)) ids.push(p.place_id);
+      for (const id of ids) rs.push(...((await treg('treg.google.maps.reviews', { body: { place_id: id, limit: 100, sort: 'newest' } }).catch(() => ({}))).reviews || [])
+        .map(r => ({ stars: Number(r.rating) || null, text: r.text || '', date: r.date, url: r.url || null })));
+    }
+    b.check_place_ids_count = ids.length;
     if (!rs.length && b.check_place_id && APIFY && !DRY) rs = (await apify('compass/google-maps-reviews-scraper', { placeIds: [b.check_place_id], maxReviews: 60, reviewsSort: 'newest', personalData: false, language: 'en' }, 60 * PRICE.apifyReview).catch(() => []))
       .map(r => ({ stars: r.stars, text: r.text || '', date: r.publishedAtDate, url: r.reviewUrl || null }));
     rs = rs.filter(r => Number.isFinite(Date.parse(r.date)));
+    const year = rs.filter(r => now - Date.parse(r.date) < 365 * 864e5);
     const recent = rs.filter(r => now - Date.parse(r.date) < 90 * 864e5), older = rs.filter(r => now - Date.parse(r.date) >= 90 * 864e5);
     const avg = xs => xs.length ? Math.round(100 * xs.reduce((a, r) => a + (r.stars || 0), 0) / xs.length) / 100 : null;
-    const leaving = rs.filter(r => (r.stars || 5) <= 3 && LEAVING.test(r.text));
-    const change = recent.length >= 5 && older.length >= 5 ? Math.round(100 * (avg(recent) - avg(older))) / 100 : null;
-    b.leaving = { reviews_checked: rs.length, recent_90d: recent.length, avg_last_90d: avg(recent), avg_before: avg(older), rating_change: change, leaving_reviews: leaving.length,
-      share_leaving: rs.length ? Math.round(1000 * leaving.length / rs.length) / 10 : null,
+    const leaving = year.filter(r => (r.stars || 5) <= 3 && LEAVING.test(r.text)), lowStar = year.filter(r => (r.stars || 5) <= 2);
+    const change = recent.length >= 10 && older.length >= 10 ? Math.round(100 * (avg(recent) - avg(older))) / 100 : null;
+    b.leaving = { locations_checked: ids.length, reviews_checked: rs.length, recent_90d: recent.length, avg_last_90d: avg(recent), avg_before: avg(older), rating_change: change, reviews_last_12m: year.length, low_star_last_12m: lowStar.length, leaving_reviews: leaving.length,
+      share_leaving: year.length ? Math.round(1000 * leaving.length / year.length) / 10 : null,
       quotes: leaving.slice(0, 3).map(r => ({ quote: String(r.text).replace(/\s+/g, ' ').slice(0, 240), stars: r.stars, date: String(r.date).slice(0, 10), url: r.url })) };
-    b.leaving.verdict = !rs.length ? 'not checked' : (leaving.length >= 4 || (change ?? 0) <= -0.4) ? 'people are leaving' : (leaving.length >= 2 || (change ?? 0) <= -0.2) ? 'some leaving' : 'steady';
-    delete b.check_place_id;
+    // Verdict needs people saying it (switching language) — a rating dip alone is only 'some leaving'.
+    const per100 = year.length ? 100 * leaving.length / year.length : 0;
+    b.leaving.leaving_per_100 = Math.round(per100 * 10) / 10;
+    b.leaving.verdict = !rs.length ? 'not checked' : year.length < 15 ? 'too few recent reviews' : (leaving.length >= 4 && per100 >= 2) || (leaving.length >= 2 && (change ?? 0) <= -0.4) ? 'people are leaving' : leaving.length >= 2 || (change ?? 0) <= -0.4 ? 'some leaving' : 'steady';
   }
-  report.sources.leaving = 'treg google.maps.reviews (newest 100 of the location A fans visit most)';
+  report.sources.leaving = 'treg google.maps.reviews: newest 100 reviews of the location A fans visit most; leaving = 1-3 star reviews in the last 12 months that say they are leaving or have left';
 
   // ---- 6b. Are people looking to switch from B? search demand for alternatives (brand-level, national)
-  const SW = n => [`${n} alternative`, `${n} alternatives`, `places like ${n}`, `${n} vs`, `better than ${n}`, `${n} closing`].map(s => s.toLowerCase());
-  const kw = check.flatMap(b => SW(b.name));
+  const SW = n => [`${n} alternative`, `${n} alternatives`, `places like ${n}`, `better than ${n}`, `cheaper than ${n}`].map(s => s.toLowerCase());
+  const EXTRA = n => [`${n} vs`, `${n} closing`];
+  const kw = check.flatMap(b => [...SW(searchName(b.name)), ...EXTRA(searchName(b.name))]);
   let vol = {};
   if (await tregOk() && kw.length) {
     const o = await treg('treg.google.keywords.volume', { body: { keywords: kw, country: 'us' }, maxCost: 0.1 }).catch(e => (log('  volume:', e.message), {}));
@@ -229,11 +256,14 @@ try {
     report.sources.switch_search = 'treg google.keywords.volume + Google autocomplete';
   }
   for (const b of check) {
-    const sugg = await fetch(`https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(b.name.toLowerCase() + ' vs')}`, { signal: AbortSignal.timeout(10000) }).then(r => r.json()).then(j => j[1] || []).catch(() => []);
-    const vs = sugg.map(s => s.replace(new RegExp(`^${b.name.toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+vs\\.?\\s*`), '')).filter(Boolean).slice(0, 6);
-    const terms = SW(b.name).map(k => ({ keyword: k, monthly: vol[k] ?? null })).filter(t => t.monthly);
+    const sn = searchName(b.name);
+    const sugg = await fetch(`https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(sn + ' vs')}`, { signal: AbortSignal.timeout(10000) }).then(r => r.json()).then(j => j[1] || []).catch(() => []);
+    const vs = sugg.map(s => s.replace(new RegExp(`^${sn.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\s+vs\\.?\\s*`), '')).filter(Boolean).slice(0, 6);
+    const ambiguous = COMMON_WORD_NAMES.has(sn);
+    const terms = SW(sn).filter(k => !ambiguous || k.startsWith('places like')).map(k => ({ keyword: k, monthly: vol[k] ?? null })).filter(t => t.monthly);
     const total = terms.reduce((n, t) => n + t.monthly, 0);
-    b.switch_search = { monthly_searches: Object.keys(vol).length ? total : null, terms, compared_with: vs, level: total >= 1000 ? 'high' : total >= 100 ? 'some' : Object.keys(vol).length ? 'low' : 'unknown' };
+    b.switch_search = { searched_as: sn, monthly_searches: Object.keys(vol).length ? total : null, terms, compared_with: vs, versus_monthly: vol[`${sn} vs`] ?? null, closing_monthly: vol[`${sn} closing`] ?? null, ambiguous,
+      level: total >= 1000 ? 'high' : total >= 150 ? 'some' : Object.keys(vol).length ? 'low' : 'unknown' };
   }
 
   // ---- 7. Opportunity: A's fans love B (affinity) AND people are leaving / looking to switch from B
@@ -242,8 +272,8 @@ try {
   for (const b of check) {
     b.opportunity = Math.round(10 * b.affinity * (1 + leaveScore(b.leaving) + 0.5 * searchScore(b.switch_search)) * ({ high: 1, medium: 0.8, low: 0.5 })[b.confidence]) / 10;
     b.why = [`${b.share_of_fans}% of ${BRAND} fans in the sample also reviewed it (${b.shared} people)`, b.lift != null ? `lift ${b.lift}` : null,
-      b.leaving?.verdict && b.leaving.verdict !== 'steady' && b.leaving.verdict !== 'not checked' ? `${b.leaving.leaving_reviews} of its newest ${b.leaving.reviews_checked} reviews talk about leaving${b.leaving.rating_change != null ? `, rating ${b.leaving.rating_change > 0 ? '+' : ''}${b.leaving.rating_change} in 90 days` : ''}` : null,
-      searchScore(b.switch_search) ? `${b.switch_search.monthly_searches}/mo search for alternatives` : null].filter(Boolean).join('; ');
+      b.leaving?.verdict && b.leaving.verdict !== 'steady' && b.leaving.verdict !== 'not checked' ? `${b.leaving.leaving_reviews} of ${b.leaving.reviews_last_12m} reviews in the last 12 months (${b.leaving.locations_checked} locations) say they're leaving or left${b.leaving.rating_change != null ? `, rating ${b.leaving.rating_change > 0 ? '+' : ''}${b.leaving.rating_change} in 90 days` : ''}` : null,
+      searchScore(b.switch_search) ? `${b.switch_search.monthly_searches}/mo US searches for alternatives` : null].filter(Boolean).join('; ');
   }
 
   // ---- 8. Data checks
@@ -257,7 +287,8 @@ try {
   const unchecked = check.filter(b => b.leaving?.verdict === 'not checked').length; if (unchecked) warnings.push(`${unchecked} brands could not be checked for leavers (no reviews returned).`);
   report.checks = { split_half_top10_in_both: `${stable}/${top10.length}`, confidence_counts: Object.fromEntries(['high', 'medium', 'low'].map(k => [k, brandB.filter(b => b.confidence === k).length])), warnings };
   report.brand_b = brandB; report.rivals = rivals;
-  report.opportunities = [...check].filter(b => leaveScore(b.leaving) || searchScore(b.switch_search)).sort((a, b) => b.opportunity - a.opportunity).slice(0, 5).map(b => ({ name: b.name, competitor: b.competitor, opportunity: b.opportunity, confidence: b.confidence, why: b.why }));
+  report.collab_partners = brandB.filter(b => b.confidence !== 'low' && !['people are leaving', 'some leaving'].includes(b.leaving?.verdict)).slice(0, 3).map(b => ({ name: b.name, why: b.why, confidence: b.confidence }));
+  report.opportunities = [...check].filter(b => b.confidence !== 'low' && (leaveScore(b.leaving) || searchScore(b.switch_search))).sort((a, b) => b.opportunity - a.opportunity).slice(0, 5).map(b => ({ name: b.name, competitor: b.competitor, opportunity: b.opportunity, confidence: b.confidence, why: b.why }));
 } catch (e) { report.error = e.message; console.error('Stopped:', e.message); }
 
 report.spend_usd = Math.round(spent * 100) / 100; report.spend_by_source = Object.fromEntries(Object.entries(spendBy).map(([k, v]) => [k, Math.round(v * 1000) / 1000]));
@@ -265,16 +296,18 @@ writeFileSync(`${OUT}/overlap.json`, JSON.stringify(report, null, 1));
 
 // ---- Answer
 const c = report.coverage || {}, A = report.place_a || {};
-const row = b => `| ${b.name}${b.locations > 1 ? ` (${b.locations} loc.)` : ''} | ${b.category || ''} | ${b.shared} (${b.share_of_fans}%) | ${b.lift ?? '-'} | ${b.confidence} | ${b.leaving?.verdict || '-'}${b.leaving?.reviews_checked ? ` · ${b.leaving.leaving_reviews}/${b.leaving.reviews_checked}` : ''} | ${b.leaving?.avg_last_90d ?? '-'} vs ${b.leaving?.avg_before ?? '-'} | ${b.switch_search?.monthly_searches ?? '-'} |`;
-const head = '| Brand | Category | Shared fans | Lift | Confidence | Leaving? (leaving reviews / checked) | Rating 90d vs before | Alt. searches/mo |\n|---|---|---|---|---|---|---|---|';
+const row = b => `| ${b.name}${b.locations > 1 ? ` (${b.locations} loc.)` : ''} | ${b.category || ''} | ${b.shared} (${b.share_of_fans}%) | ${b.lift ?? '-'} | ${b.confidence} | ${b.leaving?.verdict || '-'}${b.leaving?.reviews_last_12m != null ? ` · ${b.leaving.leaving_reviews}/${b.leaving.reviews_last_12m} (${b.leaving.locations_checked} loc.)` : ''} | ${b.leaving?.avg_last_90d ?? '-'} vs ${b.leaving?.avg_before ?? '-'} | ${b.switch_search?.monthly_searches ?? '-'} |`;
+const head = '| Brand | Category | Shared fans | Lift | Confidence | Leaving? (leaving reviews / last 12 mo) | Rating 90d vs before | Alt. searches/mo (US) |\n|---|---|---|---|---|---|---|---|';
 const md = [
   `# If someone loves ${A.name || BRAND}${CITY ? ` (${CITY})` : ''}…`, '',
   `Sample: ${c.a_reviews ?? 0} recent Google reviews across ${A.locations ?? 0} locations, ${c.unique_reviewers ?? 0} reviewers, ${c.histories_returned ?? 0} public review histories (${c.history_rows ?? 0} reviews). Totals only; no reviewer data kept.`, '',
   '## The answer', '',
   ...(report.brand_b?.length ? [
     `**Fans of ${BRAND} probably also love:** ${report.brand_b.slice(0, 6).map(b => `${b.name} (${b.share_of_fans}%, lift ${b.lift ?? '-'})`).join(', ')}.`, '',
-    report.opportunities?.length ? `**Of those, people are leaving or looking to switch from:**\n${report.opportunities.map((o, i) => `${i + 1}. **${o.name}**${o.competitor ? ' (a rival)' : ''}: ${o.why}. Confidence: ${o.confidence}.`).join('\n')}` : '**None of them shows people leaving** in their newest reviews or much search for alternatives.', '',
-    report.opportunities?.length ? `**Where the opportunity is:** ${report.opportunities[0].competitor ? `${report.opportunities[0].name}'s unhappy customers already overlap with yours. Go after them directly.` : `${report.opportunities[0].name}'s customers already love ${BRAND}, and some are unhappy with ${report.opportunities[0].name}. Collab with it while it is loved, or offer what its leavers say is missing.`}` : '',
+    report.opportunities?.length ? `**Of those, people are leaving or looking to switch from:**\n${report.opportunities.map((o, i) => `${i + 1}. **${o.name}**${o.competitor ? ' (a rival)' : ''}: ${o.why}. Confidence: ${o.confidence}.`).join('\n')}` : '**None of them shows people leaving** in the last 12 months of reviews, or much search for alternatives.', '',
+    '**Where the opportunity is:**',
+    report.opportunities?.length ? `- **Switchers:** ${report.opportunities.slice(0, 2).map(o => o.name).join(' and ')} ${report.opportunities.length > 1 ? 'are' : 'is'} loved by ${BRAND} fans but losing people. Read the leaver quotes below for what's missing, and build or market that to ${BRAND}'s crowd.` : '- **Switchers:** none with enough evidence in this sample.',
+    report.collab_partners?.length ? `- **Collab:** ${report.collab_partners.map(c => c.name).join(', ')}: fans overlap strongly and the brand is steady. A co-branded drop reaches people who already like both.` : '',
   ] : ['No brand had enough shared fans to answer yet. See the checks below.']), '',
   '## Brands A\'s fans also love', '', head, ...(report.brand_b || []).map(row), '',
   report.rivals?.length ? `## Rivals A's fans also visit\n\n${head}\n${report.rivals.map(row).join('\n')}\n` : '',
