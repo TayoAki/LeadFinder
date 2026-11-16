@@ -1,0 +1,140 @@
+{
+ "label": "SIMULATED - not demand evidence",
+ "shoppers": 20000,
+ "women_share": 28.3,
+ "names": [
+  {
+   "name": "Dad Bod Golf Club",
+   "first_choice_pct": 28.6,
+   "first_choice_ci": "28.0\u201329.3",
+   "p_buy_pct": 9.9,
+   "p_buy_ci": "9.7\u201310.1",
+   "p_share_pct": 21.1,
+   "familiarity": 0.85,
+   "women_first_pct": 2.6,
+   "men_first_pct": 38.8,
+   "winner_in": [
+    "Gift buyer (partner / family)",
+    "Golf dad",
+    "Casual humour sharer"
+   ]
+  },
+  {
+   "name": "Sunday Swing Club",
+   "first_choice_pct": 24.5,
+   "first_choice_ci": "23.9\u201325.1",
+   "p_buy_pct": 11.5,
+   "p_buy_ci": "11.4\u201311.7",
+   "p_share_pct": 26.3,
+   "familiarity": 1.0,
+   "women_first_pct": 23.6,
+   "men_first_pct": 24.9,
+   "winner_in": [
+    "Style-led retro golfer",
+    "Muni / public golfer",
+    "League / member-guest captain",
+    "Beginner golfer"
+   ]
+  },
+  {
+   "name": "Weekend Swing Club",
+   "first_choice_pct": 10.4,
+   "first_choice_ci": "10.0\u201310.8",
+   "p_buy_pct": 7.7,
+   "p_buy_ci": "7.6\u20137.8",
+   "p_share_pct": 19.0,
+   "familiarity": 1.0,
+   "women_first_pct": 9.7,
+   "men_first_pct": 10.7,
+   "winner_in": []
+  },
+  {
+   "name": "Back Nine Babes",
+   "first_choice_pct": 9.5,
+   "first_choice_ci": "9.1\u20139.9",
+   "p_buy_pct": 5.0,
+   "p_buy_ci": "4.9\u20135.2",
+   "p_share_pct": 9.7,
+   "familiarity": 0.8,
+   "women_first_pct": 33.4,
+   "men_first_pct": 0.0,
+   "winner_in": [
+    "Women golfer / golf girl"
+   ]
+  },
+  {
+   "name": "Golf Trip Boys",
+   "first_choice_pct": 8.2,
+   "first_choice_ci": "7.8\u20138.6",
+   "p_buy_pct": 4.6,
+   "p_buy_ci": "4.5\u20134.7",
+   "p_share_pct": 11.5,
+   "familiarity": 0.71,
+   "women_first_pct": 0.3,
+   "men_first_pct": 11.4,
+   "winner_in": [
+    "Trip / crew organiser"
+   ]
+  },
+  {
+   "name": "Chip Chicks",
+   "first_choice_pct": 8.1,
+   "first_choice_ci": "7.7\u20138.5",
+   "p_buy_pct": 4.6,
+   "p_buy_ci": "4.4\u20134.8",
+   "p_share_pct": 9.0,
+   "familiarity": 0.8,
+   "women_first_pct": 28.7,
+   "men_first_pct": 0.0,
+   "winner_in": []
+  },
+  {
+   "name": "Tee Time Boys",
+   "first_choice_pct": 7.1,
+   "first_choice_ci": "6.7\u20137.4",
+   "p_buy_pct": 5.2,
+   "p_buy_ci": "5.1\u20135.2",
+   "p_share_pct": 13.5,
+   "familiarity": 0.71,
+   "women_first_pct": 0.1,
+   "men_first_pct": 9.9,
+   "winner_in": []
+  },
+  {
+   "name": "Slice Boys",
+   "first_choice_pct": 1.8,
+   "first_choice_ci": "1.6\u20132.0",
+   "p_buy_pct": 2.8,
+   "p_buy_ci": "2.8\u20132.9",
+   "p_share_pct": 7.6,
+   "familiarity": 0.61,
+   "women_first_pct": 0.1,
+   "men_first_pct": 2.5,
+   "winner_in": []
+  },
+  {
+   "name": "Range Day Club",
+   "first_choice_pct": 1.4,
+   "first_choice_ci": "1.2\u20131.5",
+   "p_buy_pct": 2.9,
+   "p_buy_ci": "2.8\u20132.9",
+   "p_share_pct": 8.5,
+   "familiarity": 0.81,
+   "women_first_pct": 1.5,
+   "men_first_pct": 1.3,
+   "winner_in": []
+  },
+  {
+   "name": "Lip-Out Boys",
+   "first_choice_pct": 0.4,
+   "first_choice_ci": "0.3\u20130.5",
+   "p_buy_pct": 1.7,
+   "p_buy_ci": "1.7\u20131.7",
+   "p_share_pct": 4.9,
+   "familiarity": 0.43,
+   "women_first_pct": 0.0,
+   "men_first_pct": 0.5,
+   "winner_in": []
+  }
+ ]
+}
