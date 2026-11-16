@@ -1,0 +1,1226 @@
+{
+ "personas": [
+  {
+   "id": "A01",
+   "segment": "hype streetwear",
+   "age": 22,
+   "gender": "male",
+   "city": "Bronx, NY",
+   "top3": [
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Keep Your Head Down"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Night Range League reads like a crew name, that I'd rock. The rest is my uncle's Father's Day gift."
+  },
+  {
+   "id": "A02",
+   "segment": "hype streetwear",
+   "age": 19,
+   "gender": "female",
+   "city": "Philadelphia, PA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "I don't do golf caps, a $38 rope hat with golf words is a no from me."
+  },
+  {
+   "id": "A03",
+   "segment": "hype streetwear",
+   "age": 26,
+   "gender": "male",
+   "city": "Brooklyn, NY",
+   "top3": [
+    "Members of Nothing",
+    "Night Range League"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Night Range League"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Keep Your Head Down",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Members of Nothing is the only one with attitude. Five Borough Muni from a brand that isn't from here? Nah."
+  },
+  {
+   "id": "A04",
+   "segment": "hype streetwear",
+   "age": 24,
+   "gender": "male",
+   "city": "Atlanta, GA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular",
+    "Sunday Muni",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Corteiz does exclusivity right; these just sound like a golf course gift shop."
+  },
+  {
+   "id": "A05",
+   "segment": "hype streetwear",
+   "age": 21,
+   "gender": "female",
+   "city": "London, UK",
+   "top3": [
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Keep Your Head Down",
+    "Playing Through"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Members of Nothing could slide with a Corteiz fit, rest is too on the nose."
+  },
+  {
+   "id": "A06",
+   "segment": "hype streetwear",
+   "age": 29,
+   "gender": "male",
+   "city": "Queens, NY",
+   "top3": [
+    "Five Borough Muni",
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Five Borough Muni",
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly"
+   ],
+   "borrowed": [],
+   "reason": "I'm actually from Queens and play Clearview sometimes, Five Borough Muni hits if it's done right."
+  },
+  {
+   "id": "A07",
+   "segment": "hype streetwear",
+   "age": 23,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular",
+    "Golf, Mostly",
+    "Keep Your Head Down",
+    "Still Learning"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Nobody I know posts golf. This is cosplay for people who wanna look like they have a tee time."
+  },
+  {
+   "id": "A08",
+   "segment": "hype streetwear",
+   "age": 27,
+   "gender": "female",
+   "city": "Los Angeles, CA",
+   "top3": [
+    "Night Range League"
+   ],
+   "wear": [
+    "Night Range League"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Night Range League has a Hellstar-ish late-night energy. Members of Nothing tries too hard to be anti."
+  },
+  {
+   "id": "A09",
+   "segment": "hype streetwear",
+   "age": 20,
+   "gender": "male",
+   "city": "Houston, TX",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular",
+    "Sunday Muni"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol",
+    "Keep Your Head Down"
+   ],
+   "reason": "Golf merch on principle is a no. Keep Your Head Down from a golf brand is a weird thing to put on a hat."
+  },
+  {
+   "id": "A10",
+   "segment": "hype streetwear",
+   "age": 32,
+   "gender": "male",
+   "city": "Newark, NJ",
+   "top3": [
+    "Members of Nothing",
+    "Long Way Round"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Muni Regular"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Long Way Round is vague enough to wear without explaining myself, Members of Nothing too."
+  },
+  {
+   "id": "A11",
+   "segment": "hype streetwear",
+   "age": 25,
+   "gender": "female",
+   "city": "Brooklyn, NY",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Playing Through",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Rope cap plus golf slogan is the exact trend I'm tired of seeing on my feed."
+  },
+  {
+   "id": "A12",
+   "segment": "hype streetwear",
+   "age": 36,
+   "gender": "male",
+   "city": "Toronto, ON",
+   "top3": [
+    "Night Range League",
+    "Long Way Round"
+   ],
+   "wear": [
+    "Night Range League",
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Only the ones that don't scream golf. Night Range League sounds like a team I'd actually join."
+  },
+  {
+   "id": "A13",
+   "segment": "hype streetwear",
+   "age": 18,
+   "gender": "male",
+   "city": "Paris, FR",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular",
+    "Sunday Muni",
+    "Weekday Nine"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Trop golf. Je ne porte pas ça."
+  },
+  {
+   "id": "A14",
+   "segment": "archive/designer",
+   "age": 34,
+   "gender": "male",
+   "city": "New York, NY",
+   "top3": [
+    "Long Way Round"
+   ],
+   "wear": [
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Long Way Round is the only one with some poetry. The rest is merch, not clothing."
+  },
+  {
+   "id": "A15",
+   "segment": "archive/designer",
+   "age": 28,
+   "gender": "female",
+   "city": "Los Angeles, CA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular",
+    "Night Range League"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Gallery Dept already did the ironic thing better. Sunwashed rope cap is a trend piece, not archive."
+  },
+  {
+   "id": "A16",
+   "segment": "archive/designer",
+   "age": 41,
+   "gender": "male",
+   "city": "London, UK",
+   "top3": [
+    "Long Way Round",
+    "Still Learning"
+   ],
+   "wear": [
+    "Long Way Round",
+    "Still Learning"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Still Learning is quiet and honest, very Martine Rose. Long Way Round too. Everything else shouts."
+  },
+  {
+   "id": "A17",
+   "segment": "archive/designer",
+   "age": 38,
+   "gender": "male",
+   "city": "Berlin, DE",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular",
+    "Members of Nothing",
+    "Night Range League"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "I wear Rick and Kapital. I'm not putting the word muni on my head."
+  },
+  {
+   "id": "A18",
+   "segment": "archive/designer",
+   "age": 26,
+   "gender": "female",
+   "city": "New York, NY",
+   "top3": [
+    "Still Learning"
+   ],
+   "wear": [
+    "Still Learning"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Public Golfer",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Still Learning I'd wear as a statement about anything. Golf references, no."
+  },
+  {
+   "id": "A19",
+   "segment": "archive/designer",
+   "age": 37,
+   "gender": "male",
+   "city": "Los Angeles, CA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing",
+    "Night Range League",
+    "Public Golfer",
+    "Muni Regular",
+    "Sunday Muni"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol",
+    "Keep Your Head Down"
+   ],
+   "reason": "A new brand slapping phrases on stock Comfort Colors caps. Who Decides War makes a reason to exist; this doesn't."
+  },
+  {
+   "id": "A20",
+   "segment": "archive/designer",
+   "age": 24,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "top3": [
+    "Members of Nothing",
+    "Long Way Round"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Members of Nothing has a nice anti-elite edge if the embroidery is good. Don't let it be cheap."
+  },
+  {
+   "id": "A21",
+   "segment": "archive/designer",
+   "age": 45,
+   "gender": "female",
+   "city": "Paris, FR",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Ironic golf caps are already finished. I pass."
+  },
+  {
+   "id": "A22",
+   "segment": "archive/designer",
+   "age": 40,
+   "gender": "male",
+   "city": "Atlanta, GA",
+   "top3": [
+    "Long Way Round",
+    "Twilight Nine"
+   ],
+   "wear": [
+    "Long Way Round",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Twilight Nine sounds nice without explaining golf. Long Way Round is my top. Tired of the anti-club gimmick."
+  },
+  {
+   "id": "A23",
+   "segment": "archive/designer",
+   "age": 29,
+   "gender": "female",
+   "city": "Seoul, KR",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular",
+    "Golf, Mostly",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "For me Kapital is craft. This is only text on a hat."
+  },
+  {
+   "id": "A24",
+   "segment": "culture and heritage",
+   "age": 38,
+   "gender": "female",
+   "city": "Brooklyn, NY",
+   "top3": [
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "wear": [
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol",
+    "Keep Your Head Down"
+   ],
+   "reason": "Public Golfer is plain and true, it's about access. Keep Your Head Down on a cap reads like something my grandmother told my father, not golf advice."
+  },
+  {
+   "id": "A25",
+   "segment": "culture and heritage",
+   "age": 27,
+   "gender": "male",
+   "city": "Washington, DC",
+   "top3": [
+    "Public Golfer",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Public Golfer",
+    "Sunday Muni",
+    "Muni Regular"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down"
+   ],
+   "reason": "Langston and Rock Creek are munis with real Black golf history. Sunday Muni and Public Golfer could honor that. Five Borough Muni from outsiders, no."
+  },
+  {
+   "id": "A26",
+   "segment": "culture and heritage",
+   "age": 44,
+   "gender": "male",
+   "city": "New Orleans, LA",
+   "top3": [
+    "Sunday Muni",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down",
+    "Dawn Patrol"
+   ],
+   "reason": "Sunday Muni feels like my father's course after church. If the brand knows that history it should say so."
+  },
+  {
+   "id": "A27",
+   "segment": "culture and heritage",
+   "age": 23,
+   "gender": "female",
+   "city": "Oakland, CA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down",
+    "Dawn Patrol"
+   ],
+   "reason": "Golf has a history of keeping us out. A new brand making muni the aesthetic is borrowing a struggle it didn't live."
+  },
+  {
+   "id": "A28",
+   "segment": "culture and heritage",
+   "age": 31,
+   "gender": "female",
+   "city": "Detroit, MI",
+   "top3": [
+    "Still Learning"
+   ],
+   "wear": [
+    "Still Learning"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down"
+   ],
+   "reason": "Still Learning I'd wear, it's humble. Keep Your Head Down carries a different weight for a lot of us."
+  },
+  {
+   "id": "A29",
+   "segment": "culture and heritage",
+   "age": 35,
+   "gender": "male",
+   "city": "Harlem, NY",
+   "top3": [
+    "Public Golfer"
+   ],
+   "wear": [
+    "Public Golfer"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down",
+    "Dawn Patrol"
+   ],
+   "reason": "Who is this brand to say Five Borough? Public Golfer is the only honest one."
+  },
+  {
+   "id": "A30",
+   "segment": "culture and heritage",
+   "age": 29,
+   "gender": "female",
+   "city": "Atlanta, GA",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly",
+    "Muni Regular",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down"
+   ],
+   "reason": "I'd want to know who's behind this first. Without a story, it's all just slogans."
+  },
+  {
+   "id": "A31",
+   "segment": "culture and heritage",
+   "age": 52,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "top3": [
+    "Sunday Muni",
+    "Public Golfer"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Public Golfer",
+    "Weekday Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down"
+   ],
+   "reason": "I play Jackson Park on Sundays, so Sunday Muni speaks to me. The jokes don't."
+  },
+  {
+   "id": "A32",
+   "segment": "culture and heritage",
+   "age": 24,
+   "gender": "male",
+   "city": "Baltimore, MD",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular",
+    "Sunday Muni"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Keep Your Head Down",
+    "Dawn Patrol"
+   ],
+   "reason": "Denim Tears made the cotton wreath mean something. These mean nothing; they're vibes."
+  },
+  {
+   "id": "A33",
+   "segment": "workwear/heritage casual",
+   "age": 36,
+   "gender": "male",
+   "city": "Portland, OR",
+   "top3": [
+    "Walking Nine",
+    "Weekday Nine",
+    "Long Way Round"
+   ],
+   "wear": [
+    "Walking Nine",
+    "Weekday Nine",
+    "Long Way Round",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Walking Nine and Weekday Nine fit how I dress, Carhartt and a plain cap. Not loud."
+  },
+  {
+   "id": "A34",
+   "segment": "workwear/heritage casual",
+   "age": 42,
+   "gender": "male",
+   "city": "Pittsburgh, PA",
+   "top3": [
+    "Weekday Nine",
+    "Walking Nine",
+    "Public Golfer"
+   ],
+   "wear": [
+    "Weekday Nine",
+    "Walking Nine",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Weekday Nine is my actual life. I'd buy one if the cap is good quality."
+  },
+  {
+   "id": "A35",
+   "segment": "workwear/heritage casual",
+   "age": 37,
+   "gender": "female",
+   "city": "Denver, CO",
+   "top3": [
+    "Twilight Nine",
+    "Walking Nine"
+   ],
+   "wear": [
+    "Twilight Nine",
+    "Walking Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Night Range League"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Twilight Nine is pretty, sounds like summer evenings. The jokes are dad-store stuff."
+  },
+  {
+   "id": "A36",
+   "segment": "workwear/heritage casual",
+   "age": 27,
+   "gender": "male",
+   "city": "Philadelphia, PA",
+   "top3": [
+    "Long Way Round"
+   ],
+   "wear": [
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Public Golfer",
+    "Muni Regular",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "I wear ALD and Timberland, golf hats aren't my thing. Long Way Round could pass as anything."
+  },
+  {
+   "id": "A37",
+   "segment": "workwear/heritage casual",
+   "age": 48,
+   "gender": "male",
+   "city": "Boston, MA",
+   "top3": [
+    "Muni Regular",
+    "Walking Nine",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Muni Regular",
+    "Walking Nine",
+    "Sunday Muni",
+    "Weekday Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "I really am a muni regular. Muni Regular and Walking Nine are just true for me."
+  },
+  {
+   "id": "A38",
+   "segment": "workwear/heritage casual",
+   "age": 33,
+   "gender": "female",
+   "city": "Minneapolis, MN",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing",
+    "Night Range League",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "I like workwear basics. A slogan cap at $38 isn't basic, it's merch."
+  },
+  {
+   "id": "A39",
+   "segment": "workwear/heritage casual",
+   "age": 22,
+   "gender": "male",
+   "city": "Austin, TX",
+   "top3": [
+    "Dawn Patrol",
+    "Long Way Round"
+   ],
+   "wear": [
+    "Dawn Patrol",
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Dawn Patrol has a nice outdoor feel, could be fishing or surf. Doesn't feel too golf."
+  },
+  {
+   "id": "A40",
+   "segment": "workwear/heritage casual",
+   "age": 39,
+   "gender": "female",
+   "city": "Brooklyn, NY",
+   "top3": [
+    "Walking Nine",
+    "Twilight Nine"
+   ],
+   "wear": [
+    "Walking Nine",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Walking Nine is a nice sentence. The rest is either a joke or pretending to be from somewhere."
+  },
+  {
+   "id": "A41",
+   "segment": "Korea/Japan-based",
+   "age": 25,
+   "gender": "male",
+   "city": "Seoul, KR",
+   "top3": [
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Night Range League",
+    "Members of Nothing",
+    "Long Way Round"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Night Range League has a cool sound, like a Japanese baseball team. Five Borough is not for me, I'm not from NYC."
+  },
+  {
+   "id": "A42",
+   "segment": "Korea/Japan-based",
+   "age": 28,
+   "gender": "female",
+   "city": "Tokyo, JP",
+   "top3": [
+    "Long Way Round",
+    "Twilight Nine"
+   ],
+   "wear": [
+    "Long Way Round",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Keep Your Head Down"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Twilight Nine is poetic. English-text caps are common here; it must be beautiful embroidery."
+  },
+  {
+   "id": "A43",
+   "segment": "Korea/Japan-based",
+   "age": 23,
+   "gender": "female",
+   "city": "Seoul, KR",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Public Golfer",
+    "Muni Regular",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Screen golf is popular, but I wouldn't wear these words. Too much slogan."
+  },
+  {
+   "id": "A44",
+   "segment": "Korea/Japan-based",
+   "age": 41,
+   "gender": "male",
+   "city": "Osaka, JP",
+   "top3": [
+    "Long Way Round",
+    "Still Learning"
+   ],
+   "wear": [
+    "Long Way Round",
+    "Still Learning"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Members of Nothing",
+    "Public Golfer"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Still Learning matches the shoshin spirit. I like quiet words. I think Members of Nothing is forced."
+  },
+  {
+   "id": "A45",
+   "segment": "Korea/Japan-based",
+   "age": 31,
+   "gender": "male",
+   "city": "Tokyo, JP",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly",
+    "Members of Nothing",
+    "Night Range League",
+    "Public Golfer",
+    "Muni Regular"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "Dawn Patrol"
+   ],
+   "reason": "Japan's golf scene is already crowded with brands. This has no special reason to buy."
+  },
+  {
+   "id": "A46",
+   "segment": "golf-curious streetwear",
+   "age": 26,
+   "gender": "male",
+   "city": "Brooklyn, NY",
+   "top3": [
+    "Members of Nothing",
+    "Night Range League",
+    "Muni Regular"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Night Range League",
+    "Muni Regular",
+    "Public Golfer",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "I just started playing Dyker Beach. Members of Nothing is perfect for that anti-country-club vibe."
+  },
+  {
+   "id": "A47",
+   "segment": "golf-curious streetwear",
+   "age": 30,
+   "gender": "female",
+   "city": "Los Angeles, CA",
+   "top3": [
+    "Twilight Nine",
+    "Night Range League",
+    "Still Learning"
+   ],
+   "wear": [
+    "Twilight Nine",
+    "Night Range League",
+    "Still Learning",
+    "Walking Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Keep Your Head Down"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "I play twilight rounds at Rancho Park, so Twilight Nine is literally me. Golf Is Hard is too obvious."
+  },
+  {
+   "id": "A48",
+   "segment": "golf-curious streetwear",
+   "age": 24,
+   "gender": "male",
+   "city": "Queens, NY",
+   "top3": [
+    "Five Borough Muni",
+    "Muni Regular",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Five Borough Muni",
+    "Muni Regular",
+    "Sunday Muni",
+    "Night Range League",
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [],
+   "reason": "Five Borough Muni fits me, I play Forest Park and Kissena. As long as they aren't just faking NYC."
+  },
+  {
+   "id": "A49",
+   "segment": "golf-curious streetwear",
+   "age": 35,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "top3": [
+    "Public Golfer",
+    "Weekday Nine",
+    "Walking Nine"
+   ],
+   "wear": [
+    "Public Golfer",
+    "Weekday Nine",
+    "Walking Nine",
+    "Muni Regular",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Keep Your Head Down"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Public Golfer is clean. Played Sydney Marovitz all summer. I'd rock it with Stüssy shorts."
+  },
+  {
+   "id": "A50",
+   "segment": "golf-curious streetwear",
+   "age": 21,
+   "gender": "female",
+   "city": "Atlanta, GA",
+   "top3": [
+    "Still Learning",
+    "Night Range League"
+   ],
+   "wear": [
+    "Still Learning",
+    "Night Range League",
+    "Twilight Nine"
+   ],
+   "tryhard": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Golf, Mostly"
+   ],
+   "borrowed": [
+    "Five Borough Muni"
+   ],
+   "reason": "Still Learning is honest because I just started at the driving range. Night Range League sounds like my Tuesday with friends."
+  }
+ ]
+}
