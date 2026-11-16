@@ -30,6 +30,8 @@ const FORMATS = {
   'funny / skit': /funny|skit|comedy|joke|lol|😂|🤣/i, 'trip / destination': /golf trip|bucket list|destination|scotland|pebble|bandon|hawaii|vegas|cabo/i,
 };
 const now = Date.now() / 1000;
+// any timestamp shape -> YYYY-MM-DD, or null
+const dayOf = t => { if (t == null || t === '') return null; const n = Number(t); const ms = Number.isFinite(n) ? (n > 1e12 ? n : n * 1000) : Date.parse(t); return Number.isFinite(ms) ? new Date(ms).toISOString().slice(0, 10) : null; };
 const vids = new Map();
 for (const kw of KEYWORDS) for (const sort of [1, 0]) for (const offset of [0, 20, 40]) {
   const o = await call('tikhub.tiktok.search.videos', { keyword: kw, count: 20, offset, sort_type: sort }).catch(() => ({}));
@@ -42,14 +44,15 @@ for (const kw of KEYWORDS) for (const sort of [1, 0]) for (const offset of [0, 2
       sound_id: v.music?.id_str || String(v.music?.id || ''), sound: v.music?.title || '', sound_original: /original sound/i.test(v.music?.title || ''), keyword: kw }); }
 }
 console.log(`tiktok: ${vids.size} videos from the last ${DAYS} days · ~$${spent.toFixed(3)}`);
+mkdirSync(OUT, { recursive: true }); writeFileSync(`${OUT}/golf-videos-tiktok.json`, JSON.stringify([...vids.values()]));
 // Instagram Reels (Google-indexed search; fewer fields)
-for (const kw of ['golf outfit', 'golf fit check', 'golf hat', 'golf funny', 'golf tips', 'golf dad']) for (const page of [1, 2]) {
+for (const kw of ['golf outfit', 'golf fit check', 'golf hat', 'golf funny', 'golf tips', 'golf dad']) for (const page of [1, 2]) try {
   const o = await call('scrapecreators.x.v2-instagram-reels-search', { query: kw, date_posted: 'last-month', page }).catch(() => ({}));
   for (const r of o.reels || o.items || o.data || []) { const id = r.shortcode || r.code || r.id; if (!id || vids.has('ig' + id)) continue;
     vids.set('ig' + id, { platform: 'instagram', id, url: r.url || `https://www.instagram.com/reel/${id}/`, creator: r.owner?.username || r.user?.username || r.username || null, followers: r.owner?.follower_count || 0,
-      desc: r.caption?.text || r.caption || '', date: r.taken_at ? new Date((r.taken_at > 1e12 ? r.taken_at : r.taken_at * 1000)).toISOString().slice(0, 10) : null, views: r.video_play_count || r.play_count || r.view_count || 0,
+      desc: r.caption?.text || r.caption || '', date: dayOf(r.taken_at ?? r.taken_at_timestamp ?? r.date), views: r.video_play_count || r.play_count || r.view_count || 0,
       likes: r.like_count || 0, comments: r.comment_count || 0, sound: r.clips_music_attribution_info?.song_name || '', sound_id: r.clips_music_attribution_info?.audio_id || '', keyword: kw }); }
-}
+} catch (e) { console.log('  reels:', e.message); }
 const all = [...vids.values()];
 console.log(`total: ${all.length} videos (${all.filter(v => v.platform === 'instagram').length} reels) · ~$${spent.toFixed(3)}`);
 
