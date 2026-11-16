@@ -1,0 +1,24 @@
+{
+ "title": "5 golf gifts for the new golfer in your life",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SAVE THIS FOR GIFT SEASON ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "5 golf gifts for the *new golfer* in your life", "subtitle": "None of them are another sleeve of balls.",
+   "photo": {"key": "gift-cover", "brief": "COVER: a wrapped gift box with an Ivory rope cap on top, on a kitchen table", "search": "gift box wrapped", "src": "commons"}, "save": true, "shade": 0.65},
+  {"type": "item", "title": "1. A TOPGOLF NIGHT", "photo": {"key": "topgolf-bay", "brief": "friends at a driving-range bay at night", "search": "driving range night", "src": "commons"},
+   "name": "Book a bay for them and their friends", "notes": ["Where a lot of new golfers start"], "verdict": "Golf, minus the pressure"},
+  {"type": "item", "title": "2. A FIRST LESSON", "photo": {"key": "golf-lesson", "brief": "a coach and a beginner on a practice range", "search": "golf lesson driving range", "src": "commons"},
+   "name": "One lesson with a local coach", "notes": ["Ask the course or range what's on offer"], "verdict": "The gift that makes the rest fun"},
+  {"type": "photo", "photo": {"key": "crew-range-day-girls", "brief": "a crew cap with their group's name"}, "title": "3. A CAP WITH THEIR CREW'S NAME",
+   "lines": ["Their group, the place, the year", "Stitched one at a time"], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "slogan-here-for-the-birdies", "brief": "Here for the Birdies cap"}, "title": "4. A CAP THAT GETS IT",
+   "lines": ["\"Here for the Birdies\"", "Upbeat, and true for every beginner"], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "otc-logo", "brief": "the Open Tee Club cap"}, "title": "5. LET THEM DESIGN IT",
+   "lines": ["A gift card for a crew cap", "They pick the name. No wrong style."], "text_at": "bottom"},
+  {"type": "app", "title": "Crew caps and gift cards", "screen": "photos/otc-logo.png", "screen_brief": "the Open Tee Club cap mock-up",
+   "subtitle": "Link in bio. Made to order:\ncheck the gift cut-off date before you buy.", "save": true}
+ ]
+}

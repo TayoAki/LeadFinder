@@ -1,0 +1,18 @@
+{
+ "title": "What to wear for your first round of golf",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SAVE THIS FOR YOUR FIRST ROUND ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "What to wear for your *first round*", "subtitle": "No golf wardrobe needed.",
+   "photo": {"key": "first-tee", "brief": "COVER: a first tee box on a sunny morning", "search": "golf tee box", "src": "commons"}, "save": true, "shade": 0.65},
+  {"type": "list", "title": "1. *Check the dress code*", "lines": ["Public courses are usually relaxed", "Many still ask for a collared shirt", "One look at the website, or call ahead"]},
+  {"type": "photo", "photo": {"key": "golf-shoes", "brief": "golf shoes or clean trainers on grass", "search": "golf shoes", "src": "commons"}, "title": "2. SHOES: TRAINERS ARE FINE", "lines": ["Many courses don't allow metal spikes", "Clean trainers work for a first nine"], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "golf-layers", "brief": "a light quarter-zip and a water bottle by a golf bag", "search": "golf bag course", "src": "commons"}, "title": "3. LAYERS + WATER", "lines": ["Mornings are cold, afternoons aren't", "A light layer you can take off"], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "otc-logo", "brief": "the cap"}, "title": "4. A CAP", "lines": ["Four hours in the sun", "Bonus points if it matches your crew"], "text_at": "bottom"},
+  {"type": "app", "title": "Matching caps for your crew", "screen": "photos/crew-range-day-girls.png", "screen_brief": "a crew cap mock-up",
+   "subtitle": "Your crew's name, stitched. No minimums.\nLink in bio.", "save": true}
+ ]
+}

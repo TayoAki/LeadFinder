@@ -1,0 +1,20 @@
+{
+ "title": "Blank cap → your crew's cap",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SAVE THIS FOR YOUR NEXT GOLF TRIP ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "This cap was a *group chat* last week", "subtitle": "Blank rope cap → your crew's name, stitched.",
+   "photo": {"key": "crew-range-day-girls", "brief": "COVER: the finished crew cap in your hand"}, "save": true, "shade": 0.65},
+  {"type": "compare", "title": "BLANK → STITCHED",
+   "before": {"label": "BEFORE", "name": "The blank rope cap", "serving": "Ivory · rope brim", "photo": {"key": "blank-cap", "brief": "the blank Ivory rope cap"}},
+   "after": {"label": "AFTER", "name": "Your crew's cap", "serving": "Name + place + year", "photo": {"key": "crew-range-day-girls", "brief": "the stitched crew cap"}},
+   "verdict": "One cap or twelve. Same price each."},
+  {"type": "list", "title": "How it *works*", "lines": ["Name your crew", "Add the place and year", "Share the link: everyone picks a colour", "We stitch each cap and ship it"]},
+  {"type": "photo", "photo": {"key": "crew-after-work", "brief": "a second crew example"}, "title": "NO MINIMUMS", "lines": ["Most custom hats need 24+.", "Ours start at one."], "text_at": "bottom"},
+  {"type": "app", "title": "Comment your crew's name", "screen": "photos/otc-logo.png", "screen_brief": "the Open Tee Club cap mock-up",
+   "subtitle": "We'll mock up the best ones.\nMock-ups shown until real photos are in.", "save": true}
+ ]
+}

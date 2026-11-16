@@ -1,0 +1,18 @@
+{
+ "title": "POV: your Topgolf crew is ready for the real course",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SAVE THIS FOR YOUR FIRST ROUND ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "POV: your *Topgolf crew* is ready for the real course", "subtitle": "How to make the jump without the stress.",
+   "photo": {"key": "topgolf-bay", "brief": "COVER: your crew at a range bay, mid-laugh", "search": "driving range night", "src": "commons"}, "save": true, "shade": 0.65},
+  {"type": "photo", "photo": {"key": "range-mats", "brief": "a row of range mats with balls", "search": "golf driving range mats", "src": "commons"}, "title": "1. HIT THE RANGE TOGETHER", "lines": ["A bucket each, same bay, same night", "Get used to a real tee and real targets"], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "public-course", "brief": "a quiet public course in the evening", "search": "public golf course", "src": "commons"}, "title": "2. BOOK NINE, NOT EIGHTEEN", "lines": ["A twilight nine at a public course", "Shorter, cheaper, calmer"], "text_at": "bottom"},
+  {"type": "list", "title": "3. *Play ready golf*", "lines": ["Hit when you're ready, not by turn", "Pick up after double par. Nobody minds.", "Let faster groups play through", "Fix your divots, rake the bunker"]},
+  {"type": "photo", "photo": {"key": "crew-tee-time-squad", "brief": "the crew's matching caps on the first tee"}, "title": "4. SHOW UP AS A CREW", "lines": ["Same caps from the bay to the first tee", "\"Tee Time Squad\""], "text_at": "bottom"},
+  {"type": "app", "title": "Get your crew's cap", "screen": "photos/crew-tee-time-squad.png", "screen_brief": "a crew cap mock-up",
+   "subtitle": "Your crew's name, stitched.\nNo minimums. Link in bio.", "save": true}
+ ]
+}

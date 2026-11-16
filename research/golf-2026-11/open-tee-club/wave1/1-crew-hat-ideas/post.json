@@ -1,0 +1,19 @@
+{
+ "title": "5 hat ideas for your golf crew",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SEND THIS TO YOUR GOLF GROUP CHAT ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "5 hat ideas for your *golf crew*", "subtitle": "Your crew's name, stitched. One cap or twelve.",
+   "photo": {"key": "crew-range-day-girls", "brief": "COVER: your real crew at the range or a Topgolf bay, all in matching Ivory caps (mock-up until you shoot)"}, "save": true, "shade": 0.65},
+  {"type": "photo", "photo": {"key": "crew-range-day-girls", "brief": "Range Day Girls cap, front on"}, "title": "1. THE RANGE CREW", "lines": ["Your crew name + the city and year", "\"Range Day Girls · Scottsdale 2026\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-after-work", "brief": "After Work Nine Club cap"}, "title": "2. THE AFTER-WORK NINE", "lines": ["For the group that plays nine after work", "\"After Work Nine Club · Est. 2026\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-tee-time-squad", "brief": "Tee Time Squad cap"}, "title": "3. THE TOPGOLF CREW", "lines": ["Same caps from the bay to the real course", "\"Tee Time Squad\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-fairway-friends", "brief": "Fairway Friends Club cap"}, "title": "4. THE FRIEND GROUP", "lines": ["The ones who got you into golf", "\"Fairway Friends Club\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-golf-trip-boys", "brief": "Golf Trip Boys · Bandon 2026 cap"}, "title": "5. THE GOLF TRIP", "lines": ["The trip, the place, the year", "\"Golf Trip Boys · Bandon 2026\""], "text_at": "bottom"},
+  {"type": "app", "title": "Comment your crew's name.\nWe'll mock it up.", "screen": "photos/otc-logo.png", "screen_brief": "the Open Tee Club cap mock-up",
+   "subtitle": "Retro rope caps, stitched one at a time.\nNo minimums. Mock-ups shown.", "save": true}
+ ]
+}

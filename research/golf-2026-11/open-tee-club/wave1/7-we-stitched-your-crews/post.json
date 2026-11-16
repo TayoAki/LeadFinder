@@ -1,0 +1,19 @@
+{
+ "title": "We mocked up your crew names",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ COMMENT YOURS FOR PART 2 ↓",
+ "source_line": "",
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "_note": "TEMPLATE. Post this the day after post 1, replacing the example names with real names from its comments (ask permission in a reply first). Re-render with render.py.",
+ "slides": [
+  {"type": "cover", "title": "We mocked up *your crew names*", "subtitle": "From the comments. Part 1.",
+   "photo": {"key": "crew-after-work", "brief": "COVER: a grid of the mock-ups"}, "save": true, "shade": 0.65},
+  {"type": "photo", "photo": {"key": "crew-range-day-girls", "brief": "commenter crew #1"}, "title": "@commenter_1", "lines": ["\"Range Day Girls\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-after-work", "brief": "commenter crew #2"}, "title": "@commenter_2", "lines": ["\"After Work Nine Club\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-tee-time-squad", "brief": "commenter crew #3"}, "title": "@commenter_3", "lines": ["\"Tee Time Squad\""], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "crew-fairway-friends", "brief": "commenter crew #4"}, "title": "@commenter_4", "lines": ["\"Fairway Friends Club\""], "text_at": "bottom"},
+  {"type": "app", "title": "Want yours on a cap?", "screen": "photos/otc-logo.png", "screen_brief": "the Open Tee Club cap mock-up",
+   "subtitle": "Comment your crew's name for part 2.\nNo minimums. Link in bio.", "save": true}
+ ]
+}

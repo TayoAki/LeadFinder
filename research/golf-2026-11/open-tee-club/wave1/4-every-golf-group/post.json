@@ -1,0 +1,19 @@
+{
+ "title": "Every golf group has these 4",
+ "size": [1080, 1440],
+ "theme": {"accent": "#1F4D3A", "muted": "#5B6475"},
+ "save_line": "↓ SEND THIS TO YOUR GOLF GROUP CHAT ↓",
+ "source_line": "",
+ "counter": true,
+ "brand": {"name": "Open Tee Club", "icon": "assets/icon.png", "where": "Crew caps · no minimums"},
+ "slides": [
+  {"type": "cover", "title": "Every golf group has *these 4*", "subtitle": "Tag yours.",
+   "photo": {"key": "slogan-bogey-what-about-it", "brief": "COVER: four friends on a tee box, from behind, all in caps"}, "save": true, "shade": 0.7},
+  {"type": "photo", "photo": {"key": "slogan-bogey-what-about-it", "brief": "Bogey. What About It? cap"}, "title": "THE ONE WHO OWNS EVERY BOGEY", "lines": ["Zero shame. Full send."], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "slogan-respectfully-ob", "brief": "Respectfully, That's OB cap"}, "title": "THE ONE WHO CALLS IT OB", "lines": ["Politely. Every single time."], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "slogan-slice-in-4k", "brief": "Slice in 4K cap"}, "title": "THE ONE FILMING YOUR SLICE", "lines": ["For the group chat. In 4K."], "text_at": "bottom"},
+  {"type": "photo", "photo": {"key": "slogan-here-for-the-birdies", "brief": "Here for the Birdies cap"}, "title": "THE ONE JUST HERE FOR THE BIRDIES", "lines": ["Hasn't made one yet. Doesn't care."], "text_at": "bottom"},
+  {"type": "app", "title": "Which one are you?", "screen": "photos/otc-logo.png", "screen_brief": "the Open Tee Club cap mock-up",
+   "subtitle": "Each one's a cap. Or put your crew's name on it.\nMock-ups shown. Link in bio.", "save": true}
+ ]
+}
