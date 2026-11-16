@@ -1,0 +1,882 @@
+{
+ "label": "SIMULATED - not demand evidence",
+ "n_shoppers": 20000,
+ "segments": {
+  "Trip / crew organiser": {
+   "share": 0.14,
+   "source": "Simulation: highest conversion (20%); trip creator videos median 118k views; \"golf trip\" top keyword"
+  },
+  "Gift buyer (partner / family)": {
+   "share": 0.18,
+   "source": "Gift ideas = best-saved proven golf slideshow formula (50 winners, 42 creators); 9 of 17 brands run gift ads; mid-November"
+  },
+  "Golf dad": {
+   "share": 0.12,
+   "source": "#dad #family top hashtags among Melin taggers; Vice dad/kid ads ran 294 days; \"Daddy daughter day\" 13M views"
+  },
+  "Style-led retro golfer (Malbon/Melin crowd)": {
+   "share": 0.14,
+   "source": "Malbon = strongest outlier among Melin fans (18 people, lift 5.3); simulation: style-led 0% buy for loud/novelty designs"
+  },
+  "Muni / public golfer": {
+   "share": 0.1,
+   "source": "\"muni golf\"/\"muni golfer\" 3,600 US searches/mo each, steady; \"municipal golf course\" 12,100/mo; price-conscious"
+  },
+  "Casual humour sharer": {
+   "share": 0.14,
+   "source": "Relatable golf humour = most shared slideshow formula (14.7 shares/1k, 401x followers); \"30 handicap activities\" 4M views"
+  },
+  "Women golfer / golf girl": {
+   "share": 0.1,
+   "source": "Outfit-inspo slideshows: 85 winners from 72 creators, mostly women; \"golf girl\" a top creator tag"
+  },
+  "League / member-guest captain": {
+   "share": 0.04,
+   "source": "Community angle kept 55% in golf ads; league accounts are Melin-fan outliers"
+  },
+  "Beginner golfer": {
+   "share": 0.04,
+   "source": "Tips/basics = biggest proven slideshow formula (121 winners) - big beginner audience"
+  }
+ },
+ "top20": [
+  {
+   "id": "X05",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / FIGHTING FOR BOGEY SINCE {YEAR}",
+   "lettering": "varsity arch",
+   "icon": "flag",
+   "size": "small centred",
+   "colour": "Ivory / forest green",
+   "p_buy": 15.58,
+   "p_buy_ci": "15.40\u201315.89",
+   "first_choice_pct": 0.96,
+   "first_choice_ci": "0.83\u20131.10",
+   "by_segment": {
+    "Trip / crew organiser": 34.8,
+    "Gift buyer (partner / family)": 22.0,
+    "Golf dad": 10.5,
+    "Style-led retro golfer (Malbon/Melin crowd)": 18.2,
+    "Muni / public golfer": 2.9,
+    "Casual humour sharer": 1.6,
+    "Women golfer / golf girl": 11.5,
+    "League / member-guest captain": 25.7,
+    "Beginner golfer": 2.4
+   },
+   "rank": 1
+  },
+  {
+   "id": "D0638",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "retro script",
+   "icon": "dogleg arrow",
+   "size": "small centred",
+   "colour": "Ivory / forest green",
+   "p_buy": 14.97,
+   "p_buy_ci": "14.77\u201315.22",
+   "first_choice_pct": 0.68,
+   "first_choice_ci": "0.56\u20130.78",
+   "by_segment": {
+    "Trip / crew organiser": 32.0,
+    "Gift buyer (partner / family)": 19.6,
+    "Golf dad": 9.4,
+    "Style-led retro golfer (Malbon/Melin crowd)": 18.7,
+    "Muni / public golfer": 2.5,
+    "Casual humour sharer": 1.3,
+    "Women golfer / golf girl": 16.2,
+    "League / member-guest captain": 23.8,
+    "Beginner golfer": 2.1
+   },
+   "rank": 2
+  },
+  {
+   "id": "D0725",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "retro script",
+   "icon": "flag",
+   "size": "small centred",
+   "colour": "Black / white",
+   "p_buy": 14.25,
+   "p_buy_ci": "14.08\u201314.55",
+   "first_choice_pct": 0.32,
+   "first_choice_ci": "0.25\u20130.41",
+   "by_segment": {
+    "Trip / crew organiser": 33.9,
+    "Gift buyer (partner / family)": 18.6,
+    "Golf dad": 11.9,
+    "Style-led retro golfer (Malbon/Melin crowd)": 13.0,
+    "Muni / public golfer": 3.6,
+    "Casual humour sharer": 1.5,
+    "Women golfer / golf girl": 11.1,
+    "League / member-guest captain": 25.0,
+    "Beginner golfer": 2.2
+   },
+   "rank": 3
+  },
+  {
+   "id": "D0864",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} INVITATIONAL",
+   "lettering": "varsity arch",
+   "icon": "dogleg arrow",
+   "size": "small centred",
+   "colour": "Chambray / cream",
+   "p_buy": 13.91,
+   "p_buy_ci": "13.73\u201314.19",
+   "first_choice_pct": 0.32,
+   "first_choice_ci": "0.24\u20130.38",
+   "by_segment": {
+    "Trip / crew organiser": 33.1,
+    "Gift buyer (partner / family)": 17.8,
+    "Golf dad": 9.5,
+    "Style-led retro golfer (Malbon/Melin crowd)": 15.6,
+    "Muni / public golfer": 2.6,
+    "Casual humour sharer": 1.4,
+    "Women golfer / golf girl": 10.6,
+    "League / member-guest captain": 24.7,
+    "Beginner golfer": 2.2
+   },
+   "rank": 4
+  },
+  {
+   "id": "D0996",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "retro script",
+   "icon": "tee",
+   "size": "small centred",
+   "colour": "Peachy / espresso",
+   "p_buy": 13.44,
+   "p_buy_ci": "13.24\u201313.68",
+   "first_choice_pct": 0.34,
+   "first_choice_ci": "0.26\u20130.41",
+   "by_segment": {
+    "Trip / crew organiser": 30.2,
+    "Gift buyer (partner / family)": 16.1,
+    "Golf dad": 8.6,
+    "Style-led retro golfer (Malbon/Melin crowd)": 12.9,
+    "Muni / public golfer": 2.3,
+    "Casual humour sharer": 1.2,
+    "Women golfer / golf girl": 19.9,
+    "League / member-guest captain": 22.3,
+    "Beginner golfer": 1.9
+   },
+   "rank": 5
+  },
+  {
+   "id": "D0777",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / EST. {YEAR}",
+   "lettering": "varsity arch",
+   "icon": "flag",
+   "size": "bold full-front",
+   "colour": "Ivory / forest green",
+   "p_buy": 13.33,
+   "p_buy_ci": "13.14\u201313.61",
+   "first_choice_pct": 1.52,
+   "first_choice_ci": "1.37\u20131.66",
+   "by_segment": {
+    "Trip / crew organiser": 40.7,
+    "Gift buyer (partner / family)": 19.1,
+    "Golf dad": 10.6,
+    "Style-led retro golfer (Malbon/Melin crowd)": 3.5,
+    "Muni / public golfer": 2.9,
+    "Casual humour sharer": 3.0,
+    "Women golfer / golf girl": 4.2,
+    "League / member-guest captain": 25.9,
+    "Beginner golfer": 2.4
+   },
+   "rank": 6
+  },
+  {
+   "id": "D0704",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "varsity arch",
+   "icon": "flag",
+   "size": "medium centred",
+   "colour": "Ivory / navy",
+   "p_buy": 13.11,
+   "p_buy_ci": "12.93\u201313.38",
+   "first_choice_pct": 0.67,
+   "first_choice_ci": "0.57\u20130.80",
+   "by_segment": {
+    "Trip / crew organiser": 35.0,
+    "Gift buyer (partner / family)": 19.1,
+    "Golf dad": 13.3,
+    "Style-led retro golfer (Malbon/Melin crowd)": 5.9,
+    "Muni / public golfer": 2.9,
+    "Casual humour sharer": 1.9,
+    "Women golfer / golf girl": 4.9,
+    "League / member-guest captain": 25.9,
+    "Beginner golfer": 2.4
+   },
+   "rank": 7
+  },
+  {
+   "id": "D0179",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "stacked block caps",
+   "icon": "flag",
+   "size": "small centred",
+   "colour": "Peachy / espresso",
+   "p_buy": 13.04,
+   "p_buy_ci": "12.86\u201313.27",
+   "first_choice_pct": 0.22,
+   "first_choice_ci": "0.16\u20130.29",
+   "by_segment": {
+    "Trip / crew organiser": 32.1,
+    "Gift buyer (partner / family)": 17.3,
+    "Golf dad": 9.4,
+    "Style-led retro golfer (Malbon/Melin crowd)": 9.5,
+    "Muni / public golfer": 2.5,
+    "Casual humour sharer": 1.3,
+    "Women golfer / golf girl": 13.9,
+    "League / member-guest captain": 23.4,
+    "Beginner golfer": 2.1
+   },
+   "rank": 8
+  },
+  {
+   "id": "D0037",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / EST. {YEAR}",
+   "lettering": "varsity arch",
+   "icon": "dogleg arrow",
+   "size": "small centred",
+   "colour": "Granite / black",
+   "p_buy": 13.02,
+   "p_buy_ci": "12.86\u201313.26",
+   "first_choice_pct": 0.27,
+   "first_choice_ci": "0.20\u20130.34",
+   "by_segment": {
+    "Trip / crew organiser": 32.9,
+    "Gift buyer (partner / family)": 17.9,
+    "Golf dad": 9.7,
+    "Style-led retro golfer (Malbon/Melin crowd)": 10.7,
+    "Muni / public golfer": 3.4,
+    "Casual humour sharer": 1.4,
+    "Women golfer / golf girl": 7.7,
+    "League / member-guest captain": 24.5,
+    "Beginner golfer": 2.2
+   },
+   "rank": 9
+  },
+  {
+   "id": "D0693",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "retro script",
+   "icon": "flag",
+   "size": "bold full-front",
+   "colour": "Chambray / cream",
+   "p_buy": 12.81,
+   "p_buy_ci": "12.65\u201313.08",
+   "first_choice_pct": 0.91,
+   "first_choice_ci": "0.78\u20131.00",
+   "by_segment": {
+    "Trip / crew organiser": 39.7,
+    "Gift buyer (partner / family)": 16.1,
+    "Golf dad": 10.2,
+    "Style-led retro golfer (Malbon/Melin crowd)": 3.6,
+    "Muni / public golfer": 2.8,
+    "Casual humour sharer": 2.9,
+    "Women golfer / golf girl": 6.7,
+    "League / member-guest captain": 25.3,
+    "Beginner golfer": 2.3
+   },
+   "rank": 10
+  },
+  {
+   "id": "D0013",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / EST. {YEAR}",
+   "lettering": "varsity arch",
+   "icon": "flag",
+   "size": "bold full-front",
+   "colour": "Granite / black",
+   "p_buy": 12.67,
+   "p_buy_ci": "12.48\u201312.91",
+   "first_choice_pct": 1.36,
+   "first_choice_ci": "1.22\u20131.53",
+   "by_segment": {
+    "Trip / crew organiser": 40.8,
+    "Gift buyer (partner / family)": 16.7,
+    "Golf dad": 10.5,
+    "Style-led retro golfer (Malbon/Melin crowd)": 2.0,
+    "Muni / public golfer": 3.8,
+    "Casual humour sharer": 3.0,
+    "Women golfer / golf girl": 2.9,
+    "League / member-guest captain": 25.7,
+    "Beginner golfer": 2.4
+   },
+   "rank": 11
+  },
+  {
+   "id": "D0460",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "serif small caps",
+   "icon": "tee",
+   "size": "small centred",
+   "colour": "Ivory / forest green",
+   "p_buy": 12.64,
+   "p_buy_ci": "12.46\u201312.90",
+   "first_choice_pct": 0.15,
+   "first_choice_ci": "0.11\u20130.19",
+   "by_segment": {
+    "Trip / crew organiser": 28.9,
+    "Gift buyer (partner / family)": 17.4,
+    "Golf dad": 8.0,
+    "Style-led retro golfer (Malbon/Melin crowd)": 16.2,
+    "Muni / public golfer": 2.1,
+    "Casual humour sharer": 1.1,
+    "Women golfer / golf girl": 8.6,
+    "League / member-guest captain": 20.4,
+    "Beginner golfer": 1.7
+   },
+   "rank": 12
+  },
+  {
+   "id": "D0338",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / EST. {YEAR}",
+   "lettering": "retro script",
+   "icon": "none",
+   "size": "small centred",
+   "colour": "Peachy / espresso",
+   "p_buy": 12.57,
+   "p_buy_ci": "12.42\u201312.81",
+   "first_choice_pct": 0.21,
+   "first_choice_ci": "0.14\u20130.26",
+   "by_segment": {
+    "Trip / crew organiser": 28.7,
+    "Gift buyer (partner / family)": 14.9,
+    "Golf dad": 7.9,
+    "Style-led retro golfer (Malbon/Melin crowd)": 12.0,
+    "Muni / public golfer": 2.1,
+    "Casual humour sharer": 1.1,
+    "Women golfer / golf girl": 18.7,
+    "League / member-guest captain": 20.9,
+    "Beginner golfer": 1.6
+   },
+   "rank": 13
+  },
+  {
+   "id": "D0736",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} INVITATIONAL",
+   "lettering": "serif small caps",
+   "icon": "dogleg arrow",
+   "size": "small centred",
+   "colour": "Espresso / cream",
+   "p_buy": 12.51,
+   "p_buy_ci": "12.34\u201312.75",
+   "first_choice_pct": 0.18,
+   "first_choice_ci": "0.13\u20130.24",
+   "by_segment": {
+    "Trip / crew organiser": 30.3,
+    "Gift buyer (partner / family)": 16.2,
+    "Golf dad": 8.7,
+    "Style-led retro golfer (Malbon/Melin crowd)": 15.1,
+    "Muni / public golfer": 2.3,
+    "Casual humour sharer": 1.2,
+    "Women golfer / golf girl": 6.8,
+    "League / member-guest captain": 22.5,
+    "Beginner golfer": 1.9
+   },
+   "rank": 14
+  },
+  {
+   "id": "D0132",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "retro script",
+   "icon": "flag",
+   "size": "medium centred",
+   "colour": "Granite / black",
+   "p_buy": 12.47,
+   "p_buy_ci": "12.29\u201312.72",
+   "first_choice_pct": 0.31,
+   "first_choice_ci": "0.24\u20130.38",
+   "by_segment": {
+    "Trip / crew organiser": 34.0,
+    "Gift buyer (partner / family)": 16.1,
+    "Golf dad": 10.1,
+    "Style-led retro golfer (Malbon/Melin crowd)": 6.8,
+    "Muni / public golfer": 3.6,
+    "Casual humour sharer": 1.8,
+    "Women golfer / golf girl": 8.0,
+    "League / member-guest captain": 25.1,
+    "Beginner golfer": 2.3
+   },
+   "rank": 15
+  },
+  {
+   "id": "D0482",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} INVITATIONAL",
+   "lettering": "stacked block caps",
+   "icon": "flag",
+   "size": "small centred",
+   "colour": "Black / white",
+   "p_buy": 12.36,
+   "p_buy_ci": "12.19\u201312.61",
+   "first_choice_pct": 0.22,
+   "first_choice_ci": "0.15\u20130.28",
+   "by_segment": {
+    "Trip / crew organiser": 32.3,
+    "Gift buyer (partner / family)": 17.1,
+    "Golf dad": 11.0,
+    "Style-led retro golfer (Malbon/Melin crowd)": 8.0,
+    "Muni / public golfer": 3.3,
+    "Casual humour sharer": 1.4,
+    "Women golfer / golf girl": 6.2,
+    "League / member-guest captain": 23.9,
+    "Beginner golfer": 2.1
+   },
+   "rank": 16
+  },
+  {
+   "id": "D0595",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "stacked block caps",
+   "icon": "flag",
+   "size": "small centred",
+   "colour": "Black / white",
+   "p_buy": 12.33,
+   "p_buy_ci": "12.19\u201312.55",
+   "first_choice_pct": 0.2,
+   "first_choice_ci": "0.13\u20130.27",
+   "by_segment": {
+    "Trip / crew organiser": 32.0,
+    "Gift buyer (partner / family)": 17.3,
+    "Golf dad": 11.1,
+    "Style-led retro golfer (Malbon/Melin crowd)": 7.9,
+    "Muni / public golfer": 3.3,
+    "Casual humour sharer": 1.4,
+    "Women golfer / golf girl": 6.1,
+    "League / member-guest captain": 23.5,
+    "Beginner golfer": 2.1
+   },
+   "rank": 17
+  },
+  {
+   "id": "D0920",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "retro script",
+   "icon": "dogleg arrow",
+   "size": "medium centred",
+   "colour": "Ivory / navy",
+   "p_buy": 12.3,
+   "p_buy_ci": "12.13\u201312.57",
+   "first_choice_pct": 0.21,
+   "first_choice_ci": "0.16\u20130.27",
+   "by_segment": {
+    "Trip / crew organiser": 32.3,
+    "Gift buyer (partner / family)": 17.2,
+    "Golf dad": 11.7,
+    "Style-led retro golfer (Malbon/Melin crowd)": 6.2,
+    "Muni / public golfer": 2.5,
+    "Casual humour sharer": 1.7,
+    "Women golfer / golf girl": 7.4,
+    "League / member-guest captain": 23.7,
+    "Beginner golfer": 2.1
+   },
+   "rank": 18
+  },
+  {
+   "id": "D0327",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / {PLACE} \u00b7 {YEAR}",
+   "lettering": "retro script",
+   "icon": "dogleg arrow",
+   "size": "medium centred",
+   "colour": "Chambray / cream",
+   "p_buy": 12.28,
+   "p_buy_ci": "12.12\u201312.53",
+   "first_choice_pct": 0.11,
+   "first_choice_ci": "0.08\u20130.17",
+   "by_segment": {
+    "Trip / crew organiser": 32.0,
+    "Gift buyer (partner / family)": 14.9,
+    "Golf dad": 9.4,
+    "Style-led retro golfer (Malbon/Melin crowd)": 9.5,
+    "Muni / public golfer": 2.5,
+    "Casual humour sharer": 1.6,
+    "Women golfer / golf girl": 10.3,
+    "League / member-guest captain": 23.7,
+    "Beginner golfer": 2.1
+   },
+   "rank": 19
+  },
+  {
+   "id": "D0349",
+   "theme": "crew_trip",
+   "theme_label": "Crew + trip + year",
+   "personalised": true,
+   "text": "{CREW} / GOLF TRIP {YEAR}",
+   "lettering": "stacked block caps",
+   "icon": "dogleg arrow",
+   "size": "small centred",
+   "colour": "Peachy / espresso",
+   "p_buy": 12.19,
+   "p_buy_ci": "12.01\u201312.44",
+   "first_choice_pct": 0.14,
+   "first_choice_ci": "0.09\u20130.19",
+   "by_segment": {
+    "Trip / crew organiser": 30.3,
+    "Gift buyer (partner / family)": 16.1,
+    "Golf dad": 8.6,
+    "Style-led retro golfer (Malbon/Melin crowd)": 8.7,
+    "Muni / public golfer": 2.3,
+    "Casual humour sharer": 1.3,
+    "Women golfer / golf girl": 12.9,
+    "League / member-guest captain": 22.2,
+    "Beginner golfer": 1.9
+   },
+   "rank": 20
+  }
+ ],
+ "parts": {
+  "theme_label": [
+   {
+    "value": "Crew + trip + year",
+    "designs": 91,
+    "mean_p_buy": 11.0,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 18.7
+   },
+   {
+    "value": "Milestone date",
+    "designs": 89,
+    "mean_p_buy": 8.86,
+    "best_p_buy": 11.77,
+    "first_choice_pct": 15.4
+   },
+   {
+    "value": "Your city / town",
+    "designs": 87,
+    "mean_p_buy": 7.15,
+    "best_p_buy": 10.52,
+    "first_choice_pct": 5.0
+   },
+   {
+    "value": "Muni crew (personalised)",
+    "designs": 87,
+    "mean_p_buy": 6.5,
+    "best_p_buy": 9.56,
+    "first_choice_pct": 5.4
+   },
+   {
+    "value": "Dad & kid",
+    "designs": 88,
+    "mean_p_buy": 6.19,
+    "best_p_buy": 8.29,
+    "first_choice_pct": 10.7
+   },
+   {
+    "value": "Handicap humour",
+    "designs": 92,
+    "mean_p_buy": 5.42,
+    "best_p_buy": 7.58,
+    "first_choice_pct": 14.4
+   },
+   {
+    "value": "Retro clubhouse classic",
+    "designs": 88,
+    "mean_p_buy": 5.13,
+    "best_p_buy": 10.66,
+    "first_choice_pct": 10.7
+   },
+   {
+    "value": "Muni / public pride",
+    "designs": 89,
+    "mean_p_buy": 4.17,
+    "best_p_buy": 6.11,
+    "first_choice_pct": 8.6
+   },
+   {
+    "value": "Icon only",
+    "designs": 33,
+    "mean_p_buy": 3.92,
+    "best_p_buy": 5.34,
+    "first_choice_pct": 2.1
+   },
+   {
+    "value": "Golf-lingo humour",
+    "designs": 89,
+    "mean_p_buy": 2.75,
+    "best_p_buy": 3.88,
+    "first_choice_pct": 2.6
+   },
+   {
+    "value": "Women's golf social",
+    "designs": 85,
+    "mean_p_buy": 2.22,
+    "best_p_buy": 5.18,
+    "first_choice_pct": 6.2
+   },
+   {
+    "value": "Gift clich\u00e9",
+    "designs": 87,
+    "mean_p_buy": 1.2,
+    "best_p_buy": 1.76,
+    "first_choice_pct": 0.4
+   }
+  ],
+  "lettering": [
+   {
+    "value": "varsity arch",
+    "designs": 203,
+    "mean_p_buy": 6.2,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 36.5
+   },
+   {
+    "value": "retro script",
+    "designs": 196,
+    "mean_p_buy": 6.09,
+    "best_p_buy": 14.97,
+    "first_choice_pct": 30.1
+   },
+   {
+    "value": "stacked block caps",
+    "designs": 183,
+    "mean_p_buy": 5.54,
+    "best_p_buy": 13.04,
+    "first_choice_pct": 13.0
+   },
+   {
+    "value": "serif small caps",
+    "designs": 209,
+    "mean_p_buy": 5.36,
+    "best_p_buy": 12.64,
+    "first_choice_pct": 15.9
+   },
+   {
+    "value": "handwritten",
+    "designs": 181,
+    "mean_p_buy": 4.4,
+    "best_p_buy": 11.28,
+    "first_choice_pct": 2.5
+   },
+   {
+    "value": "none",
+    "designs": 33,
+    "mean_p_buy": 3.92,
+    "best_p_buy": 5.34,
+    "first_choice_pct": 2.1
+   }
+  ],
+  "icon": [
+   {
+    "value": "flag",
+    "designs": 174,
+    "mean_p_buy": 6.0,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 36.3
+   },
+   {
+    "value": "dogleg arrow",
+    "designs": 166,
+    "mean_p_buy": 5.77,
+    "best_p_buy": 14.97,
+    "first_choice_pct": 22.6
+   },
+   {
+    "value": "tee",
+    "designs": 173,
+    "mean_p_buy": 5.74,
+    "best_p_buy": 13.44,
+    "first_choice_pct": 16.4
+   },
+   {
+    "value": "crossed clubs",
+    "designs": 153,
+    "mean_p_buy": 5.33,
+    "best_p_buy": 12.19,
+    "first_choice_pct": 10.9
+   },
+   {
+    "value": "none",
+    "designs": 178,
+    "mean_p_buy": 5.15,
+    "best_p_buy": 12.57,
+    "first_choice_pct": 9.4
+   },
+   {
+    "value": "golf cart",
+    "designs": 161,
+    "mean_p_buy": 4.86,
+    "best_p_buy": 12.1,
+    "first_choice_pct": 4.4
+   }
+  ],
+  "size": [
+   {
+    "value": "small centred",
+    "designs": 347,
+    "mean_p_buy": 6.15,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 47.5
+   },
+   {
+    "value": "medium centred",
+    "designs": 321,
+    "mean_p_buy": 5.19,
+    "best_p_buy": 13.11,
+    "first_choice_pct": 14.9
+   },
+   {
+    "value": "bold full-front",
+    "designs": 337,
+    "mean_p_buy": 5.07,
+    "best_p_buy": 13.33,
+    "first_choice_pct": 37.7
+   }
+  ],
+  "colour": [
+   {
+    "value": "Peachy / espresso",
+    "designs": 164,
+    "mean_p_buy": 6.08,
+    "best_p_buy": 13.44,
+    "first_choice_pct": 18.9
+   },
+   {
+    "value": "Ivory / navy",
+    "designs": 136,
+    "mean_p_buy": 5.8,
+    "best_p_buy": 13.11,
+    "first_choice_pct": 17.6
+   },
+   {
+    "value": "Chambray / cream",
+    "designs": 152,
+    "mean_p_buy": 5.58,
+    "best_p_buy": 13.91,
+    "first_choice_pct": 15.3
+   },
+   {
+    "value": "Ivory / forest green",
+    "designs": 126,
+    "mean_p_buy": 5.56,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 17.3
+   },
+   {
+    "value": "Espresso / cream",
+    "designs": 142,
+    "mean_p_buy": 5.42,
+    "best_p_buy": 12.51,
+    "first_choice_pct": 11.3
+   },
+   {
+    "value": "Granite / black",
+    "designs": 144,
+    "mean_p_buy": 4.98,
+    "best_p_buy": 13.02,
+    "first_choice_pct": 9.0
+   },
+   {
+    "value": "Black / white",
+    "designs": 141,
+    "mean_p_buy": 4.89,
+    "best_p_buy": 14.25,
+    "first_choice_pct": 10.7
+   }
+  ],
+  "personalised": [
+   {
+    "value": true,
+    "designs": 442,
+    "mean_p_buy": 7.97,
+    "best_p_buy": 15.58,
+    "first_choice_pct": 55.1
+   },
+   {
+    "value": false,
+    "designs": 563,
+    "mean_p_buy": 3.53,
+    "best_p_buy": 10.66,
+    "first_choice_pct": 44.9
+   }
+  ]
+ },
+ "sensitivity": {
+  "base (Nov, gift season)": [
+   "Crew + trip + year",
+   "Milestone date",
+   "Your city / town"
+  ],
+  "after the holidays (gift buyers \u00f73)": [
+   "Crew + trip + year",
+   "Muni crew (personalised)",
+   "Your city / town"
+  ],
+  "style-led doubled": [
+   "Crew + trip + year",
+   "Milestone date",
+   "Your city / town"
+  ],
+  "humour sharers doubled (organic TikTok traffic)": [
+   "Crew + trip + year",
+   "Milestone date",
+   "Handicap humour"
+  ],
+  "trip organisers halved": [
+   "Crew + trip + year",
+   "Milestone date",
+   "Your city / town"
+  ],
+  "muni golfers doubled": [
+   "Crew + trip + year",
+   "Milestone date",
+   "Your city / town"
+  ]
+ }
+}

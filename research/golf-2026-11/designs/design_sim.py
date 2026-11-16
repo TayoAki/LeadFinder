@@ -56,6 +56,11 @@ while len(designs) < 1000:
     seen.add(key)
     designs.append(dict(id=f'D{len(designs)+1:04d}', theme=t, theme_label=THEMES[t]['label'], personalised=THEMES[t]['p'], text=text, lettering=let, icon=icon, size=size, colour=col))
 
+# Extra designs to test against the 1,000 (EXTRA_DESIGNS=path to a JSON list of {theme,text,lettering,icon,size,colour}).
+if os.environ.get('EXTRA_DESIGNS'):
+    for i, x in enumerate(json.load(open(os.environ['EXTRA_DESIGNS']))):
+        designs.append(dict(id=f'X{i+1:02d}', theme=x['theme'], theme_label=THEMES[x['theme']]['label'], personalised=THEMES[x['theme']]['p'], text=x['text'], lettering=x['lettering'], icon=x['icon'], size=x['size'], colour=x['colour']))
+
 # ------------------------------------------------------------------ the ICP panel (from our research)
 # share = how much of the buying audience each segment is. part-worths are on a -3..+3 scale.
 SEGMENTS = {

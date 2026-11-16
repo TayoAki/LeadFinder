@@ -1,0 +1,7 @@
+[
+ {"theme":"humour_handicap","text":"FIGHTING FOR PAR","lettering":"varsity arch","icon":"flag","size":"small centred","colour":"Ivory / forest green"},
+ {"theme":"humour_handicap","text":"FIGHTING FOR PAR","lettering":"retro script","icon":"none","size":"small centred","colour":"Ivory / navy"},
+ {"theme":"humour_handicap","text":"FIGHTING FOR PAR","lettering":"stacked block caps","icon":"crossed clubs","size":"bold full-front","colour":"Ivory / forest green"},
+ {"theme":"humour_handicap","text":"FIGHTING FOR BOGEY","lettering":"varsity arch","icon":"flag","size":"small centred","colour":"Ivory / forest green"},
+ {"theme":"crew_trip","text":"{CREW} / FIGHTING FOR BOGEY SINCE {YEAR}","lettering":"varsity arch","icon":"flag","size":"small centred","colour":"Ivory / forest green"}
+]

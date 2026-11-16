@@ -10,7 +10,8 @@ os.makedirs(out, exist_ok=True)
 F = {'script': 'yellowtail-latin-400-normal.woff', 'varsity': 'graduate-latin-400-normal.woff', 'block': 'oswald-latin-600-normal.woff'}
 GREEN, NAVY, CREAM = (31, 77, 58), (28, 42, 74), (245, 240, 225)
 
-MOCKS = [  # (file, title under the image, lines [(text, font, size)], thread colour, icon)
+import json as _j
+MOCKS = _j.load(open(os.environ['MOCKS'])) if os.environ.get('MOCKS') else [  # (file, title under the image, lines [(text, font, size)], thread colour, icon)
   ('1-crew-trip.png', '#1 Crew + trip + year (personalised) · D0638', [('The Bogey Boys', 'script', 44), ('BANDON · 2026', 'block', 17)], GREEN, 'dogleg'),
   ('2-milestone.png', '#2 Milestone date (personalised) · D0865', [('FIRST BIRDIE', 'block', 30), ('HOLE 7 · 2026', 'block', 17)], NAVY, 'flag'),
   ('3-19th-hole.png', 'Most-loved ready-made: 19TH HOLE · D0557', [('19th Hole', 'script', 50)], GREEN, None),
@@ -31,6 +32,7 @@ base = Image.open(cap_path).convert('RGBA'); W, H = base.size
 cx, cy = int(W * 0.60), int(H * 0.40)  # centre of the front panel in this photo
 tiles = []
 for fname, title, lines, col, icon in MOCKS:
+    col = tuple(col)
     layer = Image.new('RGBA', base.size, (0, 0, 0, 0)); d = ImageDraw.Draw(layer)
     fonts_ = [ImageFont.truetype(os.path.join(fonts, F[f]), int(sz * W / 520)) for _, f, sz in lines]
     boxes = [d.textbbox((0, 0), t, font=fo) for (t, _, _), fo in zip(lines, fonts_)]

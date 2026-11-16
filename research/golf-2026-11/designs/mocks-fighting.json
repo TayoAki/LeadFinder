@@ -1,0 +1,6 @@
+[
+ ["fighting-par-varsity.png", "FIGHTING FOR PAR (varsity, flag) — phrase already used by Good Good", [["FIGHTING", "varsity", 30], ["FOR PAR", "varsity", 30]], [31,77,58], "flag"],
+ ["fighting-par-script.png", "Fighting for Par (retro script)", [["Fighting for Par", "script", 46]], [28,42,74], null],
+ ["fighting-bogey.png", "Twist: FIGHTING FOR BOGEY (own-able)", [["FIGHTING", "varsity", 30], ["FOR BOGEY", "varsity", 30]], [31,77,58], "flag"],
+ ["crew-fighting-bogey.png", "Twist + crew: THE BOGEY BOYS / FIGHTING FOR BOGEY SINCE 2026", [["The Bogey Boys", "script", 40], ["FIGHTING FOR BOGEY SINCE 2026", "block", 13]], [31,77,58], "flag"]
+]
