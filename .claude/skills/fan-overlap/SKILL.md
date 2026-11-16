@@ -30,6 +30,19 @@ Then:
 
    Give the confidence level, and quote leavers' words, not reviewer names.
 
+**Looking for brands that share A's taste (collab partners, a niche crowd), not everyday habits?** Add `--exclude food,everyday,chains`. That drops:
+- restaurants and coffee;
+- grocery, pharmacy, phone shops and big-box stores;
+- major national chains, and any brand seen at 5+ locations.
+
+Every brand with `--min-shared`+ shared reviewers is saved in `all_brands` (totals only), so you can re-apply filters later with `--from overlap.json --exclude …` without new histories.
+
+Small brands only reach 3 shared reviewers in big samples. Plan on 300+ histories when filtering. Below that, expect "no brand had enough shared fans".
+
+**Stores in many cities** (e.g. Melin): `--place-ids id1,id2,…` or `--cities "Laguna Beach, CA|Honolulu, HI"`, plus `--category "Hat shop"` for the rival filter.
+
+**Online-first brands** (most sales on their website): store reviewers are a poor proxy for customers. Use social follower overlap or co-mentions instead.
+
 **Choosing the brand and city:**
 - Pick a city where A has at least 8 locations.
 - Use a dense metro: Chicago, Dallas, Phoenix, Salt Lake City, Atlanta.
