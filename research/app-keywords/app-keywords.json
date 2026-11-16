@@ -1,0 +1,7885 @@
+{
+ "built": "2026-11-16",
+ "country": "US",
+ "spend_usd": 0.16,
+ "apps": {
+  "Tidemark": {
+   "what": "Peptide routine tracker",
+   "keywords": [
+    {
+     "keyword": "peptide dosage calculator",
+     "volume": 33100,
+     "cpc": 0.2,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 207
+    },
+    {
+     "keyword": "peptide tracker",
+     "volume": 720,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 268
+    },
+    {
+     "keyword": "peptide tracker app",
+     "volume": 590,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 230
+    },
+    {
+     "keyword": "glp-1 tracker",
+     "volume": 480,
+     "cpc": 3.99,
+     "competition": "MEDIUM",
+     "comp_index": 34,
+     "trend_12m_pct": 40
+    },
+    {
+     "keyword": "glp-1 tracker app",
+     "volume": 320,
+     "cpc": 7.28,
+     "competition": "LOW",
+     "comp_index": 27,
+     "trend_12m_pct": 39
+    },
+    {
+     "keyword": "peptide tracker app free",
+     "volume": 140,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 433
+    },
+    {
+     "keyword": "peptide tracker spreadsheet",
+     "volume": 110,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 69
+    },
+    {
+     "keyword": "peptide dosage calculator reconstitution",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 21
+    },
+    {
+     "keyword": "glp-1 tracker app for android",
+     "volume": 70,
+     "cpc": 4.04,
+     "competition": "LOW",
+     "comp_index": 29,
+     "trend_12m_pct": 90
+    },
+    {
+     "keyword": "peptide dosage calculator for weight loss",
+     "volume": 50,
+     "cpc": 4.84,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 78
+    },
+    {
+     "keyword": "glp-1 tracker template free",
+     "volume": 50,
+     "cpc": 6.32,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": 157
+    },
+    {
+     "keyword": "injection tracker",
+     "volume": 40,
+     "cpc": 6.25,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 36
+    },
+    {
+     "keyword": "glp-1 tracker template",
+     "volume": 40,
+     "cpc": 0.61,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "injection tracker app",
+     "volume": 40,
+     "cpc": 4.28,
+     "competition": "LOW",
+     "comp_index": 16,
+     "trend_12m_pct": -10
+    },
+    {
+     "keyword": "glp-1 tracker free",
+     "volume": 30,
+     "cpc": 5.84,
+     "competition": "LOW",
+     "comp_index": 26,
+     "trend_12m_pct": 38
+    },
+    {
+     "keyword": "peptide tracker free",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 200
+    },
+    {
+     "keyword": "peptide tracker app android",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 250
+    },
+    {
+     "keyword": "peptide dosage calculator mcg",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "glp-1 tracker online free",
+     "volume": 20,
+     "cpc": 3.23,
+     "competition": "MEDIUM",
+     "comp_index": 35,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "glp-1 tracker template pdf",
+     "volume": 20,
+     "cpc": null,
+     "competition": "HIGH",
+     "comp_index": 86,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "peptide tracker ai",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator omni",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator app",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "glp-1 tracker template pdf free download",
+     "volume": 10,
+     "cpc": 1.39,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker template",
+     "volume": 10,
+     "cpc": null,
+     "competition": "HIGH",
+     "comp_index": 74,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "peptide injection tracker",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection site tracker",
+     "volume": 10,
+     "cpc": 6.85,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "peptide tracker calculator",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide tracker template",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator retatrutide",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator prime",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator jay campbell",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "peptide dosage calculator klow",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker app for android",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker sheet",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker for animals",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "injection tracker free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "peptide tracker",
+     "apps": [
+      {
+       "title": "Peptide Tracker Log & Reminder",
+       "ratings": 3074,
+       "stars": 4.91,
+       "released": "2026-05-01",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "PeptidePal \u2013\u00a0Peptide Tracker",
+       "ratings": 4928,
+       "stars": 4.67,
+       "released": "2026-04-23",
+       "updated": "2026-10-28"
+      },
+      {
+       "title": "Peptide Tracker & Calculator",
+       "ratings": 607,
+       "stars": 4.74,
+       "released": "2025-04-23",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "Shotsy GLP-1 Tracker",
+       "ratings": 34995,
+       "stars": 4.83,
+       "released": "2024-05-29",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Pep AI: GLP-1 Tracker App",
+       "ratings": 4039,
+       "stars": 4.72,
+       "released": "2026-02-16",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Injectly",
+       "ratings": 511,
+       "stars": 4.83,
+       "released": "2025-05-06",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Shiny: Card Value Scanner",
+       "ratings": 3797,
+       "stars": 4.88,
+       "released": "2024-08-09",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "Peptide Tracker - PeptideKit",
+       "ratings": 315,
+       "stars": 4.66,
+       "released": "2025-09-17",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Reta - Peptide Tracker",
+       "ratings": 1,
+       "stars": 3.0,
+       "released": "2026-03-08",
+       "updated": "2026-03-08"
+      },
+      {
+       "title": "PepTracker: Peptide Tracker",
+       "ratings": 469,
+       "stars": 4.74,
+       "released": "2025-07-08",
+       "updated": "2026-10-22"
+      }
+     ],
+     "median_top5_ratings": 4039,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "glp-1 tracker",
+     "apps": [
+      {
+       "title": "MeAgain: GLP-1 Tracker App",
+       "ratings": 41068,
+       "stars": 4.79,
+       "released": "2025-04-11",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "DreamMe: GLP-1 Tracker Pet",
+       "ratings": 3514,
+       "stars": 4.71,
+       "released": "2025-12-16",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Shotsy GLP-1 Tracker",
+       "ratings": 34995,
+       "stars": 4.83,
+       "released": "2024-05-29",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Glapp \u2014 Smart GLP-1 Tracker",
+       "ratings": 1097,
+       "stars": 4.76,
+       "released": "2026-03-22",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "GLP 1 Tracker Free.Well\u2122",
+       "ratings": 331,
+       "stars": 4.69,
+       "released": "2026-04-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "GLP-1 Tracker",
+       "ratings": 7,
+       "stars": 3.86,
+       "released": "2024-06-05",
+       "updated": "2025-07-09"
+      },
+      {
+       "title": "GLP 1 Tracker - GLPTracker",
+       "ratings": 277,
+       "stars": 4.57,
+       "released": "2025-12-04",
+       "updated": "2026-06-25"
+      },
+      {
+       "title": "GLP-1 Tracker: GLPro",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-06-30",
+       "updated": "2026-07-16"
+      },
+      {
+       "title": "Glowise: GLP-1 Tracker & Diary",
+       "ratings": 6715,
+       "stars": 4.77,
+       "released": "2024-11-06",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "GLP-1 Tracker - GLPal",
+       "ratings": 13,
+       "stars": 4.31,
+       "released": "2026-07-04",
+       "updated": "2026-11-06"
+      }
+     ],
+     "median_top5_ratings": 3514,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "injection tracker",
+     "apps": [
+      {
+       "title": "SiteCycle: Injection Tracker",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2026-08-30",
+       "updated": "2026-09-08"
+      },
+      {
+       "title": "Injectly",
+       "ratings": 511,
+       "stars": 4.83,
+       "released": "2025-05-06",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Shotsy GLP-1 Tracker",
+       "ratings": 34995,
+       "stars": 4.83,
+       "released": "2024-05-29",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Peptide & TRT Tracker: OptiPin",
+       "ratings": 181,
+       "stars": 4.73,
+       "released": "2025-05-11",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Injection Tracker: Dose & Log",
+       "ratings": 14,
+       "stars": 4.43,
+       "released": "2026-06-20",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "MEDS: Pill & Injection Tracker",
+       "ratings": 492,
+       "stars": 4.42,
+       "released": "2017-11-11",
+       "updated": "2026-10-21"
+      },
+      {
+       "title": "Dose Dot: Injection Tracker",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2026-09-14",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "SubQ",
+       "ratings": 5,
+       "stars": 4.2,
+       "released": "2023-12-04",
+       "updated": "2025-03-09"
+      },
+      {
+       "title": "Drop: Injection Tracker",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2025-10-08",
+       "updated": "2026-10-07"
+      }
+     ],
+     "median_top5_ratings": 181,
+     "weak_in_top5": 4,
+     "exact_title_in_top5": 2
+    }
+   ]
+  },
+  "Get Up": {
+   "what": "Alarm that needs a real-world task to stop",
+   "keywords": [
+    {
+     "keyword": "alarm app",
+     "volume": 4400,
+     "cpc": 2.06,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": 40
+    },
+    {
+     "keyword": "alarm app for android",
+     "volume": 1900,
+     "cpc": 2.31,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": 49
+    },
+    {
+     "keyword": "alarm apple",
+     "volume": 1900,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alarm app iphone",
+     "volume": 1000,
+     "cpc": 2.03,
+     "competition": "LOW",
+     "comp_index": 4,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alarm app for heavy sleepers",
+     "volume": 590,
+     "cpc": 2.94,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 68
+    },
+    {
+     "keyword": "alarm app free",
+     "volume": 480,
+     "cpc": 1.91,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 97
+    },
+    {
+     "keyword": "alarm clock that makes you get out of bed",
+     "volume": 210,
+     "cpc": 0.91,
+     "competition": "HIGH",
+     "comp_index": 95,
+     "trend_12m_pct": 341
+    },
+    {
+     "keyword": "alarm clock that makes you get up",
+     "volume": 170,
+     "cpc": 1.44,
+     "competition": "HIGH",
+     "comp_index": 94,
+     "trend_12m_pct": 62
+    },
+    {
+     "keyword": "alarm app download",
+     "volume": 110,
+     "cpc": 2.83,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alarm clock that makes you get up app",
+     "volume": 70,
+     "cpc": 1.94,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": 338
+    },
+    {
+     "keyword": "alarm app for pc",
+     "volume": 70,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 11
+    },
+    {
+     "keyword": "alarm clock that makes you get out of bed app",
+     "volume": 30,
+     "cpc": 2.55,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 733
+    },
+    {
+     "keyword": "alarm clock that helps you wake up",
+     "volume": 30,
+     "cpc": 2.05,
+     "competition": "HIGH",
+     "comp_index": 98,
+     "trend_12m_pct": -15
+    },
+    {
+     "keyword": "mission alarm",
+     "volume": 20,
+     "cpc": 2.45,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "mission alarms",
+     "volume": 20,
+     "cpc": 2.45,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "hard sleeper alarm clock",
+     "volume": 20,
+     "cpc": 2.9,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 67
+    },
+    {
+     "keyword": "hard alarm clock",
+     "volume": 10,
+     "cpc": 0.19,
+     "competition": "HIGH",
+     "comp_index": 80,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alarm clock that makes you stand up",
+     "volume": 10,
+     "cpc": 0.7,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alarm clock that makes you do push ups",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "mission alarm clock",
+     "volume": 10,
+     "cpc": null,
+     "competition": "MEDIUM",
+     "comp_index": 36,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "mission alarm system",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "mission alarum film",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "mission alarum cast",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "mission alarum review",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "mission alarum movie review",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 100
+    },
+    {
+     "keyword": "mission alarum rotten tomatoes",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "hard to wake alarm clock",
+     "volume": 10,
+     "cpc": null,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "hard of hearing alarm clock review",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "world s best alarm clock for heavy sleepers",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "alarm app not working on iphone",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "alarm app not working",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "mission alarm dialer",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "mission alarum prime",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hard rock alarm clock",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hard wired alarm clock",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hard hearing alarm clock",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "die hard alarm clock",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hard to snooze alarm clocks",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hard to stop alarm clock",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "alarm clock wake up",
+     "apps": [
+      {
+       "title": "Wayk: Alarm Clock to Wake Up",
+       "ratings": 21211,
+       "stars": 4.72,
+       "released": "2026-02-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Alarm Clock for Me - Wake Up!",
+       "ratings": 123674,
+       "stars": 4.59,
+       "released": "2013-12-12",
+       "updated": "2026-08-18"
+      },
+      {
+       "title": "Alarm Clock'",
+       "ratings": 35868,
+       "stars": 4.56,
+       "released": "2010-12-07",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Alarmy - Loud alarm clock",
+       "ratings": 252009,
+       "stars": 4.76,
+       "released": "2016-10-18",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Clock - Wake Up Gently",
+       "ratings": 500,
+       "stars": 4.44,
+       "released": "2024-08-30",
+       "updated": "2026-10-06"
+      },
+      {
+       "title": "Alarm Clock - Wake up!",
+       "ratings": 184,
+       "stars": 4.36,
+       "released": "2024-10-26",
+       "updated": "2024-11-06"
+      },
+      {
+       "title": "Alarm Clock \u25ce",
+       "ratings": 3494,
+       "stars": 4.51,
+       "released": "2011-07-26",
+       "updated": "2026-10-12"
+      },
+      {
+       "title": "SpeakToSnooze Alarm Clock HD",
+       "ratings": 1623,
+       "stars": 4.59,
+       "released": "2012-05-31",
+       "updated": "2018-09-25"
+      },
+      {
+       "title": "One Touch Alarm Clock",
+       "ratings": 11163,
+       "stars": 4.52,
+       "released": "2013-12-03",
+       "updated": "2025-12-16"
+      },
+      {
+       "title": "Math Alarm Clock - Wake up!",
+       "ratings": 1333,
+       "stars": 4.58,
+       "released": "2015-12-04",
+       "updated": "2025-02-13"
+      }
+     ],
+     "median_top5_ratings": 35868,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 0
+    },
+    {
+     "term": "mission alarm",
+     "apps": [
+      {
+       "title": "Mission Alarm Clock & Wake Up",
+       "ratings": 6,
+       "stars": 5.0,
+       "released": "2026-04-28",
+       "updated": "2026-05-14"
+      },
+      {
+       "title": "Wayk: Alarm Clock to Wake Up",
+       "ratings": 21211,
+       "stars": 4.72,
+       "released": "2026-02-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Instant Wake Up - Alarm Clock",
+       "ratings": 521,
+       "stars": 4.39,
+       "released": "2019-12-31",
+       "updated": "2024-10-23"
+      },
+      {
+       "title": "Mission Alarm Clock to Wake Up",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-10-02",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Outbed: Mission Alarm Clock",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-08-06",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Bukbuk: Mission Alarm Clock",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-05-01",
+       "updated": "2026-06-08"
+      },
+      {
+       "title": "Morning Max: Mission Alarm",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-07-21",
+       "updated": "2026-08-10"
+      },
+      {
+       "title": "RUCKUS \u2013 Alarm Clock&Missions",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-06-25",
+       "updated": "2026-07-01"
+      },
+      {
+       "title": "Dawnbreak: Mission Alarm Clock",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-10-10",
+       "updated": "2026-10-10"
+      },
+      {
+       "title": "Wak: Alarm Clock to Wake Up",
+       "ratings": 17,
+       "stars": 4.59,
+       "released": "2026-04-10",
+       "updated": "2026-08-17"
+      }
+     ],
+     "median_top5_ratings": 6,
+     "weak_in_top5": 4,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "photo alarm",
+     "apps": [
+      {
+       "title": "Alarmy - Loud alarm clock",
+       "ratings": 252009,
+       "stars": 4.76,
+       "released": "2016-10-18",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Daymax: Photo Alarm",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2026-06-02",
+       "updated": "2026-06-08"
+      },
+      {
+       "title": "Kiwake: smart alarm clock",
+       "ratings": 1012,
+       "stars": 3.95,
+       "released": "2015-01-06",
+       "updated": "2021-04-17"
+      },
+      {
+       "title": "Barcode Alarm Clock",
+       "ratings": 1302,
+       "stars": 4.38,
+       "released": "2013-09-24",
+       "updated": "2024-10-07"
+      },
+      {
+       "title": "Alarm Clock: Snap-to-Stop",
+       "ratings": 1,
+       "stars": 1.0,
+       "released": "2025-08-12",
+       "updated": "2026-07-20"
+      },
+      {
+       "title": "WakeSnap: Photo Alarm Clock",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-06-23",
+       "updated": "2026-10-12"
+      },
+      {
+       "title": "SpeakToSnooze Alarm Clock HD",
+       "ratings": 1623,
+       "stars": 4.59,
+       "released": "2012-05-31",
+       "updated": "2018-09-25"
+      },
+      {
+       "title": "Mission Alarm Clock to Wake Up",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-10-02",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Alarme: Scan & Math Alarm",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-07-07",
+       "updated": "2026-10-10"
+      }
+     ],
+     "median_top5_ratings": 1012,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "Grappler Fig": {
+   "what": "Boxing coach, no hardware",
+   "keywords": [
+    {
+     "keyword": "shadow boxing",
+     "volume": 90500,
+     "cpc": 0.46,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "boxing training",
+     "volume": 6600,
+     "cpc": 2.29,
+     "competition": "MEDIUM",
+     "comp_index": 53,
+     "trend_12m_pct": 9
+    },
+    {
+     "keyword": "shadow boxing game",
+     "volume": 3600,
+     "cpc": 0.38,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": -6
+    },
+    {
+     "keyword": "boxing timer",
+     "volume": 1900,
+     "cpc": 1.28,
+     "competition": "HIGH",
+     "comp_index": 84,
+     "trend_12m_pct": -18
+    },
+    {
+     "keyword": "shadow boxing meaning",
+     "volume": 1900,
+     "cpc": 0.35,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "shadow boxing workout",
+     "volume": 1300,
+     "cpc": 0.83,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 21
+    },
+    {
+     "keyword": "shadow boxing exercise",
+     "volume": 1300,
+     "cpc": 0.83,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 21
+    },
+    {
+     "keyword": "shadow boxing gif",
+     "volume": 590,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "shadow boxing benefits",
+     "volume": 320,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "shadow boxing with weights",
+     "volume": 260,
+     "cpc": 0.03,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": -19
+    },
+    {
+     "keyword": "boxing timer app",
+     "volume": 260,
+     "cpc": 0.89,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 34
+    },
+    {
+     "keyword": "shadow boxing rules",
+     "volume": 210,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 20
+    },
+    {
+     "keyword": "boxing timer online",
+     "volume": 210,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 31
+    },
+    {
+     "keyword": "boxing exercise app",
+     "volume": 110,
+     "cpc": 4.61,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "boxing timer clock",
+     "volume": 110,
+     "cpc": 1.58,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "boxing workout app",
+     "volume": 90,
+     "cpc": 20.73,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "boxing fitness app",
+     "volume": 90,
+     "cpc": 20.73,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "shadow boxing game rules",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 48
+    },
+    {
+     "keyword": "boxing workout apparel",
+     "volume": 70,
+     "cpc": 1.57,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "boxing timer bell",
+     "volume": 50,
+     "cpc": 0.58,
+     "competition": "HIGH",
+     "comp_index": 99,
+     "trend_12m_pct": 70
+    },
+    {
+     "keyword": "shadow boxing workout app",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 16,
+     "trend_12m_pct": -59
+    },
+    {
+     "keyword": "boxing timer app free",
+     "volume": 40,
+     "cpc": 1.14,
+     "competition": "LOW",
+     "comp_index": 7,
+     "trend_12m_pct": -31
+    },
+    {
+     "keyword": "boxing timer free",
+     "volume": 20,
+     "cpc": 0.42,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 17
+    },
+    {
+     "keyword": "boxing workout apple watch",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "boxing trainer app",
+     "volume": 10,
+     "cpc": 17.09,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "boxing training workout app",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "best boxing workout app",
+     "volume": 10,
+     "cpc": 1.67,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "boxing timer with sound",
+     "volume": 10,
+     "cpc": 0.14,
+     "competition": "HIGH",
+     "comp_index": 71,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "boxing timer pro",
+     "volume": 10,
+     "cpc": 0.98,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "boxing timer interval",
+     "volume": 10,
+     "cpc": 1.46,
+     "competition": "HIGH",
+     "comp_index": 95,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "boxing workout app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "boxing workout",
+     "apps": [
+      {
+       "title": "Shadow Boxing Workout App",
+       "ratings": 3126,
+       "stars": 4.87,
+       "released": "2020-05-24",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "FightCamp Home Boxing Workouts",
+       "ratings": 23696,
+       "stars": 4.92,
+       "released": "2018-01-22",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Shadow Boxing Workout Coach",
+       "ratings": 17,
+       "stars": 4.59,
+       "released": "2026-08-06",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Boxing Workout & Training Pro",
+       "ratings": 229,
+       "stars": 4.75,
+       "released": "2024-12-23",
+       "updated": "2025-11-11"
+      },
+      {
+       "title": "Boxing Training: Bag Workouts",
+       "ratings": 770,
+       "stars": 4.86,
+       "released": "2020-11-28",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "ShadowCoach Boxing",
+       "ratings": 3,
+       "stars": 3.33,
+       "released": "2026-07-26",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "PunchLab: Boxing Workout",
+       "ratings": 817,
+       "stars": 4.74,
+       "released": "2018-09-22",
+       "updated": "2026-10-19"
+      },
+      {
+       "title": "ShadowBoxing: Boxing Unlocked",
+       "ratings": 3,
+       "stars": 2.33,
+       "released": "2026-03-29",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "BoxMaxxing: AI Boxing Workout",
+       "ratings": 158,
+       "stars": 4.78,
+       "released": "2026-07-16",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "TITLE Boxing Club",
+       "ratings": 5661,
+       "stars": 4.7,
+       "released": "2020-11-10",
+       "updated": "2026-01-21"
+      }
+     ],
+     "median_top5_ratings": 770,
+     "weak_in_top5": 3,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "shadow boxing",
+     "apps": [
+      {
+       "title": "Shadow Boxing Workout App",
+       "ratings": 3126,
+       "stars": 4.87,
+       "released": "2020-05-24",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Shadow Boxing App: AR Boxing",
+       "ratings": 26,
+       "stars": 4.81,
+       "released": "2026-08-24",
+       "updated": "2026-10-03"
+      },
+      {
+       "title": "ShadowBox - Boxing & Muay Thai",
+       "ratings": 6,
+       "stars": 4.5,
+       "released": "2026-01-20",
+       "updated": "2026-03-18"
+      },
+      {
+       "title": "FightCamp Home Boxing Workouts",
+       "ratings": 23696,
+       "stars": 4.92,
+       "released": "2018-01-22",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "BoxMaxxing: AI Boxing Workout",
+       "ratings": 158,
+       "stars": 4.78,
+       "released": "2026-07-16",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "ShadowBoxing: Boxing Unlocked",
+       "ratings": 3,
+       "stars": 2.33,
+       "released": "2026-03-29",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "GOAT - Shadow Boxing",
+       "ratings": 106,
+       "stars": 1.72,
+       "released": "2020-12-17",
+       "updated": "2025-10-16"
+      },
+      {
+       "title": "Boxing Training: Bag Workouts",
+       "ratings": 770,
+       "stars": 4.86,
+       "released": "2020-11-28",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Shadow Boxing Workout: HIIT",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-05-06",
+       "updated": "2026-10-02"
+      }
+     ],
+     "median_top5_ratings": 158,
+     "weak_in_top5": 3,
+     "exact_title_in_top5": 2
+    },
+    {
+     "term": "boxing timer",
+     "apps": [
+      {
+       "title": "Boxing Interval Timer",
+       "ratings": 13159,
+       "stars": 4.79,
+       "released": "2017-12-20",
+       "updated": "2026-10-04"
+      },
+      {
+       "title": "Boxing iTimer Lite",
+       "ratings": 6741,
+       "stars": 4.9,
+       "released": "2012-03-13",
+       "updated": "2026-11-08"
+      },
+      {
+       "title": "Boxing Timer Pro Round Timer",
+       "ratings": 6785,
+       "stars": 4.85,
+       "released": "2011-05-13",
+       "updated": "2026-08-28"
+      },
+      {
+       "title": "Boxing Timer (Training Timer)",
+       "ratings": 13,
+       "stars": 3.77,
+       "released": "2014-12-30",
+       "updated": "2025-04-30"
+      },
+      {
+       "title": "Timer Plus - Workouts Timer",
+       "ratings": 61592,
+       "stars": 4.81,
+       "released": "2017-10-02",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "Boxing Timer Prof",
+       "ratings": 102,
+       "stars": 4.64,
+       "released": "2015-04-05",
+       "updated": "2026-08-27"
+      },
+      {
+       "title": "Boxing Round Timer",
+       "ratings": 50,
+       "stars": 3.26,
+       "released": "2010-12-16",
+       "updated": "2026-10-14"
+      },
+      {
+       "title": "Rounds - Boxing Timer",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2025-11-19",
+       "updated": "2025-11-19"
+      },
+      {
+       "title": "Boxing Timer",
+       "ratings": 8,
+       "stars": 4.25,
+       "released": "2009-01-23",
+       "updated": "2019-09-27"
+      },
+      {
+       "title": "Boxing Timer: BoxTime",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2026-02-26",
+       "updated": "2026-11-14"
+      }
+     ],
+     "median_top5_ratings": 6785,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 2
+    }
+   ]
+  },
+  "Parcel & Co": {
+   "what": "Shopping app with a mode per category",
+   "keywords": [
+    {
+     "keyword": "shopping app",
+     "volume": 8100,
+     "cpc": 7.06,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -12
+    },
+    {
+     "keyword": "shopping apps",
+     "volume": 8100,
+     "cpc": 7.06,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -12
+    },
+    {
+     "keyword": "online shopping app",
+     "volume": 880,
+     "cpc": 5.37,
+     "competition": "MEDIUM",
+     "comp_index": 42,
+     "trend_12m_pct": 26
+    },
+    {
+     "keyword": "shopping apps online",
+     "volume": 880,
+     "cpc": 5.37,
+     "competition": "MEDIUM",
+     "comp_index": 42,
+     "trend_12m_pct": 26
+    },
+    {
+     "keyword": "online shopping apps",
+     "volume": 880,
+     "cpc": 5.37,
+     "competition": "MEDIUM",
+     "comp_index": 42,
+     "trend_12m_pct": 26
+    },
+    {
+     "keyword": "shopping apps for clothes",
+     "volume": 480,
+     "cpc": 5.4,
+     "competition": "HIGH",
+     "comp_index": 88,
+     "trend_12m_pct": 8
+    },
+    {
+     "keyword": "shopping apps to make money",
+     "volume": 320,
+     "cpc": 5.17,
+     "competition": "MEDIUM",
+     "comp_index": 59,
+     "trend_12m_pct": -48
+    },
+    {
+     "keyword": "makeup shopping app",
+     "volume": 320,
+     "cpc": 11.68,
+     "competition": "LOW",
+     "comp_index": 28,
+     "trend_12m_pct": 1418
+    },
+    {
+     "keyword": "cosmetics shopping app",
+     "volume": 320,
+     "cpc": 11.68,
+     "competition": "LOW",
+     "comp_index": 28,
+     "trend_12m_pct": 1418
+    },
+    {
+     "keyword": "shopping apps in usa",
+     "volume": 260,
+     "cpc": 7.3,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": -52
+    },
+    {
+     "keyword": "shopping apps like temu",
+     "volume": 210,
+     "cpc": 7.77,
+     "competition": "HIGH",
+     "comp_index": 99,
+     "trend_12m_pct": 1
+    },
+    {
+     "keyword": "shopping apps like instacart",
+     "volume": 170,
+     "cpc": 9.36,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": 55
+    },
+    {
+     "keyword": "online shopping apps in usa",
+     "volume": 90,
+     "cpc": 3.15,
+     "competition": "MEDIUM",
+     "comp_index": 66,
+     "trend_12m_pct": -48
+    },
+    {
+     "keyword": "online shopping apps cheap",
+     "volume": 90,
+     "cpc": 8.64,
+     "competition": "HIGH",
+     "comp_index": 72,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "shopping app grocery",
+     "volume": 70,
+     "cpc": 10.34,
+     "competition": "MEDIUM",
+     "comp_index": 59,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "shopping apps like amazon",
+     "volume": 70,
+     "cpc": 16.58,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": 29
+    },
+    {
+     "keyword": "online shopping apps like amazon",
+     "volume": 70,
+     "cpc": 6.99,
+     "competition": "MEDIUM",
+     "comp_index": 46,
+     "trend_12m_pct": 680
+    },
+    {
+     "keyword": "online shopping apps for clothes",
+     "volume": 70,
+     "cpc": 1.9,
+     "competition": "HIGH",
+     "comp_index": 87,
+     "trend_12m_pct": 12
+    },
+    {
+     "keyword": "shopping apps for everything",
+     "volume": 40,
+     "cpc": 4.16,
+     "competition": "MEDIUM",
+     "comp_index": 59,
+     "trend_12m_pct": 45
+    },
+    {
+     "keyword": "where to buy home decor online",
+     "volume": 40,
+     "cpc": 1.01,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "online shopping apps list",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 60
+    },
+    {
+     "keyword": "online shopping apps in india",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "home decor shopping app",
+     "volume": 20,
+     "cpc": 3.71,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "home decor shopping apps",
+     "volume": 20,
+     "cpc": 3.71,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "beauty shopping app",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "online shopping apps with free shipping",
+     "volume": 10,
+     "cpc": 3.74,
+     "competition": "MEDIUM",
+     "comp_index": 41,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "online shopping apps like temu",
+     "volume": 10,
+     "cpc": 1.53,
+     "competition": "MEDIUM",
+     "comp_index": 51,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "beauty shop appointment book",
+     "volume": 10,
+     "cpc": 0.86,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "beauty store application",
+     "volume": 10,
+     "cpc": null,
+     "competition": "MEDIUM",
+     "comp_index": 57,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "beauty store app",
+     "volume": 10,
+     "cpc": null,
+     "competition": "MEDIUM",
+     "comp_index": 57,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "room decor shopping apps",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "best home decor shopping apps",
+     "volume": 10,
+     "cpc": null,
+     "competition": "HIGH",
+     "comp_index": 86,
+     "trend_12m_pct": 200
+    },
+    {
+     "keyword": "home decor online shopping app",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "best app for home decor shopping in india",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -100
+    },
+    {
+     "keyword": "national home decor stores",
+     "volume": 10,
+     "cpc": 0.21,
+     "competition": "HIGH",
+     "comp_index": 86,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "online shopping apps that take cash app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "beauty shopping apps in india",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "beauty shop appointment",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "beauty shop application",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "beauty shop appointment cards",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "home accessories shopping app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "home decor items shopping app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "ziva home decor salem online shopping app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "shopping",
+     "apps": [
+      {
+       "title": "SHEIN - Shopping Online",
+       "ratings": 4178287,
+       "stars": 4.74,
+       "released": "2014-05-20",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Temu: Shop Like a Billionaire",
+       "ratings": 2260790,
+       "stars": 4.66,
+       "released": "2022-08-31",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Target: Shop. Style. Save.",
+       "ratings": 6988821,
+       "stars": 4.9,
+       "released": "2008-11-25",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Hollister Co.",
+       "ratings": 661600,
+       "stars": 4.86,
+       "released": "2010-07-30",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Garage: Online Fashion",
+       "ratings": 33784,
+       "stars": 4.86,
+       "released": "2017-07-24",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Pacsun: Shopping & Rewards",
+       "ratings": 66629,
+       "stars": 4.62,
+       "released": "2011-05-18",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "AE + Aerie",
+       "ratings": 1261827,
+       "stars": 4.88,
+       "released": "2011-10-06",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Victoria's Secret\u2014Bras & More",
+       "ratings": 157081,
+       "stars": 4.81,
+       "released": "2009-11-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "AliExpress - Shopping App",
+       "ratings": 696187,
+       "stars": 4.69,
+       "released": "2011-05-27",
+       "updated": "2026-10-30"
+      }
+     ],
+     "median_top5_ratings": 2260790,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 1
+    },
+    {
+     "term": "beauty shopping",
+     "apps": [
+      {
+       "title": "Ulta Beauty: Makeup & Skincare",
+       "ratings": 2492737,
+       "stars": 4.86,
+       "released": "2012-11-11",
+       "updated": "2026-09-30"
+      },
+      {
+       "title": "Sephora US: Makeup & Skincare",
+       "ratings": 425959,
+       "stars": 4.88,
+       "released": "2010-09-30",
+       "updated": "2026-10-20"
+      },
+      {
+       "title": "BEAUTY BAY",
+       "ratings": 3347,
+       "stars": 4.75,
+       "released": "2017-12-19",
+       "updated": "2026-10-21"
+      },
+      {
+       "title": "SALLY BEAUTY",
+       "ratings": 70078,
+       "stars": 4.79,
+       "released": "2019-06-06",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "YesStyle: K-Beauty Destination",
+       "ratings": 93363,
+       "stars": 4.79,
+       "released": "2014-05-11",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "e.l.f. Cosmetics and Skincare",
+       "ratings": 40709,
+       "stars": 4.87,
+       "released": "2020-01-02",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "IPSY: Personalized Beauty",
+       "ratings": 224452,
+       "stars": 4.81,
+       "released": "2015-09-11",
+       "updated": "2026-10-08"
+      },
+      {
+       "title": "HSN: Shopping App for Deals",
+       "ratings": 302372,
+       "stars": 4.8,
+       "released": "2009-08-14",
+       "updated": "2026-11-02"
+      },
+      {
+       "title": "Nykaa \u2013 Makeup/Beauty Shopping",
+       "ratings": 1656,
+       "stars": 4.38,
+       "released": "2015-08-05",
+       "updated": "2026-11-06"
+      }
+     ],
+     "median_top5_ratings": 93363,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 0
+    },
+    {
+     "term": "home decor",
+     "apps": [
+      {
+       "title": "Redecor - Home Design Game",
+       "ratings": 271609,
+       "stars": 4.71,
+       "released": "2020-04-10",
+       "updated": "2026-10-26"
+      },
+      {
+       "title": "Decor Life - Home Design Game",
+       "ratings": 232288,
+       "stars": 4.65,
+       "released": "2022-03-29",
+       "updated": "2026-09-28"
+      },
+      {
+       "title": "Design Home\u2122: House Makeover",
+       "ratings": 517853,
+       "stars": 4.59,
+       "released": "2016-11-15",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Home Planner AI\uff1aRoom Design 3D",
+       "ratings": 46638,
+       "stars": 4.6,
+       "released": "2016-04-08",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Zara Home",
+       "ratings": 15165,
+       "stars": 4.74,
+       "released": "2011-10-26",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Home Design Makeover",
+       "ratings": 131384,
+       "stars": 4.55,
+       "released": "2018-01-31",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Bed Bath & Beyond",
+       "ratings": 143540,
+       "stars": 4.85,
+       "released": "2009-12-05",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Wayfair \u2013 Shop All Things Home",
+       "ratings": 2581934,
+       "stars": 4.87,
+       "released": "2014-03-30",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "My Perfect Home: Design Game",
+       "ratings": 7319,
+       "stars": 4.76,
+       "released": "2025-05-21",
+       "updated": "2026-05-09"
+      }
+     ],
+     "median_top5_ratings": 232288,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 0
+    }
+   ]
+  },
+  "Ember Fox": {
+   "what": "Drinking-moderation tracker with a game avatar",
+   "keywords": [
+    {
+     "keyword": "sober app",
+     "volume": 2900,
+     "cpc": 4.33,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -7
+    },
+    {
+     "keyword": "quit drinking app",
+     "volume": 590,
+     "cpc": 6.79,
+     "competition": "MEDIUM",
+     "comp_index": 62,
+     "trend_12m_pct": -18
+    },
+    {
+     "keyword": "sober apps free",
+     "volume": 210,
+     "cpc": 3.15,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -22
+    },
+    {
+     "keyword": "sober apparel",
+     "volume": 210,
+     "cpc": 1.15,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -17
+    },
+    {
+     "keyword": "alcohol tracker",
+     "volume": 170,
+     "cpc": 7.74,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "drinking tracker",
+     "volume": 140,
+     "cpc": 5.66,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": 2
+    },
+    {
+     "keyword": "alcohol tracker app",
+     "volume": 140,
+     "cpc": 2.96,
+     "competition": "LOW",
+     "comp_index": 27,
+     "trend_12m_pct": -18
+    },
+    {
+     "keyword": "quit drinking app free",
+     "volume": 140,
+     "cpc": 3.66,
+     "competition": "MEDIUM",
+     "comp_index": 61,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "sober app tracker",
+     "volume": 140,
+     "cpc": 4.23,
+     "competition": "MEDIUM",
+     "comp_index": 42,
+     "trend_12m_pct": -28
+    },
+    {
+     "keyword": "water drinking tracker",
+     "volume": 90,
+     "cpc": 0.3,
+     "competition": "MEDIUM",
+     "comp_index": 61,
+     "trend_12m_pct": -16
+    },
+    {
+     "keyword": "alcohol tracker app free",
+     "volume": 70,
+     "cpc": 1.7,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -59
+    },
+    {
+     "keyword": "sober app tracker free",
+     "volume": 40,
+     "cpc": 1.53,
+     "competition": "MEDIUM",
+     "comp_index": 43,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "drinking tracker app",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 29,
+     "trend_12m_pct": 17
+    },
+    {
+     "keyword": "water drinking tracker app",
+     "volume": 10,
+     "cpc": 1.4,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "no drinking tracker app",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "alcohol tracker pdf",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alcohol tracker online",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "alcohol tracker apple health",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "alcohol tracker bullet journal",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -83
+    },
+    {
+     "keyword": "quit drinking app australia",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -100
+    },
+    {
+     "keyword": "quit drinking app uk",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -100
+    },
+    {
+     "keyword": "sober appimage",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "sober app counter",
+     "volume": 10,
+     "cpc": 2.71,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "sober application bundle",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "sober app day counter",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "drinking tracker app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "drinking tracker calendar",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "drinking tracker cards",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "tracker drinking game",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "alcohol tracker calendar",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "alcohol tracker app australia",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "alcohol tracker machine",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "quit drinking app free iphone",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "quit drinking app reviews",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "quit drinking app store",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "quit drinking appetite",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "quit drinking apps for android",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "sober app with widget",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "drink tracker",
+     "apps": [
+      {
+       "title": "DrinkControl: Alcohol Tracker",
+       "ratings": 4394,
+       "stars": 4.77,
+       "released": "2011-09-08",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "My Water: Daily Drink Tracker",
+       "ratings": 24265,
+       "stars": 4.65,
+       "released": "2015-02-26",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Alcohol Tracker\u00b0",
+       "ratings": 43,
+       "stars": 4.6,
+       "released": "2023-06-06",
+       "updated": "2026-09-30"
+      },
+      {
+       "title": "Less - Alcohol Tracker",
+       "ratings": 966,
+       "stars": 4.33,
+       "released": "2019-12-31",
+       "updated": "2021-09-10"
+      },
+      {
+       "title": "Drink water: Drinking reminder",
+       "ratings": 22611,
+       "stars": 4.6,
+       "released": "2019-10-23",
+       "updated": "2026-07-27"
+      },
+      {
+       "title": "PourPal: Drink Tracker",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2026-08-07",
+       "updated": "2026-08-21"
+      },
+      {
+       "title": "Sipor - Daily Drink Tracker",
+       "ratings": 5,
+       "stars": 5.0,
+       "released": "2026-03-08",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Habit Tracker",
+       "ratings": 148945,
+       "stars": 4.79,
+       "released": "2019-01-31",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Drink Tracker - Alcohol",
+       "ratings": 7,
+       "stars": 5.0,
+       "released": "2025-04-16",
+       "updated": "2025-06-17"
+      }
+     ],
+     "median_top5_ratings": 4394,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 1
+    },
+    {
+     "term": "alcohol tracker",
+     "apps": [
+      {
+       "title": "DrinkControl: Alcohol Tracker",
+       "ratings": 4394,
+       "stars": 4.77,
+       "released": "2011-09-08",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "I Am Sober",
+       "ratings": 191359,
+       "stars": 4.88,
+       "released": "2013-07-19",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "Alcohol Tracker\u00b0",
+       "ratings": 43,
+       "stars": 4.6,
+       "released": "2023-06-06",
+       "updated": "2026-09-30"
+      },
+      {
+       "title": "Less - Alcohol Tracker",
+       "ratings": 966,
+       "stars": 4.33,
+       "released": "2019-12-31",
+       "updated": "2021-09-10"
+      },
+      {
+       "title": "Reframe: Drink Less & Thrive",
+       "ratings": 45678,
+       "stars": 4.73,
+       "released": "2020-02-19",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "TRY DRY: The Dry January app",
+       "ratings": 2995,
+       "stars": 4.82,
+       "released": "2018-12-11",
+       "updated": "2026-10-07"
+      },
+      {
+       "title": "GlassCount: Alcohol Tracker",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-05-15",
+       "updated": "2026-09-25"
+      },
+      {
+       "title": "Alcohol Tracker \u2013 AlcoStat",
+       "ratings": 31,
+       "stars": 4.68,
+       "released": "2021-07-08",
+       "updated": "2026-09-25"
+      },
+      {
+       "title": "Soberkind: Alcohol Tracker",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-09-20",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 4394,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "sober",
+     "apps": [
+      {
+       "title": "I Am Sober",
+       "ratings": 191359,
+       "stars": 4.88,
+       "released": "2013-07-19",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "Sobo: Sober Best Friend",
+       "ratings": 1882,
+       "stars": 4.77,
+       "released": "2025-10-21",
+       "updated": "2026-11-05"
+      },
+      {
+       "title": "Days Since: Quit Habit Tracker",
+       "ratings": 19786,
+       "stars": 4.82,
+       "released": "2019-08-17",
+       "updated": "2026-11-08"
+      },
+      {
+       "title": "Sober Time - Sobriety Counter",
+       "ratings": 43575,
+       "stars": 4.85,
+       "released": "2016-10-20",
+       "updated": "2026-11-04"
+      },
+      {
+       "title": "Nomo -  Sobriety Clocks",
+       "ratings": 17029,
+       "stars": 4.79,
+       "released": "2012-10-09",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Sober: Sobriety Tracker",
+       "ratings": 7874,
+       "stars": 4.75,
+       "released": "2014-06-22",
+       "updated": "2026-11-02"
+      },
+      {
+       "title": "Reframe: Drink Less & Thrive",
+       "ratings": 45678,
+       "stars": 4.73,
+       "released": "2020-02-19",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Sunflower - Sobriety Tracker",
+       "ratings": 6628,
+       "stars": 4.83,
+       "released": "2021-01-06",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Rooted: Sobriety Garden",
+       "ratings": 6,
+       "stars": 5.0,
+       "released": "2026-07-23",
+       "updated": "2026-08-15"
+      },
+      {
+       "title": "Sober not Sorry",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2025-10-11",
+       "updated": "2025-10-15"
+      }
+     ],
+     "median_top5_ratings": 19786,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 3
+    }
+   ]
+  },
+  "Stella Sessions": {
+   "what": "Narrated goal visualization",
+   "keywords": [
+    {
+     "keyword": "affirmation app",
+     "volume": 12100,
+     "cpc": 5.33,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 3
+    },
+    {
+     "keyword": "affirmation application",
+     "volume": 12100,
+     "cpc": 5.33,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 3
+    },
+    {
+     "keyword": "visualization meditation",
+     "volume": 880,
+     "cpc": 10.02,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": -18
+    },
+    {
+     "keyword": "manifestation app",
+     "volume": 590,
+     "cpc": 2.77,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 13
+    },
+    {
+     "keyword": "guided visualization",
+     "volume": 390,
+     "cpc": 13.41,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": 72
+    },
+    {
+     "keyword": "guided visualization meditation",
+     "volume": 390,
+     "cpc": 2.12,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "guided visualization meditation script",
+     "volume": 170,
+     "cpc": 26.71,
+     "competition": "LOW",
+     "comp_index": 4,
+     "trend_12m_pct": 8
+    },
+    {
+     "keyword": "affirmation app free",
+     "volume": 140,
+     "cpc": 2.73,
+     "competition": "LOW",
+     "comp_index": 27,
+     "trend_12m_pct": 18
+    },
+    {
+     "keyword": "visualization meditation script",
+     "volume": 110,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 76
+    },
+    {
+     "keyword": "guided visualization scripts pdf",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 4,
+     "trend_12m_pct": 24
+    },
+    {
+     "keyword": "guided visualization for sleep",
+     "volume": 50,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": -28
+    },
+    {
+     "keyword": "affirmation app for iphone",
+     "volume": 50,
+     "cpc": 1.23,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -27
+    },
+    {
+     "keyword": "guided visualization exercises",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 200
+    },
+    {
+     "keyword": "visualization meditation techniques",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": -29
+    },
+    {
+     "keyword": "guided visualization to decrease anxiety",
+     "volume": 30,
+     "cpc": 5.76,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 125
+    },
+    {
+     "keyword": "guided visualization for anxiety",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": 100
+    },
+    {
+     "keyword": "manifestation apps free",
+     "volume": 30,
+     "cpc": 3.65,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 25
+    },
+    {
+     "keyword": "visualization meditation script pdf",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "visualization meditation youtube",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 11
+    },
+    {
+     "keyword": "affirmation apparel",
+     "volume": 30,
+     "cpc": 15.26,
+     "competition": "MEDIUM",
+     "comp_index": 46,
+     "trend_12m_pct": 56
+    },
+    {
+     "keyword": "visualization meditation benefits",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -45
+    },
+    {
+     "keyword": "guided visualization meditation for sleep",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "manifestation app stella",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "manifestation how does it work",
+     "volume": 10,
+     "cpc": 0.15,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 100
+    },
+    {
+     "keyword": "can i write my manifestation on my phone",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "manifestation statement examples",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "visualization meditation for sleep",
+     "volume": 10,
+     "cpc": 1.41,
+     "competition": "LOW",
+     "comp_index": 30,
+     "trend_12m_pct": 67
+    },
+    {
+     "keyword": "visualization meditation for anxiety",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "visualization meditation for beginners",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "affirmation apps for android",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 27,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "guided visualization for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "manifestation appearance change",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "manifestation apps like stella",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "manifestation app for android",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "affirmation app widget",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "affirmation app for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "affirmation app for black women",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "affirmation appreciation and acknowledgment",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "visualization",
+     "apps": [
+      {
+       "title": "Visualization",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2021-09-29",
+       "updated": "2025-04-05"
+      },
+      {
+       "title": "Mesmerize - Visual Meditation",
+       "ratings": 57152,
+       "stars": 4.73,
+       "released": "2019-05-25",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "EnVision: Guided Visualization",
+       "ratings": 893,
+       "stars": 4.79,
+       "released": "2018-02-23",
+       "updated": "2024-01-02"
+      },
+      {
+       "title": "Law of Attraction Toolbox",
+       "ratings": 3012,
+       "stars": 4.81,
+       "released": "2017-09-28",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Visualization Training",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-07-14",
+       "updated": "2026-07-27"
+      },
+      {
+       "title": "Reprogram: Mental Preparation",
+       "ratings": 370,
+       "stars": 4.75,
+       "released": "2025-06-23",
+       "updated": "2026-07-20"
+      },
+      {
+       "title": "Kairo: Guided Visualization",
+       "ratings": 55,
+       "stars": 4.65,
+       "released": "2025-08-22",
+       "updated": "2026-10-28"
+      },
+      {
+       "title": "Triple A - Touch Visualizer",
+       "ratings": 8001,
+       "stars": 4.71,
+       "released": "2015-02-25",
+       "updated": "2026-10-10"
+      },
+      {
+       "title": "Imagym - AI Visualization",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2025-07-03",
+       "updated": "2026-01-01"
+      }
+     ],
+     "median_top5_ratings": 893,
+     "weak_in_top5": 3,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "manifestation",
+     "apps": [
+      {
+       "title": "Stella - Manifest Anything",
+       "ratings": 5645,
+       "stars": 4.71,
+       "released": "2026-01-28",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Aya: Manifest Your Dream Self",
+       "ratings": 3220,
+       "stars": 4.79,
+       "released": "2026-04-15",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "I am - Daily Affirmations",
+       "ratings": 739337,
+       "stars": 4.83,
+       "released": "2014-05-13",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Manifest & Affirmations - Soul",
+       "ratings": 3798,
+       "stars": 4.83,
+       "released": "2023-09-01",
+       "updated": "2026-10-07"
+      },
+      {
+       "title": "Myla : Manifest & Vision Board",
+       "ratings": 746,
+       "stars": 4.79,
+       "released": "2022-10-25",
+       "updated": "2026-05-11"
+      },
+      {
+       "title": "\u2062Manifest",
+       "ratings": 2838,
+       "stars": 4.75,
+       "released": "2024-05-07",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Fulfilled: Manifestation",
+       "ratings": 5,
+       "stars": 5.0,
+       "released": "2026-07-09",
+       "updated": "2026-10-19"
+      },
+      {
+       "title": "Already So: Manifestation",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-09-10",
+       "updated": "2026-09-26"
+      },
+      {
+       "title": "Subliminal Manifestation",
+       "ratings": 445,
+       "stars": 4.1,
+       "released": "2012-06-28",
+       "updated": "2026-04-13"
+      },
+      {
+       "title": "QuantumLeap: Manifestation",
+       "ratings": 6,
+       "stars": 5.0,
+       "released": "2026-03-09",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 3798,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 0
+    },
+    {
+     "term": "guided meditation",
+     "apps": [
+      {
+       "title": "Headspace: Sleep & Meditation",
+       "ratings": 973753,
+       "stars": 4.84,
+       "released": "2012-02-02",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Calm",
+       "ratings": 1994842,
+       "stars": 4.77,
+       "released": "2013-02-22",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Insight Timer: Meditate, Sleep",
+       "ratings": 449395,
+       "stars": 4.9,
+       "released": "2009-11-05",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Aura: Meditation & Sleep, CBT",
+       "ratings": 35247,
+       "stars": 4.67,
+       "released": "2016-10-11",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Guided Meditation - ZenForge",
+       "ratings": 76,
+       "stars": 4.66,
+       "released": "2025-06-03",
+       "updated": "2026-08-03"
+      },
+      {
+       "title": "Breethe: Sleep & Meditation",
+       "ratings": 72796,
+       "stars": 4.75,
+       "released": "2015-03-18",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Meditar: Guided Meditation",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-09-23",
+       "updated": "2026-11-04"
+      },
+      {
+       "title": "Balance: Meditation & Sleep",
+       "ratings": 120816,
+       "stars": 4.88,
+       "released": "2019-09-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Waking Up: Meditation & Wisdom",
+       "ratings": 42754,
+       "stars": 4.92,
+       "released": "2018-09-21",
+       "updated": "2026-11-11"
+      }
+     ],
+     "median_top5_ratings": 449395,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "Spotter Pair": {
+   "what": "Two partners, AI plans, shared score",
+   "keywords": [
+    {
+     "keyword": "partner workout exercises",
+     "volume": 1000,
+     "cpc": 2.57,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": -9
+    },
+    {
+     "keyword": "partner workouts crossfit",
+     "volume": 590,
+     "cpc": 1.02,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "workout buddy apple watch",
+     "volume": 480,
+     "cpc": 1.11,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": -27
+    },
+    {
+     "keyword": "partner workout",
+     "volume": 390,
+     "cpc": 5.49,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -2
+    },
+    {
+     "keyword": "partner workouts",
+     "volume": 390,
+     "cpc": 5.49,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -2
+    },
+    {
+     "keyword": "ai workout plan",
+     "volume": 320,
+     "cpc": 3.39,
+     "competition": "MEDIUM",
+     "comp_index": 40,
+     "trend_12m_pct": -41
+    },
+    {
+     "keyword": "ai workout planner",
+     "volume": 320,
+     "cpc": 3.39,
+     "competition": "MEDIUM",
+     "comp_index": 40,
+     "trend_12m_pct": -41
+    },
+    {
+     "keyword": "partner workout app",
+     "volume": 260,
+     "cpc": 5.54,
+     "competition": "LOW",
+     "comp_index": 7,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "workout buddy app",
+     "volume": 210,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": -23
+    },
+    {
+     "keyword": "couples workout app",
+     "volume": 170,
+     "cpc": 3.2,
+     "competition": "LOW",
+     "comp_index": 15,
+     "trend_12m_pct": 155
+    },
+    {
+     "keyword": "workout buddy apple",
+     "volume": 140,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "partner workout ideas",
+     "volume": 140,
+     "cpc": 0.03,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -14
+    },
+    {
+     "keyword": "partner workout challenges",
+     "volume": 140,
+     "cpc": 0.03,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": -31
+    },
+    {
+     "keyword": "couples fitness app",
+     "volume": 140,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": 35
+    },
+    {
+     "keyword": "ai workout plan generator",
+     "volume": 50,
+     "cpc": 4.15,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 20
+    },
+    {
+     "keyword": "partner workouts no equipment",
+     "volume": 30,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 4,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "ai workout planner free",
+     "volume": 30,
+     "cpc": 5.59,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "ai workout plan free",
+     "volume": 30,
+     "cpc": 5.59,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "partner workouts at home",
+     "volume": 20,
+     "cpc": 4.56,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "partner workout competition",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "workout buddy apple watch turn on",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "workout buddy apple watch turn off",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 200
+    },
+    {
+     "keyword": "workout buddy apple intelligence",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "workout buddy apple watch not working",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "workout buddy apple watch compatibility",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "ai workout plan meme",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "ai planning examples",
+     "volume": 10,
+     "cpc": 21.03,
+     "competition": "HIGH",
+     "comp_index": 82,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "workout buddy apple fitness",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "workout buddy apple watch deutsch",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "partner workouts on tonal",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "couples workout app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "couples exercise app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "couples fitness app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "partner workout app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "best couples workout app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "couples workout accountability app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "couple workout tracker app",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "ai workout plan prompt",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "workout buddy",
+     "apps": [
+      {
+       "title": "Sweatmates: Partner Fitness",
+       "ratings": 18054,
+       "stars": 4.91,
+       "released": "2025-12-21",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "WorkoutBuddy: AI Fitness Coach",
+       "ratings": 49,
+       "stars": 4.71,
+       "released": "2025-06-11",
+       "updated": "2025-12-04"
+      },
+      {
+       "title": "Fitness Buddy Home Gym Workout",
+       "ratings": 22935,
+       "stars": 4.8,
+       "released": "2012-04-04",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "Workout Buddy: Gym Companion",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-01-12",
+       "updated": "2026-01-12"
+      },
+      {
+       "title": "Home Workouts & Fitness | Luvu",
+       "ratings": 12509,
+       "stars": 4.82,
+       "released": "2025-08-08",
+       "updated": "2026-07-25"
+      },
+      {
+       "title": "Habit Tracker",
+       "ratings": 148945,
+       "stars": 4.79,
+       "released": "2019-01-31",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "MyFitnessPal: Calorie Counter",
+       "ratings": 2394294,
+       "stars": 4.71,
+       "released": "2009-12-08",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "swolie - Gym Workout Tracker",
+       "ratings": 11,
+       "stars": 5.0,
+       "released": "2026-01-07",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Home Fitness for Weight Loss",
+       "ratings": 58560,
+       "stars": 4.58,
+       "released": "2017-03-24",
+       "updated": "2024-02-14"
+      },
+      {
+       "title": "Workout Buddy - Training App",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2024-11-13",
+       "updated": "2024-11-14"
+      }
+     ],
+     "median_top5_ratings": 12509,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 1
+    },
+    {
+     "term": "partner workout",
+     "apps": [
+      {
+       "title": "Sweatmates: Partner Fitness",
+       "ratings": 18054,
+       "stars": 4.91,
+       "released": "2025-12-21",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "SweatBets: Couple Fitness",
+       "ratings": 12,
+       "stars": 4.83,
+       "released": "2026-09-17",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "DuoDone: Couple Workout Proof",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-04-07",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "OneStreak: Workout Partner",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-08-27",
+       "updated": "2026-08-28"
+      },
+      {
+       "title": "GymBuddy: Gym Partner Finder",
+       "ratings": 2,
+       "stars": 3.5,
+       "released": "2026-07-07",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Workout Partner (WOP)",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2026-03-10",
+       "updated": "2026-10-16"
+      },
+      {
+       "title": "Fitness Buddy Home Gym Workout",
+       "ratings": 22935,
+       "stars": 4.8,
+       "released": "2012-04-04",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "Maxed AI - Partner Workouts",
+       "ratings": 278,
+       "stars": 4.75,
+       "released": "2026-02-23",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "TimeLift Couples Workout Timer",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-03-30",
+       "updated": "2026-05-25"
+      }
+     ],
+     "median_top5_ratings": 2,
+     "weak_in_top5": 4,
+     "exact_title_in_top5": 0
+    },
+    {
+     "term": "couples fitness",
+     "apps": [
+      {
+       "title": "Sweatmates: Partner Fitness",
+       "ratings": 18054,
+       "stars": 4.91,
+       "released": "2025-12-21",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Better together: Couples",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-06-17",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Couple Glow",
+       "ratings": 6,
+       "stars": 4.5,
+       "released": "2026-05-25",
+       "updated": "2026-05-26"
+      },
+      {
+       "title": "Couple Goals: Habit Tracker",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-09-20",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Sweathearts: Couples Fitness",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-09-09",
+       "updated": "2026-10-30"
+      },
+      {
+       "title": "FitWithLove - Couples Workout",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2024-09-13",
+       "updated": "2024-09-13"
+      },
+      {
+       "title": "Paired: Couples & Relationship",
+       "ratings": 211048,
+       "stars": 4.72,
+       "released": "2020-09-17",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Evergreen: Relationship Growth",
+       "ratings": 54823,
+       "stars": 4.82,
+       "released": "2021-07-14",
+       "updated": "2026-09-05"
+      },
+      {
+       "title": "Coral: Couples & Relationship",
+       "ratings": 3511,
+       "stars": 4.56,
+       "released": "2019-10-28",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "Lasting: Marriage & Couples",
+       "ratings": 24991,
+       "stars": 4.68,
+       "released": "2017-05-04",
+       "updated": "2026-11-11"
+      }
+     ],
+     "median_top5_ratings": 1,
+     "weak_in_top5": 4,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "Verse by Verse": {
+   "what": "One-verse-at-a-time Bible reader",
+   "keywords": [
+    {
+     "keyword": "verse of the day",
+     "volume": 550000,
+     "cpc": 10.07,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "verse of the day bible",
+     "volume": 550000,
+     "cpc": 10.07,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "bible app",
+     "volume": 90500,
+     "cpc": 2.54,
+     "competition": "LOW",
+     "comp_index": 15,
+     "trend_12m_pct": 85
+    },
+    {
+     "keyword": "bible app youversion",
+     "volume": 90500,
+     "cpc": 1.43,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "verse of the day kjv",
+     "volume": 27100,
+     "cpc": 5.51,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "bible app verse of the day",
+     "volume": 22200,
+     "cpc": 3.01,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 2585
+    },
+    {
+     "keyword": "bible reading plan",
+     "volume": 14800,
+     "cpc": 3.85,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": -63
+    },
+    {
+     "keyword": "bible app free",
+     "volume": 14800,
+     "cpc": 2.75,
+     "competition": "MEDIUM",
+     "comp_index": 34,
+     "trend_12m_pct": 16
+    },
+    {
+     "keyword": "bible reading plan in a year",
+     "volume": 12100,
+     "cpc": 3.1,
+     "competition": "HIGH",
+     "comp_index": 79,
+     "trend_12m_pct": -68
+    },
+    {
+     "keyword": "read the bible in a year plan",
+     "volume": 12100,
+     "cpc": 3.1,
+     "competition": "HIGH",
+     "comp_index": 79,
+     "trend_12m_pct": -68
+    },
+    {
+     "keyword": "read the bible",
+     "volume": 9900,
+     "cpc": 3.2,
+     "competition": "LOW",
+     "comp_index": 31,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "verse of the day bible gateway",
+     "volume": 9900,
+     "cpc": 19.45,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 7
+    },
+    {
+     "keyword": "bible reading plan chronological",
+     "volume": 8100,
+     "cpc": 3.43,
+     "competition": "MEDIUM",
+     "comp_index": 66,
+     "trend_12m_pct": -46
+    },
+    {
+     "keyword": "read the bible in a year",
+     "volume": 8100,
+     "cpc": 2.41,
+     "competition": "HIGH",
+     "comp_index": 97,
+     "trend_12m_pct": -69
+    },
+    {
+     "keyword": "read the bible online",
+     "volume": 5400,
+     "cpc": 6.13,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "verse of the day today",
+     "volume": 3600,
+     "cpc": 6.45,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 132
+    },
+    {
+     "keyword": "bible app download",
+     "volume": 2900,
+     "cpc": 3.06,
+     "competition": "MEDIUM",
+     "comp_index": 44,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "verse of the day with reflection",
+     "volume": 2900,
+     "cpc": 13.36,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 32
+    },
+    {
+     "keyword": "bible app online",
+     "volume": 1900,
+     "cpc": 6.08,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": -3
+    },
+    {
+     "keyword": "bible app download free",
+     "volume": 1900,
+     "cpc": 3.02,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 19
+    },
+    {
+     "keyword": "read the bible in chronological order",
+     "volume": 1900,
+     "cpc": 1.24,
+     "competition": "MEDIUM",
+     "comp_index": 49,
+     "trend_12m_pct": -43
+    },
+    {
+     "keyword": "bible reading plan for beginners",
+     "volume": 1600,
+     "cpc": 4.45,
+     "competition": "HIGH",
+     "comp_index": 68,
+     "trend_12m_pct": -29
+    },
+    {
+     "keyword": "bible reading plan 2026",
+     "volume": 1600,
+     "cpc": 1.83,
+     "competition": "MEDIUM",
+     "comp_index": 45,
+     "trend_12m_pct": -93
+    },
+    {
+     "keyword": "read the bible to me",
+     "volume": 1600,
+     "cpc": 3.83,
+     "competition": "MEDIUM",
+     "comp_index": 46,
+     "trend_12m_pct": -19
+    },
+    {
+     "keyword": "bible app that reads to you",
+     "volume": 1300,
+     "cpc": 4.36,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -14
+    },
+    {
+     "keyword": "bible reading plan generator",
+     "volume": 1000,
+     "cpc": 15.87,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "read the bible online for free",
+     "volume": 1000,
+     "cpc": 5.6,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": -6
+    },
+    {
+     "keyword": "bible app without ads",
+     "volume": 720,
+     "cpc": 2.31,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": 4
+    },
+    {
+     "keyword": "bible reading plan 2026 pdf",
+     "volume": 480,
+     "cpc": 10.18,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": -79
+    },
+    {
+     "keyword": "read the bible in a year app",
+     "volume": 480,
+     "cpc": 2.13,
+     "competition": "MEDIUM",
+     "comp_index": 36,
+     "trend_12m_pct": -79
+    },
+    {
+     "keyword": "bible reading plan for women",
+     "volume": 320,
+     "cpc": 4.85,
+     "competition": "HIGH",
+     "comp_index": 94,
+     "trend_12m_pct": -29
+    },
+    {
+     "keyword": "bible reading plan pdf",
+     "volume": 260,
+     "cpc": 8.66,
+     "competition": "MEDIUM",
+     "comp_index": 34,
+     "trend_12m_pct": -53
+    },
+    {
+     "keyword": "read the bible in chronological order in a year",
+     "volume": 210,
+     "cpc": 5.21,
+     "competition": "HIGH",
+     "comp_index": 78,
+     "trend_12m_pct": -64
+    },
+    {
+     "keyword": "read the bible in 90 days",
+     "volume": 210,
+     "cpc": 0.5,
+     "competition": "HIGH",
+     "comp_index": 89,
+     "trend_12m_pct": -49
+    },
+    {
+     "keyword": "bible app for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "bible reading plan for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "verse of the day november 15 2026",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "verse of the day november 16 2026",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "verse of the day nov 16 2026",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "verse of the day november 14 2026",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "bible",
+     "apps": [
+      {
+       "title": "Bible",
+       "ratings": 13889650,
+       "stars": 4.91,
+       "released": "2019-02-12",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Bible Chat: Daily Devotional",
+       "ratings": 374853,
+       "stars": 4.92,
+       "released": "2023-05-11",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Bible - Daily Bible Verse KJV",
+       "ratings": 499334,
+       "stars": 4.87,
+       "released": "2018-04-22",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "K.J.V. Holy Bible",
+       "ratings": 506115,
+       "stars": 4.85,
+       "released": "2010-09-21",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "#Bible - Verse of the Day",
+       "ratings": 393328,
+       "stars": 4.88,
+       "released": "2017-10-21",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Bible for Women & Daily Study",
+       "ratings": 118298,
+       "stars": 4.88,
+       "released": "2019-01-01",
+       "updated": "2026-07-02"
+      },
+      {
+       "title": "Haven - Bible Chat",
+       "ratings": 150451,
+       "stars": 4.88,
+       "released": "2024-06-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Bible Offline - KJV Holy Bible",
+       "ratings": 145878,
+       "stars": 4.89,
+       "released": "2019-07-29",
+       "updated": "2026-10-16"
+      },
+      {
+       "title": "Bible For Women.",
+       "ratings": 275638,
+       "stars": 4.9,
+       "released": "2024-03-26",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Blue Letter Bible",
+       "ratings": 361305,
+       "stars": 4.87,
+       "released": "2010-05-17",
+       "updated": "2026-10-29"
+      }
+     ],
+     "median_top5_ratings": 499334,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 5
+    },
+    {
+     "term": "bible reading",
+     "apps": [
+      {
+       "title": "Bible",
+       "ratings": 13889650,
+       "stars": 4.91,
+       "released": "2019-02-12",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Bible Study App by Olive Tree",
+       "ratings": 325561,
+       "stars": 4.84,
+       "released": "2009-10-02",
+       "updated": "2026-10-26"
+      },
+      {
+       "title": "Bible - Audio & Video Bibles",
+       "ratings": 132382,
+       "stars": 4.85,
+       "released": "2010-06-28",
+       "updated": "2026-08-25"
+      },
+      {
+       "title": "Holy Bible for Daily Reading",
+       "ratings": 23193,
+       "stars": 4.83,
+       "released": "2019-10-17",
+       "updated": "2026-07-01"
+      },
+      {
+       "title": "Dwell: Audio Bible",
+       "ratings": 88386,
+       "stars": 4.89,
+       "released": "2018-08-02",
+       "updated": "2026-10-15"
+      },
+      {
+       "title": "K.J.V. Holy Bible",
+       "ratings": 506115,
+       "stars": 4.85,
+       "released": "2010-09-21",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Personal Bible Trainer",
+       "ratings": 276,
+       "stars": 4.85,
+       "released": "2021-12-08",
+       "updated": "2026-10-16"
+      },
+      {
+       "title": "Bible for Women & Daily Study",
+       "ratings": 118298,
+       "stars": 4.88,
+       "released": "2019-01-01",
+       "updated": "2026-07-02"
+      },
+      {
+       "title": "Bible - Daily Bible Verse KJV",
+       "ratings": 499334,
+       "stars": 4.87,
+       "released": "2018-04-22",
+       "updated": "2026-11-11"
+      }
+     ],
+     "median_top5_ratings": 132382,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 0
+    },
+    {
+     "term": "verse of the day",
+     "apps": [
+      {
+       "title": "#Bible - Verse of the Day",
+       "ratings": 393328,
+       "stars": 4.88,
+       "released": "2017-10-21",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Bible Widget",
+       "ratings": 28170,
+       "stars": 4.84,
+       "released": "2023-10-09",
+       "updated": "2026-09-07"
+      },
+      {
+       "title": "Bible",
+       "ratings": 13889650,
+       "stars": 4.91,
+       "released": "2019-02-12",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Verse of the Day by Heartlight",
+       "ratings": 30,
+       "stars": 4.77,
+       "released": "2022-08-14",
+       "updated": "2024-03-10"
+      },
+      {
+       "title": "Bible Verse Of The Day - BVW",
+       "ratings": 1029,
+       "stars": 4.84,
+       "released": "2025-03-27",
+       "updated": "2026-05-15"
+      },
+      {
+       "title": "Verse of the Day - Daily Bible",
+       "ratings": 10140,
+       "stars": 4.86,
+       "released": "2018-05-13",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Bible Verse of the Day!",
+       "ratings": 23922,
+       "stars": 4.86,
+       "released": "2016-04-01",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Verse-A-Day Daily Bible Verses",
+       "ratings": 4419,
+       "stars": 4.9,
+       "released": "2011-11-13",
+       "updated": "2026-01-26"
+      },
+      {
+       "title": "Bible Chat: Daily Devotional",
+       "ratings": 374853,
+       "stars": 4.92,
+       "released": "2023-05-11",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Bible Verses: Daily Devotional",
+       "ratings": 70153,
+       "stars": 4.86,
+       "released": "2013-05-03",
+       "updated": "2026-11-01"
+      }
+     ],
+     "median_top5_ratings": 28170,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 3
+    }
+   ]
+  },
+  "Sippo": {
+   "what": "Water-intake tracker",
+   "keywords": [
+    {
+     "keyword": "hydration tracker water bottle",
+     "volume": 1600,
+     "cpc": 0.93,
+     "competition": "HIGH",
+     "comp_index": 99,
+     "trend_12m_pct": -89
+    },
+    {
+     "keyword": "drink water app",
+     "volume": 1300,
+     "cpc": 1.64,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water reminder app",
+     "volume": 1000,
+     "cpc": 1.96,
+     "competition": "LOW",
+     "comp_index": 25,
+     "trend_12m_pct": -32
+    },
+    {
+     "keyword": "water tracker app",
+     "volume": 880,
+     "cpc": 2.17,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": -36
+    },
+    {
+     "keyword": "water reminder",
+     "volume": 720,
+     "cpc": 1.28,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": -12
+    },
+    {
+     "keyword": "drink water app reminder",
+     "volume": 720,
+     "cpc": 1.91,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": -48
+    },
+    {
+     "keyword": "hydration tracker",
+     "volume": 390,
+     "cpc": 1.59,
+     "competition": "MEDIUM",
+     "comp_index": 53,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "water reminder apple watch",
+     "volume": 320,
+     "cpc": 0.83,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "hydration tracker bottle",
+     "volume": 260,
+     "cpc": 0.31,
+     "competition": "HIGH",
+     "comp_index": 93,
+     "trend_12m_pct": -97
+    },
+    {
+     "keyword": "water tracker apple watch",
+     "volume": 210,
+     "cpc": 1.04,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": -31
+    },
+    {
+     "keyword": "drink water app free",
+     "volume": 140,
+     "cpc": 1.76,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": -44
+    },
+    {
+     "keyword": "hydration tracker app",
+     "volume": 140,
+     "cpc": 3.15,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -68
+    },
+    {
+     "keyword": "water tracker app free",
+     "volume": 90,
+     "cpc": 1.38,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "water reminder bottle",
+     "volume": 90,
+     "cpc": 0.81,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -28
+    },
+    {
+     "keyword": "water reminder iphone",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": -21
+    },
+    {
+     "keyword": "water reminder app for apple watch",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "water reminder app free",
+     "volume": 70,
+     "cpc": 2.12,
+     "competition": "LOW",
+     "comp_index": 29,
+     "trend_12m_pct": 35
+    },
+    {
+     "keyword": "water tracker app iphone",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": -60
+    },
+    {
+     "keyword": "water tracker app for apple watch",
+     "volume": 30,
+     "cpc": 0.81,
+     "competition": "LOW",
+     "comp_index": 15,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "water tracker app with friends",
+     "volume": 20,
+     "cpc": 0.62,
+     "competition": "LOW",
+     "comp_index": 16,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "water reminder watch",
+     "volume": 20,
+     "cpc": 0.68,
+     "competition": "HIGH",
+     "comp_index": 85,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "drink water apple watch",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "drink water app android",
+     "volume": 20,
+     "cpc": 1.6,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "hydration tracker printable",
+     "volume": 20,
+     "cpc": 0.04,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 25
+    },
+    {
+     "keyword": "hydration tracker wearable",
+     "volume": 20,
+     "cpc": 1.36,
+     "competition": "HIGH",
+     "comp_index": 95,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water tracker app with widget",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water tracker app android",
+     "volume": 10,
+     "cpc": 4.52,
+     "competition": "LOW",
+     "comp_index": 29,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water tracker app design",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water reminder garmin",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "water reminder bracelet",
+     "volume": 10,
+     "cpc": 0.49,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 25
+    },
+    {
+     "keyword": "drink water app on apple watch",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 7,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "drink water apple watch reminder",
+     "volume": 10,
+     "cpc": 2.03,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": 150
+    },
+    {
+     "keyword": "hydration tracker apple watch",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "hydration tracker bullet journal",
+     "volume": 10,
+     "cpc": 0.08,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": -25
+    },
+    {
+     "keyword": "drink water apps for iphone",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "is there an app to help you drink more water",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hydration tracker pdf",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "hydration tracker app free",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "water tracker",
+     "apps": [
+      {
+       "title": "Water tracker Waterllama",
+       "ratings": 164866,
+       "stars": 4.87,
+       "released": "2019-03-30",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Water Reminder - Daily Tracker",
+       "ratings": 79450,
+       "stars": 4.73,
+       "released": "2017-04-17",
+       "updated": "2026-09-26"
+      },
+      {
+       "title": "Plant Nanny Cute Water Tracker",
+       "ratings": 106708,
+       "stars": 4.72,
+       "released": "2019-01-17",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Water Tracker by WaterMinder\u00ae",
+       "ratings": 35863,
+       "stars": 4.75,
+       "released": "2013-07-19",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "My Water: Daily Drink Tracker",
+       "ratings": 24265,
+       "stars": 4.65,
+       "released": "2015-02-26",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Drink water: Drinking reminder",
+       "ratings": 22611,
+       "stars": 4.6,
+       "released": "2019-10-23",
+       "updated": "2026-07-27"
+      },
+      {
+       "title": "Habit Tracker",
+       "ratings": 148945,
+       "stars": 4.79,
+       "released": "2019-01-31",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Water Tracker - Drink Reminder",
+       "ratings": 3691,
+       "stars": 4.72,
+       "released": "2018-08-06",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Tracker of Water",
+       "ratings": 17,
+       "stars": 5.0,
+       "released": "2026-07-23",
+       "updated": "2026-08-19"
+      }
+     ],
+     "median_top5_ratings": 79450,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "water reminder",
+     "apps": [
+      {
+       "title": "Water Reminder - Daily Tracker",
+       "ratings": 79450,
+       "stars": 4.73,
+       "released": "2017-04-17",
+       "updated": "2026-09-26"
+      },
+      {
+       "title": "Water tracker Waterllama",
+       "ratings": 164866,
+       "stars": 4.87,
+       "released": "2019-03-30",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Drink Water Reminder N Tracker",
+       "ratings": 152215,
+       "stars": 4.5,
+       "released": "2014-05-23",
+       "updated": "2025-09-20"
+      },
+      {
+       "title": "Water Tracker by WaterMinder\u00ae",
+       "ratings": 35863,
+       "stars": 4.75,
+       "released": "2013-07-19",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Plant Nanny Cute Water Tracker",
+       "ratings": 106708,
+       "stars": 4.72,
+       "released": "2019-01-17",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Water Reminder - Daily Drink",
+       "ratings": 225,
+       "stars": 4.72,
+       "released": "2021-02-05",
+       "updated": "2021-02-19"
+      },
+      {
+       "title": "Drink water: Drinking reminder",
+       "ratings": 22611,
+       "stars": 4.6,
+       "released": "2019-10-23",
+       "updated": "2026-07-27"
+      },
+      {
+       "title": "Drink Water \u2219 Daily Reminder",
+       "ratings": 26004,
+       "stars": 4.6,
+       "released": "2015-11-24",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Water Time - My Drink Reminder",
+       "ratings": 2371,
+       "stars": 4.71,
+       "released": "2017-03-13",
+       "updated": "2024-09-04"
+      }
+     ],
+     "median_top5_ratings": 106708,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 2
+    },
+    {
+     "term": "hydration",
+     "apps": [
+      {
+       "title": "Water tracker Waterllama",
+       "ratings": 164866,
+       "stars": 4.87,
+       "released": "2019-03-30",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Plant Nanny Cute Water Tracker",
+       "ratings": 106708,
+       "stars": 4.72,
+       "released": "2019-01-17",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Drink Water Reminder N Tracker",
+       "ratings": 152215,
+       "stars": 4.5,
+       "released": "2014-05-23",
+       "updated": "2025-09-20"
+      },
+      {
+       "title": "Water Tracker by WaterMinder\u00ae",
+       "ratings": 35863,
+       "stars": 4.75,
+       "released": "2013-07-19",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Sip - Simple Hydration Tracker",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2026-02-24",
+       "updated": "2026-03-05"
+      },
+      {
+       "title": "Drink water: Drinking reminder",
+       "ratings": 22611,
+       "stars": 4.6,
+       "released": "2019-10-23",
+       "updated": "2026-07-27"
+      },
+      {
+       "title": "waterdrop\u00ae Hydration App",
+       "ratings": 786,
+       "stars": 4.82,
+       "released": "2022-02-20",
+       "updated": "2026-09-29"
+      },
+      {
+       "title": "My Water: Daily Drink Tracker",
+       "ratings": 24265,
+       "stars": 4.65,
+       "released": "2015-02-26",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Water Reminder - Daily Tracker",
+       "ratings": 79450,
+       "stars": 4.73,
+       "released": "2017-04-17",
+       "updated": "2026-09-26"
+      },
+      {
+       "title": "Water Time - My Drink Reminder",
+       "ratings": 2371,
+       "stars": 4.71,
+       "released": "2017-03-13",
+       "updated": "2024-09-04"
+      }
+     ],
+     "median_top5_ratings": 106708,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "HandsUp ASL": {
+   "what": "Learn ASL in daily lessons",
+   "keywords": [
+    {
+     "keyword": "learn asl",
+     "volume": 18100,
+     "cpc": 2.11,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": 34
+    },
+    {
+     "keyword": "asl app",
+     "volume": 6600,
+     "cpc": 1.92,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": -49
+    },
+    {
+     "keyword": "learn asl free",
+     "volume": 5400,
+     "cpc": 2.38,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "learn asl online free",
+     "volume": 5400,
+     "cpc": 2.38,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "asl apple",
+     "volume": 4400,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 28
+    },
+    {
+     "keyword": "sign language apps free",
+     "volume": 2900,
+     "cpc": 1.6,
+     "competition": "LOW",
+     "comp_index": 17,
+     "trend_12m_pct": 115
+    },
+    {
+     "keyword": "sign language apple",
+     "volume": 2900,
+     "cpc": 0.14,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 43
+    },
+    {
+     "keyword": "fingerspelling",
+     "volume": 2400,
+     "cpc": 0.43,
+     "competition": "LOW",
+     "comp_index": 8,
+     "trend_12m_pct": 61
+    },
+    {
+     "keyword": "fingerspelling asl",
+     "volume": 1900,
+     "cpc": 0.07,
+     "competition": "LOW",
+     "comp_index": 30,
+     "trend_12m_pct": 42
+    },
+    {
+     "keyword": "sign language app",
+     "volume": 1600,
+     "cpc": 1.79,
+     "competition": "LOW",
+     "comp_index": 18,
+     "trend_12m_pct": 23
+    },
+    {
+     "keyword": "learn asl app",
+     "volume": 1600,
+     "cpc": 2.07,
+     "competition": "LOW",
+     "comp_index": 26,
+     "trend_12m_pct": 51
+    },
+    {
+     "keyword": "learn asl online",
+     "volume": 1000,
+     "cpc": 2.44,
+     "competition": "LOW",
+     "comp_index": 27,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "asl appointment",
+     "volume": 1000,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -8
+    },
+    {
+     "keyword": "fingerspelling practice",
+     "volume": 880,
+     "cpc": 6.15,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 38
+    },
+    {
+     "keyword": "fingerspelling practice asl",
+     "volume": 880,
+     "cpc": 7.68,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": 68
+    },
+    {
+     "keyword": "learn asl sign",
+     "volume": 720,
+     "cpc": 1.17,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 61
+    },
+    {
+     "keyword": "sign language app translator",
+     "volume": 590,
+     "cpc": 5.15,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": 23
+    },
+    {
+     "keyword": "asl appreciate",
+     "volume": 590,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -1
+    },
+    {
+     "keyword": "sign language applause",
+     "volume": 480,
+     "cpc": 0.41,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "fingerspelling alphabet",
+     "volume": 480,
+     "cpc": 0.04,
+     "competition": "HIGH",
+     "comp_index": 69,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "asl applause",
+     "volume": 320,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 23
+    },
+    {
+     "keyword": "asl app free",
+     "volume": 260,
+     "cpc": 1.44,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 403
+    },
+    {
+     "keyword": "learn asl near me",
+     "volume": 210,
+     "cpc": 3.46,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": -6
+    },
+    {
+     "keyword": "fingerspelling chart",
+     "volume": 210,
+     "cpc": 0.14,
+     "competition": "MEDIUM",
+     "comp_index": 59,
+     "trend_12m_pct": 70
+    },
+    {
+     "keyword": "fingerspelling game",
+     "volume": 170,
+     "cpc": 7.49,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "learn asl alphabet",
+     "volume": 140,
+     "cpc": 0.13,
+     "competition": "MEDIUM",
+     "comp_index": 34,
+     "trend_12m_pct": 252
+    },
+    {
+     "keyword": "asl apple sign",
+     "volume": 140,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 66
+    },
+    {
+     "keyword": "fingerspelling our way to reading",
+     "volume": 110,
+     "cpc": 6.67,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 58
+    },
+    {
+     "keyword": "learn asl youtube",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 7
+    },
+    {
+     "keyword": "asl app to learn",
+     "volume": 50,
+     "cpc": 1.58,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": 118
+    },
+    {
+     "keyword": "fingerspelling asl sign",
+     "volume": 50,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 40
+    },
+    {
+     "keyword": "learn asl app free",
+     "volume": 40,
+     "cpc": 1.44,
+     "competition": "LOW",
+     "comp_index": 22,
+     "trend_12m_pct": 89
+    },
+    {
+     "keyword": "fingerspelling practice website",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 30
+    },
+    {
+     "keyword": "sign language apps to learn",
+     "volume": 30,
+     "cpc": 2.44,
+     "competition": "LOW",
+     "comp_index": 18,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "asl apps that are completely free",
+     "volume": 30,
+     "cpc": 1.86,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "sign language app like duolingo",
+     "volume": 20,
+     "cpc": 2.38,
+     "competition": "LOW",
+     "comp_index": 33,
+     "trend_12m_pct": 20
+    },
+    {
+     "keyword": "sign language appreciate",
+     "volume": 20,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 75
+    },
+    {
+     "keyword": "sign language app to communicate",
+     "volume": 10,
+     "cpc": 5.13,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "sign language app for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "asl apps for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "asl",
+     "apps": [
+      {
+       "title": "Lingvano - Learn Sign Language",
+       "ratings": 121732,
+       "stars": 4.88,
+       "released": "2021-03-18",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Ziggy: Learn ASL Sign Language",
+       "ratings": 7266,
+       "stars": 4.79,
+       "released": "2026-07-21",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "ASL Sign Language Pocket Sign",
+       "ratings": 39790,
+       "stars": 4.81,
+       "released": "2020-06-22",
+       "updated": "2025-08-03"
+      },
+      {
+       "title": "ASL Bloom - Sign Language",
+       "ratings": 38347,
+       "stars": 4.89,
+       "released": "2022-06-30",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "ASL Otty: Learn Sign Language",
+       "ratings": 5433,
+       "stars": 4.74,
+       "released": "2025-10-02",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Sign ASL",
+       "ratings": 90,
+       "stars": 4.13,
+       "released": "2018-09-05",
+       "updated": "2024-09-17"
+      },
+      {
+       "title": "Duolingo: Learn Languages",
+       "ratings": 5596977,
+       "stars": 4.72,
+       "released": "2012-11-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "SignSchool",
+       "ratings": 148,
+       "stars": 4.46,
+       "released": "2016-09-26",
+       "updated": "2024-10-18"
+      },
+      {
+       "title": "Anna : Sign Language - ASL",
+       "ratings": 1285,
+       "stars": 4.81,
+       "released": "2026-02-12",
+       "updated": "2026-09-15"
+      }
+     ],
+     "median_top5_ratings": 38347,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "sign language",
+     "apps": [
+      {
+       "title": "Lingvano - Learn Sign Language",
+       "ratings": 121732,
+       "stars": 4.88,
+       "released": "2021-03-18",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Ziggy: Learn ASL Sign Language",
+       "ratings": 7266,
+       "stars": 4.79,
+       "released": "2026-07-21",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "ASL Sign Language Pocket Sign",
+       "ratings": 39790,
+       "stars": 4.81,
+       "released": "2020-06-22",
+       "updated": "2025-08-03"
+      },
+      {
+       "title": "ASL Bloom - Sign Language",
+       "ratings": 38347,
+       "stars": 4.89,
+       "released": "2022-06-30",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "Duolingo: Learn Languages",
+       "ratings": 5596977,
+       "stars": 4.72,
+       "released": "2012-11-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "SignSchool",
+       "ratings": 148,
+       "stars": 4.46,
+       "released": "2016-09-26",
+       "updated": "2024-10-18"
+      },
+      {
+       "title": "Anna : Sign Language - ASL",
+       "ratings": 1285,
+       "stars": 4.81,
+       "released": "2026-02-12",
+       "updated": "2026-09-15"
+      },
+      {
+       "title": "ASL Otty: Learn Sign Language",
+       "ratings": 5433,
+       "stars": 4.74,
+       "released": "2025-10-02",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "ASL Sign Language Learning App",
+       "ratings": 7,
+       "stars": 3.0,
+       "released": "2026-10-22",
+       "updated": "2026-10-22"
+      }
+     ],
+     "median_top5_ratings": 39790,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "learn sign language",
+     "apps": [
+      {
+       "title": "Lingvano - Learn Sign Language",
+       "ratings": 121732,
+       "stars": 4.88,
+       "released": "2021-03-18",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Ziggy: Learn ASL Sign Language",
+       "ratings": 7266,
+       "stars": 4.79,
+       "released": "2026-07-21",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "ASL Sign Language Pocket Sign",
+       "ratings": 39790,
+       "stars": 4.81,
+       "released": "2020-06-22",
+       "updated": "2025-08-03"
+      },
+      {
+       "title": "Duolingo: Learn Languages",
+       "ratings": 5596977,
+       "stars": 4.72,
+       "released": "2012-11-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "ASL Bloom - Sign Language",
+       "ratings": 38347,
+       "stars": 4.89,
+       "released": "2022-06-30",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "ASL Otty: Learn Sign Language",
+       "ratings": 5433,
+       "stars": 4.74,
+       "released": "2025-10-02",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Intersign ASL - Sign Language",
+       "ratings": 4870,
+       "stars": 4.67,
+       "released": "2021-06-03",
+       "updated": "2026-09-21"
+      },
+      {
+       "title": "Anna : Sign Language - ASL",
+       "ratings": 1285,
+       "stars": 4.81,
+       "released": "2026-02-12",
+       "updated": "2026-09-15"
+      },
+      {
+       "title": "ASL -Sign Language. Learn ASL!",
+       "ratings": 766,
+       "stars": 4.78,
+       "released": "2023-04-01",
+       "updated": "2026-11-16"
+      }
+     ],
+     "median_top5_ratings": 39790,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "Five Dinners": {
+   "what": "Plans five dinners a week",
+   "keywords": [
+    {
+     "keyword": "dinner ideas near me",
+     "volume": 2240000,
+     "cpc": 0.56,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "dinner ideas",
+     "volume": 823000,
+     "cpc": 0.38,
+     "competition": "MEDIUM",
+     "comp_index": 50,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "dinner ideas easy",
+     "volume": 450000,
+     "cpc": 0.37,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": 129
+    },
+    {
+     "keyword": "dinner ideas with ground beef",
+     "volume": 110000,
+     "cpc": 0.15,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": 22
+    },
+    {
+     "keyword": "dinner ideas with chicken",
+     "volume": 110000,
+     "cpc": 0.22,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "dinner ideas for the family",
+     "volume": 74000,
+     "cpc": 0.32,
+     "competition": "MEDIUM",
+     "comp_index": 65,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "dinner ideas for two",
+     "volume": 49500,
+     "cpc": 0.28,
+     "competition": "MEDIUM",
+     "comp_index": 45,
+     "trend_12m_pct": 6
+    },
+    {
+     "keyword": "meal planning",
+     "volume": 40500,
+     "cpc": 14.59,
+     "competition": "HIGH",
+     "comp_index": 99,
+     "trend_12m_pct": 78
+    },
+    {
+     "keyword": "dinner ideas for tonight",
+     "volume": 33100,
+     "cpc": 0.34,
+     "competition": "MEDIUM",
+     "comp_index": 53,
+     "trend_12m_pct": 8
+    },
+    {
+     "keyword": "meal planning service",
+     "volume": 18100,
+     "cpc": 26.37,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -75
+    },
+    {
+     "keyword": "meal planning for weight loss",
+     "volume": 12100,
+     "cpc": 8.3,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "weekly meal plan",
+     "volume": 9900,
+     "cpc": 3.6,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 13
+    },
+    {
+     "keyword": "weekly meal plans",
+     "volume": 9900,
+     "cpc": 3.6,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 13
+    },
+    {
+     "keyword": "weekly meal planner",
+     "volume": 9900,
+     "cpc": 3.6,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 13
+    },
+    {
+     "keyword": "meal planning template",
+     "volume": 6600,
+     "cpc": 1.08,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -35
+    },
+    {
+     "keyword": "meal planning ideas",
+     "volume": 3600,
+     "cpc": 1.61,
+     "competition": "HIGH",
+     "comp_index": 89,
+     "trend_12m_pct": 11
+    },
+    {
+     "keyword": "meal planner app free",
+     "volume": 2900,
+     "cpc": 3.35,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 37
+    },
+    {
+     "keyword": "weekly meal planner template",
+     "volume": 2900,
+     "cpc": 0.66,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "weekly meal plan template",
+     "volume": 2900,
+     "cpc": 0.66,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "meal planning app free",
+     "volume": 2900,
+     "cpc": 3.35,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 37
+    },
+    {
+     "keyword": "meal planner app",
+     "volume": 2400,
+     "cpc": 5.28,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "meal planning app",
+     "volume": 2400,
+     "cpc": 5.28,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "weekly meal plan ideas",
+     "volume": 1000,
+     "cpc": 1.24,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -17
+    },
+    {
+     "keyword": "meal planning calendar",
+     "volume": 1000,
+     "cpc": 0.99,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -38
+    },
+    {
+     "keyword": "weekly meal planner with grocery list",
+     "volume": 880,
+     "cpc": 2.57,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 48
+    },
+    {
+     "keyword": "weekly meal plan for weight loss",
+     "volume": 880,
+     "cpc": 3.66,
+     "competition": "HIGH",
+     "comp_index": 95,
+     "trend_12m_pct": -5
+    },
+    {
+     "keyword": "meal planner app with grocery list",
+     "volume": 720,
+     "cpc": 6.3,
+     "competition": "MEDIUM",
+     "comp_index": 45,
+     "trend_12m_pct": 82
+    },
+    {
+     "keyword": "meal planning app with grocery list",
+     "volume": 720,
+     "cpc": 6.3,
+     "competition": "MEDIUM",
+     "comp_index": 45,
+     "trend_12m_pct": 82
+    },
+    {
+     "keyword": "meal planning template google sheets",
+     "volume": 720,
+     "cpc": 1.62,
+     "competition": "HIGH",
+     "comp_index": 68,
+     "trend_12m_pct": -27
+    },
+    {
+     "keyword": "weekly meal planner with grocery list on a budget",
+     "volume": 260,
+     "cpc": 3.24,
+     "competition": "HIGH",
+     "comp_index": 90,
+     "trend_12m_pct": 272
+    },
+    {
+     "keyword": "weekly meal plan for 2 adults",
+     "volume": 210,
+     "cpc": 3.02,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": 96
+    },
+    {
+     "keyword": "weekly meal planner app",
+     "volume": 210,
+     "cpc": 3.46,
+     "competition": "MEDIUM",
+     "comp_index": 55,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "meal planner app aldi",
+     "volume": 30,
+     "cpc": 3.8,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "meal planner app for family",
+     "volume": 20,
+     "cpc": 2.74,
+     "competition": "MEDIUM",
+     "comp_index": 59,
+     "trend_12m_pct": 20
+    },
+    {
+     "keyword": "meal planner app with recipes and grocery list",
+     "volume": 10,
+     "cpc": 5.38,
+     "competition": "MEDIUM",
+     "comp_index": 55,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "meal planner app reviews",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 23,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "dinner ideas texas",
+     "volume": 10,
+     "cpc": 0.08,
+     "competition": "MEDIUM",
+     "comp_index": 46,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "meal planner app by store",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "dinner ideas florida",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "meal planner",
+     "apps": [
+      {
+       "title": "mise - meal planner",
+       "ratings": 5051,
+       "stars": 4.73,
+       "released": "2026-06-10",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "TapCook: Budget Meal Plans",
+       "ratings": 7908,
+       "stars": 4.77,
+       "released": "2026-07-17",
+       "updated": "2026-11-07"
+      },
+      {
+       "title": "Meal Planner & Weekly Menu",
+       "ratings": 1702,
+       "stars": 4.81,
+       "released": "2023-08-11",
+       "updated": "2026-11-02"
+      },
+      {
+       "title": "ReciMe: Recipes & Meal Planner",
+       "ratings": 336207,
+       "stars": 4.79,
+       "released": "2021-11-12",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Daily Meal Planner",
+       "ratings": 1860,
+       "stars": 4.86,
+       "released": "2022-03-26",
+       "updated": "2026-08-21"
+      },
+      {
+       "title": "MealPrepPro Planner & Recipes",
+       "ratings": 12214,
+       "stars": 4.66,
+       "released": "2017-08-03",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "eMeals - Healthy Meal Plans",
+       "ratings": 52824,
+       "stars": 4.61,
+       "released": "2013-04-16",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Eat This Much - Meal Planner",
+       "ratings": 22198,
+       "stars": 4.72,
+       "released": "2015-06-15",
+       "updated": "2026-10-11"
+      }
+     ],
+     "median_top5_ratings": 5051,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "dinner ideas",
+     "apps": [
+      {
+       "title": "Tasty: Recipes, Cooking Videos",
+       "ratings": 432976,
+       "stars": 4.91,
+       "released": "2017-07-27",
+       "updated": "2026-10-08"
+      },
+      {
+       "title": "RecipePT: Dinner ideas tonight",
+       "ratings": 11,
+       "stars": 4.73,
+       "released": "2023-06-18",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "NYT Cooking: Quick Tasty Meals",
+       "ratings": 550594,
+       "stars": 4.91,
+       "released": "2014-09-17",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Cooklist: Pantry Meals Recipes",
+       "ratings": 11391,
+       "stars": 4.73,
+       "released": "2018-07-02",
+       "updated": "2026-06-29"
+      },
+      {
+       "title": "Dinner-Spinner",
+       "ratings": 18,
+       "stars": 4.33,
+       "released": "2023-12-22",
+       "updated": "2026-08-28"
+      },
+      {
+       "title": "Fork It: Dinner Decider",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-06-18",
+       "updated": "2026-08-11"
+      },
+      {
+       "title": "Reddy Meal Ideas",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-10-06",
+       "updated": "2026-10-09"
+      },
+      {
+       "title": "Delish - Easy Dinner Recipes",
+       "ratings": 130,
+       "stars": 4.58,
+       "released": "2022-12-22",
+       "updated": "2026-10-17"
+      },
+      {
+       "title": "Rosey \u2013 Easy Dinner Ideas",
+       "ratings": 17,
+       "stars": 4.88,
+       "released": "2025-01-07",
+       "updated": "2026-03-22"
+      }
+     ],
+     "median_top5_ratings": 11391,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 1
+    },
+    {
+     "term": "meal plan",
+     "apps": [
+      {
+       "title": "eMeals - Healthy Meal Plans",
+       "ratings": 52824,
+       "stars": 4.61,
+       "released": "2013-04-16",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Meal Planner & Weekly Menu",
+       "ratings": 1702,
+       "stars": 4.81,
+       "released": "2023-08-11",
+       "updated": "2026-11-02"
+      },
+      {
+       "title": "mise - meal planner",
+       "ratings": 5051,
+       "stars": 4.73,
+       "released": "2026-06-10",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Eat This Much - Meal Planner",
+       "ratings": 22198,
+       "stars": 4.72,
+       "released": "2015-06-15",
+       "updated": "2026-10-11"
+      },
+      {
+       "title": "Daily Meal Planner",
+       "ratings": 1860,
+       "stars": 4.86,
+       "released": "2022-03-26",
+       "updated": "2026-08-21"
+      },
+      {
+       "title": "MealPrepPro Planner & Recipes",
+       "ratings": 12214,
+       "stars": 4.66,
+       "released": "2017-08-03",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "Whipp: Meal Planner & Recipes",
+       "ratings": 877,
+       "stars": 4.66,
+       "released": "2026-06-12",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Plan to Eat",
+       "ratings": 6114,
+       "stars": 4.84,
+       "released": "2017-07-19",
+       "updated": "2026-11-07"
+      }
+     ],
+     "median_top5_ratings": 5051,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 5
+    }
+   ]
+  },
+  "NightRhythm": {
+   "what": "Sleep tracker",
+   "keywords": [
+    {
+     "keyword": "sleep cycle",
+     "volume": 22200,
+     "cpc": 1.58,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "sleep tracker",
+     "volume": 12100,
+     "cpc": 2.48,
+     "competition": "HIGH",
+     "comp_index": 92,
+     "trend_12m_pct": -6
+    },
+    {
+     "keyword": "sleep tracker apple watch",
+     "volume": 12100,
+     "cpc": 1.5,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": -24
+    },
+    {
+     "keyword": "sleep cycle calculator",
+     "volume": 9900,
+     "cpc": 3.05,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -34
+    },
+    {
+     "keyword": "sleep tracker app",
+     "volume": 8100,
+     "cpc": 3.33,
+     "competition": "LOW",
+     "comp_index": 26,
+     "trend_12m_pct": -54
+    },
+    {
+     "keyword": "sleep tracker ring",
+     "volume": 6600,
+     "cpc": 1.79,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "sleep cycle app",
+     "volume": 6600,
+     "cpc": 1.45,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": -58
+    },
+    {
+     "keyword": "sleep cycle stages",
+     "volume": 5400,
+     "cpc": 0.54,
+     "competition": "LOW",
+     "comp_index": 7,
+     "trend_12m_pct": 17
+    },
+    {
+     "keyword": "sleep tracker app free",
+     "volume": 1900,
+     "cpc": 2.15,
+     "competition": "LOW",
+     "comp_index": 30,
+     "trend_12m_pct": 3
+    },
+    {
+     "keyword": "sleep tracker watch",
+     "volume": 1900,
+     "cpc": 2.24,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 4
+    },
+    {
+     "keyword": "sleep tracker iphone",
+     "volume": 1300,
+     "cpc": 3.35,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": -64
+    },
+    {
+     "keyword": "sleep cycle length",
+     "volume": 1300,
+     "cpc": 0.95,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "sleep tracker device",
+     "volume": 1000,
+     "cpc": 2.4,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 57
+    },
+    {
+     "keyword": "sleep cycle time",
+     "volume": 880,
+     "cpc": 2.76,
+     "competition": "LOW",
+     "comp_index": 2,
+     "trend_12m_pct": 15
+    },
+    {
+     "keyword": "sleep tracker app for apple watch",
+     "volume": 590,
+     "cpc": 2.67,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -34
+    },
+    {
+     "keyword": "sleep tracker apple",
+     "volume": 590,
+     "cpc": 1.6,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": -41
+    },
+    {
+     "keyword": "sleep cycle stages time",
+     "volume": 590,
+     "cpc": 0.98,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -17
+    },
+    {
+     "keyword": "sleep cycles explained",
+     "volume": 590,
+     "cpc": 0.63,
+     "competition": "LOW",
+     "comp_index": 18,
+     "trend_12m_pct": -11
+    },
+    {
+     "keyword": "sleep cycle chart",
+     "volume": 590,
+     "cpc": 0.04,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -10
+    },
+    {
+     "keyword": "sleep tracker band",
+     "volume": 390,
+     "cpc": 3.75,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 25
+    },
+    {
+     "keyword": "sleep tracker apple health",
+     "volume": 320,
+     "cpc": 3.1,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": 1
+    },
+    {
+     "keyword": "sleep tracker app iphone",
+     "volume": 260,
+     "cpc": 3.23,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "sleep cycle name",
+     "volume": 260,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 1,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "snore tracker",
+     "volume": 210,
+     "cpc": 4.22,
+     "competition": "MEDIUM",
+     "comp_index": 39,
+     "trend_12m_pct": -3
+    },
+    {
+     "keyword": "sleep tracker app android",
+     "volume": 170,
+     "cpc": 2.15,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": -24
+    },
+    {
+     "keyword": "snore tracker app",
+     "volume": 110,
+     "cpc": 3.74,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": -13
+    },
+    {
+     "keyword": "sleep tracker no subscription",
+     "volume": 70,
+     "cpc": 1.58,
+     "competition": "HIGH",
+     "comp_index": 98,
+     "trend_12m_pct": 17
+    },
+    {
+     "keyword": "snore tracker app free",
+     "volume": 40,
+     "cpc": 2.11,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": -8
+    },
+    {
+     "keyword": "sleep tracker app without subscription",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "snore tracker free",
+     "volume": 10,
+     "cpc": 1.04,
+     "competition": "LOW",
+     "comp_index": 26,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "snore tracker apple watch",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "sleep tracker for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "snore tracker google pixel",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "snore tracker iphone",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "snore tracker samsung health",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "sleep tracker",
+     "apps": [
+      {
+       "title": "SleepWatch - Top Sleep Tracker",
+       "ratings": 328434,
+       "stars": 4.65,
+       "released": "2016-08-07",
+       "updated": "2026-10-23"
+      },
+      {
+       "title": "Sleep Cycle - Tracker & Sounds",
+       "ratings": 32084,
+       "stars": 4.68,
+       "released": "2009-07-23",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "ShutEye\u00ae: Sleep Tracker, Sound",
+       "ratings": 350474,
+       "stars": 4.76,
+       "released": "2019-12-09",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Sleep Tracker: Recorder, Sound",
+       "ratings": 8072,
+       "stars": 4.74,
+       "released": "2021-09-23",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "Pillow: Sleep Tracker",
+       "ratings": 95846,
+       "stars": 4.37,
+       "released": "2014-05-22",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "AutoSleep: Watch Sleep Tracker",
+       "ratings": 61917,
+       "stars": 4.7,
+       "released": "2016-12-20",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "Apple Health",
+       "ratings": 9240,
+       "stars": 3.02,
+       "released": "2021-10-25",
+       "updated": "2026-10-19"
+      },
+      {
+       "title": "RISE: Sleep Tracker",
+       "ratings": 74429,
+       "stars": 4.73,
+       "released": "2019-08-19",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Sleep Cycle: Sleep Tracker",
+       "ratings": 91,
+       "stars": 4.96,
+       "released": "2026-03-03",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 95846,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "sleep cycle",
+     "apps": [
+      {
+       "title": "Sleep Cycle - Tracker & Sounds",
+       "ratings": 32084,
+       "stars": 4.68,
+       "released": "2009-07-23",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Sleep Cycle: Sleep Tracker",
+       "ratings": 91,
+       "stars": 4.96,
+       "released": "2026-03-03",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "ShutEye\u00ae: Sleep Tracker, Sound",
+       "ratings": 350474,
+       "stars": 4.76,
+       "released": "2019-12-09",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "SleepWatch - Top Sleep Tracker",
+       "ratings": 328434,
+       "stars": 4.65,
+       "released": "2016-08-07",
+       "updated": "2026-10-23"
+      },
+      {
+       "title": "Pillow: Sleep Tracker",
+       "ratings": 95846,
+       "stars": 4.37,
+       "released": "2014-05-22",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "RISE: Sleep Tracker",
+       "ratings": 74429,
+       "stars": 4.73,
+       "released": "2019-08-19",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Sleep Tracker: Recorder, Sound",
+       "ratings": 8072,
+       "stars": 4.74,
+       "released": "2021-09-23",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "SleepCycle: Sleep Calculator",
+       "ratings": 3,
+       "stars": 5.0,
+       "released": "2026-05-18",
+       "updated": "2026-05-19"
+      }
+     ],
+     "median_top5_ratings": 95846,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 2
+    },
+    {
+     "term": "sleep",
+     "apps": [
+      {
+       "title": "BetterSleep: Relax and Sleep",
+       "ratings": 390918,
+       "stars": 4.74,
+       "released": "2009-05-07",
+       "updated": "2026-11-05"
+      },
+      {
+       "title": "ShutEye\u00ae: Sleep Tracker, Sound",
+       "ratings": 350474,
+       "stars": 4.76,
+       "released": "2019-12-09",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Sleep Cycle - Tracker & Sounds",
+       "ratings": 32084,
+       "stars": 4.68,
+       "released": "2009-07-23",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Calm",
+       "ratings": 1994842,
+       "stars": 4.77,
+       "released": "2013-02-22",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "SleepWatch - Top Sleep Tracker",
+       "ratings": 328434,
+       "stars": 4.65,
+       "released": "2016-08-07",
+       "updated": "2026-10-23"
+      },
+      {
+       "title": "Pillow: Sleep Tracker",
+       "ratings": 95846,
+       "stars": 4.37,
+       "released": "2014-05-22",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "AutoSleep: Watch Sleep Tracker",
+       "ratings": 61917,
+       "stars": 4.7,
+       "released": "2016-12-20",
+       "updated": "2026-11-03"
+      },
+      {
+       "title": "RISE: Sleep Tracker",
+       "ratings": 74429,
+       "stars": 4.73,
+       "released": "2019-08-19",
+       "updated": "2026-11-16"
+      }
+     ],
+     "median_top5_ratings": 350474,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 4
+    }
+   ]
+  },
+  "KanjiDojo": {
+   "what": "Kanji flashcards, JLPT N5-N1",
+   "keywords": [
+    {
+     "keyword": "jlpt n5",
+     "volume": 2400,
+     "cpc": 8.5,
+     "competition": "LOW",
+     "comp_index": 10,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "learn kanji",
+     "volume": 1300,
+     "cpc": 2.25,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "jlpt n5 practice test",
+     "volume": 1300,
+     "cpc": 3.68,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": -29
+    },
+    {
+     "keyword": "kanji flashcards",
+     "volume": 1000,
+     "cpc": 0.65,
+     "competition": "MEDIUM",
+     "comp_index": 35,
+     "trend_12m_pct": -20
+    },
+    {
+     "keyword": "jlpt n5 test",
+     "volume": 1000,
+     "cpc": 5.86,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "jlpt n5 exam",
+     "volume": 1000,
+     "cpc": 5.86,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 10
+    },
+    {
+     "keyword": "jlpt n5 kanji",
+     "volume": 590,
+     "cpc": 7.63,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": -24
+    },
+    {
+     "keyword": "learn kanji japanese",
+     "volume": 320,
+     "cpc": 2.06,
+     "competition": "LOW",
+     "comp_index": 19,
+     "trend_12m_pct": 5
+    },
+    {
+     "keyword": "jlpt n5 vocabulary",
+     "volume": 260,
+     "cpc": 1.21,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": -7
+    },
+    {
+     "keyword": "jlpt n5 kanji list",
+     "volume": 260,
+     "cpc": 3.12,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": 5
+    },
+    {
+     "keyword": "jlpt n5 study guide",
+     "volume": 260,
+     "cpc": 5.45,
+     "competition": "LOW",
+     "comp_index": 26,
+     "trend_12m_pct": 95
+    },
+    {
+     "keyword": "kanji app",
+     "volume": 210,
+     "cpc": 2.57,
+     "competition": "LOW",
+     "comp_index": 7,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "jlpt n5 vocab list",
+     "volume": 210,
+     "cpc": 0.52,
+     "competition": "LOW",
+     "comp_index": 3,
+     "trend_12m_pct": -19
+    },
+    {
+     "keyword": "learn kanji app",
+     "volume": 110,
+     "cpc": 2.46,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": -53
+    },
+    {
+     "keyword": "kanji apples",
+     "volume": 90,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -24
+    },
+    {
+     "keyword": "kanji flashcards printable",
+     "volume": 70,
+     "cpc": 0.01,
+     "competition": "LOW",
+     "comp_index": 15,
+     "trend_12m_pct": 38
+    },
+    {
+     "keyword": "jlpt n5 registration",
+     "volume": 50,
+     "cpc": 25.73,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": 1025
+    },
+    {
+     "keyword": "learn kanji free",
+     "volume": 40,
+     "cpc": 1.7,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "learn kanji online",
+     "volume": 40,
+     "cpc": 2.81,
+     "competition": "LOW",
+     "comp_index": 24,
+     "trend_12m_pct": -53
+    },
+    {
+     "keyword": "learn kanji game",
+     "volume": 40,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": -56
+    },
+    {
+     "keyword": "learn kanji radicals",
+     "volume": 30,
+     "cpc": 1.01,
+     "competition": "LOW",
+     "comp_index": 16,
+     "trend_12m_pct": -12
+    },
+    {
+     "keyword": "kanji flashcards app",
+     "volume": 30,
+     "cpc": 1.22,
+     "competition": "LOW",
+     "comp_index": 18,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "kanji flashcards pdf",
+     "volume": 20,
+     "cpc": 0.53,
+     "competition": "LOW",
+     "comp_index": 4,
+     "trend_12m_pct": 25
+    },
+    {
+     "keyword": "kanji flashcards online",
+     "volume": 20,
+     "cpc": 2.38,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "learn kanji pdf",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 11,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "kanji flashcards free",
+     "volume": 10,
+     "cpc": 2.02,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "kanji flashcards n5",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "kanji flashcards n4",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "kanji flashcards n3",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "learn kanji tofugu",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "kanji flashcards n2",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "kanji",
+     "apps": [
+      {
+       "title": "Kanji Study - Learn Japanese!",
+       "ratings": 7316,
+       "stars": 4.74,
+       "released": "2016-02-20",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Learn Japanese!! Kana & Kanji",
+       "ratings": 22638,
+       "stars": 4.76,
+       "released": "2015-07-10",
+       "updated": "2026-11-08"
+      },
+      {
+       "title": "Learn Kanji & Japanese: Benkyo",
+       "ratings": 3579,
+       "stars": 4.72,
+       "released": "2020-12-30",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "MochiKanji - Learn Japanese",
+       "ratings": 1596,
+       "stars": 4.67,
+       "released": "2019-05-20",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Kanji Garden Japanese",
+       "ratings": 812,
+       "stars": 4.69,
+       "released": "2019-06-16",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Shirabe Jisho",
+       "ratings": 8899,
+       "stars": 4.9,
+       "released": "2015-09-04",
+       "updated": "2026-10-20"
+      },
+      {
+       "title": "Kanji Teacher - Learn Japanese",
+       "ratings": 306,
+       "stars": 4.69,
+       "released": "2015-11-20",
+       "updated": "2025-11-18"
+      },
+      {
+       "title": "Kanji Quizzer",
+       "ratings": 215,
+       "stars": 4.72,
+       "released": "2016-01-25",
+       "updated": "2023-01-20"
+      },
+      {
+       "title": "PORO - Kanji Study",
+       "ratings": 211,
+       "stars": 4.72,
+       "released": "2021-08-27",
+       "updated": "2024-04-05"
+      },
+      {
+       "title": "Learn Japanese Kanji & Kana",
+       "ratings": 1961,
+       "stars": 4.87,
+       "released": "2017-12-14",
+       "updated": "2026-11-02"
+      }
+     ],
+     "median_top5_ratings": 3579,
+     "weak_in_top5": 1,
+     "exact_title_in_top5": 5
+    },
+    {
+     "term": "jlpt",
+     "apps": [
+      {
+       "title": "Migii JLPT: JLPT test N5-N1",
+       "ratings": 514,
+       "stars": 4.52,
+       "released": "2019-05-15",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "JLPT N1-N5 Exam Practice",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2025-07-10",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "JLPT Japanese Vocabulary N1-N5",
+       "ratings": 1,
+       "stars": 5.0,
+       "released": "2026-06-12",
+       "updated": "2026-10-20"
+      },
+      {
+       "title": "Todaii: Learn Japanese N5-N1",
+       "ratings": 1564,
+       "stars": 4.7,
+       "released": "2016-04-29",
+       "updated": "2026-11-02"
+      },
+      {
+       "title": "JLPT Test with AI Sensei",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2020-03-01",
+       "updated": "2026-10-27"
+      },
+      {
+       "title": "JLPT Plus: Japanese Vocabulary",
+       "ratings": 45,
+       "stars": 4.71,
+       "released": "2025-10-22",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "JLPT test: N4 N3 N2 N1",
+       "ratings": 15,
+       "stars": 4.73,
+       "released": "2022-08-02",
+       "updated": "2025-09-26"
+      },
+      {
+       "title": "JLPT Test (N5-N1)",
+       "ratings": 11,
+       "stars": 4.0,
+       "released": "2018-09-16",
+       "updated": "2026-09-30"
+      },
+      {
+       "title": "Kanji Study - Learn Japanese!",
+       "ratings": 7316,
+       "stars": 4.74,
+       "released": "2016-02-20",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "JLPT : Japanese Test Practice",
+       "ratings": 136,
+       "stars": 4.33,
+       "released": "2021-04-28",
+       "updated": "2021-12-21"
+      }
+     ],
+     "median_top5_ratings": 1,
+     "weak_in_top5": 4,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "learn japanese",
+     "apps": [
+      {
+       "title": "Learn Japanese!! Kana & Kanji",
+       "ratings": 22638,
+       "stars": 4.76,
+       "released": "2015-07-10",
+       "updated": "2026-11-08"
+      },
+      {
+       "title": "Duolingo: Learn Languages",
+       "ratings": 5596977,
+       "stars": 4.72,
+       "released": "2012-11-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "MARU: Learn Japanese Hiragana",
+       "ratings": 18544,
+       "stars": 4.93,
+       "released": "2017-02-24",
+       "updated": "2024-08-02"
+      },
+      {
+       "title": "Teuida: Learn Languages",
+       "ratings": 59533,
+       "stars": 4.89,
+       "released": "2019-04-10",
+       "updated": "2026-11-14"
+      },
+      {
+       "title": "renshuu - Japanese learning",
+       "ratings": 1480,
+       "stars": 4.91,
+       "released": "2021-01-28",
+       "updated": "2026-10-23"
+      },
+      {
+       "title": "Learn Japanese - Phrasebook",
+       "ratings": 2016,
+       "stars": 4.66,
+       "released": "2011-07-15",
+       "updated": "2026-10-09"
+      },
+      {
+       "title": "LingoDeer - Learn Languages",
+       "ratings": 28158,
+       "stars": 4.74,
+       "released": "2017-09-26",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "iago - Learn Japanese",
+       "ratings": 2029,
+       "stars": 4.84,
+       "released": "2024-06-25",
+       "updated": "2026-09-01"
+      },
+      {
+       "title": "Kanji Study - Learn Japanese!",
+       "ratings": 7316,
+       "stars": 4.74,
+       "released": "2016-02-20",
+       "updated": "2026-11-10"
+      }
+     ],
+     "median_top5_ratings": 22638,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 2
+    }
+   ]
+  },
+  "One Good Find": {
+   "what": "One vetted handmade product a day",
+   "keywords": [
+    {
+     "keyword": "handmade gifts",
+     "volume": 60500,
+     "cpc": 1.02,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": -94
+    },
+    {
+     "keyword": "unique gifts",
+     "volume": 27100,
+     "cpc": 1.13,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -57
+    },
+    {
+     "keyword": "handmade gifts for christmas",
+     "volume": 14800,
+     "cpc": 0.23,
+     "competition": "HIGH",
+     "comp_index": 90,
+     "trend_12m_pct": -69
+    },
+    {
+     "keyword": "unique gifts for men",
+     "volume": 14800,
+     "cpc": 1.66,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -70
+    },
+    {
+     "keyword": "unique gifts for women",
+     "volume": 9900,
+     "cpc": 1.45,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -64
+    },
+    {
+     "keyword": "handmade gifts made easy",
+     "volume": 5400,
+     "cpc": 0.5,
+     "competition": "LOW",
+     "comp_index": 14,
+     "trend_12m_pct": -45
+    },
+    {
+     "keyword": "unique gifts for mom",
+     "volume": 3600,
+     "cpc": 1.75,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -81
+    },
+    {
+     "keyword": "handmade gifts for boyfriend",
+     "volume": 2400,
+     "cpc": 0.51,
+     "competition": "HIGH",
+     "comp_index": 68,
+     "trend_12m_pct": -58
+    },
+    {
+     "keyword": "unique gifts for female friends",
+     "volume": 2400,
+     "cpc": 1.11,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -7
+    },
+    {
+     "keyword": "unique gifts for adults",
+     "volume": 2400,
+     "cpc": 1.43,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -79
+    },
+    {
+     "keyword": "handmade gifts for friends",
+     "volume": 1900,
+     "cpc": 0.51,
+     "competition": "HIGH",
+     "comp_index": 83,
+     "trend_12m_pct": -59
+    },
+    {
+     "keyword": "unique gifts for 50th birthday man",
+     "volume": 1600,
+     "cpc": 1.52,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 20
+    },
+    {
+     "keyword": "unique gifts for 50th birthday woman",
+     "volume": 1600,
+     "cpc": 1.43,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 21
+    },
+    {
+     "keyword": "handmade gifts for men",
+     "volume": 1300,
+     "cpc": 0.28,
+     "competition": "HIGH",
+     "comp_index": 90,
+     "trend_12m_pct": -72
+    },
+    {
+     "keyword": "handmade gifts for girlfriend",
+     "volume": 720,
+     "cpc": 1.02,
+     "competition": "HIGH",
+     "comp_index": 86,
+     "trend_12m_pct": -52
+    },
+    {
+     "keyword": "handmade gifts near me",
+     "volume": 480,
+     "cpc": 0.7,
+     "competition": "MEDIUM",
+     "comp_index": 34,
+     "trend_12m_pct": -54
+    },
+    {
+     "keyword": "handmade products",
+     "volume": 320,
+     "cpc": 1.12,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": 6
+    },
+    {
+     "keyword": "small business gifts",
+     "volume": 210,
+     "cpc": 5.59,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -77
+    },
+    {
+     "keyword": "handmade products that sell well",
+     "volume": 70,
+     "cpc": 0.76,
+     "competition": "MEDIUM",
+     "comp_index": 45,
+     "trend_12m_pct": -30
+    },
+    {
+     "keyword": "handmade products to sell",
+     "volume": 50,
+     "cpc": 1.83,
+     "competition": "MEDIUM",
+     "comp_index": 37,
+     "trend_12m_pct": -7
+    },
+    {
+     "keyword": "handmade products website",
+     "volume": 40,
+     "cpc": 0.92,
+     "competition": "MEDIUM",
+     "comp_index": 42,
+     "trend_12m_pct": 625
+    },
+    {
+     "keyword": "small business gifts for clients",
+     "volume": 40,
+     "cpc": 2.82,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -56
+    },
+    {
+     "keyword": "handmade products list",
+     "volume": 30,
+     "cpc": 0.5,
+     "competition": "LOW",
+     "comp_index": 15,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "small business gifts near me",
+     "volume": 30,
+     "cpc": 6.24,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": -81
+    },
+    {
+     "keyword": "handmade products near me",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 21,
+     "trend_12m_pct": -40
+    },
+    {
+     "keyword": "handmade products business ideas",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "small business gifts for women",
+     "volume": 10,
+     "cpc": 1.82,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -73
+    },
+    {
+     "keyword": "small business gifts for men",
+     "volume": 10,
+     "cpc": 0.7,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "small business gifts for customers",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": -67
+    },
+    {
+     "keyword": "small business gifts uk",
+     "volume": 10,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "small business gifts for employees",
+     "volume": 10,
+     "cpc": 3.25,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "small business gifts for her",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -33
+    },
+    {
+     "keyword": "handmade gifts for best friend girl",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "handmade gifts for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "handmade products review",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "handmade products jobs",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "handmade products work from home",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "unique gifts for teenage girl",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "unique gifts for newborn baby boy",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "small business gifts for kids",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "handmade",
+     "apps": [
+      {
+       "title": "HandMade -crafts",
+       "ratings": 1,
+       "stars": 1.0,
+       "released": "2024-06-03",
+       "updated": "2024-06-08"
+      },
+      {
+       "title": "Etsy: Shop from Real People",
+       "ratings": 7387364,
+       "stars": 4.92,
+       "released": "2011-11-16",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Velor Handmade",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-09-25",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Handmade Story: DIY ASMR",
+       "ratings": 3242,
+       "stars": 4.77,
+       "released": "2024-10-18",
+       "updated": "2025-03-25"
+      },
+      {
+       "title": "Only Handmade",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2025-05-23",
+       "updated": "2026-05-13"
+      },
+      {
+       "title": "Poshmark: Shop & Sell Fashion",
+       "ratings": 1109265,
+       "stars": 4.8,
+       "released": "2011-10-13",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Handmade Naturals",
+       "ratings": 25,
+       "stars": 4.88,
+       "released": "2021-08-19",
+       "updated": "2023-06-08"
+      },
+      {
+       "title": "Handmade Inventory & Pricing",
+       "ratings": 2,
+       "stars": 4.0,
+       "released": "2021-02-15",
+       "updated": "2026-10-31"
+      },
+      {
+       "title": "CraftPrice: Handmade Pricing",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-08-06",
+       "updated": "2026-10-21"
+      }
+     ],
+     "median_top5_ratings": 1,
+     "weak_in_top5": 3,
+     "exact_title_in_top5": 4
+    },
+    {
+     "term": "gift ideas",
+     "apps": [
+      {
+       "title": "GoWish - Your Digital Wishlist",
+       "ratings": 238229,
+       "stars": 4.78,
+       "released": "2023-04-03",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Gift Suggester: AI Gift Ideas",
+       "ratings": 48,
+       "stars": 4.38,
+       "released": "2012-08-15",
+       "updated": "2026-11-01"
+      },
+      {
+       "title": "Givetti: Gift Ideas & Budget",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-11-04",
+       "updated": "2026-11-04"
+      },
+      {
+       "title": "hint: Gift Ideas & Lists",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-11-06",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Giftful - Wishlist & Registry",
+       "ratings": 117715,
+       "stars": 4.84,
+       "released": "2019-11-04",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "Ribbon - Gift Ideas",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-02-26",
+       "updated": "2026-10-22"
+      },
+      {
+       "title": "Gift Idea Tracker & Organizer",
+       "ratings": 21,
+       "stars": 4.86,
+       "released": "2024-02-12",
+       "updated": "2024-09-24"
+      },
+      {
+       "title": "GiftFinderAI - Gift Ideas",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2024-10-30",
+       "updated": "2024-11-24"
+      },
+      {
+       "title": "GiftPal: Perfect Gift Ideas",
+       "ratings": 2,
+       "stars": 5.0,
+       "released": "2025-02-18",
+       "updated": "2025-06-03"
+      },
+      {
+       "title": "Listful - Wishlist Maker",
+       "ratings": 31080,
+       "stars": 4.86,
+       "released": "2024-07-15",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 48,
+     "weak_in_top5": 3,
+     "exact_title_in_top5": 3
+    },
+    {
+     "term": "handmade gifts",
+     "apps": [
+      {
+       "title": "Souq Fann Handmade gifts",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2022-09-10",
+       "updated": "2026-08-26"
+      },
+      {
+       "title": "Printerval: Personalized Gifts",
+       "ratings": 3142,
+       "stars": 4.65,
+       "released": "2025-08-06",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "FreePrints Gifts \u2013 Fast & Easy",
+       "ratings": 73382,
+       "stars": 4.86,
+       "released": "2020-06-04",
+       "updated": "2026-10-27"
+      },
+      {
+       "title": "Momento Handmade Memories",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2023-06-25",
+       "updated": "2023-10-29"
+      },
+      {
+       "title": "Floward Online Flowers & Gifts",
+       "ratings": 39114,
+       "stars": 4.56,
+       "released": "2014-02-10",
+       "updated": "2026-11-15"
+      },
+      {
+       "title": "Personal Creations",
+       "ratings": 30941,
+       "stars": 4.87,
+       "released": "2023-09-07",
+       "updated": "2026-11-09"
+      },
+      {
+       "title": "DIY Gifts Project Ideas Free - Handmade Tutorials",
+       "ratings": 3,
+       "stars": 3.0,
+       "released": "2016-03-30",
+       "updated": "2017-09-08"
+      },
+      {
+       "title": "SOUFEEL - Personalized Gifts",
+       "ratings": 5074,
+       "stars": 4.66,
+       "released": "2018-04-07",
+       "updated": "2026-08-28"
+      },
+      {
+       "title": "Tedooo",
+       "ratings": 523,
+       "stars": 4.11,
+       "released": "2020-10-05",
+       "updated": "2026-10-11"
+      },
+      {
+       "title": "Zazzle: Custom Gifts & Cards",
+       "ratings": 53291,
+       "stars": 4.83,
+       "released": "2013-11-18",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 3142,
+     "weak_in_top5": 2,
+     "exact_title_in_top5": 1
+    }
+   ]
+  },
+  "Closetcast": {
+   "what": "AI stylist from your own closet",
+   "keywords": [
+    {
+     "keyword": "what to wear today",
+     "volume": 2900,
+     "cpc": 1.52,
+     "competition": "MEDIUM",
+     "comp_index": 55,
+     "trend_12m_pct": 107
+    },
+    {
+     "keyword": "what to wear today weather",
+     "volume": 1000,
+     "cpc": 1.34,
+     "competition": "LOW",
+     "comp_index": 9,
+     "trend_12m_pct": 123
+    },
+    {
+     "keyword": "ai stylist",
+     "volume": 880,
+     "cpc": 4.89,
+     "competition": "MEDIUM",
+     "comp_index": 43,
+     "trend_12m_pct": -17
+    },
+    {
+     "keyword": "closet app",
+     "volume": 880,
+     "cpc": 0.81,
+     "competition": "LOW",
+     "comp_index": 6,
+     "trend_12m_pct": -14
+    },
+    {
+     "keyword": "outfit app",
+     "volume": 590,
+     "cpc": 5.51,
+     "competition": "LOW",
+     "comp_index": 20,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "what to wear today nyc",
+     "volume": 390,
+     "cpc": 1.15,
+     "competition": "MEDIUM",
+     "comp_index": 66,
+     "trend_12m_pct": 230
+    },
+    {
+     "keyword": "ai stylist app",
+     "volume": 210,
+     "cpc": 5.68,
+     "competition": "LOW",
+     "comp_index": 32,
+     "trend_12m_pct": -45
+    },
+    {
+     "keyword": "ai stylist free",
+     "volume": 170,
+     "cpc": 4.02,
+     "competition": "MEDIUM",
+     "comp_index": 36,
+     "trend_12m_pct": -6
+    },
+    {
+     "keyword": "what to wear today based on weather",
+     "volume": 110,
+     "cpc": 0.71,
+     "competition": "LOW",
+     "comp_index": 13,
+     "trend_12m_pct": 1250
+    },
+    {
+     "keyword": "what to wear today women",
+     "volume": 110,
+     "cpc": 1.63,
+     "competition": "HIGH",
+     "comp_index": 97,
+     "trend_12m_pct": -12
+    },
+    {
+     "keyword": "outfit apps free",
+     "volume": 90,
+     "cpc": 3.33,
+     "competition": "LOW",
+     "comp_index": 30,
+     "trend_12m_pct": 39
+    },
+    {
+     "keyword": "what to wear today in chicago",
+     "volume": 90,
+     "cpc": 3.85,
+     "competition": "LOW",
+     "comp_index": 30,
+     "trend_12m_pct": 629
+    },
+    {
+     "keyword": "what to wear today men",
+     "volume": 70,
+     "cpc": 2,
+     "competition": "HIGH",
+     "comp_index": 85,
+     "trend_12m_pct": 12
+    },
+    {
+     "keyword": "closet app free",
+     "volume": 70,
+     "cpc": 0.88,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": 127
+    },
+    {
+     "keyword": "ai stylist for men",
+     "volume": 50,
+     "cpc": 7.61,
+     "competition": "MEDIUM",
+     "comp_index": 44,
+     "trend_12m_pct": -35
+    },
+    {
+     "keyword": "ai stylist app free",
+     "volume": 50,
+     "cpc": 4.59,
+     "competition": "MEDIUM",
+     "comp_index": 38,
+     "trend_12m_pct": 33
+    },
+    {
+     "keyword": "closet app for outfits",
+     "volume": 50,
+     "cpc": 0.32,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "ai stylist free online",
+     "volume": 40,
+     "cpc": 4.16,
+     "competition": "MEDIUM",
+     "comp_index": 57,
+     "trend_12m_pct": 100
+    },
+    {
+     "keyword": "outfit app for women",
+     "volume": 30,
+     "cpc": 26.08,
+     "competition": "MEDIUM",
+     "comp_index": 64,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "what to wear today to work",
+     "volume": 30,
+     "cpc": 0.99,
+     "competition": "HIGH",
+     "comp_index": 100,
+     "trend_12m_pct": 44
+    },
+    {
+     "keyword": "outfit app maker",
+     "volume": 20,
+     "cpc": 2.92,
+     "competition": "LOW",
+     "comp_index": 12,
+     "trend_12m_pct": 14
+    },
+    {
+     "keyword": "outfit app for men",
+     "volume": 20,
+     "cpc": 9.86,
+     "competition": "MEDIUM",
+     "comp_index": 41,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "what to wear today in philadelphia",
+     "volume": 20,
+     "cpc": null,
+     "competition": "MEDIUM",
+     "comp_index": 41,
+     "trend_12m_pct": 400
+    },
+    {
+     "keyword": "ai stylist for men free",
+     "volume": 10,
+     "cpc": null,
+     "competition": "MEDIUM",
+     "comp_index": 46,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "ai stylist prompt",
+     "volume": 10,
+     "cpc": 5.89,
+     "competition": "LOW",
+     "comp_index": 5,
+     "trend_12m_pct": 50
+    },
+    {
+     "keyword": "outfit apple picking",
+     "volume": 10,
+     "cpc": null,
+     "competition": "HIGH",
+     "comp_index": 76,
+     "trend_12m_pct": 150
+    },
+    {
+     "keyword": "outfit app closet",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 0,
+     "trend_12m_pct": -50
+    },
+    {
+     "keyword": "outfit apps for iphone",
+     "volume": 10,
+     "cpc": null,
+     "competition": "LOW",
+     "comp_index": 31,
+     "trend_12m_pct": 0
+    },
+    {
+     "keyword": "ai stylist reviews",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "outfit appropriate for a funeral",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "what to wear today for school",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    },
+    {
+     "keyword": "closet app without ai",
+     "volume": 0,
+     "cpc": null,
+     "competition": null,
+     "comp_index": null,
+     "trend_12m_pct": null
+    }
+   ],
+   "app_store": [
+    {
+     "term": "outfit planner",
+     "apps": [
+      {
+       "title": "Whering: Your Digital Closet",
+       "ratings": 12142,
+       "stars": 4.67,
+       "released": "2020-08-20",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Fits \u2013 Outfit Planner & Closet",
+       "ratings": 5842,
+       "stars": 4.59,
+       "released": "2023-05-15",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Alta Daily: Digital AI Closet",
+       "ratings": 19706,
+       "stars": 4.89,
+       "released": "2025-03-13",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Combyne - your perfect Outfit",
+       "ratings": 87869,
+       "stars": 4.76,
+       "released": "2016-02-04",
+       "updated": "2026-10-30"
+      },
+      {
+       "title": "Essembl: Outfit Planner",
+       "ratings": 4992,
+       "stars": 4.54,
+       "released": "2024-05-24",
+       "updated": "2026-11-05"
+      },
+      {
+       "title": "My Wardrobe - Outfit Planner",
+       "ratings": 646,
+       "stars": 4.12,
+       "released": "2019-06-11",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "Pureple: AI Outfit Planner",
+       "ratings": 6116,
+       "stars": 3.94,
+       "released": "2013-04-05",
+       "updated": "2026-11-10"
+      },
+      {
+       "title": "Indyx: Wardrobe & Outfit App",
+       "ratings": 1670,
+       "stars": 4.77,
+       "released": "2022-01-20",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "FitMe: Outfit Maker & Planner",
+       "ratings": 22,
+       "stars": 4.68,
+       "released": "2026-06-25",
+       "updated": "2026-11-12"
+      }
+     ],
+     "median_top5_ratings": 12142,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 2
+    },
+    {
+     "term": "ai stylist",
+     "apps": [
+      {
+       "title": "Alta Daily: Digital AI Closet",
+       "ratings": 19706,
+       "stars": 4.89,
+       "released": "2025-03-13",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Dressly: AI Outfit Maker",
+       "ratings": 33572,
+       "stars": 4.4,
+       "released": "2024-11-21",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Style DNA: AI Stylist & Closet",
+       "ratings": 7550,
+       "stars": 4.29,
+       "released": "2018-08-05",
+       "updated": "2026-11-16"
+      },
+      {
+       "title": "Fits \u2013 Outfit Planner & Closet",
+       "ratings": 5842,
+       "stars": 4.59,
+       "released": "2023-05-15",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "GRWM - AI Stylist",
+       "ratings": 1873,
+       "stars": 4.58,
+       "released": "2024-11-04",
+       "updated": "2026-08-16"
+      },
+      {
+       "title": "Mira \u2014 AI Personal Stylist",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-08-19",
+       "updated": "2026-08-19"
+      },
+      {
+       "title": "Hanger Management: AI Stylist",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-08-20",
+       "updated": "2026-08-20"
+      },
+      {
+       "title": "Slidez: AI Stylist & Try-On",
+       "ratings": 6,
+       "stars": 4.67,
+       "released": "2026-08-06",
+       "updated": "2026-09-22"
+      },
+      {
+       "title": "Whering: Your Digital Closet",
+       "ratings": 12142,
+       "stars": 4.67,
+       "released": "2020-08-20",
+       "updated": "2026-11-11"
+      }
+     ],
+     "median_top5_ratings": 7550,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 2
+    },
+    {
+     "term": "closet organizer",
+     "apps": [
+      {
+       "title": "Whering: Your Digital Closet",
+       "ratings": 12142,
+       "stars": 4.67,
+       "released": "2020-08-20",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Alta Daily: Digital AI Closet",
+       "ratings": 19706,
+       "stars": 4.89,
+       "released": "2025-03-13",
+       "updated": "2026-11-11"
+      },
+      {
+       "title": "Fits \u2013 Outfit Planner & Closet",
+       "ratings": 5842,
+       "stars": 4.59,
+       "released": "2023-05-15",
+       "updated": "2026-11-12"
+      },
+      {
+       "title": "Closet Organizer",
+       "ratings": 9354,
+       "stars": 4.67,
+       "released": "2022-05-24",
+       "updated": "2026-09-23"
+      },
+      {
+       "title": "Stylebook",
+       "ratings": 8888,
+       "stars": 4.68,
+       "released": "2009-10-29",
+       "updated": "2025-06-15"
+      },
+      {
+       "title": "Indyx: Wardrobe & Outfit App",
+       "ratings": 1670,
+       "stars": 4.77,
+       "released": "2022-01-20",
+       "updated": "2026-11-06"
+      },
+      {
+       "title": "SimpleCloset: Digital Wardrobe",
+       "ratings": 767,
+       "stars": 4.7,
+       "released": "2018-02-14",
+       "updated": "2026-10-29"
+      },
+      {
+       "title": "Capsuleco: Closet Organizer",
+       "ratings": 0,
+       "stars": 0.0,
+       "released": "2026-10-14",
+       "updated": "2026-10-14"
+      },
+      {
+       "title": "Acloset - AI Fashion Assistant",
+       "ratings": 5604,
+       "stars": 4.46,
+       "released": "2021-03-12",
+       "updated": "2026-11-13"
+      },
+      {
+       "title": "Closet Organizer - StyleHaven",
+       "ratings": 3,
+       "stars": 3.67,
+       "released": "2025-03-17",
+       "updated": "2026-10-22"
+      }
+     ],
+     "median_top5_ratings": 9354,
+     "weak_in_top5": 0,
+     "exact_title_in_top5": 1
+    }
+   ]
+  }
+ }
+}
