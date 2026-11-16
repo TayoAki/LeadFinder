@@ -44,14 +44,15 @@ COLOURS = ['Ivory / forest green', 'Ivory / navy', 'Chambray / cream', 'Black / 
 
 # 1,000 distinct designs: every theme gets a fair share, parts sampled without repeats.
 designs, seen = [], set()
-themes = list(THEMES)
+themes = list(THEMES); fails = {t: 0 for t in themes}; turn = 0
 while len(designs) < 1000:
-    t = themes[len(designs) % len(themes)]
+    live = [t for t in themes if fails[t] < 400] # a theme with few possible combinations (icon only) drops out once used up
+    t = live[turn % len(live)]; turn += 1
     text = random.choice(THEMES[t]['texts'])
     let, icon, size, col = random.choice(LETTERING), random.choice(ICONS), random.choice(SIZES), random.choice(COLOURS)
     if t == 'minimal_icon': let, size = 'none', 'small centred'; icon = icon if icon != 'none' else 'flag'
     key = (t, text, let, icon, size, col)
-    if key in seen: continue
+    if key in seen: fails[t] += 1; continue
     seen.add(key)
     designs.append(dict(id=f'D{len(designs)+1:04d}', theme=t, theme_label=THEMES[t]['label'], personalised=THEMES[t]['p'], text=text, lettering=let, icon=icon, size=size, colour=col))
 
@@ -121,7 +122,7 @@ def simulate(shares, n=N, seed=1):
 who, P, first = simulate(shares)
 mean_p = P.mean(0); fc = np.bincount(first, minlength=len(designs)) / N
 # bootstrap 95% intervals (resample shoppers)
-B = 200; bs_p = np.zeros((B, len(designs))); bs_fc = np.zeros((B, len(designs)))
+B = 100; bs_p = np.zeros((B, len(designs))); bs_fc = np.zeros((B, len(designs)))
 for b in range(B):
     idx = rng.integers(0, N, N); bs_p[b] = P[idx].mean(0); bs_fc[b] = np.bincount(first[idx], minlength=len(designs)) / N
 lo_p, hi_p = np.percentile(bs_p, [2.5, 97.5], 0); lo_fc, hi_fc = np.percentile(bs_fc, [2.5, 97.5], 0)
