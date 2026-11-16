@@ -37,7 +37,10 @@ export function chargeRivals(ws, db = getDb()) {
 export function usage(ws, db = getDb()) {
   chargeRivals(ws, db);
   const root = rootWorkspace(ws, db);
-  const plan = PLANS[root.plan] || PLANS.trial;
+  const base = PLANS[root.plan] || PLANS.trial;
+  // Per-account rival limit (e.g. our own agency account): KEEPWATCH_RIVAL_LIMITS="<root workspace id>:<limit>,…". Published plans are unchanged.
+  const override = Number((String(process.env.KEEPWATCH_RIVAL_LIMITS || '').split(',').map(p => p.split(':')).find(([id]) => Number(id) === root.id) || [])[1]) || 0;
+  const plan = override > base.rivals ? { ...base, rivals: override } : base;
   const [where, args] = windowSql(ws, db);
   const family = familyIds(ws, db);
   const spent = -db.prepare(`SELECT COALESCE(SUM(delta), 0) n FROM credit_ledger WHERE ${where}`).get(...args).n;

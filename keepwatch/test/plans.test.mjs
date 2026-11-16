@@ -52,3 +52,11 @@ test('brand-kit fetches refuse private and local addresses', () => {
   for (const bad of ['localhost:3000', '127.0.0.1', 'http://169.254.169.254/latest', 'intranet', 'ftp://x.com']) assert.equal(safeUrl(bad), null, bad);
   assert.equal(safeUrl('shop.example.com').hostname, 'shop.example.com');
 });
+
+test('a per-account rival limit override raises only that account', () => {
+  const ws = workspaceForUser('override-user', db);
+  const before = usage(ws, db).limits.rivals;
+  process.env.KEEPWATCH_RIVAL_LIMITS = `999999:500,${ws.id}:${before + 60}`;
+  try { assert.equal(usage(ws, db).limits.rivals, before + 60); } finally { delete process.env.KEEPWATCH_RIVAL_LIMITS; }
+  assert.equal(usage(ws, db).limits.rivals, before);
+});
