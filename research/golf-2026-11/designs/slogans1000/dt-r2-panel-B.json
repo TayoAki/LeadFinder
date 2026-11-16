@@ -73,7 +73,7 @@
   {
    "id": "B04",
    "segment": "hype streetwear",
-   "age": 24,
+   "age": 38,
    "gender": "male",
    "city": "Philadelphia, PA",
    "top3": [
@@ -121,7 +121,7 @@
   {
    "id": "B06",
    "segment": "hype streetwear",
-   "age": 28,
+   "age": 41,
    "gender": "female",
    "city": "Los Angeles, CA",
    "top3": [
@@ -218,7 +218,7 @@
   {
    "id": "B10",
    "segment": "hype streetwear",
-   "age": 25,
+   "age": 36,
    "gender": "male",
    "city": "London, UK",
    "top3": [
@@ -617,7 +617,7 @@
   {
    "id": "B26",
    "segment": "culture and heritage readers",
-   "age": 27,
+   "age": 37,
    "gender": "female",
    "city": "Oakland, CA",
    "top3": [],
@@ -665,7 +665,7 @@
   {
    "id": "B28",
    "segment": "culture and heritage readers",
-   "age": 24,
+   "age": 39,
    "gender": "male",
    "city": "Detroit, MI",
    "top3": [
@@ -896,7 +896,7 @@
   {
    "id": "B37",
    "segment": "workwear/heritage casual",
-   "age": 26,
+   "age": 44,
    "gender": "female",
    "city": "Denver, CO",
    "top3": [
@@ -972,7 +972,7 @@
   {
    "id": "B40",
    "segment": "workwear/heritage casual",
-   "age": 34,
+   "age": 47,
    "gender": "female",
    "city": "Seattle, WA",
    "top3": [
@@ -1024,7 +1024,7 @@
   {
    "id": "B42",
    "segment": "Korea/Japan-based fans",
-   "age": 24,
+   "age": 36,
    "gender": "female",
    "city": "Seoul, KR",
    "top3": [
