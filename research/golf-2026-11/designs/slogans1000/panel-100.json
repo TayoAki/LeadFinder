@@ -1,0 +1,4909 @@
+{
+ "label": "SIMULATED, not demand evidence",
+ "product": "Retro golf rope cap, Ivory, curved brim with rope braid, slogan small and centred in forest green; new unknown brand; $34; mid-November",
+ "shoppers": [
+  {
+   "id": "P001",
+   "segment": "trip_organiser",
+   "age": 27,
+   "shown": [
+    "S02",
+    "S35",
+    "S08",
+    "S26",
+    "S20",
+    "S38",
+    "S25",
+    "S23",
+    "S31",
+    "S01",
+    "S29",
+    "S07",
+    "S28",
+    "S37",
+    "S09"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "\"Is mid\" grammar is clunky and reads like a bot wrote it",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S38",
+    "S26",
+    "S29"
+   ],
+   "first_choice_reason": "Works for the whole crew regardless of handicap and reads as a dare, not a confession.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P002",
+   "segment": "trip_organiser",
+   "age": 29,
+   "shown": [
+    "S03",
+    "S10",
+    "S14",
+    "S32",
+    "S13",
+    "S27",
+    "S04",
+    "S11",
+    "S39",
+    "S21",
+    "S24",
+    "S36",
+    "S22",
+    "S19",
+    "S16"
+   ],
+   "first_choice": "S22",
+   "second_choice": "S10",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "\"For the culture\" isn't ours to borrow; whose culture?",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S16",
+    "S03",
+    "S36"
+   ],
+   "first_choice_reason": "I can picture the guy who shanks every trip wearing it; \"in 4K\" is the roast.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P003",
+   "segment": "trip_organiser",
+   "age": 31,
+   "shown": [
+    "S14",
+    "S04",
+    "S30",
+    "S18",
+    "S34",
+    "S40",
+    "S32",
+    "S33",
+    "S15",
+    "S17",
+    "S12",
+    "S06",
+    "S05",
+    "S35",
+    "S19"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S30",
+   "most_disliked": {
+    "code": "S18",
+    "reason": "Too cutesy for a mixed crew of twelve",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S14",
+    "S05",
+    "S32"
+   ],
+   "first_choice_reason": "Every trip has the OB-stake argument and \"Respectfully\" is how we actually start it.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P004",
+   "segment": "trip_organiser",
+   "age": 33,
+   "shown": [
+    "S06",
+    "S30",
+    "S01",
+    "S38",
+    "S15",
+    "S27",
+    "S34",
+    "S10",
+    "S23",
+    "S02",
+    "S11",
+    "S17",
+    "S07",
+    "S12",
+    "S39"
+   ],
+   "first_choice": "S10",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Feels like a brand cosplaying a culture",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S39",
+    "S38"
+   ],
+   "first_choice_reason": "It's a running bit on our trip: someone always \"didn't see\" the white stakes.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P005",
+   "segment": "trip_organiser",
+   "age": 30,
+   "shown": [
+    "S36",
+    "S16",
+    "S03",
+    "S21",
+    "S26",
+    "S13",
+    "S40",
+    "S22",
+    "S24",
+    "S05",
+    "S31",
+    "S28",
+    "S08",
+    "S33",
+    "S29"
+   ],
+   "first_choice": "S40",
+   "second_choice": "S22",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "A golf brand saying \"bussin'\" is borrowing slang it doesn't own",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S13",
+    "S05",
+    "S36"
+   ],
+   "first_choice_reason": "\"Touch grass\" flipped to \"touch tee box\" is exactly our group chat's humour about escaping our laptops.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P006",
+   "segment": "trip_organiser",
+   "age": 34,
+   "shown": [
+    "S18",
+    "S29",
+    "S16",
+    "S24",
+    "S03",
+    "S25",
+    "S37",
+    "S30",
+    "S20",
+    "S17",
+    "S21",
+    "S38",
+    "S02",
+    "S36",
+    "S09"
+   ],
+   "first_choice": "S30",
+   "second_choice": "S09",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Borrowed slang on a country-club hat, no",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S03",
+    "S24",
+    "S29"
+   ],
+   "first_choice_reason": "Everyone on a trip has made a double from the middle of the fairway; it's the most honest line here.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P007",
+   "segment": "trip_organiser",
+   "age": 36,
+   "shown": [
+    "S35",
+    "S32",
+    "S08",
+    "S22",
+    "S33",
+    "S12",
+    "S14",
+    "S19",
+    "S40",
+    "S05",
+    "S20",
+    "S37",
+    "S31",
+    "S34",
+    "S13"
+   ],
+   "first_choice": "S12",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "No idea what \"delulu\" means",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S14",
+    "S13",
+    "S05"
+   ],
+   "first_choice_reason": "Lip-outs are the shared pain of every trip, and \"cooked\" is what the younger guys in our crew say anyway.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P008",
+   "segment": "trip_organiser",
+   "age": 38,
+   "shown": [
+    "S07",
+    "S27",
+    "S04",
+    "S39",
+    "S10",
+    "S06",
+    "S28",
+    "S18",
+    "S09",
+    "S11",
+    "S23",
+    "S25",
+    "S26",
+    "S15",
+    "S01"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S39",
+    "reason": "TikTok phrasing that'll be dead by spring",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S39",
+    "S27",
+    "S26"
+   ],
+   "first_choice_reason": "Short, readable across the patio, and nobody on the trip can be offended by it.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P009",
+   "segment": "trip_organiser",
+   "age": 41,
+   "shown": [
+    "S01",
+    "S03",
+    "S35",
+    "S29",
+    "S08",
+    "S32",
+    "S24",
+    "S31",
+    "S18",
+    "S12",
+    "S28",
+    "S37",
+    "S23",
+    "S04",
+    "S25"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S03",
+    "reason": "\"Main character\" riff, already tired",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S03",
+    "S29",
+    "S24",
+    "S32"
+   ],
+   "first_choice_reason": "Sounds like a 1970s clubhouse rule, which suits a rope cap and our Ryder-Cup-style trip.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P010",
+   "segment": "trip_organiser",
+   "age": 44,
+   "shown": [
+    "S36",
+    "S21",
+    "S14",
+    "S02",
+    "S15",
+    "S05",
+    "S33",
+    "S39",
+    "S07",
+    "S11",
+    "S10",
+    "S13",
+    "S19",
+    "S34",
+    "S27"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S07",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Sounds like a brand putting on a voice",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S27",
+    "S14",
+    "S13",
+    "S02"
+   ],
+   "first_choice_reason": "Polite-but-pointed is our group's tone, and anyone who's argued a drop gets it.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P011",
+   "segment": "trip_organiser",
+   "age": 47,
+   "shown": [
+    "S09",
+    "S40",
+    "S12",
+    "S38",
+    "S27",
+    "S30",
+    "S28",
+    "S22",
+    "S29",
+    "S20",
+    "S17",
+    "S16",
+    "S03",
+    "S06",
+    "S26"
+   ],
+   "first_choice": "S28",
+   "second_choice": "S30",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Cringe on anyone over 25, and borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S27",
+    "S40",
+    "S38",
+    "S03"
+   ],
+   "first_choice_reason": "Everyone gets it in two seconds, including the non-golfers who join us for dinner.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P012",
+   "segment": "trip_organiser",
+   "age": 39,
+   "shown": [
+    "S18",
+    "S13",
+    "S23",
+    "S26",
+    "S24",
+    "S39",
+    "S36",
+    "S30",
+    "S21",
+    "S38",
+    "S34",
+    "S15",
+    "S32",
+    "S40",
+    "S17"
+   ],
+   "first_choice": "S32",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Grammar joke that isn't a joke",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S13",
+    "S26"
+   ],
+   "first_choice_reason": "A cap that says \"no cap\" is a pun worth explaining, and \"all carry\" is how my crew talks about drives.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P013",
+   "segment": "trip_organiser",
+   "age": 52,
+   "shown": [
+    "S09",
+    "S08",
+    "S19",
+    "S25",
+    "S35",
+    "S16",
+    "S07",
+    "S06",
+    "S01",
+    "S31",
+    "S10",
+    "S33",
+    "S11",
+    "S05",
+    "S14"
+   ],
+   "first_choice": "S35",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Couldn't tell you what it means",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S16",
+    "S05",
+    "S06"
+   ],
+   "first_choice_reason": "Plain English that reads like a sign at an old course; fine for a group of 20-handicaps.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P014",
+   "segment": "trip_organiser",
+   "age": 45,
+   "shown": [
+    "S29",
+    "S33",
+    "S07",
+    "S39",
+    "S04",
+    "S22",
+    "S37",
+    "S28",
+    "S30",
+    "S32",
+    "S06",
+    "S16",
+    "S02",
+    "S20",
+    "S21"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S02",
+    "reason": "\"Mid\" means nothing to me and feels juvenile",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S02",
+    "S16",
+    "S29",
+    "S39"
+   ],
+   "first_choice_reason": "Our captain's slice is legendary and \"in 4K\" lands even if you're not online much.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P015",
+   "segment": "gift_buyer",
+   "age": 24,
+   "shown": [
+    "S27",
+    "S38",
+    "S19",
+    "S12",
+    "S09",
+    "S31",
+    "S34",
+    "S02",
+    "S14",
+    "S40",
+    "S13",
+    "S08",
+    "S36",
+    "S20",
+    "S23"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Dad would ask what it means and I'd be embarrassed",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S13",
+    "S02",
+    "S38",
+    "S27"
+   ],
+   "first_choice_reason": "Dad would actually wear it and wouldn't need me to explain any slang.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P016",
+   "segment": "gift_buyer",
+   "age": 26,
+   "shown": [
+    "S25",
+    "S15",
+    "S03",
+    "S04",
+    "S35",
+    "S10",
+    "S18",
+    "S11",
+    "S26",
+    "S24",
+    "S05",
+    "S37",
+    "S22",
+    "S17",
+    "S01"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S15",
+   "most_disliked": {
+    "code": "S03",
+    "reason": "Tries to be a meme and misses",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S03",
+    "S26",
+    "S24",
+    "S05"
+   ],
+   "first_choice_reason": "He complains about his slice constantly, so the inside joke is built in.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P017",
+   "segment": "gift_buyer",
+   "age": 29,
+   "shown": [
+    "S17",
+    "S23",
+    "S26",
+    "S24",
+    "S40",
+    "S22",
+    "S15",
+    "S27",
+    "S37",
+    "S04",
+    "S28",
+    "S30",
+    "S14",
+    "S38",
+    "S02"
+   ],
+   "first_choice": "S15",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S30",
+    "reason": "I don't know what a \"double\" is",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S24",
+    "S38"
+   ],
+   "first_choice_reason": "I understand it without golfing and it's cheerful rather than mean.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P018",
+   "segment": "gift_buyer",
+   "age": 31,
+   "shown": [
+    "S16",
+    "S25",
+    "S07",
+    "S19",
+    "S08",
+    "S34",
+    "S20",
+    "S36",
+    "S35",
+    "S13",
+    "S39",
+    "S32",
+    "S33",
+    "S03",
+    "S31"
+   ],
+   "first_choice": "S07",
+   "second_choice": "S32",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "My brother would never wear borrowed slang like that",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S13",
+    "S03"
+   ],
+   "first_choice_reason": "He IS salty about his slice; it's teasing without being cringe.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P019",
+   "segment": "gift_buyer",
+   "age": 33,
+   "shown": [
+    "S05",
+    "S20",
+    "S34",
+    "S06",
+    "S12",
+    "S11",
+    "S21",
+    "S08",
+    "S10",
+    "S29",
+    "S01",
+    "S09",
+    "S18",
+    "S31",
+    "S15"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S15",
+   "most_disliked": {
+    "code": "S05",
+    "reason": "Genuinely couldn't work out what it means",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S05"
+   ],
+   "first_choice_reason": "It's a shrug, which is exactly his attitude to his scores.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P020",
+   "segment": "gift_buyer",
+   "age": 28,
+   "shown": [
+    "S17",
+    "S32",
+    "S26",
+    "S37",
+    "S11",
+    "S19",
+    "S09",
+    "S38",
+    "S16",
+    "S39",
+    "S13",
+    "S07",
+    "S24",
+    "S27",
+    "S03"
+   ],
+   "first_choice": "S11",
+   "second_choice": "S32",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Appropriative and a bit lazy",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S16",
+    "S24",
+    "S03"
+   ],
+   "first_choice_reason": "\"Behavior\" is how we already talk about each other, and it's short enough to look tidy embroidered.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P021",
+   "segment": "gift_buyer",
+   "age": 30,
+   "shown": [
+    "S36",
+    "S21",
+    "S10",
+    "S29",
+    "S02",
+    "S04",
+    "S23",
+    "S22",
+    "S05",
+    "S12",
+    "S33",
+    "S25",
+    "S01",
+    "S18",
+    "S06"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S29",
+    "reason": "Wouldn't land with a 60-year-old at all",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S02",
+    "S36"
+   ],
+   "first_choice_reason": "Safe for an older golfer, a bit vintage, and won't look like a gas-station-rack joke.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P022",
+   "segment": "gift_buyer",
+   "age": 38,
+   "shown": [
+    "S14",
+    "S39",
+    "S35",
+    "S20",
+    "S16",
+    "S30",
+    "S18",
+    "S13",
+    "S33",
+    "S01",
+    "S04",
+    "S10",
+    "S40",
+    "S28",
+    "S19"
+   ],
+   "first_choice": "S28",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Feels like a brand trying to sound young and borrowing to do it",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S14",
+    "S13",
+    "S39"
+   ],
+   "first_choice_reason": "Everyone knows \"plot twist\", so he and his friends will all get it.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P023",
+   "segment": "gift_buyer",
+   "age": 42,
+   "shown": [
+    "S27",
+    "S35",
+    "S09",
+    "S21",
+    "S25",
+    "S02",
+    "S05",
+    "S30",
+    "S29",
+    "S14",
+    "S40",
+    "S15",
+    "S24",
+    "S08",
+    "S28"
+   ],
+   "first_choice": "S15",
+   "second_choice": "S35",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "I don't want to buy into a brand appropriating a phrase",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S14",
+    "S29",
+    "S24",
+    "S02"
+   ],
+   "first_choice_reason": "It's the one I'd feel safe giving without googling what it means.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P024",
+   "segment": "gift_buyer",
+   "age": 45,
+   "shown": [
+    "S11",
+    "S31",
+    "S03",
+    "S36",
+    "S17",
+    "S26",
+    "S07",
+    "S34",
+    "S37",
+    "S38",
+    "S23",
+    "S32",
+    "S12",
+    "S06",
+    "S22"
+   ],
+   "first_choice": "S07",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "Grammar looks like a typo on a gift",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S38",
+    "S03",
+    "S36",
+    "S32"
+   ],
+   "first_choice_reason": "Everyone knows \"salty\" and what a slice is; nobody will be confused at the party.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P025",
+   "segment": "gift_buyer",
+   "age": 49,
+   "shown": [
+    "S22",
+    "S08",
+    "S11",
+    "S24",
+    "S06",
+    "S18",
+    "S32",
+    "S29",
+    "S10",
+    "S19",
+    "S35",
+    "S27",
+    "S07",
+    "S02",
+    "S04"
+   ],
+   "first_choice": "S32",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S06",
+    "reason": "Doesn't make sense as a sentence on a hat",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S24",
+    "S29"
+   ],
+   "first_choice_reason": "My son says \"no cap\" all the time and the hat pun made me laugh, so it feels personal.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P026",
+   "segment": "gift_buyer",
+   "age": 52,
+   "shown": [
+    "S21",
+    "S17",
+    "S16",
+    "S36",
+    "S03",
+    "S39",
+    "S38",
+    "S13",
+    "S26",
+    "S15",
+    "S23",
+    "S09",
+    "S05",
+    "S14",
+    "S34"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S15",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "Reads like bad grammar",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S13",
+    "S14",
+    "S03",
+    "S39"
+   ],
+   "first_choice_reason": "Sounds like proper golf etiquette, which fits a classic-looking cap.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P027",
+   "segment": "gift_buyer",
+   "age": 55,
+   "shown": [
+    "S40",
+    "S25",
+    "S17",
+    "S22",
+    "S07",
+    "S01",
+    "S33",
+    "S12",
+    "S24",
+    "S37",
+    "S20",
+    "S31",
+    "S28",
+    "S30",
+    "S13"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S40",
+    "reason": "Didn't get it at all",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S24",
+    "S13",
+    "S40"
+   ],
+   "first_choice_reason": "My husband says \"respectfully\" before arguing every ruling.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P028",
+   "segment": "gift_buyer",
+   "age": 58,
+   "shown": [
+    "S33",
+    "S26",
+    "S05",
+    "S06",
+    "S38",
+    "S20",
+    "S02",
+    "S15",
+    "S27",
+    "S29",
+    "S36",
+    "S37",
+    "S25",
+    "S32",
+    "S39"
+   ],
+   "first_choice": "S15",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Feels like the brand is imitating someone",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S27",
+    "S38",
+    "S02",
+    "S29"
+   ],
+   "first_choice_reason": "Warm and obvious; he'll get it and so will his golf friends.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P029",
+   "segment": "gift_buyer",
+   "age": 61,
+   "shown": [
+    "S08",
+    "S11",
+    "S28",
+    "S21",
+    "S31",
+    "S40",
+    "S01",
+    "S10",
+    "S03",
+    "S14",
+    "S30",
+    "S23",
+    "S19",
+    "S18",
+    "S35"
+   ],
+   "first_choice": "S35",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Not sure what it means, sounds silly",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S03",
+    "S40"
+   ],
+   "first_choice_reason": "Gentle and a bit old-fashioned, which is what I'd want to give.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P030",
+   "segment": "gift_buyer",
+   "age": 36,
+   "shown": [
+    "S09",
+    "S11",
+    "S33",
+    "S25",
+    "S29",
+    "S06",
+    "S12",
+    "S30",
+    "S24",
+    "S34",
+    "S04",
+    "S19",
+    "S20",
+    "S15",
+    "S16"
+   ],
+   "first_choice": "S12",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Trying way too hard to sound young",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S29",
+    "S24"
+   ],
+   "first_choice_reason": "My brother lips out everything; it's a real golf moment, not a generic joke.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P031",
+   "segment": "gift_buyer",
+   "age": 47,
+   "shown": [
+    "S02",
+    "S28",
+    "S35",
+    "S34",
+    "S14",
+    "S38",
+    "S17",
+    "S31",
+    "S07",
+    "S09",
+    "S16",
+    "S26",
+    "S22",
+    "S37",
+    "S39"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S39",
+    "reason": "Meme format, dated already",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S39",
+    "S16",
+    "S14",
+    "S38"
+   ],
+   "first_choice_reason": "Understated and a bit sympathetic; he can wear it to the pub, not just the course.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P032",
+   "segment": "gift_buyer",
+   "age": 64,
+   "shown": [
+    "S40",
+    "S13",
+    "S21",
+    "S36",
+    "S27",
+    "S05",
+    "S01",
+    "S12",
+    "S32",
+    "S03",
+    "S18",
+    "S10",
+    "S04",
+    "S08",
+    "S23"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S13",
+    "reason": "Not sure what it means on a hat",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S13",
+    "S36",
+    "S27",
+    "S32",
+    "S40"
+   ],
+   "first_choice_reason": "It made me laugh and I didn't need my son to translate it.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P033",
+   "segment": "golf_dad",
+   "age": 36,
+   "shown": [
+    "S21",
+    "S18",
+    "S36",
+    "S27",
+    "S32",
+    "S28",
+    "S08",
+    "S03",
+    "S30",
+    "S11",
+    "S04",
+    "S10",
+    "S02",
+    "S19",
+    "S37"
+   ],
+   "first_choice": "S30",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Golf brand claiming \"the culture\" is awkward",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S36",
+    "S03",
+    "S02",
+    "S32"
+   ],
+   "first_choice_reason": "A double from nowhere is the most golf thing ever, and my kids won't roll their eyes at it.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P034",
+   "segment": "golf_dad",
+   "age": 39,
+   "shown": [
+    "S26",
+    "S29",
+    "S34",
+    "S13",
+    "S22",
+    "S07",
+    "S12",
+    "S15",
+    "S05",
+    "S01",
+    "S39",
+    "S06",
+    "S35",
+    "S20",
+    "S38"
+   ],
+   "first_choice": "S22",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S39",
+    "reason": "My kids would say it's cringe coming from a dad",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S39",
+    "S13",
+    "S29",
+    "S38"
+   ],
+   "first_choice_reason": "A joke at my own expense, and I'm fine with that.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P035",
+   "segment": "golf_dad",
+   "age": 41,
+   "shown": [
+    "S26",
+    "S06",
+    "S17",
+    "S31",
+    "S35",
+    "S40",
+    "S09",
+    "S14",
+    "S34",
+    "S23",
+    "S16",
+    "S25",
+    "S36",
+    "S24",
+    "S33"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "A 41-year-old in that is trying to sound like his teenager",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S24",
+    "S14"
+   ],
+   "first_choice_reason": "Wearable anywhere and doesn't scream novelty; I'm a grown man buying a hat.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P036",
+   "segment": "golf_dad",
+   "age": 43,
+   "shown": [
+    "S11",
+    "S40",
+    "S32",
+    "S04",
+    "S09",
+    "S28",
+    "S03",
+    "S25",
+    "S10",
+    "S19",
+    "S29",
+    "S14",
+    "S33",
+    "S24",
+    "S17"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S10",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Meaningless to me",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S03",
+    "S29",
+    "S24",
+    "S40"
+   ],
+   "first_choice_reason": "I slice, everyone I play with knows I slice, and it's a decent laugh.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P037",
+   "segment": "golf_dad",
+   "age": 45,
+   "shown": [
+    "S01",
+    "S39",
+    "S12",
+    "S30",
+    "S08",
+    "S22",
+    "S16",
+    "S20",
+    "S37",
+    "S07",
+    "S21",
+    "S18",
+    "S13",
+    "S02",
+    "S38"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S30",
+   "most_disliked": {
+    "code": "S02",
+    "reason": "My 14-year-old would roast me for wearing \"mid\"",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S02",
+    "S38",
+    "S16",
+    "S13",
+    "S39"
+   ],
+   "first_choice_reason": "A defiant shrug is my whole approach to golf at this stage of life.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P038",
+   "segment": "golf_dad",
+   "age": 47,
+   "shown": [
+    "S15",
+    "S05",
+    "S13",
+    "S29",
+    "S31",
+    "S06",
+    "S19",
+    "S28",
+    "S18",
+    "S10",
+    "S27",
+    "S23",
+    "S08",
+    "S04",
+    "S17"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S05",
+    "reason": "Couldn't parse it",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S13",
+    "S29",
+    "S27",
+    "S05"
+   ],
+   "first_choice_reason": "Mulligans are a dad-golf institution and it reads classic on a rope hat.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P039",
+   "segment": "golf_dad",
+   "age": 49,
+   "shown": [
+    "S09",
+    "S25",
+    "S27",
+    "S24",
+    "S31",
+    "S38",
+    "S32",
+    "S20",
+    "S02",
+    "S15",
+    "S39",
+    "S23",
+    "S01",
+    "S36",
+    "S07"
+   ],
+   "first_choice": "S07",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Brand putting on a voice that isn't its own",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S27",
+    "S38",
+    "S24"
+   ],
+   "first_choice_reason": "I'm salty about my slice every weekend, so it's just true.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P040",
+   "segment": "golf_dad",
+   "age": 51,
+   "shown": [
+    "S35",
+    "S33",
+    "S34",
+    "S05",
+    "S11",
+    "S26",
+    "S37",
+    "S14",
+    "S40",
+    "S30",
+    "S22",
+    "S03",
+    "S12",
+    "S21",
+    "S16"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S35",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Not something I'd say or wear; borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S14",
+    "S03",
+    "S26"
+   ],
+   "first_choice_reason": "Dry and funny in a way that works in my Saturday fourball.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P041",
+   "segment": "golf_dad",
+   "age": 53,
+   "shown": [
+    "S23",
+    "S06",
+    "S15",
+    "S14",
+    "S18",
+    "S04",
+    "S28",
+    "S17",
+    "S36",
+    "S22",
+    "S01",
+    "S05",
+    "S30",
+    "S13",
+    "S09"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Sounds like imitation, not humour",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S13",
+    "S14",
+    "S18"
+   ],
+   "first_choice_reason": "No slang, just a bit of attitude about a bogey; that's every Saturday for me.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P042",
+   "segment": "golf_dad",
+   "age": 55,
+   "shown": [
+    "S25",
+    "S16",
+    "S12",
+    "S37",
+    "S39",
+    "S11",
+    "S40",
+    "S31",
+    "S27",
+    "S19",
+    "S24",
+    "S20",
+    "S03",
+    "S26",
+    "S32"
+   ],
+   "first_choice": "S19",
+   "second_choice": "S32",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Feels like it's using someone else's phrase to sell a hat",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S16",
+    "S39",
+    "S40",
+    "S24",
+    "S03"
+   ],
+   "first_choice_reason": "Most of these are written for my kids' generation; this is the one I could wear without explaining.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P043",
+   "segment": "golf_dad",
+   "age": 58,
+   "shown": [
+    "S11",
+    "S38",
+    "S33",
+    "S08",
+    "S35",
+    "S03",
+    "S04",
+    "S34",
+    "S02",
+    "S29",
+    "S07",
+    "S21",
+    "S18",
+    "S10",
+    "S37"
+   ],
+   "first_choice": "S35",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "Bad grammar dressed up as slang",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S38",
+    "S02",
+    "S29",
+    "S03"
+   ],
+   "first_choice_reason": "\"Mind your bogeys\" is something my own father would have said.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P044",
+   "segment": "golf_dad",
+   "age": 44,
+   "shown": [
+    "S01",
+    "S08",
+    "S40",
+    "S35",
+    "S24",
+    "S16",
+    "S25",
+    "S09",
+    "S38",
+    "S39",
+    "S28",
+    "S32",
+    "S14",
+    "S29",
+    "S31"
+   ],
+   "first_choice": "S40",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Means nothing to me",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S14",
+    "S16",
+    "S38"
+   ],
+   "first_choice_reason": "On Zoom all week; \"touch tee box\" is my Saturday plea, and my teenager taught me \"touch grass\".",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P045",
+   "segment": "style_retro",
+   "age": 24,
+   "shown": [
+    "S02",
+    "S10",
+    "S27",
+    "S30",
+    "S15",
+    "S05",
+    "S26",
+    "S36",
+    "S19",
+    "S33",
+    "S12",
+    "S06",
+    "S13",
+    "S20",
+    "S34"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S19",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Brand borrowing a culture to sell a $34 hat",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S36",
+    "S13",
+    "S02",
+    "S26",
+    "S05"
+   ],
+   "first_choice_reason": "The only one that sounds like a vintage club motto instead of a meme.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P046",
+   "segment": "style_retro",
+   "age": 26,
+   "shown": [
+    "S17",
+    "S19",
+    "S07",
+    "S14",
+    "S30",
+    "S01",
+    "S27",
+    "S23",
+    "S28",
+    "S21",
+    "S22",
+    "S02",
+    "S34",
+    "S35",
+    "S11"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Novelty merch at its worst",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S27",
+    "S02",
+    "S22",
+    "S28"
+   ],
+   "first_choice_reason": "Has that 70s country-club wink without being a punchline.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P047",
+   "segment": "style_retro",
+   "age": 27,
+   "shown": [
+    "S17",
+    "S03",
+    "S33",
+    "S37",
+    "S40",
+    "S08",
+    "S21",
+    "S04",
+    "S32",
+    "S16",
+    "S10",
+    "S13",
+    "S26",
+    "S18",
+    "S31"
+   ],
+   "first_choice": "S40",
+   "second_choice": "S17",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Borrowed slang, peak trying-too-hard",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S03",
+    "S13",
+    "S18",
+    "S32"
+   ],
+   "first_choice_reason": "Reads small and dry; people who get it get it, and it doesn't shout.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P048",
+   "segment": "style_retro",
+   "age": 28,
+   "shown": [
+    "S24",
+    "S20",
+    "S25",
+    "S06",
+    "S15",
+    "S22",
+    "S12",
+    "S39",
+    "S09",
+    "S36",
+    "S05",
+    "S23",
+    "S38",
+    "S07",
+    "S29"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S12",
+   "most_disliked": {
+    "code": "S15",
+    "reason": "Airport gift shop energy",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S24",
+    "S29",
+    "S39",
+    "S36",
+    "S38",
+    "S15"
+   ],
+   "first_choice_reason": "Only one with a heritage feel; everything else reads like a trend report.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P049",
+   "segment": "style_retro",
+   "age": 29,
+   "shown": [
+    "S17",
+    "S14",
+    "S04",
+    "S39",
+    "S35",
+    "S26",
+    "S16",
+    "S12",
+    "S33",
+    "S30",
+    "S11",
+    "S03",
+    "S25",
+    "S24",
+    "S34"
+   ],
+   "first_choice": "S11",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S03",
+    "reason": "Meme riff, will date in months",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S03",
+    "S16",
+    "S14",
+    "S39",
+    "S24",
+    "S26"
+   ],
+   "first_choice_reason": "Two words, small and centred, a bit of attitude without being a joke shirt.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P050",
+   "segment": "style_retro",
+   "age": 30,
+   "shown": [
+    "S13",
+    "S32",
+    "S23",
+    "S07",
+    "S01",
+    "S21",
+    "S36",
+    "S20",
+    "S38",
+    "S15",
+    "S22",
+    "S18",
+    "S40",
+    "S19",
+    "S29"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S18",
+    "reason": "Novelty, not something I'd put on a rope cap",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S18",
+    "S13",
+    "S36",
+    "S38",
+    "S29",
+    "S32"
+   ],
+   "first_choice_reason": "Old-school etiquette phrasing fits a rope cap; the rest feel like novelty merch.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P051",
+   "segment": "style_retro",
+   "age": 31,
+   "shown": [
+    "S30",
+    "S05",
+    "S12",
+    "S31",
+    "S13",
+    "S17",
+    "S37",
+    "S06",
+    "S09",
+    "S08",
+    "S10",
+    "S27",
+    "S28",
+    "S21",
+    "S02"
+   ],
+   "first_choice": "S30",
+   "second_choice": "S17",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Borrowing a culture to look edgy",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S13",
+    "S02",
+    "S05",
+    "S06"
+   ],
+   "first_choice_reason": "Dry, golf-literate humour; \"double\" only lands if you actually play.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P052",
+   "segment": "style_retro",
+   "age": 33,
+   "shown": [
+    "S15",
+    "S04",
+    "S20",
+    "S38",
+    "S33",
+    "S09",
+    "S02",
+    "S16",
+    "S24",
+    "S32",
+    "S22",
+    "S39",
+    "S06",
+    "S19",
+    "S08"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S19",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Borrowed slang, instant cringe",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S32",
+    "S39",
+    "S38",
+    "S02",
+    "S24"
+   ],
+   "first_choice_reason": "Polite, almost understated tone that matches the vintage look.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P053",
+   "segment": "style_retro",
+   "age": 34,
+   "shown": [
+    "S11",
+    "S36",
+    "S37",
+    "S40",
+    "S35",
+    "S26",
+    "S31",
+    "S07",
+    "S14",
+    "S28",
+    "S05",
+    "S03",
+    "S23",
+    "S27",
+    "S10"
+   ],
+   "first_choice": "S11",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Imitating a dialect to sell merch",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S27",
+    "S14",
+    "S03",
+    "S26"
+   ],
+   "first_choice_reason": "Short enough to look like a design detail rather than a joke, which is all I want from small embroidery.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P054",
+   "segment": "style_retro",
+   "age": 36,
+   "shown": [
+    "S29",
+    "S19",
+    "S35",
+    "S12",
+    "S22",
+    "S14",
+    "S02",
+    "S18",
+    "S30",
+    "S01",
+    "S25",
+    "S16",
+    "S08",
+    "S34",
+    "S36"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Borrowed and will age terribly",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S14",
+    "S29",
+    "S02",
+    "S18"
+   ],
+   "first_choice_reason": "Sounds like something an old pro would say, so it ages well.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P055",
+   "segment": "style_retro",
+   "age": 37,
+   "shown": [
+    "S01",
+    "S25",
+    "S18",
+    "S03",
+    "S27",
+    "S32",
+    "S15",
+    "S17",
+    "S06",
+    "S24",
+    "S40",
+    "S34",
+    "S05",
+    "S11",
+    "S21"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Brand borrowing a culture",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S32",
+    "S03",
+    "S24",
+    "S18"
+   ],
+   "first_choice_reason": "A bit of attitude but no slang, so it won't look dated next season.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P056",
+   "segment": "style_retro",
+   "age": 39,
+   "shown": [
+    "S20",
+    "S33",
+    "S09",
+    "S38",
+    "S10",
+    "S29",
+    "S28",
+    "S07",
+    "S26",
+    "S31",
+    "S04",
+    "S37",
+    "S13",
+    "S39",
+    "S23"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S13",
+    "reason": "Borrowed phrase, wrong context",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S13",
+    "S38",
+    "S39",
+    "S29",
+    "S26"
+   ],
+   "first_choice_reason": "The only one that would sit next to a Melin hat without embarrassment.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P057",
+   "segment": "style_retro",
+   "age": 41,
+   "shown": [
+    "S12",
+    "S29",
+    "S09",
+    "S40",
+    "S01",
+    "S33",
+    "S18",
+    "S21",
+    "S02",
+    "S04",
+    "S19",
+    "S10",
+    "S20",
+    "S07",
+    "S25"
+   ],
+   "first_choice": "S19",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S02",
+    "reason": "Slang that'll date before the hat fades",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S02",
+    "S29",
+    "S18",
+    "S12"
+   ],
+   "first_choice_reason": "Earnest and a little retro; I don't want my hat doing stand-up.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P058",
+   "segment": "style_retro",
+   "age": 38,
+   "shown": [
+    "S03",
+    "S34",
+    "S38",
+    "S35",
+    "S30",
+    "S15",
+    "S14",
+    "S27",
+    "S23",
+    "S16",
+    "S11",
+    "S24",
+    "S08",
+    "S05",
+    "S31"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S30",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "Peak novelty, wrong audience",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S16",
+    "S03",
+    "S27",
+    "S38",
+    "S24"
+   ],
+   "first_choice_reason": "Golfers nod at it, non-golfers think it's just a nice phrase; right level for a rope cap.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P059",
+   "segment": "muni",
+   "age": 23,
+   "shown": [
+    "S13",
+    "S31",
+    "S37",
+    "S39",
+    "S22",
+    "S06",
+    "S26",
+    "S05",
+    "S01",
+    "S30",
+    "S36",
+    "S03",
+    "S17",
+    "S28",
+    "S32"
+   ],
+   "first_choice": "S32",
+   "second_choice": "S22",
+   "most_disliked": {
+    "code": "S03",
+    "reason": "Forced meme",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S03",
+    "S36",
+    "S26"
+   ],
+   "first_choice_reason": "Clever because it's on a cap, and I actually talk like that.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P060",
+   "segment": "muni",
+   "age": 31,
+   "shown": [
+    "S29",
+    "S13",
+    "S08",
+    "S40",
+    "S35",
+    "S39",
+    "S18",
+    "S10",
+    "S15",
+    "S22",
+    "S16",
+    "S36",
+    "S34",
+    "S09",
+    "S17"
+   ],
+   "first_choice": "S10",
+   "second_choice": "S22",
+   "most_disliked": {
+    "code": "S18",
+    "reason": "Too cute for me",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S18",
+    "S13"
+   ],
+   "first_choice_reason": "Muni golf is half arguing about where the OB line is, so it's real.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P061",
+   "segment": "muni",
+   "age": 42,
+   "shown": [
+    "S06",
+    "S33",
+    "S25",
+    "S14",
+    "S26",
+    "S21",
+    "S19",
+    "S20",
+    "S12",
+    "S11",
+    "S24",
+    "S02",
+    "S04",
+    "S38",
+    "S07"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S12",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "Grammar is off and it's trying too hard",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S38",
+    "S14",
+    "S24",
+    "S02",
+    "S26"
+   ],
+   "first_choice_reason": "Plays to the actual muni experience: everyone slices, nobody hides it.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P062",
+   "segment": "muni",
+   "age": 48,
+   "shown": [
+    "S37",
+    "S23",
+    "S39",
+    "S32",
+    "S08",
+    "S31",
+    "S19",
+    "S10",
+    "S24",
+    "S28",
+    "S18",
+    "S35",
+    "S05",
+    "S27",
+    "S30"
+   ],
+   "first_choice": "S30",
+   "second_choice": "S10",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Feels like borrowing to look cool",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S39",
+    "S32",
+    "S24",
+    "S05"
+   ],
+   "first_choice_reason": "Double bogey is my normal score, so I'm wearing the truth.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P063",
+   "segment": "muni",
+   "age": 55,
+   "shown": [
+    "S26",
+    "S22",
+    "S16",
+    "S27",
+    "S25",
+    "S02",
+    "S07",
+    "S29",
+    "S28",
+    "S33",
+    "S09",
+    "S12",
+    "S03",
+    "S37",
+    "S32"
+   ],
+   "first_choice": "S07",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Don't know it, don't like it",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S27",
+    "S02",
+    "S29",
+    "S03",
+    "S26"
+   ],
+   "first_choice_reason": "Plain words, and every hacker at my course would laugh at it.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P064",
+   "segment": "muni",
+   "age": 61,
+   "shown": [
+    "S20",
+    "S13",
+    "S23",
+    "S06",
+    "S34",
+    "S21",
+    "S17",
+    "S40",
+    "S36",
+    "S11",
+    "S14",
+    "S38",
+    "S15",
+    "S01",
+    "S04"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S23",
+   "most_disliked": {
+    "code": "S14",
+    "reason": "What does that even mean",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S14",
+    "S13",
+    "S36",
+    "S38",
+    "S40"
+   ],
+   "first_choice_reason": "\"Tough bounce\" is what you say forty times a round on hard muni fairways.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P065",
+   "segment": "muni",
+   "age": 66,
+   "shown": [
+    "S10",
+    "S20",
+    "S06",
+    "S35",
+    "S31",
+    "S11",
+    "S03",
+    "S16",
+    "S39",
+    "S28",
+    "S18",
+    "S02",
+    "S27",
+    "S25",
+    "S13"
+   ],
+   "first_choice": "S35",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S02",
+    "reason": "What's \"mid\"?",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S02",
+    "S16",
+    "S13",
+    "S27",
+    "S39"
+   ],
+   "first_choice_reason": "Simple, and I understand every word of it.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P066",
+   "segment": "muni",
+   "age": 38,
+   "shown": [
+    "S04",
+    "S12",
+    "S19",
+    "S22",
+    "S21",
+    "S05",
+    "S07",
+    "S29",
+    "S36",
+    "S34",
+    "S17",
+    "S32",
+    "S26",
+    "S30",
+    "S09"
+   ],
+   "first_choice": "S12",
+   "second_choice": "S22",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Brand putting on a voice",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S29",
+    "S26",
+    "S05"
+   ],
+   "first_choice_reason": "Bumpy muni greens and lip-outs; that's my every Sunday.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P067",
+   "segment": "muni",
+   "age": 52,
+   "shown": [
+    "S37",
+    "S38",
+    "S29",
+    "S01",
+    "S40",
+    "S15",
+    "S14",
+    "S02",
+    "S33",
+    "S08",
+    "S36",
+    "S23",
+    "S24",
+    "S18",
+    "S22"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S22",
+   "most_disliked": {
+    "code": "S29",
+    "reason": "Means nothing to me, sounds silly",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S38",
+    "S14",
+    "S24",
+    "S02"
+   ],
+   "first_choice_reason": "Owning your bogey is the muni spirit and it's not trying to be cool.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P068",
+   "segment": "muni",
+   "age": 70,
+   "shown": [
+    "S27",
+    "S38",
+    "S31",
+    "S39",
+    "S17",
+    "S11",
+    "S06",
+    "S30",
+    "S10",
+    "S15",
+    "S25",
+    "S19",
+    "S16",
+    "S34",
+    "S23"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S34",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Not my language and shouldn't be the brand's",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S27",
+    "S38",
+    "S39",
+    "S11"
+   ],
+   "first_choice_reason": "Courteous, and it's what we used to say on the first tee.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P069",
+   "segment": "humour_sharer",
+   "age": 22,
+   "shown": [
+    "S26",
+    "S03",
+    "S14",
+    "S37",
+    "S28",
+    "S20",
+    "S07",
+    "S24",
+    "S40",
+    "S33",
+    "S04",
+    "S35",
+    "S01",
+    "S32",
+    "S12"
+   ],
+   "first_choice": "S40",
+   "second_choice": "S12",
+   "most_disliked": {
+    "code": "S35",
+    "reason": "Sounds like a dad's garage sign",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S03",
+    "S14",
+    "S26"
+   ],
+   "first_choice_reason": "I'd screenshot it and send it to the group chat instantly.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P070",
+   "segment": "humour_sharer",
+   "age": 23,
+   "shown": [
+    "S21",
+    "S28",
+    "S04",
+    "S06",
+    "S09",
+    "S03",
+    "S19",
+    "S33",
+    "S05",
+    "S27",
+    "S14",
+    "S08",
+    "S13",
+    "S22",
+    "S40"
+   ],
+   "first_choice": "S22",
+   "second_choice": "S14",
+   "most_disliked": {
+    "code": "S19",
+    "reason": "Boring, nothing to share",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S03",
+    "S13"
+   ],
+   "first_choice_reason": "It actually made me laugh; you can picture the replay.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P071",
+   "segment": "humour_sharer",
+   "age": 24,
+   "shown": [
+    "S15",
+    "S32",
+    "S01",
+    "S36",
+    "S34",
+    "S10",
+    "S20",
+    "S24",
+    "S31",
+    "S13",
+    "S38",
+    "S21",
+    "S30",
+    "S02",
+    "S18"
+   ],
+   "first_choice": "S24",
+   "second_choice": "S02",
+   "most_disliked": {
+    "code": "S15",
+    "reason": "Basic, my aunt would wear it",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S13",
+    "S18"
+   ],
+   "first_choice_reason": "Crashing out at the range after 40 balls is so real and it's how my friends talk.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P072",
+   "segment": "humour_sharer",
+   "age": 25,
+   "shown": [
+    "S25",
+    "S11",
+    "S35",
+    "S39",
+    "S08",
+    "S16",
+    "S29",
+    "S26",
+    "S37",
+    "S09",
+    "S07",
+    "S12",
+    "S23",
+    "S17",
+    "S05"
+   ],
+   "first_choice": "S12",
+   "second_choice": "S39",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "A brand saying \"bussin'\" is cringe and borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S05",
+    "S26",
+    "S39"
+   ],
+   "first_choice_reason": "Both golf and meme, and it's a feeling everyone's had.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P073",
+   "segment": "humour_sharer",
+   "age": 26,
+   "shown": [
+    "S40",
+    "S22",
+    "S29",
+    "S04",
+    "S24",
+    "S06",
+    "S31",
+    "S23",
+    "S30",
+    "S25",
+    "S16",
+    "S37",
+    "S08",
+    "S10",
+    "S21"
+   ],
+   "first_choice": "S29",
+   "second_choice": "S40",
+   "most_disliked": {
+    "code": "S23",
+    "reason": "Snooze, sounds like a rulebook",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S06",
+    "S31"
+   ],
+   "first_choice_reason": "Funny said out loud, and it'll get comments.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P074",
+   "segment": "humour_sharer",
+   "age": 27,
+   "shown": [
+    "S12",
+    "S15",
+    "S17",
+    "S35",
+    "S18",
+    "S39",
+    "S28",
+    "S26",
+    "S38",
+    "S36",
+    "S14",
+    "S07",
+    "S34",
+    "S03",
+    "S20"
+   ],
+   "first_choice": "S38",
+   "second_choice": "S14",
+   "most_disliked": {
+    "code": "S35",
+    "reason": "Dad-joke energy",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S03",
+    "S36",
+    "S18"
+   ],
+   "first_choice_reason": "A hot take on a hat is the funniest format; \"mulligans is mid\" starts an argument.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P075",
+   "segment": "humour_sharer",
+   "age": 28,
+   "shown": [
+    "S07",
+    "S01",
+    "S39",
+    "S05",
+    "S16",
+    "S33",
+    "S14",
+    "S32",
+    "S13",
+    "S20",
+    "S09",
+    "S11",
+    "S19",
+    "S27",
+    "S02"
+   ],
+   "first_choice": "S32",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Cringe when a brand says it",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S27",
+    "S13",
+    "S05"
+   ],
+   "first_choice_reason": "The cap pun is the best joke on the list and I'd buy it for that alone.",
+   "first_choice_theme": "clever wordplay"
+  },
+  {
+   "id": "P076",
+   "segment": "humour_sharer",
+   "age": 29,
+   "shown": [
+    "S19",
+    "S32",
+    "S36",
+    "S34",
+    "S22",
+    "S38",
+    "S37",
+    "S25",
+    "S31",
+    "S30",
+    "S06",
+    "S26",
+    "S02",
+    "S15",
+    "S40"
+   ],
+   "first_choice": "S22",
+   "second_choice": "S40",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Brand putting on a voice",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S06",
+    "S26",
+    "S02"
+   ],
+   "first_choice_reason": "Self-roast hats are the only funny golf merch, and shanks beat slices.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P077",
+   "segment": "humour_sharer",
+   "age": 30,
+   "shown": [
+    "S03",
+    "S09",
+    "S08",
+    "S01",
+    "S11",
+    "S23",
+    "S24",
+    "S10",
+    "S17",
+    "S29",
+    "S13",
+    "S28",
+    "S33",
+    "S12",
+    "S35"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S24",
+   "most_disliked": {
+    "code": "S03",
+    "reason": "Main-character jokes are over",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S03",
+    "S13",
+    "S29"
+   ],
+   "first_choice_reason": "\"Respectfully\" before a complaint is a whole internet genre and it fits golf perfectly.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P078",
+   "segment": "humour_sharer",
+   "age": 31,
+   "shown": [
+    "S38",
+    "S27",
+    "S04",
+    "S18",
+    "S05",
+    "S13",
+    "S40",
+    "S37",
+    "S29",
+    "S34",
+    "S21",
+    "S19",
+    "S01",
+    "S14",
+    "S24"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S14",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Borrowing a phrase from a culture the brand isn't part of",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S05",
+    "S13",
+    "S18"
+   ],
+   "first_choice_reason": "Visual and funny, and I don't need to golf well to wear it.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P079",
+   "segment": "humour_sharer",
+   "age": 32,
+   "shown": [
+    "S16",
+    "S09",
+    "S07",
+    "S31",
+    "S26",
+    "S03",
+    "S39",
+    "S21",
+    "S05",
+    "S04",
+    "S28",
+    "S30",
+    "S08",
+    "S23",
+    "S36"
+   ],
+   "first_choice": "S39",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S23",
+    "reason": "Boring",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S03",
+    "S26"
+   ],
+   "first_choice_reason": "It's the exact caption I'd put under a video of me shanking.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P080",
+   "segment": "humour_sharer",
+   "age": 33,
+   "shown": [
+    "S17",
+    "S11",
+    "S27",
+    "S35",
+    "S12",
+    "S33",
+    "S25",
+    "S18",
+    "S06",
+    "S22",
+    "S15",
+    "S10",
+    "S02",
+    "S32",
+    "S20"
+   ],
+   "first_choice": "S22",
+   "second_choice": "S32",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Appropriative, unfunny",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S06",
+    "S18"
+   ],
+   "first_choice_reason": "Brutal self-roast I'd wear to sim night as easily as to a course.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P081",
+   "segment": "humour_sharer",
+   "age": 34,
+   "shown": [
+    "S40",
+    "S36",
+    "S01",
+    "S24",
+    "S16",
+    "S30",
+    "S15",
+    "S10",
+    "S18",
+    "S20",
+    "S12",
+    "S06",
+    "S08",
+    "S14",
+    "S17"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S40",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Borrowed slang from a golf brand, oof",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S14",
+    "S24"
+   ],
+   "first_choice_reason": "The full stop then the question is the joke, and it works for people over 50 too.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P082",
+   "segment": "humour_sharer",
+   "age": 35,
+   "shown": [
+    "S34",
+    "S04",
+    "S25",
+    "S13",
+    "S23",
+    "S09",
+    "S37",
+    "S38",
+    "S31",
+    "S22",
+    "S33",
+    "S02",
+    "S27",
+    "S03",
+    "S35"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S13",
+    "reason": "\"It's giving\" is played out",
+    "theme": "meme slang that will date"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S13",
+    "S27",
+    "S03",
+    "S02",
+    "S38"
+   ],
+   "first_choice_reason": "\"In 4K\" is a phrase I still use, and a slice is funnier than it is sad.",
+   "first_choice_theme": "relatable self-roast"
+  },
+  {
+   "id": "P083",
+   "segment": "women_golfer",
+   "age": 24,
+   "shown": [
+    "S19",
+    "S36",
+    "S21",
+    "S28",
+    "S05",
+    "S40",
+    "S25",
+    "S32",
+    "S31",
+    "S29",
+    "S39",
+    "S07",
+    "S11",
+    "S26",
+    "S17"
+   ],
+   "first_choice": "S11",
+   "second_choice": "S40",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Feels like imitation",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S05",
+    "S26"
+   ],
+   "first_choice_reason": "Cute-tough, short, and works with a skirt or jeans.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P084",
+   "segment": "women_golfer",
+   "age": 27,
+   "shown": [
+    "S28",
+    "S26",
+    "S07",
+    "S03",
+    "S11",
+    "S20",
+    "S05",
+    "S21",
+    "S16",
+    "S32",
+    "S37",
+    "S15",
+    "S06",
+    "S34",
+    "S38"
+   ],
+   "first_choice": "S15",
+   "second_choice": "S03",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Cringe and borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S38",
+    "S05"
+   ],
+   "first_choice_reason": "Positive and a little playful, and I'd wear it to brunch after the round.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P085",
+   "segment": "women_golfer",
+   "age": 29,
+   "shown": [
+    "S39",
+    "S22",
+    "S29",
+    "S33",
+    "S10",
+    "S14",
+    "S30",
+    "S04",
+    "S08",
+    "S02",
+    "S13",
+    "S27",
+    "S35",
+    "S01",
+    "S23"
+   ],
+   "first_choice": "S14",
+   "second_choice": "S13",
+   "most_disliked": {
+    "code": "S35",
+    "reason": "Dad-joke energy",
+    "theme": "bland, nothing to share"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S29",
+    "S39"
+   ],
+   "first_choice_reason": "\"Delulu\" is my mindset over a 20-foot birdie putt and my golf friends will get it.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P086",
+   "segment": "women_golfer",
+   "age": 31,
+   "shown": [
+    "S12",
+    "S37",
+    "S36",
+    "S24",
+    "S09",
+    "S20",
+    "S18",
+    "S02",
+    "S06",
+    "S19",
+    "S30",
+    "S29",
+    "S23",
+    "S34",
+    "S26"
+   ],
+   "first_choice": "S18",
+   "second_choice": "S12",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Imitating a dialect",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S36",
+    "S24",
+    "S26"
+   ],
+   "first_choice_reason": "I'd buy two and give one to the friend I golf with every Thursday.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P087",
+   "segment": "women_golfer",
+   "age": 32,
+   "shown": [
+    "S32",
+    "S17",
+    "S13",
+    "S10",
+    "S09",
+    "S38",
+    "S03",
+    "S39",
+    "S11",
+    "S16",
+    "S15",
+    "S12",
+    "S31",
+    "S01",
+    "S35"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S13",
+   "most_disliked": {
+    "code": "S15",
+    "reason": "Feels like what a brand thinks women golfers want",
+    "theme": "too cute / novelty"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S03",
+    "S16",
+    "S15",
+    "S38"
+   ],
+   "first_choice_reason": "Confident and not pink-ified; I'd wear it in a mixed competition.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P088",
+   "segment": "women_golfer",
+   "age": 34,
+   "shown": [
+    "S33",
+    "S25",
+    "S14",
+    "S40",
+    "S18",
+    "S21",
+    "S08",
+    "S19",
+    "S24",
+    "S07",
+    "S28",
+    "S04",
+    "S22",
+    "S27",
+    "S05"
+   ],
+   "first_choice": "S33",
+   "second_choice": "S18",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Borrowing, and not funny",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S14",
+    "S05",
+    "S24"
+   ],
+   "first_choice_reason": "Polite and passive-aggressive at once, which is how my Tuesday league talks about rulings.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P089",
+   "segment": "women_golfer",
+   "age": 37,
+   "shown": [
+    "S09",
+    "S20",
+    "S35",
+    "S16",
+    "S19",
+    "S25",
+    "S15",
+    "S32",
+    "S18",
+    "S33",
+    "S34",
+    "S39",
+    "S37",
+    "S36",
+    "S02"
+   ],
+   "first_choice": "S34",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Trying too hard",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S39",
+    "S02",
+    "S18"
+   ],
+   "first_choice_reason": "Quiet and wearable to school pickup, no explaining needed.",
+   "first_choice_theme": "understated, wearable off course"
+  },
+  {
+   "id": "P090",
+   "segment": "women_golfer",
+   "age": 41,
+   "shown": [
+    "S08",
+    "S13",
+    "S29",
+    "S30",
+    "S01",
+    "S10",
+    "S26",
+    "S27",
+    "S38",
+    "S24",
+    "S04",
+    "S03",
+    "S40",
+    "S23",
+    "S31"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S13",
+   "most_disliked": {
+    "code": "S29",
+    "reason": "Sounds like a meltdown, not fun",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S24",
+    "S38",
+    "S27"
+   ],
+   "first_choice_reason": "Classic and a bit cheeky; suits a cream rope hat.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P091",
+   "segment": "women_golfer",
+   "age": 45,
+   "shown": [
+    "S12",
+    "S29",
+    "S05",
+    "S21",
+    "S20",
+    "S07",
+    "S40",
+    "S28",
+    "S17",
+    "S04",
+    "S14",
+    "S11",
+    "S06",
+    "S22",
+    "S35"
+   ],
+   "first_choice": "S28",
+   "second_choice": "S07",
+   "most_disliked": {
+    "code": "S06",
+    "reason": "Doesn't make sense",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S14",
+    "S06",
+    "S05"
+   ],
+   "first_choice_reason": "Everyone understands it and it's self-deprecating without being harsh.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P092",
+   "segment": "women_golfer",
+   "age": 39,
+   "shown": [
+    "S28",
+    "S22",
+    "S02",
+    "S06",
+    "S11",
+    "S25",
+    "S31",
+    "S26",
+    "S24",
+    "S15",
+    "S38",
+    "S01",
+    "S39",
+    "S16",
+    "S17"
+   ],
+   "first_choice": "S15",
+   "second_choice": "S01",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Cringe and borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S16",
+    "S38",
+    "S39",
+    "S26"
+   ],
+   "first_choice_reason": "Happy and simple; my group would all want one for our golf trip.",
+   "first_choice_theme": "safe, personal gift"
+  },
+  {
+   "id": "P093",
+   "segment": "league_captain",
+   "age": 41,
+   "shown": [
+    "S27",
+    "S13",
+    "S05",
+    "S36",
+    "S03",
+    "S21",
+    "S33",
+    "S34",
+    "S23",
+    "S37",
+    "S10",
+    "S18",
+    "S19",
+    "S14",
+    "S30"
+   ],
+   "first_choice": "S10",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Borrowing a culture, and leagues are mixed crowds",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S36",
+    "S03",
+    "S13",
+    "S14"
+   ],
+   "first_choice_reason": "I referee OB disputes every week, so the whole league would get it.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P094",
+   "segment": "league_captain",
+   "age": 48,
+   "shown": [
+    "S09",
+    "S18",
+    "S11",
+    "S12",
+    "S06",
+    "S05",
+    "S16",
+    "S32",
+    "S08",
+    "S07",
+    "S36",
+    "S24",
+    "S28",
+    "S30",
+    "S37"
+   ],
+   "first_choice": "S09",
+   "second_choice": "S28",
+   "most_disliked": {
+    "code": "S16",
+    "reason": "Not something I'd hand out at a league night",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S16",
+    "S36",
+    "S24",
+    "S05"
+   ],
+   "first_choice_reason": "Sounds like me at every league match when someone takes a sneaky drop.",
+   "first_choice_theme": "matches a running joke in their group"
+  },
+  {
+   "id": "P095",
+   "segment": "league_captain",
+   "age": 56,
+   "shown": [
+    "S19",
+    "S32",
+    "S35",
+    "S40",
+    "S01",
+    "S38",
+    "S34",
+    "S08",
+    "S03",
+    "S04",
+    "S13",
+    "S07",
+    "S10",
+    "S14",
+    "S02"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S07",
+   "most_disliked": {
+    "code": "S38",
+    "reason": "Bad grammar on purpose still looks like bad grammar",
+    "theme": "clunky / cringe phrasing"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S38",
+    "S02",
+    "S03",
+    "S13",
+    "S14"
+   ],
+   "first_choice_reason": "Fits every handicap in a 40-player league and nobody needs to google it.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P096",
+   "segment": "league_captain",
+   "age": 62,
+   "shown": [
+    "S09",
+    "S17",
+    "S15",
+    "S27",
+    "S20",
+    "S25",
+    "S26",
+    "S12",
+    "S39",
+    "S21",
+    "S22",
+    "S33",
+    "S23",
+    "S29",
+    "S31"
+   ],
+   "first_choice": "S23",
+   "second_choice": "S33",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Wrong for a mixed league; borrowed",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S27",
+    "S29",
+    "S39",
+    "S26"
+   ],
+   "first_choice_reason": "Good league-prize hat: traditional, a little wink, nothing to apologise for.",
+   "first_choice_theme": "classic/heritage tone fits a rope cap"
+  },
+  {
+   "id": "P097",
+   "segment": "beginner",
+   "age": 25,
+   "shown": [
+    "S04",
+    "S22",
+    "S21",
+    "S34",
+    "S05",
+    "S37",
+    "S11",
+    "S27",
+    "S14",
+    "S29",
+    "S24",
+    "S12",
+    "S16",
+    "S18",
+    "S15"
+   ],
+   "first_choice": "S24",
+   "second_choice": "S04",
+   "most_disliked": {
+    "code": "S27",
+    "reason": "Feels like borrowing",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": true,
+   "trying_too_hard": [
+    "S27",
+    "S16",
+    "S05"
+   ],
+   "first_choice_reason": "Six months in, and the range is where I crash out most.",
+   "first_choice_theme": "slang they actually use"
+  },
+  {
+   "id": "P098",
+   "segment": "beginner",
+   "age": 33,
+   "shown": [
+    "S10",
+    "S26",
+    "S19",
+    "S31",
+    "S20",
+    "S30",
+    "S13",
+    "S06",
+    "S02",
+    "S40",
+    "S23",
+    "S35",
+    "S01",
+    "S17",
+    "S03"
+   ],
+   "first_choice": "S01",
+   "second_choice": "S19",
+   "most_disliked": {
+    "code": "S30",
+    "reason": "Didn't know what a \"double\" was until I googled",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": true,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S13",
+    "S03",
+    "S26",
+    "S02"
+   ],
+   "first_choice_reason": "A bogey would be a good hole for me, so it feels like a flex.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P099",
+   "segment": "beginner",
+   "age": 44,
+   "shown": [
+    "S07",
+    "S08",
+    "S32",
+    "S39",
+    "S01",
+    "S09",
+    "S36",
+    "S14",
+    "S38",
+    "S25",
+    "S12",
+    "S27",
+    "S33",
+    "S23",
+    "S28"
+   ],
+   "first_choice": "S28",
+   "second_choice": "S07",
+   "most_disliked": {
+    "code": "S36",
+    "reason": "Feels like the brand is imitating someone",
+    "theme": "brand borrowing a culture/voice"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S36",
+    "S27",
+    "S14",
+    "S38"
+   ],
+   "first_choice_reason": "\"Plot twist: bogey\" makes me feel in on golf even as a beginner.",
+   "first_choice_theme": "understood by everyone, no slang"
+  },
+  {
+   "id": "P100",
+   "segment": "beginner",
+   "age": 51,
+   "shown": [
+    "S04",
+    "S09",
+    "S35",
+    "S10",
+    "S26",
+    "S21",
+    "S30",
+    "S06",
+    "S29",
+    "S33",
+    "S40",
+    "S28",
+    "S05",
+    "S25",
+    "S39"
+   ],
+   "first_choice": "S04",
+   "second_choice": "S35",
+   "most_disliked": {
+    "code": "S21",
+    "reason": "Confusing; is it saying don't shout fore?",
+    "theme": "confusing / needs explaining"
+   },
+   "would_buy_first_now": false,
+   "would_share_tag": false,
+   "trying_too_hard": [
+    "S29",
+    "S39",
+    "S26",
+    "S05"
+   ],
+   "first_choice_reason": "My slice was the first thing I learned about golf, and the joke's on me.",
+   "first_choice_theme": "relatable self-roast"
+  }
+ ],
+ "summary": {
+  "n_shoppers": 100,
+  "under_35": 45,
+  "each_saw": 15,
+  "buy_yes_total": 20,
+  "share_yes_total": 38,
+  "method": "Subsets drawn by seeded random sampling balanced on exposure; every reaction hand-written per shopper from the slogan text (no scoring script). Aggregation only is computed.",
+  "table": [
+   {
+    "code": "S01",
+    "slogan": "Bogey. What About It?",
+    "shown": 38,
+    "first": 12,
+    "second": 11,
+    "disliked": 0,
+    "first_rate": 0.316,
+    "first_plus_second_rate": 0.605,
+    "disliked_rate": 0.0,
+    "buy_yes": 3,
+    "share_yes": 2,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.294,
+    "over35_shown": 21,
+    "over35_first_rate": 0.333
+   },
+   {
+    "code": "S23",
+    "slogan": "Mind Your Mulligans",
+    "shown": 38,
+    "first": 12,
+    "second": 8,
+    "disliked": 2,
+    "first_rate": 0.316,
+    "first_plus_second_rate": 0.526,
+    "disliked_rate": 0.053,
+    "buy_yes": 3,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.312,
+    "over35_shown": 22,
+    "over35_first_rate": 0.318
+   },
+   {
+    "code": "S34",
+    "slogan": "Tough Bounce",
+    "shown": 37,
+    "first": 7,
+    "second": 6,
+    "disliked": 0,
+    "first_rate": 0.189,
+    "first_plus_second_rate": 0.351,
+    "disliked_rate": 0.0,
+    "buy_yes": 2,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 21,
+    "over35_first_rate": 0.286
+   },
+   {
+    "code": "S33",
+    "slogan": "Respectfully, That's OB",
+    "shown": 38,
+    "first": 7,
+    "second": 9,
+    "disliked": 0,
+    "first_rate": 0.184,
+    "first_plus_second_rate": 0.421,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 3,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 15,
+    "under35_first_rate": 0.267,
+    "over35_shown": 23,
+    "over35_first_rate": 0.13
+   },
+   {
+    "code": "S04",
+    "slogan": "Slice in 4K",
+    "shown": 38,
+    "first": 7,
+    "second": 8,
+    "disliked": 0,
+    "first_rate": 0.184,
+    "first_plus_second_rate": 0.395,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 4,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.125,
+    "over35_shown": 22,
+    "over35_first_rate": 0.227
+   },
+   {
+    "code": "S22",
+    "slogan": "Shank in 4K",
+    "shown": 37,
+    "first": 5,
+    "second": 5,
+    "disliked": 0,
+    "first_rate": 0.135,
+    "first_plus_second_rate": 0.27,
+    "disliked_rate": 0.0,
+    "buy_yes": 1,
+    "share_yes": 5,
+    "tth": 1,
+    "tth_rate": 0.027,
+    "under35_shown": 18,
+    "under35_first_rate": 0.222,
+    "over35_shown": 19,
+    "over35_first_rate": 0.053
+   },
+   {
+    "code": "S15",
+    "slogan": "Here for the Birdies",
+    "shown": 37,
+    "first": 5,
+    "second": 3,
+    "disliked": 3,
+    "first_rate": 0.135,
+    "first_plus_second_rate": 0.216,
+    "disliked_rate": 0.081,
+    "buy_yes": 4,
+    "share_yes": 2,
+    "tth": 2,
+    "tth_rate": 0.054,
+    "under35_shown": 18,
+    "under35_first_rate": 0.111,
+    "over35_shown": 19,
+    "over35_first_rate": 0.158
+   },
+   {
+    "code": "S07",
+    "slogan": "Salty About That Slice",
+    "shown": 37,
+    "first": 4,
+    "second": 4,
+    "disliked": 0,
+    "first_rate": 0.108,
+    "first_plus_second_rate": 0.216,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 21,
+    "over35_first_rate": 0.143
+   },
+   {
+    "code": "S32",
+    "slogan": "No Cap, All Carry",
+    "shown": 37,
+    "first": 4,
+    "second": 4,
+    "disliked": 0,
+    "first_rate": 0.108,
+    "first_plus_second_rate": 0.216,
+    "disliked_rate": 0.0,
+    "buy_yes": 3,
+    "share_yes": 3,
+    "tth": 10,
+    "tth_rate": 0.27,
+    "under35_shown": 16,
+    "under35_first_rate": 0.125,
+    "over35_shown": 21,
+    "over35_first_rate": 0.095
+   },
+   {
+    "code": "S11",
+    "slogan": "Bogey Behavior",
+    "shown": 37,
+    "first": 4,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.108,
+    "first_plus_second_rate": 0.108,
+    "disliked_rate": 0.0,
+    "buy_yes": 2,
+    "share_yes": 2,
+    "tth": 1,
+    "tth_rate": 0.027,
+    "under35_shown": 16,
+    "under35_first_rate": 0.25,
+    "over35_shown": 21,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S28",
+    "slogan": "Plot Twist: Bogey",
+    "shown": 38,
+    "first": 4,
+    "second": 7,
+    "disliked": 0,
+    "first_rate": 0.105,
+    "first_plus_second_rate": 0.289,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 1,
+    "tth_rate": 0.026,
+    "under35_shown": 15,
+    "under35_first_rate": 0.0,
+    "over35_shown": 23,
+    "over35_first_rate": 0.174
+   },
+   {
+    "code": "S12",
+    "slogan": "The Lip Cooked Me",
+    "shown": 38,
+    "first": 4,
+    "second": 4,
+    "disliked": 0,
+    "first_rate": 0.105,
+    "first_plus_second_rate": 0.211,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 4,
+    "tth": 1,
+    "tth_rate": 0.026,
+    "under35_shown": 18,
+    "under35_first_rate": 0.056,
+    "over35_shown": 20,
+    "over35_first_rate": 0.15
+   },
+   {
+    "code": "S40",
+    "slogan": "Touch Tee Box",
+    "shown": 38,
+    "first": 4,
+    "second": 4,
+    "disliked": 1,
+    "first_rate": 0.105,
+    "first_plus_second_rate": 0.211,
+    "disliked_rate": 0.026,
+    "buy_yes": 1,
+    "share_yes": 3,
+    "tth": 7,
+    "tth_rate": 0.184,
+    "under35_shown": 17,
+    "under35_first_rate": 0.176,
+    "over35_shown": 21,
+    "over35_first_rate": 0.048
+   },
+   {
+    "code": "S30",
+    "slogan": "Plot Twist: Double",
+    "shown": 38,
+    "first": 4,
+    "second": 4,
+    "disliked": 2,
+    "first_rate": 0.105,
+    "first_plus_second_rate": 0.211,
+    "disliked_rate": 0.053,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.118,
+    "over35_shown": 21,
+    "over35_first_rate": 0.095
+   },
+   {
+    "code": "S35",
+    "slogan": "Mind Your Bogeys",
+    "shown": 38,
+    "first": 4,
+    "second": 3,
+    "disliked": 3,
+    "first_rate": 0.105,
+    "first_plus_second_rate": 0.184,
+    "disliked_rate": 0.079,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.0,
+    "over35_shown": 22,
+    "over35_first_rate": 0.182
+   },
+   {
+    "code": "S10",
+    "slogan": "Who Said That's OB?",
+    "shown": 38,
+    "first": 3,
+    "second": 3,
+    "disliked": 0,
+    "first_rate": 0.079,
+    "first_plus_second_rate": 0.158,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 3,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 18,
+    "under35_first_rate": 0.111,
+    "over35_shown": 20,
+    "over35_first_rate": 0.05
+   },
+   {
+    "code": "S19",
+    "slogan": "Keep That Swing",
+    "shown": 37,
+    "first": 2,
+    "second": 3,
+    "disliked": 1,
+    "first_rate": 0.054,
+    "first_plus_second_rate": 0.135,
+    "disliked_rate": 0.027,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.1
+   },
+   {
+    "code": "S24",
+    "slogan": "Range Crashout",
+    "shown": 37,
+    "first": 2,
+    "second": 1,
+    "disliked": 0,
+    "first_rate": 0.054,
+    "first_plus_second_rate": 0.081,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 2,
+    "tth": 26,
+    "tth_rate": 0.703,
+    "under35_shown": 18,
+    "under35_first_rate": 0.111,
+    "over35_shown": 19,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S18",
+    "slogan": "Birdie Bestie",
+    "shown": 37,
+    "first": 1,
+    "second": 1,
+    "disliked": 3,
+    "first_rate": 0.027,
+    "first_plus_second_rate": 0.054,
+    "disliked_rate": 0.081,
+    "buy_yes": 0,
+    "share_yes": 1,
+    "tth": 12,
+    "tth_rate": 0.324,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 21,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S38",
+    "slogan": "Mulligans Is Mid",
+    "shown": 37,
+    "first": 1,
+    "second": 0,
+    "disliked": 6,
+    "first_rate": 0.027,
+    "first_plus_second_rate": 0.027,
+    "disliked_rate": 0.162,
+    "buy_yes": 0,
+    "share_yes": 1,
+    "tth": 29,
+    "tth_rate": 0.784,
+    "under35_shown": 15,
+    "under35_first_rate": 0.067,
+    "over35_shown": 22,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S14",
+    "slogan": "Delulu Birdie",
+    "shown": 38,
+    "first": 1,
+    "second": 3,
+    "disliked": 9,
+    "first_rate": 0.026,
+    "first_plus_second_rate": 0.105,
+    "disliked_rate": 0.237,
+    "buy_yes": 1,
+    "share_yes": 1,
+    "tth": 30,
+    "tth_rate": 0.789,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 22,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S09",
+    "slogan": "Hold Up. That's OB",
+    "shown": 38,
+    "first": 1,
+    "second": 1,
+    "disliked": 0,
+    "first_rate": 0.026,
+    "first_plus_second_rate": 0.053,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.0,
+    "over35_shown": 22,
+    "over35_first_rate": 0.045
+   },
+   {
+    "code": "S39",
+    "slogan": "Not Me Shanking",
+    "shown": 38,
+    "first": 1,
+    "second": 1,
+    "disliked": 3,
+    "first_rate": 0.026,
+    "first_plus_second_rate": 0.053,
+    "disliked_rate": 0.079,
+    "buy_yes": 0,
+    "share_yes": 1,
+    "tth": 22,
+    "tth_rate": 0.579,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 22,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S29",
+    "slogan": "Bogey Crashout",
+    "shown": 38,
+    "first": 1,
+    "second": 0,
+    "disliked": 3,
+    "first_rate": 0.026,
+    "first_plus_second_rate": 0.026,
+    "disliked_rate": 0.079,
+    "buy_yes": 0,
+    "share_yes": 1,
+    "tth": 28,
+    "tth_rate": 0.737,
+    "under35_shown": 16,
+    "under35_first_rate": 0.062,
+    "over35_shown": 22,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S13",
+    "slogan": "It's Giving Birdie",
+    "shown": 37,
+    "first": 0,
+    "second": 3,
+    "disliked": 3,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.081,
+    "disliked_rate": 0.081,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 31,
+    "tth_rate": 0.838,
+    "under35_shown": 19,
+    "under35_first_rate": 0.0,
+    "over35_shown": 18,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S17",
+    "slogan": "I Said Pin High",
+    "shown": 37,
+    "first": 0,
+    "second": 2,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.054,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 20,
+    "under35_first_rate": 0.0,
+    "over35_shown": 17,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S02",
+    "slogan": "Bogey Is Mid",
+    "shown": 37,
+    "first": 0,
+    "second": 1,
+    "disliked": 4,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.027,
+    "disliked_rate": 0.108,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 24,
+    "tth_rate": 0.649,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S03",
+    "slogan": "Main Birdie Energy",
+    "shown": 37,
+    "first": 0,
+    "second": 1,
+    "disliked": 5,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.027,
+    "disliked_rate": 0.135,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 32,
+    "tth_rate": 0.865,
+    "under35_shown": 18,
+    "under35_first_rate": 0.0,
+    "over35_shown": 19,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S08",
+    "slogan": "Fumbled the Putt",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S20",
+    "slogan": "Fumbled the Birdie",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 18,
+    "under35_first_rate": 0.0,
+    "over35_shown": 19,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S25",
+    "slogan": "I Said Fore",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 13,
+    "under35_first_rate": 0.0,
+    "over35_shown": 25,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S26",
+    "slogan": "Birdie Receipts",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 23,
+    "tth_rate": 0.605,
+    "under35_shown": 19,
+    "under35_first_rate": 0.0,
+    "over35_shown": 19,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S31",
+    "slogan": "You Pin High?",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 1,
+    "tth_rate": 0.027,
+    "under35_shown": 16,
+    "under35_first_rate": 0.0,
+    "over35_shown": 21,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S37",
+    "slogan": "Cooked by the Greens",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 0,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.0,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S21",
+    "slogan": "Who Said Fore?",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 1,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.026,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 0,
+    "tth_rate": 0.0,
+    "under35_shown": 18,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S05",
+    "slogan": "Couldn't Be Our Cart",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 2,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.053,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 21,
+    "tth_rate": 0.553,
+    "under35_shown": 19,
+    "under35_first_rate": 0.0,
+    "over35_shown": 19,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S06",
+    "slogan": "Bogey Side-Eye",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 2,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.053,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 6,
+    "tth_rate": 0.158,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 21,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S36",
+    "slogan": "Bogey Be Like That",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 11,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.297,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 34,
+    "tth_rate": 0.919,
+    "under35_shown": 19,
+    "under35_first_rate": 0.0,
+    "over35_shown": 18,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S27",
+    "slogan": "Putt for the Culture",
+    "shown": 38,
+    "first": 0,
+    "second": 0,
+    "disliked": 16,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.421,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 38,
+    "tth_rate": 1.0,
+    "under35_shown": 16,
+    "under35_first_rate": 0.0,
+    "over35_shown": 22,
+    "over35_first_rate": 0.0
+   },
+   {
+    "code": "S16",
+    "slogan": "Driver Bussin'",
+    "shown": 37,
+    "first": 0,
+    "second": 0,
+    "disliked": 20,
+    "first_rate": 0.0,
+    "first_plus_second_rate": 0.0,
+    "disliked_rate": 0.541,
+    "buy_yes": 0,
+    "share_yes": 0,
+    "tth": 37,
+    "tth_rate": 1.0,
+    "under35_shown": 17,
+    "under35_first_rate": 0.0,
+    "over35_shown": 20,
+    "over35_first_rate": 0.0
+   }
+  ],
+  "winner_per_segment": {
+   "trip_organiser": {
+    "n": 14,
+    "winner": "S01",
+    "slogan": "Bogey. What About It?",
+    "first_choices": 2,
+    "shown_in_segment": 5,
+    "rate": 0.4,
+    "runner_up": "S33",
+    "runner_up_first_choices": 2
+   },
+   "gift_buyer": {
+    "n": 18,
+    "winner": "S23",
+    "slogan": "Mind Your Mulligans",
+    "first_choices": 3,
+    "shown_in_segment": 7,
+    "rate": 0.429,
+    "runner_up": "S15",
+    "runner_up_first_choices": 3
+   },
+   "golf_dad": {
+    "n": 12,
+    "winner": "S01",
+    "slogan": "Bogey. What About It?",
+    "first_choices": 2,
+    "shown_in_segment": 5,
+    "rate": 0.4,
+    "runner_up": "S30",
+    "runner_up_first_choices": 1
+   },
+   "style_retro": {
+    "n": 14,
+    "winner": "S23",
+    "slogan": "Mind Your Mulligans",
+    "first_choices": 4,
+    "shown_in_segment": 6,
+    "rate": 0.667,
+    "runner_up": "S34",
+    "runner_up_first_choices": 3
+   },
+   "muni": {
+    "n": 10,
+    "winner": "S04",
+    "slogan": "Slice in 4K",
+    "first_choices": 1,
+    "shown_in_segment": 3,
+    "rate": 0.333,
+    "runner_up": "S07",
+    "runner_up_first_choices": 1
+   },
+   "humour_sharer": {
+    "n": 14,
+    "winner": "S22",
+    "slogan": "Shank in 4K",
+    "first_choices": 3,
+    "shown_in_segment": 5,
+    "rate": 0.6,
+    "runner_up": "S04",
+    "runner_up_first_choices": 2
+   },
+   "women_golfer": {
+    "n": 10,
+    "winner": "S15",
+    "slogan": "Here for the Birdies",
+    "first_choices": 2,
+    "shown_in_segment": 4,
+    "rate": 0.5,
+    "runner_up": "S14",
+    "runner_up_first_choices": 1
+   },
+   "league_captain": {
+    "n": 4,
+    "winner": "S01",
+    "slogan": "Bogey. What About It?",
+    "first_choices": 1,
+    "shown_in_segment": 1,
+    "rate": 1.0,
+    "runner_up": "S10",
+    "runner_up_first_choices": 1
+   },
+   "beginner": {
+    "n": 4,
+    "winner": "S24",
+    "slogan": "Range Crashout",
+    "first_choices": 1,
+    "shown_in_segment": 1,
+    "rate": 1.0,
+    "runner_up": "S01",
+    "runner_up_first_choices": 1
+   }
+  },
+  "top5_reasons": {
+   "S01": {
+    "slogan": "Bogey. What About It?",
+    "basis": "first-choice reasons",
+    "top_reasons": [
+     [
+      "understood by everyone, no slang",
+      10
+     ],
+     [
+      "safe, personal gift",
+      1
+     ]
+    ]
+   },
+   "S23": {
+    "slogan": "Mind Your Mulligans",
+    "basis": "first-choice reasons",
+    "top_reasons": [
+     [
+      "classic/heritage tone fits a rope cap",
+      10
+     ],
+     [
+      "safe, personal gift",
+      2
+     ]
+    ]
+   },
+   "S34": {
+    "slogan": "Tough Bounce",
+    "basis": "first-choice reasons",
+    "top_reasons": [
+     [
+      "understated, wearable off course",
+      5
+     ],
+     [
+      "classic/heritage tone fits a rope cap",
+      2
+     ]
+    ]
+   },
+   "S33": {
+    "slogan": "Respectfully, That's OB",
+    "basis": "first-choice reasons",
+    "top_reasons": [
+     [
+      "matches a running joke in their group",
+      4
+     ],
+     [
+      "safe, personal gift",
+      1
+     ]
+    ]
+   },
+   "S04": {
+    "slogan": "Slice in 4K",
+    "basis": "first-choice reasons",
+    "top_reasons": [
+     [
+      "relatable self-roast",
+      6
+     ],
+     [
+      "safe, personal gift",
+      1
+     ]
+    ]
+   }
+  },
+  "bottom5_reasons": {
+   "S05": {
+    "slogan": "Couldn't Be Our Cart",
+    "basis": "most-disliked reasons",
+    "top_reasons": [
+     [
+      "confusing / needs explaining",
+      2
+     ]
+    ]
+   },
+   "S06": {
+    "slogan": "Bogey Side-Eye",
+    "basis": "most-disliked reasons",
+    "top_reasons": [
+     [
+      "confusing / needs explaining",
+      2
+     ]
+    ]
+   },
+   "S36": {
+    "slogan": "Bogey Be Like That",
+    "basis": "most-disliked reasons",
+    "top_reasons": [
+     [
+      "brand borrowing a culture/voice",
+      11
+     ]
+    ]
+   },
+   "S27": {
+    "slogan": "Putt for the Culture",
+    "basis": "most-disliked reasons",
+    "top_reasons": [
+     [
+      "brand borrowing a culture/voice",
+      16
+     ]
+    ]
+   },
+   "S16": {
+    "slogan": "Driver Bussin'",
+    "basis": "most-disliked reasons",
+    "top_reasons": [
+     [
+      "brand borrowing a culture/voice",
+      20
+     ]
+    ]
+   }
+  }
+ }
+}
