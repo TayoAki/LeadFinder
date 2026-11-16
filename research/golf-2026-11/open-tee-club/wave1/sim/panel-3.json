@@ -182,12 +182,12 @@
    "post": "P01",
    "stop": 1,
    "finish": 1,
-   "save": 0,
+   "save": 1,
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "exactly what I needed before my first nine"
   },
   {
@@ -198,9 +198,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "good tips, the cap part is selling"
   },
   {
@@ -225,8 +225,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "cute idea for my golf girls"
   },
   {
@@ -303,8 +303,8 @@
    "share": 1,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "sending to the girls, we need these"
   },
   {
@@ -355,8 +355,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "kinda funny, hats not really me"
   },
   {
@@ -367,9 +367,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "useful-ish, then it turned into a hat ad"
   },
   {
@@ -562,9 +562,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "this is literally my Topgolf crew, but ad"
   },
   {
@@ -589,8 +589,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "gift bag goals honestly"
   },
   {
@@ -667,8 +667,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "group chat energy, love it"
   },
   {
@@ -731,9 +731,9 @@
    "save": 1,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "saving the dress code part, cap is cute"
   },
   {
@@ -771,8 +771,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "love this, my friends would do this"
   },
   {
@@ -783,9 +783,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "cute caps, clearly a brand though"
   },
   {
@@ -849,8 +849,8 @@
    "share": 0,
    "comment": 0,
    "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "need these for our group, where from"
   },
   {
@@ -900,9 +900,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "I'm the bogey one lol"
   },
   {
@@ -1082,9 +1082,9 @@
    "save": 0,
    "share": 1,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "sending to the girls, I'm slice in 4K"
   },
   {
@@ -1095,8 +1095,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "helpful, then a sales pitch at the end"
   },
@@ -1199,8 +1199,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "that's an ad"
   },
@@ -1290,8 +1290,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "real course tips cool, cap's kinda corny"
   },
@@ -1446,9 +1446,9 @@
    "save": 0,
    "share": 1,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "Slice in 4K is my boy Dre"
   },
   {
@@ -1511,8 +1511,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "ad"
   },
@@ -1628,8 +1628,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "hat ad dressed as a meme"
   },
@@ -1759,8 +1759,8 @@
    "share": 1,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "sending to my Topgolf girls"
   },
   {
@@ -1810,9 +1810,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "funny but it's selling hats"
   },
   {
@@ -2057,7 +2057,7 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
    "cap_interest": 0,
    "reason": "cream rope cap, every brand has one"
@@ -2213,8 +2213,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "names on caps, brand thing"
   },
@@ -2227,8 +2227,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "love when the girls get gifts"
   },
   {
@@ -2239,9 +2239,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "Fairway Friends Club is cute honestly"
   },
   {
@@ -2291,9 +2291,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "no minimums is nice, still an ad"
   },
   {
@@ -2305,8 +2305,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "this is the vibe, saving for our crew"
   },
   {
@@ -2369,8 +2369,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "basic, been done a million times"
   },
@@ -2538,8 +2538,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "slogan hats, seen it"
   },
@@ -2603,8 +2603,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "script on cream, too country club"
   },
@@ -2695,8 +2695,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "that black rope hat is clean"
   },
   {
@@ -2759,9 +2759,9 @@
    "save": 0,
    "share": 0,
    "comment": 1,
-   "profile": 3,
-   "ad": 3,
-   "cap_interest": 0,
+   "profile": 1,
+   "ad": 1,
+   "cap_interest": 3,
    "reason": "Range Day Girls Scottsdale is literally us"
   },
   {
@@ -2773,8 +2773,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "matching trip hats in gift bags, yes"
   },
   {
@@ -2785,9 +2785,9 @@
    "save": 1,
    "share": 1,
    "comment": 0,
-   "profile": 1,
-   "ad": 3,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 3,
    "reason": "sending to the trip chat right now"
   },
   {
@@ -2837,9 +2837,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 3,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 3,
    "reason": "everyone picks a colour, no chasing money"
   },
   {
@@ -2851,8 +2851,8 @@
    "share": 1,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "forwarding, this is our group chat exactly"
   },
   {
@@ -2902,9 +2902,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "cute but we want our trip name"
   },
   {
@@ -2967,9 +2967,9 @@
    "save": 0,
    "share": 1,
    "comment": 0,
-   "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 2,
    "reason": "Golf Trip Boys Bandon, that's us"
   },
   {
@@ -3019,9 +3019,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "no minimums matters, ad though"
   },
   {
@@ -3084,9 +3084,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "Kev is definitely the OB guy"
   },
   {
@@ -3123,9 +3123,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 2,
    "reason": "After Work Nine Club is literally us"
   },
   {
@@ -3149,9 +3149,9 @@
    "save": 0,
    "share": 1,
    "comment": 0,
-   "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 2,
    "reason": "sending to the after-work girls"
   },
   {
@@ -3200,10 +3200,10 @@
    "finish": 1,
    "save": 1,
    "share": 0,
-   "comment": 1,
+   "comment": 0,
    "profile": 1,
-   "ad": 3,
-   "cap_interest": 0,
+   "ad": 1,
+   "cap_interest": 3,
    "reason": "one link, everyone picks colour, finally"
   },
   {
@@ -3215,8 +3215,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "we need to do this"
   },
   {
@@ -3448,9 +3448,9 @@
    "save": 0,
    "share": 1,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "sending to the dads, we all fit"
   },
   {
@@ -3579,8 +3579,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "need to see it worn first"
   },
   {
@@ -3605,8 +3605,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "black rope hat would fit my fits"
   },
   {
@@ -3695,8 +3695,8 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 0,
+   "profile": 0,
+   "ad": 1,
    "cap_interest": 0,
    "reason": "novelty merch energy, no"
   },
@@ -3787,8 +3787,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "clean black cap, rest is cringe"
   },
   {
@@ -3825,9 +3825,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "ok helpful, cap's kind of cute"
   },
   {
@@ -3865,8 +3865,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "aesthetic gift bag idea"
   },
   {
@@ -3943,8 +3943,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 2,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 2,
    "reason": "matching caps in colours, saving this"
   },
   {
@@ -4059,9 +4059,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 2,
    "reason": "caps for the league maybe"
   },
   {
@@ -4112,8 +4112,8 @@
    "share": 0,
    "comment": 1,
    "profile": 1,
-   "ad": 3,
-   "cap_interest": 0,
+   "ad": 1,
+   "cap_interest": 3,
    "reason": "no minimums, finally, need league pricing"
   },
   {
@@ -4125,8 +4125,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "cute idea for my ladies"
   },
   {
@@ -4254,9 +4254,9 @@
    "save": 1,
    "share": 0,
    "comment": 0,
-   "profile": 1,
-   "ad": 2,
-   "cap_interest": 0,
+   "profile": 0,
+   "ad": 1,
+   "cap_interest": 2,
    "reason": "crew cap gift card is clever, saved"
   },
   {
@@ -4320,8 +4320,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "rangefinder or cap for him"
   },
   {
@@ -4333,8 +4333,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "tee time card idea, stealing it"
   },
   {
@@ -4435,10 +4435,10 @@
    "finish": 1,
    "save": 0,
    "share": 0,
-   "comment": 1,
+   "comment": 0,
    "profile": 1,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 2,
    "reason": "gift card so he picks, perfect"
   },
   {
@@ -4502,8 +4502,8 @@
    "share": 0,
    "comment": 0,
    "profile": 0,
-   "ad": 1,
-   "cap_interest": 0,
+   "ad": 0,
+   "cap_interest": 1,
    "reason": "putting set or cap, hmm"
   },
   {
@@ -4618,9 +4618,9 @@
    "save": 0,
    "share": 0,
    "comment": 0,
-   "profile": 1,
+   "profile": 0,
    "ad": 1,
-   "cap_interest": 0,
+   "cap_interest": 1,
    "reason": "first lesson idea is good, cap too"
   },
   {

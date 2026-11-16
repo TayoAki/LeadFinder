@@ -1,0 +1,991 @@
+{
+ "note": "SIMULATED, not demand evidence",
+ "n_personas": 100,
+ "posts": {
+  "A": {
+   "label": "v1-1 crew hat ideas",
+   "stop": [
+    0.37,
+    0.29,
+    0.45
+   ],
+   "finish": [
+    0.21,
+    0.15,
+    0.27
+   ],
+   "save": [
+    0.07,
+    0.03,
+    0.11
+   ],
+   "share": [
+    0.08,
+    0.04,
+    0.12
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.13,
+    0.08,
+    0.19
+   ],
+   "ad": [
+    0.4,
+    0.31,
+    0.5
+   ],
+   "cap_interest": [
+    0.3,
+    0.2,
+    0.4
+   ],
+   "save_A": 0.08,
+   "save_B": 0.06
+  },
+  "B": {
+   "label": "v1-2 gifts",
+   "stop": [
+    0.17,
+    0.11,
+    0.23
+   ],
+   "finish": [
+    0.12,
+    0.07,
+    0.17
+   ],
+   "save": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "profile": [
+    0.03,
+    0.0,
+    0.06
+   ],
+   "ad": [
+    0.14,
+    0.08,
+    0.2
+   ],
+   "cap_interest": [
+    0.17,
+    0.08,
+    0.27
+   ],
+   "save_A": 0.06,
+   "save_B": 0.02
+  },
+  "C": {
+   "label": "v1-3 topgolf tips",
+   "stop": [
+    0.26,
+    0.19,
+    0.33
+   ],
+   "finish": [
+    0.16,
+    0.1,
+    0.22
+   ],
+   "save": [
+    0.04,
+    0.01,
+    0.07
+   ],
+   "share": [
+    0.03,
+    0.01,
+    0.06
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.04,
+    0.01,
+    0.07
+   ],
+   "ad": [
+    0.17,
+    0.11,
+    0.23
+   ],
+   "cap_interest": [
+    0.16,
+    0.09,
+    0.24
+   ],
+   "save_A": 0.02,
+   "save_B": 0.06
+  },
+  "D": {
+   "label": "v1-4 every golf group",
+   "stop": [
+    0.42,
+    0.34,
+    0.5
+   ],
+   "finish": [
+    0.18,
+    0.12,
+    0.24
+   ],
+   "save": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "share": [
+    0.05,
+    0.02,
+    0.09
+   ],
+   "comment": [
+    0.02,
+    0.0,
+    0.04
+   ],
+   "profile": [
+    0.09,
+    0.05,
+    0.14
+   ],
+   "ad": [
+    0.28,
+    0.21,
+    0.35
+   ],
+   "cap_interest": [
+    0.17,
+    0.11,
+    0.23
+   ],
+   "save_A": 0.0,
+   "save_B": 0.0
+  },
+  "E": {
+   "label": "v1-5 blank to crew cap",
+   "stop": [
+    0.24,
+    0.17,
+    0.31
+   ],
+   "finish": [
+    0.1,
+    0.05,
+    0.15
+   ],
+   "save": [
+    0.04,
+    0.01,
+    0.07
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.03,
+    0.01,
+    0.06
+   ],
+   "profile": [
+    0.08,
+    0.04,
+    0.13
+   ],
+   "ad": [
+    0.41,
+    0.31,
+    0.51
+   ],
+   "cap_interest": [
+    0.24,
+    0.15,
+    0.33
+   ],
+   "save_A": 0.02,
+   "save_B": 0.06
+  },
+  "F": {
+   "label": "v1-6 what to wear",
+   "stop": [
+    0.32,
+    0.24,
+    0.4
+   ],
+   "finish": [
+    0.17,
+    0.11,
+    0.23
+   ],
+   "save": [
+    0.05,
+    0.02,
+    0.09
+   ],
+   "share": [
+    0.02,
+    0.0,
+    0.05
+   ],
+   "comment": [
+    0.02,
+    0.0,
+    0.04
+   ],
+   "profile": [
+    0.05,
+    0.02,
+    0.09
+   ],
+   "ad": [
+    0.24,
+    0.17,
+    0.31
+   ],
+   "cap_interest": [
+    0.15,
+    0.09,
+    0.22
+   ],
+   "save_A": 0.08,
+   "save_B": 0.02
+  },
+  "G": {
+   "label": "v1-7 we mocked up your crews",
+   "stop": [
+    0.2,
+    0.13,
+    0.26
+   ],
+   "finish": [
+    0.08,
+    0.04,
+    0.12
+   ],
+   "save": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.02,
+    0.0,
+    0.04
+   ],
+   "profile": [
+    0.05,
+    0.01,
+    0.11
+   ],
+   "ad": [
+    0.26,
+    0.18,
+    0.35
+   ],
+   "cap_interest": [
+    0.16,
+    0.09,
+    0.24
+   ],
+   "save_A": 0.0,
+   "save_B": 0.0
+  },
+  "H": {
+   "label": "v2-1 gift grid",
+   "stop": [
+    0.26,
+    0.19,
+    0.33
+   ],
+   "finish": [
+    0.18,
+    0.12,
+    0.25
+   ],
+   "save": [
+    0.07,
+    0.03,
+    0.11
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ad": [
+    0.08,
+    0.04,
+    0.13
+   ],
+   "cap_interest": [
+    0.19,
+    0.12,
+    0.27
+   ],
+   "save_A": 0.12,
+   "save_B": 0.02
+  },
+  "I": {
+   "label": "v2-3 tips",
+   "stop": [
+    0.3,
+    0.23,
+    0.38
+   ],
+   "finish": [
+    0.2,
+    0.14,
+    0.27
+   ],
+   "save": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "profile": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ad": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cap_interest": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "save_A": 0.04,
+   "save_B": 0.04
+  },
+  "J": {
+   "label": "v2-4 matching caps (shot list)",
+   "stop": [
+    0.48,
+    0.4,
+    0.56
+   ],
+   "finish": [
+    0.27,
+    0.2,
+    0.34
+   ],
+   "save": [
+    0.05,
+    0.02,
+    0.09
+   ],
+   "share": [
+    0.07,
+    0.03,
+    0.12
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "ad": [
+    0.16,
+    0.09,
+    0.25
+   ],
+   "cap_interest": [
+    0.37,
+    0.26,
+    0.49
+   ],
+   "save_A": 0.04,
+   "save_B": 0.06
+  },
+  "K": {
+   "label": "v2-5 trip haul (shot list)",
+   "stop": [
+    0.37,
+    0.29,
+    0.45
+   ],
+   "finish": [
+    0.24,
+    0.17,
+    0.31
+   ],
+   "save": [
+    0.02,
+    0.0,
+    0.04
+   ],
+   "share": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "ad": [
+    0.08,
+    0.03,
+    0.13
+   ],
+   "cap_interest": [
+    0.2,
+    0.12,
+    0.27
+   ],
+   "save_A": 0.02,
+   "save_B": 0.02
+  },
+  "L": {
+   "label": "REAL R6 gift grid (30 saves/1k)",
+   "stop": [
+    0.23,
+    0.16,
+    0.3
+   ],
+   "finish": [
+    0.03,
+    0.0,
+    0.06
+   ],
+   "save": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ad": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "cap_interest": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "save_A": 0.02,
+   "save_B": 0.0
+  },
+  "M": {
+   "label": "REAL R9 tips (39.5 saves/1k)",
+   "stop": [
+    0.29,
+    0.21,
+    0.37
+   ],
+   "finish": [
+    0.16,
+    0.1,
+    0.22
+   ],
+   "save": [
+    0.03,
+    0.0,
+    0.06
+   ],
+   "share": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ad": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "cap_interest": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "save_A": 0.04,
+   "save_B": 0.02
+  },
+  "N": {
+   "label": "REAL R4 haul (34.8 saves/1k)",
+   "stop": [
+    0.27,
+    0.2,
+    0.35
+   ],
+   "finish": [
+    0.11,
+    0.06,
+    0.17
+   ],
+   "save": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "share": [
+    0.01,
+    0.0,
+    0.03
+   ],
+   "comment": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "profile": [
+    0.0,
+    0.0,
+    0.0
+   ],
+   "ad": [
+    0.04,
+    0.01,
+    0.08
+   ],
+   "cap_interest": [
+    0.1,
+    0.05,
+    0.15
+   ],
+   "save_A": 0.0,
+   "save_B": 0.02
+  }
+ },
+ "save_by_segment": {
+  "A": {
+   "crew organiser": 0.5,
+   "crew_organiser": 0.33,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.11,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.33,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "B": {
+   "crew organiser": 0.12,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.33,
+   "gift buyer for new golfer": 0.33,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "C": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.17,
+   "new women golfer": 0.0,
+   "new_women": 0.4,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.2,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "D": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "E": {
+   "crew organiser": 0.12,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.33,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 1.0,
+   "women's league leader": 0.5
+  },
+  "F": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.33,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.17,
+   "new women golfer": 0.17,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "G": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "H": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.5,
+   "gift_buyer": 0.33,
+   "league_leader": 0.0,
+   "new woman golfer": 0.33,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.5
+  },
+  "I": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.25,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.08,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "J": {
+   "crew organiser": 0.12,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.08,
+   "fashion-first golf-adjacent": 0.11,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.25,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.33,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "K": {
+   "crew organiser": 0.12,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.08,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "L": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.17,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "M": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.0,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.17,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.08,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  },
+  "N": {
+   "crew organiser": 0.0,
+   "crew_organiser": 0.0,
+   "culture": 0.0,
+   "culture golfer": 0.0,
+   "fashion-first golf-adjacent": 0.0,
+   "fashion_first": 0.0,
+   "friend-group crew organiser": 0.0,
+   "gift buyer": 0.33,
+   "gift buyer for new golfer": 0.0,
+   "gift_buyer": 0.0,
+   "league_leader": 0.0,
+   "new woman golfer": 0.0,
+   "new women golfer": 0.0,
+   "new_women": 0.0,
+   "off-course golf-curious": 0.0,
+   "off_course_curious": 0.0,
+   "women's golf league leader": 0.0,
+   "women's league leader": 0.0
+  }
+ },
+ "save_reasons": {
+  "A": [
+   "Sending to the trip guys, Bandon style.",
+   "Our group needs a name now.",
+   "Sending to the trip guys, Bandon style.",
+   "Group chat, pick our name already.",
+   "sending to the trip chat right now",
+   "golf trip one with city and year is cute"
+  ],
+  "B": [
+   "gift card so she picks the name, no wrong style",
+   "Topgolf and a lesson, ok sure.",
+   "Takes the style guessing out, I like that.",
+   "crew cap gift card is clever, saved"
+  ],
+  "C": [
+   "Play ready golf list is useful.",
+   "sending to the Topgolf crew",
+   "clearly selling hats under a tips post",
+   "book nine not eighteen, that's us"
+  ],
+  "D": [],
+  "E": [
+   "no minimums and they each pick a colour? finally",
+   "one link, everyone picks colour, finally",
+   "no minimums, finally, need league pricing",
+   "no 24 minimum is exactly what our league needs"
+  ],
+  "F": [
+   "trainers are fine? saving for my first round",
+   "Sending to Jess before her first round.",
+   "Sending to Jess before her first round.",
+   "Saving for my first real round.",
+   "saving the dress code part, cap is cute"
+  ],
+  "G": [],
+  "H": [
+   "topgolf night or first lesson, good ideas",
+   "Crew name cap is actually a nice idea.",
+   "Solid list for a beginner, honestly.",
+   "A first lesson plus cap, that works.",
+   "A first lesson plus cap, that works.",
+   "Solid list for a beginner, honestly."
+  ],
+  "I": [
+   "pick up at double par, I needed this",
+   "This makes a real course feel doable.",
+   "double par rule, saving that",
+   "plain tips, no selling, saved"
+  ],
+  "J": [
+   "ugh the 3 days picking a name is so real",
+   "Cute, real people, not an ad.",
+   "this is the vibe, saving for our crew",
+   "matching caps in colours, saving this",
+   "the group chat taking 3 days is so real"
+  ],
+  "K": [
+   "golf girls trip gift bags, saving for our trip",
+   "matching trip hats in gift bags, yes"
+  ],
+  "L": [
+   "steam card and lego, saving for later"
+  ],
+  "M": [
+   "grip drawing, finally something I can practice",
+   "clubface path chart, saving that",
+   "ball position chart, saving for sim night"
+  ],
+  "N": [
+   "tee time card idea, stealing it"
+  ]
+ }
+}
