@@ -1,0 +1,1541 @@
+{
+ "personas": [
+  {
+   "id": "B01",
+   "segment": "hype streetwear",
+   "age": 22,
+   "gender": "male",
+   "city": "Brooklyn, NY",
+   "style": "Supreme box logos, Corteiz cargos",
+   "golf_attitude": "golf is for his boss",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Uptown Range Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "None of these. I'm not paying 38 for a hat that makes me look like I caddie."
+  },
+  {
+   "id": "B02",
+   "segment": "hype streetwear",
+   "age": 19,
+   "gender": "male",
+   "city": "London, UK",
+   "style": "Corteiz, Nike Tech, Hellstar",
+   "golf_attitude": "never touched a club",
+   "top3": [
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Hole 19",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Respectfully, That's OB",
+    "Bogey. What About It?",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Members of Nothing is hard, the rest is dad-at-the-driving-range stuff."
+  },
+  {
+   "id": "B03",
+   "segment": "hype streetwear",
+   "age": 27,
+   "gender": "female",
+   "city": "Queens, NY",
+   "style": "Stussy tees, Supreme caps, Jordans",
+   "golf_attitude": "finds golf merch corny",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Open Tee Club",
+    "Night Range League",
+    "Lost Ball Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Golf brands trying to be streetwear is the most 2022 thing ever."
+  },
+  {
+   "id": "B04",
+   "segment": "hype streetwear",
+   "age": 24,
+   "gender": "male",
+   "city": "Atlanta, GA",
+   "style": "Hellstar, Gallery Dept, Jordan 4s",
+   "golf_attitude": "indifferent",
+   "top3": [
+    "Public Golf Dept."
+   ],
+   "wear": [
+    "Public Golf Dept."
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Golf Is Hard",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [],
+   "reason": "Public Golf Dept. reads like Gallery Dept fan art but I'd rock it once."
+  },
+  {
+   "id": "B05",
+   "segment": "hype streetwear",
+   "age": 36,
+   "gender": "male",
+   "city": "Philadelphia, PA",
+   "style": "Supreme, Stussy, New Era fitteds",
+   "golf_attitude": "plays topgolf twice a year",
+   "top3": [
+    "Members of Nothing",
+    "Not a Member"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Not a Member"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Not a Member is the only line that sounds like a stance and not a pun."
+  },
+  {
+   "id": "B06",
+   "segment": "hype streetwear",
+   "age": 21,
+   "gender": "female",
+   "city": "Los Angeles, CA",
+   "style": "Stussy, adidas Sambas, baby tees",
+   "golf_attitude": "hates golf on principle",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Sunday Muni",
+    "Hole 19",
+    "Cart Path Only",
+    "Respectfully, That's OB",
+    "Bogey. What About It?",
+    "Tough Chip",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Public Golf Dept.",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Golf is still the country club to me. No rope cap fixes that."
+  },
+  {
+   "id": "B07",
+   "segment": "hype streetwear",
+   "age": 26,
+   "gender": "male",
+   "city": "Toronto, ON",
+   "style": "Corteiz, Chrome Hearts, Nike",
+   "golf_attitude": "neutral",
+   "top3": [
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Hole 19",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Respectfully, That's OB",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Members of Nothing works without the golf part, that's why I like it."
+  },
+  {
+   "id": "B08",
+   "segment": "hype streetwear",
+   "age": 23,
+   "gender": "male",
+   "city": "Bronx, NY",
+   "style": "Supreme, Timberland 6-inch, Nike",
+   "golf_attitude": "never played",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Open Tee Club",
+    "Uptown Range Club",
+    "Night Range League",
+    "Lost Ball Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "A small new brand writing NYC Muni on a cap when they ain't from here? Nah."
+  },
+  {
+   "id": "B09",
+   "segment": "hype streetwear",
+   "age": 29,
+   "gender": "female",
+   "city": "Chicago, IL",
+   "style": "Stussy, Carhartt beanie, Nike Dunks",
+   "golf_attitude": "golf is boring",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Hole 19",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Respectfully, That's OB",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Nothing here. Rope caps are cute but these all read gift shop."
+  },
+  {
+   "id": "B10",
+   "segment": "hype streetwear",
+   "age": 20,
+   "gender": "male",
+   "city": "Manchester, UK",
+   "style": "Corteiz, Trapstar, Nike",
+   "golf_attitude": "no interest",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Public Golf Dept.",
+    "Cart Path Only",
+    "Night Range League",
+    "Lost Ball Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Wouldn't wear any of it, mate. Too much golf joke energy."
+  },
+  {
+   "id": "B11",
+   "segment": "hype streetwear",
+   "age": 33,
+   "gender": "male",
+   "city": "Newark, NJ",
+   "style": "Supreme, Stussy, ALD crewnecks",
+   "golf_attitude": "plays muni courses occasionally",
+   "top3": [
+    "Five Borough Muni",
+    "Sunday Muni",
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Five Borough Muni",
+    "Sunday Muni",
+    "Members of Nothing",
+    "Not a Member"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Five Borough Muni feels true if you actually play Van Cortlandt."
+  },
+  {
+   "id": "B12",
+   "segment": "hype streetwear",
+   "age": 25,
+   "gender": "female",
+   "city": "Houston, TX",
+   "style": "Stussy, Supreme, adidas Originals",
+   "golf_attitude": "thinks golf merch is a trend",
+   "top3": [
+    "Est. Whenever"
+   ],
+   "wear": [
+    "Est. Whenever"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Uptown Range Club",
+    "Bogey. What About It?",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Est. Whenever is low-key funny and doesn't scream golf. That's it."
+  },
+  {
+   "id": "B13",
+   "segment": "hype streetwear",
+   "age": 28,
+   "gender": "male",
+   "city": "Brooklyn, NY",
+   "style": "Supreme, Who Decides War, Jordans",
+   "golf_attitude": "dislikes golf merch",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Hole 19",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Public Golf Dept.",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Feels like a brand chasing the golf wave. I'd rather buy WDW."
+  },
+  {
+   "id": "B14",
+   "segment": "archive/designer",
+   "age": 30,
+   "gender": "male",
+   "city": "New York, NY",
+   "style": "Rick Owens, Margiela tabis, Kapital",
+   "golf_attitude": "doesn't care about golf",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Open Tee Club",
+    "Uptown Range Club",
+    "Night Range League",
+    "Respectfully, That's OB",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Public Golf Dept."
+   ],
+   "reason": "Text on a hat is the opposite of what I buy. Pass on all."
+  },
+  {
+   "id": "B15",
+   "segment": "archive/designer",
+   "age": 34,
+   "gender": "female",
+   "city": "Paris, FR",
+   "style": "Margiela, Martine Rose, vintage Levi's",
+   "golf_attitude": "finds golf aesthetic ironic",
+   "top3": [
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Good Walk Spoiled",
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Uptown Range Club",
+    "Night Range League",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Public Golf Dept."
+   ],
+   "reason": "Good Walk Spoiled has a literary dryness I can respect."
+  },
+  {
+   "id": "B16",
+   "segment": "archive/designer",
+   "age": 27,
+   "gender": "male",
+   "city": "Los Angeles, CA",
+   "style": "Gallery Dept, Rick DRKSHDW, Kapital",
+   "golf_attitude": "none",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Open Tee Club",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Public Golf Dept."
+   ],
+   "reason": "Public Golf Dept. is literally a Gallery Dept knockoff. Hard pass."
+  },
+  {
+   "id": "B17",
+   "segment": "archive/designer",
+   "age": 38,
+   "gender": "male",
+   "city": "Tokyo, JP",
+   "style": "Kapital, Visvim, Needles",
+   "golf_attitude": "plays occasionally with clients",
+   "top3": [
+    "Good Walk Spoiled",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Good Walk Spoiled",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Cart Path Only",
+    "Uptown Range Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Sunday Muni and Good Walk Spoiled are quiet. Quiet is good."
+  },
+  {
+   "id": "B18",
+   "segment": "archive/designer",
+   "age": 25,
+   "gender": "female",
+   "city": "Berlin, DE",
+   "style": "Rick Owens, Ann Demeulemeester",
+   "golf_attitude": "anti-golf",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Hole 19",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Night Range League",
+    "Respectfully, That's OB",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Members of Nothing"
+   ],
+   "reason": "Golf is the uniform of the people I dress against."
+  },
+  {
+   "id": "B19",
+   "segment": "archive/designer",
+   "age": 35,
+   "gender": "male",
+   "city": "London, UK",
+   "style": "Martine Rose, Margiela, Stussy",
+   "golf_attitude": "casual pitch-and-putt",
+   "top3": [
+    "Members of Nothing",
+    "Golf Is Hard"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Golf Is Hard"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Hole 19",
+    "Public Golf Dept.",
+    "Open Tee Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Golf Is Hard is honest. Members of Nothing has a Martine Rose kind of wink."
+  },
+  {
+   "id": "B20",
+   "segment": "archive/designer",
+   "age": 29,
+   "gender": "male",
+   "city": "Seoul, KR",
+   "style": "Rick Owens, Our Legacy, Kapital",
+   "golf_attitude": "indifferent",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Open Tee Club",
+    "Uptown Range Club",
+    "Night Range League",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Not my world. Embroidered jokes on caps are not archive."
+  },
+  {
+   "id": "B21",
+   "segment": "archive/designer",
+   "age": 41,
+   "gender": "female",
+   "city": "New York, NY",
+   "style": "Margiela, Comme des Garcons, Kapital",
+   "golf_attitude": "plays with her father",
+   "top3": [
+    "Good Walk Spoiled",
+    "Golf Is Hard",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Good Walk Spoiled",
+    "Golf Is Hard",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [],
+   "reason": "Good Walk Spoiled for the Twain fans. The puns are a no."
+  },
+  {
+   "id": "B22",
+   "segment": "archive/designer",
+   "age": 26,
+   "gender": "male",
+   "city": "Milan, IT",
+   "style": "Rick Owens, Chrome Hearts",
+   "golf_attitude": "no",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Hole 19",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Night Range League",
+    "Respectfully, That's OB",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Nothing. Chrome Hearts cap or nothing."
+  },
+  {
+   "id": "B23",
+   "segment": "archive/designer",
+   "age": 36,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "style": "Kapital, Engineered Garments, Visvim",
+   "golf_attitude": "plays muni on weekends",
+   "top3": [
+    "Sunday Muni",
+    "Lost Ball Club",
+    "Range Balls Only"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Lost Ball Club",
+    "Range Balls Only",
+    "Good Walk Spoiled"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Respectfully, That's OB",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Sunday Muni is a real feeling. Lost Ball Club too. Skip the bogey stuff."
+  },
+  {
+   "id": "B24",
+   "segment": "culture and heritage",
+   "age": 35,
+   "gender": "female",
+   "city": "Washington, DC",
+   "style": "Denim Tears, vintage HBCU sweats, Wales Bonner",
+   "golf_attitude": "golf's exclusion history matters to her",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Open Tee Club",
+    "Night Range League",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Members of Nothing",
+    "Uptown Range Club"
+   ],
+   "reason": "Before you print Not a Member, know who golf kept out and say it with your chest or don't."
+  },
+  {
+   "id": "B25",
+   "segment": "culture and heritage",
+   "age": 28,
+   "gender": "male",
+   "city": "Harlem, NY",
+   "style": "Denim Tears, ALD, Clarks",
+   "golf_attitude": "learning on public courses",
+   "top3": [
+    "Not a Member",
+    "Five Borough Muni"
+   ],
+   "wear": [
+    "Not a Member",
+    "Five Borough Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Night Range League",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Uptown Range Club from a brand not from uptown is borrowing. Five Borough Muni I'd wear."
+  },
+  {
+   "id": "B26",
+   "segment": "culture and heritage",
+   "age": 44,
+   "gender": "male",
+   "city": "Atlanta, GA",
+   "style": "Denim Tears, Kapital, vintage Starter",
+   "golf_attitude": "plays at a public course weekly",
+   "top3": [
+    "Not a Member",
+    "Sunday Muni",
+    "Good Walk Spoiled"
+   ],
+   "wear": [
+    "Not a Member",
+    "Sunday Muni",
+    "Good Walk Spoiled"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Open Tee Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Not a Member speaks to Black golfers who built their own clubs. The puns cheapen it."
+  },
+  {
+   "id": "B27",
+   "segment": "culture and heritage",
+   "age": 23,
+   "gender": "female",
+   "city": "Oakland, CA",
+   "style": "thrifted, Denim Tears cotton wreath",
+   "golf_attitude": "finds golf colonial",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Hole 19",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Night Range League",
+    "Respectfully, That's OB",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip",
+    "Good Walk Spoiled"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Members of Nothing",
+    "Uptown Range Club"
+   ],
+   "reason": "A new brand selling outsider identity on a golf hat? That's the whole problem."
+  },
+  {
+   "id": "B28",
+   "segment": "culture and heritage",
+   "age": 31,
+   "gender": "male",
+   "city": "Detroit, MI",
+   "style": "Denim Tears, Carhartt WIP, Timberland",
+   "golf_attitude": "neutral",
+   "top3": [
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Uptown Range Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Members of Nothing is clean. The NYC ones feel lifted unless they're actually from there."
+  },
+  {
+   "id": "B29",
+   "segment": "culture and heritage",
+   "age": 39,
+   "gender": "female",
+   "city": "Brooklyn, NY",
+   "style": "Denim Tears, Stussy, vintage Levi's",
+   "golf_attitude": "skeptical of golf culture",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Open Tee Club",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "I notice when brands borrow. Uptown, Muni, Not a Member: whose story is that?"
+  },
+  {
+   "id": "B30",
+   "segment": "culture and heritage",
+   "age": 26,
+   "gender": "male",
+   "city": "London, UK",
+   "style": "Denim Tears, Wales Bonner, adidas",
+   "golf_attitude": "indifferent",
+   "top3": [
+    "Est. Whenever"
+   ],
+   "wear": [
+    "Est. Whenever"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Respectfully, That's OB",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Est. Whenever is the only one that doesn't pretend to have history."
+  },
+  {
+   "id": "B31",
+   "segment": "culture and heritage",
+   "age": 37,
+   "gender": "female",
+   "city": "New Orleans, LA",
+   "style": "Denim Tears, Bode, vintage",
+   "golf_attitude": "her grandfather caddied",
+   "top3": [
+    "Good Walk Spoiled"
+   ],
+   "wear": [
+    "Good Walk Spoiled"
+   ],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Hole 19",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Night Range League",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Members of Nothing"
+   ],
+   "reason": "My granddad carried bags at a club that wouldn't let him play. These feel weightless."
+  },
+  {
+   "id": "B32",
+   "segment": "culture and heritage",
+   "age": 47,
+   "gender": "male",
+   "city": "Chicago, IL",
+   "style": "Denim Tears, Polo, New Era",
+   "golf_attitude": "plays public courses",
+   "top3": [
+    "Sunday Muni",
+    "Five Borough Muni",
+    "Not a Member"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Five Borough Muni",
+    "Not a Member",
+    "Golf Is Hard"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Sunday Muni is my actual life. I'd wear that one."
+  },
+  {
+   "id": "B33",
+   "segment": "workwear/heritage casual",
+   "age": 40,
+   "gender": "male",
+   "city": "Pittsburgh, PA",
+   "style": "Carhartt WIP, Timberland, Dickies",
+   "golf_attitude": "golfs with his crew",
+   "top3": [
+    "Sunday Muni",
+    "Cart Path Only",
+    "Range Balls Only"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Cart Path Only",
+    "Range Balls Only",
+    "Golf Is Hard",
+    "Lost Ball Club"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Sunday Muni and Cart Path Only on a rope cap? Easy yes."
+  },
+  {
+   "id": "B34",
+   "segment": "workwear/heritage casual",
+   "age": 29,
+   "gender": "female",
+   "city": "Brooklyn, NY",
+   "style": "ALD, New Balance 990s, Carhartt",
+   "golf_attitude": "casual player",
+   "top3": [
+    "NYC Muni",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "NYC Muni",
+    "Sunday Muni",
+    "Five Borough Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Uptown Range Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [],
+   "reason": "NYC Muni is understated. ALD-coded. I'd buy that."
+  },
+  {
+   "id": "B35",
+   "segment": "workwear/heritage casual",
+   "age": 37,
+   "gender": "male",
+   "city": "Boston, MA",
+   "style": "ALD, Timberland, Patagonia",
+   "golf_attitude": "plays a few times a summer",
+   "top3": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Lost Ball Club"
+   ],
+   "wear": [
+    "Golf Is Hard",
+    "Good Walk Spoiled",
+    "Lost Ball Club",
+    "Range Balls Only",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Golf Is Hard is the truest thing ever embroidered."
+  },
+  {
+   "id": "B36",
+   "segment": "workwear/heritage casual",
+   "age": 24,
+   "gender": "male",
+   "city": "Columbus, OH",
+   "style": "Carhartt WIP, Nike SB, New Era",
+   "golf_attitude": "never played",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Respectfully, That's OB",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Not a golfer, not buying a golf hat. Simple."
+  },
+  {
+   "id": "B37",
+   "segment": "workwear/heritage casual",
+   "age": 42,
+   "gender": "male",
+   "city": "Queens, NY",
+   "style": "Timberland, New Era, Carhartt",
+   "golf_attitude": "plays Clearview and Forest Park",
+   "top3": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Sunday Muni",
+    "Cart Path Only",
+    "Hole 19"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Five Borough Muni is real. Most people don't know NYC has public courses."
+  },
+  {
+   "id": "B38",
+   "segment": "workwear/heritage casual",
+   "age": 30,
+   "gender": "female",
+   "city": "Denver, CO",
+   "style": "Carhartt WIP, Levi's, vintage caps",
+   "golf_attitude": "mildly into it",
+   "top3": [
+    "Night Range League",
+    "Lost Ball Club"
+   ],
+   "wear": [
+    "Night Range League",
+    "Lost Ball Club"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Uptown Range Club",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Night Range League sounds like a fun bar team. Lost Ball Club too."
+  },
+  {
+   "id": "B39",
+   "segment": "workwear/heritage casual",
+   "age": 27,
+   "gender": "male",
+   "city": "Portland, OR",
+   "style": "Carhartt WIP, Danner boots, ALD",
+   "golf_attitude": "dislikes golf merch on principle",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Est. Whenever",
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Range Balls Only",
+    "Hole 19",
+    "Public Golf Dept.",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Open Tee Club",
+    "Night Range League",
+    "Respectfully, That's OB",
+    "Lost Ball Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Rope caps already peaked. Golf words on them is just a trend stacking on a trend."
+  },
+  {
+   "id": "B40",
+   "segment": "workwear/heritage casual",
+   "age": 35,
+   "gender": "female",
+   "city": "Philadelphia, PA",
+   "style": "ALD, New Balance, vintage Champion",
+   "golf_attitude": "plays with friends",
+   "top3": [
+    "Members of Nothing",
+    "Not a Member"
+   ],
+   "wear": [
+    "Members of Nothing",
+    "Not a Member",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Uptown Range Club"
+   ],
+   "reason": "Members of Nothing feels grown and a bit funny."
+  },
+  {
+   "id": "B41",
+   "segment": "Korea/Japan-based",
+   "age": 24,
+   "gender": "female",
+   "city": "Seoul, KR",
+   "style": "Stussy, Supreme, adidas Originals",
+   "golf_attitude": "screen golf with friends",
+   "top3": [
+    "Range Balls Only",
+    "Night Range League"
+   ],
+   "wear": [
+    "Range Balls Only",
+    "Night Range League",
+    "Open Tee Club"
+   ],
+   "tryhard": [
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Respectfully, That's OB",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Range Balls Only fits screen golf. NYC ones are for New Yorkers."
+  },
+  {
+   "id": "B42",
+   "segment": "Korea/Japan-based",
+   "age": 28,
+   "gender": "male",
+   "city": "Tokyo, JP",
+   "style": "Kapital, Supreme, New Era",
+   "golf_attitude": "plays at the range",
+   "top3": [
+    "Good Walk Spoiled",
+    "Golf Is Hard"
+   ],
+   "wear": [
+    "Good Walk Spoiled",
+    "Golf Is Hard",
+    "Range Balls Only"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "English golf phrases with dry humour are nice. Puns feel cheap."
+  },
+  {
+   "id": "B43",
+   "segment": "Korea/Japan-based",
+   "age": 36,
+   "gender": "male",
+   "city": "Osaka, JP",
+   "style": "Denim Tears, Neighborhood, WTAPS",
+   "golf_attitude": "plays rarely",
+   "top3": [],
+   "wear": [],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Public Golf Dept.",
+    "Open Tee Club",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Not a Member",
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Nothing feels connected to the brand's own story. I would not wear."
+  },
+  {
+   "id": "B44",
+   "segment": "Korea/Japan-based",
+   "age": 22,
+   "gender": "female",
+   "city": "Busan, KR",
+   "style": "Stussy, Martine Rose, Nike",
+   "golf_attitude": "golf is popular here but not for her",
+   "top3": [
+    "Members of Nothing"
+   ],
+   "wear": [
+    "Members of Nothing"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Golf Is Hard",
+    "Cart Path Only",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni",
+    "Uptown Range Club"
+   ],
+   "reason": "Members of Nothing has good attitude. Others are golf shop."
+  },
+  {
+   "id": "B45",
+   "segment": "Korea/Japan-based",
+   "age": 26,
+   "gender": "male",
+   "city": "Seoul, KR",
+   "style": "Hellstar, Gallery Dept, Chrome Hearts",
+   "golf_attitude": "enjoys screen golf",
+   "top3": [
+    "Public Golf Dept.",
+    "Night Range League",
+    "Est. Whenever"
+   ],
+   "wear": [
+    "Public Golf Dept.",
+    "Night Range League",
+    "Est. Whenever"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Public Golf Dept. looks good, like Gallery Dept style. Night Range League also."
+  },
+  {
+   "id": "B46",
+   "segment": "golf-curious streetwear",
+   "age": 29,
+   "gender": "male",
+   "city": "Brooklyn, NY",
+   "style": "Stussy, Malbon, Jordan 1 Lows",
+   "golf_attitude": "took up golf last year",
+   "top3": [
+    "Sunday Muni",
+    "Five Borough Muni",
+    "Respectfully, That's OB"
+   ],
+   "wear": [
+    "Sunday Muni",
+    "Five Borough Muni",
+    "Respectfully, That's OB",
+    "Range Balls Only",
+    "Cart Path Only",
+    "Golf Is Hard"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Sunday Muni and Respectfully, That's OB actually sound like my group chat."
+  },
+  {
+   "id": "B47",
+   "segment": "golf-curious streetwear",
+   "age": 36,
+   "gender": "female",
+   "city": "Los Angeles, CA",
+   "style": "Stussy, Eastside Golf, ALD",
+   "golf_attitude": "plays monthly",
+   "top3": [
+    "Good Walk Spoiled",
+    "Open Tee Club",
+    "Sunday Muni"
+   ],
+   "wear": [
+    "Good Walk Spoiled",
+    "Open Tee Club",
+    "Sunday Muni",
+    "Lost Ball Club"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Public Golf Dept."
+   ],
+   "reason": "Good Walk Spoiled for the golf girls who read. Puns, no thanks."
+  },
+  {
+   "id": "B48",
+   "segment": "golf-curious streetwear",
+   "age": 26,
+   "gender": "male",
+   "city": "Atlanta, GA",
+   "style": "Supreme, Jordan golf shoes, New Era",
+   "golf_attitude": "plays Topgolf, wants real rounds",
+   "top3": [
+    "Respectfully, That's OB",
+    "Hole 19",
+    "Cart Path Only"
+   ],
+   "wear": [
+    "Respectfully, That's OB",
+    "Hole 19",
+    "Cart Path Only",
+    "Range Balls Only",
+    "Tough Chip"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [],
+   "reason": "Respectfully, That's OB is funny every time. Tough Chip too."
+  },
+  {
+   "id": "B49",
+   "segment": "golf-curious streetwear",
+   "age": 38,
+   "gender": "male",
+   "city": "New York, NY",
+   "style": "Kapital, Supreme, Bode",
+   "golf_attitude": "plays Bethpage on weekends",
+   "top3": [
+    "Five Borough Muni",
+    "Good Walk Spoiled",
+    "Golf Is Hard"
+   ],
+   "wear": [
+    "Five Borough Muni",
+    "Good Walk Spoiled",
+    "Golf Is Hard",
+    "Sunday Muni"
+   ],
+   "tryhard": [
+    "Who Said Fore?",
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?",
+    "Tough Chip"
+   ],
+   "borrowed": [
+    "Open Tee Club"
+   ],
+   "reason": "Five Borough Muni is the one. Bethpage people will get it."
+  },
+  {
+   "id": "B50",
+   "segment": "golf-curious streetwear",
+   "age": 24,
+   "gender": "female",
+   "city": "Toronto, ON",
+   "style": "Stussy, Corteiz, Nike",
+   "golf_attitude": "golf-curious, mostly range",
+   "top3": [
+    "Night Range League",
+    "Range Balls Only",
+    "Est. Whenever"
+   ],
+   "wear": [
+    "Night Range League",
+    "Range Balls Only",
+    "Est. Whenever"
+   ],
+   "tryhard": [
+    "Here for the Birdies",
+    "Birdies in My Bag",
+    "Mind Your Bogeys",
+    "Bogey Behavior",
+    "Bogey. What About It?"
+   ],
+   "borrowed": [
+    "Five Borough Muni",
+    "NYC Muni"
+   ],
+   "reason": "Night Range League is cute and range is all I do anyway."
+  }
+ ]
+}
