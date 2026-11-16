@@ -22,7 +22,7 @@ ANGLES = [
        before='Blank cap from the airport shop', after='"BANDON 26 — THE BOGEY BOYS" stitched',
        chat=['Who\'s sorting hats for the trip?', 'Me. Sending the mock-up now', '...we\'re ordering 8'], rank='trip hat ideas', problem='Every trip photo looks the same', solution='Hats with the trip stitched on',
        covers={'list': '5 hat ideas for your golf trip crew', 'pov': 'POV: you sorted the hats for the golf trip', 'question': 'Does your golf crew have matching hats yet?', 'bold': 'A golf trip without matching hats is just a work trip', 'relatable': 'Every golf trip group chat the week before'}),
-  dict(id='A2', name='Gift for the golfer', strength=4,
+  dict(id='A2', name='Gift for the golfer', strength=5,  # top proven golf slideshow formula: 50 winners, 42 creators, 10.9 saves/1k
        who='Partners, kids and friends buying for a golfer (Nov-Dec)', promise='A gift with their name, course or home-hole on it',
        evidence='9 of 17 golf brands are running gift ads right now (Keepwatch); gift + discount angles are crowded and short-lived (9-11% kept 30+ days) — so lead with personal, not price; "custom embroidered" CPC $5-9 shows buyers pay for personal.',
        items=['Their home course on the front', 'Their best score + date on the side', 'Their nickname from the group', 'Their first hole-in-one (date + hole)', 'A matching one for you'],
@@ -113,7 +113,7 @@ CTAS = [
 HOOK_FIT = {('A1','list'):3,('A1','pov'):3,('A1','relatable'):3,('A2','question'):3,('A2','list'):3,('A2','bold'):3,('A3','pov'):3,('A3','relatable'):3,('A4','question'):3,('A4','list'):3,('A4','bold'):3,
             ('A5','bold'):3,('A5','pov'):3,('A6','question'):3,('A6','bold'):3,('A7','list'):3,('A7','relatable'):3,('A7','question'):3,('A8','list'):3,('A8','question'):3,('A9','pov'):3,('A9','list'):3,('A10','question'):3,('A10','list'):3,
             ('A5','relatable'):1,('A8','relatable'):1,('A8','pov'):1,('A10','pov'):1}
-FMT_FIT = {('A1','F1'):3,('A1','F3'):3,('A1','F2'):3,('A2','F1'):3,('A2','F5'):3,('A3','F2'):3,('A3','F5'):3,('A4','F4'):3,('A4','F2'):3,('A5','F2'):3,('A5','F1'):3,('A6','F1'):3,('A6','F3'):3,('A7','F1'):3,('A7','F4'):3,
+FMT_FIT = {('A1','F1'):3,('A1','F3'):3,('A1','F2'):3,('A2','F1'):3,('A2','F5'):3,('A3','F2'):3,('A3','F5'):3,('A4','F4'):3,('A4','F2'):3,('A5','F2'):3,('A5','F1'):3,('A6','F1'):3,('A6','F3'):3,('A7','F1'):3,('A7','F4'):2,
            ('A8','F1'):3,('A8','F5'):3,('A9','F1'):3,('A9','F3'):3,('A10','F2'):3,('A10','F4'):3,('A8','F3'):1,('A2','F4'):1,('A5','F4'):1,('A7','F2'):1}
 CTA_FIT = {('A1','C2'):3,('A1','C1'):3,('A2','C3'):3,('A3','C2'):2,('A4','C3'):2,('A5','C1'):3,('A6','C2'):3,('A7','C2'):3,('A8','C3'):3,('A9','C2'):3,('A10','C1'):3,('A7','C3'):1,('A10','C3'):1,('A2','C1'):1}
 fit = lambda m, a, k: m.get((a, k), 2)
@@ -133,6 +133,26 @@ def outline(a, f, cover, cta):
         s = [f'COVER: "{cover}"', f'2. The problem: {a["problem"]}', f'3. Why the usual fix fails', f'4. The fix: {a["solution"]}', f'5. The reveal: {a["after"]}', f'6. CTA: {cta["last"]}']
     return '\n'.join(s)
 
+# Golf TikTok slideshow outliers (photo posts beating their creator's followers 5x+), grouped into formulas.
+FORMULAS = {}
+_fp = os.path.join(OUT, 'data', 'golf-slideshow-formulas.json')
+if os.path.exists(_fp):
+    FORMULAS = {r['formula']: r for r in json.load(open(_fp))['rows']}
+def _ev(name, note):
+    r = FORMULAS.get(name)
+    return f"{'PROVEN' if r['proven'] else 'Lead'}: {name}: {r['posts']} winning slideshows from {r['creators']} creators, median {r['median_saves_per_1k']} saves and {r['median_shares_per_1k']} shares per 1k plays, {r['median_slides']} slides. {note}" if r else note
+SLIDE_EVIDENCE = {
+  'Buddy trip crew hats': 'No golf-trip slideshow formula among 474 winners: open ground (untested). Creator videos on trips get high reach (median 118k).',
+  'Gift for the golfer': _ev('Gift ideas for the golfer (bf / dad / family)', 'The best-saved proven golf formula, and it is gift season.'),
+  'Golf dad (and kid)': _ev('Gift ideas for the golfer (bf / dad / family)', 'Dad shows up mostly inside gift posts: frame it as a gift for dad.'),
+  'Fit check: the hat finishes it': _ev('Outfit inspo / fit ideas', 'Crowded (72 creators) and shared least: needs a twist.'),
+  'Blank to stitched (before/after)': 'No before/after slideshows among the winners: open ground (untested).',
+  'Member-guest / league team': 'No team-gear slideshows among the winners: open ground (untested).',
+  'Types of golfers (humour)': _ev('Relatable / boyfriend humour', 'Most shared golf formula and the biggest plays-vs-followers multiple; winners are short (about 3 slides).'),
+  'Which golf hat suits you (guide)': _ev('Golf tips / basics / drills', 'Guides/tips are the biggest proven formula; a hat guide borrows the shape.'),
+  'Golf bachelor party': 'No bachelor-trip slideshows among the winners: open ground (untested).',
+  'Comment your crew name (mock-up loop)': 'Not a slideshow formula yet: measure comments.',
+}
 rows = []
 for a, h, f, c in itertools.product(ANGLES, HOOKS, FORMATS, CTAS):
     hf, ff, cf = fit(HOOK_FIT, a['id'], h['key']), fit(FMT_FIT, a['id'], f['id']), fit(CTA_FIT, a['id'], c['id'])
@@ -188,8 +208,9 @@ for line in [
     '- No other brand\'s logo on a hat or slide (Malbon, Melin, Nike etc.). Course names on hats can be trademarks: use the customer\'s own words, and don\'t sell course logos.',
     '- Personalisation depends on Printify accepting per-order embroidery text — confirm before promising "your name on it".',
     '',
-    'STILL TO ADD',
-    '- Golf slideshow winners from TikTok (run in progress): which of these formats already wins in golf, with saves per 1k. Fills the "Slideshow evidence" column.',
+    'EVIDENCE SHEETS',
+    '- "Golf slideshow formulas": 474 golf slideshows that beat their creator\'s followers 5x+, grouped and ranked. Gift ideas is the best-saved proven formula; relatable humour is the most shared.',
+    '- "Creator trends": 1,000 golf videos: which formats get reach.',
 ]:
     ws.append([line])
 ws.column_dimensions['A'].width = 140
@@ -199,7 +220,7 @@ sheet(wb.create_sheet('Wave 1 (post first)'), ['#', 'Combo', 'Score', 'Angle', '
       [[i + 1, r['combo'], r['score'], r['angle'], r['hook'], r['format'], r['cta'], r['cover'], r['slides'], r['outline'], r['why'], r['measure']] for i, r in enumerate(wave)],
       [4, 16, 7, 24, 16, 22, 26, 38, 7, 60, 70, 22])
 sheet(wb.create_sheet('All combinations'), ['Combo', 'Score', 'Fit detail', 'Angle', 'Hook', 'Format', 'CTA', 'Cover text', 'Slides', 'Slide outline', 'Who it\'s for', 'Promise', 'Why it should work', 'Measure', 'Slideshow evidence (golf TikTok)'],
-      [[r['combo'], r['score'], r['fits'], r['angle'], r['hook'], r['format'], r['cta'], r['cover'], r['slides'], r['outline'], r['who'], r['promise'], r['why'], r['measure'], 'pending'] for r in rows],
+      [[r['combo'], r['score'], r['fits'], r['angle'], r['hook'], r['format'], r['cta'], r['cover'], r['slides'], r['outline'], r['who'], r['promise'], r['why'], r['measure'], SLIDE_EVIDENCE.get(r['angle'], '')] for r in rows],
       [16, 7, 30, 24, 16, 22, 26, 38, 7, 60, 28, 30, 70, 22, 24])
 sheet(wb.create_sheet('Angles'), ['ID', 'Angle', 'Evidence strength /5', 'Who', 'Promise', 'Evidence', 'Example slide items'],
       [[a['id'], a['name'], a['strength'], a['who'], a['promise'], a['evidence'], '\n'.join(a['items'])] for a in ANGLES], [6, 28, 10, 30, 34, 80, 40])
@@ -223,6 +244,12 @@ sheet(wb.create_sheet('Evidence'), ['Finding', 'Number', 'Source'], [
 ], [36, 70, 44])
 sheet(wb.create_sheet('Results log'), ['Combo', 'Date posted', 'Platform', 'Plays @48h', 'Saves @48h', 'Shares @48h', 'Comments @48h', 'Plays @7d', 'Saves @7d', 'Shares @7d', 'Followers', 'Saves/1k', 'Shares/1k', 'Plays/followers', 'Link clicks', 'Orders', 'Decision'],
       [], [16, 12, 10] + [11] * 13 + [30])
+if FORMULAS:
+    sheet(wb.create_sheet('Golf slideshow formulas'), ['Formula', 'Proven?', 'Winning posts', 'Creators', 'Median saves / 1k plays', 'Median shares / 1k plays', 'Median plays ÷ followers', 'Median plays', 'Median slides', 'Top examples'],
+          [[r['formula'], 'yes' if r['proven'] else 'lead (needs 3+ posts, 2+ creators)', r['posts'], r['creators'], r['median_saves_per_1k'], r['median_shares_per_1k'], r['median_ratio'], r['median_plays'], r['median_slides'],
+            '\n'.join(f"{t['url']} ({t['plays']:,} plays, {t['saves_per_1k']}/1k saves, {t['slides']} slides): {t['title']}" for t in r['top'])] for r in FORMULAS.values()],
+          [40, 14, 10, 10, 12, 12, 12, 12, 10, 120])
+    ws3 = wb['Golf slideshow formulas']; ws3.append([]); ws3.append(['Golf TikTok photo posts that beat their creator\'s follower count 5x+ (10k+ plays), 18 golf keywords, Nov 2026. Ranked by median saves per 1k plays. A formula is proven with 3+ posts from 2+ creators.'])
 # Creator trends (TikTok + Reels, last 120 days): which formats get reach, so the slideshows borrow what already travels.
 tp = os.path.join(OUT, 'data', 'golf-trends.json')
 if os.path.exists(tp):
