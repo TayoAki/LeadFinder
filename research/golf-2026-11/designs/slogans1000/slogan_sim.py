@@ -14,6 +14,12 @@ import json, math, os, re
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
 SLOGANS = [l.strip() for l in open(os.path.join(HERE, 'slogans.txt')) if l.strip()]
+# ICP=denimtears also scores slogans written for that audience (slogans-denimtears.txt), alongside the 1,000.
+NEW = []
+if os.environ.get('ICP') == 'denimtears':
+    NEW = [l.strip() for l in open(os.path.join(HERE, 'slogans-denimtears.txt')) if l.strip() and not l.startswith('#')]
+    SLOGANS += [s for s in NEW if s not in SLOGANS]
+NEWSET = set(NEW)
 
 # family: (regex, slang, borrow, dated, crude, humour)
 FAM = [
@@ -53,6 +59,7 @@ FAM = [
 def family(s):
     for name, rx, *t in FAM:
         if re.search(rx, s): return name, t
+    if s in NEWSET: return 'New: Denim Tears set', [0, 0, 0, 0, .4]  # plain English, no slang family
     return 'Other', [1, 0, 0, 0, .5]
 WORDS = {'swing': 141, 'tee': 33, 'dad': 31, 'range': 20, 'fairway': 18, 'slice': 12, 'weekend': 12, 'birdie': 11, 'par': 10, 'cart': 10, 'fore': 9, 'handicap': 9,
          'sunday': 7, 'bogey': 6, 'chunk': 5, 'beer': 4, 'bunker': 4, 'back nine': 6, 'putt': 8, 'driver': 8, 'green': 8, 'clubhouse': 3, 'eagle': 2, 'mulligan': 2, 'shank': 2, 'scramble': 3}
@@ -70,6 +77,18 @@ for s in SLOGANS:
                      humour=hum + (0.8 if SELF.search(s) else 0), group=1 if GROUP.search(s) else 0, women=1 if WOMEN.search(s) else 0,
                      brag=1 if BRAG.search(s) and not SELF.search(s) else 0, familiar=round(fam_w, 2), chars=len(s)))
 F = {k: np.array([r[k] for r in rows], float) for k in ['slang', 'borrow', 'dated', 'crude', 'humour', 'group', 'women', 'brag', 'familiar', 'chars']}
+# Style features used by ICP=denimtears (0 weight elsewhere). Caps this crowd wears (Supreme, Stussy, New Era, ALD,
+# Carhartt WIP, Kapital) carry wordmarks, departments, places and years, not jokes.
+HERITAGE = re.compile(r'\b(club|society|dept\.?|department|athletic|league|members?|union|est\.|association|division|social|public|municipal|muni)\b', re.I)
+PLACE = re.compile(r'\b(nyc|new york|brooklyn|queens|bronx|harlem|five borough|city|concrete|seoul|tokyo|downtown|uptown)\b', re.I)
+SIGN = re.compile(r'^(cart path only|ground under repair|walking only|quiet please|play it as it lies|replace your divots|out of bounds|drop zone|provisional|range balls only|no dress code|twilight rate|shotgun start|ready golf)$', re.I)
+PUN = re.compile(r"tee-?riffic|par-?ty|fore-?ever|tee time tea|sip & chip|spill the tee|fairway to|putt it|grip it|swing(in)?g? (it|by)|hole-?y|chip happens|par-?fect|tee-?hee|golf-?ing", re.I)
+F['minimal'] = np.array([1.0 if len(r['slogan'].split()) <= 3 and r['chars'] <= 18 else 0.0 for r in rows])
+F['heritage'] = np.array([1.0 if HERITAGE.search(r['slogan']) else 0.0 for r in rows])
+F['place'] = np.array([1.0 if PLACE.search(r['slogan']) else 0.0 for r in rows])
+F['sign'] = np.array([1.0 if SIGN.search(r['slogan']) else 0.0 for r in rows])
+F['pun'] = np.array([1.0 if PUN.search(r['slogan']) else 0.0 for r in rows])
+F['excl'] = np.array([1.0 if '!' in r['slogan'] else 0.0 for r in rows])
 
 # segment: share, P(under 35), P(woman), humour, group, plain-golf taste, brag taste
 SEG = {'Trip / crew organiser': (.14, .35, .2, .8, 1.5, .3, .3), 'Gift buyer': (.18, .4, .2, .6, .3, .4, .6), 'Golf dad': (.12, .1, 0, .8, .4, .4, .3),
@@ -101,6 +120,25 @@ if os.environ.get('ICP') == 'opentee':
            'Gift buyer for a new golfer': (.12, .5, .5, .6, .5, .4, .7)}
     EXTRA = {'New woman golfer (beginner, via friends/Topgolf)': (.05, 1.0, .5), 'Off-course golf-curious (Topgolf/sim)': (.15, 1.0, .4), 'Culture golfer (Eastside crowd)': (.1, 1.3, .3),
              'Friend-group crew organiser': (.05, 1.0, .2), 'Fashion-first golf-adjacent (Telfar crowd)': (.2, .9, 1.0), "Women's golf group / league leader": (0, 1.1, .3), 'Gift buyer for a new golfer': (0, 1.0, .3)}
+STYLE = {s: (0, 0, 0, 0, 0) for s in SEG}  # minimal, heritage, place, course-sign deadpan, pun/exclamation penalty
+if os.environ.get('ICP') == 'denimtears':
+    # Denim Tears ICP, from the Instagram tag overlap (research/denim-tears/ig-tags.md): 1,050 posts tagging @denimtears
+    # by 809 accounts, 453 feeds read. Outliers (lift>=3): Supreme (97 people, 3.4), Rick Owens (40, 3.0), Kapital (20,
+    # 3.2), Gallery Dept (17, 3.6), Who Decides War (14, 3.5), Martine Rose (22, 3.9); also Corteiz/Hellstar/Chrome
+    # Hearts ~2.7, Timberland 2.8, New Era 2.3, Carhartt WIP 2.1, ALD 2.1. Worn together: Stussy 121, Supreme/adidas
+    # Originals 70. A Korean cluster (#데님티어스 17, LE SSERAFIM, UGG Korea). Golf: only Golf Wang (not golf).
+    # Brand context: Tremaine Emory, Black-history storytelling, NYC; fans watch for brands borrowing culture.
+    # Segment SHARES and gender mix are JUDGEMENT informed by that data (streetwear audiences skew male).
+    SEG = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (.25, .85, .3, .5, .2, .3, .1), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (.20, .55, .35, .2, .1, .4, 0),
+           'Culture + heritage reader (history, Wales Bonner)': (.18, .5, .45, .3, .4, .4, .1), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (.15, .5, .3, .5, .3, .7, .1),
+           'Korea / Asia fan (Seoul, Tokyo)': (.12, .8, .5, .3, .2, .3, .1), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (.10, .7, .3, .7, .5, .8, .2)}
+    # slang bonus (negative: try-hard reads badly here), borrowing sensitivity, fashion taste
+    EXTRA = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (-.1, 1.3, .6), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (-.4, 1.4, .4),
+             'Culture + heritage reader (history, Wales Bonner)': (-.3, 2.0, .3), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (-.3, 1.4, .2),
+             'Korea / Asia fan (Seoul, Tokyo)': (-.5, 1.2, .5), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (-.2, 1.3, .4)}
+    STYLE = {'Hype streetwear core (Supreme/Corteiz/Stussy)': (1.0, .6, .6, .5, 1.0), 'Archive / designer head (Rick Owens, Kapital, Margiela)': (1.2, .4, .2, .8, 1.4),
+             'Culture + heritage reader (history, Wales Bonner)': (.6, .8, .5, .5, 1.0), 'Workwear / heritage casual (Carhartt WIP, Timberland, New Era, ALD)': (.8, 1.0, .7, .6, .8),
+             'Korea / Asia fan (Seoul, Tokyo)': (1.2, .7, .4, .3, .8), 'Golf-curious streetwear (ALD / Golf Wang adjacent)': (.7, .8, .5, 1.0, .6)}
 N, NOISE, HURDLE = 20000, .9, 4.6
 rng = np.random.default_rng(1611)
 seg = list(SEG); sh = np.array([SEG[s][0] for s in seg]); sh /= sh.sum(); who = rng.choice(len(seg), N, p=sh)
@@ -109,12 +147,13 @@ for si, s in enumerate(seg):
     m = who == si; k = int(m.sum()); _, py, pw, h, g, plain, brag = SEG[s]
     y = rng.random(k) < py; w = rng.random(k) < pw; young[m] = y; woman[m] = w
     yy = y[:, None].astype(float); ww = w[:, None].astype(float)
-    sb, bm, fz = EXTRA[s]
+    sb, bm, fz = EXTRA[s]; smn, sh_, spl, ssg, spn = STYLE[s]
+    style = .6 * smn * F['minimal'] + .6 * sh_ * F['heritage'] + .6 * spl * F['place'] + .6 * ssg * F['sign'] - .6 * spn * (F['pun'] + F['excl'])
     base = (fz * .6 * F['fashion'] + .25 * F['familiar'] - .05 * np.maximum(0, F['chars'] - 16) + h * .6 * F['humour'] + g * .8 * F['group'] + brag * .8 * F['brag'] + plain * .6 * (F['slang'] == 0) - .6 * bm * F['borrow'])
     slang_eff = yy * ((.35 + sb) * F['slang'] - .3 * F['dated']) + (1 - yy) * ((-.55 + sb) * F['slang'] - .4 * bm * F['borrow'] - .1 * F['dated'])
     crude_eff = -(.7 if s.startswith('Gift buyer') or s == 'Golf dad' else .35) * F['crude'] * (1 - .6 * yy)
     women_eff = ww * (1.0 * F['women']) - (1 - ww) * (2.5 * F['women'])
-    U[m] = (base[None, :] + slang_eff + crude_eff + women_eff + rng.normal(0, NOISE, (k, len(rows)))).astype(np.float32)
+    U[m] = (base[None, :] + style[None, :] + slang_eff + crude_eff + women_eff + rng.normal(0, NOISE, (k, len(rows)))).astype(np.float32)
 first = U.argmax(1); fc = np.bincount(first, minlength=len(rows)) / N
 P = (1 / (1 + np.exp(-(U - HURDLE)))).mean(0); PS = (1 / (1 + np.exp(-(U - HURDLE + 1.0 + .4 * F['humour'][None, :])))).mean(0)
 yfc = np.bincount(first[young], minlength=len(rows)) / max(1, young.sum()); ofc = np.bincount(first[~young], minlength=len(rows)) / max(1, (~young).sum())
