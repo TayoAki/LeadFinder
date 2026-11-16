@@ -48,7 +48,45 @@ Small brands only reach 3 shared reviewers in big samples. Plan on 300+ historie
 - Use a dense metro: Chicago, Dallas, Phoenix, Salt Lake City, Atlanta.
 - For a single-location business, use `--locations 1` with a bigger `--per-reviewer`, and expect weaker results.
 
-## How it works (`scripts/fan_overlap.mjs`)
+## Instagram mode (online-first brands; treg only, no Apify)
+
+```bash
+# What the brand's people tag: the strongest signal
+node .claude/skills/fan-overlap/scripts/ig_tags.mjs --handle melin --cap-usd 2
+# Who the brand's fans follow
+node .claude/skills/fan-overlap/scripts/ig_overlap.mjs --handle melin --cap-usd 4
+```
+
+**`ig_tags.mjs`** (tikhub through treg):
+1. Reads every post that tags @brand. 1,155 posts from 529 accounts for Melin cost about $0.11.
+2. Reads the recent feeds of the people who posted them.
+3. Counts, by distinct person:
+   - **Other posts (the main signal):** brands they tag or @mention in posts that do *not* tag @brand. This is their own taste.
+   - **Same post:** brands tagged together with @brand. These are mostly items worn in the same outfit.
+   - Hashtags in both.
+
+**`ig_overlap.mjs`:**
+- Fans are:
+  - people who tag @brand (tikhub);
+  - commenters on its recent posts (scrapecreators);
+  - its newest followers (the API returns about 50).
+- For each fan, it reads the first pages of the accounts they follow, through tikhub.
+
+**Lift and outliers:**
+- Lift = people ÷ √(the account's followers), relative to the median brand in the list.
+  - 1.0 is typical; 3 means three times what its size predicts.
+  - Nike-sized accounts score low, because everyone follows Nike.
+- An **outlier** is any brand with lift ≥ `--outlier-lift` (default 3), or more than 2 robust standard deviations above the median (on a log scale).
+- The report lists **every** outlier, not a top N, and always shows the people count beside the lift. A lift of 10 from 3 people is a lead to check, not proof.
+
+**Brand or person:**
+- Instagram's public data doesn't expose account categories.
+- The scripts guess from the name, bio and link, and mark uncertain accounts "unclear".
+- Check the top of the list by hand before presenting it.
+
+**Privacy:** fans' usernames are used in memory and dropped. Only public accounts with `--min-posters`/`--min-shared` (3+) people are saved, as totals.
+
+## How it works (`scripts/fan_overlap.mjs`, Google reviews)
 
 | Step | What | Source (cheapest first) |
 |---|---|---|
